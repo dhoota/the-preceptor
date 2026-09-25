@@ -1985,13 +1985,13 @@ export const DVT_PE_S33_SAMPS: Samp[] = [
         options: [
           "Bilateral leg compression ultrasound",
           "CT pulmonary angiogram",
-          "High sensitivity D-dimer first",
+          "MR pulmonary angiogram",
           "Transthoracic echocardiogram",
           "Ventilation perfusion lung scan",
         ],
         correct: 1,
         explanation:
-          "His chest X-ray shows an effusion and a basal opacity, and a ventilation perfusion scan is most likely to be diagnostic only when the chest X-ray is normal. A CT pulmonary angiogram gives a clear answer and can also show another cause, such as pneumonia. His creatinine is normal, so contrast is safe. A D-dimer cannot exclude PE when the probability is likely. Leg ultrasound has low yield without leg signs. Echocardiography does not diagnose PE in a stable patient.",
+          "His chest X-ray shows an effusion and a basal opacity, and a ventilation perfusion scan is most likely to be diagnostic only when the chest X-ray is normal. A CT pulmonary angiogram gives a clear answer and can also show another cause, such as pneumonia. His creatinine is normal, so contrast is safe. MR angiography is technically inadequate in a large share of patients and is not a first line test for PE. Leg ultrasound has low yield without leg signs. Echocardiography does not diagnose PE in a stable patient.",
         keyFeature: { topic: "dvt-pe", n: 5 },
         source: "esc-pe",
       },
@@ -2034,7 +2034,7 @@ export const DVT_PE_S33_SAMPS: Samp[] = [
     ],
     sources: [SRC_WELLS_PE, SRC_ESC_PE, SRC_ISTH_OBESITY, SRC_TC_PE_TX],
     ...META,
-    version: 3,
+    version: 4,
   },
   /* 39 ------------------------------------------------------------------ */
   {

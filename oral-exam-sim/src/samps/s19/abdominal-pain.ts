@@ -646,7 +646,7 @@ export const ABDOMINAL_PAIN_S19: Samp[] = [
   {
     id: "abdominal-pain-27",
     topic: "abdominal-pain",
-    alsoTopics: ["shock"],
+    alsoTopics: ["shock", "analgesia-sedation"],
     title: "Third visit for vomiting in two months",
     stem:
       "A 24-year-old man presents to the emergency department with 2 days of crampy diffuse abdominal pain and vomiting more than 20 times a day. This is his third visit in 2 months with the same pattern, and each episode has lasted 1 to 2 days. A CT of the abdomen 6 weeks ago was normal. He says only long hot showers ease the nausea, and he has taken several today. He has smoked cannabis several times a day for 4 years, most recently this morning. He rarely drinks alcohol and takes no medications.\n\nHe is alert and uncomfortable. His mucous membranes are dry. The abdomen is soft with mild diffuse tenderness and no guarding. Sodium is 137 mmol/L, potassium 3.1 mmol/L, chloride 94 mmol/L and bicarbonate 31 mmol/L. Glucose is 6.0 mmol/L. Lipase and liver enzymes are normal. The ECG shows sinus tachycardia with a QTc of 440 ms.",
@@ -683,12 +683,12 @@ export const ABDOMINAL_PAIN_S19: Samp[] = [
         correct: 1,
         explanation:
           "Topical capsaicin applied to the abdomen and forearms seems particularly effective for the pain of this syndrome, and it is also given as a cream to use at home. Opioids such as hydromorphone can worsen nausea and vomiting, carry a risk of dependence and are linked to repeat visits. Acetaminophen and anti-inflammatory drugs such as ketorolac work less well for this pain. Hyoscine butylbromide, also called butylscopolamine, is suggested for the cramps of cannabis withdrawal, which starts more than a day after the last use, while he smoked this morning.",
-        keyFeature: { topic: "shock", n: 8 },
+        keyFeature: { topic: "analgesia-sedation", n: 2 },
         source: "razban-chs",
       },
     ],
     sources: [
-      { id: "razban-chs", citation: "Razban M, Exadaktylos AK, Santa VD, Heymann EP. Cannabinoid hyperemesis syndrome and cannabis withdrawal syndrome: a review of the management of cannabis-related syndrome in the emergency department. Int J Emerg Med. 2022.", url: "https://doi.org/10.1186/s12245-022-00446-0" },
+      { id: "razban-chs", citation: "Razban M, Exadaktylos AK, Della Santa V, Heymann EP. Cannabinoid hyperemesis syndrome and cannabis withdrawal syndrome: a review of the management of cannabis-related syndrome in the emergency department. Int J Emerg Med. 2022.", url: "https://doi.org/10.1186/s12245-022-00446-0" },
     ],
     reviewed: false,
     author: "Draft for review by Arjan Dhoot, MD",
@@ -1144,7 +1144,7 @@ export const ABDOMINAL_PAIN_S19: Samp[] = [
         options: ["Choledocholithiasis", "Fatty liver of pregnancy", "HELLP syndrome", "Ibuprofen liver injury", "Immune thrombocytopenia"],
         correct: 2,
         explanation:
-          "Hemolysis with schistocytes and an LDH of 820 U/L, an AST of 286 U/L and platelets of 74 x 10^9/L meet the Tennessee criteria for HELLP syndrome: platelets of 100 x 10^9/L or less, AST of 70 U/L or more and LDH of 600 U/L or more. About 30% of cases begin after delivery, most within 48 hours, and hypertension and proteinuria can be absent beforehand. Her normal glucose and INR argue against acute fatty liver of pregnancy, in which low glucose and a prolonged clotting time are typical. Immune thrombocytopenia lowers the platelets without hemolysis or liver injury. A stone in the bile duct and a drug reaction to ibuprofen do not explain hemolysis with a low platelet count.",
+          "Hemolysis with schistocytes and an LDH of 820 U/L, an AST of 286 U/L and platelets of 74 x 10^9/L meet the Tennessee criteria for HELLP syndrome. These are platelets below 100 x 10^9/L, AST of 70 U/L or more and LDH above 600 U/L. About 30% of cases begin after delivery, most within 48 hours, and hypertension and proteinuria can be absent beforehand. Her normal glucose and INR argue against acute fatty liver of pregnancy, in which low glucose and a prolonged clotting time are typical. Immune thrombocytopenia lowers the platelets without hemolysis or liver injury. A stone in the bile duct and a drug reaction to ibuprofen do not explain hemolysis with a low platelet count.",
         keyFeature: { topic: "pre-eclampsia", n: 3 },
         source: "haram-hellp",
       },
@@ -1152,7 +1152,7 @@ export const ABDOMINAL_PAIN_S19: Samp[] = [
         id: "q2",
         kind: "single",
         prompt: "Which of the following is the most appropriate medication to start now?",
-        options: ["diazepam 10 mg IV", "levetiracetam 1 g IV", "magnesium sulfate 4 g IV", "phenytoin 20 mg/kg IV", "No drug, since she has given birth"],
+        options: ["diazepam 10 mg IV", "levetiracetam 1 g IV", "magnesium sulfate 4 g IV", "phenytoin 20 mg/kg IV", "No anticonvulsant"],
         correct: 2,
         explanation:
           "HELLP syndrome is a severe form of pre-eclampsia, and magnesium sulfate more than halves the risk of eclampsia, so she needs a loading dose now with an infusion to follow. Her disease began after the birth, so delivery has not removed her risk of seizures. In trials magnesium sulfate prevented eclampsia far better than phenytoin. Diazepam and levetiracetam have not been shown to prevent eclampsia.",

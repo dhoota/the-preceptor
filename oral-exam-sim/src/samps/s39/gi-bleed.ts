@@ -2332,8 +2332,9 @@ export const GI_BLEED_S39_SAMPS: Samp[] = [
   {
     "id": "gi-bleed-41",
     "topic": "gi-bleed",
+    "alsoTopics": ["arrhythmia"],
     "title": "A racing heart that will not settle",
-    "stem": "A 58-year-old man presents to the emergency department with 4 hours of a pounding heartbeat and light-headedness when he stands. He has paroxysmal atrial fibrillation, with two brief episodes in the past year that settled on their own, and takes metoprolol 25 mg twice daily. His heart rate between episodes is 60 to 70/minute. He takes no anticoagulant. For 5 weeks he has taken diclofenac 50 mg three times daily for a shoulder injury. For a week he has felt more tired than usual. He has no chest pain, abdominal pain, vomiting or change in his stools that he has noticed. He has not missed or changed any medications. He is pale. His lungs are clear and there is no leg edema. The abdomen is soft and non-tender. The ECG shows atrial fibrillation at 138/minute with a narrow QRS and no ST changes.",
+    "stem": "A 58-year-old man presents to the emergency department with 4 hours of a pounding heartbeat and light-headedness when he stands. He has paroxysmal atrial fibrillation, with two brief episodes in the past year that settled on their own, and takes metoprolol 25 mg twice daily. His heart rate between episodes is 60 to 70/minute. He has no other medical conditions and takes no anticoagulant. For 5 weeks he has taken diclofenac 50 mg three times daily for a shoulder injury. For a week he has felt more tired than usual. He denies chest pain, abdominal pain and vomiting, and he has not looked at his stools. He has not missed or changed any medications. He is pale. His lungs are clear and there is no leg edema. The abdomen is soft and non-tender. The ECG shows atrial fibrillation at 138/minute with a narrow QRS and no ST changes.",
     "vitals": {
       "temperature": "36.7°C oral",
       "pulse": "138/minute",
@@ -2365,28 +2366,28 @@ export const GI_BLEED_S39_SAMPS: Samp[] = [
       {
         "id": "q2",
         "kind": "single",
-        "update": "Hemoglobin 76 g/L (134 g/L 5 months ago), urea 21.4 mmol/L, creatinine 96 umol/L, INR 1.1, platelets 240 x 10^9/L. Rectal examination shows dark maroon stool.",
-        "prompt": "Which of the following findings best supports an upper GI source for his bleeding?",
+        "update": "Rectal examination shows melena. Endoscopy is planned for the morning. A resident asks whether to start an anticoagulant because his atrial fibrillation began 4 hours ago.",
+        "prompt": "Which of the following is the most appropriate anticoagulation plan for him now?",
         "options": [
-          "Absence of abdominal pain",
-          "Dark maroon colour of the stool",
-          "Fall in hemoglobin of 58 g/L",
-          "Normal INR and platelet count",
-          "Urea high relative to creatinine"
+          "apixaban 5 mg PO twice daily",
+          "enoxaparin 1 mg/kg SC twice daily",
+          "Heparin infusion without a bolus",
+          "rivaroxaban 20 mg PO daily",
+          "No anticoagulation"
         ],
         "correct": 4,
-        "explanation": "A urea nitrogen to creatinine ratio above 30 raises the likelihood of an upper source (LR 7.5), because blood digested in the small bowel is absorbed as urea. Urea 21.4 mmol/L is a urea nitrogen of about 60 mg/dL and creatinine 96 umol/L is about 1.09 mg/dL, a ratio of about 55. Maroon stool fits either an upper or a right colon source. The fall in hemoglobin shows how much he has lost, not where from. A normal INR and platelet count and the absence of pain do not point to a site.",
+        "explanation": "He is bleeding from the gut, so any anticoagulant would add to the bleed. He also has no current indication for one. He meets none of the CHADS-65 criteria of age 65 or more, prior stroke or TIA, hypertension, heart failure or diabetes, so the CAEP checklist does not call for long-term anticoagulation. His atrial fibrillation began 4 hours ago, less than 12 hours, so the checklist would not require anticoagulation before a cardioversion either. Apixaban, rivaroxaban, enoxaparin and a heparin infusion all add bleeding risk with no benefit to him.",
         "keyFeature": {
-          "topic": "gi-bleed",
-          "n": 2
+          "topic": "arrhythmia",
+          "n": 6
         },
-        "source": "srygley-ugib"
+        "source": "caep-af"
       },
       {
         "id": "q3",
         "kind": "menu",
         "select": 1,
-        "update": "A second IV line is placed and blood is crossmatched. After 500 mL of Ringer's lactate his heart rate is 134/minute and BP 94/58 mmHg.",
+        "update": "His heart rate is 134/minute and his BP 94/58 mmHg despite 500 mL of Ringer's lactate.",
         "prompt": "Which of the following is the most appropriate treatment for his heart rate now?",
         "options": [
           "amiodarone 150 mg IV",
@@ -2399,7 +2400,7 @@ export const GI_BLEED_S39_SAMPS: Samp[] = [
         "correct": [
           4
         ],
-        "explanation": "His fast rate is a response to blood loss, with a hemoglobin of 76 g/L and a low BP. The CAEP checklist warns that in rapid atrial fibrillation secondary to a medical cause such as bleeding, cardioversion may be harmful and aggressive rate control should be avoided, and the cause should be treated. Red cells restore volume and oxygen delivery, and his rate should fall as he is resuscitated. Diltiazem 20 mg, the usual 0.25 mg/kg for 80 kg, and metoprolol would lower his BP further and remove the compensation that keeps up his output. Amiodarone and digoxin also target the rhythm, not the bleed. Cardioversion is often chosen for recent-onset atrial fibrillation, but not when bleeding is driving the rate.",
+        "explanation": "His fast rate is a response to blood loss, with melena, pallor and a BP that stays low after crystalloid. The CAEP checklist warns that in rapid atrial fibrillation secondary to a medical cause such as bleeding, cardioversion may be harmful and aggressive rate control should be avoided, and the cause should be treated. Red cells restore volume and oxygen delivery, and his rate should fall as he is resuscitated. Diltiazem 20 mg, the usual 0.25 mg/kg for 80 kg, and metoprolol would lower his BP further and remove the compensation that keeps up his output. Amiodarone and digoxin also target the rhythm, not the bleed. Cardioversion is often chosen for recent-onset atrial fibrillation, but not when bleeding is driving the rate.",
         "keyFeature": {
           "topic": "gi-bleed",
           "n": 5
@@ -2412,15 +2413,10 @@ export const GI_BLEED_S39_SAMPS: Samp[] = [
       "id": "caep-af",
       "citation": "Stiell IG, de Wit K, Scheuermeyer FX, et al. 2021 CAEP acute atrial fibrillation/flutter best practices checklist. CJEM. 2021.",
       "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC8423652/"
-    },
-    {
-      "id": "srygley-ugib",
-      "citation": "Srygley FD, Gerardo CJ, Tran T, Fisher DA. Does this patient have a severe upper gastrointestinal bleed? JAMA. 2012.",
-      "url": "https://doi.org/10.1001/jama.2012.253"
     }
   ],
     ...META,
-    "version": 2
+    "version": 3
   },
   {
     "id": "gi-bleed-42",

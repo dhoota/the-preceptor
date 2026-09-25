@@ -598,7 +598,7 @@ export const ISCHEMIC_HEART_DISEASE_S42_SAMPS: Samp[] = [
     "id": "ischemic-heart-disease-23",
     "topic": "ischemic-heart-disease",
     "title": "An abnormal ECG from a walk-in clinic",
-    "stem": "A 48-year-old man is sent to the emergency department by a walk-in clinic because of an abnormal ECG. For 2 months he has had occasional aching left chest discomfort lasting up to 30 minutes, sometimes at rest and sometimes on exertion. His last episode was yesterday, and he is pain free now. He has hypertension treated with amlodipine and does not smoke. His examination is normal, with no murmur. His ECG shows sinus rhythm with high QRS voltage and symmetric T wave inversion of 12 to 14 mm in V3 to V6, deepest in V4 and V5, with no ST elevation. An ECG taken before minor surgery 3 years ago shows the same pattern. High sensitivity troponin I is 6 ng/L (male 99th percentile 26 ng/L).",
+    "stem": "A 48-year-old man is sent to the emergency department by a walk-in clinic because of an abnormal ECG. For 2 months he has had occasional aching left chest discomfort on exertion that lasts up to 10 minutes and eases with rest. His last episode was yesterday, and he is pain free now. He has hypertension treated with amlodipine and does not smoke. His examination is normal, with no murmur. His ECG shows sinus rhythm with high QRS voltage and symmetric T wave inversion of 12 to 14 mm in V3 to V6, deepest in V4 and V5, with no Q waves or ST elevation. An ECG taken before minor surgery 3 years ago shows the same pattern. High sensitivity troponin I is 6 ng/L (male 99th percentile 26 ng/L).",
     "vitals": {
       "temperature": "36.7°C oral",
       "pulse": "72/minute",
@@ -631,38 +631,38 @@ export const ISCHEMIC_HEART_DISEASE_S42_SAMPS: Samp[] = [
         "id": "q2",
         "kind": "single",
         "update": "A repeat high sensitivity troponin I at 3 hours is 6 ng/L. He remains pain free and his repeat ECG is unchanged.",
-        "prompt": "Which of the following treatments is most appropriate for him in the department?",
+        "prompt": "Which of the following is the most appropriate next step for him?",
         "options": [
-          "ASA 160 mg chewed",
-          "Heparin bolus and infusion",
-          "Tenecteplase by weight",
-          "Ticagrelor 180 mg PO",
-          "No antithrombotic treatment"
+          "Admit for coronary angiography",
+          "Discharge, return if pain recurs",
+          "Echocardiogram and cardiology referral",
+          "Exercise stress ECG today",
+          "Start heparin and admit"
         ],
-        "correct": 4,
-        "explanation": "Two troponins well below the 99th percentile with no change, no pain and an ECG unchanged over 3 years make an acute coronary syndrome very unlikely. The ESC guideline reserves fibrinolysis for ST elevation MI, and antiplatelet and anticoagulant loading is part of treating a confirmed or likely ACS. Here ASA, ticagrelor and heparin would add bleeding risk without a coronary event to treat. Tenecteplase carries a risk of intracranial hemorrhage and has no indication without ST elevation.",
+        "correct": 2,
+        "explanation": "Two troponins well below the 99th percentile with no change, and an ECG unchanged over 3 years, make an acute coronary syndrome unlikely, so heparin and inpatient angiography are not needed. His deep T wave inversion and exertional symptoms still need an explanation, and imaging of the left ventricle, starting with echocardiography, is the next step. Hughes and colleagues note that echocardiography missed apical hypertrophy in 40% of cases later found on cardiac MRI, so a cardiologist should review the result and arrange further imaging if it is normal. An exercise ECG cannot be read with marked baseline T wave inversion. Discharge without follow-up leaves his symptoms and abnormal ECG unexplained.",
         "keyFeature": {
           "topic": "ischemic-heart-disease",
-          "n": 7
+          "n": 8
         },
-        "source": "esc-acs-2023"
+        "source": "hughes-aphcm-2020"
       },
       {
         "id": "q3",
         "kind": "single",
-        "prompt": "Which of the following is the most appropriate next investigation for his ECG pattern?",
+        "prompt": "Which of the following is the most likely cause of his ECG pattern?",
         "options": [
-          "CT pulmonary angiography",
-          "Echocardiography",
-          "Emergency coronary angiography",
-          "Exercise stress test today",
-          "Repeat troponin in 6 hours"
+          "Acute myopericarditis",
+          "Apical hypertrophic cardiomyopathy",
+          "Old anterior myocardial infarction",
+          "Takotsubo stress cardiomyopathy",
+          "Wellens pattern from LAD stenosis"
         ],
         "correct": 1,
-        "explanation": "Deep T wave inversion without evidence of infarction calls for imaging of the left ventricle, and echocardiography shows the thickened apex and spade-shaped cavity of apical hypertrophic cardiomyopathy. Hughes and colleagues note that echocardiography missed apical hypertrophy in 40% of cases later found on cardiac MRI, so a normal study with deep T wave inversion needs further imaging. Emergency angiography exposes him to an invasive procedure without an acute coronary syndrome. An exercise ECG cannot be read with marked baseline T wave inversion. A third troponin adds little, and nothing suggests embolism.",
+        "explanation": "Giant negative T waves of 10 mm or more in the precordial leads, with voltage criteria for left ventricular hypertrophy, are the ECG hallmark of apical hypertrophic cardiomyopathy, and his pattern has been fixed for 3 years. Hughes and colleagues note that it often presents with chest pain and T wave inversion that mimic ACS. The Wellens pattern is deep T inversion in V2 and V3 after recent angina, a sign of critical LAD stenosis, and it would not be present on an ECG from 3 years ago. An old anterior infarction leaves Q waves, which he does not have. Myopericarditis and takotsubo cardiomyopathy are acute illnesses with evolving ECGs and usually a raised troponin, and his troponins are normal.",
         "keyFeature": {
           "topic": "ischemic-heart-disease",
-          "n": 7
+          "n": 2
         },
         "source": "hughes-aphcm-2020"
       }
@@ -672,15 +672,10 @@ export const ISCHEMIC_HEART_DISEASE_S42_SAMPS: Samp[] = [
       "id": "hughes-aphcm-2020",
       "citation": "Hughes RK, Knott KD, Malcolmson J, et al. Apical hypertrophic cardiomyopathy: the variant less known. J Am Heart Assoc. 2020.",
       "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC7335568/"
-    },
-    {
-      "id": "esc-acs-2023",
-      "citation": "Byrne RA, Rossello X, Coughlan JJ, et al. 2023 ESC Guidelines for the management of acute coronary syndromes. Eur Heart J. 2023.",
-      "url": "https://doi.org/10.1093/eurheartj/ehad191"
     }
   ],
     ...META,
-    "version": 2
+    "version": 3
   },
   {
     "id": "ischemic-heart-disease-24",
@@ -2081,21 +2076,21 @@ export const ISCHEMIC_HEART_DISEASE_S42_SAMPS: Samp[] = [
       {
         "id": "q3",
         "kind": "single",
-        "prompt": "Which of the following tests is most appropriate to look for coronary disease in him?",
+        "prompt": "Which of the following medications is most appropriate to add for his episodes?",
         "options": [
-          "Exercise treadmill ECG test",
-          "Holter monitor for 48 hours",
-          "Pharmacologic stress imaging",
-          "Repeat resting ECG in 1 month",
-          "Resting echocardiogram only"
+          "clopidogrel 75 mg PO daily",
+          "isosorbide mononitrate 30 mg daily",
+          "nitroglycerin 0.4 mg SL as needed",
+          "rivaroxaban 2.5 mg PO twice daily",
+          "ticagrelor 90 mg PO twice daily"
         ],
         "correct": 2,
-        "explanation": "He cannot walk on a treadmill after a below-knee amputation without a prosthesis. Diabetes Canada advises pharmacological stress echocardiography or nuclear imaging for people with diabetes who need stress testing and are unable to exercise. An exercise treadmill test depends on walking. A resting echocardiogram and a repeat resting ECG do not provoke ischemia. A Holter monitor records rhythm, not exertional ischemia.",
+        "explanation": "The CCS guideline supports sublingual nitroglycerin for exertional angina, taken when an episode starts or beforehand for an activity known to bring it on, such as pushing his chair up the ramp. It suggests a long-acting nitrate such as isosorbide mononitrate only when a beta blocker or a long-acting calcium channel blocker is not tolerated, not enough or contraindicated. Ticagrelor is given with ASA for an acute coronary syndrome, which his normal troponins argue against. Rivaroxaban at this dose is added to ASA for proven coronary or peripheral artery disease, which has not been shown in him. Clopidogrel replaces ASA only when ASA cannot be taken.",
         "keyFeature": {
           "topic": "ischemic-heart-disease",
           "n": 8
         },
-        "source": "dc-cvd-screening-2018"
+        "source": "ccs-sihd-2014"
       }
     ],
     "sources": [
@@ -2103,10 +2098,15 @@ export const ISCHEMIC_HEART_DISEASE_S42_SAMPS: Samp[] = [
       "id": "dc-cvd-screening-2018",
       "citation": "Diabetes Canada Clinical Practice Guidelines Expert Committee, Poirier P, Bertrand OF, Leipsic J, Mancini GBJ, Raggi P, Roussin A. Screening for the presence of cardiovascular disease. Can J Diabetes. 2018.",
       "url": "https://guidelines.diabetes.ca/cpg/chapter24"
+    },
+    {
+      "id": "ccs-sihd-2014",
+      "citation": "Mancini GBJ, Gosselin G, Chow B, et al. Canadian Cardiovascular Society guidelines for the diagnosis and management of stable ischemic heart disease. Can J Cardiol. 2014.",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/25064578/"
     }
   ],
     ...META,
-    "version": 2
+    "version": 3
   },
   {
     id: "ischemic-heart-disease-43",

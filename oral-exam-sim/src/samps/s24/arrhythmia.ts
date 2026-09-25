@@ -1149,66 +1149,51 @@ export const ARRHYTHMIA_S24: Samp[] = [
   {
     id: "arrhythmia-28",
     topic: "arrhythmia",
-    alsoTopics: ["tox"],
-    title: "Chest pressure after a night out",
-    stem: "A 33-year-old man presents to the emergency department at 03:00 with 40 minutes of heavy chest pressure that began 1 hour after he snorted cocaine at a party. He has no medical history and takes no medications. His ECG shows 3 mm ST elevation in II, III and aVF. He receives lorazepam 2 mg IV, ASA and two doses of nitroglycerin 0.4 mg SL.\n\nWithin 5 minutes his pain resolves and a repeat ECG shows the ST elevation has returned to baseline. The monitor then shows runs of a regular wide complex rhythm at 90/minute, lasting 20 to 30 seconds, with no P waves linked to the QRS complexes, alternating with sinus rhythm at 88/minute. He is alert and comfortable.",
-    vitals: { temperature: "37.2°C oral", pulse: "90/minute", resp: "18/minute", bp: "134/80 mmHg", o2sat: "98% on room air", weight: "76 kg" },
+    alsoTopics: ["sob"],
+    title: "Found limp in his crib",
+    stem: "A 7-month-old boy is brought to the emergency department by ambulance. He has had 3 days of cough, runny nose and poor feeding, and his 4-year-old sister has a cold. An hour ago his mother found him limp, blue and not breathing in his crib. Paramedics have given bag-mask ventilation with 100% oxygen for 8 minutes with good chest rise, and an IO needle is in his left tibia. He was born at term and has been well. There are no medications in the home.\n\nHe is unresponsive and mottled, with a weak brachial pulse and a capillary refill of 5 seconds. The anterior fontanelle is flat. The monitor shows a P wave before each narrow QRS complex. Glucose is 5.8 mmol/L and potassium 4.6 mmol/L.",
+    vitals: { temperature: "36.9°C rectal", pulse: "48/minute", bp: "62/38 mmHg", o2sat: "94% on bag-mask ventilation with 100% oxygen", weight: "8 kg" },
     questions: [
       {
         id: "q1",
         kind: "single",
-        prompt: "Which of the following is the most appropriate management of these brief runs?",
-        options: ["amiodarone 150 mg IV", "Continue monitoring only", "lidocaine 100 mg IV", "metoprolol 5 mg IV", "Synchronized cardioversion"],
-        correct: 1,
+        prompt: "Which of the following is the most likely cause of his slow heart rate?",
+        options: ["Complete heart block", "High serum potassium", "Low body temperature", "Low oxygen from apnea", "Raised intracranial pressure"],
+        correct: 3,
         explanation:
-          "A slow wide rhythm that appears just after the pain and ST elevation resolve is an accelerated idioventricular rhythm, a reperfusion rhythm, and brief runs in an alert patient with a normal BP need monitoring only. Antiarrhythmic drugs are not recommended for ventricular arrhythmias that cause no symptoms or hemodynamic change, so lidocaine and amiodarone add risk without benefit. Metoprolol slows the sinus node, which lets the ventricular rhythm take over more often. Cardioversion is not indicated for a stable rhythm at 90/minute.",
-        keyFeature: { topic: "arrhythmia", n: 7 },
-        source: "esc-acs-2023"
+          "He was found limp, blue and not breathing after 3 days of a respiratory infection, and hypoxia heads the reversible causes of bradycardia in children that the 2025 pediatric guideline says must be addressed. A P wave before each narrow QRS complex is sinus bradycardia, not complete heart block. His potassium of 4.6 mmol/L is normal, and his temperature is 36.9°C. A flat fontanelle and a respiratory illness make raised intracranial pressure less likely.",
+        keyFeature: { topic: "arrhythmia", n: 5 },
+        source: "aha-pals-2025"
       },
       {
         id: "q2",
         kind: "single",
-        update: "An hour later his sinus rate slows to 70/minute and a run lasts 3 minutes. During it his BP falls to 86/52 mmHg and he feels light-headed.",
-        prompt: "Which of the following is the most appropriate treatment for him now?",
-        options: ["amiodarone 150 mg IV", "atropine 0.5 mg IV", "lidocaine 100 mg IV", "metoprolol 5 mg IV", "Synchronized cardioversion"],
-        correct: 1,
+        prompt: "Which of the following is the most appropriate next step for his bradycardia?",
+        options: ["atropine 0.02 mg/kg IO", "Continue ventilation and observe", "Endotracheal intubation first", "Start chest compressions", "Transcutaneous pacing"],
+        correct: 3,
         explanation:
-          "The rhythm is now sustained and causes hypotension, so it needs treatment. An accelerated idioventricular rhythm takes over when the sinus rate falls below the rate of the ventricular focus, so atropine, which speeds the sinus node, lets the sinus rhythm recapture the heart, and atropine has been reported to suppress this rhythm in acute infarction. Lidocaine and amiodarone suppress the ventricular focus without speeding the sinus node and can leave a slow rhythm behind. Metoprolol slows the sinus node further and favours the ventricular rhythm. Cardioversion is used for reentrant tachycardias, not for a rhythm at 90/minute.",
-        keyFeature: { topic: "arrhythmia", n: 7 },
-        source: "riera-aivr"
+          "A heart rate below 60/minute with signs of poor perfusion that persists despite effective oxygenation and ventilation calls for high quality CPR, even when a pulse can be felt. Eight minutes of bag-mask ventilation with good chest rise and a saturation of 94% show that his ventilation is effective, yet he stays mottled with a capillary refill of 5 seconds. Observation and intubation delay compressions while his perfusion is failing. Atropine is for bradycardia from increased vagal tone. Pacing is considered for complete heart block or sinus node dysfunction.",
+        keyFeature: { topic: "arrhythmia", n: 4 },
+        source: "aha-pals-2025"
       },
       {
         id: "q3",
         kind: "single",
-        prompt: "Which of the following most likely caused his transient ST elevation?",
-        options: ["Acute aortic dissection", "Acute myopericarditis", "Benign early repolarization", "Cocaine-induced coronary spasm", "Coronary artery embolism"],
-        correct: 3,
-        explanation:
-          "Cocaine stimulates adrenergic receptors on the coronary arteries and causes coronary spasm, and ST elevation that resolves within minutes of nitroglycerin and a benzodiazepine fits spasm that has been relieved. Cocaine also promotes thrombosis, so he still needs cardiology assessment. Early repolarization does not come and go with pain. Myopericarditis causes diffuse ST elevation that does not resolve with nitroglycerin in minutes. Aortic dissection and coronary embolism do not fit rapid resolution with nitroglycerin.",
-        keyFeature: { topic: "arrhythmia", n: 5 },
-        source: "kim-cocaine"
-      },
-      {
-        id: "q4",
-        kind: "single",
-        update: "A rhythm strip shows that the first complex of each run arrives at the expected time of a sinus beat and has a shape halfway between his normal QRS and the wide complexes.",
-        prompt: "Which of the following best describes the first complex of each run?",
-        options: ["Aberrant conduction", "Capture beat", "Fusion beat", "Premature atrial beat", "Ventricular escape beat"],
+        prompt: "Which of the following is the correct IO dose of epinephrine if his bradycardia persists?",
+        options: ["epinephrine 0.008 mg IO", "epinephrine 0.04 mg IO", "epinephrine 0.08 mg IO", "epinephrine 0.16 mg IO", "epinephrine 0.8 mg IO"],
         correct: 2,
         explanation:
-          "A complex with a shape halfway between the sinus QRS and the ventricular QRS, arriving on time, is a fusion beat, formed when a sinus impulse and the ventricular focus activate the ventricles together. Fusion and capture beats are typical of an accelerated idioventricular rhythm when its rate is close to the sinus rate, and they confirm that the wide complexes arise in the ventricle. A capture beat is a fully normal, narrow QRS conducted from the sinus node during a ventricular rhythm. Aberrant conduction and a premature atrial beat are early, with a P wave before the complex. An escape beat follows a pause rather than arriving on time.",
-        keyFeature: { topic: "arrhythmia", n: 3 },
-        source: "riera-aivr"
+          "The 2025 pediatric guideline dose of epinephrine for persistent bradycardia is 0.01 mg/kg IV or IO, to a maximum of 1 mg. At 8 kg that is 0.01 x 8 = 0.08 mg, or 0.8 mL of the 0.1 mg/mL solution. A dose of 0.8 mg is ten times too much, the error made when 0.8 mL is drawn from a 1 mg/mL ampoule. A dose of 0.008 mg is ten times too little. Doses of 0.04 mg and 0.16 mg are 0.005 and 0.02 mg/kg, half and double the correct dose.",
+        keyFeature: { topic: "arrhythmia", n: 4 },
+        source: "aha-pals-2025"
       }
     ],
     sources: [
-      { id: "esc-acs-2023", citation: "Byrne RA, Rossello X, Coughlan JJ, and colleagues. 2023 ESC guidelines for the management of acute coronary syndromes. Eur Heart J. 2023.", url: "https://doi.org/10.1093/eurheartj/ehad191" },
-      { id: "riera-aivr", citation: "Riera AR, Barros RB, de Sousa FD, Baranchuk A. Accelerated idioventricular rhythm: history and chronology of the main discoveries. Indian Pacing Electrophysiol J. 2010.", url: "https://pmc.ncbi.nlm.nih.gov/articles/PMC2803604/" },
-      { id: "kim-cocaine", citation: "Kim ST, Park T. Acute and chronic effects of cocaine on cardiovascular health. Int J Mol Sci. 2019.", url: "https://doi.org/10.3390/ijms20030584" }
+      { id: "aha-pals-2025", citation: "Lasa JJ, Dhillon GS, Duff JP, and colleagues. Part 8: pediatric advanced life support. 2025 American Heart Association and American Academy of Pediatrics guidelines for cardiopulmonary resuscitation and emergency cardiovascular care. Circulation. 2025.", url: "https://doi.org/10.1161/CIR.0000000000001368" }
     ],
     reviewed: false,
     author: AUTHOR,
-    version: 3
+    version: 4
   },
   {
     id: "arrhythmia-29",
@@ -1455,7 +1440,7 @@ export const ARRHYTHMIA_S24: Samp[] = [
     id: "arrhythmia-32",
     topic: "arrhythmia",
     title: "Fluttering spells while breastfeeding",
-    stem: "A 34-year-old woman presents to the emergency department after three spells today of sudden light-headedness and a fluttering heartbeat, each lasting a few seconds while she sat breastfeeding. She did not lose consciousness. She gave birth 5 weeks ago. Three weeks ago her family physician started domperidone 20 mg four times daily to increase her milk supply. For 2 days she has had vomiting and diarrhea. She also takes ferrous fumarate and a prenatal vitamin. No relative has died suddenly.\n\nShe is alert and her examination is normal. Potassium is 3.0 mmol/L and magnesium 0.64 mmol/L. Her ECG shows sinus rhythm at 58/minute, a PR interval of 164 ms, a QRS of 90 ms and a QTc of 552 ms, with T wave inversion in V1 only.",
+    stem: "A 34-year-old woman presents to the emergency department after three spells today of sudden light-headedness and a fluttering heartbeat, each lasting a few seconds while she sat breastfeeding. She did not lose consciousness. She gave birth 5 weeks ago. Three weeks ago her family physician started domperidone 20 mg four times daily to increase her milk supply. She also takes ferrous fumarate and a prenatal vitamin. No relative has died suddenly.\n\nShe is alert and her examination is normal. Potassium is 4.1 mmol/L and magnesium 0.86 mmol/L. Her ECG shows sinus rhythm at 58/minute, a PR interval of 164 ms, a QRS of 90 ms and a QTc of 552 ms, with T wave inversion in V1 only.",
     vitals: { temperature: "36.9°C oral", pulse: "58/minute", resp: "16/minute", bp: "112/70 mmHg", o2sat: "99% on room air", weight: "64 kg" },
     questions: [
       {
@@ -1473,10 +1458,10 @@ export const ARRHYTHMIA_S24: Samp[] = [
         id: "q2",
         kind: "single",
         prompt: "Which of the following is the most appropriate plan for her now?",
-        options: ["Admit with cardiac monitoring", "Discharge once vomiting settles", "Discharge with a Holter monitor", "Outpatient echocardiogram", "Repeat ECG in 1 week"],
-        correct: 0,
+        options: ["Admit to a general ward bed", "Admit with cardiac monitoring", "Discharge once she feels well", "Discharge with a Holter monitor", "Repeat ECG in 1 week"],
+        correct: 1,
         explanation:
-          "Spells of light-headedness and palpitations with a QTc of 552 ms, low potassium and low magnesium put her at risk of torsades de pointes, so she needs admission to a unit with continuous ECG monitoring while the culprit drug is stopped and her electrolytes are corrected. Discharge once the vomiting settles, a Holter monitor, an outpatient echocardiogram or a repeat ECG next week would leave her unmonitored while the risk is highest.",
+          "Spells of light-headedness and palpitations with a QTc of 552 ms put her at risk of torsades de pointes, so she needs admission to a unit with continuous ECG monitoring while the culprit drug is stopped and her QT is followed until it shortens. A general ward bed without continuous ECG monitoring would not detect torsades in time to treat it. Discharge once she feels well, a Holter monitor or a repeat ECG next week would leave her unmonitored while the risk is highest.",
         keyFeature: { topic: "arrhythmia", n: 1 },
         source: "drew-tdp"
       },
@@ -1484,24 +1469,12 @@ export const ARRHYTHMIA_S24: Samp[] = [
         id: "q3",
         kind: "single",
         prompt: "Which of the following is the most appropriate change to her domperidone?",
-        options: ["Continue at the same dose", "Continue once potassium is normal", "Reduce to 10 mg three times daily", "Stop domperidone now", "Switch to 20 mg twice daily"],
-        correct: 3,
+        options: ["Continue at the same dose", "Reduce to 10 mg three times daily", "Stop domperidone now", "Switch to 20 mg twice daily", "Taper off over 2 weeks"],
+        correct: 2,
         explanation:
-          "Domperidone is associated with serious abnormal heart rhythms and sudden death, it is contraindicated in patients with QT prolongation or significant electrolyte disturbances, and its recommended maximum is 30 mg a day, while she takes 80 mg a day. It should be stopped now. Reducing to 30 mg a day, switching to 40 mg a day or waiting for her potassium to recover all keep a contraindicated drug going in a patient with a QTc of 552 ms. Patients taking domperidone are advised to stop it and seek care if they have symptoms of an abnormal heart rhythm, as she has.",
+          "Domperidone is associated with serious abnormal heart rhythms and sudden death, it is contraindicated in patients with QT prolongation, and its recommended maximum is 30 mg a day, while she takes 80 mg a day. It should be stopped now. Reducing to 30 mg a day, switching to 40 mg a day or tapering over 2 weeks all keep a contraindicated drug going in a patient with a QTc of 552 ms. Patients taking domperidone are advised to stop it and seek care if they have symptoms of an abnormal heart rhythm, as she has.",
         keyFeature: { topic: "arrhythmia", n: 6 },
         source: "hc-domperidone"
-      },
-      {
-        id: "q4",
-        kind: "single",
-        update: "An hour later she has another spell, and a rhythm strip shows a 6-second run of polymorphic ventricular tachycardia with QRS complexes twisting around the baseline, starting after a pause. It ends on its own and she stays awake.",
-        prompt: "Which of the following treatments is most likely to make her rhythm worse?",
-        options: ["isoproterenol 2 mcg/minute IV", "magnesium sulfate 2 g IV", "potassium chloride 10 mmol/hour IV", "procainamide 15 mg/kg IV", "Temporary pacing at 90/minute"],
-        correct: 3,
-        explanation:
-          "Procainamide prolongs the QT, and antiarrhythmics of its kind cause torsades de pointes in 1 to 10% of patients who take them, so it can worsen this rhythm even though it is a usual drug for monomorphic ventricular tachycardia. Magnesium sulfate 2 g IV is the first treatment to stop torsades, whatever the serum magnesium. Potassium should be replaced. When torsades follows pauses, raising the heart rate above 70/minute with isoproterenol or temporary pacing suppresses it.",
-        keyFeature: { topic: "arrhythmia", n: 6 },
-        source: "drew-tdp"
       }
     ],
     sources: [
@@ -1510,7 +1483,7 @@ export const ARRHYTHMIA_S24: Samp[] = [
     ],
     reviewed: false,
     author: AUTHOR,
-    version: 3
+    version: 4
   },
   {
     id: "arrhythmia-33",

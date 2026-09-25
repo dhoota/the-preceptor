@@ -851,7 +851,7 @@ export const HEADACHE_S40_SAMPS: Samp[] = [
           "No headache between attacks"
         ],
         "correct": 3,
-        "explanation": "Headache brought on only by coughing, sneezing or other straining, with sudden onset and lasting from a second to a few minutes, defines cough headache in ICHD-3. The trigger places her headaches in that group, and that group needs a search for a cause. Pain at the back of the head and a severe peak occur in many headache types. The chest cold explains why she coughs so often, not the pattern of her pain. Freedom from pain between attacks is shared by many episodic headaches.",
+        "explanation": "Headache brought on only by coughing, sneezing or other straining, with sudden onset and lasting between 1 second and 2 hours, defines cough headache in ICHD-3. The trigger places her headaches in that group, and that group needs a search for a cause. Pain at the back of the head and a severe peak occur in many headache types. The chest cold explains why she coughs so often, not the pattern of her pain. Freedom from pain between attacks is shared by many episodic headaches.",
         "keyFeature": {
           "topic": "headache",
           "n": 1
@@ -924,7 +924,7 @@ export const HEADACHE_S40_SAMPS: Samp[] = [
     }
   ],
     ...META,
-    "version": 2
+    "version": 3
   },
   {
     id: "headache-26",
