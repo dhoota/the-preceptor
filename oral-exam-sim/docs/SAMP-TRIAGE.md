@@ -37,6 +37,16 @@ An independent auditor, blind to the triage verdicts, re-read 40 SAMPs drawn at 
 
 Removing 252 rejects leaves 1248 SAMPs, below the launch gate of 1,500. Each reject is being replaced by a new SAMP on the same priority topic, written against the whole bank so it is not a copy, and reviewed like the rest.
 
+## Status after the rebuilds (25 September 2026)
+
+- **All 252 rejects are rebuilt.** Each keeps its id, topic, question count and key features. Each has a new story and new keyed decisions. Each had an independent review, and every item changed in review had a second check.
+- **Second duplicate sweep.** Every pair involving a rebuilt SAMP was judged again, 679 pairs in all. 33 were still duplicates, covering 28 SAMPs. 23 of the 28 had landed on a signed-off story again. All 28 were rebuilt a second time, reviewed, and given a final check. The pairs are under "sweep2" in `docs/triage/duplicates.json`.
+- **Reviewers kept finding defects in rebuilds.** In the second round, every reviewed set needed fixes. Four rebuilds had copied a SAMP or a keyed decision again: asthma-copd-42, loc-45, and one question each in asthma-copd-41 and arrhythmia-27. Treat a rebuilt SAMP as needing the same read as any other, not as pre-cleared.
+- **FIX items** were applied by the rebuild writers where the fix held on inspection. Each writer report in `docs/reviews/samps-replace-*.md` lists what was applied and what was not.
+- **HOLD items** are unchanged and still need your judgement.
+- **The reject list below is historical.** Every id on it now holds a new SAMP, still `reviewed: false`.
+- **What may remain:** pairs below the sweep threshold were not judged. Some repeats of a single teaching point across topics remain and are flagged in the review reports. None found so far is a wrong key.
+
 ## Reject
 
 ### s19 Abdominal pain

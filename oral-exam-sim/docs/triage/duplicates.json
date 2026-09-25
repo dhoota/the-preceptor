@@ -758,5 +758,173 @@
    "pair": "pulmonary-edema-26",
    "why": "Both are a man on a new drug with breathlessness, crackles, a high troponin and later cardiogenic shock with cool hands and a raised lactate, and both key drug induced myocarditis."
   }
- ]
+ ],
+ "sweep2": [
+  {
+   "id": "abdominal-pain-23",
+   "keeps": "abdominal-pain-02",
+   "why": "Both are an older woman with sudden severe periumbilical pain, restless with a soft abdomen, and both key acute mesenteric ischemia and CT angiography now."
+  },
+  {
+   "id": "abdominal-pain-36",
+   "keeps": "pre-eclampsia-02",
+   "why": "Both are epigastric and right upper quadrant pain blamed on the stomach that turns out to be low platelets, high transaminases and hemolysis, and both key HELLP syndrome and magnesium sulfate 4 g IV."
+  },
+  {
+   "id": "abdominal-pain-46",
+   "keeps": "abdominal-pain-05",
+   "why": "Both are a diabetic around 60 with epigastric pain, nausea and sweating that turns out to be cardiac, and both key acute coronary syndrome and ASA 160 mg chewed."
+  },
+  {
+   "id": "abuse-domestic-18",
+   "keeps": "abuse-domestic-06",
+   "why": "Both are a 4 month old who is not yet mobile, brought by the father with a sentinel injury and a thin story, and both key non mobility, a skeletal survey, coagulation studies and a child protection report."
+  },
+  {
+   "id": "abuse-domestic-18",
+   "keeps": "msk-13",
+   "why": "Both are a 4 month old who cannot yet move about, brought by the father with an injury his story does not explain, and both key a skeletal survey, coagulation studies and a child protection report."
+  },
+  {
+   "id": "airway-31",
+   "keeps": "anaphylaxis-05",
+   "why": "Both are allergic tongue swelling with a muffled voice and drooling that progresses to stridor despite epinephrine, and both key the tongue signs and intubation with a front of neck double setup."
+  },
+  {
+   "id": "anaphylaxis-42",
+   "keeps": "anaphylaxis-10",
+   "why": "Both are a school age child with asthma who wheezes with hives after a nut or seed snack and recovers after IM epinephrine, and both key autoinjectors to carry, allergist referral and better asthma control."
+  },
+  {
+   "id": "arrhythmia-27",
+   "keeps": "arrhythmia-11",
+   "why": "Both are a STEMI whose pain eases with ST resolution followed by a brief regular wide complex rhythm near 80, and both key recognising reperfusion and observing it without antiarrhythmic treatment."
+  },
+  {
+   "id": "asthma-copd-24",
+   "keeps": "asthma-copd-19",
+   "why": "Both are a COPD patient on tiotropium olodaterol with sudden right chest pain and breathlessness from a pneumothorax, and both key the pneumothorax and chest drain insertion."
+  },
+  {
+   "id": "asthma-copd-35",
+   "keeps": "asthma-copd-07",
+   "why": "Both are an adult asthmatic who improves after salbutamol and prednisone and wants to go home, and both key prednisone and budesonide formoterol as maintenance and reliever with follow up and an action plan."
+  },
+  {
+   "id": "asthma-copd-38",
+   "keeps": "asthma-copd-33",
+   "why": "Both are an older man with four days of more breathlessness and purulent sputum, speaking in sentences with no consolidation and pH 7.37, and both key antibiotics for purulent sputum and prednisone 40 mg daily."
+  },
+  {
+   "id": "asthma-copd-41",
+   "keeps": "airway-10",
+   "why": "Both are a young woman with near fatal asthma, a quiet chest and rising pCO2 despite full therapy who is intubated, and both key accepting permissive hypercapnia on the ventilator."
+  },
+  {
+   "id": "asthma-copd-41",
+   "keeps": "sob-04",
+   "why": "Both are a young woman with asthma who becomes drowsy with a quiet chest and a pCO2 of 62 mmHg and goes on to intubation, and both key the signs of respiratory failure and the intubation and ventilation plan."
+  },
+  {
+   "id": "asthma-copd-41",
+   "keeps": "asthma-copd-09",
+   "why": "Both are a young woman with near fatal asthma who tires with a silent chest and rising pCO2 despite continuous salbutamol, steroids and magnesium, and both key intubation now with a low rate and long expiratory time that accepts the hypercapnia."
+  },
+  {
+   "id": "asthma-copd-42",
+   "keeps": "asthma-copd-01",
+   "why": "Both are a young asthmatic speaking in short phrases with a peak flow near 38% of predicted after an hour of treatment, and both key peak flow as the severity measure and salbutamol with ipratropium in the first hour."
+  },
+  {
+   "id": "asthma-copd-42",
+   "keeps": "sob-04",
+   "why": "Both are a young asthmatic in short phrases after overusing salbutamol with a poor early response, and both key salbutamol with ipratropium orders and checking for rising pCO2."
+  },
+  {
+   "id": "asthma-copd-43",
+   "keeps": "asthma-copd-12",
+   "why": "Both are a young asthmatic off inhaled steroid, using two salbutamol inhalers a month, who is ready to go home after treatment, and both key the fatal asthma risk factors and budesonide formoterol as maintenance and reliever."
+  },
+  {
+   "id": "asthma-copd-43",
+   "keeps": "asthma-copd-07",
+   "why": "Both are a young asthmatic who skips inhaled steroid, improves after treatment and wants to leave, and both key a 5 day prednisone course and budesonide formoterol as maintenance and reliever."
+  },
+  {
+   "id": "asthma-copd-45",
+   "keeps": "asthma-copd-33",
+   "why": "Both are an older patient with a COPD flare graded by breathlessness score and room air gas, and both key the severity grade and controlled oxygen at 88 to 92%."
+  },
+  {
+   "id": "burns-32",
+   "keeps": "burns-17",
+   "why": "Both are a child with a scald of the trunk and limbs who needs a weight and TBSA based fluid rate, and both key the hourly Ringer's lactate rate and transfer to a paediatric burn centre."
+  },
+  {
+   "id": "cva-45",
+   "keeps": "cva-10",
+   "why": "Both are a diabetic man with resolved right hand weakness and word finding trouble and an 80% left sided stenosis on CT angiography, and both key dual antiplatelet therapy with intensive lipid lowering."
+  },
+  {
+   "id": "eye-25",
+   "keeps": "eye-10",
+   "why": "Both are a boy struck in the eye by a puck or ball with a bleeding tendency in the history and blood in the anterior chamber, and both key visual acuity, acetaminophen for pain and prompt ophthalmology."
+  },
+  {
+   "id": "first-trimester-bleeding-25",
+   "keeps": "first-trimester-bleeding-10",
+   "why": "Both are an early pregnancy treated as a miscarriage although no intrauterine pregnancy was ever seen, and both key that an hCG that fails to fall means a possible ectopic, not a completed loss."
+  },
+  {
+   "id": "first-trimester-bleeding-34",
+   "keeps": "first-trimester-bleeding-12",
+   "why": "Both are postcoital bleeding at 8 weeks from a friable cervical lesion with no confirmed intrauterine pregnancy, and both key that a cervical source does not settle the pregnancy location."
+  },
+  {
+   "id": "headache-47",
+   "keeps": "headache-10",
+   "why": "Both are a young woman with a right sided throbbing headache with vomiting and light sensitivity like her attacks since adolescence, failed oral treatment and a normal exam, and both key that it matches her usual migraine."
+  },
+  {
+   "id": "infectious-diseases-28",
+   "keeps": "infectious-diseases-01",
+   "why": "Both are a diabetic with flank pain, rigors, drowsiness and high lactate from an infected obstructing ureteric stone, and both key IV antibiotics without delay and urgent decompression."
+  },
+  {
+   "id": "ischemic-heart-disease-24",
+   "keeps": "chest-pain-15",
+   "why": "Both are a man near 80 with an anterior STEMI in a rural hospital 3 hours from PCI with no air transport, and both key half dose tenecteplase followed by transfer for angiography."
+  },
+  {
+   "id": "ischemic-heart-disease-41",
+   "keeps": "chest-pain-09",
+   "why": "Both are a man in his fifties with recurrent chest pain, a normal ECG and two normal troponins, and both key the HEART score, observation or admission, and that an atypical pain feature does not exclude ACS."
+  },
+  {
+   "id": "ischemic-heart-disease-42",
+   "keeps": "ischemic-heart-disease-15",
+   "why": "Both are a middle aged man with exertional episodes relieved by rest and normal serial troponins and ECG, and both key discharge with outpatient ischemia testing and sublingual nitroglycerin."
+  },
+  {
+   "id": "loc-26",
+   "keeps": "loc-05",
+   "why": "Both are a woman who does not wake properly with subtle twitching at the left corner of the mouth from nonconvulsive status, and both key IV lorazepam, levetiracetam and EEG."
+  },
+  {
+   "id": "loc-41",
+   "keeps": "loc-05",
+   "why": "Both are an adult who does not wake after a witnessed generalized seizure with a normal glucose, and both key CT head and nonconvulsive seizures as the cause of the prolonged low level of consciousness."
+  },
+  {
+   "id": "loc-45",
+   "keeps": "loc-16",
+   "why": "Both are a heavy drinking man who stopped eating for 2 weeks after losing his job, found confused with an ethanol of 9 mmol/L, and both key GCS 13 (E3 V4 M6) and that the low ethanol cannot explain his state."
+  },
+  {
+   "id": "pre-eclampsia-16",
+   "keeps": "pre-eclampsia-07",
+   "why": "Both are a late third trimester woman with right sided pain radiating to the shoulder who has HELLP with a subcapsular liver hematoma, and both key liver capsule stretch as the cause of the shoulder pain."
+  }
+ ],
+ "sweep2Note": "Second sweep, run after the 252 rebuilds: every pair involving a rebuilt SAMP was judged again. Each id listed was rebuilt a second time, independently reviewed and given a final check."
 }

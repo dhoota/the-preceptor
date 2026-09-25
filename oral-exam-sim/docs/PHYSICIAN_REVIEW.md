@@ -1,6 +1,6 @@
 # Physician review: Preceptor CCFP-EM
 
-For Arjan Dhoot, MD. Prepared 24 September 2026.
+For Arjan Dhoot, MD. Prepared 24 September 2026, updated 25 September 2026.
 
 This document lists what needs a physician decision before launch. Part 1 is a set of one-line decisions. Part 2 is the review of the 975 new SAMPs. Part 3 covers the oral cases.
 
@@ -51,18 +51,31 @@ Many of these citations name the book without a chapter.
 - Reviewers flagged the ones where detail was lost. They are at the top of `docs/physician-items.md`. For example: analgesia-sedation-04 q3 lost "over 2 to 3 minutes", and cqi-02 q3 lost the disclosure statement.
 - **Decision:** approve all, or name the ones to restore.
 
-### 4. Duplicates to reject
+### 4. Duplicates
 
-pulmonary-edema-39 and pulmonary-edema-40 (s48) are near copies of pulmonary-edema-23 and 31.
+Duplicates found by the two bank-wide sweeps were rebuilt, not left for you. The list is in `docs/triage/duplicates.json`. Earlier drafts of this document named pulmonary-edema-39 and 40. Those were planted test copies used to check the reviewers and were never in the bank. No decision is needed.
 
-**Decision:** reject both, which would leave 1,498 SAMPs, or keep them. At least 1,500 SAMPs is the launch gate, so rejecting both means writing two replacements.
+### 5. Items that repeat a teaching point
 
-### 5. Items that repeat a signed-off SAMP
+environmental-19 q3 and environmental-20 q2 (s36) both key repeat liver and clotting tests after heat stroke. They sit in one batch.
 
-Each of these teaches a decision that a signed-off SAMP already keys. **Decision:** keep or change each one.
-- shock-45 (s50): whole bowel irrigation for a toddler's iron ingestion, also keyed in s18.
-- eye-25 (s37): the same open globe steps as eye-13 (s10).
-- environmental-19 q3 and environmental-20 q2 (s36): both key repeat liver and clotting tests after heat stroke. They sit in one batch with different decisions.
+shock-45 and eye-25, listed here before, have since been rebuilt with new stories.
+
+**Decision:** keep both environmental questions or change one. The review reports flag further partial overlaps in their "For the physician" sections. The review pack gathers them by batch.
+
+### 6. Bank-wide standards to pick
+
+Each is a place where two SAMPs, or a SAMP and a guideline, teach different numbers. **Decision:** pick one standard for each, and the bank is aligned to it.
+- **COPD exacerbation severity:** the Rome proposal (Celli 2021) or GOLD 2026, which also counts PaO2 of 60 mmHg or less. asthma-copd-33 states both.
+- **Burn fluid titration:** burns-16 keys a 10% rate change (Alaska 2021). Signed-off burns-02 and burns-13 key 20 to 30%.
+- **Rectal ASA:** abdominal-pain-46 keys 650 mg PR, the adult suppository Health Canada lists. Two cva SAMPs in s27 key 325 mg PR, which has no listed Canadian suppository.
+- **Surviving Sepsis 2021 in signed-off SAMPs:** cqi-04, loc-11, delirium-agitation-08, infectious-diseases-01 and 07, multiple-patients-07 and 09, and shock-03 still cite 2021. The new batches now cite the 2026 guideline. Reopen them or leave them.
+
+### 7. Mock mode shows every question at once
+
+In mock mode all questions of a SAMP are on one screen. A later update can then cue an earlier key. Reviewers removed the cues that wording could remove. The rest are built into the case, for example a later lab result that reveals an earlier diagnosis. Showing questions one at a time, as the exam does, would remove them.
+
+**Decision:** a product change, not a content change. Say whether you want it.
 
 ## Part 2. The 975 new SAMPs (s19 to s53)
 
@@ -76,6 +89,12 @@ Each of these teaches a decision that a signed-off SAMP already keys. **Decision
   - Tintinalli is no longer cited anywhere in s19 to s53.
   - The other textbooks were checked claim by claim. Where a guideline covers the claim, it is now cited. Where none does, the textbook stays, with edition, year and chapter.
   - ATLS and Users' Guides are kept as they are.
+- **Triage and rebuilds:**
+  - Every new SAMP was triaged. `docs/SAMP-TRIAGE.md` sorts them into READY, FIX, HOLD and REJECT, with a reason for each.
+  - All 252 rejects were rebuilt and reviewed.
+  - A second duplicate sweep found 28 rebuilds that still copied a SAMP. Those were rebuilt again, reviewed and checked a final time.
+  - Start with the HOLD list. It is where your judgement is needed most.
+- **Surviving Sepsis:** the new batches now cite the 2026 guideline (Prescott, Crit Care Med 2026).
 - **Launch gate:** at least 1,500 SAMPs, and at least 3 questions on every key feature of every priority topic. Both pass.
 
 ### How to review
