@@ -234,12 +234,6 @@ const ANDOLFATTO: Source = {
     "Andolfatto G, Abu-Laban RB, Zed PJ, et al. Ketamine-propofol combination (ketofol) versus propofol alone for emergency department procedural sedation and analgesia. A randomized double-blind trial. Ann Emerg Med. 2012.",
   url: "https://pubmed.ncbi.nlm.nih.gov/22401952/",
 };
-const WMS: Source = {
-  id: "wms-frostbite",
-  citation:
-    "McIntosh SE, Freer L, Grissom CK, et al. Wilderness Medical Society clinical practice guidelines for the prevention and treatment of frostbite. 2024 update. Wilderness Environ Med. 2024.",
-  url: "https://pubmed.ncbi.nlm.nih.gov/38577729/",
-};
 const LALONDE: Source = {
   id: "lalonde-epinephrine",
   citation:
@@ -1445,51 +1439,65 @@ export const ANALGESIA_SEDATION_S22_SAMPS: Samp[] = [
   {
     id: "analgesia-sedation-34",
     topic: TOPIC,
-    alsoTopics: ["environmental"],
-    title: "Snowmobile breakdown overnight",
+    alsoTopics: ["abdominal-pain"],
+    title: "Upper abdominal pain in a new mother",
     stem:
-      "You are working in a rural hospital emergency department in northern Manitoba. A 44-year-old man is brought by a friend after spending the night outdoors at minus 32°C when his snowmobile broke down. He was rescued 1 hour ago. Both hands are pale, cold and waxy beyond the knuckles, with loss of sensation. His core temperature is normal. He has no medical history, takes no medications and has no allergies. You plan rapid rewarming of both hands in a warm water bath.",
-    vitals: { temperature: "36.6°C oral", pulse: "104/minute", resp: "18/minute", bp: "142/86 mmHg", o2sat: "98% on room air", weight: "84 kg" },
+      "A 31-year-old woman presents to the emergency department with 3 hours of constant severe right upper quadrant pain that began an hour after a fried dinner. She is nauseated but has not vomited. She delivered her first baby by cesarean section 5 weeks ago and is exclusively breastfeeding. Her hospital record lists an allergy to morphine. She explains that after the cesarean, IV morphine caused repeated vomiting and itching all over her body, without hives, lip swelling or wheeze, and she asks not to be given it again. She takes a prenatal vitamin. She is restless on the stretcher and rates her pain 9 out of 10. She is tender in the right upper quadrant with a positive Murphy sign. Point of care ultrasound shows gallstones with no gallbladder wall thickening or pericholecystic fluid. Her white cell count and lipase are normal.",
+    vitals: { temperature: "36.9°C oral", pulse: "104/minute", resp: "20/minute", bp: "128/78 mmHg", o2sat: "99% on room air", weight: "68 kg" },
     questions: [
       {
         id: "q1",
         kind: "single",
-        prompt: "Which of the following is the most appropriate analgesic plan for rewarming his hands?",
-        options: ["Acetaminophen 1 g PO only", "Ibuprofen alone, then reassess", "Ketorolac 30 mg IV once", "Oral codeine 60 mg", "Titrated IV opioid"],
-        correct: 4,
+        prompt: "Which of the following is the most appropriate initial analgesic plan for her?",
+        options: ["acetaminophen 1 g PO alone", "codeine 60 mg PO, acetaminophen 1 g PO", "ibuprofen 400 mg PO, fentanyl 50 mcg IV", "meperidine 50 mg IM alone", "morphine 10 mg IM alone"],
+        correct: 2,
         explanation:
-          "Rapid rewarming of frostbitten tissue is intensely painful, and the guideline advises analgesia during rewarming as dictated by the patient's response. With deep injury to both hands the pain is usually severe, so a parenteral opioid titrated to effect should be given as rewarming starts. Acetaminophen, a single dose of ketorolac, codeine or ibuprofen alone is unlikely to control this pain. Ibuprofen is still recommended in frostbite for its effect on tissue injury, but as an addition to the opioid rather than as the only analgesic.",
+          "Pain rated 9 out of 10 needs a strong opioid given in small IV doses and repeated to effect, and an NSAID given with it improves pain control and lowers the opioid dose needed. Both suit breastfeeding. Ibuprofen passes into milk at low to nil levels, and fentanyl levels in milk are extremely low with very low oral availability to the baby. Codeine is too weak for this pain and depends on CYP2D6 conversion, so a rapid metabolizer can pass high levels of morphine to her baby, and other drugs are preferred. Meperidine and its metabolite cause dose related sedation in breastfed infants for up to 36 hours. Morphine is compatible with breastfeeding, but it made her vomit and itch before and she asked to avoid it, and a single IM dose cannot be titrated. Acetaminophen alone will not control pain of this severity.",
         keyFeature: { topic: TOPIC, n: 3 },
-        source: "wms-frostbite",
+        source: "abm-15",
       },
       {
         id: "q2",
         kind: "single",
-        prompt: "Which of the following oral medications is recommended in frostbite for both analgesia and tissue protection?",
-        options: ["acetaminophen PO", "gabapentin PO", "ibuprofen PO", "prednisone PO", "tramadol PO"],
-        correct: 2,
+        update: "Her pain settles to 2 out of 10. She will go home with a surgical referral for cholecystectomy and asks for medication in case of further attacks.",
+        prompt: "Which of the following is the most appropriate home analgesic plan while she is breastfeeding?",
+        options: ["acetaminophen and ibuprofen PO", "codeine and acetaminophen PO", "hydromorphone 4 mg PO every 4 hours", "oxycodone and acetaminophen PO", "tramadol and acetaminophen PO"],
+        correct: 0,
         explanation:
-          "Ibuprofen blocks the prostaglandin and thromboxane pathways that contribute to tissue injury after frostbite, and it also relieves pain, so it is recommended unless contraindicated. He has no allergies or contraindications. Acetaminophen and tramadol relieve pain without that anti-inflammatory effect. Prednisone has no established role, and gabapentin is for neuropathic pain.",
+          "Ibuprofen is considered an ideal analgesic for a breastfeeding mother because its transfer to milk is low to nil, and acetaminophen transfer is also low. NSAIDs improve pain control and reduce the opioid a mother needs. Oxycodone was followed by central nervous system depression in about one in five breastfed infants, and the AAP advises against it. Codeine and tramadol rely on CYP2D6 conversion, so an ultrarapid metabolizer can expose her baby to high levels of active drug, and the FDA advises against both while breastfeeding. Round the clock hydromorphone 4 mg every 4 hours was followed by apnea and bradycardia needing naloxone in a breastfed newborn.",
         keyFeature: { topic: TOPIC, n: 2 },
-        source: "wms-frostbite",
+        source: "abm-15",
       },
       {
         id: "q3",
         kind: "single",
-        update: "After rewarming his fingers are swollen and red with clear blisters. He rates his pain 7 out of 10, but the nurse notes that he is joking and using his phone.",
-        prompt: "Which of the following should best guide further analgesia for him at this point?",
-        options: ["His appearance of comfort", "His heart rate trend", "His own pain rating", "The blister pattern", "The nurse's impression"],
-        correct: 2,
+        update: "Before she leaves, she asks whether the morphine allergy in her hospital record is correct.",
+        prompt: "Which of the following best describes her previous reaction to morphine?",
+        options: ["Anaphylaxis to morphine", "Histamine-release pseudoallergy", "IgE-mediated drug allergy", "Opioid-induced hyperalgesia", "Serotonin toxicity"],
+        correct: 1,
         explanation:
-          "Self-report should guide analgesia, and patients often cope through distraction, such as using a phone, so looking comfortable does not mean his pain is controlled. His rating of 7 out of 10 should guide further titration. Vital signs such as heart rate were not associated with self-reported pain intensity in emergency patients. The blister pattern helps predict tissue outcome, not current pain.",
+          "Itching all over without hives, lip swelling or wheeze fits a pseudoallergy, a non-immune reaction in which morphine releases histamine from mast cells, rather than a true allergy. Her vomiting is a common opioid side effect, not an allergic sign. Most opioid allergy labels are not confirmed when tested. The usual approach is to record the reaction as an intolerance, note her wish to avoid morphine, and choose an opioid with less histamine release when one is needed. An IgE-mediated allergy or anaphylaxis would bring hives, swelling, wheeze or low blood pressure, and she had none. Serotonin toxicity causes agitation, clonus and fever. Opioid-induced hyperalgesia is a rise in pain sensitivity, not itch and vomiting.",
         keyFeature: { topic: TOPIC, n: 1 },
-        source: "marco-vitals",
+        source: "kalangara-opioid-allergy",
       },
     ],
-    sources: [WMS, MARCO],
+    sources: [
+      {
+        id: "abm-15",
+        citation:
+          "Reece-Stremtan S, Campos M, Kokajko L, Academy of Breastfeeding Medicine. ABM clinical protocol #15: analgesia and anesthesia for the breastfeeding mother, revised 2017. Breastfeed Med. 2017.",
+        url: "https://doi.org/10.1089/bfm.2017.29054.srt",
+      },
+      {
+        id: "kalangara-opioid-allergy",
+        citation:
+          "Kalangara J, Potru S, Kuruvilla M. Clinical manifestations and diagnostic evaluation of opioid allergy labels. A review. J Pain Palliat Care Pharmacother. 2019.",
+        url: "https://doi.org/10.1080/15360288.2019.1666955",
+      },
+    ],
     reviewed: false,
     author: AUTHOR,
-    version: 1,
+    version: 2,
   },
   {
     id: "analgesia-sedation-35",

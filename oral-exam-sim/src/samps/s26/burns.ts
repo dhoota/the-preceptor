@@ -42,49 +42,30 @@ export const BURNS_S26: Samp[] = [
   {
     id: "burns-16",
     topic: "burns",
-    title: "The pressure cooker lid",
-    stem: "A 52-year-old woman is brought to the emergency department by ambulance at 17:45. At 17:00 the lid of a pressure cooker blew off while she stood over it, and boiling stew and steam struck her. She has blistered, moist, pink partial thickness burns to her lower face, the front of her abdomen, the fronts of both thighs and her right forearm, measured at 24% TBSA on a Lund and Browder chart. There is no soot in her mouth, her voice is normal and she has no stridor. She has hypertension treated with amlodipine. She rates her pain as 9 out of 10. Paramedics placed an IV but gave no fluid.",
+    title: "Hot sap at the sugar shack",
+    stem: "You are working in a regional hospital emergency department in the Eastern Townships of Quebec. A 54-year-old man arrives by ambulance at 11:40. At 10:40 a valve on the maple sap evaporator in his sugar shack failed, and boiling sap surged over the pan onto him as he knelt to feed the firebox. He has blistered, moist partial thickness scalds of the abdomen, both thighs and both forearms, measured at 26% TBSA on a Lund and Browder chart. His face is spared and his voice is normal. He has bipolar disorder treated with lithium for 20 years. For years he has passed about 6 L of pale urine a day and drunk to match. His psychiatrist has told him to avoid anti-inflammatory drugs because they raise his lithium level. He drinks no alcohol. Paramedics reached him at 11:05. Ringer's lactate is started at 11:55.",
     vitals: {
-      temperature: "36.6°C oral",
+      temperature: "36.8°C oral",
       pulse: "112/minute",
       resp: "20/minute",
-      bp: "142/86 mmHg",
+      bp: "138/84 mmHg",
       o2sat: "98% on room air",
-      weight: "64 kg"
+      weight: "88 kg"
     },
     questions: [
       {
         id: "q1",
         kind: "single",
-        prompt: "Which of the following is her estimated Ringer's lactate volume for the first 24 hours after the burn?",
+        prompt: "Using the 2 mL/kg/%TBSA formula, at which of the following times does the first 8-hour period of his resuscitation end?",
         options: [
-          "1 536 mL",
-          "2 304 mL",
-          "3 072 mL",
-          "4 608 mL",
-          "6 144 mL"
+          "18:40",
+          "19:05",
+          "19:40",
+          "19:55",
+          "22:40"
         ],
-        correct: 2,
-        explanation: "The American Burn Association guideline recommends starting adult resuscitation at 2 mL/kg per %TBSA to reduce resuscitation volumes. For her that is 2 x 64 kg x 24% = 3 072 mL over the first 24 hours after the burn. The figure of 6 144 mL uses the older 4 mL/kg Parkland formula, and 4 608 mL uses 3 mL/kg, the pediatric rate. The figures of 1 536 and 2 304 mL use 1 and 1.5 mL/kg and would under-resuscitate her. The estimate is only a starting point and is titrated to her response.",
-        keyFeature: {
-          topic: "burns",
-          n: 4
-        },
-        source: "aba-resus"
-      },
-      {
-        id: "q2",
-        kind: "single",
-        prompt: "Which of the following hourly urine outputs should be the target for titrating her fluids?",
-        options: [
-          "13 mL/hour",
-          "32 mL/hour",
-          "64 mL/hour",
-          "128 mL/hour",
-          "192 mL/hour"
-        ],
-        correct: 1,
-        explanation: "For adults with thermal burns, fluid is adjusted to a urine output of about 0.5 mL/kg/hour. At 64 kg that is 32 mL an hour. A target of 64 mL/hour is 1 mL/kg/hour, the goal for small children, and chasing it drives fluid creep. Targets of 128 and 192 mL/hour are the 2 and 3 mL/kg/hour range and would mean large excess volumes. A target of 13 mL/hour, 0.2 mL/kg/hour, accepts under-perfusion of her kidneys.",
+        correct: 0,
+        explanation: "Burn resuscitation is timed from the injury, not from the paramedics' arrival, the emergency department arrival or the start of the infusion. His burn happened at 10:40, so the first 8 hours, in which half of the 24-hour estimate is planned, end at 18:40. The estimate is 2 x 88 kg x 26% = 4 576 mL for 24 hours, and half of it, 2 288 mL, over 8 hours is 286 mL/hour. The Alaska guideline starts this calculated rate without extra catch-up fluid for the delay. Timing from the paramedics gives 19:05, from arrival 19:40 and from the start of fluid 19:55, and each pushes the plan later than the injury warrants. 22:40 is 12 hours after the burn.",
         keyFeature: {
           topic: "burns",
           n: 4
@@ -92,19 +73,39 @@ export const BURNS_S26: Samp[] = [
         source: "alaska"
       },
       {
+        id: "q2",
+        kind: "single",
+        update: "Ringer's lactate runs at 286 mL/hour. Over the next 3 hours his urine output is 240, 260 and 250 mL/hour, and it is pale. His capillary glucose is 6.4 mmol/L. His pulse is 108/minute and he is alert.",
+        prompt: "Which of the following best explains his hourly urine output?",
+        options: [
+          "Alcohol-related diuresis",
+          "Excess fluid resuscitation",
+          "Glucose-driven osmotic diuresis",
+          "Lithium-induced diabetes insipidus",
+          "Normal response to burn resuscitation"
+        ],
+        correct: 3,
+        explanation: "Lithium is one of the commonest causes of acquired nephrogenic diabetes insipidus, and about 12% of people treated for 15 years develop the overt form. After 20 years of lithium he has long passed about 6 L of pale urine a day, and his kidneys keep making about 250 mL an hour now, close to that usual volume. An adult burn patient who is responding normally makes about 0.5 mL/kg/hour, about 44 mL an hour for him, not 250. Excess fluid is unlikely at a standard formula rate when his output simply matches his usual pattern. A glucose of 6.4 mmol/L makes an osmotic diuresis unlikely, and he drinks no alcohol.",
+        keyFeature: {
+          topic: "burns",
+          n: 4
+        },
+        source: "davis-lithium"
+      },
+      {
         id: "q3",
         kind: "single",
-        update: "A urinary catheter is placed. Over the next 2 hours her urine output is 18 mL/hour. Her BP is 128/78 mmHg, a mean arterial pressure of about 95 mmHg, and she is alert.",
-        prompt: "Which of the following is the most appropriate change to her fluid resuscitation?",
+        update: "Two hours later his urine output is still about 250 mL/hour. His pulse is 106/minute, BP 134/80 mmHg, lactate 1.6 mmol/L and sodium 141 mmol/L. He is alert and his hands are warm.",
+        prompt: "Which of the following is the most appropriate change to his Ringer's lactate rate now?",
         options: [
-          "furosemide 20 mg IV",
-          "norepinephrine infusion IV",
-          "Raise the rate by about 10%",
-          "Ringer's lactate 1 L bolus",
-          "Switch to 0.9% saline"
+          "Increase the rate by 10%",
+          "Keep the current rate",
+          "Reduce the rate by 10%",
+          "Reduce the rate by half",
+          "Stop the infusion for 1 hour"
         ],
-        correct: 2,
-        explanation: "Her urine output of 18 mL/hour is below 30 mL/hour, and she is not hypotensive. The Alaska burn guideline advises increasing the crystalloid rate by about 10% each hour while output stays below 30 mL/hour, and avoiding boluses unless the patient is hypotensive, because boluses add to total body edema. Vasopressors are rarely used in burn shock and only with burn specialist advice. Furosemide would raise urine output without correcting her volume deficit, making output useless as a guide. Large volumes of 0.9% saline cause hyperchloremic acidosis, and a balanced solution is preferred.",
+        correct: 1,
+        explanation: "The Alaska guideline titrates burn fluid to hourly urine output, lowering the rate by 10% an hour when output stays above 30 mL/hour and the mean arterial pressure is above 60 mmHg. That rule assumes urine output reflects kidney perfusion. His does not, because his output stays near his usual daily volume whatever his fluid state, so cutting the rate each hour would steadily under-resuscitate a 26% burn. His pulse is settling, his mean arterial pressure is about (134 + 2 x 80) / 3 = 98 mmHg, his lactate is normal, his sodium of 141 mmol/L shows no free water deficit and he is alert, so nothing shows that he needs more fluid either. The safest course is to keep the rate, follow these other markers closely and ask the burn centre for advice. Halving or stopping the infusion risks burn shock.",
         keyFeature: {
           topic: "burns",
           n: 4
@@ -114,16 +115,17 @@ export const BURNS_S26: Samp[] = [
       {
         id: "q4",
         kind: "single",
-        prompt: "Which of the following is the most appropriate analgesia for her now?",
+        update: "He rates his pain 9 out of 10. He has had no analgesia.",
+        prompt: "Which of the following is the most appropriate analgesic plan for him now?",
         options: [
-          "acetaminophen 1 g PO alone",
-          "fentanyl 50 mcg IV titrated",
-          "ibuprofen 400 mg PO alone",
-          "morphine 10 mg IM",
-          "oxycodone 10 mg PO"
+          "celecoxib 200 mg PO, fentanyl 50 mcg IV",
+          "fentanyl 50 mcg IV, acetaminophen 1 g IV",
+          "fentanyl 50 mcg IV, ketorolac 30 mg IV",
+          "morphine 10 mg IM, acetaminophen 1 g PO",
+          "oxycodone 10 mg PO, acetaminophen 1 g PO"
         ],
         correct: 1,
-        explanation: "She has severe pain from a 24% burn. The Alaska guideline advises analgesia in repeated small IV doses titrated to effect, with monitoring for respiratory depression, and giving all medications by the IV route for burns over 20% TBSA. Intramuscular morphine and oral oxycodone are absorbed unpredictably as fluid shifts during burn resuscitation. Acetaminophen or ibuprofen alone will not control pain rated 9 out of 10, although they are useful additions later.",
+        explanation: "A 26% burn with pain rated 9 out of 10 needs IV analgesia given in repeated small doses and titrated to effect, with monitoring for respiratory depression. The Alaska guideline advises giving all medications IV for burns over 20% TBSA and combining an opioid with other agents. Fentanyl with IV acetaminophen does this without an anti-inflammatory drug, which his psychiatrist has told him to avoid because it raises his lithium level. Ketorolac and celecoxib are both anti-inflammatory drugs. Intramuscular morphine and oral oxycodone do not follow the IV route the guideline advises for a burn of this size.",
         keyFeature: {
           topic: "burns",
           n: 3
@@ -133,16 +135,16 @@ export const BURNS_S26: Samp[] = [
       {
         id: "q5",
         kind: "single",
-        prompt: "Which of the following is the most appropriate disposition for her?",
+        prompt: "Which of the following is the most appropriate disposition for him?",
         options: [
-          "Admit to general surgery at this hospital",
-          "Burn centre consultation and transfer",
-          "Discharge with dressing clinic follow-up",
-          "Observe 6 hours, then discharge",
-          "Outpatient plastic surgery referral"
+          "Admit to general surgery here",
+          "Admit to internal medicine here",
+          "Admit to the ICU here",
+          "Burn centre transfer",
+          "Discharge with burn clinic follow-up"
         ],
-        correct: 1,
-        explanation: "The American Burn Association referral guideline calls for immediate consultation with a burn centre, with consideration of transfer, for partial thickness burns of 10% TBSA or more. Her burns cover 24%, and she also needs a monitored fluid resuscitation. Discharge, observation followed by discharge, or outpatient referral would leave a major burn without specialist care. Admission to a general surgical service here does not provide burn centre care.",
+        correct: 3,
+        explanation: "The American Burn Association advises immediate consultation with a burn centre, with consideration of transfer, for partial thickness burns of 10% TBSA or more and for patients with burns and other comorbidities. He has a 26% burn, and his urine output cannot guide his fluids, which makes his resuscitation unusually difficult. A general surgery, internal medicine or ICU bed here does not provide burn centre care. Discharge would leave a major burn without resuscitation or specialist wound care.",
         keyFeature: {
           topic: "burns",
           n: 5
@@ -151,17 +153,21 @@ export const BURNS_S26: Samp[] = [
       }
     ],
     sources: [
-      S.abaResus,
-      S.abaRef,
       {
         id: "alaska",
         citation: "Alaska Department of Health, Trauma System Review Committee. Burn resuscitation guidelines for Alaska providers. 2021.",
         url: "https://health.alaska.gov/media/0zwppk25/alaska-burn-care-guidelines-2021.pdf"
-      }
+      },
+      {
+        id: "davis-lithium",
+        citation: "Davis J, Desmond M, Berk M. Lithium and nephrotoxicity: a literature review of approaches to clinical management and risk stratification. BMC Nephrol. 2018.",
+        url: "https://doi.org/10.1186/s12882-018-1101-4"
+      },
+      S.abaRef
     ],
     reviewed: false,
     author: META.author,
-    version: 2,
+    version: 3,
   },
   {
     id: "burns-17",
@@ -1628,48 +1634,58 @@ export const BURNS_S26: Samp[] = [
   {
     id: "burns-36",
     topic: "burns",
-    title: "An explosion in the shed",
+    title: "Short of breath three days after a fire",
     stem:
-      "A 23-year-old man is brought to the emergency department by ambulance 40 minutes after an explosion in a backyard shed where he was extracting cannabis oil with butane. The shed door was open. He has no medical history. He admits to drinking beer earlier in the evening.\n\nHe is restless and repeatedly pulls off his oxygen mask. There are partial and full thickness burns to the face, neck, both hands and both forearms, about 14% TBSA. His eyebrows and eyelashes are burned away. Over 20 minutes his lips and tongue have swollen and his voice has become hoarse. There is no stridor yet.",
-    vitals: { temperature: "36.6°C oral", pulse: "122/minute", resp: "24/minute", bp: "142/88 mmHg", o2sat: "95% on room air", weight: "78 kg" },
+      "A 47-year-old man is brought to the emergency department by ambulance with worsening shortness of breath. Three days ago the house trailer where he lives caught fire while he slept, and he escaped through thick smoke. He declined assessment at the scene and has coughed black sputum since. Today he became confused. He smokes a pack of cigarettes a day and has no other medical history.\n\nHe is drowsy but answers questions in a normal voice. There is no stridor. He coughs up thick black secretions that he cannot clear. There are coarse crackles and wheeze over both lungs. Deep partial thickness burns of both forearms and the upper back, about 11% TBSA, are covered with household towels. A chest radiograph shows patchy opacities in both lungs.",
+    vitals: { temperature: "38.9°C oral", pulse: "126/minute", resp: "36/minute", bp: "104/62 mmHg", o2sat: "85% on 15 L/minute by non-rebreather mask", weight: "82 kg" },
     questions: [
       {
         id: "q1",
         kind: "single",
         prompt: "Which of the following is the most appropriate airway plan for him now?",
-        options: ["Admit to the ward for observation", "Dexamethasone 10 mg IV", "Nebulized racemic epinephrine", "Repeat assessment in 1 hour", "Secure the airway now"],
-        correct: 4,
+        options: ["Awake intubation with topical anesthesia", "High flow nasal oxygen trial first", "Noninvasive ventilation trial first", "Rapid sequence with rocuronium", "Rapid sequence with succinylcholine"],
+        correct: 3,
         explanation:
-          "Swelling of the lips and tongue and a new hoarse voice over 20 minutes, within an hour of a deep facial burn show upper airway edema that will worsen for many hours, so the airway should be secured now, before stridor appears and intubation becomes much harder. Waiting for stridor, reassessing in an hour or admitting to a ward risks a failed airway. Dexamethasone and racemic epinephrine do not reverse thermal edema.",
+          "He is hypoxemic on high flow oxygen, breathing 36 times a minute, confused and unable to clear thick secretions, so his airway needs to be secured now rather than after a trial of support. High flow nasal oxygen and noninvasive ventilation are poor choices for a confused patient who cannot clear his secretions. An awake technique needs a cooperative patient, and his confusion and hypoxemia make it unsafe. His burns are 3 days old. The Alaska guideline warns that patients whose burns are more than a few hours old may have a raised potassium and that succinylcholine needs care, so rocuronium is the safer paralytic.",
         keyFeature: { topic: "burns", n: 2 },
-        source: "walker-inhalation",
+        source: "alaska",
       },
       {
         id: "q2",
         kind: "single",
-        prompt: "Which of the following examinations should be added because of the pattern of his facial burns?",
-        options: ["Fluorescein staining of the corneas", "Fundoscopy for papilledema", "Hearing test with audiometry", "Rectal examination for tone", "Visual field testing"],
-        correct: 0,
+        prompt: "Which of the following best explains his worsening respiratory failure today?",
+        options: ["Aspiration pneumonitis", "Cardiogenic pulmonary edema", "Lower airway smoke injury", "Pulmonary embolism", "Thermal upper airway edema"],
+        correct: 2,
         explanation:
-          "A flash burn that removed his eyebrows and eyelashes may also have burned the corneas, and fluorescein staining should be done early, before lid swelling closes the eyes and makes the examination much harder. Fundoscopy and visual fields look for other problems and do not detect corneal burns. Audiometry is not a resuscitation bay test. Rectal tone is part of spinal assessment and he has no reported spinal injury.",
+          "Thick smoke, black sputum since the fire, wheeze, crackles and patchy opacities in both lungs point to chemical injury of the lower airways from smoke. Inhalation injury causes atelectasis and impaired immune function, and pneumonia is a common complication, which fits his fever and new confusion 3 days later. Thermal airway injury is generally limited to the structures above the glottis, and his normal voice and lack of stridor make upper airway edema unlikely. He has no heart disease to suggest cardiogenic edema and no reduced consciousness before today to suggest aspiration. His smoke exposure explains the bilateral findings better than a pulmonary embolism.",
         keyFeature: { topic: "burns", n: 1 },
-        source: "rosen-ch54",
+        source: "walker-inhalation",
       },
       {
         id: "q3",
         kind: "single",
-        update: "He is intubated without difficulty. He is now bucking against the ventilator and his pulse is 130/minute.",
-        prompt: "Which of the following is the most appropriate ongoing analgesia and sedation for him?",
-        options: ["fentanyl infusion with propofol", "ketamine bolus alone", "midazolam infusion alone", "propofol infusion alone", "rocuronium infusion alone"],
+        update: "In the ICU he receives a fentanyl infusion and is fed through a nasogastric tube. His creatinine is 196 umol/L. When his dressings are changed he grimaces and his heart rate rises to 140/minute.",
+        prompt: "Which of the following should be added to his analgesia now?",
+        options: ["acetaminophen 1 g NG every 6 hours", "ketorolac 15 mg IV every 6 hours", "lidocaine 1 mg/kg/hour IV infusion", "midazolam 2 mg/hour IV infusion", "morphine 2 mg/hour IV infusion"],
         correct: 0,
         explanation:
-          "An intubated burn patient needs analgesia first, with sedation added, so a fentanyl infusion with propofol treats both the pain of his burns and the tube. Propofol or midazolam alone sedates without treating pain, and pain may show only as agitation and tachycardia. A single ketamine bolus wears off in minutes. Rocuronium alone paralyzes him while leaving him in pain and possibly aware.",
+          "The American Burn Association pain guideline advises that opioids should not be used in isolation and that acetaminophen be given to all burn patients, with care over the maximum daily dose. Added to his fentanyl, it gives multimodal analgesia and reduces the opioid he needs. NSAIDs such as ketorolac depend on the patient's kidney function, and his creatinine of 196 umol/L argues against one. IV lidocaine is only a second or third line adjunct. Midazolam sedates without treating pain and does not spare opioid. A morphine infusion adds a second opioid rather than an opioid sparing agent.",
         keyFeature: { topic: "burns", n: 3 },
         source: "aba-pain",
       },
     ],
-    sources: [S.walker, S.abaPain, S.rosenCh54],
-    ...META,
+    sources: [
+      {
+        id: "alaska",
+        citation: "Alaska Department of Health, Trauma System Review Committee. Burn resuscitation guidelines for Alaska providers. 2021.",
+        url: "https://health.alaska.gov/media/0zwppk25/alaska-burn-care-guidelines-2021.pdf",
+      },
+      S.walker,
+      S.abaPain,
+    ],
+    reviewed: false,
+    author: META.author,
+    version: 2,
   },
   {
     id: "burns-37",
