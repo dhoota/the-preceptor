@@ -29,7 +29,7 @@ Duplicates between your signed-off SAMPs and the new ones are a separate matter.
 
 The product owner made decision D1 (`docs/DECISIONS.md`). In crowded topics, a new SAMP may repeat one decision already keyed in a signed-off SAMP, where that decision is itself the literal wording of a key feature. This is a judgement about redundancy, not about the right answer. No key or clinical threshold was changed under it.
 
-It lets through exactly three repeats:
+The full, current list of repeats it lets through is the table in `docs/DECISIONS.md`. It grows as rebuilt SAMPs land. The first three were:
 
 | New SAMP | Repeated decision | Your signed-off SAMP it echoes |
 |---|---|---|
@@ -37,7 +37,7 @@ It lets through exactly three repeats:
 | environmental-17 q1 | Cool now, before CT or lumbar puncture | environmental-02 q2 |
 | chest-pain-47 q4 | Bedside echo for tamponade after blunt chest trauma | multiple-trauma-02 q1 and q2, also shock-15 q1 |
 
-Your signed-off SAMPs were not changed. Reversing D1 sends those three new SAMPs back for rebuild. To reverse it, say "reverse D1".
+Your signed-off SAMPs were not changed by D1. Reversing D1 sends every question in that table back for rebuild. To reverse it, say "reverse D1".
 
 ## How to sign off
 

@@ -15,5 +15,7 @@ Decisions made by the product owner, not by the physician reviewer. Each is an e
 | chest-pain-41 q2 | ECG and chewed ASA within 10 minutes for possible ACS (chest pain KF 2) | chest-pain-02 q1, also ischemic-heart-disease-15 q1 |
 | environmental-17 q1 | Cool now, before CT or lumbar puncture (environmental KF 1 and 2) | environmental-02 q2 |
 | chest-pain-47 q4 | Bedside echo for tamponade after blunt chest trauma with hypotension and distended neck veins | multiple-trauma-02 q1 and q2, also shock-15 q1 |
+| ischemic-heart-disease-13 q1 (rebuilt signed-off SAMP) | Serial ECGs and troponin (IHD KF 1) | ischemic-heart-disease-40 q2 |
+| msk-13 q3 (rebuilt signed-off SAMP) | Report to child protection when required (abuse KF 6) | abuse-domestic-06 q3, also burns-05 q4 |
 
-**To reverse:** Arjan says "reverse D1". The three questions above then go back for rebuild with a decision not keyed elsewhere.
+**To reverse:** Arjan says "reverse D1". Every question in the table above then goes back for rebuild with a decision not keyed elsewhere. Each rebuild group adds its surviving D1 repeats to this table when it lands, so the table is always the full set.

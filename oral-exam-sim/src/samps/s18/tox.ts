@@ -27,6 +27,8 @@ const S = {
   iron: { id: "iron", citation: "Manoguerra AS, Erdman AR, Booze LL, et al. Iron ingestion: an evidence-based consensus guideline for out-of-hospital management. Clin Toxicol. 2005." },
   bcAud: { id: "bc-aud", citation: "British Columbia Centre on Substance Use. Provincial guideline for the clinical management of high-risk drinking and alcohol use disorder. 2019." },
   ciwa: { id: "ciwa", citation: "Sullivan JT, Sykora K, Schneiderman J, Naranjo CA, Sellers EM. Assessment of alcohol withdrawal: the revised Clinical Institute Withdrawal Assessment for Alcohol scale (CIWA-Ar). Br J Addict. 1989." },
+  synthroid: { id: "synthroid-pm", citation: "BGP Pharma ULC. Synthroid (levothyroxine sodium tablets) product monograph, section 5: overdosage. Health Canada Drug Product Database. Revised 8 October 2024.", url: "https://pdf.hres.ca/dpd_pm/00077309.PDF" },
+  esc2023: { id: "esc-acs-2023", citation: "Byrne RA, Rossello X, Coughlan JJ, et al. 2023 ESC Guidelines for the management of acute coronary syndromes. Eur Heart J. 2023. Sections 3.4 and 12.3 on imaging for alternative diagnoses and Type 2 MI.", url: "https://doi.org/10.1093/eurheartj/ehad191" },
 } satisfies Record<string, Source>;
 
 export const TOX_SAMPS: Samp[] = [
@@ -833,7 +835,7 @@ export const TOX_SAMPS: Samp[] = [
     ...META,
   },
 
-  /* 09 Sympathomimetic ---------------------------------------------------- */
+  /* 09 Thyroid hormone excess -------------------------------------------- */
   {
     id: "tox-09",
     topic: "tox",

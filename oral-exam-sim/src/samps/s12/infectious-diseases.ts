@@ -7,6 +7,9 @@ const META = { reviewed: true, author: "Preceptor", version: 1 } as const;
 
 const S = {
   ssc: { id: "ssc", citation: "Evans L, Rhodes A, Alhazzani W, et al. Surviving Sepsis Campaign: international guidelines for management of sepsis and septic shock 2021. Crit Care Med. 2021." },
+  ssc2026: { id: "ssc-2026", citation: "Prescott HC, Antonelli M, Alhazzani W, et al. Surviving Sepsis Campaign: international guidelines for management of sepsis and septic shock 2026. Crit Care Med. 2026.", url: "https://doi.org/10.1097/CCM.0000000000007075" },
+  cigMpox: { id: "cig-mpox", citation: "Public Health Agency of Canada. Canadian Immunization Guide. Smallpox and mpox vaccines chapter, including post-exposure vaccination. Updated 5 June 2026.", url: "https://www.canada.ca/en/public-health/services/publications/healthy-living/canadian-immunization-guide-part-4-active-vaccines/page-21-smallpox-vaccine.html" },
+  phacMpox: { id: "phac-mpox", citation: "Public Health Agency of Canada. Mpox: public health management of human cases and associated human contacts in Canada. Updated 7 July 2026.", url: "https://www.canada.ca/en/public-health/services/diseases/mpox/health-professionals/management-cases-contacts.html" },
   eauStone: { id: "eau-stone", citation: "Skolarikos A, et al. EAU Guidelines on Urolithiasis. European Association of Urology. 2025 edition. Section on the obstructed and infected kidney.", url: "https://uroweb.org/guidelines/urolithiasis" },
   idsaMening: { id: "idsa-mening", citation: "Tunkel AR, Hartman BJ, Kaplan SL, et al. Practice guidelines for the management of bacterial meningitis. Clin Infect Dis. 2004." },
   escmidMening: { id: "escmid-mening", citation: "van de Beek D, Cabellos C, Dzupova O, et al. ESCMID guideline: diagnosis and treatment of acute bacterial meningitis. Clin Microbiol Infect. 2016." },
