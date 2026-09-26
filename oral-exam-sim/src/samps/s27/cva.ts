@@ -2512,15 +2512,14 @@ export const CVA_S27_SAMPS: Samp[] = [
   {
     "id": "cva-42",
     "topic": "cva",
-    "title": "Words would not come",
-    "stem": "A 71-year-old woman presents to the emergency department at 10:30 after 40 minutes of difficulty finding words that began at 07:45 and has resolved. She had no weakness. She has hypertension and type 2 diabetes. Medications: metformin and ramipril. Capillary glucose is 8.9 mmol/L. Neurologic examination is now normal. ECG shows atrial fibrillation with a ventricular rate of 88/minute. CT head shows no hemorrhage or infarction. CT angiography shows no significant stenosis. Creatinine is 84 umol/L and hemoglobin is 132 g/L.",
+    "title": "A long drive and a stalled car",
+    "stem": "A 44-year-old man presents to the emergency department at 15:10 after 15 minutes of trouble finding words that began at 13:40 and has resolved. It started as he strained to push his stalled car out of a snowbank. He had no weakness. Yesterday he finished a 14-hour drive from Thunder Bay with few stops. He has no medical history, does not smoke and takes no medications. His neurologic examination is now normal. His right calf is 3 cm larger than the left and tender. ECG shows sinus rhythm at 72/minute. CT head and CT angiography of the head and neck are normal.",
     "vitals": {
       "temperature": "36.7°C oral",
-      "pulse": "88/minute irregular",
+      "pulse": "72/minute",
       "resp": "16/minute",
-      "bp": "150/86 mmHg",
-      "o2sat": "97% on room air",
-      "weight": "68 kg"
+      "bp": "128/78 mmHg",
+      "o2sat": "98% on room air"
     },
     "questions": [
       {
@@ -2528,14 +2527,14 @@ export const CVA_S27_SAMPS: Samp[] = [
         "prompt": "Which of the following is this patient's ABCD2 score at the time of assessment?",
         "kind": "single",
         "options": [
+          "1 point",
+          "2 points",
           "3 points",
           "4 points",
-          "5 points",
-          "6 points",
-          "7 points"
+          "5 points"
         ],
-        "correct": 2,
-        "explanation": "She scores 1 for age 60 or more, 1 for BP of 140/90 mmHg or more at assessment, 1 for speech disturbance without weakness, 1 for a duration of 10 to 59 minutes and 1 for diabetes, a total of 5. She would score 2 for clinical features only with unilateral weakness, and 2 for duration only with 60 minutes or more. The score does not include atrial fibrillation, which drives her management.",
+        "correct": 1,
+        "explanation": "He scores 0 for age under 60, 0 for a BP below 140/90 mmHg, 1 for speech disturbance without weakness, 1 for a duration of 10 to 59 minutes and 0 for no diabetes, a total of 2. Unilateral weakness would have scored 2 for clinical features, and a duration of 60 minutes or more would have scored 2 for duration. Scores of 3 to 5 count features he does not have, and 1 point misses either his speech symptoms or their duration. A low score does not replace the search for the mechanism of his event.",
         "keyFeature": {
           "topic": "cva",
           "n": 4
@@ -2544,17 +2543,24 @@ export const CVA_S27_SAMPS: Samp[] = [
       },
       {
         "id": "q2",
-        "prompt": "Which of the following is the most appropriate antithrombotic plan for this patient?",
-        "kind": "single",
+        "prompt": "Which of the following features of his presentation raise concern for a paradoxical embolism?",
+        "kind": "menu",
         "options": [
-          "Apixaban 2.5 mg PO twice daily today",
-          "Apixaban 5 mg PO twice daily today",
-          "ASA and clopidogrel for 21 days",
-          "ASA now and a DOAC in 14 days",
-          "Heparin bridge then warfarin"
+          "Afternoon onset",
+          "Calf swelling and tenderness",
+          "Full resolution before arrival",
+          "Onset while pushing a stalled car",
+          "Recent 14-hour drive",
+          "Speech symptoms only",
+          "Symptoms lasting 15 minutes"
         ],
-        "correct": 1,
-        "explanation": "Canadian guidance says a patient with atrial fibrillation and a brief TIA with no infarct or hemorrhage on imaging may start oral anticoagulation, instead of antiplatelet therapy, within the first 24 hours. The usual apixaban dose is 5 mg twice daily, reduced to 2.5 mg only when two of age 80 or more, weight 60 kg or less and creatinine 133 umol/L or more are present, and she has none. Dual antiplatelet therapy is for non-cardioembolic TIA and protects less than anticoagulation in atrial fibrillation. Delaying 14 days leaves her exposed, and heparin bridging adds bleeding without benefit.",
+        "select": 3,
+        "correct": [
+          1,
+          3,
+          4
+        ],
+        "explanation": "Canadian guidance lists clinical clues to a stroke or TIA through a patent foramen ovale. They include onset right after a Valsalva-type strain, deep vein thrombosis or pulmonary embolism, and recent prolonged travel or immobility. Straining to push a car, a swollen tender calf and a 14-hour drive with few stops are those clues. The time of day, the 15-minute duration, full resolution and speech-only symptoms describe the event but do not point to a mechanism.",
         "keyFeature": {
           "topic": "cva",
           "n": 4
@@ -2563,17 +2569,17 @@ export const CVA_S27_SAMPS: Samp[] = [
       },
       {
         "id": "q3",
-        "prompt": "Which of the following best explains why dual antiplatelet therapy is not preferred for this patient?",
+        "prompt": "Which of the following cardiac investigations is most appropriate to arrange for this patient?",
         "kind": "single",
         "options": [
-          "Her age is over 70 years",
-          "Her CT angiography is normal",
-          "Her diabetes adds bleeding risk",
-          "Her symptoms have resolved",
-          "Her TIA is likely cardioembolic"
+          "Coronary CT angiography",
+          "Echocardiogram with saline bubble study",
+          "Exercise ECG stress test",
+          "Serial troponin at 0 and 3 hours",
+          "Transthoracic echo without contrast"
         ],
-        "correct": 4,
-        "explanation": "Short-term dual antiplatelet therapy is recommended for high-risk TIA or minor stroke of non-cardioembolic origin. New atrial fibrillation makes cardioembolism the likely mechanism, and anticoagulation prevents recurrence better. Age over 70, resolved symptoms and a normal CT angiography do not exclude dual therapy on their own. Diabetes raises stroke risk and does not by itself exclude dual therapy.",
+        "correct": 1,
+        "explanation": "Canadian guidance recommends echocardiography with a saline bubble study for patients 60 or younger with an embolic TIA or stroke of undetermined source, when finding a patent foramen ovale could change management. He is 44, his CT angiography shows no arterial cause and his ECG shows sinus rhythm. Contrast transesophageal echo or transcranial Doppler detect shunts better than transthoracic echo, and a transthoracic study without agitated saline can miss the shunt. Coronary CT angiography, stress testing and serial troponin look for coronary disease, which he has no symptoms of.",
         "keyFeature": {
           "topic": "cva",
           "n": 4
@@ -2583,6 +2589,7 @@ export const CVA_S27_SAMPS: Samp[] = [
     ],
     "sources": [SRC_ABCD2, SRC_CSBPR_PREV, SRC_CSBPR_ACUTE],
     ...meta,
+    "version": 2,
   },
   {
     "id": "cva-43",
