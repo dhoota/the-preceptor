@@ -19,5 +19,6 @@ Decisions made by the product owner, not by the physician reviewer. Each is an e
 | msk-13 q3 (rebuilt signed-off SAMP) | Report to child protection when required (abuse KF 6) | abuse-domestic-06 q3, also burns-05 q4 |
 | pediatric-fever-03 q4 (rebuilt signed-off SAMP) | Epinephrine infusion for fluid-refractory pediatric shock (shock KF 7) | shock-34 q3 |
 | multiple-trauma-10 q3 (rebuilt signed-off SAMP) | Urgent orthopedic debridement of an open fracture (MSK KF 7) | msk-11 q3 |
+| delirium-agitation-14 q4 (rebuilt signed-off SAMP) | Intramuscular midazolam for status epilepticus with no IV access (seizures KF 4) | seizures-23 q2 |
 
 **To reverse:** Arjan says "reverse D1". Every question in the table above then goes back for rebuild with a decision not keyed elsewhere. Each rebuild group adds its surviving D1 repeats to this table when it lands, so the table is always the full set.

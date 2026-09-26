@@ -11,6 +11,37 @@ const META = { reviewed: true, author: "Preceptor", version: 1 };
 
 /* Sources ---------------------------------------------------------------- */
 
+const CIWA: Source = {
+  id: "ciwa",
+  citation:
+    "Sullivan JT, et al. Assessment of alcohol withdrawal: the revised Clinical Institute Withdrawal Assessment for Alcohol scale (CIWA-Ar). Br J Addict. 1989.",
+};
+const CRISM: Source = {
+  id: "crism",
+  citation: "Canadian Research Initiative in Substance Matters. Canadian guideline for the clinical management of high-risk drinking and alcohol use disorder. 2023.",
+  url: "https://crism.ca/alcohol-use-disorder/",
+};
+const HUNTER: Source = {
+  id: "hunter",
+  citation:
+    "Dunkley EJ, et al. The Hunter Serotonin Toxicity Criteria: simple and accurate diagnostic decision rules for serotonin toxicity. QJM. 2003.",
+};
+const BOYER: Source = { id: "boyer", citation: "Boyer EW, Shannon M. The serotonin syndrome. N Engl J Med. 2005." };
+const EXTRIP_LI: Source = {
+  id: "extrip-lithium",
+  citation:
+    "Decker BS, et al. Extracorporeal treatment for lithium poisoning: systematic review and recommendations from the EXTRIP workgroup. Clin J Am Soc Nephrol. 2015.",
+};
+const HYPONA: Source = {
+  id: "hyponatremia",
+  citation: "Spasovski G, et al. Clinical practice guideline on diagnosis and treatment of hyponatraemia. Eur J Endocrinol. 2014.",
+};
+const HIP_BLOCK: Source = {
+  id: "hip-block",
+  citation: "Guay J, Kopp S. Peripheral nerve blocks for hip fractures in adults. Cochrane Database Syst Rev. 2020.",
+  url: "https://pubmed.ncbi.nlm.nih.gov/33238043/",
+};
+
 const CCSMH: Source = {
   id: "ccsmh",
   citation: "Canadian Coalition for Seniors' Mental Health. National guidelines for seniors' mental health: the assessment and treatment of delirium. 2006, updated 2014.",
@@ -37,44 +68,14 @@ const ACEP_AGIT: Source = {
 };
 const CAM: Source = { id: "cam", citation: "Inouye SK, et al. Clarifying confusion: the confusion assessment method. Ann Intern Med. 1990." };
 const INOUYE: Source = { id: "inouye", citation: "Inouye SK, Westendorp RG, Saczynski JS. Delirium in elderly people. Lancet. 2014." };
-const CIWA: Source = {
-  id: "ciwa",
-  citation:
-    "Sullivan JT, et al. Assessment of alcohol withdrawal: the revised Clinical Institute Withdrawal Assessment for Alcohol scale (CIWA-Ar). Br J Addict. 1989.",
-};
-const CRISM: Source = {
-  id: "crism",
-  citation: "Canadian Research Initiative in Substance Matters. Canadian guideline for the clinical management of high-risk drinking and alcohol use disorder. 2023.",
-  url: "https://crism.ca/alcohol-use-disorder/",
-};
 const GOLDFRANK: Source = {
   id: "goldfrank",
   citation: "Nelson LS, Howland MA, Lewin NA, Smith SW, Goldfrank LR, Hoffman RS, editors. Goldfrank's Toxicologic Emergencies. 11th ed. 2019.",
-};
-const HUNTER: Source = {
-  id: "hunter",
-  citation:
-    "Dunkley EJ, et al. The Hunter Serotonin Toxicity Criteria: simple and accurate diagnostic decision rules for serotonin toxicity. QJM. 2003.",
-};
-const BOYER: Source = { id: "boyer", citation: "Boyer EW, Shannon M. The serotonin syndrome. N Engl J Med. 2005." };
-const EXTRIP_LI: Source = {
-  id: "extrip-lithium",
-  citation:
-    "Decker BS, et al. Extracorporeal treatment for lithium poisoning: systematic review and recommendations from the EXTRIP workgroup. Clin J Am Soc Nephrol. 2015.",
-};
-const TUNKEL: Source = {
-  id: "idsa-encephalitis",
-  citation: "Tunkel AR, et al. The management of encephalitis: clinical practice guidelines by the Infectious Diseases Society of America. Clin Infect Dis. 2008.",
 };
 const RAMPART: Source = {
   id: "rampart",
   citation: "Silbergleit R, et al. Intramuscular versus intravenous therapy for prehospital status epilepticus. N Engl J Med. 2012.",
 };
-const HYPONA: Source = {
-  id: "hyponatremia",
-  citation: "Spasovski G, et al. Clinical practice guideline on diagnosis and treatment of hyponatraemia. Eur J Endocrinol. 2014.",
-};
-const DC_HYPO: Source = { id: "dc-hypo", citation: "Diabetes Canada Clinical Practice Guidelines Expert Committee. Hypoglycemia in adults. Can J Diabetes. 2018." };
 const TC_BLEED: Source = { id: "tc-bleed", citation: "Thrombosis Canada. Clinical guide: DOACs, management of bleeding. 2025." };
 const DLB: Source = {
   id: "dlb",
@@ -89,10 +90,75 @@ const NICE_HI: Source = {
   citation: "National Institute for Health and Care Excellence. Head injury: assessment and early management (NG232). 2023.",
   url: "https://www.nice.org.uk/guidance/ng232",
 };
-const HIP_BLOCK: Source = {
-  id: "hip-block",
-  citation: "Guay J, Kopp S. Peripheral nerve blocks for hip fractures in adults. Cochrane Database Syst Rev. 2020.",
-  url: "https://pubmed.ncbi.nlm.nih.gov/33238043/",
+
+const MARINELLI_GHB: Source = {
+  id: "marinelli-ghb",
+  citation: "Marinelli E, Beck R, Malvasi A, Lo Faro AF, Zaami S. Gamma-hydroxybutyrate abuse: pharmacology and poisoning and withdrawal management. Arh Hig Rada Toksikol. 2020.",
+  url: "https://doi.org/10.2478/aiht-2020-71-3314",
+};
+const FLOYD_GHB: Source = {
+  id: "floyd-ghb",
+  citation: "Floyd CN, Wood DM, Dargan PI. Baclofen in gamma-hydroxybutyrate withdrawal: patterns of use and online availability. Eur J Clin Pharmacol. 2018.",
+  url: "https://doi.org/10.1007/s00228-017-2387-z",
+};
+const BORELLI_GHB: Source = {
+  id: "borelli-ghb",
+  citation: "Borelli CM, Kessler N, Suter D, Levesque A. Severe gamma-hydroxybutyrate withdrawal with delirium, hemodynamic lability, and rhabdomyolysis: a case series. Am J Addict. 2025.",
+  url: "https://doi.org/10.1111/ajad.70013",
+};
+const ACR_GOUT: Source = {
+  id: "acr-gout",
+  citation: "FitzGerald JD, Dalbeth N, Mikuls T, et al. 2020 American College of Rheumatology guideline for the management of gout. Arthritis Care Res. 2020.",
+  url: "https://doi.org/10.1002/acr.24180",
+};
+const ROMANELLI_DXM: Source = {
+  id: "romanelli-dxm",
+  citation: "Romanelli F, Smith KM. Dextromethorphan abuse: clinical effects and management. J Am Pharm Assoc. 2009.",
+  url: "https://doi.org/10.1331/JAPhA.2009.08091",
+};
+const DART_APAP: Source = {
+  id: "dart-apap",
+  citation: "Dart RC, Mullins ME, Matoushek T, et al. Management of acetaminophen poisoning in the US and Canada: a consensus statement. JAMA Netw Open. 2023.",
+  url: "https://doi.org/10.1001/jamanetworkopen.2023.27739",
+};
+const MEDAROV_MAS: Source = {
+  id: "medarov-mas",
+  citation: "Medarov BI. Milk-alkali syndrome. Mayo Clin Proc. 2009.",
+  url: "https://doi.org/10.4065/84.3.261",
+};
+const BRANDARIZ_ACV: Source = {
+  id: "brandariz-acv",
+  citation: "Brandariz-Nunez D, Correas-Sanahuja M, Maya-Gallego S, Martin Herranz I. Neurotoxicity associated with acyclovir and valacyclovir: a systematic review of cases. J Clin Pharm Ther. 2021.",
+  url: "https://doi.org/10.1111/jcpt.13464",
+};
+const ROBERTSON_ACV: Source = {
+  id: "robertson-acv",
+  citation: "Robertson KM, Harvey CL, Cunningham JM. Acyclovir-induced neurotoxicity with a positive cerebrospinal fluid varicella zoster PCR result creating a management dilemma: a case report. J Med Case Rep. 2020.",
+  url: "https://doi.org/10.1186/s13256-020-02498-3",
+};
+const SADJADI_ACV: Source = {
+  id: "sadjadi-acv",
+  citation: "Sadjadi SA, Regmi S, Chau T. Acyclovir neurotoxicity in a peritoneal dialysis patient: report of a case and review of the pharmacokinetics of acyclovir. Am J Case Rep. 2018.",
+  url: "https://doi.org/10.12659/AJCR.911520",
+};
+const TAKAKUWA_CANNABIS: Source = {
+  id: "takakuwa-cannabis",
+  citation: "Takakuwa KM, Schears RM. The emergency department care of the cannabis and synthetic cannabinoid patient: a narrative review. Int J Emerg Med. 2021.",
+  url: "https://doi.org/10.1186/s12245-021-00330-3",
+};
+const CDC_STI: Source = {
+  id: "cdc-sti-2021",
+  citation: "Workowski KA, Bachmann LH, Chan PA, et al. Sexually transmitted infections treatment guidelines, 2021. MMWR Recomm Rep. 2021.",
+  url: "https://www.cdc.gov/std/treatment-guidelines/neurosyphilis.htm",
+};
+const AB_STI: Source = {
+  id: "ab-sti-2018",
+  citation: "Alberta Health. Alberta treatment guidelines for sexually transmitted infections (STI) in adolescents and adults. 2018, updated December 2023.",
+  url: "https://open.alberta.ca/dataset/93a97f17-5210-487d-a9ae-a074c66ad678/resource/0975565f-c114-441f-8aab-6234763fc8a7/download/hlth-treatment-guidelines-for-sti-adolescents-adults-2018-updated-2023-12.pdf",
+};
+const ERC_ALS: Source = {
+  id: "erc-als-2025",
+  citation: "Soar J, Bottiger BW, Carli P, et al. European Resuscitation Council Guidelines 2025: adult advanced life support. Resuscitation. 2025.",
 };
 
 /* Shared key items -------------------------------------------------------- */
@@ -656,65 +722,81 @@ export const DELIRIUM_AGITATION_SAMPS: Samp[] = [
     id: "delirium-agitation-07",
     topic: "delirium-agitation",
     alsoTopics: ["loc", "tox"],
-    title: "Combative and sweaty at home",
+    title: "Not herself for four days",
     stem:
-      "A 76-year-old man is brought to the emergency department by ambulance. His wife found him in the bathroom, sweaty and swinging at her. He has type 2 diabetes treated with gliclazide MR 120 mg daily and chronic kidney disease with an eGFR of 28 mL/minute. Paramedics could not start an IV. In the department a nurse has placed an IV. He remains combative.\n\nCapillary glucose 1.9 mmol/L.",
-    vitals: { temperature: "36.4°C", pulse: "102/minute", resp: "18/minute", bp: "150/90 mmHg", o2sat: "97% on room air", weight: "74 kg" },
+      "A 79-year-old woman is brought to the emergency department by her son with 4 days of increasing confusion, vomiting and poor appetite. Today she did not know his name. At baseline she lives alone, drives and manages her own finances. She has osteoporosis and hypertension. The medication list from her family physician shows alendronate, hydrochlorothiazide and a calcium and vitamin D supplement.\n\nCapillary glucose 6.3 mmol/L. She is drowsy, oriented to person only and cannot keep her attention on the conversation. Her mucous membranes are dry. There is no focal deficit, no neck stiffness and no sign of injury.",
+    vitals: { temperature: "36.8°C", pulse: "104/minute", resp: "16/minute", bp: "108/64 mmHg", o2sat: "96% on room air", weight: "58 kg" },
     questions: [
       {
         id: "q1",
         kind: "short",
-        prompt: "What is the immediate treatment, with the drug, dose and route?",
-        required: 1,
+        prompt: "What investigations would you send now to find a reversible cause of her delirium?",
+        required: 3,
         accept: [
-          k("d50", "Dextrose 50%, 20 to 50 mL IV (10 to 25 g)", "d50", "d50w", "50% dextrose", "dextrose 50%", "25 g", "25g", "50 ml"),
-          k("d10", "Dextrose 10%, 250 mL IV (25 g)", "d10", "d10w", "10% dextrose", "dextrose 10%", "250 ml"),
+          k("ca", "Serum calcium with albumin, or ionized calcium", "calcium", "ionized calcium", "ionised calcium"),
+          k("lytes", "Electrolytes, including sodium and potassium", "electrolyte", "sodium", "potassium"),
+          k("cr", "Creatinine and urea", "creatinine", "urea", "kidney function", "renal function", "egfr"),
+          k("gas", "Blood gas or bicarbonate", "blood gas", "vbg", "abg", "bicarbonate"),
+          k("cbc", "CBC", "cbc", "blood count"),
+          k("ua", "Urinalysis", "urinalysis", "urine dip"),
+          k("ecg", "ECG", "ecg", "ekg"),
+          k("ct", "CT head", "ct head", "ct brain", "head ct"),
+          k("tsh", "Thyroid function", "tsh", "thyroid"),
+          k("lft", "Liver enzymes and lipase", "liver enzyme", "liver function", "lipase", "alt"),
         ],
-        unacceptable: [bad("Oral glucose in a combative patient", ["oral glucose", "juice", "glucose tab", "glucose gel"])],
         explanation:
-          "Severe hypoglycemia with altered behaviour needs IV dextrose at once. Diabetes Canada advises 10 to 25 g of IV dextrose, given as D50W or D10W. D10W is gentler on veins. Oral glucose risks aspiration in a patient who cannot cooperate.",
+          "She takes a thiazide, which lowers calcium excretion and can lower sodium, and a calcium supplement, and she has been vomiting, so calcium and electrolytes come first. Dehydration from vomiting makes kidney injury likely, and creatinine shows it. A blood gas or bicarbonate shows the acid base disturbance that vomiting and alkali cause. The rest of the screen looks for the common causes of delirium in older adults, including infection and a structural brain lesion.",
         keyFeature: kf(2),
-        source: "dc-hypo",
+        source: "ccsmh",
       },
       {
         id: "q2",
         kind: "short",
-        update: "He wakes and is back to baseline.",
-        prompt: "What collateral history from his wife would change your management?",
+        update:
+          "Calcium is 3.58 mmol/L with an albumin of 38 g/L. Bicarbonate is 36 mmol/L. Creatinine is 186 umol/L, from a baseline of 78 umol/L. Sodium is 136 mmol/L. PTH is pending.",
+        prompt: "What collateral history from her son would change your management?",
         required: 2,
         accept: [
-          k("dose", "Recent medication or dose changes, including insulin", "dose", "medication", "new medication", "gliclazide", "sulfonylurea", "insulin"),
-          k("od", "Possible intentional or accidental overdose, with a pill count", "overdose", "intentional", "pill count", "empty", "extra"),
-          k("intake", "Reduced food intake or vomiting", "intake", "meal", "eating", "vomit", "vomiting", "appetite"),
-          k("time", "Time last seen well and duration of symptoms", "last seen", "last normal", "baseline", "time", "duration"),
-          k("prior", "Previous hypoglycemic episodes", "previous episode", "prior episode", "recurrent", "similar episode"),
-          k("alcohol", "Alcohol use", "alcohol", "drinking", "etoh"),
-          k("illness", "Recent illness or worsening kidney function", "illness", "infection", "kidney", "renal"),
-          k("fall", "Fall or head injury", "fall", "head injury", "trauma"),
+          k("antacid", "Over-the-counter antacids containing calcium carbonate", "antacid", "calcium carbonate", "tums", "over the counter", "otc"),
+          k("supp", "How much calcium and vitamin D she actually takes", "vitamin d", "supplement", "calcium dose", "extra calcium"),
+          k("other", "Other nonprescription products or herbal remedies", "herbal", "nonprescription", "natural product"),
+          k("cancer", "Weight loss, bone pain or a history of cancer", "weight loss", "cancer", "malignancy", "bone pain", "tumour", "tumor"),
+          k("milk", "Large intake of milk or dairy", "milk", "dairy"),
+          k("baseline", "Her usual function and when she was last well", "baseline", "usual", "last well", "last seen"),
+          k("intake", "Vomiting and fluid intake over the past days", "vomiting", "fluid intake", "drinking", "intake"),
         ],
         explanation:
-          "Sulfonylurea hypoglycemia can recur for many hours, especially with poor kidney function. Collateral clarifies the dose taken, intent, intake and duration. It also uncovers injury during the episode.",
+          "A calcium of 3.58 mmol/L with a bicarbonate of 36 mmol/L and a creatinine that has risen from 78 to 186 umol/L is the triad of calcium-alkali syndrome, and it follows large intakes of calcium carbonate. Medarov stresses that accurate medication and diet histories are central to this diagnosis, and antacids bought without a prescription rarely appear on a medication list. Weight loss, bone pain or a cancer history point instead to malignancy, which changes the workup. Her son also defines how far she is from her usual self.",
         keyFeature: { topic: "loc", n: 3 },
-        source: "dc-hypo",
+        source: "medarov-mas",
       },
       {
         id: "q3",
         kind: "short",
-        update: "Two hours later his glucose is 2.6 mmol/L despite a D10W infusion.",
-        prompt: "What specific treatment prevents further sulfonylurea induced hypoglycemia?",
-        required: 1,
-        accept: [k("octreotide", "Octreotide 50 to 100 mcg SC or IV every 6 to 8 hours", "octreotide", "sandostatin")],
-        unacceptable: [bad("Repeated glucagon", ["repeat glucagon", "repeated glucagon", "glucagon 1 mg", "glucagon infusion", "give glucagon"])],
+        update: "Her son finds that for 3 weeks she has chewed about 12 calcium carbonate antacid tablets a day for heartburn.",
+        prompt: "What treatments would you start?",
+        required: 2,
+        accept: [
+          k("saline", "IV isotonic saline", "saline", "crystalloid", "iv fluid", "normal saline", "hydration", "fluid"),
+          k("stopca", "Stop the calcium carbonate, calcium and vitamin D", "stop calcium", "stop antacid", "stop vitamin d", "hold calcium", "hold vitamin d", "discontinue calcium", "withdraw calcium", "stop supplement"),
+          k("stophctz", "Stop the hydrochlorothiazide", "stop hydrochlorothiazide", "stop thiazide", "hold thiazide", "hold hydrochlorothiazide", "stop hctz", "hold hctz", "discontinue thiazide"),
+          k("recheck", "Serial calcium checks, watching for rebound hypocalcemia", "serial calcium", "repeat calcium", "recheck calcium", "rebound hypocalcemia", "hypocalcemia"),
+          k("monitor", "Cardiac monitoring", "cardiac monitoring", "cardiac monitor", "telemetry", "ecg"),
+          k("furo", "Furosemide only once her volume is restored", "furosemide once", "furosemide after", "loop diuretic after"),
+          k("antiemetic", "An antiemetic", "antiemetic", "ondansetron"),
+        ],
+        unacceptable: [bad("Sodium bicarbonate", ["sodium bicarbonate", "bicarbonate infusion"])],
         explanation:
-          "Octreotide blocks sulfonylurea driven insulin release and prevents rebound hypoglycemia. Dextrose alone stimulates more insulin release. He needs admission with glucose checks for at least 24 hours given his renal function.",
+          "Calcium carbonate supplies both the calcium and the alkali, and a thiazide reduces calcium excretion, so treatment is IV isotonic saline and withdrawal of all three. Medarov reports that hydration and withdrawal of the offending agents are enough in most cases. Rebound hypocalcemia, sometimes severe, is common as the syndrome resolves, so calcium is checked often. Bisphosphonates have no proven benefit here and add to that risk. Furosemide can increase calcium excretion, but only after volume is restored. Bicarbonate would worsen her alkalosis.",
         keyFeature: { topic: "tox", n: 4 },
-        source: "goldfrank",
+        source: "medarov-mas",
       },
     ],
-    sources: [DC_HYPO, GOLDFRANK],
+    sources: [CCSMH, MEDAROV_MAS],
     ...META,
+    reviewed: false,
+    version: 2,
   },
-
   /* 08 ------------------------------------------------------------------ */
   {
     id: "delirium-agitation-08",
@@ -881,7 +963,6 @@ export const DELIRIUM_AGITATION_SAMPS: Samp[] = [
     sources: [GOLDFRANK, EXTRIP_LI, HCCA],
     ...META,
   },
-
   /* 10 ------------------------------------------------------------------ */
   {
     id: "delirium-agitation-10",
@@ -1038,7 +1119,6 @@ export const DELIRIUM_AGITATION_SAMPS: Samp[] = [
     sources: [HUNTER, BOYER],
     ...META,
   },
-
   /* 12 ------------------------------------------------------------------ */
   {
     id: "delirium-agitation-12",
@@ -1236,88 +1316,95 @@ export const DELIRIUM_AGITATION_SAMPS: Samp[] = [
     id: "delirium-agitation-14",
     topic: "delirium-agitation",
     alsoTopics: ["infectious-diseases", "loc", "seizures"],
-    title: "Strange behaviour with a headache",
+    title: "Suspicious of his coworkers",
     stem:
-      "A 29-year-old woman presents to the emergency department with three days of headache and strange behaviour. Her partner says she has been suspicious of him, is using wrong words and cannot find others. One hour ago she had a generalized seizure at home. She has no psychiatric history and uses no drugs.\n\nGlucose 6.2 mmol/L. GCS is 13 (E3 V4 M6). There is no rash.",
-    vitals: { temperature: "38.6°C", pulse: "112/minute", resp: "20/minute", bp: "128/80 mmHg", o2sat: "97% on room air", weight: "62 kg" },
+      "A 48-year-old man is brought to the emergency department by his husband after a generalized seizure at home. For 6 weeks he has been suspicious of his coworkers, forgetful and careless at work, which is unlike him. Today he is confused and accuses staff of spying on him. Four months ago he had a rash on his palms and soles that faded without treatment. He has no psychiatric history and uses no drugs.\n\nCapillary glucose 5.9 mmol/L. He is drowsy, oriented to person only and cannot repeat a short sentence. His pupils are small and irregular, and they constrict to accommodation but not to light. There is no neck stiffness or focal weakness.",
+    vitals: { temperature: "37.3°C", pulse: "96/minute", resp: "18/minute", bp: "138/84 mmHg", o2sat: "97% on room air", weight: "72 kg" },
     questions: [
       {
         id: "q1",
         kind: "short",
-        update: "Her partner thinks she is having a breakdown.",
-        prompt: "What features make a medical cause more likely than primary psychosis?",
+        update: "His husband wonders whether this is a breakdown from stress.",
+        prompt: "What features make a medical cause more likely than a primary psychiatric illness?",
         required: 3,
         accept: [
-          k("fever", "Fever", "fever", "febrile", "temperature"),
           k("seizure", "Seizure", "seizure"),
-          k("aphasia", "Focal neurological deficit such as word finding difficulty", "aphasia", "word finding", "wrong word", "focal", "dysphasia", "paraphasia"),
-          k("loc", "Decreased level of consciousness", "gcs", "level of consciousness", "drowsy", "decreased loc", "altered loc"),
-          k("vitals", "Abnormal vital signs such as tachycardia", "tachycardia", "vital"),
-          k("acute", "Acute onset over days", "acute", "sudden", "day"),
-          k("headache", "Headache", "headache"),
-          k("nohx", "No prior psychiatric history", "no psychiatric history", "no prior psychiatric", "first episode"),
+          k("loc", "Drowsiness and a reduced level of consciousness", "drowsy", "drowsiness", "level of consciousness", "decreased loc", "altered loc", "gcs"),
+          DISORIENT,
+          INATTN,
+          k("cog", "Cognitive decline such as forgetfulness and poor judgment", "forgetful", "memory", "cognitive", "judgment", "judgement", "dementia"),
+          k("pupils", "Abnormal pupils that react to accommodation but not to light", "pupil", "argyll robertson", "accommodation"),
+          k("rash", "A past rash on the palms and soles", "rash", "palm", "sole", "syphilis"),
+          k("age", "New psychiatric symptoms after age 40", "after 40", "older age", "age"),
+          k("nohx", "No psychiatric history", "no psychiatric history", "no prior psychiatric"),
         ],
         explanation:
-          "Fever, seizure, aphasia and a reduced GCS are not features of primary psychosis. New behaviour change with these findings is encephalitis until proven otherwise. HSV and autoimmune encephalitis often present first with psychiatric symptoms.",
+          "A first seizure, drowsiness, disorientation and a decline in memory and judgment are not features of a primary psychiatric illness. Small irregular pupils that constrict to accommodation but not to light, with a past rash on the palms and soles, point to neurosyphilis. New paranoia at 48 with no psychiatric history needs a medical cause excluded before a psychiatric label. The CDC guideline lists cognitive dysfunction among the neurological findings that call for CSF examination in a person with syphilis.",
         keyFeature: kf(1),
-        source: "idsa-encephalitis",
+        source: "cdc-sti-2021",
       },
       {
         id: "q2",
         kind: "short",
-        prompt: "What empiric antiviral would you give, with the drug, dose, route and frequency?",
+        update: "A serum treponemal antibody test is reactive and the RPR titre is 1:128. Lumbar puncture will follow a CT head.",
+        prompt: "What antimicrobial treatment would you start now, with the drug, dose, route and frequency?",
         required: 1,
         accept: [
           k(
-            "acyclovir",
-            "Acyclovir 10 mg/kg IV every 8 hours (about 620 mg)",
-            "acyclovir 10 mg/kg", "acyclovir 10mg/kg", "aciclovir 10 mg/kg", "acyclovir 620", "acyclovir 600", "acyclovir 10",
+            "pen",
+            "Aqueous penicillin G 3 to 4 million units IV every 4 hours",
+            "penicillin g 4", "penicillin g 3", "penicillin 4 million", "penicillin 3 million", "penicillin 24 million", "penicillin 18 million", "crystalline penicillin", "aqueous penicillin", "pen g 4",
           ),
+          k("ceftri", "Ceftriaxone 2 g IV daily, if penicillin cannot be used", "ceftriaxone 2", "ceftriaxone 1", "ceftriaxone 2g"),
         ],
-        unacceptable: [bad("Oral antiviral", ["valacyclovir 1", "valtrex", "acyclovir 800", "famciclovir"])],
+        unacceptable: [
+          bad("Benzathine penicillin G 2.4 million units IM", ["benzathine", "bicillin", "2.4 million"]),
+          bad("Oral doxycycline", ["doxycycline"]),
+        ],
         explanation:
-          "Start IV acyclovir as soon as HSV encephalitis is suspected, before CT or LP results. Delay worsens mortality and neurological outcome. Oral agents do not reach adequate levels in the brain. Give bacterial meningitis coverage too until excluded.",
+          "Reactive treponemal serology with an RPR of 1:128 in a man with cognitive decline, a seizure and Argyll Robertson pupils makes neurosyphilis likely, and treatment should not wait for CSF results that take days. Alberta's STI guideline prefers crystalline penicillin G 4 million units IV every 4 hours for 10 to 14 days, and the CDC gives 3 to 4 million units on the same schedule. Ceftriaxone 2 g IV daily for 10 to 14 days is the alternative when penicillin cannot be used. Benzathine penicillin IM, the treatment for early syphilis, does not reach adequate levels in CSF.",
         keyFeature: { topic: "infectious-diseases", n: 1 },
-        source: "idsa-encephalitis",
+        source: "ab-sti-2018",
       },
       {
         id: "q3",
         kind: "short",
-        prompt: "What investigations would establish the cause?",
-        required: 2,
+        update: "CT head is normal. A lumbar puncture is done.",
+        prompt: "Which tests on his CSF and blood would confirm neurosyphilis and guide his care?",
+        required: 3,
         accept: [
-          k("lp", "Lumbar puncture with CSF HSV PCR", "lumbar puncture", "lp", "csf", "pcr"),
-          k("mri", "MRI brain", "mri"),
-          k("eeg", "EEG", "eeg"),
-          k("ct", "CT head before LP", "ct head", "ct brain", "ct"),
-          k("auto", "Autoimmune encephalitis antibodies such as anti-NMDA receptor", "nmda", "autoimmune", "antibody", "antibodies"),
-          k("cultures", "Blood cultures", "blood culture", "culture"),
+          k("vdrl", "CSF VDRL", "vdrl", "csf rpr", "nontreponemal"),
+          k("cells", "CSF cell count and differential", "cell count", "white cell", "wbc", "leukocyte", "pleocytosis", "differential"),
+          k("protein", "CSF protein", "protein"),
+          k("fta", "CSF treponemal test such as FTA-ABS", "fta", "fta abs", "treponemal", "tppa", "tp pa"),
           k("hiv", "HIV test", "hiv"),
         ],
         explanation:
-          "CSF with HSV PCR is the key test. CT first is reasonable given her reduced GCS and seizure. MRI is the most sensitive imaging for temporal lobe changes. EEG detects nonconvulsive seizures.",
+          "Alberta's STI guideline recommends CSF cell count and differential, protein, VDRL and FTA-ABS to establish neurosyphilis in anyone with neurological signs. The CDC describes the CSF VDRL as highly specific but insensitive, so a lymphocytic pleocytosis or a raised protein supports the diagnosis when the VDRL is negative. A negative CSF FTA-ABS makes neurosyphilis highly unlikely. The CDC advises an HIV test for everyone with neurosyphilis, and HIV infection widens the differential to opportunistic infections.",
         keyFeature: { topic: "loc", n: 1 },
-        source: "idsa-encephalitis",
+        source: "ab-sti-2018",
       },
       {
         id: "q4",
         kind: "short",
-        update: "She has another generalized seizure. It has lasted 5 minutes. She has an IV.",
+        update: "Back in the department he pulls out his IV and has a generalized seizure. It has lasted 5 minutes.",
         prompt: "What is the first line drug, with the dose and route?",
         required: 1,
         accept: [
-          k("loraz", "Lorazepam 4 mg IV (0.1 mg/kg), repeat once if needed", "lorazepam 4", "lorazepam 0.1", "lorazepam 4mg", "ativan 4"),
-          k("midaz", "Midazolam 10 mg IM or 0.1 to 0.2 mg/kg IV", "midazolam 10", "midazolam 10mg", "midazolam 0.2", "midazolam 0.1"),
-          k("diaz", "Diazepam 10 mg IV (0.15 to 0.2 mg/kg)", "diazepam 10", "diazepam 10mg", "diazepam 0.15", "diazepam 0.2"),
+          k("midaz", "Midazolam 10 mg IM, intranasal or buccal", "midazolam 10", "midazolam 10mg", "versed 10"),
+          k("loraz", "Lorazepam 4 mg IV or IO once access is regained", "lorazepam 4", "lorazepam 4mg", "lorazepam 0.1", "ativan 4"),
         ],
+        unacceptable: [bad("An underdosed benzodiazepine such as midazolam 2 mg", ["midazolam 2", "midazolam 1 mg", "lorazepam 1 mg"])],
         explanation:
-          "A seizure lasting 5 minutes is status epilepticus and needs an adequately dosed benzodiazepine. Underdosing is common and leads to refractory status. Follow with a second line agent if seizures continue.",
+          "A seizure lasting 5 minutes is status epilepticus and needs a full benzodiazepine dose now. With no IV, midazolam 10 mg IM suits an adult over 40 kg, and in RAMPART it ended seizures before hospital arrival more often than IV lorazepam, 73.4% against 63.4%. Waiting to replace the IV delays treatment. Small doses such as midazolam 2 mg are a common cause of refractory status. A second line agent follows if the seizure continues.",
         keyFeature: { topic: "seizures", n: 4 },
         source: "rampart",
       },
     ],
-    sources: [TUNKEL, RAMPART],
+    sources: [AB_STI, CDC_STI, RAMPART],
     ...META,
+    reviewed: false,
+    version: 2,
   },
 
   /* 15 ------------------------------------------------------------------ */
