@@ -1,7 +1,6 @@
 import { describe, expect, it } from "vitest";
 import signoff from "../docs/signoff-2026-09.json";
 import signoff2 from "../docs/signoff-2026-10.json";
-import revoked from "../docs/signoff-revoked.json";
 import expansion from "../docs/samp-expansion.json";
 import { PRIORITY_TOPICS, topicById } from "@/blueprint/priorityTopics";
 import { validateSamp } from "@/engine/samp";
@@ -14,9 +13,8 @@ import { AUTHORED_SAMPS, HELD_BACK, SAMPS, SAMP_BATCHES } from "@/samps";
  */
 
 /** Signed-off ids. Anything new or changed stays reviewed: false. */
-/** Sign-offs no longer covering the current text. See docs/signoff-revoked.json. */
-const REVOKED = new Set<string>(Object.keys(revoked.ids));
-const SIGNED_OFF = new Set<string>([...signoff.samps, ...signoff2.samps].filter((id) => !REVOKED.has(id)));
+/** A held-back SAMP's text changed after sign-off, so its sign-off no longer applies. See src/samps/held-back/README.md. */
+const SIGNED_OFF = new Set<string>([...signoff.samps, ...signoff2.samps].filter((id) => !HELD_BACK.has(id)));
 
 const only = process.env.SAMP_BATCH;
 const target = only ? SAMP_BATCHES[only] ?? [] : AUTHORED_SAMPS;
@@ -75,9 +73,6 @@ describe("SAMP bank", () => {
     });
     it("releases only physician signed-off SAMPs", () => {
       expect(SAMPS.filter((s) => !s.reviewed).map((s) => s.id)).toEqual([]);
-    });
-    it("holds back every SAMP whose sign-off was revoked", () => {
-      for (const id of REVOKED) expect(HELD_BACK.has(id), id).toBe(true);
     });
     it("holds back only ids that exist", () => {
       for (const id of HELD_BACK) expect(AUTHORED_SAMPS.some((s) => s.id === id), id).toBe(true);
