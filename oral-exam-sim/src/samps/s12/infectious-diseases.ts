@@ -156,7 +156,7 @@ export const INFECTIOUS_DISEASES_SAMPS: Samp[] = [
     topic: "infectious-diseases",
     title: "Fever and abdominal pain in labour",
     stem:
-      "You are working in an emergency department in Manitoba. A 31-year-old woman at 38 weeks gestation is brought in by her partner. Her membranes ruptured 26 hours ago and contractions started 6 hours ago. For 3 hours she has had fever, chills and constant lower abdominal pain. This is her first pregnancy and it has been uncomplicated. Her group B streptococcus screening swab at 36 weeks was positive and she has had no antibiotics. She takes prenatal vitamins and has no other medical problems. The uterus is tender between contractions and the vaginal discharge smells foul. The cervix is 4 cm dilated. The fetal heart rate is 178/minute. White cell count is 19.4 x 10^9/L. Obstetrics has been paged.",
+      "You are working in an emergency department in Manitoba. A 31-year-old woman at 38 weeks gestation is brought in by her partner. Her membranes ruptured 26 hours ago and contractions started 6 hours ago. For 3 hours she has had fever, chills and constant lower abdominal pain. This is her first pregnancy and it has been uncomplicated. Her group B streptococcus screening swab at 36 weeks was positive and she has had no antibiotics. At age 20 she had hives, lip swelling and trouble breathing minutes after a dose of amoxicillin. The uterus is tender between contractions and the vaginal discharge smells foul. The cervix is 4 cm dilated. The fetal heart rate is 178/minute. White cell count is 19.4 x 10^9/L. Obstetrics has been paged.",
     vitals: { temperature: "38.9°C", pulse: "122/minute", resp: "22/minute", bp: "106/64 mmHg", o2sat: "98% on room air", weight: "78 kg" },
     questions: [
       {
@@ -165,17 +165,18 @@ export const INFECTIOUS_DISEASES_SAMPS: Samp[] = [
         required: 2,
         prompt: "What treatment do you start now for her infection, with the drug and dose?",
         accept: [
-          { id: "amp", text: "Ampicillin 2 g IV every 6 hours", match: ["ampicillin 2 g", "ampicillin 2g", "ampicillin 2 gram"] },
-          { id: "gent", text: "Gentamicin 5 mg/kg IV every 24 hours, which is 390 mg for 78 kg", match: ["gentamicin"] },
-          { id: "clinda", text: "Clindamycin 900 mg IV at cord clamping if she delivers by caesarean", match: ["clindamycin"] },
+          { id: "vanc", text: "Vancomycin 1 g IV every 12 hours as the gram positive agent", match: ["vancomycin"] },
+          { id: "clinda", text: "Clindamycin 900 mg IV every 8 hours as the gram positive agent", match: ["clindamycin"] },
+          { id: "gent", text: "Gentamicin 5 mg/kg IV every 24 hours, which is 390 mg at 78 kg", match: ["gentamicin"] },
           { id: "acet", text: "Acetaminophen 1 g PO or IV for the fever", match: ["acetaminophen", "paracetamol", "tylenol"] },
         ],
         unacceptable: [
+          { text: "Ampicillin, after a reaction with hives, lip swelling and breathing difficulty", match: ["ampicillin", "penicillin", "amoxicillin", "piperacillin"], dangerous: true },
+          { text: "A cephalosporin such as cefazolin, which is for a penicillin allergy without these features", match: ["cefazolin", "ancef", "cephalosporin", "ceftriaxone", "cefepime"] },
           { text: "Hold the antibiotics until after delivery", match: ["antibiotic after delivery", "antibiotic after birth", "antibiotic postpartum", "treat after delivery", "wait until delivery", "wait until after delivery"], dangerous: true },
-          { text: "Wait for the amniotic fluid or blood culture result", match: ["wait for culture", "await culture", "after culture result", "wait for blood culture"] },
         ],
         explanation:
-          "Fever of 38.9°C with a pulse of 122/minute, a fetal heart rate of 178/minute, uterine tenderness, foul smelling discharge and a white cell count of 19.4 x 10^9/L meet the clinical criteria for intraamniotic infection, which ask for fever plus two or more of those signs. The recommended regimen is ampicillin 2 g IV every 6 hours with gentamicin 5 mg/kg every 24 hours, which is 390 mg at 78 kg. Clindamycin 900 mg IV is added at cord clamping if she needs a caesarean. Acetaminophen treats the fever. Treatment given during labour lowers the rate of neonatal pneumonia and sepsis, so it does not wait for delivery or for cultures.",
+          "Fever of 38.9°C with a pulse of 122/minute, a fetal heart rate of 178/minute, uterine tenderness, foul smelling discharge and a white cell count of 19.4 x 10^9/L meet the clinical criteria for intraamniotic infection, which ask for fever plus two or more of those signs. The usual regimen is ampicillin with gentamicin, but hives, lip swelling and breathing difficulty within minutes of amoxicillin describe anaphylaxis, so a penicillin is unsafe and Manitoba's protocol also rules out the cefazolin option, which is for a penicillin allergy without those features. Vancomycin 1 g IV every 12 hours or clindamycin 900 mg IV every 8 hours replaces the ampicillin, with gentamicin 5 mg/kg every 24 hours, which is 390 mg at 78 kg. No susceptibility result is available, and the Manitoba protocol directs vancomycin rather than clindamycin when susceptibility to clindamycin and erythromycin is unknown, so vancomycin is the more reliable substitute. Acetaminophen treats the fever.",
         keyFeature: { topic: "infectious-diseases", n: 1 },
         source: "chorio",
       },
@@ -184,8 +185,8 @@ export const INFECTIOUS_DISEASES_SAMPS: Samp[] = [
         kind: "single",
         prompt: "Which of the following is the most appropriate plan for her antibiotics and delivery?",
         options: [
-          "Ampicillin and gentamicin now, aiming for vaginal birth",
-          "Ampicillin and gentamicin now, caesarean within the hour",
+          "Antibiotics now, aiming for vaginal birth",
+          "Antibiotics now, caesarean within the hour",
           "Antibiotics once the amniotic fluid culture is positive",
           "Antibiotics once the placenta has been delivered",
           "Caesarean now, with antibiotics at cord clamping",
@@ -218,7 +219,7 @@ export const INFECTIOUS_DISEASES_SAMPS: Samp[] = [
         id: "q4",
         kind: "menu",
         select: 3,
-        update: "She receives ampicillin and gentamicin and moves to the labour floor with obstetrics.",
+        update: "She receives vancomycin and gentamicin and moves to the labour floor with obstetrics.",
         prompt: "In which of the following situations is intrapartum prophylaxis against group B streptococcus indicated?",
         options: [
           "Fever of 38.2°C in labour, negative screening swab",

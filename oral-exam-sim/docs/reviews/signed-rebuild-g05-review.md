@@ -98,3 +98,10 @@ A question is a repeat when it keys the same decision for the same reason as a s
 - shock-09 q3 teaching: norepinephrine started low as a dilute infusion and titrated in small steps in a patient on phenelzine. The monograph's own contraindication list includes norepinephrine. Its overdose section still advises a titrated dilute pressor, and anesthesia references advise titrated direct-acting agents and avoiding indirect-acting ones. Please confirm this is the teaching you want. Also confirm that holding phenelzine during shock is acceptable.
 - seizures-03 q2: is hydralazine the only acceptable antihypertensive right after a LAST seizure with no cardiac signs yet? Would labetalol be wrong? ISSHP 2021 names all three as first-line in general.
 - seizures-03 q3: left uterine displacement is accepted without an opened source. Please confirm.
+
+## Landing decision
+
+Only shock-09 lands.
+- **Why it passes the landing rules:** the reviewer's fixes (match phrases in q3 and q4, and a corrected explanation) stay inside the writer's keyed decisions.
+- **Its one D1 repeat:** q2 echoes shock-03 q2 and q3. The keeper of its cluster is dvt-pe-08, so rule 1 is not triggered.
+- **The other nine failed.** They keep their signed text on the branch.
