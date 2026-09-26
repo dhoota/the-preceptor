@@ -1924,19 +1924,15 @@ export const INFECTIOUS_DISEASES_S41_SAMPS: Samp[] = [
         kind: "menu",
         options: [
           "Age over 65 years",
-          "Hypertension",
-          "Kidney infection",
+          "Hypertension on medication",
           "Living with her husband",
           "Proton pump inhibitor use",
           "Ramipril use",
-          "Recent ciprofloxacin course"
+          "Recent ciprofloxacin course",
+          "Recent kidney infection",
         ],
         select: 3,
-        correct: [
-          0,
-          4,
-          6
-        ],
+        correct: [0, 3, 5],
         explanation: "Recent antibiotic exposure is the main risk factor for C. difficile infection, and fluoroquinolones such as ciprofloxacin are among the classes most often implicated. Older age raises both the risk and the severity. Gastric acid suppression with a proton pump inhibitor is associated with infection. The kidney infection mattered only because it led to the antibiotic. Hypertension, ramipril and her living arrangements are not recognized risk factors.",
         keyFeature: {
           topic: "infectious-diseases",
@@ -2016,7 +2012,8 @@ export const INFECTIOUS_DISEASES_S41_SAMPS: Samp[] = [
       }
     ],
     ...META,
-    version: 2
+    reviewed: false,
+    version: 3
   },
   {
     id: "infectious-diseases-36",

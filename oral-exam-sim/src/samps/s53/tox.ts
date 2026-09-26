@@ -200,7 +200,7 @@ export const TOX_S53: Samp[] = [
           "Activated charcoal 50 g PO",
           "Apply a 25 mcg/hour patch today",
           "Discharge after 4 hours of observation",
-          "Flumazenil 0.2 mg IV",
+          "Flumazenil 0.2 mg IV if drowsiness persists",
           "Hold further patches pending palliative review",
           "Monitored admission for at least 24 hours",
           "Naloxone infusion if sedation recurs",
@@ -215,7 +215,8 @@ export const TOX_S53: Samp[] = [
     ],
     sources: [S.boland, S.sandozFentanyl, S.fuOximetry],
     ...META,
-    version: 2,
+    reviewed: false,
+    version: 3,
   },
 
   /* 18 Metformin associated lactic acidosis ------------------------------ */
@@ -927,7 +928,16 @@ export const TOX_S53: Samp[] = [
         id: "q3",
         kind: "menu",
         prompt: "Which of the following investigations should be ordered for her at this point?",
-        options: ["Chest radiograph", "Head CT without contrast", "Repeat theophylline concentration", "Serum acetaminophen level", "Serum magnesium and potassium", "Twelve lead ECG", "Urine drug screen", "Venous blood gas"],
+        options: [
+          "Head CT without contrast",
+          "Portable chest radiograph",
+          "Repeat theophylline concentration",
+          "Serum acetaminophen level",
+          "Serum magnesium and potassium",
+          "Twelve lead ECG",
+          "Urine drug screen for co-ingestants",
+          "Venous blood gas with lactate",
+        ],
         select: 4,
         correct: [2, 3, 4, 5],
         explanation:
@@ -949,6 +959,8 @@ export const TOX_S53: Samp[] = [
     ],
     sources: [S.extripTheo, S.gfMethylxanthines],
     ...META,
+    reviewed: false,
+    version: 2,
   },
 
   /* 29 Hydrocarbon aspiration ---------------------------------------------- */

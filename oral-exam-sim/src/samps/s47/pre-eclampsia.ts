@@ -475,7 +475,7 @@ export const PRE_ECLAMPSIA_S47_SAMPS: Samp[] = [
           "Age of 31 years",
           "BMI of 36 kg/m2",
           "Chronic hypertension",
-          "Headache today",
+          "Headache that has now settled",
           "Metformin use",
           "Pre-eclampsia at 33 weeks",
           "Previous caesarean birth",
@@ -524,6 +524,8 @@ export const PRE_ECLAMPSIA_S47_SAMPS: Samp[] = [
     ],
     sources: [S.sogc, S.isshp],
     ...META,
+    reviewed: false,
+    version: 2,
   },
   /* 21 ------------------------------------------------------------------ */
   {

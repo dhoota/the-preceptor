@@ -1010,11 +1010,11 @@ export const MSK_S29: Samp[] = [
         prompt: "Which of the following findings would call for referral to a hand surgeon rather than splinting alone?",
         options: [
           "Age over 40 years",
-          "Full passive DIP extension",
+          "Full passive DIP joint extension",
           "Injury to the dominant hand",
           "Large fragment with joint subluxation",
           "Open wound over the DIP joint",
-          "Small dorsal chip of bone",
+          "Small dorsal chip of bone on x-ray",
           "Swelling over the DIP joint",
         ],
         select: 2,
@@ -1026,7 +1026,8 @@ export const MSK_S29: Samp[] = [
     ],
     sources: [S.alla],
     ...META,
-    version: 2,
+    reviewed: false,
+    version: 3,
   },
   {
     id: "msk-32",

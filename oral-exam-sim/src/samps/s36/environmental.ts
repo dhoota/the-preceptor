@@ -1240,7 +1240,15 @@ export const ENVIRONMENTAL_S36: Samp[] = [
         select: 2,
         update: "Cooling is under way and his rectal temperature is 39.8°C. His BP is 96/58 mmHg after 1 L of cold normal saline.",
         prompt: "Which of the following investigations are most appropriate now to look for another cause of his fever?",
-        options: ["Blood cultures", "Carboxyhemoglobin level", "CT of the abdomen", "D-dimer level", "Serum lipase level", "Urinalysis and urine culture", "Urine drug screen"],
+        options: [
+          "Blood cultures",
+          "Carboxyhemoglobin level",
+          "CT of the abdomen and pelvis",
+          "D-dimer level",
+          "Serum lipase level",
+          "Urinalysis and urine culture",
+          "Urine drug screen for stimulants",
+        ],
         correct: [0, 5],
         explanation:
           "Advanced baclofen withdrawal can resemble sepsis, and his indwelling catheter and cloudy urine make urinary infection a real second cause of fever, so blood cultures and a urine culture are sent before antibiotics, provided they cause no delay. Carboxyhemoglobin, D-dimer, lipase and CT of the abdomen look for problems that his history and examination do not suggest. A urine drug screen does not explain fever with itching and rebound spasticity in a man who takes no other drugs.",
@@ -1262,5 +1270,7 @@ export const ENVIRONMENTAL_S36: Samp[] = [
     ],
     sources: [S.wmsHeat, S.lioresal, S.ssc],
     ...META,
+    reviewed: false,
+    version: 2,
   },
 ];

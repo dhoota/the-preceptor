@@ -890,9 +890,9 @@ export const DVT_PE_S33_SAMPS: Samp[] = [
         options: [
           "allopurinol 300 mg daily",
           "ASA 81 mg daily",
-          "atorvastatin 20 mg daily",
+          "atorvastatin 20 mg at bedtime",
           "naproxen 500 mg twice daily",
-          "ramipril 5 mg daily",
+          "ramipril 5 mg once daily",
           "None",
         ],
         correct: [1, 3],
@@ -943,7 +943,8 @@ export const DVT_PE_S33_SAMPS: Samp[] = [
       SRC_TC_PE_TX,
     ],
     ...META,
-    version: 2,
+    reviewed: false,
+    version: 3,
   },
   /* 25 ------------------------------------------------------------------ */
   {
@@ -2544,16 +2545,16 @@ export const DVT_PE_S33_SAMPS: Samp[] = [
         options: [
           "Active lung cancer on chemotherapy",
           "Age of 72 years",
-          "Left sided location",
-          "Normal popliteal vein",
-          "Pitting edema of the calf",
+          "Left sided location of the DVT",
+          "Normal popliteal and femoral veins",
+          "Pitting edema of the left calf",
           "Thrombus in two deep calf veins",
           "Thrombus length of 6 cm",
         ],
         select: 3,
         correct: [0, 5, 6],
         explanation:
-          "Risk factors for extension of an isolated distal DVT include a thrombus longer than 5 cm, involvement of more than one deep vein, active cancer, a clot close to the popliteal vein, no reversible provoking factor, previous VTE, inpatient status and a positive D-dimer. She has active cancer on chemotherapy, a 6 cm thrombus and two involved calf veins. Her age, the side affected, a normal popliteal vein and calf edema are not listed risk factors for extension.",
+          "Risk factors for extension of an isolated distal DVT include a thrombus longer than 5 cm, involvement of more than one deep vein, active cancer, a clot close to the popliteal vein, no reversible provoking factor, previous VTE, inpatient status and a positive D-dimer. She has active cancer on chemotherapy, a 6 cm thrombus and two involved calf veins. Her age, the side affected, normal popliteal and femoral veins and calf edema are not listed risk factors for extension.",
         keyFeature: { topic: "dvt-pe", n: 6 },
         source: "tc-dvt-tx",
       },
@@ -2594,6 +2595,8 @@ export const DVT_PE_S33_SAMPS: Samp[] = [
     ],
     sources: [SRC_TC_DVT_TX, SRC_TC_CANCER],
     ...META,
+    reviewed: false,
+    version: 2,
   },
   /* 47 ------------------------------------------------------------------ */
   {

@@ -175,11 +175,11 @@ export const EYE_S37_SAMPS: Samp[] = [
         select: 4,
         prompt: "Which of the following are appropriate additional steps in the care of this infant and his family?",
         options: [
-          "Bilateral eye patching",
+          "Bilateral eye patching overnight",
           "Chlamydia testing of the conjunctival swab",
           "Discharge with review in 24 hours",
           "Hospital admission",
-          "Lacrimal sac massage",
+          "Lacrimal sac massage four times daily",
           "Saline irrigation of both eyes",
           "Testing and treatment of both parents",
           "Topical corticosteroid drops",
@@ -193,6 +193,8 @@ export const EYE_S37_SAMPS: Samp[] = [
     ],
     sources: [S.cpsOn, S.aaoConj],
     ...META,
+    reviewed: false,
+    version: 2,
   },
   {
     id: "eye-17",

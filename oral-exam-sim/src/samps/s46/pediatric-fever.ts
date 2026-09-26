@@ -816,12 +816,12 @@ export const PEDIATRIC_FEVER_S46: Samp[] = [
         select: 3,
         prompt: "Which of the following investigations are most appropriate for him at this visit?",
         options: [
-          "Bag urine culture",
+          "Bag urine specimen for culture",
           "Blood culture",
           "Catheter urinalysis and culture",
           "CBC with differential",
           "Chest radiograph",
-          "Lumbar puncture",
+          "Lumbar puncture and CSF culture",
           "Stool culture",
           "Throat swab for streptococcus",
         ],
@@ -872,6 +872,8 @@ export const PEDIATRIC_FEVER_S46: Samp[] = [
     ],
     sources: [S.nelson221, S.cpsUti, S.aapFever, S.niceFever],
     ...META,
+    reviewed: false,
+    version: 2,
   },
 
   /* 26 ------------------------------------------------------------------ */

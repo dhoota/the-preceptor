@@ -83,20 +83,16 @@ export const SHOCK_SAMPS_S50: Samp[] = [
         update: "She has received 2 L of crystalloid. Her pulse is 138/minute and BP is 74/40 mmHg. Blood loss is now about 2 000 mL. The blood bank holds uncrossmatched O RhD negative red cells.",
         prompt: "Which of the following are the most appropriate next steps in her resuscitation?",
         options: [
-          "albumin 5% 500 mL IV",
+          "albumin 5% 500 mL IV bolus",
           "Bimanual uterine compression",
-          "Crystalloid 2 L IV bolus",
+          "Crystalloid 2 L IV rapid bolus",
           "hydroxyethyl starch 500 mL IV",
           "Massive hemorrhage protocol activation",
-          "norepinephrine infusion IV",
-          "O RhD negative red cells IV"
+          "norepinephrine infusion IV to MAP 65",
+          "O RhD negative red cells IV",
         ],
         select: 3,
-        correct: [
-          1,
-          4,
-          6
-        ],
+        correct: [1, 4, 6],
         explanation: "She is in hemorrhagic shock after 2 L of crystalloid, so she needs blood now. Uncrossmatched O RhD negative red cells protect a woman of childbearing age from RhD sensitization, and activating the massive hemorrhage protocol brings plasma, platelets and fibrinogen in a fixed ratio. Bimanual compression slows atonic bleeding while definitive treatment is arranged. More crystalloid dilutes clotting factors and worsens coagulopathy. Albumin and starch carry no oxygen, and starch harms clotting and kidneys. A vasopressor does not replace lost volume in hemorrhage.",
         keyFeature: {
           topic: "shock",
@@ -121,6 +117,8 @@ export const SHOCK_SAMPS_S50: Samp[] = [
       }
     ],
     ...META,
+    reviewed: false,
+    version: 2,
   },
   {
     id: "shock-17",
@@ -1115,13 +1113,10 @@ export const SHOCK_SAMPS_S50: Samp[] = [
           "flumazenil 0.2 mg IV",
           "High-dose insulin with dextrose",
           "physostigmine 1 mg IV",
-          "Urgent hemodialysis"
+          "Urgent hemodialysis for drug removal",
         ],
         select: 2,
-        correct: [
-          1,
-          3
-        ],
+        correct: [1, 3],
         explanation: "In beta-blocker poisoning with shock after atropine and fluid, catecholamines such as epinephrine improve heart rate and pressure, and high-dose insulin euglycemic therapy improves contractility. Both are standard treatments for shock that persists after atropine and fluid. Propranolol is highly protein bound and lipophilic, so hemodialysis does not remove it. Digoxin immune fab treats digoxin toxicity, and flumazenil and physostigmine treat other poisonings. Flumazenil can also provoke seizures.",
         keyFeature: {
           topic: "shock",
@@ -1192,6 +1187,8 @@ export const SHOCK_SAMPS_S50: Samp[] = [
       }
     ],
     ...META,
+    reviewed: false,
+    version: 2,
   },
   {
     id: "shock-27",

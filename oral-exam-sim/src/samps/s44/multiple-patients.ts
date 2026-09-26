@@ -364,11 +364,11 @@ export const MULTIPLE_PATIENTS_S44: Samp[] = [
         options: [
           "Absent peripheral pulse",
           "Capillary refill of 3 seconds",
-          "Heart rate of 128/minute",
+          "Heart rate of 128/minute on the monitor",
           "Neither obeys commands nor moves purposefully",
           "Respiratory distress",
-          "Respiratory rate of 32/minute",
-          "Systolic BP of 88 mmHg",
+          "Respiratory rate of 32/minute at rest",
+          "Systolic BP of 88 mmHg by automated cuff",
           "Uncontrolled major hemorrhage",
         ],
         correct: [0, 3, 4, 7],
@@ -410,6 +410,8 @@ export const MULTIPLE_PATIENTS_S44: Samp[] = [
     ],
     sources: [S.salt],
     ...META,
+    reviewed: false,
+    version: 2,
   },
   {
     id: "multiple-patients-21",
