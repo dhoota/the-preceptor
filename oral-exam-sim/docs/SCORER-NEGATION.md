@@ -1,5 +1,7 @@
 # Scorer findings: negation and word order
 
+All counts are for the committed bank at the reviewed branch head: 1,500 authored SAMPs, 1,430 released. Unreviewed drafts are excluded.
+
 For Arjan. This is a limit of the scoring engine, not of any single SAMP. It has not been fixed. A fix is an engine change and needs your decision on how it should behave.
 
 ## What happens
@@ -15,12 +17,16 @@ A probe (`docs/reviews/scorer-negation-probe.ts`) built, for every short-answer 
 | Measure | Count |
 |---|---|
 | Short-answer questions in the bank | 1,502 |
-| ...that have at least one unacceptable answer | 568 |
-| Questions where a correct "X rather than Y" line is marked unacceptable | 568 (408 released) |
-| Questions where it trips a dangerous flag and zeroes the whole question, with no override | 139 (101 released) |
-| SAMPs affected | 367 (119 with the dangerous case) |
+| ...that have at least one unacceptable answer | 542 |
+| Questions where a correct "X rather than Y" line is marked unacceptable | 542 (494 released) |
+| Questions where it trips a dangerous flag and zeroes the whole question, with no override | 136 (127 released) |
+| SAMPs affected | 363 (116 with the dangerous case) |
+| Dangerous phrases a correct "X rather than Y" line trips | 550 of 550 |
+| Unacceptable phrases a correct "X rather than Y" line trips | 1,698 of 1,698 |
 
-Control: the same lines written with ", not", "and avoid" or "and no" flag in only 32 questions (5 dangerous). The engine handles plain negation, but not comparatives.
+Control: the same lines written with ", not", "and avoid" or "and no" flag in far fewer questions (32 in the first run).
+
+**Worked example (arrhythmia-04 q4, clenbuterol overdose):** the key is phenylephrine or vasopressin, not a catecholamine. "Phenylephrine rather than epinephrine" is scored 0, because "epinephrine" counts as a positive mention of the drug the question rejects. While epinephrine was a dangerous item, that line zeroed the whole question with no override. The engine handles plain negation, but not comparatives.
 
 ## How much this matters in practice
 
@@ -43,10 +49,11 @@ A second probe (`docs/reviews/scorer-wordorder-probe.ts`) built, for every accep
 
 | Measure | Count |
 |---|---|
-| Accepted phrases that contain a negation word | 2,054 |
-| ...that the wrong line scores | 1,872 |
-| Questions exposed | 313 (209 released) |
-| SAMPs exposed | 249 |
+| Accepted phrases in the bank | 33,008 |
+| ...that contain a negation word | 1,640 |
+| ...that the wrong line scores | 1,570 |
+| Questions exposed | 286 (255 released) |
+| SAMPs exposed | 235 |
 
 A realistic example: in abdominal-pain-01 q3, "give aggressive fluid, avoid delay" earns the permissive-hypotension mark.
 
@@ -60,7 +67,7 @@ Two writers and two reviewers could not fix both at once inside the SAMP. Every 
 
 ## Third finding: numbers split by the tokeniser
 
-Colons and commas inside numbers split them into separate words. For example, "1:10,000" becomes "1", "10" and "000". So "epinephrine 1:10,000" matches "Epinephrine 1:1,000 0.5 mg IM, repeat in 10 minutes", which is a correct answer, and zeroes it as dangerous. 17 match phrases in 8 questions contain such numbers.
+Colons and commas inside numbers split them into separate words. For example, "1:10,000" becomes "1", "10" and "000". So "epinephrine 1:10,000" matches "Epinephrine 1:1,000 0.5 mg IM, repeat in 10 minutes", which is a correct answer, and zeroes it as dangerous. 14 match phrases in 8 questions contain such numbers.
 
 ## Recommendation
 

@@ -99,12 +99,29 @@ dvt-pe-02 q3 was briefly shortened on 26 September 2026 without your fresh sign-
 ## 4. The scorer misreads negation and word order (bigger than any single SAMP)
 
 Full write-up and probes: docs/SCORER-NEGATION.md. In short:
-- **"X rather than Y" counts as a mention of Y.** Of 568 short-answer questions that have an unacceptable answer, all 568 mark a correct "X rather than Y" line as unacceptable. In 139 of them (101 released) the flag is dangerous, so it zeroes the whole question and the candidate cannot override it.
-- **A negation word anywhere in the line is enough.** When an accepted phrase contains a negation word, the phrase matches wherever that word sits in the line. 313 questions (209 released) in 249 SAMPs give credit to a wrong line this way.
-- **Numbers are split.** Ratios and comma-grouped numbers break into pieces: 17 phrases in 8 questions.
+- **"X rather than Y" counts as a mention of Y.** All 550 dangerous phrases and all 1,698 unacceptable phrases in the bank are tripped by a correct "X rather than Y" line. That affects all 542 short-answer questions that have an unacceptable answer. In 136 of them (127 released), the flag is dangerous, so it zeroes the whole question and the candidate cannot override it. Example: arrhythmia-04 q4 scored "Phenylephrine rather than epinephrine" as 0.
+- **A negation word anywhere in the line is enough.** 1,640 of the bank's 33,008 accepted phrases contain a negation word. For 1,570 of them, the phrase matches wherever that word sits in the line, so a wrong line earns credit. That affects 286 questions (255 released) in 235 SAMPs.
+- **Numbers are split.** Ratios and comma-grouped numbers break into pieces: 14 phrases in 8 questions.
 - **Recommendation: fix the scorer, not SAMP by SAMP.** Content fixes could not keep up. asthma-copd-01 shows both failures in one question and was withdrawn. The two worked examples are in the write-up.
 
 - **Ruling 1 is breached in two signed SAMPs.** asthma-copd-13 (s04, dangerous item "IV bolus of undiluted epinephrine") and sob-04 (s17, dangerous item "Epinephrine 1 mg IV") flag "epinephrine 1 mg iv" as dangerous. That zeroes a correct line such as "epinephrine 0.5 mg IM, then 1 L IV bolus". Both are your signed text, so they are not changed. Say whether to narrow them to IV-push forms.
 - **The spec's own advice builds the second defect.** SAMP_SPEC section 12 tells writers to put negations inside accept phrases. See the conflict note in docs/reviews/SCORING-RULINGS.md.
 
 Your decision: whether to commission the scorer change, which needs a regression run over the whole bank, and which behaviour you want.
+
+## 5. Where the signed-duplicate rebuild ended (107 SAMPs)
+
+- **38 rebuilt and reviewed.** They are held back at reviewed:false and need your fresh sign-off. The held-back files list them.
+- **40 cannot be rebuilt** without a key feature change or a D1 repeat. They are listed in section 3 and are on your signed text.
+- **28 rebuilt but failed review.** They are on your signed text, verified identical to the signed record. Most failures came from the scorer limits in section 4, or from an undeclared repeat of a signed decision. The drafts are kept on the branch wip/round2-drafts, and the reasons are in docs/reviews/signed-rebuild-*-review.md:
+  - anaphylaxis-02, anaphylaxis-06, arrhythmia-04, asthma-copd-04
+  - chest-pain-03, chest-pain-06, chest-pain-09, chest-pain-14
+  - ems-08, ems-12, environmental-05, environmental-07
+  - headache-05, headache-12, headache-14
+  - lacerations-04, lacerations-08
+  - loc-05, loc-08, loc-09, loc-10
+  - pre-eclampsia-15, pulmonary-edema-02
+  - seizures-05, seizures-07, shock-04, shock-05, sob-08
+- **1 left on its signed text on your earlier call:** airway-09.
+
+No further rebuild round is planned. Two decisions come first: the scorer change in section 4, and your choices on the "cannot" list. D1 is frozen at 20 and stands at 19.
