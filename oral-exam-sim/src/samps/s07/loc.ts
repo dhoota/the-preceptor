@@ -1302,18 +1302,18 @@ export const LOC: Samp[] = [
         accept: [
           {
             id: "fluid",
-            text: "IV crystalloid bolus of 10 to 20 mL/kg, 140 to 280 mL",
+            text: "IV isotonic crystalloid bolus",
             match: ["bolus", "crystalloid", "normal saline", "saline", "ringer", "fluid"],
           },
           { id: "monitor", text: "Continuous cardiac and oxygen saturation monitoring", match: ["monitor", "monitoring", "telemetry", "oximetry"] },
-          { id: "atropine", text: "Atropine 0.02 mg/kg IV if bradycardia causes poor perfusion", match: ["atropine"] },
+          { id: "atropine", text: "Atropine IV if bradycardia causes poor perfusion", match: ["atropine"] },
           { id: "naloxone", text: "A trial of naloxone", match: ["naloxone"] },
           { id: "position", text: "Airway positioning and stimulation as needed", match: ["stimulation", "stimulate", "positioning", "jaw thrust", "recovery position"] },
           { id: "o2", text: "Oxygen if his saturation falls", match: ["oxygen", "o2"] },
         ],
         unacceptable: [{ text: "Activated charcoal while he is drowsy", match: ["charcoal"] }],
         explanation:
-          "Bradycardia and hypotension from guanfacine usually respond to supportive care. In a large paediatric series, some children needed IV fluid, none needed vasopressors, and atropine was given only once, to a child who had also taken cannabis. An isotonic bolus of 10 to 20 mL/kg is 140 to 280 mL at 14 kg. Naloxone may be tried when an opioid cannot be excluded, although it did not help a reported toddler with guanfacine poisoning. Activated charcoal risks aspiration in a drowsy child.",
+          "Bradycardia and hypotension from guanfacine usually respond to supportive care. In a multicentre paediatric series, 5 of 32 children with lone guanfacine exposure received IV fluid, none needed vasopressors, and atropine was given once, to a child who had also taken cannabis. Naloxone may be tried when an opioid cannot be excluded, although it did not help a reported toddler with guanfacine poisoning. Activated charcoal risks aspiration in a drowsy child.",
         keyFeature: { topic: "loc", n: 2 },
         source: "guanfacine-series",
       },
@@ -1326,7 +1326,7 @@ export const LOC: Samp[] = [
           {
             id: "delay",
             text: "Delayed worsening as the extended-release tablets are absorbed",
-            match: ["delayed", "later", "peak", "worsen", "worsening", "extended release", "prolonged"],
+            match: ["delayed", "later", "peak", "worsen", "worsening", "extended release"],
           },
           { id: "htn", text: "Transient, sometimes severe, hypertension", match: ["hypertension", "high blood pressure", "hypertensive"] },
           { id: "ortho", text: "Prolonged orthostatic hypotension", match: ["orthostatic", "postural"] },

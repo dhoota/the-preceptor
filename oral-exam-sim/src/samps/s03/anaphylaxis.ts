@@ -693,11 +693,6 @@ export const ANAPHYLAXIS: Samp[] = [
         required: 2,
         accept: [
           {
-            id: "repeat",
-            text: "Repeat epinephrine 0.5 mg IM",
-            match: [...c(EPI, IM), "repeat epinephrine", "repeat adrenaline", "second dose", "another dose", "repeat im"],
-          },
-          {
             id: "scope",
             text: "Awake flexible nasendoscopy to look at the larynx",
             match: ["nasendoscopy", "nasopharyngoscopy", "nasolaryngoscopy", "laryngoscopy", "endoscopy", "scope"],
@@ -713,7 +708,6 @@ export const ANAPHYLAXIS: Samp[] = [
             match: ["anesthesia", "anaesthesia", "anesthetist", "ent", "otolaryngology", "experienced"],
           },
           { id: "fona", text: "Prepare for front of neck access", match: ["front of neck", "cricothyroid", "cricothyrotomy", "scalpel", "surgical airway"] },
-          { id: "infusion", text: "Epinephrine infusion if symptoms persist after repeated IM doses", match: c(EPI, ["infusion", "drip"]) },
           { id: "upright", text: "Keep her sitting upright", match: ["upright", "sitting", "sit up"] },
         ],
         unacceptable: [
@@ -721,7 +715,7 @@ export const ANAPHYLAXIS: Samp[] = [
           { text: "Lay her flat", match: ["lie flat", "lay flat", "lying flat"] },
         ],
         explanation:
-          "Laryngeal symptoms that persist after epinephrine mean her airway could worsen, so plan while she can still breathe and cooperate. The CAFG advises that for suspected obstructing glottic or supraglottic pathology, awake nasal endoscopy just before airway management clarifies the extent of the problem. Repeat IM epinephrine while preparing, move her to the resuscitation room, call the most experienced airway manager and have front of neck equipment ready. Sedatives and lying flat can turn a narrowed airway into an obstructed one.",
+          "Laryngeal symptoms that persist after epinephrine mean her airway could worsen, so plan while she can still breathe and cooperate. The CAFG advises that for suspected obstructing glottic or supraglottic pathology, awake nasal endoscopy just before airway management clarifies the extent of the problem. While IM epinephrine is repeated, move her to the resuscitation room, call the most experienced airway manager and have front of neck equipment ready. Sedatives and lying flat can turn a narrowed airway into an obstructed one.",
         keyFeature: { topic: "airway", n: 2 },
         source: "cafg-2",
       },

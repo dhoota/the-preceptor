@@ -856,8 +856,7 @@ export const CHEST_PAIN_SAMPS: Samp[] = [
         prompt: "Why does her relief after transfusion not exclude coronary artery disease?",
         required: 2,
         accept: [
-          { id: "relief", text: "Relief with treatment is a weak clue that cannot exclude coronary disease", match: ["relief", "resolution", "pain free", "weak clue"] },
-          { id: "unmask", text: "Anemia may have unmasked fixed coronary stenosis", match: ["unmask", "underlying coronary", "fixed stenosis", "stenosis", "atherosclerosis", "coronary disease", "underlying cad"] },
+          { id: "unmask", text: "Anemia may have unmasked fixed coronary stenosis", match: ["unmask", "underlying coronary", "fixed stenosis", "stenosis", "atherosclerosis", "underlying cad"] },
           { id: "risk", text: "She has risk factors: smoking and hypertension", match: ["smoking", "smoker", "hypertension", "risk factor"] },
           { id: "mi", text: "Her troponin rose, so she has had an MI that needs cardiac evaluation", match: ["troponin rose", "rising troponin", "troponin rise", "type 2", "myocardial infarction"] },
         ],
@@ -1213,7 +1212,7 @@ export const CHEST_PAIN_SAMPS: Samp[] = [
         ],
         correct: [0, 3],
         explanation:
-          "Pericarditis in a patient whose dialysis has lapsed calls for dialysis, and the ESC advises intensified dialysis when pericarditis develops. Uremic effusions are often bloody, so anticoagulation should be avoided and the run should use no systemic heparin. He needs admission with repeat echocardiography to watch the effusion. Colchicine is contraindicated with severe renal impairment. NSAIDs and corticosteroids are reserved for when intensive dialysis fails. Drainage is for tamponade or failure of dialysis. Discharge leaves an effusion unmonitored 8 days after his last dialysis, and a saline bolus would worsen his overload.",
+          "Pericarditis in a patient whose dialysis has lapsed calls for dialysis, and the ESC advises intensified dialysis when pericarditis develops. The ESC notes that effusions in uremic patients are often bloody and that anticoagulation should be carefully considered or avoided, so the run should use no systemic heparin. He needs admission with repeat echocardiography to watch the effusion. Colchicine is contraindicated with severe renal impairment. NSAIDs and corticosteroids are reserved for when intensive dialysis fails. Drainage is for tamponade or failure of dialysis. Discharge leaves an effusion unmonitored 8 days after his last dialysis, and a saline bolus would worsen his overload.",
         keyFeature: { topic: "chest-pain", n: 2 },
         source: "esc-pericardial-2015",
       },

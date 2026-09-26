@@ -85,3 +85,7 @@ Three of the four D1 questions (05 q3, 06 q2, 09 q3) repeat the keeper of their 
 - **14:** the treatment is now sourced to the Alberta provincial STI guideline, a Canadian source with a neurosyphilis regimen. PHAC and BCCDC both defer neurosyphilis treatment to ID. Please confirm the new q3, which keys the CSF tests for neurosyphilis and an HIV test.
 - **05 q2** still treats gout with a systemic glucocorticoid while the joint culture is pending, as the writer flagged.
 - Tintinalli is not cited.
+
+## Landing decision
+
+Only delirium-agitation-07 and 14 land. The reviewer passed 05, 06 and 09 on D1, but each of those repeats its own duplicate cluster's keeper (analgesia-sedation-03, tox-11, tox-07). A rebuild exists to stop retelling the keeper, and the rebuild brief forbids it. So 05, 06 and 09 are treated as failures, with 04, 11 and 15. All six keep their signed text on the branch and go back for another rebuild. The one surviving D1 repeat, 14 q4, is in the table in docs/DECISIONS.md.

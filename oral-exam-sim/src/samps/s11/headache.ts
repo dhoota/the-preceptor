@@ -1069,17 +1069,16 @@ export const HEADACHE_SAMPS: Samp[] = [
       {
         id: "q1",
         kind: "short",
-        required: 3,
-        prompt: "What further details about her headache and its treatment would you ask about?",
+        required: 2,
+        prompt: "What further details about the drugs she has taken for this headache and for her infection would you ask about?",
         accept: [
-          { id: "usual", text: "Whether it matches her usual migraine or differs in character", match: ["usual", "typical", "different", "same as", "previous migraine", "character", "quality"] },
-          { id: "onset", text: "Speed of onset and time to peak intensity", match: ["onset", "thunderclap", "sudden", "peak"] },
-          { id: "aura", text: "Aura or other neurological symptoms", match: ["aura", "visual", "weakness", "numbness", "speech", "neurological"] },
-          { id: "dose", text: "Exact doses and timing of dihydroergotamine and any triptan", match: ["dose", "how much", "how often", "triptan", "sumatriptan", "rizatriptan", "overuse", "frequency of use"] },
-          { id: "newmed", text: "The name of the antiviral and any other new medications", match: ["antiviral", "paxlovid", "nirmatrelvir", "ritonavir", "new medication", "other medication", "interaction"] },
+          { id: "dose", text: "Exact doses and timing of dihydroergotamine", match: ["dose", "how much", "how often", "how many", "frequency of use", "last dose", "timing"] },
+          { id: "trip", text: "Any triptan or other ergot taken as well", match: ["triptan", "sumatriptan", "rizatriptan", "other ergot", "ergotamine", "cafergot"] },
+          { id: "newmed", text: "The name of the antiviral", match: ["antiviral", "paxlovid", "nirmatrelvir", "ritonavir", "which antiviral", "name of"] },
+          { id: "cyp", text: "Other drugs that raise ergot levels or constrict arteries, such as macrolides, azoles, decongestants or stimulants", match: ["interaction", "cyp3a", "clarithromycin", "erythromycin", "macrolide", "azole", "ketoconazole", "itraconazole", "decongestant", "pseudoephedrine", "stimulant", "other medication", "other drug", "over the counter"] },
         ],
         explanation:
-          "A prolonged headache in someone with migraine still needs its onset, character, aura and neurological symptoms compared with her usual attacks. Here the medication history matters most. Nirmatrelvir with ritonavir is a 5-day oral COVID-19 antiviral for people at high risk, and ritonavir strongly inhibits CYP3A. Its Canadian product monograph contraindicates dihydroergotamine because of acute ergot toxicity with vasospasm and ischemia of the limbs and the central nervous system. Ask exactly how much ergot and triptan she has taken.",
+          "A prolonged migraine with cold, pulseless feet and a transient deficit points to a drug problem, so the medication history matters most. Nirmatrelvir with ritonavir is a 5-day oral COVID-19 antiviral for people at high risk, and ritonavir strongly inhibits CYP3A. Its Canadian product monograph contraindicates dihydroergotamine because of acute ergot toxicity with vasospasm and ischemia of the limbs and the central nervous system. Ask exactly how much ergot she has taken and when, whether she has also used a triptan, and about other drugs that raise ergot levels or constrict arteries. Onset, aura and comparison with her usual attacks still matter, but they do not explain her feet.",
         keyFeature: { topic: "headache", n: 1 },
         source: "paxlovid-pm",
       },
@@ -1126,13 +1125,14 @@ export const HEADACHE_SAMPS: Samp[] = [
       {
         id: "q4",
         kind: "short",
-        required: 1,
+        required: 2,
         update: "Her headache is still severe.",
-        prompt: "What medication would you give for her headache?",
+        prompt: "How would you treat her headache, and which drugs must she not receive for it?",
         accept: [
-          { id: "metoclo", text: "Metoclopramide 10 mg IV", match: ["metoclopramide", "maxeran"] },
-          { id: "prochlor", text: "Prochlorperazine 10 mg IV", match: ["prochlorperazine", "stemetil"] },
-          { id: "nsaid", text: "Ketorolac IV or another NSAID", match: ["ketorolac", "toradol", "nsaid", "ibuprofen", "naproxen"] },
+          { id: "notrip", text: "No triptan", match: ["no triptan", "avoid triptan", "not a triptan", "no sumatriptan", "avoid sumatriptan", "triptan contraindicated"] },
+          { id: "noergot", text: "No further dihydroergotamine or other ergot", match: ["no ergot", "avoid ergot", "no dhe", "avoid dhe", "no dihydroergotamine", "avoid dihydroergotamine", "no more dhe", "no more ergot", "stop dhe", "stop ergot", "stop dihydroergotamine", "ergot contraindicated", "dhe contraindicated"] },
+          { id: "novaso", text: "No vasoconstricting drug of any kind", match: ["no vasoconstrictor", "avoid vasoconstrictor", "no vasoconstricting", "avoid vasoconstricting"] },
+          { id: "drug", text: "A non-vasoconstricting drug such as metoclopramide 10 mg IV, prochlorperazine 10 mg IV or ketorolac IV", match: ["metoclopramide", "maxeran", "prochlorperazine", "stemetil", "ketorolac", "toradol", "nsaid", "ibuprofen", "naproxen"] },
         ],
         unacceptable: [
           { text: "A triptan", match: ["sumatriptan", "triptan", "rizatriptan", "zolmitriptan"], dangerous: true },
@@ -1140,7 +1140,7 @@ export const HEADACHE_SAMPS: Samp[] = [
           { text: "An opioid", match: ["morphine", "hydromorphone", "opioid", "fentanyl", "codeine"] },
         ],
         explanation:
-          "Treat the migraine with drugs that do not constrict arteries. The American Headache Society assessment of parenteral drugs in the emergency department supports metoclopramide and prochlorperazine, and ketorolac is an option. Triptans and ergots are vasoconstrictors that would worsen her ischemia. Opioids are not recommended as routine migraine treatment.",
+          "The key decision is what she must not get. Triptans and ergots constrict arteries and would worsen the vasospasm in her brain and legs, and the PAXLOVID monograph contraindicates ergots with ritonavir. She should receive no triptan, no further dihydroergotamine and no other vasoconstrictor. Treat the migraine instead with a drug that does not constrict arteries. The American Headache Society assessment of parenteral drugs in the emergency department supports metoclopramide and prochlorperazine, and ketorolac is an option. Opioids are not recommended as routine migraine treatment.",
         keyFeature: { topic: "tox", n: 2 },
         source: "ahs",
       },
@@ -1179,23 +1179,6 @@ export const HEADACHE_SAMPS: Samp[] = [
       {
         id: "q2",
         kind: "short",
-        required: 2,
-        prompt: "What other features of this condition would you examine for?",
-        accept: [
-          { id: "hearing", text: "Hearing loss, with bedside testing and formal audiology", match: ["hearing", "audiology", "audiogram", "tuning fork", "weber", "rinne", "deafness"] },
-          { id: "vestib", text: "Vertigo, nystagmus or imbalance", match: ["vertigo", "nystagmus", "balance", "vestibular", "head impulse", "gait"] },
-          { id: "mouth", text: "Vesicles on the palate or tongue, and lower cranial nerve function", match: ["palate", "tongue", "oral vesicle", "gag", "swallow", "glossopharyngeal", "vagus"] },
-          { id: "trig", text: "Facial sensation for trigeminal involvement", match: ["facial sensation", "trigeminal", "numbness", "sensation"] },
-          { id: "dissem", text: "Vesicles elsewhere suggesting disseminated zoster", match: ["disseminated", "widespread", "other dermatome", "generalized rash"] },
-        ],
-        explanation:
-          "Herpes zoster oticus often spreads to the eighth nerve, as his tinnitus suggests, so test hearing and look for vertigo and nystagmus, and arrange audiology. Look in the mouth for vesicles on the palate or tongue and check the other cranial nerves, which can also be involved. Vesicles beyond one area suggest disseminated zoster. Treatment usually combines an oral corticosteroid with an antiviral, and Kim and Kwak note that combined therapy may improve outcomes in Ramsay Hunt syndrome, although high-quality evidence is limited.",
-        keyFeature: { topic: "headache", n: 4 },
-        source: "kim-facial",
-      },
-      {
-        id: "q3",
-        kind: "short",
         required: 3,
         prompt: "What would you include in your examination of his right eye?",
         accept: [
@@ -1211,6 +1194,23 @@ export const HEADACHE_SAMPS: Samp[] = [
           "Every eye complaint starts with visual acuity and a slit lamp examination. An eye that does not close dries out, and the Canadian guideline warns of exposure keratitis, corneal ulceration and vision loss. Stain with fluorescein for exposure keratopathy and note how much cornea stays uncovered on attempted closure. Reduced corneal sensation adds risk because he will not feel an injury. Zoster can also cause keratitis or uveitis, so look for dendritic lesions and anterior chamber cells.",
         keyFeature: { topic: "eye", n: 3 },
         source: "bell-cmaj",
+      },
+      {
+        id: "q3",
+        kind: "short",
+        required: 2,
+        prompt: "What other features of this condition would you examine for?",
+        accept: [
+          { id: "hearing", text: "Hearing loss, with bedside testing and formal audiology", match: ["hearing", "audiology", "audiogram", "tuning fork", "weber", "rinne", "deafness"] },
+          { id: "vestib", text: "Vertigo, nystagmus or imbalance", match: ["vertigo", "nystagmus", "balance", "vestibular", "head impulse", "gait"] },
+          { id: "mouth", text: "Vesicles on the palate or tongue, and lower cranial nerve function", match: ["palate", "tongue", "oral vesicle", "gag", "swallow", "glossopharyngeal", "vagus"] },
+          { id: "trig", text: "Facial sensation for trigeminal involvement", match: ["facial sensation", "trigeminal", "numbness", "sensation"] },
+          { id: "dissem", text: "Vesicles elsewhere suggesting disseminated zoster", match: ["disseminated", "widespread", "other dermatome", "generalized rash"] },
+        ],
+        explanation:
+          "Herpes zoster oticus often spreads to the eighth nerve, as his tinnitus suggests, so test hearing and look for vertigo and nystagmus, and arrange audiology. Look in the mouth for vesicles on the palate or tongue and check the other cranial nerves, which can also be involved. Vesicles beyond one area suggest disseminated zoster. Treatment usually combines an oral corticosteroid with an antiviral, and Kim and Kwak note that combined therapy may improve outcomes in Ramsay Hunt syndrome, although high-quality evidence is limited.",
+        keyFeature: { topic: "headache", n: 4 },
+        source: "kim-facial",
       },
       {
         id: "q4",

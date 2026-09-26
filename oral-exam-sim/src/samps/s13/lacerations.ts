@@ -344,7 +344,7 @@ export const LACERATIONS_SAMPS: Samp[] = [
         id: "q3",
         kind: "short",
         required: 3,
-        update: "Her card shows purified Vero cell rabies vaccine 1 mL IM, given 3 days ago.",
+        update: "Her card shows one full 0.5 mL IM dose of purified Vero cell rabies vaccine, given 3 days ago.",
         prompt: "What rabies prophylaxis will you give, including doses and timing?",
         accept: [
           { id: "rig", text: "Rabies immune globulin 20 IU/kg, 1280 IU, today", match: ["20 iu/kg", "20 iu kg", "20 unit/kg", "1280", "rabies immune globulin", "rabig", "hyperrab", "imogam", "kamrab"] },
@@ -360,7 +360,7 @@ export const LACERATIONS_SAMPS: Samp[] = [
           { text: "Vaccine in the buttock", match: ["gluteal", "buttock"] },
         ],
         explanation:
-          "The Canadian Immunization Guide allows rabies immune globulin up to and including day 7 after the first vaccine dose, and she is on day 3. The dose is 20 IU/kg, which is 1280 IU at 64 kg. As much as possible goes into and around the wounds, with the rest IM at a site away from the vaccine. An immunocompetent person receives 1 mL IM on days 0, 3, 7 and 14, so her Vero cell vaccine dose counts as day 0 and she receives the next dose today. The guide asks that public health be consulted about any exposure abroad, and serology is indicated if the series deviates substantially from the schedule.",
+          "The Canadian Immunization Guide allows rabies immune globulin up to and including day 7 after the first vaccine dose, and she is on day 3. The dose is 20 IU/kg, which is 1280 IU at 64 kg. As much as possible goes into and around the wounds, with the rest IM at a site away from the vaccine. An immunocompetent person receives 1 mL IM on days 0, 3, 7 and 14, so her full IM dose of Vero cell vaccine abroad counts as day 0 and she receives the next dose today. The guide asks that public health be consulted about any exposure abroad, and serology is indicated if the series deviates substantially from the schedule.",
         keyFeature: { topic: "infectious-diseases", n: 10 },
         source: "cig-rabies",
       },
@@ -464,12 +464,12 @@ export const LACERATIONS_SAMPS: Samp[] = [
         prompt: "Which of the following is the safest way to give her nitrous oxide?",
         options: [
           "100% nitrous oxide for the first 2 minutes",
-          "50% nitrous oxide premixed in oxygen",
           "70% nitrous oxide in oxygen through a nasal hood",
+          "50% nitrous oxide premixed in oxygen",
           "Nitrous oxide with intranasal fentanyl added",
           "Nitrous oxide with intranasal midazolam added",
         ],
-        correct: 1,
+        correct: 2,
         explanation:
           "The Canadian Paediatric Society supports a premixed 50% nitrous oxide and 50% oxygen formulation for procedures in cooperative children. A fixed premix cannot deliver a hypoxic mixture, while 100% nitrous oxide contains no oxygen at all. The American Academy of Pediatric Dentistry warns that concentrations above 50%, or adding a benzodiazepine or an opioid, make deeper sedation more likely, which would need sedation level monitoring and staffing. Her anxiety can be managed with nitrous oxide alone, and local anaesthetic gives the analgesia for the repair.",
         keyFeature: { topic: "analgesia-sedation", n: 2 },

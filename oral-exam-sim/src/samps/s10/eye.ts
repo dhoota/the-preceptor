@@ -668,7 +668,7 @@ export const EYE_SAMPS: Samp[] = [
         ],
         unacceptable: [no("High dose prednisone or IV methylprednisolone", "prednisone 60", "methylprednisolone", "iv steroid", "high dose steroid", "pulse steroid")],
         explanation:
-          "With normal inflammatory markers and no symptoms of arteritis, this is nonarteritic anterior ischemic optic neuropathy. There is no effective treatment, and a recent trial found that early steroids sped the resolution of disc swelling without improving final acuity. High dose steroids would also worsen his glucose of 9.8 mmol/L. He still needs prompt ophthalmology review to confirm the diagnosis and to record fields and optic nerve imaging. The other eye is affected in 15% to 24% of patients over 5 years, so his vascular risk is assessed.",
+          "With normal inflammatory markers and no symptoms of arteritis, this is nonarteritic anterior ischemic optic neuropathy. There is no proven treatment, and in a randomized trial of steroids final acuity did not differ from the untreated group. High dose steroids would also worsen his glucose of 9.8 mmol/L. He still needs prompt ophthalmology review to confirm the diagnosis and to record fields and optic nerve imaging. The other eye is affected in 15% to 24% of patients over 5 years, so his vascular risk is assessed.",
         keyFeature: { topic: "eye", n: 2 },
         source: "eyewiki-naion",
       },
