@@ -30,3 +30,9 @@ If a writer changes something the review did not ask for, the reviewer judges it
 ## 5. D1 is frozen at 20
 
 See docs/DECISIONS.md. Past 20, a rebuild that needs a repeat fails, keeps its signed text and goes on Arjan's list.
+
+## 6. Prior rulings are binding until someone names them
+
+Writers read docs/reviews/RULINGS-BY-SAMP.md for the id and docs/reviews/SCORING-RULINGS.md before changing a SAMP. Reviewers fail any silent reversal of a prior ruling.
+
+**Why:** in round 2, multiple-trauma-06 re-added "epinephrine 1 mg iv" as dangerous. An s03 review had removed that phrase bank-wide for exactly this reason. The writer could not see the ruling, because it was filed under "all files" in another batch's review.

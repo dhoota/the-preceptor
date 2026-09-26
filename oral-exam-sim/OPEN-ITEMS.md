@@ -78,4 +78,15 @@ dvt-pe-02 q3 was briefly shortened on 26 September 2026 without your fresh sign-
 
 - **D1 now covers 19 questions, not 3.** D1 lets a rebuilt or new SAMP repeat one signed decision where that decision is the literal wording of a key feature. It was the product owner's call, not Arjan's. It started as a waiver for 3 repeats. As rebuild groups landed, it grew to 19. Each is defensible alone, but the total is a different decision from the one first made. Reversing D1 sends all 19 back for rebuild. The full list and the running total are at the top of the D1 table in docs/DECISIONS.md. The product owner has frozen D1 at 20. Past that, any rebuild that needs a repeat fails and waits for you.
 - **cva-27, the PICA fact from Lee 2006.** It was cut when cva-27's sourcing was fixed. Say if you want it back, and it will be restored with its source. It was not put back on anyone's judgement but yours.
+- **asthma-copd-01 is a "cannot".** Two writer passes could not make its scoring correct, because of the scorer limits in section 4. Wrong answers scored full marks and a correct answer scored zero. It is back on its signed text.
 - **airway-09 stays on its signed text.** Its rebuild failed review in g09 because it retold tox-20's overdose arc. Two later attempts at a new story were each stopped by an automated safety filter before any text was written. airway-09 is therefore still the signed version, a member of its signed-duplicate cluster, and released. Choose one: keep it as it is, rebuild it by hand, or hold it back. Holding it back costs nothing at the gate.
+
+## 4. The scorer misreads negation and word order (bigger than any single SAMP)
+
+Full write-up and probes: docs/SCORER-NEGATION.md. In short:
+- **"X rather than Y" counts as a mention of Y.** Of 568 short-answer questions that have an unacceptable answer, all 568 mark a correct "X rather than Y" line as unacceptable. In 139 of them (101 released) the flag is dangerous, so it zeroes the whole question and the candidate cannot override it.
+- **A negation word anywhere in the line is enough.** When an accepted phrase contains a negation word, the phrase matches wherever that word sits in the line. 313 questions (209 released) in 249 SAMPs give credit to a wrong line this way.
+- **Numbers are split.** Ratios and comma-grouped numbers break into pieces: 17 phrases in 8 questions.
+- **Recommendation: fix the scorer, not SAMP by SAMP.** Content fixes could not keep up. asthma-copd-01 shows both failures in one question and was withdrawn. The two worked examples are in the write-up.
+
+Your decision: whether to commission the scorer change, which needs a regression run over the whole bank, and which behaviour you want.
