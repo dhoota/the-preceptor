@@ -75,6 +75,9 @@ const S = {
   moeller: { id: "moeller-uds", citation: "Moeller KE, Kissack JC, Atayee RS, Lee KC. Clinical interpretation of urine drug tests: what clinicians need to know about urine drug screens. Mayo Clin Proc. 2017.", url: "https://doi.org/10.1016/j.mayocp.2016.12.007" },
   acpcNaloxone: { id: "acpc-naloxone", citation: "Atlantic Canada Poison Centre. Antidote kit manual. Naloxone hydrochloride, pediatric. Updated February 2020.", url: "https://atlanticcanadapoisoncentre.ca/naloxone-hydrochloride-pediatric.html" },
   oakley: { id: "oakley", citation: "Oakley B, Wilson H, Hayes V, Lintzeris N. Managing opioid withdrawal precipitated by buprenorphine with buprenorphine. Drug Alcohol Rev. 2021.", url: "https://pmc.ncbi.nlm.nih.gov/articles/PMC8248003/" },
+  martino: { id: "martino-2025", citation: "Martino A, Di Serafino M, Zito FP, et al. Role of computed tomography in the assessment of caustic ingestion severity. A comprehensive review. World Journal of Radiology. 2025.", url: "https://doi.org/10.4329/wjr.v17.i7.109172" },
+  zar: { id: "zar-2007", citation: "Zar T, Graeber C, Perazella MA. Recognition, treatment and prevention of propylene glycol toxicity. Seminars in Dialysis. 2007.", url: "https://doi.org/10.1111/j.1525-139x.2007.00280.x" },
+  yahwak: { id: "yahwak-2008", citation: "Yahwak JA, Riker RR, Fraser GL, Subak-Sharpe S. Determination of a lorazepam dose threshold for using the osmol gap to monitor for propylene glycol toxicity. Pharmacotherapy. 2008.", url: "https://doi.org/10.1592/phco.28.8.984" },
   thakrar: { id: "thakrar", citation: "Thakrar AP, et al. Buprenorphine-precipitated withdrawal among hospitalized patients using fentanyl. JAMA Netw Open. 2024.", url: "https://pmc.ncbi.nlm.nih.gov/articles/PMC11437388/" },
 } satisfies Record<string, Source>;
 
@@ -1615,63 +1618,60 @@ export const TOX_S53: Samp[] = [
     ...META,
   },
 
-  /* 40 Methamphetamine with hyperthermia ------------------------------------- */
+  /* 40 Caustic alkali ingestion ------------------------------------------------ */
   {
     id: "tox-40",
     topic: "tox",
-    title: "Agitated man brought in by police after a struggle",
+    title: "A drink from an unlabelled bottle",
     stem:
-      "A 34-year-old man is brought to the emergency department by police after he was found fighting with bystanders. He was held face down in restraints for several minutes. He says he has used crystal methamphetamine for 3 days without sleep. He is agitated, diaphoretic and speaking rapidly, and his pupils are 7 mm. Glucose 7.4 mmol/L, K 5.6 mmol/L, creatinine 190 umol/L and creatine kinase 42 000 U/L. The ECG shows sinus tachycardia with a normal QRS.",
-    vitals: { temperature: "40.4°C rectal", pulse: "148/minute", resp: "28/minute", bp: "176/104 mmHg", o2sat: "96% on room air", weight: "82 kg" },
+      "A 58-year-old man is brought to the emergency department 45 minutes after he swallowed a mouthful of liquid from an unlabelled bottle in a restaurant kitchen. The bottle held an industrial oven cleaner containing 10% sodium hydroxide. He swallowed it before he noticed the taste and vomited once. He has burning pain behind the sternum and in the epigastrium. His voice is normal and he is neither drooling nor stridulous. There are white patches on the palate and tongue. The chest is clear and the abdomen is soft. He takes no medications.",
+    vitals: { temperature: "36.8°C oral", pulse: "104/minute", resp: "20/minute", bp: "138/82 mmHg", o2sat: "97% on room air", weight: "84 kg" },
     questions: [
       {
         id: "q1",
         kind: "single",
-        prompt: "Which of the following is the most important initial treatment for this man?",
-        options: ["Active cooling with sedation", "Dantrolene 2.5 mg/kg IV", "Haloperidol 5 mg IM alone", "Physical restraint and observation", "Propranolol 1 mg IV"],
-        correct: 0,
-        explanation:
-          "A rectal temperature of 40.4°C with agitation is the finding that will kill him first, and benzodiazepine sedation with active external cooling lowers heat production and heat load together. Continued physical restraint without sedation drives muscle heat and worsens the creatine kinase of 42 000 U/L. Haloperidol alone may control the agitation, but it leaves a temperature of 40.4°C without the rapid external cooling he needs. Dantrolene treats malignant hyperthermia from volatile anesthetics. Propranolol treats neither the agitation nor the heat, and adequate sedation usually controls a blood pressure of 176/104 mmHg without antihypertensives.",
+        prompt: "Which of the following is the most appropriate initial treatment for him?",
+        options: ["activated charcoal 50 g PO", "dilution with 250 mL of milk", "gastric lavage by nasogastric tube", "intravenous analgesia and fluids", "neutralization with dilute vinegar"],
+        correct: 3,
+        explanation: "He is kept nil by mouth while his pain is treated, fluids are given and imaging is arranged, because nothing given by mouth can undo an alkali burn that is already made. Charcoal does not bind sodium hydroxide and it coats the mucosa, which obscures the later assessment of depth. Drinking milk or water can provoke vomiting and bring the alkali back across the esophagus a second time. A tube passed blindly into a burnt esophagus can perforate it. Adding an acid to neutralize the alkali releases heat and adds a thermal burn to the chemical one.",
         keyFeature: { topic: "tox", n: 4 },
-        source: "aha-2023",
+        source: "caustic-nejm",
       },
       {
         id: "q2",
         kind: "single",
-        prompt: "Which of the following investigations most changes his immediate management?",
-        options: ["Blood culture and lactate", "Chest radiograph for infiltrates", "Head CT without contrast", "Potassium with an ECG", "Urine drug screen for amphetamines"],
-        correct: 3,
-        explanation:
-          "His creatine kinase of 42 000 U/L and creatinine of 190 umol/L put him at risk of a rising potassium, which is already 5.6 mmol/L, so repeated potassium measurement with an ECG decides on calcium, insulin and dialysis. A urine screen confirms the drug he has already described and changes nothing. Head CT is for focal signs or persistent confusion after cooling and sedation. Blood cultures and a chest film address infection, which his history of 3 days of stimulant use and restraint does not point to.",
+        prompt: "Which of the following investigations best guides his management now?",
+        options: ["Barium swallow study", "CT with intravenous contrast", "Plain chest radiograph", "Ultrasound of the neck", "Water soluble contrast swallow"],
+        correct: 1,
+        explanation: "CT after intravenous contrast shows how deep the burn goes, because a wall that still takes up contrast is alive and a wall that does not is necrotic, and that finding decides between conservative care and an operation. It also covers the mediastinum and peritoneum for free air or fluid. A plain chest film shows free air only once perforation has happened and is usually normal in the first hours. Barium and water soluble swallows outline the lumen but say nothing about the wall, and both risk spillage and aspiration. Ultrasound cannot see an esophagus surrounded by air.",
         keyFeature: { topic: "tox", n: 7 },
-        source: "goldfrank-amphetamines",
+        source: "martino-2025",
       },
       {
         id: "q3",
         kind: "single",
-        prompt: "Which of the following complications is most likely given his creatine kinase of 42 000 U/L?",
-        options: ["Aspiration pneumonia", "Bowel ischemia with bleeding", "Cerebral venous thrombosis", "Kidney injury with hyperkalemia", "Pancreatitis with severe back pain"],
+        prompt: "Which of the following complications is most likely in the first 2 days?",
+        options: ["Aspiration pneumonia with hypoxia", "Esophageal stricture at 3 weeks", "Methemoglobinemia", "Perforation with mediastinitis", "Squamous cell carcinoma"],
         correct: 3,
-        explanation:
-          "Myoglobin released from injured muscle obstructs and injures tubules, and his creatinine has already reached 190 umol/L with a potassium of 5.6 mmol/L, so worsening kidney injury with hyperkalemia is the expected complication. Stimulant use can cause bowel ischemia and arterial events, but neither fits a soft presentation with no abdominal or focal findings. Cerebral venous thrombosis and pancreatitis are not features of this picture, and he has no history of aspiration.",
+        explanation: "Alkali produces liquefactive necrosis that keeps eating into the wall over the first days, and a full thickness burn gives way, so perforation with mediastinitis or peritonitis is the early threat and the usual cause of early death. Strictures form later, as the burn heals and scars over weeks. Squamous carcinoma of the scarred esophagus appears decades afterwards. Methemoglobinemia follows oxidizing agents such as nitrites, which sodium hydroxide is not. His chest is clear with a saturation of 97% on room air, so aspiration is not the current problem.",
         keyFeature: { topic: "tox", n: 5 },
-        source: "goldfrank-amphetamines",
+        source: "caustic-nejm",
       },
       {
         id: "q4",
         kind: "single",
-        update: "After sedation and cooling his temperature is 37.8°C. His urine is dark and he has passed 20 mL in the past 2 hours.",
-        prompt: "Which of the following is the most appropriate treatment for his kidney risk now?",
-        options: ["Furosemide 40 mg IV bolus", "Hemodialysis without delay", "Intravenous crystalloid infusion", "Mannitol 25 g IV once", "Sodium bicarbonate 100 mmol boluses"],
-        correct: 2,
-        explanation:
-          "Volume repletion with crystalloid restores renal perfusion and flushes myoglobin through the tubules, and 20 mL of dark urine in 2 hours after 3 days of stimulant use without sleep shows he is dry. Furosemide lowers intravascular volume further in a patient who is already under filled. Neither mannitol nor sodium bicarbonate has been shown to add benefit over fluid alone, and bicarbonate is kept for systemic acidosis. Dialysis is for refractory hyperkalemia, acidosis or anuria rather than a first measure.",
+        update: "Imaging shows a thickened distal esophagus and stomach with necrosis through the full thickness of the wall and blurred surrounding fat.",
+        prompt: "Which of the following is the most appropriate management now?",
+        options: ["Emergency surgical resection", "Nasogastric feeding tube placement", "Observation with repeat imaging in 24 hours", "Proton pump inhibitor infusion alone", "Systemic corticosteroids"],
+        correct: 0,
+        explanation: "On CT a wall that no longer takes up contrast, with blurred fat around it, marks necrosis through the full thickness, and dead esophagus and stomach do not recover, so resection is arranged without waiting. A repeat scan a day later simply records the perforation and sepsis that follow. A feeding tube pushed through a necrotic stomach can perforate it and does nothing for the necrosis. Acid suppression is used for the healing mucosa after the acute phase rather than as treatment for necrosis. Corticosteroids have not been shown to prevent stricture and can mask early signs of infection.",
         keyFeature: { topic: "tox", n: 4 },
-        source: "scharman-rhabdo",
+        source: "martino-2025",
       },
     ],
-    sources: [S.aha, S.gfAmphetamines, S.scharman],
+    sources: [S.caustic, S.martino],
     ...META,
+    version: 2,
   },
 
   /* 41 Warfarin over anticoagulation ------------------------------------------ */
@@ -1754,62 +1754,59 @@ export const TOX_S53: Samp[] = [
     version: 2,
   },
 
-  /* 42 MDMA and hyponatremia --------------------------------------------------- */
+  /* 42 Propylene glycol from a lorazepam infusion ------------------------------ */
   {
     id: "tox-42",
     topic: "tox",
-    title: "Seizure at a music festival",
+    title: "A gap on the second hospital day",
     stem:
-      "A 19-year-old woman is brought to the emergency department from a music festival after a witnessed generalized seizure. Friends say she took two tablets of ecstasy during the evening and drank a large amount of water because she felt hot. She has vomited twice. She is confused and restless and complains of headache. Her pupils are 6 mm. Na 118 mmol/L, K 3.8 mmol/L, glucose 6.2 mmol/L, urea 3.6 mmol/L, creatinine 72 umol/L. Measured serum osmolality is 248 mmol/kg. There are no injuries.",
-    vitals: { temperature: "37.9°C oral", pulse: "118/minute", resp: "20/minute", bp: "112/68 mmHg", o2sat: "98% on room air", weight: "54 kg" },
+      "A 46-year-old man has been in the emergency department for 40 hours awaiting an intensive care bed. He was intubated for severe alcohol withdrawal and is sedated with a lorazepam infusion, now at 8 mg/hour. His last drink was 3 days ago and his blood ethanol on arrival was zero. He has no liver disease and his creatinine on arrival was 80 umol/L. He has received no other new drug. This morning he is harder to keep sedated. Na 142 mmol/L, K 4.2 mmol/L, Cl 101 mmol/L, HCO3 15 mmol/L, urea 6.0 mmol/L, creatinine 96 umol/L, glucose 6.0 mmol/L and lactate 3.8 mmol/L. Measured serum osmolality is 320 mmol/kg and venous pH is 7.26.",
+    vitals: { temperature: "37.2°C core", pulse: "104/minute", resp: "18/minute", bp: "112/68 mmHg", o2sat: "98% on 40% inspired oxygen", weight: "76 kg" },
     questions: [
       {
         id: "q1",
         kind: "single",
-        prompt: "Which of the following is the most appropriate treatment for her sodium of 118 mmol/L?",
-        options: ["Fluid restriction alone", "Hypertonic saline 3% 100 mL IV", "Isotonic saline 1 L bolus IV", "Normal saline with furosemide IV", "Tolvaptan 15 mg PO once"],
-        correct: 1,
-        explanation:
-          "She has had a seizure and remains confused with a sodium of 118 mmol/L, which is symptomatic hyponatremia and calls for a small bolus of hypertonic saline to raise the sodium by a few millimoles and pull water out of brain cells. Isotonic saline corrects too slowly and can worsen the sodium when antidiuretic hormone is high. Fluid restriction alone is for stable patients. Furosemide adds losses without correcting the sodium quickly. Tolvaptan acts over hours to days.",
+        prompt: "Which of the following is the most appropriate first step in his management?",
+        options: ["fomepizole 15 mg/kg IV", "Hemodialysis without delay", "Increase the lorazepam rate", "sodium bicarbonate 100 mmol IV", "Stop the lorazepam infusion"],
+        correct: 4,
+        explanation: "The solvent that carries the lorazepam is being infused continuously, so the load stops only when the infusion stops, and sedation is carried instead by a drug without that carrier, such as phenobarbital or propofol. His acidosis and his gap then usually settle over a day or two. Raising the rate adds more of the same solvent. Bicarbonate lifts the pH while the cause keeps running. Fomepizole has been used in single reports and removes nothing already given. Dialysis clears the solvent well and is kept for acidosis or kidney failure that persists after the infusion is stopped.",
         keyFeature: { topic: "tox", n: 4 },
-        source: "sfe-hyponatraemia",
+        source: "zar-2007",
       },
       {
         id: "q2",
         kind: "single",
-        prompt: "Which of the following investigations best explains the cause of her low sodium?",
-        options: ["Serum cortisol concentration", "Thyroid stimulating hormone", "Urine drug screen for ecstasy", "Urine output over 24 hours", "Urine sodium with urine osmolality"],
-        correct: 4,
-        explanation:
-          "Paired urine sodium and osmolality separate free water intake with appropriate dilute urine from the inappropriate antidiuresis that ecstasy provokes, and that distinction sets how fast and how far her sodium of 118 mmol/L should be corrected. A urine screen confirms an exposure she has already described. Cortisol and thyroid testing look for endocrine causes that a night at a festival does not suggest. A 24 hour urine volume is not available in time to guide care.",
+        prompt: "Which of the following investigations is most likely to change his treatment?",
+        options: ["Computed tomography of the head", "Repeat osmolality after 12 hours", "Serum ammonia concentration", "Serum salicylate concentration", "Urine drug screen"],
+        correct: 1,
+        explanation: "At 8 mg/hour he has received 192 mg a day, about 2.5 mg/kg/day, well above the 1 mg/kg/day at which the osmolal gap is used to screen for solvent toxicity, and a gap of 12 or more predicts toxic effects. Repeating the osmolality after the infusion is stopped tells you whether the gap is closing, and a closing gap with a falling lactate and a stable creatinine means supportive care is enough, while a gap that stays open with worsening acidosis is the argument for dialysis. A head CT does not explain an anion gap acidosis in a sedated man with no focal signs. An ammonia level is for liver failure, and his liver is normal. A salicylate concentration and a urine screen look for ingestions he cannot have made while intubated and watched.",
         keyFeature: { topic: "tox", n: 7 },
-        source: "sfe-hyponatraemia",
+        source: "yahwak-2008",
       },
       {
         id: "q3",
         kind: "single",
-        prompt: "Which of the following complications should be anticipated over the next few hours?",
-        options: ["Cerebral edema with herniation", "Hepatic failure with jaundice", "Malignant hyperthermia", "Pulmonary fibrosis over days", "Thrombocytopenia with bleeding"],
+        prompt: "Which of the following complications should be anticipated in him?",
+        options: ["Acute kidney injury with oliguria", "Hepatic failure with jaundice", "Hypocalcemia with tetany", "Retinal injury with blindness", "Rhabdomyolysis with a high creatine kinase"],
         correct: 0,
-        explanation:
-          "Water has moved into brain cells at a sodium of 118 mmol/L, and she has already seized and remains confused with a headache, so further swelling with brainstem compression is the immediate threat. Liver injury after ecstasy develops over days and she has no jaundice. Malignant hyperthermia follows volatile anesthetics and succinylcholine. Thrombocytopenia with bleeding and pulmonary fibrosis are not part of this presentation.",
+        explanation: "The solvent is partly cleared unchanged by the kidney, and accumulation injures the proximal tubule, so his creatinine, already up from 80 to 96 umol/L, and his urine output are followed closely. The picture can go on to look like sepsis, with hypotension and a rising lactate. Retinal injury and blindness follow methanol, which he has not taken. Hypocalcemia with tetany follows ethylene glycol, whose oxalate binds calcium. Liver failure is not a feature of this accumulation, and his liver was normal. He is sedated and still, so muscle breakdown has no cause here.",
         keyFeature: { topic: "tox", n: 5 },
-        source: "sfe-hyponatraemia",
+        source: "zar-2007",
       },
       {
         id: "q4",
         kind: "single",
-        prompt: "Which of the following best explains her measured serum osmolality of 248 mmol/kg?",
-        options: ["Dilution from water intake", "Ethanol in the serum", "Hyperglycemia from stress", "Laboratory measurement error", "Renal failure with urea rise"],
-        correct: 0,
-        explanation:
-          "Twice her sodium of 118 plus a glucose of 6.2 and a urea of 3.6 gives a calculated osmolality of 245.8 mmol/kg, within about 2 mmol/kg of the measured 248 mmol/kg, so the low value reflects dilution by the water she drank rather than an unmeasured substance. A toxic alcohol or ethanol co-ingestion raises measured osmolality above the calculated value instead of lowering it. Hyperglycemia and a high urea also raise it, and her glucose is 6.2 mmol/L with a urea of 3.6 mmol/L.",
+        prompt: "Which of the following best explains his raised osmolal gap?",
+        options: ["Ethanol remaining from his last drinks", "Ethylene glycol co-ingestion", "Ketones from poor intake", "Propylene glycol from a drug solvent", "Uremia from kidney injury"],
+        correct: 3,
+        explanation: "Twice his sodium of 142 plus a glucose of 6.0 and a urea of 6.0 gives a calculated value of 296 mmol/kg, so the gap is 320 minus 296, that is 24 mmol/kg. Lorazepam for injection is dissolved in propylene glycol, and 8 mg/hour for 40 hours delivers a large solvent load that raises measured osmolality and is metabolized to lactate, part of it the D form that the usual assay does not report, which is why his anion gap of 26 mmol/L exceeds his measured lactate of 3.8 mmol/L. His ethanol was zero on arrival 40 hours ago. He has been intubated and watched since, so a fresh ingestion is not possible. Ketones add little to the gap. Urea is already in the calculation.",
         keyFeature: { topic: "tox", n: 3 },
-        source: "goldfrank-fluid-electrolyte",
+        source: "zar-2007",
       },
     ],
-    sources: [S.sfe, S.gfFluid],
+    sources: [S.zar, S.yahwak],
     ...META,
+    version: 2,
   },
 
   /* 43 Internally concealed packets -------------------------------------------- */
