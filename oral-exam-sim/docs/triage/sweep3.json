@@ -1,0 +1,2379 @@
+{
+ "note": "Sweep 3. Lower threshold, pairs never judged against current text. Signed-signed pairs at score 0.12 or more, signed-new at 0.15, new-new at 0.18. 5,750 pairs judged.",
+ "counts": {
+  "signedSigned": {
+   "judged": 2523,
+   "confirmedDup": 117,
+   "borderline": 118
+  },
+  "signedNew": {
+   "judged": 2185,
+   "dupPairs": 43,
+   "newSampsRebuilt": 39
+  },
+  "newNew": {
+   "judged": 1042,
+   "dup": 0
+  }
+ },
+ "signedClusters": [
+  {
+   "n": 1,
+   "samps": [
+    "anaphylaxis-01",
+    "anaphylaxis-02",
+    "anaphylaxis-15",
+    "asthma-copd-13",
+    "shock-07",
+    "sob-15"
+   ],
+   "pairs": [
+    {
+     "a": "anaphylaxis-01",
+     "b": "sob-15",
+     "why": "An adult anaphylaxis that stays hypotensive after two IM doses is the same story, and IM epinephrine 0.5 mg, an epinephrine infusion and autoinjector discharge teaching repeat."
+    },
+    {
+     "a": "anaphylaxis-02",
+     "b": "shock-07",
+     "why": "Both are anaphylaxis in a patient on metoprolol and ramipril who stays hypotensive with a heart rate near 66 after IM epinephrine and fluids, and both key epinephrine 0.5 mg IM then glucagon 1 to 5 mg IV with an infusion."
+    },
+    {
+     "a": "anaphylaxis-15",
+     "b": "shock-07",
+     "why": "Both are a bee or wasp sting anaphylaxis still hypotensive after two IM epinephrine doses and fluid, and both key an epinephrine infusion with glucagon ready for beta blocker related refractory shock."
+    },
+    {
+     "a": "asthma-copd-13",
+     "b": "sob-15",
+     "why": "Both are a woman with hives, lip swelling and wheeze after a restaurant meal who stays hypotensive after two IM epinephrine doses, and both key epinephrine 0.5 mg IM then an epinephrine infusion with a 1 to 2 L crystalloid bolus."
+    },
+    {
+     "a": "anaphylaxis-01",
+     "b": "shock-07",
+     "why": "Both are a man stung by a wasp with anaphylaxis who stays at BP 76/40 after two IM doses and 2 L of fluid, and both key epinephrine 0.5 mg IM, an epinephrine infusion and discharge with two autoinjectors and allergist venom referral."
+    },
+    {
+     "a": "anaphylaxis-01",
+     "b": "anaphylaxis-15",
+     "why": "Both are an insect sting anaphylaxis that stays hypotensive after two IM epinephrine doses and litres of fluid, and both key repeat IM epinephrine, supine positioning, crystalloid, airway equipment and an epinephrine infusion."
+    }
+   ]
+  },
+  {
+   "n": 2,
+   "samps": [
+    "chest-pain-02",
+    "chest-pain-15",
+    "ems-01",
+    "ems-10",
+    "ischemic-heart-disease-01",
+    "ischemic-heart-disease-13"
+   ],
+   "pairs": [
+    {
+     "a": "chest-pain-15",
+     "b": "ischemic-heart-disease-01",
+     "why": "Both are a STEMI at a rural hospital 3 hours from PCI with air transport grounded by a snowstorm, and both key the fibrinolysis contraindication list and tenecteplase within 30 minutes then transfer."
+    },
+    {
+     "a": "ems-10",
+     "b": "ischemic-heart-disease-13",
+     "why": "Both are a STEMI at a rural hospital hours from PCI with ongoing pain and poor ST resolution about 70 minutes after tenecteplase, and both key urgent transfer for rescue PCI with ASA, clopidogrel and enoxaparin."
+    },
+    {
+     "a": "chest-pain-15",
+     "b": "ems-10",
+     "why": "An anterior STEMI in a rural hospital with air transport grounded by weather is the same story, and fibrinolysis now with transfer after repeats."
+    },
+    {
+     "a": "chest-pain-02",
+     "b": "ischemic-heart-disease-01",
+     "why": "Both are an inferior STEMI with right ventricular involvement, bradycardia and hypotension at a hospital without PCI, and both key right sided leads, a fluid bolus, avoiding nitrates and tenecteplase 45 mg."
+    },
+    {
+     "a": "chest-pain-02",
+     "b": "ems-01",
+     "why": "An inferior STEMI with bradycardia and hypotension at a hospital without a cath lab is the same right ventricular infarct story, and right sided leads, a fluid bolus, no nitrates and atropine repeat."
+    }
+   ]
+  },
+  {
+   "n": 3,
+   "samps": [
+    "headache-04",
+    "infectious-diseases-02",
+    "pediatric-fever-03",
+    "pediatric-fever-04",
+    "shock-12"
+   ],
+   "pairs": [
+    {
+     "a": "headache-04",
+     "b": "pediatric-fever-04",
+     "why": "Fever with spreading nonblanching petechiae is the same meningococcal story, and immediate ceftriaxone with vancomycin and chemoprophylaxis of close contacts repeat."
+    },
+    {
+     "a": "pediatric-fever-03",
+     "b": "shock-12",
+     "why": "Both are a febrile sleepy child in septic shock whose liver edge enlarges after fluid boluses, and both key the shock signs, 10 to 20 mL/kg boluses with reassessment, ceftriaxone 100 mg/kg and epinephrine."
+    },
+    {
+     "a": "pediatric-fever-04",
+     "b": "shock-12",
+     "why": "Both are a 3 year old girl with 12 hours of fever and a spreading nonblanching rash on the legs, and both key immediate ceftriaxone 100 mg/kg as 1.4 g plus vancomycin for meningococcemia."
+    },
+    {
+     "a": "headache-04",
+     "b": "infectious-diseases-02",
+     "why": "Fever, headache and meningococcal meningitis, keyed dexamethasone with ceftriaxone and vancomycin and identifying close contacts for prophylaxis in both."
+    }
+   ]
+  },
+  {
+   "n": 4,
+   "samps": [
+    "abdominal-pain-08",
+    "first-trimester-bleeding-01",
+    "first-trimester-bleeding-02",
+    "first-trimester-bleeding-15"
+   ],
+   "pairs": [
+    {
+     "a": "abdominal-pain-08",
+     "b": "first-trimester-bleeding-01",
+     "why": "Both are a 27 year old at 7 weeks with shoulder tip pain, hepatorenal free fluid, shock and Rh negative blood, and both key POCUS, massive transfusion, gynecology for the OR and no routine Rh immune globulin."
+    },
+    {
+     "a": "abdominal-pain-08",
+     "b": "first-trimester-bleeding-15",
+     "why": "Same young woman with syncope and a ruptured ectopic showing hepatorenal free fluid, and both key stat gynecology for the OR, large bore IVs, crossmatch and uncrossmatched blood."
+    },
+    {
+     "a": "first-trimester-bleeding-02",
+     "b": "first-trimester-bleeding-15",
+     "why": "A young woman with a presumed heavy period, orthostatic collapse, a positive test and free fluid is the same ruptured ectopic story, and the pregnancy test, large bore IVs and urgent gynecology repeat."
+    },
+    {
+     "a": "first-trimester-bleeding-01",
+     "b": "first-trimester-bleeding-15",
+     "why": "Both are a young woman who faints with a positive pregnancy test, no intrauterine pregnancy and hepatorenal free fluid, keyed to large bore access, uncrossmatched blood, the massive hemorrhage protocol and stat gynecology for the operating room."
+    }
+   ]
+  },
+  {
+   "n": 5,
+   "samps": [
+    "airway-10",
+    "asthma-copd-01",
+    "asthma-copd-09",
+    "sob-04"
+   ],
+   "pairs": [
+    {
+     "a": "asthma-copd-09",
+     "b": "sob-04",
+     "why": "Both are a young woman with asthma who becomes drowsy with a quiet chest and rising pCO2 despite full treatment, keyed to the signs of impending arrest, ketamine RSI and a low rate long expiration ventilator strategy."
+    },
+    {
+     "a": "asthma-copd-01",
+     "b": "sob-04",
+     "why": "Both are a young woman with asthma using salbutamol hourly after a cold who arrives speaking in short phrases with accessory muscle use, and both key the same fatal asthma risk factor list and the same first line salbutamol, ipratropium, steroid and magnesium orders."
+    },
+    {
+     "a": "airway-10",
+     "b": "sob-04",
+     "why": "Both are a young woman with severe asthma who becomes drowsy with a quiet chest and rising pCO2 despite maximal therapy, and both key ketamine 1.5 mg/kg for intubation with a low rate, small tidal volume and long expiration."
+    },
+    {
+     "a": "airway-10",
+     "b": "asthma-copd-09",
+     "why": "Both are a young woman with near fatal asthma after salbutamol, ipratropium, steroid and magnesium with pCO2 68 who crashes to BP 62/30 after intubation, and both key ketamine induction, the same low rate long expiration ventilator settings and disconnecting the circuit for breath stacking."
+    }
+   ]
+  },
+  {
+   "n": 6,
+   "samps": [
+    "cva-01",
+    "delirium-agitation-07",
+    "loc-03",
+    "seizures-05"
+   ],
+   "pairs": [
+    {
+     "a": "delirium-agitation-07",
+     "b": "seizures-05",
+     "why": "Both are a gliclazide user with severe hypoglycemia who recovers with IV dextrose and then drops again to 2.6 despite D10W, and both key dextrose and octreotide 50 to 100 mcg every 6 to 8 hours."
+    },
+    {
+     "a": "cva-01",
+     "b": "loc-03",
+     "why": "Both are a diabetic with kidney disease on a sulfonylurea found in the morning with right sided weakness from a glucose of 1.8, and both key capillary glucose, dextrose, glucagon, a dextrose infusion and octreotide."
+    },
+    {
+     "a": "delirium-agitation-07",
+     "b": "loc-03",
+     "why": "Both are an older diabetic with eGFR 28 on a sulfonylurea found with glucose below 2 and failed paramedic IV access, and both key dextrose, the medication and overdose history and octreotide for recurrence."
+    }
+   ]
+  },
+  {
+   "n": 7,
+   "samps": [
+    "ems-07",
+    "headache-12",
+    "loc-08",
+    "tox-12"
+   ],
+   "pairs": [
+    {
+     "a": "loc-08",
+     "b": "tox-12",
+     "why": "Both are a winter family carbon monoxide exposure with a drowsy 6 year old, and both key co oximetry, high flow oxygen, the hyperbaric criteria and keeping the family out of the home until it is fixed."
+    },
+    {
+     "a": "ems-07",
+     "b": "loc-08",
+     "why": "Same winter carbon monoxide poisoning found through other exposed people in the home, and both key CO oximetry, high flow oxygen, assessing the others and having the home checked."
+    },
+    {
+     "a": "headache-12",
+     "b": "tox-12",
+     "why": "Both are a winter household with headaches from carbon monoxide, and both key the exposure history, co oximetry, 100% oxygen with a hyperbaric centre call and the hyperbaric criteria list."
+    },
+    {
+     "a": "headache-12",
+     "b": "loc-08",
+     "why": "Both are a winter household with headaches and a vomiting child where the man has a carboxyhemoglobin of 28%, and both key co oximetry, 100% oxygen, the hyperbaric criteria and checking the family and the home."
+    }
+   ]
+  },
+  {
+   "n": 8,
+   "samps": [
+    "abuse-domestic-01",
+    "abuse-domestic-02",
+    "msk-04"
+   ],
+   "pairs": [
+    {
+     "a": "abuse-domestic-02",
+     "b": "msk-04",
+     "why": "Both are an isolated ulnar shaft fracture blamed on a fall down the stairs that is really a defensive injury from partner violence, and both key asking privately and directly and offering violence resources and a safety plan."
+    },
+    {
+     "a": "abuse-domestic-01",
+     "b": "msk-04",
+     "why": "Both are a woman whose partner stays at the bedside and answers for her after a claimed fall down the stairs, and both key interviewing her alone, asking directly about partner violence and offering violence resources."
+    },
+    {
+     "a": "abuse-domestic-01",
+     "b": "abuse-domestic-02",
+     "why": "Both are partner assault presented as a fall down the stairs with delayed presentation and repeated ED visits, and both key the red flags, asking privately and directly, and the violence support resources."
+    }
+   ]
+  },
+  {
+   "n": 9,
+   "samps": [
+    "airway-02",
+    "burns-01",
+    "burns-11"
+   ],
+   "pairs": [
+    {
+     "a": "airway-02",
+     "b": "burns-11",
+     "why": "Both are a facial and neck burn from a fire with a changing voice and airway threat, and both key intubating now by the most experienced operator with surgical backup, the largest tube and securing it with ties."
+    },
+    {
+     "a": "burns-01",
+     "b": "burns-11",
+     "why": "Both are a man with face and neck burns from an enclosed fire with a changing voice from inhalation injury, and both key intubating now by the most experienced operator with a large tube and surgical airway backup."
+    },
+    {
+     "a": "airway-02",
+     "b": "burns-01",
+     "why": "A victim trapped in an enclosed house fire with hoarseness and facial and neck burns is the same story, and intubating now with a large tube tied rather than taped repeats."
+    }
+   ]
+  },
+  {
+   "n": 10,
+   "samps": [
+    "airway-03",
+    "anaphylaxis-06",
+    "sob-01"
+   ],
+   "pairs": [
+    {
+     "a": "anaphylaxis-06",
+     "b": "sob-01",
+     "why": "Both are a hypertensive diabetic on ramipril who wakes with lip and tongue swelling without itch or rash, keyed to recognising ACE inhibitor angioedema, stopping ramipril for good and switching to a calcium channel blocker."
+    },
+    {
+     "a": "airway-03",
+     "b": "sob-01",
+     "why": "Both are an older patient on ramipril with lip and tongue swelling, muffled voice and drooling but no hives, and both key awake flexible bronchoscopic intubation with a double setup and a marked cricothyroid membrane."
+    }
+   ]
+  },
+  {
+   "n": 11,
+   "samps": [
+    "airway-09",
+    "sob-09",
+    "tox-02"
+   ],
+   "pairs": [
+    {
+     "a": "sob-09",
+     "b": "tox-02",
+     "why": "Both are chronic salicylate toxicity with tinnitus and a mixed acid base picture that deteriorates while dialysis is arranged, keyed to bicarbonate with potassium, dextrose, dialysis and matching minute ventilation at intubation."
+    },
+    {
+     "a": "airway-09",
+     "b": "tox-02",
+     "why": "Both are a salicylate poisoning that deteriorates until intubation is needed, and both key a bicarbonate bolus before induction, an expert operator, a high minute ventilation and hemodialysis."
+    }
+   ]
+  },
+  {
+   "n": 12,
+   "samps": [
+    "airway-12",
+    "arrhythmia-03",
+    "pulmonary-edema-04"
+   ],
+   "pairs": [
+    {
+     "a": "arrhythmia-03",
+     "b": "pulmonary-edema-04",
+     "why": "Both are a hemodialysis patient who missed his Friday run and presents on Sunday with a wide slow rhythm from hyperkalemia, and both key the hyperkalemia ECG signs and calcium gluconate 3 g, insulin with dextrose and salbutamol."
+    },
+    {
+     "a": "airway-12",
+     "b": "arrhythmia-03",
+     "why": "Both are a hemodialysis patient who missed dialysis and has hyperkalemia with a wide QRS, and both key IV calcium, insulin with dextrose, salbutamol and bicarbonate."
+    }
+   ]
+  },
+  {
+   "n": 13,
+   "samps": [
+    "arrhythmia-06",
+    "environmental-05",
+    "environmental-06"
+   ],
+   "pairs": [
+    {
+     "a": "arrhythmia-06",
+     "b": "environmental-05",
+     "why": "Both are a hypothermic man with J waves who goes into VF when moved, and both key gentle horizontal handling, active rewarming with warmed fluids and ECLS rewarming with limited shocks and epinephrine withheld below 30 C."
+    },
+    {
+     "a": "arrhythmia-06",
+     "b": "environmental-06",
+     "why": "Both are a man found in a snowbank with severe hypothermia and ventricular fibrillation, and both key continued CPR, extracorporeal rewarming and limiting shocks and epinephrine below 30 C."
+    }
+   ]
+  },
+  {
+   "n": 14,
+   "samps": [
+    "asthma-copd-04",
+    "pulmonary-edema-01",
+    "pulmonary-edema-03"
+   ],
+   "pairs": [
+    {
+     "a": "asthma-copd-04",
+     "b": "pulmonary-edema-03",
+     "why": "Both are an older woman with nocturnal wheeze, orthopnea, crackles and edema whose wheeze is heart failure rather than lung disease, and both key BNP and lung ultrasound with furosemide, nitroglycerin and CPAP or BiPAP."
+    },
+    {
+     "a": "asthma-copd-04",
+     "b": "pulmonary-edema-01",
+     "why": "Both are a woman in her seventies with hypertension and diabetes who wakes at 03:00 unable to breathe with crackles and LVH without ST elevation, and both key high dose nitroglycerin, CPAP or BiPAP and IV furosemide."
+    }
+   ]
+  },
+  {
+   "n": 15,
+   "samps": [
+    "asthma-copd-05",
+    "chest-pain-06",
+    "sob-14"
+   ],
+   "pairs": [
+    {
+     "a": "asthma-copd-05",
+     "b": "sob-14",
+     "why": "A young asthmatic with sudden left chest pain and a shifted trachea is the same tension pneumothorax story, and needle or finger decompression of the left chest repeats."
+    },
+    {
+     "a": "chest-pain-06",
+     "b": "sob-14",
+     "why": "Both are a man with obstructive lung disease and sudden unilateral chest pain with tracheal deviation, absent breath sounds and distended neck veins, keyed to immediate needle or finger decompression of the affected side."
+    },
+    {
+     "a": "asthma-copd-05",
+     "b": "chest-pain-06",
+     "why": "Same sudden tension pneumothorax in a patient with obstructive lung disease, and both key needle or finger decompression at the 4th or 5th space followed by a chest tube."
+    }
+   ]
+  },
+  {
+   "n": 16,
+   "samps": [
+    "asthma-copd-11",
+    "dvt-pe-06",
+    "sob-06"
+   ],
+   "pairs": [
+    {
+     "a": "dvt-pe-06",
+     "b": "sob-06",
+     "why": "Both are a 68 year old with COPD and sudden pleuritic pain without sputum change who has a segmental PE on CT, and both key the same differential, CT pulmonary angiogram and hypoxemia and poor reserve as reasons not to discharge."
+    },
+    {
+     "a": "asthma-copd-11",
+     "b": "dvt-pe-06",
+     "why": "Same 68 year old man with COPD whose worse breathing without sputum change or fever is a segmental PE with RV to LV ratio 0.8, and both key CTPA and admission for hypoxemia."
+    },
+    {
+     "a": "asthma-copd-11",
+     "b": "sob-06",
+     "why": "A COPD patient with more dyspnea, unchanged sputum, recent immobility and a swollen calf is the same PE not a flare story, and the CT pulmonary angiogram key repeats."
+    }
+   ]
+  },
+  {
+   "n": 17,
+   "samps": [
+    "chest-pain-11",
+    "ischemic-heart-disease-06",
+    "tox-09"
+   ],
+   "pairs": [
+    {
+     "a": "ischemic-heart-disease-06",
+     "b": "tox-09",
+     "why": "A young man with chest pain after snorting cocaine at a party is the same story, and IV benzodiazepines with nitroglycerin and phentolamine repeat."
+    },
+    {
+     "a": "chest-pain-11",
+     "b": "tox-09",
+     "why": "Both are a young man agitated and diaphoretic with chest pressure after snorting cocaine at a party who still has pressure after benzodiazepines, and both key titrated IV benzodiazepines, ASA, nitroglycerin and phentolamine."
+    },
+    {
+     "a": "chest-pain-11",
+     "b": "ischemic-heart-disease-06",
+     "why": "Same young man with chest pain after snorting cocaine at a party, and both key benzodiazepines, ASA, nitroglycerin, calcium channel blocker, phentolamine and cessation counselling."
+    }
+   ]
+  },
+  {
+   "n": 18,
+   "samps": [
+    "dvt-pe-08",
+    "shock-09",
+    "sob-11"
+   ],
+   "pairs": [
+    {
+     "a": "dvt-pe-08",
+     "b": "shock-09",
+     "why": "Both are a collapse from massive PE with RV dilation and a leg DVT on POCUS, and both key a cautious bolus of no more than 500 mL, norepinephrine and alteplase 100 mg over 2 hours."
+    },
+    {
+     "a": "dvt-pe-08",
+     "b": "sob-11",
+     "why": "Same collapse from massive PE too unstable for CT, and both key the bedside echo signs of RV strain, alteplase 100 mg and norepinephrine."
+    },
+    {
+     "a": "shock-09",
+     "b": "sob-11",
+     "why": "Same collapse from massive PE with a dilated RV and a noncompressible leg vein, and both key the echo signs of RV strain and alteplase 100 mg over 2 hours."
+    }
+   ]
+  },
+  {
+   "n": 19,
+   "samps": [
+    "ems-12",
+    "multiple-patients-03",
+    "multiple-patients-15"
+   ],
+   "pairs": [
+    {
+     "a": "ems-12",
+     "b": "multiple-patients-03",
+     "why": "Both are a community hospital called about a bus crash with many casualties, and both key START triage including five rescue breaths for an apneic 6 year old with a pulse and activating Code Orange with department clearing."
+    },
+    {
+     "a": "ems-12",
+     "b": "multiple-patients-15",
+     "why": "Same EMS call about a highway mass casualty crash, and both key the information to gather, Code Orange activation and distributing patients across hospitals."
+    }
+   ]
+  },
+  {
+   "n": 20,
+   "samps": [
+    "gi-bleed-01",
+    "gi-bleed-11",
+    "gi-bleed-15"
+   ],
+   "pairs": [
+    {
+     "a": "gi-bleed-11",
+     "b": "gi-bleed-15",
+     "why": "Same cirrhotic man with variceal bleeding, and both key octreotide, ceftriaxone, erythromycin and pantoprazole and the harm of liberal volume resuscitation."
+    },
+    {
+     "a": "gi-bleed-01",
+     "b": "gi-bleed-15",
+     "why": "Both are a heavy drinking man with large volume hematemesis from suspected varices, and both key ceftriaxone 1 g IV with octreotide 50 mcg bolus then 50 mcg/h."
+    }
+   ]
+  },
+  {
+   "n": 21,
+   "samps": [
+    "headache-06",
+    "pre-eclampsia-04",
+    "seizures-03"
+   ],
+   "pairs": [
+    {
+     "a": "pre-eclampsia-04",
+     "b": "seizures-03",
+     "why": "Both are a primigravida who seizes in triage in the third trimester and seizes again once magnesium is running, and both key magnesium 4 g then 1 g/h, an extra 2 g for the recurrent seizure, left lateral positioning and antihypertensives."
+    },
+    {
+     "a": "headache-06",
+     "b": "seizures-03",
+     "why": "Primigravida at 35 weeks with severe pre-eclampsia or eclampsia on magnesium who develops magnesium toxicity, keyed stop infusion and calcium gluconate in both."
+    }
+   ]
+  },
+  {
+   "n": 22,
+   "samps": [
+    "abdominal-pain-06",
+    "sob-08"
+   ],
+   "pairs": [
+    {
+     "a": "abdominal-pain-06",
+     "b": "sob-08",
+     "why": "Both are a 19 year old woman with vomiting, abdominal pain and Kussmaul breathing from severe DKA with Na 131 and K 5.6, and both key saline resuscitation, insulin 0.1 units/kg/h with potassium rules and dextrose at about 14 mmol/L."
+    }
+   ]
+  },
+  {
+   "n": 23,
+   "samps": [
+    "abuse-domestic-06",
+    "msk-13"
+   ],
+   "pairs": [
+    {
+     "a": "abuse-domestic-06",
+     "b": "msk-13",
+     "why": "A four month old with an ear bruise and an implausible mechanism from the father is the same abuse story, and skeletal survey, head imaging, eye exam and a direct report to child protection repeat."
+    }
+   ]
+  },
+  {
+   "n": 24,
+   "samps": [
+    "abuse-domestic-14",
+    "burns-05"
+   ],
+   "pairs": [
+    {
+     "a": "abuse-domestic-14",
+     "b": "burns-05",
+     "why": "Forced immersion scald claimed as stepping into a bath, keyed stocking burns with a sharp line, symmetry and no splash marks in both."
+    }
+   ]
+  },
+  {
+   "n": 25,
+   "samps": [
+    "airway-04",
+    "multiple-trauma-08"
+   ],
+   "pairs": [
+    {
+     "a": "airway-04",
+     "b": "multiple-trauma-08",
+     "why": "Both are an ejected rollover victim intubated with the tube at 23 cm who then desaturates with high airway pressures, and both key the causes of that deterioration including tension pneumothorax."
+    }
+   ]
+  },
+  {
+   "n": 26,
+   "samps": [
+    "analgesia-sedation-03",
+    "delirium-agitation-05"
+   ],
+   "pairs": [
+    {
+     "a": "analgesia-sedation-03",
+     "b": "delirium-agitation-05",
+     "why": "Both are a long term care resident with dementia and a displaced hip fracture who becomes agitated and pulls at the IV, and both key a fascia iliaca block, delirium triggers, nondrug measures and low dose antipsychotic."
+    }
+   ]
+  },
+  {
+   "n": 27,
+   "samps": [
+    "analgesia-sedation-04",
+    "lacerations-08"
+   ],
+   "pairs": [
+    {
+     "a": "analgesia-sedation-04",
+     "b": "lacerations-08",
+     "why": "Both are long glass lacerations where too much 2% lidocaine causes perioral tingling, tinnitus and a seizure, and both key the maximum lidocaine dose and treatment of local anaesthetic toxicity with 20% lipid emulsion."
+    }
+   ]
+  },
+  {
+   "n": 28,
+   "samps": [
+    "analgesia-sedation-08",
+    "lacerations-05"
+   ],
+   "pairs": [
+    {
+     "a": "analgesia-sedation-08",
+     "b": "lacerations-05",
+     "why": "Both are a 4 year old boy who fell against a coffee table with a facial laceration who develops laryngospasm under ketamine 27 mg, and both key jaw thrust at the laryngospasm notch, bag mask with 100% oxygen, suction and succinylcholine if it persists."
+    }
+   ]
+  },
+  {
+   "n": 29,
+   "samps": [
+    "analgesia-sedation-11",
+    "burns-14"
+   ],
+   "pairs": [
+    {
+     "a": "analgesia-sedation-11",
+     "b": "burns-14",
+     "why": "A screaming man with about 20% partial thickness scald burns is the same burn analgesia story, and fentanyl about 75 mcg IV repeated to effect with low dose ketamine repeats."
+    }
+   ]
+  },
+  {
+   "n": 30,
+   "samps": [
+    "arrhythmia-04",
+    "tox-03"
+   ],
+   "pairs": [
+    {
+     "a": "arrhythmia-04",
+     "b": "tox-03",
+     "why": "Both are a young woman with an amitriptyline overdose, dilated pupils, dry skin and a wide QRS who then seizes, and both key the aVR and terminal QRS signs, sodium bicarbonate boluses and a benzodiazepine for the seizure."
+    }
+   ]
+  },
+  {
+   "n": 31,
+   "samps": [
+    "arrhythmia-13",
+    "seizures-07"
+   ],
+   "pairs": [
+    {
+     "a": "arrhythmia-13",
+     "b": "seizures-07",
+     "why": "Teen girl collapsing at a swimming pool with a family history of sudden death and long QT, keyed beta blocker and relative screening in both."
+    }
+   ]
+  },
+  {
+   "n": 32,
+   "samps": [
+    "arrhythmia-15",
+    "tox-05"
+   ],
+   "pairs": [
+    {
+     "a": "arrhythmia-15",
+     "b": "tox-05",
+     "why": "Same 84 year old woman with chronic digoxin toxicity, kidney injury, potassium 5.9 and a level of 4.1, and both key the indications for digoxin Fab."
+    }
+   ]
+  },
+  {
+   "n": 33,
+   "samps": [
+    "asthma-copd-02",
+    "sob-05"
+   ],
+   "pairs": [
+    {
+     "a": "asthma-copd-02",
+     "b": "sob-05",
+     "why": "71 year old man with a hypercapnic COPD exacerbation and green sputum on BiPAP, keyed SpO2 target 88 to 92% and prednisone in both."
+    }
+   ]
+  },
+  {
+   "n": 34,
+   "samps": [
+    "asthma-copd-03",
+    "sob-03"
+   ],
+   "pairs": [
+    {
+     "a": "asthma-copd-03",
+     "b": "sob-03",
+     "why": "Both are a toddler with a witnessed choking spell on nuts and a focal right sided wheeze, keyed to inspiratory expiratory or decubitus films and rigid bronchoscopy with the child kept NPO, calm and monitored."
+    }
+   ]
+  },
+  {
+   "n": 35,
+   "samps": [
+    "burns-06",
+    "environmental-13"
+   ],
+   "pairs": [
+    {
+     "a": "burns-06",
+     "b": "environmental-13",
+     "why": "Both are a lineman who touched a 14 400 volt line with palm and heel wounds, dark urine and a tense forearm, and both key urine output of 75 to 100 mL/h and urgent fasciotomy."
+    }
+   ]
+  },
+  {
+   "n": 36,
+   "samps": [
+    "chest-pain-03",
+    "ischemic-heart-disease-08"
+   ],
+   "pairs": [
+    {
+     "a": "chest-pain-03",
+     "b": "ischemic-heart-disease-08",
+     "why": "ST depression in V1 to V3 with a tall R wave and ST elevation in V7 to V9 is the same posterior STEMI story, and posterior leads with cath lab activation repeat."
+    }
+   ]
+  },
+  {
+   "n": 37,
+   "samps": [
+    "chest-pain-07",
+    "ischemic-heart-disease-10"
+   ],
+   "pairs": [
+    {
+     "a": "chest-pain-07",
+     "b": "ischemic-heart-disease-10",
+     "why": "Both are a 61 year old with burning lower chest pain after an evening meal that settles with an antacid and viscous lidocaine, keyed to the point that relief with a GI cocktail does not exclude ACS."
+    }
+   ]
+  },
+  {
+   "n": 38,
+   "samps": [
+    "chest-pain-08",
+    "ischemic-heart-disease-02"
+   ],
+   "pairs": [
+    {
+     "a": "chest-pain-08",
+     "b": "ischemic-heart-disease-02",
+     "why": "An older diabetic woman with kidney disease, fatigue, nausea, exertional dyspnea and lateral ST depression is the same atypical NSTEMI story, and admission for an invasive strategy repeats."
+    }
+   ]
+  },
+  {
+   "n": 39,
+   "samps": [
+    "chest-pain-09",
+    "ischemic-heart-disease-15"
+   ],
+   "pairs": [
+    {
+     "a": "chest-pain-09",
+     "b": "ischemic-heart-disease-15",
+     "why": "Both are a middle aged man with exertional chest pain while shovelling snow that eased with rest, a normal ECG and normal serial troponins, and both key repeat troponin and expedited outpatient cardiac testing."
+    }
+   ]
+  },
+  {
+   "n": 40,
+   "samps": [
+    "chest-pain-13",
+    "ischemic-heart-disease-03"
+   ],
+   "pairs": [
+    {
+     "a": "chest-pain-13",
+     "b": "ischemic-heart-disease-03",
+     "why": "Same young man with positional pleuritic pain after a cold and diffuse concave ST elevation with PR depression, and the pericarditis ECG criteria are keyed in both."
+    }
+   ]
+  },
+  {
+   "n": 41,
+   "samps": [
+    "chest-pain-14",
+    "ischemic-heart-disease-04"
+   ],
+   "pairs": [
+    {
+     "a": "chest-pain-14",
+     "b": "ischemic-heart-disease-04",
+     "why": "Both are a smoker now pain free after recurrent chest pressure with Wellens T waves in V2 and V3 and a normal first troponin, and both key critical proximal LAD stenosis with admission for early angiography."
+    }
+   ]
+  },
+  {
+   "n": 42,
+   "samps": [
+    "cva-04",
+    "loc-09"
+   ],
+   "pairs": [
+    {
+     "a": "cva-04",
+     "b": "loc-09",
+     "why": "A patient off apixaban for two weeks with slurred speech, diplopia and falling consciousness is the same basilar occlusion story, and CT with CTA then thrombolysis and thrombectomy repeat."
+    }
+   ]
+  },
+  {
+   "n": 43,
+   "samps": [
+    "cva-13",
+    "headache-14"
+   ],
+   "pairs": [
+    {
+     "a": "cva-13",
+     "b": "headache-14",
+     "why": "Both are a man checked into the boards at hockey with neck pain and a Horner syndrome from internal carotid dissection, and both key the dissection diagnosis, CT angiography and antithrombotic therapy."
+    }
+   ]
+  },
+  {
+   "n": 44,
+   "samps": [
+    "cva-15",
+    "headache-15"
+   ],
+   "pairs": [
+    {
+     "a": "cva-15",
+     "b": "headache-15",
+     "why": "Man with weeks of morning headache worse with cough and a 3 cm frontal mass with edema, keyed dexamethasone, neurosurgery and MRI in both."
+    }
+   ]
+  },
+  {
+   "n": 45,
+   "samps": [
+    "delirium-agitation-04",
+    "tox-15"
+   ],
+   "pairs": [
+    {
+     "a": "delirium-agitation-04",
+     "b": "tox-15",
+     "why": "A heavy drinker who stopped and now sees insects on the wall is the same delirium tremens story, and titrated IV diazepam with IV thiamine repeats."
+    }
+   ]
+  },
+  {
+   "n": 46,
+   "samps": [
+    "delirium-agitation-06",
+    "tox-11"
+   ],
+   "pairs": [
+    {
+     "a": "delirium-agitation-06",
+     "b": "tox-11",
+     "why": "Same young patient with delirium after a diphenhydramine overdose with identical ECG values, and both key the ECG and acetaminophen workup and physostigmine."
+    }
+   ]
+  },
+  {
+   "n": 47,
+   "samps": [
+    "delirium-agitation-09",
+    "tox-07"
+   ],
+   "pairs": [
+    {
+     "a": "delirium-agitation-09",
+     "b": "tox-07",
+     "why": "Both are a woman on lithium 900 mg for years with vomiting, confusion, coarse tremor, myoclonus and acute kidney injury from lithium toxicity, and both key hemodialysis."
+    }
+   ]
+  },
+  {
+   "n": 48,
+   "samps": [
+    "delirium-agitation-11",
+    "tox-10"
+   ],
+   "pairs": [
+    {
+     "a": "delirium-agitation-11",
+     "b": "tox-10",
+     "why": "Serotonin syndrome from sertraline plus tramadol with clonus, keyed benzodiazepines and cyproheptadine in both."
+    }
+   ]
+  },
+  {
+   "n": 49,
+   "samps": [
+    "delirium-agitation-14",
+    "seizures-14"
+   ],
+   "pairs": [
+    {
+     "a": "delirium-agitation-14",
+     "b": "seizures-14",
+     "why": "Same woman with fever, behaviour change, word finding trouble and recurrent seizures from HSV encephalitis, and both key acyclovir 10 mg/kg, LP with HSV PCR, MRI and EEG."
+    }
+   ]
+  },
+  {
+   "n": 50,
+   "samps": [
+    "delirium-agitation-15",
+    "loc-06"
+   ],
+   "pairs": [
+    {
+     "a": "delirium-agitation-15",
+     "b": "loc-06",
+     "why": "Both are an older woman on a thiazide and an SSRI with sodium 114 and a seizure in the department, keyed to 3% saline boluses with the rise limited to 8 mmol/L in 24 hours and desmopressin or D5W for overcorrection."
+    }
+   ]
+  },
+  {
+   "n": 51,
+   "samps": [
+    "dvt-pe-02",
+    "sob-10"
+   ],
+   "pairs": [
+    {
+     "a": "dvt-pe-02",
+     "b": "sob-10",
+     "why": "Both are a woman in her twenties on the combined pill with a day or two of left pleuritic pain and mild exertional dyspnea judged PE unlikely, and both key the VTE risk factor history and acting on the D-dimer without imaging when it is negative."
+    }
+   ]
+  },
+  {
+   "n": 52,
+   "samps": [
+    "dvt-pe-05",
+    "sob-12"
+   ],
+   "pairs": [
+    {
+     "a": "dvt-pe-05",
+     "b": "sob-12",
+     "why": "Both are a 31 year old G2P1 at 28 to 29 weeks with two days of breathlessness and a 3 cm swollen left calf, and both key leg compression ultrasound first, then VQ imaging and enoxaparin 1 mg/kg every 12 hours."
+    }
+   ]
+  },
+  {
+   "n": 53,
+   "samps": [
+    "ems-08",
+    "loc-07"
+   ],
+   "pairs": [
+    {
+     "a": "ems-08",
+     "b": "loc-07",
+     "why": "Same young man with a brief knockout, a lucid interval and a left temporal epidural hematoma with 6 mm shift, and both key intubation, hyperosmolar therapy, head up and emergent neurosurgery."
+    }
+   ]
+  },
+  {
+   "n": 54,
+   "samps": [
+    "ems-09",
+    "multiple-trauma-06"
+   ],
+   "pairs": [
+    {
+     "a": "ems-09",
+     "b": "multiple-trauma-06",
+     "why": "Both are a northern Ontario trauma patient with a pneumothorax awaiting a 90 minute fixed wing flight, and both key a chest tube before departure and the expansion of trapped gas at altitude."
+    }
+   ]
+  },
+  {
+   "n": 55,
+   "samps": [
+    "ems-13",
+    "multiple-patients-06"
+   ],
+   "pairs": [
+    {
+     "a": "ems-13",
+     "b": "multiple-patients-06",
+     "why": "Both are several agricultural workers with organophosphate exposure, drooling, bronchorrhea and bradycardia, and both key scene decontamination, PPE, a decontamination area and atropine doubled until secretions clear."
+    }
+   ]
+  },
+  {
+   "n": 56,
+   "samps": [
+    "environmental-01",
+    "pediatric-fever-11"
+   ],
+   "pairs": [
+    {
+     "a": "environmental-01",
+     "b": "pediatric-fever-11",
+     "why": "Both are a confused, combative athlete who collapses in heat during a race or tournament with exertional heat stroke, and both key immediate whole body cold water immersion, stopping near 39 C and the same complication list."
+    }
+   ]
+  },
+  {
+   "n": 57,
+   "samps": [
+    "environmental-07",
+    "loc-15"
+   ],
+   "pairs": [
+    {
+     "a": "environmental-07",
+     "b": "loc-15",
+     "why": "Both are an older woman found cold and confused at home with puffy features, hypothermia and glucose 3.4, and both key myxedema coma in the differential and IV levothyroxine with hydrocortisone."
+    }
+   ]
+  },
+  {
+   "n": 58,
+   "samps": [
+    "eye-01",
+    "headache-09"
+   ],
+   "pairs": [
+    {
+     "a": "eye-01",
+     "b": "headache-09",
+     "why": "Both are a 67 year old woman with acute angle closure after a dim evening out on an anticholinergic antihistamine, keyed to acetazolamide, apraclonidine and timolol then same day laser iridotomy."
+    }
+   ]
+  },
+  {
+   "n": 59,
+   "samps": [
+    "eye-05",
+    "headache-13"
+   ],
+   "pairs": [
+    {
+     "a": "eye-05",
+     "b": "headache-13",
+     "why": "Older man with herpes zoster ophthalmicus involving the nose tip and anterior chamber, keyed valacyclovir and ophthalmology review in both."
+    }
+   ]
+  },
+  {
+   "n": 60,
+   "samps": [
+    "eye-07",
+    "headache-08"
+   ],
+   "pairs": [
+    {
+     "a": "eye-07",
+     "b": "headache-08",
+     "why": "Both are an older woman with new temple headache, weight loss and visual loss or amaurosis from giant cell arteritis, and both key high dose steroids now with temporal artery biopsy or ultrasound and urgent ophthalmology."
+    }
+   ]
+  },
+  {
+   "n": 61,
+   "samps": [
+    "first-trimester-bleeding-11",
+    "pre-eclampsia-15"
+   ],
+   "pairs": [
+    {
+     "a": "first-trimester-bleeding-11",
+     "b": "pre-eclampsia-15",
+     "why": "Both are a complete molar pregnancy with a uterus large for dates, hCG over 400 000, early onset hypertension and hyperthyroidism, and both key quantitative hCG, pelvic ultrasound and TSH with free T4 plus serial hCG follow up."
+    }
+   ]
+  },
+  {
+   "n": 62,
+   "samps": [
+    "gi-bleed-03",
+    "shock-13"
+   ],
+   "pairs": [
+    {
+     "a": "gi-bleed-03",
+     "b": "shock-13",
+     "why": "Both are an older man on apixaban who faints in the bathroom with melena and a hemoglobin near 72, and both key holding apixaban with PCC or andexanet reversal, transfusion, IV pantoprazole and endoscopy."
+    }
+   ]
+  },
+  {
+   "n": 63,
+   "samps": [
+    "headache-05",
+    "loc-04"
+   ],
+   "pairs": [
+    {
+     "a": "headache-05",
+     "b": "loc-04",
+     "why": "Older adult with fever, headache and confusion with lymphocytic CSF, keyed empiric meningitis cover with acyclovir and HSV PCR in both."
+    }
+   ]
+  },
+  {
+   "n": 64,
+   "samps": [
+    "infectious-diseases-03",
+    "pediatric-fever-12"
+   ],
+   "pairs": [
+    {
+     "a": "infectious-diseases-03",
+     "b": "pediatric-fever-12",
+     "why": "Same febrile patient with a port 8 or 9 days after chemotherapy, and both key an antipseudomonal beta lactam within 60 minutes and the triggers to add vancomycin."
+    }
+   ]
+  },
+  {
+   "n": 65,
+   "samps": [
+    "infectious-diseases-06",
+    "pediatric-fever-07"
+   ],
+   "pairs": [
+    {
+     "a": "infectious-diseases-06",
+     "b": "pediatric-fever-07",
+     "why": "Both are an unprophylaxed traveller back from Ghana with fever, icterus and severe falciparum malaria, and both key smears repeated to three, the severe features and IV artesunate 2.4 mg/kg."
+    }
+   ]
+  },
+  {
+   "n": 66,
+   "samps": [
+    "infectious-diseases-09",
+    "lacerations-04"
+   ],
+   "pairs": [
+    {
+     "a": "infectious-diseases-09",
+     "b": "lacerations-04",
+     "why": "Adult bat exposure with no visible wound is the same rabies story, and immune globulin plus vaccine with a fifth dose for immunosuppression repeats."
+    }
+   ]
+  },
+  {
+   "n": 67,
+   "samps": [
+    "ischemic-heart-disease-12",
+    "pulmonary-edema-02"
+   ],
+   "pairs": [
+    {
+     "a": "ischemic-heart-disease-12",
+     "b": "pulmonary-edema-02",
+     "why": "Both are an anterior STEMI with cool mottled skin, crackles and a high lactate, and both key emergency PCI and avoiding a beta blocker such as metoprolol in cardiogenic shock."
+    }
+   ]
+  },
+  {
+   "n": 68,
+   "samps": [
+    "lacerations-03",
+    "msk-09"
+   ],
+   "pairs": [
+    {
+     "a": "lacerations-03",
+     "b": "msk-09",
+     "why": "Same young man with a small dorsal MCP wound who admits punching someone in the mouth, and both key exploration in a fist position, radiographs, amoxicillin clavulanate and leaving the wound open."
+    }
+   ]
+  },
+  {
+   "n": 69,
+   "samps": [
+    "loc-05",
+    "seizures-01"
+   ],
+   "pairs": [
+    {
+     "a": "loc-05",
+     "b": "seizures-01",
+     "why": "Same patient with two generalized seizures without waking after EMS midazolam 10 mg IM, and both key lorazepam 4 mg, levetiracetam 60 mg/kg and urgent EEG for nonconvulsive status."
+    }
+   ]
+  },
+  {
+   "n": 70,
+   "samps": [
+    "loc-10",
+    "tox-14"
+   ],
+   "pairs": [
+    {
+     "a": "loc-10",
+     "b": "tox-14",
+     "why": "Both are a 2 year old who got into a grandmother's gliclazide and becomes sleepy with glucose 2.1, and both key the full medication list and pill count, dextrose and octreotide to prevent recurrent hypoglycemia."
+    }
+   ]
+  },
+  {
+   "n": 71,
+   "samps": [
+    "msk-01",
+    "multiple-trauma-10"
+   ],
+   "pairs": [
+    {
+     "a": "msk-01",
+     "b": "multiple-trauma-10",
+     "why": "Same roofer who fell from height onto his feet with a calcaneal fracture, and both key the associated thoracolumbar, knee, pelvic and wrist injuries."
+    }
+   ]
+  },
+  {
+   "n": 72,
+   "samps": [
+    "multiple-trauma-01",
+    "shock-05"
+   ],
+   "pairs": [
+    {
+     "a": "multiple-trauma-01",
+     "b": "shock-05",
+     "why": "Motorcyclist with an open book pelvic fracture and negative eFAST, keyed binder, massive transfusion and permissive hypotension in both."
+    }
+   ]
+  },
+  {
+   "n": 73,
+   "samps": [
+    "multiple-trauma-03",
+    "shock-04"
+   ],
+   "pairs": [
+    {
+     "a": "multiple-trauma-03",
+     "b": "shock-04",
+     "why": "A belted pregnant driver in the third trimester with abdominal pain and a tender uterus is the same story, and uterine displacement, O negative blood, Rh immune globulin and Kleihauer Betke repeat."
+    }
+   ]
+  },
+  {
+   "n": 74,
+   "samps": [
+    "shock-11",
+    "tox-04"
+   ],
+   "pairs": [
+    {
+     "a": "shock-11",
+     "b": "tox-04",
+     "why": "Both are an intentional calcium channel blocker overdose with hyperglycemia and refractory shock, and both key IV calcium, high dose insulin bolus and infusion with glucose and potassium monitoring, and VA ECMO."
+    }
+   ]
+  }
+ ],
+ "signedBorderline": [
+  {
+   "a": "cva-09",
+   "b": "chest-pain-01",
+   "verdict": "BORDERLINE",
+   "why": "Both are a hypertensive man with sudden interscapular pain, an arm BP difference and a new diastolic murmur from a type A dissection and both key IV beta blocker to HR below 60 and cardiac surgery, but one hinges on withholding thrombolysis for a stroke mimic.",
+   "file": "sweep3-ss-1.json"
+  },
+  {
+   "a": "infectious-diseases-01",
+   "b": "shock-03",
+   "verdict": "BORDERLINE",
+   "why": "Both are an older woman with urosepsis who stays at MAP below 65 after 1.8 L and both key the 30 mL/kg bolus and peripheral norepinephrine, but one turns on an obstructing stone needing decompression and the other on a beta blocker masking shock.",
+   "file": "sweep3-ss-1.json"
+  },
+  {
+   "a": "infectious-diseases-04",
+   "b": "lacerations-07",
+   "verdict": "BORDERLINE",
+   "why": "Both are a diabetic man cut on rusty metal with no tetanus history who develops necrotizing soft tissue infection, and both key Tdap with tetanus immune globulin and surgery with broad antibiotics plus clindamycin, though one opens with wound care.",
+   "file": "sweep3-ss-1.json"
+  },
+  {
+   "a": "chest-pain-04",
+   "b": "dvt-pe-09",
+   "verdict": "BORDERLINE",
+   "why": "Both are a young woman with pleuritic pain and a low risk segmental PE treated at home, and both key LMWH at treatment dose instead of a DOAC, though the reasons differ, breastfeeding in one and carbamazepine in the other.",
+   "file": "sweep3-ss-1.json"
+  },
+  {
+   "a": "headache-06",
+   "b": "pre-eclampsia-05",
+   "verdict": "BORDERLINE",
+   "why": "Both are a woman at 35 weeks with severe preeclampsia on a magnesium infusion who becomes drowsy with absent reflexes, and both key stopping magnesium, calcium gluconate 1 g and ventilatory support, but the lead up and the other keyed decisions differ.",
+   "file": "sweep3-ss-1.json"
+  },
+  {
+   "a": "asthma-copd-04",
+   "b": "sob-07",
+   "verdict": "BORDERLINE",
+   "why": "Both are an older cardiac patient who wakes at night breathless with crackles and raised JVP from acute heart failure and both key NIV, nitroglycerin and IV furosemide, but one turns on wheeze as cardiac asthma and the other on pneumonia with shock.",
+   "file": "sweep3-ss-1.json"
+  },
+  {
+   "a": "airway-10",
+   "b": "multiple-patients-05",
+   "verdict": "BORDERLINE",
+   "why": "Both have a newly intubated obstructive airways patient who drops BP with a high peak pressure alarm and both key disconnecting the ventilator to let the patient exhale and checking for tension pneumothorax, but one is set in a multiple patient scenario.",
+   "file": "sweep3-ss-1.json"
+  },
+  {
+   "a": "abdominal-pain-05",
+   "b": "chest-pain-02",
+   "verdict": "BORDERLINE",
+   "why": "Both are a diabetic man with an inferior STEMI where nitrate use raises right ventricular infarction, and both key a right sided ECG and caution with nitroglycerin, but one goes to primary PCI and the other to tenecteplase.",
+   "file": "sweep3-ss-1.json"
+  },
+  {
+   "a": "ems-15",
+   "b": "tox-12",
+   "verdict": "BORDERLINE",
+   "why": "Both are carbon monoxide poisoning from generators during a two day ice storm power outage with a pregnant woman exposed, and both key oxygen and a hyperbaric centre call, but one is a surge and triage problem and the other a single family.",
+   "file": "sweep3-ss-1.json"
+  },
+  {
+   "a": "pulmonary-edema-06",
+   "b": "pulmonary-edema-12",
+   "verdict": "BORDERLINE",
+   "why": "Both are an elderly woman with heart disease and severe anemia from chronic GI blood loss needing transfusion, and both key one unit at a time at about 1 mL/kg/h with furosemide, though one asks for the diagnosis and the other manages TACO.",
+   "file": "sweep3-ss-1.json"
+  },
+  {
+   "a": "chest-pain-04",
+   "b": "sob-12",
+   "verdict": "BORDERLINE",
+   "why": "Both are a 31 year old peripartum woman with right pleuritic pain and a right lower lobe segmental PE, and both key CTPA and enoxaparin 1 mg/kg twice daily, though one is postpartum and the other is about imaging in pregnancy.",
+   "file": "sweep3-ss-1.json"
+  },
+  {
+   "a": "gi-bleed-01",
+   "b": "gi-bleed-11",
+   "verdict": "BORDERLINE",
+   "why": "Both are a heavy drinking man with bleeding esophageal varices and both key octreotide 50 mcg then 50 mcg/h with ceftriaxone 1 g, but one moves to balloon tamponade after failed banding and the other to restrictive transfusion and early TIPS.",
+   "file": "sweep3-ss-1.json"
+  },
+  {
+   "a": "chest-pain-02",
+   "b": "ischemic-heart-disease-13",
+   "verdict": "BORDERLINE",
+   "why": "Both are an inferior STEMI lysed at a hospital without PCI, and both key the criteria for failed reperfusion and the clopidogrel and enoxaparin doses, but the main decisions differ.",
+   "file": "sweep3-ss-2.json"
+  },
+  {
+   "a": "headache-05",
+   "b": "seizures-14",
+   "verdict": "BORDERLINE",
+   "why": "Both are a woman with fever, confusion and a focal seizure from herpes simplex encephalitis with the same diagnosis and HSV PCR, MRI and EEG keys, but one tests empiric coverage and the other status epilepticus.",
+   "file": "sweep3-ss-2.json"
+  },
+  {
+   "a": "chest-pain-08",
+   "b": "ischemic-heart-disease-10",
+   "verdict": "BORDERLINE",
+   "why": "Both are a diabetic woman with an atypical NSTEMI and a rising troponin, and both key the list of atypical symptoms and an invasive strategy, but the stories differ.",
+   "file": "sweep3-ss-2.json"
+  },
+  {
+   "a": "ischemic-heart-disease-02",
+   "b": "ischemic-heart-disease-10",
+   "verdict": "BORDERLINE",
+   "why": "Both are an older diabetic woman with an atypical NSTEMI, and both key repeat troponin, repeat ECG and admission for angiography within 24 hours, but one is a missed diagnosis after a GI cocktail.",
+   "file": "sweep3-ss-2.json"
+  },
+  {
+   "a": "pre-eclampsia-02",
+   "b": "pre-eclampsia-07",
+   "verdict": "BORDERLINE",
+   "why": "Both are third trimester right upper quadrant pain from HELLP syndrome with the same diagnosis key, but one tests the workup and magnesium and the other a missed diagnosis with liver rupture.",
+   "file": "sweep3-ss-2.json"
+  },
+  {
+   "a": "pre-eclampsia-05",
+   "b": "seizures-03",
+   "verdict": "BORDERLINE",
+   "why": "Both key magnesium toxicity at 35 weeks with absent reflexes and slow breathing treated by stopping the infusion and giving calcium gluconate, but one is a pump error in transfer and the other eclampsia.",
+   "file": "sweep3-ss-2.json"
+  },
+  {
+   "a": "headache-06",
+   "b": "pre-eclampsia-01",
+   "verdict": "BORDERLINE",
+   "why": "Both are a persistent headache late in pregnancy from pre-eclampsia with the same lab workup key, but one is severe disease with magnesium toxicity and the other a subtle rise from baseline.",
+   "file": "sweep3-ss-2.json"
+  },
+  {
+   "a": "pulmonary-edema-01",
+   "b": "sob-07",
+   "verdict": "BORDERLINE",
+   "why": "Both are a patient who wakes at night gasping with crackles to the mid lung fields and both key BiPAP and high dose nitroglycerin, but one adds pneumonia and cardiogenic shock.",
+   "file": "sweep3-ss-2.json"
+  },
+  {
+   "a": "chest-pain-02",
+   "b": "ems-10",
+   "verdict": "BORDERLINE",
+   "why": "Both are a STEMI treated with tenecteplase at a hospital far from PCI, and both key the clopidogrel and enoxaparin doses and the criteria for failed lysis, but the infarct and main decisions differ.",
+   "file": "sweep3-ss-2.json"
+  },
+  {
+   "a": "lacerations-02",
+   "b": "lacerations-14",
+   "verdict": "BORDERLINE",
+   "why": "Both are a bite from a known healthy dog, and both key amoxicillin clavulanate, 10 day observation of the dog instead of rabies prophylaxis and reporting to public health, but the wounds differ.",
+   "file": "sweep3-ss-2.json"
+  },
+  {
+   "a": "dvt-pe-14",
+   "b": "shock-09",
+   "verdict": "BORDERLINE",
+   "why": "Both are pulmonary embolism 9 days after a total knee replacement, but one tests the stable workup and the other obstructive shock and thrombolysis.",
+   "file": "sweep3-ss-2.json"
+  },
+  {
+   "a": "delirium-agitation-03",
+   "b": "delirium-agitation-13",
+   "verdict": "BORDERLINE",
+   "why": "Both are a stimulant user fighting police and held in restraints and sedated, but one keys sedation and hyperthermia and the other airway rescue after unmonitored sedation.",
+   "file": "sweep3-ss-2.json"
+  },
+  {
+   "a": "ems-07",
+   "b": "headache-12",
+   "verdict": "BORDERLINE",
+   "why": "Both key carboxyhemoglobin, high flow oxygen, hyperbaric discussion and checking the home, but one is a confused older woman found down and the other a family with headaches.",
+   "file": "sweep3-ss-2.json"
+  },
+  {
+   "a": "anaphylaxis-05",
+   "b": "sob-15",
+   "verdict": "BORDERLINE",
+   "why": "Both are restaurant food anaphylaxis with lip swelling and stridor after two epinephrine doses, and both key the upper airway warning signs and early airway preparation, but one proceeds to a surgical airway.",
+   "file": "sweep3-ss-2.json"
+  },
+  {
+   "a": "pulmonary-edema-03",
+   "b": "pulmonary-edema-09",
+   "verdict": "BORDERLINE",
+   "why": "Both are heart failure mislabelled as lung disease after failed salbutamol, and both key the clinical signs of heart failure and BNP and ultrasound, but the later decisions differ.",
+   "file": "sweep3-ss-2.json"
+  },
+  {
+   "a": "ischemic-heart-disease-12",
+   "b": "shock-08",
+   "verdict": "BORDERLINE",
+   "why": "Both are an anterior STEMI in cardiogenic shock with pulmonary edema at a PCI hospital with emergency angiography keyed, but one tests avoiding metoprolol and the other avoiding fluid and starting norepinephrine.",
+   "file": "sweep3-ss-2.json"
+  },
+  {
+   "a": "abdominal-pain-08",
+   "b": "first-trimester-bleeding-02",
+   "verdict": "BORDERLINE",
+   "why": "Both are an unstable ruptured ectopic with free fluid and an empty uterus keyed to urgent gynecology and large bore IVs, but one tests the low hCG trap.",
+   "file": "sweep3-ss-2.json"
+  },
+  {
+   "a": "chest-pain-05",
+   "b": "sob-10",
+   "verdict": "BORDERLINE",
+   "why": "Both are a young adult with a day of pleuritic chest pain and low PE probability followed by a second patient, but one keys PERC and the other VTE history and the age adjusted D dimer.",
+   "file": "sweep3-ss-2.json"
+  },
+  {
+   "a": "cva-14",
+   "b": "loc-14",
+   "verdict": "BORDERLINE",
+   "why": "Both are a sudden headache with vomiting and right weakness from a left basal ganglia hemorrhage and both key a systolic target near 140, but one tests warfarin reversal and the other deterioration.",
+   "file": "sweep3-ss-2.json"
+  },
+  {
+   "a": "ems-10",
+   "b": "ischemic-heart-disease-01",
+   "verdict": "BORDERLINE",
+   "why": "Same rural STEMI with the PCI centre hours away and air transport grounded by weather, and both key tenecteplase now then transfer, though the follow on decisions differ.",
+   "file": "sweep3-ss-3.json"
+  },
+  {
+   "a": "anaphylaxis-08",
+   "b": "asthma-copd-13",
+   "verdict": "BORDERLINE",
+   "why": "Same food anaphylaxis in a woman with mild asthma, and both key epinephrine 0.5 mg IM in the thigh with fluids and salbutamol, though one tests a biphasic reaction and the other recognition.",
+   "file": "sweep3-ss-3.json"
+  },
+  {
+   "a": "airway-01",
+   "b": "airway-15",
+   "verdict": "BORDERLINE",
+   "why": "Similar soiled airway where intubation and the supraglottic airway fail, and both key the scalpel bougie tube cricothyrotomy, though the setting and earlier decisions differ.",
+   "file": "sweep3-ss-3.json"
+  },
+  {
+   "a": "pre-eclampsia-09",
+   "b": "pulmonary-edema-10",
+   "verdict": "BORDERLINE",
+   "why": "Same postpartum woman with orthopnea, crackles and B lines, and both key furosemide and NIV, but the keyed diagnosis differs between preeclampsia and peripartum cardiomyopathy.",
+   "file": "sweep3-ss-3.json"
+  },
+  {
+   "a": "analgesia-sedation-12",
+   "b": "analgesia-sedation-15",
+   "verdict": "BORDERLINE",
+   "why": "Similar older man with rib fractures after a fall and kidney disease, and both key a serratus or erector spinae block, scheduled acetaminophen and a lidocaine patch, though one is an oversedation case.",
+   "file": "sweep3-ss-3.json"
+  },
+  {
+   "a": "asthma-copd-15",
+   "b": "sob-04",
+   "verdict": "BORDERLINE",
+   "why": "Similar asthmatic tiring despite full treatment with a rising pCO2, and both key the signs of impending respiratory failure and magnesium, though one keys BiPAP and the other intubation.",
+   "file": "sweep3-ss-3.json"
+  },
+  {
+   "a": "airway-04",
+   "b": "multiple-trauma-06",
+   "verdict": "BORDERLINE",
+   "why": "Similar intubated trauma patient with a head injury who desaturates with a high peak pressure alarm, and both key the same list of tube, pneumothorax and equipment causes.",
+   "file": "sweep3-ss-3.json"
+  },
+  {
+   "a": "anaphylaxis-01",
+   "b": "asthma-copd-13",
+   "verdict": "BORDERLINE",
+   "why": "Similar anaphylaxis still hypotensive after two IM epinephrine doses, and both key crystalloid and an epinephrine infusion, though the trigger and the other decisions differ.",
+   "file": "sweep3-ss-3.json"
+  },
+  {
+   "a": "shock-07",
+   "b": "sob-15",
+   "verdict": "BORDERLINE",
+   "why": "Similar anaphylaxis still hypotensive after two IM doses, and both key an epinephrine infusion and the autoinjector and allergist discharge plan, though glucagon and the airway plan differ.",
+   "file": "sweep3-ss-3.json"
+  },
+  {
+   "a": "abuse-domestic-02",
+   "b": "abuse-domestic-10",
+   "verdict": "BORDERLINE",
+   "why": "Similar intimate partner violence behind an implausible injury story, and both key asking privately and the same support resources with police only if the patient chooses.",
+   "file": "sweep3-ss-3.json"
+  },
+  {
+   "a": "cva-01",
+   "b": "delirium-agitation-07",
+   "verdict": "BORDERLINE",
+   "why": "Similar older diabetic on gliclazide with kidney disease presenting with neuroglycopenia, and both key IV dextrose and octreotide for recurrent sulfonylurea hypoglycemia.",
+   "file": "sweep3-ss-3.json"
+  },
+  {
+   "a": "dvt-pe-03",
+   "b": "sob-10",
+   "verdict": "BORDERLINE",
+   "why": "Similar older man with PE unlikely and a D dimer just above 500, and both key that an age adjusted cutoff excludes PE without imaging.",
+   "file": "sweep3-ss-3.json"
+  },
+  {
+   "a": "ems-03",
+   "b": "multiple-trauma-13",
+   "verdict": "BORDERLINE",
+   "why": "Similar paramedic prenotification of a critically injured trauma patient, and both key activating the trauma team and massive transfusion and preparing the airway and OR.",
+   "file": "sweep3-ss-3.json"
+  },
+  {
+   "a": "airway-11",
+   "b": "multiple-trauma-12",
+   "verdict": "BORDERLINE",
+   "why": "Similar severe head injury with GCS below 8 and a dilated pupil, and both key the same neuroprotective targets for oxygen, blood pressure, CO2 and head position.",
+   "file": "sweep3-ss-3.json"
+  },
+  {
+   "a": "seizures-08",
+   "b": "seizures-09",
+   "verdict": "BORDERLINE",
+   "why": "Similar first unprovoked seizure in a driver, and both key no driving until cleared and mandatory reporting to the Ministry of Transportation.",
+   "file": "sweep3-ss-3.json"
+  },
+  {
+   "a": "delirium-agitation-03",
+   "b": "tox-09",
+   "verdict": "BORDERLINE",
+   "why": "Similar agitated young man after stimulant use brought by police, and both key sedation, active cooling and the list of complications such as rhabdomyolysis.",
+   "file": "sweep3-ss-3.json"
+  },
+  {
+   "a": "abdominal-pain-05",
+   "b": "chest-pain-07",
+   "verdict": "BORDERLINE",
+   "why": "Similar 61 year old man whose epigastric discomfort is a STEMI, and both key ASA and cath lab activation, though one keys nitrate cautions and the other the GI cocktail trap.",
+   "file": "sweep3-ss-3.json"
+  },
+  {
+   "a": "airway-12",
+   "b": "pulmonary-edema-04",
+   "verdict": "BORDERLINE",
+   "why": "Similar dialysis patient who missed sessions with pulmonary edema and severe hyperkalemia with a wide QRS, and both key calcium, insulin with dextrose, salbutamol and urgent dialysis.",
+   "file": "sweep3-ss-3.json"
+  },
+  {
+   "a": "cqi-05",
+   "b": "cqi-06",
+   "verdict": "BORDERLINE",
+   "why": "Similar high alert medication error that harmed a patient who recovered, and both key prompt disclosure with an apology, though the drugs and system fixes differ.",
+   "file": "sweep3-ss-3.json"
+  },
+  {
+   "a": "abdominal-pain-03",
+   "b": "analgesia-sedation-14",
+   "verdict": "BORDERLINE",
+   "why": "Same young woman with migratory right lower quadrant pain from appendicitis, but one keys the diagnostic traps and the other keys giving analgesia before the surgeon sees her.",
+   "file": "sweep3-ss-3.json"
+  },
+  {
+   "a": "abuse-domestic-01",
+   "b": "abuse-domestic-11",
+   "verdict": "BORDERLINE",
+   "why": "Same pregnant woman with abdominal pain after a doubtful fall hiding partner violence, but one keys the abuse interview and the other keys trauma in pregnancy with Rh immune globulin.",
+   "file": "sweep3-ss-3.json"
+  },
+  {
+   "a": "ems-14",
+   "b": "environmental-01",
+   "verdict": "BORDERLINE",
+   "why": "Similar event medicine heat stroke in a confused young adult, and both key immediate onsite cold water immersion stopping at about 39 C.",
+   "file": "sweep3-ss-3.json"
+  },
+  {
+   "a": "anaphylaxis-02",
+   "b": "anaphylaxis-13",
+   "verdict": "BORDERLINE",
+   "why": "Similar food anaphylaxis with shock refractory to three IM doses, but one keys glucagon for a beta blocker and the other keys more fluid and a second vasopressor.",
+   "file": "sweep3-ss-3.json"
+  },
+  {
+   "a": "first-trimester-bleeding-03",
+   "b": "first-trimester-bleeding-10",
+   "verdict": "BORDERLINE",
+   "why": "Both are early pregnancy bleeding with an empty uterus keyed as pregnancy of unknown location with a repeat hCG in 48 hours, but one is a presumed completed miscarriage.",
+   "file": "sweep3-ss-4.json"
+  },
+  {
+   "a": "loc-01",
+   "b": "loc-07",
+   "verdict": "BORDERLINE",
+   "why": "Both are head injured men dismissed as drunk who blow a pupil awaiting CT, with RSI, hyperosmolar therapy and neurosurgery keyed, but one is an epidural lucid interval.",
+   "file": "sweep3-ss-4.json"
+  },
+  {
+   "a": "delirium-agitation-10",
+   "b": "multiple-trauma-04",
+   "verdict": "BORDERLINE",
+   "why": "Both are an older woman on apixaban who fell with a subdural and a daughter at the bedside with PCC keyed, but one tests capacity and the other trauma deterioration.",
+   "file": "sweep3-ss-4.json"
+  },
+  {
+   "a": "abdominal-pain-12",
+   "b": "analgesia-sedation-02",
+   "verdict": "BORDERLINE",
+   "why": "Both are a 36 year old man with left renal colic and ketorolac 15 mg keyed, but one tests imaging and infected stone and the other escalation of analgesia.",
+   "file": "sweep3-ss-4.json"
+  },
+  {
+   "a": "ems-10",
+   "b": "ischemic-heart-disease-11",
+   "verdict": "BORDERLINE",
+   "why": "Both are an anterior STEMI in a rural hospital far from PCI, but one keys fibrinolysis then rescue transfer and the other transfer despite delay after a recent stroke.",
+   "file": "sweep3-ss-4.json"
+  },
+  {
+   "a": "burns-02",
+   "b": "burns-13",
+   "verdict": "BORDERLINE",
+   "why": "Both are major burn resuscitation keyed on a urine output target of 0.5 mL/kg/h with a 20 to 30% rate change, but one is under and the other over resuscitated.",
+   "file": "sweep3-ss-4.json"
+  },
+  {
+   "a": "airway-03",
+   "b": "anaphylaxis-06",
+   "verdict": "BORDERLINE",
+   "why": "Both are a 68 year old man on ramipril with lip and tongue swelling, but one keys awake bronchoscopic intubation and the other diagnosis and stopping the ACE inhibitor.",
+   "file": "sweep3-ss-4.json"
+  },
+  {
+   "a": "airway-14",
+   "b": "pre-eclampsia-04",
+   "verdict": "BORDERLINE",
+   "why": "Both are recurrent eclamptic seizures in the third trimester, but one keys airway management and the other magnesium and hypertension control.",
+   "file": "sweep3-ss-4.json"
+  },
+  {
+   "a": "pulmonary-edema-08",
+   "b": "sob-07",
+   "verdict": "BORDERLINE",
+   "why": "Both are ischemic cardiomyopathy failing BiPAP and nitroglycerin with falling pressure and intubation, but one adds pneumonia and cardiogenic shock management.",
+   "file": "sweep3-ss-4.json"
+  },
+  {
+   "a": "airway-05",
+   "b": "seizures-02",
+   "verdict": "BORDERLINE",
+   "why": "Both are a toddler in refractory status epilepticus, but one keys tube size and depth for intubation and the other the second line drug sequence.",
+   "file": "sweep3-ss-4.json"
+  },
+  {
+   "a": "dvt-pe-09",
+   "b": "dvt-pe-13",
+   "verdict": "BORDERLINE",
+   "why": "Well woman with a low risk segmental PE for outpatient care, both keyed to warfarin with LMWH overlap instead of a DOAC.",
+   "file": "sweep3-ss-5.json"
+  },
+  {
+   "a": "airway-11",
+   "b": "ems-08",
+   "verdict": "BORDERLINE",
+   "why": "Severe head injury with a blown pupil in a hospital without neurosurgery, both keyed on neuroprotective targets and tube security for transfer.",
+   "file": "sweep3-ss-5.json"
+  },
+  {
+   "a": "first-trimester-bleeding-10",
+   "b": "first-trimester-bleeding-14",
+   "verdict": "BORDERLINE",
+   "why": "Early pregnancy with heavy bleeding and now an empty uterus, one keyed as pregnancy of unknown location and one as complete miscarriage.",
+   "file": "sweep3-ss-5.json"
+  },
+  {
+   "a": "loc-04",
+   "b": "infectious-diseases-02",
+   "verdict": "BORDERLINE",
+   "why": "Man in his sixties brought by his wife with fever, confusion and neck stiffness, both keyed to the same empiric meningitis regimen.",
+   "file": "sweep3-ss-5.json"
+  },
+  {
+   "a": "multiple-patients-03",
+   "b": "multiple-patients-15",
+   "verdict": "BORDERLINE",
+   "why": "Highway mass casualty call to a community hospital, both keyed on Code Orange activation and clearing the department.",
+   "file": "sweep3-ss-5.json"
+  },
+  {
+   "a": "delirium-agitation-14",
+   "b": "headache-05",
+   "verdict": "BORDERLINE",
+   "why": "Headache, confusion and seizure from HSV encephalitis, both keyed to acyclovir, CSF HSV PCR, MRI and EEG.",
+   "file": "sweep3-ss-5.json"
+  },
+  {
+   "a": "delirium-agitation-04",
+   "b": "seizures-13",
+   "verdict": "BORDERLINE",
+   "why": "Heavy drinker who ran out of money with a head bruise in alcohol withdrawal, both keyed to diazepam, thiamine and subdural in the differential.",
+   "file": "sweep3-ss-5.json"
+  },
+  {
+   "a": "loc-06",
+   "b": "seizures-06",
+   "verdict": "BORDERLINE",
+   "why": "Severe symptomatic hyponatremia with a seizure, both keyed to 3% saline boluses and a correction limit of about 8 to 10 mmol/L.",
+   "file": "sweep3-ss-5.json"
+  },
+  {
+   "a": "ems-11",
+   "b": "sob-08",
+   "verdict": "BORDERLINE",
+   "why": "Drowsy patient in severe DKA where intubation is suggested, both keyed to avoiding intubation because of lost respiratory compensation.",
+   "file": "sweep3-ss-5.json"
+  },
+  {
+   "a": "pre-eclampsia-03",
+   "b": "pre-eclampsia-13",
+   "verdict": "BORDERLINE",
+   "why": "Both are a woman a week or more after an uneventful vaginal delivery with an epidural who presents with severe headache from late postpartum preeclampsia, and both key magnesium sulfate 4 g then 1 g/h and the same differential of CVST, PRES and RCVS, but one tests BP control and the other a seizure with neuroimaging.",
+   "file": "sweep3-ss-6.json"
+  },
+  {
+   "a": "abdominal-pain-07",
+   "b": "infectious-diseases-12",
+   "verdict": "BORDERLINE",
+   "why": "Both are a confused long term care resident sent in to treat a UTI on a positive dipstick whose real source is elsewhere, and both key that the pyuria likely reflects asymptomatic bacteriuria, though the hidden sources and later decisions differ.",
+   "file": "sweep3-ss-6.json"
+  },
+  {
+   "a": "abdominal-pain-07",
+   "b": "loc-11",
+   "verdict": "BORDERLINE",
+   "why": "Both are a confused long term care resident labelled as a UTI with pyuria whose true source is elsewhere, and both key that the positive urine does not prove the source, though one is perforated diverticulitis and the other pneumonia with GCS scoring.",
+   "file": "sweep3-ss-6.json"
+  },
+  {
+   "a": "loc-02",
+   "b": "ems-06",
+   "verdict": "BORDERLINE",
+   "why": "Both are a young person found unresponsive in a washroom with pinpoint pupils after using drugs with a friend, a partial naloxone response and a methadone reveal, and both key hypoxic injury and co ingested sedatives such as xylazine as causes of persistent drowsiness, though one tests naloxone titration and the other the paramedic handover.",
+   "file": "sweep3-ss-6.json"
+  },
+  {
+   "a": "first-trimester-bleeding-08",
+   "b": "first-trimester-bleeding-14",
+   "verdict": "BORDERLINE",
+   "why": "Both are an Rh negative woman at 8 to 9 weeks with an early pregnancy loss, and both key the same Rh immune globulin options and the same reassurance that she did not cause it, though one is a missed miscarriage needing management choices and the other a complete loss going home.",
+   "file": "sweep3-ss-7.json"
+  },
+  {
+   "a": "asthma-copd-09",
+   "b": "asthma-copd-15",
+   "verdict": "BORDERLINE",
+   "why": "Both are an asthmatic who looks calmer after treatment but is tiring with a rising pCO2, sharing the signs of impending failure, but one keys intubation and ventilator settings and the other keys BiPAP.",
+   "file": "sweep3-ss-7.json"
+  },
+  {
+   "a": "cqi-02",
+   "b": "multiple-patients-12",
+   "verdict": "BORDERLINE",
+   "why": "Both are a critical result missed at shift handover that led to deterioration, and both key disclosure and handover system fixes for pending results, though the clinical problems differ.",
+   "file": "sweep3-ss-7.json"
+  },
+  {
+   "a": "abuse-domestic-01",
+   "b": "multiple-trauma-15",
+   "verdict": "BORDERLINE",
+   "why": "Both are a young woman who says she fell down the stairs while a controlling partner answers for her, and both key interviewing her alone with a pretext and asking directly, though one is a pregnancy and the other a splenic injury.",
+   "file": "sweep3-ss-7.json"
+  },
+  {
+   "a": "abdominal-pain-05",
+   "b": "ems-01",
+   "verdict": "BORDERLINE",
+   "why": "Both are a 61 year old man with an inferior STEMI near a PCI centre, and both key checking BP, heart rate, PDE5 inhibitor use and a right sided ECG before nitroglycerin.",
+   "file": "sweep3-ss-7.json"
+  },
+  {
+   "a": "airway-15",
+   "b": "gi-bleed-08",
+   "verdict": "BORDERLINE",
+   "why": "Both are massive hematemesis needing intubation before endoscopy, and both key resuscitation before induction, two rigid suction devices, head up position and the most experienced operator.",
+   "file": "sweep3-ss-7.json"
+  },
+  {
+   "a": "loc-04",
+   "b": "seizures-14",
+   "verdict": "BORDERLINE",
+   "why": "Both are an adult with days of fever and headache who becomes confused from HSV encephalitis, and both key acyclovir and CSF HSV PCR, though one tests GCS and meningitis cover and the other seizure control.",
+   "file": "sweep3-ss-7.json"
+  },
+  {
+   "a": "airway-09",
+   "b": "sob-09",
+   "verdict": "BORDERLINE",
+   "why": "Both are salicylate toxicity that progresses to obtundation needing intubation, and both key bicarbonate, urgent hemodialysis and matching the high pre intubation minute ventilation.",
+   "file": "sweep3-ss-7.json"
+  },
+  {
+   "a": "loc-11",
+   "b": "infectious-diseases-12",
+   "verdict": "BORDERLINE",
+   "why": "Both are an 88 year old woman with dementia sent from long term care labelled as a UTI whose real source is elsewhere, and both key that pyuria is not proof of the source, though the source and other decisions differ.",
+   "file": "sweep3-ss-7.json"
+  },
+  {
+   "a": "airway-03",
+   "b": "anaphylaxis-05",
+   "verdict": "BORDERLINE",
+   "why": "Both are a drooling patient with a swollen protruding tongue and muffled voice needing a definitive airway and both key awake flexible bronchoscopic intubation with a marked cricothyroid double setup, but one is ACE inhibitor angioedema and the other food anaphylaxis progressing to a surgical airway.",
+   "file": "sweep3-ss-8.json"
+  },
+  {
+   "a": "headache-07",
+   "b": "pre-eclampsia-13",
+   "verdict": "BORDERLINE",
+   "why": "Both are a woman 9 or 10 days after a vaginal delivery with an epidural who has days of headache then a seizure, with the same postpartum seizure differential keyed, but one is venous sinus thrombosis and the other late eclampsia with PRES.",
+   "file": "sweep3-ss-8.json"
+  },
+  {
+   "a": "ems-01",
+   "b": "ischemic-heart-disease-01",
+   "verdict": "BORDERLINE",
+   "why": "Both are an inferior STEMI with right ventricular involvement who becomes hypotensive and bradycardic after one nitroglycerin, keying right sided leads and fluids, but one is an EMS bypass to PCI and the other rural tenecteplase in a snowstorm.",
+   "file": "sweep3-ss-8.json"
+  },
+  {
+   "a": "environmental-05",
+   "b": "multiple-trauma-14",
+   "verdict": "BORDERLINE",
+   "why": "Both are a 52 year old man found drowsy and not shivering after hours in the snow and both key active external rewarming, warmed fluids, gentle handling and core temperature monitoring, but one adds VF arrest and ECLS while the other adds a knee dislocation and rewarming shock.",
+   "file": "sweep3-ss-8.json"
+  },
+  {
+   "a": "msk-04",
+   "b": "multiple-trauma-15",
+   "verdict": "BORDERLINE",
+   "why": "Both are a young woman who says she fell down the stairs while her partner answers for her and both key interviewing her alone, looking for strangulation and injuries of different ages and documenting, but one has a nightstick ulnar fracture and the other a bleeding spleen.",
+   "file": "sweep3-ss-8.json"
+  },
+  {
+   "a": "asthma-copd-11",
+   "b": "dvt-pe-14",
+   "verdict": "BORDERLINE",
+   "why": "Both are breathlessness 8 or 9 days after total knee replacement with bilateral segmental PE and RV to LV ratio under 1 and both key CT pulmonary angiogram, but one tests separating PE from a COPD flare and the other Wells scoring and outpatient eligibility.",
+   "file": "sweep3-ss-8.json"
+  },
+  {
+   "a": "msk-15",
+   "b": "multiple-trauma-14",
+   "verdict": "BORDERLINE",
+   "why": "Both are a snowmobile crash with a grossly unstable multidirectional knee and both key ankle brachial index, CT angiography, serial vascular checks and a splint in slight flexion, but one adds hypothermia and rewarming shock.",
+   "file": "sweep3-ss-8.json"
+  },
+  {
+   "a": "anaphylaxis-15",
+   "b": "asthma-copd-13",
+   "verdict": "BORDERLINE",
+   "why": "Both are anaphylaxis still hypotensive and wheezing after two IM epinephrine doses and both key further IM epinephrine, crystalloid and an epinephrine infusion, but one is a bee sting base hospital patch and the other a food reaction in an asthmatic.",
+   "file": "sweep3-ss-8.json"
+  },
+  {
+   "a": "ems-03",
+   "b": "multiple-trauma-08",
+   "verdict": "BORDERLINE",
+   "why": "Both are a 28 year old man ejected in a highway rollover with a low GCS, but one keys the paramedic handover and trauma activation while the other keys a tension pneumothorax after intubation, so every keyed decision differs.",
+   "file": "sweep3-ss-8.json"
+  },
+  {
+   "a": "loc-02",
+   "b": "tox-08",
+   "verdict": "BORDERLINE",
+   "why": "Both are a 26 year old found unresponsive with 1 mm pupils after smoking opioids who wakes to titrated naloxone with bag mask ventilation, but one keys a methadone recurrence needing a naloxone infusion and the other discharge criteria and starting buprenorphine.",
+   "file": "sweep3-ss-8.json"
+  },
+  {
+   "a": "anaphylaxis-05",
+   "b": "sob-01",
+   "verdict": "BORDERLINE",
+   "why": "Different causes, cashew anaphylaxis and ACE inhibitor angioedema, but both show progressive tongue swelling with a muffled voice, drooling and stridor keyed to awake flexible bronchoscopic intubation with a front of neck double setup.",
+   "file": "sweep3-ss-9.json"
+  },
+  {
+   "a": "headache-07",
+   "b": "pre-eclampsia-03",
+   "verdict": "BORDERLINE",
+   "why": "Both are a woman about a week after an epidural vaginal delivery with a new severe headache, but one is keyed to venous sinus thrombosis and anticoagulation and the other to postpartum pre-eclampsia with BP control and magnesium.",
+   "file": "sweep3-ss-9.json"
+  },
+  {
+   "a": "environmental-02",
+   "b": "pediatric-fever-11",
+   "verdict": "BORDERLINE",
+   "why": "Classic heat stroke in an older man and exertional heat stroke in a child are different stories, but both are keyed to cold water immersion or evaporative cooling and a near identical mimic list.",
+   "file": "sweep3-ss-9.json"
+  },
+  {
+   "a": "chest-pain-05",
+   "b": "dvt-pe-02",
+   "verdict": "BORDERLINE",
+   "why": "Both are a 27 year old with a day or two of left pleuritic chest pain and low gestalt for PE, but one is keyed to PERC rule out and the other to Wells with a negative D-dimer.",
+   "file": "sweep3-ss-9.json"
+  },
+  {
+   "a": "chest-pain-15",
+   "b": "ischemic-heart-disease-11",
+   "verdict": "BORDERLINE",
+   "why": "Both are an anterior STEMI in a rural hospital hours from PCI, but one is keyed to fibrinolysis and the other to transfer for PCI because a recent stroke contraindicates lysis.",
+   "file": "sweep3-ss-9.json"
+  },
+  {
+   "a": "chest-pain-15",
+   "b": "ischemic-heart-disease-13",
+   "verdict": "BORDERLINE",
+   "why": "Both are a STEMI in a rural hospital 3 hours by road from PCI, but one is keyed to giving fibrinolysis and the other to recognising failed lysis and rescue PCI.",
+   "file": "sweep3-ss-9.json"
+  },
+  {
+   "a": "msk-08",
+   "b": "msk-11",
+   "verdict": "BORDERLINE",
+   "why": "An ankle fracture dislocation and a tibial shaft fracture are different injuries, but both hinge on finding a small wound over the fracture and are keyed to cefazolin, tetanus, a saline dressing and urgent orthopedic debridement.",
+   "file": "sweep3-ss-9.json"
+  },
+  {
+   "a": "chest-pain-10",
+   "b": "ischemic-heart-disease-05",
+   "verdict": "BORDERLINE",
+   "why": "Both are a 38 year old woman with chest pain, a normal ECG and an undetectable troponin, keyed to a low HEART score and discharge with family physician follow up and return advice.",
+   "file": "sweep3-ss-9.json"
+  },
+  {
+   "a": "abuse-domestic-02",
+   "b": "abuse-domestic-12",
+   "verdict": "BORDERLINE",
+   "why": "Both are a man abused by his partner who presents late with an injury that does not fit the story and prior injury visits, keyed to the same red flags, though the forearm fracture and the thrown kettle scald lead to different next steps.",
+   "file": "sweep3-ss-9.json"
+  },
+  {
+   "a": "first-trimester-bleeding-01",
+   "b": "first-trimester-bleeding-02",
+   "verdict": "BORDERLINE",
+   "why": "Both are a young woman with a positive test, an empty uterus, free fluid and hemodynamic compromise from ectopic pregnancy, but one is keyed to massive hemorrhage resuscitation and the other to the low hCG trap.",
+   "file": "sweep3-ss-9.json"
+  },
+  {
+   "a": "pediatric-fever-10",
+   "b": "tox-02",
+   "why": "A toddler with an occult wintergreen ingestion and an adult with known salicylate use differ in story but repeat the bicarbonate and dialysis criteria keys."
+  },
+  {
+   "a": "ischemic-heart-disease-01",
+   "b": "ischemic-heart-disease-11",
+   "why": "Both are rural STEMI reperfusion choices but one gives tenecteplase for RV infarction and the other must transfer for PCI after a recent stroke."
+  },
+  {
+   "a": "abuse-domestic-05",
+   "b": "analgesia-sedation-03",
+   "why": "Both are nonverbal long term care women with hip fractures but one tests elder abuse reporting and the other pain assessment and analgesia."
+  },
+  {
+   "a": "ischemic-heart-disease-11",
+   "b": "ischemic-heart-disease-13",
+   "why": "Both are rural STEMI transfers but one is primary PCI because of a recent stroke and the other is rescue PCI after failed lysis."
+  },
+  {
+   "a": "dvt-pe-01",
+   "b": "dvt-pe-12",
+   "why": "Both are men with calf pain scored by Wells but one leads to D dimer and a DOAC and the other to an isolated distal DVT decision."
+  },
+  {
+   "a": "pre-eclampsia-05",
+   "b": "pre-eclampsia-08",
+   "why": "Both are rural preeclampsia patients awaiting transfer with overlapping transfer lists but one tests magnesium toxicity and the other initial treatment."
+  },
+  {
+   "a": "first-trimester-bleeding-03",
+   "b": "first-trimester-bleeding-04",
+   "why": "Both are early pregnancy bleeding without a seen IUP but one is a pregnancy of unknown location and the other a suspected ectopic with a pseudosac."
+  },
+  {
+   "a": "cva-06",
+   "b": "cva-07",
+   "why": "Both are LVO strokes going to thrombectomy but one tests BP control before tenecteplase and the other last known well in a wake up stroke."
+  },
+  {
+   "a": "first-trimester-bleeding-04",
+   "b": "first-trimester-bleeding-10",
+   "why": "Both are early pregnancies with no confirmed IUP managed as possible ectopic with same day gynecology and repeat hCG, but the scan findings differ."
+  },
+  {
+   "a": "headache-06",
+   "b": "pre-eclampsia-02",
+   "why": "Both are severe preeclampsia keyed on the lab panel and magnesium but one tests headache with magnesium toxicity and the other HELLP differential."
+  },
+  {
+   "a": "loc-13",
+   "b": "gi-bleed-11",
+   "why": "Both are confused cirrhotics keyed on hepatic encephalopathy precipitants and lactulose, but one is primary encephalopathy and the other a variceal bleed."
+  },
+  {
+   "a": "asthma-copd-07",
+   "b": "asthma-copd-12",
+   "why": "Both are asthmatics recovered in the ED with poor controller use keyed on budesonide formoterol, action plan and prednisone."
+  }
+ ],
+ "signedNewDups": [
+  {
+   "a": "anaphylaxis-03",
+   "b": "anaphylaxis-42",
+   "verdict": "DUP",
+   "why": "Both are a young child with eczema who vomits and turns pale and quiet after a first taste of a new food, and both key weight based IM epinephrine and discharge with a 0.15 mg autoinjector."
+  },
+  {
+   "a": "chest-pain-07",
+   "b": "chest-pain-47",
+   "verdict": "DUP",
+   "why": "Both are a smoker around 60 with burning heartburn after dinner that antacids seem to explain but that turns out to be a STEMI with a cath lab on site, and both key that the GI picture does not exclude ACS plus ASA and heparin before PCI."
+  },
+  {
+   "a": "gi-bleed-04",
+   "b": "gi-bleed-44",
+   "verdict": "DUP",
+   "why": "Both are an NSAID user with brisk red or maroon blood per rectum or stoma from a duodenal ulcer, and both key upper endoscopy as the first test."
+  },
+  {
+   "a": "first-trimester-bleeding-08",
+   "b": "first-trimester-bleeding-25",
+   "verdict": "DUP",
+   "why": "Both are spotting at eight to nine weeks with a closed os and an embryo of 7 mm or more without a heartbeat, and both key that the scan alone diagnoses the loss, with medical management and support."
+  },
+  {
+   "a": "asthma-copd-14",
+   "b": "asthma-copd-35",
+   "verdict": "DUP",
+   "why": "Both are an older COPD patient with two prednisone treated flares this year who is ready to go home, and both key escalating maintenance to triple inhaler therapy with attention to inhaler technique."
+  },
+  {
+   "a": "headache-04",
+   "b": "infectious-diseases-40",
+   "verdict": "DUP",
+   "why": "Both are a university student with meningococcal disease whose roommate and kissing contacts need care, and both key ceftriaxone 250 mg IM once as chemoprophylaxis."
+  },
+  {
+   "a": "seizures-11",
+   "b": "seizures-22",
+   "verdict": "DUP",
+   "why": "Both are a toddler with fever and a two minute generalized seizure who is now playing, and both key counselling that about one in three recur and epilepsy risk is near average."
+  },
+  {
+   "a": "shock-12",
+   "b": "pediatric-fever-22",
+   "verdict": "DUP",
+   "why": "Both are a 3 year old girl with about 12 hours of fever, cold hands and a capillary refill of 4 seconds, and both key recognising septic shock from perfusion signs with IV ceftriaxone and a crystalloid bolus."
+  },
+  {
+   "a": "asthma-copd-02",
+   "b": "asthma-copd-41",
+   "verdict": "DUP",
+   "why": "Both are a drowsy older COPD patient with pH near 7.25 and pCO2 near 80 started on bilevel NIV, and both key judging early response and keeping NIV in a monitored bed."
+  },
+  {
+   "a": "loc-13",
+   "b": "delirium-agitation-24",
+   "verdict": "DUP",
+   "why": "Both are a man with alcohol related cirrhosis brought in by family after two days of confusion with asterixis, and both key precipitants such as constipation and sedatives and lactulose 25 mL every 1 to 2 hours."
+  },
+  {
+   "a": "lacerations-06",
+   "b": "infectious-diseases-42",
+   "verdict": "DUP",
+   "why": "Both are an adult raised abroad with no tetanus record whose foot was punctured through a rubber sole, and both key Tdap with tetanus immune globulin 250 units and completion of the primary series."
+  },
+  {
+   "a": "delirium-agitation-08",
+   "b": "delirium-agitation-23",
+   "verdict": "DUP",
+   "why": "Both are a delirious older man with a fever who refuses antibiotics and wants to go home, and both key naming the right substitute decision maker and treating as an emergency when that person cannot be reached."
+  },
+  {
+   "a": "anaphylaxis-08",
+   "b": "anaphylaxis-36",
+   "verdict": "DUP",
+   "why": "Both are a nut anaphylaxis treated with one epinephrine dose that recurs hours later with hives and wheeze and no new exposure, and both key a biphasic reaction treated with epinephrine 0.5 mg IM."
+  },
+  {
+   "a": "abdominal-pain-05",
+   "b": "chest-pain-47",
+   "verdict": "DUP",
+   "why": "Both are a diabetic man with sweating and heartburn or epigastric pain not settled by antacids that is a STEMI, and both key an immediate 12 lead ECG and ASA 160 mg chewed."
+  },
+  {
+   "a": "cva-06",
+   "b": "cva-27",
+   "verdict": "DUP",
+   "why": "Both are an older man found after a collapse with left weakness, right gaze deviation and neglect from a right M1 occlusion, and both key tenecteplase with thrombectomy."
+  },
+  {
+   "a": "pre-eclampsia-02",
+   "b": "pre-eclampsia-31",
+   "verdict": "DUP",
+   "why": "Both are a third trimester woman whose right upper quadrant pain was put down to a benign cause but whose labs show preeclampsia with liver involvement, and both key that diagnosis."
+  },
+  {
+   "a": "ischemic-heart-disease-15",
+   "b": "chest-pain-41",
+   "verdict": "DUP",
+   "why": "Both are a man with exertional chest pressure eased by rest, a normal ECG and normal serial troponins, and both key that a normal troponin does not exclude unstable angina."
+  },
+  {
+   "a": "burns-02",
+   "b": "burns-16",
+   "verdict": "DUP",
+   "why": "Both are an adult with a large partial thickness burn of the anterior trunk and limbs seen about two hours after injury whose urine output falls below target, and both key the burn fluid volume and raising the infusion rate."
+  },
+  {
+   "a": "environmental-01",
+   "b": "environmental-17",
+   "verdict": "DUP",
+   "why": "Both are a young person who collapses confused during outdoor exertion on a hot humid day and is cooled to about 39 C and becomes oriented, and both key immediate cold water immersion with a rectal temperature probe."
+  },
+  {
+   "a": "pediatric-fever-11",
+   "b": "environmental-17",
+   "verdict": "DUP",
+   "why": "Both are a school age boy who becomes confused and combative during outdoor sport or games on a hot humid day with a drug cause on the differential, and both key immediate cold water immersion with continuous rectal temperature monitoring."
+  },
+  {
+   "a": "suicide-risk-07",
+   "b": "suicide-risk-23",
+   "verdict": "DUP",
+   "why": "Both are a middle aged man with a few months of depression and passive thoughts of death but no plan, going home with his wife, and both key sertraline 50 mg daily, counselling that benefit takes weeks and limiting access to a toxic antidepressant supply."
+  },
+  {
+   "a": "multiple-trauma-11",
+   "b": "multiple-trauma-18",
+   "verdict": "DUP",
+   "why": "Both are a young man with a single penetrating wound in hemorrhagic shock on the massive transfusion protocol who develops low ionized calcium in a crowded noisy room, and both key calcium chloride 1 g IV and pausing to give the team a summary of the plan."
+  },
+  {
+   "a": "pre-eclampsia-08",
+   "b": "pre-eclampsia-30",
+   "verdict": "DUP",
+   "why": "Both are a woman at 28 to 29 weeks with preeclampsia, headache and platelets of 118 in a hospital without a NICU, and both key betamethasone and transfer of the pregnancy to the perinatal centre."
+  },
+  {
+   "a": "pre-eclampsia-08",
+   "b": "pre-eclampsia-17",
+   "verdict": "DUP",
+   "why": "Both are a preterm woman with severe preeclampsia and headache in a rural department hours from the perinatal centre, and both key oral nifedipine 10 mg, a magnesium load of 4 g then 1 g per hour and stabilizing her before transfer."
+  },
+  {
+   "a": "lacerations-07",
+   "b": "infectious-diseases-42",
+   "verdict": "DUP",
+   "why": "Both are an older farm worker with a soil contaminated farm tool wound and no record of tetanus vaccination, and both key Tdap with tetanus immune globulin 250 units IM and completing the primary series."
+  },
+  {
+   "a": "burns-01",
+   "b": "burns-36",
+   "verdict": "DUP",
+   "why": "Both are a young man with flame burns to the face and neck whose voice turns hoarse after a fire or explosion, and both key securing the airway by intubation now before swelling progresses."
+  },
+  {
+   "a": "pulmonary-edema-07",
+   "b": "pulmonary-edema-32",
+   "verdict": "DUP",
+   "why": "Both are a man with HFrEF at an ejection fraction of 35% who feels better after treatment for pulmonary edema and wants to go home, and both key the disposition decision on a walk test and the Ottawa Heart Failure Risk Scale."
+  },
+  {
+   "a": "arrhythmia-12",
+   "b": "arrhythmia-29",
+   "verdict": "DUP",
+   "why": "Both are an adult brought in comatose and ventilated after out of hospital arrest with ROSC, and both key deliberate temperature control for at least 36 hours with active fever prevention afterward."
+  },
+  {
+   "a": "environmental-09",
+   "b": "analgesia-sedation-34",
+   "verdict": "DUP",
+   "why": "Both are a man who spent a night outdoors near minus 30 degrees with frozen white hands that need rapid rewarming, and both key opioid analgesia for rewarming pain plus oral ibuprofen."
+  },
+  {
+   "a": "anaphylaxis-08",
+   "b": "anaphylaxis-44",
+   "verdict": "DUP",
+   "why": "Both are an adult with asthma whose nut anaphylaxis resolved after one IM epinephrine dose and who wants to go home, and both key the risk of a biphasic reaction hours later that makes observation necessary."
+  },
+  {
+   "a": "abuse-domestic-09",
+   "b": "abuse-domestic-30",
+   "verdict": "DUP",
+   "why": "Both are a woman with suspected partner violence whose husband acts as her interpreter, and both key the same decision to use a professional hospital interpreter with the husband out of the room."
+  },
+  {
+   "a": "asthma-copd-04",
+   "b": "pulmonary-edema-38",
+   "verdict": "DUP",
+   "why": "Both open with an older woman without lung disease who wheezes at night with orthopnea, crackles and a raised JVP, and both key recognising the cardiac cause of the wheeze and starting noninvasive ventilation."
+  },
+  {
+   "a": "asthma-copd-13",
+   "b": "anaphylaxis-25",
+   "verdict": "DUP",
+   "why": "Both are an adult woman with food anaphylaxis with hives, lip swelling and wheeze who stays hypotensive after two IM doses, and both key epinephrine 0.5 mg IM repeated every 5 minutes with a crystalloid bolus and high flow oxygen."
+  },
+  {
+   "a": "delirium-agitation-03",
+   "b": "tox-40",
+   "verdict": "DUP",
+   "why": "Both are a young man brought by police fighting after three days of methamphetamine who becomes hyperthermic, and both key sedation with active cooling plus rhabdomyolysis, kidney injury and hyperkalemia as the complications."
+  },
+  {
+   "a": "seizures-06",
+   "b": "tox-42",
+   "verdict": "DUP",
+   "why": "Both are a young woman who seizes after drinking large volumes of water with a sodium near 117 mmol/L, and both key a 100 mL bolus of 3% hypertonic saline."
+  },
+  {
+   "a": "asthma-copd-04",
+   "b": "asthma-copd-31",
+   "verdict": "DUP",
+   "why": "Both are an older patient with ischemic heart disease, orthopnea, edema and wheeze with crackles where the wheeze is heart failure, and both key acute heart failure, natriuretic peptide testing, noninvasive ventilation and IV furosemide."
+  },
+  {
+   "a": "gi-bleed-02",
+   "b": "gi-bleed-27",
+   "verdict": "DUP",
+   "why": "Both are an older woman with orthostatic melena from naproxen, a hemoglobin near 90 g/L and a Glasgow Blatchford score of 11 or 12, and both key admission for endoscopy within 24 hours."
+  },
+  {
+   "a": "environmental-09",
+   "b": "environmental-23",
+   "verdict": "DUP",
+   "why": "Both are an intoxicated man found outdoors overnight at minus 29 in January with frozen hard extremities, and both key rewarming the core before thawing plus a tissue salvage agent such as iloprost."
+  },
+  {
+   "a": "analgesia-sedation-12",
+   "b": "asthma-copd-37",
+   "verdict": "DUP",
+   "why": "Both are an older patient with COPD who is hard to rouse with small pupils after opioid dosing for fracture pain, and both key small titrated naloxone doses with monitoring for resedation."
+  },
+  {
+   "a": "delirium-agitation-12",
+   "b": "delirium-agitation-32",
+   "verdict": "DUP",
+   "why": "Both are an older patient with pneumonia boarding overnight in the department who becomes delirious and tries to climb out of bed, and both key removable drug precipitants and a sitter with a low bed before medication."
+  },
+  {
+   "a": "cva-11",
+   "b": "cva-42",
+   "verdict": "DUP",
+   "why": "Both are an older woman with a resolved morning transient event, atrial fibrillation on ECG and a clear CT and CTA, and both key starting apixaban 5 mg twice daily now."
+  },
+  {
+   "a": "pulmonary-edema-03",
+   "b": "asthma-copd-31",
+   "verdict": "DUP",
+   "why": "Both are an older patient labelled with COPD who wheezes, sleeps in a chair and has edema, and both key recognising heart failure with NT-proBNP, IV furosemide and noninvasive ventilation."
+  },
+  {
+   "a": "infectious-diseases-04",
+   "b": "critical-appraisal-28",
+   "verdict": "DUP",
+   "why": "Both are a man with diabetes and severe thigh pain after a minor scrape with tense edema beyond the erythema and no crepitus, and both key urgent surgical consultation for exploration."
+  }
+ ],
+ "verification": {
+  "method": "blind second adjudication of all 118 first-pass signed DUP pairs plus 40 hidden controls",
+  "dupConfirmed": 117,
+  "dupDowngraded": 1,
+  "controls": {
+   "distinct": 28,
+   "borderline": 11,
+   "dup": 1
+  }
+ }
+}

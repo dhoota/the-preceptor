@@ -6,6 +6,25 @@ This document lists what needs a physician decision before launch. Part 1 is a s
 
 Nothing in the app changes status until you sign it off. Every new SAMP ships `reviewed: false`.
 
+## Read first: signed-off SAMPs that duplicate each other
+
+A third duplicate sweep compared your signed-off SAMPs with each other for the first time. It found that some of them are near copies of other signed-off SAMPs.
+
+- **117 duplicate pairs** among the 525. Two adjudicators confirmed each one, and the second was blind to the first.
+- They form **74 clusters holding 181 SAMPs**. Often one story was written up under several topics. For example, anaphylaxis still hypotensive after two IM doses appears under anaphylaxis, asthma-copd, shock and sob.
+
+What this means for your sign-off:
+- Your attestation covers each of those texts exactly as written. None of them was changed or rebuilt after you signed it.
+- But you signed the same case more than once under different topics. A candidate will meet it more than once. Key-feature coverage counts it more than once, so coverage looks better than it is.
+- No signed-off SAMP will be touched until you decide.
+
+What to decide: open `docs/SIGNED-DUPLICATES.md`. For each cluster it recommends one copy to keep and gives a replacement direction for each other copy.
+- Keeping one copy per cluster means 107 rebuilds.
+- A lighter option clears every confirmed pair with 89 rebuilds.
+- Any SAMP you approve for rebuild gets new text. Your old sign-off does not cover that text, so it returns to `reviewed: false` for a fresh sign-off.
+
+Duplicates between your signed-off SAMPs and the new ones are a separate matter. In each of those the new SAMP was rebuilt and your text was left alone.
+
 ## How to sign off
 
 - Sign-offs are recorded in `docs/signoff-2026-09.json`. A new round gets its own file, for example `docs/signoff-2026-10.json`, with the ids you approve.
