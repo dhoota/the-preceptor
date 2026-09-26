@@ -1,0 +1,9 @@
+{
+ "ids": {
+  "ems-08": "Rebuilt after sign-off (signed-duplicate cluster 53). Needs a fresh physician sign-off.",
+  "ems-10": "Rebuilt after sign-off (signed-duplicate cluster 2). Needs a fresh physician sign-off.",
+  "ems-12": "Rebuilt after sign-off (signed-duplicate cluster 19). Needs a fresh physician sign-off.",
+  "environmental-05": "Rebuilt after sign-off (signed-duplicate cluster 13). Needs a fresh physician sign-off.",
+  "environmental-07": "Rebuilt after sign-off (signed-duplicate cluster 57). Needs a fresh physician sign-off."
+ }
+}

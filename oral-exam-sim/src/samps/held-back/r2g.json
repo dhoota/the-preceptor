@@ -1,0 +1,9 @@
+{
+ "ids": {
+  "asthma-copd-04": "Rebuilt after sign-off (signed-duplicate cluster 14). Needs a fresh physician sign-off.",
+  "asthma-copd-11": "Rebuilt after sign-off (signed-duplicate cluster 16). Needs a fresh physician sign-off.",
+  "asthma-copd-13": "Rebuilt after sign-off (signed-duplicate cluster 1). Needs a fresh physician sign-off.",
+  "burns-01": "Rebuilt after sign-off (signed-duplicate cluster 9). Needs a fresh physician sign-off.",
+  "burns-06": "Rebuilt after sign-off (signed-duplicate cluster 35). Needs a fresh physician sign-off."
+ }
+}

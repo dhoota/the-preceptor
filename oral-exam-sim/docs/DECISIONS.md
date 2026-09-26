@@ -33,7 +33,7 @@ Decisions made by the product owner, not by the physician reviewer. Each is an e
 | anaphylaxis-15 q3 (rebuilt signed-off SAMP) | Cardiogenic shock from an inferior STEMI (shock KF 5) | ischemic-heart-disease-44 q1 |
 | tox-09 q4 (rebuilt signed-off SAMP) | Life-threatening causes of chest pain first (chest pain KF 1) | the KF 1 lists keyed in signed chest pain SAMPs |
 | sob-12 q1 (rebuilt signed-off SAMP) | CT pulmonary angiography over a lung scan when lung disease is present (DVT-PE KF 4) | dvt-pe-06 q2 |
-| shock-09 q2 (rebuilt signed-off SAMP) | 30 mL/kg balanced crystalloid in septic shock (shock KF 3) | shock-03 q2 and q3 |
 | multiple-trauma-06 q3 (rebuilt signed-off SAMP) | IM epinephrine for anaphylaxis (anaphylaxis KF 3) | anaphylaxis-01 q1, also anaphylaxis-31 q1 and q3 |
+| shock-09 q2 (rebuilt signed-off SAMP) | 30 mL/kg balanced crystalloid in septic shock (shock KF 3) | shock-03 q2 and q3 |
 
 **To reverse:** Arjan says "reverse D1". Every question in the table above then goes back for rebuild with a decision not keyed elsewhere. Each rebuild group adds its surviving D1 repeats to this table when it lands, so the table is always the full set.

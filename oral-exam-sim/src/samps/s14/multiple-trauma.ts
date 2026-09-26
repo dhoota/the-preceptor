@@ -580,7 +580,7 @@ export const MULTIPLE_TRAUMA_SAMPS: Samp[] = [
           { id: "allergy", text: "Record cefazolin as the suspected trigger in her chart and handover", match: ["allergy", "allergic to cefazolin", "document the reaction", "record the reaction", "suspected trigger", "medical record", "chart the reaction"] },
         ],
         unacceptable: [
-          { text: "Epinephrine 1 mg IV push", match: ["1 mg iv push", "iv push 1 mg", "code dose", "cardiac arrest dose"], dangerous: true },
+          { text: "Epinephrine 1 mg IV push", match: ["1 mg iv push", "iv push 1 mg", "epinephrine 1:10000", "adrenaline 1:10000", "epinephrine 1:10,000", "adrenaline 1:10,000", "code dose", "cardiac arrest dose"], dangerous: true },
           { text: "Massive transfusion for presumed bleeding", match: ["massive transfusion", "mtp", "massive hemorrhage protocol", "massive haemorrhage protocol"] },
         ],
         explanation:
