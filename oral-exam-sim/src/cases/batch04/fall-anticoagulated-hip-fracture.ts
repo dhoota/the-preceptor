@@ -595,7 +595,7 @@ export const fallAnticoagulatedHipFracture: OralCase = {
       url: "https://ontariohealth.ca/evidence-to-improve-care/quality-standards/view-all-quality-standards/hip-fracture",
     },
   ],
-  reviewed: false,
+  reviewed: true,
   author: "Preceptor",
   version: 2,
 };

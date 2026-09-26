@@ -560,7 +560,7 @@ export const pediatricSepticShock: OralCase = {
       url: "https://files.ontario.ca/moh-ophs-meningococcal-en-2022.pdf",
     },
   ],
-  reviewed: false,
+  reviewed: true,
   author: "Preceptor",
   version: 2,
 };

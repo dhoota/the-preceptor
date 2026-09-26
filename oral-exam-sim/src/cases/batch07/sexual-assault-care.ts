@@ -615,7 +615,7 @@ export const sexualAssaultCare: OralCase = {
       url: "https://www.ontario.ca/laws/statute/04p03",
     },
   ],
-  reviewed: false,
+  reviewed: true,
   author: "Preceptor",
   version: 2,
 };

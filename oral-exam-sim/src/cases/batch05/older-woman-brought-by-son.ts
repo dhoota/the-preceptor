@@ -532,7 +532,7 @@ export const olderWomanBroughtBySon: OralCase = {
       url: "https://www.canlii.org/en/on/laws/stat/so-2021-c-39-sch-1/latest/so-2021-c-39-sch-1.html",
     },
   ],
-  reviewed: false,
+  reviewed: true,
   author: "Preceptor",
   version: 2,
 };

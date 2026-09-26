@@ -721,7 +721,7 @@ export const discrepancyCallback: OralCase = {
       url: "https://www.hqontario.ca/Evidence-to-Improve-Care/Quality-Standards/View-All-Quality-Standards/Hip-Fracture",
     },
   ],
-  reviewed: false,
+  reviewed: true,
   author: "Preceptor",
   version: 2,
 };

@@ -541,7 +541,7 @@ export const pediatricDka: OralCase = {
       url: "https://www.nejm.org/doi/full/10.1056/NEJMoa1716816",
     },
   ],
-  reviewed: false,
+  reviewed: true,
   author: "Preceptor",
   version: 2,
 };

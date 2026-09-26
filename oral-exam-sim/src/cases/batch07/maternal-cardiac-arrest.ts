@@ -626,7 +626,7 @@ export const maternalCardiacArrest: OralCase = {
       url: "https://doi.org/10.1093/eurheartj/ehz405",
     },
   ],
-  reviewed: false,
+  reviewed: true,
   author: "Preceptor",
   version: 2,
 };

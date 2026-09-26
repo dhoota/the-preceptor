@@ -608,7 +608,7 @@ export const chronicDigoxinToxicity: OralCase = {
       url: "https://digifab.health/getmedia/3f1076f4-7959-4a6b-8b66-a364f662c644/product-monograph_English_Updated-Dec-2022.pdf",
     },
   ],
-  reviewed: false,
+  reviewed: true,
   author: "Preceptor",
   version: 2,
 };

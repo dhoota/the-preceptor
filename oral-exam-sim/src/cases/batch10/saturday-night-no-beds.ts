@@ -611,7 +611,7 @@ export const saturdayNightNoBeds: OralCase = {
       url: "https://pubmed.ncbi.nlm.nih.gov/34605781/",
     },
   ],
-  reviewed: false,
+  reviewed: true,
   author: "Preceptor",
   version: 2,
 };

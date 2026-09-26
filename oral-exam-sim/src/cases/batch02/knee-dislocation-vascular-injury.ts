@@ -527,7 +527,7 @@ export const kneeDislocationVascularInjury: OralCase = {
       url: "https://pubmed.ncbi.nlm.nih.gov/24438649/",
     },
   ],
-  reviewed: false,
+  reviewed: true,
   author: "Preceptor",
   version: 2,
 };

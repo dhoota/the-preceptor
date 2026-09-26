@@ -655,7 +655,7 @@ export const trauma: OralCase = {
       url: "https://pubmed.ncbi.nlm.nih.gov/27654000/",
     },
   ],
-  reviewed: false,
+  reviewed: true,
   author: "Preceptor",
   version: 2,
 };

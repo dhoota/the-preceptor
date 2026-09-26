@@ -542,7 +542,7 @@ export const lateralCanthotomyOrbitalHematoma: OralCase = {
       url: "https://www.ontario.ca/laws/statute/96h02",
     },
   ],
-  reviewed: false,
+  reviewed: true,
   author: "Preceptor",
   version: 2,
 };

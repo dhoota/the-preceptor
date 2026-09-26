@@ -17,8 +17,7 @@
 // Public SDK keys. Safe to ship in the app. From RevenueCat > Project > API
 // keys. A placeholder keeps purchases off on that platform, and the launch
 // gate (LAUNCH_GATE=1 tests/platform.test.ts) fails while one remains.
-// The iOS key arrives once the App Store in-app purchase key is uploaded.
-export const RC_KEY_IOS = "appl_REPLACE_WITH_CCFPEM_IOS_PUBLIC_KEY";
+export const RC_KEY_IOS = "appl_YxaBlQZmJUqbaUJyqapCBTpHUAX";
 export const RC_KEY_ANDROID = "goog_ytowRSJmXGIejpeGDKurvANZWCy";
 
 export type Component = "written" | "oral";

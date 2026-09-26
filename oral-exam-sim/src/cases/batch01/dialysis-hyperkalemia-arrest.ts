@@ -640,7 +640,7 @@ export const dialysisHyperkalemiaArrest: OralCase = {
       url: "https://pdf.hres.ca/dpd_pm/00074795.PDF",
     },
   ],
-  reviewed: false,
+  reviewed: true,
   author: "Preceptor",
   version: 2,
 };

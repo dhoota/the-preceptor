@@ -579,7 +579,7 @@ export const obstructiveShockPeLysis: OralCase = {
       citation: "Perera P, Mailhot T, Riley D, Mandavia D. The RUSH exam. Rapid ultrasound in shock in the evaluation of the critically ill. Emerg Med Clin North Am. 2010.",
     },
   ],
-  reviewed: false,
+  reviewed: true,
   author: "Preceptor",
   version: 2,
 };

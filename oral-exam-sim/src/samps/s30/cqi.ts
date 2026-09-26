@@ -3,7 +3,7 @@
 import type { Samp } from "@/engine/samp";
 import type { Source } from "@/engine/types";
 
-const META = { topic: "cqi", reviewed: false, author: "Preceptor", version: 1 } as const;
+const META = { topic: "cqi", reviewed: true, author: "Preceptor", version: 1 } as const;
 
 const S = {
   ciaf: {

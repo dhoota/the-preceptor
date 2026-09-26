@@ -528,7 +528,7 @@ export const hypothermicCardiacArrest: OralCase = {
         "Pasquier M, Hugli O, Paal P, et al. Hypothermia outcome prediction after extracorporeal life support for hypothermic cardiac arrest patients. The HOPE score. Resuscitation. 2018.",
     },
   ],
-  reviewed: false,
+  reviewed: true,
   author: "Preceptor",
   version: 2,
 };

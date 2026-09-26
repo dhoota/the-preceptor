@@ -609,7 +609,7 @@ export const waitingRoomSlump: OralCase = {
       url: "https://pubmed.ncbi.nlm.nih.gov/24176460/",
     },
   ],
-  reviewed: false,
+  reviewed: true,
   author: "Preceptor",
   version: 2,
 };

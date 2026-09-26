@@ -622,7 +622,7 @@ export const secondaryPneumothoraxCopd: OralCase = {
       url: "https://www.healthcareexcellence.ca/resources/canadian-disclosure-guidelines/",
     },
   ],
-  reviewed: false,
+  reviewed: true,
   author: "Preceptor",
   version: 2,
 };

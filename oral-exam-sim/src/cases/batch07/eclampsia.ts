@@ -588,7 +588,7 @@ export const eclampsia: OralCase = {
       url: "https://doi.org/10.1016/j.jogc.2018.04.018",
     },
   ],
-  reviewed: false,
+  reviewed: true,
   author: "Preceptor",
   version: 2,
 };

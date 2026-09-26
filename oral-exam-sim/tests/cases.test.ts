@@ -1,5 +1,6 @@
 import { describe, expect, it } from "vitest";
 import signoff from "../docs/signoff-2026-09.json";
+import signoff2 from "../docs/signoff-2026-10.json";
 import realign from "../docs/oral-realign.json";
 import { BATCHES, CASES } from "@/cases";
 import { BLUEPRINT, ORAL_CRITERIA, maxQuestionSeconds, questionRange, toCriterion, validateCase } from "@/engine";
@@ -13,7 +14,7 @@ import { topicById } from "@/blueprint/priorityTopics";
  */
 
 /** Signed-off ids. Anything new or changed stays reviewed: false. */
-const SIGNED_OFF = new Set<string>(signoff.cases);
+const SIGNED_OFF = new Set<string>([...signoff.cases, ...signoff2.cases]);
 
 /** Batches remapped to the CFPC oral card and score sheet. REALIGN=batch03 previews one. */
 const REALIGNED = new Set<string>([...realign.batches, ...(process.env.REALIGN ? [process.env.REALIGN] : [])]);

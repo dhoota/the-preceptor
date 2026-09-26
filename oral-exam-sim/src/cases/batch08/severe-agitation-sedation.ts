@@ -607,7 +607,7 @@ export const severeAgitationSedation: OralCase = {
       citation: "Government of Ontario. Patient Restraints Minimization Act, 2001. S.O. 2001, c. 16.",
     },
   ],
-  reviewed: false,
+  reviewed: true,
   author: "Preceptor",
   version: 2,
 };

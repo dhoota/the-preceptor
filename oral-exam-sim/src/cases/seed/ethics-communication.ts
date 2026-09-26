@@ -652,7 +652,7 @@ export const ethicsCommunication: OralCase = {
       url: "https://www.ontario.ca/laws/statute/90h20",
     },
   ],
-  reviewed: false,
+  reviewed: true,
   author: "Preceptor",
   version: 2,
 };

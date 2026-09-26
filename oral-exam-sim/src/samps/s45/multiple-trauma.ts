@@ -117,7 +117,7 @@ export const MULTIPLE_TRAUMA_S45: Samp[] = [
         url: "https://www.facs.org/quality-programs/trauma/education/advanced-trauma-life-support/atls-11/"
       }
     ],
-    reviewed: false,
+    reviewed: true,
     author: "Preceptor",
     version: 1
   },
@@ -236,7 +236,7 @@ export const MULTIPLE_TRAUMA_S45: Samp[] = [
         url: "https://www.facs.org/quality-programs/trauma/education/advanced-trauma-life-support/atls-11/"
       }
     ],
-    reviewed: false,
+    reviewed: true,
     author: "Preceptor",
     version: 1
   },
@@ -381,7 +381,7 @@ export const MULTIPLE_TRAUMA_S45: Samp[] = [
         url: "https://doi.org/10.1155/2015/532721"
       }
     ],
-    reviewed: false,
+    reviewed: true,
     author: "Preceptor",
     version: 2
   },
@@ -494,7 +494,7 @@ export const MULTIPLE_TRAUMA_S45: Samp[] = [
         url: "https://doi.org/10.1097/TA.0b013e31827019fd"
       }
     ],
-    reviewed: false,
+    reviewed: true,
     author: "Preceptor",
     version: 1
   },
@@ -599,7 +599,7 @@ export const MULTIPLE_TRAUMA_S45: Samp[] = [
         url: "https://pubmed.ncbi.nlm.nih.gov/26334607/"
       }
     ],
-    reviewed: false,
+    reviewed: true,
     author: "Preceptor",
     version: 1
   },
@@ -703,7 +703,7 @@ export const MULTIPLE_TRAUMA_S45: Samp[] = [
         url: "https://www.facs.org/quality-programs/trauma/education/advanced-trauma-life-support/atls-11/"
       }
     ],
-    reviewed: false,
+    reviewed: true,
     author: "Preceptor",
     version: 2
   },
@@ -812,7 +812,7 @@ export const MULTIPLE_TRAUMA_S45: Samp[] = [
         url: "https://pubmed.ncbi.nlm.nih.gov/25638631/"
       }
     ],
-    reviewed: false,
+    reviewed: true,
     author: "Preceptor",
     version: 1
   },
@@ -935,7 +935,7 @@ export const MULTIPLE_TRAUMA_S45: Samp[] = [
         url: "https://doi.org/10.1016/j.resuscitation.2025.110769"
       }
     ],
-    reviewed: false,
+    reviewed: true,
     author: "Preceptor",
     version: 1
   },
@@ -1044,7 +1044,7 @@ export const MULTIPLE_TRAUMA_S45: Samp[] = [
         url: "https://www.tandfonline.com/doi/full/10.1080/10903127.2018.1481476"
       }
     ],
-    reviewed: false,
+    reviewed: true,
     author: "Preceptor",
     version: 1
   },
@@ -1153,7 +1153,7 @@ export const MULTIPLE_TRAUMA_S45: Samp[] = [
         url: "https://pubmed.ncbi.nlm.nih.gov/29132571/"
       }
     ],
-    reviewed: false,
+    reviewed: true,
     author: "Preceptor",
     version: 2
   },
@@ -1263,7 +1263,7 @@ export const MULTIPLE_TRAUMA_S45: Samp[] = [
         url: "https://www.us.elsevierhealth.com/rosens-emergency-medicine-concepts-and-clinical-practice-9780323757898.html"
       }
     ],
-    reviewed: false,
+    reviewed: true,
     author: "Preceptor",
     version: 1
   },
@@ -1371,7 +1371,7 @@ export const MULTIPLE_TRAUMA_S45: Samp[] = [
         url: "https://www.facs.org/quality-programs/trauma/education/advanced-trauma-life-support/atls-11/"
       }
     ],
-    reviewed: false,
+    reviewed: true,
     author: "Preceptor",
     version: 2
   },
@@ -1480,7 +1480,7 @@ export const MULTIPLE_TRAUMA_S45: Samp[] = [
         url: "https://pubmed.ncbi.nlm.nih.gov/36859355/"
       }
     ],
-    reviewed: false,
+    reviewed: true,
     author: "Preceptor",
     version: 2
   },
@@ -1597,7 +1597,7 @@ export const MULTIPLE_TRAUMA_S45: Samp[] = [
         url: "https://pubmed.ncbi.nlm.nih.gov/36859355/"
       }
     ],
-    reviewed: false,
+    reviewed: true,
     author: "Preceptor",
     version: 1
   },
@@ -1681,7 +1681,7 @@ export const MULTIPLE_TRAUMA_S45: Samp[] = [
         url: "https://doi.org/10.1136/tsaco-2025-001913"
       }
     ],
-    reviewed: false,
+    reviewed: true,
     author: "Preceptor",
     version: 1
   },
@@ -1791,7 +1791,7 @@ export const MULTIPLE_TRAUMA_S45: Samp[] = [
         url: "https://pubmed.ncbi.nlm.nih.gov/28828034/"
       }
     ],
-    reviewed: false,
+    reviewed: true,
     author: "Preceptor",
     version: 2
   },
@@ -1908,7 +1908,7 @@ export const MULTIPLE_TRAUMA_S45: Samp[] = [
         url: "https://pubmed.ncbi.nlm.nih.gov/36859355/"
       }
     ],
-    reviewed: false,
+    reviewed: true,
     author: "Preceptor",
     version: 1
   },
@@ -2022,7 +2022,7 @@ export const MULTIPLE_TRAUMA_S45: Samp[] = [
         url: "https://pubmed.ncbi.nlm.nih.gov/30829890/"
       }
     ],
-    reviewed: false,
+    reviewed: true,
     author: "Preceptor",
     version: 1
   },
@@ -2124,7 +2124,7 @@ export const MULTIPLE_TRAUMA_S45: Samp[] = [
         url: "https://pubmed.ncbi.nlm.nih.gov/35010760/"
       }
     ],
-    reviewed: false,
+    reviewed: true,
     author: "Preceptor",
     version: 1
   },
@@ -2212,7 +2212,7 @@ export const MULTIPLE_TRAUMA_S45: Samp[] = [
         url: "https://pubmed.ncbi.nlm.nih.gov/29132571/"
       }
     ],
-    reviewed: false,
+    reviewed: true,
     author: "Preceptor",
     version: 2
   },
@@ -2331,7 +2331,7 @@ export const MULTIPLE_TRAUMA_S45: Samp[] = [
         url: "https://pubmed.ncbi.nlm.nih.gov/27654000/"
       }
     ],
-    reviewed: false,
+    reviewed: true,
     author: "Preceptor",
     version: 1
   },
@@ -2415,7 +2415,7 @@ export const MULTIPLE_TRAUMA_S45: Samp[] = [
         url: "https://pubmed.ncbi.nlm.nih.gov/36859355/"
       }
     ],
-    reviewed: false,
+    reviewed: true,
     author: "Preceptor",
     version: 1
   },
@@ -2526,7 +2526,7 @@ export const MULTIPLE_TRAUMA_S45: Samp[] = [
         url: "https://www.facs.org/quality-programs/trauma/education/advanced-trauma-life-support/atls-11/"
       }
     ],
-    reviewed: false,
+    reviewed: true,
     author: "Preceptor",
     version: 1
   },
@@ -2620,7 +2620,7 @@ export const MULTIPLE_TRAUMA_S45: Samp[] = [
         url: "https://www.facs.org/media/qdgliayt/2025_tr_bestpracticesguidelines_chest-wall.pdf"
       }
     ],
-    reviewed: false,
+    reviewed: true,
     author: "Preceptor",
     version: 1
   },
@@ -2732,7 +2732,7 @@ export const MULTIPLE_TRAUMA_S45: Samp[] = [
         url: "https://pubmed.ncbi.nlm.nih.gov/33053308/"
       }
     ],
-    reviewed: false,
+    reviewed: true,
     author: "Preceptor",
     version: 2
   },
@@ -2822,7 +2822,7 @@ export const MULTIPLE_TRAUMA_S45: Samp[] = [
         url: "https://www.facs.org/quality-programs/trauma/education/advanced-trauma-life-support/atls-11/"
       }
     ],
-    reviewed: false,
+    reviewed: true,
     author: "Preceptor",
     version: 1
   },
@@ -2936,7 +2936,7 @@ export const MULTIPLE_TRAUMA_S45: Samp[] = [
         url: "https://www.cmajopen.ca/content/7/3/E546"
       }
     ],
-    reviewed: false,
+    reviewed: true,
     author: "Preceptor",
     version: 1
   },
@@ -3054,7 +3054,7 @@ export const MULTIPLE_TRAUMA_S45: Samp[] = [
         url: "https://www.facs.org/quality-programs/trauma/education/advanced-trauma-life-support/atls-11/"
       }
     ],
-    reviewed: false,
+    reviewed: true,
     author: "Preceptor",
     version: 1
   },
@@ -3165,7 +3165,7 @@ export const MULTIPLE_TRAUMA_S45: Samp[] = [
         url: "https://pubmed.ncbi.nlm.nih.gov/36859355/"
       }
     ],
-    reviewed: false,
+    reviewed: true,
     author: "Preceptor",
     version: 2
   },
@@ -3255,7 +3255,7 @@ export const MULTIPLE_TRAUMA_S45: Samp[] = [
         url: "https://pubmed.ncbi.nlm.nih.gov/36859355/"
       }
     ],
-    reviewed: false,
+    reviewed: true,
     author: "Preceptor",
     version: 2
   },
@@ -3349,7 +3349,7 @@ export const MULTIPLE_TRAUMA_S45: Samp[] = [
         url: "https://pubmed.ncbi.nlm.nih.gov/36859355/"
       }
     ],
-    reviewed: false,
+    reviewed: true,
     author: "Preceptor",
     version: 2
   },
@@ -3458,7 +3458,7 @@ export const MULTIPLE_TRAUMA_S45: Samp[] = [
         url: "https://www.facs.org/quality-programs/trauma/education/advanced-trauma-life-support/atls-11/"
       }
     ],
-    reviewed: false,
+    reviewed: true,
     author: "Preceptor",
     version: 1
   }

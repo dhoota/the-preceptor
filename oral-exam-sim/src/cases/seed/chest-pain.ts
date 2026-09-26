@@ -701,7 +701,7 @@ export const chestPain: OralCase = {
       url: "https://pubmed.ncbi.nlm.nih.gov/14707589/",
     },
   ],
-  reviewed: false,
+  reviewed: true,
   author: "Preceptor",
   version: 2,
 };

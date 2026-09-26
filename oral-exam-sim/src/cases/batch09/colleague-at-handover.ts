@@ -561,7 +561,7 @@ export const colleagueAtHandover: OralCase = {
       url: "https://www.cmpa-acpm.ca/en/advice-publications/browse-articles/2010/do-you-need-to-report-another-health-professional",
     },
   ],
-  reviewed: false,
+  reviewed: true,
   author: "Preceptor",
   version: 2,
 };

@@ -545,7 +545,7 @@ export const ludwigAnginaAirway: OralCase = {
       url: "https://pubmed.ncbi.nlm.nih.gov/33383265/",
     },
   ],
-  reviewed: false,
+  reviewed: true,
   author: "Preceptor",
   version: 2,
 };

@@ -697,7 +697,7 @@ export const nearFatalAsthma: OralCase = {
         "Kew KM, Kirtchuk L, Michell CI. Intravenous magnesium sulfate for treating adults with acute asthma in the emergency department. Cochrane Database of Systematic Reviews. 2014.",
     },
   ],
-  reviewed: false,
+  reviewed: true,
   author: "Preceptor",
   version: 2,
 };

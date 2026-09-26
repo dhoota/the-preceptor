@@ -546,7 +546,7 @@ export const aceInhibitorAngioedemaAirway: OralCase = {
       url: "https://pdf.hres.ca/dpd_pm/00059606.PDF",
     },
   ],
-  reviewed: false,
+  reviewed: true,
   author: "Preceptor",
   version: 2,
 };

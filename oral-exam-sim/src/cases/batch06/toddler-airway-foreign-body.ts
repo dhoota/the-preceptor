@@ -543,7 +543,7 @@ export const toddlerAirwayForeignBody: OralCase = {
       url: "https://pmc.ncbi.nlm.nih.gov/articles/PMC3299355/",
     },
   ],
-  reviewed: false,
+  reviewed: true,
   author: "Preceptor",
   version: 2,
 };

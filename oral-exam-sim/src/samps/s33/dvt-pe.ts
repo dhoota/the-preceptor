@@ -130,7 +130,7 @@ const SRC_VIRCHOW: Source = {
   url: "https://pubmed.ncbi.nlm.nih.gov/32310560/",
 };
 
-const META = { reviewed: false, author: "Preceptor", version: 1 };
+const META = { reviewed: true, author: "Preceptor", version: 1 };
 
 export const DVT_PE_S33_SAMPS: Samp[] = [
   /* 16 ------------------------------------------------------------------ */

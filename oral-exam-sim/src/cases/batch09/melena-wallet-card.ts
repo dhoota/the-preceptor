@@ -621,7 +621,7 @@ export const melenaWalletCard: OralCase = {
         "Barkun AN, et al. Management of nonvariceal upper gastrointestinal bleeding. Guideline recommendations from the International Consensus Group. Annals of Internal Medicine. 2019.",
     },
   ],
-  reviewed: false,
+  reviewed: true,
   author: "Preceptor",
   version: 2,
 };

@@ -3,7 +3,7 @@
 import type { Samp } from "@/engine/samp";
 import type { Source } from "@/engine/types";
 
-const META = { reviewed: false, author: "Preceptor", version: 1 } as const;
+const META = { reviewed: true, author: "Preceptor", version: 1 } as const;
 
 const S = {
   goonewardene: { id: "sterile-pyuria", citation: "Goonewardene S, Persad R. Sterile pyuria: a forgotten entity. Ther Adv Urol. 2015.", url: "https://doi.org/10.1177/1756287215592570" },
@@ -118,7 +118,7 @@ export const ABDOMINAL_PAIN_S19: Samp[] = [
       { id: "akhtar-volvulus", citation: "Akhtar A, Siddiqui FS, Sheikh AAE, Sheikh AB, Perisetti A. Gastric volvulus: a rare entity case report and literature review. Cureus. 2018.", url: "https://doi.org/10.7759/cureus.2312" },
       { id: "wirsching-peh", citation: "Wirsching A, El Lakis MA, Mohiuddin K, and colleagues. Acute vs. elective paraesophageal hernia repair: endoscopic gastric decompression allows semi-elective surgery in a majority of acute patients. J Gastrointest Surg. 2018.", url: "https://doi.org/10.1007/s11605-017-3495-x" },
     ],
-    reviewed: false,
+    reviewed: true,
     author: "Preceptor",
     version: 2,
   },
@@ -339,7 +339,7 @@ export const ABDOMINAL_PAIN_S19: Samp[] = [
       { id: "ifa-fluids", citation: "Malbrain MLNG, Langer T, Annane D, and colleagues. Intravenous fluid therapy in the perioperative and critical care setting: executive summary of the International Fluid Academy (IFA). Ann Intensive Care. 2020.", url: "https://doi.org/10.1186/s13613-020-00679-3" },
       { id: "acog-imaging", citation: "American College of Obstetricians and Gynecologists. Committee Opinion No. 723: guidelines for diagnostic imaging during pregnancy and lactation. Obstet Gynecol. 2017.", url: "https://doi.org/10.1097/AOG.0000000000002355" },
     ],
-    reviewed: false,
+    reviewed: true,
     author: "Preceptor",
     version: 2,
   },
@@ -450,7 +450,7 @@ export const ABDOMINAL_PAIN_S19: Samp[] = [
       { id: "mahat-bladder", citation: "Mahat Y, Leong JY, Chung PH. A contemporary review of adult bladder trauma. J Inj Violence Res. 2019.", url: "https://doi.org/10.5249/jivr.v11i2.1069" },
       { id: "aua-urotrauma", citation: "Morey AF, Broghammer JA, Hollowell CMP, and colleagues. Urotrauma guideline 2020: AUA guideline. J Urol. 2021.", url: "https://doi.org/10.1097/JU.0000000000001408" },
     ],
-    reviewed: false,
+    reviewed: true,
     author: "Preceptor",
     version: 2,
   },
@@ -501,7 +501,7 @@ export const ABDOMINAL_PAIN_S19: Samp[] = [
       { id: "bourgault-ri", citation: "Bourgault M, Grimbert P, Verret C, and colleagues. Acute renal infarction: a case series. Clin J Am Soc Nephrol. 2013.", url: "https://doi.org/10.2215/CJN.05570612" },
       { id: "motaouakil-ri", citation: "Motaouakil A, Yacoub AO, El Moudane A, Barki A. Acute renal infarction mimicking renal colic: a case report and review of the literature. Urol Case Rep. 2024.", url: "https://doi.org/10.1016/j.eucr.2024.102823" },
     ],
-    reviewed: false,
+    reviewed: true,
     author: "Preceptor",
     version: 3,
   },
@@ -692,7 +692,7 @@ export const ABDOMINAL_PAIN_S19: Samp[] = [
     sources: [
       { id: "razban-chs", citation: "Razban M, Exadaktylos AK, Della Santa V, Heymann EP. Cannabinoid hyperemesis syndrome and cannabis withdrawal syndrome: a review of the management of cannabis-related syndrome in the emergency department. Int J Emerg Med. 2022.", url: "https://doi.org/10.1186/s12245-022-00446-0" },
     ],
-    reviewed: false,
+    reviewed: true,
     author: "Preceptor",
     version: 3,
   },
@@ -952,7 +952,7 @@ export const ABDOMINAL_PAIN_S19: Samp[] = [
     sources: [
       { id: "lee-hymen", citation: "Lee KH, Hong JS, Jung HJ, and colleagues. Imperforate hymen: a comprehensive systematic review. J Clin Med. 2019.", url: "https://doi.org/10.3390/jcm8010056" },
     ],
-    reviewed: false,
+    reviewed: true,
     author: "Preceptor",
     version: 2,
   },
@@ -1074,7 +1074,7 @@ export const ABDOMINAL_PAIN_S19: Samp[] = [
       { id: "shields-psoas", citation: "Shields D, Robinson P, Crowley TP. Iliopsoas abscess: a review and update on the literature. Int J Surg. 2012.", url: "https://doi.org/10.1016/j.ijsu.2012.08.016" },
       { id: "idsa-mrsa", citation: "Liu C, Bayer A, Cosgrove SE, and colleagues. Clinical practice guidelines by the Infectious Diseases Society of America for the treatment of methicillin-resistant Staphylococcus aureus infections in adults and children. Clin Infect Dis. 2011.", url: "https://doi.org/10.1093/cid/ciq146" },
     ],
-    reviewed: false,
+    reviewed: true,
     author: "Preceptor",
     version: 2,
   },
@@ -1126,7 +1126,7 @@ export const ABDOMINAL_PAIN_S19: Samp[] = [
       { id: "zizzo-cvf", citation: "Zizzo M, Tumiati D, Bassi MC, and colleagues. Management of colovesical fistula: a systematic review. Minerva Urol Nephrol. 2022.", url: "https://doi.org/10.23736/S2724-6051.21.04750-9" },
       { id: "wses-diverticulitis", citation: "Sartelli M, Weber DG, Kluger Y, and colleagues. 2020 update of the WSES guidelines for the management of acute colonic diverticulitis in the emergency setting. World J Emerg Surg. 2020.", url: "https://doi.org/10.1186/s13017-020-00313-4" },
     ],
-    reviewed: false,
+    reviewed: true,
     author: "Preceptor",
     version: 2,
   },
@@ -1177,7 +1177,7 @@ export const ABDOMINAL_PAIN_S19: Samp[] = [
     sources: [
       { id: "isshp-2021", citation: "Magee LA, Brown MA, Hall DR, and colleagues. The 2021 International Society for the Study of Hypertension in Pregnancy classification, diagnosis and management recommendations for international practice. Pregnancy Hypertens. 2022.", url: "https://doi.org/10.1016/j.preghy.2021.09.008" },
     ],
-    reviewed: false,
+    reviewed: true,
     author: "Preceptor",
     version: 4,
   },
@@ -1587,7 +1587,7 @@ export const ABDOMINAL_PAIN_S19: Samp[] = [
       { id: "asmbs-leak", citation: "Kim J, Azagury D, Eisenberg D, and colleagues. ASMBS position statement on prevention, detection, and treatment of gastrointestinal leak after gastric bypass and sleeve gastrectomy, including the roles of imaging, surgical exploration, and nonoperative management. Surg Obes Relat Dis. 2015.", url: "https://doi.org/10.1016/j.soard.2015.05.001" },
       { id: "ssc-2026", citation: "Prescott HC, Antonelli M, Alhazzani W, and colleagues. Surviving Sepsis Campaign: international guidelines for management of sepsis and septic shock 2026. Crit Care Med. 2026.", url: "https://doi.org/10.1097/CCM.0000000000007075" },
     ],
-    reviewed: false,
+    reviewed: true,
     author: "Preceptor",
     version: 2,
   },
@@ -1687,7 +1687,7 @@ export const ABDOMINAL_PAIN_S19: Samp[] = [
       { id: "esc-acs-2023", citation: "Byrne RA, Rossello X, Coughlan JJ, and colleagues. 2023 ESC guidelines for the management of acute coronary syndromes. Eur Heart J. 2023.", url: "https://doi.org/10.1093/eurheartj/ehad191" },
       { id: "maalouf-rectal-asa", citation: "Maalouf R, Mosley M, James Kallail K, Kramer KM, Kumar G. A comparison of salicylic acid levels in normal subjects after rectal versus oral dosing. Acad Emerg Med. 2009.", url: "https://doi.org/10.1111/j.1553-2712.2008.00318.x" },
     ],
-    reviewed: false,
+    reviewed: true,
     author: "Preceptor",
     version: 3,
   },

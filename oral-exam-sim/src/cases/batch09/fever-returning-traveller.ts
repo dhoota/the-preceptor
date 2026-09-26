@@ -609,7 +609,7 @@ export const feverReturningTraveller: OralCase = {
       url: "https://www.ontario.ca/laws/regulation/180135",
     },
   ],
-  reviewed: false,
+  reviewed: true,
   author: "Preceptor",
   version: 2,
 };

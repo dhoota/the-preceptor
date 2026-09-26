@@ -564,7 +564,7 @@ export const pediatricStatusEpilepticus: OralCase = {
       url: "https://www.ontario.ca/laws/statute/17c14",
     },
   ],
-  reviewed: false,
+  reviewed: true,
   author: "Preceptor",
   version: 2,
 };

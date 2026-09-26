@@ -553,7 +553,7 @@ export const driverAsksForSilence: OralCase = {
         "Huff JS, et al. Clinical policy. Critical issues in the evaluation and management of adult patients presenting to the emergency department with seizures. Annals of Emergency Medicine. 2014.",
     },
   ],
-  reviewed: false,
+  reviewed: true,
   author: "Preceptor",
   version: 2,
 };

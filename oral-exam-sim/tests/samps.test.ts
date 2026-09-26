@@ -1,5 +1,6 @@
 import { describe, expect, it } from "vitest";
 import signoff from "../docs/signoff-2026-09.json";
+import signoff2 from "../docs/signoff-2026-10.json";
 import expansion from "../docs/samp-expansion.json";
 import { PRIORITY_TOPICS, topicById } from "@/blueprint/priorityTopics";
 import { validateSamp } from "@/engine/samp";
@@ -12,7 +13,7 @@ import { AUTHORED_SAMPS, HELD_BACK, SAMPS, SAMP_BATCHES } from "@/samps";
  */
 
 /** Signed-off ids. Anything new or changed stays reviewed: false. */
-const SIGNED_OFF = new Set<string>(signoff.samps);
+const SIGNED_OFF = new Set<string>([...signoff.samps, ...signoff2.samps]);
 
 const only = process.env.SAMP_BATCH;
 const target = only ? SAMP_BATCHES[only] ?? [] : AUTHORED_SAMPS;

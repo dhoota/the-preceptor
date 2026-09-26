@@ -540,7 +540,7 @@ export const exertionalHeatStroke: OralCase = {
       citation: "UK Kidney Association. Clinical practice guidelines. Treatment of acute hyperkalaemia in adults. 2020.",
     },
   ],
-  reviewed: false,
+  reviewed: true,
   author: "Preceptor",
   version: 2,
 };

@@ -650,7 +650,7 @@ export const chronicLithiumToxicity: OralCase = {
       url: "https://pubmed.ncbi.nlm.nih.gov/37721023/",
     },
   ],
-  reviewed: false,
+  reviewed: true,
   author: "Preceptor",
   version: 2,
 };

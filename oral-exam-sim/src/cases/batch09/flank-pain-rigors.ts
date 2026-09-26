@@ -545,7 +545,7 @@ export const flankPainRigors: OralCase = {
         "Pearle MS, et al. Optimal method of urgent decompression of the collecting system for obstruction and infection due to ureteral calculi. Journal of Urology. 1998.",
     },
   ],
-  reviewed: false,
+  reviewed: true,
   author: "Preceptor",
   version: 2,
 };

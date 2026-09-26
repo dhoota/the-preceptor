@@ -570,7 +570,7 @@ export const massiveHemoptysis: OralCase = {
       url: "https://nacblood.ca/en/resource/recommendations-use-prothrombin-complex-concentrates-canada",
     },
   ],
-  reviewed: false,
+  reviewed: true,
   author: "Preceptor",
   version: 2,
 };

@@ -601,7 +601,7 @@ export const bronchiolitisApnea: OralCase = {
       url: "https://www.cdc.gov/mmwr/preview/mmwrhtml/rr5414a1.htm",
     },
   ],
-  reviewed: false,
+  reviewed: true,
   author: "Preceptor",
   version: 2,
 };

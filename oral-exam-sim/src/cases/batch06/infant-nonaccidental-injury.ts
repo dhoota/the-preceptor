@@ -503,7 +503,7 @@ export const infantNonaccidentalInjury: OralCase = {
       url: "https://pubmed.ncbi.nlm.nih.gov/41860516/",
     },
   ],
-  reviewed: false,
+  reviewed: true,
   author: "Preceptor",
   version: 2,
 };

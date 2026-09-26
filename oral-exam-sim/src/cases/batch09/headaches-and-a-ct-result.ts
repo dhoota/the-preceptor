@@ -587,7 +587,7 @@ export const headachesAndACtResult: OralCase = {
       citation: "Ontario. Personal Health Information Protection Act, 2004. SO 2004, c 3, Sched A.",
     },
   ],
-  reviewed: false,
+  reviewed: true,
   author: "Preceptor",
   version: 2,
 };

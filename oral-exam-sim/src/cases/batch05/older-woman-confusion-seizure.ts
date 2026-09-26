@@ -518,7 +518,7 @@ export const olderWomanConfusionSeizure: OralCase = {
       url: "https://pubmed.ncbi.nlm.nih.gov/37139824/",
     },
   ],
-  reviewed: false,
+  reviewed: true,
   author: "Preceptor",
   version: 2,
 };

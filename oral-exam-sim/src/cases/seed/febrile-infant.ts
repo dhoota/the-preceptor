@@ -626,7 +626,7 @@ export const febrileInfant: OralCase = {
       url: "https://pubmed.ncbi.nlm.nih.gov/41122885/",
     },
   ],
-  reviewed: false,
+  reviewed: true,
   author: "Preceptor",
   version: 2,
 };

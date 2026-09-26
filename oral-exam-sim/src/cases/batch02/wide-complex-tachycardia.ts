@@ -576,7 +576,7 @@ export const wideComplexTachycardia: OralCase = {
       url: "https://onlinecjc.ca/article/S0828-282X(23)01755-5/fulltext",
     },
   ],
-  reviewed: false,
+  reviewed: true,
   author: "Preceptor",
   version: 2,
 };

@@ -517,7 +517,7 @@ export const carbonMonoxideFamily: OralCase = {
       url: "https://www.ola.org/en/legislative-business/bills/parliament-40/session-2/bill-77",
     },
   ],
-  reviewed: false,
+  reviewed: true,
   author: "Preceptor",
   version: 2,
 };

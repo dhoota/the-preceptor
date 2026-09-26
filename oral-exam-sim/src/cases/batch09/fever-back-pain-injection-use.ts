@@ -711,7 +711,7 @@ export const feverBackPainInjectionUse: OralCase = {
       url: "https://www.cmaj.ca/content/196/38/E1280",
     },
   ],
-  reviewed: false,
+  reviewed: true,
   author: "Preceptor",
   version: 2,
 };

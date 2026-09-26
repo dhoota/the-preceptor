@@ -704,7 +704,7 @@ export const shoulderDystociaNeonatalResuscitation: OralCase = {
       url: "https://doi.org/10.1093/pch/pxz134",
     },
   ],
-  reviewed: false,
+  reviewed: true,
   author: "Preceptor",
   version: 2,
 };

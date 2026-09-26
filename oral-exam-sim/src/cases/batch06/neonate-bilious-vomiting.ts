@@ -498,7 +498,7 @@ export const neonateBiliousVomiting: OralCase = {
       url: "https://pubmed.ncbi.nlm.nih.gov/41869844/",
     },
   ],
-  reviewed: false,
+  reviewed: true,
   author: "Preceptor",
   version: 2,
 };

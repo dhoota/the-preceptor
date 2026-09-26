@@ -591,7 +591,7 @@ export const teenWantsToLeave: OralCase = {
       citation: "Chiew AL, et al. Updated guidelines for the management of paracetamol poisoning in Australia and New Zealand. Medical Journal of Australia. 2020.",
     },
   ],
-  reviewed: false,
+  reviewed: true,
   author: "Preceptor",
   version: 2,
 };

@@ -565,7 +565,7 @@ export const drowningCottageLake: OralCase = {
       url: "https://pubmed.ncbi.nlm.nih.gov/41122894/",
     },
   ],
-  reviewed: false,
+  reviewed: true,
   author: "Preceptor",
   version: 2,
 };

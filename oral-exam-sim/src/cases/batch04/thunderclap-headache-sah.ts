@@ -574,7 +574,7 @@ export const thunderclapHeadacheSah: OralCase = {
         "Hoh BL et al. 2023 Guideline for the management of patients with aneurysmal subarachnoid hemorrhage. American Heart Association and American Stroke Association. Stroke. 2023.",
     },
   ],
-  reviewed: false,
+  reviewed: true,
   author: "Preceptor",
   version: 2,
 };

@@ -102,7 +102,7 @@ const SABRINA: Source = {
   url: "https://www.ontario.ca/laws/statute/05s07",
 };
 
-const base = { topic: "anaphylaxis", reviewed: false, author: AUTHOR, version: 1 } as const;
+const base = { topic: "anaphylaxis", reviewed: true, author: AUTHOR, version: 1 } as const;
 
 export const ANAPHYLAXIS_S23: Samp[] = [
   {

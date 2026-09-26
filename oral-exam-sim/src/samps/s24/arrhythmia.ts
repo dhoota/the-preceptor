@@ -107,7 +107,7 @@ export const ARRHYTHMIA_S24: Samp[] = [
         citation: "Ommen SR, et al. 2024 AHA/ACC/AMSSM/HRS/PACES/SCMR Guideline for the Management of Hypertrophic Cardiomyopathy. Circulation. 2024."
       }
     ],
-    reviewed: false,
+    reviewed: true,
     author: AUTHOR,
     version: 1
   },
@@ -170,7 +170,7 @@ export const ARRHYTHMIA_S24: Samp[] = [
       { id: "leblanc-ccs-af", citation: "Leblanc K, MacGillivray J, Carroccia A, Macle L, Andrade JG. The 2020 CCS atrial fibrillation guidelines for pharmacists: top 10 takeaways. Can Pharm J. 2022.", url: "https://doi.org/10.1177/17151635211058160" },
       { id: "caep-af", citation: "Stiell IG, de Wit K, Scheuermeyer FX, and colleagues. 2021 CAEP acute atrial fibrillation/flutter best practices checklist. CJEM. 2021.", url: "https://doi.org/10.1007/s43678-021-00167-y" }
     ],
-    reviewed: false,
+    reviewed: true,
     author: AUTHOR,
     version: 2
   },
@@ -274,7 +274,7 @@ export const ARRHYTHMIA_S24: Samp[] = [
         url: "https://www.ahajournals.org/doi/10.1161/CIR.0000000000001368"
       }
     ],
-    reviewed: false,
+    reviewed: true,
     author: AUTHOR,
     version: 1
   },
@@ -357,7 +357,7 @@ export const ARRHYTHMIA_S24: Samp[] = [
         url: "https://pmc.ncbi.nlm.nih.gov/articles/PMC8423652/"
       }
     ],
-    reviewed: false,
+    reviewed: true,
     author: AUTHOR,
     version: 1
   },
@@ -466,7 +466,7 @@ export const ARRHYTHMIA_S24: Samp[] = [
         citation: "Farkas JD, et al. BRASH Syndrome: Bradycardia, Renal Failure, AV Blockade, Shock, and Hyperkalemia. J Emerg Med. 2020."
       }
     ],
-    reviewed: false,
+    reviewed: true,
     author: AUTHOR,
     version: 1
   },
@@ -569,7 +569,7 @@ export const ARRHYTHMIA_S24: Samp[] = [
         url: "https://www.jacc.org/doi/10.1016/j.jacc.2018.11.035"
       }
     ],
-    reviewed: false,
+    reviewed: true,
     author: AUTHOR,
     version: 1
   },
@@ -655,7 +655,7 @@ export const ARRHYTHMIA_S24: Samp[] = [
         citation: "Andrade JG, et al. The 2020 Canadian Cardiovascular Society/Canadian Heart Rhythm Society Comprehensive Guidelines for the Management of Atrial Fibrillation. Can J Cardiol. 2020."
       }
     ],
-    reviewed: false,
+    reviewed: true,
     author: AUTHOR,
     version: 1
   },
@@ -763,7 +763,7 @@ export const ARRHYTHMIA_S24: Samp[] = [
         citation: "Konstantinides SV, et al. 2019 ESC Guidelines for the diagnosis and management of acute pulmonary embolism. Eur Heart J. 2020."
       }
     ],
-    reviewed: false,
+    reviewed: true,
     author: AUTHOR,
     version: 1
   },
@@ -870,7 +870,7 @@ export const ARRHYTHMIA_S24: Samp[] = [
         citation: "Zeppenfeld K, et al. 2022 ESC Guidelines for the management of patients with ventricular arrhythmias and the prevention of sudden cardiac death. Eur Heart J. 2022."
       }
     ],
-    reviewed: false,
+    reviewed: true,
     author: AUTHOR,
     version: 1
   },
@@ -998,7 +998,7 @@ export const ARRHYTHMIA_S24: Samp[] = [
         url: "https://pmc.ncbi.nlm.nih.gov/articles/PMC8423652/"
       }
     ],
-    reviewed: false,
+    reviewed: true,
     author: AUTHOR,
     version: 1
   },
@@ -1079,7 +1079,7 @@ export const ARRHYTHMIA_S24: Samp[] = [
         citation: "Brugada J, et al. 2019 ESC Guidelines for the management of patients with supraventricular tachycardia. Eur Heart J. 2020."
       }
     ],
-    reviewed: false,
+    reviewed: true,
     author: AUTHOR,
     version: 1
   },
@@ -1138,7 +1138,7 @@ export const ARRHYTHMIA_S24: Samp[] = [
       { id: "frampton-2023", citation: "Frampton J, Ortengren AR, Zeitler EP. Arrhythmias after acute myocardial infarction. Yale J Biol Med. 2023.", url: "https://pmc.ncbi.nlm.nih.gov/articles/PMC10052595/" },
       { id: "drew-tdp", citation: "Drew BJ, Ackerman MJ, Funk M, and colleagues. Prevention of torsade de pointes in hospital settings: a scientific statement from the American Heart Association and the American College of Cardiology Foundation. Circulation. 2010.", url: "https://doi.org/10.1161/CIRCULATIONAHA.109.192704" }
     ],
-    reviewed: false,
+    reviewed: true,
     author: AUTHOR,
     version: 3
   },
@@ -1187,7 +1187,7 @@ export const ARRHYTHMIA_S24: Samp[] = [
     sources: [
       { id: "aha-pals-2025", citation: "Lasa JJ, Dhillon GS, Duff JP, and colleagues. Part 8: pediatric advanced life support. 2025 American Heart Association and American Academy of Pediatrics guidelines for cardiopulmonary resuscitation and emergency cardiovascular care. Circulation. 2025.", url: "https://doi.org/10.1161/CIR.0000000000001368" }
     ],
-    reviewed: false,
+    reviewed: true,
     author: AUTHOR,
     version: 4
   },
@@ -1295,7 +1295,7 @@ export const ARRHYTHMIA_S24: Samp[] = [
         url: "https://doi.org/10.17085/apm.26581"
       }
     ],
-    reviewed: false,
+    reviewed: true,
     author: AUTHOR,
     version: 2
   },
@@ -1384,7 +1384,7 @@ export const ARRHYTHMIA_S24: Samp[] = [
         url: "https://www.ahajournals.org/doi/10.1161/CIR.0000000000001376"
       }
     ],
-    reviewed: false,
+    reviewed: true,
     author: AUTHOR,
     version: 1
   },
@@ -1435,7 +1435,7 @@ export const ARRHYTHMIA_S24: Samp[] = [
       { id: "elboghdadly-last", citation: "El-Boghdadly K, Pawa A, Chin KJ. Local anesthetic systemic toxicity: current perspectives. Local Reg Anesth. 2018.", url: "https://doi.org/10.2147/LRA.S154512" },
       { id: "aha-post-arrest-2025", citation: "Hirsch KG, Amorim E, Coppler PJ, and colleagues. Part 11. Post-cardiac arrest care. 2025 American Heart Association guidelines for cardiopulmonary resuscitation and emergency cardiovascular care. Circulation. 2025.", url: "https://doi.org/10.1161/CIR.0000000000001375" }
     ],
-    reviewed: false,
+    reviewed: true,
     author: AUTHOR,
     version: 2
   },
@@ -1484,7 +1484,7 @@ export const ARRHYTHMIA_S24: Samp[] = [
       { id: "drew-tdp", citation: "Drew BJ, Ackerman MJ, Funk M, and colleagues. Prevention of torsade de pointes in hospital settings: a scientific statement from the American Heart Association and the American College of Cardiology Foundation. Circulation. 2010.", url: "https://doi.org/10.1161/CIRCULATIONAHA.109.192704" },
       { id: "hc-domperidone", citation: "Health Canada. Domperidone maleate: association with serious abnormal heart rhythms and sudden death (cardiac arrest). Information update for health professionals. 2015.", url: "https://recalls-rappels.canada.ca/en/alert-recall/domperidone-maleate-association-serious-abnormal-heart-rhythms-and-sudden-death-1" }
     ],
-    reviewed: false,
+    reviewed: true,
     author: AUTHOR,
     version: 4
   },
@@ -1585,7 +1585,7 @@ export const ARRHYTHMIA_S24: Samp[] = [
         citation: "Zeppenfeld K, et al. 2022 ESC Guidelines for the management of patients with ventricular arrhythmias and the prevention of sudden cardiac death. Eur Heart J. 2022."
       }
     ],
-    reviewed: false,
+    reviewed: true,
     author: AUTHOR,
     version: 1
   },
@@ -1696,7 +1696,7 @@ export const ARRHYTHMIA_S24: Samp[] = [
         url: "https://www.ahajournals.org/doi/10.1161/CIR.0000000000001376"
       }
     ],
-    reviewed: false,
+    reviewed: true,
     author: AUTHOR,
     version: 1
   },
@@ -1777,7 +1777,7 @@ export const ARRHYTHMIA_S24: Samp[] = [
         citation: "Kusumoto FM, et al. 2018 ACC/AHA/HRS Guideline on the Evaluation and Management of Patients With Bradycardia and Cardiac Conduction Delay. Circulation. 2019."
       }
     ],
-    reviewed: false,
+    reviewed: true,
     author: AUTHOR,
     version: 1
   },
@@ -1886,7 +1886,7 @@ export const ARRHYTHMIA_S24: Samp[] = [
         citation: "Kusumoto FM, et al. 2018 ACC/AHA/HRS Guideline on the Evaluation and Management of Patients With Bradycardia and Cardiac Conduction Delay. Circulation. 2019."
       }
     ],
-    reviewed: false,
+    reviewed: true,
     author: AUTHOR,
     version: 1
   },
@@ -1994,7 +1994,7 @@ export const ARRHYTHMIA_S24: Samp[] = [
         citation: "Crossley GH, et al. The Heart Rhythm Society (HRS)/American Society of Anesthesiologists (ASA) Expert Consensus Statement on the perioperative management of patients with implantable defibrillators, pacemakers and arrhythmia monitors. Heart Rhythm. 2011."
       }
     ],
-    reviewed: false,
+    reviewed: true,
     author: AUTHOR,
     version: 1
   },
@@ -2077,7 +2077,7 @@ export const ARRHYTHMIA_S24: Samp[] = [
         url: "https://www.ahajournals.org/doi/10.1161/CIR.0000000000001368"
       }
     ],
-    reviewed: false,
+    reviewed: true,
     author: AUTHOR,
     version: 1
   },
@@ -2159,7 +2159,7 @@ export const ARRHYTHMIA_S24: Samp[] = [
         citation: "Brugada J, et al. 2019 ESC Guidelines for the management of patients with supraventricular tachycardia. Eur Heart J. 2020."
       }
     ],
-    reviewed: false,
+    reviewed: true,
     author: AUTHOR,
     version: 1
   },
@@ -2247,7 +2247,7 @@ export const ARRHYTHMIA_S24: Samp[] = [
         citation: "Unwin RJ, Luft FC, Shirley DG. Pathophysiology and management of hypokalemia: a clinical perspective. Nat Rev Nephrol. 2011."
       }
     ],
-    reviewed: false,
+    reviewed: true,
     author: AUTHOR,
     version: 1
   },
@@ -2329,7 +2329,7 @@ export const ARRHYTHMIA_S24: Samp[] = [
         citation: "Shah MJ, et al. 2021 PACES expert consensus statement on the indications and management of cardiovascular implantable electronic devices in pediatric patients. Heart Rhythm. 2021."
       }
     ],
-    reviewed: false,
+    reviewed: true,
     author: AUTHOR,
     version: 1
   },
@@ -2417,7 +2417,7 @@ export const ARRHYTHMIA_S24: Samp[] = [
         citation: "Sandhu RK, et al. Canadian Cardiovascular Society Clinical Practice Update on the Assessment and Management of Syncope. Can J Cardiol. 2020."
       }
     ],
-    reviewed: false,
+    reviewed: true,
     author: AUTHOR,
     version: 1
   },
@@ -2499,7 +2499,7 @@ export const ARRHYTHMIA_S24: Samp[] = [
         url: "https://pmc.ncbi.nlm.nih.gov/articles/PMC8423652/"
       }
     ],
-    reviewed: false,
+    reviewed: true,
     author: AUTHOR,
     version: 1
   },
@@ -2581,7 +2581,7 @@ export const ARRHYTHMIA_S24: Samp[] = [
         citation: "Brugada J, et al. 2019 ESC Guidelines for the management of patients with supraventricular tachycardia. Eur Heart J. 2020."
       }
     ],
-    reviewed: false,
+    reviewed: true,
     author: AUTHOR,
     version: 1
   },
@@ -2667,7 +2667,7 @@ export const ARRHYTHMIA_S24: Samp[] = [
         citation: "Brugada J, et al. 2019 ESC Guidelines for the management of patients with supraventricular tachycardia. Eur Heart J. 2020."
       }
     ],
-    reviewed: false,
+    reviewed: true,
     author: AUTHOR,
     version: 1
   },
@@ -2759,7 +2759,7 @@ export const ARRHYTHMIA_S24: Samp[] = [
         citation: "Sandhu RK, et al. Canadian Cardiovascular Society Clinical Practice Update on the Assessment and Management of Syncope. Can J Cardiol. 2020."
       }
     ],
-    reviewed: false,
+    reviewed: true,
     author: AUTHOR,
     version: 1
   },
@@ -2846,7 +2846,7 @@ export const ARRHYTHMIA_S24: Samp[] = [
         url: "https://www.ahajournals.org/doi/10.1161/CIR.0000000000001368"
       }
     ],
-    reviewed: false,
+    reviewed: true,
     author: AUTHOR,
     version: 1
   }

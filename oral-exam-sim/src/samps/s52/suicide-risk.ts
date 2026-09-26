@@ -3,7 +3,7 @@
 import type { Samp } from "@/engine/samp";
 import type { Source } from "@/engine/types";
 
-const META = { reviewed: false, author: "Preceptor", version: 1 } as const;
+const META = { reviewed: true, author: "Preceptor", version: 1 } as const;
 
 const S = {
   horowitz: { id: "horowitz-asq", citation: "Horowitz LM, Bridge JA, Teach SJ, and colleagues. Ask Suicide-Screening Questions (ASQ): a brief instrument for the pediatric emergency department. Arch Pediatr Adolesc Med. 2012.", url: "https://pubmed.ncbi.nlm.nih.gov/23027429/" },

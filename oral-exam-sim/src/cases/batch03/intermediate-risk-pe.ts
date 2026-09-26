@@ -624,7 +624,7 @@ export const intermediateRiskPe: OralCase = {
       url: "https://thrombosiscanada.ca/clinical_guides/pdfs/44_52.pdf",
     },
   ],
-  reviewed: false,
+  reviewed: true,
   author: "Preceptor",
   version: 2,
 };

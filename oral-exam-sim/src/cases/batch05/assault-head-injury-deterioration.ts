@@ -601,7 +601,7 @@ export const assaultHeadInjuryDeterioration: OralCase = {
       url: "https://www.canlii.org/en/on/laws/stat/so-2004-c-3-sch-a/latest/so-2004-c-3-sch-a.html",
     },
   ],
-  reviewed: false,
+  reviewed: true,
   author: "Preceptor",
   version: 2,
 };

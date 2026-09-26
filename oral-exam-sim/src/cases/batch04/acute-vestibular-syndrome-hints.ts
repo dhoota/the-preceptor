@@ -575,7 +575,7 @@ export const acuteVestibularSyndromeHints: OralCase = {
         "Wijdicks EF et al. Recommendations for the management of cerebral and cerebellar infarction with swelling. A statement for healthcare professionals from the American Heart Association and American Stroke Association. Stroke. 2014.",
     },
   ],
-  reviewed: false,
+  reviewed: true,
   author: "Preceptor",
   version: 2,
 };

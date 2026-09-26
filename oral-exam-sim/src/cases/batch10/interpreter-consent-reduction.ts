@@ -615,7 +615,7 @@ export const interpreterConsentReduction: OralCase = {
       url: "https://pubmed.ncbi.nlm.nih.gov/31029297/",
     },
   ],
-  reviewed: false,
+  reviewed: true,
   author: "Preceptor",
   version: 2,
 };

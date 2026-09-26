@@ -2,7 +2,7 @@
 
 import type { Samp } from "@/engine/samp";
 
-const META = { reviewed: false, author: "Preceptor", version: 1 } as const;
+const META = { reviewed: true, author: "Preceptor", version: 1 } as const;
 
 export const SHOCK_SAMPS_S50: Samp[] = [
   {

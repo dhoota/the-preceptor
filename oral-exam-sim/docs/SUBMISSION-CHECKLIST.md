@@ -77,12 +77,7 @@ The App Store has no such wait. It needs only the `appl_` key pasted in (A4), a 
   - support is at preceptor.app@gmail.com
 
 **A4. iOS RevenueCat key.**
-- The iOS app in RevenueCat exists. You paste the key yourself. This is the only step left on the RevenueCat side for iOS.
-- Screen: RevenueCat > Preceptor project > API keys.
-- Copy the public key that starts `appl_` for the app config "Preceptor: CCFP-EM (App Store)".
-- It must replace `appl_REPLACE_WITH_CCFPEM_IOS_PUBLIC_KEY` on line 21 of `src/lib/purchases.ts`.
-- Either send the key to your developer session, or edit the file in the GitHub web editor on branch `claude/oral-exam-sim` and commit.
-- The iOS build fails its launch gate until this is done. That failure is on purpose.
+- Done on 26 September 2026. `src/lib/purchases.ts` holds the iOS `appl_` key and the Android `goog_` key, and the launch gate passes.
 
 ## Phase B. Google Play products and RevenueCat
 

@@ -521,7 +521,7 @@ export const suddenUnexpectedInfantDeath: OralCase = {
       url: "https://www.ahajournals.org/doi/10.1161/CIR.0000000000001368",
     },
   ],
-  reviewed: false,
+  reviewed: true,
   author: "Preceptor",
   version: 2,
 };

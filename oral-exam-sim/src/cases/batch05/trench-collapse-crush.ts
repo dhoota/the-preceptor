@@ -526,7 +526,7 @@ export const trenchCollapseCrush: OralCase = {
       url: "https://www.wsib.ca/en/health-care-providers/provider-information/reporting-requirements-health-professionals",
     },
   ],
-  reviewed: false,
+  reviewed: true,
   author: "Preceptor",
   version: 2,
 };

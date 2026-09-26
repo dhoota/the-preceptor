@@ -2,7 +2,7 @@
 import type { Samp } from "@/engine/samp";
 import type { Source } from "@/engine/types";
 
-const META = { reviewed: false, author: "Preceptor", version: 1 } as const;
+const META = { reviewed: true, author: "Preceptor", version: 1 } as const;
 
 const S = {
   abaResus: { id: "aba-resus", citation: "Cartotto R, Johnson LS, Savetamal A, and colleagues. American Burn Association clinical practice guidelines on burn shock resuscitation. J Burn Care Res. 2024.", url: "https://pubmed.ncbi.nlm.nih.gov/38051821/" },
@@ -165,7 +165,7 @@ export const BURNS_S26: Samp[] = [
       },
       S.abaRef
     ],
-    reviewed: false,
+    reviewed: true,
     author: META.author,
     version: 3,
   },
@@ -403,7 +403,7 @@ export const BURNS_S26: Samp[] = [
         url: "https://health.alaska.gov/media/0zwppk25/alaska-burn-care-guidelines-2021.pdf"
       }
     ],
-    reviewed: false,
+    reviewed: true,
     author: META.author,
     version: 2,
   },
@@ -568,7 +568,7 @@ export const BURNS_S26: Samp[] = [
         url: "https://health.alaska.gov/media/0zwppk25/alaska-burn-care-guidelines-2021.pdf"
       }
     ],
-    reviewed: false,
+    reviewed: true,
     author: META.author,
     version: 2,
   },
@@ -768,7 +768,7 @@ export const BURNS_S26: Samp[] = [
       }
     ],
     sources: [S.trekkBurns],
-    reviewed: false,
+    reviewed: true,
     author: META.author,
     version: 2,
   },
@@ -873,7 +873,7 @@ export const BURNS_S26: Samp[] = [
         url: "https://health.alaska.gov/media/0zwppk25/alaska-burn-care-guidelines-2021.pdf"
       }
     ],
-    reviewed: false,
+    reviewed: true,
     author: META.author,
     version: 2,
   },
@@ -1001,7 +1001,7 @@ export const BURNS_S26: Samp[] = [
       }
     ],
     sources: [S.abaRef, S.cig],
-    reviewed: false,
+    reviewed: true,
     author: META.author,
     version: 2,
   },
@@ -1105,7 +1105,7 @@ export const BURNS_S26: Samp[] = [
       }
     ],
     sources: [S.trekkBurns, S.trekkPain],
-    reviewed: false,
+    reviewed: true,
     author: META.author,
     version: 2,
   },
@@ -1318,7 +1318,7 @@ export const BURNS_S26: Samp[] = [
         url: "https://health.alaska.gov/media/0zwppk25/alaska-burn-care-guidelines-2021.pdf"
       }
     ],
-    reviewed: false,
+    reviewed: true,
     author: META.author,
     version: 2,
   },
@@ -1426,7 +1426,7 @@ export const BURNS_S26: Samp[] = [
         url: "https://nbtrauma.ca/wp-content/uploads/2025/10/Consensus-Statement-Emergency-Burn-Care-AUGUST-2025-FINAL.pdf"
       }
     ],
-    reviewed: false,
+    reviewed: true,
     author: META.author,
     version: 3,
   },
@@ -1535,7 +1535,7 @@ export const BURNS_S26: Samp[] = [
         url: "https://health.alaska.gov/media/0zwppk25/alaska-burn-care-guidelines-2021.pdf"
       }
     ],
-    reviewed: false,
+    reviewed: true,
     author: META.author,
     version: 2,
   },
@@ -1683,7 +1683,7 @@ export const BURNS_S26: Samp[] = [
       S.walker,
       S.abaPain,
     ],
-    reviewed: false,
+    reviewed: true,
     author: META.author,
     version: 2,
   },
