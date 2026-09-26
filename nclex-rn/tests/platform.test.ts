@@ -149,9 +149,11 @@ describe("RevenueCat offering", () => {
     const src = read("../src/lib/purchases.ts");
     expect(src.replace(/\/\/.*$|\/\*[\s\S]*?\*\//gm, "")).not.toMatch(/\.current\b/);
   });
-  it("keeps keys as placeholders until the owner pastes them", () => {
-    expect(RC_KEY_IOS.startsWith("appl_")).toBe(true);
-    expect(RC_KEY_ANDROID.startsWith("goog_")).toBe(true);
+  it("has the NCLEX public SDK keys from RevenueCat project 9de07656", () => {
+    expect(RC_KEY_IOS).toBe("appl_qgQcyvKZciCQsltVKSlDmmfrGeq");
+    expect(RC_KEY_ANDROID).toBe("goog_pxjNpwnbZtVIDDQXvWbqeTDswPq");
+    expect(keysConfigured("ios")).toBe(true);
+    expect(keysConfigured("android")).toBe(true);
     expect(keysConfigured("web")).toBe(false);
   });
   // Release builds run LAUNCH_GATE=1. They must not ship with a placeholder key.

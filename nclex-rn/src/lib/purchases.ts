@@ -10,11 +10,11 @@
  * "NCLEX-RN Access". There is no lifetime purchase. Owner setup is in LAUNCH.md.
  */
 
-// Public SDK keys. Safe to ship in the app. From RevenueCat > Project > API
-// keys. A placeholder keeps purchases off on that platform, and the launch
-// gate (LAUNCH_GATE=1 tests/platform.test.ts) fails while one remains.
-export const RC_KEY_IOS = "appl_REPLACE_WITH_NCLEXRN_IOS_PUBLIC_KEY";
-export const RC_KEY_ANDROID = "goog_REPLACE_WITH_NCLEXRN_ANDROID_PUBLIC_KEY";
+// Public SDK keys for the NCLEX iOS and Android apps in the shared Preceptor
+// RevenueCat project (9de07656). Safe to ship in the app. The launch gate
+// (LAUNCH_GATE=1 tests/platform.test.ts) fails if either is a placeholder.
+export const RC_KEY_IOS = "appl_qgQcyvKZciCQsltVKSlDmmfrGeq";
+export const RC_KEY_ANDROID = "goog_pxjNpwnbZtVIDDQXvWbqeTDswPq";
 
 export const ENTITLEMENT = "nclexrn_access";
 

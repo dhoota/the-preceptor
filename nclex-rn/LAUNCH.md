@@ -68,7 +68,7 @@ All Preceptor apps share one RevenueCat project. Its Current offering belongs to
 2. Products: import `nclexrn_6month` and `nclexrn_3month` from App Store Connect, and `nclexrn_6month:p6m` and `nclexrn_3month:p3m` from Play.
 3. Entitlement `nclexrn_access`: attach both products.
 4. Offering `nclexrn` with packages `$rc_six_month` and `$rc_three_month`, each holding its product from both stores. The app finds a package by package type, then by product ID (the Play form `id:basePlan` included).
-5. Paste the public SDK keys into `src/lib/purchases.ts`, replacing `appl_REPLACE_WITH_NCLEXRN_IOS_PUBLIC_KEY` and `goog_REPLACE_WITH_NCLEXRN_ANDROID_PUBLIC_KEY`. Until then purchases stay off and the release launch gate fails.
+5. Public SDK keys: in `src/lib/purchases.ts` since 26 September 2026, from RevenueCat project 9de07656. iOS `appl_qgQcyvKZciCQsltVKSlDmmfrGeq`, Android `goog_pxjNpwnbZtVIDDQXvWbqeTDswPq`. The release launch gate passes.
 6. Test with a sandbox Apple ID and a Play licence tester. Buy the 3 month plan, let the sandbox subscription lapse and confirm access ends after a silent restore. Upgrade from 3 months to 6 months within the group. Delete, reinstall and Restore.
 
 ## 6. Codemagic
