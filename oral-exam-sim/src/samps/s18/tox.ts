@@ -857,7 +857,7 @@ export const TOX_SAMPS: Samp[] = [
           { id: "tolerance", text: "She eats tuna often without a reaction and has no food allergy", match: ["eats tuna often", "often", "regularly", "tolerate", "tolerated", "eaten before", "no known allergy", "no allergy", "no food allergy", "no prior reaction", "no previous reaction"] },
           { id: "taste", text: "A peppery taste to the fish", match: ["peppery", "pepper", "taste", "metallic"] },
           { id: "flush", text: "Flushing of the face and upper chest rather than hives or swelling", match: ["flushing", "flushed", "flush", "sunburn", "red face", "erythema"] },
-          { id: "onset", text: "Onset about 30 minutes into the meal rather than within minutes", match: ["30 minute", "thirty minute", "half hour", "onset", "delay", "delayed", "timing"] },
+          { id: "onset", text: "Onset about 30 minutes into the meal rather than within minutes", match: ["30 minute", "30 min", "thirty minute", "half hour", "delay", "delayed", "later onset"] },
           { id: "noana", text: "No hives, lip or tongue swelling, wheeze, stridor or hypotension", match: ["no hive", "no urticaria", "no swelling", "no angioedema", "no wheeze", "no stridor", "no hypotension", "normal blood pressure", "normal bp"] },
         ],
         explanation:
@@ -875,10 +875,10 @@ export const TOX_SAMPS: Samp[] = [
           { id: "h1", text: "An H1 antihistamine such as diphenhydramine IV", match: ["diphenhydramine", "benadryl", "cetirizine", "loratadine", "hydroxyzine", "chlorpheniramine", "h1 blocker", "h1 antagonist", "h1 antihistamine", "h1 receptor", "antihistamine"] },
         ],
         unacceptable: [
-          { text: "Epinephrine without airway swelling, bronchospasm or hypotension", match: ["epinephrine", "adrenaline", "epipen"] },
+          { text: "Epinephrine for histamine fish poisoning without airway swelling, bronchospasm or hypotension", match: ["epinephrine", "adrenaline", "epipen"] },
         ],
         explanation:
-          "Scombroid poisoning comes from histamine eaten in the fish, so blocking histamine receptors treats the cause. The treatment is an H1 antihistamine such as diphenhydramine, 25 to 100 mg in an adult, with an H2 antihistamine such as famotidine. Both are given IV when symptoms are marked, as her pulse of 128/minute, chest tightness and diarrhea are. Epinephrine and corticosteroids are kept for airway edema, bronchospasm or hypotension. She has none of these, and epinephrine would push up a heart rate that is already 128/minute while she has chest tightness.",
+          "Scombroid poisoning comes from histamine eaten in the fish, so blocking histamine receptors treats the cause. An H1 antihistamine such as diphenhydramine, 25 to 100 mg in an adult, is the mainstay. The US CDC says an H2 antihistamine such as famotidine might add some benefit, and case reviews advise giving both. Both are given IV when symptoms are marked, as her pulse of 128/minute, chest tightness and diarrhea are. In histamine fish poisoning, epinephrine and corticosteroids are kept for airway edema, bronchospasm or hypotension. She has none of these, and her husband being ill from the same fish makes an allergy unlikely. If she developed hives, wheeze, stridor or a falling BP, true anaphylaxis would be treated with epinephrine IM at once, because it has no absolute contraindication.",
         keyFeature: { topic: "tox", n: 4 },
         source: "tortorella-2014",
       },
@@ -911,11 +911,11 @@ export const TOX_SAMPS: Samp[] = [
         update: "While her discharge is arranged, her chest tightness returns. Her pulse is 112/minute and a repeat ECG shows new 1 mm ST depression in V2 to V5.",
         prompt: "What life-threatening causes of her chest tightness must you consider now?",
         accept: [
-          { id: "ischemia", text: "Myocardial ischemia, including coronary vasospasm from histamine or Type 2 MI from tachycardia", match: ["ischemia", "ischaemia", "ischemic", "acute coronary", "myocardial infarction", "vasospasm", "coronary spasm", "kounis", "nstemi", "stemi", "angina", "type 2", "acs"] },
-          { id: "arrhythmia", text: "Arrhythmia", match: ["arrhythmia", "dysrhythmia", "atrial fibrillation", "ventricular tachycardia", "tachyarrhythmia", "svt"] },
+          { id: "ischemia", text: "Myocardial ischemia, including coronary vasospasm from histamine or Type 2 MI from tachycardia", match: ["ischemia", "ischaemia", "ischemic", "acute coronary", "myocardial infarction", "vasospasm", "coronary spasm", "kounis", "nstemi", "stemi", "angina", "type 2", "acs", "mi", "heart attack"] },
+          { id: "arrhythmia", text: "Arrhythmia", match: ["arrhythmia", "dysrhythmia", "atrial fibrillation", "ventricular tachycardia", "tachyarrhythmia", "svt", "ventricular fibrillation"] },
           { id: "anaphylaxis", text: "Evolving anaphylaxis with bronchospasm or airway swelling", match: ["anaphylaxis", "anaphylactic", "bronchospasm", "angioedema", "airway swelling", "airway edema", "laryngeal"] },
           { id: "myocardial", text: "Acute myocardial dysfunction such as takotsubo cardiomyopathy or myocarditis", match: ["takotsubo", "stress cardiomyopathy", "cardiomyopathy", "myocarditis", "heart failure", "pulmonary edema", "cardiogenic shock"] },
-          { id: "pe", text: "Pulmonary embolism", match: ["pulmonary embolism", "embolism", "embolus"] },
+          { id: "pe", text: "Pulmonary embolism", match: ["pulmonary embolism", "embolism", "embolus", "pe"] },
           { id: "dissection", text: "Aortic dissection", match: ["dissection"] },
           { id: "ptx", text: "Pneumothorax", match: ["pneumothorax"] },
         ],
