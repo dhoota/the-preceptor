@@ -126,3 +126,7 @@ Only anaphylaxis-15 lands.
 - **Waiting:** arrhythmia-15 passed. It waits because its file also holds this reviewer's stray edit to signed arrhythmia-01. That file is committed unchanged until the stray edit is removed.
 
 All nine keep their signed text on the branch. The surviving D1 repeat is anaphylaxis-15 q3, and it is in docs/DECISIONS.md.
+
+## arrhythmia-15, landed after the stray edit was reverted
+
+This reviewer's stray edit to signed arrhythmia-01 (two added atropine match phrases at line 225) has been reverted in the working tree. arrhythmia-01 is again byte for byte the text on the branch that the key-lock snapshot protects. It was never committed. arrhythmia-15 passed this review on its own merits and lands without that edit. The review noted that its q3 could also accept atropine in micrograms. That is left as it is, since it would be an unreviewed change. It uses no D1 repeat.

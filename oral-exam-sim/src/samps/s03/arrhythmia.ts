@@ -98,6 +98,44 @@ const CCS_STEMI: Source = {
     "Wong GC, et al. 2019 Canadian Cardiovascular Society/Canadian Association of Interventional Cardiology guidelines on the acute management of ST-elevation myocardial infarction. Focused update on regionalization and reperfusion. Can J Cardiol. 2019.",
 };
 
+const SSRI_OVERDOSE: Source = {
+  id: "ssri-overdose",
+  citation: "Isbister GK, Bowe SJ, Dawson A, Whyte IM. Relative toxicity of selective serotonin reuptake inhibitors (SSRIs) in overdose. J Toxicol Clin Toxicol. 2004.",
+  url: "https://doi.org/10.1081/clt-120037428",
+};
+const CITALOPRAM_CHARCOAL: Source = {
+  id: "citalopram-charcoal",
+  citation: "Isbister GK, Friberg LE, Stokes B, et al. Activated charcoal decreases the risk of QT prolongation after citalopram overdose. Ann Emerg Med. 2007.",
+  url: "https://doi.org/10.1016/j.annemergmed.2007.03.009",
+};
+const TDP_PREVENTION: Source = {
+  id: "tdp-prevention",
+  citation:
+    "Drew BJ, Ackerman MJ, Funk M, et al. Prevention of torsade de pointes in hospital settings. A scientific statement from the American Heart Association and the American College of Cardiology Foundation. Circulation. 2010.",
+  url: "https://doi.org/10.1161/CIRCULATIONAHA.109.192704",
+};
+const TOX_2023: Source = {
+  id: "tox-2023",
+  citation:
+    "Lavonas EJ, Akpunonu PD, Arens AM, et al. 2023 American Heart Association focused update on the management of patients with cardiac arrest or life-threatening toxicity due to poisoning. Circulation. 2023.",
+  url: "https://doi.org/10.1161/CIR.0000000000001161",
+};
+const ERC_SPECIAL: Source = {
+  id: "erc-special",
+  citation: "Lott C, Karageorgos V, Abelairas-Gomez C, et al. European Resuscitation Council Guidelines 2025. Special circumstances in resuscitation. Resuscitation. 2025.",
+  url: "https://doi.org/10.1016/j.resuscitation.2025.110753",
+};
+const MAD_HONEY_REVIEW: Source = {
+  id: "mad-honey-review",
+  citation: "Silici S, Atayoglu AT. Mad honey intoxication. A systematic review on the 1199 cases. Food Chem Toxicol. 2015.",
+  url: "https://doi.org/10.1016/j.fct.2015.10.018",
+};
+const GRAYANOTOXIN: Source = {
+  id: "grayanotoxin",
+  citation: "Gunduz A, Turedi S, Russell RM, Ayaz FA. Clinical review of grayanotoxin/mad honey poisoning past and present. Clin Toxicol (Phila). 2008.",
+  url: "https://doi.org/10.1080/15563650701666306",
+};
+
 const base = { topic: "arrhythmia", reviewed: true, author: AUTHOR, version: 1 } as const;
 
 export const ARRHYTHMIA: Samp[] = [
@@ -1459,99 +1497,100 @@ export const ARRHYTHMIA: Samp[] = [
   },
   {
     ...base,
+    reviewed: false,
+    version: 2,
     id: "arrhythmia-15",
     alsoTopics: ["tox"],
-    title: "Nausea and yellow halos",
+    title: "Faint at the breakfast table",
     stem:
-      "An 84-year-old woman with heart failure and atrial fibrillation is brought in by her daughter with 4 days of nausea, poor appetite and yellow halos around lights. She has had vomiting and diarrhea this week. Medications: digoxin 0.125 mg daily, furosemide, spironolactone, apixaban, and clarithromycin started 5 days ago for bronchitis. ECG: regular junctional rhythm at 42 with scooped ST depression. Creatinine 210 umol/L (baseline 95). Potassium 5.9 mmol/L. Digoxin level 4.1 nmol/L.",
-    vitals: { pulse: "42/minute regular", bp: "104/60 mmHg" },
+      "A 57-year-old man is brought in by his wife after nearly fainting at breakfast. About an hour after eating he became dizzy, sweaty and nauseated, and he vomited twice. He is drooling and says his lips tingle and his vision is blurred. He has hypertension treated with amlodipine 5 mg daily and takes no other medications. He returned 3 days ago from visiting family in northern Turkey. He is pale and sweating. His pupils are 3 mm and reactive. His ECG shows sinus bradycardia at 38 with a normal QRS and no ST changes.",
+    vitals: { temperature: "36.7°C", pulse: "38/minute", resp: "18/minute", bp: "78/46 mmHg", o2sat: "97% on room air" },
     questions: [
       {
         id: "q1",
         kind: "short",
-        prompt: "What factors precipitated her toxicity?",
+        prompt: "What causes of his bradycardia would you consider?",
         required: 3,
         accept: [
-          { id: "aki", text: "Acute kidney injury reducing digoxin clearance", match: ["aki", "renal", "kidney", "creatinine"] },
+          { id: "honey", text: "Grayanotoxin poisoning from mad honey", match: ["honey", "grayanotoxin", "rhododendron"] },
           {
-            id: "clari",
-            text: "Clarithromycin interaction that raises digoxin levels",
-            match: ["clarithromycin", "macrolide", "antibiotic", "interaction"],
+            id: "cholinergic",
+            text: "Cholinergic poisoning, such as an organophosphate or carbamate",
+            match: ["cholinergic", "organophosphate", "carbamate", "insecticide", "pesticide", "mushroom", "muscarinic"],
           },
-          {
-            id: "volume",
-            text: "Volume depletion from vomiting and diarrhea with ongoing diuretics",
-            match: ["dehydration", "volume", "vomiting", "diarrhea", "diarrhoea", "hypovolemia"],
-          },
-          { id: "age", text: "Advanced age and low lean body mass", match: ["age", "elderly", "older", "body mass"] },
-          { id: "diuretic", text: "Diuretic use", match: ["diuretic", "furosemide", "spironolactone"] },
-          { id: "mg", text: "Hypomagnesemia", match: ["hypomagnesemia", "magnesium"] },
+          { id: "ccb", text: "Calcium channel blocker or beta blocker toxicity", match: ["amlodipine", "calcium channel", "beta blocker", "ccb"] },
+          { id: "mi", text: "Inferior myocardial ischemia", match: ["myocardial infarction", "mi", "stemi", "ischemia", "acs", "acute coronary"] },
+          { id: "k", text: "Hyperkalemia", match: ["hyperkalemia", "potassium"] },
+          { id: "glycoside", text: "Digoxin or a cardiac glycoside plant", match: ["digoxin", "glycoside", "foxglove", "oleander", "lily of the valley"] },
+          { id: "vagal", text: "Vasovagal reaction to vomiting", match: ["vasovagal", "vagal"] },
+          { id: "conduction", text: "Sinus node disease or AV block", match: ["sick sinus", "sinus node", "heart block", "av block", "conduction disease"] },
+          { id: "thyroid", text: "Hypothyroidism", match: ["hypothyroid", "hypothyroidism", "thyroid"] },
         ],
         explanation:
-          "Chronic digoxin toxicity in older adults usually follows reduced renal clearance or a drug interaction. Clarithromycin inhibits P-glycoprotein and raises digoxin levels. Vomiting, diarrhea and diuretics caused the kidney injury here.",
+          "Bradycardia and hypotension with sweating, salivation and vomiting suggest excess cholinergic or vagal tone. Grayanotoxin from rhododendron honey produces this cholinergic toxidrome, and a recent trip abroad should prompt questions about foods brought home. Organophosphate or carbamate poisoning, calcium channel blocker or beta blocker toxicity, inferior ischemia, hyperkalemia and cardiac glycosides also need to be considered. A careful food and exposure history, potassium and a repeat ECG narrow the list quickly.",
         keyFeature: { topic: "arrhythmia", n: 5 },
-        source: "tox",
+        source: "grayanotoxin",
       },
       {
         id: "q2",
         kind: "short",
-        prompt: "What is the specific treatment for her toxicity?",
+        update:
+          "His wife says a relative gave him a jar of dark wild honey from the Black Sea coast. He ate 2 tablespoons with breakfast because he was told it lowers blood pressure.",
+        prompt: "What is the most likely diagnosis?",
         required: 1,
-        accept: [
-          {
-            id: "fab",
-            text: "Digoxin immune Fab",
-            match: ["fab", "digifab", "digibind", "digoxin immune", "digoxin specific antibody", "digoxin antidote"],
-          },
-        ],
-        unacceptable: [{ text: "Hemodialysis to remove digoxin", match: ["dialysis", "hemodialysis"] }],
+        accept: [{ id: "honey", text: "Grayanotoxin poisoning from mad honey", match: ["honey", "grayanotoxin", "rhododendron"] }],
+        unacceptable: [{ text: "Organophosphate poisoning", match: ["organophosphate"] }],
         explanation:
-          "Digoxin immune Fab binds digoxin and reverses bradycardia, dysrhythmias and hyperkalemia within about an hour. Digoxin has a large volume of distribution and is not removed by dialysis. Contact the poison centre for dosing.",
+          "Mad honey is made by bees from rhododendron nectar and is used as a folk remedy, especially for hypertension. Symptoms start soon after eating it, most often dizziness, nausea and near fainting. In a review of 1 199 cases, sinus bradycardia was seen in about 80% and complete AV block in about 46%. He has no pesticide exposure to suggest an organophosphate, and the honey explains the timing.",
         keyFeature: { topic: "tox", n: 2 },
-        source: "tox",
+        source: "mad-honey-review",
       },
       {
         id: "q3",
         kind: "short",
-        prompt: "What are the indications for this treatment in digoxin toxicity?",
+        prompt: "What treatment would you give now, including the dose and route of any drug?",
         required: 2,
-        accept: [
-          {
-            id: "rhythm",
-            text: "Life threatening dysrhythmia or symptomatic bradycardia",
-            match: ["bradycardia", "dysrhythmia", "arrhythmia", "heart block", "ventricular"],
-          },
-          { id: "k", text: "Hyperkalemia, especially potassium over 5 mmol/L in acute toxicity", match: ["potassium", "hyperkalemia"] },
-          { id: "organ", text: "End organ hypoperfusion or shock", match: ["hypoperfusion", "shock", "hypotension", "end organ"] },
-          { id: "renal", text: "Chronic toxicity with worsening renal function and symptoms", match: ["renal", "kidney"] },
-          { id: "level", text: "Markedly elevated digoxin level", match: ["level", "concentration"] },
-          { id: "dose", text: "Large acute ingestion", match: ["ingestion", "overdose"] },
-        ],
-        explanation:
-          "Fab is indicated for dysrhythmias, hyperkalemia, hypoperfusion and very high levels or large ingestions. Chronic toxicity with symptoms and renal failure is a common indication in older adults. The level alone is less important than the clinical picture.",
-        keyFeature: { topic: "tox", n: 2 },
-        source: "tox",
-      },
-      {
-        id: "q4",
-        kind: "short",
-        update: "Before the antidote arrives her HR falls to 34 and her BP to 78/44 mmHg.",
-        prompt: "What is your next treatment, including the dose and route?",
-        required: 1,
         accept: [
           {
             id: "atropine",
             text: "Atropine 0.5 to 1 mg IV, repeated as needed",
-            match: c(["atropine"], ["0.5 mg", "0.5mg", "1 mg", "1mg"]),
+            match: c(["atropine"], ["0.5 mg", "0.5mg", "1 mg", "1mg", "500 mcg", "0.5 to 1 mg", "0.6 mg"]),
           },
+          { id: "fluid", text: "IV normal saline bolus", match: ["saline", "crystalloid", "fluid", "bolus", "ringer"] },
+          { id: "pacing", text: "Transcutaneous pacing if atropine and fluid fail", match: ["pacing", "pace", "pacer"] },
         ],
-        unacceptable: [{ text: "A beta blocker", match: ["metoprolol", "beta blocker"], dangerous: true }],
+        unacceptable: [
+          { text: "Pralidoxime", match: ["pralidoxime", "2 pam"] },
+          { text: "Digoxin immune Fab", match: ["fab", "digifab"] },
+        ],
         explanation:
-          "Atropine is a reasonable bridge for symptomatic bradycardia while Fab is obtained. Pacing is a last resort because the irritable myocardium may develop VT or VF. Fab should be given as soon as it arrives.",
+          "Atropine and IV saline are the mainstays of treatment. In the review of 1 199 cases, most patients received atropine 0.5 mg or 1 mg IV and IV fluid, no deaths were reported, and most were discharged within 24 hours after recovery. Pacing is the back-up if bradycardia and hypotension persist despite atropine. Pralidoxime has no role because this is not organophosphate poisoning, and digoxin Fab does not bind grayanotoxin.",
+        keyFeature: { topic: "tox", n: 2 },
+        source: "mad-honey-review",
+      },
+      {
+        id: "q4",
+        kind: "short",
+        update: "After atropine 1 mg IV and 1 L of saline, his HR is 64 and his BP is 112/70 mmHg.",
+        prompt: "What complications would you watch for, and how would you monitor him?",
+        required: 2,
+        accept: [
+          { id: "block", text: "Recurrent bradycardia, complete heart block or asystole", match: ["heart block", "av block", "bradycardia", "asystole"] },
+          { id: "bp", text: "Recurrent hypotension", match: ["hypotension", "low blood pressure"] },
+          {
+            id: "monitor",
+            text: "Continuous cardiac monitoring until he has recovered, usually within 24 hours",
+            match: ["24 hour", "telemetry", "cardiac monitor", "monitoring", "monitored"],
+          },
+          { id: "aspiration", text: "Aspiration from vomiting", match: ["aspiration"] },
+          { id: "fall", text: "Injury from a faint or fall", match: ["fall", "injury"] },
+        ],
+        explanation:
+          "Complete heart block occurs in a large share of reported cases, and asystole has been described, so he needs continuous cardiac monitoring. Bradycardia and hypotension can recur while the toxin is still active. Treatment with saline and atropine is almost always successful, and most patients recover within a day. Advise him to discard the honey and warn anyone else who ate from the same jar.",
         keyFeature: { topic: "tox", n: 5 },
-        source: "aha-sc",
+        source: "grayanotoxin",
       },
     ],
-    sources: [TOX, AHA_SC],
+    sources: [GRAYANOTOXIN, MAD_HONEY_REVIEW],
   },
 ];
