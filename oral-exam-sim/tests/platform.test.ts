@@ -292,7 +292,10 @@ describe("Codemagic", () => {
     expect(ids(root)).toEqual(["android-debug", "android-release", "android-play-internal", "ios-release"]);
     expect(ids(root)).toEqual(ids(local));
     expect(root.match(/^    working_directory: oral-exam-sim$/gm)?.length).toBe(4);
-    for (const s of ["preceptor_signing", "preceptor_play", "app_store_connect: preceptor_appstore"]) expect(root, s).toContain(s);
+    for (const s of ["android_signing:\n        - preceptor_upload_key", "preceptor_play", "app_store_connect: preceptor_appstore", "distribution_type: app_store", "bundle_identifier: com.preceptor.oral"]) expect(root, s).toContain(s);
+    // Signing comes from Codemagic code signing identities, never from pasted secrets.
+    for (const s of ["preceptor_signing", "IOS_CERT_KEY", "PRECEPTOR_KEYSTORE_BASE64"]) expect(root, s).not.toContain(s);
+    expect(root.match(/- preceptor_upload_key/g)?.length).toBe(2);
     // With working_directory set, Codemagic resolves artifact globs from that folder
     // (build 1 found nothing with an oral-exam-sim/ prefix), so the paths match the local file.
     const arts = (y: string) => y.match(/^      - [^*\s]\S*\/\S*$/gm) ?? [];

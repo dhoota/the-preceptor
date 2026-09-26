@@ -57,13 +57,13 @@ workflows:
     environment:
       node: 20
       java: 21
-      groups:
-        - preceptor_signing   # PRECEPTOR_KEYSTORE_BASE64, PRECEPTOR_STORE_PASSWORD, PRECEPTOR_KEY_ALIAS, PRECEPTOR_KEY_PASSWORD
+      android_signing:
+        - preceptor_upload_key   # Code signing identities > Android keystores. Sets CM_KEYSTORE_PATH, CM_KEYSTORE_PASSWORD, CM_KEY_ALIAS, CM_KEY_PASSWORD.
     scripts:
-      - name: Decode and check keystore from secret
-        # Fails in seconds if a signing variable is missing, the base64 is bad or
-        # double-encoded, the store password is wrong, or the key alias is absent.
-        script: bash scripts/ci/decode-keystore.sh
+      - name: Check the uploaded keystore
+        # Fails in seconds if the keystore reference is missing, or its password,
+        # alias or key password does not open it.
+        script: bash scripts/ci/check-keystore.sh
       - *install
       - *test
       - *launch_gate
@@ -88,21 +88,22 @@ workflows:
     environment:
       node: 20
       java: 21
+      android_signing:
+        - preceptor_upload_key
       groups:
-        - preceptor_signing
         - preceptor_play      # GCLOUD_SERVICE_ACCOUNT_CREDENTIALS
     scripts:
       - name: Fail fast if required secrets are missing
         script: |
           missing=""
-          for v in GCLOUD_SERVICE_ACCOUNT_CREDENTIALS PRECEPTOR_KEYSTORE_BASE64 PRECEPTOR_STORE_PASSWORD PRECEPTOR_KEY_ALIAS PRECEPTOR_KEY_PASSWORD; do
+          for v in GCLOUD_SERVICE_ACCOUNT_CREDENTIALS; do
             if [ -z "${!v}" ]; then missing="$missing $v"; fi
           done
           if [ -n "$missing" ]; then echo "Missing:$missing"; exit 1; fi
-      - name: Decode and check keystore from secret
-        # Fails in seconds if a signing variable is missing, the base64 is bad or
-        # double-encoded, the store password is wrong, or the key alias is absent.
-        script: bash scripts/ci/decode-keystore.sh
+      - name: Check the uploaded keystore
+        # Fails in seconds if the keystore reference is missing, or its password,
+        # alias or key password does not open it.
+        script: bash scripts/ci/check-keystore.sh
       - *install
       - *test
       - *launch_gate
@@ -141,8 +142,13 @@ workflows:
       node: 20
       xcode: latest
       cocoapods: default
-      groups:
-        - preceptor_signing   # IOS_CERT_KEY (Secure). Reuse the existing key. See CODEMAGIC-NOTES.md in preceptor-app.
+      ios_signing:
+        # Codemagic-managed signing. Uses the account-level distribution
+        # certificate preceptor_distribution and the App Store profile for this
+        # bundle id, both from Code signing identities. The keychain is set up
+        # automatically, so no certificate key is restored here.
+        distribution_type: app_store
+        bundle_identifier: com.preceptor.oral
       vars:
         BUNDLE_ID: "com.preceptor.oral"
     scripts:
@@ -156,19 +162,8 @@ workflows:
         script: cd ios/App && pod install
       - name: Set unique iOS build number
         script: cd ios/App && agvtool new-version -all "$BUILD_NUMBER"
-      - name: Restore persistent iOS signing key
-        script: |
-          if [ -z "$IOS_CERT_KEY" ]; then echo "IOS_CERT_KEY not set in preceptor_signing."; exit 1; fi
-          echo "$IOS_CERT_KEY" | base64 --decode > "$CM_BUILD_DIR/ios_cert.key"
-      - name: Set up code signing
-        script: |
-          keychain initialize
-          app-store-connect fetch-signing-files "$BUNDLE_ID" \
-            --type IOS_APP_STORE \
-            --certificate-key=@file:"$CM_BUILD_DIR/ios_cert.key" \
-            --create
-          keychain add-certificates
-          xcode-project use-profiles
+      - name: Apply the App Store profile to the Xcode project
+        script: xcode-project use-profiles
       - name: Build signed IPA
         script: |
           xcode-project build-ipa --workspace "ios/App/App.xcworkspace" --scheme "App"

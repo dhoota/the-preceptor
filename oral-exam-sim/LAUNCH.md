@@ -103,7 +103,12 @@ A candidate with no subscription sees all three offered. A candidate who holds W
 
 ## 6. Codemagic
 
-1. The Codemagic app "Preceptor: CCFP-EM" uses the root `codemagic.yaml` (section 1). Link the existing `preceptor_signing` and `preceptor_play` groups and the `preceptor_appstore` integration. Reuse the same `IOS_CERT_KEY`.
+1. The Codemagic app "Preceptor: CCFP-EM" uses the root `codemagic.yaml` (section 1). It needs the `preceptor_play` group and the `preceptor_appstore` integration. Signing no longer uses pasted secrets, and the `preceptor_signing` group is not used.
+   - **iOS:** `ios_signing` (app_store, com.preceptor.oral) uses the account-level distribution certificate `preceptor_distribution`. Codemagic needs the App Store provisioning profile for com.preceptor.oral in Code signing identities > iOS provisioning profiles. Use "Fetch profiles" there, which goes through the App Store Connect integration. If Apple has no such profile yet, create one at developer.apple.com (Profiles > App Store Connect > com.preceptor.oral > the preceptor_distribution certificate), then fetch it.
+   - **Android:** `android_signing: preceptor_upload_key`. This is a new upload key, which is fine because this app has never been uploaded to Play. One-time step:
+     1. On a Mac, in Terminal: `"/Applications/Android Studio.app/Contents/jbr/Contents/Home/bin/keytool" -genkeypair -v -keystore preceptor-upload.jks -storetype JKS -keyalg RSA -keysize 2048 -validity 10000 -alias upload`. Answer the prompts. Choose a keystore password, and press Enter at the key password prompt to reuse it.
+     2. In Codemagic > Team settings > codemagic.yaml settings > Code signing identities > Android keystores, upload `preceptor-upload.jks`. Enter the keystore password, key alias `upload`, the key password, and reference name `preceptor_upload_key`.
+     3. Keep the .jks and its password in a password manager. Never commit them. With Play App Signing, a lost upload key can be reset through Play Console support, but that takes days.
 2. Workflows: `android-debug`, `android-release`, `android-play-internal` (manual, internal track only), `ios-release` (TestFlight only).
 3. Every workflow runs `npm test`. Release workflows also run the launch gate.
 
