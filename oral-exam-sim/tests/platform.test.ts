@@ -289,13 +289,13 @@ describe("Codemagic", () => {
     const root = readFileSync(new URL("../../codemagic.yaml", import.meta.url), "utf8");
     const local = readFileSync(new URL("../codemagic.yaml", import.meta.url), "utf8");
     const ids = (y: string) => [...y.slice(y.indexOf("workflows:")).matchAll(/^  ([a-z0-9-]+):$/gm)].map((m) => m[1]);
-    expect(ids(root)).toEqual(["android-debug", "android-release", "android-play-internal", "ios-release"]);
+    expect(ids(root)).toEqual(["android-debug", "android-release", "android-build-only", "android-play-internal", "ios-release"]);
     expect(ids(root)).toEqual(ids(local));
-    expect(root.match(/^    working_directory: oral-exam-sim$/gm)?.length).toBe(4);
+    expect(root.match(/^    working_directory: oral-exam-sim$/gm)?.length).toBe(5);
     for (const s of ["android_signing:\n        - preceptor_upload_key", "preceptor_play", "app_store_connect: preceptor_appstore", "distribution_type: app_store", "bundle_identifier: com.preceptor.oral"]) expect(root, s).toContain(s);
     // Signing comes from Codemagic code signing identities, never from pasted secrets.
     for (const s of ["preceptor_signing", "IOS_CERT_KEY", "PRECEPTOR_KEYSTORE_BASE64"]) expect(root, s).not.toContain(s);
-    expect(root.match(/- preceptor_upload_key/g)?.length).toBe(2);
+    expect(root.match(/- preceptor_upload_key/g)?.length).toBe(3);
     // android-release uploads to closed testing as a draft, never production.
     expect(root).toContain("track: alpha");
     expect(root).toContain("submit_as_draft: true");

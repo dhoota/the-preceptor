@@ -98,6 +98,37 @@ workflows:
         track: alpha            # closed testing. Never production.
         submit_as_draft: true   # the app is still a draft on Play
 
+  android-build-only:
+    name: Preceptor CCFP-EM Android (build only, no Play upload)
+    # Same as android-release, but no Play credentials and no upload. Produces
+    # the signed .aab and .apk as artifacts only, with the versionCode in build.gradle.
+    max_build_duration: 30
+    instance_type: mac_mini_m2
+    environment:
+      node: 20
+      java: 21
+      android_signing:
+        - preceptor_upload_key   # Code signing identities > Android keystores. Sets CM_KEYSTORE_PATH, CM_KEYSTORE_PASSWORD, CM_KEY_ALIAS, CM_KEY_PASSWORD.
+    scripts:
+      - name: Check the uploaded keystore
+        # Fails in seconds if the keystore reference is missing, or its password,
+        # alias or key password does not open it.
+        script: bash scripts/ci/check-keystore.sh
+      - *install
+      - *test
+      - *launch_gate
+      - *build_web
+      - name: Sync web assets into Android project
+        script: npx cap sync android
+      - name: Build signed release APK and AAB
+        script: |
+          cd android
+          chmod +x ./gradlew
+          ./gradlew :app:assembleRelease :app:bundleRelease
+    artifacts:
+      - android/app/build/outputs/**/*.apk
+      - android/app/build/outputs/**/*.aab
+
   android-play-internal:
     name: Preceptor CCFP-EM Android (publish to Play internal track)
     max_build_duration: 30
