@@ -1098,12 +1098,12 @@ export const CHEST_PAIN_S28: Samp[] = [
         kind: "menu",
         prompt: "Which of the following changes to her case would make discharge after a single troponin unsafe?",
         options: [
-          "Age of 55 years",
+          "Age of 55 years rather than 49",
           "Hypertension on ramipril",
           "New ST depression on the ECG",
           "Pain onset 1 hour before the draw",
           "Prior normal stress test",
-          "Treated dyslipidemia",
+          "Treated dyslipidemia on a statin",
         ],
         select: 2,
         correct: [2, 3],
@@ -1133,6 +1133,8 @@ export const CHEST_PAIN_S28: Samp[] = [
     ],
     sources: [ESC_ACS, HEART_SCORE],
     ...meta,
+    reviewed: false,
+    version: 2,
   },
 
   /* 28 ------------------------------------------------------------------ */
@@ -1972,10 +1974,10 @@ export const CHEST_PAIN_S28: Samp[] = [
         options: [
           "ASA 160 mg PO chewed",
           "Enoxaparin 1 mg/kg SC every 12 hours",
-          "Ketorolac 30 mg IV",
-          "Pantoprazole 40 mg IV",
-          "Tenecteplase 45 mg IV",
-          "Warfarin 5 mg PO daily",
+          "Ketorolac 30 mg IV every 6 hours",
+          "Pantoprazole 40 mg IV daily",
+          "Tenecteplase 45 mg IV bolus",
+          "Warfarin 5 mg PO once daily",
         ],
         select: 2,
         correct: [0, 1],
@@ -1987,6 +1989,8 @@ export const CHEST_PAIN_S28: Samp[] = [
     ],
     sources: [ESC_ACS],
     ...meta,
+    reviewed: false,
+    version: 2,
   },
 
   /* 41 ------------------------------------------------------------------ */

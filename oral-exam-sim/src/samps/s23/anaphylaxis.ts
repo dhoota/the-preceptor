@@ -107,7 +107,8 @@ const base = { topic: "anaphylaxis", reviewed: true, author: AUTHOR, version: 1 
 export const ANAPHYLAXIS_S23: Samp[] = [
   {
     ...base,
-    version: 2,
+    reviewed: false,
+    version: 3,
     id: "anaphylaxis-16",
     title: "Collapse while a wound is cleaned",
     stem: "A 38-year-old man presents to the emergency department with a 4 cm laceration of the palm from a broken glass. A nurse cleaned the wound and surrounding skin with a chlorhexidine 2% antiseptic solution. No local anesthetic or other drug has been given. Ten minutes later he says he feels hot and dizzy, then slumps on the stretcher. Two years ago a planned knee arthroscopy was cancelled after he had an unexplained drop in BP and a rash in the operating room. After a dental cleaning last year his lips swelled. He takes no medications.\n\nHe is flushed and pale around the lips, with faint hives on his chest. His lungs are clear. The wound is oozing slightly.",
@@ -140,7 +141,14 @@ export const ANAPHYLAXIS_S23: Samp[] = [
         kind: "menu",
         prompt: "Which of the following are the most appropriate next steps in his management?",
         select: 2,
-        options: ["Crystalloid 1 L IV", "Glucagon 1 mg IV", "Irrigate the chlorhexidine off", "Oral cetirizine alone", "Prednisone 50 mg PO", "Sit him upright"],
+        options: [
+          "Crystalloid 1 L IV",
+          "Glucagon 1 mg IV",
+          "Irrigate the chlorhexidine off",
+          "Oral cetirizine 10 mg alone",
+          "Prednisone 50 mg PO",
+          "Sit him upright on the stretcher",
+        ],
         correct: [0, 2],
         explanation:
           "A rapid crystalloid bolus treats the vasodilation and fluid shift of anaphylactic shock, and washing the remaining chlorhexidine from the skin and wound removes the trigger, as stopping an infusion would for a drug. He should lie flat with his legs raised, because sitting or standing can cause sudden collapse. Glucagon is used when a beta blocker blunts the response to epinephrine, and he takes none. Oral cetirizine and prednisone do not treat shock.",

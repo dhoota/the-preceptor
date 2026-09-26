@@ -1222,7 +1222,7 @@ export const CVA_S27_SAMPS: Samp[] = [
           "Right superior cerebellar artery"
         ],
         "correct": 4,
-        "explanation": "The superior cerebellar artery supplies the upper cerebellar hemisphere. Its infarcts cause gait and limb ataxia with little or no vertigo, as in this patient. Most cerebellar infarcts that present as isolated vertigo lie in the territory of the medial branch of the posterior inferior cerebellar artery, and he has no vertigo, vomiting or nystagmus. The lenticulostriate and thalamoperforating arteries supply the internal capsule and thalamus, and a middle cerebral artery branch supplies the hand area of the cortex. Lesions there would cause weakness or sensory loss on the right, which he does not have.",
+        "explanation": "The superior cerebellar artery supplies the upper surface of the cerebellar hemisphere. Its infarcts cause gait and limb ataxia with little or no vertigo, as in this patient, and can follow occlusion at the top of the basilar artery. His ataxia comes with no vertigo, vomiting or nystagmus, which fits this territory better than that of the posterior inferior cerebellar artery. The lenticulostriate and thalamoperforating arteries supply the internal capsule and thalamus, and a middle cerebral artery branch supplies the hand area of the cortex. Lesions there would cause weakness or sensory loss on the right, which he does not have.",
         "keyFeature": {
           "topic": "cva",
           "n": 3
@@ -1262,7 +1262,7 @@ export const CVA_S27_SAMPS: Samp[] = [
           "Non-contrast CT only"
         ],
         "correct": 1,
-        "explanation": "Canadian guidance calls for vascular imaging from the aortic arch to the vertex without delay after an acute stroke, and upper cerebellar infarcts can come from an occlusion at the top of the basilar artery. The same guidance says a known contrast allergy or renal failure should not exclude a patient from thrombectomy assessment, and it advises IV diphenhydramine, a corticosteroid and an H2 blocker beforehand. Initial blood work should not delay imaging, so waiting for creatinine is wrong. Carotid Doppler does not show the basilar artery. MR angiography tomorrow is too late, and non-contrast CT cannot show an occlusion.",
+        "explanation": "Canadian guidance calls for vascular imaging from the aortic arch to the vertex without delay after an acute stroke. The same guidance says a known contrast allergy or renal failure should not exclude a patient from thrombectomy assessment, and it advises IV diphenhydramine, a corticosteroid and an H2 blocker beforehand. Initial blood work should not delay imaging, so waiting for creatinine is wrong. Carotid Doppler does not show the basilar artery. MR angiography tomorrow is too late, and non-contrast CT cannot show an occlusion.",
         "keyFeature": {
           "topic": "cva",
           "n": 3
@@ -1272,7 +1272,8 @@ export const CVA_S27_SAMPS: Samp[] = [
     ],
     "sources": [SRC_AMARENCO_SCA, SRC_KASE_SCA, SRC_CSBPR_ACUTE],
     ...meta,
-    "version": 3,
+    "reviewed": false,
+    "version": 4,
   },
   {
     "id": "cva-28",

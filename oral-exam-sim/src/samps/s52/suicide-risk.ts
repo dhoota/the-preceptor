@@ -778,7 +778,15 @@ export const SUICIDE_RISK_S52: Samp[] = [
         select: 2,
         update: "Through the interpreter, he describes nightmares and flashbacks of the war and says his family would be better off without him. He attends his mosque weekly, lives with his wife and children, takes English classes and has worked in a warehouse since spring.",
         prompt: "Which of the following findings in his history raise his risk of suicide?",
-        options: ["Attends his mosque weekly", "Belief his family is better off without him", "English language classes", "Headaches worst on waking", "Lives with his wife and children", "Nightmares and flashbacks of the war", "Warehouse job since spring"],
+        options: [
+          "Attends prayers at his mosque weekly",
+          "Belief his family is better off without him",
+          "Daily headaches worst on waking",
+          "Has worked in a warehouse since spring",
+          "Lives with his wife and children",
+          "Nightmares and flashbacks of the war",
+          "Takes English language classes",
+        ],
         correct: [1, 5],
         explanation:
           "Feeling that his family would be better off without him is a statement of perceived burden and hopelessness, and it needs direct questions about plan and intent. Nightmares and flashbacks suggest posttraumatic stress disorder, which is common in refugees and raises suicide risk. His faith community, his family at home, language classes and work are protective factors to build into his plan. Morning headaches are a symptom to follow up, not a suicide risk factor.",
@@ -800,6 +808,8 @@ export const SUICIDE_RISK_S52: Samp[] = [
     ],
     sources: [S.karliner, S.kirmayer],
     ...META,
+    reviewed: false,
+    version: 2,
   },
   /* 30 Chest tightness after an arrest ------------------------------------- */
   {

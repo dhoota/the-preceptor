@@ -1103,7 +1103,14 @@ export const DELIRIUM_AGITATION_S34: Samp[] = [
         id: "q1",
         kind: "menu",
         prompt: "Which of the following investigations are most likely to show the cause of her confusion?",
-        options: ["CT of the head without contrast", "Electroencephalogram", "Lumbar puncture", "Serum sodium", "Thyroid stimulating hormone", "Urine culture"],
+        options: [
+          "CT of the head without contrast",
+          "Electroencephalogram",
+          "Lumbar puncture and CSF studies",
+          "Serum sodium",
+          "Thyroid stimulating hormone",
+          "Urine culture and sensitivity",
+        ],
         select: 2,
         correct: [0, 3],
         explanation: "A week of morning headache with new confusion in small cell lung cancer points to a mass or bleeding, so a CT head comes first. Small cell tumours also produce antidiuretic hormone, and a low sodium is a common and treatable cause of delirium in a patient with that tumour. An electroencephalogram is for suspected seizures without convulsions, which nothing here suggests. Lumbar puncture in a woman with possible intracranial metastases and no fever or neck stiffness adds risk without answers. Thyroid results rarely explain a change over 2 days. A urine culture invites anchoring on bacteriuria that is common and often silent.",
@@ -1145,9 +1152,9 @@ export const DELIRIUM_AGITATION_S34: Samp[] = [
       },
     ],
     sources: [SRC_INOUYE_2006, SRC_BETA_DEESC, SRC_KNOX, SRC_BEACH],
-    reviewed: true,
+    reviewed: false,
     author: AUTHOR,
-    version: 2,
+    version: 3,
   },
   /* 33 ------------------------------------------------------------------ */
   {
