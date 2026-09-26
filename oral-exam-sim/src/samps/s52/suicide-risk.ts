@@ -431,53 +431,82 @@ export const SUICIDE_RISK_S52: Samp[] = [
     ...META,
     version: 2,
   },
-  /* 23 Medication counselling after a tricyclic start --------------------- */
+  /* 23 Lithium counselling at discharge --------------------------------- */
   {
     id: "suicide-risk-23",
     topic: "suicide-risk",
-    title: "Better off with the insurance",
+    title: "A late-night text to her brother",
     stem:
-      "A 58-year-old man is brought to the emergency department by his wife. Last night he told her she would be better off with his life insurance. He has had low mood, early waking and poor appetite for 2 months since he was passed over for a promotion. His family physician started amitriptyline 50 mg at bedtime 3 weeks ago and dispensed 90 tablets. He has thought about death but has no plan and no past attempts. He drinks 2 glasses of wine most nights. He has type 2 diabetes and takes metformin. He is tearful but engaged and wants help.",
-    vitals: { temperature: "36.7°C oral", pulse: "80/minute", resp: "14/minute", bp: "136/82 mmHg", o2sat: "98% on room air", weight: "92 kg" },
+      "A 36-year-old woman with bipolar I disorder is brought to the emergency department by her brother. She has been stable for 6 years on lithium 900 mg at bedtime, with a level in range 2 months ago. For 3 weeks she has had low mood, poor sleep and little energy since her father was diagnosed with cancer. Last night she texted her brother that she was tired of fighting her illness. She has passive thoughts of death but no plan, intent or past attempts, and no psychotic or manic symptoms. Four days ago a walk-in clinic started naproxen 500 mg twice daily for wrist tendinitis. She takes no other medications. The on-call psychiatrist agrees with discharge to her brother's home, and her own psychiatrist will see her in 3 days.",
+    vitals: { temperature: "36.8°C oral", pulse: "76/minute", resp: "14/minute", bp: "118/74 mmHg", o2sat: "99% on room air", weight: "68 kg" },
     questions: [
       {
         id: "q1",
         kind: "single",
-        update: "The psychiatry consultant judges his risk as moderate and agrees with outpatient care. The crisis team will see him in 48 hours, and his wife will stay with him.",
-        prompt: "Which of the following is the most appropriate change to his antidepressant treatment?",
-        options: ["Add lorazepam for sleep", "Change to sertraline 50 mg daily", "Continue amitriptyline at 50 mg", "Increase amitriptyline to 100 mg", "Switch amitriptyline to zopiclone"],
+        update: "She asks whether she should stop lithium, since it has not kept her mood up.",
+        prompt: "Which of the following is the most accurate advice to give her about her lithium?",
+        options: [
+          "Halve the lithium dose until mood lifts",
+          "Keep lithium at her current dose",
+          "Replace lithium with sertraline alone",
+          "Stop lithium until she sees psychiatry",
+          "Taper lithium off over 2 weeks",
+        ],
         correct: 1,
         explanation:
-          "Tricyclic antidepressants are among the most lethal drugs in overdose, and he has suicidal thoughts and most of the 90 tablets dispensed still at home. An SSRI such as sertraline is a first line antidepressant with far lower toxicity in overdose. The change is made with the psychiatry consultant, and his family physician is told the same day. Continuing or increasing amitriptyline keeps a highly lethal supply in his hands. Lorazepam and zopiclone treat sleep, not depression, and both add sedation and overdose risk with his nightly wine.",
+          "Lithium is the gold standard maintenance treatment in bipolar disorder. It prevents both manic and depressive episodes and appears to have an anti-suicidal effect, which matters now that she has thoughts of death. She should keep taking it, and any change is for her psychiatrist in 3 days. Halving the dose, tapering it or stopping it until the psychiatry visit gives up that protection during a risky period. Antidepressant monotherapy is not recommended in bipolar I depression, because trials do not support it and it can switch mood, so sertraline alone is not a safe replacement.",
         keyFeature: { topic: "suicide-risk", n: 5 },
-        source: "canmat-2023",
+        source: "canmat-bd",
       },
       {
         id: "q2",
         kind: "single",
-        prompt: "Which of the following counselling points about starting sertraline is most accurate?",
-        options: ["Early side effects usually get worse", "It is safe to stop it all at once", "Mood may take weeks to improve", "Sexual side effects are uncommon", "Sleep improves within 2 days"],
-        correct: 2,
+        prompt: "Which of the following is the most appropriate advice about her lithium now that she takes naproxen?",
+        options: [
+          "Lithium level at her usual 3-month check",
+          "Recheck lithium and creatinine this week",
+          "Stop lithium while she takes naproxen",
+          "Switch naproxen to ibuprofen",
+          "No lithium check for a short course",
+        ],
+        correct: 1,
         explanation:
-          "Improvement in mood usually builds over several weeks, and patients who expect that are less likely to stop early. Early side effects such as nausea and restlessness usually ease over the first weeks rather than worsen. Stopping abruptly can cause discontinuation symptoms, so changes should be planned with his physician. Sexual side effects are common with SSRIs and should be named in advance. Sleep does not reliably improve within days.",
+          "The Canadian lithium product monograph reports that indomethacin raises steady-state lithium levels by 30 to 59% and that other NSAIDs may have a similar effect, so it advises more frequent lithium levels when they are combined. The CANMAT and ISBD guideline advises a lithium level and kidney function check 5 to 7 days after an NSAID is started, in its advice for older adults. She started naproxen 4 days ago, so a check this week fits, and it is still needed if the naproxen is stopped. Waiting for her routine 3-month level misses the change. A short course still starts the interaction, so it still needs the check. Stopping lithium gives up its protective effect. Ibuprofen is also an NSAID, so switching to it does not avoid the interaction.",
         keyFeature: { topic: "suicide-risk", n: 5 },
-        source: "canmat-2023",
+        source: "carbolith-pm",
       },
       {
         id: "q3",
         kind: "single",
-        update: "He has 69 amitriptyline tablets left at home. His wife asks what she should do with them.",
-        prompt: "Which of the following is the most appropriate plan for the remaining amitriptyline tablets?",
-        options: ["Give them to his son to hold", "Keep them for a later switch back", "Let his wife hide them in a drawer", "Lock them in his car glove box", "Return them to the pharmacy"],
-        correct: 4,
+        prompt: "Which of the following is the most appropriate analgesic for her wrist while she takes lithium?",
+        options: [
+          "acetaminophen 1 g PO every 6 hours",
+          "celecoxib 200 mg PO daily",
+          "ibuprofen 400 mg PO every 6 hours",
+          "ketorolac 10 mg PO every 6 hours",
+          "naproxen 250 mg PO twice daily",
+        ],
+        correct: 0,
         explanation:
-          "Returning the tablets to a pharmacy for disposal removes a highly lethal supply from the home during the riskiest weeks. A drawer at home or a car he drives is within his reach. Keeping them for later leaves the same supply in the house. Giving them to his son moves the risk rather than removing it, and it relies on another person's storage. Removing lethal means is one of the few interventions shown to lower suicide deaths.",
+          "Acetaminophen is not among the drugs that the CANMAT and ISBD guideline lists as affecting lithium monitoring, so it treats her tendinitis pain without adding to the interaction. Celecoxib, ibuprofen and ketorolac are all NSAIDs, and a lower dose of naproxen is still an NSAID. Each would call for the same lithium and kidney monitoring, and NSAIDs also add to the long-term kidney risk of lithium.",
         keyFeature: { topic: "suicide-risk", n: 5 },
-        source: "yip-means",
+        source: "canmat-bd",
       },
     ],
-    sources: [S.canmat, S.yip],
+    sources: [
+      {
+        id: "canmat-bd",
+        citation: "Yatham LN, Kennedy SH, Parikh SV, et al. Canadian Network for Mood and Anxiety Treatments (CANMAT) and International Society for Bipolar Disorders (ISBD) 2018 guidelines for the management of patients with bipolar disorder. Bipolar Disord. 2018.",
+        url: "https://pmc.ncbi.nlm.nih.gov/articles/PMC5947163/",
+      },
+      {
+        id: "carbolith-pm",
+        citation: "Bausch Health Canada. Carbolith (lithium carbonate capsules) product monograph. Revised 2019.",
+        url: "https://pdf.hres.ca/dpd_pm/00051552.PDF",
+      },
+    ],
     ...META,
+    version: 2,
   },
   /* 24 Three weeks after a cesarean birth ---------------------------------- */
   {

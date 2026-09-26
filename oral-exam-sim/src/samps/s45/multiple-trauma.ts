@@ -243,89 +243,95 @@ export const MULTIPLE_TRAUMA_S45: Samp[] = [
   {
     id: "multiple-trauma-18",
     topic: "multiple-trauma",
-    title: "Stab wound near the groin",
-    stem: "A 23-year-old man is brought to the emergency department by police 15 minutes after he was stabbed once in the right groin. The wound is 2 cm long, just below the inguinal ligament. Blood has soaked through the dressing that a paramedic is pressing on the wound. He has no other wounds. He is pale and sweaty. GCS 14. He has no medical history and takes no medications. His right foot is warm with a palpable dorsalis pedis pulse.",
+    title: "Cyclist found hours after a crash",
+    stem: "A 47-year-old man is brought to the emergency department by air ambulance after an e-bike crash on a rural road. He was not wearing a helmet. His smartwatch logged a hard fall at 21:05. A passing driver found him in a ditch at 23:40. Critical care paramedics intubated him at the scene because blood was filling his airway, and they splinted his deformed left thigh. His GCS before intubation was 12. He arrived at 00:20. His wife reports by phone that he takes no medications. Blood runs from both nostrils and around the endotracheal tube. His maxilla moves when the upper teeth are grasped.",
     vitals: {
-      temperature: "36.4°C oral",
-      pulse: "134/minute",
-      resp: "28/minute",
-      bp: "84/52 mmHg",
-      o2sat: "97% on room air",
-      weight: "75 kg"
+      temperature: "35.6°C tympanic",
+      pulse: "132/minute",
+      resp: "16/minute",
+      bp: "84/50 mmHg",
+      o2sat: "95% on a ventilator with FiO2 1.0",
+      weight: "82 kg"
     },
     questions: [
       {
         id: "q1",
         kind: "single",
-        prompt: "Which of the following is the most appropriate method to control the bleeding from this wound?",
+        update: "Two suction catheters do not keep up with the bleeding from his nose and mouth.",
+        prompt: "Which of the following is the most appropriate next step to control the bleeding from his nose and mouth?",
         options: [
-          "Blind clamping of the femoral vessels",
-          "Elevation and a firm pressure bandage",
-          "Packing with hemostatic gauze and pressure",
-          "Skin closure with a running suture",
-          "Tourniquet at the top of the thigh"
+          "Angiography with embolization first",
+          "Anterior and posterior nasal tamponade",
+          "Anterior nasal gauze packing only",
+          "Electrocautery of the bleeding points",
+          "Ligation of the external carotid artery"
         ],
-        correct: 2,
-        explanation: "A wound just below the inguinal ligament is junctional, with no room above it for a tourniquet. The bleeding point is packed tightly with hemostatic gauze and firm pressure is held until surgical control. A tourniquet at the top of the thigh would sit over or below the wound and cannot compress the vessel. Blind clamping risks injury to the femoral vein and nerve. Skin closure lets bleeding continue into the thigh, and elevation with a bandage cannot control bleeding at this depth.",
+        correct: 1,
+        explanation: "Brisk bleeding from both nostrils and around the tube, with a mobile maxilla, is bleeding from a midface fracture. Once the airway is secure, anterior nasal packing together with posterior balloon tamponade is the first step. The two press on the anterior and the posterior nasal plexus. Anterior packing alone leaves the posterior source without pressure. Angiography with embolization is kept for bleeding that persists after packing. Embolization has largely replaced surgical ligation of the external carotid artery. Cautery needs a single visible bleeding point, which diffuse bleeding from both nostrils does not offer.",
         keyFeature: {
           topic: "multiple-trauma",
           n: 1
         },
-        source: "euro-bleeding"
+        source: "wu-maxfac"
       },
       {
         id: "q2",
         kind: "single",
-        update: "The bleeding is controlled with packing. eFAST shows no free fluid in the abdomen and no pericardial effusion.",
-        prompt: "Which of the following is his assessment of blood consumption (ABC) score at this point?",
+        update: "His initial hemoglobin is 136 g/L. His blood pressure and pulse are unchanged.",
+        prompt: "Which of the following is the most appropriate approach to red cell transfusion for him at this point?",
         options: [
-          "1",
-          "2",
-          "3",
-          "4",
-          "5"
+          "Crystalloid 2 L IV, then reassess",
+          "Repeat the hemoglobin in 1 hour first",
+          "Transfuse if hemoglobin falls below 70 g/L",
+          "Transfuse only after a full crossmatch",
+          "Uncrossmatched red cells now"
         ],
-        correct: 2,
-        explanation: "The ABC score gives 1 point each for a penetrating mechanism, systolic BP of 90 mmHg or less, pulse of 120/minute or more and a positive FAST. He scores 1 for the stab wound, 1 for a systolic of 84 mmHg and 1 for a pulse of 134/minute, for a total of 3. The negative eFAST adds nothing, so a score of 4 is wrong. A score of 2 or more predicts massive transfusion, so the massive hemorrhage protocol should be activated. The score has only four items, so a score of 5 is not possible.",
+        correct: 4,
+        explanation: "He has a blood pressure of 84/50 mmHg and a pulse of 132/minute after hours of bleeding, so he needs red cells now. An early hemoglobin in the normal range can mask bleeding, because the value falls only as fluid moves into the vessels or is given. Waiting to repeat the hemoglobin, or for it to fall below 70 g/L, delays blood for a patient already in shock. A 2 L crystalloid load adds to hemodilution and carries no oxygen. A full crossmatch takes time he does not have, so uncrossmatched units come first.",
         keyFeature: {
           topic: "multiple-trauma",
           n: 6
         },
-        source: "abc-score"
+        source: "euro-bleeding"
       },
       {
         id: "q3",
         kind: "single",
-        prompt: "Which of the following red cell products is most appropriate for him while his blood group is unknown?",
+        update: "It is now 00:25, 3 hours and 20 minutes after the fall. No tranexamic acid has been given.",
+        prompt: "Which of the following is the most appropriate tranexamic acid order for him at this time?",
         options: [
-          "Crossmatched red cells when available",
-          "Group AB RhD negative red cells",
-          "Group O RhD negative red cells",
-          "Group O RhD positive red cells",
-          "Type specific red cells after grouping"
+          "tranexamic acid 1 g IV over 10 minutes",
+          "tranexamic acid 2 g IV over 10 minutes",
+          "tranexamic acid 1 g IV plus 1 g infusion",
+          "tranexamic acid 15 mg/kg IV over 10 minutes",
+          "No tranexamic acid"
         ],
-        correct: 3,
-        explanation: "He is a man, so uncrossmatched group O RhD positive red cells are appropriate. A Canadian consensus massive hemorrhage protocol reserves O RhD negative red cells for females of child-bearing potential, under 45 years, because O negative stock is limited. Group AB is the universal plasma donor group, not a red cell group that is safe for an unknown recipient. Grouping and crossmatching take far longer than a patient in shock can wait, so uncrossmatched units are given first.",
+        correct: 4,
+        explanation: "The smartwatch dates the injury to 21:05, so at 00:25 he is 3 hours and 20 minutes from injury. Tranexamic acid reduced death from bleeding when it was started within 3 hours. In the CRASH-2 analysis, treatment started after 3 hours raised the risk of death from bleeding, with a relative risk of 1.44. So none is given now. The 1 g load with a 1 g infusion over 8 hours is the regimen for patients inside the 3 hour window. A 2 g bolus or a 15 mg/kg dose changes the amount but not the timing problem.",
         keyFeature: {
           topic: "multiple-trauma",
           n: 6
         },
-        source: "on-mhp"
+        source: "crash2-timing"
       },
       {
         id: "q4",
-        kind: "single",
-        update: "He has received 6 units of red cells and 4 units of plasma. Ionized calcium is 0.86 mmol/L. His ECG shows sinus tachycardia with no other change.",
-        prompt: "Which of the following is the most appropriate treatment for his ionized calcium result?",
+        kind: "menu",
+        select: 2,
+        update: "CT of the head shows a small right frontal contusion. Blood pressure is 104/66 mmHg. Slow oozing continues from the nose. Hemoglobin is 94 g/L, prothrombin time 1.8 times normal (INR 1.9), fibrinogen 1.8 g/L and platelets 84 x 10^9/L.",
+        prompt: "Which of the following blood products or drugs are most appropriate for him based on these results?",
         options: [
-          "calcium chloride 1 g IV",
-          "calcium gluconate 1 g IV",
-          "magnesium sulfate 2 g IV",
-          "sodium bicarbonate 50 mmol IV",
-          "No calcium unless the ECG changes"
+          "Cryoprecipitate",
+          "Desmopressin",
+          "Fibrinogen concentrate",
+          "Frozen plasma",
+          "Platelets",
+          "Recombinant factor VIIa",
+          "Red cells",
+          "Vitamin K"
         ],
-        correct: 0,
-        explanation: "Citrate in transfused products binds calcium, and his ionized calcium of 0.86 mmol/L is well below the normal range of 1.1 to 1.3 mmol/L. Low calcium impairs clotting and cardiac contractility, so it is corrected with calcium chloride. One gram of calcium chloride holds about 6.8 mmol of calcium, three times the 2.2 mmol in 1 g of calcium gluconate, so the gluconate dose is too small. Bicarbonate raises pH and lowers ionized calcium further. Magnesium does not correct hypocalcemia. Waiting for ECG changes leaves the coagulopathy untreated.",
+        correct: [3, 4],
+        explanation: "He has a brain contusion and ongoing bleeding. A platelet count of 84 x 10^9/L is below the 100 x 10^9/L advised when there is brain injury, so platelets are given. A prothrombin time 1.8 times normal is above the 1.5 times threshold for more plasma. Fibrinogen of 1.8 g/L is above the 1.5 g/L trigger, so cryoprecipitate and fibrinogen concentrate are not needed. A hemoglobin of 94 g/L is above the 70 to 90 g/L target. Recombinant factor VIIa is not a first-line treatment. He takes no anticoagulant, so vitamin K has no role. Desmopressin has been proposed only to reverse antiplatelet drugs, and he takes none.",
         keyFeature: {
           topic: "multiple-trauma",
           n: 6
@@ -335,49 +341,49 @@ export const MULTIPLE_TRAUMA_S45: Samp[] = [
       {
         id: "q5",
         kind: "single",
-        update: "The surgeon arrives and starts to examine the wound. The nurses, the respiratory therapist and the surgeon are all asking you questions at the same time.",
-        prompt: "Which of the following is the most appropriate action for you as the team leader at this moment?",
+        update: "His wife arrives and asks to stay at his side during the resuscitation. She is tearful but calm. The department has a family presence policy.",
+        prompt: "Which of the following is the most appropriate response to her request from you as the team leader?",
         options: [
-          "Answer each question in the order asked",
-          "Call a brief pause and summarize the plan",
-          "Hand leadership to the surgeon without comment",
-          "Leave the bay to book the operating room",
-          "Raise your voice to regain control"
+          "Ask her to wait in the family room",
+          "Brief her yourself at the bedside now",
+          "Have security escort her from the area",
+          "Invite her in with a staff chaperone",
+          "Let her stand at the head of the bed"
         ],
-        correct: 1,
-        explanation: "When several people speak at once, a brief pause with a spoken summary of the findings, the priorities and each person's task rebuilds a shared mental model and lets the team work in parallel again. Answering questions one at a time keeps the team waiting in a queue. A silent change of leader leaves the team unsure who is in charge, so any handover must be stated aloud. Leaving the bay removes the leader from the resuscitation. Raising your voice adds noise without restoring order.",
+        correct: 3,
+        explanation: "The department has a family presence policy and she is calm, so she can be offered a place in the room. A Canadian position paper found that offering family presence does not change patient outcomes, and family psychological outcomes are neutral or better. It advises that an experienced chaperone accompany and support the family member. Standing alone at the head of the bed puts her in the airway team's space without support. Briefing her yourself takes the leader away from the resuscitation. Sending her to the family room, or out with security, excludes her against the policy.",
         keyFeature: {
           topic: "multiple-trauma",
           n: 7
         },
-        source: "hicks"
+        source: "ccs-fpdr"
       }
     ],
     sources: [
+      {
+        id: "wu-maxfac",
+        citation: "Wu FC, Hung KS, Lin YW, et al. Effectiveness of protocolized management for patients sustaining maxillofacial fracture with massive oronasal bleeding: a single-center experience. Scand J Trauma Resusc Emerg Med. 2022.",
+        url: "https://doi.org/10.1186/s13049-022-01047-9"
+      },
       {
         id: "euro-bleeding",
         citation: "Rossaint R, Afshari A, Bouillon B, et al. The European guideline on management of major bleeding and coagulopathy following trauma: sixth edition. Crit Care. 2023.",
         url: "https://pubmed.ncbi.nlm.nih.gov/36859355/"
       },
       {
-        id: "abc-score",
-        citation: "Nunez TC, Voskresensky IV, Dossett LA, et al. Early prediction of massive transfusion in trauma: simple as ABC (assessment of blood consumption)? J Trauma. 2009.",
-        url: "https://pubmed.ncbi.nlm.nih.gov/19204506/"
+        id: "crash2-timing",
+        citation: "CRASH-2 collaborators, Roberts I, Shakur H, et al. The importance of early treatment with tranexamic acid in bleeding trauma patients: an exploratory analysis of the CRASH-2 randomised controlled trial. Lancet. 2011.",
+        url: "https://doi.org/10.1016/S0140-6736(11)60278-X"
       },
       {
-        id: "on-mhp",
-        citation: "Callum JL, Yeh CH, Petrosoniak A, et al. A regional massive hemorrhage protocol developed through a modified Delphi technique. CMAJ Open. 2019.",
-        url: "https://www.cmajopen.ca/content/7/3/E546"
-      },
-      {
-        id: "hicks",
-        citation: "Hicks C, Petrosoniak A. The human factor: optimizing trauma team performance in dynamic clinical environments. Emerg Med Clin North Am. 2018.",
-        url: "https://pubmed.ncbi.nlm.nih.gov/29132571/"
+        id: "ccs-fpdr",
+        citation: "Oczkowski SJ, Mazzetti I, Cupido C, Fox-Robichaud AE. Family presence during resuscitation: a Canadian Critical Care Society position paper. Can Respir J. 2015.",
+        url: "https://doi.org/10.1155/2015/532721"
       }
     ],
     reviewed: false,
     author: "Draft for review by Arjan Dhoot, MD",
-    version: 1
+    version: 2
   },
   {
     id: "multiple-trauma-19",
