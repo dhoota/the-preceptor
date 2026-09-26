@@ -42,6 +42,8 @@ const S = {
   nacPcc: { id: "nac-pcc-2022", citation: "National Advisory Committee on Blood and Blood Products. Recommendations for use of prothrombin complex concentrates in Canada. 2022 revision.", url: "https://nacblood.ca/en/resource/recommendations-use-prothrombin-complex-concentrates-canada" },
   kentAconite: { id: "kent-aconite-2025", citation: "Kent JT, Sathya A, Juurlink DN, et al. Mass aconite poisoning from a mislabelled spice product. Clin Toxicol (Phila). 2025.", url: "https://doi.org/10.1080/15563650.2025.2526115" },
   coulsonAconite: { id: "coulson-aconite-2017", citation: "Coulson JM, Caparrotta TM, Thompson JP. The management of ventricular dysrhythmia in aconite poisoning. Clin Toxicol (Phila). 2017.", url: "https://doi.org/10.1080/15563650.2017.1291944" },
+  easlCirrhosis: { id: "easl-cirrhosis-2018", citation: "European Association for the Study of the Liver. EASL Clinical Practice Guidelines for the management of patients with decompensated cirrhosis. J Hepatol. 2018.", url: "https://doi.org/10.1016/j.jhep.2018.03.024" },
+  chapmanAuto: { id: "chapman-autotransfusion-2025", citation: "Chapman NG, Wineberg DL, et al. Autologous transfusion of hemothoraces in resuscitation after thoracic trauma. A narrative review. J Trauma Inj. 2025.", url: "https://doi.org/10.20408/jti.2025.0053" },
 } satisfies Record<string, Source>;
 
 /** Oral rehydration plan: a volume and a 4 hour time frame are both required. */
@@ -442,7 +444,6 @@ export const SHOCK_SAMPS: Samp[] = [
     sources: [S.sogcTrauma],
     ...META,
   },
-
   /* 05 Pelvic fracture with hemorrhagic shock -------------------------- */
   {
     id: "shock-05",
@@ -528,7 +529,6 @@ export const SHOCK_SAMPS: Samp[] = [
     sources: [S.atls, S.proppr, S.crash2],
     ...META,
   },
-
   /* 06 Neurogenic shock ------------------------------------------------ */
   {
     id: "shock-06",
@@ -947,94 +947,96 @@ export const SHOCK_SAMPS: Samp[] = [
     ...META,
   },
 
-  /* 11 Calcium channel blocker poisoning ------------------------------- */
+  /* 11 Poisoning from a herbal root decoction -------------------------- */
   {
     id: "shock-11",
     topic: "shock",
     alsoTopics: ["tox"],
-    title: "Man found with empty pill bottles",
+    title: "Man who collapsed after a home remedy",
     stem:
-      "A 52-year-old man was found by his wife 3 hours after he told her he was taking all his pills. She brings empty bottles of amlodipine 10 mg (about 60 tablets) and extended release metformin. He is drowsy but answers questions. His O2 sat is 96%. Glucose 16.8 mmol/L. Potassium 3.6 mmol/L. Lactate 5.2 mmol/L. ECG shows sinus bradycardia with a normal QRS. He has received 2 L of crystalloid.",
-    vitals: { temperature: "36.5°C", pulse: "58/minute", resp: "18/minute", bp: "72/34 mmHg", weight: "100 kg" },
+      "A 58-year-old man is brought to the emergency department by ambulance 90 minutes after drinking a herbal decoction for knee pain. A relative abroad sent him the dried root, and he boiled a larger amount than he was told to use. Within 30 minutes his lips and tongue tingled, the numbness spread to his hands and feet, and he vomited several times. He then felt his heart racing and collapsed briefly. His wife tasted a spoonful and now has tingling lips but is otherwise well. He has hypertension treated with ramipril. He is pale, sweaty and alert. The monitor shows frequent multifocal ventricular ectopic beats and short runs of polymorphic ventricular tachycardia. Potassium 3.9 mmol/L, magnesium 0.85 mmol/L, glucose 7.4 mmol/L.",
+    vitals: { temperature: "36.4°C", pulse: "132/minute irregular", resp: "22/minute", bp: "74/42 mmHg", o2sat: "96% on room air", weight: "82 kg" },
     questions: [
       {
         id: "q1",
         kind: "short",
         required: 2,
-        prompt: "What features point to a toxic cause of his shock?",
+        prompt: "Which features point to a toxic cause of his shock?",
         accept: [
-          { id: "collateral", text: "Empty pill bottles and a statement of intent", match: ["bottle", "pill", "intent", "collateral", "amlodipine"] },
-          { id: "hyperglycemia", text: "Hyperglycemia, reflecting impaired insulin release", match: ["hyperglycemia", "glucose", "sugar"] },
-          { id: "brady", text: "Relative bradycardia with hypotension", match: ["bradycardia", "heart rate", "hr"] },
-          { id: "fluid", text: "Poor response to fluid", match: ["fluid", "refractory"] },
-          { id: "mental", text: "Relatively preserved mental status for the degree of hypotension", match: ["mental status", "preserved", "awake"] },
+          { id: "ingestion", text: "A herbal root decoction taken shortly before the symptoms began", match: ["herbal", "decoction", "root", "remedy", "ingestion", "aconite"] },
+          { id: "paresthesia", text: "Perioral and limb paresthesia", match: ["tingling", "paresthesia", "paraesthesia", "numbness", "perioral"] },
+          { id: "vomiting", text: "Early repeated vomiting", match: ["vomiting", "vomited", "nausea"] },
+          { id: "va", text: "Ventricular ectopy and polymorphic VT without known heart disease", match: ["ventricular ectopy", "ectopic", "polymorphic", "ventricular tachycardia", "arrhythmia", "dysrhythmia"] },
+          { id: "wife", text: "His wife has similar symptoms after a small taste", match: ["wife", "others affected", "second person"] },
+          { id: "lytes", text: "Normal potassium and magnesium, so no metabolic cause for the arrhythmia", match: ["normal potassium", "normal electrolytes", "normal magnesium"] },
         ],
         explanation:
-          "Calcium channel blocker poisoning causes vasodilatory and cardiogenic shock. Hyperglycemia reflects blocked insulin release and correlates with severity. Dihydropyridines like amlodipine often cause reflex tachycardia at first, but large overdoses lose selectivity.",
+          "Tingling lips and limbs, vomiting and ventricular arrhythmias soon after a herbal root preparation point to aconite poisoning. In a Toronto outbreak caused by aconite root sold as a mislabelled spice, 91% of patients had perioral paresthesia, 64% had nausea, vomiting or abdominal pain, and 73% developed refractory ventricular dysrhythmias. His wife's symptoms after a small taste point to a shared toxin. His normal potassium and magnesium argue against a metabolic cause of the arrhythmia.",
         keyFeature: { topic: "shock", n: 5 },
-        source: "ccb",
+        source: "kent-aconite-2025",
       },
       {
         id: "q2",
         kind: "short",
         required: 1,
-        prompt: "What first line drug, with its dose and route, would you give for this poisoning?",
+        update: "He develops sustained polymorphic ventricular tachycardia with a pulse, and his BP falls to 68/38 mmHg. Two synchronized shocks do not restore sinus rhythm.",
+        prompt: "Which antiarrhythmic drug would you give now?",
         accept: [
-          { id: "cagluc", text: "Calcium gluconate 10%, 30 to 60 mL IV (3 to 6 g)", match: ["calcium gluconate 30", "calcium gluconate 60", "calcium gluconate 3 g", "calcium gluconate 3g", "calcium gluconate 6 g", "calcium gluconate 6g", "calcium gluconate 3"] },
-          { id: "cacl", text: "Calcium chloride 10%, 10 to 20 mL IV (1 to 2 g), by central line if possible", match: ["calcium chloride 10", "calcium chloride 20", "calcium chloride 1 g", "calcium chloride 1g", "calcium chloride 2 g", "calcium chloride 2g", "calcium chloride 1"] },
-          { id: "hiet", text: "High dose insulin 1 unit/kg IV bolus, so 100 units, with dextrose", match: ["insulin 1 unit/kg", "insulin 100 unit", "insulin 1 u/kg", "insulin 1 unit per kg", "insulin 100 u"] },
-          { id: "ne", text: "Norepinephrine infusion titrated to MAP", match: ["norepinephrine infusion", "norepinephrine mcg", "levophed infusion", "norepinephrine drip", "norepinephrine titrate"] },
+          { id: "amio", text: "Amiodarone IV", match: ["amiodarone"] },
+          { id: "flec", text: "Flecainide, where it can be given", match: ["flecainide"] },
+          { id: "proc", text: "Procainamide IV", match: ["procainamide"] },
         ],
         explanation:
-          "Consensus recommendations list IV calcium, high dose insulin and norepinephrine or epinephrine as first line. Calcium may be repeated. Calcium chloride has three times the calcium of gluconate and damages tissue if it extravasates.",
+          "Aconite alkaloids hold cardiac sodium channels in the activated state, which drives ventricular automaticity. In the review of 65 case reports, cardioversion restored sinus rhythm in only 5 of 30 attempts. Flecainide or amiodarone was more often followed by a return to sinus rhythm than lidocaine or cardioversion, though case reports cannot prove cause, and procainamide was followed by success in 2 of 2 cases. Amiodarone is the one most emergency departments can give IV at once.",
         keyFeature: { topic: "tox", n: 4 },
-        source: "ccb",
+        source: "coulson-aconite-2017",
       },
       {
         id: "q3",
         kind: "short",
         required: 3,
-        prompt: "You start high dose insulin euglycemic therapy. What are the elements of the protocol?",
+        prompt: "What other treatments would you start for his shock and arrhythmia?",
         accept: [
-          { id: "bolus", text: "Insulin bolus 1 unit/kg IV", match: ["bolus", "1 unit/kg", "1 u/kg"] },
-          { id: "inf", text: "Insulin infusion 1 unit/kg/h, titrated up to 10 unit/kg/h", match: ["infusion", "unit/kg/h", "unit/kg/hr", "u/kg/h", "u/kg/hr", "titrate"] },
-          { id: "dex", text: "Dextrose infusion to keep glucose 5.5 to 11 mmol/L", match: ["dextrose", "d10", "d50", "d25"] },
-          { id: "glucose", text: "Glucose checks every 15 to 30 minutes at first", match: ["glucose check", "check glucose", "monitor glucose", "glucose monitoring", "glucose every", "glucose q"] },
-          { id: "k", text: "Monitor potassium and replace if below about 2.8 to 3.0 mmol/L", match: ["potassium"] },
-          { id: "time", text: "Allow 15 to 60 minutes for effect and continue vasopressors meanwhile", match: ["delay", "onset", "15 to 60", "continue vasopressor"] },
+          { id: "bicarb", text: "Sodium bicarbonate infusion", match: ["bicarbonate", "bicarb", "nahco3"] },
+          { id: "pressor", text: "Norepinephrine infusion for hypotension", match: ["norepinephrine", "noradrenaline", "vasopressor", "epinephrine", "pressor"] },
+          { id: "mg", text: "Magnesium sulfate IV", match: ["magnesium sulfate", "magnesium sulphate", "mgso4", "iv magnesium", "magnesium iv", "give magnesium", "magnesium 2 g", "magnesium bolus", "magnesium infusion"] },
+          { id: "airway", text: "Prepare for intubation and ventilation", match: ["intubate", "intubation", "ventilation", "airway"] },
+          { id: "ecmo", text: "Early contact with a centre that can provide ECMO or cardiopulmonary bypass", match: ["ecmo", "bypass", "extracorporeal"] },
+          { id: "poison", text: "Poison centre consultation, which also alerts public health", match: ["poison centre", "poison center", "public health", "toxicology", "toxicologist"] },
         ],
         explanation:
-          "High dose insulin improves myocardial carbohydrate use and contractility. Start with a 1 unit/kg bolus, then 1 unit/kg/h titrated up. Give dextrose to maintain euglycemia and monitor glucose and potassium closely. It takes time to work, so vasopressors continue.",
+          "In the Toronto outbreak, refractory ventricular dysrhythmias were managed with infusions of sodium bicarbonate, amiodarone and vasopressors, and two patients needed mechanical ventilation for 48 hours. No patient died. The poison centre and public health traced the source to a mislabelled imported spice, which matters here because his wife is also affected and the remaining root could harm others. A centre able to provide ECMO or cardiopulmonary bypass should be contacted early, before he arrests.",
         keyFeature: { topic: "shock", n: 8 },
-        source: "ccb",
+        source: "kent-aconite-2025",
       },
       {
         id: "q4",
         kind: "menu",
-        select: 2,
-        update: "Despite calcium, insulin at 10 units/kg/h and norepinephrine at 0.8 mcg/kg/min, his MAP is 52 mmHg. Bedside echo shows a poorly contracting heart.",
-        prompt: "Which of the following rescue therapies are most appropriate for this patient?",
+        select: 1,
+        update: "Twenty minutes later he goes into ventricular fibrillation. After three shocks, epinephrine and amiodarone, he remains in ventricular fibrillation. The nearest ECMO centre is 3 hours away by air.",
+        prompt: "Which of the following is the most appropriate next step for him?",
         options: [
-          "Activated charcoal 50 g by mouth",
-          "Hemodialysis to remove amlodipine",
-          "Intravenous lipid emulsion",
-          "Methylene blue",
-          "Physostigmine",
-          "Referral for VA ECMO",
-          "Transcutaneous pacing alone",
-          "Whole bowel irrigation",
+          "Calcium chloride 1 g IV",
+          "Digoxin immune Fab 10 vials IV",
+          "Hemodialysis to remove the toxin",
+          "Insert a transvenous pacing wire",
+          "Naloxone 2 mg IV push",
+          "Physostigmine 1 mg IV",
+          "Prolonged high-quality CPR",
+          "Stop resuscitation at 20 minutes",
         ],
-        correct: [5, 2],
+        correct: [6],
         explanation:
-          "The 2017 expert consensus suggests VA ECMO for refractory cardiogenic shock where available, and lipid emulsion in refractory shock. His echo shows pump failure, so ECMO fits. Methylene blue was not graded by the consensus and targets vasoplegia rather than a failing heart. Amlodipine is highly protein bound and not dialyzable. Charcoal is unsafe without a protected airway.",
+          "In the review of aconite dysrhythmias, prolonged cardiopulmonary resuscitation was followed by a return to sinus rhythm in 9 of 15 patients. The authors call prolonged CPR a time-buying strategy that lets the body excrete the alkaloids, and bypass is not within reach for him. Stopping at 20 minutes abandons a patient who may recover. Digoxin immune Fab treats cardiac glycoside toxicity, not aconite. Calcium, naloxone and physostigmine treat calcium channel blocker, opioid and anticholinergic toxicity. Hemodialysis cannot be run during cardiac arrest, and pacing does not treat ventricular fibrillation.",
         keyFeature: { topic: "tox", n: 4 },
-        source: "ccb",
+        source: "coulson-aconite-2017",
       },
     ],
-    sources: [S.ccb],
+    sources: [S.kentAconite, S.coulsonAconite],
     ...META,
+    reviewed: false,
+    version: 2,
   },
-
   /* 12 Paediatric septic shock with petechiae -------------------------- */
   {
     id: "shock-12",
