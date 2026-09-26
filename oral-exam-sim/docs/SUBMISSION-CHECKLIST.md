@@ -41,7 +41,7 @@ The App Store has no such wait. It needs only the `appl_` key pasted in (A4), a 
 | Bundle ID (iOS) and package name (Android) | `com.preceptor.oral` |
 | Version | 1.0. Codemagic sets the build number |
 | Subscription product IDs, same on both stores | `ccfpem_complete_1y`, `ccfpem_written_1y`, `ccfpem_oral_1y` |
-| Prices per year | Complete CA$199.99. Written CA$149.99. Oral CA$99.99 |
+| Prices per year | Complete US$199.99. Written US$149.99. Oral US$99.99 (US dollars, base country United States) |
 | RevenueCat entitlements | `written_access` (Complete, Written). `oral_full_access` (Complete, Oral) |
 | RevenueCat offering | `ccfpem`, with packages `complete`, `written`, `oral` |
 | Support email | preceptor.app@gmail.com |
@@ -86,7 +86,7 @@ The App Store has no such wait. It needs only the `appl_` key pasted in (A4), a 
 - Screen: Play Console > Preceptor app > Monetize with Play > Products > Subscriptions > Create subscription.
 - Make one per row:
 
-| Product ID | Name | Base plan ID | Type | Billing period | Price (CAD) | Free trial |
+| Product ID | Name | Base plan ID | Type | Billing period | Price (USD) | Free trial |
 |---|---|---|---|---|---|---|
 | `ccfpem_complete_1y` | CCFP-EM Complete, yearly | `yearly` | Auto-renewing | 1 year | 199.99 | None |
 | `ccfpem_written_1y` | CCFP-EM Written, yearly | `yearly` | Auto-renewing | 1 year | 149.99 | None |
@@ -94,9 +94,9 @@ The App Store has no such wait. It needs only the `appl_` key pasted in (A4), a 
 
 - For each one:
   - Add the base plan.
-  - Set Canada to the price above.
+  - Set United States to the price above. Play converts it for the other countries.
   - Activate the base plan.
-- **UNKNOWN:** which countries to sell in. Play will convert the CAD price for other countries unless you turn them off. The App Store availability should match.
+- **UNKNOWN:** which countries to sell in. Play will convert the USD price for other countries unless you turn them off. The App Store availability should match.
 
 **B2. Real-time developer notifications.**
 - In RevenueCat: Preceptor project > the Play app config > Google developer notifications. Copy the Pub/Sub topic.

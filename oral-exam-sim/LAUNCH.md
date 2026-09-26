@@ -40,9 +40,9 @@ The app record exists under `com.preceptor.oral`. Update the name to Preceptor: 
 
    | Level | Reference name | Product ID | Duration | Price |
    |---|---|---|---|---|
-   | 1 | Complete: written and oral, yearly | `ccfpem_complete_1y` | 1 year | CA$199.99 |
-   | 2 | Written: SAMP bank, yearly | `ccfpem_written_1y` | 1 year | CA$149.99 |
-   | 2 | Oral: oral simulator, yearly | `ccfpem_oral_1y` | 1 year | CA$99.99 |
+   | 1 | Complete: written and oral, yearly | `ccfpem_complete_1y` | 1 year | US$199.99 |
+   | 2 | Written: SAMP bank, yearly | `ccfpem_written_1y` | 1 year | US$149.99 |
+   | 2 | Oral: oral simulator, yearly | `ccfpem_oral_1y` | 1 year | US$99.99 |
 
    Put Complete alone on the top level and Written and Oral together on the level below. A group lets a person hold one subscription at a time. So a subscriber to Written or Oral who wants both upgrades to Complete. The App Store does that at once and refunds the unused part. The paywall offers only Complete to someone who already holds Written or Oral. Moving between Written and Oral, or down from Complete, is left to the App Store subscription settings, where it takes effect at the next renewal.
 
@@ -111,27 +111,27 @@ A candidate with no subscription sees all three offered. A candidate who holds W
         - **Mac:** in Terminal, run `"/Applications/Android Studio.app/Contents/jbr/Contents/Home/bin/keytool" -genkeypair -v -keystore preceptor-upload.jks -storetype JKS -keyalg RSA -keysize 2048 -validity 10000 -alias upload`.
         - Then upload it the same way, with key alias `upload` and reference name `preceptor_upload_key`.
      3. Keep the .jks and its password in a password manager. Never commit them. With Play App Signing, a lost upload key can be reset through Play Console support, but that takes days.
-2. Workflows: `android-debug`, `android-release`, `android-play-internal` (manual, internal track only), `ios-release` (TestFlight only).
+2. Workflows: `android-debug`, `android-release` (uploads to the Play closed testing track, alpha, as a draft), `android-play-internal` (manual, internal track only), `ios-release` (TestFlight only). Both Play workflows need `GCLOUD_SERVICE_ACCOUNT_CREDENTIALS` in group `preceptor_play` of this Codemagic app.
 3. Every workflow runs `npm test`. Release workflows also run the launch gate.
 
 ## 7. Price proposal
 
-Confirmed by Arjan on 24 September 2026: Complete CA$199.99, Written CA$149.99, Oral CA$99.99.
+Confirmed by Arjan on 24 September 2026, and changed to USD for launch on 26 September 2026: Complete US$199.99, Written US$149.99, Oral US$99.99.
 
-**Next update: switch the base currency to USD (Arjan, 26 September 2026).** This launch keeps the CAD prices above. At the next update, and for any new product, set USD as the base currency on both stores:
-- **iOS:** App Store Connect > each subscription > Subscription Prices. Choose United States as the base country and let Apple convert the rest.
-- **Android:** Play Console > each subscription's base plan > Prices. Set the United States price and let Play convert the rest.
+**Launch prices are in USD (Arjan, 26 September 2026).** Set United States as the base country on both stores and let them convert for other countries:
+- **iOS:** App Store Connect > each subscription > Subscription Prices > base country United States.
+- **Android:** Play Console > each subscription's base plan > Prices > United States.
 - **Prices:** Complete US$199.99 per year, Written US$149.99 per year, Oral US$99.99 per year.
-- **App fallback prices:** also change `fallbackPrice` in `src/lib/purchases.ts` to US$. The paywall shows these only before the store price loads.
+- **App fallback labels** in `src/lib/purchases.ts` read $199.99, $149.99 and $99.99. They show only before the store price loads. On a device the store's localized price replaces them.
 - **RevenueCat:** no change. It reads prices from the stores.
 
 The bank is now far larger: 1,500 SAMPs and 100 oral cases. Running cost is still zero. The store fee is 15 percent.
 
 | Product | Price | Nets about |
 |---|---|---|
-| Complete (written and oral) | CA$199.99 | CA$170 |
-| Written only | CA$149.99 | CA$127 |
-| Oral only | CA$99.99 | CA$85 |
+| Complete (written and oral) | US$199.99 | US$170 |
+| Written only | US$149.99 | US$127 |
+| Oral only | US$99.99 | US$85 |
 
 Reasoning:
 
@@ -139,7 +139,7 @@ Reasoning:
 - The written bank is the bigger body of work and the part most candidates use daily, so it is priced higher than the oral.
 - Complete is 20 percent less than buying both, so it is the clear choice for a first attempt. It anchors the paywall.
 - A yearly subscription fits an exam cycle and renews for candidates who sit again. It renews automatically until cancelled in the store account (Arjan, 24 September 2026). The paywall says so next to the price.
-- CA$199.99 sits below the Preceptor CCFP annual price of $250 while offering two exam components, and stays under the price point where app store buyers balk.
+- US$199.99 sits below the Preceptor CCFP annual price of $250 while offering two exam components, and stays under the price point where app store buyers balk.
 - The store and RevenueCat track the subscription and its renewals, so no server of our own is needed. The app caches the entitlement end dates, which keep working offline and still end access on time.
 
 ## 7a. Exam format decisions

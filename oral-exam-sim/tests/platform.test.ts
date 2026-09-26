@@ -296,6 +296,10 @@ describe("Codemagic", () => {
     // Signing comes from Codemagic code signing identities, never from pasted secrets.
     for (const s of ["preceptor_signing", "IOS_CERT_KEY", "PRECEPTOR_KEYSTORE_BASE64"]) expect(root, s).not.toContain(s);
     expect(root.match(/- preceptor_upload_key/g)?.length).toBe(2);
+    // android-release uploads to closed testing as a draft, never production.
+    expect(root).toContain("track: alpha");
+    expect(root).toContain("submit_as_draft: true");
+    expect(root).not.toMatch(/track: production/);
     // With working_directory set, Codemagic resolves artifact globs from that folder
     // (build 1 found nothing with an oral-exam-sim/ prefix), so the paths match the local file.
     const arts = (y: string) => y.match(/^      - [^*\s]\S*\/\S*$/gm) ?? [];

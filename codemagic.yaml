@@ -9,7 +9,8 @@
 # match. Codemagic app: "Preceptor: CCFP-EM".
 #
 # Nothing here publishes to production. iOS goes to TestFlight only. Android
-# goes to the Play internal track only, by manual trigger.
+# release goes to the Play closed testing track (alpha) as a draft, and the
+# manual android-play-internal workflow goes to the internal track.
 
 definitions:
   scripts:
@@ -59,7 +60,15 @@ workflows:
       java: 21
       android_signing:
         - preceptor_upload_key   # Code signing identities > Android keystores. Sets CM_KEYSTORE_PATH, CM_KEYSTORE_PASSWORD, CM_KEY_ALIAS, CM_KEY_PASSWORD.
+      groups:
+        - preceptor_play         # GCLOUD_SERVICE_ACCOUNT_CREDENTIALS, the Play service account JSON key (Secure). Same setup as the other Preceptor apps.
     scripts:
+      - name: Fail fast if the Play credentials are missing
+        script: |
+          if [ -z "$GCLOUD_SERVICE_ACCOUNT_CREDENTIALS" ]; then
+            echo "Missing GCLOUD_SERVICE_ACCOUNT_CREDENTIALS. Add the Play service account JSON key to group preceptor_play in this Codemagic app (Environment variables), marked Secure."
+            exit 1
+          fi
       - name: Check the uploaded keystore
         # Fails in seconds if the keystore reference is missing, or its password,
         # alias or key password does not open it.
@@ -70,6 +79,15 @@ workflows:
       - *build_web
       - name: Sync web assets into Android project
         script: npx cap sync android
+      - name: Set versionCode one above the latest on Play
+        script: |
+          CURRENT=$(grep -oE 'versionCode [0-9]+' android/app/build.gradle | awk '{print $2}')
+          LATEST=$(google-play get-latest-build-number \
+            --package-name "com.preceptor.oral" \
+            --credentials "$GCLOUD_SERVICE_ACCOUNT_CREDENTIALS" 2>/dev/null || true)
+          if [ -n "$LATEST" ] && [ "$LATEST" -eq "$LATEST" ] 2>/dev/null && [ "$LATEST" -ge "$CURRENT" ]; then VC=$((LATEST + 1)); else VC="$CURRENT"; fi
+          sed -i.bak "s/versionCode .*/versionCode $VC/" android/app/build.gradle && rm -f android/app/build.gradle.bak
+          echo "versionCode $VC"
       - name: Build signed release APK and AAB
         script: |
           cd android
@@ -78,6 +96,11 @@ workflows:
     artifacts:
       - android/app/build/outputs/**/*.apk
       - android/app/build/outputs/**/*.aab
+    publishing:
+      google_play:
+        credentials: $GCLOUD_SERVICE_ACCOUNT_CREDENTIALS
+        track: alpha            # closed testing. Never production.
+        submit_as_draft: true   # the app is still a draft on Play
 
   android-play-internal:
     name: Preceptor CCFP-EM Android (publish to Play internal track)
