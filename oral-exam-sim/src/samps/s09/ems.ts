@@ -73,7 +73,7 @@ export const EMS_SAMPS: Samp[] = [
           { id: "transport", text: "If the head does not deliver, transport urgently to the closest hospital", match: ["transport", "closest hospital", "nearest hospital", "load and go"] },
           { id: "newborn", text: "Prepare for newborn resuscitation once the head delivers", match: ["newborn resuscitation", "neonatal resuscitation", "resuscitation", "bag mask", "bag valve", "ppv"] },
         ],
-        unacceptable: [{ text: "Pull on the body to deliver the head", match: ["pull", "traction"], dangerous: true }],
+        unacceptable: [{ text: "Pull on the body to deliver the head", match: ["pull body", "pull leg", "pull trunk", "pull the baby", "pull baby out", "traction leg", "traction trunk", "traction on the body"], dangerous: true }],
         explanation:
           "The Ontario ALS directive tells paramedics to attempt the Mauriceau-Smellie-Veit manoeuvre once the hairline is visible or 3 minutes have passed since the umbilicus appeared. Both conditions are met here. The manoeuvre flexes the head so its smallest diameter passes through the pelvis. If it fails, the directive is transport to the closest appropriate facility. Pulling on the body extends the head and can injure the baby, so it is not an acceptable answer.",
         keyFeature: { topic: "ems", n: 1 },

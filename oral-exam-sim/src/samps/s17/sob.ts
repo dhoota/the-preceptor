@@ -1086,12 +1086,12 @@ export const SOB_SAMPS: Samp[] = [
         update: "A D-dimer ordered at triage is 4 100 mcg/L FEU. The resident says this confirms PE and that imaging can be skipped.",
         prompt: "What are the reasons the D-dimer cannot replace imaging here?",
         accept: [
-          { id: "ppv", text: "A raised D-dimer has a low positive predictive value and cannot confirm PE", match: ["positive predictive", "cannot confirm", "not diagnostic", "nonspecific", "non specific", "specificity"] },
+          { id: "ppv", text: "A raised D-dimer has a low positive predictive value and cannot confirm PE", match: ["positive predictive", "cannot confirm", "not diagnostic", "nonspecific", "non specific", "not specific", "specificity"] },
           { id: "raised", text: "Infection, inflammation and older age raise the D-dimer", match: ["infection", "inflammation", "covid", "pneumonia", "older age", "advanced age", "elderly"] },
-          { id: "high", text: "In high clinical probability a D-dimer should not be measured, and imaging is needed", match: ["high probability", "high clinical probability", "pe likely", "pretest", "pre test", "needs imaging", "go to imaging"] },
+          { id: "high", text: "In high clinical probability a D-dimer should not be measured, and imaging is needed", match: ["high probability", "high clinical probability", "pe likely", "pretest", "pre test", "needs imaging", "imaging needed", "go to imaging"] },
           { id: "commit", text: "Long term anticoagulation needs a confirmed diagnosis", match: ["confirm the diagnosis", "confirmed diagnosis", "before committing", "long term anticoagulation"] },
         ],
-        unacceptable: [{ text: "Treat for PE on the D-dimer alone without imaging", match: ["skip imaging", "no imaging needed", "d dimer is diagnostic", "treat without imaging"], dangerous: true }],
+        unacceptable: [{ text: "Treat for PE on the D-dimer alone without imaging", match: ["can skip imaging", "imaging can be skipped", "imaging unnecessary", "imaging is unnecessary", "d dimer is diagnostic"], dangerous: true }],
         explanation:
           "The ESC guideline states that the positive predictive value of a raised D-dimer is low, so the test is not useful for confirming PE. D-dimer is also less specific in severe infection, inflammatory disease and hospitalized or older patients, and her COVID-19 pneumonia alone could explain a high value. In a patient with a high clinical probability the D-dimer should not be measured, and imaging decides the diagnosis. A confirmed diagnosis matters because it commits her to months of anticoagulation.",
         keyFeature: { topic: "sob", n: 5 },
@@ -1129,7 +1129,7 @@ export const SOB_SAMPS: Samp[] = [
         ],
         correct: 2,
         explanation:
-          "Ritonavir raises blood levels of apixaban, rivaroxaban and edoxaban and so raises bleeding risk. The BC Centre for Disease Control advises against giving apixaban at any dose with nirmatrelvir-ritonavir when it is being used for a thrombotic event in the past 3 months, and against giving rivaroxaban with it at all. LMWH has no such interaction, so dalteparin 200 units/kg daily, 14 000 units at 70 kg rounded to the nearest prefilled syringe, is the safest start. A DOAC can be considered after the antiviral course has finished.",
+          "Ritonavir raises blood levels of apixaban, rivaroxaban and edoxaban and so raises bleeding risk. The BC Centre for Disease Control advises against giving apixaban at any dose with nirmatrelvir-ritonavir when it is being used for a thrombotic event in the past 3 months, and against giving rivaroxaban with it at all. LMWH has no such interaction, so dalteparin 200 units/kg daily is the safest start. At 70 kg that is 14 000 units, given as the nearest prefilled syringe of 15 000 units. A DOAC can be considered after the antiviral course has finished.",
         keyFeature: { topic: "dvt-pe", n: 6 },
         source: "bccdc-nmv",
       },
