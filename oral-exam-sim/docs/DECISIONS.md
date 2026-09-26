@@ -8,7 +8,9 @@ Decisions made by the product owner, not by the physician reviewer. Each is an e
 
 **The rule:** in crowded topics, a new SAMP may repeat one decision already keyed in a signed-off SAMP, where that decision is itself the literal wording of a CFPC key feature. This is a judgement about redundancy. It is not a judgement about the right answer.
 
-**Running total: 18 questions now ride on D1.** It began as a waiver for 3. Each later row was added when a rebuild group landed. The total is the decision Arjan should weigh, not any single row. Reversing D1 sends all 18 back for rebuild. If the total climbs much past 20, no more rows are added until the product owner decides again.
+**Running total: 18 questions now ride on D1.** It began as a waiver for 3. Each later row was added when a rebuild group landed. The total is the decision Arjan should weigh, not any single row. Reversing D1 sends all 18 back for rebuild.
+
+**Frozen at 20 (product owner, 26 September 2026).** Rows may be added only while the total stays at 20 or under. At 20, D1 stops being a small exception and becomes a policy on how much repetition the bank tolerates. That policy is Arjan's to set, not the product owner's. Once the total reaches 20, no further D1 repeat lands without Arjan's decision. A later rebuild that needs one fails, keeps its signed text and is listed for Arjan in OPEN-ITEMS.md. No session may resume adding rows past 20 on its own judgement.
 
 **Covered SAMPs:**
 
