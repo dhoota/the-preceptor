@@ -1009,7 +1009,7 @@ export const PEDIATRIC_FEVER_SAMPS: Samp[] = [
         update: "Her snowsuit and blankets are removed and she is left in a light sleeper. Twenty minutes later her rectal temperature is 39.4°C. She is calmer and breastfeeding.",
         prompt: "How do you interpret her temperature now?",
         accept: [
-          { id: "fever", text: "It is a true fever, a rectal temperature of 38.0°C or more", match: ["true fever", "real fever", "genuine fever", "still febrile", "still has a fever", "38.0", "38 or more", "38 or higher", "over 38", "above 38", "more than 38", "at least 38"] },
+          { id: "fever", text: "It is a true fever, a rectal temperature of 38.0°C or more", match: ["true fever", "real fever", "genuine fever", "still febrile", "still has a fever", "38.0", "38 or more", "38 or higher"] },
           { id: "bundling", text: "Bundling does not explain a raised rectal temperature", match: ["bundling doe", "bundling doesnt", "not from bundling", "not due to bundling", "not explained by bundling", "cannot blame bundling", "cant blame bundling", "skin temperature"] },
           { id: "persist", text: "It has not settled after 20 minutes undressed", match: ["persist", "persistent", "still high", "still elevated", "not settled", "not come down", "not fall", "did not fall"] },
           { id: "rectal", text: "A rectal reading is the reference standard at this age", match: ["rectal", "reference standard", "gold standard"] },

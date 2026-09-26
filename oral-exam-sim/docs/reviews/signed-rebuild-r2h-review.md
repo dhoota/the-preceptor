@@ -6,9 +6,17 @@ Files: `src/samps/s14/pediatric-fever.ts` and `src/samps/s14/multiple-trauma.ts`
 
 | SAMP | Verdict | Reason |
 |---|---|---|
-| pediatric-fever-11 | FIXED | The writer applied exactly the two g15 fixes and nothing else. I added four threshold match phrases to the q2 "fever" item. No D1 slot. |
+| pediatric-fever-11 | PASS (one optional match fix recommended) | The writer applied exactly the two g15 fixes and nothing else. No D1 slot. |
 | multiple-trauma-06 | PASS, one D1 slot | The writer applied exactly the one g15 fix and nothing else. The q3 D1 repeat (IM epinephrine for anaphylaxis, anaphylaxis KF 3) is confirmed. It does not echo the cluster 54 keeper, ems-09. |
-| multiple-trauma-08 | FIXED | The new q2 keys a new decision: persistent leak after intubation means the cuff is above a bronchial tear, despite normal capnography. It does not repeat airway-37, airway-44 or the keeper airway-04. q4 is sound without the clamp item. I made match-phrase fixes and one wording fix. No D1 slot. |
+| multiple-trauma-08 | PASS (match-phrase and wording fixes recommended, not blocking) | The new q2 keys a new decision: persistent leak after intubation means the cuff is above a bronchial tear, despite normal capnography. It does not repeat airway-37, airway-44 or the keeper airway-04. q4 is sound without the clamp item. No D1 slot. |
+
+## Editing
+
+I made scratch edits to probe the fixes below, then read the new standing rule (docs/reviews/REVIEW-RULES.md, reviewers do not edit) and reverted them. Both files are byte for byte as the writer left them. Every fix below is a recommendation for a writer.
+
+## Unrequested writer changes
+
+None. pediatric-fever-11 and multiple-trauma-06 differ from the g15 text only as g15 asked. multiple-trauma-08 changes only q2 (the re-key g15 asked for) and the q4 clamp removal (also asked for).
 
 ## Integrity check
 
@@ -44,14 +52,14 @@ Files: `src/samps/s14/pediatric-fever.ts` and `src/samps/s14/multiple-trauma.ts`
 | Question | Result | Notes |
 |---|---|---|
 | pediatric-fever-11 q1 | PASS | The g15 fix is applied. "Remove the snowsuit and blankets" is at index 4, with no pronoun and not the longest option. markQuestion gives choice 4 a score of 1 and every other choice 0. |
-| pediatric-fever-11 q2 | FIXED | The g15 match list is applied exactly. "A fever from overheating", "febrile from being overdressed" and bare "fever" now score 0. "True fever", "still febrile", "still has a fever", "genuine fever" and "38 or more" score. **Fix:** "Temperature over 38 is a fever" scored 0 on the fever item, so I added "over 38", "above 38", "more than 38" and "at least 38". A side effect: "a fever from overheating, over 38" now earns the fever point. That is a minor leak, and it is outweighed by crediting the correct threshold. |
+| pediatric-fever-11 q2 | PASS, fix recommended | The g15 match list is applied exactly. "A fever from overheating", "febrile from being overdressed" and bare "fever" now score 0. "True fever", "still febrile", "still has a fever", "genuine fever" and "38 or more" score. **Recommended (optional):** "Temperature over 38 is a fever" and "It is a fever above 38" score 0 on the fever item. Add "over 38", "above 38", "more than 38" and "at least 38" to its match list. I probed this in a scratch edit, now reverted: those lines then score, and the side effect is that "a fever from overheating, over 38" also earns the fever point. The question is passable without the fix, because four other items remain. |
 | pediatric-fever-11 q3 | PASS | Unchanged from g15. |
 | pediatric-fever-11 q4 | PASS | Unchanged from g15. |
 | multiple-trauma-06 q1 | PASS | Unchanged. |
 | multiple-trauma-06 q2 | PASS | Unchanged. |
 | multiple-trauma-06 q3 | PASS (D1) | The g15 fix is applied exactly: the item text, seven match phrases and the added WAO sentence. WAO (g15 copy reopened): "Register in electronic or paper medical record the suspected trigger(s)". **markQuestion results:** "Choose another antibiotic", "Switch to clindamycin" and "different antibiotic" score 0/3. "Anaphylaxis to cefazolin" + "Epinephrine 0.5 mg IM thigh" + "Record the reaction in her handover" scores 3/3. "Epinephrine 1 mg IV push" is dangerous and scores 0. "0.5 mg IM, not 1 mg IV push" is not penalised. |
 | multiple-trauma-08 q1 | PASS | Unchanged. The fallen lung sign, and "within 2.5 cm of the carina in 62% to 75%", are confirmed in Antonescu 2022 (reopened). |
-| multiple-trauma-08 q2 | FIXED | See the q2 section below. |
+| multiple-trauma-08 q2 | PASS, fixes recommended | See the q2 section below. |
 | multiple-trauma-08 q3 | PASS | Unchanged. Its update now follows on from q2. |
 | multiple-trauma-08 q4 | PASS | The clamp item, the "Clamp the chest tube" dangerous answer and the clamp sentence are gone. The explanation still reads cleanly. Five items remain with required 3 (water seal, air embolism, pressures, tube slipping back, hypothermia), so it is still answerable. It now has no pulmonary-edema-20 q2 repeat. **markQuestion results:** "Air embolism" + "plateau pressure low" + "tube slipping back" scores 3/3. "Water seal" + "barotrauma from high PEEP" + "keep him warm" scores 3/3. Keeper airway-04 answers score 1/3. "Clamp the drain" scores 0 but is no longer penalised. |
 
@@ -89,14 +97,14 @@ Files: `src/samps/s14/pediatric-fever.ts` and `src/samps/s14/multiple-trauma.ts`
   - Other writers' uncommitted diffs: one new EtCO2 and PaCO2 gap question, a dead space decision, which is not this one.
   - No other file has the skid steer or bronchial tear story.
 - **simcheck.** airway-37 0.14/0.18, airway-11 0.14/0.15, multiple-trauma-06 (HEAD) 0.13/0.15, then lower.
-- **Fixes (match phrases and wording only, inside the writer's decision):**
-  - "above" item: removed "in the trachea", because "Capnography confirms the tube is in the trachea", a reassurance answer, scored the item. Added "still in the trachea", "only in the trachea", "too proximal", "not deep enough", "not far enough" and "ventilating the injured".
-  - "etco2" item: added "misleading".
-  - "advance" item: added "left endobronchial". "Right endobronchial intubation" still scores 0.
-  - Explanation: "advance the tube over it" now reads "advance the tube over the scope", because "it" had no clear referent.
-- **Probes after the fixes.**
+- **Recommended fixes (match phrases and wording only, inside the writer's decision; for a writer to apply):**
+  - "above" item: remove "in the trachea", because "Capnography confirms the tube is in the trachea", a reassurance answer, scores the item (1/3). Add "still in the trachea", "only in the trachea", "too proximal", "not deep enough", "not far enough" and "ventilating the injured".
+  - "etco2" item: add "misleading".
+  - "advance" item: add "left endobronchial". "Right endobronchial intubation" would still score 0.
+  - Explanation: change "advance the tube over it" to "advance the tube over the scope", because "it" has no clear referent.
+- **Probes.** On the current text, and in a reverted scratch edit with the fixes above:
   - The writer's three natural answer sets still score 3/3.
-  - "Tube is too proximal, still ventilating the injured bronchus" + "EtCO2 is misleading here" + "Left endobronchial intubation" now scores 3/3. It scored 0/3 before.
+  - "Tube is too proximal, still ventilating the injured bronchus" + "EtCO2 is misleading here" + "Left endobronchial intubation" scores 0/3 now, and 3/3 with the fixes. "Tube not deep enough" scores 0 now. Candidates can override automatic marks, so this is not blocking.
   - "Capnography confirms correct position", "Tube is fine" and "Pull the tube back" are unacceptable, and score 0/3.
   - "Do not pull the tube back" is not penalised.
   - "Withdraw the tube slightly" is unacceptable, correctly.
@@ -113,9 +121,9 @@ A re-grep of src/samps for snowsuit, skid steer, bronchus or bronchial tear, cef
 
 ## Tests
 
-After my fixes:
-- `SAMP_BATCH=s14 npx vitest run tests/samps.test.ts tests/samp-quality.test.ts`: 2 files, 479 tests passed.
-- `npx tsc --noEmit -p .`: no errors.
+Optional for reviewers (REVIEW-RULES.md rule 2).
+- I ran `SAMP_BATCH=s14 npx vitest run tests/samps.test.ts tests/samp-quality.test.ts` with my scratch edits in place: 479 passed. `npx tsc --noEmit -p .` reported no errors.
+- The writer reports the same results on the text as it stands now.
 
 ## For the physician
 
@@ -125,3 +133,7 @@ After my fixes:
 - **multiple-trauma-08 q4** no longer keys "do not clamp the bubbling drain". Clamping is now neither credited nor penalised. This avoids repeating pulmonary-edema-20 q2.
 - **multiple-trauma-06** uses one D1 slot for IM epinephrine in anaphylaxis to a new antibiotic, which echoes your signed anaphylaxis-01 and anaphylaxis-31. It takes the D1 total to 19, or 20 if another pending group lands first. Choosing a replacement antibiotic is no longer credited. Only recording cefazolin as the suspected trigger is keyed.
 - **pediatric-fever-11** is unchanged in substance from the g15 pass. The earlier requests still stand: undressing before acetaminophen as the first step, and discharge after a negative catheter urinalysis with culture pending and follow-up in 24 to 48 hours.
+
+## Landing decision
+
+All three land. The reviewer's scratch edits were restored before landing. Both s14 files were confirmed byte for byte against the snapshot taken when the writer finished. The recommended match-phrase fixes are not applied, since a reviewer may not write them. One multiple-trauma-08 q2 wording, "capnography confirms the tube is in the trachea", still earns 1 of 3. The other recommendations would credit more correct wordings. They are listed for the physician and for any later writer pass. multiple-trauma-06 q3 is the one D1 repeat, and the D1 total goes to 19.
