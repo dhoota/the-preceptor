@@ -11,6 +11,13 @@ Decisions only you can make. Nothing here has been acted on.
 2. Settings > General > scroll to Danger Zone > Change repository visibility > Make private. Confirm.
 3. In Codemagic, check the app "Preceptor: CCFP-EM" still has access to the repository. A private repository needs the Codemagic GitHub App to have access to it.
 
+**Attempts so far, all still public:**
+- A browser session got through Danger Zone, Change visibility, Make private and both confirmations. GitHub then asked for the account password (sudo mode). The session does not enter passwords, so it stopped there and left the tab on that screen for Arjan.
+- The build session sent `PATCH /repos/dhoota/the-preceptor` with `private: true`. The session's GitHub proxy refused it: "Repository settings writes are not permitted through this proxy."
+- A read straight after still showed `private: false`, `visibility: public`.
+
+**What changes when it goes private:** GitHub Pages is off for this repository, so no site breaks. It has 0 forks, 0 stars and 0 watchers, so no public fork survives. Anything already cloned, forked or cached by anyone who looked stays out regardless.
+
 Status: **not yet done** at the time of writing. Going private stops new public reads. Anything already cloned, forked, cached or archived while it was public stays out of reach whatever is done later. History rewrite and a fresh repository (options 2 and 3 below) remain open for Arjan to choose later.
 
 What the public history contains:
@@ -66,3 +73,8 @@ dvt-pe-02 q3 was briefly shortened on 26 September 2026 without your fresh sign-
 | sob-02 | q2 | menu | 1.95 |
 | sob-04 | q4 | menu | 1.53 |
 | tox-09 | q3 | menu | 1.96 |
+
+## 3. Items held for Arjan, not written into the text
+
+- **cva-27, the PICA fact from Lee 2006.** It was cut when cva-27's sourcing was fixed. Say if you want it back, and it will be restored with its source. It was not put back on anyone's judgement but yours.
+- **airway-09 stays on its signed text.** Its rebuild failed review in g09 because it retold tox-20's overdose arc. Two later attempts at a new story were each stopped by an automated safety filter before any text was written. airway-09 is therefore still the signed version, a member of its signed-duplicate cluster, and released. Choose one: keep it as it is, rebuild it by hand, or hold it back. Holding it back costs nothing at the gate.
