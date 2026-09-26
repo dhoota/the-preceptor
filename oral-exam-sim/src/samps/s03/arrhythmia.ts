@@ -1554,7 +1554,7 @@ export const ARRHYTHMIA: Samp[] = [
           {
             id: "atropine",
             text: "Atropine 0.5 to 1 mg IV, repeated as needed",
-            match: c(["atropine"], ["0.5 mg", "0.5mg", "1 mg", "1mg", "500 mcg", "0.5 to 1 mg", "0.6 mg"]),
+            match: c(["atropine"], ["0.5 mg", "0.5mg", "1 mg", "1mg", "500 mcg", "0.5 to 1 mg", "0.6 mg", "600 mcg", "1000 mcg", "1 000 mcg", "500 microgram", "600 microgram", "1000 microgram", "1 000 microgram", "500 ug", "600 ug", "1000 ug"]),
           },
           { id: "fluid", text: "IV normal saline bolus", match: ["saline", "crystalloid", "fluid", "bolus", "ringer"] },
           { id: "pacing", text: "Transcutaneous pacing if atropine and fluid fail", match: ["pacing", "pace", "pacer"] },
