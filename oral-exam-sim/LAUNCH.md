@@ -118,6 +118,13 @@ A candidate with no subscription sees all three offered. A candidate who holds W
 
 Confirmed by Arjan on 24 September 2026: Complete CA$199.99, Written CA$149.99, Oral CA$99.99.
 
+**Next update: switch the base currency to USD (Arjan, 26 September 2026).** This launch keeps the CAD prices above. At the next update, and for any new product, set USD as the base currency on both stores:
+- **iOS:** App Store Connect > each subscription > Subscription Prices. Choose United States as the base country and let Apple convert the rest.
+- **Android:** Play Console > each subscription's base plan > Prices. Set the United States price and let Play convert the rest.
+- **Prices:** Complete US$199.99 per year, Written US$149.99 per year, Oral US$99.99 per year.
+- **App fallback prices:** also change `fallbackPrice` in `src/lib/purchases.ts` to US$. The paywall shows these only before the store price loads.
+- **RevenueCat:** no change. It reads prices from the stores.
+
 The bank is now far larger: 1,500 SAMPs and 100 oral cases. Running cost is still zero. The store fee is 15 percent.
 
 | Product | Price | Nets about |
