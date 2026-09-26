@@ -550,6 +550,6 @@ export const precordialStabWound: OralCase = {
     },
   ],
   reviewed: false,
-  author: "Draft for review by Arjan Dhoot, MD",
+  author: "Preceptor",
   version: 2,
 };

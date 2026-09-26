@@ -3,7 +3,7 @@
 import type { Samp } from "@/engine/samp";
 import type { Source } from "@/engine/types";
 
-const meta = { reviewed: false, author: "Draft for review by Arjan Dhoot, MD", version: 1 };
+const meta = { reviewed: false, author: "Preceptor", version: 1 };
 
 const SRC_BELL: Source = {
   "id": "bell",

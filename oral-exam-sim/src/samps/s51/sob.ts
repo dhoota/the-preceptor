@@ -321,7 +321,7 @@ const LUZZATTO: Source = {
   url: "https://doi.org/10.1182/blood.2019000944",
 };
 
-const AUTHOR = "Draft for review by Arjan Dhoot, MD";
+const AUTHOR = "Preceptor";
 
 export const SOB_S51_SAMPS: Samp[] = [
   {

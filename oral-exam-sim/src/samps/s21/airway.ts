@@ -232,7 +232,7 @@ const PADIS: Source = {
     "Devlin JW, Skrobik Y, Gelinas C, et al. Clinical practice guidelines for the prevention and management of pain, agitation/sedation, delirium, immobility, and sleep disruption in adult patients in the ICU. Crit Care Med. 2018.",
 };
 
-const AUTHOR = "Draft for review by Arjan Dhoot, MD";
+const AUTHOR = "Preceptor";
 
 export const AIRWAY_S21_SAMPS: Samp[] = [
   {

@@ -3,7 +3,7 @@
 import type { Samp } from "@/engine/samp";
 import type { Source } from "@/engine/types";
 
-const AUTHOR = "Draft for review by Arjan Dhoot, MD";
+const AUTHOR = "Preceptor";
 
 const GINA: Source = {
   id: "gina",

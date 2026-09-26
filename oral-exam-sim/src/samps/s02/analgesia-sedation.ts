@@ -106,7 +106,7 @@ const MANTEROLA: Source = {
   citation: "Manterola C, Vial M, Moraga J, Astudillo P. Analgesia in patients with acute abdominal pain. Cochrane Database Syst Rev. 2011.",
 };
 
-const AUTHOR = "Draft for review by Arjan Dhoot, MD";
+const AUTHOR = "Preceptor";
 
 export const ANALGESIA_SEDATION_SAMPS: Samp[] = [
   {

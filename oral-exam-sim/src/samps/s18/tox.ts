@@ -3,7 +3,7 @@
 import type { Samp } from "@/engine/samp";
 import type { Source } from "@/engine/types";
 
-const META = { reviewed: true, author: "Draft for review by Arjan Dhoot, MD", version: 1 } as const;
+const META = { reviewed: true, author: "Preceptor", version: 1 } as const;
 
 const S = {
   cag: { id: "cag", citation: "Centre antipoison du Québec and CIUSSS de la Capitale-Nationale. Canadian Antidote Guide in Acute Care Toxicology. Online edition. Accessed 24 September 2026.", url: "https://www.ciusss-capitalenationale.gouv.qc.ca/en/antidotes" },

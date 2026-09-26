@@ -1,7 +1,7 @@
 // DRAFT. Written for exam practice only. Requires physician review before release. Verify every dose and threshold against current guidelines.
 
 /** Author line shared by every SAMP in this batch. */
-export const AUTHOR = "Draft for review by Arjan Dhoot, MD";
+export const AUTHOR = "Preceptor";
 
 /**
  * Match phrases for a labelled value. lab(["sensitivity", "sn"], ["80%", "0.8"])

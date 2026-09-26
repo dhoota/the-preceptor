@@ -71,7 +71,7 @@ const OAA: Source = {
     "Mushambi MC, Kinsella SM, Popat M, et al. Obstetric Anaesthetists' Association and Difficult Airway Society guidelines for the management of difficult and failed tracheal intubation in obstetrics. Anaesthesia. 2015.",
 };
 
-const AUTHOR = "Draft for review by Arjan Dhoot, MD";
+const AUTHOR = "Preceptor";
 
 export const AIRWAY_SAMPS: Samp[] = [
   {

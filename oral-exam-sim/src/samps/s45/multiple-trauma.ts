@@ -118,7 +118,7 @@ export const MULTIPLE_TRAUMA_S45: Samp[] = [
       }
     ],
     reviewed: false,
-    author: "Draft for review by Arjan Dhoot, MD",
+    author: "Preceptor",
     version: 1
   },
   {
@@ -237,7 +237,7 @@ export const MULTIPLE_TRAUMA_S45: Samp[] = [
       }
     ],
     reviewed: false,
-    author: "Draft for review by Arjan Dhoot, MD",
+    author: "Preceptor",
     version: 1
   },
   {
@@ -382,7 +382,7 @@ export const MULTIPLE_TRAUMA_S45: Samp[] = [
       }
     ],
     reviewed: false,
-    author: "Draft for review by Arjan Dhoot, MD",
+    author: "Preceptor",
     version: 2
   },
   {
@@ -495,7 +495,7 @@ export const MULTIPLE_TRAUMA_S45: Samp[] = [
       }
     ],
     reviewed: false,
-    author: "Draft for review by Arjan Dhoot, MD",
+    author: "Preceptor",
     version: 1
   },
   {
@@ -600,7 +600,7 @@ export const MULTIPLE_TRAUMA_S45: Samp[] = [
       }
     ],
     reviewed: false,
-    author: "Draft for review by Arjan Dhoot, MD",
+    author: "Preceptor",
     version: 1
   },
   {
@@ -704,7 +704,7 @@ export const MULTIPLE_TRAUMA_S45: Samp[] = [
       }
     ],
     reviewed: false,
-    author: "Draft for review by Arjan Dhoot, MD",
+    author: "Preceptor",
     version: 2
   },
   {
@@ -813,7 +813,7 @@ export const MULTIPLE_TRAUMA_S45: Samp[] = [
       }
     ],
     reviewed: false,
-    author: "Draft for review by Arjan Dhoot, MD",
+    author: "Preceptor",
     version: 1
   },
   {
@@ -936,7 +936,7 @@ export const MULTIPLE_TRAUMA_S45: Samp[] = [
       }
     ],
     reviewed: false,
-    author: "Draft for review by Arjan Dhoot, MD",
+    author: "Preceptor",
     version: 1
   },
   {
@@ -1045,7 +1045,7 @@ export const MULTIPLE_TRAUMA_S45: Samp[] = [
       }
     ],
     reviewed: false,
-    author: "Draft for review by Arjan Dhoot, MD",
+    author: "Preceptor",
     version: 1
   },
   {
@@ -1154,7 +1154,7 @@ export const MULTIPLE_TRAUMA_S45: Samp[] = [
       }
     ],
     reviewed: false,
-    author: "Draft for review by Arjan Dhoot, MD",
+    author: "Preceptor",
     version: 2
   },
   {
@@ -1264,7 +1264,7 @@ export const MULTIPLE_TRAUMA_S45: Samp[] = [
       }
     ],
     reviewed: false,
-    author: "Draft for review by Arjan Dhoot, MD",
+    author: "Preceptor",
     version: 1
   },
   {
@@ -1372,7 +1372,7 @@ export const MULTIPLE_TRAUMA_S45: Samp[] = [
       }
     ],
     reviewed: false,
-    author: "Draft for review by Arjan Dhoot, MD",
+    author: "Preceptor",
     version: 2
   },
   {
@@ -1481,7 +1481,7 @@ export const MULTIPLE_TRAUMA_S45: Samp[] = [
       }
     ],
     reviewed: false,
-    author: "Draft for review by Arjan Dhoot, MD",
+    author: "Preceptor",
     version: 2
   },
   {
@@ -1598,7 +1598,7 @@ export const MULTIPLE_TRAUMA_S45: Samp[] = [
       }
     ],
     reviewed: false,
-    author: "Draft for review by Arjan Dhoot, MD",
+    author: "Preceptor",
     version: 1
   },
   {
@@ -1682,7 +1682,7 @@ export const MULTIPLE_TRAUMA_S45: Samp[] = [
       }
     ],
     reviewed: false,
-    author: "Draft for review by Arjan Dhoot, MD",
+    author: "Preceptor",
     version: 1
   },
   {
@@ -1792,7 +1792,7 @@ export const MULTIPLE_TRAUMA_S45: Samp[] = [
       }
     ],
     reviewed: false,
-    author: "Draft for review by Arjan Dhoot, MD",
+    author: "Preceptor",
     version: 2
   },
   {
@@ -1909,7 +1909,7 @@ export const MULTIPLE_TRAUMA_S45: Samp[] = [
       }
     ],
     reviewed: false,
-    author: "Draft for review by Arjan Dhoot, MD",
+    author: "Preceptor",
     version: 1
   },
   {
@@ -2023,7 +2023,7 @@ export const MULTIPLE_TRAUMA_S45: Samp[] = [
       }
     ],
     reviewed: false,
-    author: "Draft for review by Arjan Dhoot, MD",
+    author: "Preceptor",
     version: 1
   },
   {
@@ -2125,7 +2125,7 @@ export const MULTIPLE_TRAUMA_S45: Samp[] = [
       }
     ],
     reviewed: false,
-    author: "Draft for review by Arjan Dhoot, MD",
+    author: "Preceptor",
     version: 1
   },
   {
@@ -2213,7 +2213,7 @@ export const MULTIPLE_TRAUMA_S45: Samp[] = [
       }
     ],
     reviewed: false,
-    author: "Draft for review by Arjan Dhoot, MD",
+    author: "Preceptor",
     version: 2
   },
   {
@@ -2332,7 +2332,7 @@ export const MULTIPLE_TRAUMA_S45: Samp[] = [
       }
     ],
     reviewed: false,
-    author: "Draft for review by Arjan Dhoot, MD",
+    author: "Preceptor",
     version: 1
   },
   {
@@ -2416,7 +2416,7 @@ export const MULTIPLE_TRAUMA_S45: Samp[] = [
       }
     ],
     reviewed: false,
-    author: "Draft for review by Arjan Dhoot, MD",
+    author: "Preceptor",
     version: 1
   },
   {
@@ -2527,7 +2527,7 @@ export const MULTIPLE_TRAUMA_S45: Samp[] = [
       }
     ],
     reviewed: false,
-    author: "Draft for review by Arjan Dhoot, MD",
+    author: "Preceptor",
     version: 1
   },
   {
@@ -2621,7 +2621,7 @@ export const MULTIPLE_TRAUMA_S45: Samp[] = [
       }
     ],
     reviewed: false,
-    author: "Draft for review by Arjan Dhoot, MD",
+    author: "Preceptor",
     version: 1
   },
   {
@@ -2733,7 +2733,7 @@ export const MULTIPLE_TRAUMA_S45: Samp[] = [
       }
     ],
     reviewed: false,
-    author: "Draft for review by Arjan Dhoot, MD",
+    author: "Preceptor",
     version: 2
   },
   {
@@ -2823,7 +2823,7 @@ export const MULTIPLE_TRAUMA_S45: Samp[] = [
       }
     ],
     reviewed: false,
-    author: "Draft for review by Arjan Dhoot, MD",
+    author: "Preceptor",
     version: 1
   },
   {
@@ -2937,7 +2937,7 @@ export const MULTIPLE_TRAUMA_S45: Samp[] = [
       }
     ],
     reviewed: false,
-    author: "Draft for review by Arjan Dhoot, MD",
+    author: "Preceptor",
     version: 1
   },
   {
@@ -3055,7 +3055,7 @@ export const MULTIPLE_TRAUMA_S45: Samp[] = [
       }
     ],
     reviewed: false,
-    author: "Draft for review by Arjan Dhoot, MD",
+    author: "Preceptor",
     version: 1
   },
   {
@@ -3166,7 +3166,7 @@ export const MULTIPLE_TRAUMA_S45: Samp[] = [
       }
     ],
     reviewed: false,
-    author: "Draft for review by Arjan Dhoot, MD",
+    author: "Preceptor",
     version: 2
   },
   {
@@ -3256,7 +3256,7 @@ export const MULTIPLE_TRAUMA_S45: Samp[] = [
       }
     ],
     reviewed: false,
-    author: "Draft for review by Arjan Dhoot, MD",
+    author: "Preceptor",
     version: 2
   },
   {
@@ -3350,7 +3350,7 @@ export const MULTIPLE_TRAUMA_S45: Samp[] = [
       }
     ],
     reviewed: false,
-    author: "Draft for review by Arjan Dhoot, MD",
+    author: "Preceptor",
     version: 2
   },
   {
@@ -3459,7 +3459,7 @@ export const MULTIPLE_TRAUMA_S45: Samp[] = [
       }
     ],
     reviewed: false,
-    author: "Draft for review by Arjan Dhoot, MD",
+    author: "Preceptor",
     version: 1
   }
 ];

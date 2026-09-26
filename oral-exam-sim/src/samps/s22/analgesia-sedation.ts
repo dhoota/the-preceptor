@@ -267,7 +267,7 @@ const SENER: Source = {
   url: "https://pubmed.ncbi.nlm.nih.gov/20970888/",
 };
 
-const AUTHOR = "Draft for review by Arjan Dhoot, MD";
+const AUTHOR = "Preceptor";
 const TOPIC = "analgesia-sedation";
 
 export const ANALGESIA_SEDATION_S22_SAMPS: Samp[] = [

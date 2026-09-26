@@ -2,7 +2,7 @@
 import type { Samp } from "@/engine/samp";
 import type { Source } from "@/engine/types";
 
-const META = { reviewed: false, author: "Draft for review by Arjan Dhoot, MD", version: 1 } as const;
+const META = { reviewed: false, author: "Preceptor", version: 1 } as const;
 
 const S = {
   abaResus: { id: "aba-resus", citation: "Cartotto R, Johnson LS, Savetamal A, and colleagues. American Burn Association clinical practice guidelines on burn shock resuscitation. J Burn Care Res. 2024.", url: "https://pubmed.ncbi.nlm.nih.gov/38051821/" },

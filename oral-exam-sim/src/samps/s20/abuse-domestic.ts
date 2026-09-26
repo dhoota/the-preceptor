@@ -3,7 +3,7 @@
 import type { Samp } from "@/engine/samp";
 import type { Source } from "@/engine/types";
 
-const META = { reviewed: false, author: "Draft for review by Arjan Dhoot, MD", version: 1 } as const;
+const META = { reviewed: false, author: "Preceptor", version: 1 } as const;
 
 const S: Record<string, Source> = {
   cpsThi: { id: "cps-thi", citation: "Shouldice M, Ward MGK, Nolan K, Cory E. Canadian Paediatric Society, Child and Youth Maltreatment Section. Medical assessment of suspected traumatic head injury due to child maltreatment (THI-CM). Paediatr Child Health. 2025.", url: "https://pubmed.ncbi.nlm.nih.gov/40904407/" },
@@ -273,7 +273,7 @@ export const ABUSE_DOMESTIC_S20: Samp[] = [
       { id: "ontario-duty-2022", citation: "Ontario Ministry of Children, Community and Social Services. Reporting child abuse and neglect: it's your duty. Your responsibilities under the Child, Youth and Family Services Act, 2017. 2022.", url: "https://files.ontario.ca/pdf-3/mccss-report-child-abuse-and-neglect-en-2022-03-31.pdf" },
     ],
     reviewed: false,
-    author: "Draft for review by Arjan Dhoot, MD",
+    author: "Preceptor",
     version: 3,
   },
   {

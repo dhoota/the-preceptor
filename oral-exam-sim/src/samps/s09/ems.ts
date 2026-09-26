@@ -3,7 +3,7 @@
 import type { Samp } from "@/engine/samp";
 import type { Source } from "@/engine/types";
 
-const META = { reviewed: true, author: "Draft for review by Arjan Dhoot, MD", version: 1 } as const;
+const META = { reviewed: true, author: "Preceptor", version: 1 } as const;
 
 const S = {
   alsPcs: { id: "als-pcs", citation: "Ontario Ministry of Health. Advanced Life Support Patient Care Standards, version 5.5, including the base hospital medical directives. 2025.", url: "https://www.ontario.ca/files/2026-08/moh-advanced-life-support-als-patient-care-standards-pcs-5.5-en-2025-08-18.pdf" },

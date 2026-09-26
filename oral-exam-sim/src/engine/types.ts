@@ -177,7 +177,7 @@ export interface OralCase {
   nodes: CaseNode[];
   rubric: RubricItem[];
   sources: Source[];
-  /** Physician sign off. Every seed case ships as false until Arjan reviews it. */
+  /** Physician sign off. Every case ships as false until a physician reviews it. */
   reviewed: boolean;
   author: string;
   version: number;

@@ -3,7 +3,7 @@
 import type { Samp } from "@/engine/samp";
 import type { Source } from "@/engine/types";
 
-const META = { reviewed: true, author: "Draft for review by Arjan Dhoot, MD", version: 1 } as const;
+const META = { reviewed: true, author: "Preceptor", version: 1 } as const;
 
 const S = {
   cigTet: { id: "cig-tetanus", citation: "Public Health Agency of Canada. Canadian Immunization Guide. Part 4. Tetanus toxoid. Tetanus prophylaxis in wound management. 2026.", url: "https://www.canada.ca/en/public-health/services/publications/healthy-living/canadian-immunization-guide-part-4-active-vaccines/page-22-tetanus-toxoid.html" },

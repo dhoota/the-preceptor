@@ -3,7 +3,7 @@
 import type { Samp } from "@/engine/samp";
 import type { Source } from "@/engine/types";
 
-const META = { reviewed: false, author: "Draft for review by Arjan Dhoot, MD", version: 1 } as const;
+const META = { reviewed: false, author: "Preceptor", version: 1 } as const;
 
 const S = {
   sogcEctopic: { id: "sogc-ectopic", citation: "Po L, Thomas J, Mills K, and colleagues. Guideline No. 414: management of pregnancy of unknown location and tubal and nontubal ectopic pregnancies. J Obstet Gynaecol Can. 2021.", url: "https://pubmed.ncbi.nlm.nih.gov/33453378/" },

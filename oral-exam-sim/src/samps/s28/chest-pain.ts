@@ -3,7 +3,7 @@
 import type { Samp } from "@/engine/samp";
 import type { Source } from "@/engine/types";
 
-const meta = { reviewed: false, author: "Draft for review by Arjan Dhoot, MD", version: 1 };
+const meta = { reviewed: false, author: "Preceptor", version: 1 };
 
 const ESC_ACS: Source = {
   id: "esc-acs",
@@ -388,7 +388,7 @@ export const CHEST_PAIN_S28: Samp[] = [
     ],
     sources: [RADIATION_HEART, AHA_CP, ESC_ACS],
     reviewed: false,
-    author: "Draft for review by Arjan Dhoot, MD",
+    author: "Preceptor",
     version: 3,
   },
 
@@ -443,7 +443,7 @@ export const CHEST_PAIN_S28: Samp[] = [
     ],
     sources: [ACUPUNCTURE_PTX, BTS],
     reviewed: false,
-    author: "Draft for review by Arjan Dhoot, MD",
+    author: "Preceptor",
     version: 3,
   },
 
@@ -660,7 +660,7 @@ export const CHEST_PAIN_S28: Samp[] = [
     ],
     sources: [STERNAL_INFECTION, EACTS_MEDIASTINITIS],
     reviewed: false,
-    author: "Draft for review by Arjan Dhoot, MD",
+    author: "Preceptor",
     version: 3,
   },
 
@@ -719,7 +719,7 @@ export const CHEST_PAIN_S28: Samp[] = [
     ],
     sources: [AHA_CP, SHARE_ETHNICITY, ESC_ACS],
     reviewed: false,
-    author: "Draft for review by Arjan Dhoot, MD",
+    author: "Preceptor",
     version: 3,
   },
 
@@ -1258,7 +1258,7 @@ export const CHEST_PAIN_S28: Samp[] = [
     ],
     sources: [AHA_CP, ESC_ACS],
     reviewed: false,
-    author: "Draft for review by Arjan Dhoot, MD",
+    author: "Preceptor",
     version: 3,
   },
 
@@ -1314,7 +1314,7 @@ export const CHEST_PAIN_S28: Samp[] = [
     ],
     sources: [HEMOPNEUMOTHORAX, BTS],
     reviewed: false,
-    author: "Draft for review by Arjan Dhoot, MD",
+    author: "Preceptor",
     version: 3,
   },
 
@@ -1456,7 +1456,7 @@ export const CHEST_PAIN_S28: Samp[] = [
     ],
     sources: [INFLUENZA_MI, AHA_CP, LIPIDS],
     reviewed: false,
-    author: "Draft for review by Arjan Dhoot, MD",
+    author: "Preceptor",
     version: 3,
   },
 
@@ -1514,7 +1514,7 @@ export const CHEST_PAIN_S28: Samp[] = [
     ],
     sources: [LIPIDS, ESC_ACS, AHA_CP],
     reviewed: false,
-    author: "Draft for review by Arjan Dhoot, MD",
+    author: "Preceptor",
     version: 3,
   },
 
@@ -1637,7 +1637,7 @@ export const CHEST_PAIN_S28: Samp[] = [
     ],
     sources: [AHA_CP, ESC_ACS, HIV_MI],
     reviewed: false,
-    author: "Draft for review by Arjan Dhoot, MD",
+    author: "Preceptor",
     version: 3,
   },
 
@@ -1830,7 +1830,7 @@ export const CHEST_PAIN_S28: Samp[] = [
     ],
     sources: [ATHLETE_CAC, ESC_ACS, AHA_CP, LIPIDS],
     reviewed: false,
-    author: "Draft for review by Arjan Dhoot, MD",
+    author: "Preceptor",
     version: 3,
   },
 
@@ -2184,7 +2184,7 @@ export const CHEST_PAIN_S28: Samp[] = [
     ],
     sources: [AEF_REVIEW],
     reviewed: false,
-    author: "Draft for review by Arjan Dhoot, MD",
+    author: "Preceptor",
     version: 3,
   },
 
@@ -2314,7 +2314,7 @@ export const CHEST_PAIN_S28: Samp[] = [
     ],
     sources: [ESC_CARDIOONC],
     reviewed: false,
-    author: "Draft for review by Arjan Dhoot, MD",
+    author: "Preceptor",
     version: 2,
   },
 
@@ -2361,7 +2361,7 @@ export const CHEST_PAIN_S28: Samp[] = [
     ],
     sources: [AHA_ENDOCARDITIS],
     reviewed: false,
-    author: "Draft for review by Arjan Dhoot, MD",
+    author: "Preceptor",
     version: 3,
   },
 

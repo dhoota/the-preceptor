@@ -7,7 +7,7 @@ import type { Source } from "@/engine/types";
 const c = (...parts: string[][]): string[] =>
   parts.reduce<string[]>((acc, p) => acc.flatMap((a) => p.map((x) => (a ? `${a} ${x}` : x))), [""]);
 
-const AUTHOR = "Draft for review by Arjan Dhoot, MD";
+const AUTHOR = "Preceptor";
 
 const ECG_MATCH = ["ecg", "ekg", "12 lead", "electrocardiogram"];
 const AV_NODAL_BLOCKERS = ["adenosine", "diltiazem", "verapamil", "metoprolol", "esmolol", "beta blocker", "digoxin", "calcium channel blocker"];

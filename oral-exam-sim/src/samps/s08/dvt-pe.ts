@@ -7,7 +7,7 @@ const k = (id: string, text: string, ...match: string[]): KeyItem => ({ id, text
 const bad = (text: string, match: string[], dangerous = false): UnacceptableItem =>
   dangerous ? { text, match, dangerous: true } : { text, match };
 const kf = (n: number) => ({ topic: "dvt-pe", n });
-const META = { reviewed: true, author: "Draft for review by Arjan Dhoot, MD", version: 1 };
+const META = { reviewed: true, author: "Preceptor", version: 1 };
 
 /* Sources ---------------------------------------------------------------- */
 

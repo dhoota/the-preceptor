@@ -3,7 +3,7 @@
 import type { Samp } from "@/engine/samp";
 import type { Source } from "@/engine/types";
 
-const META = { topic: "msk", reviewed: false, author: "Draft for review by Arjan Dhoot, MD", version: 1 } as const;
+const META = { topic: "msk", reviewed: false, author: "Preceptor", version: 1 } as const;
 
 const S = {
   oar94: { id: "ottawa-ankle", citation: "Stiell IG and colleagues. Implementation of the Ottawa ankle rules. JAMA. 1994.", url: "https://pubmed.ncbi.nlm.nih.gov/8114236/" },

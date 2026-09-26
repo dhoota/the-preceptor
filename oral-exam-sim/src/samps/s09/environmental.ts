@@ -3,7 +3,7 @@
 import type { Samp } from "@/engine/samp";
 import type { Source } from "@/engine/types";
 
-const META = { reviewed: true, author: "Draft for review by Arjan Dhoot, MD", version: 1 } as const;
+const META = { reviewed: true, author: "Preceptor", version: 1 } as const;
 
 const S = {
   wmsHeat: { id: "wms-heat", citation: "Eifling KP, et al. Wilderness Medical Society clinical practice guidelines for the prevention and treatment of heat illness. 2024 update. Wilderness Environ Med. 2024.", url: "https://pubmed.ncbi.nlm.nih.gov/38425235/" },

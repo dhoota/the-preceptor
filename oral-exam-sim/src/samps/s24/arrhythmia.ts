@@ -2,7 +2,7 @@
 
 import type { Samp } from "@/engine/samp";
 
-const AUTHOR = "Draft for review by Arjan Dhoot, MD";
+const AUTHOR = "Preceptor";
 
 /** Expansion batch s24: arrhythmia-16 to arrhythmia-47. 2027 MCQ and menu format only. */
 export const ARRHYTHMIA_S24: Samp[] = [

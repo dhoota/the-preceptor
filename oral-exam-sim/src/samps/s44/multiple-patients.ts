@@ -3,7 +3,7 @@
 import type { Samp } from "@/engine/samp";
 import type { Source } from "@/engine/types";
 
-const META = { reviewed: false, author: "Draft for review by Arjan Dhoot, MD", version: 1 } as const;
+const META = { reviewed: false, author: "Preceptor", version: 1 } as const;
 
 const S = {
   ctas2016: { id: "ctas-2016", citation: "Bullard MJ, Musgrave E, Warren D, et al. Revisions to the Canadian Emergency Department Triage and Acuity Scale (CTAS) Guidelines 2016. CJEM. 2017.", url: "https://doi.org/10.1017/cem.2017.365" },

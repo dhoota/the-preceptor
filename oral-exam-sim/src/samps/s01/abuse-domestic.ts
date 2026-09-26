@@ -3,7 +3,7 @@
 import type { Samp } from "@/engine/samp";
 import type { Source } from "@/engine/types";
 
-const meta = { reviewed: true, author: "Draft for review by Arjan Dhoot, MD", version: 1 };
+const meta = { reviewed: true, author: "Preceptor", version: 1 };
 
 const SRC: Record<string, Source> = {
   rnao: { id: "rnao-ipv", citation: "Registered Nurses' Association of Ontario. Woman abuse: screening, identification and initial response. Nursing best practice guideline. 2005, with 2012 supplement." },

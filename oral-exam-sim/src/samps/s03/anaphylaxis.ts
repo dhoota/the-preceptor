@@ -17,7 +17,7 @@ const EPI_03 = ["0.3 mg", "0.3mg", "300 mcg", "300mcg"];
  */
 const EPI_IV_BOLUS = ["epinephrine iv push", "adrenaline iv push", "epi iv push", "epinephrine 1 mg iv push", "adrenaline 1 mg iv push"];
 
-const AUTHOR = "Draft for review by Arjan Dhoot, MD";
+const AUTHOR = "Preceptor";
 
 const WAO: Source = {
   id: "wao",

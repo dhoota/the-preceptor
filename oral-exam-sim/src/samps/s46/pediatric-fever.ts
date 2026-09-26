@@ -3,7 +3,7 @@
 import type { Samp } from "@/engine/samp";
 import type { Source } from "@/engine/types";
 
-const META = { reviewed: false, author: "Draft for review by Arjan Dhoot, MD", version: 1 } as const;
+const META = { reviewed: false, author: "Preceptor", version: 1 } as const;
 
 const S = {
   cpsInfant: { id: "cps-infant", citation: "Burstein B, Lirette MP, Beck C, Chauvin-Kimoff L, Chan K. Canadian Paediatric Society position statement. Management of well-appearing febrile young infants aged 90 days or younger. Paediatr Child Health. 2024. Updated 2026.", url: "https://cps.ca/en/documents/position/management-of-well-appearing-febrile-young-infants-aged-90-days" },
