@@ -37,6 +37,9 @@ describe("store listing", () => {
   });
   it("discloses the subscription terms", () => {
     const desc = sections().find((s) => s.title === "Description")!.body;
-    expect(desc).toMatch(/renews each month unless cancelled at least 24 hours before/);
+    expect(desc).toMatch(/renews each period unless cancelled at least 24 hours before the period ends/);
+    expect(desc).toContain("US$149.99 every 6 months");
+    expect(desc).toContain("US$99.99 every 3 months");
+    expect(md).not.toMatch(/lifetime purchase|one time purchase|monthly subscription/i);
   });
 });

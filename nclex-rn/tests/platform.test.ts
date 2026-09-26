@@ -73,8 +73,9 @@ describe("free tier", () => {
 
 describe("products and entitlement", () => {
   it("uses the planned ids, entitlement and offering", () => {
-    expect(PRODUCTS.lifetime.id).toBe("nclexrn_lifetime");
-    expect(PRODUCTS.monthly.id).toBe("nclexrn_monthly");
+    expect(PRODUCTS.threeMonth).toMatchObject({ id: "nclexrn_3month", basePlan: "p3m", packageType: "$rc_three_month", fallbackPrice: "US$99.99" });
+    expect(PRODUCTS.sixMonth).toMatchObject({ id: "nclexrn_6month", basePlan: "p6m", packageType: "$rc_six_month", fallbackPrice: "US$149.99" });
+    expect(Object.keys(PRODUCTS).sort()).toEqual(["sixMonth", "threeMonth"]);
     expect(ENTITLEMENT).toBe("nclexrn_access");
     expect(RC_OFFERING).toBe("nclexrn");
   });
@@ -93,7 +94,7 @@ describe("reconcileAccess", () => {
     expect(await reconcileAccess(FULL, p)).toEqual(FULL);
     expect(p.restores).toBe(1);
   });
-  it("revokes on a clean confirmed no, such as a lapsed monthly subscription", async () => {
+  it("revokes on a clean confirmed no, such as a lapsed subscription", async () => {
     expect(await reconcileAccess(FULL, fake(NO_ACCESS, NO_ACCESS))).toEqual(NO_ACCESS);
     expect(await reconcileAccess(FULL, fake(NO_ACCESS, null))).toEqual(FULL);
   });
@@ -107,12 +108,12 @@ describe("reconcileAccess", () => {
 describe("web adapter", () => {
   it("never grants access in a production web build", async () => {
     const p = webAdapter(false);
-    expect(await p.purchase("lifetime")).toBe("unavailable");
+    expect(await p.purchase("sixMonth")).toBe("unavailable");
     expect(await p.check()).toEqual(NO_ACCESS);
   });
   it("simulates a purchase in local dev", async () => {
     const p = webAdapter(true);
-    expect(await p.purchase("monthly")).toBe("purchased");
+    expect(await p.purchase("threeMonth")).toBe("purchased");
     expect(await p.restore()).toEqual(FULL);
   });
 });
@@ -122,8 +123,8 @@ describe("RevenueCat offering", () => {
   const other = { availablePackages: [{ identifier: "$rc_annual", product: { identifier: "preceptor_ccfp_annual" } }] };
   const mine = {
     availablePackages: [
-      { identifier: "$rc_lifetime", product: { identifier: "nclexrn_lifetime" } },
-      { identifier: "$rc_monthly", product: { identifier: "nclexrn_monthly" } },
+      { identifier: "$rc_three_month", product: { identifier: "nclexrn_3month" } },
+      { identifier: "$rc_six_month", product: { identifier: "nclexrn_6month" } },
     ],
   };
   it("uses offerings.all['nclexrn'], never offerings.current", () => {
@@ -131,11 +132,18 @@ describe("RevenueCat offering", () => {
     expect(offeringPackages({ current: other, all: { default: other } })).toEqual([]);
     expect(offeringPackages(null)).toEqual([]);
   });
-  it("finds both packages by product id or package type", () => {
-    expect(findPackage(mine.availablePackages, "lifetime")?.product?.identifier).toBe("nclexrn_lifetime");
-    expect(findPackage(mine.availablePackages, "monthly")?.product?.identifier).toBe("nclexrn_monthly");
-    expect(findPackage([{ identifier: "$rc_monthly", product: { identifier: "x" } }], "monthly")?.identifier).toBe("$rc_monthly");
-    expect(findPackage(other.availablePackages, "lifetime")).toBeUndefined();
+  it("finds both plans by package type, App Store product id or Play product id", () => {
+    expect(findPackage(mine.availablePackages, "threeMonth")?.product?.identifier).toBe("nclexrn_3month");
+    expect(findPackage(mine.availablePackages, "sixMonth")?.product?.identifier).toBe("nclexrn_6month");
+    // Play products arrive as "subscriptionId:basePlanId".
+    const play = [
+      { identifier: "custom_a", product: { identifier: "nclexrn_6month:p6m" } },
+      { identifier: "custom_b", product: { identifier: "nclexrn_3month:p3m" } },
+    ];
+    expect(findPackage(play, "sixMonth")?.identifier).toBe("custom_a");
+    expect(findPackage(play, "threeMonth")?.identifier).toBe("custom_b");
+    expect(findPackage([{ identifier: "x", product: { identifier: "nclexrn_3monthly" } }], "threeMonth")).toBeUndefined();
+    expect(findPackage(other.availablePackages, "sixMonth")).toBeUndefined();
   });
   it("never reads offerings.current in the source", () => {
     const src = read("../src/lib/purchases.ts");
@@ -220,5 +228,14 @@ describe("Codemagic", () => {
     expect(arts(root)).toEqual(arts(local));
     for (const a of arts(root)) expect(a).not.toMatch(/nclex-rn\//);
     expect(root.slice(root.indexOf("definitions:"))).toBe(local.slice(local.indexOf("definitions:")));
+  });
+});
+
+describe("paywall", () => {
+  const src = read("../src/screens/Paywall.tsx");
+  it("offers both subscriptions, the renewal terms, Restore and the Terms and Privacy links", () => {
+    for (const s of ["PLAN_ORDER", "every 6 months", "every 3 months", "at least 24 hours before the current period ends", "Restore purchases", "TERMS_URL", "PRIVACY_URL"])
+      expect(src, s).toContain(s);
+    expect(src).not.toMatch(/lifetime|monthly/i);
   });
 });

@@ -1,25 +1,15 @@
 import { useState } from "react";
 import { FREE_CASES, FREE_ITEMS } from "@/lib/access";
 import { APP_NAME, PRIVACY_URL, TERMS_URL } from "@/lib/constants";
-import { PRODUCTS, isNative, keysConfigured, type ProductKey } from "@/lib/purchases";
+import { PLAN_ORDER, PRODUCTS, isNative, keysConfigured, type ProductKey } from "@/lib/purchases";
 import type { Go } from "../routes";
 import { useApp } from "../state";
 import { openUrl } from "./Settings";
 
-const TIERS: { key: ProductKey; name: string; body: string; note: string }[] = [
-  {
-    key: "lifetime",
-    name: "Lifetime",
-    body: "Pay once. Keep full access on this store account.",
-    note: "One time purchase.",
-  },
-  {
-    key: "monthly",
-    name: "Monthly",
-    body: "Full access for as long as you subscribe.",
-    note: "Auto-renewing subscription. Cancel anytime in your store account settings.",
-  },
-];
+const PLANS: Record<ProductKey, { name: string; body: string; cta: string; best?: string }> = {
+  sixMonth: { name: "6 months", body: "Full access for 6 months, then renews every 6 months.", cta: "Subscribe for 6 months", best: "Lower cost per month" },
+  threeMonth: { name: "3 months", body: "Full access for 3 months, then renews every 3 months.", cta: "Subscribe for 3 months" },
+};
 
 export function Paywall({ go }: { go: Go }) {
   const app = useApp();
@@ -73,35 +63,44 @@ export function Paywall({ go }: { go: Go }) {
         <li>Works offline. No account. Nothing leaves your device.</li>
       </ul>
 
-      {TIERS.map((t) => (
-        <div key={t.key} className={`tier ${t.key === "lifetime" ? "best" : ""}`}>
-          <div className="tierhead">
-            <span className="serif tiername">{t.name}</span>
-            <span className="mono price">
-              {app.prices[t.key] ?? PRODUCTS[t.key].fallbackPrice}
-              {PRODUCTS[t.key].period && <span className="per"> per {PRODUCTS[t.key].period}</span>}
-            </span>
+      {PLAN_ORDER.map((key) => {
+        const plan = PLANS[key];
+        const price = app.prices[key] ?? PRODUCTS[key].fallbackPrice;
+        return (
+          <div key={key} className={`tier ${plan.best ? "best" : ""}`}>
+            <div className="tierhead">
+              <span className="serif tiername">{plan.name}</span>
+              <span className="mono price">
+                {price}
+                <span className="per"> every {PRODUCTS[key].period}</span>
+              </span>
+            </div>
+            {plan.best && <p className="small tierbadge">{plan.best}</p>}
+            <p className="muted small" style={{ margin: "4px 0 10px" }}>
+              {plan.body}
+            </p>
+            <button className={`btn block ${plan.best ? "" : "ghost"}`} disabled={app.busy} onClick={() => buy(key)}>
+              {app.busy ? "Working" : plan.cta}
+            </button>
           </div>
-          <p className="muted small" style={{ margin: "4px 0 4px" }}>
-            {t.body}
-          </p>
-          <p className="muted small" style={{ margin: "0 0 10px" }}>
-            {t.note}
-          </p>
-          <button className={`btn block ${t.key === "lifetime" ? "" : "ghost"}`} disabled={app.busy} onClick={() => buy(t.key)}>
-            {app.busy ? "Working" : t.key === "lifetime" ? "Buy lifetime access" : "Subscribe monthly"}
-          </button>
-        </div>
-      ))}
+        );
+      })}
 
-      <p className="muted small disclose" style={{ marginTop: 14 }}>
-        The monthly subscription renews automatically each month unless you cancel it at least 24 hours before the current
-        period ends. Payment is charged to your store account. Manage or cancel the subscription in your store account
-        settings. Prices show in your local currency once the store loads them.
-      </p>
+      <div className="muted small disclose" style={{ marginTop: 14 }}>
+        <p>Both plans are auto-renewing subscriptions. Payment is charged to your store account when you confirm the purchase.</p>
+        <p>
+          The 6 month plan renews at {app.prices.sixMonth ?? PRODUCTS.sixMonth.fallbackPrice} every 6 months. The 3 month plan
+          renews at {app.prices.threeMonth ?? PRODUCTS.threeMonth.fallbackPrice} every 3 months.
+        </p>
+        <p>
+          A subscription renews unless you cancel it at least 24 hours before the current period ends. Your account is charged
+          for renewal within 24 hours before the period ends.
+        </p>
+        <p>Manage or cancel the subscription in your App Store or Google Play account settings. Prices show in your local currency once the store loads them.</p>
+      </div>
       <div className="actions">
         <button className="btn ghost block" disabled={app.busy} onClick={restore}>
-          Restore purchase
+          Restore purchases
         </button>
       </div>
       {msg && (

@@ -9,11 +9,11 @@ House style: no em or en dashes, no semicolons, short sentences, no filler. Char
 | iOS bundle ID | com.preceptor.nclex |
 | Android applicationId | com.preceptor.nclex |
 | App name | Preceptor: NCLEX-RN Prep |
-| Products | nclexrn_lifetime (one time), nclexrn_monthly (auto-renewing, 1 month) |
-| Product type | iOS Non-Consumable and Auto-Renewable Subscription. Play one-time product and subscription |
+| Products | nclexrn_6month (auto-renewing, 6 months), nclexrn_3month (auto-renewing, 3 months). No lifetime or monthly product |
+| Product type | iOS Auto-Renewable Subscriptions in the group NCLEX-RN Access (6 months level 1, 3 months level 2). Play subscriptions with base plans p6m and p3m |
 | RevenueCat entitlement | nclexrn_access. Both products grant it |
-| RevenueCat offering | nclexrn, packages $rc_lifetime and $rc_monthly. Never the Current offering |
-| Prices | Lifetime US$59.99 and its CA$ tier. Launch price US$49.99. Monthly US$14.99 and its CA$ tier |
+| RevenueCat offering | nclexrn, packages $rc_six_month and $rc_three_month. Never the Current offering |
+| Prices | US$149.99 every 6 months. US$99.99 every 3 months. Other currencies from the store price tiers |
 | Free tier | 50 items and 1 case study |
 | App Store category | Education. Secondary: Medical |
 | Play category | Education |
@@ -57,13 +57,13 @@ Every choice has its own reason, right or wrong. Every item cites a named source
 Private and offline
 No account. No tracking. Everything stays on your device and works with no signal.
 
-Try it free. 50 items and 1 case study are open. Then choose a one time purchase or a monthly subscription.
+Try it free. 50 items and 1 case study are open. Then subscribe for 3 or 6 months.
 
 Every item is original. None is taken from NCSBN material or any real exam. Content is written for education and every item was reviewed before release.
 
 Preceptor: NCLEX-RN Prep is an independent study tool. It is not affiliated with, sponsored or endorsed by NCSBN. NCLEX, NCLEX-RN and NCLEX-PN are registered trademarks of NCSBN. The app is for education only and is not nursing or medical advice. Scores do not predict exam results.
 
-Monthly subscription: payment is charged to your store account. It renews each month unless cancelled at least 24 hours before the period ends. Manage or cancel it in your store account settings.
+Subscriptions: US$149.99 every 6 months or US$99.99 every 3 months. Payment is charged to your store account. A subscription renews each period unless cancelled at least 24 hours before the period ends. Manage or cancel it in your store account settings.
 
 Support: preceptor.app@gmail.com
 
@@ -135,4 +135,4 @@ Answer the questionnaire with:
 - Expected result: Everyone or Teen. The target audience setting keeps it to adults.
 
 ## Review notes for Apple and Google
-50 items and 1 case study are free. A one time purchase or a monthly subscription opens the full bank and the adaptive mock. Restore Purchases is on the paywall and in Settings. No account or sign in is needed. The app works fully offline. The app is not affiliated with NCSBN. The NCLEX name is used only to describe the exam the content prepares for.
+50 items and 1 case study are free. A 3 month or a 6 month auto-renewing subscription opens the full bank and the adaptive mock. Both are in the subscription group NCLEX-RN Access. Restore Purchases is on the paywall and in Settings. No account or sign in is needed. The app works fully offline. The app is not affiliated with NCSBN. The NCLEX name is used only to describe the exam the content prepares for.

@@ -282,7 +282,7 @@ async function captureApp(size) {
   const full = page.locator(".top button", { hasText: "Full access" });
   if (await full.count()) {
     await full.click();
-    await button("Buy lifetime access").click();
+    await button("Subscribe for 6 months").click();
     await page.locator(".top button", { hasText: "Full access" }).waitFor({ state: "detached" });
     await wait();
   }

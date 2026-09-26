@@ -40,16 +40,16 @@ The iOS home screen truncates long names. Consider a shorter `CFBundleDisplayNam
 
 ## 3. App Store Connect
 
-1. Create the app record with bundle ID `com.preceptor.nclex` and the name Preceptor: NCLEX-RN Prep.
-2. In-App Purchases:
+1. App record: created 26 September 2026. Name Preceptor: NCLEX-RN Prep, bundle ID `com.preceptor.nclex`, Apple ID 6816532704, SKU `preceptor-nclex`, primary language English (U.S.).
+2. Subscriptions:
 
-   | Reference name | Product ID | Type | Price |
-   |---|---|---|---|
-   | Lifetime access | `nclexrn_lifetime` | Non-Consumable | US$59.99 tier and its CA$ equivalent. Launch price US$49.99 as a temporary price |
-   | Monthly access | `nclexrn_monthly` | Auto-Renewable Subscription, 1 month | US$14.99 tier and its CA$ equivalent |
+   | Reference name | Product ID | Type | Duration | Group level | Price |
+   |---|---|---|---|---|---|
+   | NCLEX-RN Access, 6 months | `nclexrn_6month` | Auto-Renewable Subscription | 6 months | 1 | US$149.99 |
+   | NCLEX-RN Access, 3 months | `nclexrn_3month` | Auto-Renewable Subscription | 3 months | 2 | US$99.99 |
 
-   Put the monthly product in its own subscription group, "NCLEX-RN access". Add a paywall screenshot and this review note to each: "50 items and 1 case study are free. Either product opens the full bank and the adaptive mock. Restore is on the paywall and in Settings."
-3. Take the CA$ price from the store's own tier table for each US$ price. Do not convert by hand. Set the launch price as a scheduled price change so it ends on a date you choose.
+   Both go in one subscription group, "NCLEX-RN Access". There is no lifetime and no monthly product. Add the paywall review screenshot `store/screenshots/review/paywall.png` and this review note to each: "50 items and 1 case study are free. Either subscription opens the full bank and the adaptive mock. Restore Purchases is on the paywall and in Settings."
+3. Set US$149.99 and US$99.99 as the base prices and let the store derive the other currencies from its tier table. There is no launch price.
 4. Agreements, Tax and Banking and the Paid Apps agreement must be active. Stay in the App Store Small Business Program.
 5. App Privacy and age rating: see `store/listing.md`.
 6. Export compliance: `Info.plist` sets `ITSAppUsesNonExemptEncryption` to false.
@@ -57,7 +57,7 @@ The iOS home screen truncates long names. Consider a shorter `CFBundleDisplayNam
 ## 4. Google Play Console
 
 1. Create the app with package `com.preceptor.nclex`.
-2. Monetize > Products. Create the one-time product `nclexrn_lifetime` and the subscription `nclexrn_monthly` with a monthly base plan. Match the prices above. Activate both.
+2. Monetize > Subscriptions. Create `nclexrn_6month` with an auto-renewing base plan `p6m` (6 months, US$149.99) and `nclexrn_3month` with an auto-renewing base plan `p3m` (3 months, US$99.99). Activate both base plans.
 3. Data safety, content rating and target audience: see `store/listing.md`.
 
 ## 5. RevenueCat
@@ -65,11 +65,11 @@ The iOS home screen truncates long names. Consider a shorter `CFBundleDisplayNam
 All Preceptor apps share one RevenueCat project. Its Current offering belongs to another app. This app reads `offerings.all["nclexrn"]` and never `offerings.current`. Do not make `nclexrn` the Current offering.
 
 1. Add the iOS app and the Android app for `com.preceptor.nclex` to the project.
-2. Products: import `nclexrn_lifetime` and `nclexrn_monthly` from both stores.
+2. Products: import `nclexrn_6month` and `nclexrn_3month` from App Store Connect, and `nclexrn_6month:p6m` and `nclexrn_3month:p3m` from Play.
 3. Entitlement `nclexrn_access`: attach both products.
-4. Offering `nclexrn` with packages `$rc_lifetime` and `$rc_monthly`, each holding its product from both stores. The app finds a package by product ID, then by package type.
+4. Offering `nclexrn` with packages `$rc_six_month` and `$rc_three_month`, each holding its product from both stores. The app finds a package by package type, then by product ID (the Play form `id:basePlan` included).
 5. Paste the public SDK keys into `src/lib/purchases.ts`, replacing `appl_REPLACE_WITH_NCLEXRN_IOS_PUBLIC_KEY` and `goog_REPLACE_WITH_NCLEXRN_ANDROID_PUBLIC_KEY`. Until then purchases stay off and the release launch gate fails.
-6. Test with a sandbox Apple ID and a Play licence tester. Buy monthly, let the sandbox subscription lapse, confirm access ends after a silent restore. Buy lifetime, delete, reinstall, Restore.
+6. Test with a sandbox Apple ID and a Play licence tester. Buy the 3 month plan, let the sandbox subscription lapse and confirm access ends after a silent restore. Upgrade from 3 months to 6 months within the group. Delete, reinstall and Restore.
 
 ## 6. Codemagic
 
@@ -79,10 +79,10 @@ All Preceptor apps share one RevenueCat project. Its Current offering belongs to
 
 ## 7. Pricing
 
-Set by Arjan: lifetime at the CA$ equivalent of US$59.99, with a launch price of US$49.99, and a monthly subscription at US$14.99. The store fee is 15 percent in the Small Business Program and for subscriptions on Play.
+Set by Arjan on 26 September 2026: two auto-renewing subscriptions and nothing else. US$149.99 every 6 months and US$99.99 every 3 months. Other currencies come from the store price tiers. The store fee is 15 percent in the App Store Small Business Program and on Play subscriptions.
 
-- Lifetime fits a one time exam and restores cleanly.
-- Monthly suits a candidate with a test date 4 to 8 weeks out. Four months of monthly passes the lifetime price, which anchors lifetime as the better value for longer study.
+- The plans match how long candidates study for the exam. The 6 month plan costs about 25 percent less per month.
+- Both plans renew until cancelled, so a candidate who retakes the exam keeps access.
 
 ## 8. Exam model decisions
 
@@ -100,6 +100,7 @@ Everything for the store records is in `store/`:
 - `store/screenshots/`: 8 captioned screens for iPhone 6.9, iPhone 6.5, iPad 13, Play phone, Play 7 inch tablet and Play 10 inch tablet (9:16).
 - `store/graphics/play-icon-512.png` and `store/graphics/play-feature-1024x500.png`.
 - To regenerate: `VITE_SEED=1 npx vite build --outDir /tmp/seeded`, then `npx vite preview --outDir /tmp/seeded --port 5174`, then `npx -y -p playwright@1 node store/tools/make-assets.mjs http://localhost:5174`.
+- `store/screenshots/review/paywall.png` (1320 by 2868) is the in-app purchase review screenshot for both subscriptions. Regenerate it with `npx -y -p playwright@1 node store/tools/make-review.mjs http://localhost:5174` against the same seeded preview.
 
 ## 10. Legal and trademark checklist
 
@@ -110,7 +111,7 @@ Everything for the store records is in `store/`:
 - [ ] Educational use only. Not nursing or medical advice.
 - [ ] No real client information. All scenarios are invented.
 - [ ] Privacy policy on thepreceptor.ca covers this app. Store privacy labels match it.
-- [ ] Terms cover a one time purchase, an auto-renewing subscription and the refund route through Apple or Google.
+- [ ] Terms cover auto-renewing 3 and 6 month subscriptions, cancellation and the refund route through Apple or Google.
 - [ ] Accessibility: test with VoiceOver and TalkBack on a device.
 
 ## 11. Build locally

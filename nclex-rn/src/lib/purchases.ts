@@ -3,10 +3,11 @@
  * lazy import of @revenuecat/purchases-capacitor on native only, buyer-safe
  * revocation, no server of our own.
  *
- * One entitlement, two products:
- *   nclexrn_lifetime  one time purchase
- *   nclexrn_monthly   auto-renewing monthly subscription
- * Both grant nclexrn_access. Owner setup is in LAUNCH.md.
+ * One entitlement, two auto-renewing subscriptions:
+ *   nclexrn_6month  US$149.99 every 6 months (App Store group level 1, Play base plan p6m)
+ *   nclexrn_3month  US$99.99 every 3 months (App Store group level 2, Play base plan p3m)
+ * Both grant nclexrn_access. Both sit in the App Store subscription group
+ * "NCLEX-RN Access". There is no lifetime purchase. Owner setup is in LAUNCH.md.
  */
 
 // Public SDK keys. Safe to ship in the app. From RevenueCat > Project > API
@@ -24,13 +25,19 @@ export const ENTITLEMENT = "nclexrn_access";
  */
 export const RC_OFFERING = "nclexrn";
 
-export type ProductKey = "lifetime" | "monthly";
+export type ProductKey = "sixMonth" | "threeMonth";
 
-/** Store product IDs. fallbackPrice shows only until the store price loads. */
-export const PRODUCTS: Record<ProductKey, { id: string; fallbackPrice: string; period: string | null }> = {
-  lifetime: { id: "nclexrn_lifetime", fallbackPrice: "US$59.99", period: null },
-  monthly: { id: "nclexrn_monthly", fallbackPrice: "US$14.99", period: "month" },
+/**
+ * Store product IDs, the Play base plan and the RevenueCat package type.
+ * fallbackPrice shows only until the store price loads.
+ */
+export const PRODUCTS: Record<ProductKey, { id: string; basePlan: string; packageType: string; fallbackPrice: string; period: string; months: number }> = {
+  sixMonth: { id: "nclexrn_6month", basePlan: "p6m", packageType: "$rc_six_month", fallbackPrice: "US$149.99", period: "6 months", months: 6 },
+  threeMonth: { id: "nclexrn_3month", basePlan: "p3m", packageType: "$rc_three_month", fallbackPrice: "US$99.99", period: "3 months", months: 3 },
 };
+
+/** Paywall order: the 6 month plan first, as on the App Store group (level 1). */
+export const PLAN_ORDER: ProductKey[] = ["sixMonth", "threeMonth"];
 
 export interface Access {
   full: boolean;
@@ -116,10 +123,17 @@ export function offeringPackages<P extends PackageLike>(offerings: OfferingsLike
   return (offerings?.all?.[RC_OFFERING]?.availablePackages ?? []) as P[];
 }
 
-/** The package for a product: by store product id, else by the RevenueCat package type. */
+/**
+ * The package for a product: by RevenueCat package type, else by store
+ * product id. On Play, RevenueCat reports a subscription as
+ * "subscriptionId:basePlanId", for example "nclexrn_3month:p3m".
+ */
 export function findPackage<P extends PackageLike>(pkgs: P[], key: ProductKey): P | undefined {
-  const byType = key === "lifetime" ? "$rc_lifetime" : "$rc_monthly";
-  return pkgs.find((p) => p.product?.identifier === PRODUCTS[key].id) ?? pkgs.find((p) => p.identifier === byType || p.identifier === key);
+  const { id, packageType } = PRODUCTS[key];
+  return (
+    pkgs.find((p) => p.identifier === packageType) ??
+    pkgs.find((p) => p.product?.identifier === id || p.product?.identifier?.startsWith(`${id}:`))
+  );
 }
 
 async function packages(m: RCModule) {
@@ -211,7 +225,7 @@ export function defaultAdapter(): PurchasesAdapter {
  *   store says active          -> granted
  *   store unreachable          -> keep the cached state
  *   store says inactive        -> if cached as granted, try a silent restore
- *   restore also says inactive -> revoke (a lapsed monthly subscription ends here)
+ *   restore also says inactive -> revoke (a lapsed subscription ends here)
  */
 export async function reconcileAccess(cached: Access, p: PurchasesAdapter): Promise<Access> {
   const now = await p.check();
