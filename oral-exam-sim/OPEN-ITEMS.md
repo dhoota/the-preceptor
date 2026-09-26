@@ -89,4 +89,7 @@ Full write-up and probes: docs/SCORER-NEGATION.md. In short:
 - **Numbers are split.** Ratios and comma-grouped numbers break into pieces: 17 phrases in 8 questions.
 - **Recommendation: fix the scorer, not SAMP by SAMP.** Content fixes could not keep up. asthma-copd-01 shows both failures in one question and was withdrawn. The two worked examples are in the write-up.
 
+- **Ruling 1 is breached in two signed SAMPs.** asthma-copd-13 (s04, dangerous item "IV bolus of undiluted epinephrine") and sob-04 (s17, dangerous item "Epinephrine 1 mg IV") flag "epinephrine 1 mg iv" as dangerous. That zeroes a correct line such as "epinephrine 0.5 mg IM, then 1 L IV bolus". Both are your signed text, so they are not changed. Say whether to narrow them to IV-push forms.
+- **The spec's own advice builds the second defect.** SAMP_SPEC section 12 tells writers to put negations inside accept phrases. See the conflict note in docs/reviews/SCORING-RULINGS.md.
+
 Your decision: whether to commission the scorer change, which needs a regression run over the whole bank, and which behaviour you want.
