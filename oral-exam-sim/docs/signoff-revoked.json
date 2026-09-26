@@ -1,0 +1,4 @@
+{
+ "note": "SAMPs whose current text is no longer what the physician attested, because they were edited or rebuilt after sign-off. The sign-off records stay as they were. The tests subtract these ids from the signed set, so each must be reviewed: false, and each is held back from the release (src/samps/held-back.json) until a fresh sign-off.",
+ "ids": {}
+}

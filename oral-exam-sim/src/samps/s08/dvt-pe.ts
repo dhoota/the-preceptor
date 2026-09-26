@@ -263,7 +263,7 @@ export const DVT_PE_SAMPS: Samp[] = [
           "CT pulmonary angiogram",
           "Start apixaban and book an outpatient CT",
           "Ventilation perfusion scan",
-          "No imaging, look for another cause",
+          "No PE imaging, seek other cause, return advice at discharge",
         ],
         correct: 4,
         explanation:

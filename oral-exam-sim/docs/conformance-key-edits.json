@@ -617,9 +617,8 @@
     "No imaging for PE. Look for another cause and discharge with return advice"
    ],
    "after": [
-    "No imaging, look for another cause"
-   ],
-   "note": "Shortened again on 26 September 2026 for option length parity (key was 1.9 times the mean distractor). Meaning unchanged. Physician asked for the answer-length fix."
+    "No PE imaging, seek other cause, return advice at discharge"
+   ]
   },
   "dvt-pe-03#q3": {
    "batch": "s08",
