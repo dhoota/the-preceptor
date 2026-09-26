@@ -8,7 +8,7 @@ Decisions made by the product owner, not by the physician reviewer. Each is an e
 
 **The rule:** in crowded topics, a new SAMP may repeat one decision already keyed in a signed-off SAMP, where that decision is itself the literal wording of a CFPC key feature. This is a judgement about redundancy. It is not a judgement about the right answer.
 
-**Running total: 16 questions now ride on D1.** It began as a waiver for 3. Each later row was added when a rebuild group landed. The total is the decision Arjan should weigh, not any single row. Reversing D1 sends all 16 back for rebuild. If the total climbs much past 20, no more rows are added until the product owner decides again.
+**Running total: 17 questions now ride on D1.** It began as a waiver for 3. Each later row was added when a rebuild group landed. The total is the decision Arjan should weigh, not any single row. Reversing D1 sends all 17 back for rebuild. If the total climbs much past 20, no more rows are added until the product owner decides again.
 
 **Covered SAMPs:**
 
@@ -30,5 +30,6 @@ Decisions made by the product owner, not by the physician reviewer. Each is an e
 | headache-15 q2 (rebuilt signed-off SAMP) | Papilledema, sixth nerve palsy, level of consciousness and focal deficits (headache KF 3) | headache-07 q2, also headache-03 q1 |
 | anaphylaxis-15 q3 (rebuilt signed-off SAMP) | Cardiogenic shock from an inferior STEMI (shock KF 5) | ischemic-heart-disease-44 q1 |
 | tox-09 q4 (rebuilt signed-off SAMP) | Life-threatening causes of chest pain first (chest pain KF 1) | the KF 1 lists keyed in signed chest pain SAMPs |
+| sob-12 q1 (rebuilt signed-off SAMP) | CT pulmonary angiography over a lung scan when lung disease is present (DVT-PE KF 4) | dvt-pe-06 q2 |
 
 **To reverse:** Arjan says "reverse D1". Every question in the table above then goes back for rebuild with a decision not keyed elsewhere. Each rebuild group adds its surviving D1 repeats to this table when it lands, so the table is always the full set.
