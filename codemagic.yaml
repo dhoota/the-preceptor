@@ -60,10 +60,10 @@ workflows:
       groups:
         - preceptor_signing   # PRECEPTOR_KEYSTORE_BASE64, PRECEPTOR_STORE_PASSWORD, PRECEPTOR_KEY_ALIAS, PRECEPTOR_KEY_PASSWORD
     scripts:
-      - name: Decode keystore from secret
-        script: |
-          echo "$PRECEPTOR_KEYSTORE_BASE64" | base64 --decode > "$CM_BUILD_DIR/preceptor-release.jks"
-          echo "PRECEPTOR_STORE_FILE=$CM_BUILD_DIR/preceptor-release.jks" >> "$CM_ENV"
+      - name: Decode and check keystore from secret
+        # Fails in seconds if a signing variable is missing, the base64 is bad or
+        # double-encoded, the store password is wrong, or the key alias is absent.
+        script: bash scripts/ci/decode-keystore.sh
       - *install
       - *test
       - *launch_gate
@@ -99,10 +99,10 @@ workflows:
             if [ -z "${!v}" ]; then missing="$missing $v"; fi
           done
           if [ -n "$missing" ]; then echo "Missing:$missing"; exit 1; fi
-      - name: Decode keystore from secret
-        script: |
-          echo "$PRECEPTOR_KEYSTORE_BASE64" | base64 --decode > "$CM_BUILD_DIR/preceptor-release.jks"
-          echo "PRECEPTOR_STORE_FILE=$CM_BUILD_DIR/preceptor-release.jks" >> "$CM_ENV"
+      - name: Decode and check keystore from secret
+        # Fails in seconds if a signing variable is missing, the base64 is bad or
+        # double-encoded, the store password is wrong, or the key alias is absent.
+        script: bash scripts/ci/decode-keystore.sh
       - *install
       - *test
       - *launch_gate
