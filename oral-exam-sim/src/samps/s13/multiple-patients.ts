@@ -6,10 +6,11 @@ import type { Source } from "@/engine/types";
 const META = { reviewed: true, author: "Preceptor", version: 1 } as const;
 
 const S = {
+  salt: { id: "salt", citation: "Lerner EB, et al. Mass casualty triage. An evaluation of the data and development of a proposed national guideline. Disaster Med Public Health Prep. 2008." },
+  eddleston: { id: "eddleston-op", citation: "Eddleston M, Buckley NA, Eyer P, Dawson AH. Management of acute organophosphorus pesticide poisoning. Lancet. 2008." },
   ctas: { id: "ctas", citation: "Bullard MJ, et al. Revisions to the Canadian Emergency Department Triage and Acuity Scale (CTAS) guidelines 2016. CJEM. 2017." },
   start: { id: "start", citation: "Benson M, Koenig KL, Schultz CH. Disaster triage. START, then SAVE. A new method of dynamic triage for victims of a catastrophic earthquake. Prehosp Disaster Med. 1996." },
   jumpstart: { id: "jumpstart", citation: "Romig LE. Pediatric triage. A system to JumpSTART your triage of young patients at MCIs. JEMS. 2002." },
-  salt: { id: "salt", citation: "Lerner EB, et al. Mass casualty triage. An evaluation of the data and development of a proposed national guideline. Disaster Med Public Health Prep. 2008." },
   ohaCodes: { id: "oha-codes", citation: "Ontario Hospital Association. OHA Emergency Management Toolkit. Developing a sustainable emergency management program for hospitals, with standardized hospital emergency codes. 2008." },
   ipass: { id: "ipass", citation: "Starmer AJ, et al. Changes in medical errors after implementation of a handoff program. N Engl J Med. 2014." },
   cpsiFramework: { id: "cpsi-ciaf", citation: "Canadian Patient Safety Institute. Canadian Incident Analysis Framework. 2012." },
@@ -20,11 +21,16 @@ const S = {
   sogcPph: { id: "sogc-pph", citation: "Robinson D, et al. Guideline No. 431. Postpartum hemorrhage and hemorrhagic shock. J Obstet Gynaecol Can. 2022.", url: "https://www.jogc.com/article/S1701-2163(22)00668-5/abstract" },
   ssc: { id: "ssc", citation: "Evans L, et al. Surviving Sepsis Campaign. International guidelines for management of sepsis and septic shock 2021. Crit Care Med. 2021." },
   csbpr: { id: "csbpr", citation: "Heart and Stroke Foundation of Canada. Heran M, Lindsay P, Gubitz G, et al. Canadian Stroke Best Practice Recommendations. Acute stroke management, 7th edition practice guidelines update, 2022. Can J Neurol Sci. 2024.", url: "https://doi.org/10.1017/cjn.2022.344" },
-  eddleston: { id: "eddleston-op", citation: "Eddleston M, Buckley NA, Eyer P, Dawson AH. Management of acute organophosphorus pesticide poisoning. Lancet. 2008." },
   abls: { id: "abls", citation: "American Burn Association. Advanced Burn Life Support Course Provider Manual. 2018 update." },
   criticall: { id: "criticall", citation: "CritiCall Ontario. About CritiCall Ontario. 24 hour emergency consultation and referral service for Ontario hospital physicians. Web page, accessed 2026.", url: "https://www.criticall.org/about-criticall-ontario/" },
   rosen: { id: "rosen", citation: "Walls RM, Hockberger RS, Gausche-Hill M, editors. Rosen's Emergency Medicine: Concepts and Clinical Practice. 10th ed. Elsevier. 2023. Chapters on disaster preparedness, ED crowding and airway management." },
   tintinalli: { id: "tintinalli", citation: "Tintinalli JE, Ma OJ, Yealy DM, Meckler GD, Stapczynski JS, Cline DM, Thomas SH, editors. Tintinalli's Emergency Medicine: A Comprehensive Study Guide. 9th ed. McGraw Hill. 2020. Chapter 5, Disaster Preparedness. Chapter 8, Chemical Disasters. Chapter 17, Fluids and Electrolytes. Chapter 186, Opioids. Chapter 201, Pesticides." },
+  opcAntidotes: { id: "opc-antidotes", citation: "Ontario Poison Centre and Manitoba Poison Centre. Guidelines for stocking emergency antidotes. May 2025.", url: "https://www.ontariopoisoncentre.ca/siteassets/pdfs/english/patient-care-resources-documents/opc_mpc-antidote-stocking-recommendations-2025-updated.pdf" },
+  mmwrNitrite: { id: "mmwr-nitrite", citation: "Centers for Disease Control and Prevention. Methemoglobinemia following unintentional ingestion of sodium nitrite. New York, 2002. MMWR Morb Mortal Wkly Rep. 2002.", url: "https://www.cdc.gov/mmwr/preview/mmwrhtml/mm5129a2.htm" },
+  ehaMethb: { id: "eha-methb", citation: "Iolascon A, Bianchi P, Andolfo I, et al. Recommendations for diagnosis and treatment of methemoglobinemia. European Hematology Association and EuroBloodNet. Am J Hematol. 2021.", url: "https://pmc.ncbi.nlm.nih.gov/articles/PMC8598222/" },
+  changItaewon: { id: "chang-itaewon", citation: "Chang D, Wang J, Anandjiwala A, Hsu E. A crowd disaster study. The Itaewon Seoul crush. Cureus. 2024.", url: "https://pmc.ncbi.nlm.nih.gov/articles/PMC11456318/" },
+  chemmSalt: { id: "chemm-salt", citation: "US Department of Health and Human Services. Chemical Hazards Emergency Medical Management. SALT mass casualty triage algorithm. Based on Lerner EB, et al. Disaster Med Public Health Prep. 2008. Page updated 2026.", url: "https://chemm.hhs.gov/incident-primer/triage/salt-triage" },
+  asprTracie: { id: "aspr-tracie", citation: "ASPR TRACIE, US Department of Health and Human Services. Hospital mass casualty incident response plan considerations. 2024.", url: "https://files.asprtracie.hhs.gov/documents/aspr-tracie-mci-response-plan-considerations.pdf" },
 } satisfies Record<string, Source>;
 
 export const MULTIPLE_PATIENTS_SAMPS: Samp[] = [
