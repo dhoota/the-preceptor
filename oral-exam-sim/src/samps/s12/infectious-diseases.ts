@@ -165,7 +165,7 @@ export const INFECTIOUS_DISEASES_SAMPS: Samp[] = [
         required: 2,
         prompt: "What antibiotics do you start now to treat her infection?",
         accept: [
-          { id: "gpos", text: "Vancomycin 1 g IV every 12 hours, or clindamycin 900 mg IV every 8 hours, in place of ampicillin", match: ["vancomycin", "vanc", "vanco", "clindamycin", "clinda"] },
+          { id: "gpos", text: "Vancomycin 1 g IV every 12 hours, or clindamycin 900 mg IV every 8 hours, as the gram positive agent", match: ["vancomycin", "vanc", "vanco", "clindamycin", "clinda"] },
           { id: "gent", text: "Gentamicin 5 mg/kg IV every 24 hours, which is 390 mg at 78 kg", match: ["gentamicin", "gent"] },
         ],
         unacceptable: [
@@ -204,7 +204,7 @@ export const INFECTIOUS_DISEASES_SAMPS: Samp[] = [
           { id: "gbs", text: "Her positive group B streptococcus swab in this pregnancy", match: ["group b", "gbs", "colonization", "colonisation", "positive swab", "positive screen"] },
           { id: "rom", text: "Membranes ruptured 26 hours, which is 18 hours or more", match: ["rupture", "rom", "26 hour", "membrane"] },
           { id: "fever", text: "Maternal fever of 38.9°C, which is 38°C or more", match: ["fever", "temperature", "38.9", "pyrexia", "febrile"] },
-          { id: "noiap", text: "No adequate prophylaxis, since she has had none and vancomycin would not count", match: ["no antibiotic", "no prophylaxis", "no adequate", "no intrapartum antibiotic", "inadequate prophylaxis", "without antibiotic", "no iap", "inadequate iap", "not iap", "not antibiotic", "not prophylaxis"] },
+          { id: "noiap", text: "No adequate prophylaxis, since she has had none and vancomycin would not count", match: ["no antibiotic", "no prophylaxis", "no adequate", "no intrapartum antibiotic", "inadequate prophylaxis", "without antibiotic", "no iap", "inadequate iap", "not iap", "not antibiotic", "not prophylaxis", "not received", "hasnt iap", "hasnt antibiotic", "hasnt prophylaxis"] },
           { id: "iai", text: "The intraamniotic infection itself", match: ["intraamniotic", "intra amniotic", "chorioamnionitis", "amniotic infection"] },
         ],
         unacceptable: [{ text: "Preterm birth, which does not apply at 38 weeks", match: ["preterm", "premature", "before 37"] }],
