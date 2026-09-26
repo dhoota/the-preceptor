@@ -36,9 +36,9 @@ export type ProductKey = "complete" | "written" | "oral";
  * are subscription IDs, and RevenueCat may append the base plan after a colon.
  */
 export const PRODUCTS: Record<ProductKey, { id: string; grants: Component[]; fallbackPrice: string }> = {
-  complete: { id: "ccfpem_complete_1y", grants: ["written", "oral"], fallbackPrice: "CA$199.99" },
-  written: { id: "ccfpem_written_1y", grants: ["written"], fallbackPrice: "CA$149.99" },
-  oral: { id: "ccfpem_oral_1y", grants: ["oral"], fallbackPrice: "CA$99.99" },
+  complete: { id: "ccfpem_complete_1y", grants: ["written", "oral"], fallbackPrice: "$199.99" },
+  written: { id: "ccfpem_written_1y", grants: ["written"], fallbackPrice: "$149.99" },
+  oral: { id: "ccfpem_oral_1y", grants: ["oral"], fallbackPrice: "$99.99" },
 };
 
 /** RevenueCat entitlement per component. Complete is attached to both. */
