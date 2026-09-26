@@ -1,15 +1,22 @@
-# Codemagic CI for Preceptor: NCLEX-RN Prep (com.preceptor.nclex).
-# Codemagic reads codemagic.yaml only from the repository root. The app
-# lives in nclex-rn/, so every workflow sets working_directory to that
-# folder. Artifact paths are written relative to that working directory.
-# With a prefix of nclex-rn/ Codemagic finds no artifacts.
+# Codemagic CI for Preceptor: NCLEX (com.preceptor.nclex), branch claude/nclex.
+# These workflows run from the existing Codemagic app "Preceptor: CCFP-EM"
+# (same repository) with branch claude/nclex selected. Codemagic reads
+# codemagic.yaml only from the repository root of the selected branch. The
+# app lives in nclex-rn/, so every workflow sets working_directory to that
+# folder, and artifact paths are relative to it.
+#
+# Signing uses the team code signing identities, not group variables:
+#   Android: keystore reference preceptor_upload_key (alias preceptor)
+#   iOS: certificate preceptor_distribution with the App Store profile for
+#        com.preceptor.nclex, through environment.ios_signing
+# Play uploads read GCLOUD_SERVICE_ACCOUNT_CREDENTIALS from group preceptor_play.
+# App Store uploads use the integration preceptor_appstore.
 #
 # The root codemagic.yaml mirrors this file. Keep the two in step.
-# tests/platform.test.ts checks the workflow ids, groups and artifacts match.
-# Codemagic app: "Preceptor: NCLEX-RN Prep".
+# tests/platform.test.ts checks them.
 #
 # Nothing here publishes to production. iOS goes to TestFlight only. Android
-# goes to the Play internal track only, by manual trigger.
+# release goes to the Play closed testing track (alpha) as a draft.
 
 definitions:
   scripts:
@@ -27,8 +34,8 @@ definitions:
       script: npm run build
 
 workflows:
-  android-debug:
-    name: Preceptor NCLEX-RN Android (debug APK)
+  nclex-android-debug:
+    name: Preceptor NCLEX Android (debug APK)
     working_directory: nclex-rn
     max_build_duration: 30
     instance_type: mac_mini_m2
@@ -49,21 +56,23 @@ workflows:
     artifacts:
       - android/app/build/outputs/**/*.apk
 
-  android-release:
-    name: Preceptor NCLEX-RN Android (signed release)
+  nclex-android-build-only:
+    name: Preceptor NCLEX Android (build only, no Play upload)
+    # Signed .aab and .apk as artifacts only, for the first manual upload to
+    # Play. No Play credentials and no upload. versionCode comes from build.gradle.
     working_directory: nclex-rn
     max_build_duration: 30
     instance_type: mac_mini_m2
     environment:
       node: 20
       java: 21
-      groups:
-        - preceptor_signing   # PRECEPTOR_KEYSTORE_BASE64, PRECEPTOR_STORE_PASSWORD, PRECEPTOR_KEY_ALIAS, PRECEPTOR_KEY_PASSWORD
+      android_signing:
+        - preceptor_upload_key   # Code signing identities > Android keystores. Sets CM_KEYSTORE_PATH, CM_KEYSTORE_PASSWORD, CM_KEY_ALIAS, CM_KEY_PASSWORD.
     scripts:
-      - name: Decode keystore from secret
-        script: |
-          echo "$PRECEPTOR_KEYSTORE_BASE64" | base64 --decode > "$CM_BUILD_DIR/preceptor-release.jks"
-          echo "PRECEPTOR_STORE_FILE=$CM_BUILD_DIR/preceptor-release.jks" >> "$CM_ENV"
+      - name: Check the uploaded keystore
+        # Fails in seconds if the keystore reference is missing, or its password,
+        # alias or key password does not open it.
+        script: bash scripts/ci/check-keystore.sh
       - *install
       - *test
       - *launch_gate
@@ -79,30 +88,29 @@ workflows:
       - android/app/build/outputs/**/*.apk
       - android/app/build/outputs/**/*.aab
 
-  android-play-internal:
-    name: Preceptor NCLEX-RN Android (publish to Play internal track)
+  nclex-android-release:
+    name: Preceptor NCLEX Android (signed release to Play alpha, draft)
     working_directory: nclex-rn
     max_build_duration: 30
     instance_type: mac_mini_m2
-    # Manual trigger only. Never fires on push.
     environment:
       node: 20
       java: 21
+      android_signing:
+        - preceptor_upload_key   # Code signing identities > Android keystores. Sets CM_KEYSTORE_PATH, CM_KEYSTORE_PASSWORD, CM_KEY_ALIAS, CM_KEY_PASSWORD.
       groups:
-        - preceptor_signing
-        - preceptor_play      # GCLOUD_SERVICE_ACCOUNT_CREDENTIALS
+        - preceptor_play         # GCLOUD_SERVICE_ACCOUNT_CREDENTIALS, the Play service account JSON key (Secure).
     scripts:
-      - name: Fail fast if required secrets are missing
+      - name: Fail fast if the Play credentials are missing
         script: |
-          missing=""
-          for v in GCLOUD_SERVICE_ACCOUNT_CREDENTIALS PRECEPTOR_KEYSTORE_BASE64 PRECEPTOR_STORE_PASSWORD PRECEPTOR_KEY_ALIAS PRECEPTOR_KEY_PASSWORD; do
-            if [ -z "${!v}" ]; then missing="$missing $v"; fi
-          done
-          if [ -n "$missing" ]; then echo "Missing:$missing"; exit 1; fi
-      - name: Decode keystore from secret
-        script: |
-          echo "$PRECEPTOR_KEYSTORE_BASE64" | base64 --decode > "$CM_BUILD_DIR/preceptor-release.jks"
-          echo "PRECEPTOR_STORE_FILE=$CM_BUILD_DIR/preceptor-release.jks" >> "$CM_ENV"
+          if [ -z "$GCLOUD_SERVICE_ACCOUNT_CREDENTIALS" ]; then
+            echo "Missing GCLOUD_SERVICE_ACCOUNT_CREDENTIALS. Add the Play service account JSON key to group preceptor_play in this Codemagic app (Environment variables), marked Secure."
+            exit 1
+          fi
+      - name: Check the uploaded keystore
+        # Fails in seconds if the keystore reference is missing, or its password,
+        # alias or key password does not open it.
+        script: bash scripts/ci/check-keystore.sh
       - *install
       - *test
       - *launch_gate
@@ -115,23 +123,25 @@ workflows:
           LATEST=$(google-play get-latest-build-number \
             --package-name "com.preceptor.nclex" \
             --credentials "$GCLOUD_SERVICE_ACCOUNT_CREDENTIALS" 2>/dev/null || true)
-          if [ -n "$LATEST" ] && [ "$LATEST" -eq "$LATEST" ] 2>/dev/null; then VC=$((LATEST + 1)); else VC="$CURRENT"; fi
+          if [ -n "$LATEST" ] && [ "$LATEST" -eq "$LATEST" ] 2>/dev/null && [ "$LATEST" -ge "$CURRENT" ]; then VC=$((LATEST + 1)); else VC="$CURRENT"; fi
           sed -i.bak "s/versionCode .*/versionCode $VC/" android/app/build.gradle && rm -f android/app/build.gradle.bak
           echo "versionCode $VC"
-      - name: Build signed release AAB
+      - name: Build signed release APK and AAB
         script: |
           cd android
           chmod +x ./gradlew
-          ./gradlew :app:bundleRelease
+          ./gradlew :app:assembleRelease :app:bundleRelease
     artifacts:
+      - android/app/build/outputs/**/*.apk
       - android/app/build/outputs/**/*.aab
     publishing:
       google_play:
         credentials: $GCLOUD_SERVICE_ACCOUNT_CREDENTIALS
-        track: internal
+        track: alpha            # closed testing. Never production.
+        submit_as_draft: true   # the app is still a draft on Play
 
-  ios-release:
-    name: Preceptor NCLEX-RN iOS (TestFlight)
+  nclex-ios-release:
+    name: Preceptor NCLEX iOS (TestFlight)
     working_directory: nclex-rn
     instance_type: mac_mini_m2
     max_build_duration: 60
@@ -141,8 +151,12 @@ workflows:
       node: 20
       xcode: latest
       cocoapods: default
-      groups:
-        - preceptor_signing   # IOS_CERT_KEY (Secure). Reuse the existing key. See CODEMAGIC-NOTES.md in preceptor-app.
+      ios_signing:
+        # Codemagic-managed signing. Uses the team distribution certificate
+        # preceptor_distribution and the App Store profile for this bundle id,
+        # both from Code signing identities.
+        distribution_type: app_store
+        bundle_identifier: com.preceptor.nclex
       vars:
         BUNDLE_ID: "com.preceptor.nclex"
     scripts:
@@ -156,19 +170,8 @@ workflows:
         script: cd ios/App && pod install
       - name: Set unique iOS build number
         script: cd ios/App && agvtool new-version -all "$BUILD_NUMBER"
-      - name: Restore persistent iOS signing key
-        script: |
-          if [ -z "$IOS_CERT_KEY" ]; then echo "IOS_CERT_KEY not set in preceptor_signing."; exit 1; fi
-          echo "$IOS_CERT_KEY" | base64 --decode > "$CM_BUILD_DIR/ios_cert.key"
-      - name: Set up code signing
-        script: |
-          keychain initialize
-          app-store-connect fetch-signing-files "$BUNDLE_ID" \
-            --type IOS_APP_STORE \
-            --certificate-key=@file:"$CM_BUILD_DIR/ios_cert.key" \
-            --create
-          keychain add-certificates
-          xcode-project use-profiles
+      - name: Apply the App Store profile to the Xcode project
+        script: xcode-project use-profiles
       - name: Build signed IPA
         script: |
           xcode-project build-ipa --workspace "ios/App/App.xcworkspace" --scheme "App"

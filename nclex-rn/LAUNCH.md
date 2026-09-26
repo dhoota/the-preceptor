@@ -1,4 +1,4 @@
-# Preceptor: NCLEX-RN Prep. Launch guide
+# Preceptor: NCLEX. Launch guide
 
 These are the owner steps for Arjan. They take the app from the `claude/nclex` branch to TestFlight and the Play internal track. Nothing in this repo deploys or submits anything by itself.
 
@@ -20,27 +20,27 @@ The app is fully offline. It calls no AI and no server of ours. The only network
 
 ## 1. Repository and Codemagic app
 
-Create a Codemagic app "Preceptor: NCLEX-RN Prep" on `dhoota/the-preceptor`. Codemagic reads `codemagic.yaml` only from the repository root. On this branch the root file holds the NCLEX workflows with `working_directory: nclex-rn`, and artifact globs are relative to that folder. `nclex-rn/codemagic.yaml` is the mirror. `tests/platform.test.ts` checks they match.
+NCLEX builds run from the existing Codemagic app "Preceptor: CCFP-EM" on `dhoota/the-preceptor`, with branch `claude/nclex` selected. The Codemagic GitHub integration could not see the repository for a new app, so no separate app is used. Codemagic reads `codemagic.yaml` only from the repository root of the selected branch. On `claude/nclex` the root file holds only the NCLEX workflows, with `working_directory: nclex-rn` and artifact globs relative to that folder. `nclex-rn/codemagic.yaml` is the mirror, and `tests/platform.test.ts` checks they match.
 
-If this branch is merged with `claude/oral-exam-sim`, both apps need their workflows in the one root file. Give the NCLEX workflows distinct ids at that point (for example `nclex-android-debug`) and update the platform tests in both apps.
+If this branch is ever merged with `claude/oral-exam-sim`, both sets of workflows must live in the one root file. The NCLEX workflow ids already start with `nclex-`, so they do not clash with the CCFP-EM ids.
 
 ## 2. App identity
 
 | Setting | Value | Where |
 |---|---|---|
 | Bundle ID and package | `com.preceptor.nclex` | `capacitor.config.json`, `android/app/build.gradle`, Xcode project |
-| Display name | Preceptor: NCLEX-RN Prep | `capacitor.config.json`, `android/app/src/main/res/values/strings.xml`, `ios/App/App/Info.plist` |
+| Display name | Preceptor: NCLEX | `capacitor.config.json`, `android/app/src/main/res/values/strings.xml`, `ios/App/App/Info.plist` |
 | Entitlement | `nclexrn_access` | `src/lib/purchases.ts` |
 | Offering | `nclexrn` | `src/lib/purchases.ts` |
 | Support | preceptor.app@gmail.com | `src/lib/constants.ts` |
 | Privacy | https://thepreceptor.ca/privacy | `src/lib/constants.ts` |
 | Terms | https://thepreceptor.ca/terms | `src/lib/constants.ts` |
 
-The iOS home screen truncates long names. Consider a shorter `CFBundleDisplayName` such as "NCLEX-RN Prep" and keep the full name in App Store Connect.
+"Preceptor: NCLEX" is 16 characters and the iOS home screen may shorten it under the icon. If it does, set a shorter `CFBundleDisplayName` in `Info.plist` and keep the full name in App Store Connect.
 
 ## 3. App Store Connect
 
-1. App record: created 26 September 2026. Name Preceptor: NCLEX-RN Prep, bundle ID `com.preceptor.nclex`, Apple ID 6816532704, SKU `preceptor-nclex`, primary language English (U.S.).
+1. App record: created 26 September 2026. Name Preceptor: NCLEX, bundle ID `com.preceptor.nclex`, Apple ID 6816532704, SKU `preceptor-nclex`, primary language English (U.S.).
 2. Subscriptions:
 
    | Reference name | Product ID | Type | Duration | Group level | Price |
@@ -56,7 +56,7 @@ The iOS home screen truncates long names. Consider a shorter `CFBundleDisplayNam
 
 ## 4. Google Play Console
 
-1. Create the app with package `com.preceptor.nclex`.
+1. App: created 26 September 2026 as Preceptor: NCLEX, package `com.preceptor.nclex`. Upload the first signed .aab by hand from the build-only workflow, then later builds go up through `nclex-android-release`.
 2. Monetize > Subscriptions. Create `nclexrn_6month` with an auto-renewing base plan `p6m` (6 months, US$149.99) and `nclexrn_3month` with an auto-renewing base plan `p3m` (3 months, US$99.99). Activate both base plans.
 3. Data safety, content rating and target audience: see `store/listing.md`.
 
@@ -73,9 +73,23 @@ All Preceptor apps share one RevenueCat project. Its Current offering belongs to
 
 ## 6. Codemagic
 
-1. Link the existing `preceptor_signing` and `preceptor_play` groups and the `preceptor_appstore` integration. Reuse the same `IOS_CERT_KEY`.
-2. Workflows: `android-debug`, `android-release`, `android-play-internal` (manual, internal track only), `ios-release` (TestFlight only).
-3. Every workflow runs `npm test`. Release workflows also run the launch gate.
+The app "Preceptor: CCFP-EM" already holds everything the NCLEX workflows need. Do not rely on the `preceptor_signing` variables.
+
+- Android keystore reference `preceptor_upload_key` (alias `preceptor`) in Code signing identities. `scripts/ci/check-keystore.sh` checks it before Gradle runs.
+- iOS distribution certificate `preceptor_distribution` and the App Store provisioning profile for `com.preceptor.nclex`, used through `environment.ios_signing`.
+- App Store Connect integration `preceptor_appstore`.
+- Group `preceptor_play` with `GCLOUD_SERVICE_ACCOUNT_CREDENTIALS`, the same Play service account as the other Preceptor apps.
+
+| Workflow id | Name in Codemagic | What it does |
+|---|---|---|
+| `nclex-android-debug` | Preceptor NCLEX Android (debug APK) | Tests, then a debug APK. No signing, no upload. |
+| `nclex-android-build-only` | Preceptor NCLEX Android (build only, no Play upload) | Signed .aab and .apk as artifacts for the first manual Play upload. |
+| `nclex-android-release` | Preceptor NCLEX Android (signed release to Play alpha, draft) | versionCode one above the latest on Play, then uploads to the closed testing track (alpha) as a draft. |
+| `nclex-ios-release` | Preceptor NCLEX iOS (TestFlight) | Codemagic managed signing (app_store, `com.preceptor.nclex`), then TestFlight through `preceptor_appstore`. |
+
+- Android targets API 36 (compileSdk and targetSdk). iOS targets 15.0.
+- Every workflow runs `npm test`. The signed workflows also run the launch gate, which fails until both RevenueCat keys are real. Run `nclex-android-debug` to check a build before the keys are in.
+- Nothing goes to production. iOS stops at TestFlight. Android stops at alpha as a draft.
 
 ## 7. Pricing
 

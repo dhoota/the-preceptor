@@ -1,6 +1,6 @@
 # Adversarial review brief
 
-For the reviewer of one batch in Preceptor: NCLEX-RN Prep. You did not write the batch. Assume there are errors and find them. Be a genuine skeptic, but do not invent problems or nitpick style. Missing a real fault is worse than flagging a borderline one.
+For the reviewer of one batch in Preceptor: NCLEX. You did not write the batch. Assume there are errors and find them. Be a genuine skeptic, but do not invent problems or nitpick style. Missing a real fault is worse than flagging a borderline one.
 
 Only edit files in the batch folder `src/bank/<batch>/`. Write your report to `docs/reviews/<batch>-review.md`. Do not run git.
 

@@ -1,4 +1,4 @@
-# Store listing: Preceptor: NCLEX-RN Prep
+# Store listing: Preceptor: NCLEX
 
 House style: no em or en dashes, no semicolons, short sentences, no filler. Character counts and style are checked by `tests/listing.test.ts`. The NCLEX name is used descriptively only.
 
@@ -8,7 +8,7 @@ House style: no em or en dashes, no semicolons, short sentences, no filler. Char
 |---|---|
 | iOS bundle ID | com.preceptor.nclex |
 | Android applicationId | com.preceptor.nclex |
-| App name | Preceptor: NCLEX-RN Prep |
+| App name | Preceptor: NCLEX |
 | Products | nclexrn_6month (auto-renewing, 6 months), nclexrn_3month (auto-renewing, 3 months). No lifetime or monthly product |
 | Product type | iOS Auto-Renewable Subscriptions in the group NCLEX-RN Access (6 months level 1, 3 months level 2). Play subscriptions with base plans p6m and p3m |
 | RevenueCat entitlement | nclexrn_access. Both products grant it |
@@ -25,7 +25,7 @@ House style: no em or en dashes, no semicolons, short sentences, no filler. Char
 ## App Store
 
 ### Name (30)
-Preceptor: NCLEX-RN Prep
+Preceptor: NCLEX
 
 ### Subtitle (30)
 NGN items and an adaptive mock
@@ -61,7 +61,7 @@ Try it free. 50 items and 1 case study are open. Then subscribe for 3 or 6 month
 
 Every item is original. None is taken from NCSBN material or any real exam. Content is written for education and every item was reviewed before release.
 
-Preceptor: NCLEX-RN Prep is an independent study tool. It is not affiliated with, sponsored or endorsed by NCSBN. NCLEX, NCLEX-RN and NCLEX-PN are registered trademarks of NCSBN. The app is for education only and is not nursing or medical advice. Scores do not predict exam results.
+Preceptor: NCLEX is an independent study tool. It is not affiliated with, sponsored or endorsed by NCSBN. NCLEX, NCLEX-RN and NCLEX-PN are registered trademarks of NCSBN. The app is for education only and is not nursing or medical advice. Scores do not predict exam results.
 
 Subscriptions: US$149.99 every 6 months or US$99.99 every 3 months. Payment is charged to your store account. A subscription renews each period unless cancelled at least 24 hours before the period ends. Manage or cancel it in your store account settings.
 
@@ -78,7 +78,7 @@ First release.
 ## Google Play
 
 ### App name (30)
-Preceptor: NCLEX-RN Prep
+Preceptor: NCLEX
 
 ### Short description (80)
 Every NGN item type, case studies and an adaptive mock for the NCLEX-RN.

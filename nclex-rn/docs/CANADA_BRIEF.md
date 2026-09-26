@@ -1,6 +1,6 @@
 # Canada note brief
 
-For the Canada pass on one reviewed batch in Preceptor: NCLEX-RN Prep. The NCLEX-RN is the entry exam for registered nurses in every Canadian province and territory except Quebec. The exam tests the practice NCSBN describes. Canadian candidates also need to know where Canadian practice differs. The `canada` field says so.
+For the Canada pass on one reviewed batch in Preceptor: NCLEX. The NCLEX-RN is the entry exam for registered nurses in every Canadian province and territory except Quebec. The exam tests the practice NCSBN describes. Canadian candidates also need to know where Canadian practice differs. The `canada` field says so.
 
 Only edit the `canada` field, and add a source when the note needs one. Do not change stems, choices, keys or rationales. Work only in `src/bank/<batch>/`. Write your report to `docs/reviews/<batch>-canada.md`. Do not run git.
 

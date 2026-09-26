@@ -1,6 +1,6 @@
 {
   "appId": "com.preceptor.nclex",
-  "appName": "Preceptor: NCLEX-RN Prep",
+  "appName": "Preceptor: NCLEX",
   "webDir": "dist",
   "loggingBehavior": "none",
   "android": { "backgroundColor": "#F7F5F0", "webContentsDebuggingEnabled": false },

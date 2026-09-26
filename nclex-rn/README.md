@@ -1,4 +1,4 @@
-# Preceptor: NCLEX-RN Prep
+# Preceptor: NCLEX
 
 An offline NCLEX-RN study app for iOS and Android. Vite, React 18, Capacitor 7 and RevenueCat. No runtime AI and no network except store purchases.
 

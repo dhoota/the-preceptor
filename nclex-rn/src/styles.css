@@ -1,5 +1,5 @@
 /*
- * Preceptor: NCLEX-RN Prep. Clinical and quiet: warm paper, navy ink, one gold accent
+ * Preceptor: NCLEX. Clinical and quiet: warm paper, navy ink, one gold accent
  * from The Preceptor mark. Serif for what the examiner says, sans for the
  * interface, mono for time and numbers. Flat surfaces and hairline rules.
  */
@@ -388,7 +388,7 @@ input[type="range"] { accent-color: var(--navy); width: 140px; }
 .oralcard dd { margin: 0; font-size: 15px; color: var(--ink); }
 
 /* ------------------------------------------------------------------ */
-/* NCLEX-RN Prep additions                                            */
+/* NCLEX app additions                                                 */
 /* ------------------------------------------------------------------ */
 
 :root { --fs: 1; }

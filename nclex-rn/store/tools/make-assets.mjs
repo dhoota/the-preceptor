@@ -446,7 +446,7 @@ mkdirSync(g, { recursive: true });
     <div style="width:180px;height:180px;margin:0 48px 0 72px;flex:none">${markSvg("#FFFFFF")}</div>
     <div style="padding-right:56px">
       <div style="font:700 15px/1 ${SANS};letter-spacing:0.18em;color:#E0B43C;text-transform:uppercase">Next Generation NCLEX-RN prep</div>
-      <div style="font-size:50px;font-weight:600;line-height:1.05;margin-top:16px;white-space:nowrap">Preceptor: NCLEX-RN Prep</div>
+      <div style="font-size:50px;font-weight:600;line-height:1.05;margin-top:16px;white-space:nowrap">Preceptor: NCLEX</div>
       <div style="font-size:25px;line-height:1.35;margin-top:18px;color:#C9D8EA;max-width:600px">Every NGN item type. Case studies. An adaptive mock. Fully offline.</div>
     </div></body>`);
   await page.screenshot({ path: join(g, "play-feature-1024x500.png") });

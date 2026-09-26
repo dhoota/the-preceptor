@@ -36,7 +36,7 @@ const CANADA = {
   required: ['batch', 'notes', 'empty', 'testsPass'],
 }
 
-const writerPrompt = (b) => `You are the writer for batch ${b} of the Preceptor: NCLEX-RN Prep item bank, in ${APP}.
+const writerPrompt = (b) => `You are the writer for batch ${b} of the Preceptor: NCLEX item bank, in ${APP}.
 Follow ${APP}/docs/WRITER_BRIEF.md exactly. It tells you what to read first (docs/ITEM_SPEC.md, src/engine/types.ts, tests/fixture.ts, docs/bank-plan.json entry "${b}", docs/topic-plan.json entry "${b}").
 You are the only writer for ${b}. If you find files in src/bank/${b}/ other than an empty index.ts, they are leftovers: replace them.
 Write only inside ${APP}/src/bank/${b}/ and your report ${APP}/docs/reviews/${b}-writer.md. Do not run git. Do not edit any other file, even if another test fails elsewhere, and never create files in tests/. Other writers work in parallel on other batches.
@@ -44,7 +44,7 @@ Hard rules: original content only, never copy or paraphrase NCSBN items, test pl
 Work in chunks of about 10 items per file. Run: cd ${APP} && BATCH=${b} npx vitest run tests/bank.test.ts   until every test passes. Also check npx tsc --noEmit -p . 2>&1 | grep bank/${b} prints nothing.
 Return batch, the number of items written, whether BATCH=${b} tests pass, and short notes on anything uncertain.`
 
-const reworkPrompt = (b, what) => `You are reworking batch ${b} of the Preceptor: NCLEX-RN Prep item bank, in ${APP}. The batch is written and passes its gates, but part of it must be replaced: ${what}
+const reworkPrompt = (b, what) => `You are reworking batch ${b} of the Preceptor: NCLEX item bank, in ${APP}. The batch is written and passes its gates, but part of it must be replaced: ${what}
 Follow ${APP}/docs/WRITER_BRIEF.md and docs/ITEM_SPEC.md for everything you write. Read docs/topic-plan.json entry "${b}" and docs/bank-plan.json entry "${b}". Keep the batch Client Needs totals exactly as planned, keep ids in place (a replaced case keeps its case id and item ids), and keep every other item unchanged. Delete any extra.ts in the folder.
 Write only inside ${APP}/src/bank/${b}/ and update ${APP}/docs/reviews/${b}-writer.md with a section "Rework" in house style (no em or en dashes, no semicolons). Do not run git. Never create files in tests/.
 Original content only. Real citations only, verified with WebFetch on PubMed, publisher or agency pages (WebSearch may be exhausted).
@@ -64,14 +64,14 @@ export const EXTRA: Item[] = [ ...the two item objects as TypeScript object lite
 Change their ids to "${ids[0]}" and "${ids[1]}" respectively, and set their need field to a Client Needs code that already appears in the batch (look at src/bank/${b}/ files). Change nothing else in them. Do not import extra.ts anywhere and do not edit index.ts or any other file. Do not run git. Check with: cd ${APP} && npx tsc --noEmit -p . 2>&1 | grep bank/${b}/extra  (must print nothing). Return the two ids you used.`
 }
 
-const reviewPrompt = (b, pass) => `You are the adversarial reviewer for batch ${b} of the Preceptor: NCLEX-RN Prep item bank, in ${APP}.${pass > 1 ? ' A previous review of this batch was not trusted, so review it again from scratch with more care.' : ''}
+const reviewPrompt = (b, pass) => `You are the adversarial reviewer for batch ${b} of the Preceptor: NCLEX item bank, in ${APP}.${pass > 1 ? ' A previous review of this batch was not trusted, so review it again from scratch with more care.' : ''}
 Follow ${APP}/docs/REVIEW_BRIEF.md exactly, both Lens A (nursing content, with every citation verified by WebSearch or WebFetch, or PubMed, publisher and agency pages when WebSearch is exhausted) and Lens B (internal consistency and numbers, recompute every number with a script).
 Every .ts file in ${APP}/src/bank/${b}/ is in scope, including any file index.ts does not import. Review those items too and include their ids in defectIds when defective.
 Only edit files in ${APP}/src/bank/${b}/ and write your report to ${APP}/docs/reviews/${b}-review.md (overwrite any earlier report for this batch)${pass > 1 ? ', with a section headed "Second review"' : ''}. The report must follow house style: no em or en dashes, no semicolons. Do not run git. Never create files in tests/. Never set reviewed: true.
 After fixing, run: cd ${APP} && BATCH=${b} npx vitest run tests/bank.test.ts   and keep every test passing.
 Return batch, defectIds (every item id with a defect you found or fixed), the number of fixes, the number of key changes, whether tests pass, and a two sentence summary.`
 
-const canadaPrompt = (b) => `You are the Canada note writer for batch ${b} of the Preceptor: NCLEX-RN Prep item bank, in ${APP}.
+const canadaPrompt = (b) => `You are the Canada note writer for batch ${b} of the Preceptor: NCLEX item bank, in ${APP}.
 Follow ${APP}/docs/CANADA_BRIEF.md exactly. Only edit the canada field (and add a source when the note needs one) in the items in ${APP}/src/bank/${b}/ files that index.ts imports. Ignore extra.ts if present. Write your report to ${APP}/docs/reviews/${b}-canada.md in house style (no em or en dashes, no semicolons). Do not run git. Never create files in tests/.
 Verify every Canadian claim with WebSearch or WebFetch. Run: cd ${APP} && BATCH=${b} npx vitest run tests/bank.test.ts   and keep every test passing.
 Return batch, the number of notes written, the number left empty, and whether tests pass.`

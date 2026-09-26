@@ -1,6 +1,6 @@
 # Writer brief
 
-For the writer of one batch in Preceptor: NCLEX-RN Prep. Only create or edit files in your batch folder `src/bank/<batch>/`, plus your report at `docs/reviews/<batch>-writer.md`. Do not run git. Do not edit any other file. Keep scratch files in your own subfolder of the scratchpad, never its root, because other agents share it.
+For the writer of one batch in Preceptor: NCLEX. Only create or edit files in your batch folder `src/bank/<batch>/`, plus your report at `docs/reviews/<batch>-writer.md`. Do not run git. Do not edit any other file. Keep scratch files in your own subfolder of the scratchpad, never its root, because other agents share it.
 
 ## Read first
 

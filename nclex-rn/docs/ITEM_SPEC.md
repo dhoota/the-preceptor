@@ -1,6 +1,6 @@
 # Item spec
 
-For anyone writing items for Preceptor: NCLEX-RN Prep, human or AI assisted. Items are static data. The app runs no AI. Every item ships with `reviewed: false` until Arjan signs it off.
+For anyone writing items for Preceptor: NCLEX, human or AI assisted. Items are static data. The app runs no AI. Every item ships with `reviewed: false` until Arjan signs it off.
 
 The contract is `src/engine/types.ts`. The gates are `src/engine/quality.ts`. The worked examples are `tests/fixture.ts`. They pass every gate. Copy their shape.
 

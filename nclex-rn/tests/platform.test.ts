@@ -195,14 +195,14 @@ describe("identity and disclaimer", () => {
   it("uses com.preceptor.nclex and the app name everywhere", () => {
     const cap = JSON.parse(read("../capacitor.config.json"));
     expect(cap.appId).toBe("com.preceptor.nclex");
-    expect(cap.appName).toBe("Preceptor: NCLEX-RN Prep");
+    expect(cap.appName).toBe("Preceptor: NCLEX");
     expect(read("../android/app/build.gradle")).toContain('applicationId "com.preceptor.nclex"');
-    expect(read("../android/app/src/main/res/values/strings.xml")).toContain("Preceptor: NCLEX-RN Prep");
+    expect(read("../android/app/src/main/res/values/strings.xml")).toContain("Preceptor: NCLEX");
     expect(read("../ios/App/App.xcodeproj/project.pbxproj").match(/PRODUCT_BUNDLE_IDENTIFIER = ([\w.]+);/g)).toEqual([
       "PRODUCT_BUNDLE_IDENTIFIER = com.preceptor.nclex;",
       "PRODUCT_BUNDLE_IDENTIFIER = com.preceptor.nclex;",
     ]);
-    expect(read("../ios/App/App/Info.plist")).toContain("Preceptor: NCLEX-RN Prep");
+    expect(read("../ios/App/App/Info.plist")).toContain("Preceptor: NCLEX");
   });
   it("states the NCSBN disclaimer", () => {
     const d = DISCLAIMER.join(" ");
@@ -213,23 +213,61 @@ describe("identity and disclaimer", () => {
 
 describe("Codemagic", () => {
   // Codemagic reads only the repository root file. It must mirror this folder's copy.
+  const root = read("../../codemagic.yaml");
+  const local = read("../codemagic.yaml");
+  const flow = (y: string, id: string) => {
+    const at = y.indexOf(`\n  ${id}:\n`);
+    const next = y.slice(at + 1).search(/\n  [a-z0-9-]+:\n/);
+    return next < 0 ? y.slice(at) : y.slice(at, at + 1 + next);
+  };
   it("root codemagic.yaml mirrors nclex-rn/codemagic.yaml", () => {
-    const root = read("../../codemagic.yaml");
-    const local = read("../codemagic.yaml");
-    const ids = (y: string) => [...y.slice(y.indexOf("workflows:")).matchAll(/^  ([a-z0-9-]+):$/gm)].map((m) => m[1]);
-    expect(ids(root)).toEqual(["android-debug", "android-release", "android-play-internal", "ios-release"]);
-    expect(ids(root)).toEqual(ids(local));
-    expect(root.match(/^    working_directory: nclex-rn$/gm)?.length).toBe(4);
-    for (const s of ["preceptor_signing", "preceptor_play", "app_store_connect: preceptor_appstore", "com.preceptor.nclex"]) expect(root, s).toContain(s);
-    expect(root).not.toMatch(/com\.preceptor\.oral|oral-exam-sim/);
-    // Artifact globs resolve from the working directory, so no nclex-rn/ prefix.
-    const arts = (y: string) => y.match(/^      - [^*\s]\S*\/\S*$/gm) ?? [];
-    expect(arts(root).length).toBeGreaterThan(0);
-    expect(arts(root)).toEqual(arts(local));
-    for (const a of arts(root)) expect(a).not.toMatch(/nclex-rn\//);
     expect(root.slice(root.indexOf("definitions:"))).toBe(local.slice(local.indexOf("definitions:")));
   });
+  it("has four uniquely named NCLEX workflows in nclex-rn", () => {
+    const ids = [...root.slice(root.indexOf("workflows:")).matchAll(/^  ([a-z0-9-]+):$/gm)].map((m) => m[1]);
+    expect(ids).toEqual(["nclex-android-debug", "nclex-android-build-only", "nclex-android-release", "nclex-ios-release"]);
+    const names = [...root.matchAll(/^    name: (.+)$/gm)].map((m) => m[1]);
+    expect(names).toHaveLength(4);
+    for (const n of names) expect(n).toMatch(/^Preceptor NCLEX /);
+    expect(root.match(/^    working_directory: nclex-rn$/gm)?.length).toBe(4);
+    expect(root).not.toMatch(/com\.preceptor\.oral|oral-exam-sim|preceptor_signing|PRECEPTOR_KEYSTORE/);
+    // Artifact globs resolve from the working directory, so no nclex-rn/ prefix.
+    for (const a of root.match(/^      - [^*\s]\S*\/\S*$/gm) ?? []) expect(a).not.toMatch(/nclex-rn\//);
+  });
+  it("signs Android with the team keystore and uploads only to Play alpha as a draft", () => {
+    for (const id of ["nclex-android-build-only", "nclex-android-release"]) {
+      const f = flow(root, id);
+      expect(f, id).toMatch(/android_signing:\n\s+- preceptor_upload_key/);
+      expect(f, id).toContain("bash scripts/ci/check-keystore.sh");
+    }
+    const rel = flow(root, "nclex-android-release");
+    expect(rel).toContain("- preceptor_play");
+    expect(rel).toContain('--package-name "com.preceptor.nclex"');
+    expect(rel).toMatch(/track: alpha/);
+    expect(rel).toMatch(/submit_as_draft: true/);
+    expect(root).not.toMatch(/track: production/);
+    const only = flow(root, "nclex-android-build-only");
+    expect(only).not.toMatch(/publishing:|preceptor_play|GCLOUD/);
+  });
+  it("signs iOS with Codemagic managed signing and publishes to TestFlight only", () => {
+    const ios = flow(root, "nclex-ios-release");
+    expect(ios).toContain("app_store_connect: preceptor_appstore");
+    expect(ios).toMatch(/ios_signing:[\s\S]*distribution_type: app_store[\s\S]*bundle_identifier: com\.preceptor\.nclex/);
+    expect(ios).toMatch(/submit_to_testflight: true/);
+    expect(ios).not.toMatch(/submit_to_app_store: true/);
+  });
+  it("targets Android API 36 and iOS 15.0", () => {
+    const v = read("../android/variables.gradle");
+    expect(v).toMatch(/compileSdkVersion = 36/);
+    expect(v).toMatch(/targetSdkVersion = 36/);
+    expect(read("../ios/App/Podfile")).toContain("platform :ios, '15.0'");
+    const pbx = read("../ios/App/App.xcodeproj/project.pbxproj");
+    expect(pbx).not.toMatch(/IPHONEOS_DEPLOYMENT_TARGET = 1[0-4]\./);
+    expect(pbx).toMatch(/IPHONEOS_DEPLOYMENT_TARGET = 15\.0;/);
+    expect(read("../android/app/build.gradle")).toContain("System.getenv('CM_KEYSTORE_PATH')");
+  });
 });
+
 
 describe("paywall", () => {
   const src = read("../src/screens/Paywall.tsx");
