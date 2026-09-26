@@ -77,7 +77,6 @@ Status on 25 September 2026:
 - `written_access` holds `ccfpem_written_1y` and `ccfpem_complete_1y`. `oral_full_access` holds `ccfpem_oral_1y` and `ccfpem_complete_1y`.
 - Offering `ccfpem` (display name "CCFP-EM Subscriptions") has packages `complete`, `written` and `oral`, each with its App Store product. These match `src/lib/purchases.ts` exactly.
 - Still open:
-  - The iOS public SDK key (`appl_...`) for this app config is not yet in `src/lib/purchases.ts`.
   - The Play subscriptions do not exist yet (section 4).
   - The three lifetime placeholders in RevenueCat still need to be detached and deleted.
 
@@ -96,7 +95,7 @@ All Preceptor apps share one RevenueCat project. Its Current offering belongs to
 3. Offering `ccfpem` with three packages, custom identifiers `complete`, `written` and `oral`, each holding its `_1y` product from both stores. The app finds a package by its identifier, then by product ID.
 4. Public SDK keys in `src/lib/purchases.ts`:
    - Android: done (`goog_...`).
-   - iOS: still a placeholder. Upload the App Store in-app purchase key in RevenueCat, then paste the `appl_...` key. Until then purchases stay off on iOS and the release launch gate fails.
+   - iOS: done (`appl_...`).
 5. Test with a sandbox Apple ID and a Play licence tester. Sandbox years pass in about an hour on iOS and in minutes on Play test tracks. Subscribe to Written and confirm Settings shows "renews or ends" on the entitlement date. Upgrade to Complete and confirm both open, only one subscription is active, and the Written subscription ended (App Store: replaced in the group. Play: replaced by the app). Let a sandbox renewal happen and confirm the date moves forward. Cancel, let the period end, and confirm access closes on the next launch. Delete, reinstall, Restore.
 
 A candidate with no subscription sees all three offered. A candidate who holds Written or Oral sees only the upgrade to Complete.
@@ -104,7 +103,7 @@ A candidate with no subscription sees all three offered. A candidate who holds W
 ## 6. Codemagic
 
 1. The Codemagic app "Preceptor: CCFP-EM" uses the root `codemagic.yaml` (section 1). It needs the `preceptor_play` group and the `preceptor_appstore` integration. Signing no longer uses pasted secrets, and the `preceptor_signing` group is not used.
-   - **iOS:** `ios_signing` (app_store, com.preceptor.oral) uses the account-level distribution certificate `preceptor_distribution`. Codemagic needs the App Store provisioning profile for com.preceptor.oral in Code signing identities > iOS provisioning profiles. Use "Fetch profiles" there, which goes through the App Store Connect integration. If Apple has no such profile yet, create one at developer.apple.com (Profiles > App Store Connect > com.preceptor.oral > the preceptor_distribution certificate), then fetch it.
+   - **iOS:** `ios_signing` (app_store, com.preceptor.oral) uses the account-level distribution certificate `preceptor_distribution`. Codemagic needs the App Store provisioning profile for com.preceptor.oral in Code signing identities > iOS provisioning profiles. Done on 26 September 2026: an App Store profile for com.preceptor.oral, signed with the preceptor_distribution certificate, was created in the Apple portal and fetched into team code signing as `preceptor_ccfpem_appstore`. `ios_signing` finds it by bundle ID and distribution type.
    - **Android:** `android_signing: preceptor_upload_key`. Codemagic keeps the other Preceptor apps' keystore as pasted text inside each app's own `preceptor_signing` group. It cannot be read or exported into another app, which is why CCFP-EM sees those values as empty. What can be reused is the keystore file itself. One-time step, in the Codemagic website only:
      1. **Preferred: reuse the existing Preceptor keystore.** Find `preceptor-release.jks`, the file the other apps were set up with, and its password (alias `preceptor`). Go to Codemagic > Team settings > codemagic.yaml settings > Code signing identities > Android keystores and upload it. Give the keystore password, key alias `preceptor`, the key password and reference name `preceptor_upload_key`. Play lets one upload key serve several apps, and this app has never been uploaded, so any key works for its first upload.
      2. **Only if that file or its password cannot be found: make a new key.**
