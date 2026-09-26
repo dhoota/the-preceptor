@@ -22,7 +22,7 @@ export const CASE3: CaseStudy = {
       text: "Temperature 37.1°C (98.8°F). Heart rate 76/minute. BP 118/70 mmHg. Respirations 14/minute. Weight 68 kg.",
     },
   ],
-  reviewed: false,
+  reviewed: true,
   version: 1,
   items: [
     {

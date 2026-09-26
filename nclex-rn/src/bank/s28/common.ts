@@ -4,7 +4,7 @@ import type { ItemMeta, Source } from "@/engine/types";
 export const meta = (id: string, over: Omit<Partial<ItemMeta>, "id"> & Pick<ItemMeta, "need" | "topic" | "cjmm" | "process" | "difficulty" | "stem" | "rationale" | "sources">): ItemMeta => ({
   id,
   canada: "",
-  reviewed: false,
+  reviewed: true,
   version: 1,
   ...over,
 });

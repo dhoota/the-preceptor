@@ -37,7 +37,7 @@ export const CASE1: CaseStudy = {
       text: "Ceftriaxone 1 g IM once for acute otitis media not improved on amoxicillin. Observe in clinic for 15 minutes after the injection.",
     },
   ],
-  reviewed: false,
+  reviewed: true,
   version: 1,
   items: [
     {

@@ -45,7 +45,7 @@ export const CASE4: CaseStudy = {
     },
     { title: "Laboratory Results", text: "Day 4: sodium 138 mEq/L (138 mmol/L)." },
   ],
-  reviewed: false,
+  reviewed: true,
   version: 1,
   items: [
     {

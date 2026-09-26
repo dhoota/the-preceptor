@@ -5,7 +5,7 @@ export const meta = (id: string, over: Omit<Partial<ItemMeta>, "id"> & Pick<Item
   id,
   need: "SIPC",
   canada: "",
-  reviewed: false,
+  reviewed: true,
   version: 1,
   ...over,
 });

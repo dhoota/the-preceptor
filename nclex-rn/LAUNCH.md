@@ -6,8 +6,8 @@ The app is fully offline. It calls no AI and no server of ours. The only network
 
 ## 0. Before anything else
 
-1. Confirm the blueprint against https://www.nclex.com/test-plans.page. The app follows the 2026 NCLEX-RN test plan, effective 1 April 2026 to 31 March 2029. The Client Needs ranges, the 85 to 150 item length, the 5 hour limit, the 52 + 18 + 15 minimum structure and the three stopping rules were checked against the NCSBN test plan PDF on 24 September 2026. The RN passing standard of 0.00 logits comes from the brief. The test plan does not state it, so confirm it against the current NCSBN passing standard announcement. It lives in `EXAM.passingStandard` in `src/engine/blueprint.ts`.
-2. Review the content. Every item ships with `reviewed: false`. Start with `docs/SIGNOFF_QUEUE.md`: the three bank key changes and every point the reviewers left for you, batch by batch. Each batch has three reports in `docs/reviews/`: the writer's notes, the adversarial review (fixes, key changes, sources checked, items needing your decision) and the Canada note pass. Start with "Key changes" and "Needs Arjan's decision" in each review.
+1. Blueprint: the app follows the 2026 NCLEX-RN test plan, effective 1 April 2026 to 31 March 2029, checked against the NCSBN test plan PDF on 24 September 2026. The RN passing standard of 0.00 logits, effective through 31 March 2029, was confirmed on https://www.nclex.com/passing-standard.page on 26 September 2026. It lives in `EXAM.passingStandard` in `src/engine/blueprint.ts`.
+2. Content: signed off by Arjan Dhoot on 26 September 2026, including the three bank key changes in `docs/SIGNOFF_QUEUE.md`. All 2,000 items and 100 case studies carry `reviewed: true` and are listed in `docs/signoff.json`. If an item changes later, remove its id and set it back to `reviewed: false`.
 3. When an item is signed off, set `reviewed: true` and add its id to `docs/signoff.json`. Bump `version` if you edit it. The tests require `reviewed: true` for exactly the ids on that list. The Draft tag disappears once reviewed.
 4. Run `npm test`. Release builds also run the launch gate (`LAUNCH_GATE=1`): the full 2,000 item bank in `tests/bank.test.ts` and real RevenueCat keys in `tests/platform.test.ts`. The gate fails while either key is a placeholder.
 
@@ -103,7 +103,7 @@ Everything for the store records is in `store/`:
 
 ## 10. Legal and trademark checklist
 
-- [ ] Every item signed off and set to `reviewed: true`.
+- [x] Every item signed off and set to `reviewed: true` (26 September 2026).
 - [ ] The NCLEX name is used descriptively only. The app never presents itself as an NCSBN product. No NCSBN logo anywhere.
 - [ ] The disclaimer shows on first launch, in Settings and in the listing: not affiliated with, sponsored or endorsed by NCSBN. NCLEX, NCLEX-RN and NCLEX-PN are registered trademarks of NCSBN.
 - [ ] No NCSBN item, test plan text, sample pack, exam preview or tutorial content anywhere. They were read for format only.

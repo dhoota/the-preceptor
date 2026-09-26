@@ -31,7 +31,7 @@ export const CASE3: CaseStudy = {
       },
     },
   ],
-  reviewed: false,
+  reviewed: true,
   version: 1,
   items: [
     {

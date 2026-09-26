@@ -25,7 +25,7 @@ export const CASE2: CaseStudy = {
       ].join("\n"),
     },
   ],
-  reviewed: false,
+  reviewed: true,
   version: 1,
   items: [
     {

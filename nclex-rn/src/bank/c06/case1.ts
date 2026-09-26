@@ -37,7 +37,7 @@ export const CASE1: CaseStudy = {
     },
     { title: "Nurses' Notes", text: "0937 Stroke alert called. Noncontrast head CT requested." },
   ],
-  reviewed: false,
+  reviewed: true,
   version: 1,
   items: [
     {

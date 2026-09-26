@@ -10,7 +10,7 @@ export const meta = (
   id,
   need,
   canada: "",
-  reviewed: false,
+  reviewed: true,
   version: 1,
   ...over,
 });

@@ -50,7 +50,7 @@ export const CASE2: CaseStudy = {
     },
     { title: "ECG", text: "Sinus bradycardia at 58/minute with tall, peaked T waves." },
   ],
-  reviewed: false,
+  reviewed: true,
   version: 1,
   items: [
     {

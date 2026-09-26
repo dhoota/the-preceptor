@@ -110,7 +110,7 @@ export function Settings({ go }: { go: Go }) {
             <p key={l}>{l}</p>
           ))}
           <p>It is for education only and is not nursing or medical advice. Every item is original.</p>
-          <p>Items are drafted for review by nurse educators. An item marked as a draft has not been signed off yet.</p>
+          <p>Every item was reviewed and signed off before release. An item marked as a draft has not been signed off yet.</p>
           <p>Everything stays on this device. The app collects no personal data.</p>
         </div>
         <p className="muted small mono">Version {APP_VERSION}</p>

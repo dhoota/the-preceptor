@@ -59,7 +59,7 @@ No account. No tracking. Everything stays on your device and works with no signa
 
 Try it free. 50 items and 1 case study are open. Then choose a one time purchase or a monthly subscription.
 
-Every item is original. None is taken from NCSBN material or any real exam. Content is written for education and is being reviewed by a nurse educator.
+Every item is original. None is taken from NCSBN material or any real exam. Content is written for education and every item was reviewed before release.
 
 Preceptor: NCLEX-RN Prep is an independent study tool. It is not affiliated with, sponsored or endorsed by NCSBN. NCLEX, NCLEX-RN and NCLEX-PN are registered trademarks of NCSBN. The app is for education only and is not nursing or medical advice. Scores do not predict exam results.
 

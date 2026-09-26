@@ -24,7 +24,7 @@ export const CASE1: CaseStudy = {
       text: "0800 phone call: Wife reports he could not swallow his 2200 morphine tablet last night. He has had no morphine since 1000 yesterday. He moaned most of the night.",
     },
   ],
-  reviewed: false,
+  reviewed: true,
   version: 1,
   items: [
     {

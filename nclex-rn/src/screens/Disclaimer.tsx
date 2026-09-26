@@ -16,7 +16,7 @@ export function Disclaimer({ onAccept }: { onAccept: () => void }) {
           ))}
           <li>It is for education only. It is not nursing or medical advice and is not for client care.</li>
           <li>Every item is original. None is taken from NCSBN material or any real exam.</li>
-          <li>Items are drafted for review by nurse educators. Check doses and policies against current sources.</li>
+          <li>Every item was reviewed and signed off before release. Check doses and policies against current sources and local policy.</li>
           <li>Scores are a study guide. They do not predict your NCLEX result.</li>
           <li>Everything stays on this device. There is no account and no tracking.</li>
         </ul>

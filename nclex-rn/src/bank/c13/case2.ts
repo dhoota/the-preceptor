@@ -28,7 +28,7 @@ export const CASE2: CaseStudy = {
       text: ["Regular diet as tolerated.", "Ostomy teaching each day with the client and his wife.", "Change the pouch as needed for leaks."].join("\n"),
     },
   ],
-  reviewed: false,
+  reviewed: true,
   version: 1,
   items: [
     {

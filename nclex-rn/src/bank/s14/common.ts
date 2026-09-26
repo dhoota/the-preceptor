@@ -8,7 +8,7 @@ export const meta = (
   id,
   need: "BCC",
   canada: "",
-  reviewed: false,
+  reviewed: true,
   version: 1,
   ...over,
 });

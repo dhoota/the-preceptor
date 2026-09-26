@@ -12,7 +12,7 @@ export const meta = (id: string, over: Partial<ItemMeta>): ItemMeta => ({
   rationale: "",
   sources: [],
   canada: "",
-  reviewed: false,
+  reviewed: true,
   version: 1,
   ...over,
 });

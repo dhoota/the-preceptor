@@ -45,7 +45,7 @@ export const CASE1: CaseStudy = {
       },
     },
   ],
-  reviewed: false,
+  reviewed: true,
   version: 1,
   items: [
     {

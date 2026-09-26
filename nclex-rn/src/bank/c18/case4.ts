@@ -36,7 +36,7 @@ export const CASE4: CaseStudy = {
       text: "Temperature 36.8°C (98.2°F). Heart rate 96/minute. Respirations 22/minute.",
     },
   ],
-  reviewed: false,
+  reviewed: true,
   version: 1,
   items: [
     {

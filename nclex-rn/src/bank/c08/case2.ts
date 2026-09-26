@@ -43,7 +43,7 @@ export const CASE2: CaseStudy = {
       },
     },
   ],
-  reviewed: false,
+  reviewed: true,
   version: 1,
   items: [
     {

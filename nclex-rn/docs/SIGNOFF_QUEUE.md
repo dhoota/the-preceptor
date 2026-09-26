@@ -1,6 +1,8 @@
 # Sign-off queue for Arjan
 
-Every item in the bank ships with `reviewed: false`. This file gathers what the 48 adversarial reviews left for Arjan. The full reports are in `docs/reviews/`.
+Status: signed off by Arjan Dhoot on 26 September 2026, including the three key changes below. Every item now carries `reviewed: true`.
+
+This file gathers what the 48 adversarial reviews left for Arjan. The full reports are in `docs/reviews/`.
 
 ## Answer key changes on bank items
 

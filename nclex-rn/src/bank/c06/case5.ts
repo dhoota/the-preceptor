@@ -39,7 +39,7 @@ export const CASE5: CaseStudy = {
       text: "Three other clients on her hallway have had vomiting and diarrhea since Monday. One AP went home ill on Tuesday.",
     },
   ],
-  reviewed: false,
+  reviewed: true,
   version: 1,
   items: [
     {

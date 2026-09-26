@@ -33,7 +33,7 @@ export const CASE5: CaseStudy = {
       },
     },
   ],
-  reviewed: false,
+  reviewed: true,
   version: 1,
   items: [
     {
