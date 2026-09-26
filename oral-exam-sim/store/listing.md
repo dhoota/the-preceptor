@@ -13,7 +13,7 @@ House style: no em or en dashes, no semicolons, short sentences, no filler. Char
 | Product type | iOS Auto-Renewable Subscription, 1 year, one subscription group (Complete level 1, Written and Oral level 2). Play subscription with a 1 year auto-renewing base plan |
 | RevenueCat entitlements | written_access (Complete, Written). oral_full_access (Complete, Oral) |
 | RevenueCat offering | ccfpem, three packages |
-| Prices | Per year, in US dollars (base country United States). Complete US$199.99. Written US$149.99. Oral US$99.99 |
+| Prices | Per year. Complete CA$199.99. Written CA$149.99. Oral CA$99.99 |
 | App Store category | Medical. Secondary: Education |
 | Play category | Medical |
 | Support email | preceptor.app@gmail.com |

@@ -40,9 +40,9 @@ The app record exists under `com.preceptor.oral`. Update the name to Preceptor: 
 
    | Level | Reference name | Product ID | Duration | Price |
    |---|---|---|---|---|
-   | 1 | Complete: written and oral, yearly | `ccfpem_complete_1y` | 1 year | US$199.99 |
-   | 2 | Written: SAMP bank, yearly | `ccfpem_written_1y` | 1 year | US$149.99 |
-   | 2 | Oral: oral simulator, yearly | `ccfpem_oral_1y` | 1 year | US$99.99 |
+   | 1 | Complete: written and oral, yearly | `ccfpem_complete_1y` | 1 year | CA$199.99 |
+   | 2 | Written: SAMP bank, yearly | `ccfpem_written_1y` | 1 year | CA$149.99 |
+   | 2 | Oral: oral simulator, yearly | `ccfpem_oral_1y` | 1 year | CA$99.99 |
 
    Put Complete alone on the top level and Written and Oral together on the level below. A group lets a person hold one subscription at a time. So a subscriber to Written or Oral who wants both upgrades to Complete. The App Store does that at once and refunds the unused part. The paywall offers only Complete to someone who already holds Written or Oral. Moving between Written and Oral, or down from Complete, is left to the App Store subscription settings, where it takes effect at the next renewal.
 
@@ -116,15 +116,15 @@ A candidate with no subscription sees all three offered. A candidate who holds W
 
 ## 7. Price proposal
 
-Confirmed by Arjan on 24 September 2026, in US dollars (currency confirmed 26 September 2026): Complete US$199.99, Written US$149.99, Oral US$99.99. Set United States as the base country in App Store Connect and Play. The stores convert for other countries.
+Confirmed by Arjan on 24 September 2026: Complete CA$199.99, Written CA$149.99, Oral CA$99.99.
 
 The bank is now far larger: 1,500 SAMPs and 100 oral cases. Running cost is still zero. The store fee is 15 percent.
 
 | Product | Price | Nets about |
 |---|---|---|
-| Complete (written and oral) | US$199.99 | US$170 |
-| Written only | US$149.99 | US$127 |
-| Oral only | US$99.99 | US$85 |
+| Complete (written and oral) | CA$199.99 | CA$170 |
+| Written only | CA$149.99 | CA$127 |
+| Oral only | CA$99.99 | CA$85 |
 
 Reasoning:
 
@@ -132,7 +132,7 @@ Reasoning:
 - The written bank is the bigger body of work and the part most candidates use daily, so it is priced higher than the oral.
 - Complete is 20 percent less than buying both, so it is the clear choice for a first attempt. It anchors the paywall.
 - A yearly subscription fits an exam cycle and renews for candidates who sit again. It renews automatically until cancelled in the store account (Arjan, 24 September 2026). The paywall says so next to the price.
-- US$199.99 sits below the Preceptor CCFP annual price of $250 while offering two exam components, and stays under the price point where app store buyers balk.
+- CA$199.99 sits below the Preceptor CCFP annual price of $250 while offering two exam components, and stays under the price point where app store buyers balk.
 - The store and RevenueCat track the subscription and its renewals, so no server of our own is needed. The app caches the entitlement end dates, which keep working offline and still end access on time.
 
 ## 7a. Exam format decisions
