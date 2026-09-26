@@ -828,11 +828,11 @@ export const SHOCK_SAMPS: Samp[] = [
         update: "After 2 L of Ringer's lactate her BP is 80/44 mmHg.",
         prompt: "Which vasopressor would you start, and how would you start it given her medication?",
         accept: [
-          { id: "ne", text: "Norepinephrine as a dilute infusion, started at a low dose and titrated in small steps with close BP monitoring", match: ["norepinephrine", "noradrenaline", "levophed"] },
+          { id: "ne", text: "Norepinephrine as a dilute infusion, started at a low dose and titrated in small steps with close BP monitoring", match: ["norepinephrine low", "norepinephrine dilute", "norepinephrine diluted", "norepinephrine titrate", "norepinephrine titrated", "norepinephrine small", "norepinephrine slow", "norepinephrine slowly", "norepinephrine cautious", "norepinephrine cautiously", "norepinephrine careful", "norepinephrine carefully", "norepinephrine reduced", "norepinephrine lower", "norepinephrine 0.01", "norepinephrine 0.02", "noradrenaline low", "noradrenaline dilute", "noradrenaline titrate", "noradrenaline titrated", "noradrenaline small", "noradrenaline slow", "noradrenaline cautious", "noradrenaline careful", "levophed low", "levophed titrate", "levophed titrated", "levophed dilute"] },
         ],
         unacceptable: [{ text: "Dopamine", match: ["dopamine"] }],
         explanation:
-          "Norepinephrine is the first-line vasopressor in septic shock. Phenelzine is a monoamine oxidase inhibitor, and its Canadian product monograph warns that adrenergic agents may produce a markedly increased pressor response. It advises treating hypotension with fluids and, if needed, titrating a dilute pressor infusion. So norepinephrine is started low and increased in small steps with frequent or arterial BP readings. The monograph lists dopamine among the sympathomimetics not to be given with phenelzine.",
+          "Norepinephrine is the first-line vasopressor in septic shock. The Surviving Sepsis Campaign recommends it over other vasopressors, including dopamine. Phenelzine is a monoamine oxidase inhibitor. Its Canadian product monograph says patients taking it should not be given sympathomimetics, and it names dopamine, epinephrine and norepinephrine. For hypotension and vascular collapse, its overdose section advises IV fluids and, if needed, a dilute pressor infusion titrated to BP, and it warns that adrenergic agents may produce a markedly increased pressor response. Her shock needs a vasopressor, so norepinephrine is started low and increased in small steps with frequent or arterial BP readings. Naming norepinephrine without saying how it is started does not answer the question.",
         keyFeature: { topic: "shock", n: 7 },
         source: "nardil-pm",
       },
@@ -845,7 +845,7 @@ export const SHOCK_SAMPS: Samp[] = [
         accept: [
           { id: "abx", text: "Broad-spectrum IV antibiotics for severe pneumonia within 1 hour", match: ["antibiotic", "antimicrobial", "ceftriaxone", "azithromycin", "piperacillin", "levofloxacin", "moxifloxacin"] },
           { id: "hold", text: "Hold phenelzine while she is hypotensive, with psychiatry advice on restarting", match: ["hold phenelzine", "stop phenelzine", "withhold phenelzine", "hold maoi", "stop maoi", "hold the maoi"] },
-          { id: "meperidine", text: "Avoid meperidine for pain and dextromethorphan for cough", match: ["meperidine", "pethidine", "dextromethorphan", "avoid meperidine", "no meperidine", "avoid pethidine", "avoid dextromethorphan", "no dextromethorphan", "serotonergic", "drug interaction"] },
+          { id: "meperidine", text: "Avoid meperidine for pain and dextromethorphan for cough", match: ["avoid meperidine", "no meperidine", "meperidine contraindicated", "avoid pethidine", "no pethidine", "pethidine contraindicated", "avoid dextromethorphan", "no dextromethorphan", "dextromethorphan contraindicated", "avoid serotonergic", "no serotonergic", "drug interaction"] },
         ],
         explanation:
           "Antimicrobials are due immediately, within 1 hour of recognizing septic shock. The phenelzine monograph notes that the drug causes postural hypotension that improves when it is stopped or the dose reduced, so holding it while she is in shock is reasonable, with psychiatric input about restarting. It warns that a single dose of meperidine has caused excitation, hyperpyrexia, circulatory collapse and death in patients on MAO inhibitors, and that dextromethorphan can cause similar reactions, so both are avoided for her pleuritic pain and cough.",

@@ -121,3 +121,7 @@ No other line of DECISIONS.md was changed. The working-tree copy of the file is 
 - In ems-01 q2, a written answer that describes the Mauriceau-Smellie-Veit manoeuvre with gentle traction now scores. Only traction on the legs, trunk or body is marked dangerous. Please confirm that this matches your teaching.
 - Five of the seven fail and need another rebuild: ems-08, ems-10, ems-12, environmental-05 and environmental-07. The reason for each is in its section above. None was re-keyed here. Until they are rebuilt, they stay held back in g06.json.
 - ems-10 and the g12 rebuild of pulmonary-edema-02 have drifted into the same STEMI story. The next rebuild of either should be done with the other in view.
+
+## Landing decision
+
+ems-01 and ems-07 land. Neither uses a D1 repeat, so the D1 total is unchanged. The ems-01 fix narrows a dangerous-answer match inside the writer's own keyed decision, which the landing rules allow. ems-08, ems-10, ems-12, environmental-05 and environmental-07 failed, and all five keep their signed text on the branch. The writer's four D1 rows are not added.
