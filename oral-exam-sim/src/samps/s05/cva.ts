@@ -68,74 +68,81 @@ const NAC_PCC: Source = {
   url: "https://nacblood.ca/en/resource/recommendations-use-prothrombin-complex-concentrates-canada",
 };
 
+const DC_HYPER: Source = {
+  id: "diabetes-canada-hyperglycemic",
+  citation: "Goguen J, Gilbert J, Diabetes Canada Clinical Practice Guidelines Expert Committee. Hyperglycemic emergencies in adults. Can J Diabetes. 2018.",
+  url: "https://www.diabetes.ca/for-professionals/full-guidelines/chapter-15",
+};
+
 export const CVA_SAMPS: Samp[] = [
   /* 01 ------------------------------------------------------------------ */
   {
     id: "cva-01",
     topic: "cva",
-    title: "Found unable to speak at breakfast",
+    title: "Weak on one side after a thirsty week",
     stem:
-      "A 67-year-old man is brought by paramedics from a seniors' residence at 07:40. Staff found him at breakfast unable to speak and not moving his right arm. He was last seen well at 23:00. He has type 2 diabetes treated with insulin glargine and gliclazide, hypertension and chronic kidney disease. He is pale and diaphoretic. He has a dense right hemiparesis and expressive aphasia. No glucose was checked before arrival.",
-    vitals: { temperature: "36.4°C", pulse: "104/minute", resp: "18/minute", bp: "168/92 mmHg", o2sat: "97% on room air", weight: "92 kg" },
+      "A 78-year-old woman is brought in by ambulance at 10:05. Her daughter found her at 09:15 drowsy and unable to lift her left arm. They last spoke normally by phone at 19:00 yesterday. For 5 days she has been very thirsty and passing large amounts of urine. Six days ago she started prednisone 40 mg daily for a COPD flare. She has type 2 diabetes treated with metformin and sitagliptin. Her mucous membranes are dry. GCS is 13 (E3 V4 M6). She has left arm power 2/5, left leg power 4/5 and a left facial droop. The paramedic glucometer read HI. Laboratory results show glucose 46.8 mmol/L, sodium 139 mmol/L, bicarbonate 22 mmol/L, venous pH 7.35, beta-hydroxybutyrate 0.7 mmol/L and a measured serum osmolality of 348 mmol/kg. Non-contrast CT and CT angiography at 10:20 show no hemorrhage, no early ischemic change and no large vessel occlusion.",
+    vitals: { temperature: "37.4°C", pulse: "112/minute", resp: "22/minute", bp: "112/68 mmHg", o2sat: "94% on room air", weight: "58 kg" },
     questions: [
       {
         id: "q1",
         kind: "single",
-        prompt: "Which of the following is the most appropriate first action for this patient on arrival?",
+        prompt: "Which of the following is the most appropriate plan for her neurologic deficit now?",
         options: [
-          "ECG and cardiac monitoring",
-          "Labetalol 10 mg IV",
-          "Non-contrast CT head",
-          "Page the stroke team for thrombolysis",
-          "Point of care capillary glucose",
+          "Correct the HHS, then reassess the deficit",
+          "EEG before any further treatment",
+          "MRI brain before starting treatment",
+          "Tenecteplase 0.25 mg/kg IV now",
+          "Transfer for thrombectomy assessment",
         ],
-        correct: 4,
+        correct: 0,
         explanation:
-          "Hypoglycemia is a common and reversible stroke mimic. A capillary glucose takes seconds and must precede imaging and any thrombolysis decision. Insulin plus a sulfonylurea with renal impairment puts him at high risk.",
+          "Her glucose of 46.8 mmol/L and osmolality of 348 mmol/kg with little ketosis fit HHS, and Diabetes Canada notes that HHS can cause a stroke-like state that resolves once osmolality returns to normal. The deficit should therefore be reassessed as the metabolic state is corrected. CT and CTA have already excluded hemorrhage and a large vessel occlusion, so there is no target for thrombectomy. She was last known well 15 hours ago, beyond the window for tenecteplase. An MRI can wait until she is more stable, and nothing suggests ongoing seizures that would call for an EEG first.",
         keyFeature: { topic: "cva", n: 1 },
-        source: "csbpr-acute",
+        source: "diabetes-canada-hyperglycemic",
       },
       {
         id: "q2",
         kind: "short",
-        update: "Capillary glucose is 1.8 mmol/L.",
-        prompt: "What measures would correct his low glucose and prevent it from recurring over the next several hours?",
+        prompt: "What findings in this case suggest her deficit may be a stroke mimic?",
         required: 2,
         accept: [
-          { id: "d50", text: "Dextrose 25 g IV (50 mL of D50W)", match: ["d50", "d50w", "dextrose 50", "dextrose 25 g", "dextrose 25g", "dextrose bolus", "iv dextrose", "dextrose iv"] },
-          { id: "d10", text: "Dextrose infusion such as D10W", match: ["d10", "d10w", "d5w", "dextrose infusion", "dextrose drip", "dextrose 10"] },
-          { id: "octreotide", text: "Octreotide for sulfonylurea induced hypoglycemia", match: ["octreotide"] },
-          { id: "glucagon", text: "Glucagon 1 mg IM if IV access is delayed", match: ["glucagon"] },
-          { id: "food", text: "Oral carbohydrate and a meal once awake and able to swallow", match: ["meal", "eat", "oral carbohydrate", "oral glucose", "juice", "food"] },
-          { id: "monitor", text: "Frequent glucose checks, hourly at first", match: ["hourly glucose", "glucose check", "glucose monitoring", "q1h glucose", "serial glucose", "frequent glucose", "repeat glucose"] },
-          { id: "hold", text: "Hold gliclazide and insulin", match: ["hold gliclazide", "stop gliclazide", "discontinue gliclazide", "hold insulin", "hold sulfonylurea", "stop sulfonylurea", "discontinue sulfonylurea"] },
+          { id: "glucose", text: "Severe hyperglycemia", match: ["glucose", "hyperglycemia", "hyperglycaemia", "high sugar", "46.8"] },
+          { id: "osm", text: "Serum osmolality above 320 mmol/kg", match: ["osmolality", "hyperosmolar", "osmolar", "348"] },
+          { id: "hhs", text: "Little ketosis and no acidosis, fitting HHS", match: ["hhs", "hyperosmolar hyperglycemic", "no ketone", "low ketone", "minimal ketone", "no acidosis", "normal ph", "bicarbonate"] },
+          { id: "course", text: "Days of thirst and polyuria before the deficit", match: ["polyuria", "thirst", "gradual", "dehydration", "dehydrated", "dry"] },
+          { id: "loc", text: "Reduced level of consciousness", match: ["drowsy", "gcs", "decreased consciousness", "level of consciousness", "obtunded"] },
+          { id: "trigger", text: "A precipitant: prednisone", match: ["prednisone", "steroid", "glucocorticoid", "corticosteroid"] },
         ],
         explanation:
-          "Give IV dextrose now. Gliclazide with renal impairment causes prolonged and recurrent hypoglycemia, so he needs a dextrose infusion, frequent checks and possibly octreotide. Feed him as soon as he can swallow safely.",
+          "A glucose of 46.8 mmol/L and a serum osmolality of 348 mmol/kg with little ketosis and a near normal pH fit the Diabetes Canada description of HHS, with glucose usually 34 mmol/L or more and osmolality above 320. Diabetes Canada notes that HHS can cause seizures and a stroke-like state that resolves once osmolality returns to normal. Days of thirst and polyuria after starting prednisone, a known precipitant, point the same way. A normal CT and CTA do not exclude a small infarct, so the deficit must be reassessed once she is corrected.",
         keyFeature: { topic: "cva", n: 1 },
-        source: "csbpr-acute",
+        source: "diabetes-canada-hyperglycemic",
       },
       {
         id: "q3",
         kind: "short",
-        update:
-          "Thirty minutes later his glucose is 6.4 mmol/L. His speech has recovered but a right arm drift and right facial droop persist unchanged. NIHSS is 3.",
-        prompt: "What investigations would you order now?",
+        update: "Six hours later her osmolality is 331 mmol/kg and she is alert with GCS 15. The facial droop has gone, but left arm power is still 3/5. MRI shows a small acute infarct in the right corona radiata. The neurology resident asks why she was not offered IV thrombolysis on arrival.",
+        prompt: "What reasons would you give for not offering IV thrombolysis on arrival?",
         required: 2,
         accept: [
-          { id: "cta", text: "CT angiogram of the head and neck", match: ["cta", "ct angiogram", "ct angiography"] },
-          { id: "ncct", text: "Non-contrast CT head", match: ["ct head", "non contrast ct", "noncontrast ct", "ncct", "ct brain", "head ct"] },
-          { id: "ctp", text: "CT perfusion or MRI with diffusion", match: ["ct perfusion", "ctp", "mri", "diffusion"] },
-          { id: "ecg", text: "12-lead ECG", match: ["ecg", "ekg", "electrocardiogram"] },
+          { id: "window", text: "Last known well 15 hours before arrival, beyond the 4.5-hour window", match: ["4.5", "last known well", "last seen well", "time window", "outside window", "beyond window", "15 hour", "unknown onset"] },
+          { id: "glucose", text: "Glucose above 22.2 mmol/L, a relative exclusion", match: ["glucose", "hyperglycemia", "hyperglycaemia", "22.2", "sugar"] },
+          { id: "mimic", text: "The deficit could have been caused by hyperglycemia, a mimic", match: ["mimic", "metabolic cause", "hhs", "hyperosmolar", "hyperglycemia caused"] },
+        ],
+        unacceptable: [
+          { text: "No large vessel occlusion", match: ["no lvo", "no occlusion", "no large vessel"] },
         ],
         explanation:
-          "A deficit that persists after the glucose is normal must be treated as a stroke until proven otherwise. He needs urgent brain and vascular imaging and an ECG to look for atrial fibrillation. He is beyond 4.5 hours from last seen well, but advanced imaging can still select some patients for reperfusion.",
+          "The standard window for IV thrombolysis is 4.5 hours from last known well, and she was last known well 15 hours before arrival. The Canadian Stroke Best Practice Recommendations list a glucose above 22.2 mmol/L as a relative exclusion, and also focal signs due to severe hyperglycemia, because the deficit may be a mimic. Her lack of a large vessel occlusion ruled out thrombectomy but is not itself a reason to withhold thrombolysis. The MRI now shows a small infarct, which could not be known at 10:05, and she needs the usual workup for its cause.",
         keyFeature: { topic: "cva", n: 3 },
         source: "csbpr-acute",
       },
     ],
-    sources: [CSBPR_ACUTE],
+    sources: [DC_HYPER, CSBPR_ACUTE],
     ...meta,
+    version: 2,
+    reviewed: false,
   },
 
   /* 02 ------------------------------------------------------------------ */

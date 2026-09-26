@@ -1411,7 +1411,7 @@ export const AIRWAY_S21_SAMPS: Samp[] = [
           "Age of 19 years",
           "Cough for the past 3 weeks",
           "Facial puffiness each morning",
-          "Low-grade fever of 37.8°C",
+          "Low-grade fever",
           "Night sweats for 3 weeks",
           "Recent weight loss",
           "Stridor when leaning back",

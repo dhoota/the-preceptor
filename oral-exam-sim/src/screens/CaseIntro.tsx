@@ -35,7 +35,7 @@ export function CaseIntro({ id, go }: { id: string; go: Go }) {
       </p>
       {!c.reviewed && (
         <p className="small" style={{ marginTop: 10 }}>
-          <span className="tag warn">Draft</span> This case is awaiting physician review. Doses and details may change.
+          <span className="tag warn">Draft</span> This case is awaiting review by the Preceptor team. Doses and details may change.
         </p>
       )}
 

@@ -106,6 +106,24 @@ const MANTEROLA: Source = {
   citation: "Manterola C, Vial M, Moraga J, Astudillo P. Analgesia in patients with acute abdominal pain. Cochrane Database Syst Rev. 2011.",
 };
 
+const INGRANDE: Source = {
+  id: "ingrande-obese",
+  citation: "Ingrande J, Lemmens HJ. Dose adjustment of anaesthetics in the morbidly obese. Br J Anaesth. 2010.",
+  url: "https://doi.org/10.1093/bja/aeq312",
+};
+const TRACY: Source = {
+  id: "tracy-osa",
+  citation:
+    "Tracy E, Crandall C, Grajales A, Plunkett A. The perioperative implications of the patient with obstructive sleep apnea (OSA). A narrative review. Future Sci OA. 2025.",
+  url: "https://doi.org/10.1080/20565623.2025.2540744",
+};
+const SCHWENK: Source = {
+  id: "schwenk-ketamine",
+  citation:
+    "Schwenk ES, Viscusi ER, Buvanendran A, et al. Consensus guidelines on the use of intravenous ketamine infusions for acute pain management from the American Society of Regional Anesthesia and Pain Medicine, the American Academy of Pain Medicine, and the American Society of Anesthesiologists. Reg Anesth Pain Med. 2018.",
+  url: "https://doi.org/10.1097/AAP.0000000000000806",
+};
+
 const AUTHOR = "Preceptor";
 
 export const ANALGESIA_SEDATION_SAMPS: Samp[] = [
@@ -945,75 +963,71 @@ export const ANALGESIA_SEDATION_SAMPS: Samp[] = [
     id: "analgesia-sedation-11",
     topic: "analgesia-sedation",
     alsoTopics: ["burns"],
-    title: "Kitchen accident with hot oil",
+    title: "Soup spilled at the community hall",
     stem:
-      "A 28-year-old man spilled a pot of hot cooking oil 30 minutes ago. He has partial thickness burns to both legs and his right forearm, about 18% of total body surface area. He ran the burns under cool tap water for 5 minutes. He is screaming and rates his pain 10 out of 10. Two IVs are in place. He has no other injuries.",
-    vitals: { temperature: "36.9°C", pulse: "124/minute", resp: "22/minute", bp: "146/86 mmHg", o2sat: "99% on room air", weight: "75 kg" },
+      "A 52-year-old man is brought to the emergency department by ambulance 40 minutes after he tripped while carrying a stockpot of boiling soup in a community hall kitchen. The soup soaked the front of his trousers. Paramedics cooled the area with water and removed his clothing. He has blistered, partial thickness scalds of the front of both thighs and the lower abdomen, about 12% of total body surface area. He has severe obstructive sleep apnea and uses CPAP every night. He also has hypertension. He is 175 cm tall, and his lean body weight is about 80 kg. He is crying out and rates his pain 10 out of 10. He has an IV and has had no analgesia.",
+    vitals: { temperature: "36.9°C", pulse: "118/minute", resp: "24/minute", bp: "168/94 mmHg", o2sat: "95% on room air", weight: "150 kg" },
     questions: [
       {
         id: "q1",
         kind: "short",
-        prompt: "What measures would control his pain in the first 30 minutes, including doses for any drugs?",
-        required: 3,
+        prompt: "What body weight would you use to dose his opioid, and what first IV opioid dose would you give?",
+        required: 2,
         accept: [
-          { id: "opioid", text: "IV opioid titrated to effect, such as fentanyl 1 mcg/kg (75 mcg) every 5 minutes or morphine 0.1 mg/kg", match: ["fentanyl", "morphine", "hydromorphone", "opioid", "dilaudid"] },
-          { id: "ketamine", text: "Ketamine 0.1 to 0.3 mg/kg IV", match: ["ketamine"] },
-          { id: "cover", text: "Cover burns with clean dressings or plastic wrap to keep air off", match: ["cover", "dressing", "plastic wrap", "cling", "saran"] },
-          { id: "cool", text: "Cool running water for 20 minutes, since he is within 3 hours of the burn", match: ["cool", "cooling", "water"] },
-          { id: "acet", text: "Acetaminophen 1 g", match: ["acetaminophen", "tylenol", "paracetamol"] },
+          { id: "scalar", text: "Lean body weight, about 80 kg, not total body weight. Ideal body weight, about 70 kg, is also safe if titrated up", match: ["lean body", "lean weight", "lbw", "lean mass", "ideal body", "ideal weight", "ibw"] },
+          { id: "dose", text: "Fentanyl 1 mcg/kg of lean body weight, about 80 mcg IV, or hydromorphone 0.5 to 1 mg IV, or morphine 4 to 8 mg IV", match: ["fentanyl 50", "fentanyl 60", "fentanyl 70", "fentanyl 75", "fentanyl 80", "fentanyl 90", "fentanyl 100", "hydromorphone 0.5", "hydromorphone 1 mg", "morphine 4", "morphine 5", "morphine 6", "morphine 8"] },
         ],
         unacceptable: [
-          { text: "Intramuscular opioids", match: ["intramuscular", "im morphine", "im injection"] },
-          { text: "Ice on the burn", match: ["ice"] },
+          { text: "A dose based on his total body weight of 150 kg, such as fentanyl 150 mcg or more", match: ["fentanyl 150", "fentanyl 200", "fentanyl 225", "150 mcg", "200 mcg", "morphine 15", "hydromorphone 2 mg"] },
+          { text: "Intramuscular opioid", match: ["intramuscular", "im morphine", "im hydromorphone"] },
+          { text: "Withhold opioids because of sleep apnea", match: ["no opioid", "avoid opioid", "withhold opioid", "opioid contraindicated"] },
         ],
         explanation:
-          "Severe burn pain needs IV opioids titrated quickly, and fentanyl works fast. Covering the wound reduces pain from air currents, and cool running water for 20 minutes within 3 hours of injury reduces pain and burn depth. Ice worsens tissue injury and causes hypothermia.",
+          "Lean body weight is the best dosing scalar for opioids in severe obesity, and dosing on total body weight can cause overdose. His lean body weight is about 80 kg, so fentanyl 1 mcg/kg is about 80 mcg, repeated to effect. Dosing on 150 kg would nearly double each dose in a man whose sleep apnea already raises his risk of respiratory events from these drugs. Ideal body weight, about 70 kg for his height, is a safe place to start but can underdose, so it needs titration upward. Pain this severe still needs titrated IV opioid, so withholding opioids is not the answer.",
         keyFeature: { topic: "burns", n: 3 },
-        source: "abls",
+        source: "ingrande-obese",
       },
       {
         id: "q2",
         kind: "short",
-        update: "After fentanyl 250 mcg over 30 minutes, his pain is 8 out of 10. He is alert with RR 18 and SpO2 98%.",
-        prompt: "What are the next steps for his pain?",
-        required: 2,
+        update:
+          "Over 20 minutes he receives fentanyl 80 mcg IV three times and acetaminophen 1 g. His pain is now 7 out of 10. Between doses he dozes and snores, with pauses in his breathing, and his SpO2 falls to 86%. He wakes to voice and then breathes normally.",
+        prompt: "How would you continue to treat his pain safely?",
+        required: 3,
         accept: [
-          { id: "more", text: "Keep titrating the opioid, as there is no fixed ceiling while he is monitored", match: ["titrate", "titrating", "more fentanyl", "further", "continue", "additional"] },
-          { id: "ketamine", text: "Add low dose ketamine", match: ["ketamine"] },
-          { id: "longer", text: "Add a longer acting opioid such as hydromorphone", match: ["hydromorphone", "morphine", "longer acting", "dilaudid"] },
-          { id: "pca", text: "Patient controlled analgesia", match: ["pca", "patient controlled"] },
-          { id: "acet", text: "Scheduled acetaminophen or an NSAID", match: ["acetaminophen", "tylenol", "paracetamol", "nsaid", "ibuprofen", "ketorolac"] },
-          { id: "cover", text: "Cover the wounds", match: ["cover", "dressing", "wrap"] },
+          { id: "cpap", text: "Put on his CPAP while analgesia continues", match: ["cpap", "bipap", "noninvasive", "positive airway pressure", "nippv"] },
+          { id: "ket", text: "Add low dose ketamine to reduce opioid needs", match: ["ketamine"] },
+          { id: "monitor", text: "Continuous capnography and oximetry with close nursing observation", match: ["capnography", "capnograph", "etco2", "end tidal", "continuous oximetry", "continuous monitoring", "one to one"] },
+          { id: "position", text: "Sit him up or position him on his side", match: ["sit up", "sitting up", "upright", "head of bed", "head up", "lateral", "on his side"] },
+          { id: "smaller", text: "Smaller opioid increments with reassessment before each dose", match: ["smaller dose", "smaller increment", "lower dose", "reduce dose", "reduced dose", "smaller bolus", "fentanyl 25"] },
         ],
-        unacceptable: [{ text: "Stop because the maximum opioid dose is reached", match: ["maximum dose", "max dose", "ceiling reached"] }],
+        unacceptable: [
+          { text: "Stop all analgesia", match: ["stop analgesia", "no further analgesia", "withhold analgesia", "stop all opioid"] },
+          { text: "Add a benzodiazepine to help him sleep", match: ["lorazepam", "midazolam", "benzodiazepine", "diazepam"] },
+        ],
         explanation:
-          "He is alert and breathing normally, so he can safely receive more. Opioid needs in burns are high and there is no fixed maximum when the patient is monitored. Ketamine adds analgesia and reduces opioid requirements.",
+          "He still has moderate to severe pain, so analgesia continues, but his obstructive apnea now shows whenever he sleeps. Sleep apnea raises the risk of opioid-induced respiratory depression, and his own CPAP keeps his airway open so titration can go on. Low dose ketamine adds analgesia and reduces the opioid he needs, with less risk of airway obstruction. Continuous capnography and oximetry detect obstruction early. Sedatives and hypnotics increase airway collapsibility in a dose-dependent way and would add to the opioid effect.",
         keyFeature: { topic: "burns", n: 3 },
-        source: "abls",
+        source: "tracy-osa",
       },
       {
         id: "q3",
         kind: "single",
-        update: "His wounds need cleaning and debridement of large blisters in the ED before transfer to the burn centre.",
-        prompt: "Which of the following is the most appropriate agent for procedural sedation during the debridement?",
-        options: [
-          "Haloperidol 5 mg IV",
-          "Ketamine 1 mg/kg IV",
-          "Lorazepam 2 mg PO",
-          "Midazolam 2 mg IV alone",
-          "Propofol 1 mg/kg IV alone",
-        ],
-        correct: 1,
+        update:
+          "The burn centre asks for the large blisters to be debrided and the wounds dressed before transfer. When the nurse starts, he cries out and pulls his legs away. The nurse asks for an order for lorazepam to settle him.",
+        prompt: "Which of the following is the most appropriate medication to give before the wound care continues?",
+        options: ["Diphenhydramine 50 mg IV", "Haloperidol 5 mg IV", "Ketamine 20 mg IV", "Lorazepam 2 mg IV", "Midazolam 2 mg IV"],
+        correct: 2,
         explanation:
-          "Ketamine provides both analgesia and sedation while keeping airway reflexes and blood pressure. Propofol and midazolam sedate without relieving pain. Sedation without analgesia for a painful procedure is inadequate care.",
+          "Crying out and pulling away as the wounds are touched is procedural pain, and he needs more analgesia, not a sedative alone. Ketamine 20 mg IV is 0.25 mg/kg of his lean body weight, inside the subanesthetic bolus range of up to 0.35 mg/kg. Subanesthetic ketamine is an opioid-sparing adjunct that may be considered in sleep apnea. Lorazepam and midazolam would calm him without treating the pain and would add to the respiratory depression of the fentanyl he has already had. Haloperidol and diphenhydramine sedate but give no analgesia for the procedure.",
         keyFeature: { topic: "analgesia-sedation", n: 4 },
-        source: "green-ketamine",
+        source: "schwenk-ketamine",
       },
     ],
-    sources: [ABLS, GREEN],
-    reviewed: true,
+    sources: [INGRANDE, TRACY, SCHWENK],
+    reviewed: false,
     author: AUTHOR,
-    version: 1,
+    version: 2,
   },
   {
     id: "analgesia-sedation-12",

@@ -935,7 +935,7 @@ export const TOX_S53: Samp[] = [
           "Serum acetaminophen level",
           "Serum magnesium and potassium",
           "Twelve lead ECG",
-          "Urine drug screen for co-ingestants",
+          "Urine drug screen",
           "Venous blood gas with lactate",
         ],
         select: 4,
