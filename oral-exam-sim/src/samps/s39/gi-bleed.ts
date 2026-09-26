@@ -16,10 +16,10 @@ const S = {
   "oakland": {"id": "oakland", "citation": "Oakland K, Jairath V, Uberoi R, et al. Derivation and validation of a novel risk score for safe discharge after acute lower gastrointestinal bleeding: a modelling study. Lancet Gastroenterol Hepatol. 2017."},
   "bsg-lgib": {"id": "bsg-lgib", "citation": "Oakland K, Chadwick G, East JE, et al. Diagnosis and management of acute lower gastrointestinal bleeding: guidelines from the British Society of Gastroenterology. Gut. 2019."},
   "acg-lgib": {"id": "acg-lgib", "citation": "Sengupta N, Feuerstein JD, Jairath V, et al. Management of patients with acute lower gastrointestinal bleeding: an updated ACG guideline. Am J Gastroenterol. 2023."},
-  "lau": {"id": "lau", "citation": "Lau JYW, Yu Y, Tang RSY, et al. Timing of endoscopy for acute upper gastrointestinal bleeding. N Engl J Med. 2020."},
+  "lau": {"id": "lau", "citation": "Lau JYW, Yu Y, Tang RSY, et al. Timing of endoscopy for acute upper gastrointestinal bleeding. N Engl J Med. 2020.", "url": "https://doi.org/10.1056/NEJMoa1912484"},
   "tc-doac": {"id": "tc-doac", "citation": "Thrombosis Canada. Clinical guide: DOACs: management of bleeding. 2024.", "url": "https://thrombosiscanada.ca/clinical_guides/pdfs/MANAGEMENTOFBLEEDINGINPATIENTS_75.pdf"},
   "cbs": {"id": "cbs", "citation": "Trudeau JD, Dawe P, Shih AW. Massive hemorrhage and emergency transfusion. In: Clinical Guide to Transfusion. Canadian Blood Services. 2021.", "url": "https://professionaleducation.blood.ca/en/transfusion/clinical-guide/massive-hemorrhage-and-emergency-transfusion"},
-  "halt-it": {"id": "halt-it", "citation": "HALT-IT Trial Collaborators. Effects of a high-dose 24-h infusion of tranexamic acid on death and thromboembolic events in patients with acute gastrointestinal bleeding (HALT-IT): an international randomised, double-blind, placebo-controlled trial. Lancet. 2020."},
+  "halt-it": {"id": "halt-it", "citation": "HALT-IT Trial Collaborators. Effects of a high-dose 24-h infusion of tranexamic acid on death and thromboembolic events in patients with acute gastrointestinal bleeding (HALT-IT): an international randomised, double-blind, placebo-controlled trial. Lancet. 2020.", "url": "https://doi.org/10.1016/S0140-6736(20)30848-5"},
   "rosen-ch20": {"id": "rosen-ch20", "citation": "Walls RM, Hockberger RS, Gausche-Hill M, Erickson TB, Wilcox SR, editors. Rosen's Emergency Medicine: Concepts and Clinical Practice. 10th ed. Elsevier. 2023. Chapter 20, Hemoptysis.", "url": "https://www.us.elsevierhealth.com/rosens-emergency-medicine-concepts-and-clinical-practice-9780323757898.html"},
   "rosen-ch26": {"id": "rosen-ch26", "citation": "Walls RM, Hockberger RS, Gausche-Hill M, Erickson TB, Wilcox SR, editors. Rosen's Emergency Medicine: Concepts and Clinical Practice. 10th ed. Elsevier. 2023. Chapter 26, Gastrointestinal Bleeding.", "url": "https://www.us.elsevierhealth.com/rosens-emergency-medicine-concepts-and-clinical-practice-9780323757898.html"},
   "rosen-ch56": {"id": "rosen-ch56", "citation": "Walls RM, Hockberger RS, Gausche-Hill M, Erickson TB, Wilcox SR, editors. Rosen's Emergency Medicine: Concepts and Clinical Practice. 10th ed. Elsevier. 2023. Chapter 56, Oral Medicine.", "url": "https://www.us.elsevierhealth.com/rosens-emergency-medicine-concepts-and-clinical-practice-9780323757898.html"},
@@ -30,6 +30,7 @@ const S = {
   "hc-nsaid-pregnancy": {"id": "hc-nsaid-pregnancy", "citation": "Health Canada. Use of non-steroidal anti-inflammatory drugs (NSAIDs) beyond 20 weeks of pregnancy and risk of kidney damage in unborn babies, leading to low amniotic fluid. Public advisory. 2020.", "url": "https://recalls-rappels.canada.ca/en/alert-recall/use-non-steroidal-anti-inflammatory-drugs-nsaids-beyond-20-weeks-pregnancy-and-risk"},
   "ese-es-gcai": {"id": "ese-es-gcai", "citation": "Beuschlein F, Else T, Bancos I, et al. European Society of Endocrinology and Endocrine Society joint clinical guideline: diagnosis and therapy of glucocorticoid-induced adrenal insufficiency. J Clin Endocrinol Metab. 2024.", "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC11180513/"},
   "beran-mu": {"id": "beran-marginal-ulcer", "citation": "Beran A, Shaear M, Al-Mudares S, et al. Predictors of marginal ulcer after gastric bypass: a systematic review and meta-analysis. J Gastrointest Surg. 2023.", "url": "https://doi.org/10.1007/s11605-023-05619-7"},
+  "hht2020": {"id": "hht-2020", "citation": "Faughnan ME, Mager JJ, Hetts SW, et al. Second international guidelines for the diagnosis and management of hereditary hemorrhagic telangiectasia. Ann Intern Med. 2020.", "url": "https://doi.org/10.7326/M20-1443"},
   "srygley": {"id": "srygley-ugib", "citation": "Srygley FD, Gerardo CJ, Tran T, Fisher DA. Does this patient have a severe upper gastrointestinal bleed? JAMA. 2012.", "url": "https://pubmed.ncbi.nlm.nih.gov/22416103/"},
   "sdcep": {"id": "sdcep-anticoagulants", "citation": "Scottish Dental Clinical Effectiveness Programme. Management of dental patients taking anticoagulants or antiplatelet drugs. 2nd ed. 2022.", "url": "https://www.sdcep.org.uk/published-guidance/anticoagulants-and-antiplatelets/"},
   "araki": {"id": "araki-vkdb", "citation": "Araki S, Shirahata A. Vitamin K deficiency bleeding in infancy. Nutrients. 2020.", "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC7146284/"},
@@ -1100,99 +1101,88 @@ export const GI_BLEED_S39_SAMPS: Samp[] = [
     "version": 2
   },
   {
-    "id": "gi-bleed-27",
-    "topic": "gi-bleed",
-    "title": "Fatigue and dizziness in a woman on several medications",
-    "stem": "A 63-year-old woman presents to the emergency department with 4 days of fatigue and dizziness on standing. Yesterday she became short of breath climbing one flight of stairs. She has polymyalgia rheumatica treated with prednisone 15 mg daily for 8 months and depression treated with sertraline 100 mg daily. Two weeks ago she started naproxen 500 mg twice daily for hip pain. She drinks two glasses of wine a week. She has no abdominal pain and has not noticed any bleeding. She has not fainted. She is pale. The abdomen is soft. Rectal examination shows black stool.",
-    "vitals": {
-      "temperature": "36.9°C oral",
-      "pulse": "102/minute",
-      "resp": "18/minute",
-      "bp": "108/64 mmHg",
-      "o2sat": "98% on room air",
-      "weight": "66 kg"
+    id: "gi-bleed-27",
+    topic: "gi-bleed",
+    title: "Black stools and red spots on the lips",
+    stem: "A 61-year-old woman presents to the emergency department with 5 days of black stools and 2 weeks of fatigue. Yesterday she had to stop twice to catch her breath while walking her dog. She has had nosebleeds most weeks since her teens, each lasting a few minutes, and the last was 6 days ago. Her father and brother also have frequent nosebleeds and red spots on their lips. Two months ago she started ASA 81 mg daily on her own to prevent a heart attack. She has no heart disease, stroke, diabetes or liver disease, and no Raynaud symptoms. She is pale. Small flat red spots on her lips, tongue and fingertips blanch with pressure. Her skin is not thickened. The nose shows no active bleeding. Rectal examination shows black tarry stool.",
+    vitals: {
+      temperature: "36.8°C oral",
+      pulse: "98/minute",
+      resp: "18/minute",
+      bp: "124/76 mmHg",
+      o2sat: "98% on room air",
+      weight: "70 kg",
     },
-    "questions": [
+    questions: [
       {
-        "id": "q1",
-        "kind": "single",
-        "update": "Hemoglobin 88 g/L (131 g/L 2 months ago), urea 9.1 mmol/L, creatinine 70 umol/L, INR 1.0, platelets 290 x 10^9/L.",
-        "prompt": "Which of the following is her Glasgow Blatchford score based on these findings?",
-        "options": [
-          "6",
-          "8",
-          "10",
-          "12",
-          "14"
+        id: "q1",
+        kind: "single",
+        update: "Hemoglobin 74 g/L, MCV 66 fL, ferritin 4 mcg/L, platelets 305 x 10^9/L, INR 1.0. Liver enzymes are normal.",
+        prompt: "Which of the following is the most likely underlying cause of her bleeding?",
+        options: [
+          "Alcohol-related cirrhosis with spider angiomas",
+          "Hereditary hemorrhagic telangiectasia",
+          "Immune thrombocytopenia",
+          "Limited systemic sclerosis",
+          "Von Willebrand disease",
         ],
-        "correct": 3,
-        "explanation": "Urea 9.1 mmol/L scores 3 (8 to 10 mmol/L). Hemoglobin 88 g/L in a woman scores 6 (below 100 g/L). Systolic BP 108 mmHg scores 1, pulse 102/minute scores 1 and melena scores 1. She has not fainted and has no liver disease or heart failure. The total is 3 + 6 + 1 + 1 + 1 = 12. A score of 10 comes from placing urea in the 6.5 to 8 mmol/L band (2 points) and missing the pulse point.",
-        "keyFeature": {
-          "topic": "gi-bleed",
-          "n": 6
-        },
-        "source": "blatchford"
+        correct: 1,
+        explanation: "She has recurrent spontaneous nosebleeds, telangiectasias on the lips, tongue and fingertips, and first-degree relatives with the same features. These are three of the four Curacao diagnostic criteria for the condition. Telangiectasias in the gut explain her melena, and a ferritin of 4 mcg/L fits ongoing loss. Von Willebrand disease causes nosebleeds and runs in families but does not produce telangiectasias. Limited systemic sclerosis can, but she has no Raynaud symptoms or skin thickening. Spider angiomas of alcohol-related cirrhosis are unlikely with no known liver disease and normal liver enzymes. A platelet count of 305 x 10^9/L excludes immune thrombocytopenia.",
+        keyFeature: { topic: "gi-bleed", n: 1 },
+        source: "hht-2020",
       },
       {
-        "id": "q2",
-        "kind": "single",
-        "prompt": "Which of the following changes to her medications is most appropriate now?",
-        "options": [
-          "Continue all three with a daily PPI",
-          "Stop naproxen and continue prednisone",
-          "Stop naproxen, prednisone and sertraline",
-          "Stop prednisone and continue naproxen",
-          "Stop prednisone and sertraline today"
+        id: "q2",
+        kind: "single",
+        prompt: "Which of the following is the most appropriate change to her ASA?",
+        options: [
+          "Continue ASA with a daily PPI",
+          "Hold ASA for 7 days, then restart",
+          "Stop ASA with no substitute",
+          "Switch ASA to clopidogrel 75 mg",
+          "Switch to enteric-coated ASA",
         ],
-        "correct": 1,
-        "explanation": "Naproxen is the main cause of her bleed, and the risk is higher because she also takes an SSRI and a corticosteroid. It should be stopped. Prednisone must not be stopped suddenly after long use because of the risk of adrenal crisis and a flare of polymyalgia. Stopping sertraline abruptly causes discontinuation symptoms, so its role can be reviewed later. Adding a PPI while continuing naproxen does not address the main cause.",
-        "keyFeature": {
-          "topic": "gi-bleed",
-          "n": 1
-        },
-        "source": "ese-es-gcai"
+        correct: 2,
+        explanation: "The guideline supports antiplatelet therapy in this condition when there is an indication, weighing it against bleeding. She started ASA herself to prevent a first heart attack and has no heart disease, stroke or diabetes, so there is no indication to weigh. It adds to her bleeding and should be stopped without a replacement. A PPI protects against ulcers but not against bleeding from telangiectasias. Enteric-coated ASA and clopidogrel still impair platelet function. Restarting after a week brings back the same risk with no benefit.",
+        keyFeature: { topic: "gi-bleed", n: 1 },
+        source: "hht-2020",
       },
       {
-        "id": "q3",
-        "kind": "single",
-        "prompt": "Which of the following is the most appropriate disposition for her?",
-        "options": [
-          "Admit for endoscopy within 24 hours",
-          "Admit to ICU for immediate endoscopy",
-          "Discharge on a twice daily PPI",
-          "Discharge with outpatient endoscopy",
-          "Observe 6 hours and repeat hemoglobin"
+        id: "q3",
+        kind: "single",
+        prompt: "Which of the following is the most appropriate first investigation to find the source of her bleeding?",
+        options: [
+          "Abdominal CT angiography",
+          "Capsule endoscopy",
+          "Colonoscopy after bowel prep",
+          "Tagged red cell scan",
+          "Upper endoscopy",
         ],
-        "correct": 0,
-        "explanation": "With a Glasgow Blatchford score of 12 she is not low risk, so she needs admission and endoscopy within 24 hours. Discharge is only suggested for a score of 1 or less. She is stable after assessment, with no ongoing hematemesis or shock, so ICU admission and immediate endoscopy are not required. A short observation period does not change the need for endoscopy.",
-        "keyFeature": {
-          "topic": "gi-bleed",
-          "n": 6
-        },
-        "source": "icg"
+        correct: 4,
+        explanation: "The guideline recommends upper endoscopy as the first test for suspected GI bleeding in this condition. It also fits her melena, and lesions found can be treated at the same time. Capsule endoscopy is advised only when upper endoscopy does not find a cause. The guideline adds colonoscopy for people who meet usual colorectal cancer screening criteria, as she may at 61, but melena points first to the upper tract. CT angiography and a tagged red cell scan need brisk active bleeding to find a source, and she is stable with a picture of slow ongoing loss.",
+        keyFeature: { topic: "gi-bleed", n: 6 },
+        source: "hht-2020",
       },
       {
-        "id": "q4",
-        "kind": "single",
-        "prompt": "Which of the following tests is most important to guide her long term ulcer management?",
-        "options": [
-          "CA 19-9 tumour marker",
-          "Celiac serology",
-          "Fecal calprotectin",
-          "Helicobacter pylori testing",
-          "Serum gastrin level"
+        id: "q4",
+        kind: "single",
+        prompt: "Which of the following medications is most appropriate to give her in the emergency department?",
+        options: [
+          "Ceftriaxone 1 g IV",
+          "Desmopressin 0.3 mcg/kg IV",
+          "Octreotide 50 mcg IV bolus",
+          "Pantoprazole 80 mg IV",
+          "Vitamin K 10 mg IV",
         ],
-        "correct": 3,
-        "explanation": "Patients with a bleeding peptic ulcer should be tested for Helicobacter pylori and treated if it is present, because eradication reduces rebleeding. A negative test during the acute bleed should be repeated later because false negatives are common. A gastrin level is only checked when a gastrinoma is suspected. Celiac serology, calprotectin and CA 19-9 do not guide ulcer management.",
-        "keyFeature": {
-          "topic": "gi-bleed",
-          "n": 1
-        },
-        "source": "icg"
-      }
+        correct: 3,
+        explanation: "An ulcer from her ASA remains possible until endoscopy. The International Consensus Group states that a PPI before endoscopy may be considered to downstage an ulcer, as long as it does not delay endoscopy. Octreotide is used for variceal bleeding, and she has no liver disease. Her INR is 1.0, so vitamin K has nothing to correct. Desmopressin treats some bleeding disorders, and none has been shown here. Prophylactic ceftriaxone is given to patients with cirrhosis who bleed, and she has none.",
+        keyFeature: { topic: "gi-bleed", n: 6 },
+        source: "icg",
+      },
     ],
-    "sources": [S["blatchford"], S["icg"], S["ese-es-gcai"]],
+    sources: [S["hht2020"], S["icg"]],
     ...META,
+    version: 2,
   },
   {
     "id": "gi-bleed-28",
@@ -2575,105 +2565,92 @@ export const GI_BLEED_S39_SAMPS: Samp[] = [
     "version": 2
   },
   {
-    "id": "gi-bleed-44",
-    "topic": "gi-bleed",
-    "title": "Blood in an ileostomy bag",
-    "stem": "A 58-year-old man presents to the emergency department after his ileostomy bag filled with dark red blood three times over 4 hours. He feels dizzy on standing. He had a total colectomy with end ileostomy for ulcerative colitis 10 years ago. He has taken naproxen 500 mg twice daily for 3 weeks for back pain. He has had no vomiting. He does not drink alcohol and has no liver disease. He is pale. The stoma is pink with no bleeding from its surface. The abdomen is soft and non-tender.",
-    "vitals": {
-      "temperature": "36.6°C oral",
-      "pulse": "118/minute",
-      "resp": "20/minute",
-      "bp": "94/60 mmHg",
-      "o2sat": "97% on room air",
-      "weight": "80 kg"
+    id: "gi-bleed-44",
+    topic: "gi-bleed",
+    title: "Maroon stools during dialysis",
+    stem: "A 67-year-old man is brought to the emergency department by ambulance from his hemodialysis unit. One hour into his session he passed a large maroon stool and felt light-headed, and dialysis was stopped. He passed a second maroon stool without clots in the ambulance. He received his usual heparin bolus of 2 000 units at the start of dialysis, with no infusion. He has end-stage kidney disease from diabetes, is anuric and has a left forearm arteriovenous fistula. A colonoscopy 3 years ago showed scattered sigmoid diverticula. He takes no antiplatelet, anticoagulant or NSAID. He has no abdominal pain and has not vomited. He is pale. The abdomen is soft and non-tender. Rectal examination shows maroon stool.",
+    vitals: {
+      temperature: "36.4°C oral",
+      pulse: "118/minute",
+      resp: "20/minute",
+      bp: "88/54 mmHg",
+      o2sat: "97% on room air",
+      weight: "78 kg",
     },
-    "questions": [
+    questions: [
       {
-        "id": "q1",
-        "kind": "single",
-        "prompt": "Which of the following is the most likely source of his bleeding?",
-        "options": [
-          "Colonic diverticular bleeding",
-          "Peptic ulcer from naproxen",
-          "Retained rectal stump",
-          "Small bowel angiodysplasia",
-          "Stoma mucosal trauma"
+        id: "q1",
+        kind: "single",
+        update: "Hemoglobin 68 g/L (104 g/L last week), urea 31.0 mmol/L, creatinine 690 umol/L, INR 1.1, aPTT 31 seconds, platelets 212 x 10^9/L.",
+        prompt: "Which of the following usual clues to an upper GI source is made unreliable by his kidney failure?",
+        options: [
+          "Absence of clots in the stool",
+          "Maroon colour of the stool",
+          "Tachycardia with hypotension",
+          "Urea to creatinine ratio",
+          "Vomiting of blood",
         ],
-        "correct": 1,
-        "explanation": "Brisk bleeding from an upper GI source can pass quickly through the small bowel and appear as dark red blood in an ileostomy bag. With 3 weeks of naproxen, a peptic ulcer is most likely. He has no colon, so diverticular bleeding is impossible. A rectal stump would bleed per rectum, not into the stoma. The stoma surface is not bleeding. Angiodysplasia is possible but less likely than an NSAID ulcer.",
-        "keyFeature": {
-          "topic": "gi-bleed",
-          "n": 2
-        },
-        "source": "rosen-ch26"
+        correct: 3,
+        explanation: "In a systematic review of bedside findings, a urea nitrogen to creatinine ratio above 30 in conventional units made an upper source more likely. In his case both values are set by kidney failure and dialysis, not by digested blood. His ratio is about 11 (urea 31.0 mmol/L is 86.8 mg/dL, and creatinine 690 umol/L is 7.8 mg/dL), so it looks reassuring whatever the source. Tachycardia with hypotension still reflects the size of the bleed. Stool colour, clots and vomiting of blood are not changed by kidney function.",
+        keyFeature: { topic: "gi-bleed", n: 2 },
+        source: "srygley-ugib",
       },
       {
-        "id": "q2",
-        "kind": "single",
-        "prompt": "Which of the following is the most appropriate first endoscopic procedure?",
-        "options": [
-          "Capsule endoscopy",
-          "Ileoscopy through the stoma",
-          "Push enteroscopy",
-          "Sigmoidoscopy of the stump",
-          "Upper endoscopy"
+        id: "q2",
+        kind: "single",
+        prompt: "Which of the following stool findings would most lower the likelihood of an upper GI source?",
+        options: [
+          "Black tarry stool",
+          "Blood clots in the stool",
+          "Large stool volume",
+          "Maroon rather than red colour",
+          "Positive fecal occult blood",
         ],
-        "correct": 4,
-        "explanation": "The likely source is a duodenal or gastric ulcer, so upper endoscopy within 24 hours is the first procedure and allows treatment. Ileoscopy through the stoma looks only at the distal ileum. Capsule endoscopy cannot treat and is used after negative upper and lower studies. Push enteroscopy is for suspected proximal small bowel lesions after a negative upper endoscopy. He has no colon to examine.",
-        "keyFeature": {
-          "topic": "gi-bleed",
-          "n": 2
-        },
-        "source": "icg"
+        correct: 1,
+        explanation: "In the same review, blood clots in the stool had a likelihood ratio of 0.05 for an upper source, which makes it much less likely. His stools had no clots, so this finding does not argue against an upper source in his case. Black tarry stool seen on examination raises the likelihood of an upper source, with a likelihood ratio of 25. A large volume reflects a brisk bleed from any level. A positive occult blood test confirms blood but does not locate it. Maroon stool is darker than fresh red blood and does not point away from the upper tract.",
+        keyFeature: { topic: "gi-bleed", n: 2 },
+        source: "srygley-ugib",
       },
       {
-        "id": "q3",
-        "kind": "menu",
-        "prompt": "Which of the following are the most appropriate immediate measures for him?",
-        "options": [
-          "Crossmatch 4 units of red cells",
-          "Loperamide 4 mg PO",
-          "Normal saline 4 L IV",
-          "Octreotide 50 mcg IV bolus",
-          "Pantoprazole 80 mg IV",
+        id: "q3",
+        kind: "menu",
+        select: 2,
+        prompt: "Which of the following are the most appropriate immediate measures for him?",
+        options: [
+          "Crossmatch 2 units of red cells",
+          "Crystalloid 2 L IV bolus",
+          "Crystalloid 500 mL IV bolus",
+          "Frozen plasma 15 mL/kg IV",
+          "Platelets 1 adult dose IV",
+          "Protamine 20 mg IV",
           "Tranexamic acid 1 g IV",
-          "Vitamin K 10 mg IV"
         ],
-        "select": 2,
-        "correct": [
-          0,
-          4
-        ],
-        "explanation": "He has tachycardia and a low BP from GI bleeding, so blood should be crossmatched early, and an IV PPI given for a likely ulcer. Tranexamic acid did not reduce death in GI bleeding in the HALT-IT trial and increased venous thrombosis. Octreotide is for variceal bleeding. Loperamide reduces stoma output but does not treat bleeding. Large crystalloid volumes dilute clotting factors, and vitamin K has no role without warfarin or liver disease.",
-        "keyFeature": {
-          "topic": "gi-bleed",
-          "n": 5
-        },
-        "source": "halt-it"
+        correct: [0, 2],
+        explanation: "He is hypotensive and tachycardic with a hemoglobin of 68 g/L, so red cells should be crossmatched now. A modest crystalloid bolus supports his BP while the blood is prepared. He is anuric, so 2 L of crystalloid cannot be excreted, risks pulmonary edema and dilutes clotting factors. His INR of 1.1 and platelets of 212 x 10^9/L need no plasma or platelets. His heparin was a single bolus at the start of dialysis and his aPTT is 31 seconds, so protamine has nothing to reverse. In the HALT-IT trial, tranexamic acid did not reduce death from GI bleeding and increased venous thrombosis.",
+        keyFeature: { topic: "gi-bleed", n: 5 },
+        source: "halt-it",
       },
       {
-        "id": "q4",
-        "kind": "single",
-        "update": "After 2 units of red cells he is stable. Endoscopy shows a duodenal ulcer with a clean base and no stigmata of recent bleeding.",
-        "prompt": "Which of the following is the most appropriate plan after this endoscopy?",
-        "options": [
-          "Admit for 72 hours of IV PPI",
-          "Angiographic embolization",
-          "Discharge without a PPI",
-          "Oral PPI and early discharge",
-          "Repeat endoscopy in 24 hours"
+        id: "q4",
+        kind: "single",
+        update: "After resuscitation in the emergency department his pulse is 94/minute and his systolic BP is 116 mmHg. He has had no further stool.",
+        prompt: "Which of the following is the most appropriate timing for his upper endoscopy?",
+        options: [
+          "After colonoscopy",
+          "Only if bleeding recurs",
+          "Within 6 hours",
+          "Within 24 hours",
+          "Within 72 hours",
         ],
-        "correct": 3,
-        "explanation": "A clean-based ulcer has a low risk of rebleeding, so he can start oral PPI therapy and be discharged early once stable, with Helicobacter pylori testing arranged. High dose IV PPI for 72 hours is for high risk stigmata such as a visible vessel. Routine second-look endoscopy is not recommended. Embolization is a rescue for bleeding that endoscopy cannot control. He still needs a PPI to heal the ulcer and should stop naproxen.",
-        "keyFeature": {
-          "topic": "gi-bleed",
-          "n": 6
-        },
-        "source": "icg"
-      }
+        correct: 3,
+        explanation: "His shock responded to resuscitation, and once a patient is stable, endoscopy within 24 hours is the usual recommendation for upper GI bleeding. In a randomized trial of high-risk patients whose blood pressure responded to resuscitation, endoscopy within 6 hours of gastroenterology consultation did not lower 30-day mortality compared with endoscopy at 6 to 24 hours. That trial excluded patients whose shock did not respond, and for them endoscopy should not wait. Waiting 72 hours, or until after colonoscopy, leaves a possible upper source unexamined in a man who has already been in shock. Waiting for rebleeding risks a second episode of shock.",
+        keyFeature: { topic: "gi-bleed", n: 6 },
+        source: "lau",
+      },
     ],
-    "sources": [S["halt-it"], S["icg"], S["rosen-ch26"]],
+    sources: [S["srygley"], S["halt-it"], S["lau"]],
     ...META,
+    version: 2,
   },
   {
     "id": "gi-bleed-45",

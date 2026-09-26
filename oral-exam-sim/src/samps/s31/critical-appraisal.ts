@@ -98,10 +98,10 @@ const S: Record<string, Source> = {
     citation: "Kuppermann N, Holmes JF, Dayan PS, et al. Identification of children at very low risk of clinically-important brain injuries after head trauma. A prospective cohort study. Lancet 2009.",
     url: "https://doi.org/10.1016/S0140-6736(09)61558-0",
   },
-  idsa: {
-    id: "idsa-ssti",
-    citation: "Stevens DL, Bisno AL, Chambers HF, et al. Practice guidelines for the diagnosis and management of skin and soft tissue infections. 2014 update by the Infectious Diseases Society of America. Clinical Infectious Diseases 2014.",
-    url: "https://academic.oup.com/cid/article/59/2/e10/2895845",
+  tetsuka: {
+    id: "tetsuka-sea",
+    citation: "Tetsuka S, Suzuki T, Ogawa T, Hashimoto R, Kato H. Spinal epidural abscess: a review highlighting early diagnosis and management. JMA Journal 2020.",
+    url: "https://doi.org/10.31662/jmaj.2019-0038",
   },
   cps: {
     id: "cps-bronchiolitis",
@@ -1089,16 +1089,16 @@ export const CRITICAL_APPRAISAL_S31: Samp[] = [
   {
     id: "critical-appraisal-28",
     topic: "critical-appraisal",
-    title: "A low marker and a worrying thigh",
+    title: "A low marker and a sore back",
     stem:
-      "A 46-year-old man presents to the emergency department with 24 hours of worsening right thigh pain. He scraped the thigh on a fence 2 days ago. He has type 2 diabetes treated with metformin. He has 10 cm of erythema over the lateral thigh with tense edema extending beyond it. The pain is severe and out of proportion to the skin findings. There is no crepitus. A fictional serum biomarker, marker N, is 0.6 ng/mL. A fictional study of marker N in 400 adults with suspected necrotizing soft tissue infection reports an area under the ROC curve of 0.80. Surgical exploration was the reference standard for all patients.",
-    vitals: { temperature: "38.6°C oral", pulse: "118/minute", resp: "22/minute", bp: "88/56 mmHg", o2sat: "97% on room air", weight: "104 kg" },
+      "A 57-year-old man presents to the emergency department with 5 days of worsening mid-back pain that now wakes him at night. Two weeks ago a walk-in clinic drained a boil on his left thigh. He has rheumatoid arthritis treated with methotrexate and prednisone 10 mg daily. He has focal tenderness over the T10 spinous process. Leg strength, sensation and reflexes are normal, and a bladder scan after voiding shows 40 mL. A fictional serum biomarker, marker E, is 0.6 ng/mL. A fictional study of marker E in 400 adults with suspected spinal epidural abscess reports an area under the ROC curve of 0.80. Gadolinium-enhanced MRI was the reference standard for all patients.",
+    vitals: { temperature: "38.3°C oral", pulse: "104/minute", resp: "18/minute", bp: "132/78 mmHg", o2sat: "98% on room air", weight: "82 kg" },
     questions: [
       {
         id: "q1",
         kind: "single",
         update: "The study reports three cutoffs. At 1.0 ng/mL, sensitivity is 95% and specificity 40%. At 2.5 ng/mL, 80% and 75%. At 5.0 ng/mL, 50% and 95%.",
-        prompt: "Which of the following is the negative likelihood ratio of marker N at the 1.0 ng/mL cutoff?",
+        prompt: "Which of the following is the negative likelihood ratio of marker E at the 1.0 ng/mL cutoff?",
         options: ["0.05", "0.13", "0.27", "0.53", "1.6"],
         correct: 1,
         explanation:
@@ -1109,8 +1109,8 @@ export const CRITICAL_APPRAISAL_S31: Samp[] = [
       {
         id: "q2",
         kind: "single",
-        update: "Before the result, you estimated his probability of necrotizing infection at 50% from his findings.",
-        prompt: "Which of the following is closest to his probability of necrotizing infection after the marker N result of 0.6 ng/mL?",
+        update: "Before the result, you estimated his probability of spinal epidural abscess at 50% from his findings.",
+        prompt: "Which of the following is closest to his probability of spinal epidural abscess after the marker E result of 0.6 ng/mL?",
         options: ["5%", "6%", "11%", "21%", "34%"],
         correct: 2,
         explanation:
@@ -1121,7 +1121,7 @@ export const CRITICAL_APPRAISAL_S31: Samp[] = [
       {
         id: "q3",
         kind: "single",
-        prompt: "Which of the following is the best interpretation of the area under the ROC curve of 0.80 for marker N?",
+        prompt: "Which of the following is the best interpretation of the area under the ROC curve of 0.80 for marker E?",
         options: [
           "80% of patients are correctly classified",
           "Probability a case outranks a non-case is 0.80",
@@ -1138,23 +1138,25 @@ export const CRITICAL_APPRAISAL_S31: Samp[] = [
       {
         id: "q4",
         kind: "single",
-        prompt: "Which of the following is the most appropriate next step for this patient?",
+        update: "Two sets of blood cultures have been drawn. His leg strength, sensation and reflexes remain normal.",
+        prompt: "Which of the following is the most appropriate next diagnostic step for this patient?",
         options: [
-          "Discharge on oral antibiotics",
-          "IV antibiotics and admit to medicine",
-          "MRI of the thigh before any surgery",
-          "Repeat marker N in 6 hours",
-          "Urgent surgical consultation for exploration",
+          "CT of the thoracic spine without contrast",
+          "Emergency MRI with gadolinium",
+          "Lumbar puncture for CSF culture",
+          "Repeat marker E in 6 hours",
+          "Thoracic spine radiographs",
         ],
-        correct: 4,
+        correct: 1,
         explanation:
-          "An 11% chance of a necrotizing infection, with hypotension, tachycardia and pain out of proportion, is far too high to accept, so the low marker must not delay surgery. Surgical exploration is both the diagnostic standard and the treatment, alongside broad IV antibiotics. Admission to medicine or a repeat marker in 6 hours lets a rapidly lethal infection progress. MRI delays surgery and should not hold up exploration when suspicion is high. Discharge on oral antibiotics is unsafe in a hypotensive patient.",
+          "An 11% chance of spinal epidural abscess is far too high to accept, because a missed abscess can cause permanent paralysis. He has two risk factors the review names, long-term corticosteroids and a recent skin infection, along with fever, night pain and focal spinal tenderness. Gadolinium-enhanced MRI is the most sensitive and specific test and should be done urgently once the diagnosis is suspected. Repeating the marker in 6 hours only delays that diagnosis. The review advises against a lumbar puncture until an abscess is ruled out, because the needle can spread the infection. Plain radiographs and CT without contrast are less sensitive than gadolinium-enhanced MRI for pus in the epidural space.",
         keyFeature: { topic: "critical-appraisal", n: 5 },
-        source: "idsa-ssti",
+        source: "tetsuka-sea",
       },
     ],
-    sources: [S.ug, S.idsa],
+    sources: [S.ug, S.tetsuka],
     ...META,
+    version: 2,
   },
   /* 29 ----------------------------------------------------------------- */
   {

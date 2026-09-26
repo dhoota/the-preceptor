@@ -2429,86 +2429,84 @@ export const INFECTIOUS_DISEASES_S41_SAMPS: Samp[] = [
     "version": 2
   },
   {
-    "id": "infectious-diseases-40",
-    "topic": "infectious-diseases",
-    "title": "Worried after his girlfriend's admission",
-    "stem": "You are working in an emergency department in Manitoba. A 20-year-old man presents because his girlfriend, a 19-year-old university student, was admitted last night with meningococcal septicemia. The laboratory now reports Neisseria meningitidis serogroup W from her blood. He kissed her the day before she became ill and last saw her 30 hours ago. He feels well, with no fever, headache or rash. He received a meningococcal ACYW conjugate vaccine at age 14 and has no condition that raises his risk of meningococcal disease. He takes no medications and has no allergies. Her roommate, who shares her dormitory room and is 28 weeks pregnant, has come with him. His examination is normal.",
-    "vitals": {
-      "temperature": "36.8°C oral",
-      "pulse": "76/minute",
-      "resp": "16/minute",
-      "bp": "124/76 mmHg",
-      "o2sat": "99% on room air",
-      "weight": "78 kg"
+    id: "infectious-diseases-40",
+    topic: "infectious-diseases",
+    title: "Family of a coughing teenager",
+    stem: "You are working in an emergency department in Manitoba. A 31-year-old woman who is 33 weeks pregnant presents with her husband and their 4-year-old daughter. Her 15-year-old son was diagnosed with pertussis by PCR today at his family physician's office and started treatment. His illness began 9 days ago with a runny nose and cough, and the family has lived together throughout. The woman, her husband and her daughter feel well and have no cough. Her daughter is fully immunized for her age. The woman missed her prenatal visit at 28 weeks and has not had a pertussis-containing vaccine in this pregnancy. She has no allergies and takes prenatal vitamins. Her examination is normal.",
+    vitals: {
+      temperature: "36.7°C oral",
+      pulse: "88/minute",
+      resp: "16/minute",
+      bp: "114/70 mmHg",
+      o2sat: "99% on room air",
+      weight: "72 kg",
     },
-    "questions": [
+    questions: [
       {
-        "id": "q1",
-        "kind": "single",
-        "prompt": "Which of the following is the most appropriate timing of chemoprophylaxis for close contacts of this case?",
-        "options": [
-          "After a nasal swab confirms carriage",
-          "As soon as possible, within 24 hours",
-          "At day 7 if he stays well",
-          "Only if he develops fever or rash",
-          "Within 14 days of the last contact"
+        id: "q1",
+        kind: "menu",
+        select: 2,
+        prompt: "Which of the following contacts of her son should receive antibiotic chemoprophylaxis?",
+        options: [
+          "Her 4-year-old daughter",
+          "Her husband",
+          "Her son's classmates",
+          "Her son's hockey teammates",
+          "Her son's teacher",
+          "His school bus driver",
         ],
-        "correct": 1,
-        "explanation": "Kissing on the mouth is direct contact with her oral secretions, so he is a close contact. The Manitoba protocol advises chemoprophylaxis as soon as possible and preferably within 24 hours of identifying the case. It is still recommended up to 10 days after the last contact, not 14. A healthy person with a positive nasopharyngeal culture needs prophylaxis only if they are also a close contact, so a swab does not decide who is treated and waiting for it only delays treatment. Waiting for fever, a rash or day 7 gives up the benefit of early prophylaxis.",
-        "keyFeature": {
-          "topic": "infectious-diseases",
-          "n": 10
-        },
-        "source": "mb-imd"
+        correct: [0, 1],
+        explanation: "The provincial protocol limits household chemoprophylaxis to homes where a vulnerable person lives, meaning an infant under 1 year or a pregnant person in the third trimester. At 33 weeks the woman is in her third trimester, so every household contact is treated, vaccinated or not. That includes her husband and her fully immunized daughter. Classmates, teammates, a teacher and a bus driver are contacts outside the home. There, prophylaxis is offered only to vulnerable people, and none of them is described as vulnerable. His illness began 9 days ago, so every household contact is within the 21 days after first contact when prophylaxis can still help.",
+        keyFeature: { topic: "infectious-diseases", n: 10 },
+        source: "mb-pertussis",
       },
       {
-        "id": "q2",
-        "kind": "single",
-        "prompt": "Which of the following is the most appropriate chemoprophylaxis for the pregnant roommate?",
-        "options": [
-          "amoxicillin 500 mg PO three times daily",
-          "azithromycin 500 mg PO once",
-          "ceftriaxone 250 mg IM once",
-          "ciprofloxacin 500 mg PO once",
-          "rifampin 600 mg PO every 12 hours for 2 days"
+        id: "q2",
+        kind: "single",
+        prompt: "Which of the following is the most appropriate chemoprophylaxis for the woman?",
+        options: [
+          "amoxicillin 500 mg PO three times daily for 7 days",
+          "azithromycin 500 mg then 250 mg PO daily, 5 days",
+          "cephalexin 500 mg PO four times daily for 7 days",
+          "clarithromycin 500 mg PO twice daily for 7 days",
+          "doxycycline 100 mg PO twice daily for 7 days",
         ],
-        "correct": 2,
-        "explanation": "She shares a sleeping room with the case, which makes her a close contact. The provincial protocol lists ceftriaxone 250 mg IM once as the recommended drug for pregnant women. Ciprofloxacin and rifampin are both listed as contraindicated in pregnancy. Amoxicillin does not eradicate nasopharyngeal carriage. Azithromycin is not a listed option in the provincial protocol.",
-        "keyFeature": {
-          "topic": "infectious-diseases",
-          "n": 10
-        },
-        "source": "mb-imd"
+        correct: 1,
+        explanation: "The provincial protocol names azithromycin as the preferred drug for all ages and states that pregnancy is not a contraindication. The adult course is 500 mg on day 1, then 250 mg daily for 4 more days. Clarithromycin is effective against pertussis but is not recommended in pregnancy. Doxycycline is avoided in pregnancy and is not a listed agent for pertussis. Amoxicillin and cephalexin are not among the agents the protocol lists for treatment or prophylaxis.",
+        keyFeature: { topic: "infectious-diseases", n: 10 },
+        source: "mb-pertussis",
       },
       {
-        "id": "q3",
-        "kind": "single",
-        "prompt": "Which of the following is the most appropriate plan for him?",
-        "options": [
-          "ACYW conjugate vaccine only",
-          "Chemoprophylaxis only, no vaccine",
-          "Chemoprophylaxis plus ACYW vaccine",
-          "Chemoprophylaxis plus MenB vaccine",
-          "No chemoprophylaxis or vaccine"
+        id: "q3",
+        kind: "single",
+        prompt: "Which of the following is the most appropriate plan for her pertussis immunization?",
+        options: [
+          "Td booster today instead",
+          "Tdap after delivery only",
+          "Tdap in her next pregnancy",
+          "Tdap today, before delivery",
+          "No pertussis vaccine",
         ],
-        "correct": 2,
-        "explanation": "Chemoprophylaxis is recommended for close contacts regardless of immunization status. The case is serogroup W, which Men-C-ACYW vaccine covers. A close contact who was vaccinated after age 1, is not at high risk and was last vaccinated at least a year ago should receive a further dose of Men-C-ACYW, so he needs both. A MenB vaccine does not cover serogroup W. Vaccine alone does not act fast enough to prevent early secondary cases.",
-        "keyFeature": {
-          "topic": "infectious-diseases",
-          "n": 10
-        },
-        "source": "mb-imd"
-      }
+        correct: 3,
+        explanation: "The Canadian Immunization Guide recommends Tdap in every pregnancy, ideally at 27 to 32 weeks. It adds that Tdap should be considered until the end of pregnancy because it can still give partial protection. She missed the ideal window, so she should receive it now at 33 weeks. Antibiotics clear current exposure but do not give her baby antibodies. A dose after delivery or in a later pregnancy does nothing for this baby before birth. Td contains no pertussis component.",
+        keyFeature: { topic: "infectious-diseases", n: 10 },
+        source: "cig-pertussis",
+      },
     ],
-    "sources": [
-    {
-      "id": "mb-imd",
-      "citation": "Manitoba Health. Communicable disease management protocol: invasive meningococcal disease (updated January 2025). Government of Manitoba. 2025.",
-      "url": "https://www.gov.mb.ca/health/publichealth/cdc/protocol/mid.pdf"
-    }
-  ],
+    sources: [
+      {
+        id: "mb-pertussis",
+        citation: "Manitoba Health, Seniors and Long-Term Care. Communicable disease management protocol: pertussis (whooping cough). Government of Manitoba. September 2024.",
+        url: "https://www.gov.mb.ca/health/publichealth/cdc/protocol/pertussis.pdf",
+      },
+      {
+        id: "cig-pertussis",
+        citation: "Public Health Agency of Canada. Canadian Immunization Guide. Part 4. Pertussis (whooping cough) vaccine. Updated 2026.",
+        url: "https://www.canada.ca/en/public-health/services/publications/healthy-living/canadian-immunization-guide-part-4-active-vaccines/page-15-pertussis-vaccine.html",
+      },
+    ],
     ...META,
-    "version": 2
+    version: 3,
   },
   {
     id: "infectious-diseases-41",
@@ -2595,83 +2593,76 @@ export const INFECTIOUS_DISEASES_S41_SAMPS: Samp[] = [
   {
     id: "infectious-diseases-42",
     topic: "infectious-diseases",
-    title: "Farm injury in an older woman",
-    stem: "You are working in a rural hospital emergency department. A 72-year-old woman presents 5 hours after she stepped on a pitchfork tine in her barn. The tine went through the sole of her rubber boot into her left heel. She grew up on a farm abroad and does not recall ever being vaccinated, and her daughter confirms there are no immunization records. She has hypertension treated with hydrochlorothiazide. There is a 5 mm puncture wound on the left heel with soil in it. There is no redness. She can bear weight.",
+    title: "A husband after his wife's diagnosis",
+    stem: "A 52-year-old man presents to the emergency department because his wife was diagnosed yesterday with acute hepatitis A. Her nausea began 8 days ago and her jaundice 2 days ago. They share a home, meals and a bed. He feels well, with no nausea, dark urine or jaundice. He has cirrhosis from hepatitis C, which was cured 3 years ago. He also has type 2 diabetes treated with metformin and hypertension treated with ramipril, and he takes omeprazole for heartburn. He was born in Canada, has never received hepatitis A vaccine and has never had hepatitis A. His sclerae are not icteric, and his abdomen is soft without ascites.",
     vitals: {
-      temperature: "36.7°C oral",
-      pulse: "78/minute",
-      resp: "16/minute",
-      bp: "152/86 mmHg",
+      temperature: "36.6°C oral",
+      pulse: "72/minute",
+      resp: "14/minute",
+      bp: "132/80 mmHg",
       o2sat: "98% on room air",
-      weight: "70 kg"
+      weight: "82 kg",
     },
     questions: [
       {
         id: "q1",
-        prompt: "Which of the following is the most appropriate tetanus prophylaxis today?",
         kind: "single",
+        prompt: "Which of the following features most increases his risk of severe hepatitis A if he is infected?",
         options: [
-          "Immune globulin 250 units IM alone",
-          "Tdap and immune globulin 250 units IM",
-          "Tdap and immune globulin 500 units IM",
-          "Tdap vaccine alone",
-          "No prophylaxis, as the wound is small"
+          "Birth in Canada",
+          "Cirrhosis from hepatitis C",
+          "Daily omeprazole use",
+          "Hypertension on ramipril",
+          "Type 2 diabetes on metformin",
         ],
         correct: 1,
-        explanation: "A deep puncture contaminated with soil is not a clean minor wound, and she has no record of a primary series. With an unknown history or fewer than 3 doses, she needs both a tetanus containing vaccine and tetanus immune globulin. The immune globulin dose for adults is 250 units by deep IM injection. Tdap is preferred because she has had no pertussis dose as an adult. Vaccine alone gives no immediate protection, and a small wound does not remove the risk.",
-        keyFeature: {
-          topic: "infectious-diseases",
-          n: 10
-        },
-        source: "cig-tetanus"
+        explanation: "The Canadian Immunization Guide states that people with chronic liver disease have an increased risk of progressing to fulminant hepatic failure and death from hepatitis A. His cirrhosis remains even though the hepatitis C was cured. Being born in Canada makes it less likely that he is already immune, which raises his chance of infection but not its severity. The guide does not name diabetes, hypertension or omeprazole as risk factors for severe hepatitis A.",
+        keyFeature: { topic: "infectious-diseases", n: 3 },
+        source: "cig-hepa",
       },
       {
         id: "q2",
-        prompt: "Which of the following is the most appropriate plan for her further tetanus immunization?",
         kind: "single",
+        prompt: "Which of the following is the most appropriate post-exposure prophylaxis for him?",
         options: [
-          "Complete a 3 dose primary series",
-          "One booster dose in 10 years",
-          "Repeat immune globulin in 4 weeks",
-          "Serology to guide further doses",
-          "No further doses after today"
+          "Hepatitis A vaccine alone",
+          "Immune globulin alone",
+          "Serology first, then vaccine",
+          "Vaccine plus immune globulin",
+          "No prophylaxis this late",
         ],
-        correct: 0,
-        explanation: "An adult who was never immunized needs a full primary series of 3 doses of tetanus and diphtheria toxoid, and today's dose is the first. Boosters every 10 years start only after the primary series is complete. Immune globulin gives temporary passive protection and is not repeated for this wound. Serology is not used to plan routine tetanus doses.",
-        keyFeature: {
-          topic: "infectious-diseases",
-          n: 10
-        },
-        source: "cig-tetanus"
+        correct: 3,
+        explanation: "The guide recommends hepatitis A vaccine for susceptible household contacts as soon as possible, preferably within 14 days of the last exposure. It adds that people with chronic liver disease should receive immune globulin as well as vaccine. He lives with his wife, so his last exposure is today and he is well within that window. Vaccine alone is for healthy contacts, and immune globulin alone is for people who cannot receive vaccine, such as infants under 6 months. Serology is mainly considered where prior immunity is likely, and waiting for it delays protection in a Canadian-born man with no history of hepatitis A.",
+        keyFeature: { topic: "infectious-diseases", n: 10 },
+        source: "cig-hepa",
       },
       {
         id: "q3",
-        prompt: "Which of the following groups in Canada is least likely to have completed a primary tetanus series?",
         kind: "single",
+        update: "Their 24-year-old daughter lives with them and shares meals. She is healthy, is not pregnant and has never received hepatitis A vaccine.",
+        prompt: "Which of the following is the most appropriate post-exposure prophylaxis for the daughter?",
         options: [
-          "Adolescents aged 14 to 16 years",
-          "Adults aged 60 years or older",
-          "Children aged 4 to 6 years",
-          "Health care workers",
-          "Pregnant people in prenatal care"
+          "Hepatitis A vaccine alone",
+          "Immune globulin alone",
+          "Serology first, then vaccine",
+          "Vaccine plus immune globulin",
+          "No prophylaxis while she is well",
         ],
-        correct: 1,
-        explanation: "In Canada, people aged 60 or older account for over half of tetanus cases, and increasing age, birth outside Canada and missing records are linked to a lack of tetanus immunity. This woman fits that pattern. Children and adolescents receive tetanus toxoid through routine school and infant programs. Health care workers and pregnant people have their immunizations reviewed as part of routine care.",
-        keyFeature: {
-          topic: "infectious-diseases",
-          n: 3
-        },
-        source: "cig-tetanus"
-      }
+        correct: 0,
+        explanation: "For healthy household contacts aged 6 months or older, the guide recommends hepatitis A vaccine in preference to immune globulin, given as soon as possible and preferably within 14 days of the last exposure. She is 24, healthy and has no liver disease or immune compromise, so she does not need immune globulin as well. Immune globulin alone is for infants under 6 months and people who cannot receive vaccine. Feeling well now does not exclude infection in its incubation period, and waiting for serology delays protection.",
+        keyFeature: { topic: "infectious-diseases", n: 10 },
+        source: "cig-hepa",
+      },
     ],
     sources: [
       {
-        id: "cig-tetanus",
-        citation: "Public Health Agency of Canada. Canadian Immunization Guide. Tetanus toxoid chapter, including tetanus prophylaxis in wound management. Updated 2026.",
-        url: "https://www.canada.ca/en/public-health/services/publications/healthy-living/canadian-immunization-guide-part-4-active-vaccines/page-22-tetanus-toxoid.html"
-      }
+        id: "cig-hepa",
+        citation: "Public Health Agency of Canada. Canadian Immunization Guide. Part 4. Hepatitis A vaccine, including post-exposure prophylaxis. Updated 2021.",
+        url: "https://www.canada.ca/en/public-health/services/publications/healthy-living/canadian-immunization-guide-part-4-active-vaccines/page-6-hepatitis-a-vaccine.html",
+      },
     ],
-    ...META
+    ...META,
+    version: 2,
   },
   {
     id: "infectious-diseases-43",
