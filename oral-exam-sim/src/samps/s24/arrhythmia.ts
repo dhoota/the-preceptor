@@ -1194,103 +1194,110 @@ export const ARRHYTHMIA_S24: Samp[] = [
   {
     id: "arrhythmia-29",
     topic: "arrhythmia",
-    title: "Found unresponsive after an asthma attack",
-    stem: "A 47-year-old woman is brought to the emergency department by ambulance after a cardiac arrest at home. Her husband found her unresponsive and not breathing after a severe asthma attack and started CPR. Paramedics found pulseless electrical activity. After ventilation, intubation and two doses of epinephrine, she had return of spontaneous circulation 24 minutes after the arrest. In the emergency department she is ventilated with no sedation. She does not open her eyes or follow commands, and her pupils are 4 mm and reactive. Breath sounds are equal and a chest radiograph shows no pneumothorax. Glucose is 9.4 mmol/L.",
+    title: "Collapse behind the arena",
+    stem: "A 12-year-old boy is brought to the emergency department by ambulance after a cardiac arrest. Friends say he was inhaling gas from a butane lighter refill canister behind the arena when a police car pulled in. He ran about 20 m and collapsed. A bystander started CPR within 1 minute. The AED advised two shocks, and he had return of spontaneous circulation 11 minutes after collapse. Paramedics intubated him. He has no medical history and no family history of sudden death. He was not struck in the chest. He has had no sedation. He does not open his eyes and has no motor response to pain. His pupils are 3 mm and reactive. A 12-lead ECG shows sinus tachycardia, a normal PR interval, no delta wave and a QTc of 430 ms. Potassium is 3.9 mmol/L.",
     vitals: {
-      temperature: "36.2°C core",
-      pulse: "112/minute",
-      resp: "16/minute",
-      bp: "104/62 mmHg",
-      o2sat: "97% on FiO2 0.6"
+      temperature: "37.1°C rectal",
+      pulse: "128/minute",
+      resp: "20/minute",
+      bp: "98/58 mmHg",
+      o2sat: "98% on FiO2 0.4",
+      weight: "40 kg"
     },
     questions: [
       {
         id: "q1",
         kind: "single",
-        prompt: "Which of the following is the most appropriate approach to her temperature?",
+        prompt: "Which of the following is the most likely cause of his cardiac arrest?",
         options: [
-          "Deliberate temperature control now",
-          "Passive rewarming with warm blankets",
-          "Temperature control after CT excludes bleeding",
-          "Temperature control only if fever develops",
-          "No temperature control after a nonshockable arrest"
+          "Commotio cordis from a chest blow",
+          "Congenital long QT syndrome",
+          "Hypoxia from the inhaled gas",
+          "Myocardial sensitization by butane",
+          "Wolff-Parkinson-White syndrome"
         ],
-        correct: 0,
-        explanation: "She remains comatose after return of spontaneous circulation, so she needs deliberate temperature control at a constant target between 32 and 37.5°C. The recommendation covers comatose adults after any first rhythm, including pulseless electrical activity. Waiting for fever or warming her with blankets lets her temperature drift and risks further brain injury. A CT is not required before temperature control begins.",
-        keyFeature: {
-          topic: "arrhythmia",
-          n: 8
-        },
-        source: "aha-pca"
-      },
-      {
-        id: "q2",
-        kind: "single",
-        prompt: "Which of the following is the minimum recommended duration of deliberate temperature control for her?",
-        options: [
-          "6 hours",
-          "12 hours",
-          "18 hours",
-          "24 hours",
-          "36 hours"
-        ],
-        correct: 4,
-        explanation: "The 2025 guidance recommends deliberate temperature control between 32 and 37.5°C for at least 36 hours in adults who stay comatose after return of spontaneous circulation. Stopping at 6, 12, 18 or 24 hours ends control before the recommended minimum. After that period, fever should still be prevented while she remains comatose.",
-        keyFeature: {
-          topic: "arrhythmia",
-          n: 8
-        },
-        source: "aha-pca"
-      },
-      {
-        id: "q3",
-        kind: "single",
-        prompt: "Which of the following was the most likely cause of her arrest?",
-        options: [
-          "Hypoxemia from severe asthma",
-          "Primary ventricular arrhythmia",
-          "Pulmonary embolism",
-          "Stress cardiomyopathy",
-          "Tension pneumothorax"
-        ],
-        correct: 0,
-        explanation: "She arrested after a severe asthma attack with pulseless electrical activity, the usual pattern of a hypoxic arrest. A primary ventricular arrhythmia would more often present as ventricular fibrillation. Equal breath sounds and a chest radiograph without pneumothorax argue against tension pneumothorax. Nothing in her history points to pulmonary embolism or stress cardiomyopathy as the first event.",
+        correct: 3,
+        explanation: "He collapsed while running from police minutes after inhaling butane, and his first rhythm was shockable. Inhaled hydrocarbons sensitize the heart muscle, so a surge of catecholamines from fright or exertion can trigger ventricular fibrillation, the pattern called sudden sniffing death. Commotio cordis needs a blow to the chest, and he was not struck. His QTc of 430 ms is normal, and a normal PR interval with no delta wave argues against Wolff-Parkinson-White syndrome. He was running just before he collapsed, which does not fit a gradual loss of consciousness from hypoxia.",
         keyFeature: {
           topic: "arrhythmia",
           n: 5
         },
-        source: "aha-pca"
+        source: "sniffing"
       },
       {
-        id: "q4",
+        id: "q2",
         kind: "single",
-        prompt: "Which of the following is the most appropriate plan once the period of deliberate temperature control ends?",
+        prompt: "Which of the following is the most appropriate way to monitor his temperature after admission?",
         options: [
-          "Prevent fever while she remains comatose",
-          "Rewarm to 38°C to aid awakening",
-          "Stop monitoring core temperature",
-          "Temperature allowed to drift freely",
-          "Treat fever only above 39.5°C"
+          "Axillary readings every hour",
+          "Continuous esophageal probe",
+          "Forehead skin sensor",
+          "Oral readings every 2 hours",
+          "Tympanic readings every 4 hours"
         ],
-        correct: 0,
-        explanation: "Fever after cardiac arrest is linked to worse neurologic outcome, so after the period of deliberate temperature control, fever should be actively prevented while she remains comatose. Letting her temperature drift, stopping core monitoring or treating only temperatures above 39.5°C allows harmful fever. Warming her to 38°C would create the fever the plan is meant to avoid.",
+        correct: 1,
+        explanation: "He remains comatose after return of spontaneous circulation, and pediatric guidance calls for continuous monitoring of core temperature so that any fever is caught and treated at once. An esophageal probe gives a continuous core reading in an intubated child. Hourly axillary and 4-hourly tympanic checks are intermittent and can miss a rise between readings. A forehead sensor measures skin, not core, temperature. Oral readings are intermittent and unreliable with an endotracheal tube in place.",
         keyFeature: {
           topic: "arrhythmia",
           n: 8
         },
-        source: "aha-pca"
+        source: "peds-pca"
+      },
+      {
+        id: "q3",
+        kind: "single",
+        prompt: "Which of the following temperature plans best fits current pediatric guidance for him?",
+        options: [
+          "Antipyretic only above 38.5°C",
+          "Cool to 32 to 34°C for 12 hours only",
+          "Surface cooling to 30°C for 24 hours",
+          "Target 36 to 37.5°C for up to 5 days",
+          "No temperature control for 24 hours"
+        ],
+        correct: 3,
+        explanation: "For a child who stays comatose after cardiac arrest, current pediatric guidance supports up to 5 days of targeted temperature management. That can be 36 to 37.5°C throughout, or a first phase at 32 to 34°C followed by 36 to 37.5°C, with fever strictly avoided. A 32 to 34°C phase that stops at 12 hours ends control far too early. Cooling to 30°C is below any recommended target. Treating only temperatures above 38.5°C allows fever above the 37.5°C ceiling. Withholding control for 24 hours leaves him exposed to fever right after the arrest, when it should be prevented.",
+        keyFeature: {
+          topic: "arrhythmia",
+          n: 8
+        },
+        source: "peds-pca"
+      },
+      {
+        id: "q4",
+        kind: "single",
+        update: "His parents ask when the team will know whether he will wake up.",
+        prompt: "Which of the following is the earliest appropriate time after the arrest to judge his neurologic prognosis?",
+        options: [
+          "6 hours after the arrest",
+          "12 hours after the arrest",
+          "24 hours after the arrest",
+          "48 hours after the arrest",
+          "72 hours after the arrest"
+        ],
+        correct: 4,
+        explanation: "Pediatric guidance advises delaying prognostication until at least 72 hours after cardiac arrest and basing it on several findings over time rather than any single test. Sedation and temperature management can change the examination and some test results, so an earlier assessment can wrongly suggest a poor outcome. Judging at 6, 12, 24 or 48 hours risks a false prediction that could lead to withdrawal of care from a child who might recover.",
+        keyFeature: {
+          topic: "arrhythmia",
+          n: 8
+        },
+        source: "peds-pca"
       }
     ],
     sources: [
       {
-        id: "aha-pca",
-        citation: "American Heart Association. Part 11. Post-cardiac arrest care. 2025 Guidelines for Cardiopulmonary Resuscitation and Emergency Cardiovascular Care. Circulation. 2025.",
-        url: "https://www.ahajournals.org/doi/10.1161/CIR.0000000000001375"
+        id: "sniffing",
+        citation: "Berling I, Isbister GK. Rare but relevant: hydrocarbons and sudden sniffing syndrome. Addiction. 2025.",
+        url: "https://doi.org/10.1111/add.70082"
+      },
+      {
+        id: "peds-pca",
+        citation: "Lee JE and colleagues. Updated pediatric cardiopulmonary resuscitation: a comprehensive review of the 2025 American Heart Association guidelines. Anesth Pain Med (Seoul). 2026.",
+        url: "https://doi.org/10.17085/apm.26581"
       }
     ],
     reviewed: false,
     author: AUTHOR,
-    version: 1
+    version: 2
   },
   {
     id: "arrhythmia-30",
