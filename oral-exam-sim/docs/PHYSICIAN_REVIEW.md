@@ -25,6 +25,20 @@ What to decide: open `docs/SIGNED-DUPLICATES.md`. For each cluster it recommends
 
 Duplicates between your signed-off SAMPs and the new ones are a separate matter. In each of those the new SAMP was rebuilt and your text was left alone.
 
+## Let through on the product owner's judgement, not yours
+
+The product owner made decision D1 (`docs/DECISIONS.md`). In crowded topics, a new SAMP may repeat one decision already keyed in a signed-off SAMP, where that decision is itself the literal wording of a key feature. This is a judgement about redundancy, not about the right answer. No key or clinical threshold was changed under it.
+
+It lets through exactly three repeats:
+
+| New SAMP | Repeated decision | Your signed-off SAMP it echoes |
+|---|---|---|
+| chest-pain-41 q2 | ECG and chewed ASA within 10 minutes for possible ACS | chest-pain-02 q1, also ischemic-heart-disease-15 q1 |
+| environmental-17 q1 | Cool now, before CT or lumbar puncture | environmental-02 q2 |
+| chest-pain-47 q4 | Bedside echo for tamponade after blunt chest trauma | multiple-trauma-02 q1 and q2, also shock-15 q1 |
+
+Your signed-off SAMPs were not changed. Reversing D1 sends those three new SAMPs back for rebuild. To reverse it, say "reverse D1".
+
 ## How to sign off
 
 - Sign-offs are recorded in `docs/signoff-2026-09.json`. A new round gets its own file, for example `docs/signoff-2026-10.json`, with the ids you approve.

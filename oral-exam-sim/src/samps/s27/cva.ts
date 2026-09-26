@@ -162,6 +162,17 @@ const SRC_HU_SCEH: Source = {
   "url": "https://doi.org/10.1159/000527705"
 };
 
+const SRC_AMARENCO_SCA: Source = {
+  "id": "amarenco-sca",
+  "citation": "Amarenco P, Roullet E, Goujon C, Cheron F, Hauw JJ, Bousser MG. Infarction in the anterior rostral cerebellum (the territory of the lateral branch of the superior cerebellar artery). Neurology. 1991.",
+  "url": "https://doi.org/10.1212/wnl.41.2_part_1.253"
+};
+const SRC_KASE_SCA: Source = {
+  "id": "kase-sca",
+  "citation": "Kase CS, White JL, Joslyn JN, Williams JP, Mohr JP. Cerebellar infarction in the superior cerebellar artery distribution. Neurology. 1985.",
+  "url": "https://doi.org/10.1212/wnl.35.5.705"
+};
+
 export const CVA_S27_SAMPS: Samp[] = [
   {
     "id": "cva-16",
@@ -1169,49 +1180,69 @@ export const CVA_S27_SAMPS: Samp[] = [
   {
     "id": "cva-27",
     "topic": "cva",
-    "title": "Found on the kitchen floor",
-    "stem": "An 84-year-old man is brought to the emergency department by ambulance at 13:20 after a fall at home. His daughter spoke with him by phone at 11:30 and he sounded normal. At 12:40 a neighbour found him on the kitchen floor. He says he tripped, is fine and wants to go home. He lives alone and manages his own affairs. He has hypertension and takes amlodipine. Capillary glucose is 7.0 mmol/L. There is no scalp wound. His eyes and head are turned to the right. He does not respond when approached from the left. When asked to lift both arms, only the right arm rises. He denies that anything is wrong with his left arm.",
+    "title": "Veering on a morning walk",
+    "stem": "A 67-year-old man presents to the emergency department at 11:05 because he has been unsteady since 09:40. While walking his dog he began veering to the right, and at home his right hand kept overshooting his coffee cup. His wife thinks his speech is slurred. He has had no vertigo, vomiting, headache or neck pain. Yesterday he had coronary angiography through the right radial artery, with premedication for a past reaction to IV contrast. It showed nonobstructive disease, and he went home on ASA 81 mg daily. He has hypertension. Strength, including finger spreading, is normal. Reflexes are symmetric and plantar responses are flexor. Pinprick and joint position sense are normal. Finger-nose and heel-shin testing are ataxic on the right. He cannot walk without support and falls to the right. There is no nystagmus. Capillary glucose is 6.4 mmol/L.",
     "vitals": {
-      "temperature": "36.5°C oral",
-      "pulse": "88/minute",
-      "resp": "18/minute",
-      "bp": "176/98 mmHg",
-      "o2sat": "96% on room air",
-      "weight": "70 kg"
+      "temperature": "36.7°C oral",
+      "pulse": "78/minute",
+      "resp": "16/minute",
+      "bp": "164/88 mmHg",
+      "o2sat": "97% on room air",
+      "weight": "84 kg"
     },
     "questions": [
       {
         "id": "q1",
-        "prompt": "Which of the following terms best describes his unawareness of his left arm weakness?",
+        "prompt": "Which of the following is the most likely cause of his symptoms?",
         "kind": "single",
         "options": [
-          "Akinetic mutism",
-          "Anosognosia",
-          "Conduction aphasia",
-          "Ideomotor apraxia",
-          "Prosopagnosia"
+          "Infarct of the right cerebellum",
+          "Left internal capsule lacunar infarct",
+          "Left motor cortex hand area infarct",
+          "Left thalamic infarct",
+          "Right C7 radiculopathy"
         ],
-        "correct": 1,
-        "explanation": "Anosognosia is unawareness or denial of a deficit, and with left neglect and right gaze deviation it points to a right hemisphere stroke. It is a reason these strokes present as a simple fall or confusion, a stroke chameleon. Conduction aphasia is a language disorder, and his speech is fluent and appropriate. Ideomotor apraxia is failure to perform learned movements despite normal strength. Prosopagnosia is loss of face recognition, and akinetic mutism is loss of speech and movement.",
+        "correct": 0,
+        "explanation": "Sudden ataxia of the right arm and leg with slurred speech, normal strength and normal sensation points to the right cerebellum, which coordinates movement on its own side. Infarcts in the upper cerebellum cause dysmetria on the same side, dysarthria and unsteadiness, and can mimic a lacunar dysarthria and clumsy hand syndrome. A left capsular lacune would usually bring some weakness or brisk reflexes on the right. A hand area infarct weakens finger spreading. A thalamic infarct brings sensory loss, and a C7 radiculopathy would not affect his leg or his speech.",
         "keyFeature": {
           "topic": "cva",
           "n": 2
         },
-        "source": "chameleon"
+        "source": "amarenco-sca"
       },
       {
         "id": "q2",
-        "prompt": "Which of the following is the most appropriate imaging for this patient now?",
+        "prompt": "Which of the following arteries most likely supplies the injured area in this patient?",
         "kind": "single",
         "options": [
-          "CT head and cervical spine only",
-          "CT perfusion before plain CT",
-          "Hip and pelvis radiographs first",
-          "MRI brain before any treatment",
-          "Non-contrast CT with CT angiography"
+          "Left lenticulostriate arteries",
+          "Left MCA cortical branch",
+          "Left thalamoperforating arteries",
+          "Right posterior inferior cerebellar artery",
+          "Right superior cerebellar artery"
         ],
         "correct": 4,
-        "explanation": "He was last known well at 11:30 and has signs of a right hemisphere stroke, so he needs non-contrast CT with CT angiography from arch to vertex at once. Imaging only the head and spine for trauma would miss a large vessel occlusion. MRI would delay treatment in most Canadian centres. Hip films can wait, and perfusion imaging must not delay the first CT and CT angiography.",
+        "explanation": "The superior cerebellar artery supplies the upper cerebellar hemisphere. Its infarcts cause gait and limb ataxia with little or no vertigo, as in this patient. Most cerebellar infarcts that present as isolated vertigo lie in the territory of the medial branch of the posterior inferior cerebellar artery, and he has no vertigo, vomiting or nystagmus. The lenticulostriate and thalamoperforating arteries supply the internal capsule and thalamus, and a middle cerebral artery branch supplies the hand area of the cortex. Lesions there would cause weakness or sensory loss on the right, which he does not have.",
+        "keyFeature": {
+          "topic": "cva",
+          "n": 3
+        },
+        "source": "kase-sca"
+      },
+      {
+        "id": "q3",
+        "update": "Non-contrast CT shows no hemorrhage. NIHSS is 3, and the stroke neurologist judges the deficit disabling because he cannot walk. INR is 1.0, aPTT is normal and platelets are 214 x 10^9/L. It is 11:30.",
+        "prompt": "Which of the following is the most appropriate reperfusion decision for this patient?",
+        "kind": "single",
+        "options": [
+          "ASA and clopidogrel loading",
+          "Half-dose tenecteplase now",
+          "Observation and repeat CT",
+          "Tenecteplase IV now",
+          "No thrombolysis after the angiogram"
+        ],
+        "correct": 3,
+        "explanation": "He is within 4.5 hours of onset at 09:40, with a disabling ischemic stroke, no hemorrhage and normal coagulation, so thrombolysis should be offered. Canadian criteria list arterial puncture at a noncompressible site in the previous 7 days as a relative exclusion. The radial artery is compressible, so yesterday's angiogram is not a reason to withhold treatment, and ASA is not on the list of exclusions. Tenecteplase is given at the full dose of 0.25 mg/kg, to a maximum of 25 mg, not a reduced dose. Dual antiplatelet loading is for non-disabling stroke and TIA. Observation withholds a time-dependent treatment.",
         "keyFeature": {
           "topic": "cva",
           "n": 3
@@ -1219,46 +1250,19 @@ export const CVA_S27_SAMPS: Samp[] = [
         "source": "csbpr-acute"
       },
       {
-        "id": "q3",
-        "update": "CT shows no hemorrhage and ASPECTS 9. CT angiography shows a right M1 occlusion. NIHSS is 14. It is now 13:55.",
-        "prompt": "Which of the following is the most appropriate management for this patient?",
+        "id": "q4",
+        "update": "His past reaction was hives and wheeze after IV contrast 4 years ago. He had no reaction after premedication yesterday. Today's creatinine is pending.",
+        "prompt": "Which of the following is the most appropriate plan for his vascular imaging?",
         "kind": "single",
         "options": [
-          "CT perfusion before any treatment",
-          "Heparin infusion and admission",
-          "Tenecteplase alone and admission",
-          "Tenecteplase and thrombectomy",
-          "Thrombectomy only if lysis fails"
+          "Carotid Doppler ultrasound today",
+          "CT angiography after IV premedication",
+          "CT angiography once creatinine is known",
+          "MR angiography tomorrow morning",
+          "Non-contrast CT only"
         ],
-        "correct": 3,
-        "explanation": "He is within 4.5 hours of last known well, has a disabling deficit, a small core with ASPECTS 9, an M1 occlusion and independent baseline function. He should receive thrombolysis while the angiography suite is prepared for thrombectomy. Thrombolysis alone leaves a large vessel occlusion untreated, and Canadian guidance advises no delay to see if thrombolysis works. Heparin has no role, and further imaging would delay treatment that is already indicated. Age 84 is not a reason to withhold either therapy.",
-        "keyFeature": {
-          "topic": "cva",
-          "n": 3
-        },
-        "source": "csbpr-evt"
-      },
-      {
-        "id": "q4",
-        "update": "The first laboratory results arrive just before the tenecteplase dose is drawn up.",
-        "prompt": "Which of the following results would be relative exclusions to thrombolysis in this patient?",
-        "kind": "menu",
-        "options": [
-          "Creatinine 140 umol/L",
-          "Glucose 12.0 mmol/L",
-          "Hemoglobin 118 g/L",
-          "INR of 1.9",
-          "Platelets 85 x 10^9/L",
-          "Potassium 3.4 mmol/L",
-          "Sodium 133 mmol/L",
-          "Troponin mildly raised"
-        ],
-        "select": 2,
-        "correct": [
-          3,
-          4
-        ],
-        "explanation": "Canadian criteria list a platelet count below 100 x 10^9/L and an INR above 1.7 as laboratory exclusions that need expert judgement. A glucose of 12.0 mmol/L lies between the limits of 2.7 and 22.2 mmol/L. Kidney function, mild anemia, a small troponin rise and mild electrolyte changes are not exclusions. Canadian guidance also says initial blood work should not delay imaging or treatment decisions.",
+        "correct": 1,
+        "explanation": "Canadian guidance calls for vascular imaging from the aortic arch to the vertex without delay after an acute stroke, and upper cerebellar infarcts can come from an occlusion at the top of the basilar artery. The same guidance says a known contrast allergy or renal failure should not exclude a patient from thrombectomy assessment, and it advises IV diphenhydramine, a corticosteroid and an H2 blocker beforehand. Initial blood work should not delay imaging, so waiting for creatinine is wrong. Carotid Doppler does not show the basilar artery. MR angiography tomorrow is too late, and non-contrast CT cannot show an occlusion.",
         "keyFeature": {
           "topic": "cva",
           "n": 3
@@ -1266,8 +1270,9 @@ export const CVA_S27_SAMPS: Samp[] = [
         "source": "csbpr-acute"
       }
     ],
-    "sources": [SRC_CHAMELEON, SRC_CSBPR_ACUTE, SRC_CSBPR_EVT],
+    "sources": [SRC_AMARENCO_SCA, SRC_KASE_SCA, SRC_CSBPR_ACUTE],
     ...meta,
+    "version": 3,
   },
   {
     "id": "cva-28",
