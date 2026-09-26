@@ -17,5 +17,7 @@ Decisions made by the product owner, not by the physician reviewer. Each is an e
 | chest-pain-47 q4 | Bedside echo for tamponade after blunt chest trauma with hypotension and distended neck veins | multiple-trauma-02 q1 and q2, also shock-15 q1 |
 | ischemic-heart-disease-13 q1 (rebuilt signed-off SAMP) | Serial ECGs and troponin (IHD KF 1) | ischemic-heart-disease-40 q2 |
 | msk-13 q3 (rebuilt signed-off SAMP) | Report to child protection when required (abuse KF 6) | abuse-domestic-06 q3, also burns-05 q4 |
+| pediatric-fever-03 q4 (rebuilt signed-off SAMP) | Epinephrine infusion for fluid-refractory pediatric shock (shock KF 7) | shock-34 q3 |
+| multiple-trauma-10 q3 (rebuilt signed-off SAMP) | Urgent orthopedic debridement of an open fracture (MSK KF 7) | msk-11 q3 |
 
 **To reverse:** Arjan says "reverse D1". Every question in the table above then goes back for rebuild with a decision not keyed elsewhere. Each rebuild group adds its surviving D1 repeats to this table when it lands, so the table is always the full set.
