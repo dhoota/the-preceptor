@@ -21,6 +21,10 @@ const S = {
   abls: { id: "abls", citation: "American Burn Association. Advanced Burn Life Support Course Provider Manual. 2018 update. Chapter on electrical injury." },
   rosen: { id: "rosen", citation: "Walls RM, Hockberger RS, Gausche-Hill M, editors. Rosen's Emergency Medicine: Concepts and Clinical Practice. 10th ed. Elsevier. 2023. Chapters on heat illness, dysbarism and electrical and lightning injuries." },
   tintinalli: { id: "tintinalli", citation: "Tintinalli JE, Ma OJ, Yealy DM, Meckler GD, Stapczynski JS, Cline DM, Thomas SH, editors. Tintinalli's Emergency Medicine: A Comprehensive Study Guide. 9th ed. McGraw Hill. 2020. Chapter 180, Antipsychotics. Chapter 210, Heat Emergencies. Chapter 219, Electrical and Lightning Injuries." },
+  paal: { id: "paal", citation: "Paal P, et al. Accidental hypothermia: 2021 update. Int J Environ Res Public Health. 2022.", url: "https://doi.org/10.3390/ijerph19010501" },
+  cscm: { id: "cscm", citation: "Krassioukov A, et al. Consortium for Spinal Cord Medicine. Evaluation and management of autonomic dysreflexia and other autonomic dysfunctions: preventing the highs and lows. Management of blood pressure, sweating, and temperature dysfunction. Top Spinal Cord Inj Rehabil. 2021.", url: "https://pmc.ncbi.nlm.nih.gov/articles/PMC8152175/" },
+  efns: { id: "efns", citation: "Galvin R, et al. EFNS guidelines for diagnosis, therapy and prevention of Wernicke encephalopathy. European Federation of Neurological Societies. Eur J Neurol. 2010.", url: "https://pubmed.ncbi.nlm.nih.gov/20642790/" },
+  liXing: { id: "li-xing", citation: "Li S, Xing C. Wernicke encephalopathy: a mini review of the clinical spectrum, atypical manifestations, and diagnostic challenges. Front Neurol. 2025.", url: "https://doi.org/10.3389/fneur.2025.1566366" },
 } satisfies Record<string, Source>;
 
 export const ENVIRONMENTAL_SAMPS: Samp[] = [
