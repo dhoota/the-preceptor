@@ -222,7 +222,7 @@ export const ARRHYTHMIA: Samp[] = [
           {
             id: "atropine",
             text: "Atropine 1 mg IV (0.5 mg in ERC guidance), repeated every 3 to 5 minutes to a maximum of 3 mg",
-            match: ["atropine 1 mg", "atropine 1mg", "atropine 0.5 mg", "atropine 0.5mg", "atropine 500 mcg", "atropine 0.6 mg", "atropine 600 mcg", "atropine 1000 mcg"],
+            match: ["atropine 1 mg", "atropine 1mg", "atropine 0.5 mg", "atropine 0.5mg", "atropine 500 mcg", "atropine 0.6 mg"],
           },
           {
             id: "epi",

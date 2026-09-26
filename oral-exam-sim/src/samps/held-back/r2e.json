@@ -1,0 +1,13 @@
+{
+ "ids": {
+  "seizures-03": "Rebuilt after sign-off (signed-duplicate cluster 21). Needs a fresh physician sign-off.",
+  "seizures-05": "Rebuilt after sign-off (signed-duplicate cluster 6). Needs a fresh physician sign-off.",
+  "seizures-07": "Rebuilt after sign-off (signed-duplicate cluster 31). Needs a fresh physician sign-off.",
+  "shock-04": "Rebuilt after sign-off (signed-duplicate cluster 73). Needs a fresh physician sign-off.",
+  "shock-05": "Rebuilt after sign-off (signed-duplicate cluster 72). Needs a fresh physician sign-off.",
+  "shock-07": "Rebuilt after sign-off (signed-duplicate cluster 1). Needs a fresh physician sign-off.",
+  "shock-11": "Rebuilt after sign-off (signed-duplicate cluster 74). Needs a fresh physician sign-off.",
+  "shock-12": "Rebuilt after sign-off (signed-duplicate cluster 3). Needs a fresh physician sign-off.",
+  "shock-13": "Rebuilt after sign-off (signed-duplicate cluster 62). Needs a fresh physician sign-off."
+ }
+}

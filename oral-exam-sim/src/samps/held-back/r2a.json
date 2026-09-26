@@ -1,0 +1,15 @@
+{
+ "ids": {
+  "sob-01": "Rebuilt after sign-off (signed-duplicate cluster 10). Needs a fresh physician sign-off.",
+  "sob-03": "Rebuilt after sign-off (signed-duplicate cluster 34). Needs a fresh physician sign-off.",
+  "sob-04": "Rebuilt after sign-off (signed-duplicate cluster 5). Needs a fresh physician sign-off.",
+  "sob-05": "Rebuilt after sign-off (signed-duplicate cluster 33). Needs a fresh physician sign-off.",
+  "sob-06": "Rebuilt after sign-off (signed-duplicate cluster 16). Needs a fresh physician sign-off.",
+  "sob-08": "Rebuilt after sign-off (signed-duplicate cluster 22). Needs a fresh physician sign-off.",
+  "sob-09": "Rebuilt after sign-off (signed-duplicate cluster 11). Needs a fresh physician sign-off.",
+  "sob-10": "Rebuilt after sign-off (signed-duplicate cluster 51). Needs a fresh physician sign-off.",
+  "sob-11": "Rebuilt after sign-off (signed-duplicate cluster 18). Needs a fresh physician sign-off.",
+  "sob-14": "Rebuilt after sign-off (signed-duplicate cluster 15). Needs a fresh physician sign-off.",
+  "sob-15": "Rebuilt after sign-off (signed-duplicate cluster 1). Needs a fresh physician sign-off."
+ }
+}

@@ -1,14 +1,6 @@
 {
-  "ids": {
-    "anaphylaxis-02": "Rebuilt after sign-off (signed-duplicate cluster 1). Needs a fresh physician sign-off.",
-    "anaphylaxis-06": "Rebuilt after sign-off (signed-duplicate cluster 10). Needs a fresh physician sign-off.",
-    "anaphylaxis-15": "Rebuilt after sign-off (signed-duplicate cluster 1). Needs a fresh physician sign-off.",
-    "arrhythmia-04": "Rebuilt after sign-off (signed-duplicate cluster 30). Needs a fresh physician sign-off.",
-    "arrhythmia-06": "Rebuilt after sign-off (signed-duplicate cluster 13). Needs a fresh physician sign-off.",
-    "arrhythmia-15": "Rebuilt after sign-off (signed-duplicate cluster 32). Needs a fresh physician sign-off.",
-    "loc-05": "Rebuilt after sign-off (signed-duplicate cluster 69). Needs a fresh physician sign-off.",
-    "loc-08": "Rebuilt after sign-off (signed-duplicate cluster 7). Needs a fresh physician sign-off.",
-    "loc-09": "Rebuilt after sign-off (signed-duplicate cluster 42). Needs a fresh physician sign-off.",
-    "loc-10": "Rebuilt after sign-off (signed-duplicate cluster 70). Needs a fresh physician sign-off."
-  }
+ "ids": {
+  "anaphylaxis-15": "Rebuilt after sign-off (signed-duplicate cluster 1). Needs a fresh physician sign-off.",
+  "arrhythmia-15": "Rebuilt after sign-off (signed-duplicate cluster 32). Needs a fresh physician sign-off."
+ }
 }
