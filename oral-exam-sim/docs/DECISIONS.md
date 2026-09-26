@@ -27,5 +27,6 @@ Decisions made by the product owner, not by the physician reviewer. Each is an e
 | gi-bleed-01 q2 (rebuilt signed-off SAMP) | Early crossmatch, group O red cells, crystalloid limited to about 1 L (GI bleed KF 5) | shock-29 q3, also multiple-patients-13 q3 and shock-37 q2 |
 | headache-13 q2 (rebuilt signed-off SAMP) | Visual acuity, fluorescein and slit lamp (eye KF 3) | eye-04 q1 |
 | headache-15 q2 (rebuilt signed-off SAMP) | Papilledema, sixth nerve palsy, level of consciousness and focal deficits (headache KF 3) | headache-07 q2, also headache-03 q1 |
+| anaphylaxis-15 q3 (rebuilt signed-off SAMP) | Cardiogenic shock from an inferior STEMI (shock KF 5) | ischemic-heart-disease-44 q1 |
 
 **To reverse:** Arjan says "reverse D1". Every question in the table above then goes back for rebuild with a decision not keyed elsewhere. Each rebuild group adds its surviving D1 repeats to this table when it lands, so the table is always the full set.

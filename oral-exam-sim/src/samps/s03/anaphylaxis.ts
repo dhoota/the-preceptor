@@ -88,6 +88,45 @@ const ALS_PCS: Source = {
   url: "https://www.ontario.ca/files/2025-04/moh-advanced-life-support-als-patient-care-standards-pcs-5.4-en-2025-04-23.pdf",
 };
 
+const TC_UFH: Source = {
+  id: "tc-ufh",
+  citation: "Thrombosis Canada. Clinical guide: unfractionated heparin, low molecular weight heparin and fondaparinux. 2025.",
+  url: "https://thrombosiscanada.ca/hcp/practice/clinical_guides?language=en-ca&guideID=UNFRACTIONATEDHEPARINANDLOWMOL",
+};
+const PROTAMINE: Source = {
+  id: "protamine",
+  citation: "Crivellari M, Landoni G, D'Andria Ursoleo J, et al. Protamine and heparin interactions. A narrative review. Ann Card Anaesth. 2024.",
+  url: "https://doi.org/10.4103/aca.aca_117_23",
+};
+const SHOC: Source = {
+  id: "shoc",
+  citation:
+    "Atkinson P, Bowra J, Milne J, et al. International Federation for Emergency Medicine consensus statement. Sonography in hypotension and cardiac arrest (SHoC). CJEM. 2017.",
+  url: "https://doi.org/10.1017/cem.2016.394",
+};
+const CROSS_REACT: Source = {
+  id: "cross-react",
+  citation:
+    "Worm M, Jappe U, Kleine-Tebbe J, et al. Food allergies resulting from immunological cross-reactivity with inhalant allergens. Guidelines from the German Society for Allergology and Clinical Immunology. Allergo J Int. 2014.",
+  url: "https://doi.org/10.1007/s40629-014-0004-6",
+};
+const CAFG_2: Source = {
+  id: "cafg-2",
+  citation:
+    "Law JA, Duggan LV, Asselin M, et al. Canadian Airway Focus Group updated consensus-based recommendations for management of the difficult airway. Part 2. Planning and implementing safe management of the patient with an anticipated difficult airway. Can J Anesth. 2021.",
+  url: "https://doi.org/10.1007/s12630-021-02008-z",
+};
+const KOUNIS: Source = {
+  id: "kounis",
+  citation: "Rochel-Perez E, Santaularia-Tomas M, Martin-Dorantes M, et al. Triggers, types, and treatments for Kounis syndrome. A systematic review. Clin Pract. 2025.",
+  url: "https://doi.org/10.3390/clinpract15030059",
+};
+const WAO_2020: Source = {
+  id: "wao-2020",
+  citation: "Cardona V, Ansotegui IJ, Ebisawa M, et al. World Allergy Organization anaphylaxis guidance 2020. World Allergy Organ J. 2020.",
+  url: "https://doi.org/10.1016/j.waojou.2020.100472",
+};
+
 const base = { topic: "anaphylaxis", reviewed: true, author: AUTHOR, version: 1 } as const;
 
 export const ANAPHYLAXIS: Samp[] = [
@@ -1363,84 +1402,83 @@ export const ANAPHYLAXIS: Samp[] = [
   },
   {
     ...base,
+    reviewed: false,
+    version: 2,
     id: "anaphylaxis-15",
     alsoTopics: ["ems", "shock"],
-    title: "Patch from a highway crew",
+    title: "Patch from a farm at harvest",
     stem:
-      "You are the base hospital physician. A paramedic crew patches in from a rural highway 25 minutes away. A 45-year-old woman was stung by a bee while gardening. She is flushed, wheezing and dizzy. They gave epinephrine 0.5 mg IM 6 minutes ago. They have one IV established.",
-    vitals: { pulse: "124/minute", resp: "28/minute", bp: "82/50 mmHg", o2sat: "91% on oxygen" },
+      "You are the base hospital physician. An advanced care paramedic crew patches from a farm 45 minutes from your emergency department. A 58-year-old man was stung on the forearm by a wasp 35 minutes ago. Within minutes he had hives, a tight throat and light-headedness, and he gave himself his own epinephrine 0.3 mg autoinjector 25 minutes ago. His symptoms have settled and he says he feels fine. The crew has loaded him and asks for direction for the transport.",
+    vitals: { pulse: "96/minute", resp: "18/minute", bp: "138/84 mmHg", o2sat: "97% on room air" },
     questions: [
       {
         id: "q1",
         kind: "short",
-        prompt: "What orders would you give the crew now?",
-        required: 2,
+        prompt: "What further information would you ask the crew for before giving direction?",
+        required: 3,
         accept: [
           {
-            id: "epi",
-            text: "Repeat epinephrine 0.5 mg IM now and every 5 minutes as needed",
-            match: [...c(EPI, EPI_05, [...IM, "repeat"]), "repeat epinephrine", "second dose epinephrine", "repeat im"],
+            id: "worst",
+            text: "How severe the reaction was at its worst, such as fainting, hoarseness or trouble breathing",
+            match: ["worst", "severity", "severe", "faint", "fainting", "syncope", "hoarse", "hoarseness", "stridor", "wheeze"],
           },
-          { id: "fluid", text: "IV crystalloid bolus of 1 L, repeated as needed", match: ["bolus", "fluid", "saline", "ringer", "crystalloid"] },
-          { id: "salb", text: "Nebulized salbutamol for wheeze", match: ["salbutamol", "ventolin", "bronchodilator"] },
-          { id: "position", text: "Keep her supine with legs raised", match: ["supine", "leg raised", "leg elevated", "lie flat"] },
-          { id: "o2", text: "High flow oxygen", match: ["high flow", "non rebreather", "oxygen"] },
+          { id: "previous", text: "Previous reactions to stings", match: ["previous", "prior", "past reaction", "before"] },
+          { id: "heart", text: "Heart disease or cardiac symptoms such as chest pain", match: ["heart disease", "cardiac", "coronary", "chest pain", "angina"] },
+          {
+            id: "meds",
+            text: "His medications, especially a beta blocker or ACE inhibitor",
+            match: ["beta blocker", "ace inhibitor", "medication", "metoprolol", "ramipril"],
+          },
+          { id: "exam", text: "A current examination of his voice, skin and chest", match: ["exam", "examination", "skin", "hives", "voice", "chest", "reassess"] },
+          { id: "ecg", text: "A 12 lead ECG", match: ["ecg", "ekg", "12 lead"] },
+          { id: "mastocytosis", text: "Known mastocytosis or other mast cell disorder", match: ["mastocytosis", "mast cell", "tryptase"] },
         ],
-        unacceptable: [{ text: "Epinephrine as an IV bolus", match: EPI_IV_BOLUS, dangerous: true }],
         explanation:
-          "Persistent hypotension and wheeze after one dose call for a repeat IM dose after 5 minutes, fluids and positioning. Online medical direction should be clear and specific about dose and route. Transport should not be delayed.",
+          "Direction should rest on a focused report. Hives with a tight throat and light-headedness meet the criteria for anaphylaxis, and the worst features show how severe it was. Older age, cardiovascular disease, mastocytosis and beta blockers or ACE inhibitors are recognized risk factors for a more severe reaction. Previous sting reactions help predict what comes next. An ECG from the crew screens for ischemia in a 58-year-old man who has just had epinephrine.",
         keyFeature: { topic: "ems", n: 1 },
-        source: "als-pcs",
+        source: "wao-2020",
       },
       {
         id: "q2",
         kind: "short",
-        prompt: "How would you prepare the department for her arrival?",
-        required: 3,
+        update:
+          "Twenty minutes into the transport the crew calls again. He has crushing central chest pressure and is pale and sweaty. His skin and chest are clear. His HR is 56 and BP 86/54 mmHg. They have not yet recorded an ECG.",
+        prompt: "What direction would you give the crew now?",
+        required: 2,
         accept: [
-          {
-            id: "bay",
-            text: "Assign a resuscitation bay and assemble the team",
-            match: ["resuscitation", "resus", "bay", "room", "team"],
-          },
-          { id: "airway", text: "Difficult airway equipment ready", match: ["airway", "intubation", "cric"] },
-          { id: "infusion", text: "Epinephrine infusion prepared", match: ["infusion", "drip"] },
-          { id: "fluids", text: "Pressure bags or a rapid infuser for fluids", match: ["pressure bag", "rapid infuser", "warmed fluid", "level 1"] },
-          { id: "consult", text: "Notify ICU or anesthesia", match: ["icu", "intensivist", "critical care", "anesthesia", "anaesthesia"] },
-          { id: "glucagon", text: "Glucagon available in case she takes a beta blocker", match: ["glucagon"] },
+          { id: "ecg", text: "Record a 12 lead ECG and transmit it", match: ["ecg", "ekg", "12 lead", "transmit"] },
+          { id: "fluid", text: "IV crystalloid bolus for the hypotension", match: ["bolus", "fluid", "saline", "crystalloid", "ringer"] },
+          { id: "supine", text: "Keep him supine with his legs raised", match: ["supine", "leg raised", "lie flat", "lay flat", "leg elevated"] },
+          { id: "epi", text: "Epinephrine 0.5 mg IM if hives, wheeze or throat symptoms return", match: c(EPI, IM) },
+          { id: "pads", text: "Defibrillator pads on with continuous monitoring", match: ["pad", "defibrillator", "monitor", "monitoring"] },
+          { id: "pci", text: "Go directly to a PCI centre if the ECG shows a STEMI", match: ["pci", "cath lab", "catheterization", "stemi centre", "divert", "bypass"] },
         ],
+        unacceptable: [{ text: "Nitroglycerin while he is hypotensive", match: ["nitroglycerin", "nitro", "ntg"], dangerous: true }],
         explanation:
-          "A call ahead lets the team prepare for refractory anaphylaxis before the patient arrives. Airway swelling and shock may both need advanced care on arrival. Preparing the infusion saves minutes.",
+          "Chest pressure with hypotension after anaphylaxis may be recurrent anaphylaxis, an acute coronary syndrome, or both. A 12 lead ECG is the key field test, and transmitting it lets you choose his destination. Keep him flat and give fluid for the low BP. Epinephrine 0.01 mg/kg IM, up to 0.5 mg, remains the treatment if features of anaphylaxis return, but his skin and chest are now clear. Nitroglycerin is unsafe with a systolic BP of 86 mmHg.",
         keyFeature: { topic: "ems", n: 1 },
-        source: "rcuk",
+        source: "wao-2020",
       },
       {
         id: "q3",
         kind: "short",
-        update:
-          "On arrival, after a second IM dose and 1.5 L of fluid, her hives have faded and her wheeze has improved, but she remains hypotensive at 80/48 mmHg.",
-        prompt: "What other causes of shock would you now consider?",
-        required: 3,
+        update: "The crew's ECG shows ST elevation in II, III and aVF with ST depression in I and aVL.",
+        prompt: "What is the most likely cause of his shock?",
+        required: 1,
         accept: [
           {
-            id: "cardiac",
-            text: "Myocardial ischemia or cardiogenic shock, including Kounis syndrome",
-            match: ["cardiogenic", "ischemia", "kounis", "acs", "myocardial", "mi", "stemi"],
+            id: "kounis",
+            text: "Acute inferior STEMI, an allergic acute coronary syndrome (Kounis syndrome)",
+            match: ["kounis", "stemi", "st elevation", "myocardial infarction", "mi", "acute coronary", "acs", "cardiogenic", "inferior infarct"],
           },
-          { id: "bb", text: "Beta blocker effect limiting the response to epinephrine", match: ["beta blocker"] },
-          { id: "pe", text: "Pulmonary embolism", match: ["pulmonary embolism", "pe"] },
-          { id: "arrhythmia", text: "Arrhythmia", match: ["arrhythmia", "dysrhythmia", "atrial fibrillation"] },
-          { id: "bleed", text: "Hemorrhage", match: ["hemorrhage", "haemorrhage", "bleed", "bleeding"] },
-          { id: "sepsis", text: "Sepsis", match: ["sepsis", "septic"] },
-          { id: "adrenal", text: "Adrenal insufficiency", match: ["adrenal"] },
-          { id: "tox", text: "Co-ingestion or drug toxicity", match: ["ingestion", "overdose", "toxicity", "toxin"] },
         ],
+        unacceptable: [{ text: "Recurrent anaphylaxis alone", match: ["biphasic", "recurrent anaphylaxis"] }],
         explanation:
-          "When shock does not respond as expected, re-examine the diagnosis. Anaphylaxis can trigger coronary spasm or infarction, and other causes can coexist. Bedside ultrasound and an ECG help sort these out quickly.",
+          "Kounis syndrome is an acute coronary syndrome that occurs with mast cell activation during an allergic or anaphylactic reaction. Insect venom is one of its most common triggers, and ST elevation is the most frequent ECG finding. A 58-year-old man may have underlying coronary disease, which defines the type II form. Clear skin and chest, bradycardia and inferior ST elevation fit a coronary cause better than recurrent anaphylaxis, so treat it as a STEMI and involve cardiology now.",
         keyFeature: { topic: "shock", n: 5 },
-        source: "wao",
+        source: "kounis",
       },
     ],
-    sources: [ALS_PCS, RCUK, WAO],
+    sources: [WAO_2020, KOUNIS],
   },
 ];
