@@ -8,7 +8,7 @@ Decisions made by the product owner, not by the physician reviewer. Each is an e
 
 **The rule:** in crowded topics, a new SAMP may repeat one decision already keyed in a signed-off SAMP, where that decision is itself the literal wording of a CFPC key feature. This is a judgement about redundancy. It is not a judgement about the right answer.
 
-**Running total: 18 questions now ride on D1.** It began as a waiver for 3. Each later row was added when a rebuild group landed. The total is the decision Arjan should weigh, not any single row. Reversing D1 sends all 18 back for rebuild.
+**Running total: 19 questions now ride on D1.** It began as a waiver for 3. Each later row was added when a rebuild group landed. The total is the decision Arjan should weigh, not any single row. Reversing D1 sends all 19 back for rebuild.
 
 **Frozen at 20 (product owner, 26 September 2026).** Rows may be added only while the total stays at 20 or under. At 20, D1 stops being a small exception and becomes a policy on how much repetition the bank tolerates. That policy is Arjan's to set, not the product owner's. Once the total reaches 20, no further D1 repeat lands without Arjan's decision. A later rebuild that needs one fails, keeps its signed text and is listed for Arjan in OPEN-ITEMS.md. No session may resume adding rows past 20 on its own judgement.
 
@@ -34,5 +34,6 @@ Decisions made by the product owner, not by the physician reviewer. Each is an e
 | tox-09 q4 (rebuilt signed-off SAMP) | Life-threatening causes of chest pain first (chest pain KF 1) | the KF 1 lists keyed in signed chest pain SAMPs |
 | sob-12 q1 (rebuilt signed-off SAMP) | CT pulmonary angiography over a lung scan when lung disease is present (DVT-PE KF 4) | dvt-pe-06 q2 |
 | shock-09 q2 (rebuilt signed-off SAMP) | 30 mL/kg balanced crystalloid in septic shock (shock KF 3) | shock-03 q2 and q3 |
+| multiple-trauma-06 q3 (rebuilt signed-off SAMP) | IM epinephrine for anaphylaxis (anaphylaxis KF 3) | anaphylaxis-01 q1, also anaphylaxis-31 q1 and q3 |
 
 **To reverse:** Arjan says "reverse D1". Every question in the table above then goes back for rebuild with a decision not keyed elsewhere. Each rebuild group adds its surviving D1 repeats to this table when it lands, so the table is always the full set.
