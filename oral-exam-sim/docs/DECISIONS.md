@@ -8,7 +8,7 @@ Decisions made by the product owner, not by the physician reviewer. Each is an e
 
 **The rule:** in crowded topics, a new SAMP may repeat one decision already keyed in a signed-off SAMP, where that decision is itself the literal wording of a CFPC key feature. This is a judgement about redundancy. It is not a judgement about the right answer.
 
-**Running total: 17 questions now ride on D1.** It began as a waiver for 3. Each later row was added when a rebuild group landed. The total is the decision Arjan should weigh, not any single row. Reversing D1 sends all 17 back for rebuild. If the total climbs much past 20, no more rows are added until the product owner decides again.
+**Running total: 16 questions now ride on D1.** It began as a waiver for 3. Each later row was added when a rebuild group landed. The total is the decision Arjan should weigh, not any single row. Reversing D1 sends all 16 back for rebuild. If the total climbs much past 20, no more rows are added until the product owner decides again.
 
 **Covered SAMPs:**
 
@@ -21,7 +21,6 @@ Decisions made by the product owner, not by the physician reviewer. Each is an e
 | msk-13 q3 (rebuilt signed-off SAMP) | Report to child protection when required (abuse KF 6) | abuse-domestic-06 q3, also burns-05 q4 |
 | pediatric-fever-03 q4 (rebuilt signed-off SAMP) | Epinephrine infusion for fluid-refractory pediatric shock (shock KF 7) | shock-34 q3 |
 | multiple-trauma-10 q3 (rebuilt signed-off SAMP) | Urgent orthopedic debridement of an open fracture (MSK KF 7) | msk-11 q3 |
-| delirium-agitation-14 q4 (rebuilt signed-off SAMP) | Intramuscular midazolam for status epilepticus with no IV access (seizures KF 4) | seizures-23 q2 |
 | chest-pain-07 q3 (rebuilt signed-off SAMP) | ECG within 10 minutes and troponin before the history is complete (chest pain KF 2) | ischemic-heart-disease-15 q1 |
 | chest-pain-15 q2 (rebuilt signed-off SAMP) | Primary PCI now for STEMI at a PCI centre (IHD KF 6) | ischemic-heart-disease-11 q1, also ischemic-heart-disease-34 q1 |
 | eye-07 q2 (rebuilt signed-off SAMP) | Normal ESR and CRP to set aside giant cell arteritis (eye KF 2) | eye-08 q2 (an accepted item) |
