@@ -79,6 +79,21 @@ dvt-pe-02 q3 was briefly shortened on 26 September 2026 without your fresh sign-
 - **D1 now covers 19 questions, not 3.** D1 lets a rebuilt or new SAMP repeat one signed decision where that decision is the literal wording of a key feature. It was the product owner's call, not Arjan's. It started as a waiver for 3 repeats. As rebuild groups landed, it grew to 19. Each is defensible alone, but the total is a different decision from the one first made. Reversing D1 sends all 19 back for rebuild. The full list and the running total are at the top of the D1 table in docs/DECISIONS.md. The product owner has frozen D1 at 20. Past that, any rebuild that needs a repeat fails and waits for you.
 - **cva-27, the PICA fact from Lee 2006.** It was cut when cva-27's sourcing was fixed. Say if you want it back, and it will be restored with its source. It was not put back on anyone's judgement but yours.
 - **asthma-copd-01 is a "cannot".** Two writer passes could not make its scoring correct, because of the scorer limits in section 4. Wrong answers scored full marks and a correct answer scored zero. It is back on its signed text.
+- **Round 2 "cannot" list (40 SAMPs), all still on your signed text.** Each writer found that the key features these SAMPs must keep leave no keyed decision that is not already the keeper's or in the signed bank, unless another D1 slot is used (1 is left) or a key feature changes. The reasons for each are in docs/reviews/signed-rebuild-r2*.md.
+  - headache-04, headache-06
+  - abdominal-pain-08, abuse-domestic-01, abuse-domestic-14
+  - asthma-copd-01 (scorer limits, section 4), asthma-copd-11, asthma-copd-13, burns-01, burns-06
+  - arrhythmia-06
+  - seizures-03, shock-07, shock-12, shock-13
+  - pulmonary-edema-01, pulmonary-edema-04
+  - delirium-agitation-04, 05, 06, 09, 11, 14, 15. Delirium KF 4 (sedation before restraint) is saturated: every agent sold in Canada is already keyed.
+  - sob-01, 03, 04, 05, 06, 09, 10, 11, 14, 15
+  - ems-10
+  - first-trimester-bleeding-15, multiple-patients-06, multiple-patients-15
+  - gi-bleed-15
+  - chest-pain-11
+
+  Your choice for each: keep the signed duplicate, allow a key feature to change, or allow a D1 repeat. The last needs the freeze lifted.
 - **airway-09 stays on its signed text.** Its rebuild failed review in g09 because it retold tox-20's overdose arc. Two later attempts at a new story were each stopped by an automated safety filter before any text was written. airway-09 is therefore still the signed version, a member of its signed-duplicate cluster, and released. Choose one: keep it as it is, rebuild it by hand, or hold it back. Holding it back costs nothing at the gate.
 
 ## 4. The scorer misreads negation and word order (bigger than any single SAMP)
