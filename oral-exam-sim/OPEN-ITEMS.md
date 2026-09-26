@@ -6,6 +6,13 @@ Decisions only you can make. Nothing here has been acted on.
 
 **Found on 26 September 2026:** GitHub reports `dhoota/the-preceptor` as **public**, not private. Anyone can read it now, including its full history.
 
+**Decision on 26 September 2026: make it private.** Arjan asked for "no public repo, private only". The build session has no tool that can change repository settings, so this has to be done by the account owner:
+1. Open https://github.com/dhoota/the-preceptor while signed in as `dhoota`.
+2. Settings > General > scroll to Danger Zone > Change repository visibility > Make private. Confirm.
+3. In Codemagic, check the app "Preceptor: CCFP-EM" still has access to the repository. A private repository needs the Codemagic GitHub App to have access to it.
+
+Status: **not yet done** at the time of writing. Going private stops new public reads. Anything already cloned, forked, cached or archived while it was public stays out of reach whatever is done later. History rewrite and a fresh repository (options 2 and 3 below) remain open for Arjan to choose later.
+
 What the public history contains:
 - Your name and the old website bio ("founded by Arjan Dhoot, MD", with your training details), in earlier versions of `index.html`.
 - Your personal email address, `dhoota@hotmail.com`, in earlier versions of `index.html`.
