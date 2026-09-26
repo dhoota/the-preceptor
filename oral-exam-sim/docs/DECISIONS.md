@@ -8,7 +8,7 @@ Decisions made by the product owner, not by the physician reviewer. Each is an e
 
 **The rule:** in crowded topics, a new SAMP may repeat one decision already keyed in a signed-off SAMP, where that decision is itself the literal wording of a CFPC key feature. This is a judgement about redundancy. It is not a judgement about the right answer.
 
-**Running total: 16 questions now ride on D1.** It began as a waiver for 3. Each later row was added when a rebuild group landed. The total is the decision Arjan should weigh, not any single row. Reversing D1 sends all 16 back for rebuild. If the total climbs much past 20, no more rows are added until the product owner decides again.
+**Running total: 17 questions now ride on D1.** It began as a waiver for 3. Each later row was added when a rebuild group landed. The total is the decision Arjan should weigh, not any single row. Reversing D1 sends all 17 back for rebuild. If the total climbs much past 20, no more rows are added until the product owner decides again.
 
 **Covered SAMPs:**
 

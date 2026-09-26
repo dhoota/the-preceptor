@@ -670,9 +670,9 @@ export const MULTIPLE_TRAUMA_SAMPS: Samp[] = [
     id: "multiple-trauma-08",
     topic: "multiple-trauma",
     alsoTopics: ["airway"],
-    title: "Man pinned by a tree trunk",
+    title: "Man pinned against a barn wall",
     stem:
-      "A 38-year-old man is brought to the emergency department by ambulance 40 minutes after a tree he was cutting split and the trunk struck him across the chest. It pinned him against a woodpile until coworkers rolled it off. He coughed up a small amount of blood at the scene. He has no medical history and takes no medications. He is anxious and speaks in short phrases. GCS 15. There is crepitus over his neck and right chest wall. Breath sounds are absent on the right, and the trachea is midline. eFAST shows no lung sliding on the right and no pericardial or abdominal free fluid. His pelvis is stable.",
+      "A 38-year-old man is brought to the emergency department by ambulance 40 minutes after a reversing skid steer loader pinned his chest against a barn wall on his farm. His brother drove it forward within about a minute. He coughed up a small amount of blood at the scene. He has no medical history and takes no medications. He is anxious and speaks in short phrases. GCS 15. There is crepitus over his neck and right chest wall. Breath sounds are absent on the right, and the trachea is midline. eFAST shows no lung sliding on the right and no pericardial or abdominal free fluid. His pelvis is stable.",
     vitals: { temperature: "36.1°C", pulse: "118/minute", resp: "32/minute", bp: "134/82 mmHg", o2sat: "86% on a non-rebreather mask", weight: "86 kg" },
     questions: [
       {
