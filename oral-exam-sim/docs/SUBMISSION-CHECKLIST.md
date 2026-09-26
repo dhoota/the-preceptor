@@ -202,7 +202,7 @@ All of these are in App Store Connect > Apps > the app with bundle `com.precepto
   - Support URL: https://thepreceptor.ca
   - Marketing URL: https://thepreceptor.ca
   - What's New: section "What's New (4000)".
-  - Copyright: **UNKNOWN**. For example "2026 Arjan Dhoot" or your company name.
+  - Copyright: `2026 Preceptor`
 
 **E2. Screenshots.**
 - Upload, in order 01 to 08:
@@ -288,7 +288,6 @@ All of these are in App Store Connect > Apps > the app with bundle `com.precepto
 - Whether Draft (unsigned) SAMPs may be visible at launch (A1).
 - Countries to sell in (B1, C5, F4).
 - The state of build 7 in App Review (D2).
-- The copyright line (E1).
 - The Play health apps declaration (F2).
 - Whether the Codemagic upload works while the Play app is a Draft, or the first bundle must go up by hand (D3).
 - Who the 12 closed testers are (F0).
