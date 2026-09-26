@@ -113,6 +113,10 @@ const YEARS_PREG: Source = {
   citation: "van der Pol LM, Tromeur C, Bistervels IM and colleagues. Pregnancy-adapted YEARS algorithm for diagnosis of suspected pulmonary embolism. N Engl J Med. 2019.",
   url: "https://www.nejm.org/doi/full/10.1056/NEJMoa1813865",
 };
+const TC_PREG_DX: Source = {
+  id: "tc-preg-dx",
+  citation: "Thrombosis Canada. Clinical guide: pregnancy, diagnosis of DVT and PE. 2026.",
+};
 const ADJUST_PE: Source = {
   id: "adjust-pe",
   citation: "Righini M and colleagues. Age-adjusted D-dimer cutoff levels to rule out pulmonary embolism: the ADJUST-PE study. JAMA. 2014.",
@@ -863,7 +867,7 @@ export const CHEST_PAIN_S28: Samp[] = [
         select: 4,
         correct: [0, 3, 5, 6],
         explanation:
-          "The expert panel recommends an IV cephalosporin with an oral macrolide, incentive spirometry and oxygen for saturation below 95%. Her hemoglobin has fallen 17 g/L below baseline, which exceeds the 10 g/L drop at which simple transfusion is recommended. Large fluid boluses can cause pulmonary edema and worsen the syndrome. Steroids are linked to rebound pain crises. She has no indication for anticoagulation or diuresis.",
+          "The expert panel recommends an IV cephalosporin with an oral macrolide, incentive spirometry and oxygen for saturation below 95%. Her hemoglobin has fallen 17 g/L below baseline, which exceeds the 10 g/L drop at which simple transfusion is recommended. Large fluid boluses can cause pulmonary edema and worsen the syndrome. The panel judges the role of corticosteroids uncertain, and a large study linked them to longer hospital stays. She has no indication for anticoagulation or diuresis.",
         keyFeature: { topic: "chest-pain", n: 2 },
         source: "nhlbi-sickle",
       },
@@ -887,6 +891,7 @@ export const CHEST_PAIN_S28: Samp[] = [
     ],
     sources: [CANHAEM, SICKLE],
     ...meta,
+    version: 2,
   },
 
   /* 25 ------------------------------------------------------------------ */
@@ -1326,7 +1331,7 @@ export const CHEST_PAIN_S28: Samp[] = [
       {
         id: "q1",
         kind: "single",
-        prompt: "Which of the following features of her history most increases her pretest probability of PE?",
+        prompt: "Which of the following features of her presentation most increases her pretest probability of PE?",
         options: [
           "Absence of leg symptoms",
           "Current pregnancy at 24 weeks",
@@ -1343,25 +1348,25 @@ export const CHEST_PAIN_S28: Samp[] = [
       {
         id: "q2",
         kind: "single",
-        prompt: "Which of the following statements about D-dimer testing in this patient is most accurate?",
+        prompt: "Which of the following is the most appropriate approach to D-dimer testing in this patient?",
         options: [
-          "It cannot be used because pregnancy raises it",
-          "It is only useful after 36 weeks",
-          "It may exclude PE using pregnancy-adapted YEARS",
-          "It should replace compression ultrasound",
-          "It uses the age-adjusted cutoff",
+          "Apply the age-adjusted cutoff",
+          "Apply the PEGeD pretest thresholds",
+          "Skip it and go straight to chest imaging",
+          "Use it only in the third trimester",
+          "Use the pregnancy-adapted YEARS rule",
         ],
-        correct: 2,
+        correct: 4,
         explanation:
-          "The pregnancy-adapted YEARS algorithm safely excluded PE with D-dimer in many pregnant women. D-dimer rises through pregnancy, so it is most useful earlier in gestation, not only after 36 weeks. Compression ultrasound is used when there are leg symptoms, not replaced by D-dimer. The age-adjusted cutoff applies to patients over 50.",
+          "Thrombosis Canada calls the pregnancy-adapted YEARS protocol the best validated method for excluding PE in pregnancy. It pairs D-dimer with the three YEARS items, and in its validation study it avoided chest imaging in 39% of women. Going straight to imaging gives up that chance to spare her and the fetus radiation. D-dimer rises through pregnancy and is highest in the third trimester, so it is least useful late in gestation. PEGeD excluded pregnant women, and the age-adjusted cutoff applies only to patients over 50.",
         keyFeature: { topic: "chest-pain", n: 5 },
-        source: "years-pregnancy",
+        source: "tc-preg-dx",
       },
       {
         id: "q3",
         kind: "single",
-        update: "She has none of the three YEARS items. D-dimer is 780 ng/mL FEU.",
-        prompt: "Which of the following is the most appropriate next step?",
+        update: "She has no signs of DVT and no hemoptysis, and PE is not the most likely diagnosis. Her D-dimer is 780 mcg/L FEU.",
+        prompt: "Which of the following is the most appropriate next step in her assessment for PE?",
         options: [
           "Bilateral leg compression ultrasound",
           "CT pulmonary angiogram",
@@ -1371,14 +1376,14 @@ export const CHEST_PAIN_S28: Samp[] = [
         ],
         correct: 4,
         explanation:
-          "With no YEARS items, PE is excluded when the D-dimer is below 1000 ng/mL, and hers is 780 ng/mL. No imaging or anticoagulation is needed. Compression ultrasound is used only for women with leg symptoms. CT or perfusion scanning would expose her and the fetus to radiation without benefit.",
+          "She has none of the three YEARS items, so PE is excluded when the D-dimer is below 1000 mcg/L FEU, and hers is 780 mcg/L. No imaging or anticoagulation is needed. Compression ultrasound is used only for women with signs of DVT. CT or perfusion scanning would expose her and the fetus to radiation without benefit.",
         keyFeature: { topic: "chest-pain", n: 1 },
         source: "years-pregnancy",
       },
       {
         id: "q4",
         kind: "single",
-        update: "Later, a woman at 30 weeks of pregnancy has the same symptoms plus hemoptysis. She has no leg symptoms. Her D-dimer is also 780 ng/mL FEU.",
+        update: "Later, a woman at 30 weeks of pregnancy has the same symptoms plus hemoptysis. She has no leg symptoms. Her D-dimer is also 780 mcg/L FEU.",
         prompt: "Which of the following is the most appropriate next step for this second patient?",
         options: [
           "Bilateral leg compression ultrasound",
@@ -1389,13 +1394,14 @@ export const CHEST_PAIN_S28: Samp[] = [
         ],
         correct: 1,
         explanation:
-          "Hemoptysis is a YEARS item, so her D-dimer threshold falls to 500 ng/mL, and 780 ng/mL is above it. She needs CT pulmonary angiography. Compression ultrasound comes first only when there are leg symptoms. Repeating the D-dimer or discharging her leaves PE unexcluded. An echo cannot rule out PE in a stable patient.",
+          "Hemoptysis is a YEARS item, so her D-dimer threshold falls to 500 mcg/L, and 780 mcg/L is above it. PE is not excluded, and CT pulmonary angiography was the imaging test in the validation study. Thrombosis Canada also accepts a V/Q scan, and some physicians prefer it when the chest X-ray is normal. Compression ultrasound comes first only when there are signs of DVT. Repeating the D-dimer or discharging her leaves PE unexcluded, and an echo cannot rule it out in a stable patient.",
         keyFeature: { topic: "chest-pain", n: 4 },
         source: "years-pregnancy",
       },
     ],
-    sources: [ESC_PE, YEARS_PREG],
+    sources: [ESC_PE, YEARS_PREG, TC_PREG_DX],
     ...meta,
+    version: 2,
   },
 
   /* 32 ------------------------------------------------------------------ */

@@ -1,6 +1,6 @@
 import { describe, expect, it } from "vitest";
 import { VITAL_LABELS, sampFormat, type Samp, type SampQuestion } from "@/engine/samp";
-import { SAMPS, SAMP_BATCHES } from "@/samps";
+import { AUTHORED_SAMPS as SAMPS, SAMP_BATCHES } from "@/samps";
 import { stripInstruction } from "../src/screens/SampParts";
 import expansion from "../docs/samp-expansion.json";
 import conformance from "../docs/conformance.json";

@@ -1665,6 +1665,7 @@ export const ANAPHYLAXIS_S23: Samp[] = [
   },
   {
     ...base,
+    version: 2,
     id: "anaphylaxis-38",
     title: "Reaction at the sexual health clinic",
     stem: "A 32-year-old man is brought to the emergency department by ambulance from a sexual health clinic next door. He received benzathine penicillin G 2.4 million units IM for early syphilis 30 minutes ago. Ten minutes after the injection he developed itch, hives, chest tightness and light-headedness. Clinic staff gave epinephrine 0.5 mg IM 5 minutes before paramedics arrived. He has no known drug allergies and does not recall taking penicillin before. He takes no medications. He has generalized urticaria and mild wheeze. He is anxious but alert.",
@@ -1713,7 +1714,7 @@ export const ANAPHYLAXIS_S23: Samp[] = [
       {
         id: "q3",
         kind: "single",
-        update: "His symptoms resolve after the second dose and 1 L of crystalloid.",
+        update: "His hives, wheeze and hypotension resolve with treatment in the emergency department.",
         prompt: "Which of the following is the most appropriate disposition for him?",
         options: [
           "Discharge after 1 hour",
@@ -1723,7 +1724,7 @@ export const ANAPHYLAXIS_S23: Samp[] = [
           "Extended observation or admission",
         ],
         correct: 4,
-        explanation: "He needed more than one dose of epinephrine, a major risk factor for a biphasic reaction, and benzathine penicillin is a long-acting depot that keeps releasing drug for days to weeks. Both favour extended observation or admission rather than early discharge. Cetirizine and prednisone do not prevent a biphasic reaction. The clinic cannot provide the observation he needs.",
+        explanation: "His BP of 84/50 mmHg after a first dose of epinephrine marks severe anaphylaxis, a major risk factor for a biphasic reaction. Benzathine penicillin is also a long-acting depot that keeps releasing drug for days to weeks. Both favour extended observation or admission. Discharge after 1 hour suits only a reaction without severe features that settles with one dose. Cetirizine and prednisone do not prevent a biphasic reaction. The clinic cannot provide the observation he needs.",
         keyFeature: { topic: "anaphylaxis", n: 4 },
         source: "jtf20",
       },

@@ -542,7 +542,7 @@ export const AIRWAY_S21_SAMPS: Samp[] = [
         id: "q3",
         kind: "single",
         update:
-          "Nasendoscopy shows a swollen, red epiglottis and swollen arytenoids, with about half of the airway open. Ceftriaxone 2 g IV and dexamethasone 10 mg IV are given. Anesthesia and otolaryngology are called.",
+          "The epiglottis and arytenoids are confirmed to be swollen, with about half of the airway open. Ceftriaxone 2 g IV and dexamethasone 10 mg IV are given. Anesthesia and otolaryngology are called.",
         prompt: "Which of the following is the most appropriate plan for securing his airway?",
         options: [
           "Awake flexible intubation with ENT present",
@@ -560,7 +560,7 @@ export const AIRWAY_S21_SAMPS: Samp[] = [
       {
         id: "q4",
         kind: "single",
-        update: "Airway topical anesthesia with lidocaine is planned for the awake intubation. His estimated lean body weight is 70 kg.",
+        update: "Topical lidocaine is planned to anesthetize his airway. His estimated lean body weight is 70 kg.",
         prompt: "Which of the following is the maximum total dose of topical lidocaine for this procedure?",
         options: ["315 mg", "490 mg", "630 mg", "738 mg", "1050 mg"],
         correct: 2,
@@ -573,7 +573,7 @@ export const AIRWAY_S21_SAMPS: Samp[] = [
     sources: [BERGER, CAFG2, DASATI],
     reviewed: false,
     author: AUTHOR,
-    version: 1,
+    version: 2,
   },
   {
     id: "airway-20",
@@ -1989,9 +1989,9 @@ export const AIRWAY_S21_SAMPS: Samp[] = [
     id: "airway-40",
     topic: "airway",
     alsoTopics: ["multiple-trauma"],
-    title: "Dive into a shallow lake",
+    title: "Headfirst landing from a snowboard jump",
     stem:
-      "A 22-year-old man is brought to the emergency department by ambulance 40 minutes after diving into a shallow lake. He could not move his arms or legs when he was pulled from the water. He is alert and anxious. He can shrug his shoulders but has no other movement and no sensation below the clavicles. His breathing is rapid and shallow, his voice is weak, and his skin is warm and dry. A cervical collar is in place. His forced vital capacity is 0.9 L.",
+      "A 22-year-old man is brought to the emergency department by ambulance 90 minutes after landing on his head from a snowboard jump. He lay in the snow, unable to move his arms or legs, until the ski patrol reached him. He is alert and anxious. He can shrug his shoulders but has no other movement and no sensation below the clavicles. His breathing is rapid and shallow, his voice is weak, and his skin is warm and dry. A cervical collar is in place. His forced vital capacity is 0.9 L.",
     vitals: { temperature: "35.9°C oral", pulse: "52/minute", resp: "30/minute", bp: "82/48 mmHg", o2sat: "93% on 10 L/minute by nonrebreather mask", weight: "80 kg" },
     questions: [
       {
@@ -2007,7 +2007,7 @@ export const AIRWAY_S21_SAMPS: Samp[] = [
         ],
         correct: 1,
         explanation:
-          "A forced vital capacity of 0.9 L is 900 / 80 = 11 mL/kg, well below the 20 mL/kg level at which ventilation starts to fail. With an injury at about C4, diaphragm function is weak and will fatigue, and cord swelling can raise the level over the next days, so early controlled intubation is safer than a crash intubation. Hypotension, bradycardia and warm, dry skin are features of neurogenic shock, which needs vasopressors but does not by itself decide the airway. His temperature of 35.9°C is only slightly low, reflecting the cold water and lost vasomotor control, and does not bear on the airway.",
+          "A forced vital capacity of 0.9 L is 900 / 80 = 11 mL/kg, well below the 20 mL/kg level at which ventilation starts to fail. With an injury at about C4, diaphragm function is weak and will fatigue, and cord swelling can raise the level over the next days, so early controlled intubation is safer than a crash intubation. Hypotension, bradycardia and warm, dry skin are features of neurogenic shock, which needs vasopressors but does not by itself decide the airway. His temperature of 35.9°C is only slightly low, reflecting his time in the snow and lost vasomotor control, and does not bear on the airway.",
         keyFeature: { topic: "airway", n: 2 },
         source: "walls-ch34",
       },
@@ -2049,7 +2049,7 @@ export const AIRWAY_S21_SAMPS: Samp[] = [
     sources: [WALLS_CH34, SCI, ATLS],
     reviewed: false,
     author: AUTHOR,
-    version: 1,
+    version: 2,
   },
   {
     id: "airway-41",

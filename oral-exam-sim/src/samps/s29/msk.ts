@@ -1166,7 +1166,7 @@ export const MSK_S29: Samp[] = [
         id: "q3",
         kind: "single",
         update: "Cefazolin 2 g IV is given and the wound is covered with a saline-soaked dressing. The orthopedic resident asks how urgently the wound must be debrided.",
-        prompt: "Which of the following intervals from the time of injury is the standard target for surgical debridement of her open fracture?",
+        prompt: "Which of the following is the British Orthopaedic Association target time from injury to debridement for her fracture?",
         options: ["1 hour", "6 hours", "24 hours", "48 hours", "72 hours"],
         correct: 2,
         explanation:
@@ -1188,6 +1188,7 @@ export const MSK_S29: Samp[] = [
     ],
     sources: [S.east, S.boast, S.gustilo, S.boastArterial],
     ...META,
+    version: 2,
   },
   {
     id: "msk-35",

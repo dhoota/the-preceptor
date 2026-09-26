@@ -54,6 +54,7 @@ import { SAMPS_S50 } from "./s50";
 import { SAMPS_S51 } from "./s51";
 import { SAMPS_S52 } from "./s52";
 import { SAMPS_S53 } from "./s53";
+import heldBack from "./held-back.json";
 
 export const SAMP_BATCHES: Record<string, Samp[]> = {
   s01: SAMPS_S01,
@@ -111,7 +112,14 @@ export const SAMP_BATCHES: Record<string, Samp[]> = {
   s53: SAMPS_S53,
 };
 
-export const SAMPS: Samp[] = Object.values(SAMP_BATCHES).flat();
+/** Every authored SAMP, including any held back from release. Tests check all of these. */
+export const AUTHORED_SAMPS: Samp[] = Object.values(SAMP_BATCHES).flat();
+
+/** Ids held back from the release until they have a fresh sign-off. See held-back.json. */
+export const HELD_BACK = new Set<string>(heldBack.ids);
+
+/** The SAMPs the app shows. Held-back SAMPs are left out. */
+export const SAMPS: Samp[] = AUTHORED_SAMPS.filter((s) => !HELD_BACK.has(s.id));
 
 export function getSamp(id: string): Samp | undefined {
   return SAMPS.find((s) => s.id === id);

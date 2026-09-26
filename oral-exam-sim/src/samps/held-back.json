@@ -1,0 +1,7 @@
+{
+  "note": "SAMPs authored but held back from the release build until they have a fresh physician sign-off. The app never shows them. Tests still check them. Remove an id here once it is signed off.",
+  "ids": ["asthma-copd-32"],
+  "reasons": {
+    "asthma-copd-32": "Physician approved REJECT and rebuild (HOLD proposal, group 3). The rebuild is not written yet and will need a fresh sign-off."
+  }
+}

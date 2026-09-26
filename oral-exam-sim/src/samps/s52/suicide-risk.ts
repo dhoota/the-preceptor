@@ -26,7 +26,6 @@ const S = {
   russell: { id: "russell-chosen-name", citation: "Russell ST, Pollitt AM, Li G, Grossman AH. Chosen name use is linked to reduced depressive symptoms, suicidal ideation, and suicidal behavior among transgender youth. J Adolesc Health. 2018.", url: "https://pubmed.ncbi.nlm.nih.gov/29609917/" },
   bohnert: { id: "bohnert-opioids", citation: "Bohnert ASB, Ilgen MA. Understanding links among opioid use, overdose, and suicide. N Engl J Med. 2019.", url: "https://pubmed.ncbi.nlm.nih.gov/30601750/" },
   acep: { id: "acep-psych", citation: "American College of Emergency Physicians Clinical Policies Subcommittee on the Adult Psychiatric Patient, Nazarian DJ, Broder JS, and colleagues. Clinical policy: critical issues in the diagnosis and management of the adult psychiatric patient in the emergency department. Ann Emerg Med. 2017.", url: "https://pubmed.ncbi.nlm.nih.gov/28335913/" },
-  vantil: { id: "vantil-veterans", citation: "VanTil LD, Simkus K, Rolland-Harris E, Heber A. Identifying release-related precursors to suicide among Canadian Veterans between 1976 and 2012. J Mil Veteran Fam Health. 2021.", url: "https://doi.org/10.3138/jmvfh-2020-0011" },
   vac: { id: "vac-assistance", citation: "Veterans Affairs Canada. Talk to a mental health professional: VAC Assistance Service. 2026.", url: "https://www.veterans.gc.ca/en/contact-us/talk-mental-health-professional" },
   witt: { id: "witt-cochrane", citation: "Witt KG, Hetrick SE, Rajaram G, and colleagues. Psychosocial interventions for self-harm in adults. Cochrane Database Syst Rev. 2021.", url: "https://doi.org/10.1002/14651858.CD013668.pub2" },
   donovan: { id: "donovan-ed-safety", citation: "Donovan AL, Aaronson EL, Black L, and colleagues. Keeping patients at risk for self-harm safe in the emergency department: a protocolized approach. Jt Comm J Qual Patient Saf. 2021.", url: "https://pubmed.ncbi.nlm.nih.gov/32962905/" },
@@ -827,18 +826,18 @@ export const SUICIDE_RISK_S52: Samp[] = [
         id: "q2",
         kind: "single",
         update: "He has thought it would be easier to be dead but has no plan or intent. He has no past attempts and no psychiatric history. His brother arrives and offers to stay with him.",
-        prompt: "Which of the following is the most appropriate disposition for him from the emergency department?",
-        options: ["Admission to psychiatry overnight", "Constant observation in the department", "Hold for psychiatry review tomorrow", "Medical admission for telemetry", "Return home with his brother and a plan"],
-        correct: 4,
+        prompt: "Which of the following is the most appropriate next step in his emergency department management?",
+        options: ["Admission to psychiatry overnight", "Hold for psychiatry review tomorrow", "Medical admission for telemetry", "Psychiatry assessment in the ED today", "Return home with his brother and a plan"],
+        correct: 3,
         explanation:
-          "Thoughts of death without plan, intent or past attempts, with a brother who will stay with him, fit a low acute risk level that can be managed as an outpatient. He needs a safety plan, crisis contacts and prompt follow-up. Admission, constant observation or a hold for psychiatry go beyond what his risk requires and can deter future help seeking. His cardiac workup is negative, so telemetry adds nothing.",
+          "His thoughts of death without a plan, intent or past attempt fit the SAFE-T low risk row, but his risk factors do not. SAFE-T counts triggering events that bring humiliation or shame as a risk factor, as it does global insomnia. It places an acute precipitating event in its high risk row, and one supportive brother does not amount to strong protective factors. His level is therefore uncertain and needs a full psychiatry assessment in the department today. Admission or a hold until tomorrow commits him to a setting before that assessment, and sending him home now skips it. His cardiac workup is negative, so telemetry adds nothing.",
         keyFeature: { topic: "suicide-risk", n: 4 },
         source: "safe-t",
       },
       {
         id: "q3",
         kind: "single",
-        prompt: "Which of the following follow-up arrangements best supports his safety after discharge?",
+        prompt: "Which of the following follow-up arrangements would best support his safety if he is discharged?",
         options: ["Crisis team call within 24 hours", "Family doctor visit in 1 month", "Letter to his lawyer about stress", "Mail-out mental health pamphlets", "Psychiatry referral with no date"],
         correct: 0,
         explanation:
@@ -849,6 +848,7 @@ export const SUICIDE_RISK_S52: Samp[] = [
     ],
     sources: [S.safet, S.miller],
     ...META,
+    version: 2,
   },
   /* 31 Hand injury in a young veteran ------------------------------------ */
   {
@@ -856,22 +856,11 @@ export const SUICIDE_RISK_S52: Samp[] = [
     topic: "suicide-risk",
     title: "A wall in the kitchen",
     stem:
-      "A 27-year-old man presents to the emergency department at 02:00 with his partner. He punched a wall during an argument 3 hours ago and has a swollen right hand. A radiograph shows a fifth metacarpal neck fracture. He served 6 years in the Canadian Armed Forces and was released at the rank of corporal 3 years ago, at age 24, after a deployment injury. He has post-traumatic stress disorder and stopped attending therapy 2 months ago. He drinks 8 beers most nights. His partner says he has been sleeping in his truck. He is calm, avoids eye contact and says he is fine.",
+      "A 27-year-old man presents to the emergency department at 02:00 with his partner. He punched a wall during an argument 3 hours ago and has a swollen right hand. A radiograph shows a fifth metacarpal neck fracture. He served 6 years in the Canadian Armed Forces and was released 3 years ago after a deployment injury. He has post-traumatic stress disorder and stopped attending therapy 2 months ago. He drinks 8 beers most nights. His partner says he has been sleeping in his truck. He is calm, avoids eye contact and says he is fine.",
     vitals: { temperature: "36.7°C oral", pulse: "92/minute", resp: "16/minute", bp: "134/82 mmHg", o2sat: "98% on room air" },
     questions: [
       {
         id: "q1",
-        kind: "single",
-        prompt: "Which of the following statements about suicide risk in Canadian Armed Forces veterans is most accurate?",
-        options: ["Female veterans peak soon after release", "Junior ranks carry lower risk than officers", "Release before age 25 carries the highest risk", "Risk peaks in the first months after release", "Risk stays above civilian levels for life"],
-        correct: 2,
-        explanation:
-          "In a Canadian study of veterans released from 1976 to 2012, men who released before age 25 had the highest risk of suicide. He released at 24 as a corporal, a non-commissioned rank. Men who released as junior non-commissioned members were 1.9 times as likely to die by suicide as junior officers, so junior rank adds risk rather than lowering it. In those men the risk peaked about 4 years after release, not in the first months. By 20 years after release the rate in male veterans fell to that of other Canadian men. In female veterans the risk peaked about 20 years after release.",
-        keyFeature: { topic: "suicide-risk", n: 1 },
-        source: "vantil-veterans",
-      },
-      {
-        id: "q2",
         kind: "single",
         update: "His partner adds that last week he gave his service medals to his younger brother and asked him to look after his dog.",
         prompt: "Which of the following findings most suggests that he has started preparing for suicide?",
@@ -883,7 +872,7 @@ export const SUICIDE_RISK_S52: Samp[] = [
         source: "posner-cssrs",
       },
       {
-        id: "q3",
+        id: "q2",
         kind: "single",
         update: "Asked directly, he says he plans to drive his truck into the river next week on the anniversary of a friend's death. He agrees to stay in hospital.",
         prompt: "Which of the following is the most appropriate disposition for him from the emergency department?",
@@ -895,7 +884,7 @@ export const SUICIDE_RISK_S52: Samp[] = [
         source: "safe-t",
       },
       {
-        id: "q4",
+        id: "q3",
         kind: "single",
         update: "His partner is frightened. She asks where she can get counselling for herself while he is in hospital and after he comes home.",
         prompt: "Which of the following services should you give her for counselling support at any hour?",
@@ -907,8 +896,9 @@ export const SUICIDE_RISK_S52: Samp[] = [
         source: "vac-assistance",
       },
     ],
-    sources: [S.vantil, S.posner, S.safet, S.vac],
+    sources: [S.posner, S.safet, S.vac],
     ...META,
+    version: 2,
   },
   /* 32 Threats over intimate images ---------------------------------------- */
   {

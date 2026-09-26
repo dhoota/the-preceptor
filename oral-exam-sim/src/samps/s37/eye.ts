@@ -511,19 +511,19 @@ export const EYE_S37_SAMPS: Samp[] = [
       {
         id: "q2",
         kind: "single",
-        prompt: "Which of the following is the most appropriate plan for his tobramycin and dexamethasone drops?",
+        prompt: "Which of the following is the most appropriate plan for this patient?",
         options: [
           "Add latanoprost and continue the drops",
-          "Continue them with a 3-month recheck",
-          "Replace them with loteprednol drops",
-          "Stop them and refer to ophthalmology",
-          "Switch to moxifloxacin drops alone",
+          "Continue the drops with a 3-month recheck",
+          "Ophthalmology review within 24 hours",
+          "Stop the drops and see his family physician",
+          "Switch to loteprednol and recheck in 1 month",
         ],
-        correct: 3,
+        correct: 2,
         explanation:
-          "The steroid is the cause of the pressure rise, and the pressure usually falls over weeks once it is stopped. Ophthalmology should see him within 1 to 2 days to check the optic nerves, decide on pressure lowering drops and follow the corneal opacities, which can flare once the steroid is withdrawn. Loteprednol still carries a steroid pressure risk. Adding latanoprost treats the number but keeps the cause. Waiting 3 months risks optic nerve damage. He has no bacterial infection that needs moxifloxacin.",
+          "A pressure of 38 mmHg with reduced vision in the left eye needs an ophthalmologist within 24 hours to examine the optic nerve and lower the pressure if needed. The ophthalmologist also decides how to withdraw the dexamethasone. The American Academy of Ophthalmology advises that steroids used for subepithelial infiltrates be tapered slowly to the minimum effective dose, with regular pressure checks. Stopping the drops with family physician follow-up skips that taper and leaves a pressure of 38 mmHg without specialist review. Loteprednol may carry a lower pressure risk, but a 1-month recheck leaves the pressure unwatched. Adding latanoprost treats the pressure but keeps full strength dexamethasone going with no specialist review, and waiting 3 months risks optic nerve damage.",
         keyFeature: { topic: "eye", n: 4 },
-        source: "steroid-iop",
+        source: "aao-conj",
       },
       {
         id: "q3",
@@ -545,6 +545,7 @@ export const EYE_S37_SAMPS: Samp[] = [
     ],
     sources: [S.jonesRhee, S.aaoConj],
     ...META,
+    version: 2,
   },
   {
     id: "eye-22",

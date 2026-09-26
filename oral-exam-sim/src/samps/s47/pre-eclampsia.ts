@@ -698,7 +698,7 @@ export const PRE_ECLAMPSIA_S47_SAMPS: Samp[] = [
         options: [
           "carbetocin 100 mcg IV",
           "carboprost 250 mcg IM",
-          "ergonovine 0.2 mg IM",
+          "ergonovine 0.25 mg IM",
           "misoprostol 800 mcg SL",
           "tranexamic acid 1 g IV",
         ],
@@ -711,12 +711,12 @@ export const PRE_ECLAMPSIA_S47_SAMPS: Samp[] = [
       {
         id: "q2",
         kind: "single",
-        update: "The bleeding settles after misoprostol and tranexamic acid, with a total blood loss of 900 mL. She is admitted to the obstetric unit.",
+        update: "The bleeding settles, with a total blood loss of 900 mL. She is admitted to an obstetric unit that follows ACOG guidance for HELLP syndrome.",
         prompt: "Which of the following is the longest acceptable interval between her repeat laboratory tests?",
         options: ["4 hours", "12 hours", "24 hours", "48 hours", "72 hours"],
         correct: 1,
         explanation:
-          "ACOG advises very close monitoring in HELLP syndrome, with laboratory tests at least every 12 hours, because the platelet count can fall by about 40% a day as liver enzymes rise, and the disease can worsen in the first days after birth. From 78 x 10^9/L, a 40% fall would bring her to about 47 x 10^9/L within a day, since 78 x 0.6 = 46.8. Intervals of 24 to 72 hours would miss that fall. Testing every 4 hours is acceptable when she is unstable, but it is not the longest safe interval.",
+          "ACOG advises very close monitoring in HELLP syndrome before and after birth, with laboratory tests at least every 12 hours. The platelet count can fall by about 40% a day as liver enzymes rise, and the disease can worsen in the first days after birth. From 78 x 10^9/L, a 40% fall would bring her to about 47 x 10^9/L within a day, since 78 x 0.6 = 46.8. Intervals of 24 to 72 hours would miss that fall. Testing every 4 hours is reasonable when she is unstable, but it is not the longest interval ACOG accepts.",
         keyFeature: { topic: "pre-eclampsia", n: 3 },
         source: "acog-222",
       },
@@ -742,6 +742,7 @@ export const PRE_ECLAMPSIA_S47_SAMPS: Samp[] = [
     ],
     sources: [S.figo, S.acog222],
     ...META,
+    version: 2,
   },
   /* 24 ------------------------------------------------------------------ */
   {

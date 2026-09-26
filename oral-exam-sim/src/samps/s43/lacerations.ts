@@ -39,7 +39,6 @@ const S = {
   sandhu: { id: "ccs-syncope", citation: "Sandhu RK, Raj SR, Thiruganasambandamoorthy V, and colleagues. Canadian Cardiovascular Society clinical practice update on the assessment and management of syncope. Can J Cardiol. 2020.", url: "https://doi.org/10.1016/j.cjca.2019.12.023" },
   gonsalves: { id: "gonsalves-tongue", citation: "Gonsalves CL, Zhu JW, Kim GY, Leveille CF, Kam AJ. Surgical versus conservative management of tongue lacerations in the acute care setting: a systematic review of the literature. Paediatr Child Health. 2022.", url: "https://doi.org/10.1093/pch/pxab044" },
   tindall: { id: "tindall-wrinkle", citation: "Tindall A, Dawood R, Povlsen B. The skin wrinkle test: a simple nerve injury test for paediatric and uncooperative patients. Emerg Med J. 2006.", url: "https://doi.org/10.1136/emj.2005.031377" },
-  nice: { id: "nice-ng225", citation: "National Institute for Health and Care Excellence. Self-harm: assessment, management and preventing recurrence. NICE guideline NG225. 2022.", url: "https://www.nice.org.uk/guidance/ng225" },
   courter: { id: "courter-glass", citation: "Courter BJ. Radiographic screening for glass foreign bodies: what does a negative foreign body series really mean? Ann Emerg Med. 1990.", url: "https://pubmed.ncbi.nlm.nih.gov/2393187/" },
   istap: { id: "istap-2018", citation: "LeBlanc K, Campbell K, and colleagues. International Skin Tear Advisory Panel. Best practice recommendations for the prevention and management of skin tears in aged skin. Wounds International. 2018.", url: "https://woundsinternational.com/best-practice-statements/istap-best-practice-recommendations-prevention-and-management-skin-tears-aged-skin/" },
   davis: { id: "davis-us-fb", citation: "Davis J, Czerniski B, Au A, Adhikari S, Farrell I, Fields JM. Diagnostic accuracy of ultrasonography in retained soft tissue foreign bodies: a systematic review and meta-analysis. Acad Emerg Med. 2015.", url: "https://onlinelibrary.wiley.com/doi/10.1111/acem.12714" },
@@ -231,18 +230,19 @@ export const LACERATIONS_S43: Samp[] = [
           "Admission to an adolescent inpatient unit",
           "Discharge with a pamphlet on self-harm",
           "Involuntary hold under mental health law",
-          "Psychosocial assessment by mental health staff",
+          "Psychosocial assessment and safety plan",
           "Urgent referral to her family doctor only",
         ],
         correct: 3,
         explanation:
-          "Repeated self-harm over 4 months calls for a psychosocial assessment by a mental health clinician before discharge, covering risk, needs and a safety plan made with her and her family. Denying suicidal thoughts does not remove the need for that assessment. Written material or a family doctor referral alone skips it. She has no suicidal intent or plan and a supportive parent, so an involuntary hold or admission is not justified on these facts.",
+          "Repeated self-harm over 4 months calls for a psychosocial assessment before she leaves. It covers risk, needs and supports, and it ends with a safety plan made with her and her mother. The emergency physician or mental health staff may do it, and mental health follow-up is arranged. Denying suicidal thoughts does not remove the need for that assessment. A pamphlet or a family doctor referral alone skips it. She has no suicidal intent or plan and a supportive parent, so an involuntary hold or admission is not justified on these facts.",
         keyFeature: { topic: "suicide-risk", n: 4 },
-        source: "nice-ng225",
+        source: "cps-suicidal-ideation",
       },
     ],
-    sources: [S.cps, S.nice, S.quinnRisk],
+    sources: [S.cps, S.quinnRisk],
     ...META,
+    version: 2,
   },
   {
     id: "lacerations-19",
@@ -825,7 +825,7 @@ export const LACERATIONS_S43: Samp[] = [
     alsoTopics: ["seizures"],
     title: "Preschooler with a bleeding mouth",
     stem:
-      "A 4-year-old boy is brought to the emergency department by his mother 1 hour after she heard a thud and found him on the kitchen floor beside a chair, with blood in his mouth. She did not see what happened. He was sleepy for about 20 minutes and is now back to his usual self. He is healthy and fully immunized.\n\nThere is a 2.5 cm full thickness laceration on the lateral border of the tongue that gapes when he moves his tongue. It oozes slowly. His teeth are intact and he opens his mouth normally. The neurological examination is normal.",
+      "A 4-year-old boy is brought to the emergency department by his mother 1 hour after she heard a thud and found him on the kitchen floor beside a chair, with blood in his mouth. She did not see what happened. He was sleepy for about 20 minutes and is now back to his usual self. He is healthy and fully immunized.\n\nThere is a 2.5 cm full thickness laceration on the lateral border of the tongue. It gapes at rest, with a flap on its lower edge. It is still bleeding after 10 minutes of firm pressure with gauze. His teeth are intact and he opens his mouth normally. The neurological examination is normal.",
     vitals: { temperature: "37.2°C tympanic", pulse: "112/minute", resp: "22/minute", bp: "100/64 mmHg", o2sat: "99% on room air", weight: "17 kg" },
     questions: [
       {
@@ -858,21 +858,21 @@ export const LACERATIONS_S43: Samp[] = [
         ],
         correct: 2,
         explanation:
-          "Many small tongue lacerations heal well without repair, but a full thickness wound, a gaping wound longer than about 1 to 2 cm, a flap or persistent bleeding is repaired, usually with absorbable sutures that do not need removal. This wound is full thickness and gapes. Nylon sutures would need removal from a small child's tongue. Tissue adhesive does not hold on a wet, mobile surface. Silver nitrate treats small bleeding points, not a gaping full thickness wound.",
+          "This wound is still bleeding after 10 minutes of firm pressure, and it gapes at rest with a flap. Bleeding that pressure does not control needs sutures, and the flap and gap add to the case for repair. Absorbable sutures are used because they do not need removal from a small child's tongue. A systematic review found that most tongue lacerations heal well with or without sutures, so healing without repair suits a small wound that has stopped bleeding, not this one. Nylon would need removal, tissue adhesive does not hold on a wet and mobile surface, and silver nitrate treats only small bleeding points.",
         keyFeature: { topic: TOPIC, n: 3 },
-        source: "rh-ch35",
+        source: "gonsalves-tongue",
       },
       {
         id: "q3",
         kind: "single",
-        update: "The laceration is repaired under procedural sedation. His mother asks about antibiotics.",
-        prompt: "Which of the following is the most appropriate antibiotic plan after this repair?",
+        update: "His mother asks whether he needs antibiotics for the tongue wound.",
+        prompt: "Which of the following is the most appropriate antibiotic plan for this tongue wound?",
         options: [
           "Amoxicillin for 5 days",
           "Amoxicillin-clavulanate for 5 days",
           "Cephalexin for 5 days",
           "Clindamycin for 5 days",
-          "No antibiotics after repair",
+          "No antibiotics",
         ],
         correct: 4,
         explanation:
@@ -881,8 +881,9 @@ export const LACERATIONS_S43: Samp[] = [
         source: "gonsalves-tongue",
       },
     ],
-    sources: [S.gonsalves, S.benbadis, S.rhCh35],
+    sources: [S.gonsalves, S.benbadis],
     ...META,
+    version: 2,
   },
   {
     id: "lacerations-29",

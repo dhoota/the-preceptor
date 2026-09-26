@@ -46,6 +46,7 @@ const S = {
   starr: { id: "starr", citation: "Starr P, Klein-Schwartz W, Spiller H, et al. Incidence and onset of delayed seizures after overdoses of extended-release bupropion. Am J Emerg Med. 2009.", url: "https://pubmed.ncbi.nlm.nih.gov/19857406/" },
   bullock: { id: "bullock", citation: "Bullock MR, Chesnut R, Ghajar J, et al. Surgical management of acute epidural hematomas. Surgical Management of Traumatic Brain Injury Author Group. Neurosurgery. 2006.", url: "https://pubmed.ncbi.nlm.nih.gov/16710967/" },
   rosen88: { id: "rosen-ch88", citation: "Walls RM, Hockberger RS, Gausche-Hill M, Erickson TB, Wilcox SR, editors. Rosen's Emergency Medicine: Concepts and Clinical Practice. 10th ed. Elsevier. 2023. Chapter 88, Seizure.", url: "https://www.us.elsevierhealth.com/rosens-emergency-medicine-concepts-and-clinical-practice-9780323757898.html" },
+  jungilligens: { id: "jungilligens-2021", citation: "Jungilligens J, Michaelis R, Popkirov S. Misdiagnosis of prolonged psychogenic non-epileptic seizures as status epilepticus: epidemiology and associated risks. J Neurol Neurosurg Psychiatry. 2021.", url: "https://doi.org/10.1136/jnnp-2021-326443" },
   rosen169: { id: "rosen-ch169", citation: "Walls RM, Hockberger RS, Gausche-Hill M, Erickson TB, Wilcox SR, editors. Rosen's Emergency Medicine: Concepts and Clinical Practice. 10th ed. Elsevier. 2023. Chapter 169, Pediatric Neurologic Disorders.", url: "https://www.us.elsevierhealth.com/rosens-emergency-medicine-concepts-and-clinical-practice-9780323757898.html" },
   rosen174: { id: "rosen-ch174", citation: "Walls RM, Hockberger RS, Gausche-Hill M, Erickson TB, Wilcox SR, editors. Rosen's Emergency Medicine: Concepts and Clinical Practice. 10th ed. Elsevier. 2023. Chapter 174, Medical Emergencies During Pregnancy.", url: "https://www.us.elsevierhealth.com/rosens-emergency-medicine-concepts-and-clinical-practice-9780323757898.html" },
   ilaeCae: { id: "ilae-cae", citation: "International League Against Epilepsy. EpilepsyDiagnosis.org. Childhood absence epilepsy: overview and EEG. Last updated 2024.", url: "https://www.epilepsydiagnosis.org/syndrome/cae-eeg.html" },
@@ -1163,14 +1164,14 @@ export const SEIZURES_S49: Samp[] = [
         ],
         correct: 3,
         explanation:
-          "After 30 minutes of generalized movements she still has regular breathing, an O2 sat of 99% and reactive pupils, she reacts to her name, and the features point to a nonepileptic event. Generalized epileptic convulsions of this length often cause desaturation or cyanosis. Repeated benzodiazepines, loading doses and intubation expose patients with nonepileptic events to real harm, so supportive observation is appropriate. EEG during an event is the best test when there is doubt, and escalation is resumed if it shows seizure activity or her condition changes. Painful or noxious stimuli are unhelpful and damage trust.",
+          "She resists eye opening, her pupils react and her movements pause when her name is called. These signs of interaction are close to fully specific for a nonepileptic event. After 30 minutes she still breathes regularly with an O2 sat of 99%, while generalized epileptic convulsions of this length often cause desaturation or cyanosis. In two large status epilepticus trials, about 1 in 12 patients had nonepileptic events, and a quarter to a third of those given benzodiazepines or second line drugs had adverse effects such as respiratory depression or intubation. Observation is appropriate, with EEG during an event if doubt remains, and treatment escalates if EEG shows seizure activity or her condition changes. Sternal rub and ammonia capsules are unhelpful and damage trust.",
         keyFeature: { topic: T, n: 3 },
-        source: "rosen-ch88",
+        source: "jungilligens-2021",
       },
       {
         id: "q3",
         kind: "single",
-        update: "The event stops after 10 more minutes. She is alert and asks what is happening to her.",
+        update: "The event stops. Soon after, she is alert and asks what is happening to her.",
         prompt: "Which of the following is the most appropriate way to discuss the likely diagnosis with her?",
         options: [
           "Avoid discussing it until she leaves",
@@ -1186,8 +1187,9 @@ export const SEIZURES_S49: Samp[] = [
         source: "lafrance",
       },
     ],
-    sources: [S.lafrance, S.rosen88],
+    sources: [S.lafrance, S.jungilligens],
     ...META,
+    version: 2,
   },
 
   /* 31 Collapse with jerking in an older man ------------------------- */

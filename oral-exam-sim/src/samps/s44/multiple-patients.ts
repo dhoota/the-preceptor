@@ -1035,7 +1035,7 @@ export const MULTIPLE_PATIENTS_S44: Samp[] = [
     topic: "multiple-patients",
     title: "Third day of a heat wave",
     stem:
-      "An 86-year-old woman is brought to the emergency department by ambulance on the third day of a heat wave. A building superintendent found her confused during a wellness check of units without air conditioning. She takes hydrochlorothiazide and metoprolol. Her skin is hot and dry. She is disoriented and does not follow commands consistently. Nine other patients with heat related complaints are waiting, and ambulances report more on the way. The vital signs listed are hers.",
+      "An 86-year-old woman is brought to the emergency department by ambulance on the third day of a heat wave. A building superintendent found her confused during a wellness check of units without air conditioning. She takes hydrochlorothiazide and metoprolol. Her skin is hot and dry. She is disoriented and does not follow commands consistently. Nine other patients with heat related complaints are waiting, and ambulances report more on the way. The department triages with the CTAS 2016 guidelines. The vital signs listed are hers.",
     vitals: { temperature: "41.6°C rectal", pulse: "126/minute", resp: "28/minute", bp: "92/54 mmHg", o2sat: "95% on room air" },
     questions: [
       {
@@ -1045,14 +1045,14 @@ export const MULTIPLE_PATIENTS_S44: Samp[] = [
         options: ["CTAS level 1", "CTAS level 2", "CTAS level 3", "CTAS level 4", "CTAS level 5"],
         correct: 0,
         explanation:
-          "The 2016 CTAS heat related issue complaint assigns level 1 to a core temperature above 41°C. Her rectal temperature is 41.6°C, and she also has confusion, tachycardia and a soft BP. A core temperature of 39 to 41°C would be level 2. Level 3 fits ongoing heat cramps or mild dehydration. Heat stroke in an older adult can progress to seizures, arrhythmia and multiorgan failure within hours, so she needs a resuscitation bed now.",
+          "The 2016 CTAS heat related issue complaint assigns level 1 to a core temperature above 41°C, and her rectal temperature is 41.6°C. Her BP of 92/54 mmHg, pulse of 126/minute and confusion also point to shock, which the hemodynamic modifier places at level 1. A core temperature of 39 to 41°C would be level 2. Level 3 fits ongoing heat cramps or mild dehydration. Heat stroke in an older adult can progress to seizures, arrhythmia and multiorgan failure within hours, so she needs a resuscitation bed now.",
         keyFeature: { topic: "multiple-patients", n: 1 },
         source: "ctas-2016",
       },
       {
         id: "q2",
         kind: "single",
-        update: "She is in a resuscitation bed with evaporative cooling under way. Five other heat related patients are waiting at triage.",
+        update: "Evaporative cooling of the woman is under way. Five other heat related patients are waiting at triage.",
         prompt: "Which of the following waiting patients should be seen next by a physician?",
         options: [
           "Ankle swelling after a day outdoors",
@@ -1099,6 +1099,7 @@ export const MULTIPLE_PATIENTS_S44: Samp[] = [
     ],
     sources: [S.ctas2016, S.epstein, S.hick],
     ...META,
+    version: 2,
   },
   {
     id: "multiple-patients-30",
@@ -1424,7 +1425,7 @@ export const MULTIPLE_PATIENTS_S44: Samp[] = [
         ],
         correct: [2, 3],
         explanation:
-          "An immunocompromised child with a temperature above 38.5°C is level 2, so the child on chemotherapy qualifies at 38.9°C. The 2016 revision limits the fever modifier to children aged 3 to 18 months. In that group a temperature above 38.5°C with an unwell appearance is level 2, which fits the 11-month-old. The playful 14-month-old at 39.0°C is level 3. The well 2-year-old is now outside the fever modifier and is triaged on other modifiers. Well appearing children over 3 years sit at level 3 or 4, depending on their other modifiers.",
+          "An immunocompromised child with fever is CTAS level 2, so the child on chemotherapy at 38.9°C qualifies. An infant aged 3 to 18 months with a temperature above 38.5°C who looks unwell is also level 2, which fits the 11-month-old. The playful 14-month-old at 39.0°C looks well, so he is level 3. The well 2-year-old and the well children aged 4 and 8 years are not level 2 on temperature alone. Their other modifiers set their level.",
         keyFeature: { topic: "multiple-patients", n: 1 },
         source: "ctas-2016",
       },
@@ -1435,7 +1436,7 @@ export const MULTIPLE_PATIENTS_S44: Samp[] = [
         prompt: "Which of the following is the most appropriate action for this toddler now?",
         options: [
           "Antipyretic and reassess in 30 minutes",
-          "Keep his place in the queue at level 3",
+          "Keep his original place in the queue",
           "Move him to a resuscitation bed now",
           "Oral fluid challenge in the waiting room",
           "Repeat vital signs in 1 hour",
@@ -1449,6 +1450,7 @@ export const MULTIPLE_PATIENTS_S44: Samp[] = [
     ],
     sources: [S.ctas2016, S.paedctas],
     ...META,
+    version: 2,
   },
   {
     id: "multiple-patients-35",

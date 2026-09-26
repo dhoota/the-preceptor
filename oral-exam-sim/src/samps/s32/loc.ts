@@ -1445,7 +1445,7 @@ export const LOC_S32: Samp[] = [
       {
         id: "q3",
         kind: "single",
-        update: "He is intubated. CT shows a large right epidural hematoma, and neurosurgery is on the way. His right pupil is now 6 mm and fixed.",
+        update: "CT shows a large right epidural hematoma, and neurosurgery is on the way. His right pupil is now 6 mm and fixed.",
         prompt: "Which of the following is the most appropriate treatment for his signs of raised intracranial pressure while awaiting surgery?",
         options: ["dexamethasone 10 mg IV", "furosemide 40 mg IV", "labetalol 20 mg IV", "mannitol 80 g IV", "nimodipine 60 mg PO"],
         correct: 3,
@@ -1456,7 +1456,7 @@ export const LOC_S32: Samp[] = [
       {
         id: "q4",
         kind: "single",
-        update: "After mannitol, and while he waits for the operating room, his BP is 98/58 mmHg.",
+        update: "While he waits for the operating room, his BP falls to 98/58 mmHg.",
         prompt: "Which of the following is the minimum systolic BP target for this patient?",
         options: ["At least 80 mmHg", "At least 90 mmHg", "At least 100 mmHg", "At least 110 mmHg", "At least 140 mmHg"],
         correct: 3,
@@ -1468,7 +1468,7 @@ export const LOC_S32: Samp[] = [
     sources: [SRC_GCS_40, SRC_BTF_TBI, SRC_ENLS_ICP],
     reviewed: false,
     author: AUTHOR,
-    version: 1,
+    version: 2,
   },
   {
     id: "loc-38",

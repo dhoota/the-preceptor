@@ -18,6 +18,7 @@ const S = {
   ccsStemi: { id: "ccs-stemi", citation: "Wong GC, Welsford M, Ainsworth C, et al. 2019 Canadian Cardiovascular Society and Canadian Association of Interventional Cardiology guidelines on the acute management of ST-elevation myocardial infarction: focused update on regionalization and reperfusion. Can J Cardiol. 2019.", url: "https://pubmed.ncbi.nlm.nih.gov/30760415/" },
   atls: { id: "atls", citation: "American College of Surgeons Committee on Trauma. Advanced Trauma Life Support Student Course Manual. 11th ed. 2025. Content on transfer to definitive care.", url: "https://www.facs.org/quality-programs/trauma/education/advanced-trauma-life-support/atls-11/" },
   crash2: { id: "crash2-timing", citation: "CRASH-2 collaborators. The importance of early treatment with tranexamic acid in bleeding trauma patients: an exploratory analysis of the CRASH-2 randomised controlled trial. Lancet. 2011.", url: "https://pubmed.ncbi.nlm.nih.gov/21439633/" },
+  patchTrauma: { id: "patch-trauma", citation: "PATCH-Trauma Investigators and the ANZICS Clinical Trials Group. Prehospital tranexamic acid for severe trauma. N Engl J Med. 2023.", url: "https://doi.org/10.1056/NEJMoa2215457" },
   prism: { id: "prism", citation: "Chilcott RP, Amlot R, editors. Primary Response Incident Scene Management (PRISM) guidance for chemical incidents. Volume 1: strategic guidance for mass casualty disrobe and decontamination. Biomedical Advanced Research and Development Authority, US Department of Health and Human Services. 2015.", url: "https://www.medicalcountermeasures.gov/media/36872/prism-volume-1.pdf" },
   okumura1: { id: "okumura-tokyo-1", citation: "Okumura T, Suzuki K, Fukuda A, et al. The Tokyo subway sarin attack: disaster management, Part 1: community emergency response. Acad Emerg Med. 1998.", url: "https://pubmed.ncbi.nlm.nih.gov/9660289/" },
   okumura: { id: "okumura-tokyo", citation: "Okumura T, Suzuki K, Fukuda A, et al. The Tokyo subway sarin attack: disaster management, Part 2: hospital response. Acad Emerg Med. 1998.", url: "https://pubmed.ncbi.nlm.nih.gov/9660290/" },
@@ -1182,13 +1183,14 @@ export const EMS_S35: Samp[] = [
         options: ["tranexamic acid 1 g IM now", "tranexamic acid 1 g IV over 8 hours", "tranexamic acid 1 g IV over 10 minutes", "tranexamic acid 2 g IV over 10 minutes", "No further tranexamic acid"],
         correct: 1,
         explanation:
-          "The Ontario directive gives a single 1 g dose, IV or IM, which matches the loading dose of the CRASH-2 regimen, and that regimen continues with 1 g IV infused over 8 hours. He is 70 minutes from injury, with a pulse of 124/minute and BP of 98/60 mmHg, so completing the regimen is appropriate. Another 1 g or a 2 g bolus over 10 minutes repeats the loading dose rather than completing the regimen. A further IM dose is unnecessary once IV access is in place in hospital. Stopping after the field dose leaves the regimen incomplete while he remains in shock.",
+          "The field dose of 1 g counts as the first dose of the standard regimen. In a large prehospital trial, 1 g IV before hospital was followed by 1 g IV over 8 hours after arrival. He is 70 minutes from injury, with a pulse of 124/minute and BP of 98/60 mmHg, so the 8 hour infusion should follow. Another 1 g or a 2 g bolus repeats the first dose, and a further IM dose is not needed once he has IV access. Stopping after the field dose leaves the regimen incomplete while he remains in shock.",
         keyFeature: { topic: "ems", n: 4 },
-        source: "crash2-timing",
+        source: "patch-trauma",
       },
     ],
-    sources: [S.blsPcs, S.crash2],
+    sources: [S.blsPcs, S.crash2, S.patchTrauma],
     ...META,
+    version: 2,
   },
 
   /* 36 Dialysis patient with a wide complex bradycardia ------------------- */

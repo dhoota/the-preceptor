@@ -204,18 +204,19 @@ export const ABDOMINAL_PAIN_S19: Samp[] = [
       {
         id: "q3",
         kind: "single",
-        update: "Ultrasound shows gallstones and a common bile duct of 13 mm. Blood cultures are drawn and piperacillin-tazobactam is started. BP is 92/56 mmHg after 1 L of Ringer's lactate.",
+        update: "Imaging shows gallstones and a common bile duct of 13 mm. Blood cultures are drawn and piperacillin-tazobactam is started. BP is 92/56 mmHg after 1 L of Ringer's lactate.",
         prompt: "Which of the following is the most appropriate next step in management?",
         options: ["Antibiotics alone for 48 hours", "Cholecystectomy within 24 hours", "Elective ERCP after 72 hours", "Endoscopic biliary drainage now", "MRCP before any intervention"],
         correct: 3,
         explanation:
-          "New confusion is organ dysfunction, so this is severe (grade III) cholangitis. With a dilated duct and stones, the obstruction needs urgent drainage, usually by ERCP, alongside antibiotics and resuscitation. Antibiotics alone are enough only for mild cholangitis that responds within 24 hours. Waiting 72 hours leaves an obstructed, infected duct. Cholecystectomy does not clear the common duct and is unsafe in a hypotensive older patient. MRCP adds delay when ultrasound already shows the obstruction.",
+          "New confusion is organ dysfunction, so this is severe (grade III) cholangitis. With a dilated duct and stones, the obstruction needs urgent drainage, usually by ERCP, alongside antibiotics and resuscitation. Antibiotics alone are enough only for mild cholangitis that responds within 24 hours. Waiting 72 hours leaves an obstructed, infected duct. Cholecystectomy does not clear the common duct and is unsafe in a hypotensive older patient. MRCP adds delay when imaging already shows the obstruction.",
         keyFeature: { topic: "abdominal-pain", n: 4 },
         source: "tg18-cholangitis",
       },
     ],
     sources: [S.tg18Chol, S.acrRuq],
     ...META,
+    version: 2,
   },
   {
     id: "abdominal-pain-19",

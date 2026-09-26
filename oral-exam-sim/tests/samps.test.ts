@@ -3,7 +3,7 @@ import signoff from "../docs/signoff-2026-09.json";
 import expansion from "../docs/samp-expansion.json";
 import { PRIORITY_TOPICS, topicById } from "@/blueprint/priorityTopics";
 import { validateSamp } from "@/engine/samp";
-import { SAMPS, SAMP_BATCHES } from "@/samps";
+import { AUTHORED_SAMPS, HELD_BACK, SAMPS, SAMP_BATCHES } from "@/samps";
 
 /**
  * Structure, blueprint coverage and house style for the SAMP bank.
@@ -15,7 +15,7 @@ import { SAMPS, SAMP_BATCHES } from "@/samps";
 const SIGNED_OFF = new Set<string>(signoff.samps);
 
 const only = process.env.SAMP_BATCH;
-const target = only ? SAMP_BATCHES[only] ?? [] : SAMPS;
+const target = only ? SAMP_BATCHES[only] ?? [] : AUTHORED_SAMPS;
 const kfCount = (t: string) => topicById(t)?.keyFeatures.length;
 
 function strings(value: unknown, out: string[] = [], key = ""): string[] {
@@ -38,7 +38,7 @@ function coverage(samps: typeof SAMPS) {
 
 describe("SAMP bank", () => {
   it("has unique SAMP ids", () => {
-    const ids = SAMPS.map((s) => s.id);
+    const ids = AUTHORED_SAMPS.map((s) => s.id);
     expect(ids.filter((id, i) => ids.indexOf(id) !== i)).toEqual([]);
   });
 
@@ -66,8 +66,14 @@ describe("SAMP bank", () => {
   }
 
   if (process.env.LAUNCH_GATE) {
-    it("meets the launch minimum of 1,500 SAMPs", () => {
-      expect(SAMPS.length).toBeGreaterThanOrEqual(1500);
+    it("meets the launch minimum of 1,500 authored SAMPs", () => {
+      expect(AUTHORED_SAMPS.length).toBeGreaterThanOrEqual(1500);
+    });
+    it("releases only physician signed-off SAMPs", () => {
+      expect(SAMPS.filter((s) => !s.reviewed).map((s) => s.id)).toEqual([]);
+    });
+    it("holds back only ids that exist", () => {
+      for (const id of HELD_BACK) expect(AUTHORED_SAMPS.some((s) => s.id === id), id).toBe(true);
     });
     it("has at least 3 questions on every key feature of every priority topic", () => {
       const cov = coverage(SAMPS);

@@ -1359,7 +1359,7 @@ export const ISCHEMIC_HEART_DISEASE_S42_SAMPS: Samp[] = [
       {
         id: "q3",
         kind: "single",
-        update: "The 1-hour troponin is 12 ng/L. He now mentions that the epigastric discomfort also comes on when he walks uphill and eases with rest.",
+        update: "The 1-hour troponin is 12 ng/L. He now mentions that the discomfort comes only when he walks after meals or walks uphill. It eases within 5 minutes of rest and has not become more frequent.",
         prompt: "Which of the following is the most appropriate disposition for him?",
         options: [
           "Discharge on a proton pump inhibitor alone",
@@ -1370,13 +1370,14 @@ export const ISCHEMIC_HEART_DISEASE_S42_SAMPS: Samp[] = [
         ],
         correct: 1,
         explanation:
-          "A baseline below 12 ng/L with a change of only 1 ng/L at 1 hour rules out MI by the ESC algorithm. His exertional epigastric discomfort that eases with rest is an anginal equivalent in a man with known coronary disease, so it cannot be put down to reflux. He needs prompt cardiology follow-up for possible progressive disease, with review of his antianginal therapy and clear return advice. Emergency angiography is not needed without rest pain or a rising troponin, and a further troponin adds nothing.",
+          "A baseline below 12 ng/L with a change of only 1 ng/L at 1 hour rules out MI by the ESC algorithm. His discomfort comes on walking after meals or uphill and eases with rest. That is exertional angina in a man with known coronary disease, so neither a proton pump inhibitor alone nor stopping cardiac testing is safe. It does not meet the ESC definition of unstable angina, which needs ischemia at rest or on minimal exertion, severe new angina or a crescendo pattern. He needs prompt cardiology follow-up with review of his antianginal therapy and clear return advice. Emergency angiography is not needed without rest pain or a rising troponin, and a further troponin adds nothing.",
         keyFeature: { topic: TOPIC, n: 8 },
         source: "esc-acs-2023",
       },
     ],
     sources: [S.klein, S.esc],
     ...META,
+    version: 2,
   },
   {
     id: "ischemic-heart-disease-34",

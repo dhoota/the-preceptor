@@ -122,9 +122,10 @@ const OHFRS: Source = {
   citation: "Stiell IG, Perry JJ, Clement CM, et al. Prospective and explicit clinical validation of the Ottawa Heart Failure Risk Scale, with and without use of quantitative NT-proBNP. Acad Emerg Med. 2017.",
   url: "https://doi.org/10.1111/acem.13141",
 };
-const BCPAL: Source = {
-  id: "bcpal",
-  citation: "BC Centre for Palliative Care. B.C. inter-professional palliative symptom management guidelines. Dyspnea. 2017.",
+const BCGUIDE_PALLIATIVE: Source = {
+  id: "bc-palliative-2017",
+  citation: "BC Ministry of Health, Guidelines and Protocols Advisory Committee. Palliative care for the patient with incurable cancer or advanced disease. Part 2: Pain and symptom management. 2017.",
+  url: "https://www2.gov.bc.ca/gov/content/health/practitioner-professional-resources/bc-guidelines/palliative-pain-management",
 };
 const SSC: Source = {
   id: "ssc",
@@ -1469,22 +1470,22 @@ export const PULMONARY_EDEMA_S48_SAMPS: Samp[] = [
         prompt: "Which of the following is the most appropriate medication to relieve her breathlessness?",
         options: [
           "fentanyl 100 mcg IV",
+          "hydromorphone 0.5 mg SC",
           "lorazepam 2 mg IV",
           "midazolam 5 mg IV",
-          "morphine 2.5 mg SC",
           "salbutamol 5 mg nebulized",
         ],
-        correct: 3,
+        correct: 1,
         explanation:
-          "Her breathlessness is now a crisis at the end of life, and the B.C. palliative symptom guideline uses an opioid as the first drug, with morphine given SC or IV and repeated every 5 to 10 minutes until she is comfortable. A reduced starting dose such as 2.5 mg SC suits an opioid naive 89-year-old with stage 4 kidney disease, in whom morphine metabolites can accumulate, so repeat doses should be watched. Fentanyl 100 mcg IV is a large first dose for someone who has never had opioids. The guideline keeps benzodiazepines as an addition for anxiety or a second-line agent, not the sole drug for breathlessness. Salbutamol treats bronchospasm, not edema.",
+          "She has crisis breathlessness after failing full treatment, and she has declined intubation, so relief of breathlessness comes first. An opioid given SC or IV is the first drug, and doses are repeated until she is comfortable. She has stage 4 kidney disease, and morphine is the least preferred opioid in renal failure because its active metabolites build up. Hydromorphone 0.5 mg SC equals about 2.5 mg of morphine SC, half the guideline's morphine crisis dose, which suits an opioid naive 89-year-old. Fentanyl 100 mcg IV is a large first dose for someone who has never had opioids. Benzodiazepines are added for anxiety or used second line, not as the sole drug for breathlessness, and salbutamol treats bronchospasm, not edema.",
         keyFeature: { topic: "pulmonary-edema", n: 4 },
-        source: "bcpal",
+        source: "bc-palliative-2017",
       },
     ],
-    sources: [NIV, BCPAL],
+    sources: [NIV, BCGUIDE_PALLIATIVE],
     reviewed: false,
     author: AUTHOR,
-    version: 1,
+    version: 2,
   },
   {
     id: "pulmonary-edema-34",

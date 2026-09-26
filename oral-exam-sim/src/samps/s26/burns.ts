@@ -1789,17 +1789,18 @@ export const BURNS_S26: Samp[] = [
       {
         id: "q4",
         kind: "single",
-        update: "Nasolaryngoscopy shows soot in the pharynx and on the epiglottis with no edema.",
+        update: "Two hours later his voice is still normal and he has no stridor.",
         prompt: "Which of the following is the most appropriate disposition for him?",
         options: ["Admit to the general medicine ward", "Discharge after a normal carboxyhemoglobin", "Discharge with next day clinic review", "Refer to the burn centre for admission", "Short stay unit for 6 hours"],
         correct: 3,
         explanation:
-          "Soot in the pharynx confirms smoke inhalation, and the American Burn Association advises burn centre consultation with consideration of transfer for every suspected inhalation injury, because airway edema and lower airway injury can worsen over the next 24 to 48 hours. A general ward lacks airway and burn expertise. Discharge once the carboxyhemoglobin falls, discharge with clinic review or a 6 hour stay all end monitoring too early.",
+          "Soot in the nostrils, carbonaceous sputum and a raised carboxyhemoglobin after an enclosed space fire make this a suspected inhalation injury. The American Burn Association advises immediate burn centre consultation, with consideration of transfer, for every patient with suspected inhalation injury. Airway edema and lower airway injury can worsen over the next 24 to 48 hours, so a normal voice at 2 hours does not end the risk. A general ward lacks airway and burn expertise. Discharge once the carboxyhemoglobin falls, discharge with clinic review or a 6 hour stay all end monitoring too early.",
         keyFeature: { topic: "burns", n: 5 },
         source: "aba-referral",
       },
     ],
     sources: [S.walker, S.hampson, S.abaRef],
     ...META,
+    version: 2,
   },
 ];

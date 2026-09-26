@@ -393,7 +393,7 @@ export const DVT_PE_S33_SAMPS: Samp[] = [
     topic: "dvt-pe",
     title: "Pleuritic pain after abdominal surgery",
     stem:
-      "A 38-year-old woman presents to the emergency department with one day of right sided pleuritic chest pain and mild shortness of breath. She had a laparoscopic cholecystectomy 18 days ago and went home the next day. She has no leg symptoms, hemoptysis, cancer or previous VTE. She takes no medications.\n\nHer lungs are clear and her calves are soft and symmetric. The port sites are healing well. ECG shows sinus tachycardia. You think another diagnosis is more likely than PE.",
+      "A 38-year-old woman presents to the emergency department with two days of left-sided pleuritic chest pain and mild shortness of breath. She had a laparoscopic cholecystectomy 25 days ago and went home the next day. She has no leg symptoms, hemoptysis, cancer or previous VTE. She takes no medications.\n\nHer lungs are clear and her calves are soft and symmetric. The port sites are healing well. ECG shows sinus tachycardia. You think another diagnosis is more likely than PE.",
     vitals: { temperature: "37.1°C oral", pulse: "106/minute", resp: "18/minute", bp: "122/76 mmHg", o2sat: "97% on room air", weight: "68 kg" },
     questions: [
       {
@@ -426,7 +426,7 @@ export const DVT_PE_S33_SAMPS: Samp[] = [
         ],
         correct: 3,
         explanation:
-          "With a low clinical pretest probability, PEGeD showed that a D-dimer below 1000 mcg/L FEU safely excludes PE without imaging. Going straight to CT or VQ imaging exposes her to radiation that a negative D-dimer could avoid. Leg ultrasound has a low yield with no leg symptoms. An age adjusted cutoff applies only above age 50 and would give her the lower standard cutoff of 500 mcg/L, sending more patients to imaging.",
+          "With a low clinical pretest probability, PEGeD showed that a D-dimer below 1000 mcg/L FEU safely excludes PE without imaging. PEGeD excluded patients who had major surgery in the previous 21 days, and her surgery was 25 days ago. Going straight to CT or VQ imaging exposes her to radiation that a negative D-dimer could avoid. Leg ultrasound has a low yield with no leg symptoms. An age adjusted cutoff applies only above age 50 and would give her the lower standard cutoff of 500 mcg/L, sending more patients to imaging.",
         keyFeature: { topic: "dvt-pe", n: 4 },
         source: "peged",
       },
@@ -468,6 +468,7 @@ export const DVT_PE_S33_SAMPS: Samp[] = [
     ],
     sources: [SRC_WELLS_PE, SRC_PEGED],
     ...META,
+    version: 2,
   },
   /* 20 ------------------------------------------------------------------ */
   {

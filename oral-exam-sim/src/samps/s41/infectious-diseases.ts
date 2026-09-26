@@ -1984,7 +1984,7 @@ export const INFECTIOUS_DISEASES_S41_SAMPS: Samp[] = [
       },
       {
         id: "q4",
-        update: "She recovers and completes 10 days of oral vancomycin. Three weeks later she returns with watery diarrhea 6 times a day, and her stool is again positive for C. difficile toxin. She is not in shock.",
+        update: "She recovers after 10 days of treatment. Three weeks later she returns with watery diarrhea 6 times a day, and her stool is again positive for C. difficile toxin. She is not in shock.",
         prompt: "Which of the following is the most appropriate treatment for this episode of her infection?",
         kind: "single",
         options: [
@@ -2015,7 +2015,8 @@ export const INFECTIOUS_DISEASES_S41_SAMPS: Samp[] = [
         url: "https://pubmed.ncbi.nlm.nih.gov/34164674/"
       }
     ],
-    ...META
+    ...META,
+    version: 2
   },
   {
     id: "infectious-diseases-36",

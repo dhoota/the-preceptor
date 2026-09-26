@@ -2499,19 +2499,19 @@ export const HEADACHE_S40_SAMPS: Samp[] = [
         id: "q3",
         kind: "menu",
         update:
-          "MRI shows symmetrical vasogenic edema in both parieto-occipital regions. She has no further seizures.",
+          "Further imaging shows symmetrical vasogenic edema in both parieto-occipital regions. She has no further seizures.",
         prompt: "Which of the following are the most appropriate management steps for her?",
         options: [
           "Acetazolamide PO",
           "Controlled BP lowering",
           "Heparin infusion",
           "High-dose methylprednisolone",
+          "Immunosuppressant dose review",
           "Lumbar puncture",
           "Stop all immunosuppression",
-          "Tacrolimus review with transplant team",
         ],
         select: 2,
-        correct: [1, 6],
+        correct: [1, 4],
         explanation:
           "Her MRI confirms posterior reversible encephalopathy, which is managed by treating its triggers: controlled lowering of BP and reduction or change of the calcineurin inhibitor in discussion with the transplant team, with seizures treated as needed. Stopping all immunosuppression risks graft rejection. Steroid pulses, acetazolamide and heparin do not treat the syndrome, and a lumbar puncture adds nothing once imaging confirms it.",
         keyFeature: { topic: "headache", n: 2 },
@@ -2520,6 +2520,7 @@ export const HEADACHE_S40_SAMPS: Samp[] = [
     ],
     sources: [S.fugate],
     ...META,
+    version: 2,
   },
   {
     id: "headache-46",

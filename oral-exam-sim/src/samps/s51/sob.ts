@@ -29,6 +29,16 @@ const TCPE: Source = {
   citation: "Thrombosis Canada. Pulmonary embolism (PE). Diagnosis. Clinical guide. 2023.",
   url: "https://thrombosiscanada.ca/clinical_guides/pdfs/PULMONARYEMBOLISMDIAGNOSISANDM_80.pdf",
 };
+const WELLS2000: Source = {
+  id: "wells-2000",
+  citation: "Wells PS, Anderson DR, Rodger M, and colleagues. Derivation of a simple clinical model to categorize patients' probability of pulmonary embolism: increasing the model's utility with the SimpliRED D-dimer. Thromb Haemost. 2000.",
+  url: "https://doi.org/10.1055/s-0037-1613830",
+};
+const WELLS1998: Source = {
+  id: "wells-1998",
+  citation: "Wells PS, Ginsberg JS, Anderson DR, and colleagues. Use of a clinical model for safe management of patients with suspected pulmonary embolism. Ann Intern Med. 1998.",
+  url: "https://doi.org/10.7326/0003-4819-129-12-199812150-00002",
+};
 const ESCPE: Source = {
   id: "esc-pe",
   citation: "Konstantinides SV, Meyer G, Becattini C, et al. 2019 ESC Guidelines for the diagnosis and management of acute pulmonary embolism. Eur Heart J. 2020.",
@@ -850,19 +860,19 @@ export const SOB_S51_SAMPS: Samp[] = [
     alsoTopics: ["dvt-pe"],
     title: "Pleuritic pain three weeks after gallbladder surgery",
     stem:
-      "A 41-year-old woman presents to the emergency department with 2 days of right sided pleuritic chest pain and shortness of breath. She had a laparoscopic cholecystectomy 3 weeks ago. She had an unprovoked DVT 6 years ago and stopped anticoagulation after 6 months. She has no hemoptysis, cough or fever and takes no medications. Her legs are not swollen or tender. The chest is clear. The ECG shows sinus tachycardia and the chest radiograph is normal. Her creatinine is normal and she has no contrast allergy. PE is your leading diagnosis.",
+      "A 41-year-old woman presents to the emergency department with 2 days of right sided pleuritic chest pain and shortness of breath. She had a laparoscopic cholecystectomy 3 weeks ago. She has no personal history of venous thromboembolism or cancer. She has no hemoptysis, cough or fever and takes no medications. Her legs are not swollen or tender. The chest is clear. The ECG shows sinus tachycardia and the chest radiograph is normal. Her creatinine is normal and she has no contrast allergy. PE is your leading diagnosis.",
     vitals: { temperature: "36.9°C oral", pulse: "108/minute", resp: "22/minute", bp: "124/76 mmHg", o2sat: "93% on room air" },
     questions: [
       {
         id: "q1",
         kind: "single",
         prompt: "Which of the following is this patient's Wells score for pulmonary embolism?",
-        options: ["4.5 points", "6 points", "7.5 points", "9 points", "10.5 points"],
+        options: ["3 points", "4.5 points", "6 points", "7.5 points", "9 points"],
         correct: 2,
         explanation:
-          "She scores 3 because PE is the most likely diagnosis, 1.5 for a heart rate above 100/minute, 1.5 for surgery within 4 weeks and 1.5 for a previous DVT, a total of 7.5. That is 4.5 or more, so PE is likely, and Thrombosis Canada advises going straight to imaging without a D-dimer. A score of 6 leaves out either the surgery or the old DVT, and 4.5 leaves out both. A score of 9 counts surgery and immobilization as two items, although they form one. A score of 10.5 adds 3 points for signs of DVT, and her legs are normal.",
+          "She scores 3 because PE is the most likely diagnosis, 1.5 for a heart rate above 100/minute and 1.5 for surgery within 4 weeks, a total of 6. She has no previous VTE, cancer, hemoptysis or signs of DVT. That makes PE likely, and on the three level scale a score of 2 to 6 is moderate. A score of 4.5 leaves out either the heart rate or the surgery, and 3 counts only the leading diagnosis. A score of 7.5 counts surgery and immobilization as two items, although they form one. A score of 9 adds 3 points for signs of DVT, and her legs are normal.",
         keyFeature: { topic: "sob", n: 5 },
-        source: "tc-pe",
+        source: "wells-2000",
       },
       {
         id: "q2",
@@ -879,7 +889,7 @@ export const SOB_S51_SAMPS: Samp[] = [
         ],
         correct: 4,
         explanation:
-          "A CT that could not assess the segmental arteries is not a negative study, and with a Wells score of 7.5 her probability of PE is still high. Thrombosis Canada advises further testing with a V/Q scan or proximal leg ultrasound when suspicion stays high after a negative initial CT, and her normal chest radiograph makes a V/Q scan likely to give a clear answer. A D-dimer has no role at this pretest probability. Discharge treats an incomplete study as a normal one. Echocardiography can support PE in an unstable patient but cannot exclude it in a stable one, and waiting a week leaves a possible PE untreated.",
+          "A CT that could not assess the segmental arteries is not a negative study. With a Wells score of 6, PE is still likely. Thrombosis Canada advises further testing with a V/Q scan or proximal leg ultrasound when suspicion stays high after a negative initial CT, and her normal chest radiograph makes a V/Q scan likely to give a clear answer. A D-dimer has no role at this pretest probability. Discharge treats an incomplete study as a normal one. Echocardiography can support PE in an unstable patient but cannot exclude it in a stable one, and waiting a week leaves a possible PE untreated.",
         keyFeature: { topic: "sob", n: 5 },
         source: "tc-pe",
       },
@@ -897,15 +907,15 @@ export const SOB_S51_SAMPS: Samp[] = [
         ],
         correct: 3,
         explanation:
-          "Thrombosis Canada advises serial compression ultrasound of the legs when a V/Q scan is neither normal nor high probability. Finding a proximal DVT confirms that she needs anticoagulation, and repeated normal studies make a clinically important PE unlikely. A single normal study is not enough, because a calf clot can extend into the proximal veins over the following days, which is why the test is repeated. Treating for 3 months commits her to anticoagulation and its bleeding risk without a diagnosis. Discharge without further testing ignores a nondiagnostic result in a patient whose pretest probability was high, and repeating the V/Q scan does not resolve the uncertainty.",
+          "Her Wells score of 6 is moderate, and serial compression ultrasound of the legs was shown to be safe after a V/Q scan that is neither normal nor high probability when pretest probability is low or moderate. Finding a proximal DVT confirms that she needs anticoagulation, and repeated normal studies make a clinically important PE unlikely. A single normal study is not enough, because a calf clot can extend into the proximal veins over the following days. Treating for 3 months commits her to anticoagulation and its bleeding risk without a diagnosis. Discharge ignores a nondiagnostic result, and repeating the V/Q scan does not resolve the uncertainty.",
         keyFeature: { topic: "sob", n: 5 },
-        source: "tc-pe",
+        source: "wells-1998",
       },
     ],
-    sources: [TCPE],
+    sources: [TCPE, WELLS2000, WELLS1998],
     reviewed: false,
     author: AUTHOR,
-    version: 1,
+    version: 2,
   },
   {
     id: "sob-24",
