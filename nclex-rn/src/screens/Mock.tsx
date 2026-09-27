@@ -334,8 +334,7 @@ export function MockResult({ id, go }: { id: string; go: Go }) {
 
   return (
     <>
-      <div className="label">Adaptive mock result</div>
-      <h1 style={{ marginTop: 6 }}>{BAND_LABEL[res.band]}</h1>
+      <h1>{BAND_LABEL[res.band]}</h1>
       <p className="muted" style={{ marginTop: 8 }}>
         {RULE_TEXT[res.rule]}
       </p>

@@ -65,7 +65,7 @@ const MAX_APP_W = 780;
 // The app's tray world: specimen-label ink, a cool grey tray, one cap color per Client Needs area.
 const INK = "#101418";
 const TRAY = "#E8ECEF";
-const CAPS = ["#2446C8", "#1D8A4B", "#E0559B", "#23282D", "#4DB2E0", "#8C939B", "#EE7A1F", "#E9CB2B"];
+const CAPS = ["#2446C8", "#1D8A4B", "#E0559B", "#9A6B3F", "#4DB2E0", "#8C939B", "#EE7A1F", "#E9CB2B"];
 const fontFace = (family, file, extra = "") =>
   `@font-face{font-family:'${family}';src:url(data:font/woff2;base64,${readFileSync(join(root, "node_modules", file)).toString("base64")}) format('woff2');font-weight:100 900;${extra}}`;
 const FONTS = () =>

@@ -1,6 +1,6 @@
 import { useState } from "react";
 import { FREE_CASES, FREE_ITEMS } from "@/lib/access";
-import { APP_NAME, PRIVACY_URL, TERMS_URL } from "@/lib/constants";
+import { PRIVACY_URL, TERMS_URL } from "@/lib/constants";
 import { PLAN_ORDER, PRODUCTS, isNative, keysConfigured, type ProductKey } from "@/lib/purchases";
 import type { Go } from "../routes";
 import { useApp } from "../state";
@@ -49,8 +49,7 @@ export function Paywall({ go }: { go: Go }) {
 
   return (
     <div className="pay">
-      <div className="label">{APP_NAME}</div>
-      <h1 style={{ marginTop: 6 }}>Full access</h1>
+      <h1>Full access</h1>
       <p className="muted" style={{ marginTop: 10 }}>
         Free use includes {FREE_ITEMS} items across all eight Client Needs areas and {FREE_CASES} case study. Full access opens
         the rest.
