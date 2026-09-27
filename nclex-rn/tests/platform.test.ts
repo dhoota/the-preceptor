@@ -225,19 +225,26 @@ describe("Codemagic", () => {
   it("root codemagic.yaml mirrors nclex-rn/codemagic.yaml", () => {
     expect(root.slice(root.indexOf("definitions:"))).toBe(local.slice(local.indexOf("definitions:")));
   });
-  it("has four uniquely named NCLEX workflows in nclex-rn", () => {
+  it("has six uniquely named NCLEX workflows in nclex-rn", () => {
     const ids = [...root.slice(root.indexOf("workflows:")).matchAll(/^  ([a-z0-9-]+):$/gm)].map((m) => m[1]);
-    expect(ids).toEqual(["nclex-android-debug", "nclex-android-build-only", "nclex-android-release", "nclex-ios-release"]);
+    expect(ids).toEqual([
+      "nclex-android-debug",
+      "nclex-android-build-only",
+      "nclex-android-release",
+      "nclex-ios-release",
+      "nclex-android-production",
+      "nclex-ios-appstore",
+    ]);
     const names = [...root.matchAll(/^    name: (.+)$/gm)].map((m) => m[1]);
-    expect(names).toHaveLength(4);
+    expect(names).toHaveLength(6);
     for (const n of names) expect(n).toMatch(/^Preceptor NCLEX /);
-    expect(root.match(/^    working_directory: nclex-rn$/gm)?.length).toBe(4);
+    expect(root.match(/^    working_directory: nclex-rn$/gm)?.length).toBe(6);
     expect(root).not.toMatch(/com\.preceptor\.oral|oral-exam-sim|preceptor_signing|PRECEPTOR_KEYSTORE/);
     // Artifact globs resolve from the working directory, so no nclex-rn/ prefix.
     for (const a of root.match(/^      - [^*\s]\S*\/\S*$/gm) ?? []) expect(a).not.toMatch(/nclex-rn\//);
   });
   it("signs Android with the team keystore and uploads only to Play alpha as a draft", () => {
-    for (const id of ["nclex-android-build-only", "nclex-android-release"]) {
+    for (const id of ["nclex-android-build-only", "nclex-android-release", "nclex-android-production"]) {
       const f = flow(root, id);
       expect(f, id).toMatch(/android_signing:\n\s+- preceptor_upload_key/);
       expect(f, id).toContain("bash scripts/ci/check-keystore.sh");
@@ -247,7 +254,12 @@ describe("Codemagic", () => {
     expect(rel).toContain('--package-name "com.preceptor.nclex"');
     expect(rel).toMatch(/track: alpha/);
     expect(rel).toMatch(/submit_as_draft: true/);
-    expect(root).not.toMatch(/track: production/);
+    expect(rel).not.toMatch(/track: production/);
+    // Only the hand-started production workflow targets Play production.
+    const prod = flow(root, "nclex-android-production");
+    expect(prod).toContain("- preceptor_play");
+    expect(prod).toMatch(/track: production/);
+    expect(root.match(/track: production/g)).toHaveLength(1);
     const only = flow(root, "nclex-android-build-only");
     expect(only).not.toMatch(/publishing:|preceptor_play|GCLOUD/);
   });
@@ -257,6 +269,20 @@ describe("Codemagic", () => {
     expect(ios).toMatch(/ios_signing:[\s\S]*distribution_type: app_store[\s\S]*bundle_identifier: com\.preceptor\.nclex/);
     expect(ios).toMatch(/submit_to_testflight: true/);
     expect(ios).not.toMatch(/submit_to_app_store: true/);
+    const store = flow(root, "nclex-ios-appstore");
+    expect(store).toContain("app_store_connect: preceptor_appstore");
+    expect(store).toMatch(/ios_signing:[\s\S]*distribution_type: app_store[\s\S]*bundle_identifier: com\.preceptor\.nclex/);
+    expect(store).toMatch(/submit_to_app_store: true/);
+    expect(store).toMatch(/cancel_previous_submissions: true/);
+    expect(root.match(/submit_to_app_store: true/g)).toHaveLength(1);
+  });
+  it("ships release notes and one version everywhere", () => {
+    const notes = JSON.parse(read("../release_notes.json"));
+    expect(notes).toEqual([{ language: "en-US", text: "User interface improvements" }]);
+    const v = JSON.parse(read("../package.json")).version;
+    expect(read("../src/lib/constants.ts")).toContain(`APP_VERSION = "${v}"`);
+    expect(read("../android/app/build.gradle")).toContain(`versionName "${v}"`);
+    for (const m of read("../ios/App/App.xcodeproj/project.pbxproj").match(/MARKETING_VERSION = [^;]+;/g) ?? []) expect(m).toBe(`MARKETING_VERSION = ${v};`);
   });
   it("targets Android API 36 and iOS 15.0", () => {
     const v = read("../android/variables.gradle");

@@ -141,3 +141,11 @@ npx cap open ios       # Xcode, on a Mac
 ```
 
 In the browser dev server a purchase is simulated so the paid flow can be clicked through. A production web build never grants access.
+
+## Releasing an update
+
+1. Set the new version in `package.json`, `src/lib/constants.ts`, `android/app/build.gradle` (versionName) and the iOS MARKETING_VERSION. A test checks they match.
+2. Write the release notes in `release_notes.json`.
+3. In Codemagic, on branch claude/nclex, start "Preceptor NCLEX iOS (App Store release)" and "Preceptor NCLEX Android (Play production)".
+4. iOS sets the build number one above App Store Connect. It removes any version waiting for review and submits the new build. The app releases after approval.
+5. Android sets versionCode one above Play and sends the release to production review.
