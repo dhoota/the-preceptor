@@ -464,10 +464,10 @@ mkdirSync(g, { recursive: true });
       </span></div>`,
   ).join("");
   await page.setContent(`<!doctype html>${FONTS()}<body style="margin:0;width:1024px;height:500px;background:${INK};display:flex;align-items:center;color:#fff">
-    <div style="display:flex;gap:12px;margin:0 56px 0 64px;flex:none">${tubes}</div>
-    <div style="padding-right:48px">
+    <div style="display:flex;gap:10px;margin:0 44px 0 52px;flex:none">${tubes}</div>
+    <div style="padding-right:36px;min-width:0">
       <div style="font:700 15px/1 ${DISPLAY};font-stretch:125%;letter-spacing:0.08em;color:#C3CAD0;text-transform:uppercase">Next Generation NCLEX-RN prep</div>
-      <div style="font:800 54px/1.02 ${DISPLAY};font-stretch:112%;letter-spacing:-0.015em;margin-top:16px;white-space:nowrap">Preceptor: NCLEX</div>
+      <div style="font:800 46px/1.02 ${DISPLAY};font-stretch:108%;letter-spacing:-0.015em;margin-top:16px;white-space:nowrap">Preceptor: NCLEX</div>
       <div style="font:400 24px/1.4 ${TEXT};margin-top:18px;color:#DCE2E6;max-width:520px">Every NGN item type. Case studies. An adaptive mock. Fully offline.</div>
     </div></body>`);
   await page.waitForTimeout(150);
