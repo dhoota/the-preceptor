@@ -41,9 +41,10 @@ Preceptor: NCLEX is an offline study tool. It gives original practice items in e
 
 ## Brand Commitments
 
-- Part of the Preceptor family of exam preparation apps. Credit is to Preceptor, with no personal names.
-- The Preceptor house look is binding: warm paper, navy ink, one gold accent from the Preceptor mark, serif for clinical text, sans for the interface, mono for numbers and time, flat surfaces and hairline rules. Work on it is refinement, not a new brand.
-- The mark is three concentric rings in gold and navy.
+- Part of the Preceptor family of exam preparation apps. Credit is to Preceptor, with no personal names. The name Preceptor: NCLEX stays.
+- This app has its own look, distinct from the other Preceptor apps. The shared warm paper, serif and gold look is retired here.
+- Refused for this app: cream or paper grounds, a stock serif and sans pairing, Inter or system fonts, generic gold, saffron or purple accents, and uniform card grids.
+- Fonts are bundled and open licence, so the app stays offline.
 
 ## Evidence on Hand
 

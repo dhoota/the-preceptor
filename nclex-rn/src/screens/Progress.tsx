@@ -1,5 +1,6 @@
 import { byKind, byNeed, byStep, overall, weakest, type Tally } from "@/engine/analytics";
-import { NEEDS } from "@/engine/blueprint";
+import { Cap, capStyle } from "@/components/Tube";
+import { NEEDS, type ClientNeed } from "@/engine/blueprint";
 import { KIND_NAMES } from "@/engine/score";
 import type { ItemKind } from "@/engine/types";
 import { pct } from "@/engine/ui";
@@ -7,23 +8,25 @@ import type { Go } from "../routes";
 import { useApp } from "../state";
 import { MockList } from "./Mock";
 
-function Bar({ t }: { t: Tally }) {
+function Bar({ t, cap }: { t: Tally; cap?: ClientNeed }) {
   const p = t.pct === null ? 0 : Math.round(t.pct * 100);
   return (
-    <div className={`bar ${t.pct !== null && p < 60 ? "low" : ""}`} aria-hidden="true">
+    <div className={`bar ${t.pct !== null && p < 60 ? "low" : ""}`} style={cap ? capStyle(cap) : undefined} aria-hidden="true">
       <div style={{ width: `${p}%` }} />
     </div>
   );
 }
 
-function Row({ name, t, note }: { name: string; t: Tally; note?: string }) {
+function Row({ name, t, note, cap }: { name: string; t: Tally; note?: string; cap?: ClientNeed }) {
   return (
     <div className="domrow">
       <div className="h">
-        <span>{name}</span>
+        <span>
+          {cap && <Cap id={cap} />} {name}
+        </span>
         <span className="mono">{pct(t.pct)}</span>
       </div>
-      <Bar t={t} />
+      <Bar t={t} cap={cap} />
       <div className="muted small">
         {t.items} {t.items === 1 ? "item" : "items"} answered
         {note ? `. ${note}` : ""}
@@ -78,7 +81,7 @@ export function Progress({ go }: { go: Go }) {
           <section className="section">
             <h2 className="label">Weakest Client Needs areas</h2>
             {weak.length ? (
-              weak.map((w) => <Row key={w.id} name={w.name} t={w.tally} />)
+              weak.map((w) => <Row key={w.id} name={w.name} t={w.tally} cap={w.id} />)
             ) : (
               <p className="muted small" style={{ marginTop: 10 }}>
                 Answer at least 5 items in an area to see it here.
@@ -90,7 +93,7 @@ export function Progress({ go }: { go: Go }) {
             <h2 className="label">By Client Needs area</h2>
             {needs.map((n) => {
               const info = NEEDS.find((x) => x.id === n.id)!;
-              return <Row key={n.id} name={n.name} t={n.tally} note={`Test plan share ${info.min} to ${info.max}%`} />;
+              return <Row key={n.id} name={n.name} t={n.tally} cap={n.id} note={`Test plan share ${info.min} to ${info.max}%`} />;
             })}
           </section>
 

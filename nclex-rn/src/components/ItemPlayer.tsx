@@ -4,6 +4,7 @@ import { KIND_NAMES, score } from "@/engine/score";
 import type { Choice, Item, Response } from "@/engine/types";
 import { parsePassage, place, splitTemplate, toggle } from "@/engine/ui";
 import { Exhibit } from "./Exhibit";
+import { Cap } from "./Tube";
 
 type R<K extends Response["kind"]> = Extract<Response, { kind: K }>;
 type I<K extends Item["kind"]> = Extract<Item, { kind: K }>;
@@ -537,7 +538,12 @@ export function ItemCard({
         <span className="meta">
           <span className="tag">{KIND_NAMES[item.kind]}</span>
           {item.trend && <span className="tag">Trend</span>}
-          {reveal && <span className="tag">{needName(item.need)}</span>}
+          {reveal && (
+            <span className="tag">
+              <Cap id={item.need} />
+              {needName(item.need)}
+            </span>
+          )}
           {reveal && <span className="tag">{stepName(item.cjmm)}</span>}
         </span>
         {onFlag && (

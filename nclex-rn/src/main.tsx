@@ -1,8 +1,12 @@
 import React from "react";
 import { createRoot } from "react-dom/client";
+import "@fontsource-variable/archivo/wdth.css";
+import "@fontsource-variable/atkinson-hyperlegible-next/wght.css";
+import "@fontsource-variable/atkinson-hyperlegible-mono/wght.css";
 import "./styles.css";
 import { App } from "./App";
 import { AppProvider } from "./state";
+import { ConfirmProvider } from "./components/Confirm";
 
 async function boot() {
   // Dev only: ?seed=1 loads a sample history for screenshots. Stripped from production builds.
@@ -19,7 +23,9 @@ function render() {
   createRoot(document.getElementById("root")!).render(
     <React.StrictMode>
       <AppProvider>
-        <App />
+        <ConfirmProvider>
+          <App />
+        </ConfirmProvider>
       </AppProvider>
     </React.StrictMode>,
   );

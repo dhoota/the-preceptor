@@ -1,4 +1,5 @@
 import { useEffect, useState } from "react";
+import { useConfirm } from "@/components/Confirm";
 import { Mark } from "@/components/Mark";
 import { APP_NAME } from "@/lib/constants";
 import { TABBED, type Route } from "./routes";
@@ -17,11 +18,12 @@ const TABS: { name: "home" | "cases" | "mock" | "progress" | "settings"; label: 
   { name: "cases", label: "Cases" },
   { name: "mock", label: "Mock" },
   { name: "progress", label: "Progress" },
-  { name: "settings", label: "More" },
+  { name: "settings", label: "Settings" },
 ];
 
 export function App() {
   const app = useApp();
+  const ask = useConfirm();
   const [route, setRoute] = useState<Route>({ name: "home" });
   const go = (r: Route) => {
     setRoute(r);
@@ -45,9 +47,9 @@ export function App() {
   const tabbed = TABBED.includes(route.name);
   const inSet = route.name === "practice" || route.name === "case";
 
-  function back() {
+  async function back() {
     if (route.name === "mockRun") return go({ name: "mock" });
-    if (inSet && !confirm("Leave this set? Items you submitted are saved.")) return;
+    if (inSet && !(await ask({ title: "Leave this set?", body: "Items you submitted are saved.", confirm: "Leave", cancel: "Stay" }))) return;
     if (route.name === "case") return go({ name: "cases" });
     if (route.name === "mockResult") return go({ name: "mock" });
     go({ name: "home" });

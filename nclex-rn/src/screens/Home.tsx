@@ -1,7 +1,8 @@
 import { useMemo, useState } from "react";
 import { Lock } from "@/components/Lock";
-import { overall } from "@/engine/analytics";
-import { CJMM, NEEDS } from "@/engine/blueprint";
+import { Cap, Tube } from "@/components/Tube";
+import { byNeed, overall } from "@/engine/analytics";
+import { CJMM, NEEDS, type ClientNeed } from "@/engine/blueprint";
 import { KIND_NAMES } from "@/engine/score";
 import type { Item, ItemKind } from "@/engine/types";
 import { buildSet, missedIds, pct } from "@/engine/ui";
@@ -10,6 +11,7 @@ import { useApp } from "../state";
 
 interface SetDef {
   key: string;
+  cap?: ClientNeed;
   name: string;
   items: Item[];
 }
@@ -20,12 +22,13 @@ export function Home({ go }: { go: Go }) {
   const missed = useMemo(() => missedIds(app.answers), [app.answers]);
   const all = app.items;
   const tally = overall(app.answers);
+  const areaTally = byNeed(app.answers);
 
   const special: SetDef[] = [
     { key: "all", name: "Mixed set from every area", items: all },
     { key: "missed", name: "Missed and flagged", items: all.filter((i) => missed.has(i.id) || app.flags.includes(i.id)) },
   ];
-  const needs: SetDef[] = NEEDS.map((n) => ({ key: n.id, name: n.name, items: all.filter((i) => i.need === n.id) }));
+  const needs: SetDef[] = NEEDS.map((n) => ({ key: n.id, cap: n.id, name: n.name, items: all.filter((i) => i.need === n.id) }));
   const steps: SetDef[] = CJMM.map((s) => ({ key: s.id, name: s.name, items: all.filter((i) => i.cjmm === s.id) }));
   const kinds: SetDef[] = (Object.keys(KIND_NAMES) as ItemKind[]).map((k) => ({
     key: k,
@@ -51,7 +54,10 @@ export function Home({ go }: { go: Go }) {
     return (
       <li key={d.key}>
         <button className={`setrow ${!open && !empty ? "locked" : ""}`} disabled={empty} onClick={() => start(d)}>
-          <span className="t">{d.name}</span>
+          <span className="t">
+            {d.cap && <Cap id={d.cap} />}
+            {d.name}
+          </span>
           <span className="right mono">
             {empty ? (
               <span className="muted">None yet</span>
@@ -81,20 +87,27 @@ export function Home({ go }: { go: Go }) {
         </p>
       </div>
 
-      <div className="stats">
-        <div>
-          <div className="label">Items</div>
-          <div className="num">{all.length}</div>
-        </div>
-        <div>
-          <div className="label">Answered</div>
-          <div className="num">{tally.items}</div>
-        </div>
-        <div>
-          <div className="label">Points</div>
-          <div className="num">{pct(tally.pct)}</div>
-        </div>
-      </div>
+      {all.length > 0 && (
+        <>
+          <div className="rack" role="group" aria-label="Client Needs areas. Each tube fills with your points.">
+            {needs.map((d) => {
+              const t = areaTally.find((a) => a.id === d.key)?.tally;
+              return <Tube key={d.key} id={d.cap!} name={d.name} pct={t && t.items ? t.pct : null} disabled={!d.items.length} onClick={() => start(d)} />;
+            })}
+          </div>
+          <p className="tally">
+            <span>
+              <b>{all.length}</b> items
+            </span>
+            <span>
+              <b>{tally.items}</b> answered
+            </span>
+            <span>
+              <b>{pct(tally.pct)}</b> of points
+            </span>
+          </p>
+        </>
+      )}
 
       {app.demo && (
         <p className="duebar small">

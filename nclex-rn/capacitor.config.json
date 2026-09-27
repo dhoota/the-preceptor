@@ -3,6 +3,6 @@
   "appName": "Preceptor: NCLEX",
   "webDir": "dist",
   "loggingBehavior": "none",
-  "android": { "backgroundColor": "#F7F5F0", "webContentsDebuggingEnabled": false },
+  "android": { "backgroundColor": "#E8ECEF", "webContentsDebuggingEnabled": false },
   "ios": { "webContentsDebuggingEnabled": false, "contentInset": "never" }
 }

@@ -1,4 +1,5 @@
 import { useState } from "react";
+import { useConfirm } from "@/components/Confirm";
 import { APP_NAME, APP_VERSION, DISCLAIMER, PRIVACY_URL, SUPPORT_EMAIL, TERMS_URL, TEST_PLAN_URL } from "@/lib/constants";
 import type { Go } from "../routes";
 import { useApp } from "../state";
@@ -17,6 +18,7 @@ function Switch({ on, onChange, label }: { on: boolean; onChange: (v: boolean) =
 
 export function Settings({ go }: { go: Go }) {
   const app = useApp();
+  const ask = useConfirm();
   const s = app.settings;
   const [msg, setMsg] = useState<string | null>(null);
 
@@ -127,7 +129,8 @@ export function Settings({ go }: { go: Go }) {
           <button
             className="btn small quiet"
             onClick={async () => {
-              if (confirm("Delete all answers, flags and mocks on this device?")) {
+              const ok = await ask({ title: "Reset progress?", body: "This deletes all answers, flags and mocks on this device. Your purchase and settings stay.", confirm: "Reset", danger: true });
+              if (ok) {
                 await app.resetProgress();
                 setMsg("Progress reset.");
               }

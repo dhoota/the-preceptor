@@ -1,4 +1,5 @@
 import { useEffect, useMemo, useRef, useState } from "react";
+import { useConfirm } from "@/components/Confirm";
 import { Exhibit } from "@/components/Exhibit";
 import { ItemCard } from "@/components/ItemPlayer";
 import { EXAM } from "@/engine/blueprint";
@@ -35,6 +36,7 @@ function Caveat() {
 /** Mock tab: how the exam works, resume, start, and past mocks. */
 export function MockHome({ go }: { go: Go }) {
   const app = useApp();
+  const ask = useConfirm();
   const bank: MockBank = { items: app.items, cases: app.cases };
   const unfinished = app.mocks.find((m) => !m.result);
   const done = app.mocks.filter((m) => m.result);
@@ -61,8 +63,9 @@ export function MockHome({ go }: { go: Go }) {
           </button>
           <button
             className="btn small ghost"
-            onClick={() => {
-              if (confirm("Discard this unfinished mock? Its answers stay in your progress.")) app.deleteMock(unfinished.id);
+            onClick={async () => {
+              const ok = await ask({ title: "Discard this mock?", body: "Its answers stay in your progress.", confirm: "Discard", danger: true });
+              if (ok) app.deleteMock(unfinished.id);
             }}
           >
             Discard
@@ -146,7 +149,7 @@ export function MockList({ mocks, go }: { mocks: Mock[]; go: Go }) {
           <button className="setrow" onClick={() => go({ name: "mockResult", id: m.id })}>
             <span className="t">
               {new Date(m.startedAt).toLocaleDateString("en-GB", { day: "numeric", month: "short", year: "numeric" })}
-              <span className="muted small" style={{ display: "block", fontFamily: "var(--sans)" }}>
+              <span className="muted small" style={{ display: "block", fontFamily: "var(--text)" }}>
                 {m.log.length} items, {hms(m.elapsedMs)}
               </span>
             </span>

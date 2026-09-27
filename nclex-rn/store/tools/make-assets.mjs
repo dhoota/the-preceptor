@@ -62,13 +62,25 @@ const CAPTIONS = [
 
 const MIN_APP_W = 390;
 const MAX_APP_W = 780;
-const NAVY = "#00305C";
-const GOLD = "#C99400";
-const SERIF = "'Iowan Old Style',Charter,'Source Serif Pro',Georgia,serif";
-const SANS = "-apple-system,'Segoe UI',Roboto,Helvetica,Arial,sans-serif";
+// The app's tray world: specimen-label ink, a cool grey tray, one cap color per Client Needs area.
+const INK = "#101418";
+const TRAY = "#E8ECEF";
+const CAPS = ["#2446C8", "#1D8A4B", "#E0559B", "#23282D", "#4DB2E0", "#8C939B", "#EE7A1F", "#E9CB2B"];
+const fontFace = (family, file, extra = "") =>
+  `@font-face{font-family:'${family}';src:url(data:font/woff2;base64,${readFileSync(join(root, "node_modules", file)).toString("base64")}) format('woff2');font-weight:100 900;${extra}}`;
+const FONTS = () =>
+  `<style>${fontFace("Archivo", "@fontsource-variable/archivo/files/archivo-latin-wdth-normal.woff2", "font-stretch:62% 125%;")}${fontFace(
+    "Atkinson",
+    "@fontsource-variable/atkinson-hyperlegible-next/files/atkinson-hyperlegible-next-latin-wght-normal.woff2",
+  )}</style>`;
+const DISPLAY = "'Archivo',sans-serif";
+const TEXT = "'Atkinson',sans-serif";
 
-const markSvg = (ring2) =>
-  `<svg viewBox="0 0 200 200" width="100%" height="100%"><circle cx="100" cy="100" r="88" fill="none" stroke="${GOLD}" stroke-width="14"/><circle cx="100" cy="100" r="56" fill="none" stroke="${ring2}" stroke-width="12"/><circle cx="100" cy="100" r="22" fill="${GOLD}"/></svg>`;
+// A row of tube caps in area order, the store frame's signature.
+const capRow = (h) =>
+  `<div style="display:flex;gap:${Math.round(h * 0.45)}px">${CAPS.map(
+    (c) => `<span style="display:block;width:${Math.round(h * 0.95)}px;height:${h}px;border:${Math.max(1.5, h * 0.12)}px solid #fff;border-radius:${Math.round(h * 0.3)}px ${Math.round(h * 0.3)}px ${Math.round(h * 0.08)}px ${Math.round(h * 0.08)}px;background:${c}"></span>`,
+  ).join("")}</div>`;
 
 // Falls back to any full Chromium under PLAYWRIGHT_BROWSERS_PATH when this
 // Playwright version's own build is not installed.
@@ -172,6 +184,9 @@ async function captureApp(size) {
   };
   const exitSet = async () => {
     await page.locator(".top .back").click();
+    // Leaving a set asks first, in an in-app dialog.
+    const leave = page.locator(".dialog .btn").last();
+    if (await leave.count()) await leave.click();
     await wait();
   };
 
@@ -403,13 +418,12 @@ async function compose(size, shot, caption, out) {
   const ctx = await browser.newContext({ viewport: { width: size.w, height: size.h }, deviceScaleFactor: 1 });
   const page = await ctx.newPage();
   const img = `data:image/png;base64,${shot.toString("base64")}`;
-  const mark = Math.round(font * 0.95);
-  await page.setContent(`<!doctype html><html style="zoom:${size.dpr}"><body style="margin:0;background:${NAVY};width:${cssW}px;height:${cssH}px;overflow:hidden;position:relative;font-family:${SERIF}">
+  await page.setContent(`<!doctype html><html style="zoom:${size.dpr}">${FONTS()}<body style="margin:0;background:${INK};width:${cssW}px;height:${cssH}px;overflow:hidden;position:relative;font-family:${DISPLAY}">
     <div style="height:${band}px;display:flex;flex-direction:column;justify-content:center;padding:0 ${pad}px;box-sizing:border-box">
-      <div style="width:${mark}px;height:${mark}px;margin-bottom:${Math.round(font * 0.45)}px">${markSvg("#FFFFFF")}</div>
-      <div style="color:#FFFFFF;font-size:${font}px;line-height:1.12;font-weight:600;letter-spacing:-0.01em">${caption}</div>
+      <div style="margin-bottom:${Math.round(font * 0.5)}px">${capRow(Math.round(font * 0.42))}</div>
+      <div style="color:#FFFFFF;font-size:${font}px;line-height:1.08;font-weight:800;font-stretch:112%;letter-spacing:-0.015em">${caption}</div>
     </div>
-    <div style="position:absolute;left:${pad}px;right:${pad}px;top:${band}px;bottom:0;overflow:hidden;border-radius:${Math.round(cssW * 0.04)}px ${Math.round(cssW * 0.04)}px 0 0;border:1px solid rgba(255,255,255,0.25);border-bottom:0;background:#F7F5F0">
+    <div style="position:absolute;left:${pad}px;right:${pad}px;top:${band}px;bottom:0;overflow:hidden;border-radius:${Math.round(cssW * 0.035)}px ${Math.round(cssW * 0.035)}px 0 0;border:${Math.max(1, cssW * 0.004)}px solid #fff;border-bottom:0;background:${TRAY}">
       <img src="${img}" style="width:100%;display:block"/>
     </div></body></html>`);
   await page.waitForTimeout(100);
@@ -442,13 +456,21 @@ mkdirSync(g, { recursive: true });
 {
   const ctx = await browser.newContext({ viewport: { width: 1024, height: 500 } });
   const page = await ctx.newPage();
-  await page.setContent(`<!doctype html><body style="margin:0;width:1024px;height:500px;background:${NAVY};display:flex;align-items:center;font-family:${SERIF};color:#fff">
-    <div style="width:180px;height:180px;margin:0 48px 0 72px;flex:none">${markSvg("#FFFFFF")}</div>
-    <div style="padding-right:56px">
-      <div style="font:700 15px/1 ${SANS};letter-spacing:0.18em;color:#E0B43C;text-transform:uppercase">Next Generation NCLEX-RN prep</div>
-      <div style="font-size:50px;font-weight:600;line-height:1.05;margin-top:16px;white-space:nowrap">Preceptor: NCLEX</div>
-      <div style="font-size:25px;line-height:1.35;margin-top:18px;color:#C9D8EA;max-width:600px">Every NGN item type. Case studies. An adaptive mock. Fully offline.</div>
+  const tubes = CAPS.map(
+    (c, i) => `<div style="display:flex;flex-direction:column;align-items:center">
+      <span style="display:block;width:34px;height:16px;border:2.5px solid #fff;border-bottom-width:4px;border-radius:7px 7px 2px 2px;background:${c}"></span>
+      <span style="display:block;position:relative;width:24px;height:190px;margin-top:-3px;border:2.5px solid #fff;border-top:0;border-radius:0 0 14px 14px;overflow:hidden">
+        <span style="position:absolute;left:0;right:0;bottom:0;height:${[62, 70, 55, 78, 66, 48, 74, 58][i]}%;background:${c};border-top:2.5px solid #fff"></span>
+      </span></div>`,
+  ).join("");
+  await page.setContent(`<!doctype html>${FONTS()}<body style="margin:0;width:1024px;height:500px;background:${INK};display:flex;align-items:center;color:#fff">
+    <div style="display:flex;gap:12px;margin:0 56px 0 64px;flex:none">${tubes}</div>
+    <div style="padding-right:48px">
+      <div style="font:700 15px/1 ${DISPLAY};font-stretch:125%;letter-spacing:0.08em;color:#C3CAD0;text-transform:uppercase">Next Generation NCLEX-RN prep</div>
+      <div style="font:800 54px/1.02 ${DISPLAY};font-stretch:112%;letter-spacing:-0.015em;margin-top:16px;white-space:nowrap">Preceptor: NCLEX</div>
+      <div style="font:400 24px/1.4 ${TEXT};margin-top:18px;color:#DCE2E6;max-width:520px">Every NGN item type. Case studies. An adaptive mock. Fully offline.</div>
     </div></body>`);
+  await page.waitForTimeout(150);
   await page.screenshot({ path: join(g, "play-feature-1024x500.png") });
   await ctx.close();
 }
