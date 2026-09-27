@@ -43,12 +43,23 @@ const server = http.createServer((q,s)=>{
     // ---- Shop, all three tabs ----
     go('shop');
     if (vis('#tabP')) issues.push('the Bones tab is VISIBLE with a placeholder key — v1.0 must have no purchase surface');
-    ['U','B'].forEach(t=>{
+    ['U','B','L'].forEach(t=>{
       document.getElementById('tab'+t).onclick();
       const rows = document.querySelectorAll('#shopList .shopRow').length;
       seen['tab'+t+'Rows'] = rows;
       if (!rows) issues.push(`shop tab ${t} rendered zero rows`);
-      document.querySelectorAll('#shopList .buy').forEach(b=>{ if(!b.onclick) issues.push(`a buy button on tab ${t} has no handler`); });
+      const btns = document.querySelectorAll('#shopList .priceBtn');
+      if (!btns.length) issues.push(`shop tab ${t} rendered no price buttons`);
+      if (t === 'B' && rows !== BOOST_ORDER.length)
+        issues.push(`Boosts shows ${rows} rows for ${BOOST_ORDER.length} products — one row per product`);
+      if (t === 'L' && rows !== Object.keys(THEMES).length)
+        issues.push(`Looks shows ${rows} rows for ${Object.keys(THEMES).length} themes`);
+      btns.forEach(b=>{ if(!b.onclick) issues.push(`a price button on tab ${t} has no handler`); });
+      // Every price must name its currency; a bare number could be either.
+      btns.forEach(b=>{
+        const flat = b.classList.contains('owned');
+        if (!flat && !b.querySelector('img')) issues.push(`a price button on tab ${t} shows no currency`);
+      });
     });
     // Buying an upgrade must actually charge and level up.
     document.getElementById('tabU').onclick();
@@ -56,7 +67,7 @@ const server = http.createServer((q,s)=>{
     const gateRow = Array.from(document.querySelectorAll('#shopList .shopRow'))
       .find(n => n.querySelector('.tt').textContent === 'Wide Gate');
     if (!gateRow) issues.push('Wide Gate upgrade row missing');
-    else { gateRow.querySelector('.buy').onclick();
+    else { gateRow.querySelector('.priceBtn').onclick();
       if ((S.up.gate||0) !== beforeLv+1) issues.push('buying an upgrade did not raise its level');
       if (S.coins >= beforeCoins) issues.push('buying an upgrade did not charge coins'); }
     // Forcing the hidden tab open must not reach a storefront. Two separate
@@ -78,6 +89,7 @@ const server = http.createServer((q,s)=>{
     const btns = Array.from(document.querySelectorAll('#setBox .btn')).map(b=>b.textContent);
     seen.settingsButtons = btns;
     if(!btns.some(t=>/Reset progress/.test(t))) issues.push('no Reset progress control — the privacy policy promises one');
+    if(!btns.some(t=>/Sound/.test(t))) issues.push('no sound control in settings');
     if(btns.some(t=>/Restore Purchases/.test(t))) issues.push('Restore Purchases is showing with no store configured');
     confirmReset();
     if(!vis('#rewardScr')) issues.push('reset confirmation did not open');
@@ -102,6 +114,28 @@ const server = http.createServer((q,s)=>{
     document.querySelector('#storyBox .btn').onclick();
     if(!seen.storyDone) issues.push('story continue button did not fire its callback');
     if(!S.storySeen[74]) issues.push('story beat was not marked seen — it will replay');
+
+    // ---- the reward animation must survive the repaint ----
+    // deliver() used to call popDog() and then paintPlay(), which replaced the
+    // node the animation was attached to, so a correct serve never animated
+    // while a wrong one did.
+    closeOverlay();
+    S.day = 40; S.hearts = 5; startPlay();
+    if (window.timer) { clearInterval(window.timer); window.timer = null; }
+    const di = D.dogs.findIndex(d => d.state === 'wait');
+    deliver(D.dogs[di].want, di);
+    const cell = document.querySelector(`.dog[data-i="${di}"]`);
+    seen.settleSurvives = !!(cell && cell.classList.contains('settle'));
+    if (!seen.settleSurvives) issues.push('the reward animation does not survive the repaint after a correct delivery');
+
+    // ---- the request must be named, not just pictured ----
+    const strip = document.querySelector('.dog .want .wl');
+    seen.requestNamed = !!(strip && strip.textContent.trim().length);
+    if (!seen.requestNamed) issues.push('the request strip shows no item name');
+
+    // ---- Dutch is the main character; he works every day ----
+    seen.dutchOnFloor = D.dogs.some(d => d.k === 'dutch');
+    if (!seen.dutchOnFloor) issues.push('Dutch is not on the floor');
 
     // ---- overlayOpen must be false once everything is closed ----
     closeOverlay();

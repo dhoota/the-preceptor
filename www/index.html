@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
 <meta charset="utf-8">
-<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover,maximum-scale=1,user-scalable=no">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
 <meta name="apple-mobile-web-app-capable" content="yes">
 <meta name="theme-color" content="#0f3b3d">
 <meta name="color-scheme" content="light">
@@ -12,36 +12,158 @@
    Dutch's Doggy Daycare — one self-contained file, no bundler, no framework.
    Everything is greppable in one place on purpose.
    ========================================================================== */
-:root{
-  /* Declared so Android Chrome's "auto dark theme for web contents" leaves the
-     palette alone. Without it the whole game is force-inverted. */
-  color-scheme:light;
-  --cream:#fdf6e9; --cream2:#f6e9d2; --ink:#2b2118; --ink2:#6b5946;
-  --teal:#0f3b3d; --teal2:#1b5f5c; --teal3:#2f8f86;
-  --gold:#f2b134; --gold2:#e08e26; --rose:#e05a5a; --leaf:#5aa860;
-  --sky:#7fc4d8; --plum:#7d5ba6;
-  --shadow:0 6px 0 rgba(0,0,0,.18); --soft:0 8px 26px rgba(0,0,0,.20);
-  --r:18px; --r2:26px;
-  --safeT:env(safe-area-inset-top,0px); --safeB:env(safe-area-inset-bottom,0px);
-  --bg:var(--cream); --panel:#fffaf0; --line:rgba(43,33,24,.12);
+
+/* THE VOICE.
+   Bricolage Grotesque is the display face: a deliberately irregular grotesque
+   with a width and an optical-size axis, drawn from mismatched sources. It has
+   a crooked, hand-set quality that no default pairing has, and at large sizes
+   with the width axis open it reads like signage on a kennel wall. Hanken
+   Grotesk carries the text: tall x-height, open apertures, legible at 11px on
+   a dark ground, and warm enough not to fight the plush art.
+   Both are SIL OFL 1.1, both are self-hosted, because the store build has to
+   run in airplane mode. Latin subsets only: 166 KB for the pair. */
+@font-face{
+  font-family:"Bricolage Grotesque"; font-style:normal; font-weight:200 800;
+  font-display:swap; src:url("fonts/bricolage-var.woff2") format("woff2");
 }
-body.thNight{ color-scheme:dark; --bg:#141b2b; --panel:#1e2740; --cream:#141b2b; --cream2:#1a2237;
-  --ink:#f0e9dc; --ink2:#b6aa96; --line:rgba(255,255,255,.14); }
-body.thMeadow{ --bg:#eef7e6; --panel:#fbfff5; --cream:#eef7e6; --cream2:#dcecd0;
-  --teal:#2c5a2e; --teal2:#3f7a41; --teal3:#63a765; }
-body.thSunset{ --bg:#fdeee4; --panel:#fff6ee; --cream:#fdeee4; --cream2:#f8ddca;
-  --teal:#7a3b2e; --teal2:#a4523d; --teal3:#d0764f; }
+@font-face{
+  font-family:"Hanken Grotesk"; font-style:normal; font-weight:400 800;
+  font-display:swap; src:url("fonts/hanken-var.woff2") format("woff2");
+}
+
+:root{
+  /* THE WORLD: a kennel yard after dark.
+     The ground is deep bottle green, not paper. Everything in this product is
+     a glossy, brightly-lit 3D character, and a pale ground was competing with
+     them for the same tonal register — on a dark yard they light up like they
+     are under the floodlights, which is the whole point of the art budget.
+     Declaring color-scheme:dark also stops Android Chrome force-inverting us. */
+  color-scheme:dark;
+  --ground:#0d2620; --raise:#1c4538; --ink:#f4f1e4; --ink2:#9fb8a6;
+  --teal:#081c18; --teal2:#14352c; --teal3:#2c6b58;
+
+  /* THE SIGNATURE: tennis-ball chartreuse.
+     It is the one colour every dog owner already associates with a dog, it is
+     almost never used as an interface primary, and against bottle green it is
+     the brightest thing that can exist on screen. So it means exactly one
+     thing here — TOUCH THIS NEXT — and nothing else is allowed to use it. */
+  --ball:#d8f24a; --ball2:#b4d426;
+  --clay:#ff7a45; --leaf:#7ee081; --berry:#ff4d5e;
+  --sky:#5ad1e8; --iris:#ff6fd8;
+
+  /* On a dark ground the readable member of each pair is the LIGHTER one, so
+     the -Ink tokens invert: bright fills stay for rings and strokes, and
+     anything CARRYING TEXT takes these. Every one clears 4.5:1 on --ground. */
+  --tealInk:#6fe3cf; --leafInk:#9be89f; --ballInk:#e6ff6b;
+  --berryInk:#ff8f9b; --clayInk:#ffa273;
+
+  /* Depth: warm-black shadows plus a chartreuse inner hairline along the top
+     of raised surfaces, so a card looks lit from above by the same yard light
+     the characters are standing in. */
+  --shadow:0 3px 0 rgba(0,0,0,.45), 0 6px 14px rgba(0,0,0,.38);
+  --soft:0 10px 30px rgba(2,12,9,.46), 0 2px 6px rgba(0,0,0,.30),
+         inset 0 1px 0 rgba(216,242,74,.13);
+  --lift:0 18px 44px rgba(2,12,9,.62), 0 4px 10px rgba(0,0,0,.40),
+         inset 0 1px 0 rgba(216,242,74,.18);
+  --contact:drop-shadow(0 8px 10px rgba(0,0,0,.55));
+
+  /* Tighter than the old 18/26/34. Soft blobs are the default everything
+     arrives wearing; this world is crisper than that. */
+  --r:12px; --r2:18px; --r3:24px;
+  --safeT:env(safe-area-inset-top,0px); --safeB:env(safe-area-inset-bottom,0px);
+  --bg:var(--ground); --panel:var(--teal2);
+  /* Rules are chartreuse at low alpha, never neutral grey. */
+  --line:rgba(216,242,74,.15);
+
+  --bubble:#1c4538; --ringTrack:rgba(216,242,74,.16); --fade:rgba(13,38,32,0);
+  /* Clock ramp: calm mint -> persimmon -> berry. Chartreuse is deliberately
+     absent, because the clock is not the thing you touch. */
+  --ok:#4fd6be; --warnC:var(--clay); --critC:var(--berry); --okInk:var(--tealInk);
+  --ease:cubic-bezier(.16,1,.3,1);
+  /* Text laid ON an accent fill. Every accent in this world is bright, so
+     this is near-black; in the one light theme the accents invert and so
+     does this. One token means no button ever has to guess. */
+  --onAccent:#08211b;
+  /* Turf: a two-tone dot lattice over the ground so the dark is a surface
+     rather than an absence. Tiny, tiled, and free. */
+  --turf:radial-gradient(circle at 1px 1px, rgba(216,242,74,.055) 1px, transparent 0);
+}
+body.thNight{ --bg:#0b1430; --panel:#152043; --ground:#0b1430; --raise:#1e2c59;
+  --teal:#060d22; --teal2:#152043; --teal3:#31508f;
+  --ink:#eaeeff; --ink2:#9aa6cc; --line:rgba(122,162,255,.18);
+  --ball:#7aa2ff; --ball2:#4f79df; --ballInk:#a9c4ff;
+  --tealInk:#8fd8ff; --leafInk:#8fe6a6; --berryInk:#ff9bb0; --clayInk:#ffb383;
+  --onAccent:#070f26;
+  --bubble:#1e2c59; --ringTrack:rgba(122,162,255,.20); --fade:rgba(11,20,48,0);
+  --ok:#5fc0e8; --warnC:#ffb14d; --critC:#ff6b83;
+  --turf:radial-gradient(circle at 1px 1px, rgba(122,162,255,.06) 1px, transparent 0); }
+body.thMeadow{ color-scheme:light; --bg:#dff0c4; --panel:#eef8dc; --ground:#dff0c4; --raise:#cbe6a8;
+  --teal:#1d3b17; --teal2:#2e5c24; --teal3:#4c8a38;
+  --ink:#15300f; --ink2:#456138; --line:rgba(30,60,20,.20);
+  --ball:#2e5c24; --ball2:#1d3b17; --ballInk:#1d3b17;
+  --tealInk:#1d5a4a; --leafInk:#2c6b32; --berryInk:#a32433; --clayInk:#9a4a16;
+  --onAccent:#eef8dc;
+  --bubble:#eef8dc; --ringTrack:rgba(30,60,20,.18); --fade:rgba(223,240,196,0);
+  --ok:#3f8f6e; --warnC:#b56a12; --critC:#b3303f;
+  --shadow:0 3px 0 rgba(30,60,20,.20), 0 6px 14px rgba(30,60,20,.16);
+  --soft:0 10px 30px rgba(30,60,20,.18), 0 2px 6px rgba(30,60,20,.10);
+  --lift:0 18px 44px rgba(30,60,20,.26), 0 4px 10px rgba(30,60,20,.14);
+  --contact:drop-shadow(0 7px 9px rgba(30,60,20,.30));
+  --turf:radial-gradient(circle at 1px 1px, rgba(30,60,20,.07) 1px, transparent 0); }
+body.thSunset{ --bg:#2b1013; --panel:#3d1a1b; --ground:#2b1013; --raise:#552622;
+  --teal:#1c0a0d; --teal2:#3d1a1b; --teal3:#8a4230;
+  --ink:#ffeede; --ink2:#c8a08f; --line:rgba(255,154,90,.20);
+  --ball:#ffb03a; --ball2:#e08b1c; --ballInk:#ffc766;
+  --tealInk:#ffb694; --leafInk:#b8d98a; --berryInk:#ff93a0; --clayInk:#ffab72;
+  --onAccent:#2b1013;
+  --bubble:#552622; --ringTrack:rgba(255,154,90,.20); --fade:rgba(43,16,19,0);
+  --ok:#e0913f; --warnC:#ff8a3d; --critC:#ff5d6b;
+  --turf:radial-gradient(circle at 1px 1px, rgba(255,154,90,.06) 1px, transparent 0); }
 
 *{box-sizing:border-box;-webkit-tap-highlight-color:transparent}
 html,body{margin:0;padding:0;height:100%;overflow:hidden;overscroll-behavior:none}
 body{
-  font-family:"Nunito",-apple-system,BlinkMacSystemFont,"Segoe UI",system-ui,sans-serif;
-  background:var(--bg); color:var(--ink);
+  font-family:"Hanken Grotesk",ui-sans-serif,sans-serif;
+  background:var(--bg); background-image:var(--turf); background-size:14px 14px;
+  color:var(--ink);
   -webkit-user-select:none;user-select:none;
   -webkit-font-smoothing:antialiased;
 }
 img{display:block;max-width:100%;-webkit-user-drag:none}
 button{font:inherit;color:inherit;border:0;background:none;cursor:pointer}
+
+/* The display voice. Everything that names something rather than explaining it. */
+.h1,.h2,#logo .l2,#clockTxt,#dayChip,.starsRow,.dexCard .nm,.shopRow .tt,
+.dog .nm,.want .wl,#phaseName,.bigNum{
+  font-family:"Bricolage Grotesque","Hanken Grotesk",sans-serif;
+  /* Width axis fully open and a large optical size: this is the cut with the
+     flat, wide-set terminals, which is the whole reason to use this face
+     rather than another rounded sans. Tracking pulled in to match. */
+  font-variation-settings:"wdth" 100,"opsz" 40;
+  letter-spacing:-.025em;
+}
+#logo .l2,#roundCard .rcName,.posterArt .dy,#clockTxt{ font-variation-settings:"wdth" 100,"opsz" 88 }
+
+/* Counters must not jitter as they change. */
+#tCoins,#tBones,#hCoins,#sCoins,#sBones,#tHearts,#comboPill,#clockTxt,#dexCount,
+.statLine b,.dexCard .lv,.boostBtn .ct,.priceBtn,.bigNum{
+  font-variant-numeric:tabular-nums; font-feature-settings:"tnum" 1;
+}
+
+/* Surfaces the browser draws for you. Left at their defaults they belong to no
+   design system, and theming them is the cheapest signal a thing was built. */
+::selection{ background:var(--ball); color:var(--onAccent); }
+:focus{ outline:none; }
+:focus-visible{ outline:3px solid var(--ball2); outline-offset:3px; border-radius:6px; }
+.scroll,#dogZone,.sheetBox,#trayZone{ scrollbar-width:thin; scrollbar-color:var(--teal3) transparent; }
+.scroll::-webkit-scrollbar,#dogZone::-webkit-scrollbar,
+.sheetBox::-webkit-scrollbar,#trayZone::-webkit-scrollbar{ width:7px; height:7px; }
+.scroll::-webkit-scrollbar-thumb,#dogZone::-webkit-scrollbar-thumb,
+.sheetBox::-webkit-scrollbar-thumb,#trayZone::-webkit-scrollbar-thumb{
+  background:color-mix(in srgb, var(--teal3) 55%, transparent); border-radius:99px;
+}
+.scroll::-webkit-scrollbar-track,#dogZone::-webkit-scrollbar-track,
+.sheetBox::-webkit-scrollbar-track,#trayZone::-webkit-scrollbar-track{ background:transparent; }
 
 #app{position:fixed;inset:0;display:flex;flex-direction:column;overflow:hidden}
 .scr{position:absolute;inset:0;display:none;flex-direction:column;overflow:hidden}
@@ -52,214 +174,551 @@ button{font:inherit;color:inherit;border:0;background:none;cursor:pointer}
 /* ---- generic chrome ---- */
 .btn{
   display:inline-flex;align-items:center;justify-content:center;gap:8px;
-  background:var(--teal3);color:#fff;border-radius:var(--r);
+  background:var(--tealInk);color:var(--onAccent);border-radius:var(--r);
   padding:13px 20px;font-weight:800;font-size:16px;letter-spacing:.2px;
   box-shadow:var(--shadow);transition:transform .08s ease, filter .12s ease;
   min-height:48px;
 }
-.btn:active{transform:translateY(3px);box-shadow:0 3px 0 rgba(0,0,0,.18)}
-.btn.gold{background:var(--gold);color:#3a2a08}
-.btn.rose{background:var(--rose)}
-.btn.ghost{background:transparent;color:var(--ink);box-shadow:none;border:2px solid var(--line)}
+.btn:active{transform:translateY(2px) scale(.985);box-shadow:0 1px 0 rgba(0,0,0,.4), 0 3px 8px rgba(0,0,0,.34)}
+.btn.gold{background:var(--ball);color:var(--onAccent)}
+.btn.rose{background:var(--berry);color:var(--onAccent)}
+.btn.ghost{background:color-mix(in srgb, var(--ink) 4%, transparent);color:var(--ink);box-shadow:none;border:2px solid var(--line)}
+.btn.ghost:active{box-shadow:none;background:color-mix(in srgb, var(--ink) 8%, transparent)}
 .btn.wide{width:100%}
 .btn[disabled]{filter:grayscale(.7) brightness(.9);opacity:.65;pointer-events:none}
 .card{background:var(--panel);border-radius:var(--r2);box-shadow:var(--soft);padding:16px}
-.h1{font-size:clamp(24px,6.5vw,38px);font-weight:900;line-height:1.05;margin:0}
-.h2{font-size:clamp(17px,4.4vw,22px);font-weight:900;margin:0}
-.sub{color:var(--ink2);font-size:14px;font-weight:600;line-height:1.45}
+h1.h1,.h1{font-size:clamp(26px,7vw,42px);font-weight:600;line-height:1.02;margin:0}
+h2.h2,.h2{font-size:clamp(18px,4.6vw,24px);font-weight:600;margin:0}
+.sub{color:var(--ink2);font-size:14.5px;font-weight:500;line-height:1.5}
+.bigNum{font-weight:600;letter-spacing:-.02em}
 .row{display:flex;align-items:center;gap:10px}
 .sp{flex:1}
-.pill{display:inline-flex;align-items:center;gap:6px;background:var(--cream2);
-  border-radius:999px;padding:6px 12px;font-weight:800;font-size:14px}
-.pill img{width:20px;height:20px;object-fit:contain}
+/* THE COLLAR TAG. Every count in this game is a thing clipped to a dog's
+   collar: flat on the left where the ring goes through, rounded on the
+   right, with a punched hole. It costs one pseudo-element and it is the
+   detail that tells you what this product is about from across a room. */
+.pill{display:inline-flex;align-items:center;gap:6px;background:var(--raise);
+  border-radius:5px 999px 999px 5px;padding:6px 13px 6px 19px;
+  font-weight:800;font-size:14px;position:relative;
+  border:1px solid var(--line);box-shadow:var(--shadow)}
+.pill::before{content:"";position:absolute;left:7px;top:50%;width:6px;height:6px;
+  margin-top:-3px;border-radius:50%;background:var(--bg);
+  box-shadow:inset 0 1px 1.5px rgba(0,0,0,.55)}
+/* Blending is off now that the art carries a real alpha channel. Multiply
+   dissolved a pale plate against pale paper; against this ground it would
+   dissolve the icon instead. */
+.pill img{width:22px;height:22px;object-fit:contain;
+  filter:drop-shadow(0 1px 2px rgba(0,0,0,.45))}
 .tag{font-size:11px;font-weight:900;letter-spacing:.6px;text-transform:uppercase;
-  padding:3px 9px;border-radius:999px;background:var(--cream2);color:var(--ink2)}
+  padding:3px 9px;border-radius:999px;background:var(--raise);color:var(--ink2)}
 
 /* ---- title ---- */
 #titleScr{background:var(--bg)}
 #titleBg{position:absolute;inset:0;object-fit:cover;width:100%;height:100%;opacity:.98}
+/* The wordmark previously sat as white type over a bright sunset sky with a
+   veil that only reached .72 at the very bottom, so it had nothing to hold it. */
+/* The key art is a bright, pale scene and the chrome around it is not. The
+   veil is what reconciles them: a tight pool of the ground colour behind the
+   wordmark, and a deep ramp at the foot so the menu lands on something solid
+   instead of floating over lit grass. Tinted with --ground rather than a
+   neutral black, so the art appears to sit in this world rather than behind
+   a sheet of smoke. */
 #titleVeil{position:absolute;inset:0;background:
-  linear-gradient(180deg,rgba(15,59,61,.10) 0%,rgba(15,59,61,.02) 38%,rgba(15,59,61,.72) 100%)}
+  radial-gradient(112% 34% at 50% 0%, rgba(8,28,24,.90) 0%, rgba(8,28,24,.52) 52%, rgba(8,28,24,0) 82%),
+  linear-gradient(180deg,rgba(13,38,32,.46) 0%,rgba(13,38,32,.06) 26%,rgba(13,38,32,0) 42%,
+                  rgba(13,38,32,.58) 70%,rgba(13,38,32,.93) 88%,var(--ground) 100%)}
 #titleInner{position:relative;z-index:2;display:flex;flex-direction:column;height:100%;
   padding:calc(var(--safeT) + 14px) 18px calc(var(--safeB) + 18px)}
 #logo{text-align:center;margin-top:6px}
-#logo .l1{font-size:clamp(15px,4vw,20px);font-weight:900;letter-spacing:3px;
-  text-transform:uppercase;color:#fff;text-shadow:0 2px 8px rgba(0,0,0,.5)}
-#logo .l2{font-size:clamp(34px,10vw,58px);font-weight:900;line-height:.95;color:#fff;
-  text-shadow:0 4px 0 var(--teal),0 8px 22px rgba(0,0,0,.45);margin-top:2px}
+#logo .l2{font-family:"Bricolage Grotesque","Hanken Grotesk",sans-serif;
+  font-size:clamp(30px,8.4vw,50px);font-weight:600;line-height:.98;color:#fff;
+  letter-spacing:-.02em;
+  /* Offset and neutral. A zero-offset coloured halo is the house style of
+     every generated interface; this is a shadow the art could actually cast. */
+  text-shadow:0 3px 14px rgba(0,0,0,.62), 0 1px 2px rgba(0,0,0,.55)}
+#logo .l2 em{font-style:normal;display:inline-block;font-size:1.34em;color:var(--ball);
+  text-shadow:0 3px 14px rgba(0,0,0,.62), 0 1px 2px rgba(0,0,0,.55)}
 #titleDutch{width:min(58%,240px);margin:8px auto 0;object-fit:contain;
   filter:drop-shadow(0 12px 24px rgba(0,0,0,.35));animation:bob 3.4s ease-in-out infinite}
 @keyframes bob{0%,100%{transform:translateY(0)}50%{transform:translateY(-9px)}}
 @media (max-height:700px){ #titleDutch{width:min(42%,170px)} }
 #titleMenu{margin-top:auto;display:flex;flex-direction:column;gap:10px}
-#titleMenu .btn{font-size:18px;padding:16px}
-.menuGrid{display:grid;grid-template-columns:repeat(3,1fr);gap:10px}
-.menuGrid .btn{flex-direction:column;gap:4px;font-size:13px;padding:12px 6px;
-  background:rgba(255,255,255,.92);color:var(--teal)}
-.menuGrid .btn .ic{font-size:22px;line-height:1}
+#titleMenu > .btn{font-size:18px;padding:16px}
+.menuGrid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:10px}
+.menuGrid .btn{flex-direction:column;gap:5px;font-size:13.5px;font-weight:700;padding:13px 6px;
+  background:rgba(7,28,23,.58);color:#f4f1e4;border:1px solid rgba(216,242,74,.28);
+  -webkit-backdrop-filter:blur(10px);backdrop-filter:blur(10px);box-shadow:var(--soft)}
+.menuGrid .btn .ic{color:var(--ball)}
+.ic{display:inline-flex;align-items:center;justify-content:center;width:24px;height:24px;flex:0 0 auto}
+.ic svg{width:100%;height:100%}
+.menuGrid .btn .ic{width:26px;height:26px}
+.pill .ic{width:18px;height:18px}
 
 /* ---- top HUD ---- */
-#topbar{display:flex;align-items:center;gap:8px;padding:calc(var(--safeT) + 8px) 12px 8px;
-  background:linear-gradient(180deg,var(--panel),rgba(255,250,240,0));z-index:5;flex:0 0 auto}
-#topbar .pill{background:rgba(0,0,0,.06)}
-#dayChip{font-weight:900;font-size:15px}
-#phaseChip{font-size:11px}
+#topbar{display:flex;align-items:flex-start;gap:10px;padding:calc(var(--safeT) + 10px) 14px 10px;
+  background:linear-gradient(180deg,var(--panel) 62%,var(--fade));z-index:5;flex:0 0 auto}
+#topbar .pill{background:color-mix(in srgb, var(--ink) 7%, transparent);padding:4px 10px;font-size:13px}
+#dayChip{font-weight:600;font-size:19px;letter-spacing:-.015em;line-height:1.1}
 
-/* corner timer ring — the thing the whole game hangs off */
-#clockWrap{position:relative;width:62px;height:62px;flex:0 0 auto}
-#clockWrap svg{transform:rotate(-90deg);display:block}
+/* Which of the day's three rounds you are in. There was previously no way to
+   know you were two-thirds done. */
+#roundPips{display:flex;align-items:center;gap:5px}
+/* The active pip grows by transform rather than by width: animating width
+   relays out the row on every frame. */
+#roundPips i{width:26px;height:5px;border-radius:99px;background:color-mix(in srgb, var(--ink) 16%, transparent);
+  transform:scaleX(.6);transition:background-color .3s ease,transform .3s var(--ease)}
+#roundPips i.did{background:color-mix(in srgb, var(--teal3) 70%, transparent)}
+#roundPips i.now{background:var(--ball);transform:scaleX(1)}
+#phaseName{font-size:12.5px;font-weight:600;letter-spacing:.02em;color:var(--ink2)}
+#weatherPill{font-size:12px;font-weight:700;padding:3px 9px;border-radius:999px;
+  background:color-mix(in srgb, var(--sky) 26%, var(--panel));color:var(--ink)}
+
+/* The corner clock and the per-dog patience rings used to share a stroke, a
+   geometry and a colour ramp, so five identical teal rings competed. The corner
+   clock is now bigger, thicker and gold-to-rose; the dog rings are a thin
+   steady arc with no filled plate. */
+#clockWrap{position:relative;width:78px;height:78px;flex:0 0 auto}
+#clockWrap svg{transform:rotate(-90deg);display:block;filter:drop-shadow(0 3px 6px rgba(0,0,0,.22))}
 #clockRing{transition:stroke-dashoffset .25s linear, stroke .3s ease}
 #clockTxt{position:absolute;inset:0;display:flex;align-items:center;justify-content:center;
-  font-weight:900;font-size:17px;font-variant-numeric:tabular-nums}
-#clockWrap.warn #clockTxt{color:var(--gold2)}
-#clockWrap.crit #clockTxt{color:var(--rose)}
-#clockWrap.crit{animation:pulse .7s ease-in-out infinite}
-@keyframes pulse{0%,100%{transform:scale(1)}50%{transform:scale(1.07)}}
+  font-weight:600;font-size:25px;letter-spacing:-.03em}
+/* The clock numeral was least legible exactly when it mattered most —
+   2.42:1 in the warn state. The RING keeps the bright hue; the numeral
+   takes the readable one. */
+#clockWrap.warn #clockTxt{color:var(--ballInk)}
+#clockWrap.crit #clockTxt{color:var(--berryInk)}
+/* Looping motion is reserved for this one state, so that when something does
+   pulse it means something. */
+#clockWrap.crit{animation:pulse .68s ease-in-out infinite}
+@keyframes pulse{0%,100%{transform:scale(1)}50%{transform:scale(1.075)}}
 
 /* care meter */
-#careWrap{flex:1;min-width:60px}
-#careBar{height:12px;border-radius:999px;background:rgba(0,0,0,.12);overflow:hidden}
-#careFill{height:100%;width:100%;border-radius:999px;
-  background:linear-gradient(90deg,var(--leaf),var(--teal3));transition:width .3s ease,background .3s ease}
-#careFill.low{background:linear-gradient(90deg,var(--gold),var(--gold2))}
-#careFill.crit{background:linear-gradient(90deg,var(--rose),#b83b3b)}
+#careWrap{flex:1;min-width:74px;max-width:260px}
+#careHead{display:flex;align-items:center;gap:5px;margin-bottom:4px}
+#careHead svg{width:14px;height:14px;color:var(--leaf);flex:0 0 auto}
+#careHead span{font-size:11px;font-weight:700;letter-spacing:.04em;text-transform:uppercase;color:var(--ink2)}
+#careBar{height:11px;border-radius:999px;background:color-mix(in srgb, var(--ink) 20%, transparent);
+  overflow:hidden;box-shadow:inset 0 1px 2px rgba(0,0,0,.18)}
+/* transform, not width: animating width relayouts on every frame of a 350ms
+   transition, and this fires on every miss. */
+#careFill{height:100%;width:100%;border-radius:999px;transform-origin:left center;
+  background:linear-gradient(90deg,var(--leaf),var(--teal3));
+  transition:transform .35s var(--ease),background .3s ease}
+#careFill.low{background:linear-gradient(90deg,var(--ball),var(--ball2))}
+#careFill.crit{background:linear-gradient(90deg,var(--critC),var(--berryInk))}
+#careWrap.hit{animation:careHit .4s ease}
+@keyframes careHit{0%,100%{transform:translateX(0)}30%{transform:translateX(-4px)}70%{transform:translateX(4px)}}
 
 /* ---- play field ---- */
 #playScr{background:var(--bg)}
-#fieldBg{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;opacity:.55}
+/* The backgrounds are the best art in the product and were washed to .55, which
+   turned them into pale smears. Full strength, with a panel-tinted scrim only
+   where the cards actually sit. */
+#fieldBg{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;
+  transition:opacity .5s ease,transform .6s var(--ease)}
+/* Tinted with --ground, not --panel, and considerably deeper than before. The
+   backdrops are the best art in the product, but the cards are dark now and a
+   lit kitchen photo behind them competes with the dogs for the same attention.
+   Heaviest at the top and the foot, where the HUD and the tray need to read. */
+#fieldScrim{position:absolute;inset:0;background:
+  linear-gradient(180deg, color-mix(in srgb, var(--ground) 88%, transparent) 0%,
+                  color-mix(in srgb, var(--ground) 64%, transparent) 22%,
+                  color-mix(in srgb, var(--ground) 58%, transparent) 64%,
+                  color-mix(in srgb, var(--ground) 90%, transparent) 100%),
+  radial-gradient(120% 60% at 50% 46%,
+                  color-mix(in srgb, var(--ground) 34%, transparent) 0%, transparent 100%)}
+
+/* The one authored moment: the day breathes three times instead of scrolling
+   past as one flat 90 seconds. */
+#roundCard{position:absolute;inset:0;z-index:12;display:none;
+  align-items:center;justify-content:center;pointer-events:none}
+#roundCard.on{display:flex}
+#roundCard .rcInner{text-align:center;padding:0 24px}
+#roundCard .rcName{font-family:"Bricolage Grotesque","Hanken Grotesk",sans-serif;font-size:clamp(34px,9vw,54px);
+  font-weight:600;letter-spacing:-.02em;color:#fff;
+  text-shadow:0 4px 16px rgba(0,0,0,.66), 0 2px 4px rgba(0,0,0,.55);
+  clip-path:inset(0 100% 0 0);animation:wipeIn .52s .06s var(--ease) forwards}
+#roundCard .rcSub{margin-top:6px;font-size:15px;font-weight:600;color:rgba(255,255,255,.92);
+  text-shadow:0 2px 8px rgba(0,0,0,.6);opacity:0;animation:fadeUp .4s .3s var(--ease) forwards}
+#roundCard .rcVeil{position:absolute;inset:0;background:color-mix(in srgb, var(--teal) 62%, transparent);
+  animation:veil .9s var(--ease) forwards}
+@keyframes wipeIn{to{clip-path:inset(0 0 0 0)}}
+@keyframes fadeUp{from{opacity:0;transform:translateY(8px)}to{opacity:1;transform:none}}
+@keyframes veil{0%{opacity:0}22%{opacity:1}72%{opacity:1}100%{opacity:0}}
+
+#dogZone.enter .dog{animation:dogIn .5s var(--ease) backwards}
+@keyframes dogIn{from{opacity:0;transform:translateY(18px) scale(.94)}to{opacity:1;transform:none}}
+#tray.enter .item{animation:itemIn .42s var(--ease) backwards}
+@keyframes itemIn{from{opacity:0;transform:translateY(16px);filter:blur(5px)}
+  to{opacity:1;transform:none;filter:blur(0)}}
 #playInner{position:relative;z-index:2;display:flex;flex-direction:column;flex:1;min-height:0}
 #playBody{flex:1;min-height:0;display:flex;flex-direction:column}
 #dogZone{flex:1;min-height:0;overflow-y:auto;overscroll-behavior:contain;
-  display:flex;flex-wrap:wrap;align-content:center;justify-content:center;
-  gap:10px;padding:10px 10px 14px}
+  display:flex;flex-wrap:wrap;justify-content:center;
+  /* `safe` falls back to flex-start the moment the content overflows, so a
+     full floor scrolls from the top instead of being clipped at both ends. */
+  align-content:safe center;
+  gap:9px;padding:8px 10px 12px}
 
 .dog{position:relative;width:calc(50% - 5px);max-width:190px;touch-action:manipulation;
   background:var(--panel);border-radius:var(--r2);box-shadow:var(--soft);
-  padding:8px;display:flex;flex-direction:column;align-items:center;gap:6px;
-  border:3px solid transparent;transition:transform .12s ease,border-color .15s ease,opacity .3s ease}
-.dog.target{border-color:var(--gold);transform:scale(1.03)}
-.dog.done{opacity:.55}
-.dog.pop{animation:pop .42s cubic-bezier(.2,1.6,.4,1)}
-@keyframes pop{0%{transform:scale(1)}40%{transform:scale(1.13)}100%{transform:scale(1)}}
-.dog.shake{animation:shake .34s ease}
-@keyframes shake{0%,100%{transform:translateX(0)}25%{transform:translateX(-6px)}75%{transform:translateX(6px)}}
-.dog .por{width:100%;aspect-ratio:1/1;border-radius:var(--r);object-fit:cover;background:var(--cream2)}
-.dog .nm{font-weight:900;font-size:13px;line-height:1.1;text-align:center}
-.dog .br{font-size:10px;font-weight:700;color:var(--ink2);text-align:center;line-height:1.1}
-.dog .ring{position:absolute;top:6px;right:6px;width:38px;height:38px;
-  filter:drop-shadow(0 2px 4px rgba(0,0,0,.25))}
+  padding:8px 8px 0;display:flex;flex-direction:column;align-items:center;gap:2px;
+  border:2px solid transparent;overflow:hidden;
+  transition:transform .16s var(--ease),border-color .15s ease,background-color .35s ease,box-shadow .2s ease}
+/* THE FLOOR IS NOT A SPREADSHEET. Alternate cards drop half a step, so the
+   floor reads as animals standing around a yard rather than rows in a table.
+   Cheap, and it is the first thing that stops this looking generated. */
+.dog:nth-child(even){margin-top:14px}
+.dog:nth-child(4n+3){margin-top:6px}
+@media (prefers-reduced-motion:no-preference){ .dog{will-change:transform} }
+.dog.target{border-color:var(--ball);transform:translateY(-4px) scale(1.035);box-shadow:var(--lift)}
+/* A dog you took care of should look taken care of. The old rule faded the
+   whole card to 55%, so on the night background a settled dog read as a
+   rendering glitch: the reward for care was that the dog visually decayed. */
+.dog.done{background:color-mix(in srgb, var(--leaf) 11%, var(--panel));border-color:color-mix(in srgb, var(--leaf) 45%, transparent)}
+.dog.done .por{filter:var(--contact) saturate(1.06)}
+.dog.settle{animation:settle .62s var(--ease)}
+@keyframes settle{0%{transform:scale(1)}38%{transform:scale(1.05)}100%{transform:scale(1)}}
+.dog.pop{animation:pop .44s cubic-bezier(.2,1.7,.4,1)}
+@keyframes pop{0%{transform:scale(1)}32%{transform:scale(1.11) rotate(-1.2deg)}62%{transform:scale(.985)}100%{transform:scale(1)}}
+.dog.shake{animation:shake .36s ease}
+@keyframes shake{0%,100%{transform:translateX(0)}20%{transform:translateX(-7px) rotate(-1.5deg)}60%{transform:translateX(7px) rotate(1.5deg)}}
+/* No inner tile. The art is keyed to alpha at build time, so the character sits
+   on the card with a contact shadow instead of inside a second rounded box. */
+.dog .por{width:100%;aspect-ratio:1.18/1;object-fit:contain;filter:var(--contact);
+  transition:filter .35s ease,transform .3s var(--ease)}
+.dog .nm{font-weight:600;font-size:13.5px;line-height:1.05;text-align:center;letter-spacing:-.01em}
+.dog .ring{position:absolute;top:10px;right:10px;width:31px;height:31px;
+  filter:drop-shadow(0 2px 4px rgba(0,0,0,.22))}
 .dog .ring svg{transform:rotate(-90deg)}
-.want{position:absolute;top:-10px;left:50%;transform:translateX(-50%);
-  background:#fff;border-radius:14px;padding:4px;box-shadow:0 4px 12px rgba(0,0,0,.22);
-  border:2px solid var(--gold);display:flex;align-items:center;gap:4px;z-index:3}
-.want img{width:30px;height:30px;object-fit:contain}
-.badge{position:absolute;top:6px;left:6px;font-size:9px;font-weight:900;
-  padding:3px 7px;border-radius:999px;background:var(--rose);color:#fff;letter-spacing:.4px}
-.badge.ok{background:var(--leaf)}
-.badge.warn{background:var(--gold2)}
-.stateIc{position:absolute;bottom:44px;right:8px;font-size:22px;filter:drop-shadow(0 2px 3px rgba(0,0,0,.3))}
+
+/* The request strip: full width, named, at the bottom where the eye lands last
+   and therefore rests. It doubles as the receipt once the dog is served. */
+.want{width:calc(100% + 16px);margin:3px -8px 0;min-height:42px;
+  display:flex;align-items:center;justify-content:center;gap:7px;padding:5px 8px;
+  background:color-mix(in srgb, var(--ball) 17%, var(--panel));
+  border-top:2px solid color-mix(in srgb, var(--ball) 62%, transparent);
+  transition:background-color .3s ease,border-color .3s ease}
+.want img{width:32px;height:32px;object-fit:contain;flex:0 0 auto;border-radius:8px;filter:drop-shadow(0 2px 3px rgba(0,0,0,.45))}
+.want .wl{font-size:13px;font-weight:600;line-height:1.05;letter-spacing:-.01em;
+  text-align:left;max-width:92px}
+.dog.done .want{background:color-mix(in srgb, var(--leaf) 20%, var(--panel));
+  border-top-color:color-mix(in srgb, var(--leaf) 65%, transparent)}
+.want .tick{width:18px;height:18px;flex:0 0 auto;color:var(--leaf)}
+
+.badge{position:absolute;top:8px;left:8px;font-size:11px;font-weight:800;
+  padding:4px 9px;border-radius:999px;background:var(--berry);color:var(--onAccent);letter-spacing:.4px;
+  box-shadow:0 2px 6px rgba(0,0,0,.45)}
+.badge.ok{background:var(--leafInk)}
+.badge.warn{background:var(--ballInk)}
+/* Authored marks rather than emoji, one stroke weight throughout. */
+.stateIc{position:absolute;top:8px;right:48px;width:24px;height:24px;
+  filter:drop-shadow(0 2px 3px rgba(0,0,0,.34))}
+.dog.done .stateIc{right:8px}
 
 /* ---- tray ---- */
-#trayZone{flex:0 0 auto;background:var(--panel);border-radius:var(--r2) var(--r2) 0 0;
-  box-shadow:0 -6px 22px rgba(0,0,0,.14);padding:10px 8px calc(var(--safeB) + 10px);z-index:6}
-#trayHint{text-align:center;font-size:12px;font-weight:800;color:var(--ink2);margin-bottom:6px;min-height:16px}
+#trayZone{flex:0 0 auto;background:var(--panel);border-radius:var(--r3) var(--r3) 0 0;
+  box-shadow:0 -10px 30px rgba(0,0,0,.20);padding:12px 10px calc(var(--safeB) + 10px);z-index:6}
+#trayHint{text-align:center;font-size:12.5px;font-weight:600;color:var(--ink2);
+  margin-bottom:9px;min-height:16px;text-wrap:balance}
 #tray{display:flex;flex-wrap:wrap;justify-content:center;gap:8px;touch-action:none}
-.item{width:62px;height:62px;border-radius:var(--r);background:var(--cream2);
+.item{width:66px;height:66px;border-radius:var(--r);background:var(--raise);
   display:flex;align-items:center;justify-content:center;position:relative;
-  box-shadow:0 3px 0 rgba(0,0,0,.14);transition:transform .1s ease,box-shadow .1s ease;
+  box-shadow:0 2px 0 rgba(0,0,0,.16), 0 4px 10px rgba(0,0,0,.14);
+  transition:transform .14s var(--ease),box-shadow .14s ease,background-color .14s ease;
   /* The drag belongs to us, not to the scroller. Without this the browser
      claims the gesture as a pan the instant the finger moves and fires
      pointercancel, so dragging a bowl onto a dog silently does nothing. */
   touch-action:none}
-.item img{width:48px;height:48px;object-fit:contain;pointer-events:none}
-.item:active{transform:translateY(2px)}
-.item.sel{transform:translateY(-8px) scale(1.08);box-shadow:0 8px 0 var(--gold2);background:#fff}
-.item .lbl{position:absolute;bottom:-3px;left:0;right:0;text-align:center;font-size:8px;
-  font-weight:900;color:var(--ink2);text-transform:uppercase;letter-spacing:.3px}
+.item img{width:50px;height:50px;object-fit:contain;pointer-events:none;border-radius:11px;filter:drop-shadow(0 2px 3px rgba(0,0,0,.42))}
+.item:active{transform:translateY(2px) scale(.97)}
+.item.sel{transform:translateY(-10px) scale(1.09);background:var(--bubble);
+  box-shadow:0 4px 0 var(--ball2), 0 12px 22px rgba(0,0,0,.30);
+  outline:2px solid var(--ball);outline-offset:-2px}
+/* Combo escalation: the shelf itself lifts as the run builds. */
+#tray.hot .item{transform:translateY(-3px)}
+#tray.hot .item.sel{transform:translateY(-12px) scale(1.09)}
+.item .lbl{position:absolute;bottom:-3px;left:-6px;right:-6px;text-align:center;font-size:11px;
+  font-weight:800;color:var(--ink2);letter-spacing:.1px;line-height:1}
 #ghost{position:fixed;width:64px;height:64px;pointer-events:none;z-index:99;
   transform:translate(-50%,-50%);display:none;filter:drop-shadow(0 6px 10px rgba(0,0,0,.35))}
 #ghost img{width:100%;height:100%;object-fit:contain}
 
-/* boost rail */
-#boostRail{display:flex;justify-content:center;gap:8px;margin-top:8px}
-.boostBtn{position:relative;width:52px;height:52px;border-radius:16px;background:var(--cream2);
-  display:flex;align-items:center;justify-content:center;box-shadow:0 3px 0 rgba(0,0,0,.14)}
-.boostBtn img{width:36px;height:36px;object-fit:contain}
-.boostBtn .ct{position:absolute;top:-5px;right:-5px;background:var(--teal3);color:#fff;
-  font-size:10px;font-weight:900;border-radius:999px;min-width:19px;height:19px;
-  display:flex;align-items:center;justify-content:center;padding:0 4px}
-.boostBtn.empty{filter:grayscale(1);opacity:.5}
+/* Boost rail. These are paid consumables and they used to be the same tile, the
+   same radius and the same background as a bowl, 8px away — one thumb-slip from
+   spending something, with no undo. Circular, tinted, and ruled off. */
+/* THE SEAM. The rule between the free bowls and the paid consumables is the
+   curve off a tennis ball. It is the one line in the layout that has to be
+   noticed — a thumb-slip across it spends money — so it is the one line that
+   is not straight. Masked rather than inlined so it takes the theme colour. */
+#boostRail{display:flex;justify-content:center;align-items:center;gap:12px;margin-top:12px;
+  padding-top:16px;position:relative}
+#boostRail::before{content:"";position:absolute;top:0;left:0;right:0;height:12px;
+  background:var(--ball);opacity:.42;
+  -webkit-mask:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='64' height='12' viewBox='0 0 64 12'%3E%3Cpath d='M0 9C16 9 16 3 32 3C48 3 48 9 64 9' fill='none' stroke='white' stroke-width='2.4' stroke-linecap='round'/%3E%3C/svg%3E") repeat-x center / 64px 12px;
+          mask:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='64' height='12' viewBox='0 0 64 12'%3E%3Cpath d='M0 9C16 9 16 3 32 3C48 3 48 9 64 9' fill='none' stroke='white' stroke-width='2.4' stroke-linecap='round'/%3E%3C/svg%3E") repeat-x center / 64px 12px}
+#boostRail .rl{font-size:11px;font-weight:800;letter-spacing:.06em;text-transform:uppercase;
+  color:var(--ink2);margin-right:2px}
+.boostBtn{position:relative;width:52px;height:52px;border-radius:50%;
+  background:color-mix(in srgb, var(--teal3) 14%, var(--panel));
+  border:2px solid color-mix(in srgb, var(--teal3) 30%, transparent);
+  display:flex;align-items:center;justify-content:center;
+  box-shadow:0 2px 0 rgba(0,0,0,.14), 0 4px 10px rgba(0,0,0,.12);
+  transition:transform .14s var(--ease)}
+.boostBtn:active{transform:translateY(2px) scale(.95)}
+.boostBtn img{width:34px;height:34px;object-fit:contain;
+  filter:drop-shadow(0 2px 3px rgba(0,0,0,.42))}
+.boostBtn .ct{position:absolute;top:-5px;right:-5px;background:var(--tealInk);color:var(--onAccent);
+  font-size:10.5px;font-weight:800;border-radius:999px;min-width:20px;height:20px;
+  display:flex;align-items:center;justify-content:center;padding:0 5px;
+  box-shadow:0 2px 5px rgba(0,0,0,.3)}
+.boostBtn.empty{filter:grayscale(1);opacity:.45}
 
 /* floating score popups */
-.fx{position:fixed;pointer-events:none;z-index:80;font-weight:900;font-size:18px;
-  text-shadow:0 2px 4px rgba(0,0,0,.35);animation:rise 1s ease-out forwards}
-@keyframes rise{0%{opacity:1;transform:translate(-50%,0) scale(.7)}
-  30%{transform:translate(-50%,-18px) scale(1.15)}
-  100%{opacity:0;transform:translate(-50%,-64px) scale(1)}}
+.fx{position:fixed;pointer-events:none;z-index:80;font-weight:700;font-size:20px;
+  font-family:"Bricolage Grotesque","Hanken Grotesk",sans-serif;letter-spacing:-.02em;
+  text-shadow:0 2px 5px rgba(0,0,0,.45);animation:rise 1.05s var(--ease) forwards}
+@keyframes rise{0%{opacity:0;transform:translate(-50%,4px) scale(.6)}
+  18%{opacity:1;transform:translate(-50%,-14px) scale(1.2)}
+  100%{opacity:0;transform:translate(-50%,-72px) scale(1)}}
 
-/* ---- day card / results / overlays ---- */
-.sheet{position:absolute;inset:0;background:rgba(20,14,8,.62);backdrop-filter:blur(6px);
+.paw{position:fixed;width:20px;height:20px;margin:-10px 0 0 -10px;pointer-events:none;z-index:79;
+  color:var(--ball);animation:pawFly .92s var(--ease) forwards}
+.paw svg{width:100%;height:100%;filter:drop-shadow(0 2px 3px rgba(0,0,0,.3))}
+@keyframes pawFly{
+  0%{opacity:0;transform:translate(0,0) scale(.3) rotate(0)}
+  16%{opacity:1;transform:translate(calc(var(--dx)*.32),calc(var(--dy)*.42)) scale(1.05) rotate(calc(var(--rot)*.4))}
+  100%{opacity:0;transform:translate(var(--dx),calc(var(--dy) + 26px)) scale(.62) rotate(var(--rot))}}
+
+.hotPill{background:var(--ball) !important;color:var(--onAccent);
+  box-shadow:0 0 0 3px color-mix(in srgb, var(--ball) 34%, transparent)}
+
+/* A 4+ title with a permanently pulsing clock and a permanently bobbing mascot
+   needs a way out. Motion that conveys state keeps its colour change; motion
+   that is only decoration stops. */
+@media (prefers-reduced-motion: reduce){
+  *,*::before,*::after{
+    animation-duration:.001ms !important; animation-iteration-count:1 !important;
+    transition-duration:.001ms !important; scroll-behavior:auto !important;
+  }
+  #titleDutch{animation:none}
+  #clockWrap.crit{animation:none;outline:3px solid var(--critC);outline-offset:2px;border-radius:50%}
+}
+
+/* ---- sheets ----
+   One component used to carry the day card, a story beat, the results, an
+   achievement, the mop bill and a destructive confirmation — identical cream
+   box, identical spring, identical gold button. A celebration and an invoice
+   should not be indistinguishable, so the variants below share tokens rather
+   than layout. */
+.sheet{position:absolute;inset:0;background:color-mix(in srgb, var(--teal) 78%, transparent);backdrop-filter:blur(7px);
   display:none;align-items:center;justify-content:center;padding:18px;z-index:40}
 .sheet.on{display:flex}
-.sheetBox{width:100%;max-width:430px;max-height:92%;overflow-y:auto;
-  background:var(--panel);border-radius:var(--r2);box-shadow:var(--soft);padding:20px;
-  animation:sheetIn .3s cubic-bezier(.2,1.4,.4,1)}
-@keyframes sheetIn{from{opacity:0;transform:translateY(24px) scale(.95)}to{opacity:1;transform:none}}
-.starsRow{display:flex;justify-content:center;gap:8px;font-size:38px;margin:6px 0 2px}
-.star{opacity:.25;transition:opacity .3s ease,transform .3s ease}
-.star.lit{opacity:1;animation:pop .5s cubic-bezier(.2,1.6,.4,1)}
-.statLine{display:flex;justify-content:space-between;padding:7px 0;
-  border-bottom:1px dashed var(--line);font-weight:700;font-size:14px}
-.statLine:last-child{border-bottom:0}
-.statLine b{font-weight:900}
+.sheetBox{width:100%;max-width:440px;max-height:92%;overflow-y:auto;position:relative;
+  background:var(--panel);border-radius:var(--r3);box-shadow:var(--lift);padding:22px;
+  animation:sheetIn .38s var(--ease)}
+@keyframes sheetIn{from{opacity:0;transform:translateY(26px) scale(.955)}to{opacity:1;transform:none}}
 
-/* dogdex */
-.dexGrid{display:grid;grid-template-columns:repeat(auto-fill,minmax(104px,1fr));gap:10px;padding:12px}
-.dexCard{background:var(--panel);border-radius:var(--r);box-shadow:var(--soft);padding:8px;text-align:center}
-.dexCard img{width:100%;aspect-ratio:1/1;border-radius:12px;object-fit:cover;background:var(--cream2)}
-.dexCard.locked img{filter:grayscale(1) brightness(.55) contrast(.8)}
-.dexCard .nm{font-weight:900;font-size:12px;margin-top:5px;line-height:1.1}
-.dexCard .lv{font-size:10px;font-weight:800;color:var(--ink2)}
-.lvBar{height:5px;border-radius:999px;background:rgba(0,0,0,.12);margin-top:4px;overflow:hidden}
-.lvBar i{display:block;height:100%;background:var(--gold);border-radius:999px}
+/* Day card — a poster for today, not a receipt for it. */
+.sheetBox.poster{padding:0;overflow:hidden}
+.posterArt{position:relative;height:172px;overflow:hidden;background:var(--raise)}
+.posterArt img{width:100%;height:100%;object-fit:cover;object-position:50% 58%}
+.posterArt .scrim{position:absolute;inset:0;
+  background:linear-gradient(180deg,rgba(20,14,8,.06) 0%,rgba(20,14,8,.30) 48%,var(--panel) 100%)}
+.posterArt .cap{position:absolute;left:20px;right:20px;bottom:10px;z-index:2}
+.posterArt .ch{font-size:12px;font-weight:800;letter-spacing:.07em;text-transform:uppercase;
+  color:rgba(255,255,255,.92);text-shadow:0 2px 8px rgba(0,0,0,.5)}
+.posterArt .dy{font-family:"Bricolage Grotesque","Hanken Grotesk",sans-serif;font-size:42px;font-weight:600;
+  line-height:1;letter-spacing:-.02em;color:#fff;text-shadow:0 3px 14px rgba(0,0,0,.55)}
+.posterBody{padding:14px 22px 22px}
+.epigraph{font-size:17px;font-weight:500;line-height:1.45;color:var(--ink);
+  text-wrap:balance;margin:2px 0 14px}
+.factRow{display:flex;gap:10px;margin-bottom:16px;flex-wrap:wrap}
+.fact{flex:1;min-width:120px;background:var(--raise);border-radius:var(--r);padding:10px 12px}
+.fact .k{font-size:10.5px;font-weight:800;letter-spacing:.06em;text-transform:uppercase;color:var(--ink2)}
+.fact .v{font-family:"Bricolage Grotesque","Hanken Grotesk",sans-serif;font-size:17px;font-weight:600;margin-top:2px;letter-spacing:-.01em}
+
+/* Results — a ledger. The failure variant gets its own colour so a lost day
+   does not read as a slightly worse win. */
+.sheetBox.ledger.lost{background:color-mix(in srgb, var(--critC) 7%, var(--panel))}
+.starsRow{display:flex;justify-content:center;gap:10px;margin:10px 0 4px}
+.star{width:54px;height:54px;opacity:.22;transform:scale(.82);color:var(--ink2)}
+.star svg{width:100%;height:100%}
+.star.lit{opacity:1;color:var(--ball);transform:scale(1);
+  animation:starPop .58s var(--ease) backwards;filter:drop-shadow(0 4px 8px rgba(224,142,38,.45))}
+@keyframes starPop{0%{opacity:0;transform:scale(.3) rotate(-24deg)}
+  58%{opacity:1;transform:scale(1.22) rotate(6deg)}100%{opacity:1;transform:scale(1) rotate(0)}}
+.diag{background:color-mix(in srgb, var(--critC) 12%, var(--panel));
+  border-radius:var(--r);padding:11px 14px;font-size:14px;font-weight:600;line-height:1.4;
+  margin:2px 0 14px}
+
+.statLine{display:flex;justify-content:space-between;align-items:baseline;gap:14px;padding:8px 0;
+  border-bottom:1px solid var(--line);font-weight:600;font-size:14.5px}
+.statLine:last-child{border-bottom:0}
+.statLine b{font-weight:800;font-size:15.5px;white-space:nowrap}
+
+/* Achievement rows need two lines, not a space-between pair — a two-word name
+   collided with its own description. */
+.achRow{display:flex;align-items:flex-start;gap:11px;padding:9px 0;border-bottom:1px solid var(--line)}
+.achRow:last-child{border-bottom:0}
+.achRow .ai{width:30px;height:30px;flex:0 0 auto;border-radius:50%;display:flex;
+  align-items:center;justify-content:center;background:var(--raise);color:var(--ink2)}
+.achRow .ai svg{width:17px;height:17px}
+.achRow.got .ai{background:color-mix(in srgb, var(--ball) 30%, var(--panel));color:var(--ball2)}
+.achRow .at{flex:1;min-width:0}
+.achRow .an{font-weight:700;font-size:14.5px;line-height:1.2}
+.achRow .ad{font-size:12.5px;font-weight:500;color:var(--ink2);line-height:1.35;margin-top:1px}
+.achRow .ap{font-size:12px;font-weight:700;color:var(--tealInk);margin-top:3px;
+  font-variant-numeric:tabular-nums}
+
+/* dogdex — the one screen where the art already carries the composition. */
+.dexGrid{display:grid;grid-template-columns:repeat(auto-fill,minmax(108px,1fr));gap:11px;padding:14px}
+.dexCard{background:var(--panel);border-radius:var(--r2);box-shadow:var(--soft);padding:9px 9px 11px;
+  text-align:center;position:relative;overflow:hidden;
+  border-top:3px solid var(--rc,transparent);
+  transition:transform .16s var(--ease),box-shadow .16s ease}
+.dexCard:active{transform:translateY(-3px);box-shadow:var(--lift)}
+.dexCard img{width:100%;aspect-ratio:1/1;object-fit:contain;filter:drop-shadow(0 5px 7px rgba(0,0,0,.42))}
+.dexCard.locked img{filter:grayscale(1) brightness(.62) contrast(.85) opacity(.5)}
+.dexCard.locked{box-shadow:none;background:color-mix(in srgb, var(--ink) 4%, var(--panel))}
+.dexCard .nm{font-weight:600;font-size:13px;margin-top:4px;line-height:1.1;letter-spacing:-.01em}
+/* Rarity was defined and then only used in the detail sheet, so Epic and Common
+   looked identical in the grid — the collection's whole value ladder invisible
+   at the one place you browse it. */
+.dexCard .lv{font-size:10.5px;font-weight:700;color:var(--ink2);margin-top:1px}
+.dexCard .rr{font-size:11px;font-weight:800;letter-spacing:.05em;text-transform:uppercase;
+  color:var(--rc,var(--ink2))}
+.lvBar{height:5px;border-radius:999px;background:color-mix(in srgb, var(--ink) 13%, transparent);
+  margin-top:6px;overflow:hidden}
+.lvBar i{display:block;height:100%;width:100%;background:var(--ball);border-radius:999px;
+  transform-origin:left center;transform:scaleX(var(--p,0));
+  transition:transform .4s var(--ease)}
+.lvBar.max i{background:linear-gradient(90deg,var(--ball),var(--ball2))}
 
 /* shop */
-.tabs{display:flex;gap:6px;padding:10px 12px 0}
-.tabs .tb{flex:1;text-align:center;padding:10px 6px;border-radius:14px 14px 0 0;
-  font-weight:900;font-size:13px;background:rgba(0,0,0,.06);color:var(--ink2)}
-.tabs .tb.on{background:var(--panel);color:var(--ink);box-shadow:0 -3px 10px rgba(0,0,0,.08)}
-.shopList{padding:12px;display:flex;flex-direction:column;gap:10px}
-.shopRow{display:flex;align-items:center;gap:12px;background:var(--panel);
-  border-radius:var(--r);box-shadow:var(--soft);padding:12px}
-.shopRow img{width:52px;height:52px;object-fit:contain;flex:0 0 auto}
+.tabs{display:flex;gap:6px;padding:10px 14px 0}
+.tabs .tb{flex:1;text-align:center;padding:14px 6px;border-radius:14px 14px 0 0;
+  font-weight:700;font-size:13.5px;background:color-mix(in srgb, var(--ink) 7%, transparent);color:var(--ink2);
+  transition:background-color .18s ease,color .18s ease}
+.tabs .tb.on{background:var(--panel);color:var(--ink);box-shadow:0 -4px 12px rgba(0,0,0,.10)}
+.shopList{padding:14px;display:flex;flex-direction:column;gap:10px}
+/* Rows used to be --panel on a --panel scroll pane: cards on an identically
+   coloured card. The pane now sits a step behind them. */
+.shopPane{background:var(--raise)}
+.shopRow{display:flex;align-items:center;gap:13px;background:var(--panel);
+  border-radius:var(--r2);box-shadow:var(--soft);padding:13px 14px}
+.shopRow img{width:54px;height:54px;object-fit:contain;flex:0 0 auto;border-radius:12px;filter:drop-shadow(0 3px 5px rgba(0,0,0,.42))}
 .shopRow .txt{flex:1;min-width:0}
-.shopRow .tt{font-weight:900;font-size:15px;line-height:1.15}
-.shopRow .ds{font-size:12px;color:var(--ink2);font-weight:600;line-height:1.3;margin-top:2px}
-.shopRow .buy{flex:0 0 auto}
-.lvDots{display:flex;gap:3px;margin-top:5px}
-.lvDots i{width:14px;height:6px;border-radius:3px;background:rgba(0,0,0,.14)}
-.lvDots i.on{background:var(--gold)}
+.shopRow .tt{font-weight:600;font-size:16px;line-height:1.15;letter-spacing:-.01em}
+.shopRow .ds{font-size:12.5px;color:var(--ink2);font-weight:500;line-height:1.35;margin-top:2px}
+.shopRow .have{font-size:12.5px;font-weight:700;color:var(--tealInk);margin-top:4px}
+.buyCol{display:flex;flex-direction:column;gap:6px;flex:0 0 auto}
+/* A bare number could not say whether it wanted coins or bones. */
+.priceBtn{display:inline-flex;align-items:center;justify-content:center;gap:5px;
+  background:var(--ball);color:var(--onAccent);border-radius:14px;padding:9px 13px;
+  font-weight:800;font-size:14px;min-height:44px;min-width:84px;box-shadow:var(--shadow);
+  transition:transform .1s ease}
+.priceBtn:active{transform:translateY(2px);box-shadow:0 1px 0 rgba(0,0,0,.22)}
+.priceBtn img{width:17px;height:17px;object-fit:contain;flex:0 0 auto;filter:none;}
+.priceBtn.bone{background:var(--clayInk);color:var(--onAccent)}
+.priceBtn[disabled]{filter:grayscale(.65) brightness(.96);opacity:.55;pointer-events:none}
+.priceBtn.owned{background:var(--raise);color:var(--ink2);box-shadow:none}
+.lvDots{display:flex;gap:3px;margin-top:6px}
+.lvDots i{width:16px;height:6px;border-radius:3px;background:color-mix(in srgb, var(--ink) 15%, transparent)}
+.lvDots i.on{background:var(--ball)}
+/* A theme is a colour scheme; showing a sunny house for "Night Shift" told you
+   nothing. The swatch is the actual information. */
+.swatch{width:54px;height:54px;border-radius:14px;overflow:hidden;display:flex;flex:0 0 auto;
+  box-shadow:var(--shadow)}
+.swatch i{flex:1}
+
+/* First-run coach. A spotlight cut out of a scrim rather than a tooltip, so
+   the thing being named is the only lit thing on screen. Each beat advances on
+   the correct action, not on a Continue button. */
+#coach{position:fixed;inset:0;z-index:60;display:none;pointer-events:none}
+#coach.on{display:block}
+#coachScrim{position:absolute;inset:0;background:rgba(20,14,8,.62);
+  transition:clip-path .38s var(--ease);pointer-events:auto}
+#coachRing{position:absolute;border-radius:20px;border:3px solid var(--ball);
+  box-shadow:0 0 0 5px color-mix(in srgb, var(--ball) 26%, transparent);
+  /* Named properties, not `all`: the spotlight moves three times in a player's
+     whole lifetime and has no business animating everything it owns. */
+  transition:left .38s var(--ease),top .38s var(--ease),
+             width .38s var(--ease),height .38s var(--ease);
+  pointer-events:none;will-change:left,top,width,height}
+#coachTip{position:absolute;left:50%;transform:translateX(-50%);max-width:340px;width:calc(100% - 36px);
+  background:var(--panel);border-radius:var(--r2);padding:15px 17px;box-shadow:var(--lift);
+  pointer-events:auto;transition:top .38s var(--ease)}
+#coachTip .ct{font-family:"Bricolage Grotesque","Hanken Grotesk",sans-serif;font-size:17px;font-weight:600;
+  letter-spacing:-.01em;margin-bottom:3px}
+#coachTip .cd{font-size:14.5px;font-weight:500;line-height:1.45;color:var(--ink2)}
+#coachTip .cw{display:flex;align-items:center;gap:9px;margin-bottom:8px}
+#coachTip .cw img{width:38px;height:38px;object-fit:contain;flex:0 0 auto}
+#coachStep{font-size:11px;font-weight:800;letter-spacing:.07em;text-transform:uppercase;
+  color:var(--ball2);margin-bottom:5px}
+
+/* Windows High Contrast and forced-colors erase every colour-only state, and
+   several states here are carried by colour or a filter alone. */
+@media (forced-colors: active){
+  .badge,.priceBtn,.btn{ border:1px solid ButtonText; }
+  .tabs .tb.on{ outline:2px solid Highlight; outline-offset:-2px; }
+  .dexCard.locked{ outline:1px dashed GrayText; }
+  .boostBtn.empty{ outline:1px dashed GrayText; }
+  .dog.done{ outline:2px solid Highlight; outline-offset:-2px; }
+  #careFill{ forced-color-adjust:none; }
+}
 
 /* misc */
 .sceneWrap{display:flex;flex-direction:column;align-items:center;gap:12px;text-align:center}
-.sceneWrap img.por{width:132px;height:132px;border-radius:50%;object-fit:cover;
-  border:5px solid var(--gold);box-shadow:var(--soft);background:var(--cream2)}
-.speech{background:var(--cream2);border-radius:var(--r);padding:14px;font-weight:700;
-  font-size:15px;line-height:1.5;text-align:left;width:100%;white-space:pre-line}
-.speech .who{display:block;font-size:12px;font-weight:900;letter-spacing:.8px;
-  text-transform:uppercase;color:var(--teal3);margin-bottom:5px}
+/* The circular crop was amputating Bruno's paws and filling the ring with the
+   PNG's own background, so a character read as a profile picture. Now that the
+   art is keyed to alpha, the whole figure stands. */
+.sceneWrap img.por{width:150px;height:150px;object-fit:contain;
+  filter:drop-shadow(0 10px 14px rgba(0,0,0,.34))}
+.speech{background:var(--raise);border-radius:var(--r2);padding:16px 18px;font-weight:500;
+  font-size:16.5px;line-height:1.55;text-align:left;width:100%;white-space:pre-line;
+  position:relative}
+.speech .who{display:block;font-size:12.5px;font-weight:800;letter-spacing:.06em;
+  text-transform:uppercase;color:var(--ball2);margin-bottom:6px}
+
+/* Story beat: the character stands on the field and speaks, rather than being
+   cropped into an avatar inside the same box the shop uses for a receipt. */
+.sheet.tale{background:rgba(20,14,8,.72)}
+.taleBox{width:100%;max-width:460px;display:flex;flex-direction:column;align-items:center;
+  gap:0;animation:taleIn .5s var(--ease)}
+@keyframes taleIn{from{opacity:0;transform:translateY(30px)}to{opacity:1;transform:none}}
+.taleFig{width:min(58vw,210px);height:min(58vw,210px);object-fit:contain;
+  filter:drop-shadow(0 14px 18px rgba(0,0,0,.45));margin-bottom:-14px;position:relative;z-index:2;
+  animation:taleFig .62s var(--ease) backwards}
+@keyframes taleFig{from{opacity:0;transform:translateY(22px) scale(.92)}to{opacity:1;transform:none}}
+.taleBubble{position:relative;width:100%;background:var(--panel);border-radius:var(--r3);
+  padding:20px 20px 18px;box-shadow:var(--lift);animation:taleBub .5s .08s var(--ease) backwards}
+@keyframes taleBub{from{opacity:0;transform:translateY(16px) scale(.97)}to{opacity:1;transform:none}}
+.taleBubble::before{content:"";position:absolute;top:-13px;left:50%;transform:translateX(-50%) rotate(45deg);
+  width:26px;height:26px;background:var(--panel);border-radius:6px}
+.taleWho{font-family:"Bricolage Grotesque","Hanken Grotesk",sans-serif;font-size:19px;font-weight:600;
+  color:var(--ball2);letter-spacing:-.01em;margin-bottom:6px}
+.taleTxt{font-size:16.5px;font-weight:500;line-height:1.58;white-space:pre-line;
+  color:var(--ink);text-wrap:pretty}
+.taleGo{margin-top:16px}
 .streakRow{display:flex;gap:6px;justify-content:center;flex-wrap:wrap;margin:10px 0}
-.sDay{width:40px;height:52px;border-radius:12px;background:var(--cream2);
+.sDay{width:40px;height:52px;border-radius:12px;background:var(--raise);
   display:flex;flex-direction:column;align-items:center;justify-content:center;
-  font-size:10px;font-weight:900;color:var(--ink2);gap:2px}
-.sDay.got{background:var(--leaf);color:#fff}
-.sDay.today{outline:3px solid var(--gold);outline-offset:1px}
+  font-size:11px;font-weight:900;color:var(--ink2);gap:2px}
+.sDay.got{background:var(--leaf);color:var(--onAccent)}
+.sDay.today{outline:3px solid var(--ball);outline-offset:1px}
 .sDay .v{font-size:13px}
-#toast{position:fixed;left:50%;bottom:calc(var(--safeB) + 96px);transform:translateX(-50%);
-  background:rgba(20,14,8,.92);color:#fff;padding:11px 18px;border-radius:999px;
-  font-weight:800;font-size:14px;z-index:95;opacity:0;transition:opacity .25s ease;
-  pointer-events:none;max-width:90vw;text-align:center}
-#toast.on{opacity:1}
+/* Sits below the HUD rather than above the tray: at the bottom it rendered
+   behind #trayZone's stacking context, so "Clean round! +240" — the one piece
+   of pure good news in the loop — was invisible. */
+#toast{position:fixed;left:50%;top:calc(var(--safeT) + 96px);transform:translateX(-50%) translateY(-10px);
+  background:color-mix(in srgb, var(--teal) 94%, transparent);color:#fff;padding:11px 20px;border-radius:999px;
+  font-weight:700;font-size:14px;z-index:98;opacity:0;
+  transition:opacity .25s ease,transform .3s var(--ease);
+  pointer-events:none;max-width:90vw;text-align:center;box-shadow:var(--lift)}
+#toast.on{opacity:1;transform:translateX(-50%) translateY(0)}
+#toast.good{background:color-mix(in srgb, var(--leaf) 92%, transparent)}
+#toast.bad{background:color-mix(in srgb, var(--critC) 92%, transparent)}
 .emptyNote{text-align:center;padding:28px 18px;color:var(--ink2);font-weight:700;font-size:14px;line-height:1.5}
 
 @media (min-width:430px){
@@ -276,7 +735,9 @@ button{font:inherit;color:inherit;border:0;background:none;cursor:pointer}
   .dog .br{font-size:11px}
   .dexGrid{grid-template-columns:repeat(auto-fill,minmax(130px,1fr));padding:20px}
   .shopList{padding:20px;max-width:720px;margin:0 auto;width:100%}
-  #titleInner{max-width:560px;margin:0 auto;width:100%}
+  #titleInner{max-width:620px;margin:0 auto;width:100%}
+  #logo{margin-top:22px}
+  #titleDutch{width:min(40%,290px)}
   .sheetBox{max-width:520px;padding:26px}
   #clockWrap{width:74px;height:74px}
   #clockTxt{font-size:21px}
@@ -287,15 +748,17 @@ button{font:inherit;color:inherit;border:0;background:none;cursor:pointer}
    where a 320px rail would squeeze the dog grid instead of helping it. */
 @media (min-width:900px){
   #playBody{flex-direction:row}
-  #dogZone{flex:1;padding:14px 18px}
+  #dogZone{flex:1;padding:16px 20px}
   #trayZone{flex:0 0 320px;overflow-y:auto;align-self:stretch;
-    border-radius:var(--r2) 0 0 var(--r2);
-    box-shadow:-8px 0 24px rgba(0,0,0,.12);
-    padding:18px 16px calc(var(--safeB) + 18px);
-    display:flex;flex-direction:column}
-  #trayHint{font-size:13px;margin-bottom:12px}
-  #tray{align-content:flex-start}
-  #boostRail{margin-top:auto;padding-top:14px;border-top:1px dashed var(--line)}
+    border-radius:var(--r3) 0 0 var(--r3);
+    box-shadow:-10px 0 30px rgba(0,0,0,.16);
+    padding:20px 18px calc(var(--safeB) + 20px);
+    display:flex;flex-direction:column;justify-content:center}
+  #trayHint{font-size:13.5px;margin-bottom:14px}
+  #tray{align-content:center;gap:10px}
+  /* The rail is a shelf, so it reads as one centred block rather than two
+     things pinned to opposite ends of a column of empty cream. */
+  #boostRail{margin-top:26px;padding-top:16px}
   .dog,.dog.wide{width:calc(33.333% - 10px);max-width:230px}
 }
 @media (min-width:1100px){
@@ -315,59 +778,74 @@ button{font:inherit;color:inherit;border:0;background:none;cursor:pointer}
 <div id="app">
 
   <!-- ================= TITLE ================= -->
-  <div class="scr on" id="titleScr">
+  <div class="scr on" id="titleScr" role="region" aria-label="Title">
     <img id="titleBg" alt="">
     <div id="titleVeil"></div>
     <div id="titleInner">
       <div id="logo">
-        <div class="l1">Dutch the Golden</div>
-        <div class="l2">Doggy<br>Daycare</div>
+        <div class="l2">Dutch's<br><em>Doggy Daycare</em></div>
       </div>
       <img id="titleDutch" alt="Dutch the Golden">
       <div class="sp"></div>
       <div id="titleMenu">
         <div class="row" style="justify-content:center;gap:8px;margin-bottom:2px">
-          <span class="pill" style="background:rgba(255,255,255,.92)"><img id="tCoinIc" alt=""><span id="tCoins">0</span></span>
-          <span class="pill" style="background:rgba(255,255,255,.92)"><img id="tBoneIc" alt=""><span id="tBones">0</span></span>
-          <span class="pill" style="background:rgba(255,255,255,.92)">❤️ <span id="tHearts">5</span></span>
+          <span class="pill"><img id="tCoinIc" alt=""><span id="tCoins">0</span></span>
+          <span class="pill"><img id="tBoneIc" alt=""><span id="tBones">0</span></span>
+          <span class="pill"><span class="ic" data-ic="heart" style="color:var(--berry)"></span><span id="tHearts">5</span></span>
         </div>
         <button class="btn gold wide" id="btnPlay">Open the Daycare</button>
         <div class="menuGrid">
-          <button class="btn" id="btnDex"><span class="ic">🐾</span>Dogdex</button>
-          <button class="btn" id="btnShop"><span class="ic">🛍️</span>Shop</button>
-          <button class="btn" id="btnSet"><span class="ic">⚙️</span>Settings</button>
+          <button class="btn" id="btnDex"><span class="ic" data-ic="paw"></span>Dogdex</button>
+          <button class="btn" id="btnShop"><span class="ic" data-ic="bag"></span>Shop</button>
+          <button class="btn" id="btnSet"><span class="ic" data-ic="cog"></span>Settings</button>
         </div>
       </div>
     </div>
   </div>
 
   <!-- ================= PLAY ================= -->
-  <div class="scr" id="playScr">
+  <div class="scr" id="playScr" role="region" aria-label="The daycare floor">
     <img id="fieldBg" alt="">
+    <div id="fieldScrim"></div>
+    <div id="roundCard"><div class="rcVeil"></div><div class="rcInner">
+      <div class="rcName"></div><div class="rcSub"></div>
+    </div></div>
     <div id="playInner">
       <div id="topbar">
         <div style="min-width:0;flex:1">
-          <div class="row" style="gap:6px">
+          <div class="row" style="gap:8px">
             <span id="dayChip">Day 1</span>
-            <span class="tag" id="phaseChip">Mealtime</span>
+            <span id="roundPips"><i></i><i></i><i></i></span>
           </div>
-          <div id="careWrap" style="margin-top:6px">
+          <div class="row" style="gap:7px;margin-top:3px">
+            <span id="phaseName">Mealtime</span>
+            <span id="weatherPill" hidden></span>
+          </div>
+          <div id="careWrap" style="margin-top:8px">
+            <div id="careHead">
+              <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 20.4S3.6 15.3 3.6 9.5A4.7 4.7 0 0 1 12 6.7a4.7 4.7 0 0 1 8.4 2.8c0 5.8-8.4 10.9-8.4 10.9Z"/></svg>
+              <span>Care</span>
+            </div>
             <div id="careBar"><div id="careFill"></div></div>
           </div>
-          <div class="row" style="gap:6px;margin-top:6px">
-            <span class="pill" style="padding:3px 9px;font-size:12px"><img id="hCoinIc" alt=""><span id="hCoins">0</span></span>
-            <span class="pill" style="padding:3px 9px;font-size:12px" id="comboPill">×1</span>
+          <div class="row" style="gap:7px;margin-top:7px">
+            <span class="pill"><img id="hCoinIc" alt=""><span id="hCoins">0</span></span>
+            <span class="pill" id="comboPill">×1</span>
           </div>
         </div>
-        <div id="clockWrap">
-          <svg width="62" height="62" viewBox="0 0 62 62">
-            <circle cx="31" cy="31" r="26" fill="rgba(0,0,0,.07)" stroke="rgba(0,0,0,.10)" stroke-width="7"></circle>
-            <circle id="clockRing" cx="31" cy="31" r="26" fill="none" stroke="#2f8f86"
-                    stroke-width="7" stroke-linecap="round" stroke-dasharray="163.4" stroke-dashoffset="0"></circle>
+        <div id="clockWrap" role="timer" aria-live="off">
+          <svg width="78" height="78" viewBox="0 0 78 78">
+            <circle cx="39" cy="39" r="32" fill="color-mix(in srgb, var(--panel) 80%, transparent)"
+                    stroke="var(--ringTrack)" stroke-width="9"></circle>
+            <circle id="clockRing" cx="39" cy="39" r="32" fill="none" stroke="var(--ok)"
+                    stroke-width="9" stroke-linecap="round" stroke-dasharray="201.1" stroke-dashoffset="0"></circle>
           </svg>
           <div id="clockTxt">45</div>
         </div>
-        <button class="btn ghost" id="btnPause" style="padding:8px 12px;min-height:auto">⏸</button>
+        <button class="btn ghost" id="btnPause" aria-label="Pause"
+                style="padding:0;width:44px;height:44px;min-height:44px;border-radius:50%;flex:0 0 auto">
+          <svg viewBox="0 0 24 24" width="18" height="18" fill="currentColor" aria-hidden="true"><rect x="6" y="5" width="4" height="14" rx="1.5"/><rect x="14" y="5" width="4" height="14" rx="1.5"/></svg>
+        </button>
       </div>
 
       <div id="playBody">
@@ -391,31 +869,38 @@ button{font:inherit;color:inherit;border:0;background:none;cursor:pointer}
   <div class="sheet" id="setScr"><div class="sheetBox" id="setBox"></div></div>
 
   <!-- ================= DOGDEX ================= -->
-  <div class="scr" id="dexScr">
+  <div class="scr" id="dexScr" role="region" aria-label="Dogdex">
     <div class="row pad" style="padding-left:14px;padding-right:14px;gap:10px">
-      <button class="btn ghost" id="dexBack" style="padding:9px 14px;min-height:auto">‹ Back</button>
+      <button class="btn ghost" id="dexBack" style="padding:9px 15px">‹ Back</button>
       <div class="h2">Dogdex</div>
       <div class="sp"></div>
-      <span class="pill" id="dexCount">0 / 0</span>
+      <span class="tag" id="dexCount" style="font-size:12px;padding:5px 11px">0 / 0</span>
     </div>
     <div class="scroll"><div class="dexGrid" id="dexGrid"></div></div>
   </div>
 
   <!-- ================= SHOP ================= -->
-  <div class="scr" id="shopScr">
+  <div class="scr" id="shopScr" role="region" aria-label="Shop">
     <div class="row pad" style="padding-left:14px;padding-right:14px;gap:10px">
-      <button class="btn ghost" id="shopBack" style="padding:9px 14px;min-height:auto">‹ Back</button>
+      <button class="btn ghost" id="shopBack" style="padding:9px 15px">‹ Back</button>
       <div class="h2">Shop</div>
       <div class="sp"></div>
       <span class="pill"><img id="sCoinIc" alt=""><span id="sCoins">0</span></span>
       <span class="pill"><img id="sBoneIc" alt=""><span id="sBones">0</span></span>
     </div>
-    <div class="tabs">
-      <div class="tb on" id="tabU">Upgrades</div>
-      <div class="tb" id="tabB">Boosts</div>
-      <div class="tb" id="tabP">Bones</div>
+    <div class="tabs" role="tablist">
+      <div class="tb on" id="tabU" role="tab" tabindex="0">Upgrades</div>
+      <div class="tb" id="tabB" role="tab" tabindex="0">Boosts</div>
+      <div class="tb" id="tabL" role="tab" tabindex="0">Looks</div>
+      <div class="tb" id="tabP" role="tab" tabindex="0">Bones</div>
     </div>
-    <div class="scroll" style="background:var(--panel)"><div class="shopList" id="shopList"></div></div>
+    <div class="scroll shopPane"><div class="shopList" id="shopList"></div></div>
+  </div>
+
+  <div id="coach" aria-live="polite">
+    <div id="coachScrim"></div>
+    <div id="coachRing"></div>
+    <div id="coachTip"></div>
   </div>
 
   <div id="ghost"><img id="ghostImg" alt=""></div>
@@ -664,8 +1149,8 @@ var BREEDS = [
   {k:"greatdane",    img:"greatdane",    name:"Mr Grey",   breed:"Great Dane",           size:"l", fav:"broth",    day:220, rar:"e",    fact:"A horse who has been told he is a lapdog and chose to believe it."}
 ];
 var RARITY = {c:{n:"Common",cl:"var(--ink2)"}, u:{n:"Uncommon",cl:"var(--leaf)"},
-              r:{n:"Rare",cl:"var(--sky)"}, e:{n:"Epic",cl:"var(--plum)"},
-              star:{n:"Founder",cl:"var(--gold2)"}};
+              r:{n:"Rare",cl:"var(--sky)"}, e:{n:"Epic",cl:"var(--iris)"},
+              star:{n:"Founder",cl:"var(--ball2)"}};
 
 var CHAPTERS = [
   {from:1,   to:25,  t:"The First Bowl",      l:"Start where you are. Feed who is in front of you."},
@@ -919,10 +1404,12 @@ function coinMult(){
 }
 
 var THEMES = {
-  classic:{name:"Daycare Cream", cl:""},
+  // Keys are the save format and never change. Names are labels, and the
+  // default one had to: the yard is not cream any more.
+  classic:{name:"Floodlit Yard", cl:""},
   night:  {name:"Night Shift",   cl:"thNight"},
-  meadow: {name:"Meadow",        cl:"thMeadow"},
-  sunset: {name:"Sunset Kennel", cl:"thSunset"}
+  meadow: {name:"Morning Meadow",cl:"thMeadow"},
+  sunset: {name:"Last Light",    cl:"thSunset"}
 };
 
 /* ============================================================================
@@ -1102,9 +1589,12 @@ function pick(a){ return a[Math.floor(Math.random()*a.length)]; }
 function shuffle(a){ for(var i=a.length-1;i>0;i--){ var j=Math.floor(Math.random()*(i+1)); var t=a[i]; a[i]=a[j]; a[j]=t; } return a; }
 function fmt(n){ n = Math.floor(n||0); return n >= 10000 ? (n/1000).toFixed(n>=100000?0:1)+"k" : String(n); }
 
-function toast(msg){
-  var t = $("#toast"); t.textContent = msg; t.classList.add("on");
-  clearTimeout(toast._t); toast._t = setTimeout(function(){ t.classList.remove("on"); }, 1700);
+function toast(msg, tone){
+  var t = $("#toast");
+  t.textContent = msg;
+  t.className = "on" + (tone ? " " + tone : "");
+  clearTimeout(toast._t);
+  toast._t = setTimeout(function(){ t.className = ""; }, 1800);
 }
 function buzz(ms){
   if(!S.sound) return;
@@ -1316,7 +1806,9 @@ function enterPhase(ph){
 
   buildTray();
   paintPlay();
+  roundCurtain(ph);
   startTimer();
+  coachMaybeStart();
   // An empty round (every dog already resolved — e.g. nobody got fed at all)
   // must still advance, after the repaint so the player sees why. The sequence
   // stamp stops a queued callback from firing into a phase that moved on.
@@ -1324,6 +1816,38 @@ function enterPhase(ph){
   if(!pending()) setTimeout(function(){
     if(D && !D.done && phaseSeq === seq) finishPhase();
   }, 700);
+}
+
+var ROUND_SUB = {
+  feed: "Read the bowl each dog is asking for",
+  walk: "Gear them up and get them out",
+  bed:  "Settle everyone before lights out"
+};
+
+/* Names the round as it begins. Three rounds used to run into one another with
+   no marker at all: you survived Mealtime and nothing said so. */
+function roundCurtain(ph){
+  var card = $("#roundCard");
+  if(!card) return;
+  var zone = $("#dogZone"), tray = $("#tray");
+  // The stagger is the point, so it is re-armed every round.
+  [zone, tray].forEach(function(n){ if(n){ n.classList.remove("enter"); void n.offsetWidth; } });
+  if(zone){
+    zone.classList.add("enter");
+    var dogs = zone.children;
+    for(var i=0;i<dogs.length;i++) dogs[i].style.animationDelay = (60 * i) + "ms";
+  }
+  if(tray){
+    tray.classList.add("enter");
+    var its = tray.children;
+    for(var j=0;j<its.length;j++) its[j].style.animationDelay = (170 + 40 * j) + "ms";
+  }
+  if(REDUCE) return;
+  card.querySelector(".rcName").textContent = phaseName(ph);
+  card.querySelector(".rcSub").textContent = ROUND_SUB[ph] || "";
+  card.classList.remove("on"); void card.offsetWidth; card.classList.add("on");
+  clearTimeout(roundCurtain._t);
+  roundCurtain._t = setTimeout(function(){ card.classList.remove("on"); }, 940);
 }
 
 /* Dogs still waiting on the player in this phase. */
@@ -1391,10 +1915,12 @@ function deliver(itemKey, idx){
 
   // Correct.
   dog.state = "done";
+  dog.got = itemKey;          // the request strip becomes a receipt
   if(D.phase === "feed"){ dog.fed = true;  D.served++; S.totalServed++; }
   if(D.phase === "walk"){ dog.walked = true; D.walked++; S.totalWalks++; }
   if(D.phase === "bed"){  dog.slept = true;  D.slept++;  S.totalSleeps++; }
 
+  if(coach.on) coachAdvance("served");
   D.combo++;
   D.comboT = 4.5 + upLv("clicker") * 1.6;
   D.mult = 1 + Math.min(4, Math.floor(D.combo / 3)) * 0.25;
@@ -1409,11 +1935,13 @@ function deliver(itemKey, idx){
 
   if(D.combo > 0 && D.combo % 12 === 0){ D.bonesEarned += 1; addBones(1); }
 
-  popDog(idx, "+" + gain, "var(--leaf)");
-  buzz(10);
   paintCombo();
   buildTray();
   paintPlay();
+  // Only now that the node exists in its final form can it be animated.
+  popDog(idx, "+" + gain, "var(--leaf)", true);
+  pawBurst(document.querySelector('.dog[data-i="'+idx+'"]'), Math.floor(D.combo / 3));
+  buzz(10);
 
   if(!pending()) finishPhase();
   return true;
@@ -1428,9 +1956,43 @@ function drainCare(n){
 }
 function penalty(n, dog, label){
   var empty = drainCare(n);
-  if(dog) popDog(dog.slot, label || "-", "var(--rose)");
+  coachOnMiss();
+  if(dog) popDog(dog.slot, label || "-", "var(--critC)");
+  var cw = $("#careWrap");
+  if(cw && !REDUCE){ cw.classList.remove("hit"); void cw.offsetWidth; cw.classList.add("hit"); }
   buzz(24);
   if(empty && !D.done) failDay();
+}
+
+/* The one piece of pure reward in the loop. Small, warm, and gone in 900ms —
+   enough to feel the serve land without tiring the eye over a long session.
+   Skipped entirely under prefers-reduced-motion. */
+var REDUCE = false;
+try{ REDUCE = window.matchMedia && window.matchMedia("(prefers-reduced-motion: reduce)").matches; }catch(e){}
+
+function pawBurst(node, strength){
+  if(REDUCE || !node) return;
+  var b = node.getBoundingClientRect();
+  var cx = b.left + b.width / 2, cy = b.top + b.height * 0.56;
+  var n = Math.min(9, 4 + (strength || 0));
+  for(var i=0;i<n;i++){
+    (function(i){
+      var p = el("div","paw");
+      p.innerHTML = '<svg viewBox="0 0 24 24" fill="currentColor"><ellipse cx="12" cy="16" rx="5.4" ry="4.4"/>'
+        + '<ellipse cx="5.6" cy="10.4" rx="2.5" ry="3.1"/><ellipse cx="10" cy="7.2" rx="2.4" ry="3.2"/>'
+        + '<ellipse cx="14.8" cy="7.2" rx="2.4" ry="3.2"/><ellipse cx="18.8" cy="10.8" rx="2.4" ry="3"/></svg>';
+      var ang = (-100 + (i / (n - 1)) * 200 + (Math.random() * 22 - 11)) * Math.PI / 180;
+      var dist = 46 + Math.random() * 54;
+      p.style.left = cx + "px";
+      p.style.top = cy + "px";
+      p.style.setProperty("--dx", Math.sin(ang) * dist + "px");
+      p.style.setProperty("--dy", (-Math.abs(Math.cos(ang)) * dist - 18) + "px");
+      p.style.setProperty("--rot", (Math.random() * 120 - 60) + "deg");
+      p.style.animationDelay = (i * 22) + "ms";
+      document.body.appendChild(p);
+      setTimeout(function(){ if(p.parentNode) p.parentNode.removeChild(p); }, 1100);
+    })(i);
+  }
 }
 
 function shakeDog(i){
@@ -1438,16 +2000,17 @@ function shakeDog(i){
   if(!n) return;
   n.classList.remove("shake"); void n.offsetWidth; n.classList.add("shake");
 }
-function popDog(i, txt, col){
+function popDog(i, txt, col, settle){
   var n = document.querySelector('.dog[data-i="'+i+'"]');
   if(!n) return;
-  n.classList.remove("pop"); void n.offsetWidth; n.classList.add("pop");
+  var cls = settle ? "settle" : "pop";
+  n.classList.remove("pop","settle"); void n.offsetWidth; n.classList.add(cls);
   if(txt){
     var b = n.getBoundingClientRect();
     var f = el("div","fx",txt);
     f.style.left = (b.left + b.width/2) + "px";
     f.style.top  = (b.top + 18) + "px";
-    f.style.color = col || "var(--gold)";
+    f.style.color = col || "var(--ball)";
     document.body.appendChild(f);
     setTimeout(function(){ if(f.parentNode) f.parentNode.removeChild(f); }, 1000);
   }
@@ -1581,6 +2144,7 @@ function afterPhase(){
 function failDay(){
   if(D.done) return;
   D.done = true; D.failed = true;
+  D.lostIn = D.phase;            // so the results can name what went wrong
   stopTimer();
   spendHeart();
   persist();
@@ -1612,31 +2176,64 @@ function beginDay(){
   showDayCard();
 }
 
+var CH_ORD = ["One","Two","Three","Four","Five","Six","Seven","Eight","Nine","Ten"];
+
+/* What the weather actually means for the round it governs. The chip said
+   "Rainy" and left the player to work out the consequence. */
+var WEATHER_LINE = {
+  sun:  "Clear out there. Leads and harnesses will do.",
+  rain: "Rain today — coats on before the door opens.",
+  hot:  "Hot out. They'll want the cooling vests.",
+  cold: "Chilly. Booties, or you'll be drying paws all evening.",
+  dusk: "Getting dark early. Keep them visible."
+};
+
 function showDayCard(){
   var ch = chapterOf(S.day);
   var isChapterStart = (S.day === ch.from);
   var w = WEATHER[(S.day * 7 + 3) % WEATHER.length];
   var box = $("#dayBox"); box.innerHTML = "";
+  box.className = "sheetBox poster";
 
-  var head = el("div","row");
-  head.appendChild(el("div","tag", "Chapter " + (CHAPTERS.indexOf(ch)+1)));
-  head.appendChild(el("div","sp"));
-  head.appendChild(el("div","tag", w.ic + " " + w.name));
-  box.appendChild(head);
+  // Art rather than a wall of type: this is the curtain going up on the day.
+  var art = el("div","posterArt");
+  var ai = el("img");
+  ai.src = isChapterStart ? ART.bgHouse : (S.day % 3 === 0 ? ART.bgPark : ART.bgKitchen);
+  ai.alt = "";
+  art.appendChild(ai);
+  art.appendChild(el("div","scrim"));
+  var cap = el("div","cap");
+  cap.appendChild(el("div","ch", "Chapter " + (CH_ORD[CHAPTERS.indexOf(ch)] || "") + " · " + ch.t));
+  cap.appendChild(el("div","dy", "Day " + S.day));
+  art.appendChild(cap);
+  box.appendChild(art);
 
-  box.appendChild(el("div","h1","Day " + S.day));
-  box.appendChild(el("div","h2", ch.t));
-  var sub = el("div","sub", isChapterStart ? ch.l : pick(WISDOM));
-  sub.style.marginTop = "8px";
-  box.appendChild(sub);
+  var body = el("div","posterBody");
+  // The best writing in the game was set at 14px in grey. It leads now.
+  body.appendChild(el("div","epigraph", isChapterStart ? ch.l : pick(WISDOM)));
 
-  var stats = el("div"); stats.style.margin = "14px 0 4px";
-  var roster = rosterFor(S.day);
-  addStat(stats, "Dogs on the floor", String(dogCount()));
-  addStat(stats, "Breeds in the daycare", String(roster.length) + " / " + BREEDS.length);
-  addStat(stats, "Hearts", "❤️ " + S.hearts + " / " + HEART_MAX);
-  if(S.streak > 1) addStat(stats, "Day streak", "🔥 " + S.streak);
-  box.appendChild(stats);
+  // Only the two facts that change how today is played.
+  var facts = el("div","factRow");
+  var f1 = el("div","fact");
+  f1.appendChild(el("div","k","On the floor"));
+  f1.appendChild(el("div","v", dogCount() + (dogCount() === 1 ? " dog" : " dogs")));
+  facts.appendChild(f1);
+  var f2 = el("div","fact");
+  f2.appendChild(el("div","k","Weather"));
+  f2.appendChild(el("div","v", w.ic + " " + w.name));
+  facts.appendChild(f2);
+  body.appendChild(facts);
+  body.appendChild(el("div","sub", WEATHER_LINE[w.k] || ""));
+
+  var hearts = el("div","row");
+  hearts.style.cssText = "margin:14px 0 12px;gap:8px";
+  hearts.appendChild(heartRow());
+  if(S.streak > 1){
+    var st = el("span","pill","🔥 " + S.streak + " day streak");
+    st.style.fontSize = "13px";
+    hearts.appendChild(st);
+  }
+  body.appendChild(hearts);
 
   var go1 = el("button","btn gold wide","Start the day");
   go1.onclick = function(){
@@ -1644,38 +2241,57 @@ function showDayCard(){
     if(STORY[S.day] && !S.storySeen[S.day]) showStory(S.day, startPlay);
     else startPlay();
   };
-  box.appendChild(go1);
+  body.appendChild(go1);
 
   var back = el("button","btn ghost wide","Back to the porch");
   back.style.marginTop = "8px";
   back.onclick = function(){ closeOverlay(); go("title"); };
-  box.appendChild(back);
+  body.appendChild(back);
 
+  box.appendChild(body);
   overlay("#dayScr");
+}
+
+/* Hearts as five marks you can count at a glance rather than "3 / 5". */
+function heartRow(){
+  var wrap = el("div","row");
+  wrap.style.gap = "3px";
+  for(var i=0;i<HEART_MAX;i++){
+    var h = svgEl("hp", MARK.heart, i < S.hearts ? "var(--berry)" : "var(--line)");
+    h.style.cssText = "width:19px;height:19px";
+    wrap.appendChild(h);
+  }
+  return wrap;
 }
 function addStat(parent, k, v){
   var r = el("div","statLine");
   r.appendChild(el("span",null,k));
   r.appendChild(el("b",null,v));
   parent.appendChild(r);
+  return r;
 }
 
 function showStory(day, done){
   var s = STORY[day];
   if(!s){ done(); return; }
   S.storySeen[day] = 1; persist();
-  var box = $("#storyBox"); box.innerHTML = "";
-  var wrap = el("div","sceneWrap");
-  var im = el("img","por"); im.src = ART[s.img] || ART.dutch; im.alt = s.who;
-  wrap.appendChild(im);
-  var sp = el("div","speech");
-  var who = el("span","who", s.who); sp.appendChild(who);
-  sp.appendChild(document.createTextNode(s.t));
-  wrap.appendChild(sp);
-  var b = el("button","btn gold wide","Continue");
+  var box = $("#storyBox");
+  box.className = "taleBox";
+  box.innerHTML = "";
+
+  var im = el("img","taleFig"); im.src = ART[s.img] || ART.dutch; im.alt = s.who;
+  box.appendChild(im);
+
+  var bub = el("div","taleBubble");
+  bub.appendChild(el("div","taleWho", s.who));
+  var txt = el("div","taleTxt", s.t);
+  bub.appendChild(txt);
+  var b = el("button","btn gold wide taleGo","Continue");
   b.onclick = function(){ closeOverlay(); done(); };
-  wrap.appendChild(b);
-  box.appendChild(wrap);
+  bub.appendChild(b);
+  box.appendChild(bub);
+
+  $("#storyScr").classList.add("tale");
   overlay("#storyScr");
 }
 
@@ -1725,18 +2341,20 @@ function bumpStreak(){
   S.streakStamp = today;
 }
 
+/* `at` / `need` drive the progress line in Settings; `ok` still decides the
+   award, so the unlock rules are unchanged. */
 var ACHIEVEMENTS = [
-  {k:"first",   n:"First Bowl",      d:"Serve your first dog.",           img:"kibble",     ok:function(){ return S.totalServed >= 1; },   bones:2},
-  {k:"fifty",   n:"Fifty Bowls",     d:"Serve fifty dogs.",               img:"chicken",    ok:function(){ return S.totalServed >= 50; },  bones:5},
-  {k:"fivehun", n:"Five Hundred",    d:"Serve five hundred dogs.",        img:"crate",      ok:function(){ return S.totalServed >= 500; }, bones:20},
-  {k:"walker",  n:"Good Walker",     d:"Complete a hundred walks.",       img:"leash",      ok:function(){ return S.totalWalks >= 100; },  bones:10},
-  {k:"nightowl",n:"Lights Out",      d:"Settle a hundred dogs at night.", img:"nightlight", ok:function(){ return S.totalSleeps >= 100; }, bones:10},
-  {k:"perfect5",n:"Five Perfect",    d:"Finish five days with no misses.",img:"trophy",     ok:function(){ return S.perfectDays >= 5; },   bones:12},
-  {k:"dex10",   n:"Ten Friends",     d:"Meet ten different breeds.",      img:"dutch_h",    ok:function(){ return dexSeen() >= 10; },      bones:8},
-  {k:"dexall",  n:"The Whole Pack",  d:"Meet every breed.",               img:"passCrest",  ok:function(){ return dexSeen() >= BREEDS.length; }, bones:50},
-  {k:"day50",   n:"Fifty Days",      d:"Reach day fifty.",                img:"bgHouse",    ok:function(){ return S.best >= 50; },         bones:15},
-  {k:"day150",  n:"A Hundred Fifty", d:"Reach day one hundred and fifty.",img:"bgPark",     ok:function(){ return S.best >= 150; },        bones:30},
-  {k:"day250",  n:"Every Last Day",  d:"Reach day two hundred and fifty.",img:"trophy",     ok:function(){ return S.best >= TOTAL_DAYS; }, bones:100}
+  {k:"first",   n:"First Bowl",      d:"Serve your first dog.",           img:"kibble",     ok:function(){ return S.totalServed >= 1; },   bones:2,   at:function(){ return S.totalServed; }, need:1},
+  {k:"fifty",   n:"Fifty Bowls",     d:"Serve fifty dogs.",               img:"chicken",    ok:function(){ return S.totalServed >= 50; },  bones:5,   at:function(){ return S.totalServed; }, need:50},
+  {k:"fivehun", n:"Five Hundred",    d:"Serve five hundred dogs.",        img:"crate",      ok:function(){ return S.totalServed >= 500; }, bones:20,  at:function(){ return S.totalServed; }, need:500},
+  {k:"walker",  n:"Good Walker",     d:"Complete a hundred walks.",       img:"leash",      ok:function(){ return S.totalWalks >= 100; },  bones:10,  at:function(){ return S.totalWalks; },  need:100},
+  {k:"nightowl",n:"Lights Out",      d:"Settle a hundred dogs at night.", img:"nightlight", ok:function(){ return S.totalSleeps >= 100; }, bones:10,  at:function(){ return S.totalSleeps; }, need:100},
+  {k:"perfect5",n:"Five Perfect",    d:"Finish five days with no misses.",img:"trophy",     ok:function(){ return S.perfectDays >= 5; },   bones:12,  at:function(){ return S.perfectDays; }, need:5},
+  {k:"dex10",   n:"Ten Friends",     d:"Meet ten different breeds.",      img:"dutch_h",    ok:function(){ return dexSeen() >= 10; },      bones:8,   at:function(){ return dexSeen(); },     need:10},
+  {k:"dexall",  n:"The Whole Pack",  d:"Meet every breed.",               img:"passCrest",  ok:function(){ return dexSeen() >= BREEDS.length; }, bones:50, at:function(){ return dexSeen(); }, need:BREEDS.length},
+  {k:"day50",   n:"Fifty Days",      d:"Reach day fifty.",                img:"bgHouse",    ok:function(){ return S.best >= 50; },         bones:15,  at:function(){ return S.best; },        need:50},
+  {k:"day150",  n:"A Hundred Fifty", d:"Reach day one hundred and fifty.",img:"bgPark",     ok:function(){ return S.best >= 150; },        bones:30,  at:function(){ return S.best; },        need:150},
+  {k:"day250",  n:"Every Last Day",  d:"Reach day two hundred and fifty.",img:"trophy",     ok:function(){ return S.best >= TOTAL_DAYS; }, bones:100, at:function(){ return S.best; },        need:TOTAL_DAYS}
 ];
 function dexSeen(){ var n=0; for(var k in S.dex){ if(S.dex[k] && S.dex[k].seen) n++; } return n; }
 function checkAchievements(){
@@ -1750,34 +2368,75 @@ function checkAchievements(){
 }
 var pendingRewards = [];
 
+/* Roll a number up rather than printing it. The purse is the one figure the
+   player is actually waiting for. */
+function countUp(node, to, ms){
+  if(REDUCE || to <= 0){ node.textContent = fmt(to); return; }
+  var t0 = 0;
+  function step(ts){
+    if(!t0) t0 = ts;
+    var k = Math.min(1, (ts - t0) / ms);
+    var eased = 1 - Math.pow(1 - k, 3);
+    node.textContent = fmt(Math.round(to * eased));
+    if(k < 1) requestAnimationFrame(step);
+  }
+  requestAnimationFrame(step);
+}
+
+/* Name the round that ended the day. "The care meter emptied" told the player
+   nothing they could use on the next attempt. */
+function lossReason(){
+  var late = D.dogs.filter(function(d){ return d.state !== "done"; }).length;
+  if(D.lostIn === "feed")
+    return "Mealtime got away from you — " + (D.dogs.length - D.served) + " of " + D.dogs.length +
+           " never got their bowl. Serve the impatient ones first: the ring tells you who.";
+  if(D.lostIn === "walk")
+    return "The walk was the problem. " + (D.accidents || late) +
+           " couldn't go out, and that bill is what emptied the meter. A dog only walks once it has eaten.";
+  if(D.lostIn === "bed")
+    return "Bedtime got away from you. " + late + " were still up at lights out. " +
+           "A dog that missed its walk only settles for something calming.";
+  return "Too many misses in one day. Each one costs care, and the meter does not refill mid-day.";
+}
+
 function showEnd(){
   var box = $("#endBox"); box.innerHTML = "";
   var failed = D.failed;
   var stars = failed ? 0 : (D.misses === 0 ? 3 : (D.misses <= 2 ? 2 : 1));
+  var perfect = !failed && D.misses === 0 && D.wrongs === 0;
+  box.className = "sheetBox ledger" + (failed ? " lost" : "");
 
   box.appendChild(el("div","tag", failed ? "Day lost" : "Day complete"));
-  box.appendChild(el("div","h1", failed ? "Too much chaos" : "Lights out"));
+  box.appendChild(el("h1","h1", failed ? "Too much chaos" :
+    (perfect ? "Not a paw wrong" : "Lights out")));
 
   var sr = el("div","starsRow");
   for(var i=0;i<3;i++){
-    var s = el("span","star" + (i < stars ? " lit" : ""), "⭐");
-    s.style.animationDelay = (i*0.12) + "s";
-    sr.appendChild(s);
+    var st = svgEl("star" + (i < stars ? " lit" : ""), MARK.star);
+    st.style.animationDelay = (i*0.14) + "s";
+    sr.appendChild(st);
   }
   box.appendChild(sr);
 
-  var stats = el("div"); stats.style.margin = "12px 0";
+  if(failed){
+    var diag = el("div","diag", lossReason());
+    diag.style.marginTop = "14px";
+    box.appendChild(diag);
+  }
+
+  var stats = el("div"); stats.style.margin = "14px 0";
   addStat(stats, "Fed",      D.served + " / " + D.dogs.length);
   addStat(stats, "Walked",   D.walked + " / " + D.dogs.length);
   addStat(stats, "Settled",  D.slept  + " / " + D.dogs.length);
-  addStat(stats, "Wrong bowls", String(D.wrongs));
+  if(D.wrongs)    addStat(stats, "Wrong bowls", String(D.wrongs));
   if(D.accidents) addStat(stats, "Accidents", String(D.accidents));
-  addStat(stats, "Coins earned", fmt(D.coinsEarned));
+  var purseRow = addStat(stats, "Coins earned", "0");
   if(D.bonesEarned) addStat(stats, "Bones earned", String(D.bonesEarned));
   box.appendChild(stats);
+  countUp(purseRow.querySelector("b"), D.coinsEarned, 700);
 
   if(failed){
-    var msg = el("div","sub","The care meter emptied. You lost a heart — the day is still there when you are ready.");
+    var msg = el("div","sub","You lost a heart — the day is still there when you are ready.");
     msg.style.marginBottom = "12px";
     box.appendChild(msg);
     var retry = el("button","btn gold wide", S.hearts > 0 ? "Try day " + S.day + " again" : "Out of hearts");
@@ -1820,8 +2479,8 @@ function drainRewards(){
 function showReward(o, onDone){
   var box = $("#rewardBox"); box.innerHTML = "";
   var wrap = el("div","sceneWrap");
-  if(o.img){ var im = el("img","por"); im.src = o.img; im.alt = ""; wrap.appendChild(im); }
-  wrap.appendChild(el("div","h2", o.title || ""));
+  if(o.img){ var im = el("img","por"); im.src = o.img; im.alt = o.title || ""; wrap.appendChild(im); }
+  wrap.appendChild(el("h2","h2", o.title || ""));
   if(o.body) wrap.appendChild(el("div","sub", o.body));
   var b = el("button","btn gold wide", o.btn || "OK");
   b.onclick = function(){ closeOverlay(); if(onDone) onDone(); };
@@ -1864,6 +2523,113 @@ function useBoost(k){
 }
 
 /* ============================================================================
+   11b. FIRST RUN
+
+   S.tutorial has been in the save schema since v1 and was never read or
+   written, so a brand-new player met an unlabelled bar, five unlabelled rings
+   and a pill reading "x1" with no explanation anywhere in the product. Three
+   beats, taught by doing: name the request, name the delivery, name the cost of
+   a miss. Uses the existing field, so the save format is unchanged.
+   ========================================================================== */
+var coach = { step: 0, on: false };
+
+function coachDone(){ return !!S.tutorial; }
+
+function coachStop(){
+  coach.on = false; coach.step = 0;
+  var c = $("#coach"); if(c) c.classList.remove("on");
+  if(D) D.frozen = 0;
+}
+
+function coachShow(step){
+  if(REDUCE && step === 0){ /* still run: this is instruction, not decoration */ }
+  var c = $("#coach"), ring = $("#coachRing"), tip = $("#coachTip"), scrim = $("#coachScrim");
+  if(!c || !D) return;
+
+  var target = null, title = "", body = "", art = null;
+  if(step === 0){
+    var i0 = D.dogs.findIndex(function(d){ return d.state === "wait"; });
+    if(i0 < 0) { coachStop(); return; }
+    target = document.querySelector('.dog[data-i="'+i0+'"] .want');
+    var d0 = D.dogs[i0], tb = tableFor(D.phase);
+    art = tb[d0.want] ? ART[tb[d0.want].img] : null;
+    title = d0.name + " wants " + (tb[d0.want] ? tb[d0.want].name.toLowerCase() : "something") + ".";
+    body = "Every dog asks for one thing. It is written along the bottom of their card.";
+  }else if(step === 1){
+    var iw = D.dogs.findIndex(function(d){ return d.state === "wait"; });
+    if(iw < 0){ coachStop(); return; }
+    var want = D.dogs[iw].want;
+    target = document.querySelector('#tray .item[data-k="'+want+'"]');
+    title = "Tap it, then tap the dog.";
+    body = "Or drag it straight across. Either works.";
+  }else{
+    target = $("#careWrap");
+    title = "That one cost you.";
+    body = "Every miss drains care. Empty it and the day is lost — but you keep everything you earned.";
+  }
+  if(!target){ coachStop(); return; }
+
+  var b = target.getBoundingClientRect();
+  var pad = 8;
+  var x = b.left - pad, y = b.top - pad, w2 = b.width + pad*2, h2 = b.height + pad*2;
+  ring.style.cssText = "left:"+x+"px;top:"+y+"px;width:"+w2+"px;height:"+h2+"px";
+  // Cut the spotlight out of the scrim so the named thing is the only lit
+  // thing on screen. evenodd on a polygon is the portable way to do a hole.
+  scrim.style.clipPath = "polygon(0 0, 100% 0, 100% 100%, 0 100%, 0 0," +
+    " " + x + "px " + y + "px," +
+    " " + x + "px " + (y+h2) + "px," +
+    " " + (x+w2) + "px " + (y+h2) + "px," +
+    " " + (x+w2) + "px " + y + "px," +
+    " " + x + "px " + y + "px)";
+
+  tip.innerHTML = "";
+  tip.appendChild(el("div","coachStep","Step " + (step+1) + " of 3"));
+  var head = el("div","cw");
+  if(art){ var ai = el("img"); ai.src = art; ai.alt=""; head.appendChild(ai); }
+  head.appendChild(el("div","ct", title));
+  tip.appendChild(head);
+  tip.appendChild(el("div","cd", body));
+
+  // Place the tip on whichever side of the spotlight has room.
+  var below = y + h2 + 14;
+  var fits = below + 130 < window.innerHeight;
+  tip.style.top = (fits ? below : Math.max(12, y - 140)) + "px";
+
+  c.classList.add("on");
+  coach.on = true; coach.step = step;
+  D.frozen = 9999;                       // hold every clock while a beat is up
+}
+
+function coachMaybeStart(){
+  if(coachDone() || S.day !== 1 || !D || D.phase !== "feed") return;
+  setTimeout(function(){ if(D && !D.done && !overlayOpen) coachShow(0); }, 620);
+}
+
+/* Called from deliver(): the beats advance on the player doing the thing. */
+function coachAdvance(kind){
+  if(!coach.on && coachDone()) return;
+  if(!coach.on) return;
+  if(coach.step === 0 && kind === "select"){ coachShow(1); return; }
+  if(coach.step === 1 && kind === "served"){
+    coachStop();
+    D.frozen = 0;
+    return;
+  }
+  if(coach.step === 2 && kind === "any"){
+    S.tutorial = 1; persist(); coachStop();
+  }
+}
+
+function coachOnMiss(){
+  if(coachDone() || S.day !== 1 || !D || D.done) return;
+  if(coach.on) return;
+  S.tutorial = 1; persist();            // only ever shown once
+  coachShow(2);
+  var c = $("#coachScrim");
+  if(c) c.onclick = function(){ coachStop(); c.onclick = null; };
+}
+
+/* ============================================================================
    12. RENDERING
    ========================================================================== */
 function paintCurrency(){
@@ -1874,10 +2640,23 @@ function paintCurrency(){
   var h = $("#tHearts"); if(h) h.textContent = S.hearts + "/" + HEART_MAX;
 }
 
+/* The timer colours used to be literal hex, so Meadow and Sunset kept a teal
+   clock belonging to no theme and Night Shift kept a cream ring plate. Read
+   them from the tokens instead, cached because paintRings runs every tick. */
+var _tok = {}, _tokTheme = null;
+function tok(name){
+  if(_tokTheme !== S.theme){ _tok = {}; _tokTheme = S.theme; }
+  if(!_tok[name]){
+    var v = getComputedStyle(document.body).getPropertyValue(name);
+    _tok[name] = (v || "").trim() || "#2f8f86";
+  }
+  return _tok[name];
+}
+
 function paintCare(){
   if(!D) return;
   var f = $("#careFill");
-  f.style.width = D.care + "%";
+  f.style.transform = "scaleX(" + (clamp(D.care, 0, 100) / 100) + ")";
   f.className = D.care <= 25 ? "crit" : (D.care <= 55 ? "low" : "");
 }
 
@@ -1885,10 +2664,11 @@ function paintClock(){
   if(!D) return;
   var w = $("#clockWrap"), r = $("#clockRing"), t = $("#clockTxt");
   var frac = clamp(D.clock / Math.max(1, D.clockMax), 0, 1);
-  var C = 2 * Math.PI * 26;
+  var C = 2 * Math.PI * 32;
   r.setAttribute("stroke-dasharray", C.toFixed(1));
   r.setAttribute("stroke-dashoffset", (C * (1 - frac)).toFixed(1));
-  var col = D.frozen > 0 ? "#7fc4d8" : (frac > 0.5 ? "#2f8f86" : (frac > 0.22 ? "#f2b134" : "#e05a5a"));
+  var col = D.frozen > 0 ? "#7fc4d8"
+          : (frac > 0.5 ? tok("--ok") : (frac > 0.22 ? tok("--warnC") : tok("--critC")));
   r.setAttribute("stroke", col);
   t.textContent = Math.ceil(D.clock);
   w.className = D.frozen > 0 ? "" : (frac <= 0.22 ? "crit" : (frac <= 0.5 ? "warn" : ""));
@@ -1898,7 +2678,9 @@ function paintCombo(){
   if(!D) return;
   var p = $("#comboPill");
   p.textContent = "×" + D.mult.toFixed(2).replace(/\.?0+$/,"");
-  p.style.background = D.combo >= 3 ? "var(--gold)" : "rgba(0,0,0,.06)";
+  var hot = D.combo >= 3;
+  p.classList.toggle("hotPill", hot);
+  var tr = $("#tray"); if(tr) tr.classList.toggle("hot", hot);
 }
 
 function paintRings(){
@@ -1908,17 +2690,52 @@ function paintRings(){
     var n = document.querySelector('.dog[data-i="'+i+'"] .pRing');
     if(!n) continue;
     var frac = d.state === "done" ? 1 : clamp(d.t / d.tmax, 0, 1);
-    var C = 2 * Math.PI * 15;
+    var C = 2 * Math.PI * 13;
     n.setAttribute("stroke-dasharray", C.toFixed(1));
     n.setAttribute("stroke-dashoffset", (C * (1 - frac)).toFixed(1));
-    n.setAttribute("stroke", d.state === "done" ? "#5aa860" : (frac > 0.45 ? "#2f8f86" : (frac > 0.2 ? "#f2b134" : "#e05a5a")));
+    // One steady colour that only breaks to red near the end, so these read as
+    // "how long this dog will wait" and never compete with the corner clock.
+    n.setAttribute("stroke", frac > 0.2 ? tok("--ok") : tok("--critC"));
   }
+}
+
+/* One stroke weight, one visual language. Replaces the emoji that stood in for
+   an icon system on the dog cards. */
+var MARK = {
+  sleep: '<svg viewBox="0 0 24 24" fill="currentColor"><path d="M8 5h7.2L8 13.6V19h8.4v-2.6h-4.7L19 7.8V3H8Z" transform="scale(.82) translate(2.4 2.4)"/><path d="M3 15h4.4l-4.4 5.2V22h5.6v-1.7H5.9L9.2 16v-1.6H3Z"/></svg>',
+  heart: '<svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 20.4S3.6 15.3 3.6 9.5A4.7 4.7 0 0 1 12 6.7a4.7 4.7 0 0 1 8.4 2.8c0 5.8-8.4 10.9-8.4 10.9Z"/></svg>',
+  tired: '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round"><path d="M5 10h5M14 10h5M8 16.5c2.4-1.6 5.6-1.6 8 0"/></svg>',
+  drop:  '<svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2.5c3.6 4.4 6.2 7.9 6.2 11a6.2 6.2 0 1 1-12.4 0c0-3.1 2.6-6.6 6.2-11Z"/></svg>',
+  awake: '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round"><circle cx="12" cy="12" r="3.2"/><path d="M12 3v2.4M12 18.6V21M3 12h2.4M18.6 12H21M5.6 5.6l1.7 1.7M16.7 16.7l1.7 1.7M18.4 5.6l-1.7 1.7M7.3 16.7l-1.7 1.7"/></svg>',
+  tick:  '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3.2" stroke-linecap="round" stroke-linejoin="round"><path d="M4.5 12.8 9.6 18 19.5 6.6"/></svg>',
+  star:  '<svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2.2l2.9 6.05 6.65.92-4.83 4.6 1.18 6.6L12 17.25 6.1 20.37l1.18-6.6L2.45 9.17l6.65-.92Z"/></svg>',
+  lock:  '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><rect x="5" y="10.5" width="14" height="9.5" rx="2.4"/><path d="M8.4 10.5V8a3.6 3.6 0 0 1 7.2 0v2.5"/></svg>'
+};
+function svgEl(cls, markup, colour){
+  var n = el("div", cls);
+  n.innerHTML = markup;
+  var sv = n.firstChild;
+  if(sv && sv.setAttribute){ sv.setAttribute("width","100%"); sv.setAttribute("height","100%"); sv.setAttribute("aria-hidden","true"); }
+  if(colour) n.style.color = colour;
+  return n;
 }
 
 function paintPlay(){
   if(!D) return;
   $("#dayChip").textContent = "Day " + S.day;
-  $("#phaseChip").textContent = D.weather.ic + " " + phaseName(D.phase);
+  $("#phaseName").textContent = phaseName(D.phase);
+  $("#clockWrap").setAttribute("aria-label", phaseName(D.phase) + " timer");
+  // Weather drives what the walk round asks for and nothing else, so it is
+  // shown in the round where it is load-bearing rather than glued to every
+  // phase label (which made a hot day read as an alarm at breakfast).
+  var wp = $("#weatherPill");
+  if(D.phase === "walk"){ wp.hidden = false; wp.textContent = D.weather.ic + " " + D.weather.name; }
+  else wp.hidden = true;
+  var order = ["feed","walk","bed"], at = order.indexOf(D.phase);
+  var pips = $("#roundPips").children;
+  for(var pi=0; pi<pips.length; pi++){
+    pips[pi].className = pi < at ? "did" : (pi === at ? "now" : "");
+  }
   $("#trayHint").textContent = phaseHint(D.phase);
   var bg = $("#fieldBg");
   var want = phaseBg(D.phase);
@@ -1929,49 +2746,69 @@ function paintPlay(){
   var zone = $("#dogZone");
   zone.innerHTML = "";
   var wide = D.dogs.length >= 5;
+  var tbl = tableFor(D.phase);
   D.dogs.forEach(function(d, i){
     var n = el("div","dog" + (wide ? " wide" : "") + (d.state === "done" ? " done" : ""));
     n.setAttribute("data-i", String(i));
 
-    if(d.state !== "done" && d.want){
-      var wb = el("div","want");
-      var wi = el("img"); wi.src = ART[tableFor(D.phase)[d.want].img]; wi.alt = tableFor(D.phase)[d.want].name;
-      wb.appendChild(wi);
-      n.appendChild(wb);
-    }
-
     var por = el("img","por"); por.src = ART[d.img]; por.alt = d.name;
     n.appendChild(por);
     n.appendChild(el("div","nm", d.name));
-    n.appendChild(el("div","br", d.ref.breed));
 
-    if(D.phase === "feed" && d.state !== "done"){
+    if(D.phase === "feed" && d.state === "wait"){
       var ring = el("div","ring");
-      ring.innerHTML = '<svg width="38" height="38" viewBox="0 0 38 38">'
-        + '<circle cx="19" cy="19" r="15" fill="#fffaf0" stroke="rgba(0,0,0,.06)" stroke-width="1"></circle>'
-        + '<circle cx="19" cy="19" r="15" fill="none" stroke="#d9cdb8" stroke-width="5"></circle>'
-        + '<circle class="pRing" cx="19" cy="19" r="15" fill="none" stroke="#2f8f86" stroke-width="5" stroke-linecap="round"></circle></svg>';
+      ring.innerHTML = '<svg width="31" height="31" viewBox="0 0 31 31">'
+        + '<circle cx="15.5" cy="15.5" r="13" fill="none" stroke="var(--ringTrack)" stroke-width="4"></circle>'
+        + '<circle class="pRing" cx="15.5" cy="15.5" r="13" fill="none" stroke="var(--ok)" stroke-width="4" stroke-linecap="round"></circle></svg>';
       n.appendChild(ring);
     }
 
     var badge = null;
-    if(d.state === "done")        badge = el("div","badge ok","✓");
-    else if(d.state === "hungry") badge = el("div","badge","HUNGRY");
-    else if(d.state === "tired")  badge = el("div","badge warn","TIRED");
+    if(d.state === "hungry")       badge = el("div","badge","HUNGRY");
+    else if(d.state === "tired")   badge = el("div","badge warn","TIRED");
     else if(d.state === "accident")badge = el("div","badge","OOPS");
-    else if(d.state === "awake")  badge = el("div","badge warn","AWAKE");
-    else if(D.phase !== "feed" && !d.fed) badge = el("div","badge","HUNGRY");
+    else if(d.state === "awake")   badge = el("div","badge warn","AWAKE");
+    else if(D.phase !== "feed" && d.state !== "done" && !d.fed) badge = el("div","badge","HUNGRY");
     if(badge) n.appendChild(badge);
 
-    var ic = d.state === "done" ? (D.phase === "bed" ? "💤" : "💚")
-           : d.state === "tired" ? "😪" : d.state === "accident" ? "💦"
-           : d.state === "awake" ? "🐕‍🦺" : "";
-    if(ic) n.appendChild(el("div","stateIc", ic));
+    if(d.state === "done")          n.appendChild(svgEl("stateIc", D.phase === "bed" ? MARK.sleep : MARK.heart, "var(--leaf)"));
+    else if(d.state === "tired")    n.appendChild(svgEl("stateIc", MARK.tired, "var(--ball2)"));
+    else if(d.state === "accident") n.appendChild(svgEl("stateIc", MARK.drop, "var(--sky)"));
+    else if(d.state === "awake")    n.appendChild(svgEl("stateIc", MARK.awake, "var(--ball2)"));
 
-    // Deliberately NO per-dog pointer listener. All delivery — tap-then-tap and
-    // drag alike — goes through the single document-level handler in trayInput,
-    // because two entry points meant a mouse/trackpad release over a dog fired
-    // both and double-penalised every wrong item.
+    // The request, as the card's headline — full width, at the bottom, and
+    // NAMED. As a 30px unlabelled thumbnail it was the smallest thing on screen
+    // while carrying the entire decision, and "harness" versus "cool vest" at
+    // that size is a coin flip. After delivery the same strip becomes the
+    // receipt, so a served dog reads as resolved rather than as blank.
+    var shown = d.state === "done" ? (d.got || d.want) : d.want;
+    if(shown && tbl[shown]){
+      var wb = el("div","want");
+      var wi = el("img"); wi.src = ART[tbl[shown].img]; wi.alt = "";
+      wb.appendChild(wi);
+      wb.appendChild(el("div","wl", tbl[shown].name));
+      if(d.state === "done") wb.appendChild(svgEl("tick", MARK.tick, "var(--leaf)"));
+      n.appendChild(wb);
+    }
+
+    // Deliberately NO per-dog POINTER listener. All pointer delivery —
+    // tap-then-tap and drag alike — goes through the single document-level
+    // handler in trayInput, because two entry points meant a mouse/trackpad
+    // release over a dog fired both and double-penalised every wrong item.
+    // Keyboard is a separate path that pointer capture cannot reach.
+    if(d.state === "wait"){
+      n.setAttribute("role","button");
+      n.setAttribute("tabindex","0");
+      n.setAttribute("aria-label", d.name + " wants " + (tbl[d.want] ? tbl[d.want].name : ""));
+      n.onkeydown = (function(idx){
+        return function(ev){
+          if(ev.key === "Enter" || ev.key === " "){
+            ev.preventDefault();
+            if(D && D.sel){ deliver(D.sel, idx); D.sel = null; paintTray(); }
+          }
+        };
+      })(i);
+    }
     zone.appendChild(n);
   });
 
@@ -1988,6 +2825,17 @@ function paintTray(){
     var def = tbl[k]; if(!def) return;
     var n = el("div","item" + (D.sel === k ? " sel" : ""));
     n.setAttribute("data-k", k);
+    n.setAttribute("role","button");
+    n.setAttribute("tabindex","0");
+    n.setAttribute("aria-label", def.name);
+    n.onkeydown = function(ev){
+      if(ev.key === "Enter" || ev.key === " "){
+        ev.preventDefault();
+        D.sel = (D.sel === k) ? null : k;
+        paintTray();
+        if(coach.on) coachAdvance("select");
+      }
+    };
     var im = el("img"); im.src = ART[def.img]; im.alt = def.name;
     n.appendChild(im);
     n.appendChild(el("div","lbl", def.name));
@@ -1997,14 +2845,22 @@ function paintTray(){
 
 function paintBoosts(){
   var r = $("#boostRail"); r.innerHTML = "";
+  r.appendChild(el("div","rl","Boosts"));
   BOOST_ORDER.forEach(function(k){
     if(k === "heart") return;           // hearts are a menu action, not in-round
     var b = BOOSTS[k], ct = boostCt(k);
     var n = el("div","boostBtn" + (ct <= 0 ? " empty" : ""));
-    var im = el("img"); im.src = ART[b.img]; im.alt = b.name;
+    n.setAttribute("role","button");
+    n.setAttribute("tabindex","0");
+    n.setAttribute("aria-label", b.name + ", " + ct + " left");
+    if(ct <= 0) n.setAttribute("aria-disabled","true");
+    var im = el("img"); im.src = ART[b.img]; im.alt = "";
     n.appendChild(im);
     n.appendChild(el("div","ct", String(ct)));
     n.onclick = function(){ useBoost(k); };
+    n.onkeydown = function(ev){
+      if(ev.key === "Enter" || ev.key === " "){ ev.preventDefault(); useBoost(k); }
+    };
     r.appendChild(n);
   });
 }
@@ -2051,6 +2907,7 @@ function paintBoosts(){
     dragging = true;
     D.sel = dragKey;
     paintTray();
+    if(coach.on) coachAdvance("select");
     ghost = ghost || $("#ghost"); gimg = gimg || $("#ghostImg");
     var tbl = tableFor(D.phase);
     if(tbl[dragKey]){
@@ -2130,16 +2987,60 @@ function go(name){
 
 /* Any sheet opening pauses the loop; closing it grants a short grace period so
    the player is not immediately punished for the interruption. */
+/* Focus used to walk the four title buttons BEHIND a dimmed, blurred sheet
+   before it reached anything inside it, and Escape did nothing because the file
+   had no key listener at all. */
+var _focusBefore = null;
+
 function overlay(sel, _unused){
   document.querySelectorAll(".sheet").forEach(function(n){ n.classList.remove("on"); });
-  document.querySelector(sel).classList.add("on");
+  var sheet = document.querySelector(sel);
+  sheet.classList.add("on");
+  sheet.setAttribute("role","dialog");
+  sheet.setAttribute("aria-modal","true");
   overlayOpen = true;
+
+  // Everything behind the sheet stops being reachable while it is up.
+  var app = $("#app");
+  for(var i=0;i<app.children.length;i++){
+    var c = app.children[i];
+    if(!c.classList.contains("sheet") && c.id !== "toast") {
+      try{ c.inert = true; }catch(e){}
+      c.setAttribute("aria-hidden","true");
+    }
+  }
+  if(document.activeElement && document.activeElement !== document.body) _focusBefore = document.activeElement;
+  var box = sheet.firstElementChild || sheet;
+  box.setAttribute("tabindex","-1");
+  setTimeout(function(){ try{ box.focus({preventScroll:true}); }catch(e){} }, 60);
 }
+
 function closeOverlay(){
-  document.querySelectorAll(".sheet").forEach(function(n){ n.classList.remove("on"); });
+  document.querySelectorAll(".sheet").forEach(function(n){
+    n.classList.remove("on"); n.removeAttribute("aria-modal");
+  });
+  var app = $("#app");
+  for(var i=0;i<app.children.length;i++){
+    var c = app.children[i];
+    try{ c.inert = false; }catch(e){}
+    c.removeAttribute("aria-hidden");
+  }
   overlayOpen = false;
   grace = 8;                            // ~0.8s before the clock resumes biting
+  if(_focusBefore){
+    try{ _focusBefore.focus({preventScroll:true}); }catch(e){}
+    _focusBefore = null;
+  }
 }
+
+/* Escape closes whatever is open, and doubles as the pause key in a round. */
+document.addEventListener("keydown", function(ev){
+  if(ev.key !== "Escape" && ev.key !== "Esc") return;
+  if(coach.on){ coachStop(); S.tutorial = 1; persist(); return; }
+  if(overlayOpen){ closeOverlay(); return; }
+  if(curScreen === "play" && D && !D.done){ showPause(); return; }
+  if(curScreen === "dex" || curScreen === "shop") go("title");
+});
 
 /* ---- Dogdex -------------------------------------------------------------- */
 function paintDex(){
@@ -2150,20 +3051,33 @@ function paintDex(){
     var known = !!(e && e.seen);
     if(known) seen++;
     var c = el("div","dexCard" + (known ? "" : " locked"));
+    if(!known) c.setAttribute("aria-label", "Not yet met. Arrives day " + b.day);
     var im = el("img");
     // 34 portraits at full size decoded simultaneously is real memory pressure
     // in a WebView; let the browser defer everything below the fold.
     im.loading = "lazy"; im.decoding = "async";
     im.src = ART[b.img]; im.alt = known ? b.name : "Not yet met";
     c.appendChild(im);
+    c.style.setProperty("--rc", known ? RARITY[b.rar].cl : "transparent");
     c.appendChild(el("div","nm", known ? b.name : "???"));
-    c.appendChild(el("div","lv", known ? (RARITY[b.rar].n + " · Lv " + e.lv) : ("Day " + b.day)));
     if(known){
-      var bar = el("div","lvBar"); var fill = el("i");
+      c.appendChild(el("div","rr", RARITY[b.rar].n));
+      var maxed = e.lv >= 5;
+      c.appendChild(el("div","lv", maxed ? "Level 5 · Max" : "Level " + e.lv));
+      var bar = el("div","lvBar" + (maxed ? " max" : "")); var fill = el("i");
       var need = e.lv * 8;
-      fill.style.width = Math.min(100, Math.round((e.served % need) / need * 100)) + "%";
+      // At level 5 the bar used to keep filling and resetting forever with
+      // nothing left to earn.
+      fill.style.setProperty("--p", maxed ? 1
+        : Math.min(1, Math.round((e.served % need) / need * 100) / 100));
       bar.appendChild(fill); c.appendChild(bar);
+      c.setAttribute("role","button"); c.setAttribute("tabindex","0");
       c.onclick = function(){ showDexCard(b, e); };
+      c.onkeydown = function(ev){
+        if(ev.key === "Enter" || ev.key === " "){ ev.preventDefault(); showDexCard(b, e); }
+      };
+    }else{
+      c.appendChild(el("div","lv", "Arrives day " + b.day));
     }
     g.appendChild(c);
   });
@@ -2174,7 +3088,7 @@ function showDexCard(b, e){
   var wrap = el("div","sceneWrap");
   var im = el("img","por"); im.src = ART[b.img]; im.alt = b.name;
   wrap.appendChild(im);
-  wrap.appendChild(el("div","h2", b.name));
+  wrap.appendChild(el("h2","h2", b.name));
   var t = el("div","tag", RARITY[b.rar].n); t.style.color = RARITY[b.rar].cl;
   wrap.appendChild(t);
   wrap.appendChild(el("div","sub", b.breed));
@@ -2201,30 +3115,52 @@ function paintShop(){
   var storeOn = IAP.available();
   $("#tabP").style.display = storeOn ? "" : "none";
   if(!storeOn && shopTab === "P") shopTab = "U";
-  ["U","B","P"].forEach(function(t){ $("#tab"+t).classList.toggle("on", shopTab === t); });
+  ["U","B","L","P"].forEach(function(t){
+    var n = $("#tab"+t);
+    n.classList.toggle("on", shopTab === t);
+    n.setAttribute("aria-selected", shopTab === t ? "true" : "false");
+  });
 
   var list = $("#shopList"); list.innerHTML = "";
   paintCurrency();
   if(shopTab === "U") paintUpgrades(list);
   else if(shopTab === "B") paintBoostShop(list);
+  else if(shopTab === "L") paintThemeShop(list);
   else paintStore(list);
 }
 
-function shopRow(imgKey, title, desc, buttonLabel, onBuy, extra, disabled){
-  var r = el("div","shopRow");
-  var im = el("img"); im.src = ART[imgKey]; im.alt = "";
-  r.appendChild(im);
-  var t = el("div","txt");
-  var tt = el("div","tt", title);
-  t.appendChild(tt);
-  t.appendChild(el("div","ds", desc));
-  if(extra) t.appendChild(extra);
-  r.appendChild(t);
-  var b = el("button","btn gold buy", buttonLabel);
-  b.style.padding = "10px 14px"; b.style.fontSize = "14px"; b.style.minHeight = "auto";
+/* A price button that says which currency it wants. "1551" could have been
+   either, and the bone rows used an emoji 40px from the real bone art. */
+function priceBtn(kind, label, onBuy, disabled){
+  var b = el("button","priceBtn" + (kind === "bone" ? " bone" : (kind === "flat" ? " owned" : "")));
+  if(kind === "coin" || kind === "bone"){
+    var im = el("img"); im.src = kind === "bone" ? ART.boneIcon : ART.coinIcon; im.alt = "";
+    b.appendChild(im);
+  }
+  b.appendChild(el("span", null, label));
   if(disabled) b.setAttribute("disabled","");
   b.onclick = onBuy;
-  r.appendChild(b);
+  return b;
+}
+
+/* `art` may be an ART key or a ready-made node (a theme swatch). */
+function shopRow(art, title, desc, buttons, extra, note){
+  var r = el("div","shopRow");
+  if(typeof art === "string"){
+    var im = el("img"); im.src = ART[art]; im.alt = "";
+    r.appendChild(im);
+  }else if(art){
+    r.appendChild(art);
+  }
+  var t = el("div","txt");
+  t.appendChild(el("div","tt", title));
+  t.appendChild(el("div","ds", desc));
+  if(note) t.appendChild(el("div","have", note));
+  if(extra) t.appendChild(extra);
+  r.appendChild(t);
+  var col = el("div","buyCol");
+  (buttons || []).forEach(function(b){ if(b) col.appendChild(b); });
+  r.appendChild(col);
   return r;
 }
 
@@ -2233,52 +3169,81 @@ function paintUpgrades(list){
     var u = UPGRADES[k], lv = upLv(k), maxed = lv >= u.max, cost = upCost(k);
     var dots = el("div","lvDots");
     for(var i=0;i<u.max;i++) dots.appendChild(el("i", i < lv ? "on" : null));
-    var row = shopRow(u.img, u.name, u.ds,
-      maxed ? "Maxed" : fmt(cost),
-      function(){
-        if(upLv(k) >= u.max) return;
-        var c = upCost(k);
-        if(S.coins < c){ toast("Not enough coins yet."); return; }
-        addCoins(-c); S.up[k] = upLv(k) + 1; persist(); paintShop();
-        toast(u.name + " upgraded to level " + S.up[k] + ".");
-      }, dots, maxed || S.coins < cost);
-    list.appendChild(row);
+    var btn = maxed
+      ? priceBtn("flat", "Maxed", function(){}, true)
+      : priceBtn("coin", fmt(cost), function(){
+          if(upLv(k) >= u.max) return;
+          var c = upCost(k);
+          if(S.coins < c){ toast("Not enough coins yet.", "bad"); return; }
+          addCoins(-c); S.up[k] = upLv(k) + 1; persist(); paintShop();
+          toast(u.name + " is now level " + S.up[k] + ".", "good");
+        }, S.coins < cost);
+    list.appendChild(shopRow(u.img, u.name, u.ds, [btn], dots,
+      maxed ? "Fully upgraded" : "Level " + lv + " of " + u.max));
   });
 }
 
 function paintBoostShop(list){
+  // One row per product with both prices side by side. Every boost used to be
+  // listed twice — a coin row and a bone row with the same icon, stacked — so
+  // four products filled eight rows and "You have N" appeared on only one.
   BOOST_ORDER.forEach(function(k){
     var b = BOOSTS[k];
-    var have = el("div","ds", "You have " + boostCt(k));
-    have.style.fontWeight = "800"; have.style.color = "var(--teal3)";
+    var boneCost = Math.round(b.bone * 2.5);
+    var btns = [];
     if(b.coin > 0){
-      list.appendChild(shopRow(b.img, b.name, b.ds, fmt(b.coin), function(){
-        if(S.coins < b.coin){ toast("Not enough coins yet."); return; }
+      btns.push(priceBtn("coin", fmt(b.coin), function(){
+        if(S.coins < b.coin){ toast("Not enough coins yet.", "bad"); return; }
         addCoins(-b.coin); S.boosts[k] = boostCt(k) + 1; persist(); paintShop();
-        toast(b.name + " added.");
-      }, have, S.coins < b.coin));
+        toast("One " + b.name + " added.", "good");
+      }, S.coins < b.coin));
     }
-    list.appendChild(shopRow(b.img, b.name + " ×3", "Three at a discount, paid in bones.",
-      String(Math.round(b.bone * 2.5)) + " 🦴", function(){
-      var c = Math.round(b.bone * 2.5);
-      if(S.bones < c){ toast("Not enough bones."); return; }
-      addBones(-c); S.boosts[k] = boostCt(k) + 3; persist(); paintShop();
-      toast("Three " + b.name + " added.");
-    }, null, S.bones < Math.round(b.bone * 2.5)));
+    btns.push(priceBtn("bone", boneCost + " · ×3", function(){
+      if(S.bones < boneCost){ toast("Not enough bones.", "bad"); return; }
+      addBones(-boneCost); S.boosts[k] = boostCt(k) + 3; persist(); paintShop();
+      toast("Three " + b.name + " added.", "good");
+    }, S.bones < boneCost));
+    list.appendChild(shopRow(b.img, b.name, b.ds, btns, null,
+      "You have " + boostCt(k)));
   });
+}
 
-  // Themes are a coin sink that never touches gameplay balance — the safest
-  // possible place to park surplus currency.
+/* Themes are a coin sink that never touches gameplay balance — the safest
+   possible place to park surplus currency. They are not boosts, so they no
+   longer sit under Boosts, and each one shows its own colours instead of the
+   same sunny house illustrating "Night Shift". */
+function themeSwatch(k){
+  var sw = el("div","swatch");
+  var probe = document.createElement("div");
+  probe.className = THEMES[k].cl || "";
+  probe.style.cssText = "position:absolute;visibility:hidden;pointer-events:none";
+  document.body.appendChild(probe);
+  var cs = getComputedStyle(probe);
+  ["--bg","--panel","--teal3"].forEach(function(v){
+    var i = el("i");
+    i.style.background = (cs.getPropertyValue(v) || "").trim() || "var(--raise)";
+    sw.appendChild(i);
+  });
+  document.body.removeChild(probe);
+  return sw;
+}
+
+function paintThemeShop(list){
   Object.keys(THEMES).forEach(function(k){
-    if(k === "classic") return;
     var owned = S.themes.indexOf(k) >= 0;
-    list.appendChild(shopRow("bgHouse", THEMES[k].name, owned ? "Owned — tap to wear it." : "A new look for the whole daycare.",
-      owned ? (S.theme === k ? "Worn" : "Wear") : "1200",
-      function(){
-        if(owned){ S.theme = k; applyTheme(); persist(); paintShop(); return; }
-        if(S.coins < 1200){ toast("Not enough coins yet."); return; }
-        addCoins(-1200); S.themes.push(k); S.theme = k; applyTheme(); persist(); paintShop();
-      }, null, !owned && S.coins < 1200));
+    var worn = S.theme === k;
+    var btn = owned
+      ? priceBtn("flat", worn ? "Worn" : "Wear", function(){
+          S.theme = k; applyTheme(); persist(); paintShop();
+        }, worn)
+      : priceBtn("coin", "1200", function(){
+          if(S.coins < 1200){ toast("Not enough coins yet.", "bad"); return; }
+          addCoins(-1200); S.themes.push(k); S.theme = k; applyTheme(); persist(); paintShop();
+          toast(THEMES[k].name + " unlocked.", "good");
+        }, S.coins < 1200);
+    list.appendChild(shopRow(themeSwatch(k), THEMES[k].name,
+      owned ? "Yours. Tap to wear it." : "A new look for the whole daycare.",
+      [btn], null, worn ? "Currently worn" : null));
   });
 }
 
@@ -2296,19 +3261,21 @@ function paintStore(list){
     var pkg = IAP.find(sku);
     if(!pkg) return;                                // never show what cannot be sold
     if(it.kind === "n" && has(sku)) {
-      list.appendChild(shopRow(it.img, it.name, "Owned. Thank you.", "Owned", function(){}, null, true));
+      list.appendChild(shopRow(it.img, it.name, "Owned. Thank you.",
+        [priceBtn("flat", "Owned", function(){}, true)]));
       return;
     }
     var extra = it.tag ? el("div","tag", it.tag) : null;
-    if(extra) extra.style.marginTop = "5px";
-    list.appendChild(shopRow(it.img, it.name, it.ds, IAP.priceOf(sku), function(){
-      IAP.buy(sku).then(function(){
-        toast("Thank you!"); persist(); paintShop();
-      }).catch(function(e){
-        if(e && /cancel/i.test(String(e.message || e))) return;
-        toast("That did not go through.");
-      });
-    }, extra));
+    if(extra) extra.style.marginTop = "6px";
+    list.appendChild(shopRow(it.img, it.name, it.ds,
+      [priceBtn("flat", IAP.priceOf(sku), function(){
+        IAP.buy(sku).then(function(){
+          toast("Thank you!", "good"); persist(); paintShop();
+        }).catch(function(e){
+          if(e && /cancel/i.test(String(e.message || e))) return;
+          toast("That did not go through.", "bad");
+        });
+      }, false)], extra));
   });
 
   var restore = el("button","btn ghost wide","Restore Purchases");
@@ -2323,10 +3290,17 @@ function paintStore(list){
 /* ---- Settings + pause ---------------------------------------------------- */
 function showSettings(){
   var box = $("#setBox"); box.innerHTML = "";
-  box.appendChild(el("div","h2","Settings"));
+  box.appendChild(el("h2","h2","Settings"));
 
-  var sound = el("button","btn ghost wide", (S.sound ? "Sound & haptics: On" : "Sound & haptics: Off"));
-  sound.style.marginTop = "12px";
+  var sound = el("button","btn ghost wide");
+  sound.style.cssText = "margin-top:14px;justify-content:space-between";
+  var sl = el("div","row"); sl.style.gap = "9px";
+  sl.appendChild(svgEl("ic", S.sound ? ICONS.sound : ICONS.mute));
+  sl.appendChild(el("span",null,"Sound & haptics"));
+  sound.appendChild(sl);
+  var sw = el("span", null, S.sound ? "On" : "Off");
+  sw.style.cssText = "font-weight:800;color:" + (S.sound ? "var(--teal3)" : "var(--ink2)");
+  sound.appendChild(sw);
   sound.onclick = function(){ S.sound = S.sound ? 0 : 1; persist(); showSettings(); };
   box.appendChild(sound);
 
@@ -2356,12 +3330,26 @@ function showSettings(){
     box.appendChild(rp);
   }
 
-  var ach = el("div"); ach.style.marginTop = "12px";
-  ach.appendChild(el("div","h2","Achievements"));
+  var ach = el("div"); ach.style.marginTop = "16px";
+  ach.appendChild(el("h2","h2","Achievements"));
+  // Was a space-between pair of spans, so a two-word name wrapped and overlapped
+  // its own right-aligned description. Two lines, and it shows progress now —
+  // "Serve five hundred dogs" with no count told you nothing.
   ACHIEVEMENTS.forEach(function(a){
-    var r = el("div","statLine");
-    r.appendChild(el("span",null,(S.achv[a.k] ? "🏆 " : "🔒 ") + a.n));
-    r.appendChild(el("b",null, S.achv[a.k] ? "Done" : a.d));
+    var got = !!S.achv[a.k];
+    var r = el("div","achRow" + (got ? " got" : ""));
+    r.appendChild(svgEl("ai", got ? MARK.star : MARK.lock));
+    var t = el("div","at");
+    t.appendChild(el("div","an", a.n));
+    t.appendChild(el("div","ad", a.d));
+    if(!got && a.at){
+      var now = a.at(), need = a.need;
+      t.appendChild(el("div","ap", fmt(Math.min(now, need)) + " / " + fmt(need)));
+    }
+    r.appendChild(t);
+    var v = el("div","an", got ? "Done" : ("+" + a.bones));
+    v.style.cssText = "flex:0 0 auto;color:" + (got ? "var(--leaf)" : "var(--ink2)") + ";font-size:13.5px";
+    r.appendChild(v);
     ach.appendChild(r);
   });
   box.appendChild(ach);
@@ -2406,7 +3394,7 @@ function confirmReset(){
 
 function showPause(){
   var box = $("#pauseBox"); box.innerHTML = "";
-  box.appendChild(el("div","h2","Paused"));
+  box.appendChild(el("h2","h2","Paused"));
   box.appendChild(el("div","sub","Everyone is waiting patiently. The clock is stopped."));
   var r = el("button","btn gold wide","Back to it"); r.style.marginTop = "14px";
   r.onclick = closeOverlay; box.appendChild(r);
@@ -2418,6 +3406,14 @@ function showPause(){
 
 function applyTheme(){
   document.body.className = THEMES[S.theme] ? THEMES[S.theme].cl : "";
+  _tok = {}; _tokTheme = null;               // token cache is per-theme
+  // The status bar was pinned to the default teal and did not follow a theme
+  // the player had paid for.
+  var m = document.querySelector('meta[name="theme-color"]');
+  if(m){
+    var c = (getComputedStyle(document.body).getPropertyValue("--panel") || "").trim();
+    if(c) m.setAttribute("content", c);
+  }
 }
 
 /* ---- daily streak / offline earnings ------------------------------------- */
@@ -2437,7 +3433,7 @@ function showWelcome(){
   var wrap = el("div","sceneWrap");
   var im = el("img","por"); im.src = ART.dutch_h; im.alt = "Dutch";
   wrap.appendChild(im);
-  wrap.appendChild(el("div","h2","Welcome back"));
+  wrap.appendChild(el("h2","h2","Welcome back"));
 
   if(newStreak > 0){
     var row = el("div","streakRow");
@@ -2465,9 +3461,33 @@ function showWelcome(){
 /* ============================================================================
    14. BOOT
    ========================================================================== */
+/* One icon set, one stroke weight. Replaces the emoji that were standing in for
+   an icon system across the menu, the pills and the settings sheet. */
+var ICONS = {
+  paw:   '<svg viewBox="0 0 24 24" fill="currentColor"><ellipse cx="12" cy="16.4" rx="5.5" ry="4.4"/><ellipse cx="5.4" cy="10.4" rx="2.5" ry="3.2"/><ellipse cx="9.9" cy="6.9" rx="2.4" ry="3.3"/><ellipse cx="14.9" cy="6.9" rx="2.4" ry="3.3"/><ellipse cx="19" cy="10.8" rx="2.4" ry="3.1"/></svg>',
+  bag:   '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linejoin="round"><path d="M4.4 8h15.2l-1.3 11.2a1.8 1.8 0 0 1-1.8 1.6H7.5a1.8 1.8 0 0 1-1.8-1.6Z"/><path d="M8.6 8V6.4a3.4 3.4 0 0 1 6.8 0V8" stroke-linecap="round"/></svg>',
+  cog:   '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="3.2"/><path d="M12 2.8v2.6M12 18.6v2.6M21.2 12h-2.6M5.4 12H2.8M18.5 5.5l-1.8 1.8M7.3 16.7l-1.8 1.8M18.5 18.5l-1.8-1.8M7.3 7.3 5.5 5.5" stroke-linecap="round"/></svg>',
+  heart: '<svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 20.4S3.6 15.3 3.6 9.5A4.7 4.7 0 0 1 12 6.7a4.7 4.7 0 0 1 8.4 2.8c0 5.8-8.4 10.9-8.4 10.9Z"/></svg>',
+  sound: '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 9.5h3.4L12 5.4v13.2L7.4 14.5H4Z"/><path d="M15.8 9.4a3.7 3.7 0 0 1 0 5.2M18.4 6.8a7.4 7.4 0 0 1 0 10.4"/></svg>',
+  mute:  '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 9.5h3.4L12 5.4v13.2L7.4 14.5H4Z"/><path d="m16.4 9.6 4.4 4.8M20.8 9.6l-4.4 4.8"/></svg>',
+  swatch:'<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linejoin="round"><rect x="3.4" y="3.4" width="17.2" height="17.2" rx="3.4"/><path d="M3.4 14.6h17.2M9.6 3.4v17.2"/></svg>',
+  back:  '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M14.5 5.5 8 12l6.5 6.5"/></svg>'
+};
+function paintIcons(root){
+  var ns = (root || document).querySelectorAll("[data-ic]");
+  for(var i=0;i<ns.length;i++){
+    var n = ns[i], k = n.getAttribute("data-ic");
+    if(ICONS[k] && n.getAttribute("data-done") !== k){
+      n.innerHTML = ICONS[k];
+      n.setAttribute("data-done", k);
+    }
+  }
+}
+
 function paintStaticArt(){
   $("#titleBg").src = ART.bgHouse;
   $("#titleDutch").src = ART.dutchFull;
+  paintIcons();
   ["#tCoinIc","#hCoinIc","#sCoinIc"].forEach(function(s){ var n=$(s); if(n) n.src = ART.coinIcon; });
   ["#tBoneIc","#sBoneIc"].forEach(function(s){ var n=$(s); if(n) n.src = ART.boneIcon; });
 }
@@ -2480,9 +3500,13 @@ function wire(){
   $("#dexBack").onclick = function(){ go("title"); };
   $("#shopBack").onclick= function(){ go("title"); };
   $("#btnPause").onclick= function(){ showPause(); };
-  $("#tabU").onclick = function(){ shopTab = "U"; paintShop(); };
-  $("#tabB").onclick = function(){ shopTab = "B"; paintShop(); };
-  $("#tabP").onclick = function(){ shopTab = "P"; paintShop(); };
+  ["U","B","L","P"].forEach(function(t){
+    var n = $("#tab" + t);
+    n.onclick = function(){ shopTab = t; paintShop(); };
+    n.onkeydown = function(ev){
+      if(ev.key === "Enter" || ev.key === " "){ ev.preventDefault(); shopTab = t; paintShop(); }
+    };
+  });
 
   // Leaving the app must both stop the clock and stamp the offline timer, or
   // the idle payout reads the wrong window and the loop keeps draining in the

@@ -3,3 +3,6 @@ www/assets/*
 !www/assets/.gitkeep
 assets/*.png
 *.part
+www/assets-src/
+__pycache__/
+.design/shots/

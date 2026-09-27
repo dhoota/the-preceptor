@@ -29,6 +29,17 @@ definitions:
           || echo "Pillow unavailable — bundle-assets.sh will use sips instead"
         chmod +x ./scripts/bundle-assets.sh
         ./scripts/bundle-assets.sh
+        # Key the generated backdrops out of the art. The game now sits on a
+        # dark ground, where a leftover cream plate behind a dog is the most
+        # conspicuous thing on the screen; the old build hid those plates with
+        # mix-blend-mode, which cannot work against a dark surface. Needs
+        # Pillow, installed above on a best-effort basis, so this is guarded:
+        # a build that cannot matte should still ship, just less pretty.
+        if python3 -c "import PIL" 2>/dev/null; then
+          python3 scripts/prep-art.py || echo "prep-art failed — shipping un-matted art"
+        else
+          echo "Pillow unavailable — skipping alpha matte"
+        fi
     - &validate
       name: Validate (IP scan, portrait audit, monetization, offline)
       script: |
