@@ -84,7 +84,10 @@ export function Paywall({ go, focus }: { go: Go; focus?: "written" | "oral" }) {
         <div key={t.key} className={`tier ${t.key === "complete" ? "best" : ""}`}>
           <div className="tierhead">
             <span className="serif tiername">{t.name}</span>
-            <span className="mono price">{app.prices[t.key] ?? PRODUCTS[t.key].fallbackPrice} / year</span>
+            <span className="price">
+              <span className="mono">{app.prices[t.key] ?? PRODUCTS[t.key].fallbackPrice}</span>
+              <span className="per"> / year</span>
+            </span>
           </div>
           <p className="muted small" style={{ margin: "4px 0 10px" }}>
             {upgrade ? `Adds the ${written ? "oral simulator" : "written SAMP bank"}. Replaces your current subscription.` : t.body}

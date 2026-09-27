@@ -201,7 +201,7 @@ export function Runner({
         </span>
       </div>
       <div className="progress" aria-hidden="true">
-        <div style={{ width: `${Math.min(100, (Math.max(0, answered) / Math.max(1, range.max)) * 100)}%` }} />
+        <div style={{ transform: `scaleX(${Math.min(1, Math.max(0, answered) / Math.max(1, range.max))})` }} />
       </div>
 
       {phase === "stem" ? (

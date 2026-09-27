@@ -54,7 +54,7 @@ export function App() {
       <header className="top">
         {tabbed ? (
           <span className="brand">
-            <Mark size={22} /> Preceptor: CCFP-EM
+            <Mark size={22} /> <span><span className="fam">Preceptor: </span>CCFP-EM</span>
           </span>
         ) : (
           <button
@@ -100,8 +100,10 @@ export function App() {
         <nav className="tabs" aria-label="Sections">
           {TABS.map((t) => (
             <button key={t.name} aria-current={route.name === t.name ? "page" : undefined} onClick={() => go({ name: t.name })}>
-              {t.label}
-              {t.name === "review" && due > 0 && <span className="badge">{due}</span>}
+              <span className="tl">
+                {t.label}
+                {t.name === "review" && due > 0 && <span className="badge">{due > 99 ? "99+" : due}</span>}
+              </span>
             </button>
           ))}
         </nav>

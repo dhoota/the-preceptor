@@ -37,7 +37,7 @@ export function Settings({ go }: { go: Go }) {
 
   return (
     <>
-      <div className="label">Settings</div>
+      <div className="label">More</div>
       <h1 style={{ marginTop: 6 }}>Settings</h1>
 
       <section className="section">
