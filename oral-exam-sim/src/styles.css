@@ -242,7 +242,8 @@ textarea, input { caret-color: var(--pen); }
   .nextcase { padding: 9px 12px 10px; }
   .nextcase .t { font-size: 17px; }
   .nextcase.cue { padding-right: 76px; }
-  .duebar { padding: 8px 12px; font-size: 14.5px; }
+  /* The Review tab badge already carries the count; the case log gets the space. */
+  .main .duebar { display: none; }
   .section { margin-top: 26px; }
 }
 .hero p, .pay > p { max-width: 62ch; }
