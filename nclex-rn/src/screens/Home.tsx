@@ -75,8 +75,7 @@ export function Home({ go }: { go: Go }) {
   return (
     <>
       <div className="hero">
-        <div className="label">Practice</div>
-        <h1 style={{ marginTop: 6 }}>Build a practice set</h1>
+        <h1>Build a practice set</h1>
         <p className="muted" style={{ marginTop: 8 }}>
           Pick an area to practice. Items you have not seen come first.
         </p>
@@ -105,7 +104,7 @@ export function Home({ go }: { go: Go }) {
 
       {all.length === 0 ? (
         <div className="card empty" style={{ marginTop: 22 }}>
-          <h3>The item bank is being written</h3>
+          <h2>The item bank is being written</h2>
           <p className="muted" style={{ marginTop: 8 }}>
             Items appear here as each batch is added. Case studies and the adaptive mock fill in the same way.
           </p>
@@ -115,7 +114,7 @@ export function Home({ go }: { go: Go }) {
           <div className="sizepick" role="radiogroup" aria-label="Set size">
             <span className="label">Set size</span>
             {([10, 25] as const).map((n) => (
-              <button key={n} className="chip" role="radio" aria-checked={size === n} aria-pressed={size === n} onClick={() => setSize(n)}>
+              <button key={n} className="chip" role="radio" aria-checked={size === n} onClick={() => setSize(n)}>
                 {n} items
               </button>
             ))}
@@ -127,19 +126,19 @@ export function Home({ go }: { go: Go }) {
           )}
 
           <section className="section">
-            <span className="label">Quick sets</span>
+            <h2 className="label">Quick sets</h2>
             <ul className="sets">{special.map(row)}</ul>
           </section>
           <section className="section">
-            <span className="label">By Client Needs area</span>
+            <h2 className="label">By Client Needs area</h2>
             <ul className="sets">{needs.map(row)}</ul>
           </section>
           <section className="section">
-            <span className="label">By clinical judgment step</span>
+            <h2 className="label">By clinical judgment step</h2>
             <ul className="sets">{steps.map(row)}</ul>
           </section>
           <section className="section">
-            <span className="label">By item type</span>
+            <h2 className="label">By item type</h2>
             <ul className="sets">{kinds.map(row)}</ul>
           </section>
         </>

@@ -27,11 +27,10 @@ export function Settings({ go }: { go: Go }) {
 
   return (
     <>
-      <div className="label">More</div>
-      <h1 style={{ marginTop: 6 }}>Settings</h1>
+      <h1>Settings</h1>
 
       <section className="section">
-        <span className="label">Practice</span>
+        <h2 className="label">Practice</h2>
         <div className="row">
           <span>
             Show the answer after each item
@@ -48,7 +47,7 @@ export function Settings({ go }: { go: Go }) {
       </section>
 
       <section className="section">
-        <span className="label">Purchase</span>
+        <h2 className="label">Purchase</h2>
         <div className="row">
           <span>{app.access.full ? "Full access" : "Free sample"}</span>
           {!app.access.full && (
@@ -71,7 +70,7 @@ export function Settings({ go }: { go: Go }) {
       </section>
 
       <section className="section">
-        <span className="label">Exam</span>
+        <h2 className="label">Exam</h2>
         <div className="row">
           <span>
             Official NCLEX-RN test plan
@@ -86,7 +85,7 @@ export function Settings({ go }: { go: Go }) {
       </section>
 
       <section className="section">
-        <span className="label">About</span>
+        <h2 className="label">About</h2>
         <div className="row">
           <span>Support</span>
           <button className="linkbtn" onClick={() => openUrl(`mailto:${SUPPORT_EMAIL}?subject=${encodeURIComponent(`${APP_NAME} ${APP_VERSION}`)}`)}>
@@ -117,7 +116,7 @@ export function Settings({ go }: { go: Go }) {
       </section>
 
       <section className="section">
-        <span className="label">Data</span>
+        <h2 className="label">Data</h2>
         <div className="row">
           <span>
             Reset progress

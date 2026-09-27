@@ -10,8 +10,7 @@ export function Cases({ go }: { go: Go }) {
   const last = latestScores(app.answers);
   return (
     <>
-      <div className="label">Case studies</div>
-      <h1 style={{ marginTop: 6 }}>Case studies</h1>
+      <h1>Case studies</h1>
       <p className="muted" style={{ marginTop: 8 }}>
         Each case gives six items that walk the clinical judgment steps in order. The chart updates as the case moves on.
       </p>
@@ -22,7 +21,7 @@ export function Cases({ go }: { go: Go }) {
       )}
       {app.cases.length === 0 ? (
         <div className="card empty" style={{ marginTop: 22 }}>
-          <h3>No case studies yet</h3>
+          <h2>No case studies yet</h2>
           <p className="muted" style={{ marginTop: 8 }}>
             Case studies are being written. They appear here as each batch is added.
           </p>

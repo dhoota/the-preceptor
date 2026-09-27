@@ -43,8 +43,7 @@ export function Progress({ go }: { go: Go }) {
 
   return (
     <>
-      <div className="label">Progress</div>
-      <h1 style={{ marginTop: 6 }}>Progress</h1>
+      <h1>Progress</h1>
       <p className="muted" style={{ marginTop: 8 }}>
         Percent of points earned. Each item counts once, on your latest answer.
       </p>
@@ -66,7 +65,7 @@ export function Progress({ go }: { go: Go }) {
 
       {all.items === 0 ? (
         <div className="card empty" style={{ marginTop: 22 }}>
-          <h3>Nothing answered yet</h3>
+          <h2>Nothing answered yet</h2>
           <p className="muted" style={{ marginTop: 8 }}>
             Answer a practice set, a case study or a mock. Your results by area show here.
           </p>
@@ -77,7 +76,7 @@ export function Progress({ go }: { go: Go }) {
       ) : (
         <>
           <section className="section">
-            <span className="label">Weakest Client Needs areas</span>
+            <h2 className="label">Weakest Client Needs areas</h2>
             {weak.length ? (
               weak.map((w) => <Row key={w.id} name={w.name} t={w.tally} />)
             ) : (
@@ -88,7 +87,7 @@ export function Progress({ go }: { go: Go }) {
           </section>
 
           <section className="section">
-            <span className="label">By Client Needs area</span>
+            <h2 className="label">By Client Needs area</h2>
             {needs.map((n) => {
               const info = NEEDS.find((x) => x.id === n.id)!;
               return <Row key={n.id} name={n.name} t={n.tally} note={`Test plan share ${info.min} to ${info.max}%`} />;
@@ -96,14 +95,14 @@ export function Progress({ go }: { go: Go }) {
           </section>
 
           <section className="section">
-            <span className="label">By clinical judgment step</span>
+            <h2 className="label">By clinical judgment step</h2>
             {steps.map((s) => (
               <Row key={s.id} name={s.name} t={s.tally} />
             ))}
           </section>
 
           <section className="section">
-            <span className="label">By item type</span>
+            <h2 className="label">By item type</h2>
             {(Object.keys(KIND_NAMES) as ItemKind[]).map((k) =>
               kinds[k] ? <Row key={k} name={KIND_NAMES[k]} t={kinds[k]!} /> : null,
             )}
@@ -112,7 +111,7 @@ export function Progress({ go }: { go: Go }) {
       )}
 
       <section className="section">
-        <span className="label">Mock history</span>
+        <h2 className="label">Mock history</h2>
         {mocks.length ? (
           <MockList mocks={mocks} go={go} />
         ) : (

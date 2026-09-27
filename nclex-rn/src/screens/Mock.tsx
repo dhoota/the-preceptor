@@ -49,8 +49,7 @@ export function MockHome({ go }: { go: Go }) {
 
   return (
     <>
-      <div className="label">Adaptive mock</div>
-      <h1 style={{ marginTop: 6 }}>Adaptive mock</h1>
+      <h1>Adaptive mock</h1>
 
       {unfinished && (
         <div className="duebar">
@@ -72,7 +71,7 @@ export function MockHome({ go }: { go: Go }) {
       )}
 
       <section className="section">
-        <span className="label">How it works</span>
+        <h2 className="label">How it works</h2>
         <ul className="plain rules">
           <li>
             The mock follows the published structure of the exam. It gives {EXAM.minItems} to {EXAM.maxItems} items in up to{" "}
@@ -90,7 +89,7 @@ export function MockHome({ go }: { go: Go }) {
       </section>
 
       <section className="section">
-        <span className="label">When it stops</span>
+        <h2 className="label">When it stops</h2>
         <ul className="plain rules">
           <li>After the first {EXAM.minItems} items, once the 95% interval of your estimate is clear of the passing standard.</li>
           <li>At {EXAM.maxItems} items. The final estimate decides.</li>
@@ -131,7 +130,7 @@ export function MockHome({ go }: { go: Go }) {
 
       {done.length > 0 && (
         <section className="section">
-          <span className="label">Past mocks</span>
+          <h2 className="label">Past mocks</h2>
           <MockList mocks={done} go={go} />
         </section>
       )}
@@ -146,7 +145,7 @@ export function MockList({ mocks, go }: { mocks: Mock[]; go: Go }) {
         <li key={m.id}>
           <button className="setrow" onClick={() => go({ name: "mockResult", id: m.id })}>
             <span className="t">
-              {new Date(m.startedAt).toLocaleDateString()}
+              {new Date(m.startedAt).toLocaleDateString("en-GB", { day: "numeric", month: "short", year: "numeric" })}
               <span className="muted small" style={{ display: "block", fontFamily: "var(--sans)" }}>
                 {m.log.length} items, {hms(m.elapsedMs)}
               </span>
@@ -264,13 +263,13 @@ export function MockRun({ id, go }: { id: string; go: Go }) {
   return (
     <>
       <div className="runhead">
-        <span className="label">Item {mock.log.length + 1}</span>
+        <h1 className="label runtitle">Item {mock.log.length + 1}</h1>
         <span className={`clock ${EXAM.durationMs - elapsed < 15 * 60_000 ? "over" : ""}`} aria-label="Time used">
           {hms(elapsed)} of {hms(EXAM.durationMs)}
         </span>
       </div>
       <div className="progress" aria-hidden="true">
-        <div style={{ width: `${Math.min(100, (mock.log.length / EXAM.maxItems) * 100)}%` }} />
+        <div style={{ transform: `scaleX(${Math.min(1, mock.log.length / EXAM.maxItems)})` }} />
       </div>
       {c && ref.caseStep && (
         <>
@@ -356,7 +355,7 @@ export function MockResult({ id, go }: { id: string; go: Go }) {
       </div>
 
       <section className="section">
-        <span className="label">Readiness band</span>
+        <h2 className="label">Readiness band</h2>
         <p style={{ marginTop: 10 }}>
           <span className={`band ${BAND_CLASS[res.band]}`}>{res.band}</span>
         </p>
@@ -369,7 +368,7 @@ export function MockResult({ id, go }: { id: string; go: Go }) {
       </section>
 
       <section className="section">
-        <span className="label">Review each item</span>
+        <h2 className="label">Review each item</h2>
         {m.log.map((e, k) => {
           const it = app.itemById(e.itemId);
           return (

@@ -98,14 +98,14 @@ export function Runner({ items, title, caseStudy, onDone }: { items: Item[]; tit
   return (
     <>
       <div className="runhead">
-        <span className="label">{title}</span>
+        <h1 className="label runtitle">{title}</h1>
         <span className="mono muted small">
           {idx + 1} of {items.length}
         </span>
       </div>
       {!caseStudy && (
         <div className="progress" aria-hidden="true">
-          <div style={{ width: `${((idx + (submitted ? 1 : 0)) / items.length) * 100}%` }} />
+          <div style={{ transform: `scaleX(${(idx + (submitted ? 1 : 0)) / items.length})` }} />
         </div>
       )}
 

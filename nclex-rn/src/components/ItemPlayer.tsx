@@ -1,4 +1,4 @@
-import { useState, type ReactNode } from "react";
+import { useEffect, useRef, useState, type ReactNode } from "react";
 import { stepName, needName } from "@/engine/blueprint";
 import { KIND_NAMES, score } from "@/engine/score";
 import type { Choice, Item, Response } from "@/engine/types";
@@ -25,11 +25,11 @@ function markOf(picked: boolean, key: boolean, reveal: boolean): string {
   return "";
 }
 
-function Why({ c, show, keyed }: { c: Choice; show: boolean; keyed: boolean }) {
+function Why({ c, show, keyed, picked }: { c: Choice; show: boolean; keyed: boolean; picked?: boolean }) {
   if (!show) return null;
   return (
     <span className="why">
-      {keyed && <span className="tag pass">Key</span>} {c.why}
+      {keyed && <span className="tag pass">Key</span>} {picked && <span className={`tag ${keyed ? "pass" : "fail"}`}>Your answer</span>} {c.why}
     </span>
   );
 }
@@ -64,7 +64,7 @@ function Opt({
       <span className={`box ${round ? "round" : ""}`} aria-hidden="true" />
       <span className="otext">
         {c.text}
-        <Why c={c} show={reveal} keyed={keyed} />
+        <Why c={c} show={reveal} keyed={keyed} picked={picked} />
       </span>
     </button>
   );
@@ -286,10 +286,14 @@ function Highlight({ item, r, set, reveal }: BodyProps<"highlight">) {
     <>
       <p className="hint">Tap each phrase to highlight it. Tap again to clear it.</p>
       <p className="passage selectable">
-        {parsePassage(item.passage).map((p, i) =>
-          p.span === undefined ? (
-            <span key={i}>{p.text}</span>
-          ) : (
+        {parsePassage(item.passage).map((p, i, all) => {
+          // Punctuation right after a phrase joins the phrase, so a period never wraps onto a line alone.
+          const prev = all[i - 1];
+          const lead = p.span === undefined && prev?.span !== undefined ? (/^[.,:!?)]+/.exec(p.text)?.[0] ?? "") : "";
+          if (p.span === undefined) return <span key={i}>{p.text.slice(lead.length)}</span>;
+          const nextText = all[i + 1]?.span === undefined ? (all[i + 1]?.text ?? "") : "";
+          const tail = /^[.,:!?)]+/.exec(nextText)?.[0] ?? "";
+          return (
             <button
               key={i}
               type="button"
@@ -299,9 +303,10 @@ function Highlight({ item, r, set, reveal }: BodyProps<"highlight">) {
               onClick={() => set({ kind: "highlight", spans: toggle(r.spans, p.span!) })}
             >
               {p.text}
+              {tail}
             </button>
-          ),
-        )}
+          );
+        })}
       </p>
       {reveal && (
         <ul className="whys">
@@ -446,9 +451,15 @@ export function ItemBody({ item, r, set, reveal }: { item: Item; r: Response; se
 export function Feedback({ item, r }: { item: Item; r: Response }) {
   const s = score(item, r);
   const cls = s.earned === s.max ? "" : s.earned === 0 ? "unsafe" : "partial";
+  const verdict = useRef<HTMLDivElement>(null);
+  // Bring the score into view and to the screen reader as soon as it appears.
+  useEffect(() => {
+    verdict.current?.focus({ preventScroll: true });
+    verdict.current?.scrollIntoView({ block: "nearest", behavior: "smooth" });
+  }, []);
   return (
     <div className="feedback">
-      <div className={`verdict ${cls}`}>
+      <div className={`verdict ${cls}`} ref={verdict} tabIndex={-1} role="status">
         <span className="label">Score</span>{" "}
         <b className="mono">
           {s.earned} of {s.max}
