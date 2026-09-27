@@ -221,3 +221,107 @@ workflows:
       app_store_connect:
         auth: integration
         submit_to_testflight: true
+
+  # Production release. Starts only when a tag matching ccfpem-v* is pushed,
+  # never on a branch push. Release notes come from release_notes.txt.
+  android-production:
+    name: Preceptor CCFP-EM Android (production)
+    max_build_duration: 30
+    instance_type: mac_mini_m2
+    triggering:
+      events:
+        - tag
+      tag_patterns:
+        - pattern: 'ccfpem-v*'
+          include: true
+    environment:
+      node: 20
+      java: 21
+      android_signing:
+        - preceptor_upload_key
+      groups:
+        - preceptor_play
+    scripts:
+      - name: Fail fast if the Play credentials are missing (production)
+        script: |
+          if [ -z "$GCLOUD_SERVICE_ACCOUNT_CREDENTIALS" ]; then
+            echo "Missing GCLOUD_SERVICE_ACCOUNT_CREDENTIALS in group preceptor_play."
+            exit 1
+          fi
+      - name: Check the uploaded keystore (production)
+        script: bash scripts/ci/check-keystore.sh
+      - *install
+      - *test
+      - *launch_gate
+      - *build_web
+      - name: Sync web assets into Android project (production)
+        script: npx cap sync android
+      - name: Set versionCode one above the latest on Play (production)
+        script: |
+          CURRENT=$(grep -oE 'versionCode [0-9]+' android/app/build.gradle | awk '{print $2}')
+          LATEST=$(google-play get-latest-build-number \
+            --package-name "com.preceptor.oral" \
+            --credentials "$GCLOUD_SERVICE_ACCOUNT_CREDENTIALS" 2>/dev/null || true)
+          if [ -n "$LATEST" ] && [ "$LATEST" -eq "$LATEST" ] 2>/dev/null && [ "$LATEST" -ge "$CURRENT" ]; then VC=$((LATEST + 1)); else VC="$CURRENT"; fi
+          sed -i.bak "s/versionCode .*/versionCode $VC/" android/app/build.gradle && rm -f android/app/build.gradle.bak
+          echo "versionCode $VC"
+      - name: Build signed release AAB (production)
+        script: |
+          cd android
+          chmod +x ./gradlew
+          ./gradlew :app:bundleRelease
+    artifacts:
+      - android/app/build/outputs/**/*.aab
+    publishing:
+      google_play:
+        credentials: $GCLOUD_SERVICE_ACCOUNT_CREDENTIALS
+        track: production
+        # Play accepts only draft releases while the app itself is a draft.
+        # The first production release is sent for review from Play Console.
+        submit_as_draft: true
+
+  ios-production:
+    name: Preceptor CCFP-EM iOS (App Store)
+    instance_type: mac_mini_m2
+    max_build_duration: 60
+    triggering:
+      events:
+        - tag
+      tag_patterns:
+        - pattern: 'ccfpem-v*'
+          include: true
+    integrations:
+      app_store_connect: preceptor_appstore
+    environment:
+      node: 20
+      xcode: latest
+      cocoapods: default
+      ios_signing:
+        distribution_type: app_store
+        bundle_identifier: com.preceptor.oral
+      vars:
+        BUNDLE_ID: "com.preceptor.oral"
+    scripts:
+      - *install
+      - *test
+      - *launch_gate
+      - *build_web
+      - name: Sync web assets into iOS project (production)
+        script: npx cap sync ios
+      - name: Install CocoaPods (production)
+        script: cd ios/App && pod install
+      - name: Set unique iOS build number (production)
+        script: cd ios/App && agvtool new-version -all "$BUILD_NUMBER"
+      - name: Apply the App Store profile to the Xcode project (production)
+        script: xcode-project use-profiles
+      - name: Build signed IPA (production)
+        script: |
+          xcode-project build-ipa --workspace "ios/App/App.xcworkspace" --scheme "App"
+    artifacts:
+      - build/ios/ipa/*.ipa
+    publishing:
+      app_store_connect:
+        auth: integration
+        submit_to_app_store: true
+        cancel_previous_submissions: true   # a version already in review is pulled and this build submitted instead
+        release_type: AFTER_APPROVAL

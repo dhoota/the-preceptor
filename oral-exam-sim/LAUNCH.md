@@ -111,7 +111,7 @@ A candidate with no subscription sees all three offered. A candidate who holds W
         - **Mac:** in Terminal, run `"/Applications/Android Studio.app/Contents/jbr/Contents/Home/bin/keytool" -genkeypair -v -keystore preceptor-upload.jks -storetype JKS -keyalg RSA -keysize 2048 -validity 10000 -alias upload`.
         - Then upload it the same way, with key alias `upload` and reference name `preceptor_upload_key`.
      3. Keep the .jks and its password in a password manager. Never commit them. With Play App Signing, a lost upload key can be reset through Play Console support, but that takes days.
-2. Workflows: `android-debug`, `android-release` (uploads to the Play closed testing track, alpha, as a draft), `android-play-internal` (manual, internal track only), `ios-release` (TestFlight only). Both Play workflows need `GCLOUD_SERVICE_ACCOUNT_CREDENTIALS` in group `preceptor_play` of this Codemagic app.
+2. Workflows: `android-debug`, `android-release` (uploads to the Play closed testing track, alpha, as a draft), `android-play-internal` (manual, internal track only), `ios-release` (TestFlight only), `android-build-only` (signed .aab, no upload). Production: `android-production` (Play production track, as a draft while the app is a draft on Play) and `ios-production` (submits to App Store review, pulls any version already in review, releases after approval). Both production workflows start only when a tag matching `ccfpem-v*` is pushed; release notes come from `release_notes.txt`. The Play workflows need `GCLOUD_SERVICE_ACCOUNT_CREDENTIALS` in group `preceptor_play` of this Codemagic app.
 3. Every workflow runs `npm test`. Release workflows also run the launch gate.
 
 ## 7. Price proposal

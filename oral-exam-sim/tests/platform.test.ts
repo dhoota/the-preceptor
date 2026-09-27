@@ -289,17 +289,30 @@ describe("Codemagic", () => {
     const root = readFileSync(new URL("../../codemagic.yaml", import.meta.url), "utf8");
     const local = readFileSync(new URL("../codemagic.yaml", import.meta.url), "utf8");
     const ids = (y: string) => [...y.slice(y.indexOf("workflows:")).matchAll(/^  ([a-z0-9-]+):$/gm)].map((m) => m[1]);
-    expect(ids(root)).toEqual(["android-debug", "android-release", "android-build-only", "android-play-internal", "ios-release"]);
+    expect(ids(root)).toEqual(["android-debug", "android-release", "android-build-only", "android-play-internal", "ios-release", "android-production", "ios-production"]);
     expect(ids(root)).toEqual(ids(local));
-    expect(root.match(/^    working_directory: oral-exam-sim$/gm)?.length).toBe(5);
+    expect(root.match(/^    working_directory: oral-exam-sim$/gm)?.length).toBe(7);
     for (const s of ["android_signing:\n        - preceptor_upload_key", "preceptor_play", "app_store_connect: preceptor_appstore", "distribution_type: app_store", "bundle_identifier: com.preceptor.oral"]) expect(root, s).toContain(s);
     // Signing comes from Codemagic code signing identities, never from pasted secrets.
     for (const s of ["preceptor_signing", "IOS_CERT_KEY", "PRECEPTOR_KEYSTORE_BASE64"]) expect(root, s).not.toContain(s);
-    expect(root.match(/- preceptor_upload_key/g)?.length).toBe(3);
-    // android-release uploads to closed testing as a draft, never production.
+    expect(root.match(/- preceptor_upload_key/g)?.length).toBe(4);
+    // android-release uploads to closed testing as a draft. Production is only
+    // android-production, and the production workflows start only from a release tag.
     expect(root).toContain("track: alpha");
     expect(root).toContain("submit_as_draft: true");
-    expect(root).not.toMatch(/track: production/);
+    // One workflow's text: from its id line to the next workflow id, or the end of the file.
+    const block = (y: string, id: string) => {
+      const start = y.indexOf(`\n  ${id}:\n`);
+      const next = y.slice(start + 1).search(/\n  [a-z0-9-]+:\n/);
+      return next < 0 ? y.slice(start) : y.slice(start, start + 1 + next);
+    };
+    expect(root.match(/track: production/g)?.length).toBe(1);
+    expect(block(root, "android-production")).toContain("track: production");
+    for (const id of ["android-production", "ios-production"]) expect(block(root, id), id).toMatch(/events:\n\s+- tag\n\s+tag_patterns:\n\s+- pattern: 'ccfpem-v\*'/);
+    expect(root.match(/- tag$/gm)?.length).toBe(2);
+    expect(root).not.toMatch(/- push$|- pull_request$/m);
+    expect(block(root, "ios-production")).toContain("cancel_previous_submissions: true");
+    expect(readFileSync(new URL("../release_notes.txt", import.meta.url), "utf8").trim()).toBe("User interface improvements");
     // With working_directory set, Codemagic resolves artifact globs from that folder
     // (build 1 found nothing with an oral-exam-sim/ prefix), so the paths match the local file.
     const arts = (y: string) => y.match(/^      - [^*\s]\S*\/\S*$/gm) ?? [];
