@@ -40,12 +40,7 @@ export function Home({ go }: { go: Go }) {
   return (
     <>
       <div className="hero">
-        <div className="label">Structured oral</div>
         <h1>Run the case out loud.</h1>
-        <p className="muted" style={{ marginTop: 8 }}>
-          Four stations of 12 minutes on exam day, each with a different examiner and topic. Practise one case at a time, or
-          sit a full mock oral. Then mark yourself on the examiner criteria.
-        </p>
       </div>
 
       <div className="stats">
@@ -63,15 +58,13 @@ export function Home({ go }: { go: Go }) {
         </div>
       </div>
 
-      <button className="nextcase" style={{ marginTop: 16 }} onClick={startMockOral}>
+      <button className="nextcase cue" style={{ marginTop: 16 }} onClick={startMockOral}>
+        <span className="go" aria-hidden="true">{app.access.oral ? "Start" : <Lock />}</span>
         <div className="label">Mock oral</div>
         <div className="t">Four stations. Four topics. 12 minutes each.</div>
         <div className="muted small">
           {app.access.oral ? "Starts with a fresh set of cases on four different priority topics." : "Included with oral access."}
         </div>
-      </button>
-      <button className="linkbtn small" style={{ marginTop: 10 }} onClick={() => go({ name: "resources" })}>
-        Official CFPC resources
       </button>
 
       {due > 0 && (
@@ -100,7 +93,7 @@ export function Home({ go }: { go: Go }) {
         {groups.map((g) => (
           <div key={g.id}>
             <div className="areahead">
-              <span className="label" style={{ color: "var(--ink)" }}>{g.label}</span>
+              <span className="label">{g.label}</span>
               <span className="muted small mono">{g.cases.length}</span>
             </div>
             <ul className="cases">
@@ -141,6 +134,16 @@ export function Home({ go }: { go: Go }) {
             Two cases are free. Oral access is a yearly subscription that renews until you cancel it.
           </p>
         )}
+      </section>
+
+      <section className="section about">
+        <p className="muted">
+          Four stations of 12 minutes on exam day, each with a different examiner and topic. Practise one case at a time, or
+          sit a full mock oral. Then mark yourself on the examiner criteria.
+        </p>
+        <button className="linkbtn small" onClick={() => go({ name: "resources" })}>
+          Official CFPC resources
+        </button>
       </section>
     </>
   );

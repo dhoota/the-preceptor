@@ -35,8 +35,8 @@ export function SelfScore({ attemptId, mockOralId, go }: { attemptId: string; mo
 
   return (
     <>
-      <div className="label">Mark your answers</div>
-      <h1 style={{ marginTop: 6 }}>{c.title}</h1>
+      <h1>{c.title}</h1>
+      <div className="label fieldline">Mark your answers</div>
       <p className="muted" style={{ marginTop: 8 }}>
         Read the model answers. Then mark each rubric point honestly. Only count what you actually said out loud.
       </p>
@@ -81,6 +81,11 @@ export function SelfScore({ attemptId, mockOralId, go }: { attemptId: string; mo
                         aria-pressed={marks[id] === o.v}
                         onClick={() => setMarks((m) => ({ ...m, [id]: o.v }))}
                       >
+                        <span className="box" aria-hidden="true">
+                          <svg className="tick" viewBox="0 0 26 26">
+                            <path d="M4 14.5l5.5 5.5L23 4" />
+                          </svg>
+                        </span>
                         {o.label}
                       </button>
                     ))}

@@ -65,8 +65,7 @@ export function Paywall({ go, focus }: { go: Go; focus?: "written" | "oral" }) {
 
   return (
     <div className="pay">
-      <div className="label">Preceptor: CCFP-EM</div>
-      <h1 style={{ marginTop: 6 }}>Both components. One subscription.</h1>
+      <h1>Both components. One subscription.</h1>
       <p className="muted" style={{ marginTop: 10 }}>
         {SAMPS.length} original SAMPs and {CASES.length} oral cases, mapped to all {PRIORITY_TOPICS.length} CFPC priority
         topics. {FREE_CASE_COUNT} oral cases and {FREE_SAMP_TOPICS} SAMPs are free to try.

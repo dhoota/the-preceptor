@@ -23,12 +23,12 @@ export function Result({ attemptId, go }: { attemptId: string; go: Go }) {
 
   return (
     <>
-      <div className="label">
+      <h1>{c.title}</h1>
+      <div className="label fieldline">
         {blueprintLabel(c.blueprint)} · {a.mode === "exam" ? "Exam day" : "Practice"} ·{" "}
         {new Date(a.startedAt).toLocaleDateString("en-CA")}
         {mins !== null && ` · ${mins} min`}
       </div>
-      <h1 style={{ marginTop: 6 }}>{c.title}</h1>
 
       <div className="score">
         <div>

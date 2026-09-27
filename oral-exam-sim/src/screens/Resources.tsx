@@ -45,8 +45,8 @@ const LINKS = [
 export function Resources() {
   return (
     <>
-      <div className="label">Official CFPC resources</div>
-      <h1 style={{ marginTop: 6 }}>From the source</h1>
+      <h1>From the source</h1>
+      <div className="label fieldline">Official CFPC resources</div>
       <p className="muted" style={{ marginTop: 8 }}>
         These open on the CFPC and CAEP websites. Every question in this app is original. None is taken from CFPC samples
         or from any real exam.

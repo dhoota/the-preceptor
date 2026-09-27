@@ -231,10 +231,10 @@ export function MockOralScreen({ id, go }: { id: string; go: Go }) {
     const c = getCase(next)!;
     return (
       <>
-        <div className="label">
+        <h1>{topicName(c.priorityTopic)}</h1>
+        <div className="label fieldline">
           Mock oral · station {m.attemptIds.length + 1} of {MOCK_ORAL_STATIONS}
         </div>
-        <h1 style={{ marginTop: 6 }}>{topicName(c.priorityTopic)}</h1>
         <p className="muted" style={{ marginTop: 8 }}>
           A new examiner and a new patient. Read the stem aloud. The {ORAL_STATION_MINUTES} minute clock starts when you
           tap start. The station ends at time wherever you are.
@@ -264,8 +264,8 @@ export function MockOralScreen({ id, go }: { id: string; go: Go }) {
 
   return (
     <>
-      <div className="label">Mock oral · four stations</div>
-      <h1 style={{ marginTop: 6 }}>Your stations</h1>
+      <h1>Your stations</h1>
+      <div className="label fieldline">Mock oral · four stations</div>
       {attempts.map((a, k) => {
         const c = getCase(a!.caseId)!;
         return (

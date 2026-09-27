@@ -68,8 +68,8 @@ export function isAnswered(q: SampQuestion, r?: SampResponse): boolean {
 export function SampStem({ s, showTopic = true }: { s: Samp; showTopic?: boolean }) {
   return (
     <div className="sampstem selectable">
-      {showTopic && <div className="label">{topicName(s.topic)}</div>}
       <h2 style={{ margin: "6px 0 10px" }}>{s.title}</h2>
+      {showTopic && <div className="label fieldline" style={{ margin: "0 0 12px" }}>{topicName(s.topic)}</div>}
       {s.stem.split(/\n+/).map((p, i) => (
         <p key={i}>{p}</p>
       ))}

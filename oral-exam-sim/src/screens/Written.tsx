@@ -40,8 +40,7 @@ export function Written({ go }: { go: Go }) {
 
   return (
     <>
-      <div className="label">Written component</div>
-      <h1 style={{ marginTop: 6 }}>SAMPs</h1>
+      <h1>SAMPs</h1>
       <p className="muted" style={{ marginTop: 8 }}>
         Short answer management problems in the CFPC formats: short answer, menu and multiple choice. Keys are scored the
         way examiners score them. Only your first answers count.
@@ -154,8 +153,8 @@ export function TopicSamps({ id, go }: { id: string; go: Go }) {
   const list = SAMPS.filter((s) => s.topic === id);
   return (
     <>
-      <div className="label">Priority topic</div>
-      <h1 style={{ marginTop: 6 }}>{topic.name}</h1>
+      <h1>{topic.name}</h1>
+      <div className="label fieldline">Priority topic</div>
       <details className="kfbox">
         <summary>{topic.keyFeatures.length} key features, in our words</summary>
         <ol>

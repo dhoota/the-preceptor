@@ -66,15 +66,15 @@ function Trend({ points }: { points: TrendPoint[] }) {
       </svg>
       <div className="legend">
         <span>
-          <span className="sw" style={{ background: "var(--gold)", borderRadius: 6, width: 10 }} />
+          <span className="sw" style={{ background: "var(--pen)", borderRadius: 6, width: 10 }} />
           Each case
         </span>
         <span>
-          <span className="sw" style={{ background: "var(--navy)", height: 2 }} />
+          <span className="sw" style={{ background: "var(--form)", height: 2.5 }} />
           Average of last five
         </span>
         <span>
-          <span className="sw" style={{ borderTop: "1px dashed var(--green)", height: 0 }} />
+          <span className="sw" style={{ borderTop: "1px dashed var(--ink-2)", height: 0 }} />
           Pass mark
         </span>
       </div>
@@ -103,8 +103,7 @@ export function Progress({ go }: { go: Go }) {
 
   return (
     <>
-      <div className="label">Progress</div>
-      <h1 style={{ marginTop: 6 }}>Where you stand</h1>
+      <h1>Where you stand</h1>
 
       <div className="ready">
         <div className="big">{ready.score}</div>

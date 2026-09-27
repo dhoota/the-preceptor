@@ -1,0 +1,51 @@
+{
+  "schemaVersion": 2,
+  "generatedAt": "2026-09-27T20:00:00Z",
+  "title": "Design System: Preceptor: CCFP-EM",
+  "extensions": {
+    "colorMeta": {
+      "sheet": { "role": "neutral", "displayName": "Bond Sheet", "canonical": "#f8fbfa", "tonalRamp": ["#0c1211", "#17211f", "#33403d", "#56625f", "#8e9d98", "#c9dcd5", "#edf3f1", "#f8fbfa"] },
+      "form": { "role": "primary", "displayName": "Form Green", "canonical": "#0d6650", "tonalRamp": ["#062019", "#0a5241", "#0d6650", "#26775d", "#58b596", "#7fbfa8", "#b9dccf", "#dcefe8"] },
+      "pen": { "role": "secondary", "displayName": "Ballpoint Blue", "canonical": "#1d3fd0", "tonalRamp": ["#0b1a5c", "#132b94", "#1d3fd0", "#4a66e0", "#7089ee", "#93a9ff", "#c3d0ff", "#e3e9ff"] },
+      "stamp": { "role": "tertiary", "displayName": "Stamp Red", "canonical": "#c1121f", "tonalRamp": ["#3a1b1d", "#6e0b12", "#a30f1a", "#c1121f", "#e2515a", "#ff8a8a", "#f7c1c3", "#fde4e4"] },
+      "highlighter": { "role": "tertiary", "displayName": "Highlighter", "canonical": "#fff25c", "tonalRamp": ["#141400", "#4a4710", "#8a8414", "#c9c01e", "#f2e94e", "#fff25c", "#fff79a", "#fffbd0"] }
+    },
+    "typographyMeta": {
+      "form-title": { "displayName": "Form title", "purpose": "Home title only, bold condensed caps." },
+      "headline": { "displayName": "Headline", "purpose": "Screen titles, sentence case." },
+      "examiner": { "displayName": "Examiner", "purpose": "What the examiner says, stems and choices." },
+      "field-label": { "displayName": "Field label", "purpose": "Box corner labels, section heads and the field line under a title." },
+      "entry-numeral": { "displayName": "Entry numeral", "purpose": "Counts and scores in pen, tabular." }
+    },
+    "shadows": [],
+    "motion": [
+      { "name": "pen-stroke", "value": "stroke-dashoffset 0.26s cubic-bezier(0.22, 1, 0.36, 1)", "purpose": "The pen tick drawing into a self-mark box." },
+      { "name": "stamp-press", "value": "0.24s cubic-bezier(0.22, 1, 0.36, 1)", "purpose": "The result stamp pressing in from scale 1.35." }
+    ],
+    "breakpoints": [
+      { "name": "narrow", "value": "359px" },
+      { "name": "column", "value": "757px" }
+    ]
+  },
+  "components": [
+    { "name": "Primary Button", "kind": "button", "refersTo": "button-primary", "description": "Printed action in form green.", "html": "<button class=\"ds-btn\">Start practice case</button>", "css": ".ds-btn { background: var(--form, #0d6650); color: #fff; border: 1.5px solid var(--form, #0d6650); border-radius: 2px; min-height: 52px; padding: 15px 20px; font: 700 16px/1 'Barlow Semi Condensed', sans-serif; letter-spacing: 0.06em; text-transform: uppercase; } .ds-btn:active { background: #0a5241; transform: translateY(1px); } .ds-btn:focus-visible { outline: 2px solid #1d3fd0; outline-offset: 2px; }" },
+    { "name": "Filter Chip", "kind": "chip", "refersTo": "chip-selected", "description": "Square ruled option; selected in pen.", "html": "<button class=\"ds-chip\" aria-pressed=\"true\">All</button> <button class=\"ds-chip\">Trauma</button>", "css": ".ds-chip { min-height: 44px; padding: 0 13px; border: 1px solid #6f837c; background: #fff; color: #33403d; font: 600 14px/1 'Barlow Semi Condensed', sans-serif; letter-spacing: 0.05em; text-transform: uppercase; } .ds-chip[aria-pressed='true'] { border: 1.5px solid #1d3fd0; background: #e3e9ff; color: #1d3fd0; box-shadow: inset 0 -3px 0 #1d3fd0; } .ds-chip:focus-visible { outline: 2px solid #1d3fd0; outline-offset: 2px; }" },
+    { "name": "Stat Box Row", "kind": "card", "refersTo": "stat-box", "description": "Three joined boxes: corner label in form green, entry in pen.", "html": "<div class=\"ds-stats\"><div><span>Cases done</span><b>26/100</b></div><div><span>Attempts</span><b>26</b></div><div><span>Average</span><b>73%</b></div></div>", "css": ".ds-stats { display: grid; grid-template-columns: 1.35fr 1fr 1fr; border: 1.5px solid #0d6650; background: #fff; } .ds-stats > div { padding: 8px 12px 10px; border-right: 1px solid #0d6650; display: flex; flex-direction: column; gap: 6px; } .ds-stats > div:last-child { border-right: 0; } .ds-stats span { font: 600 11.5px/1.2 'Barlow Semi Condensed', sans-serif; letter-spacing: 0.06em; text-transform: uppercase; color: #0d6650; } .ds-stats b { font: 600 30px/1 'Barlow Semi Condensed', sans-serif; font-variant-numeric: tabular-nums; color: #1d3fd0; }" },
+    { "name": "Case Row", "kind": "custom", "refersTo": "row-title", "description": "Ruled row with a number gutter behind a double rule.", "html": "<button class=\"ds-row\"><span class=\"n\">06</span><span><span class=\"t\">Collapse in the ambulance bay</span><span class=\"s\">A 51 year old man collapses outside the department.</span></span><span class=\"r\">82%</span></button>", "css": ".ds-row { width: 100%; display: grid; grid-template-columns: 44px 1fr auto; gap: 0 14px; text-align: left; background: none; border: 0; border-bottom: 1px solid #c9dcd5; padding: 0; } .ds-row > span { padding: 15px 0; } .ds-row .n { border-right: 3px double #c9dcd5; padding-right: 10px; text-align: right; font: 600 16px/1.5 'Barlow Semi Condensed', sans-serif; color: #0d6650; } .ds-row .t { display: block; font: 600 20px/1.2 'Barlow Semi Condensed', sans-serif; color: #131c1a; } .ds-row .s { display: block; font: 14px/1.5 'Atkinson Hyperlegible Next', sans-serif; color: #56625f; } .ds-row .r { font: 600 18px/1.3 'Barlow Semi Condensed', sans-serif; color: #1d3fd0; } .ds-row:active { background: #edf3f1; }" },
+    { "name": "Result Stamp", "kind": "custom", "refersTo": "field-label", "description": "Rubber stamp for the result band.", "html": "<span class=\"ds-stamp\">Below standard</span>", "css": ".ds-stamp { display: inline-block; padding: 8px 11px; transform: rotate(-4deg); color: #c1121f; border: 2.5px solid currentColor; box-shadow: inset 0 0 0 2px #f8fbfa, inset 0 0 0 3.5px currentColor; font: 700 15px/1 'Barlow Semi Condensed', sans-serif; letter-spacing: 0.14em; text-transform: uppercase; }" },
+    { "name": "Short Answer Blank", "kind": "input", "refersTo": "body", "description": "Fill-in blank written in pen.", "html": "<label class=\"ds-blank\"><span>1.</span><input value=\"Aortic dissection\"></label>", "css": ".ds-blank { display: grid; grid-template-columns: 24px 1fr; align-items: end; gap: 6px; } .ds-blank span { font: 600 15px/2 'Barlow Semi Condensed', sans-serif; color: #0d6650; } .ds-blank input { border: 0; border-bottom: 1.5px solid #6f837c; background: transparent; padding: 10px 2px 6px; font: 17px/1.4 'Atkinson Hyperlegible Next', sans-serif; color: #1d3fd0; } .ds-blank input:focus { outline: none; border-bottom-color: #1d3fd0; box-shadow: 0 1.5px 0 #1d3fd0; }" }
+  ],
+  "narrative": {
+    "northStar": "The Resus Record",
+    "overview": "The app is the paper record clipped to the board in the resus bay. Everything the institution printed is in one form-green ink. Everything the candidate does is in ballpoint blue. When the case is marked, the result comes back as a rubber stamp. The sheet is cool bond white, never cream; the dark theme is the carbon copy.",
+    "keyCharacteristics": ["Two inks with fixed meanings: green is the form, blue is you.", "Stamp red is reserved for alarms: critical misses, the fail stamp, overtime.", "Highlighter yellow marks partial: the borderline stamp, draft tags, partial verdicts.", "Printed double rules (3px double) open sections, the masthead, the tab bar and the dock.", "Barlow Semi Condensed prints; Atkinson Hyperlegible Next is read. Both are bundled under the SIL OFL in src/fonts."],
+    "rules": [
+      { "name": "The Two Inks Rule", "body": "Green is what the form printed; blue is what the candidate wrote. A new element takes the ink of whoever authored it.", "section": "colors" },
+      { "name": "The Alarm Rule", "body": "Stamp red appears only where something is unsafe, critical, failed or overdue in time. It never decorates.", "section": "colors" },
+      { "name": "The AA Floor Rule", "body": "Every text pair passes 4.5:1 and every control border 3:1, in both the sheet and the carbon copy.", "section": "colors" },
+      { "name": "The Fixed Digits Rule", "body": "Every clock, count and score uses tabular figures, so digits never shift as they change.", "section": "typography" }
+    ],
+    "dos": ["Do give every new element the ink of its author: form green if the app printed it, ballpoint blue if the candidate did it.", "Do open sections with a field label over a 3px double form rule.", "Do keep clocks, counts and prices tabular and on one line.", "Do make every control at least 44px tall, with an invisible hit area where the visual has to stay small."],
+    "donts": ["Don't use cream or paper-tone grounds, a serif, or system and Inter fonts.", "Don't use gold, saffron or purple.", "Don't put stamp red on anything that is not an alarm.", "Don't add shadows, gradients, pills or soft card grids. Rows and ruled boxes carry the layout.", "Don't set a label above a title as a kicker. Context goes in a field line under the title."]
+  }
+}

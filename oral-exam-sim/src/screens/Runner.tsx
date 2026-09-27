@@ -257,7 +257,7 @@ export function Runner({
               />
             </svg>
             <div>
-              <div className={`num ${remaining < 0 ? "" : ""}`} style={remaining < 0 ? { color: "var(--red)" } : undefined}>
+              <div className={`num ${remaining < 0 ? "" : ""}`} style={remaining < 0 ? { color: "var(--stamp)" } : undefined}>
                 {mmss(remaining)}
               </div>
               <div className="muted small">{exam ? "Answer out loud. Time ends the question." : "Answer out loud."}</div>

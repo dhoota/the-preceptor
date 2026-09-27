@@ -26,8 +26,7 @@ export function Review({ go }: { go: Go }) {
 
   return (
     <>
-      <div className="label">Spaced review</div>
-      <h1 style={{ marginTop: 6 }}>Missed points</h1>
+      <h1>Missed points</h1>
       <p className="muted small" style={{ marginTop: 8 }}>
         <span className="mono">{stats.total}</span> in deck · <span className="mono">{stats.learning}</span> learning ·{" "}
         <span className="mono">{stats.retired}</span> retired

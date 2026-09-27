@@ -1,205 +1,234 @@
 ---
 name: "Preceptor: CCFP-EM"
-description: "Oral and written exam prep for CCFP-EM, in the shared Preceptor look"
+description: "The resuscitation record on the resus clipboard: printed in form green, filled in with ballpoint blue"
 colors:
-  paper: "#f7f5f0"
-  paper-2: "#efece4"
-  card: "#fffdf8"
-  ink: "#15202b"
-  ink-2: "#3b4856"
-  muted: "#5f6a77"
-  line: "#d9d4c7"
-  line-2: "#e7e3d8"
-  navy: "#00305c"
-  navy-2: "#0a4478"
-  gold: "#b88700"
-  gold-ink: "#8a6500"
-  gold-soft: "#f5e7bf"
-  red: "#a4262c"
-  red-soft: "#f6dcdc"
-  green: "#2f6b3a"
-  green-soft: "#dcebdc"
-  dark-paper: "#11161c"
-  dark-card: "#1a222b"
-  dark-ink: "#e9e6de"
-  dark-navy: "#8fb6de"
-  dark-gold: "#e0b43c"
+  sheet: "#f8fbfa"
+  sheet-2: "#edf3f1"
+  field: "#ffffff"
+  ink: "#131c1a"
+  ink-2: "#33403d"
+  muted: "#56625f"
+  rule: "#c9dcd5"
+  rule-2: "#dfeae6"
+  edge: "#6f837c"
+  form: "#0d6650"
+  form-pressed: "#0a5241"
+  form-soft: "#dcefe8"
+  pen: "#1d3fd0"
+  pen-soft: "#e3e9ff"
+  stamp: "#c1121f"
+  stamp-soft: "#fde4e4"
+  highlighter: "#fff25c"
+  carbon-sheet: "#0c1211"
+  carbon-field: "#17211f"
+  carbon-ink: "#e4ece9"
+  carbon-form: "#6fd3b0"
+  carbon-pen: "#93a9ff"
+  carbon-stamp: "#ff8a8a"
+  carbon-highlighter: "#f2e94e"
 typography:
-  display:
-    fontFamily: "Iowan Old Style, Charter, Source Serif Pro, Georgia, serif"
-    fontSize: "30px"
+  form-title:
+    fontFamily: "Barlow Semi Condensed, Arial Narrow, sans-serif"
+    fontSize: "clamp(30px, 9vw, 40px)"
+    fontWeight: 700
+    lineHeight: 0.98
+    letterSpacing: "0.01em"
+  headline:
+    fontFamily: "Barlow Semi Condensed, Arial Narrow, sans-serif"
+    fontSize: "34px"
+    fontWeight: 700
+    lineHeight: 1.04
+    letterSpacing: "-0.005em"
+  row-title:
+    fontFamily: "Barlow Semi Condensed, Arial Narrow, sans-serif"
+    fontSize: "20px"
     fontWeight: 600
-    lineHeight: 1.15
-    letterSpacing: "-0.01em"
+    lineHeight: 1.2
   examiner:
-    fontFamily: "Iowan Old Style, Charter, Source Serif Pro, Georgia, serif"
+    fontFamily: "Atkinson Hyperlegible Next, sans-serif"
     fontSize: "20px"
     fontWeight: 400
-    lineHeight: 1.55
+    lineHeight: 1.5
   body:
-    fontFamily: "-apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Helvetica, Arial, sans-serif"
+    fontFamily: "Atkinson Hyperlegible Next, sans-serif"
     fontSize: "16px"
     fontWeight: 400
     lineHeight: 1.5
-  label:
-    fontFamily: "-apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Helvetica, Arial, sans-serif"
-    fontSize: "11.5px"
-    fontWeight: 700
-    letterSpacing: "0.14em"
-  numeric:
-    fontFamily: "ui-monospace, SF Mono, Menlo, Consolas, monospace"
-    fontSize: "24px"
-    fontWeight: 500
+  field-label:
+    fontFamily: "Barlow Semi Condensed, Arial Narrow, sans-serif"
+    fontSize: "12.5px"
+    fontWeight: 600
+    lineHeight: 1.2
+    letterSpacing: "0.08em"
+  entry-numeral:
+    fontFamily: "Barlow Semi Condensed, Arial Narrow, sans-serif"
+    fontSize: "32px"
+    fontWeight: 600
+    lineHeight: 1
     fontFeature: "tnum"
 rounded:
-  hair: "2px"
-  r: "3px"
-  pill: "20px"
+  none: "0px"
+  r: "2px"
 spacing:
   gutter: "18px"
-  section: "30px"
+  section: "34px"
   row: "14px"
+  number-gutter: "44px"
 components:
   button-primary:
-    backgroundColor: "{colors.navy}"
-    textColor: "{colors.card}"
+    backgroundColor: "{colors.form}"
+    textColor: "{colors.field}"
     rounded: "{rounded.r}"
     padding: "15px 20px"
-    height: "50px"
+    height: "52px"
+  button-primary-pressed:
+    backgroundColor: "{colors.form-pressed}"
   button-ghost:
     backgroundColor: "transparent"
-    textColor: "{colors.navy}"
+    textColor: "{colors.form}"
     rounded: "{rounded.r}"
     padding: "15px 20px"
   button-quiet:
-    backgroundColor: "{colors.card}"
+    backgroundColor: "{colors.field}"
     textColor: "{colors.ink}"
     rounded: "{rounded.r}"
   chip:
-    backgroundColor: "{colors.card}"
+    backgroundColor: "{colors.field}"
     textColor: "{colors.ink-2}"
-    rounded: "{rounded.pill}"
-    padding: "10px 13px"
+    rounded: "{rounded.none}"
+    height: "44px"
   chip-selected:
-    backgroundColor: "{colors.navy}"
-    textColor: "{colors.card}"
-    rounded: "{rounded.pill}"
-  card:
-    backgroundColor: "{colors.card}"
-    rounded: "{rounded.r}"
-    padding: "18px"
+    backgroundColor: "{colors.pen-soft}"
+    textColor: "{colors.pen}"
+    rounded: "{rounded.none}"
   tag:
-    backgroundColor: "{colors.paper-2}"
+    backgroundColor: "{colors.field}"
     textColor: "{colors.ink-2}"
-    rounded: "{rounded.hair}"
+    rounded: "{rounded.none}"
     padding: "5px 7px"
+  stat-box:
+    backgroundColor: "{colors.field}"
+    textColor: "{colors.pen}"
+    typography: "{typography.entry-numeral}"
 ---
 
 # Design System: Preceptor: CCFP-EM
 
-<!-- Recorded by /impeccable document from src/styles.css after the design/impeccable refinement pass. This is the shared Preceptor look; change tokens here and in the sibling Preceptor apps together. -->
-
 ## Overview
 
-**Creative North Star: "The Examiner's Desk"**
+**Creative North Star: "The Resus Record"**
 
-A quiet, paper-and-ink study room. Warm paper, navy ink and one gold accent taken from The Preceptor mark. The examiner speaks in a serif, the interface answers in the platform sans, and time and scores are set in a monospace with tabular figures. Surfaces are flat and separated by hairline rules, not shadows. The case text and the clock carry the attention. The chrome stays out of the way.
+The app is the paper record clipped to the board in the resus bay. Everything the institution printed (rules, box labels, headings, buttons, the examiner's lines) is in one form-green ink. Everything the candidate does (counts, scores, selections, ticks, notes, answers typed into a blank) is in ballpoint blue. When the case is marked, the result comes back as a rubber stamp. The sheet is cool bond white, never cream; the dark theme is the carbon copy, green-black with pale form ink and bright carbon blue.
 
-Dense but calm: long lists of cases and topics are ruled rows, not cards. Cards appear only where something is a discrete choice or a summary.
+It is dense, ruled and square. Lists are rows between printed rules with a fixed number gutter, not cards. Boxes carry their label in the top-left corner, in small condensed caps, the way a form field does. There are no shadows, no gradients and no pills except the hand-drawn pen circle on the active tab.
 
 **Key Characteristics:**
-- Warm paper background, never pure white. Navy for action, gold for identity and emphasis, red, green and gold-soft only for verdicts.
-- Serif for examiner voice, stems and titles. Sans for controls and explanation. Mono only for time, counts, scores and prices.
-- Hairline rules (1px) everywhere. Section heads get a 1px ink rule under an uppercase label.
-- Light and dark follow the system. Dark is its own palette, not an inversion.
+- Two inks with fixed meanings: green is the form, blue is you.
+- Stamp red is reserved for alarms: critical misses, the fail stamp, overtime.
+- Highlighter yellow marks partial: the borderline stamp, draft tags, partial verdicts.
+- Printed double rules (3px double) open sections, the masthead, the tab bar and the dock.
+- Barlow Semi Condensed prints; Atkinson Hyperlegible Next is read. Both are bundled under the SIL OFL in `src/fonts`.
 
 ## Colors
 
-A restrained, warm neutral palette with one institutional blue and one gold.
+Two inks on a cool white sheet, plus a stamp and a highlighter.
 
 ### Primary
-- **Preceptor Navy** (navy): primary buttons, selected chips, the examiner rule, progress bars, switches. In dark mode it becomes a pale steel blue (dark-navy) and primary buttons take dark text.
+- **Form Green** (form): pre-printed structure: section and box labels, double rules, the examiner rule and label, primary buttons, row numbers, printed check marks on the order form. In the carbon copy it is a pale mint (carbon-form) and primary buttons take dark text.
 
 ### Secondary
-- **Mark Gold** (gold): the brand accent from the logo. Used for marks, the active tab indicator, top rules on the recommended tier and model answer, and the chart's case dots. Never as body text in light mode.
-- **Gold Ink** (gold-ink): the same gold darkened to pass AA on paper (4.9:1). Used for gold text such as case numbers, question numbers, the Free tag and focus rings. Dark mode uses Mark Gold for both.
+- **Ballpoint Blue** (pen): the candidate's marks: stat numerals, best scores, selected chips and modes, the pen tick, notes and typed answers, the progress bar, the active-tab circle, focus rings, trend dots.
+
+### Tertiary
+- **Stamp Red** (stamp): alarms only: critical tags and alerts, the fail stamp, the timer when time is low, overtime clocks, wrong answers.
+- **Highlighter** (highlighter): partial and borderline, always with ink text (on-hi).
 
 ### Neutral
-- **Paper** (paper) and **Paper 2** (paper-2): page and recessed backgrounds.
-- **Card** (card): raised surfaces such as cards, inputs and choices.
-- **Ink** (ink), **Ink 2** (ink-2) and **Muted** (muted): primary, secondary and tertiary text. Muted passes AA on paper (5.05:1).
-- **Line** (line) and **Line 2** (line-2): borders and row dividers.
-
-### Verdict colours
-- **Pass Green**, **Unsafe Red** and **Partial Gold** each come with a soft tint for backgrounds. They are reserved for scoring and feedback states.
+- **Sheet** (sheet) and **Sheet 2** (sheet-2): page and recessed surfaces. **Field** (field): inside boxes, inputs and choices.
+- **Ink**, **Ink 2** and **Muted**: text. Muted is 6.1:1 on the sheet.
+- **Rule** and **Rule 2**: printed dividers, decorative. **Edge** (edge): borders of anything you can press or type into, at least 3:1.
 
 ### Named Rules
-**The One Gold Rule.** Gold marks identity and emphasis. It never fills a button and never carries text in light mode without Gold Ink.
+**The Two Inks Rule.** Green is what the form printed; blue is what the candidate wrote. A new element takes the ink of whoever authored it.
 
-**The AA Floor Rule.** Every text colour passes 4.5:1 on the surface it sits on, in both modes. Check any new token pair before shipping.
+**The Alarm Rule.** Stamp red appears only where something is unsafe, critical, failed or overdue in time. It never decorates.
+
+**The AA Floor Rule.** Every text pair passes 4.5:1 and every control border 3:1, in both the sheet and the carbon copy.
 
 ## Typography
 
-**Display and Examiner Font:** Iowan Old Style (with Charter, Source Serif Pro and Georgia fallbacks)
-**Body Font:** System sans (-apple-system, Segoe UI, Roboto)
-**Numeric Font:** System monospace with tabular figures
+**Print Font:** Barlow Semi Condensed 500/600/700 (with Arial Narrow fallback)
+**Reading Font:** Atkinson Hyperlegible Next, variable 200 to 800, with italic (with sans-serif fallback)
 
-**Character:** A bookish serif gives the examiner and the cases authority. The native sans keeps controls familiar on both stores.
+**Character:** The condensed grotesk is the form's printed voice: labels, headings, buttons and every numeral. Atkinson carries everything you read at length: the examiner, stems, choices and feedback. Its slashed zero is kept on purpose, so a dose's 0 never reads as O.
 
 ### Hierarchy
-- **Display** (600, 30 to 32px, 1.15): screen titles. Headings use balanced wrapping.
-- **Examiner** (400, 19 to 20px, 1.55): examiner lines, stems and choices.
-- **Title** (600 serif, 17 to 20px): case titles and tier names.
-- **Body** (400, 16px, 1.5): explanation. Intro paragraphs stop at about 62ch.
-- **Label** (700, 11.5px, 0.14em, uppercase): section heads and eyebrows. In tight grid cells tracking drops to 0.08em.
-- **Numeric** (500 mono): clocks, scores, counts and prices. The "/ year" unit next to a price is set in small muted sans.
+- **Form title** (700, clamp 30 to 40px, uppercase): the home screen title only.
+- **Headline** (700, 34px, 1.04): screen titles in sentence case.
+- **Row title** (600, 20px): case and topic rows, tier names (uppercase), mode names (uppercase).
+- **Examiner** (400, 20px, 1.5): examiner lines. Stems are 19px and SAMP stems 17px.
+- **Body** (400, 16px, 1.5): explanation, capped at 62ch for intros.
+- **Field label** (600, 12.5px, 0.08em, uppercase, form green): box corner labels, section heads and the field line under a title.
+- **Entry numeral** (600, 32px, tabular, pen blue): counts and scores. Clocks are 19px, the timer 34px and the result score 72px, all tabular.
+
+### Named Rules
+**The Fixed Digits Rule.** Every clock, count and score uses tabular figures, so digits never shift as they change.
 
 ## Layout
 
-A single column, max 720px, with 18px gutters (14px under 360px). Fixed bottom tab bar with 5 labelled tabs and a fixed action dock on case screens. Both respect the safe-area insets. Sections are separated by 30px with a label and a 1px ink rule. Rows are 14px vertical with a line-2 divider. On the narrowest phones (under 360px) the header shows the app name without the family prefix, and the tab labels and stats shrink rather than wrap.
+Single column, max 720px, 18px gutters (14px under 360px). Rows are ruled, with a 44px number gutter behind a 3px double rule in the rule colour. Sections open 34px down with a field label over a double form rule. Screen titles are followed, when there is context to give, by a field line: a field label between two hairline rules. A fixed five-tab bar and a fixed action dock both open with a double rule and respect the safe-area insets. The dock hides itself when it has no action. Under 360px the masthead shows only "CCFP-EM", tabs tighten and stats shrink rather than wrap. At 757px and wider the filter strip stays inside the column and fades at its edge.
 
 ## Elevation & Depth
 
-Flat. There are no shadows. Depth comes from paper versus card tone, hairline borders and the scrim behind bottom sheets. Selection is shown with an inset 3px navy edge (box-shadow inset) or a filled chip.
+Flat paper. No shadows anywhere. Depth is tone (sheet, sheet-2, field), printed rules and the scrim behind the tear-off slip. Selection is shown with ink, not lift: a pen border, pen-soft fill or an inset 3px rule.
 
 ## Shapes
 
-Nearly square: 3px radius on buttons, cards and inputs, 2px on tags, pills only for filter chips and the tab badge. A card with a 3px top accent rule has square top corners so the rule meets the edge cleanly.
+Square. Buttons have a 2px radius; boxes, chips, tags, fields and tick boxes have none. Radio marks on the mode picker are circles. The only curves beyond that are hand-made: the pen circle on the active tab and the pen tick.
 
 ## Components
 
 ### Buttons
-- **Shape:** 3px radius, 50px minimum height (38px for small).
-- **Primary:** navy fill, white text (dark text in dark mode).
-- **Ghost:** transparent with a navy border and text. **Quiet:** card fill with a line border and ink text.
-- **Link button:** underlined navy text with a 44px tall invisible hit area.
-- **Focus:** a 2px Gold Ink outline, 2px offset, on every focusable control.
+- **Shape:** 2px radius, 52px tall (44px small), uppercase print type with 0.06em tracking.
+- **Primary:** form fill, white text; pressed darkens and nudges down 1px.
+- **Ghost:** transparent with a form border and text. **Quiet:** field fill, edge border, ink text.
+- **Link button:** underlined form-green text with a 44px hit area.
+- **Focus:** a 2px pen outline, 2px offset, on everything focusable.
 
-### Chips
-- **Style:** pill, card fill, line border, 40px tall. Selected is navy fill with white text. They scroll horizontally in one row.
+### Chips (filters)
+- **Style:** square ruled boxes, 44px tall, uppercase print type. Selected: pen border, pen-soft fill and a 3px pen underline.
 
-### Cards and rows
-- Cases and SAMPs are ruled rows: a number in Gold Ink mono, a serif title, a muted summary and tags.
-- Cards (card fill, line border, 3px radius, 18px padding) are for choices, the mock oral entry, pricing tiers and readiness.
+### Rows and boxes
+- **Case and topic rows:** number in form green in the gutter, row title, muted summary, tags as small printed boxes, best score in pen at the right.
+- **Stat box row:** three boxes joined by form rules, corner labels, pen numerals.
+- **Requisition box** (mock oral): a form-bordered box with a printed START box, or a lock when not owned.
 
-### Callouts
-- Verdicts, the review-due bar, critical-miss alerts and SAMP updates use a soft tint with a 3px left rule in the verdict or brand colour. This is a shared Preceptor pattern.
+### Inputs
+- **Notes:** ruled writing lines at 28px, written in pen.
+- **Short answers:** fill-in blanks: a bottom rule only, typed text in pen, the blank turns pen blue on focus.
+- **Choices and options:** one printed tick-box line per option between rules.
 
 ### Navigation
-- Bottom tabs: 12px semibold labels. The active tab has ink text and a 2px gold bar on top. The due-count badge sits at the label's top-right corner and caps at 99+.
+- **Masthead:** mark plus the app name in tracked print caps over a double form rule.
+- **Tabs:** uppercase print labels; the current tab is circled by hand in pen. The review count sits in a small form-green box at the label's corner and caps at 99+.
 
-### Examiner block
-- A 3px navy left rule, an uppercase "Examiner" label, an italic serif phase line, then the line itself in the 20px serif. The Read aloud control sits to the right.
+### The pen tick (signature)
+Self-marking boxes (Said it, Partly, Missed) fill with a ballpoint tick drawn as an SVG stroke that overshoots the box. It draws in over 260ms and appears instantly under reduced motion.
+
+### The stamp (signature)
+The result band is a rubber stamp: uppercase print type in a double frame, rotated -4 degrees, pressed in with a short scale-down on arrival (off under reduced motion). Pass stamps in form green, borderline on highlighter, below standard in stamp red.
 
 ## Do's and Don'ts
 
 ### Do:
-- **Do** use Gold Ink for any gold text or focus ring in light mode.
-- **Do** keep clocks and prices on one line (`white-space: nowrap`).
-- **Do** animate with transform or opacity and turn transitions off under reduced motion.
-- **Do** make every tap target at least 40 to 44px tall, using an invisible hit area where the visual has to stay small.
+- **Do** give every new element the ink of its author: form green if the app printed it, ballpoint blue if the candidate did it.
+- **Do** open sections with a field label over a 3px double form rule.
+- **Do** keep clocks, counts and prices tabular and on one line.
+- **Do** make every control at least 44px tall, with an invisible hit area where the visual has to stay small.
 
 ### Don't:
-- **Don't** add shadows, gradients or glass. The system is flat paper.
-- **Don't** use mono for anything but time, counts, scores and prices.
-- **Don't** change the shared tokens here alone. Mirror them in the other Preceptor apps.
+- **Don't** use cream or paper-tone grounds, a serif, or system and Inter fonts.
+- **Don't** use gold, saffron or purple.
+- **Don't** put stamp red on anything that is not an alarm.
+- **Don't** add shadows, gradients, pills or soft card grids. Rows and ruled boxes carry the layout.
+- **Don't** set a label above a title as a kicker. Context goes in a field line under the title.

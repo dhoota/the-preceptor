@@ -3,6 +3,6 @@
   "appName": "Preceptor: CCFP-EM",
   "webDir": "dist",
   "loggingBehavior": "none",
-  "android": { "backgroundColor": "#F7F5F0", "webContentsDebuggingEnabled": false },
+  "android": { "backgroundColor": "#F8FBFA", "webContentsDebuggingEnabled": false },
   "ios": { "webContentsDebuggingEnabled": false, "contentInset": "never" }
 }

@@ -27,8 +27,8 @@ export function CaseIntro({ id, go }: { id: string; go: Go }) {
 
   return (
     <>
-      <div className="label">{blueprintLabel(c.blueprint)}</div>
-      <h1 style={{ marginTop: 6 }}>{c.title}</h1>
+      <h1>{c.title}</h1>
+      <div className="label fieldline">{blueprintLabel(c.blueprint)}</div>
       <p className="muted" style={{ marginTop: 8 }}>
         {c.durationMinutes} minutes. {q.min === q.max ? q.min : `${q.min} to ${q.max}`} examiner questions.{" "}
         {tries.length ? `You have done this case ${tries.length} ${tries.length === 1 ? "time" : "times"}.` : "New case."}

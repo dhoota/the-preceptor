@@ -15,3 +15,6 @@ GoogleService-Info.plist
 *.cer
 ios_cert.key
 *.certSigningRequest
+
+# Impeccable review captures
+.impeccable/review/
