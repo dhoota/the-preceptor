@@ -36,8 +36,18 @@ const CAPTIONS = [
   ["08-review", "Review what you missed until it sticks."],
 ];
 
-const markSvg = (ring2) =>
-  `<svg viewBox="0 0 200 200"><circle cx="100" cy="100" r="88" fill="none" stroke="#C99400" stroke-width="14"/><circle cx="100" cy="100" r="56" fill="none" stroke="${ring2}" stroke-width="12"/><circle cx="100" cy="100" r="22" fill="#C99400"/></svg>`;
+// The mark in the app's own inks, drawn on the form-green band.
+const markSvg = () =>
+  `<svg viewBox="0 0 200 200"><circle cx="100" cy="100" r="88" fill="none" stroke="#FFFFFF" stroke-width="14"/><circle cx="100" cy="100" r="56" fill="none" stroke="#9FE0C8" stroke-width="12"/><circle cx="100" cy="100" r="22" fill="#C3D0FF"/></svg>`;
+
+// The app's bundled fonts (SIL OFL), inlined so the composed frames use them too.
+const font = (f) => readFileSync(join(root, "src", "fonts", f)).toString("base64");
+const FONTS = `<style>
+  @font-face { font-family: "Barlow Semi Condensed"; font-weight: 700; src: url(data:font/woff2;base64,${font("barlow-semi-condensed-latin-700-normal.woff2")}) format("woff2"); }
+  @font-face { font-family: "Barlow Semi Condensed"; font-weight: 600; src: url(data:font/woff2;base64,${font("barlow-semi-condensed-latin-600-normal.woff2")}) format("woff2"); }
+  @font-face { font-family: "Atkinson Hyperlegible Next"; font-weight: 200 800; src: url(data:font/woff2;base64,${font("atkinson-hyperlegible-next-latin-wght-normal.woff2")}) format("woff2"); }
+</style>`;
+const FORM = "#0D6650";
 
 const browser = await chromium.launch(process.env.CHROMIUM_PATH ? { executablePath: process.env.CHROMIUM_PATH } : {});
 
@@ -205,12 +215,12 @@ async function compose(size, shot, caption, out) {
   const ctx = await browser.newContext({ viewport: { width: cssW, height: cssH }, deviceScaleFactor: size.dpr });
   const page = await ctx.newPage();
   const img = `data:image/png;base64,${shot.toString("base64")}`;
-  await page.setContent(`<!doctype html><html><body style="margin:0;background:#00305C;width:${cssW}px;height:${cssH}px;overflow:hidden;font-family:'Iowan Old Style',Charter,Georgia,serif">
+  await page.setContent(`<!doctype html><html><head>${FONTS}</head><body style="margin:0;background:${FORM};width:${cssW}px;height:${cssH}px;overflow:hidden;font-family:'Barlow Semi Condensed',sans-serif">
     <div style="height:${band}px;display:flex;flex-direction:column;justify-content:center;padding:0 ${pad}px;box-sizing:border-box">
-      <div style="width:${Math.round(cssW * 0.07)}px;height:${Math.round(cssW * 0.07)}px;margin-bottom:${Math.round(band * 0.08)}px">${markSvg("#FFFFFF")}</div>
-      <div style="color:#FFFFFF;font-size:${Math.round(cssW * 0.075)}px;line-height:1.12;font-weight:600;letter-spacing:-0.01em">${caption}</div>
+      <div style="width:${Math.round(cssW * 0.07)}px;height:${Math.round(cssW * 0.07)}px;margin-bottom:${Math.round(band * 0.08)}px">${markSvg()}</div>
+      <div style="color:#FFFFFF;font-size:${Math.round(cssW * 0.078)}px;line-height:1.02;font-weight:700;text-transform:uppercase;letter-spacing:0.01em">${caption}</div>
     </div>
-    <div style="position:absolute;left:${pad}px;right:${pad}px;top:${band}px;bottom:0;overflow:hidden;border-radius:${Math.round(cssW * 0.05)}px ${Math.round(cssW * 0.05)}px 0 0;border:1px solid rgba(255,255,255,0.25);border-bottom:0;background:#F7F5F0">
+    <div style="position:absolute;left:${pad}px;right:${pad}px;top:${band}px;bottom:0;overflow:hidden;border-radius:${Math.round(cssW * 0.03)}px ${Math.round(cssW * 0.03)}px 0 0;border:3px double rgba(255,255,255,0.6);border-bottom:0;background:#F8FBFA">
       <img src="${img}" style="width:100%;display:block"/>
     </div></body></html>`);
   await page.waitForTimeout(100);
@@ -240,12 +250,12 @@ mkdirSync(g, { recursive: true });
 {
   const ctx = await browser.newContext({ viewport: { width: 1024, height: 500 } });
   const page = await ctx.newPage();
-  await page.setContent(`<!doctype html><body style="margin:0;width:1024px;height:500px;background:#00305C;display:flex;align-items:center;font-family:'Iowan Old Style',Charter,Georgia,serif;color:#fff">
-    <div style="width:210px;height:210px;margin:0 56px 0 84px;flex:none">${markSvg("#FFFFFF")}</div>
+  await page.setContent(`<!doctype html><head>${FONTS}</head><body style="margin:0;width:1024px;height:500px;background:${FORM};display:flex;align-items:center;font-family:'Barlow Semi Condensed',sans-serif;color:#fff">
+    <div style="width:210px;height:210px;margin:0 56px 0 84px;flex:none">${markSvg()}</div>
     <div>
-      <div style="font:700 15px/1 -apple-system,Segoe UI,Roboto,Arial,sans-serif;letter-spacing:0.18em;color:#E0B43C;text-transform:uppercase">Written and oral exam practice</div>
-      <div style="font-size:64px;font-weight:600;line-height:1.05;margin-top:14px">Preceptor: CCFP-EM</div>
-      <div style="font-size:26px;line-height:1.35;margin-top:16px;color:#C9D8EA;max-width:560px">Original SAMPs with examiner style keys. 12 minute oral stations. Fully offline.</div>
+      <div style="font-weight:600;font-size:18px;line-height:1;letter-spacing:0.12em;color:#9FE0C8;text-transform:uppercase">Written and oral exam practice</div>
+      <div style="font-size:70px;font-weight:700;line-height:1;margin-top:14px;text-transform:uppercase;padding-bottom:14px;border-bottom:4px double rgba(255,255,255,0.6)">Preceptor: CCFP-EM</div>
+      <div style="font:400 24px/1.4 'Atkinson Hyperlegible Next',sans-serif;margin-top:16px;color:#DCEFE8;max-width:580px">Original SAMPs with examiner style keys. 12 minute oral stations. Fully offline.</div>
     </div></body>`);
   await page.screenshot({ path: join(g, "play-feature-1024x500.png") });
   await ctx.close();
