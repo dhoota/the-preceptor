@@ -3,7 +3,7 @@ import type { Answered } from "@/engine/analytics";
 import type { Mock } from "@/engine/mock";
 import type { CaseStudy, Item } from "@/engine/types";
 import { freeCaseIds, freeItemIds } from "@/lib/access";
-import { NO_ACCESS, defaultAdapter, reconcileAccess, type Access, type ProductKey, type PurchaseOutcome } from "@/lib/purchases";
+import { NO_ACCESS, defaultAdapter, reconcileAccess, type Access, type Prices, type ProductKey, type PurchaseOutcome } from "@/lib/purchases";
 import { createRepo, DEFAULT_SETTINGS, type Settings } from "@/lib/storage";
 import { getBank } from "./bankSource";
 
@@ -24,7 +24,9 @@ interface AppState {
   flags: string[];
   settings: Settings;
   access: Access;
-  prices: Partial<Record<ProductKey, string>>;
+  /** undefined while loading, null when the offering failed. */
+  prices: Prices | null | undefined;
+  reloadPrices(): Promise<void>;
   busy: boolean;
   canOpenItem(id: string): boolean;
   canOpenCase(id: string): boolean;
@@ -48,7 +50,7 @@ export function AppProvider({ children }: { children: ReactNode }) {
   const [flags, setFlags] = useState<string[]>([]);
   const [settings, setSettings] = useState<Settings>(DEFAULT_SETTINGS);
   const [access, setAccess] = useState<Access>(NO_ACCESS);
-  const [prices, setPrices] = useState<Partial<Record<ProductKey, string>>>({});
+  const [prices, setPrices] = useState<Prices | null | undefined>(undefined);
   const [busy, setBusy] = useState(false);
 
   useEffect(() => {
@@ -121,6 +123,11 @@ export function AppProvider({ children }: { children: ReactNode }) {
     await repo.setCachedAccess(a);
   }, []);
 
+  const reloadPrices = useCallback(async () => {
+    setPrices(undefined);
+    setPrices(await purchases.prices());
+  }, []);
+
   const buy = useCallback(
     async (product: ProductKey) => {
       setBusy(true);
@@ -166,6 +173,7 @@ export function AppProvider({ children }: { children: ReactNode }) {
       settings,
       access,
       prices,
+      reloadPrices,
       busy,
       canOpenItem: (id: string) => access.full || freeItems.has(id),
       canOpenCase: (id: string) => access.full || freeCases.has(id),
@@ -178,7 +186,7 @@ export function AppProvider({ children }: { children: ReactNode }) {
       restore,
       resetProgress,
     }),
-    [ready, bank, byId, answers, mocks, flags, settings, access, prices, busy, freeItems, freeCases, addAnswers, saveMock, deleteMock, toggleFlag, updateSettings, buy, restore, resetProgress],
+    [ready, bank, byId, answers, mocks, flags, settings, access, prices, reloadPrices, busy, freeItems, freeCases, addAnswers, saveMock, deleteMock, toggleFlag, updateSettings, buy, restore, resetProgress],
   );
 
   return <Ctx.Provider value={value}>{children}</Ctx.Provider>;

@@ -1,19 +1,21 @@
 import { useState } from "react";
 import { FREE_CASES, FREE_ITEMS } from "@/lib/access";
 import { PRIVACY_URL, TERMS_URL } from "@/lib/constants";
-import { PLAN_ORDER, PRODUCTS, isNative, keysConfigured, type ProductKey } from "@/lib/purchases";
+import { PRODUCTS, isNative, keysConfigured, planView, type ProductKey } from "@/lib/purchases";
 import type { Go } from "../routes";
 import { useApp } from "../state";
 import { openUrl } from "./Settings";
 
-const PLANS: Record<ProductKey, { name: string; body: string; cta: string; best?: string }> = {
-  sixMonth: { name: "6 months", body: "Full access for 6 months, then renews every 6 months.", cta: "Subscribe for 6 months", best: "Lower cost per month" },
+// Only these two plans exist. Plans come from PLAN_ORDER through planView, never from other packages in the offering.
+const PLANS: Record<ProductKey, { name: string; body: string; cta: string }> = {
+  sixMonth: { name: "6 months", body: "Full access for 6 months, then renews every 6 months.", cta: "Subscribe for 6 months" },
   threeMonth: { name: "3 months", body: "Full access for 3 months, then renews every 3 months.", cta: "Subscribe for 3 months" },
 };
 
 export function Paywall({ go }: { go: Go }) {
   const app = useApp();
   const [msg, setMsg] = useState<string | null>(null);
+  const view = planView(app.prices);
 
   if (app.access.full) {
     return (
@@ -62,40 +64,57 @@ export function Paywall({ go }: { go: Go }) {
         <li>Works offline. No account. Nothing leaves your device.</li>
       </ul>
 
-      {PLAN_ORDER.map((key) => {
+      {view.plans.map(({ key, price, enabled }) => {
         const plan = PLANS[key];
-        const price = app.prices[key] ?? PRODUCTS[key].fallbackPrice;
+        const main = key === view.primary;
         return (
-          <div key={key} className={`tier ${plan.best ? "best" : ""}`}>
+          <div key={key} className={`tier ${main ? "best" : ""}`}>
             <div className="tierhead">
-              <span className="serif tiername">{plan.name}</span>
-              <span className="mono price">
-                {price}
-                <span className="per"> every {PRODUCTS[key].period}</span>
-              </span>
+              <span className="tiername">{plan.name}</span>
+              {price && (
+                <span className="price">
+                  <span className="mono">{price}</span>
+                  <span className="per"> every {PRODUCTS[key].period}</span>
+                </span>
+              )}
             </div>
-            {plan.best && <p className="small tierbadge">{plan.best}</p>}
             <p className="muted small" style={{ margin: "4px 0 10px" }}>
               {plan.body}
             </p>
-            <button className={`btn block ${plan.best ? "" : "ghost"}`} disabled={app.busy} onClick={() => buy(key)}>
+            <button className={`btn block ${main ? "" : "ghost"}`} disabled={!enabled || app.busy} onClick={() => buy(key)}>
               {app.busy ? "Working" : plan.cta}
             </button>
           </div>
         );
       })}
+      {view.status === "loading" && (
+        <p className="muted small" role="status" style={{ marginTop: 10 }}>
+          Loading prices from the store.
+        </p>
+      )}
+      {view.status === "failed" && (
+        <p className="small" role="status" style={{ marginTop: 10 }}>
+          Prices could not load from the store. Check your connection.{" "}
+          <button className="linkbtn" onClick={() => app.reloadPrices()}>
+            Try again
+          </button>
+        </p>
+      )}
 
       <div className="muted small disclose" style={{ marginTop: 14 }}>
         <p>Both plans are auto-renewing subscriptions. Payment is charged to your store account when you confirm the purchase.</p>
-        <p>
-          The 6 month plan renews at {app.prices.sixMonth ?? PRODUCTS.sixMonth.fallbackPrice} every 6 months. The 3 month plan
-          renews at {app.prices.threeMonth ?? PRODUCTS.threeMonth.fallbackPrice} every 3 months.
-        </p>
+        {view.status === "ready" ? (
+          <p>
+            {view.plans.map(({ key, price }) => `The ${PRODUCTS[key].months} month plan renews at ${price} every ${PRODUCTS[key].period}.`).join(" ")}
+          </p>
+        ) : (
+          <p>Each plan renews at the price the store shows for it, every 6 months or every 3 months.</p>
+        )}
         <p>
           A subscription renews unless you cancel it at least 24 hours before the current period ends. Your account is charged
           for renewal within 24 hours before the period ends.
         </p>
-        <p>Manage or cancel the subscription in your App Store or Google Play account settings. Prices show in your local currency once the store loads them.</p>
+        <p>Manage or cancel the subscription in your App Store or Google Play account settings. Prices are set by the store in your local currency.</p>
       </div>
       <div className="actions">
         <button className="btn ghost block" disabled={app.busy} onClick={restore}>

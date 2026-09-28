@@ -4,8 +4,9 @@
  * revocation, no server of our own.
  *
  * One entitlement, two auto-renewing subscriptions:
- *   nclexrn_6month  US$149.99 every 6 months (App Store group level 1, Play base plan p6m)
- *   nclexrn_3month  US$99.99 every 3 months (App Store group level 2, Play base plan p3m)
+ *   nclexrn_6month  every 6 months (App Store group level 1, Play base plan p6m)
+ *   nclexrn_3month  every 3 months (App Store group level 2, Play base plan p3m)
+ * Prices come only from the store, through RevenueCat. The app has no price of its own.
  * Both grant nclexrn_access. Both sit in the App Store subscription group
  * "NCLEX-RN Access". There is no lifetime purchase. Owner setup is in LAUNCH.md.
  */
@@ -27,14 +28,40 @@ export const RC_OFFERING = "nclexrn";
 
 export type ProductKey = "sixMonth" | "threeMonth";
 
-/**
- * Store product IDs, the Play base plan and the RevenueCat package type.
- * fallbackPrice shows only until the store price loads.
- */
-export const PRODUCTS: Record<ProductKey, { id: string; basePlan: string; packageType: string; fallbackPrice: string; period: string; months: number }> = {
-  sixMonth: { id: "nclexrn_6month", basePlan: "p6m", packageType: "$rc_six_month", fallbackPrice: "US$149.99", period: "6 months", months: 6 },
-  threeMonth: { id: "nclexrn_3month", basePlan: "p3m", packageType: "$rc_three_month", fallbackPrice: "US$99.99", period: "3 months", months: 3 },
+/** Store product IDs, the Play base plan and the RevenueCat package type. */
+export const PRODUCTS: Record<ProductKey, { id: string; basePlan: string; packageType: string; period: string; months: number }> = {
+  sixMonth: { id: "nclexrn_6month", basePlan: "p6m", packageType: "$rc_six_month", period: "6 months", months: 6 },
+  threeMonth: { id: "nclexrn_3month", basePlan: "p3m", packageType: "$rc_three_month", period: "3 months", months: 3 },
 };
+
+/** Localised price strings of the packages in the live offering, by plan. */
+export type Prices = Partial<Record<ProductKey, string>>;
+
+export interface PlanView {
+  /** loading: the offering has not answered yet. failed: it could not load or has neither plan. */
+  status: "loading" | "failed" | "ready";
+  /** Plans to show, 6 months first. When not ready, both plans show disabled with no price. */
+  plans: { key: ProductKey; price: string | null; enabled: boolean }[];
+  /** The plan shown as the main choice. 6 months when it exists. */
+  primary: ProductKey;
+}
+
+/**
+ * What the paywall shows. undefined means still loading, null means the
+ * offering failed. A plan appears only when its package is in the live
+ * offering, and only with the store's own priceString.
+ */
+export function planView(prices: Prices | null | undefined): PlanView {
+  const live = prices ? PLAN_ORDER.filter((k) => Boolean(prices[k])) : [];
+  if (!live.length) {
+    return {
+      status: prices === undefined ? "loading" : "failed",
+      plans: PLAN_ORDER.map((key) => ({ key, price: null, enabled: false })),
+      primary: "sixMonth",
+    };
+  }
+  return { status: "ready", plans: live.map((key) => ({ key, price: prices![key]!, enabled: true })), primary: live[0] };
+}
 
 /** Paywall order: the 6 month plan first, as on the App Store group (level 1). */
 export const PLAN_ORDER: ProductKey[] = ["sixMonth", "threeMonth"];
@@ -53,8 +80,8 @@ export interface PurchasesAdapter {
   /** Same, after asking the store to restore purchases. */
   restore(): Promise<Access | null>;
   purchase(product: ProductKey): Promise<PurchaseOutcome>;
-  /** Localised store prices. Missing keys fall back to PRODUCTS. */
-  prices(): Promise<Partial<Record<ProductKey, string>>>;
+  /** priceString of each plan whose package is in the live offering. null when the offering cannot be loaded. */
+  prices(): Promise<Prices | null>;
 }
 
 type RCModule = typeof import("@revenuecat/purchases-capacitor");
@@ -175,17 +202,17 @@ export const revenueCat: PurchasesAdapter = {
   },
   async prices() {
     const m = await rc();
-    if (!m) return {};
+    if (!m) return null;
     try {
       const pkgs = await packages(m);
-      const out: Partial<Record<ProductKey, string>> = {};
+      const out: Prices = {};
       for (const key of Object.keys(PRODUCTS) as ProductKey[]) {
         const p = findPackage(pkgs, key);
         if (p?.product?.priceString) out[key] = p.product.priceString;
       }
       return out;
     } catch {
-      return {};
+      return null;
     }
   },
 };
@@ -210,7 +237,8 @@ export function webAdapter(dev: boolean): PurchasesAdapter {
       return "purchased";
     },
     async prices() {
-      return {};
+      // Local dev only: stand-in labels so the paid flow can be clicked through. Never a real price.
+      return dev ? { sixMonth: "Test price", threeMonth: "Test price" } : null;
     },
   };
 }

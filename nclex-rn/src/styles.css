@@ -680,3 +680,4 @@ summary::before {
 details[open] > summary::before { transform: rotate(45deg); }
 /* A set runner names its set as the page heading. */
 h1.runtitle { font: 800 calc(18px * var(--fs))/1.2 var(--display); font-stretch: 108%; text-transform: none; letter-spacing: -0.01em; color: var(--ink); }
+.btn:disabled, .btn.ghost:disabled, .btn.quiet:disabled { background: var(--tray-2); border-color: var(--line); color: var(--mut); cursor: not-allowed; }

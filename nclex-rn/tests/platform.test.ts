@@ -13,6 +13,7 @@ import {
   findPackage,
   keysConfigured,
   offeringPackages,
+  planView,
   reconcileAccess,
   webAdapter,
   type Access,
@@ -73,8 +74,8 @@ describe("free tier", () => {
 
 describe("products and entitlement", () => {
   it("uses the planned ids, entitlement and offering", () => {
-    expect(PRODUCTS.threeMonth).toMatchObject({ id: "nclexrn_3month", basePlan: "p3m", packageType: "$rc_three_month", fallbackPrice: "US$99.99" });
-    expect(PRODUCTS.sixMonth).toMatchObject({ id: "nclexrn_6month", basePlan: "p6m", packageType: "$rc_six_month", fallbackPrice: "US$149.99" });
+    expect(PRODUCTS.threeMonth).toMatchObject({ id: "nclexrn_3month", basePlan: "p3m", packageType: "$rc_three_month" });
+    expect(PRODUCTS.sixMonth).toMatchObject({ id: "nclexrn_6month", basePlan: "p6m", packageType: "$rc_six_month" });
     expect(Object.keys(PRODUCTS).sort()).toEqual(["sixMonth", "threeMonth"]);
     expect(ENTITLEMENT).toBe("nclexrn_access");
     expect(RC_OFFERING).toBe("nclexrn");
@@ -297,8 +298,50 @@ describe("Codemagic", () => {
 });
 
 
+describe("paywall plans", () => {
+  it("shows 6 and 3 months disabled, with no price, while loading or failed", () => {
+    for (const prices of [undefined, null, {}]) {
+      const v = planView(prices);
+      expect(v.status).toBe(prices === undefined ? "loading" : "failed");
+      expect(v.plans).toEqual([
+        { key: "sixMonth", price: null, enabled: false },
+        { key: "threeMonth", price: null, enabled: false },
+      ]);
+      expect(v.primary).toBe("sixMonth");
+    }
+  });
+  it("shows only the plans in the live offering, with the store priceString, 6 months first", () => {
+    expect(planView({ threeMonth: "CA$139.99", sixMonth: "CA$209.99" })).toEqual({
+      status: "ready",
+      plans: [
+        { key: "sixMonth", price: "CA$209.99", enabled: true },
+        { key: "threeMonth", price: "CA$139.99", enabled: true },
+      ],
+      primary: "sixMonth",
+    });
+    const only3 = planView({ threeMonth: "CA$139.99" });
+    expect(only3.plans).toEqual([{ key: "threeMonth", price: "CA$139.99", enabled: true }]);
+    expect(only3.primary).toBe("threeMonth");
+  });
+  it("never offers an annual or other package from the offering", () => {
+    const pkgs = [
+      { identifier: "$rc_annual", product: { identifier: "nclexrn_annual", priceString: "CA$550.00" } },
+      { identifier: "$rc_monthly", product: { identifier: "other_monthly", priceString: "CA$20.00" } },
+    ];
+    expect(findPackage(pkgs, "sixMonth")).toBeUndefined();
+    expect(findPackage(pkgs, "threeMonth")).toBeUndefined();
+  });
+});
+
 describe("paywall", () => {
   const src = read("../src/screens/Paywall.tsx");
+  it("has no price of its own, no strike-through and no savings claim", () => {
+    const code = read("../src/lib/purchases.ts") + src;
+    expect(code).not.toMatch(/\$\d|US\$\d|fallbackPrice/);
+    expect(src + read("../src/styles.css")).not.toMatch(/line-through|<s>|<del>|strikethrough/i);
+    expect(src).not.toMatch(/save \d|\d+% off|lower cost|was /i);
+    expect(src).toContain("planView(app.prices)");
+  });
   it("offers both subscriptions, the renewal terms, Restore and the Terms and Privacy links", () => {
     for (const s of ["PLAN_ORDER", "every 6 months", "every 3 months", "at least 24 hours before the current period ends", "Restore purchases", "TERMS_URL", "PRIVACY_URL"])
       expect(src, s).toContain(s);
