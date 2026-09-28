@@ -4,16 +4,19 @@ import { SAMPS } from "@/samps";
 import { finishAttempt, updateDeckFromAttempt, review as reviewCard, type Attempt, type Deck, type SelfMark } from "@/engine";
 import { canOpenCase, canOpenSamp } from "@/lib/access";
 import {
+  DURATION_MONTHS,
   NO_EXPIRY,
-  PRODUCTS,
+  TIERS,
   accessAt,
   defaultAdapter,
   laterExpiry,
   reconcileExpiry,
   type Access,
+  type Duration,
   type Expiry,
-  type ProductKey,
+  type Plan,
   type PurchaseOutcome,
+  type Tier,
 } from "@/lib/purchases";
 import { createRepo, DEFAULT_SETTINGS, type MockExam, type MockOral, type SampAttempt, type Settings } from "@/lib/storage";
 
@@ -28,7 +31,8 @@ interface AppState {
   access: Access;
   /** When each component's access ends, or null if never bought. */
   expiry: Expiry;
-  prices: Partial<Record<ProductKey, string>>;
+  /** Plans in the live store offering, with store prices. Empty until loaded or when none can be read. */
+  plans: Plan[];
   busy: boolean;
   sampAttempts: SampAttempt[];
   mockExams: MockExam[];
@@ -42,7 +46,9 @@ interface AppState {
   saveSampAttempts(list: SampAttempt[]): Promise<void>;
   saveMockExam(m: MockExam): Promise<void>;
   saveMockOral(m: MockOral): Promise<void>;
-  buy(product: ProductKey): Promise<PurchaseOutcome>;
+  buy(tier: Tier, duration: Duration): Promise<PurchaseOutcome>;
+  /** Reads the offering again, for the paywall. */
+  refreshPlans(): Promise<void>;
   restore(): Promise<Access | null>;
   resetProgress(): Promise<void>;
 }
@@ -62,7 +68,7 @@ export function AppProvider({ children }: { children: ReactNode }) {
     return () => clearInterval(t);
   }, []);
   const access = useMemo(() => accessAt(expiry, clock), [expiry, clock]);
-  const [prices, setPrices] = useState<Partial<Record<ProductKey, string>>>({});
+  const [plans, setPlans] = useState<Plan[]>([]);
   const [busy, setBusy] = useState(false);
   const [sampAttempts, setSampAttempts] = useState<SampAttempt[]>([]);
   const [mockExams, setMockExams] = useState<MockExam[]>([]);
@@ -94,7 +100,7 @@ export function AppProvider({ children }: { children: ReactNode }) {
       if (cancelled) return;
       setExpiry(next);
       if (next.written !== cached.written || next.oral !== cached.oral) await repo.setCachedExpiry(next);
-      setPrices(await purchases.prices());
+      setPlans(await purchases.plans());
     })();
     return () => {
       cancelled = true;
@@ -157,20 +163,24 @@ export function AppProvider({ children }: { children: ReactNode }) {
     await repo.setCachedExpiry(e);
   }, []);
 
+  const refreshPlans = useCallback(async () => {
+    setPlans(await purchases.plans());
+  }, []);
+
   const buy = useCallback(
-    async (product: ProductKey) => {
+    async (tier: Tier, duration: Duration) => {
       setBusy(true);
       try {
-        const r = await purchases.purchase(product);
+        const r = await purchases.purchase(tier, duration);
         if (r === "purchased") {
           const fromStore = await purchases.check();
           // The purchase already confirmed the entitlements. If the store cannot be
-          // read back right away, hold one subscription year locally. The next
+          // read back right away, hold the plan's length locally. The next
           // launch replaces it with the entitlement dates.
           const local: Expiry = { ...expiry };
-          const yearOn = new Date();
-          yearOn.setUTCFullYear(yearOn.getUTCFullYear() + 1);
-          for (const c of PRODUCTS[product].grants) local[c] = yearOn.toISOString();
+          const until = new Date();
+          until.setUTCMonth(until.getUTCMonth() + DURATION_MONTHS[duration]);
+          for (const c of TIERS[tier].grants) local[c] = until.toISOString();
           await grant(fromStore ? laterExpiry(expiry, fromStore) : local);
         }
         return r;
@@ -209,7 +219,7 @@ export function AppProvider({ children }: { children: ReactNode }) {
       settings,
       access,
       expiry,
-      prices,
+      plans,
       busy,
       sampAttempts,
       mockExams,
@@ -224,10 +234,11 @@ export function AppProvider({ children }: { children: ReactNode }) {
       saveMockExam,
       saveMockOral,
       buy,
+      refreshPlans,
       restore,
       resetProgress,
     }),
-    [ready, attempts, deck, settings, access, expiry, prices, busy, sampAttempts, mockExams, mockOrals, saveAttempt, submitMarks, answerReview, updateSettings, saveSampAttempts, saveMockExam, saveMockOral, buy, restore, resetProgress],
+    [ready, attempts, deck, settings, access, expiry, plans, busy, sampAttempts, mockExams, mockOrals, saveAttempt, submitMarks, answerReview, updateSettings, saveSampAttempts, saveMockExam, saveMockOral, buy, refreshPlans, restore, resetProgress],
   );
 
   return <Ctx.Provider value={value}>{children}</Ctx.Provider>;

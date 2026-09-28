@@ -230,7 +230,8 @@ workflows:
         submit_to_testflight: true
 
   # Production release. Starts only when a tag matching ccfpem-v* is pushed,
-  # never on a branch push. Release notes come from release_notes.txt.
+  # never on a branch push. Add release_notes.txt (What's New) from the second
+  # release on. The first release, 1.0.1, has none.
   android-production:
     name: Preceptor CCFP-EM Android (production)
     working_directory: oral-exam-sim

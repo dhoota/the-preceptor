@@ -16,7 +16,7 @@ State on 25 September 2026: Preceptor: CCFP-EM is a Draft in Play Console with z
    - Play will not let you create subscriptions until a bundle that uses Play Billing has been uploaded.
    - This app's bundle includes Play Billing through RevenueCat.
    - Steps D3 and F0 below.
-2. **Create the three annual subscriptions.**
+2. **Create the three subscriptions, each with 3 and 6 month base plans.**
    - Step B1, only after step 1.
    - Then do B2 and B3 in RevenueCat.
 3. **Run a closed test with at least 12 opted-in testers for 14 days in a row.**
@@ -39,11 +39,12 @@ The App Store has no such wait. It needs only the `appl_` key pasted in (A4), a 
 |---|---|
 | App name | Preceptor: CCFP-EM |
 | Bundle ID (iOS) and package name (Android) | `com.preceptor.oral` |
-| Version | 1.0. Codemagic sets the build number |
-| Subscription product IDs, same on both stores | `ccfpem_complete_1y`, `ccfpem_written_1y`, `ccfpem_oral_1y` |
-| Prices per year | Complete US$199.99. Written US$149.99. Oral US$99.99 (US dollars, base country United States) |
+| Version | 1.0.1. Codemagic sets the build number |
+| App Store product IDs | `ccfpem_complete_6m`, `ccfpem_complete_3m`, `ccfpem_written_6m`, `ccfpem_written_3m`, `ccfpem_oral_6m`, `ccfpem_oral_3m` |
+| Play subscriptions and base plans | `ccfpem_complete`, `ccfpem_written`, `ccfpem_oral`, each with base plans `p6m` (P6M) and `p3m` (P3M) |
+| Prices | 6 months: Complete US$199.99, Written US$149.99, Oral US$99.99. 3 months: Complete US$129.99, Written US$99.99, Oral US$69.99 (base country United States) |
 | RevenueCat entitlements | `written_access` (Complete, Written). `oral_full_access` (Complete, Oral) |
-| RevenueCat offering | `ccfpem`, with packages `complete`, `written`, `oral` |
+| RevenueCat offering | `ccfpem`, with packages `complete_6m`, `complete_3m`, `written_6m`, `written_3m`, `oral_6m`, `oral_3m` |
 | Support email | preceptor.app@gmail.com |
 | Privacy policy | https://thepreceptor.ca/privacy |
 | Terms of use | https://thepreceptor.ca/terms |
@@ -62,9 +63,9 @@ The App Store has no such wait. It needs only the `appl_` key pasted in (A4), a 
 
 **A2. Terms page.**
 - On thepreceptor.ca, update https://thepreceptor.ca/terms to cover:
-  - yearly subscriptions that renew automatically
+  - subscriptions of 3 months and 6 months that renew automatically
   - how to cancel in the App Store or Google Play account
-  - that access runs to the end of the paid year after cancelling
+  - that access runs to the end of the paid period after cancelling
   - that refunds go through Apple or Google
 - Apple rejects subscription apps whose terms do not say this.
 
@@ -82,20 +83,23 @@ The App Store has no such wait. It needs only the `appl_` key pasted in (A4), a 
 ## Phase B. Google Play products and RevenueCat
 
 **B1. Create the three subscriptions.**
-- **Blocked until a bundle is uploaded (D3 and F0).** Play disables subscription setup until then. This is why the annual products could not be made yet.
+- **Blocked until a bundle is uploaded (D3 and F0).** Play disables subscription setup until then. This is why the Play products could not be made yet.
 - Screen: Play Console > Preceptor app > Monetize with Play > Products > Subscriptions > Create subscription.
-- Make one per row:
+- Make three subscriptions, each with two base plans, as in these rows:
 
 | Product ID | Name | Base plan ID | Type | Billing period | Price (USD) | Free trial |
 |---|---|---|---|---|---|---|
-| `ccfpem_complete_1y` | CCFP-EM Complete, yearly | `yearly` | Auto-renewing | 1 year | 199.99 | None |
-| `ccfpem_written_1y` | CCFP-EM Written, yearly | `yearly` | Auto-renewing | 1 year | 149.99 | None |
-| `ccfpem_oral_1y` | CCFP-EM Oral, yearly | `yearly` | Auto-renewing | 1 year | 99.99 | None |
+| `ccfpem_complete` | CCFP-EM Complete | `p6m` | Auto-renewing | 6 months | 199.99 | None |
+| `ccfpem_complete` | CCFP-EM Complete | `p3m` | Auto-renewing | 3 months | 129.99 | None |
+| `ccfpem_written` | CCFP-EM Written | `p6m` | Auto-renewing | 6 months | 149.99 | None |
+| `ccfpem_written` | CCFP-EM Written | `p3m` | Auto-renewing | 3 months | 99.99 | None |
+| `ccfpem_oral` | CCFP-EM Oral | `p6m` | Auto-renewing | 6 months | 99.99 | None |
+| `ccfpem_oral` | CCFP-EM Oral | `p3m` | Auto-renewing | 3 months | 69.99 | None |
 
 - For each one:
-  - Add the base plan.
+  - Add both base plans.
   - Set United States to the price above. Play converts it for the other countries.
-  - Activate the base plan.
+  - Activate both base plans.
 - **UNKNOWN:** which countries to sell in. Play will convert the USD price for other countries unless you turn them off. The App Store availability should match.
 
 **B2. Real-time developer notifications.**
@@ -104,16 +108,16 @@ The App Store has no such wait. It needs only the `appl_` key pasted in (A4), a 
 
 **B3. RevenueCat Play products.**
 - Screen: RevenueCat > Preceptor project > Product catalog > Products.
-- Import the three Play subscriptions. They appear as `ccfpem_complete_1y:yearly` and similar.
+- Import the six Play products. They appear as `ccfpem_complete:p6m` and similar.
 - Then:
-  - Entitlements > `written_access`: attach the Play `ccfpem_written_1y` and `ccfpem_complete_1y`.
-  - Entitlements > `oral_full_access`: attach the Play `ccfpem_oral_1y` and `ccfpem_complete_1y`.
-  - Offerings > `ccfpem`: in each package (`complete`, `written`, `oral`), add the matching Play product beside the App Store one.
-  - Detach the three lifetime placeholder products from every entitlement and package, then delete them.
+  - Entitlements > `written_access`: attach the Play `ccfpem_complete:p6m`, `ccfpem_complete:p3m`, `ccfpem_written:p6m` and `ccfpem_written:p3m`.
+  - Entitlements > `oral_full_access`: attach the Play `ccfpem_complete:p6m`, `ccfpem_complete:p3m`, `ccfpem_oral:p6m` and `ccfpem_oral:p3m`.
+  - Offerings > `ccfpem`: in each package (`complete_6m`, `complete_3m`, `written_6m`, `written_3m`, `oral_6m`, `oral_3m`), add the matching Play product beside the App Store one.
+  - Detach any `_1y` or lifetime products from every entitlement and package, then delete them.
 - Do not make `ccfpem` the Current offering. Another Preceptor app uses the Current offering, and this app reads `ccfpem` by name.
 
 **B4. App Store side of RevenueCat.**
-- Done on 25 September 2026. Nothing to do.
+- Redo for the new plans: import the six `_3m` and `_6m` App Store products, attach them to the entitlements, put them in the six packages above, and remove the `_1y` products.
 
 ## Phase C. App Store Connect setup (before the build)
 
@@ -125,16 +129,16 @@ All of these are in App Store Connect > Apps > the app with bundle `com.precepto
 
 **C2. Clear out old products.**
 - Screen: the app > Monetization > In-App Purchases.
-- Delete the three unsubmitted drafts: `ccfpem_complete_lifetime`, `ccfpem_written_lifetime` and `oral_full_lifetime`.
+- Delete the unsubmitted drafts: `ccfpem_complete_lifetime`, `ccfpem_written_lifetime`, `oral_full_lifetime`, and the three `_1y` subscriptions if they were never submitted.
 
 **C3. Subscriptions.**
 - Screen: the app > Monetization > Subscriptions.
-- The group and the three 1-year subscriptions already exist.
-- In the group, check the levels: Complete alone on level 1, and Written and Oral on level 2.
+- In the group "CCFP-EM Access", create the six subscriptions `ccfpem_complete_6m`, `ccfpem_complete_3m`, `ccfpem_written_6m`, `ccfpem_written_3m`, `ccfpem_oral_6m` and `ccfpem_oral_3m`.
+- In the group, set the levels: both Complete plans on level 1, and the Written and Oral plans on level 2.
 - For each subscription:
   - It needs a display name and a description. Localization English (Canada) is enough.
-  - Add a review screenshot. Use `store/screenshots/iphone-6.9/` or a screenshot of the paywall from TestFlight.
-  - Add this review note: "Ten SAMPs and two oral cases are free. Three yearly auto-renewable subscriptions in one group open the rest. Complete opens both components. Written or Oral opens one. The paywall shows the price per year, says the subscription renews automatically, and links to the Terms of Use and Privacy Policy. Restore is in Settings and on the paywall."
+  - Add a review screenshot. Use `store/screenshots/review/` or a screenshot of the paywall from TestFlight.
+  - Add this review note: "Ten SAMPs and two oral cases are free. Six auto-renewable subscriptions in one group open the rest: Complete, Written or Oral, each for 3 months or 6 months. Complete opens both components. Written or Oral opens one. The paywall shows each plan's length and price, says the subscription renews automatically, and links to the Terms of Use and Privacy Policy. Restore is in Settings and on the paywall."
 - Each should show "Ready to Submit".
 
 **C4. App Information.**
@@ -174,7 +178,7 @@ All of these are in App Store Connect > Apps > the app with bundle `com.precepto
 - Branch: `claude/oral-exam-sim`, or `main` once it is merged.
 - Workflow: `ios-release`.
 - It builds, signs and uploads to TestFlight. It does not submit for review.
-- **UNKNOWN:** build 7 was reported as "in review" on 24 September 2026. If an older build of version 1.0 is still in App Review, it predates the yearly subscriptions and the 1,500 SAMPs. On the version page, choose "Remove from Review" before you attach the new build. Only you can see its state.
+- **UNKNOWN:** build 7 was reported as "in review" on 24 September 2026. If an older build of version 1.0 is still in App Review, it predates the current subscriptions and the 1,500 SAMPs. On the version page, choose "Remove from Review" before you attach the new build. Only you can see its state.
 
 **D3. Android build.**
 - Screen: the same Codemagic app > Start new build.

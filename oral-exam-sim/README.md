@@ -22,7 +22,7 @@ Across both
 - Every SAMP and case is mapped to the 35 CFPC EM priority topics and 215 key features. Progress shows each topic and key feature.
 - Spaced review of missed oral rubric points. Readiness estimate and trend.
 - Official CFPC resources screen that links out to the CFPC material. Nothing is copied from it.
-- Free sample: 10 SAMPs and 2 oral cases. Then yearly subscriptions that renew automatically: Complete, Written or Oral.
+- Free sample: 10 SAMPs and 2 oral cases. Then subscriptions of 3 months or 6 months that renew automatically: Complete, Written or Oral.
 
 ## Run it
 

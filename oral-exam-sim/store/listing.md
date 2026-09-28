@@ -9,11 +9,12 @@ House style: no em or en dashes, no semicolons, short sentences, no filler. Char
 | iOS bundle ID | com.preceptor.oral |
 | Android applicationId | com.preceptor.oral |
 | App name | Preceptor: CCFP-EM |
-| Products | ccfpem_complete_1y (Complete), ccfpem_written_1y (Written), ccfpem_oral_1y (Oral) |
-| Product type | iOS Auto-Renewable Subscription, 1 year, one subscription group (Complete level 1, Written and Oral level 2). Play subscription with a 1 year auto-renewing base plan |
+| App Store products | ccfpem_complete_6m, ccfpem_complete_3m (Complete). ccfpem_written_6m, ccfpem_written_3m (Written). ccfpem_oral_6m, ccfpem_oral_3m (Oral) |
+| Play products | Subscriptions ccfpem_complete, ccfpem_written, ccfpem_oral, each with base plans p6m (6 months) and p3m (3 months) |
+| Product type | iOS Auto-Renewable Subscriptions of 3 months and 6 months in the group CCFP-EM Access (both Complete plans level 1, Written and Oral level 2). Play subscriptions with auto-renewing 3 month and 6 month base plans |
 | RevenueCat entitlements | written_access (Complete, Written). oral_full_access (Complete, Oral) |
-| RevenueCat offering | ccfpem, three packages |
-| Prices | Per year, in US dollars (base country United States). Complete US$199.99. Written US$149.99. Oral US$99.99 |
+| RevenueCat offering | ccfpem, six packages: complete_6m, complete_3m, written_6m, written_3m, oral_6m, oral_3m |
+| Prices | US dollars, base country United States. 6 months: Complete US$199.99, Written US$149.99, Oral US$99.99. 3 months: Complete US$129.99, Written US$99.99, Oral US$69.99. The app shows only the store price |
 | App Store category | Medical. Secondary: Education |
 | Play category | Medical |
 | Support email | preceptor.app@gmail.com |
@@ -55,7 +56,7 @@ Answer keys, model answers, scripted examiner feedback on every oral decision, t
 Try it free. Ten SAMPs and two oral cases are open. Then subscribe to the written bank, the oral simulator, or both.
 
 Subscriptions
-Complete, Written and Oral are yearly subscriptions. Payment is charged to your App Store or Google Play account when you confirm the purchase. A subscription renews automatically each year at the same price unless you cancel it at least 24 hours before the end of the current year. Manage or cancel it any time in your store account settings.
+Complete, Written and Oral are each offered as a subscription for 3 months or 6 months. Payment is charged to your App Store or Google Play account when you confirm the purchase. A subscription renews automatically for the same length, 3 months or 6 months, at the same price unless you cancel it at least 24 hours before the end of the current period. Manage or cancel it any time in your store account settings.
 
 Terms of Use (EULA): https://www.apple.com/legal/internet-services/itunes/dev/stdeula/
 Preceptor terms: https://thepreceptor.ca/terms
@@ -68,12 +69,7 @@ Preceptor: CCFP-EM is an independent study tool. It is not affiliated with or en
 Support: preceptor.app@gmail.com
 
 ### What's New (4000)
-First release.
-- Original SAMPs in all three written formats, with examiner style answer keys
-- Timed four hour mock written exam and practice by priority topic
-- Structured oral stations of 12 minutes and a four station mock oral
-- Scoring on the four oral examiner criteria
-- Progress for every CFPC priority topic and key feature
+Not applicable. Version 1.0.1 is the first release, so App Store Connect has no What's New field for it.
 
 ## Google Play
 
@@ -135,4 +131,4 @@ Answer the questionnaire with:
 - Expected result: Everyone or Teen depending on the questionnaire. The target audience setting keeps it to adults.
 
 ## Review notes for Apple and Google
-Ten SAMPs and two oral cases are free. Three yearly auto-renewable subscriptions in one group open the rest: Complete, Written or Oral. Complete opens both components. A subscriber to Written or Oral is offered the upgrade to Complete. The paywall shows the price per year and the renewal terms, and links to the Terms of Use and Privacy Policy. Settings shows the renewal or end date. Restore Purchases is on the paywall and in Settings. No account or sign in is needed. The app works fully offline.
+Ten SAMPs and two oral cases are free. Six auto-renewable subscriptions in one group open the rest: Complete, Written or Oral, each for 3 months or 6 months. Complete opens both components. A subscriber to Written or Oral is offered the upgrade to Complete. The paywall opens on 6 months, shows each plan's length and store price, and the renewal terms, and links to the Terms of Use and Privacy Policy. Settings shows the renewal or end date. Restore Purchases is on the paywall and in Settings. No account or sign in is needed. The app works fully offline.

@@ -131,7 +131,7 @@ export function Home({ go }: { go: Go }) {
         ))}
         {!app.access.oral && (
           <p className="muted small" style={{ marginTop: 12 }}>
-            Two cases are free. Oral access is a yearly subscription that renews until you cancel it.
+            Two cases are free. Oral access is a subscription of 3 months or 6 months that renews until you cancel it.
           </p>
         )}
       </section>

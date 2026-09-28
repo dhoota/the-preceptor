@@ -3,12 +3,14 @@
  * lazy import of @revenuecat/purchases-capacitor on native only, buyer-safe
  * revocation, no server of our own.
  *
- * Three yearly subscriptions that renew automatically:
+ * Three tiers, each sold for 3 months or 6 months, renewing automatically:
  *   complete  unlocks written_access and oral_full_access
  *   written   unlocks written_access (the SAMP bank and mock exam)
  *   oral      unlocks oral_full_access (the oral cases and mock oral)
- * App Store: auto-renewable subscriptions of one year in one subscription
- * group. Google Play: subscriptions with a one year auto-renewing base plan.
+ * App Store: six auto-renewable subscriptions in one subscription group,
+ * ccfpem_<tier>_3m and ccfpem_<tier>_6m. Google Play: one subscription per
+ * tier with a P3M and a P6M auto-renewing base plan. The packages shown and
+ * their prices come only from the live RevenueCat offering.
  * The store supplies each expiry date through the RevenueCat entitlements.
  * The app caches those dates so access works offline and ends on time.
  * Owner setup is in LAUNCH.md.
@@ -29,17 +31,34 @@ export type Component = "written" | "oral";
  */
 export const RC_OFFERING = "ccfpem";
 
-export type ProductKey = "complete" | "written" | "oral";
+export type Tier = "complete" | "written" | "oral";
+export type Duration = "3m" | "6m";
 
-/**
- * Store product IDs, the same on the App Store and Google Play. On Play these
- * are subscription IDs, and RevenueCat may append the base plan after a colon.
- */
-export const PRODUCTS: Record<ProductKey, { id: string; grants: Component[]; fallbackPrice: string }> = {
-  complete: { id: "ccfpem_complete_1y", grants: ["written", "oral"], fallbackPrice: "$199.99" },
-  written: { id: "ccfpem_written_1y", grants: ["written"], fallbackPrice: "$149.99" },
-  oral: { id: "ccfpem_oral_1y", grants: ["oral"], fallbackPrice: "$99.99" },
+/** Tiers in paywall order, and the components each one opens. */
+export const TIERS: Record<Tier, { grants: Component[] }> = {
+  complete: { grants: ["written", "oral"] },
+  written: { grants: ["written"] },
+  oral: { grants: ["oral"] },
 };
+export const TIER_ORDER: Tier[] = ["complete", "written", "oral"];
+
+/** Plan lengths in paywall order. Six months is the default. */
+export const DURATIONS: Duration[] = ["6m", "3m"];
+export const DEFAULT_DURATION: Duration = "6m";
+export const DURATION_LABEL: Record<Duration, string> = { "3m": "3 months", "6m": "6 months" };
+export const DURATION_MONTHS: Record<Duration, number> = { "3m": 3, "6m": 6 };
+
+/** App Store product ID, such as ccfpem_complete_6m. */
+export const productId = (tier: Tier, duration: Duration) => `ccfpem_${tier}_${duration}`;
+/** RevenueCat package identifier in the ccfpem offering, such as complete_6m. */
+export const packageId = (tier: Tier, duration: Duration) => `${tier}_${duration}`;
+
+/** A plan the store actually offers, with its localised price from RevenueCat. */
+export interface Plan {
+  tier: Tier;
+  duration: Duration;
+  priceString: string;
+}
 
 /** RevenueCat entitlement per component. Complete is attached to both. */
 export const ENTITLEMENTS: Record<Component, string> = { written: "written_access", oral: "oral_full_access" };
@@ -79,9 +98,9 @@ export interface PurchasesAdapter {
   check(): Promise<Expiry | null>;
   /** Same, after asking the store to restore purchases. */
   restore(): Promise<Expiry | null>;
-  purchase(product: ProductKey): Promise<PurchaseOutcome>;
-  /** Localised store prices. Missing keys fall back to PRODUCTS. */
-  prices(): Promise<Partial<Record<ProductKey, string>>>;
+  purchase(tier: Tier, duration: Duration): Promise<PurchaseOutcome>;
+  /** The plans in the live offering, with store prices. Empty when none can be read. */
+  plans(): Promise<Plan[]>;
 }
 
 type RCModule = typeof import("@revenuecat/purchases-capacitor");
@@ -143,8 +162,8 @@ type CustomerInfoLike = { entitlements?: { all?: Record<string, EntitlementLike 
 export const NO_END = "9999-12-31T00:00:00.000Z";
 
 /**
- * Expiry dates from the RevenueCat entitlements. For a yearly subscription
- * this is the current period end, and it moves forward on each renewal. An
+ * Expiry dates from the RevenueCat entitlements. For a 3 or 6 month
+ * subscription this is the current period end, and it moves forward on each renewal. An
  * expired entitlement keeps its past date, so the app can say when it ended.
  * Products of the other Preceptor apps unlock other entitlements and are ignored.
  */
@@ -167,14 +186,43 @@ export function ccfpemPackages<P extends PackageLike>(offerings: OfferingsLike):
   return (offerings?.all?.[RC_OFFERING]?.availablePackages ?? []) as P[];
 }
 
-/** True when a store product id is this product, with or without a Play base plan suffix. */
-export function isProduct(storeId: string | undefined, key: ProductKey): boolean {
-  return storeId?.split(":")[0] === PRODUCTS[key].id;
+/**
+ * Tier and length from a store product id. App Store: ccfpem_complete_6m.
+ * Google Play, as RevenueCat reports it: subscriptionId:basePlanId, where the
+ * subscription id starts with ccfpem_<tier> and the base plan id ends in 3m or
+ * 6m, such as ccfpem_complete:p6m. A product of any other length is not a
+ * plan this app sells.
+ */
+export function parseStoreId(storeId: string | undefined): { tier: Tier; duration: Duration | null } | null {
+  if (!storeId) return null;
+  const [sub, base] = storeId.split(":");
+  const m = /^ccfpem_(complete|written|oral)(?:_([a-z0-9]+))?$/.exec(sub);
+  if (!m) return null;
+  const tail = base ?? m[2] ?? "";
+  const d = /(?:^|[^0-9])([36])m$/i.exec(tail);
+  return { tier: m[1] as Tier, duration: d ? (`${d[1]}m` as Duration) : null };
 }
 
-/** The package for a product: by package id (complete, written, oral), else by store product id. */
-export function findPackage<P extends PackageLike>(pkgs: P[], key: ProductKey): P | undefined {
-  return pkgs.find((p) => p.identifier === key) ?? pkgs.find((p) => isProduct(p.product?.identifier, key));
+/** The package for a plan: by package id (complete_6m), else by store product id. */
+export function findPackage<P extends PackageLike>(pkgs: P[], tier: Tier, duration: Duration): P | undefined {
+  return (
+    pkgs.find((p) => p.identifier === packageId(tier, duration)) ??
+    pkgs.find((p) => {
+      const x = parseStoreId(p.product?.identifier);
+      return x?.tier === tier && x.duration === duration;
+    })
+  );
+}
+
+/** Every plan the offering holds, in paywall order. Only packages that exist and carry a store price. */
+export function plansFrom(pkgs: PackageLike[]): Plan[] {
+  const out: Plan[] = [];
+  for (const tier of TIER_ORDER)
+    for (const duration of DURATIONS) {
+      const priceString = findPackage(pkgs, tier, duration)?.product?.priceString;
+      if (priceString) out.push({ tier, duration, priceString });
+    }
+  return out;
 }
 
 /**
@@ -183,9 +231,12 @@ export function findPackage<P extends PackageLike>(pkgs: P[], key: ProductKey): 
  * App Store does this itself inside the subscription group. Google Play needs
  * the old product named, or the candidate would pay for both.
  */
-export function replaces(product: ProductKey, activeSubscriptions: string[]): string | null {
-  if (product !== "complete") return null;
-  const old = activeSubscriptions.find((id) => isProduct(id, "written") || isProduct(id, "oral"));
+export function replaces(tier: Tier, activeSubscriptions: string[]): string | null {
+  if (tier !== "complete") return null;
+  const old = activeSubscriptions.find((id) => {
+    const t = parseStoreId(id)?.tier;
+    return t === "written" || t === "oral";
+  });
   return old ? old.split(":")[0] : null;
 }
 
@@ -213,39 +264,33 @@ export const revenueCat: PurchasesAdapter = {
       return null;
     }
   },
-  async purchase(product) {
+  async purchase(tier, duration) {
     const m = await rc();
     if (!m) return "unavailable";
     try {
-      const pkg = findPackage(await packages(m), product);
+      const pkg = findPackage(await packages(m), tier, duration);
       if (!pkg) return "unavailable";
       let googleProductChangeInfo = null;
       if (platform() === "android") {
         const { customerInfo } = await m.Purchases.getCustomerInfo();
-        const old = replaces(product, customerInfo.activeSubscriptions);
+        const old = replaces(tier, customerInfo.activeSubscriptions);
         if (old) googleProductChangeInfo = { oldProductIdentifier: old, prorationMode: m.PRORATION_MODE.IMMEDIATE_WITH_TIME_PRORATION };
       }
       const res = await m.Purchases.purchasePackage({ aPackage: pkg, googleProductChangeInfo });
       const got = accessAt(expiryFrom(res?.customerInfo));
-      return PRODUCTS[product].grants.every((g) => got[g]) ? "purchased" : "failed";
+      return TIERS[tier].grants.every((g) => got[g]) ? "purchased" : "failed";
     } catch (e) {
       const err = e as { userCancelled?: boolean; code?: string | number };
       return err?.userCancelled || err?.code === "1" || err?.code === 1 ? "cancelled" : "failed";
     }
   },
-  async prices() {
+  async plans() {
     const m = await rc();
-    if (!m) return {};
+    if (!m) return [];
     try {
-      const pkgs = await packages(m);
-      const out: Partial<Record<ProductKey, string>> = {};
-      for (const key of Object.keys(PRODUCTS) as ProductKey[]) {
-        const p = findPackage(pkgs, key);
-        if (p?.product?.priceString) out[key] = p.product.priceString;
-      }
-      return out;
+      return plansFrom(await packages(m));
     } catch {
-      return {};
+      return [];
     }
   },
 };
@@ -264,15 +309,18 @@ export function webAdapter(dev: boolean, now: () => number = Date.now): Purchase
     async restore() {
       return { ...owned };
     },
-    async purchase(product) {
+    async purchase(tier, duration) {
       if (!dev) return "unavailable";
       const d = new Date(now());
-      d.setUTCFullYear(d.getUTCFullYear() + 1);
-      for (const c of PRODUCTS[product].grants) owned = { ...owned, [c]: d.toISOString() };
+      d.setUTCMonth(d.getUTCMonth() + DURATION_MONTHS[duration]);
+      for (const c of TIERS[tier].grants) owned = { ...owned, [c]: d.toISOString() };
       return "purchased";
     },
-    async prices() {
-      return {};
+    async plans() {
+      // Local dev only: a fixture offering so the paid flow can be clicked through.
+      // Kept in src/dev and loaded on demand, so no price is in the store app's code.
+      if (!dev) return [];
+      return plansFrom((await import("@/dev/offering")).DEV_PACKAGES);
     },
   };
 }

@@ -24,7 +24,7 @@ The Codemagic app "Preceptor: CCFP-EM" (id 6ab4a0114e7acd498ad4caf1) builds from
 |---|---|---|
 | Bundle ID and package | `com.preceptor.oral` (unchanged, the store records exist) | `capacitor.config.json`, `android/app/build.gradle`, Xcode project |
 | Display name | Preceptor: CCFP-EM | `capacitor.config.json`, `android/app/src/main/res/values/strings.xml`, `ios/App/App/Info.plist` |
-| Access | Yearly auto-renewing subscriptions. Expiry comes from the RevenueCat entitlements `written_access` and `oral_full_access` | `src/lib/purchases.ts` |
+| Access | Auto-renewing subscriptions of 3 months or 6 months. Expiry comes from the RevenueCat entitlements `written_access` and `oral_full_access` | `src/lib/purchases.ts` |
 | Offering | `ccfpem` | `src/lib/purchases.ts` |
 | Support | preceptor.app@gmail.com | `src/lib/constants.ts` |
 | Privacy | https://thepreceptor.ca/privacy | `src/lib/constants.ts` |
@@ -36,19 +36,22 @@ The iOS home screen truncates long names under the icon. "Preceptor: CCFP-EM" wi
 
 The app record exists under `com.preceptor.oral`. Update the name to Preceptor: CCFP-EM.
 
-1. Monetization > Subscriptions. Access is a yearly subscription that renews automatically (Arjan, 24 September 2026). Create one subscription group, for example "CCFP-EM access", and three **Auto-Renewable Subscriptions** in it, each with a duration of 1 year:
+1. Monetization > Subscriptions. Access is a subscription of 3 months or 6 months that renews automatically, the rule for all Preceptor apps (Arjan, 28 September 2026). There is no 1 year plan. In the existing group "CCFP-EM Access", create six **Auto-Renewable Subscriptions**:
 
    | Level | Reference name | Product ID | Duration | Price |
    |---|---|---|---|---|
-   | 1 | Complete: written and oral, yearly | `ccfpem_complete_1y` | 1 year | US$199.99 |
-   | 2 | Written: SAMP bank, yearly | `ccfpem_written_1y` | 1 year | US$149.99 |
-   | 2 | Oral: oral simulator, yearly | `ccfpem_oral_1y` | 1 year | US$99.99 |
+   | 1 | Complete, 6 months | `ccfpem_complete_6m` | 6 months | US$199.99 |
+   | 1 | Complete, 3 months | `ccfpem_complete_3m` | 3 months | US$129.99 |
+   | 2 | Written, 6 months | `ccfpem_written_6m` | 6 months | US$149.99 |
+   | 2 | Written, 3 months | `ccfpem_written_3m` | 3 months | US$99.99 |
+   | 2 | Oral, 6 months | `ccfpem_oral_6m` | 6 months | US$99.99 |
+   | 2 | Oral, 3 months | `ccfpem_oral_3m` | 3 months | US$69.99 |
 
-   Put Complete alone on the top level and Written and Oral together on the level below. A group lets a person hold one subscription at a time. So a subscriber to Written or Oral who wants both upgrades to Complete. The App Store does that at once and refunds the unused part. The paywall offers only Complete to someone who already holds Written or Oral. Moving between Written and Oral, or down from Complete, is left to the App Store subscription settings, where it takes effect at the next renewal.
+   Put both Complete plans on the top level and the four Written and Oral plans on the level below. A group lets a person hold one subscription at a time. So a subscriber to Written or Oral who wants both upgrades to Complete. The App Store does that at once and refunds the unused part. The paywall offers only Complete to someone who already holds Written or Oral. Changing length within a level, moving between Written and Oral, or down from Complete is left to the App Store subscription settings, where it takes effect at the next renewal.
 
-   Add a localized display name and description to the group and to each subscription. The earlier drafts `ccfpem_complete_lifetime`, `ccfpem_written_lifetime` and `oral_full_lifetime` are abandoned unsubmitted. If any `_11mo` products were created, leave them unsubmitted too. Apple never lets a product ID be reused, so the new IDs are different on purpose.
+   Add a localized display name and description to the group and to each subscription. The earlier `_1y`, `_lifetime` and `_11mo` products are dropped before launch and must not be submitted. Apple never lets a product ID be reused, so the new IDs are different on purpose.
 
-   Add a paywall screenshot and this review note to each: "Ten SAMPs and two oral cases are free. Three yearly auto-renewable subscriptions in one group open the rest. Complete opens both components. Written or Oral opens one. The paywall shows the price per year, says the subscription renews automatically, and links to the Terms of Use and Privacy Policy. Restore is in Settings and on the paywall."
+   Add a paywall screenshot (`store/screenshots/review/`) and this review note to each: "Ten SAMPs and two oral cases are free. Six auto-renewable subscriptions in one group open the rest: Complete, Written or Oral, each for 3 months or 6 months. Complete opens both components. Written or Oral opens one. The paywall shows each plan's length and price, says the subscription renews automatically, and links to the Terms of Use and Privacy Policy. Restore is in Settings and on the paywall."
 
    Auto-renewable subscriptions need a Terms of Use (EULA) link in the App Store description or the EULA field, and the Privacy Policy URL in App Information. `store/listing.md` covers both.
 2. Agreements, Tax and Banking and the Paid Apps agreement must be active.
@@ -61,42 +64,60 @@ The app record exists under `com.preceptor.oral`. Update the name to Preceptor: 
 The app is a Draft with zero testers. Subscriptions can only be created after a bundle with billing is uploaded. Production access needs a closed test with at least 12 opted-in testers for 14 days first. Play is therefore at least two weeks out. The ordered steps are at the top of `docs/SUBMISSION-CHECKLIST.md`.
 
 1. Rename the app to Preceptor: CCFP-EM.
-2. Monetize > Products > Subscriptions. Create three subscriptions with the same product IDs: `ccfpem_complete_1y`, `ccfpem_written_1y` and `ccfpem_oral_1y`. Give each one auto-renewing base plan with a billing period of 1 year (for example base plan ID `yearly`) at the prices above. Activate the base plans. Play has no subscription group, so the app itself replaces Written or Oral when a subscriber upgrades to Complete. It passes the old product to Play Billing with immediate time proration, so nobody pays for both. If any `_lifetime` or `_11mo` products were created in Play, leave them inactive. Play IDs cannot be reused either.
+2. Monetize > Products > Subscriptions. Create three subscriptions, one per tier: `ccfpem_complete`, `ccfpem_written` and `ccfpem_oral`. Give each two auto-renewing base plans:
+
+   | Subscription | Base plan ID | Billing period | Price |
+   |---|---|---|---|
+   | `ccfpem_complete` | `p6m` | 6 months (P6M) | US$199.99 |
+   | `ccfpem_complete` | `p3m` | 3 months (P3M) | US$129.99 |
+   | `ccfpem_written` | `p6m` | 6 months (P6M) | US$149.99 |
+   | `ccfpem_written` | `p3m` | 3 months (P3M) | US$99.99 |
+   | `ccfpem_oral` | `p6m` | 6 months (P6M) | US$99.99 |
+   | `ccfpem_oral` | `p3m` | 3 months (P3M) | US$69.99 |
+
+   Activate the base plans. The app reads the tier from the subscription ID (it must start with `ccfpem_complete`, `ccfpem_written` or `ccfpem_oral`) and the length from the base plan ID (it must end in `3m` or `6m`). If `_1y` subscriptions were ever created in Play, their IDs also work with `p3m` and `p6m` base plans added, but leave any 1 year base plan inactive. Play has no subscription group, so the app itself replaces Written or Oral when a subscriber upgrades to Complete. It passes the old subscription to Play Billing with immediate time proration, so nobody pays for both.
    Then in RevenueCat:
-   - Import the three Play subscriptions.
+   - Import the six Play products. RevenueCat lists each as `subscriptionId:basePlanId`, such as `ccfpem_oral:p6m`.
    - Attach each to the same entitlements as its App Store twin.
    - Add each to its package in `ccfpem` beside the App Store product.
-   - Detach the three lifetime placeholders from every entitlement and package, then delete them. They are "not found" because they never existed in Play.
    Turn on Real-time developer notifications (Play Console > Monetization setup) with the Pub/Sub topic RevenueCat gives. Renewals and cancellations then reach RevenueCat without waiting for the app to open.
 3. Data safety, content rating and target audience: see `store/listing.md`.
 
 ## 5. RevenueCat
 
-Status on 25 September 2026:
-- App Store side done. The app config "Preceptor: CCFP-EM (App Store)" for `com.preceptor.oral` exists in the Preceptor project, and the three annual products are imported from App Store Connect.
-- `written_access` holds `ccfpem_written_1y` and `ccfpem_complete_1y`. `oral_full_access` holds `ccfpem_oral_1y` and `ccfpem_complete_1y`.
-- Offering `ccfpem` (display name "CCFP-EM Subscriptions") has packages `complete`, `written` and `oral`, each with its App Store product. These match `src/lib/purchases.ts` exactly.
-- Still open:
-  - The Play subscriptions do not exist yet (section 4).
-  - The three lifetime placeholders in RevenueCat still need to be detached and deleted.
+Status on 28 September 2026:
+- The app config "Preceptor: CCFP-EM (App Store)" for `com.preceptor.oral` exists in the Preceptor project.
+- The six 3 and 6 month App Store products are being created. The three `_1y` products must be detached from the entitlements and the offering and removed before launch.
+- The Play subscriptions do not exist yet (section 4).
 
 
 All Preceptor apps share one RevenueCat project. Its Current offering belongs to another app, so this app fetches its offering by id (`offerings.all["ccfpem"]`) and never reads `offerings.current`. Do not make `ccfpem` the Current offering.
 
-1. Products: import the three `_1y` subscriptions from both stores. On Play, RevenueCat lists each as `productId:basePlanId`, such as `ccfpem_oral_1y:yearly`. The app accepts either form. Delete any `_lifetime` products from RevenueCat if they were imported.
+1. Products: import the six App Store products and, once they exist, the six Play products. On Play, RevenueCat lists each as `subscriptionId:basePlanId`, such as `ccfpem_oral:p6m`. Remove the `_1y` and any `_lifetime` products from RevenueCat.
 2. Entitlements. Attach the products like this:
 
-   | Entitlement | Products attached (App Store and Play) |
-   |---|---|
-   | `written_access` | `ccfpem_complete_1y`, `ccfpem_written_1y` |
-   | `oral_full_access` | `ccfpem_complete_1y`, `ccfpem_oral_1y` |
+   | Entitlement | App Store products | Play products |
+   |---|---|---|
+   | `written_access` | `ccfpem_complete_6m`, `ccfpem_complete_3m`, `ccfpem_written_6m`, `ccfpem_written_3m` | `ccfpem_complete:p6m`, `ccfpem_complete:p3m`, `ccfpem_written:p6m`, `ccfpem_written:p3m` |
+   | `oral_full_access` | `ccfpem_complete_6m`, `ccfpem_complete_3m`, `ccfpem_oral_6m`, `ccfpem_oral_3m` | `ccfpem_complete:p6m`, `ccfpem_complete:p3m`, `ccfpem_oral:p6m`, `ccfpem_oral:p3m` |
 
-   Complete is attached to both entitlements. Nothing else from the shared project may be attached to these two, or another app's subscribers would open this one. For auto-renewable subscriptions RevenueCat gives each active entitlement a real expiration date, the end of the current paid year, and moves it forward on each renewal. The app caches those dates on the device, so access works offline and still ends on time if a subscription lapses.
-3. Offering `ccfpem` with three packages, custom identifiers `complete`, `written` and `oral`, each holding its `_1y` product from both stores. The app finds a package by its identifier, then by product ID.
+   Complete is attached to both entitlements. Nothing else from the shared project may be attached to these two, or another app's subscribers would open this one. For auto-renewable subscriptions RevenueCat gives each active entitlement a real expiration date, the end of the current paid period, and moves it forward on each renewal. The app caches those dates on the device, so access works offline and still ends on time if a subscription lapses.
+3. Offering `ccfpem` with six packages, custom identifiers exactly as below, each holding its App Store product and its Play product:
+
+   | Package identifier | App Store product | Play product |
+   |---|---|---|
+   | `complete_6m` | `ccfpem_complete_6m` | `ccfpem_complete:p6m` |
+   | `complete_3m` | `ccfpem_complete_3m` | `ccfpem_complete:p3m` |
+   | `written_6m` | `ccfpem_written_6m` | `ccfpem_written:p6m` |
+   | `written_3m` | `ccfpem_written_3m` | `ccfpem_written:p3m` |
+   | `oral_6m` | `ccfpem_oral_6m` | `ccfpem_oral:p6m` |
+   | `oral_3m` | `ccfpem_oral_3m` | `ccfpem_oral:p3m` |
+
+   Use custom identifiers, not RevenueCat's `$rc_three_month` and `$rc_six_month` types: an offering can hold only one package of each type, and this one needs three of each. The app finds a package by its identifier, then by product ID. The paywall shows only the packages that exist in the offering, with the store's own price, and opens on 6 months.
 4. Public SDK keys in `src/lib/purchases.ts`:
    - Android: done (`goog_...`).
    - iOS: done (`appl_...`).
-5. Test with a sandbox Apple ID and a Play licence tester. Sandbox years pass in about an hour on iOS and in minutes on Play test tracks. Subscribe to Written and confirm Settings shows "renews or ends" on the entitlement date. Upgrade to Complete and confirm both open, only one subscription is active, and the Written subscription ended (App Store: replaced in the group. Play: replaced by the app). Let a sandbox renewal happen and confirm the date moves forward. Cancel, let the period end, and confirm access closes on the next launch. Delete, reinstall, Restore.
+5. Test with a sandbox Apple ID and a Play licence tester. In sandbox, 3 and 6 month periods pass in about 30 to 60 minutes on iOS and in minutes on Play test tracks. Subscribe to Written and confirm Settings shows "renews or ends" on the entitlement date. Upgrade to Complete and confirm both open, only one subscription is active, and the Written subscription ended (App Store: replaced in the group. Play: replaced by the app). Let a sandbox renewal happen and confirm the date moves forward. Cancel, let the period end, and confirm access closes on the next launch. Delete, reinstall, Restore.
 
 A candidate with no subscription sees all three offered. A candidate who holds Written or Oral sees only the upgrade to Complete.
 
@@ -111,7 +132,7 @@ A candidate with no subscription sees all three offered. A candidate who holds W
         - **Mac:** in Terminal, run `"/Applications/Android Studio.app/Contents/jbr/Contents/Home/bin/keytool" -genkeypair -v -keystore preceptor-upload.jks -storetype JKS -keyalg RSA -keysize 2048 -validity 10000 -alias upload`.
         - Then upload it the same way, with key alias `upload` and reference name `preceptor_upload_key`.
      3. Keep the .jks and its password in a password manager. Never commit them. With Play App Signing, a lost upload key can be reset through Play Console support, but that takes days.
-2. Workflows: `android-debug`, `android-release` (uploads to the Play closed testing track, alpha, as a draft), `android-play-internal` (manual, internal track only), `ios-release` (TestFlight only), `android-build-only` (signed .aab, no upload). Production: `android-production` (Play production track, as a draft while the app is a draft on Play) and `ios-production` (submits to App Store review, pulls any version already in review, releases after approval). Both production workflows start only when a tag matching `ccfpem-v*` is pushed; release notes come from `release_notes.txt`. The Play workflows need `GCLOUD_SERVICE_ACCOUNT_CREDENTIALS` in group `preceptor_play` of this Codemagic app.
+2. Workflows: `android-debug`, `android-release` (uploads to the Play closed testing track, alpha, as a draft), `android-play-internal` (manual, internal track only), `ios-release` (TestFlight only), `android-build-only` (signed .aab, no upload). Production: `android-production` (Play production track, as a draft while the app is a draft on Play) and `ios-production` (submits to App Store review, pulls any version already in review, releases after approval). Both production workflows start only when a tag matching `ccfpem-v*` is pushed. Add `release_notes.txt` for What's New from the second release on. Version 1.0.1 is the first release and has none. The Play workflows need `GCLOUD_SERVICE_ACCOUNT_CREDENTIALS` in group `preceptor_play` of this Codemagic app.
 3. Every workflow runs `npm test`. Release workflows also run the launch gate.
 
 ## 7. Price proposal
@@ -121,7 +142,7 @@ Confirmed by Arjan on 24 September 2026, and changed to USD for launch on 26 Sep
 **Launch prices are in USD (Arjan, 26 September 2026).** Set United States as the base country on both stores and let them convert for other countries:
 - **iOS:** App Store Connect > each subscription > Subscription Prices > base country United States.
 - **Android:** Play Console > each subscription's base plan > Prices > United States.
-- **Prices:** Complete US$199.99 per year, Written US$149.99 per year, Oral US$99.99 per year.
+- **Prices:** 6 months: Complete US$199.99, Written US$149.99, Oral US$99.99. 3 months: Complete US$129.99, Written US$99.99, Oral US$69.99. The app shows only the store's price for each plan.
 - **App fallback labels** in `src/lib/purchases.ts` read $199.99, $149.99 and $99.99. They show only before the store price loads. On a device the store's localized price replaces them.
 - **RevenueCat:** no change. It reads prices from the stores.
 
@@ -138,8 +159,8 @@ Reasoning:
 - Candidates can pass one component and repeat the other. Selling each component on its own serves repeat candidates. It is also the honest price for someone who only wants the written bank.
 - The written bank is the bigger body of work and the part most candidates use daily, so it is priced higher than the oral.
 - Complete is 20 percent less than buying both, so it is the clear choice for a first attempt. It anchors the paywall.
-- A yearly subscription fits an exam cycle and renews for candidates who sit again. It renews automatically until cancelled in the store account (Arjan, 24 September 2026). The paywall says so next to the price.
-- US$199.99 sits below the Preceptor CCFP annual price of $250 while offering two exam components, and stays under the price point where app store buyers balk.
+- Plans of 3 months and 6 months, the rule for all Preceptor apps (Arjan, 28 September 2026). Six months is the default on the paywall. Each renews automatically until cancelled in the store account. The paywall says so next to the price.
+- Six months costs what the earlier yearly plan did. Three months is for a candidate close to the exam.
 - The store and RevenueCat track the subscription and its renewals, so no server of our own is needed. The app caches the entitlement end dates, which keep working offline and still end access on time.
 
 ## 7a. Exam format decisions
@@ -181,7 +202,7 @@ To regenerate the screenshots after content changes, build a seeded static copy 
 - [ ] Privacy policy on thepreceptor.ca covers this app. Store privacy labels match it.
 - [ ] App Store Connect: delete the three unsubmitted lifetime drafts (`ccfpem_complete_lifetime`, `ccfpem_written_lifetime`, `oral_full_lifetime`). They are leftovers. The app never references them. Their IDs cannot be reused either way.
 - [ ] Not this app: the separate CCFP written and study App Store config in the same RevenueCat project shows a credentials warning on its in-app purchase key that re-validating did not clear. Arjan to check that key in App Store Connect.
-- [ ] Terms of use cover yearly subscriptions that renew automatically, how to cancel in the App Store or Google Play account, that cancelling stops the next renewal and access runs to the end of the paid year, and the refund route. Refunds go through Apple or Google. The terms page at thepreceptor.ca is outside this repo and must be updated by hand.
+- [ ] Terms of use cover 3 and 6 month subscriptions that renew automatically, how to cancel in the App Store or Google Play account, that cancelling stops the next renewal and access runs to the end of the paid period, and the refund route. Refunds go through Apple or Google. The terms page at thepreceptor.ca is outside this repo and must be updated by hand.
 - [ ] Sales tax: Apple and Google collect and remit GST and HST on app sales in Canada. Keep records for your own filings.
 - [ ] Accessibility: test with VoiceOver and TalkBack on a device. All controls are real buttons with labels.
 - [ ] CASL: the app sends no marketing messages. If you add a mailing list later, collect express consent.

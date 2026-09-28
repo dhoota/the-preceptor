@@ -91,7 +91,7 @@ export function Settings({ go }: { go: Go }) {
           <span>
             Written: {status(app.access.written, app.expiry.written)}. Oral: {status(app.access.oral, app.expiry.oral)}.
             {(app.access.written || app.access.oral) && (
-              <span className="muted small"> Yearly subscriptions renew until you cancel them in your App Store or Google Play account.</span>
+              <span className="muted small"> Subscriptions of 3 months or 6 months renew until you cancel them in your App Store or Google Play account.</span>
             )}
           </span>
           {!(app.access.written && app.access.oral) && (

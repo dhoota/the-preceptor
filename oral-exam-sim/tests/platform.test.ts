@@ -5,7 +5,11 @@ import {
   ENTITLEMENTS,
   NO_END,
   NO_EXPIRY,
-  PRODUCTS,
+  DEFAULT_DURATION,
+  DURATIONS,
+  DURATION_LABEL,
+  TIERS,
+  TIER_ORDER,
   RC_KEY_ANDROID,
   RC_KEY_IOS,
   RC_OFFERING,
@@ -14,7 +18,10 @@ import {
   ccfpemPackages,
   expiryFrom,
   findPackage,
-  isProduct,
+  packageId,
+  parseStoreId,
+  plansFrom,
+  productId,
   keysConfigured,
   laterExpiry,
   reconcileExpiry,
@@ -49,8 +56,8 @@ function fake(check: Expiry | null, restore: Expiry | null): PurchasesAdapter & 
     async purchase() {
       return "purchased" as const;
     },
-    async prices() {
-      return {};
+    async plans() {
+      return [];
     },
   };
   return a;
@@ -75,13 +82,27 @@ describe("free sample gating", () => {
 
 describe("products", () => {
   it("complete grants both components", () => {
-    expect(PRODUCTS.complete.grants.sort()).toEqual(["oral", "written"]);
-    expect(PRODUCTS.written.grants).toEqual(["written"]);
-    expect(PRODUCTS.oral.grants).toEqual(["oral"]);
+    expect([...TIERS.complete.grants].sort()).toEqual(["oral", "written"]);
+    expect(TIERS.written.grants).toEqual(["written"]);
+    expect(TIERS.oral.grants).toEqual(["oral"]);
   });
-  it("uses the yearly subscription IDs, never the abandoned lifetime or 11 month ones", () => {
-    expect(Object.values(PRODUCTS).map((p) => p.id)).toEqual(["ccfpem_complete_1y", "ccfpem_written_1y", "ccfpem_oral_1y"]);
-    for (const p of Object.values(PRODUCTS)) expect(p.id).not.toMatch(/lifetime|11mo/);
+  it("sells 3 and 6 month plans of each tier, 6 months first, never 1 year", () => {
+    expect(DURATIONS).toEqual(["6m", "3m"]);
+    expect(DEFAULT_DURATION).toBe("6m");
+    expect(DURATION_LABEL).toEqual({ "3m": "3 months", "6m": "6 months" });
+    const ids = TIER_ORDER.flatMap((t) => DURATIONS.map((d) => productId(t, d)));
+    expect(ids).toEqual(["ccfpem_complete_6m", "ccfpem_complete_3m", "ccfpem_written_6m", "ccfpem_written_3m", "ccfpem_oral_6m", "ccfpem_oral_3m"]);
+    expect(TIER_ORDER.flatMap((t) => DURATIONS.map((d) => packageId(t, d)))).toEqual(["complete_6m", "complete_3m", "written_6m", "written_3m", "oral_6m", "oral_3m"]);
+  });
+  it("has no 1 year plan, and no price or savings text in the app code", async () => {
+    const { readFileSync, readdirSync } = await import("node:fs");
+    const files = ["../src/lib/purchases.ts", "../src/lib/constants.ts", "../src/state.tsx", ...readdirSync(new URL("../src/screens", import.meta.url)).map((f) => `../src/screens/${f}`)];
+    for (const f of files) {
+      const src = readFileSync(new URL(f, import.meta.url), "utf8");
+      expect(src, f).not.toMatch(/_1y|\b1 year|yearly|per year|\/ year|annual/i);
+      expect(src, f).not.toMatch(/\$\d|fallbackPrice|FALLBACK_PRICE/);
+      expect(src, f).not.toMatch(/line-through|strikethrough|\bsave \d|% off|savings/i);
+    }
   });
   it("maps components to the written_access and oral_full_access entitlements", () => {
     expect(ENTITLEMENTS).toEqual({ written: "written_access", oral: "oral_full_access" });
@@ -128,16 +149,21 @@ describe("entitlement expiry", () => {
 });
 
 describe("upgrades", () => {
-  it("replaces Written or Oral when upgrading to Complete, with or without a Play base plan", () => {
-    expect(replaces("complete", ["ccfpem_written_1y:yearly"])).toBe("ccfpem_written_1y");
-    expect(replaces("complete", ["ccfpem_oral_1y"])).toBe("ccfpem_oral_1y");
+  it("replaces Written or Oral when upgrading to Complete, on either store", () => {
+    expect(replaces("complete", ["ccfpem_written:p6m"])).toBe("ccfpem_written");
+    expect(replaces("complete", ["ccfpem_oral_3m"])).toBe("ccfpem_oral_3m");
     expect(replaces("complete", ["preceptor_ccfp_annual"])).toBeNull();
-    expect(replaces("oral", ["ccfpem_written_1y"])).toBeNull();
+    expect(replaces("oral", ["ccfpem_written_6m"])).toBeNull();
   });
-  it("matches store product IDs with a Play base plan suffix", () => {
-    expect(isProduct("ccfpem_oral_1y:yearly", "oral")).toBe(true);
-    expect(isProduct("ccfpem_oral_1y", "oral")).toBe(true);
-    expect(isProduct("ccfpem_oral_1yx", "oral")).toBe(false);
+  it("reads tier and length from App Store and Play product IDs", () => {
+    expect(parseStoreId("ccfpem_complete_6m")).toEqual({ tier: "complete", duration: "6m" });
+    expect(parseStoreId("ccfpem_oral_3m")).toEqual({ tier: "oral", duration: "3m" });
+    expect(parseStoreId("ccfpem_written:p3m")).toEqual({ tier: "written", duration: "3m" });
+    expect(parseStoreId("ccfpem_complete_1y:p6m")).toEqual({ tier: "complete", duration: "6m" });
+    expect(parseStoreId("ccfpem_complete_1y")?.duration).toBeNull();
+    expect(parseStoreId("ccfpem_complete_1y:yearly")?.duration).toBeNull();
+    expect(parseStoreId("ccfpem_completex_6m")).toBeNull();
+    expect(parseStoreId("preceptor_ccfp_annual")).toBeNull();
   });
 });
 
@@ -174,17 +200,21 @@ describe("reconcileExpiry", () => {
 describe("web adapter", () => {
   it("never grants access in a production web build", async () => {
     const p = webAdapter(false);
-    expect(await p.purchase("complete")).toBe("unavailable");
+    expect(await p.purchase("complete", "6m")).toBe("unavailable");
+    expect(await p.plans()).toEqual([]);
     expect(await p.check()).toEqual(NO_EXPIRY);
   });
-  it("simulates each product for one year in local dev", async () => {
+  it("simulates each plan for its length in local dev", async () => {
     let t = NOW;
     const p = webAdapter(true, () => t);
-    expect(await p.purchase("written")).toBe("purchased");
+    expect((await p.plans()).map((x) => `${x.tier}_${x.duration}`)).toEqual(["complete_6m", "complete_3m", "written_6m", "written_3m", "oral_6m", "oral_3m"]);
+    expect(await p.purchase("written", "3m")).toBe("purchased");
     expect(accessAt((await p.check())!, t)).toEqual(A(true, false));
-    await p.purchase("oral");
+    await p.purchase("oral", "6m");
     expect(accessAt((await p.restore())!, t)).toEqual(A(true, true));
-    t = Date.parse("2027-10-01T12:00:01Z");
+    t = Date.parse("2027-01-02T12:00:00Z"); // past 3 months, inside 6
+    expect(accessAt((await p.check())!, t)).toEqual(A(false, true));
+    t = Date.parse("2027-04-02T12:00:00Z"); // past 6 months
     expect(accessAt((await p.check())!, t)).toEqual(NO_ACCESS);
   });
 });
@@ -245,9 +275,10 @@ describe("RevenueCat offering", () => {
   const other = { availablePackages: [{ identifier: "$rc_annual", product: { identifier: "preceptor_ccfp_annual" } }] };
   const mine = {
     availablePackages: [
-      { identifier: "complete", product: { identifier: "ccfpem_complete_1y" } },
-      { identifier: "written", product: { identifier: "ccfpem_written_1y" } },
-      { identifier: "oral", product: { identifier: "ccfpem_oral_1y" } },
+      { identifier: "complete_6m", product: { identifier: "ccfpem_complete_6m", priceString: "US$199.99" } },
+      { identifier: "complete_3m", product: { identifier: "ccfpem_complete_3m", priceString: "US$129.99" } },
+      { identifier: "written_6m", product: { identifier: "ccfpem_written_6m", priceString: "US$149.99" } },
+      { identifier: "oral_3m", product: { identifier: "ccfpem_oral_3m", priceString: "US$69.99" } },
     ],
   };
   it("uses the ccfpem offering by id, never offerings.current", () => {
@@ -256,11 +287,25 @@ describe("RevenueCat offering", () => {
     expect(ccfpemPackages({ current: other, all: { default: other } })).toEqual([]);
     expect(ccfpemPackages(null)).toEqual([]);
   });
-  it("finds packages complete, written and oral", () => {
-    for (const k of ["complete", "written", "oral"] as const) expect(findPackage(mine.availablePackages, k)?.identifier).toBe(k);
-    const byProduct = [{ identifier: "x", product: { identifier: "ccfpem_oral_1y:yearly" } }];
-    expect(findPackage(byProduct, "oral")?.identifier).toBe("x");
-    expect(findPackage(other.availablePackages, "complete")).toBeUndefined();
+  it("finds a package by tier and length, by package id or store id", () => {
+    expect(findPackage(mine.availablePackages, "complete", "6m")?.identifier).toBe("complete_6m");
+    expect(findPackage(mine.availablePackages, "written", "3m")).toBeUndefined();
+    const byProduct = [{ identifier: "x", product: { identifier: "ccfpem_oral:p6m" } }];
+    expect(findPackage(byProduct, "oral", "6m")?.identifier).toBe("x");
+    expect(findPackage(byProduct, "oral", "3m")).toBeUndefined();
+    expect(findPackage(other.availablePackages, "complete", "6m")).toBeUndefined();
+  });
+  it("lists only the plans the offering holds, with the store's own price strings", () => {
+    expect(plansFrom(mine.availablePackages)).toEqual([
+      { tier: "complete", duration: "6m", priceString: "US$199.99" },
+      { tier: "complete", duration: "3m", priceString: "US$129.99" },
+      { tier: "written", duration: "6m", priceString: "US$149.99" },
+      { tier: "oral", duration: "3m", priceString: "US$69.99" },
+    ]);
+    // A 1 year product left in the offering is never shown.
+    expect(plansFrom([{ identifier: "complete", product: { identifier: "ccfpem_complete_1y", priceString: "US$199.99" } }])).toEqual([]);
+    // A package without a store price is not shown either.
+    expect(plansFrom([{ identifier: "oral_6m", product: { identifier: "ccfpem_oral_6m" } }])).toEqual([]);
   });
   it("never reads offerings.current in the source", async () => {
     const { readFileSync } = await import("node:fs");
@@ -312,7 +357,6 @@ describe("Codemagic", () => {
     expect(root.match(/- tag$/gm)?.length).toBe(2);
     expect(root).not.toMatch(/- push$|- pull_request$/m);
     expect(block(root, "ios-production")).toContain("cancel_previous_submissions: true");
-    expect(readFileSync(new URL("../release_notes.txt", import.meta.url), "utf8").trim()).toBe("User interface improvements");
     // With working_directory set, Codemagic resolves artifact globs from that folder
     // (build 1 found nothing with an oral-exam-sim/ prefix), so the paths match the local file.
     const arts = (y: string) => y.match(/^      - [^*\s]\S*\/\S*$/gm) ?? [];
