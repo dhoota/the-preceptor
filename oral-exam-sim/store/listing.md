@@ -57,7 +57,8 @@ Try it free. Ten SAMPs and two oral cases are open. Then subscribe to the writte
 Subscriptions
 Complete, Written and Oral are yearly subscriptions. Payment is charged to your App Store or Google Play account when you confirm the purchase. A subscription renews automatically each year at the same price unless you cancel it at least 24 hours before the end of the current year. Manage or cancel it any time in your store account settings.
 
-Terms of use: https://thepreceptor.ca/terms
+Terms of Use (EULA): https://www.apple.com/legal/internet-services/itunes/dev/stdeula/
+Preceptor terms: https://thepreceptor.ca/terms
 Privacy policy: https://thepreceptor.ca/privacy
 
 Every question and case is original. None is taken from CFPC sample material or any real exam. The app links to the official CFPC resources so you can study them at the source.
@@ -83,7 +84,7 @@ Preceptor: CCFP-EM
 SAMPs and 12 minute oral stations for the CCFP-EM exam. Fully offline.
 
 ### Full description (4000)
-Use the App Store description above, unchanged. It fits the Play limit.
+Use the App Store description above, except replace the two lines "Terms of Use (EULA): ..." and "Preceptor terms: ..." with the single line "Terms of use: https://thepreceptor.ca/terms". Apple's EULA applies only on iOS. It fits the Play limit.
 
 ### Release notes (500)
 First release. Original SAMPs with examiner style answer keys, a timed four hour mock written exam, 12 minute oral stations and a four station mock oral. Progress for every CFPC priority topic and key feature.
