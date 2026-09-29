@@ -222,6 +222,17 @@ export const revenueCat: PurchasesAdapter = {
  * purchase is simulated so the paid flow can be clicked through. A hosted
  * production web build never grants access.
  */
+/** "sixMonth=...,threeMonth=..." from VITE_DEMO_PRICES, for store screenshots only. */
+function demoPrices(): Prices {
+  const raw = (import.meta.env?.VITE_DEMO_PRICES as string | undefined) ?? "";
+  const out: Prices = {};
+  for (const part of raw.split(",")) {
+    const [k, v] = part.split("=");
+    if ((k === "sixMonth" || k === "threeMonth") && v) out[k] = v.trim();
+  }
+  return out;
+}
+
 export function webAdapter(dev: boolean): PurchasesAdapter {
   const on: Access = { ...NO_ACCESS };
   return {
@@ -237,8 +248,9 @@ export function webAdapter(dev: boolean): PurchasesAdapter {
       return "purchased";
     },
     async prices() {
-      // Local dev only: stand-in labels so the paid flow can be clicked through. Never a real price.
-      return dev ? { sixMonth: "Test price", threeMonth: "Test price" } : null;
+      // Local dev and screenshot builds only: stand-in labels so the paid flow can be clicked through.
+      // A screenshot build may pass the store's own price strings in VITE_DEMO_PRICES. Store builds never set it.
+      return dev ? { sixMonth: "Test price", threeMonth: "Test price", ...demoPrices() } : null;
     },
   };
 }

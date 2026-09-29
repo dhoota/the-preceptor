@@ -1,7 +1,8 @@
 // Paywall screenshot for App Store in-app purchase review, 1320 x 2868.
 //
 // Usage (from nclex-rn/), against a seeded static build as in LAUNCH.md:
-//   VITE_SEED=1 npx vite build --outDir /tmp/seeded
+//   VITE_SEED=1 VITE_DEMO_PRICES="sixMonth=US$149.99,threeMonth=US$99.99" npx vite build --outDir /tmp/seeded
+//   (the price strings the US App Store shows. Without them the paywall reads "Test price")
 //   npx vite preview --outDir /tmp/seeded --port 5174
 //   npx -y -p playwright@1 node store/tools/make-review.mjs http://localhost:5174
 //
