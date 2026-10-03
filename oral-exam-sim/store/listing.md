@@ -14,7 +14,7 @@ House style: no em or en dashes, no semicolons, short sentences, no filler. Char
 | Product type | iOS Auto-Renewable Subscriptions of 3 months and 6 months in the group CCFP-EM Access (both Complete plans level 1, Written and Oral level 2). Play subscriptions with auto-renewing 3 month and 6 month base plans |
 | RevenueCat entitlements | written_access (Complete, Written). oral_full_access (Complete, Oral) |
 | RevenueCat offering | ccfpem, six packages: complete_6m, complete_3m, written_6m, written_3m, oral_6m, oral_3m |
-| Prices | US dollars, base country United States. 6 months: Complete US$199.99, Written US$149.99, Oral US$99.99. 3 months: Complete US$129.99, Written US$99.99, Oral US$69.99. The app shows only the store price |
+| Prices | Set in App Store Connect and Play Console by the central Codemagic store-prices workflow (USD base, base country United States, other countries derived). The app shows only the store price. This listing quotes no prices |
 | App Store category | Medical. Secondary: Education |
 | Play category | Medical |
 | Support email | preceptor.app@gmail.com |

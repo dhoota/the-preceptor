@@ -29,6 +29,10 @@ describe("store listing", () => {
     expect(kw).not.toMatch(/, /);
   });
 
+  it("quotes no prices or savings: the stores set prices", () => {
+    expect(md).not.toMatch(/(US|CA)?\$\s?\d|\d+\.99\b|\d+ ?% (off|less)|per month|a month\b/i);
+  });
+
   it("follows house style", () => {
     expect(md).not.toMatch(/[–—]/);
     expect(md).not.toContain(";");

@@ -42,7 +42,7 @@ The App Store has no such wait. It needs only the `appl_` key pasted in (A4), a 
 | Version | 1.0.1. Codemagic sets the build number |
 | App Store product IDs | `ccfpem_complete_6m`, `ccfpem_complete_3m`, `ccfpem_written_6m`, `ccfpem_written_3m`, `ccfpem_oral_6m`, `ccfpem_oral_3m` |
 | Play subscriptions and base plans | `ccfpem_complete`, `ccfpem_written`, `ccfpem_oral`, each with base plans `p6m` (P6M) and `p3m` (P3M) |
-| Prices | 6 months: Complete US$199.99, Written US$149.99, Oral US$99.99. 3 months: Complete US$129.99, Written US$99.99, Oral US$69.99 (base country United States) |
+| Prices | Set in the stores by the central Codemagic store-prices workflow (USD base, base country United States). Not recorded here. See LAUNCH.md section 7 |
 | RevenueCat entitlements | `written_access` (Complete, Written). `oral_full_access` (Complete, Oral) |
 | RevenueCat offering | `ccfpem`, with packages `complete_6m`, `complete_3m`, `written_6m`, `written_3m`, `oral_6m`, `oral_3m` |
 | Support email | preceptor.app@gmail.com |
@@ -87,14 +87,14 @@ The App Store has no such wait. It needs only the `appl_` key pasted in (A4), a 
 - Screen: Play Console > Preceptor app > Monetize with Play > Products > Subscriptions > Create subscription.
 - Make three subscriptions, each with two base plans, as in these rows:
 
-| Product ID | Name | Base plan ID | Type | Billing period | Price (USD) | Free trial |
+| Product ID | Name | Base plan ID | Type | Billing period | Price | Free trial |
 |---|---|---|---|---|---|---|
-| `ccfpem_complete` | CCFP-EM Complete | `p6m` | Auto-renewing | 6 months | 199.99 | None |
-| `ccfpem_complete` | CCFP-EM Complete | `p3m` | Auto-renewing | 3 months | 129.99 | None |
-| `ccfpem_written` | CCFP-EM Written | `p6m` | Auto-renewing | 6 months | 149.99 | None |
-| `ccfpem_written` | CCFP-EM Written | `p3m` | Auto-renewing | 3 months | 99.99 | None |
-| `ccfpem_oral` | CCFP-EM Oral | `p6m` | Auto-renewing | 6 months | 99.99 | None |
-| `ccfpem_oral` | CCFP-EM Oral | `p3m` | Auto-renewing | 3 months | 69.99 | None |
+| `ccfpem_complete` | CCFP-EM Complete | `p6m` | Auto-renewing | 6 months | set by store-prices workflow | None |
+| `ccfpem_complete` | CCFP-EM Complete | `p3m` | Auto-renewing | 3 months | set by store-prices workflow | None |
+| `ccfpem_written` | CCFP-EM Written | `p6m` | Auto-renewing | 6 months | set by store-prices workflow | None |
+| `ccfpem_written` | CCFP-EM Written | `p3m` | Auto-renewing | 3 months | set by store-prices workflow | None |
+| `ccfpem_oral` | CCFP-EM Oral | `p6m` | Auto-renewing | 6 months | set by store-prices workflow | None |
+| `ccfpem_oral` | CCFP-EM Oral | `p3m` | Auto-renewing | 3 months | set by store-prices workflow | None |
 
 - For each one:
   - Add both base plans.

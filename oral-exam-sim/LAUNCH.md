@@ -40,12 +40,12 @@ The app record exists under `com.preceptor.oral`. Update the name to Preceptor: 
 
    | Level | Reference name | Product ID | Duration | Price |
    |---|---|---|---|---|
-   | 1 | Complete, 6 months | `ccfpem_complete_6m` | 6 months | US$199.99 |
-   | 1 | Complete, 3 months | `ccfpem_complete_3m` | 3 months | US$129.99 |
-   | 2 | Written, 6 months | `ccfpem_written_6m` | 6 months | US$149.99 |
-   | 2 | Written, 3 months | `ccfpem_written_3m` | 3 months | US$99.99 |
-   | 2 | Oral, 6 months | `ccfpem_oral_6m` | 6 months | US$99.99 |
-   | 2 | Oral, 3 months | `ccfpem_oral_3m` | 3 months | US$69.99 |
+   | 1 | Complete, 6 months | `ccfpem_complete_6m` | 6 months | set by store-prices workflow |
+   | 1 | Complete, 3 months | `ccfpem_complete_3m` | 3 months | set by store-prices workflow |
+   | 2 | Written, 6 months | `ccfpem_written_6m` | 6 months | set by store-prices workflow |
+   | 2 | Written, 3 months | `ccfpem_written_3m` | 3 months | set by store-prices workflow |
+   | 2 | Oral, 6 months | `ccfpem_oral_6m` | 6 months | set by store-prices workflow |
+   | 2 | Oral, 3 months | `ccfpem_oral_3m` | 3 months | set by store-prices workflow |
 
    Put both Complete plans on the top level and the four Written and Oral plans on the level below. A group lets a person hold one subscription at a time. So a subscriber to Written or Oral who wants both upgrades to Complete. The App Store does that at once and refunds the unused part. The paywall offers only Complete to someone who already holds Written or Oral. Changing length within a level, moving between Written and Oral, or down from Complete is left to the App Store subscription settings, where it takes effect at the next renewal.
 
@@ -68,12 +68,12 @@ The app is a Draft with zero testers. Subscriptions can only be created after a 
 
    | Subscription | Base plan ID | Billing period | Price |
    |---|---|---|---|
-   | `ccfpem_complete` | `p6m` | 6 months (P6M) | US$199.99 |
-   | `ccfpem_complete` | `p3m` | 3 months (P3M) | US$129.99 |
-   | `ccfpem_written` | `p6m` | 6 months (P6M) | US$149.99 |
-   | `ccfpem_written` | `p3m` | 3 months (P3M) | US$99.99 |
-   | `ccfpem_oral` | `p6m` | 6 months (P6M) | US$99.99 |
-   | `ccfpem_oral` | `p3m` | 3 months (P3M) | US$69.99 |
+   | `ccfpem_complete` | `p6m` | 6 months (P6M) | set by store-prices workflow |
+   | `ccfpem_complete` | `p3m` | 3 months (P3M) | set by store-prices workflow |
+   | `ccfpem_written` | `p6m` | 6 months (P6M) | set by store-prices workflow |
+   | `ccfpem_written` | `p3m` | 3 months (P3M) | set by store-prices workflow |
+   | `ccfpem_oral` | `p6m` | 6 months (P6M) | set by store-prices workflow |
+   | `ccfpem_oral` | `p3m` | 3 months (P3M) | set by store-prices workflow |
 
    Activate the base plans. The app reads the tier from the subscription ID (it must start with `ccfpem_complete`, `ccfpem_written` or `ccfpem_oral`) and the length from the base plan ID (it must end in `3m` or `6m`). If `_1y` subscriptions were ever created in Play, their IDs also work with `p3m` and `p6m` base plans added, but leave any 1 year base plan inactive. Play has no subscription group, so the app itself replaces Written or Oral when a subscriber upgrades to Complete. It passes the old subscription to Play Billing with immediate time proration, so nobody pays for both.
    Then in RevenueCat:
@@ -135,32 +135,23 @@ A candidate with no subscription sees all three offered. A candidate who holds W
 2. Workflows: `android-debug`, `android-release` (uploads to the Play closed testing track, alpha, as a draft), `android-play-internal` (manual, internal track only), `ios-release` (TestFlight only), `android-build-only` (signed .aab, no upload). Production: `android-production` (Play production track, as a draft while the app is a draft on Play) and `ios-production` (submits to App Store review, pulls any version already in review, releases after approval). Both production workflows start only when a tag matching `ccfpem-v*` is pushed. Add `release_notes.txt` for What's New from the second release on. Version 1.0.1 is the first release and has none. The Play workflows need `GCLOUD_SERVICE_ACCOUNT_CREDENTIALS` in group `preceptor_play` of this Codemagic app.
 3. Every workflow runs `npm test`. Release workflows also run the launch gate.
 
-## 7. Price proposal
+## 7. Prices
 
-Confirmed by Arjan on 24 September 2026, and changed to USD for launch on 26 September 2026: Complete US$199.99, Written US$149.99, Oral US$99.99.
+**This repo holds no prices.** Store prices are set in App Store Connect and Play Console, for every Preceptor app at once, by the MCCQE session's Codemagic store-prices workflow: a USD price per product, base country United States, with other countries derived from USD. Do not change CCFP-EM prices by hand or from this repo.
 
-**Launch prices are in USD (Arjan, 26 September 2026).** Set United States as the base country on both stores and let them convert for other countries:
-- **iOS:** App Store Connect > each subscription > Subscription Prices > base country United States.
-- **Android:** Play Console > each subscription's base plan > Prices > United States.
-- **Prices:** 6 months: Complete US$199.99, Written US$149.99, Oral US$99.99. 3 months: Complete US$129.99, Written US$99.99, Oral US$69.99. The app shows only the store's price for each plan.
-- **App fallback labels** in `src/lib/purchases.ts` read $199.99, $149.99 and $99.99. They show only before the store price loads. On a device the store's localized price replaces them.
-- **RevenueCat:** no change. It reads prices from the stores.
+- **App:** the paywall shows only the RevenueCat `priceString` for each package, which is the store's localized price. There are no fallback prices, no savings line and no per-month maths in the app.
+- **Listing:** `store/listing.md` quotes no prices.
+- **Dev server only:** `src/dev/offering.ts` holds sample price strings so the paywall can be clicked through locally and captured for App Review screenshots. Keep them in step with the store when prices change. They never reach a store build (`tests/platform.test.ts` guards this).
+- **RevenueCat:** no change when prices change. It reads prices from the stores.
 
-The bank is now far larger: 1,500 SAMPs and 100 oral cases. Running cost is still zero. The store fee is 15 percent.
-
-| Product | Price | Nets about |
-|---|---|---|
-| Complete (written and oral) | US$199.99 | US$170 |
-| Written only | US$149.99 | US$127 |
-| Oral only | US$99.99 | US$85 |
+History: launch prices in USD (Arjan, 26 September 2026). 3 and 6 month plans only (Arjan, 28 September 2026). Every 3 and 6 month price halved, rounded to x.99, to build volume (Arjan, 3 October 2026). The 1 year products, which the app no longer sells, were left as they were.
 
 Reasoning:
 
 - Candidates can pass one component and repeat the other. Selling each component on its own serves repeat candidates. It is also the honest price for someone who only wants the written bank.
 - The written bank is the bigger body of work and the part most candidates use daily, so it is priced higher than the oral.
-- Complete is 20 percent less than buying both, so it is the clear choice for a first attempt. It anchors the paywall.
+- Complete costs less than Written and Oral bought separately, so it is the clear choice for a first attempt. It anchors the paywall. The app does not state the difference.
 - Plans of 3 months and 6 months, the rule for all Preceptor apps (Arjan, 28 September 2026). Six months is the default on the paywall. Each renews automatically until cancelled in the store account. The paywall says so next to the price.
-- Six months costs what the earlier yearly plan did. Three months is for a candidate close to the exam.
 - The store and RevenueCat track the subscription and its renewals, so no server of our own is needed. The app caches the entitlement end dates, which keep working offline and still end access on time.
 
 ## 7a. Exam format decisions
