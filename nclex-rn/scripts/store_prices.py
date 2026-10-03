@@ -560,13 +560,15 @@ class PlayDeveloper:
 # Driver — discover, then price each discovered product independently
 # ---------------------------------------------------------------------------
 
-def plan_target(product: str, current: Decimal, rule: str, targets: dict) -> tuple[Decimal | None, str | None]:
+def plan_target(product: str, current: Decimal, rule: str, targets: dict, accept: dict | None = None) -> tuple[Decimal | None, str | None]:
     """(target, error). The target is the approved price from config; the
-    current price must already be it, or halve to it under the rule."""
+    current price must already be it, or halve to it under the rule, or be
+    a known wrong value listed in `accept_current_usd` for correction."""
     if product not in targets:
         return None, None
     target = Decimal(str(targets[product]))
-    if current == target or new_price_for(current, rule) == target:
+    known = (accept or {}).get(product)
+    if current == target or new_price_for(current, rule) == target or (known and current == Decimal(str(known))):
         return target, None
     return target, f"current ${current} is neither the target ${target} nor halves to it; not touched"
 
@@ -635,7 +637,7 @@ def process_ios(bundle_id: str, rule: str, targets: dict, deferred: list, asc: A
     return rows
 
 
-def process_android(package_name: str, rule: str, targets: dict, migrate: bool, play: PlayDeveloper, dry_run: bool) -> list[dict]:
+def process_android(package_name: str, rule: str, targets: dict, accept: dict, migrate: bool, play: PlayDeveloper, dry_run: bool) -> list[dict]:
     rows = []
     if not play.available():
         return [{"platform": "android", "status": "skipped", "reason": "Play credentials not in environment"}]
@@ -656,7 +658,7 @@ def process_android(package_name: str, rule: str, targets: dict, migrate: bool, 
                 rows.append(row)
                 continue
             row["old_usd"] = str(current)
-            target, err = plan_target(key, current, rule, targets)
+            target, err = plan_target(key, current, rule, targets, accept)
             if target is None:
                 row.update(status="no_target", new_usd=str(new_price_for(current, rule)))
                 rows.append(row)
@@ -669,6 +671,13 @@ def process_android(package_name: str, rule: str, targets: dict, migrate: bool, 
             do_migrate = migrate and item["type"] == "autoRenewingBasePlanType"
             row["migrate_existing_subscribers"] = do_migrate
             converted = play.convert_region_prices(package_name, target)
+            # Google's converter rounds the US price to its own pattern too
+            # (187.99 came back as 189.99), so the US keeps the exact target
+            # and only the other regions take the converted price.
+            exact = {"currencyCode": "USD", "units": str(int(target)), "nanos": int((target % 1) * 10**9)}
+            converted.setdefault("convertedRegionPrices", {}).setdefault("US", {"regionCode": "US"})["price"] = exact
+            if converted.get("convertedOtherRegionsPrice"):
+                converted["convertedOtherRegionsPrice"]["usdPrice"] = exact
             changes = play.region_changes(bp, converted)
             row.update(regions=len(bp.get("regionalConfigs", [])), regions_to_change=len(changes))
             if not changes:
@@ -727,7 +736,7 @@ def process_app(entry: dict, asc: AppStoreConnect, play: PlayDeveloper, dry_run:
     android_cfg = entry.get("android")
     if android_cfg:
         migrate = bool(android_cfg.get("migrate_existing_subscribers", False))
-        rows += process_android(android_cfg["package_name"], rule, targets, migrate, play, dry_run)
+        rows += process_android(android_cfg["package_name"], rule, targets, entry.get("accept_current_usd", {}), migrate, play, dry_run)
         rows += process_deactivations(android_cfg["package_name"], android_cfg.get("deactivate_base_plans", []), play, dry_run)
 
     return {"name": name, "rows": rows}
