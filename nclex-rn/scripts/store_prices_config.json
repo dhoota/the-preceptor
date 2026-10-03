@@ -1,11 +1,22 @@
 {
-  "_readme": "Preceptor NCLEX-RN (com.preceptor.nclex) — 50% price cut, Oct 2026. No product IDs listed: store_prices.py discovers the real 3-month/6-month subscriptions live from each store (iOS: subscriptionPeriod THREE_MONTHS/SIX_MONTHS; Android: ACTIVE base plans with billingPeriodDuration P3M/P6M). Known current prices per LAUNCH.md as of this cut: nclexrn_6month = US$149.99, nclexrn_3month = US$99.99 — this script computes 74.99 and 49.99 and will fail loudly if what it discovers live doesn't match that shape.",
+  "_readme": "Preceptor NCLEX-RN (com.preceptor.nclex) \u2014 50% price cut, Oct 2026. No product IDs listed: store_prices.py discovers the real 3-month/6-month subscriptions live from each store (iOS: subscriptionPeriod THREE_MONTHS/SIX_MONTHS; Android: ACTIVE base plans with billingPeriodDuration P3M/P6M). Known current prices per LAUNCH.md as of this cut: nclexrn_6month = US$149.99, nclexrn_3month = US$99.99 \u2014 this script computes 74.99 and 49.99 and will fail loudly if what it discovers live doesn't match that shape.",
   "apps": [
     {
       "name": "NCLEX-RN",
       "round_rule": "half_round_99",
-      "ios": { "bundle_id": "com.preceptor.nclex" },
-      "android": { "package_name": "com.preceptor.nclex", "migrate_existing_subscribers": true }
+      "ios": {
+        "bundle_id": "com.preceptor.nclex"
+      },
+      "android": {
+        "package_name": "com.preceptor.nclex",
+        "migrate_existing_subscribers": true
+      },
+      "targets_usd": {
+        "nclexrn_3month": "49.99",
+        "nclexrn_6month": "74.99",
+        "nclexrn_3month:p3m": "49.99",
+        "nclexrn_6month:p6m": "74.99"
+      }
     }
   ]
 }

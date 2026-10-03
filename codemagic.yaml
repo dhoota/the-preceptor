@@ -152,7 +152,7 @@ workflows:
     # DRY_RUN is explicitly set to "false" when starting the build.
     # This file mirrors nclex-rn/codemagic.yaml — keep the two in step.
     working_directory: nclex-rn
-    max_build_duration: 15
+    max_build_duration: 120
     instance_type: linux_x2
     integrations:
       app_store_connect: preceptor_appstore
