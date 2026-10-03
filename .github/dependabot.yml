@@ -1,0 +1,16 @@
+version: 2
+updates:
+  # nclex-rn and oral-exam-sim live on their own release branches
+  # (next-release-nclex, next-release-ccfpem) and aren't on main yet — these
+  # entries start working once either branch merges to main. Add a third
+  # entry here if a future app under this repo gets its own subdirectory.
+  - package-ecosystem: "npm"
+    directory: "/nclex-rn"
+    schedule:
+      interval: "weekly"
+    open-pull-requests-limit: 5
+  - package-ecosystem: "npm"
+    directory: "/oral-exam-sim"
+    schedule:
+      interval: "weekly"
+    open-pull-requests-limit: 5
