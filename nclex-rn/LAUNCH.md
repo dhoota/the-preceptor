@@ -32,7 +32,7 @@ If this branch is ever merged with `claude/oral-exam-sim`, both sets of workflow
 | Display name | Preceptor: NCLEX | `capacitor.config.json`, `android/app/src/main/res/values/strings.xml`, `ios/App/App/Info.plist` |
 | Entitlement | `nclexrn_access` | `src/lib/purchases.ts` |
 | Offering | `nclexrn` | `src/lib/purchases.ts` |
-| Support | preceptor.app@gmail.com | `src/lib/constants.ts` |
+| Support | nclex@thepreceptor.ca | `src/lib/constants.ts` |
 | Privacy | https://thepreceptor.ca/privacy | `src/lib/constants.ts` |
 | Terms | https://thepreceptor.ca/terms | `src/lib/constants.ts` |
 
