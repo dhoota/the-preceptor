@@ -26,6 +26,31 @@ definitions:
       script: npm run build
 
 workflows:
+  gitleaks-scan:
+    name: Preceptor CCFP-EM (gitleaks secret scan — manual, full history)
+    # Manual only, never on push, no store-publishing integration. The
+    # compensating control for GitHub secret scanning / push protection /
+    # branch protection, none of which this plan tier offers on a private
+    # repo — see PRECEPTOR_APP_STANDARD.md §13A (dhoota/preceptor-mccqe).
+    # Scans the whole repo's shared git history (covers NCLEX too).
+    # This file mirrors ../codemagic.yaml — keep the two in step.
+    max_build_duration: 30
+    instance_type: linux_x2
+    triggering:
+      events: []
+    scripts:
+      - name: Ensure full git history
+        script: git fetch --unshallow 2>/dev/null || true
+      - name: Install gitleaks
+        script: |
+          LATEST=$(curl -sS https://api.github.com/repos/gitleaks/gitleaks/releases/latest | grep -o '"tag_name": *"[^"]*"' | head -1 | cut -d'"' -f4)
+          VER=${LATEST#v}
+          curl -sSL "https://github.com/gitleaks/gitleaks/releases/download/$LATEST/gitleaks_${VER}_linux_x64.tar.gz" -o /tmp/gitleaks.tar.gz
+          tar -xzf /tmp/gitleaks.tar.gz -C /tmp gitleaks
+          chmod +x /tmp/gitleaks
+      - name: Full-history secret scan
+        script: /tmp/gitleaks detect --source . -v
+
   android-debug:
     name: Preceptor CCFP-EM Android (debug APK)
     max_build_duration: 30
