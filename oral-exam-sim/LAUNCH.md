@@ -26,7 +26,7 @@ The Codemagic app "Preceptor: CCFP-EM" (id 6ab4a0114e7acd498ad4caf1) builds from
 | Display name | Preceptor: CCFP-EM | `capacitor.config.json`, `android/app/src/main/res/values/strings.xml`, `ios/App/App/Info.plist` |
 | Access | Auto-renewing subscriptions of 3 months or 6 months. Expiry comes from the RevenueCat entitlements `written_access` and `oral_full_access` | `src/lib/purchases.ts` |
 | Offering | `ccfpem` | `src/lib/purchases.ts` |
-| Support | preceptor.app@gmail.com | `src/lib/constants.ts` |
+| Support | ccfpem@thepreceptor.ca | `src/lib/constants.ts` |
 | Privacy | https://thepreceptor.ca/privacy | `src/lib/constants.ts` |
 | Terms | https://thepreceptor.ca/terms | `src/lib/constants.ts` |
 
@@ -176,7 +176,7 @@ To regenerate the screenshots after content changes, build a seeded static copy 
 ## 9. Website
 
 1. Add a Preceptor: CCFP-EM section to thepreceptor.ca with the store badges.
-2. Update https://thepreceptor.ca/privacy to cover this app. Key points: no account, no data collected by the app, progress stays on the device, purchases handled by Apple or Google through RevenueCat, support at preceptor.app@gmail.com.
+2. Update https://thepreceptor.ca/privacy to cover this app. Key points: no account, no data collected by the app, progress stays on the device, purchases handled by Apple or Google through RevenueCat, support at ccfpem@thepreceptor.ca.
 3. Make sure https://thepreceptor.ca/terms covers this app too.
 
 ## 10. Legal and disclaimer checklist
