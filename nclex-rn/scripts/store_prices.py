@@ -80,6 +80,7 @@ past the midpoint — this is a cut, not a rounding-driven increase).
   100.00 -> 49.99    150.00 -> 74.99    59.99 -> 29.99
 """
 import argparse
+import datetime
 import json
 import os
 import sys
@@ -90,6 +91,11 @@ import urllib.error
 from decimal import Decimal, ROUND_HALF_UP
 
 KEEP_IOS_PERIODS = {"THREE_MONTHS", "SIX_MONTHS"}
+
+
+def log_seen(**fields) -> None:
+    """One line per product or base plan seen in a store, before any filtering."""
+    print(json.dumps({"seen": True, **fields}), flush=True)
 KEEP_ANDROID_DURATIONS = {"P3M", "P6M"}
 
 # ---------------------------------------------------------------------------
@@ -239,26 +245,43 @@ class AppStoreConnect:
             for s in subs:
                 attrs = s.get("attributes", {})
                 period = attrs.get("subscriptionPeriod")
+                log_seen(
+                    platform="ios", group=g.get("attributes", {}).get("referenceName"), product_id=attrs.get("productId"),
+                    state=attrs.get("state"), period=period, kept=period in KEEP_IOS_PERIODS,
+                )
                 if period in KEEP_IOS_PERIODS:
                     found.append({"subscription_id": s["id"], "product_id": attrs.get("productId"), "period": period, "name": attrs.get("name")})
         return found
 
-    def current_usd_price(self, subscription_id: str) -> Decimal | None:
-        res = self._request(
-            "GET",
-            f"/subscriptions/{subscription_id}/prices"
-            "?filter[territory]=USA&include=subscriptionPricePoint&limit=1"
-            "&sort=-startDate",
+    def current_usd_price(self, subscription_id: str, today: str | None = None) -> Decimal | None:
+        """The USA price in effect today.
+
+        /subscriptions/{id}/prices does not accept `sort` (HTTP 400
+        PARAMETER_ERROR.ILLEGAL), so read every USA price row and pick the one
+        in effect: the latest startDate that is not in the future. A null
+        startDate is the original price, in effect since the product began.
+        Scheduled future prices are ignored.
+        """
+        today = today or datetime.date.today().isoformat()
+        rows: list[tuple[str, str]] = []  # (startDate or "", customerPrice)
+        next_url = (
+            f"{ASC_BASE}/subscriptions/{subscription_id}/prices"
+            "?filter[territory]=USA&include=subscriptionPricePoint&limit=200"
         )
-        included = {i["id"]: i for i in res.get("included", [])}
-        for price in res.get("data", []):
-            pp_id = price.get("relationships", {}).get("subscriptionPricePoint", {}).get("data", {}).get("id")
-            pp = included.get(pp_id)
-            if pp:
-                customer_price = pp["attributes"].get("customerPrice")
-                if customer_price is not None:
-                    return Decimal(str(customer_price))
-        return None
+        while next_url:
+            res = self._request("GET", next_url)
+            included = {i["id"]: i for i in res.get("included", []) if i.get("type") == "subscriptionPricePoints"}
+            for price in res.get("data", []):
+                start = (price.get("attributes") or {}).get("startDate") or ""
+                pp_id = price.get("relationships", {}).get("subscriptionPricePoint", {}).get("data", {}).get("id")
+                pp = included.get(pp_id)
+                customer_price = (pp or {}).get("attributes", {}).get("customerPrice")
+                if customer_price is not None and start <= today:
+                    rows.append((start, str(customer_price)))
+            next_url = res.get("links", {}).get("next")
+        if not rows:
+            return None
+        return Decimal(max(rows)[1])
 
     def find_price_point(self, subscription_id: str, target_usd: Decimal) -> str | None:
         # subscriptionPricePoints are Apple's fixed tier ladder for USA; find
@@ -353,6 +376,16 @@ class PlayDeveloper:
         except urllib.error.HTTPError as e:
             raise RuntimeError(f"Play {method} {path} -> HTTP {e.code}: {e.read().decode(errors='replace')[:500]}")
 
+    @staticmethod
+    def base_plan_period(bp: dict) -> tuple[str | None, str]:
+        """(billingPeriodDuration, type). The period is not a top-level field:
+        it sits under autoRenewingBasePlanType or prepaidBasePlanType
+        (installmentsBasePlanType for instalment plans)."""
+        for kind in ("autoRenewingBasePlanType", "prepaidBasePlanType", "installmentsBasePlanType"):
+            if kind in bp:
+                return (bp[kind] or {}).get("billingPeriodDuration"), kind
+        return bp.get("billingPeriodDuration"), "unknown"
+
     def discover_base_plans(self, package_name: str) -> list[dict]:
         """List every subscription for the package, keep ACTIVE 3m/6m base plans.
 
@@ -365,11 +398,22 @@ class PlayDeveloper:
             if page_token:
                 q["pageToken"] = page_token
             res = self._request("GET", f"/applications/{package_name}/subscriptions?{urllib.parse.urlencode(q)}")
-            for sub in res.get("subscriptions", []):
+            subs = res.get("subscriptions", [])
+            if not subs and not page_token:
+                log_seen(platform="android", package_name=package_name, subscriptions=0)
+            for sub in subs:
                 product_id = sub.get("productId")
+                if not sub.get("basePlans"):
+                    log_seen(platform="android", product_id=product_id, base_plan=None, kept=False)
                 for bp in sub.get("basePlans", []):
-                    if bp.get("state") == "ACTIVE" and bp.get("billingPeriodDuration") in KEEP_ANDROID_DURATIONS:
-                        found.append({"product_id": product_id, "base_plan": bp})
+                    period, kind = self.base_plan_period(bp)
+                    kept = bp.get("state") == "ACTIVE" and period in KEEP_ANDROID_DURATIONS
+                    log_seen(
+                        platform="android", product_id=product_id, base_plan=bp.get("basePlanId"),
+                        state=bp.get("state"), period=period, type=kind, kept=kept,
+                    )
+                    if kept:
+                        found.append({"product_id": product_id, "base_plan": bp, "period": period, "type": kind})
             page_token = res.get("nextPageToken")
             if not page_token:
                 break
@@ -463,7 +507,7 @@ def process_ios(bundle_id: str, rule: str, asc: AppStoreConnect, dry_run: bool, 
     for sub in discovered:
         row = {"platform": "ios", "product_id": sub["product_id"], "period": sub["period"], "name": sub["name"]}
         try:
-            current = asc.current_usd_price(sub["subscription_id"])
+            current = asc.current_usd_price(sub["subscription_id"], today)
             if current is None:
                 row["status"] = "no_current_price"
             else:
@@ -496,7 +540,7 @@ def process_android(package_name: str, rule: str, migrate: bool, play: PlayDevel
         return [{"platform": "android", "status": "not_found", "package_name": package_name}]
     for item in discovered:
         product_id, bp = item["product_id"], item["base_plan"]
-        row = {"platform": "android", "product_id": f"{product_id}:{bp['basePlanId']}", "duration": bp.get("billingPeriodDuration")}
+        row = {"platform": "android", "product_id": f"{product_id}:{bp['basePlanId']}", "duration": item["period"], "type": item["type"]}
         try:
             current = play.current_usd_price(bp)
             if current is None:
@@ -506,7 +550,9 @@ def process_android(package_name: str, rule: str, migrate: bool, play: PlayDevel
                 row.update(status="ok", old_usd=str(current), new_usd=str(new), migrate_existing_subscribers=migrate)
                 if not dry_run:
                     converted = play.convert_region_prices(package_name, new)
-                    play.update_base_plan_prices(package_name, product_id, bp, converted, migrate)
+                    play.update_base_plan_prices(
+                        package_name, product_id, bp, converted, migrate and item["type"] == "autoRenewingBasePlanType"
+                    )
                     row["status"] = "applied"
         except Exception as e:  # noqa: BLE001
             row["status"] = "error"
