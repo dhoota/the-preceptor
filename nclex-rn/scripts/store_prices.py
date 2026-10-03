@@ -627,6 +627,7 @@ def process_ios(bundle_id: str, rule: str, targets: dict, deferred: list, asc: A
                 for terr in sorted(todo, key=lambda t: t != "USA"):
                     asc.set_price(sub["subscription_id"], wanted[terr], today, preserve_current_price=False)
                 row["status"] = "applied"
+            row["ios_start_date"] = today
         except Exception as e:  # noqa: BLE001
             row["status"] = "error"
             row["error"] = str(e)
@@ -748,7 +749,14 @@ def main():
 
     asc = AppStoreConnect()
     play = PlayDeveloper()
-    today = datetime.datetime.now(datetime.timezone.utc).strftime("%Y-%m-%d")
+    # Apple only accepts a subscription price change starting at least two
+    # days out ("a future date is expected, and must be on or after ..."),
+    # so iOS prices are scheduled for that date and read back as of it.
+    # IOS_START_DATE overrides it. Play changes apply now.
+    today = os.environ.get("IOS_START_DATE") or (
+        datetime.datetime.now(datetime.timezone.utc).date() + datetime.timedelta(days=2)
+    ).isoformat()
+    print(f"iOS price start date / as-of date: {today}")
 
     apps = config["apps"]
     print(f"=== store_prices.py — DRY_RUN={dry_run} — {len(apps)} app(s) — "
