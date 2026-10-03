@@ -45,7 +45,7 @@ The App Store has no such wait. It needs only the `appl_` key pasted in (A4), a 
 | Prices | 6 months: Complete US$199.99, Written US$149.99, Oral US$99.99. 3 months: Complete US$129.99, Written US$99.99, Oral US$69.99 (base country United States) |
 | RevenueCat entitlements | `written_access` (Complete, Written). `oral_full_access` (Complete, Oral) |
 | RevenueCat offering | `ccfpem`, with packages `complete_6m`, `complete_3m`, `written_6m`, `written_3m`, `oral_6m`, `oral_3m` |
-| Support email | preceptor.app@gmail.com |
+| Support email | ccfpem@thepreceptor.ca |
 | Privacy policy | https://thepreceptor.ca/privacy |
 | Terms of use | https://thepreceptor.ca/terms |
 | Marketing site | https://thepreceptor.ca |
@@ -75,7 +75,7 @@ The App Store has no such wait. It needs only the `appl_` key pasted in (A4), a 
   - the app collects no data
   - progress stays on the device
   - purchases are handled by Apple or Google through RevenueCat
-  - support is at preceptor.app@gmail.com
+  - support is at ccfpem@thepreceptor.ca
 
 **A4. iOS RevenueCat key.**
 - Done on 26 September 2026. `src/lib/purchases.ts` holds the iOS `appl_` key and the Android `goog_` key, and the launch gate passes.
@@ -270,7 +270,7 @@ All of these are in App Store Connect > Apps > the app with bundle `com.precepto
 **F3. Store settings.**
 - Screen: Grow users > Store presence > Store settings.
 - Category: Medical.
-- Email: preceptor.app@gmail.com.
+- Email: ccfpem@thepreceptor.ca.
 - Website: https://thepreceptor.ca
 
 **F4. Release to production.**
