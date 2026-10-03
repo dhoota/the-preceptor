@@ -13,7 +13,7 @@ House style: no em or en dashes, no semicolons, short sentences, no filler. Char
 | Product type | iOS Auto-Renewable Subscriptions in the group NCLEX-RN Access (6 months level 1, 3 months level 2). Play subscriptions with base plans p6m and p3m |
 | RevenueCat entitlement | nclexrn_access. Both products grant it |
 | RevenueCat offering | nclexrn, packages $rc_six_month and $rc_three_month. Never the Current offering |
-| Prices | US$149.99 every 6 months. US$99.99 every 3 months. Other currencies from the store price tiers |
+| Prices | Set only in the stores. Not quoted in store text. The app shows the store price string |
 | Free tier | 50 items and 1 case study |
 | App Store category | Education. Secondary: Medical |
 | Play category | Education |
@@ -63,7 +63,7 @@ Every item is original. None is taken from NCSBN material or any real exam. Cont
 
 Preceptor: NCLEX is an independent study tool. It is not affiliated with, sponsored or endorsed by NCSBN. NCLEX, NCLEX-RN and NCLEX-PN are registered trademarks of NCSBN. The app is for education only and is not nursing or medical advice. Scores do not predict exam results.
 
-Subscriptions: US$149.99 every 6 months or US$99.99 every 3 months. Payment is charged to your store account. A subscription renews each period unless cancelled at least 24 hours before the period ends. Manage or cancel it in your store account settings.
+Subscriptions: one plan renews every 6 months and one every 3 months. The store shows the price in your currency before you buy. Payment is charged to your store account. A subscription renews each period unless cancelled at least 24 hours before the period ends. Manage or cancel it in your store account settings.
 
 Support: preceptor.app@gmail.com
 

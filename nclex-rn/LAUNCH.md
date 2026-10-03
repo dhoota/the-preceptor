@@ -45,11 +45,11 @@ If this branch is ever merged with `claude/oral-exam-sim`, both sets of workflow
 
    | Reference name | Product ID | Type | Duration | Group level | Price |
    |---|---|---|---|---|---|
-   | NCLEX-RN Access, 6 months | `nclexrn_6month` | Auto-Renewable Subscription | 6 months | 1 | US$149.99 |
-   | NCLEX-RN Access, 3 months | `nclexrn_3month` | Auto-Renewable Subscription | 3 months | 2 | US$99.99 |
+   | NCLEX-RN Access, 6 months | `nclexrn_6month` | Auto-Renewable Subscription | 6 months | 1 | Set in the store |
+   | NCLEX-RN Access, 3 months | `nclexrn_3month` | Auto-Renewable Subscription | 3 months | 2 | Set in the store |
 
    Both go in one subscription group, "NCLEX-RN Access". There is no lifetime and no monthly product. Add the paywall review screenshot `store/screenshots/review/paywall.png` and this review note to each: "50 items and 1 case study are free. Either subscription opens the full bank and the adaptive mock. Restore Purchases is on the paywall and in Settings."
-3. Set US$149.99 and US$99.99 as the base prices and let the store derive the other currencies from its tier table. There is no launch price.
+3. Set the US dollar base price of each plan in the store (see section 7) and let the store derive the other currencies. There is no launch price. The app shows only the store's own price string, so a price change needs no app release.
 4. Agreements, Tax and Banking and the Paid Apps agreement must be active. Stay in the App Store Small Business Program.
 5. App Privacy and age rating: see `store/listing.md`.
 6. Export compliance: `Info.plist` sets `ITSAppUsesNonExemptEncryption` to false.
@@ -57,7 +57,7 @@ If this branch is ever merged with `claude/oral-exam-sim`, both sets of workflow
 ## 4. Google Play Console
 
 1. App: created 26 September 2026 as Preceptor: NCLEX, package `com.preceptor.nclex`. Upload the first signed .aab by hand from the build-only workflow, then later builds go up through `nclex-android-release`.
-2. Monetize > Subscriptions. Create `nclexrn_6month` with an auto-renewing base plan `p6m` (6 months, US$149.99) and `nclexrn_3month` with an auto-renewing base plan `p3m` (3 months, US$99.99). Activate both base plans.
+2. Monetize > Subscriptions. Create `nclexrn_6month` with an auto-renewing base plan `p6m` (6 months) and `nclexrn_3month` with an auto-renewing base plan `p3m` (3 months). Activate both base plans.
 3. Data safety, content rating and target audience: see `store/listing.md`.
 
 ## 5. RevenueCat
@@ -93,9 +93,12 @@ The app "Preceptor: CCFP-EM" already holds everything the NCLEX workflows need. 
 
 ## 7. Pricing
 
-Set by Arjan on 26 September 2026: two auto-renewing subscriptions and nothing else. US$149.99 every 6 months and US$99.99 every 3 months. Other currencies come from the store price tiers. The store fee is 15 percent in the App Store Small Business Program and on Play subscriptions.
+Two auto-renewing subscriptions and nothing else. Prices live only in App Store Connect and Play Console. The app reads each plan's price string from RevenueCat and holds no price of its own. Store text and docs do not quote prices.
 
-- The plans match how long candidates study for the exam. The 6 month plan costs about 25 percent less per month.
+- 26 September 2026: US dollar base prices set by Arjan.
+- 3 October 2026: Arjan approved a 50 percent cut across the Preceptor apps. US$74.99 every 6 months and US$49.99 every 3 months. Other currencies derive from US dollars. The change is made centrally in the stores, not in this repo.
+- The store fee is 15 percent in the App Store Small Business Program and on Play subscriptions.
+- The plans match how long candidates study for the exam.
 - Both plans renew until cancelled, so a candidate who retakes the exam keeps access.
 
 ## 8. Exam model decisions

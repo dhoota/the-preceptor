@@ -38,8 +38,10 @@ describe("store listing", () => {
   it("discloses the subscription terms", () => {
     const desc = sections().find((s) => s.title === "Description")!.body;
     expect(desc).toMatch(/renews each period unless cancelled at least 24 hours before the period ends/);
-    expect(desc).toContain("US$149.99 every 6 months");
-    expect(desc).toContain("US$99.99 every 3 months");
+    expect(desc).toMatch(/every 6 months/);
+    expect(desc).toMatch(/every 3 months/);
+    // Prices live only in the stores. No price, percent saving or per month figure in store text.
+    expect(md).not.toMatch(/(US|CA)?\$\s?\d|\d+\.\d\d\b|\d+ ?(%|percent)\s*(off|less|cheaper|saving)|per month/i);
     expect(md).not.toMatch(/lifetime purchase|one time purchase|monthly subscription/i);
   });
 });
