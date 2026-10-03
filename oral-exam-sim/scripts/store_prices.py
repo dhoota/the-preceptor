@@ -75,9 +75,15 @@ says so by app rather than guessing):
     Monetization access before a real (non-dry) run can write anything.
 
 ROUNDING RULE (Arjan, Oct 2026): new USD price = half the current USD
-price, rounded to the nearest .99 AT OR BELOW that half (never round up
-past the midpoint — this is a cut, not a rounding-driven increase).
-  100.00 -> 49.99    150.00 -> 74.99    59.99 -> 29.99
+price, rounded to the NEAREST X.99 (a tie goes to the lower one).
+  100.00 -> 49.99    150.00 -> 74.99    59.99 -> 29.99    374.99 -> 187.99
+
+IDEMPOTENCY: each app's config lists `targets_usd`, the approved new USD
+price per product (iOS productId, Android productId:basePlanId). A product
+already at its target is "no_change" and only its unfinished territories or
+regions are written. A product whose current price neither equals its
+target nor halves to it is an error, never a second cut. A discovered
+product with no target is reported and left alone.
 """
 import argparse
 import datetime
@@ -103,18 +109,18 @@ KEEP_ANDROID_DURATIONS = {"P3M", "P6M"}
 # ---------------------------------------------------------------------------
 
 def half_round_99(old_price: Decimal) -> Decimal:
-    """Half the price, then the largest X.99 that does not exceed that half.
+    """Half the price, then the nearest X.99 (the lower one on a tie).
 
     Using Decimal throughout (never float) because this is money: a float
     half of 59.99 is 29.995, and plain float rounding is exactly the kind
     of off-by-a-cent bug a pricing script must not have.
     """
     half = (old_price / 2).quantize(Decimal("0.01"), rounding=ROUND_HALF_UP)
-    whole_dollars = int(half // 1)
-    candidate = Decimal(whole_dollars) + Decimal("0.99")
-    if candidate > half:
-        candidate -= 1
-    return candidate
+    above = Decimal(int(half // 1)) + Decimal("0.99")
+    if above == half:
+        return above
+    below = above - 1
+    return above if above - half < half - below else below
 
 
 def new_price_for(old_price: Decimal, rule: str) -> Decimal:
@@ -211,12 +217,20 @@ class AppStoreConnect:
         req = urllib.request.Request(url, data=data, method=method)
         req.add_header("Authorization", "Bearer " + self._jwt())
         req.add_header("Content-Type", "application/json")
-        try:
-            with urllib.request.urlopen(req, timeout=30) as r:
-                raw = r.read()
-                return json.loads(raw) if raw else {}
-        except urllib.error.HTTPError as e:
-            raise RuntimeError(f"ASC {method} {path} -> HTTP {e.code}: {e.read().decode(errors='replace')[:500]}")
+        for attempt in range(40):
+            req.headers["Authorization"] = "Bearer " + self._jwt()
+            try:
+                with urllib.request.urlopen(req, timeout=60) as r:
+                    raw = r.read()
+                    return json.loads(raw) if raw else {}
+            except urllib.error.HTTPError as e:
+                if e.code == 429 or e.code >= 500:
+                    # Apple's hourly request budget; wait and retry the same call.
+                    print(f"ASC {method} -> HTTP {e.code}, retrying in 90s (attempt {attempt + 1})", flush=True)
+                    time.sleep(90)
+                    continue
+                raise RuntimeError(f"ASC {method} {path} -> HTTP {e.code}: {e.read().decode(errors='replace')[:500]}")
+        raise RuntimeError(f"ASC {method} {path} -> still rate limited after 40 retries")
 
     def _paginate(self, path: str) -> list[dict]:
         out = []
@@ -284,25 +298,48 @@ class AppStoreConnect:
         return Decimal(max(rows)[1])
 
     def find_price_point(self, subscription_id: str, target_usd: Decimal) -> str | None:
-        # subscriptionPricePoints are Apple's fixed tier ladder for USA; find
-        # the one whose customerPrice matches our computed new price exactly
-        # (Apple's tiers land on real .99/.49 values, so an exact match is
-        # expected for a target already rounded to .99).
-        q = urllib.parse.urlencode({"filter[territory]": "USA", "limit": 8000})
-        res = self._request("GET", f"/subscriptions/{subscription_id}/pricePoints?{q}")
-        for pp in res.get("data", []):
+        """The USA subscriptionPricePoint whose customerPrice is exactly the target."""
+        q = urllib.parse.urlencode({"filter[territory]": "USA", "limit": 200})
+        for pp in self._paginate(f"/subscriptions/{subscription_id}/pricePoints?{q}"):
             if Decimal(str(pp["attributes"]["customerPrice"])) == target_usd:
                 return pp["id"]
         return None
 
+    def equalizations(self, price_point_id: str) -> dict[str, str]:
+        """territory -> price point id: Apple's own equalized price for every
+        other territory, derived from the USA price point."""
+        out = {}
+        next_url = f"{ASC_BASE}/subscriptionPricePoints/{price_point_id}/equalizations?include=territory&limit=200"
+        while next_url:
+            res = self._request("GET", next_url)
+            for pp in res.get("data", []):
+                terr = pp.get("relationships", {}).get("territory", {}).get("data", {}).get("id")
+                if terr:
+                    out[terr] = pp["id"]
+            next_url = res.get("links", {}).get("next")
+        return out
+
+    def current_points(self, subscription_id: str, today: str) -> dict[str, str]:
+        """territory -> price point id in effect today, for every territory
+        the subscription is priced in."""
+        best: dict[str, tuple[str, str]] = {}
+        next_url = f"{ASC_BASE}/subscriptions/{subscription_id}/prices?include=territory,subscriptionPricePoint&limit=200"
+        while next_url:
+            res = self._request("GET", next_url)
+            for price in res.get("data", []):
+                start = (price.get("attributes") or {}).get("startDate") or ""
+                rel = price.get("relationships", {})
+                terr = rel.get("territory", {}).get("data", {}).get("id")
+                pp_id = rel.get("subscriptionPricePoint", {}).get("data", {}).get("id")
+                if terr and pp_id and start <= today and (terr not in best or start >= best[terr][0]):
+                    best[terr] = (start, pp_id)
+            next_url = res.get("links", {}).get("next")
+        return {t: v[1] for t, v in best.items()}
+
     def set_price(self, subscription_id: str, price_point_id: str, start_date: str, preserve_current_price: bool = False) -> dict:
-        # VERIFY against current ASC API docs before the first live run:
-        # preserveCurrentPrice=false on every other territory is how a USD
-        # price change "equalizes" to Apple's own tier table for the rest of
-        # the world, per the task's instruction ("USD price point then
-        # equalizations for all territories"). If Apple's API has since
-        # changed this to a relationship-array shape instead of a flag,
-        # update this call, not the rest of the script.
+        # One subscriptionPrice per territory; the territory is implied by the
+        # price point. For a decrease Apple moves existing subscribers to the
+        # lower price itself, so preserveCurrentPrice does not apply.
         body = {
             "data": {
                 "type": "subscriptionPrices",
@@ -437,49 +474,64 @@ class PlayDeveloper:
         body = {"price": {"currencyCode": "USD", "units": str(int(new_usd)), "nanos": int((new_usd % 1) * 10**9)}}
         return self._request("POST", f"/applications/{package_name}/pricing:convertRegionPrices", body)
 
+    @staticmethod
+    def money(m: dict) -> Decimal:
+        return Decimal(int(m.get("units", 0) or 0)) + Decimal(int(m.get("nanos", 0) or 0)) / Decimal(10**9)
+
+    def region_changes(self, base_plan: dict, converted: dict) -> list[dict]:
+        """The regionalConfigs that differ from Google's converted price.
+
+        Only regions the base plan is already in are touched, so the cut
+        never opens the plan in a new country. convertedRegionPrices maps
+        region -> ConvertedRegionPrice {regionCode, price, taxAmount}."""
+        conv = converted.get("convertedRegionPrices", {})
+        changes = []
+        for cfg in base_plan.get("regionalConfigs", []):
+            region = cfg["regionCode"]
+            if region not in conv:
+                raise RuntimeError(f"convertRegionPrices returned no price for region {region}")
+            new = conv[region]["price"]
+            old = cfg.get("price", {})
+            if old.get("currencyCode") != new.get("currencyCode") or self.money(old) != self.money(new):
+                changes.append({**cfg, "price": {"currencyCode": new["currencyCode"], "units": new.get("units", "0"), "nanos": new.get("nanos", 0)}})
+        return changes
+
     def update_base_plan_prices(
         self,
         package_name: str,
         product_id: str,
-        base_plan: dict,
+        base_plan_id: str,
+        changes: list[dict],
         converted: dict,
         migrate_existing_subscribers: bool,
     ) -> dict:
-        # There is no basePlans.batchUpdate/update method in Play Developer
-        # API v3 — a base plan's regionalConfigs are updated by PATCHing the
-        # parent Subscription with an updateMask scoped to this one base
-        # plan, per
+        # Read the subscription fresh, change this one base plan's regional
+        # prices in place, and PATCH basePlans back whole.
         # https://developers.google.com/android-publisher/api-ref/rest/v3/monetization.subscriptions/patch
-        # newSubscriberAvailability is preserved per-region from the base
-        # plan we already read (discover_base_plans), so a region that was
-        # off for new subscribers doesn't silently flip on just because its
-        # price changed.
-        base_plan_id = base_plan["basePlanId"]
-        existing_by_region = {c["regionCode"]: c for c in base_plan.get("regionalConfigs", [])}
+        sub = self._request("GET", f"/applications/{package_name}/subscriptions/{product_id}")
+        by_region = {c["regionCode"]: c for c in changes}
+        for bp in sub.get("basePlans", []):
+            if bp.get("basePlanId") == base_plan_id:
+                bp["regionalConfigs"] = [by_region.get(c["regionCode"], c) for c in bp.get("regionalConfigs", [])]
+                other = converted.get("convertedOtherRegionsPrice")
+                if bp.get("otherRegionsConfig") and other:
+                    bp["otherRegionsConfig"]["usdPrice"] = other["usdPrice"]
+                    bp["otherRegionsConfig"]["eurPrice"] = other["eurPrice"]
         region_version = converted.get("regionVersion", {}).get("version")
-        regional_configs = []
-        for region, price in converted.get("convertedRegionPrices", {}).items():
-            existing = existing_by_region.get(region, {})
-            regional_configs.append(
-                {
-                    "regionCode": region,
-                    "newSubscriberAvailability": existing.get("newSubscriberAvailability", True),
-                    "price": {"currencyCode": price["currencyCode"], "units": price["units"], "nanos": price.get("nanos", 0)},
-                }
-            )
-        patch_body = {
-            "packageName": package_name,
-            "productId": product_id,
-            "basePlans": [{"basePlanId": base_plan_id, "regionalConfigs": regional_configs}],
-        }
-        q = urllib.parse.urlencode(
-            {"updateMask": f"basePlans[{base_plan_id}].regionalConfigs", "regionsVersion.version": region_version}
-        )
-        result = self._request("PATCH", f"/applications/{package_name}/subscriptions/{product_id}?{q}", patch_body)
+        q = urllib.parse.urlencode({"updateMask": "basePlans", "regionsVersion.version": region_version})
+        result = self._request("PATCH", f"/applications/{package_name}/subscriptions/{product_id}?{q}", sub)
         if migrate_existing_subscribers:
+            # Move every existing subscriber in the changed regions to the new
+            # (lower) price at their next renewal.
             # https://developers.google.com/android-publisher/api-ref/rest/v3/monetization.subscriptions.basePlans/migratePrices
+            cutoff = datetime.datetime.now(datetime.timezone.utc).strftime("%Y-%m-%dT%H:%M:%SZ")
             migrate_body = {
-                "regionalPriceMigrations": [{"regionCode": c["regionCode"]} for c in regional_configs],
+                "packageName": package_name,
+                "productId": product_id,
+                "basePlanId": base_plan_id,
+                "regionalPriceMigrations": [
+                    {"regionCode": region, "oldestAllowedPriceVersionTime": cutoff} for region in by_region
+                ],
                 "regionsVersion": {"version": region_version},
             }
             result["migration"] = self._request(
@@ -489,12 +541,37 @@ class PlayDeveloper:
             )
         return result
 
+    def base_plan_state(self, package_name: str, product_id: str, base_plan_id: str) -> str | None:
+        sub = self._request("GET", f"/applications/{package_name}/subscriptions/{product_id}")
+        for bp in sub.get("basePlans", []):
+            if bp.get("basePlanId") == base_plan_id:
+                return bp.get("state")
+        return None
+
+    def deactivate_base_plan(self, package_name: str, product_id: str, base_plan_id: str) -> dict:
+        # https://developers.google.com/android-publisher/api-ref/rest/v3/monetization.subscriptions.basePlans/deactivate
+        body = {"packageName": package_name, "productId": product_id, "basePlanId": base_plan_id}
+        return self._request(
+            "POST", f"/applications/{package_name}/subscriptions/{product_id}/basePlans/{base_plan_id}:deactivate", body
+        )
+
 
 # ---------------------------------------------------------------------------
 # Driver — discover, then price each discovered product independently
 # ---------------------------------------------------------------------------
 
-def process_ios(bundle_id: str, rule: str, asc: AppStoreConnect, dry_run: bool, today: str) -> list[dict]:
+def plan_target(product: str, current: Decimal, rule: str, targets: dict) -> tuple[Decimal | None, str | None]:
+    """(target, error). The target is the approved price from config; the
+    current price must already be it, or halve to it under the rule."""
+    if product not in targets:
+        return None, None
+    target = Decimal(str(targets[product]))
+    if current == target or new_price_for(current, rule) == target:
+        return target, None
+    return target, f"current ${current} is neither the target ${target} nor halves to it; not touched"
+
+
+def process_ios(bundle_id: str, rule: str, targets: dict, deferred: list, asc: AppStoreConnect, dry_run: bool, today: str) -> list[dict]:
     rows = []
     if not asc.available():
         return [{"platform": "ios", "status": "skipped", "reason": "ASC credentials not in environment"}]
@@ -506,21 +583,50 @@ def process_ios(bundle_id: str, rule: str, asc: AppStoreConnect, dry_run: bool, 
         return [{"platform": "ios", "status": "not_found", "bundle_id": bundle_id}]
     for sub in discovered:
         row = {"platform": "ios", "product_id": sub["product_id"], "period": sub["period"], "name": sub["name"]}
+        if sub["product_id"] in deferred:
+            # In App Store review: no reads of prices, no writes, until approved.
+            row.update(status="deferred", reason="in App Store review; deferred until approved")
+            rows.append(row)
+            continue
         try:
             current = asc.current_usd_price(sub["subscription_id"], today)
             if current is None:
                 row["status"] = "no_current_price"
+                rows.append(row)
+                continue
+            row["old_usd"] = str(current)
+            target, err = plan_target(sub["product_id"], current, rule, targets)
+            if target is None:
+                row.update(status="no_target", new_usd=str(new_price_for(current, rule)))
+                rows.append(row)
+                continue
+            row["new_usd"] = str(target)
+            if err:
+                row.update(status="error", error=err)
+                rows.append(row)
+                continue
+            pp_id = asc.find_price_point(sub["subscription_id"], target)
+            if not pp_id:
+                row.update(status="error", error=f"no ASC price point for ${target}")
+                rows.append(row)
+                continue
+            wanted = asc.equalizations(pp_id)
+            wanted["USA"] = pp_id
+            have = asc.current_points(sub["subscription_id"], today)
+            missing = sorted(t for t in have if t not in wanted)
+            todo = sorted(t for t in have if t in wanted and have[t] != wanted[t])
+            row.update(territories=len(have), territories_to_change=len(todo))
+            if missing:
+                row["territories_without_equalization"] = missing
+            if not todo:
+                row["status"] = "no_change"
+            elif dry_run:
+                row["status"] = "planned"
             else:
-                new = new_price_for(current, rule)
-                row.update(status="ok", old_usd=str(current), new_usd=str(new))
-                if not dry_run:
-                    pp_id = asc.find_price_point(sub["subscription_id"], new)
-                    if not pp_id:
-                        row["status"] = "error"
-                        row["error"] = f"no ASC price point for ${new} - check it lands on a real Apple tier"
-                    else:
-                        asc.set_price(sub["subscription_id"], pp_id, today, preserve_current_price=False)
-                        row["status"] = "applied"
+                # USA first, so a partial run still shows the US price moved.
+                for terr in sorted(todo, key=lambda t: t != "USA"):
+                    asc.set_price(sub["subscription_id"], wanted[terr], today, preserve_current_price=False)
+                row["status"] = "applied"
         except Exception as e:  # noqa: BLE001
             row["status"] = "error"
             row["error"] = str(e)
@@ -528,7 +634,7 @@ def process_ios(bundle_id: str, rule: str, asc: AppStoreConnect, dry_run: bool, 
     return rows
 
 
-def process_android(package_name: str, rule: str, migrate: bool, play: PlayDeveloper, dry_run: bool) -> list[dict]:
+def process_android(package_name: str, rule: str, targets: dict, migrate: bool, play: PlayDeveloper, dry_run: bool) -> list[dict]:
     rows = []
     if not play.available():
         return [{"platform": "android", "status": "skipped", "reason": "Play credentials not in environment"}]
@@ -540,20 +646,66 @@ def process_android(package_name: str, rule: str, migrate: bool, play: PlayDevel
         return [{"platform": "android", "status": "not_found", "package_name": package_name}]
     for item in discovered:
         product_id, bp = item["product_id"], item["base_plan"]
-        row = {"platform": "android", "product_id": f"{product_id}:{bp['basePlanId']}", "duration": item["period"], "type": item["type"]}
+        key = f"{product_id}:{bp['basePlanId']}"
+        row = {"platform": "android", "product_id": key, "duration": item["period"], "type": item["type"]}
         try:
             current = play.current_usd_price(bp)
             if current is None:
                 row["status"] = "no_current_price"
+                rows.append(row)
+                continue
+            row["old_usd"] = str(current)
+            target, err = plan_target(key, current, rule, targets)
+            if target is None:
+                row.update(status="no_target", new_usd=str(new_price_for(current, rule)))
+                rows.append(row)
+                continue
+            row["new_usd"] = str(target)
+            if err:
+                row.update(status="error", error=err)
+                rows.append(row)
+                continue
+            do_migrate = migrate and item["type"] == "autoRenewingBasePlanType"
+            row["migrate_existing_subscribers"] = do_migrate
+            converted = play.convert_region_prices(package_name, target)
+            changes = play.region_changes(bp, converted)
+            row.update(regions=len(bp.get("regionalConfigs", [])), regions_to_change=len(changes))
+            if not changes:
+                row["status"] = "no_change"
+            elif dry_run:
+                row["status"] = "planned"
             else:
-                new = new_price_for(current, rule)
-                row.update(status="ok", old_usd=str(current), new_usd=str(new), migrate_existing_subscribers=migrate)
-                if not dry_run:
-                    converted = play.convert_region_prices(package_name, new)
-                    play.update_base_plan_prices(
-                        package_name, product_id, bp, converted, migrate and item["type"] == "autoRenewingBasePlanType"
-                    )
-                    row["status"] = "applied"
+                res = play.update_base_plan_prices(package_name, product_id, bp["basePlanId"], changes, converted, do_migrate)
+                row["status"] = "applied"
+                row["migrated"] = bool(do_migrate and "migration" in res)
+        except Exception as e:  # noqa: BLE001
+            row["status"] = "error"
+            row["error"] = str(e)
+        rows.append(row)
+    return rows
+
+
+def process_deactivations(package_name: str, plans: list[str], play: PlayDeveloper, dry_run: bool) -> list[dict]:
+    rows = []
+    if not plans or not play.available():
+        return rows
+    for plan in plans:
+        product_id, base_plan_id = plan.split(":", 1)
+        row = {"platform": "android", "product_id": plan, "action": "deactivate"}
+        try:
+            state = play.base_plan_state(package_name, product_id, base_plan_id)
+            row["state_before"] = state
+            if state is None:
+                row["status"] = "error"
+                row["error"] = "base plan not found"
+            elif state != "ACTIVE":
+                row["status"] = "no_change"
+            elif dry_run:
+                row["status"] = "planned"
+            else:
+                play.deactivate_base_plan(package_name, product_id, base_plan_id)
+                row["state_after"] = play.base_plan_state(package_name, product_id, base_plan_id)
+                row["status"] = "applied"
         except Exception as e:  # noqa: BLE001
             row["status"] = "error"
             row["error"] = str(e)
@@ -564,16 +716,18 @@ def process_android(package_name: str, rule: str, migrate: bool, play: PlayDevel
 def process_app(entry: dict, asc: AppStoreConnect, play: PlayDeveloper, dry_run: bool, today: str) -> dict:
     name = entry["name"]
     rule = entry.get("round_rule", "half_round_99")
+    targets = entry.get("targets_usd", {})
     rows: list[dict] = []
 
     ios_cfg = entry.get("ios")
     if ios_cfg:
-        rows += process_ios(ios_cfg["bundle_id"], rule, asc, dry_run, today)
+        rows += process_ios(ios_cfg["bundle_id"], rule, targets, ios_cfg.get("defer_products", []), asc, dry_run, today)
 
     android_cfg = entry.get("android")
     if android_cfg:
         migrate = bool(android_cfg.get("migrate_existing_subscribers", False))
-        rows += process_android(android_cfg["package_name"], rule, migrate, play, dry_run)
+        rows += process_android(android_cfg["package_name"], rule, targets, migrate, play, dry_run)
+        rows += process_deactivations(android_cfg["package_name"], android_cfg.get("deactivate_base_plans", []), play, dry_run)
 
     return {"name": name, "rows": rows}
 
@@ -594,7 +748,7 @@ def main():
 
     asc = AppStoreConnect()
     play = PlayDeveloper()
-    today = time.strftime("%Y-%m-%d")
+    today = datetime.datetime.now(datetime.timezone.utc).strftime("%Y-%m-%d")
 
     apps = config["apps"]
     print(f"=== store_prices.py — DRY_RUN={dry_run} — {len(apps)} app(s) — "
@@ -619,6 +773,8 @@ def main():
                 f"{row.get('old_usd', '-'):>8} {row.get('new_usd', '-'):>8}  {row.get('status')}"
             )
 
+    pending = [row for r in results for row in r["rows"] if row.get("status") == "planned"]
+    print(f"\nCHANGES_PENDING={len(pending)}")
     bad = [row for r in results for row in r["rows"] if row.get("status") == "error"]
     if bad:
         print(f"\n{len(bad)} row(s) errored — see above. Non-zero exit.", file=sys.stderr)

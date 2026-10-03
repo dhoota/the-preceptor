@@ -195,7 +195,7 @@ workflows:
     # 3m/6m product found; nothing is written to either store unless
     # DRY_RUN is explicitly set to "false" when starting the build.
     working_directory: oral-exam-sim
-    max_build_duration: 15
+    max_build_duration: 120
     instance_type: linux_x2
     integrations:
       app_store_connect: preceptor_appstore

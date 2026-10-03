@@ -1,11 +1,34 @@
 {
-  "_readme": "Preceptor CCFP-EM (com.preceptor.oral) — 50% price cut, Oct 2026. No product IDs listed: store_prices.py discovers the real 3-month/6-month subscriptions live from each store (iOS: subscriptionPeriod THREE_MONTHS/SIX_MONTHS; Android: ACTIVE base plans with billingPeriodDuration P3M/P6M) across all three tiers (Complete/Written/Oral) in one pass. Known current prices per LAUNCH.md as of this cut: ccfpem_complete_6m/3m = US$199.99/129.99, ccfpem_written_6m/3m = US$149.99/99.99, ccfpem_oral_6m/3m = US$99.99/69.99 -> halved to 99.99/64.99, 74.99/49.99, 49.99/34.99.",
+  "_readme": "Preceptor CCFP-EM (com.preceptor.oral) \u2014 50% price cut, Oct 2026. No product IDs listed: store_prices.py discovers the real 3-month/6-month subscriptions live from each store (iOS: subscriptionPeriod THREE_MONTHS/SIX_MONTHS; Android: ACTIVE base plans with billingPeriodDuration P3M/P6M) across all three tiers (Complete/Written/Oral) in one pass. Known current prices per LAUNCH.md as of this cut: ccfpem_complete_6m/3m = US$199.99/129.99, ccfpem_written_6m/3m = US$149.99/99.99, ccfpem_oral_6m/3m = US$99.99/69.99 -> halved to 99.99/64.99, 74.99/49.99, 49.99/34.99.",
   "apps": [
     {
       "name": "CCFP-EM",
       "round_rule": "half_round_99",
-      "ios": { "bundle_id": "com.preceptor.oral" },
-      "android": { "package_name": "com.preceptor.oral", "migrate_existing_subscribers": true }
+      "ios": {
+        "bundle_id": "com.preceptor.oral"
+      },
+      "android": {
+        "package_name": "com.preceptor.oral",
+        "migrate_existing_subscribers": true,
+        "deactivate_base_plans": [
+          "ccfpem_written_1y:yearly",
+          "ccfpem_oral_1y:yearly"
+        ]
+      },
+      "targets_usd": {
+        "ccfpem_complete_3m": "64.99",
+        "ccfpem_complete_6m": "99.99",
+        "ccfpem_oral_3m": "34.99",
+        "ccfpem_oral_6m": "49.99",
+        "ccfpem_written_3m": "49.99",
+        "ccfpem_written_6m": "74.99",
+        "ccfpem_complete:p6m": "99.99",
+        "ccfpem_complete:p3m": "64.99",
+        "ccfpem_oral:p6m": "49.99",
+        "ccfpem_oral:p3m": "34.99",
+        "ccfpem_written:p6m": "74.99",
+        "ccfpem_written:p3m": "49.99"
+      }
     }
   ]
 }
