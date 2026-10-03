@@ -7,7 +7,7 @@
  */
 import { test } from "vitest";
 import { writeFileSync, mkdirSync } from "node:fs";
-import { SAMP_BATCHES } from "@/samps";
+import { SAMP_BATCHES } from "@/samps/source";
 import type { Samp } from "@/engine/samp";
 
 const SP = "/tmp/claude-0/-home-user-the-preceptor/2b2ab036-b60f-5dbe-9566-53f9f56eb384/scratchpad/tripwires";

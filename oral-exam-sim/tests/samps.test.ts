@@ -4,7 +4,7 @@ import signoff2 from "../docs/signoff-2026-10.json";
 import expansion from "../docs/samp-expansion.json";
 import { PRIORITY_TOPICS, topicById } from "@/blueprint/priorityTopics";
 import { validateSamp } from "@/engine/samp";
-import { AUTHORED_SAMPS, HELD_BACK, SAMPS, SAMP_BATCHES } from "@/samps";
+import { AUTHORED_SAMPS, HELD_BACK, SAMPS, SAMP_BATCHES } from "@/samps/source";
 
 /**
  * Structure, blueprint coverage and house style for the SAMP bank.

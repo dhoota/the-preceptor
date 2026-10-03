@@ -3,7 +3,7 @@ import { mkdirSync, readdirSync, readFileSync, rmSync, writeFileSync } from "nod
 import expansion from "../docs/samp-expansion.json";
 import { topicById } from "@/blueprint/priorityTopics";
 import { VITAL_LABELS, type Samp, type SampQuestion } from "@/engine/samp";
-import { SAMP_BATCHES } from "@/samps";
+import { SAMP_BATCHES } from "@/samps/source";
 
 /**
  * Writes the physician review pack: one readable file per expansion batch in

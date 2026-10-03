@@ -6,7 +6,7 @@
  */
 import { test } from "vitest";
 import { readFileSync, writeFileSync } from "node:fs";
-import { SAMP_BATCHES } from "@/samps";
+import { SAMP_BATCHES } from "@/samps/source";
 
 test("log key edits", () => {
   const b = process.env.BATCH!;

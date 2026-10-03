@@ -2,7 +2,7 @@ import { describe, expect, it } from "vitest";
 import signoff from "../docs/signoff-2026-09.json";
 import signoff2 from "../docs/signoff-2026-10.json";
 import realign from "../docs/oral-realign.json";
-import { BATCHES, CASES } from "@/cases";
+import { BATCHES, CASES } from "@/cases/source";
 import { BLUEPRINT, ORAL_CRITERIA, maxQuestionSeconds, questionRange, toCriterion, validateCase } from "@/engine";
 import { VITAL_LABELS } from "@/engine/samp";
 import { topicById } from "@/blueprint/priorityTopics";
