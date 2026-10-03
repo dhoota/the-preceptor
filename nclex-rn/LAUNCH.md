@@ -98,6 +98,8 @@ Set by Arjan on 26 September 2026: two auto-renewing subscriptions and nothing e
 - The plans match how long candidates study for the exam. The 6 month plan costs about 25 percent less per month.
 - Both plans renew until cancelled, so a candidate who retakes the exam keeps access.
 
+**Price cut, approved by Arjan 3 October 2026:** both subscriptions cut 50% to build volume before a later raise — US$74.99 every 6 months (was US$149.99) and US$49.99 every 3 months (was US$99.99). Other currencies re-derive from the new US price via each store's own tier table. Applied with `scripts/store_prices.py` (see `store-prices` Codemagic workflow) rather than by hand; existing Android subscribers are migrated to the new price, existing iOS subscribers get it automatically on renewal.
+
 ## 8. Exam model decisions
 
 - The adaptive mock is a simple Rasch model. Item difficulty comes from the writer's 1 to 5 rating, mapped to -1.6, -0.8, 0, 0.8 and 1.6 logits. Nobody has calibrated these items on real candidates. The app shows a readiness band (above, near or below the standard) and never a chance of passing.
