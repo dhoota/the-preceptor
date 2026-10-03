@@ -180,6 +180,31 @@ workflows:
         credentials: $GCLOUD_SERVICE_ACCOUNT_CREDENTIALS
         track: internal
 
+  store-prices:
+    name: Preceptor CCFP-EM (store prices - 50% cut, DRY_RUN by default)
+    # Manual only — never fire this on a push. Reuses the exact integration
+    # and env-var groups the release workflows above already use; creates no
+    # new keys, no new certs. DRY_RUN=true (the default) only discovers and
+    # reads current prices and prints the planned change for every
+    # 3m/6m product found; nothing is written to either store unless
+    # DRY_RUN is explicitly set to "false" when starting the build.
+    max_build_duration: 15
+    instance_type: linux_x2
+    integrations:
+      app_store_connect: preceptor_appstore
+    environment:
+      groups:
+        - preceptor_play      # GCLOUD_SERVICE_ACCOUNT_CREDENTIALS (Secure)
+      vars:
+        DRY_RUN: "true"
+    triggering:
+      events: []
+    scripts:
+      - name: Install dependencies
+        script: pip3 install --quiet "pyjwt[crypto]>=2.8"
+      - name: Report / apply the price cut
+        script: python3 scripts/store_prices.py --config scripts/store_prices_config.json
+
   ios-release:
     name: Preceptor CCFP-EM iOS (TestFlight)
     instance_type: mac_mini_m2

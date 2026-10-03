@@ -6,10 +6,10 @@
  * and show only the prices RevenueCat returns.
  */
 export const DEV_PACKAGES = [
-  { identifier: "complete_6m", product: { identifier: "ccfpem_complete_6m", priceString: "$199.99" } },
-  { identifier: "complete_3m", product: { identifier: "ccfpem_complete_3m", priceString: "$129.99" } },
-  { identifier: "written_6m", product: { identifier: "ccfpem_written_6m", priceString: "$149.99" } },
-  { identifier: "written_3m", product: { identifier: "ccfpem_written_3m", priceString: "$99.99" } },
-  { identifier: "oral_6m", product: { identifier: "ccfpem_oral_6m", priceString: "$99.99" } },
-  { identifier: "oral_3m", product: { identifier: "ccfpem_oral_3m", priceString: "$69.99" } },
+  { identifier: "complete_6m", product: { identifier: "ccfpem_complete_6m", priceString: "$99.99" } },
+  { identifier: "complete_3m", product: { identifier: "ccfpem_complete_3m", priceString: "$64.99" } },
+  { identifier: "written_6m", product: { identifier: "ccfpem_written_6m", priceString: "$74.99" } },
+  { identifier: "written_3m", product: { identifier: "ccfpem_written_3m", priceString: "$49.99" } },
+  { identifier: "oral_6m", product: { identifier: "ccfpem_oral_6m", priceString: "$49.99" } },
+  { identifier: "oral_3m", product: { identifier: "ccfpem_oral_3m", priceString: "$34.99" } },
 ];

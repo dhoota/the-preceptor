@@ -143,8 +143,10 @@ Confirmed by Arjan on 24 September 2026, and changed to USD for launch on 26 Sep
 - **iOS:** App Store Connect > each subscription > Subscription Prices > base country United States.
 - **Android:** Play Console > each subscription's base plan > Prices > United States.
 - **Prices:** 6 months: Complete US$199.99, Written US$149.99, Oral US$99.99. 3 months: Complete US$129.99, Written US$99.99, Oral US$69.99. The app shows only the store's price for each plan.
-- **App fallback labels** in `src/lib/purchases.ts` read $199.99, $149.99 and $99.99. They show only before the store price loads. On a device the store's localized price replaces them.
+- **App fallback labels:** `src/lib/purchases.ts` has none — this claim was stale. It only ever pushes a tier/duration's `priceString` into the paywall list when the live RevenueCat package actually has one (`if (priceString) out.push(...)`); a tier with no live price is simply left out of the list rather than shown with a guessed number. `src/dev/offering.ts` is the one place a price is written in source, and it is dev-only (never built into a store release — see its own docstring).
 - **RevenueCat:** no change. It reads prices from the stores.
+
+**Price cut, approved by Arjan 3 October 2026:** all six subscriptions cut 50% to build volume before a later raise. 6 months: Complete US$99.99 (was US$199.99), Written US$74.99 (was US$149.99), Oral US$49.99 (was US$99.99). 3 months: Complete US$64.99 (was US$129.99), Written US$49.99 (was US$99.99), Oral US$34.99 (was US$69.99). Other currencies re-derive from the new US price via each store's own tier table. Applied with `scripts/store_prices.py` (see `store-prices` Codemagic workflow) rather than by hand; existing Android subscribers are migrated to the new price, existing iOS subscribers get it automatically on renewal. `src/dev/offering.ts`'s dev-only mock prices were updated to match.
 
 The bank is now far larger: 1,500 SAMPs and 100 oral cases. Running cost is still zero. The store fee is 15 percent.
 
