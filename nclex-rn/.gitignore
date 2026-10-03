@@ -4,6 +4,9 @@ dist/
 .env
 .env.*
 
+# Generated at build time from src/bank/**, see scripts/build-bank-cache.mjs.
+src/bank/generated/
+
 # Signing material. Never commit.
 *.jks
 *.keystore
