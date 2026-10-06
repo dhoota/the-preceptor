@@ -69,7 +69,7 @@ Preceptor: CCFP-EM is an independent study tool. It is not affiliated with or en
 Support: ccfpem@thepreceptor.ca
 
 ### What's New (4000)
-Not applicable. Version 1.0.1 is the first release, so App Store Connect has no What's New field for it.
+User interface improvements
 
 ## Google Play
 

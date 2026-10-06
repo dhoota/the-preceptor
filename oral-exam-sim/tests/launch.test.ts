@@ -11,7 +11,7 @@ vi.mock("react", async (orig) => {
 
 const { Splash, SPLASH_MS } = await import("@/components/Splash");
 const { settle } = await import("@/lib/settle");
-const { persistedAppUserId, APP_USER_ID_KEY } = await import("@/lib/purchases");
+const { configureWithStableId, APP_USER_ID_KEY } = await import("@/lib/purchases");
 
 const SRC = new URL("../src/", import.meta.url).pathname;
 function files(dir: string): string[] {
@@ -78,8 +78,9 @@ describe("app entry is never gated", () => {
 describe("RevenueCat rules", () => {
   it("configures once, with an app user ID, and never logs out", () => {
     const all = code.map(([, s]) => s).join("\n");
-    expect(all.match(/Purchases\.configure\(/g)?.length).toBe(1);
-    expect(read("lib/purchases.ts")).toMatch(/Purchases\.configure\(\{ apiKey: [^}]*appUserID \}\)/);
+    // One configure call site, reached only through the memoised startPurchases().
+    expect(all.match(/\.configure\(/g)?.length).toBe(1);
+    expect(read("lib/purchases.ts")).toMatch(/await configureWithStableId\(m\.Purchases/);
     expect(all).not.toMatch(/\.(logOut|logIn)\(/);
     expect(read("main.tsx")).toMatch(/startPurchases\(\)/);
   });
@@ -103,20 +104,62 @@ describe("helpers", () => {
     vi.advanceTimersByTime(100);
     await expect(hung).resolves.toBe(-1);
   });
-  it("keeps one app user ID per install in Preferences", async () => {
+  const memory = (init: Record<string, string> = {}) => {
+    const kv = new Map(Object.entries(init));
+    return { kv, get: async (k: string) => kv.get(k) ?? null, set: async (k: string, v: string) => void kv.set(k, v) };
+  };
+  const sdk = (existing: string | null | (() => Promise<never>)) => {
+    const calls: { apiKey: string; appUserID?: string }[] = [];
+    return {
+      calls,
+      configure: async (o: { apiKey: string; appUserID?: string }) => void calls.push(o),
+      getAppUserID: async () => (typeof existing === "function" ? existing() : { appUserID: existing ?? "" }),
+    };
+  };
+  it("upgrade: no stored ID, SDK already has an anonymous ID -> adopts it, never replaces it", async () => {
     vi.useRealTimers();
-    const kv = new Map<string, string>();
-    const store = { get: async (k: string) => kv.get(k) ?? null, set: async (k: string, v: string) => void kv.set(k, v) };
-    const first = await persistedAppUserId(store);
-    expect(first).toMatch(/^ccfpem_[A-Za-z0-9-]{16,}$/);
-    expect(kv.get(APP_USER_ID_KEY)).toBe(first);
-    expect(await persistedAppUserId(store)).toBe(first);
+    const store = memory();
+    const rc = sdk("$RCAnonymousID:0123456789abcdef0123456789abcdef");
+    const id = await configureWithStableId(rc, "key", store);
+    expect(rc.calls).toEqual([{ apiKey: "key" }]); // configured WITHOUT an appUserID
+    expect(id).toBe("$RCAnonymousID:0123456789abcdef0123456789abcdef");
+    expect(store.kv.get(APP_USER_ID_KEY)).toBe(id);
+    // Next launch: the adopted ID is passed explicitly, configure still runs once.
+    const next = sdk("ignored");
+    expect(await configureWithStableId(next, "key", store)).toBe(id);
+    expect(next.calls).toEqual([{ apiKey: "key", appUserID: id }]);
   });
-  it("still yields an app user ID when Preferences throws or hangs", async () => {
+  it("fresh install: SDK returns no ID at all -> mints preceptor_<uuid> and keeps it", async () => {
     vi.useRealTimers();
-    const broken = { get: async () => Promise.reject(new Error("io")), set: async () => Promise.reject(new Error("io")) };
-    expect(await persistedAppUserId(broken)).toMatch(/^ccfpem_/);
+    const store = memory();
+    const rc = sdk("");
+    const id = await configureWithStableId(rc, "key", store);
+    expect(id).toMatch(/^preceptor_[A-Za-z0-9-]{16,}$/);
+    expect(store.kv.get(APP_USER_ID_KEY)).toBe(id);
+    expect(rc.calls).toHaveLength(1);
+  });
+  it("stored ID: configures with it and does not ask the SDK", async () => {
+    vi.useRealTimers();
+    const store = memory({ [APP_USER_ID_KEY]: "preceptor_abcdefabcdefabcdef" });
+    const rc = sdk(() => Promise.reject(new Error("should not be called")));
+    expect(await configureWithStableId(rc, "key", store)).toBe("preceptor_abcdefabcdefabcdef");
+    expect(rc.calls).toEqual([{ apiKey: "key", appUserID: "preceptor_abcdefabcdefabcdef" }]);
+  });
+  it("SDK read fails or hangs -> stores nothing, so no one is moved to a new identity", async () => {
+    vi.useRealTimers();
+    const store = memory();
+    expect(await configureWithStableId(sdk(() => Promise.reject(new Error("x"))), "key", store)).toBeNull();
+    expect(await configureWithStableId(sdk(() => new Promise<never>(() => undefined)), "key", store, 20)).toBeNull();
+    expect(store.kv.size).toBe(0);
+  });
+  it("Preferences throwing or hanging still configures, without an appUserID", async () => {
+    vi.useRealTimers();
+    const broken = { get: () => Promise.reject(new Error("io")), set: () => Promise.reject(new Error("io")) };
+    const rc = sdk("$RCAnonymousID:ffffffffffffffffffffffffffffffff");
+    expect(await configureWithStableId(rc, "key", broken)).toBe("$RCAnonymousID:ffffffffffffffffffffffffffffffff");
+    expect(rc.calls).toEqual([{ apiKey: "key" }]);
     const hung = { get: () => new Promise<string | null>(() => undefined), set: () => new Promise<void>(() => undefined) };
-    expect(await persistedAppUserId(hung, 20)).toMatch(/^ccfpem_/);
+    const rc2 = sdk("$RCAnonymousID:eeeeeeeeeeeeeeeeeeeeeeeeeeeeeeee");
+    expect(await configureWithStableId(rc2, "key", hung, 20)).toBe("$RCAnonymousID:eeeeeeeeeeeeeeeeeeeeeeeeeeeeeeee");
   });
 });

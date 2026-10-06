@@ -5,7 +5,8 @@
  *
  * RevenueCat is configured once, at bootstrap (startPurchases in main.tsx),
  * with an app user ID kept in Capacitor Preferences, so the same install is
- * always the same customer. There is no logOut anywhere. Access comes only
+ * always the same customer. An existing install adopts the ID the SDK already
+ * has; only a fresh install gets a new one (configureWithStableId). There is no logOut anywhere. Access comes only
  * from customerInfo.entitlements.active.
  *
  * Three tiers, each sold for 3 months or 6 months, renewing automatically:
@@ -168,17 +169,34 @@ function randomId(): string {
   return Array.from(b, (x) => x.toString(16).padStart(2, "0")).join("");
 }
 
-const validId = (v: string | null | undefined): v is string => typeof v === "string" && /^ccfpem_[A-Za-z0-9-]{16,}$/.test(v);
+const hasId = (v: string | null | undefined): v is string => typeof v === "string" && v.trim().length > 0;
+
+/** The two RevenueCat calls the identity logic needs. The real SDK in the store apps. */
+export interface RcIdentity {
+  configure(options: { apiKey: string; appUserID?: string }): Promise<void>;
+  getAppUserID(): Promise<{ appUserID: string } | null | undefined>;
+}
 
 /**
- * The app user ID for this install: the stored one, or a new one that is
- * stored for next time. A storage fault still yields an ID, so configure
- * never waits on it or fails because of it.
+ * Configures RevenueCat exactly once with a stable app user ID, without ever
+ * moving an existing customer to a new identity.
+ *   stored ID                -> configure with it
+ *   no stored ID (upgrade)   -> configure WITHOUT an appUserID, so the SDK keeps the
+ *                               identity it already has (the one any purchase is attached
+ *                               to), read it with getAppUserID(), store it, use it from then on
+ *   SDK returns no ID at all -> a genuinely fresh install: mint preceptor_<uuid> and store it
+ *   SDK read fails or hangs  -> store nothing; the SDK keeps its own identity this session
+ *                               and the next launch tries again
+ * A storage fault never blocks configure. Returns the ID in use, or null if unknown.
  */
-export async function persistedAppUserId(store: IdStore = preferencesStore, ms = 2500): Promise<string> {
+export async function configureWithStableId(sdk: RcIdentity, apiKey: string, store: IdStore = preferencesStore, ms = 2500): Promise<string | null> {
   const saved = await settle(() => store.get(APP_USER_ID_KEY), null, ms);
-  if (validId(saved)) return saved;
-  const id = `ccfpem_${randomId()}`;
+  await sdk.configure(hasId(saved) ? { apiKey, appUserID: saved } : { apiKey });
+  if (hasId(saved)) return saved;
+  const unread = Symbol("unread");
+  const current = await settle<string | typeof unread>(async () => (await sdk.getAppUserID())?.appUserID ?? "", unread, ms);
+  if (current === unread) return null;
+  const id = hasId(current) ? current : `preceptor_${randomId()}`;
   await settle(() => store.set(APP_USER_ID_KEY, id), undefined, ms);
   return id;
 }
@@ -198,8 +216,7 @@ export function startPurchases(): Promise<RCModule | null> {
     boot = (async () => {
       if (!isNative() || !keysConfigured()) return null;
       const m = await import("@revenuecat/purchases-capacitor");
-      const appUserID = await persistedAppUserId();
-      await m.Purchases.configure({ apiKey: platform() === "ios" ? RC_KEY_IOS : RC_KEY_ANDROID, appUserID });
+      await configureWithStableId(m.Purchases, platform() === "ios" ? RC_KEY_IOS : RC_KEY_ANDROID);
       return m;
     })().catch(() => {
       boot = null;

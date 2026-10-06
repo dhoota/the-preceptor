@@ -12,6 +12,7 @@ These hold for every change to this app. Tests in `tests/launch.test.ts` and
 
 ## RevenueCat
 - Configure exactly once, at bootstrap (`startPurchases()` in `src/main.tsx`), with an `appUserID` persisted in `@capacitor/preferences` (`rc_app_user_id_v1`).
+- Never move an existing customer to a new identity. With no stored ID (first run after an update), configure WITHOUT an `appUserID`, read the SDK's own ID with `getAppUserID()`, store it and use it from then on. Mint `preceptor_<uuid>` only when `getAppUserID()` returns nothing at all (a genuinely fresh install). If that read fails, store nothing and try again next launch. Nobody should ever need Restore purchase after an update (`configureWithStableId` in `src/lib/purchases.ts`).
 - No `logOut` (or `logIn`) anywhere.
 - Gate access only on `customerInfo.entitlements.active`: `written_access` (Complete, Written) and `oral_full_access` (Complete, Oral). An entitlement missing from `active` never opens anything, whatever its date says.
 - Handle promotional entitlements defensively: `productIdentifier` may be null, `expirationDate` may be null and `activeSubscriptions` may be empty or missing. Never require any of them to open access.
