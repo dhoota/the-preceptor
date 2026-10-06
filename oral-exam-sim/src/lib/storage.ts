@@ -89,15 +89,12 @@ export interface Settings {
   rate: number;
   /** Show model answers after each question in practice mode. */
   revealEachQuestion: boolean;
-  /** Seen the one time disclaimer. */
-  acceptedDisclaimer: boolean;
 }
 
 export const DEFAULT_SETTINGS: Settings = {
   speak: true,
   rate: 1,
   revealEachQuestion: true,
-  acceptedDisclaimer: false,
 };
 
 /** One finished SAMP, in practice or inside a mock exam. */

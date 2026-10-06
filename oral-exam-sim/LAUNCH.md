@@ -185,7 +185,7 @@ To regenerate the screenshots after content changes, build a seeded static copy 
 - [ ] Every SAMP added after that signed off and set to `reviewed: true`.
 - [ ] No CFPC logos or trademarks in the app, icon, screenshots or listing. "CCFP-EM" names the certificate the exam leads to. Say clearly that the app is independent and not affiliated. Consider asking the CFPC whether it objects to the name.
 - [ ] No CFPC sample question or recalled exam content in the app. The Official CFPC resources screen only links out.
-- [ ] In-app disclaimer shown on first launch. It is in `src/screens/Disclaimer.tsx`.
+- [ ] In-app disclaimer: one line on the launch splash (`src/components/Splash.tsx`) and in full under More. There is no click-through screen; app entry is never gated.
 - [ ] Educational use only. Not medical advice. Not for patient care.
 - [ ] No real patient information in any case. All cases are invented.
 - [ ] No copied textbook or question bank text. All cases were written for this app.

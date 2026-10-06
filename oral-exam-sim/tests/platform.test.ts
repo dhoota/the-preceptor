@@ -111,35 +111,59 @@ describe("products", () => {
 
 describe("entitlement expiry", () => {
   const RENEW = "2027-10-01T12:00:00.000Z";
-  it("takes each date from its entitlement", () => {
-    const e = expiryFrom({ entitlements: { all: { written_access: ent(true, RENEW) } } });
+  // RevenueCat lists an active entitlement under both active and all.
+  const live = (m: Record<string, ReturnType<typeof ent>>) => ({ entitlements: { active: m, all: m } });
+  it("takes each date from its active entitlement", () => {
+    const e = expiryFrom(live({ written_access: ent(true, RENEW) }), NOW);
     expect(e).toEqual(E(RENEW, null));
     expect(accessAt(e, NOW)).toEqual(A(true, false));
     expect(accessAt(e, Date.parse("2027-10-01T12:00:01Z"))).toEqual(NO_ACCESS);
   });
   it("opens both components when Complete unlocks both entitlements", () => {
-    const e = expiryFrom({ entitlements: { all: { written_access: ent(true, RENEW), oral_full_access: ent(true, RENEW) } } });
+    const e = expiryFrom(live({ written_access: ent(true, RENEW), oral_full_access: ent(true, RENEW) }), NOW);
     expect(accessAt(e, NOW)).toEqual(A(true, true));
   });
   it("moves the date forward when the subscription renews", () => {
     const next = "2028-10-01T12:00:00.000Z";
-    const e = expiryFrom({ entitlements: { all: { oral_full_access: ent(true, next) } } });
+    const e = expiryFrom(live({ oral_full_access: ent(true, next) }), NOW);
     expect(accessAt(e, Date.parse("2028-01-01T00:00:00Z"))).toEqual(A(false, true));
   });
   it("keeps the past date of an expired entitlement so the app can say when it ended", () => {
-    const e = expiryFrom({ entitlements: { all: { oral_full_access: ent(false, "2026-09-01T12:00:00Z") } } });
+    const e = expiryFrom({ entitlements: { active: {}, all: { oral_full_access: ent(false, "2026-09-01T12:00:00Z") } } }, NOW);
     expect(e).toEqual(E(null, "2026-09-01T12:00:00.000Z"));
     expect(accessAt(e, NOW)).toEqual(NO_ACCESS);
   });
+  it("opens nothing that is missing from entitlements.active, whatever its date or flag", () => {
+    const ci = { entitlements: { active: {}, all: { written_access: ent(true, RENEW), oral_full_access: ent(false, RENEW) } } };
+    expect(accessAt(expiryFrom(ci, NOW), NOW)).toEqual(NO_ACCESS);
+    expect(accessAt(expiryFrom({ entitlements: { all: { written_access: ent(true, RENEW) } } }, NOW), NOW)).toEqual(NO_ACCESS);
+  });
   it("treats an active entitlement with no end date as open", () => {
-    const e = expiryFrom({ entitlements: { all: { written_access: ent(true, null) } } });
+    const e = expiryFrom(live({ written_access: ent(true, null) }), NOW);
     expect(e.written).toBe(NO_END);
     expect(accessAt(e, NOW).written).toBe(true);
   });
-  it("ignores other apps' entitlements", () => {
-    const ci = { entitlements: { all: { ccfp_full_access: ent(true, RENEW), pro: ent(true, null) } } };
-    expect(expiryFrom(ci)).toEqual(NO_EXPIRY);
+  it("opens a promotional grant with a null productIdentifier and no active subscriptions", () => {
+    const promo = { isActive: true, expirationDate: null, productIdentifier: null };
+    const ci = { entitlements: { active: { written_access: promo, oral_full_access: promo }, all: {} }, activeSubscriptions: [] };
+    expect(accessAt(expiryFrom(ci, NOW), NOW)).toEqual(A(true, true));
+    const dated = { isActive: true, expirationDate: RENEW, productIdentifier: null };
+    expect(expiryFrom({ entitlements: { active: { oral_full_access: dated } }, activeSubscriptions: null }, NOW)).toEqual(E(null, RENEW));
+  });
+  it("keeps an active entitlement open a day past its date while the store still calls it active", () => {
+    const e = expiryFrom(live({ written_access: ent(true, "2026-09-30T12:00:00Z") }), NOW);
+    expect(accessAt(e, NOW).written).toBe(true);
+    expect(accessAt(e, NOW + 25 * 3600_000).written).toBe(false);
+  });
+  it("survives missing or malformed customer info", () => {
     expect(expiryFrom(null)).toEqual(NO_EXPIRY);
+    expect(expiryFrom({})).toEqual(NO_EXPIRY);
+    expect(expiryFrom({ entitlements: null })).toEqual(NO_EXPIRY);
+    expect(expiryFrom({ entitlements: { active: { written_access: null } } })).toEqual(NO_EXPIRY);
+  });
+  it("ignores other apps' entitlements", () => {
+    const ci = live({ ccfp_full_access: ent(true, RENEW), pro: ent(true, null) });
+    expect(expiryFrom(ci, NOW)).toEqual(NO_EXPIRY);
   });
   it("keeps the later date per component", () => {
     expect(laterExpiry(E("2027-01-01T00:00:00Z", null), E("2026-12-01T00:00:00Z", "2027-02-01T00:00:00Z"))).toEqual(
@@ -154,6 +178,12 @@ describe("upgrades", () => {
     expect(replaces("complete", ["ccfpem_oral_3m"])).toBe("ccfpem_oral_3m");
     expect(replaces("complete", ["preceptor_ccfp_annual"])).toBeNull();
     expect(replaces("oral", ["ccfpem_written_6m"])).toBeNull();
+  });
+  it("handles a promotional customer with no store subscriptions", () => {
+    expect(replaces("complete", [])).toBeNull();
+    expect(replaces("complete", null)).toBeNull();
+    expect(replaces("complete", undefined)).toBeNull();
+    expect(replaces("complete", [null, "", "ccfpem_oral:p3m"])).toBe("ccfpem_oral");
   });
   it("reads tier and length from App Store and Play product IDs", () => {
     expect(parseStoreId("ccfpem_complete_6m")).toEqual({ tier: "complete", duration: "6m" });

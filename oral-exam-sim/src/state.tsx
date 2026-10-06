@@ -18,9 +18,14 @@ import {
   type PurchaseOutcome,
   type Tier,
 } from "@/lib/purchases";
+import { settle } from "@/lib/settle";
 import { createRepo, DEFAULT_SETTINGS, type MockExam, type MockOral, type SampAttempt, type Settings } from "@/lib/storage";
 
 const repo = createRepo();
+/** Longest the launch waits on one storage read before using an empty default. */
+const READ_MS = 2500;
+/** Longest a background store check may take before the cached dates stand. */
+const STORE_MS = 20_000;
 const purchases = defaultAdapter();
 
 interface AppState {
@@ -77,14 +82,16 @@ export function AppProvider({ children }: { children: ReactNode }) {
   useEffect(() => {
     let cancelled = false;
     (async () => {
+      // Each read falls back to empty after a short wait, so a storage fault
+      // can never keep the app closed. The splash does not wait on any of it.
       const [a, d, s, cached, sa, me, mo] = await Promise.all([
-        repo.attempts(),
-        repo.deck(),
-        repo.settings(),
-        repo.cachedExpiry(),
-        repo.sampAttempts(),
-        repo.mockExams(),
-        repo.mockOrals(),
+        settle(() => repo.attempts(), [] as Attempt[], READ_MS),
+        settle(() => repo.deck(), {} as Deck, READ_MS),
+        settle(() => repo.settings(), DEFAULT_SETTINGS, READ_MS),
+        settle(() => repo.cachedExpiry(), NO_EXPIRY, READ_MS),
+        settle(() => repo.sampAttempts(), [] as SampAttempt[], READ_MS),
+        settle(() => repo.mockExams(), [] as MockExam[], READ_MS),
+        settle(() => repo.mockOrals(), [] as MockOral[], READ_MS),
       ]);
       if (cancelled) return;
       setAttempts(a);
@@ -95,13 +102,17 @@ export function AppProvider({ children }: { children: ReactNode }) {
       setMockExams(me);
       setMockOrals(mo);
       setReady(true);
-      // Store check runs after first paint. Offline keeps the cached dates.
-      const next = await reconcileExpiry(cached, purchases);
+      // Store check runs after first paint. Offline, slow or failing keeps the cached dates.
+      const next = await settle(() => reconcileExpiry(cached, purchases), cached, STORE_MS);
       if (cancelled) return;
       setExpiry(next);
-      if (next.written !== cached.written || next.oral !== cached.oral) await repo.setCachedExpiry(next);
-      setPlans(await purchases.plans());
-    })();
+      if (next.written !== cached.written || next.oral !== cached.oral) await settle(() => repo.setCachedExpiry(next), undefined, READ_MS);
+      const offered = await settle(() => purchases.plans(), [] as Plan[], STORE_MS);
+      if (!cancelled) setPlans(offered);
+    })().catch(() => {
+      // Never leaves the app unopened. The paywall still decides access.
+      if (!cancelled) setReady(true);
+    });
     return () => {
       cancelled = true;
     };
@@ -164,7 +175,7 @@ export function AppProvider({ children }: { children: ReactNode }) {
   }, []);
 
   const refreshPlans = useCallback(async () => {
-    setPlans(await purchases.plans());
+    setPlans(await settle(() => purchases.plans(), [] as Plan[], STORE_MS));
   }, []);
 
   const buy = useCallback(

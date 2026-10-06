@@ -3,6 +3,11 @@
  * lazy import of @revenuecat/purchases-capacitor on native only, buyer-safe
  * revocation, no server of our own.
  *
+ * RevenueCat is configured once, at bootstrap (startPurchases in main.tsx),
+ * with an app user ID kept in Capacitor Preferences, so the same install is
+ * always the same customer. There is no logOut anywhere. Access comes only
+ * from customerInfo.entitlements.active.
+ *
  * Three tiers, each sold for 3 months or 6 months, renewing automatically:
  *   complete  unlocks written_access and oral_full_access
  *   written   unlocks written_access (the SAMP bank and mock exam)
@@ -15,6 +20,8 @@
  * The app caches those dates so access works offline and ends on time.
  * Owner setup is in LAUNCH.md.
  */
+
+import { settle } from "./settle";
 
 // Public SDK keys. Safe to ship in the app. From RevenueCat > Project > API
 // keys. A placeholder keeps purchases off on that platform, and the launch
@@ -132,48 +139,116 @@ export function allKeysConfigured(): boolean {
   return !isPlaceholder(RC_KEY_IOS) && !isPlaceholder(RC_KEY_ANDROID);
 }
 
-let mod: RCModule | null = null;
-let configured = false;
+/** Preferences key for the RevenueCat app user ID of this install. */
+export const APP_USER_ID_KEY = "rc_app_user_id_v1";
 
-async function rc(): Promise<RCModule | null> {
-  if (!isNative() || !keysConfigured()) return null;
-  if (!mod) {
-    try {
-      mod = await import("@revenuecat/purchases-capacitor");
-    } catch {
-      return null;
-    }
-  }
-  if (!configured) {
-    try {
-      await mod.Purchases.configure({ apiKey: platform() === "ios" ? RC_KEY_IOS : RC_KEY_ANDROID });
-      configured = true;
-    } catch {
-      return null;
-    }
-  }
-  return mod;
+/** Key-value store for the app user ID. Capacitor Preferences in the store apps. */
+export interface IdStore {
+  get(key: string): Promise<string | null>;
+  set(key: string, value: string): Promise<void>;
 }
 
-type EntitlementLike = { isActive?: boolean; expirationDate?: string | null };
-type CustomerInfoLike = { entitlements?: { all?: Record<string, EntitlementLike | undefined> } } | null | undefined;
+const preferencesStore: IdStore = {
+  async get(key) {
+    const { Preferences } = await import("@capacitor/preferences");
+    return (await Preferences.get({ key })).value;
+  },
+  async set(key, value) {
+    const { Preferences } = await import("@capacitor/preferences");
+    await Preferences.set({ key, value });
+  },
+};
+
+function randomId(): string {
+  const c = (globalThis as { crypto?: Crypto }).crypto;
+  if (c?.randomUUID) return c.randomUUID();
+  const b = new Uint8Array(16);
+  if (c?.getRandomValues) c.getRandomValues(b);
+  else for (let i = 0; i < b.length; i++) b[i] = Math.floor(Math.random() * 256);
+  return Array.from(b, (x) => x.toString(16).padStart(2, "0")).join("");
+}
+
+const validId = (v: string | null | undefined): v is string => typeof v === "string" && /^ccfpem_[A-Za-z0-9-]{16,}$/.test(v);
+
+/**
+ * The app user ID for this install: the stored one, or a new one that is
+ * stored for next time. A storage fault still yields an ID, so configure
+ * never waits on it or fails because of it.
+ */
+export async function persistedAppUserId(store: IdStore = preferencesStore, ms = 2500): Promise<string> {
+  const saved = await settle(() => store.get(APP_USER_ID_KEY), null, ms);
+  if (validId(saved)) return saved;
+  const id = `ccfpem_${randomId()}`;
+  await settle(() => store.set(APP_USER_ID_KEY, id), undefined, ms);
+  return id;
+}
+
+let boot: Promise<RCModule | null> | null = null;
+/** Longest one read from RevenueCat may take before it counts as unreachable. */
+const STORE_CALL_MS = 20_000;
+
+/**
+ * Configures RevenueCat once for the app's lifetime. Called at bootstrap and
+ * never awaited by anything that draws the screen. Later callers share the
+ * same promise. A configure that failed (no network module, bad key) may be
+ * tried again by the next purchase call; a successful one never repeats.
+ */
+export function startPurchases(): Promise<RCModule | null> {
+  if (!boot) {
+    boot = (async () => {
+      if (!isNative() || !keysConfigured()) return null;
+      const m = await import("@revenuecat/purchases-capacitor");
+      const appUserID = await persistedAppUserId();
+      await m.Purchases.configure({ apiKey: platform() === "ios" ? RC_KEY_IOS : RC_KEY_ANDROID, appUserID });
+      return m;
+    })().catch(() => {
+      boot = null;
+      return null;
+    });
+  }
+  return boot;
+}
+
+async function rc(): Promise<RCModule | null> {
+  return settle(() => startPurchases(), null, 15_000);
+}
+
+type EntitlementLike = { isActive?: boolean; expirationDate?: string | null; productIdentifier?: string | null };
+type EntitlementMap = Record<string, EntitlementLike | null | undefined> | null | undefined;
+type CustomerInfoLike =
+  | { entitlements?: { active?: EntitlementMap; all?: EntitlementMap } | null; activeSubscriptions?: string[] | null }
+  | null
+  | undefined;
+
+/** How long an active entitlement whose date has already passed (store grace period) stays open before the next check. */
+const GRACE_MS = 24 * 60 * 60 * 1000;
 
 /** Stands in for an active entitlement with no end date, such as a promotional grant. */
 export const NO_END = "9999-12-31T00:00:00.000Z";
 
 /**
- * Expiry dates from the RevenueCat entitlements. For a 3 or 6 month
- * subscription this is the current period end, and it moves forward on each renewal. An
- * expired entitlement keeps its past date, so the app can say when it ended.
+ * Expiry dates from the RevenueCat entitlements. Access is decided only by
+ * customerInfo.entitlements.active: an entitlement there opens its component,
+ * one that is not there never does, whatever its date says.
+ *   active, with an end date     -> that date (the current period end, moving forward on renewal)
+ *   active, end date passed      -> open for one more day; the next check refreshes it (store grace period)
+ *   active, no end date          -> NO_END. Promotional and lifetime grants look like this, often
+ *                                   with a null productIdentifier and no activeSubscriptions, so
+ *                                   neither of those is ever read here.
+ *   not active                   -> only a past end date, kept so the app can say when it ended
  * Products of the other Preceptor apps unlock other entitlements and are ignored.
  */
-export function expiryFrom(ci: CustomerInfoLike): Expiry {
+export function expiryFrom(ci: CustomerInfoLike, now: number = Date.now()): Expiry {
   const date = (c: Component): string | null => {
-    const e = ci?.entitlements?.all?.[ENTITLEMENTS[c]];
-    if (!e) return null;
-    const t = Date.parse(e.expirationDate ?? "");
-    if (e.isActive) return Number.isFinite(t) ? new Date(t).toISOString() : NO_END;
-    return Number.isFinite(t) ? new Date(t).toISOString() : null;
+    const id = ENTITLEMENTS[c];
+    const active = ci?.entitlements?.active?.[id];
+    if (active) {
+      const t = Date.parse(active.expirationDate ?? "");
+      if (!Number.isFinite(t)) return NO_END;
+      return new Date(t > now ? t : now + GRACE_MS).toISOString();
+    }
+    const t = Date.parse(ci?.entitlements?.all?.[id]?.expirationDate ?? "");
+    return Number.isFinite(t) && t <= now ? new Date(t).toISOString() : null;
   };
   return { written: date("written"), oral: date("oral") };
 }
@@ -231,9 +306,11 @@ export function plansFrom(pkgs: PackageLike[]): Plan[] {
  * App Store does this itself inside the subscription group. Google Play needs
  * the old product named, or the candidate would pay for both.
  */
-export function replaces(tier: Tier, activeSubscriptions: string[]): string | null {
+export function replaces(tier: Tier, activeSubscriptions: readonly (string | null | undefined)[] | null | undefined): string | null {
   if (tier !== "complete") return null;
-  const old = activeSubscriptions.find((id) => {
+  // A promotional grant has no store subscription, so this list can be empty or missing.
+  const ids = (activeSubscriptions ?? []).filter((id): id is string => typeof id === "string" && id.length > 0);
+  const old = ids.find((id) => {
     const t = parseStoreId(id)?.tier;
     return t === "written" || t === "oral";
   });
@@ -250,7 +327,8 @@ export const revenueCat: PurchasesAdapter = {
     const m = await rc();
     if (!m) return null;
     try {
-      return expiryFrom((await m.Purchases.getCustomerInfo()).customerInfo);
+      const res = await settle(() => m.Purchases.getCustomerInfo(), null, STORE_CALL_MS);
+      return res ? expiryFrom(res.customerInfo) : null;
     } catch {
       return null;
     }
@@ -259,7 +337,8 @@ export const revenueCat: PurchasesAdapter = {
     const m = await rc();
     if (!m) return null;
     try {
-      return expiryFrom((await m.Purchases.restorePurchases()).customerInfo);
+      const res = await settle(() => m.Purchases.restorePurchases(), null, STORE_CALL_MS);
+      return res ? expiryFrom(res.customerInfo) : null;
     } catch {
       return null;
     }
@@ -273,7 +352,7 @@ export const revenueCat: PurchasesAdapter = {
       let googleProductChangeInfo = null;
       if (platform() === "android") {
         const { customerInfo } = await m.Purchases.getCustomerInfo();
-        const old = replaces(tier, customerInfo.activeSubscriptions);
+        const old = replaces(tier, customerInfo?.activeSubscriptions);
         if (old) googleProductChangeInfo = { oldProductIdentifier: old, prorationMode: m.PRORATION_MODE.IMMEDIATE_WITH_TIME_PRORATION };
       }
       const res = await m.Purchases.purchasePackage({ aPackage: pkg, googleProductChangeInfo });
@@ -288,7 +367,7 @@ export const revenueCat: PurchasesAdapter = {
     const m = await rc();
     if (!m) return [];
     try {
-      return plansFrom(await packages(m));
+      return plansFrom(await settle(() => packages(m), [], STORE_CALL_MS));
     } catch {
       return [];
     }

@@ -1,11 +1,11 @@
-import { useEffect, useState } from "react";
+import { useCallback, useEffect, useState } from "react";
 import { Mark } from "@/components/Mark";
+import { Splash } from "@/components/Splash";
 import { dueCards } from "@/engine";
 import { stopSpeaking } from "@/lib/speech";
 import type { Route } from "./routes";
 import { useApp } from "./state";
 import { CaseIntro } from "./screens/CaseIntro";
-import { Disclaimer } from "./screens/Disclaimer";
 import { Home } from "./screens/Home";
 import { Paywall } from "./screens/Paywall";
 import { Progress } from "./screens/Progress";
@@ -29,6 +29,9 @@ const TABS: { name: "home" | "written" | "review" | "progress" | "settings"; lab
 export function App() {
   const app = useApp();
   const [route, setRoute] = useState<Route>({ name: "home" });
+  // The splash ends on its own timer or on a tap. Nothing else decides when the app opens.
+  const [splash, setSplash] = useState(true);
+  const endSplash = useCallback(() => setSplash(false), []);
   const go = (r: Route) => {
     stopSpeaking();
     setRoute(r);
@@ -41,9 +44,6 @@ export function App() {
     window.addEventListener("popstate", onPop);
     return () => window.removeEventListener("popstate", onPop);
   }, []);
-
-  if (!app.ready) return <div className="app" />;
-  if (!app.settings.acceptedDisclaimer) return <Disclaimer onAccept={() => app.updateSettings({ acceptedDisclaimer: true })} />;
 
   const due = dueCards(app.deck, Date.now()).length;
   const tabbed = ["home", "written", "review", "progress", "settings"].includes(route.name);
@@ -108,6 +108,7 @@ export function App() {
           ))}
         </nav>
       )}
+      {splash && <Splash onDone={endSplash} />}
     </div>
   );
 }
