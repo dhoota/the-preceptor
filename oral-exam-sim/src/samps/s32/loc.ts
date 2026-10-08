@@ -98,7 +98,6 @@ const SRC_CANMAT_BIPOLAR: Source = {
 const SRC_GF_ANTIEPILEPTICS: Source = {
   id: "goldfrank-antiepileptics",
   citation: "Nelson LS, Howland MA, Lewin NA, Smith SW, Goldfrank LR, Hoffman RS, editors. Goldfrank's Toxicologic Emergencies. 11th edition. McGraw-Hill Education. 2019. Chapter: Antiepileptics.",
-  url: "https://accessemergencymedicine.mhmedical.com/content.aspx?bookid=2569&sectionid=210272255",
 };
 const SRC_GF_CARNITINE: Source = {
   id: "goldfrank-carnitine",
@@ -108,7 +107,6 @@ const SRC_GF_CARNITINE: Source = {
 const SRC_GF_ETHANOL: Source = {
   id: "goldfrank-ethanol",
   citation: "Yip L. Ethanol. In: Nelson LS, Howland MA, Lewin NA, Smith SW, Goldfrank LR, Hoffman RS, editors. Goldfrank's Toxicologic Emergencies. 11th edition. McGraw-Hill Education. 2019. Chapter 76, Ethanol.",
-  url: "https://accessemergencymedicine.mhmedical.com/content.aspx?legacysectionid=goldtox11_ch76",
 };
 const SRC_SSC_2026: Source = {
   id: "ssc-2026",

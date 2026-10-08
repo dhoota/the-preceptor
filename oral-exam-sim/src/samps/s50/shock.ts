@@ -1601,8 +1601,7 @@ export const SHOCK_SAMPS_S50: Samp[] = [
       },
       {
         id: "stoma",
-        citation: "Wang Y, Peng H, Cui C, Zou Q, Yang M. Summary of best evidence for the dietary management in patients with high-output ileostomy. J Multidiscip Healthc. 2025.",
-        url: "https://europepmc.org/article/PMC/PMC11842286"
+        citation: "Wang Y, Peng H, Cui C, Zou Q, Yang M. Summary of best evidence for the dietary management in patients with high-output ileostomy. J Multidiscip Healthc. 2025."
       }
     ],
     ...META,

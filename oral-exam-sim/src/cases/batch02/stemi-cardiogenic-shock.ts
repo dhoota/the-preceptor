@@ -516,7 +516,6 @@ export const stemiCardiogenicShock: OralCase = {
     {
       id: "esc-acs",
       citation: "Byrne RA, et al. 2023 ESC Guidelines for the management of acute coronary syndromes. European Heart Journal. 2023.",
-      url: "https://academic.oup.com/eurheartj/article/44/38/3720/7243210",
     },
     {
       id: "soap2",

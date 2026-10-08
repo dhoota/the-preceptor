@@ -16,6 +16,7 @@ import { SelfScore } from "./screens/SelfScore";
 import { Settings } from "./screens/Settings";
 import { MockExamResult, MockExamScreen, MockOralScreen } from "./screens/Mocks";
 import { Resources } from "./screens/Resources";
+import { Sources } from "./screens/Sources";
 import { SampPractice, SampResult, TopicSamps, Written } from "./screens/Written";
 
 const TABS: { name: "home" | "written" | "review" | "progress" | "settings"; label: string }[] = [
@@ -89,6 +90,7 @@ export function App() {
         {route.name === "mock" && <MockExamScreen id={route.id} go={go} />}
         {route.name === "mockResult" && <MockExamResult id={route.id} go={go} />}
         {route.name === "resources" && <Resources />}
+        {route.name === "sources" && <Sources />}
         {route.name === "result" && <Result attemptId={route.attemptId} go={go} />}
         {route.name === "review" && <Review go={go} />}
         {route.name === "progress" && <Progress go={go} />}

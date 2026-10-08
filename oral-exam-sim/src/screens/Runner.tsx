@@ -1,5 +1,7 @@
 import { useEffect, useMemo, useRef, useState } from "react";
 import { getCase } from "@/cases";
+import { SourceLinks } from "@/components/SourceLinks";
+import { EDU_ONLY, sourcesFor } from "@/lib/sources";
 import {
   advance,
   askFinding,
@@ -309,6 +311,8 @@ export function Runner({
               <li key={m}>{m}</li>
             ))}
           </ul>
+          <SourceLinks sources={sourcesFor(c, node.rubric)} topic={c.priorityTopic} />
+          <p className="edu-only">{EDU_ONLY}</p>
         </div>
       )}
 

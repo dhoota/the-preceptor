@@ -515,7 +515,6 @@ export const olderWomanBroughtBySon: OralCase = {
     {
       id: "hcca",
       citation: "Ontario. Health Care Consent Act, 1996.",
-      url: "https://www.canlii.org/en/on/laws/stat/so-1996-c-2-sch-a/latest/so-1996-c-2-sch-a.html",
     },
     {
       id: "phipa",
@@ -529,7 +528,6 @@ export const olderWomanBroughtBySon: OralCase = {
     {
       id: "fltca",
       citation: "Ontario. Fixing Long-Term Care Act, 2021, section 28, and Retirement Homes Act, 2010, section 75.",
-      url: "https://www.canlii.org/en/on/laws/stat/so-2021-c-39-sch-1/latest/so-2021-c-39-sch-1.html",
     },
   ],
   reviewed: true,

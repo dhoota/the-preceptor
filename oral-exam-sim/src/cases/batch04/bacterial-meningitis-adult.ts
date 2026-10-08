@@ -565,7 +565,6 @@ export const bacterialMeningitisAdult: OralCase = {
     {
       id: "hppa",
       citation: "Ontario. Health Protection and Promotion Act, R.S.O. 1990, c. H.7, and O. Reg. 135/18, Designation of Diseases.",
-      url: "https://www.canlii.org/en/on/laws/regu/o-reg-135-18/latest/o-reg-135-18.html",
     },
   ],
   reviewed: true,

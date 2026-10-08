@@ -532,7 +532,6 @@ export const divingInjuryCottage: OralCase = {
     {
       id: "hcca",
       citation: "Ontario. Health Care Consent Act, 1996.",
-      url: "https://www.canlii.org/en/on/laws/stat/so-1996-c-2-sch-a/latest/so-1996-c-2-sch-a.html",
     },
   ],
   reviewed: true,

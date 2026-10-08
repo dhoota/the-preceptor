@@ -532,7 +532,6 @@ export const athleteExertionalSyncope: OralCase = {
     {
       id: "esc-syncope",
       citation: "Brignole M, et al. 2018 ESC Guidelines for the diagnosis and management of syncope. European Heart Journal. 2018.",
-      url: "https://academic.oup.com/eurheartj/article/39/21/1883/4939241",
     },
     {
       id: "aha-hcm",

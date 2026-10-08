@@ -18,7 +18,7 @@ const SRC: Record<string, Source> = {
   strang: { id: "strangulation", citation: "Training Institute on Strangulation Prevention. Recommendations for the medical/radiographic evaluation of acute adult/adolescent non/near fatal strangulation. 2022." },
   danger: { id: "danger", citation: "Campbell JC, Webster DW, Glass N. The Danger Assessment: validation of a lethality risk assessment instrument for intimate partner femicide. J Interpers Violence. 2009." },
   easi: { id: "easi", citation: "Yaffe MJ, Wolfson C, Lithwick M, Weiss D. Development and validation of a tool to improve physician identification of elder abuse: the Elder Abuse Suspicion Index (EASI). J Elder Abuse Negl. 2008." },
-  hivPep: { id: "hiv-pep", citation: "Tan DHS and colleagues. Canadian guideline on HIV pre- and postexposure prophylaxis. 2025 update. CMAJ. 2025.", url: "https://www.cmaj.ca/content/197/41/E1374" },
+  hivPep: { id: "hiv-pep", citation: "Tan DHS and colleagues. Canadian guideline on HIV pre- and postexposure prophylaxis. 2025 update. CMAJ. 2025." },
   sadv: { id: "sadv", citation: "Ontario Network of Sexual Assault/Domestic Violence Treatment Centres. Standards of care. 2nd ed. 2019." },
   rnaoSuicide: { id: "rnao-suicide", citation: "Registered Nurses' Association of Ontario. Assessment and care of adults at risk for suicidal ideation and behaviour. Nursing best practice guideline. 2009." },
   aba: { id: "aba", citation: "American Burn Association and American College of Surgeons Committee on Trauma. Burn center referral criteria. In: Resources for Optimal Care of the Injured Patient. 2006." },

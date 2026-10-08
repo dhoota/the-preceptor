@@ -12,7 +12,6 @@ const S: Record<string, Source> = {
     id: "users-guides",
     citation:
       "Guyatt G, Rennie D, Meade MO, Cook DJ, editors. Users' Guides to the Medical Literature. A Manual for Evidence-Based Clinical Practice. 3rd edition. JAMA Evidence and McGraw-Hill Education. 2015.",
-    url: "https://jamaevidence.mhmedical.com/content.aspx?bookid=847&sectionid=69030714",
   },
   stard: {
     id: "stard-2015",

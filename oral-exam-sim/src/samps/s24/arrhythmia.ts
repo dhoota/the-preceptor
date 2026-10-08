@@ -1687,8 +1687,7 @@ export const ARRHYTHMIA_S24: Samp[] = [
       },
       {
         id: "esc-acs",
-        citation: "Byrne RA, et al. 2023 ESC Guidelines for the management of acute coronary syndromes. Eur Heart J. 2023.",
-        url: "https://academic.oup.com/eurheartj/article/44/38/3720/7243210"
+        citation: "Byrne RA, et al. 2023 ESC Guidelines for the management of acute coronary syndromes. Eur Heart J. 2023."
       },
       {
         id: "aha-als",

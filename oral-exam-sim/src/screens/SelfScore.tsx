@@ -1,5 +1,7 @@
 import { useState } from "react";
 import { getCase } from "@/cases";
+import { SourceLinks } from "@/components/SourceLinks";
+import { sourcesFor } from "@/lib/sources";
 import { ORAL_CRITERIA, competencyLabel, toCriterion, questionsOnPath, rubricOrder, type SelfMark } from "@/engine";
 import type { Go } from "../routes";
 import { useApp } from "../state";
@@ -53,6 +55,7 @@ export function SelfScore({ attemptId, mockOralId, go }: { attemptId: string; mo
                 <li key={m}>{m}</li>
               ))}
             </ul>
+            <SourceLinks sources={sourcesFor(c, q.rubric)} topic={c.priorityTopic} />
           </details>
         ))}
       </section>

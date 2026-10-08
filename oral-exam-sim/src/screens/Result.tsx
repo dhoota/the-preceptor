@@ -1,13 +1,14 @@
 import { useMemo } from "react";
 import { CASES, getCase } from "@/cases";
 import { STANDARD, blueprintLabel, buildReport, type ReportItem } from "@/engine";
+import { SourceLinks } from "@/components/SourceLinks";
+import { EDU_ONLY } from "@/lib/sources";
 import type { Go } from "../routes";
 import { useApp } from "../state";
 import { QUALITY_LABEL } from "./Runner";
 
-function Cite({ item }: { item: ReportItem }) {
-  if (!item.source) return null;
-  return <div className="cite">Source: {item.source.citation}</div>;
+function Cite({ item, topic }: { item: ReportItem; topic: string }) {
+  return <SourceLinks sources={[item.source]} topic={topic} />;
 }
 
 export function Result({ attemptId, go }: { attemptId: string; go: Go }) {
@@ -24,6 +25,7 @@ export function Result({ attemptId, go }: { attemptId: string; go: Go }) {
   return (
     <>
       <h1>{c.title}</h1>
+      <p className="edu-only">{EDU_ONLY}</p>
       <div className="label fieldline">
         {blueprintLabel(c.blueprint)} · {a.mode === "exam" ? "Exam day" : "Practice"} ·{" "}
         {new Date(a.startedAt).toLocaleDateString("en-CA")}
@@ -56,7 +58,7 @@ export function Result({ attemptId, go }: { attemptId: string; go: Go }) {
             <div key={m.id} style={{ marginTop: 10 }}>
               <div style={{ fontWeight: 600 }}>{m.text}</div>
               <div className="small">{m.teaching}</div>
-              <Cite item={m} />
+              <Cite item={m} topic={c.priorityTopic} />
             </div>
           ))}
         </div>
@@ -83,7 +85,7 @@ export function Result({ attemptId, go }: { attemptId: string; go: Go }) {
                 <p className="small" style={{ margin: "6px 0 0" }}>
                   {f.teaching}
                 </p>
-                <Cite item={f} />
+                <Cite item={f} topic={c.priorityTopic} />
               </div>
             </div>
           ))

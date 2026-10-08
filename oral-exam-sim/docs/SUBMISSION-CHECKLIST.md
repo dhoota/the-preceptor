@@ -39,7 +39,7 @@ The App Store has no such wait. It needs only the `appl_` key pasted in (A4), a 
 |---|---|
 | App name | Preceptor: CCFP-EM |
 | Bundle ID (iOS) and package name (Android) | `com.preceptor.oral` |
-| Version | 1.0.2. Codemagic sets the build number |
+| Version | 1.0.3. Codemagic sets the build number |
 | App Store product IDs | `ccfpem_complete_6m`, `ccfpem_complete_3m`, `ccfpem_written_6m`, `ccfpem_written_3m`, `ccfpem_oral_6m`, `ccfpem_oral_3m` |
 | Play subscriptions and base plans | `ccfpem_complete`, `ccfpem_written`, `ccfpem_oral`, each with base plans `p6m` (P6M) and `p3m` (P3M) |
 | Prices | Set in the stores by the central Codemagic store-prices workflow (USD base, base country United States). Not recorded here. See LAUNCH.md section 7 |

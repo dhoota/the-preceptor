@@ -8,7 +8,6 @@ const meta = { reviewed: true, author: "Preceptor", version: 1 };
 const ESC_ACS: Source = {
   id: "esc-acs",
   citation: "Byrne RA and colleagues. 2023 ESC guidelines for the management of acute coronary syndromes. Eur Heart J. 2023.",
-  url: "https://academic.oup.com/eurheartj/article/44/38/3720/7243210",
 };
 const DE_WINTER: Source = {
   id: "de-winter",
@@ -202,7 +201,6 @@ const EACTS_MEDIASTINITIS: Source = {
 const SHARE_ETHNICITY: Source = {
   id: "share-ethnicity",
   citation: "Anand SS, Yusuf S, Vuksan V and colleagues. Differences in risk factors, atherosclerosis, and cardiovascular disease between ethnic groups in Canada: the Study of Health Assessment and Risk in Ethnic groups (SHARE). Lancet. 2000.",
-  url: "https://www.thelancet.com/journals/lancet/article/PIIS0140673600025022/abstract",
 };
 const HEMOPNEUMOTHORAX: Source = {
   id: "hemopneumothorax",

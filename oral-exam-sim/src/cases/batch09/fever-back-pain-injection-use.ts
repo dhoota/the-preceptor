@@ -708,7 +708,6 @@ export const feverBackPainInjectionUse: OralCase = {
     {
       id: "crism",
       citation: "Canadian Research Initiative in Substance Matters. Management of opioid use disorder. 2024 update to the national clinical practice guideline. CMAJ. 2024.",
-      url: "https://www.cmaj.ca/content/196/38/E1280",
     },
   ],
   reviewed: true,

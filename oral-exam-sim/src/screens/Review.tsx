@@ -1,7 +1,9 @@
 import { useMemo, useState } from "react";
 import { getCase } from "@/cases";
+import { SourceLinks } from "@/components/SourceLinks";
 import { deckStats, dueCards } from "@/engine";
 import type { Go } from "../routes";
+import { EDU_ONLY } from "@/lib/sources";
 import { useApp } from "../state";
 
 export function Review({ go }: { go: Go }) {
@@ -27,6 +29,7 @@ export function Review({ go }: { go: Go }) {
   return (
     <>
       <h1>Missed points</h1>
+      <p className="edu-only">{EDU_ONLY}</p>
       <p className="muted small" style={{ marginTop: 8 }}>
         <span className="mono">{stats.total}</span> in deck · <span className="mono">{stats.learning}</span> learning ·{" "}
         <span className="mono">{stats.retired}</span> retired
@@ -64,9 +67,7 @@ export function Review({ go }: { go: Go }) {
                 <p className="muted" style={{ marginTop: 8, marginBottom: 0 }}>
                   {item.teaching}
                 </p>
-                {c.sources.find((s) => s.id === item.source) && (
-                  <div className="cite">Source: {c.sources.find((s) => s.id === item.source)!.citation}</div>
-                )}
+                <SourceLinks sources={[c.sources.find((s) => s.id === item.source)]} topic={c.priorityTopic} />
               </div>
             )}
           </div>

@@ -585,12 +585,10 @@ export const sympatheticCrashingPulmonaryEdema: OralCase = {
     {
       id: "ers-ats-niv",
       citation: "Rochwerg B, et al. Official ERS/ATS clinical practice guidelines. Noninvasive ventilation for acute respiratory failure. European Respiratory Journal. 2017.",
-      url: "https://publications.ersnet.org/content/erj/50/2/1602426",
     },
     {
       id: "esc-hf",
       citation: "McDonagh TA, et al. 2021 ESC Guidelines for the diagnosis and treatment of acute and chronic heart failure. European Heart Journal. 2021.",
-      url: "https://academic.oup.com/eurheartj/article/42/36/3599/6358045",
     },
     {
       id: "ccs-hf",

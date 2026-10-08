@@ -551,7 +551,7 @@ export const DVT_PE_S33_SAMPS: Samp[] = [
       },
     ],
     sources: [
-      { id: "esur", citation: "European Society of Urogenital Radiology Contrast Media Safety Committee. ESUR guidelines on contrast agents, version 10.0. 2018.", url: "https://www.esur.org/wp-content/uploads/2022/03/ESUR-Guidelines-10_0-Final-Version.pdf" },
+      { id: "esur", citation: "European Society of Urogenital Radiology Contrast Media Safety Committee. ESUR guidelines on contrast agents, version 10.0. 2018." },
       SRC_ESC_PE,
       SRC_TC_PE_TX,
       SRC_SPESI,

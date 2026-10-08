@@ -143,6 +143,10 @@ export function Home({ go }: { go: Go }) {
         </p>
         <button className="linkbtn small" onClick={() => go({ name: "resources" })}>
           Official CFPC resources
+        </button>{" "}
+        ·{" "}
+        <button className="linkbtn small" onClick={() => go({ name: "sources" })}>
+          Sources &amp; References
         </button>
       </section>
     </>

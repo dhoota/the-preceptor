@@ -6,6 +6,7 @@ import { getSamp } from "@/samps";
 import type { SampAttempt } from "@/lib/storage";
 import type { Go } from "../routes";
 import { useApp } from "../state";
+import { EDU_ONLY } from "@/lib/sources";
 import { MarkedQuestion, QuestionInput, SampStem, emptyResponse, isAnswered } from "./SampParts";
 
 const hms = (ms: number) => {
@@ -146,6 +147,7 @@ export function MockExamResult({ id, go }: { id: string; go: Go }) {
 
   return (
     <>
+      <p className="edu-only">{EDU_ONLY}</p>
       <div className="label">
         Mock exam · {mock.sampIds.length} SAMPs{mins !== null && ` · ${mins} min`}
       </div>
@@ -196,7 +198,7 @@ export function MockExamResult({ id, go }: { id: string; go: Go }) {
                       q={q}
                       n={j + 1}
                       value={a.responses[q.id] ?? emptyResponse(q)}
-                      source={s.sources.find((x) => x.id === q.source)?.citation}
+                      source={s.sources.find((x) => x.id === q.source)}
                       onOverride={q.kind === "short" ? (line, c) => override(a, q.id, line, c) : undefined}
                     />
                   ))}

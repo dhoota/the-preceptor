@@ -718,7 +718,6 @@ export const discrepancyCallback: OralCase = {
     {
       id: "hqo-hip",
       citation: "Health Quality Ontario, now Ontario Health. Quality standard. Hip fracture. Care for people with fragility fractures. Updated 2024.",
-      url: "https://www.hqontario.ca/Evidence-to-Improve-Care/Quality-Standards/View-All-Quality-Standards/Hip-Fracture",
     },
   ],
   reviewed: true,

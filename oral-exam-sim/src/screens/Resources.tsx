@@ -4,7 +4,7 @@ import { CFPC_KF_URL } from "@/blueprint/priorityTopics";
  * Links out to the official CFPC material. The app does not copy any of it.
  * CFPC content is copyright and real exam content is confidential.
  */
-const LINKS = [
+export const LINKS = [
   {
     title: "Preparing for the examination",
     body: "Exam format, timing, the virtual oral and the SAMP software.",
@@ -57,6 +57,9 @@ export function Resources() {
           <div className="muted small">{l.body}</div>
         </button>
       ))}
+      <p className="small" style={{ marginTop: 16 }}>
+        Every guideline and reference the questions cite is listed in Sources &amp; References, under More.
+      </p>
       <p className="muted small" style={{ marginTop: 16 }}>
         Preceptor: CCFP-EM is independent. It is not affiliated with or endorsed by the College of Family Physicians of
         Canada. Opening these links needs an internet connection. Everything else works offline.

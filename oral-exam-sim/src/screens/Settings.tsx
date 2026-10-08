@@ -3,6 +3,7 @@ import { APP_VERSION, PRIVACY_URL, SUPPORT_EMAIL, TERMS_URL } from "@/lib/consta
 import { speak } from "@/lib/speech";
 import { NO_END, formatDay } from "@/lib/purchases";
 import type { Go } from "../routes";
+import { EDU_ONLY } from "@/lib/sources";
 import { useApp } from "../state";
 
 function Switch({ on, onChange, label }: { on: boolean; onChange: (v: boolean) => void; label: string }) {
@@ -117,10 +118,23 @@ export function Settings({ go }: { go: Go }) {
             Open
           </button>
         </div>
+        <div className="row">
+          <span>Sources &amp; References</span>
+          <button className="btn small quiet" onClick={() => go({ name: "sources" })}>
+            Open
+          </button>
+        </div>
       </section>
 
       <section className="section">
         <span className="label">About</span>
+        <p className="edu-only">{EDU_ONLY}</p>
+        <div className="row">
+          <span>Sources &amp; References</span>
+          <button className="linkbtn" onClick={() => go({ name: "sources" })}>
+            Every cited source
+          </button>
+        </div>
         <div className="row">
           <span>Support</span>
           <button className="linkbtn" onClick={() => open(`mailto:${SUPPORT_EMAIL}?subject=Preceptor%20CCFP-EM%20${APP_VERSION}`)}>

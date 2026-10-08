@@ -18,6 +18,13 @@ These hold for every change to this app. Tests in `tests/launch.test.ts` and
 - Handle promotional entitlements defensively: `productIdentifier` may be null, `expirationDate` may be null and `activeSubscriptions` may be empty or missing. Never require any of them to open access.
 - Fetch the `ccfpem` offering by id. Never use `offerings.current`. Prices come only from the store.
 
+## Citations (App Store Guideline 1.4.1)
+- Every answer, rationale and model answer shows a visible "Source:" citation via `src/components/SourceLinks.tsx`, plus a tappable "Blueprint:" link to the CFPC key features PDF page for its priority topic.
+- Only real, verified URLs. Never invent one. A source without a confirmed public URL is listed as text; the blueprint link still makes it tappable.
+- Every cited source is listed on the Sources & References screen (More > Exam, More > About, and the Oral home page footer).
+- "Educational exam preparation only. Not medical advice." (`EDU_ONLY`) stays visible on the result, review and sources screens.
+- `tests/citations.test.ts` fails if any question lacks a citation or link.
+
 ## Layout and controls
 - Full-height containers use `100dvh` (with a `100vh` fallback first) and pad for `env(safe-area-inset-bottom)`.
 - Every primary action is a real `<button>` with `onClick`. No clickable divs or spans for primary actions.

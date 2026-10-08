@@ -7,6 +7,7 @@ import type { MockExam, SampAttempt } from "@/lib/storage";
 import type { Go } from "../routes";
 import { useApp } from "../state";
 import { Lock } from "./Home";
+import { EDU_ONLY } from "@/lib/sources";
 import { MarkedQuestion, QuestionInput, SampStem, emptyResponse, isAnswered } from "./SampParts";
 
 const newId = (p: string) => `${p}-${Date.now().toString(36)}-${Math.random().toString(36).slice(2, 7)}`;
@@ -254,6 +255,7 @@ export function SampResult({ attemptId, go }: { attemptId: string; go: Go }) {
   const next = SAMPS.filter((x) => x.topic === s.topic).find((x) => x.id !== s.id && !app.sampAttempts.some((y) => y.sampId === x.id) && app.canOpenSamp(x.id));
   return (
     <>
+      <p className="edu-only">{EDU_ONLY}</p>
       <div className="score">
         <div>
           <div className="label">{topicName(s.topic)}</div>
@@ -270,7 +272,7 @@ export function SampResult({ attemptId, go }: { attemptId: string; go: Go }) {
           q={q}
           n={i + 1}
           value={a.responses[q.id] ?? emptyResponse(q)}
-          source={s.sources.find((x) => x.id === q.source)?.citation}
+          source={s.sources.find((x) => x.id === q.source)}
           onOverride={q.kind === "short" ? (line, c) => override(q.id, line, c) : undefined}
         />
       ))}

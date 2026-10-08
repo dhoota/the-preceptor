@@ -18,7 +18,7 @@ const S = {
   caepCrowding: { id: "caep-crowding", citation: "Affleck A, Parks P, Drummond A, Rowe BH, Ovens HJ. Emergency department overcrowding and access block. CAEP position statement. CJEM. 2013." },
   atls: { id: "atls", citation: "American College of Surgeons Committee on Trauma. Advanced Trauma Life Support Student Course Manual. 10th ed. 2018. Chapters on initial assessment, teamwork and transfer to definitive care." },
   nrp: { id: "nrp", citation: "American Academy of Pediatrics and American Heart Association. Textbook of Neonatal Resuscitation (NRP). 8th ed. 2021." },
-  sogcPph: { id: "sogc-pph", citation: "Robinson D, et al. Guideline No. 431. Postpartum hemorrhage and hemorrhagic shock. J Obstet Gynaecol Can. 2022.", url: "https://www.jogc.com/article/S1701-2163(22)00668-5/abstract" },
+  sogcPph: { id: "sogc-pph", citation: "Robinson D, et al. Guideline No. 431. Postpartum hemorrhage and hemorrhagic shock. J Obstet Gynaecol Can. 2022." },
   ssc: { id: "ssc", citation: "Evans L, et al. Surviving Sepsis Campaign. International guidelines for management of sepsis and septic shock 2021. Crit Care Med. 2021." },
   csbpr: { id: "csbpr", citation: "Heart and Stroke Foundation of Canada. Heran M, Lindsay P, Gubitz G, et al. Canadian Stroke Best Practice Recommendations. Acute stroke management, 7th edition practice guidelines update, 2022. Can J Neurol Sci. 2024.", url: "https://doi.org/10.1017/cjn.2022.344" },
   abls: { id: "abls", citation: "American Burn Association. Advanced Burn Life Support Course Provider Manual. 2018 update." },

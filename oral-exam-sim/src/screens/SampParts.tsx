@@ -1,4 +1,6 @@
 import { topicName } from "@/blueprint/priorityTopics";
+import { SourceLinks } from "@/components/SourceLinks";
+import type { Source } from "@/engine/types";
 import { VITAL_LABELS, markQuestion, type Samp, type SampQuestion, type SampResponse } from "@/engine/samp";
 
 const WORD = ["", "one", "two", "three", "four", "five", "six"];
@@ -178,7 +180,7 @@ export function MarkedQuestion({
   n: number;
   value: SampResponse | undefined;
   onOverride?: (line: number, counted: boolean) => void;
-  source?: string;
+  source?: Source;
 }) {
   const m = markQuestion(q, value);
   const pct = Math.round(m.score * 100);
@@ -264,8 +266,8 @@ export function MarkedQuestion({
         <p style={{ margin: 0 }}>{q.explanation}</p>
         <div className="cite">
           Key feature {q.keyFeature.n} · {topicName(q.keyFeature.topic)}
-          {source ? ` · Source: ${source}` : ""}
         </div>
+        <SourceLinks sources={[source]} topic={q.keyFeature.topic} keyFeature={q.keyFeature.n} />
       </div>
     </div>
   );

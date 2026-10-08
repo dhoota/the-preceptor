@@ -43,7 +43,6 @@ const AHA_SC: Source = {
 const ERC_ALS: Source = {
   id: "erc-als",
   citation: "European Resuscitation Council Guidelines 2025. Adult advanced life support. Resuscitation. 2025.",
-  url: "https://www.resuscitationjournal.com/article/S0300-9572(25)00281-3/fulltext",
 };
 const CSRS: Source = {
   id: "csrs",

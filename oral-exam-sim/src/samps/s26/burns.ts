@@ -7,7 +7,7 @@ const META = { reviewed: true, author: "Preceptor", version: 1 } as const;
 const S = {
   abaResus: { id: "aba-resus", citation: "Cartotto R, Johnson LS, Savetamal A, and colleagues. American Burn Association clinical practice guidelines on burn shock resuscitation. J Burn Care Res. 2024.", url: "https://pubmed.ncbi.nlm.nih.gov/38051821/" },
   abls: { id: "abls", citation: "American Burn Association. Advanced Burn Life Support Course Provider Manual. 2018 update." },
-  abaRef: { id: "aba-referral", citation: "American Burn Association. Guidelines for burn patient referral. 2025.", url: "https://ameriburn.org/resources/burnreferral/" },
+  abaRef: { id: "aba-referral", citation: "American Burn Association. Guidelines for burn patient referral. 2025." },
   trekkBurns: { id: "trekk-burns", citation: "TREKK (Translating Emergency Knowledge for Kids). Bottom line recommendations: pediatric thermal burns. Version 2.0. 2025.", url: "https://trekk.ca/resources/bottom-line-recommendations-pediatric-thermal-burns/" },
   trekkPain: { id: "trekk-pain", citation: "TREKK (Translating Emergency Knowledge for Kids). Bottom line recommendations: pain treatment. Version 4.0. 2023.", url: "https://trekk.ca/resources/bottom-line-recommendations-pain-treatment/" },
   trekkAbuse: { id: "trekk-abuse", citation: "TREKK (Translating Emergency Knowledge for Kids). Bottom line recommendations: suspected physical child abuse. Version 2.0. 2023.", url: "https://trekk.ca/resources/bottom-line-recommendations-suspected-physical-child-abuse/" },

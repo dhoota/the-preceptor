@@ -15,6 +15,7 @@ export type Route =
   | { name: "progress" }
   | { name: "settings" }
   | { name: "resources" }
+  | { name: "sources" }
   | { name: "paywall"; focus?: "written" | "oral" };
 
 export type Go = (r: Route) => void;

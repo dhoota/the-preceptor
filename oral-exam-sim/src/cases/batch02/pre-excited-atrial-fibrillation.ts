@@ -599,7 +599,6 @@ export const preExcitedAtrialFibrillation: OralCase = {
     {
       id: "esc-svt",
       citation: "Brugada J, et al. 2019 ESC Guidelines for the management of patients with supraventricular tachycardia. European Heart Journal. 2020.",
-      url: "https://academic.oup.com/eurheartj/article/41/5/655/5556821",
     },
     {
       id: "acc-af",
