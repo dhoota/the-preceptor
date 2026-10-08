@@ -119,7 +119,6 @@ export const NEUBERGER: Source = {
   body: "Neuberger J, Patel J, Caldwell H, et al. British Society of Gastroenterology, Royal College of Radiologists and Royal College of Pathology",
   work: "Guidelines on the Use of Liver Biopsy in Clinical Practice. Gut 69(8):1382",
   year: 2020,
-  url: "https://www.bsg.org.uk/clinical-resource/guidelines-on-the-use-of-liver-biopsy-in-clinical-practice-from-the-british-society-of-gastroenterology-the-royal-college-of-radiologists-and-the-royal-college-of-pathology/",
 };
 export const KDIGO_AKI: Source = {
   body: "Kidney Disease: Improving Global Outcomes Acute Kidney Injury Work Group",

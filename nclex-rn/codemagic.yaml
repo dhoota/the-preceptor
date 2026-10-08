@@ -43,7 +43,6 @@ workflows:
     # branch protection, none of which this plan tier offers on a private
     # repo — see PRECEPTOR_APP_STANDARD.md §13A (dhoota/preceptor-mccqe).
     # Scans the whole repo's shared git history (covers CCFP-EM too).
-    # This file mirrors ../codemagic.yaml — keep the two in step.
     max_build_duration: 30
     instance_type: linux_x2
     triggering:

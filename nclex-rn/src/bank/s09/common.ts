@@ -129,7 +129,7 @@ export const SLEEP: Source = {
   body: "Paruthi S, Brooks LJ, D'Ambrosio C, et al. American Academy of Sleep Medicine",
   work: "Recommended Amount of Sleep for Pediatric Populations: A Consensus Statement. Journal of Clinical Sleep Medicine 12(6):785",
   year: 2016,
-  url: "https://jcsm.aasm.org/doi/10.5664/jcsm.5866",
+  url: "https://doi.org/10.5664/jcsm.5866",
 };
 export const BRIGHT: Source = {
   body: "Hagan JF, Shaw JS, Duncan PM. American Academy of Pediatrics",

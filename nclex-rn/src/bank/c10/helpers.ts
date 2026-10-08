@@ -100,7 +100,6 @@ export const SRC: Record<string, Source> = {
     body: "US Food and Drug Administration",
     work: "FDA Drug Safety Communication: FDA requires label warnings to prohibit sharing of multi-dose diabetes pen devices among patients",
     year: 2015,
-    url: "https://www.fda.gov/drugs/drug-safety-and-availability/fda-drug-safety-communication-fda-requires-label-warnings-prohibit-sharing-multi-dose-diabetes-pen",
   },
   sharps: {
     body: "US Food and Drug Administration",

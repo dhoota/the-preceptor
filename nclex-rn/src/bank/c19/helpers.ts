@@ -154,7 +154,6 @@ export const SRC: Record<string, Source> = {
     body: "US Food and Drug Administration",
     work: "FDA Drug Safety Communication: FDA revises warnings regarding use of the diabetes medicine metformin in certain patients with reduced kidney function",
     year: 2016,
-    url: "https://www.fda.gov/drugs/drug-safety-and-availability/fda-drug-safety-communication-fda-revises-warnings-regarding-use-diabetes-medicine-metformin-certain",
   },
   kdoqi: {
     body: "Ikizler TA, Burrowes JD, Byham-Gray LD, et al. National Kidney Foundation KDOQI",

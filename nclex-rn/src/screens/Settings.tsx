@@ -1,5 +1,7 @@
 import { useState } from "react";
 import { useConfirm } from "@/components/Confirm";
+import { useSources } from "@/components/Sources";
+import { EDUCATION_ONLY } from "@/lib/references";
 import { APP_NAME, APP_VERSION, DISCLAIMER, PRIVACY_URL, SUPPORT_EMAIL, TERMS_URL, TEST_PLAN_URL } from "@/lib/constants";
 import type { Go } from "../routes";
 import { useApp } from "../state";
@@ -19,6 +21,7 @@ function Switch({ on, onChange, label }: { on: boolean; onChange: (v: boolean) =
 export function Settings({ go }: { go: Go }) {
   const app = useApp();
   const ask = useConfirm();
+  const openSources = useSources();
   const s = app.settings;
   const [msg, setMsg] = useState<string | null>(null);
 
@@ -89,6 +92,17 @@ export function Settings({ go }: { go: Go }) {
       <section className="section">
         <h2 className="label">About</h2>
         <div className="row">
+          <span>
+            Sources &amp; References
+            <span className="muted small" style={{ display: "block" }}>
+              The guidelines and works every question cites.
+            </span>
+          </span>
+          <button className="btn small quiet" onClick={openSources}>
+            Open
+          </button>
+        </div>
+        <div className="row">
           <span>Support</span>
           <button className="linkbtn" onClick={() => openUrl(`mailto:${SUPPORT_EMAIL}?subject=${encodeURIComponent(`${APP_NAME} ${APP_VERSION}`)}`)}>
             {SUPPORT_EMAIL}
@@ -110,7 +124,7 @@ export function Settings({ go }: { go: Go }) {
           {DISCLAIMER.map((l) => (
             <p key={l}>{l}</p>
           ))}
-          <p>It is for education only and is not nursing or medical advice. Every item is original.</p>
+          <p>{EDUCATION_ONLY} Every item is original.</p>
           <p>Every item was reviewed and signed off before release. An item marked as a draft has not been signed off yet.</p>
           <p>Everything stays on this device. The app collects no personal data.</p>
         </div>

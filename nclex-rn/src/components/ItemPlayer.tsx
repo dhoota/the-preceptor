@@ -4,6 +4,7 @@ import { KIND_NAMES, score } from "@/engine/score";
 import type { Choice, Item, Response } from "@/engine/types";
 import { parsePassage, place, splitTemplate, toggle } from "@/engine/ui";
 import { Exhibit } from "./Exhibit";
+import { ItemSources } from "./Sources";
 import { Cap } from "./Tube";
 
 type R<K extends Response["kind"]> = Extract<Response, { kind: K }>;
@@ -496,18 +497,7 @@ export function Feedback({ item, r }: { item: Item; r: Response }) {
           <p style={{ margin: "6px 0 0" }}>{item.canada}</p>
         </div>
       )}
-      {item.sources.length > 0 && (
-        <div className="sources">
-          <span className="label">Sources</span>
-          <ul>
-            {item.sources.map((x, i) => (
-              <li key={i} className="cite">
-                {x.body}. <i>{x.work}</i>. {x.year}.
-              </li>
-            ))}
-          </ul>
-        </div>
-      )}
+      <ItemSources item={item} />
     </div>
   );
 }

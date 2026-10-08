@@ -193,7 +193,6 @@ export const FDA_CODEINE: Source = {
   body: "US Food and Drug Administration",
   work: "FDA Drug Safety Communication: FDA restricts use of prescription codeine pain and cough medicines and tramadol pain medicines in children",
   year: 2017,
-  url: "https://www.fda.gov/drugs/drug-safety-and-availability/fda-drug-safety-communication-fda-restricts-use-prescription-codeine-pain-and-cough-medicines-and",
 };
 export const CASCADE: Source = {
   body: "Savage RD, Visentin JD, Bronskill SE, et al.",

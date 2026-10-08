@@ -5,6 +5,8 @@ import { PRODUCTS, isNative, keysConfigured, planView, type ProductKey } from "@
 import type { Go } from "../routes";
 import { useApp } from "../state";
 import { openUrl } from "./Settings";
+import { useSources } from "@/components/Sources";
+import { EDUCATION_ONLY } from "@/lib/references";
 
 // Only these two plans exist. Plans come from PLAN_ORDER through planView, never from other packages in the offering.
 const PLANS: Record<ProductKey, { name: string; body: string; cta: string }> = {
@@ -15,6 +17,7 @@ const PLANS: Record<ProductKey, { name: string; body: string; cta: string }> = {
 export function Paywall({ go }: { go: Go }) {
   const app = useApp();
   const [msg, setMsg] = useState<string | null>(null);
+  const openSources = useSources();
   const view = planView(app.prices);
 
   if (app.access.full) {
@@ -135,7 +138,12 @@ export function Paywall({ go }: { go: Go }) {
         <button className="linkbtn" onClick={() => openUrl(PRIVACY_URL)}>
           Privacy policy
         </button>
+        <span aria-hidden="true"> · </span>
+        <button className="linkbtn" onClick={openSources}>
+          Sources &amp; References
+        </button>
       </p>
+      <p className="muted small">{EDUCATION_ONLY}</p>
     </div>
   );
 }

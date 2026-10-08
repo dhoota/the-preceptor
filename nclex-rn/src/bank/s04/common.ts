@@ -63,7 +63,6 @@ export const NCSBN_SUD: Source = {
   body: "National Council of State Boards of Nursing",
   work: "A Nurse's Guide to Substance Use Disorder in Nursing",
   year: 2014,
-  url: "https://www.ncsbn.org/public-files/SUD_Brochure_2014.pdf",
 };
 export const PSNET_REPORT: Source = {
   body: "Agency for Healthcare Research and Quality, Patient Safety Network",

@@ -229,6 +229,7 @@ describe("Codemagic", () => {
   it("has six uniquely named NCLEX workflows in nclex-rn", () => {
     const ids = [...root.slice(root.indexOf("workflows:")).matchAll(/^  ([a-z0-9-]+):$/gm)].map((m) => m[1]);
     expect(ids).toEqual([
+      "gitleaks-scan",
       "nclex-android-debug",
       "nclex-android-build-only",
       "nclex-android-release",
@@ -237,7 +238,7 @@ describe("Codemagic", () => {
       "nclex-ios-appstore",
     ]);
     const names = [...root.matchAll(/^    name: (.+)$/gm)].map((m) => m[1]);
-    expect(names).toHaveLength(6);
+    expect(names).toHaveLength(7);
     for (const n of names) expect(n).toMatch(/^Preceptor NCLEX /);
     expect(root.match(/^    working_directory: nclex-rn$/gm)?.length).toBe(6);
     expect(root).not.toMatch(/com\.preceptor\.oral|oral-exam-sim|preceptor_signing|PRECEPTOR_KEYSTORE/);

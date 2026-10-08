@@ -81,7 +81,6 @@ export const ASA_DNR: Source = {
   body: "American Society of Anesthesiologists Committee on Ethics",
   work: "Ethical Guidelines for the Anesthesia Care of Patients with Do-Not-Resuscitate Orders or Other Directives that Limit Treatment",
   year: 2023,
-  url: "https://www.asahq.org/standards-and-guidelines/ethical-guidelines-for-the-anesthesia-care-of-patients-with-do-not-resuscitate-orders-or-other-directives-that-limit-treatment",
 };
 export const IPASS: Source = {
   body: "Starmer AJ, Spector ND, Srivastava R, et al.",

@@ -1,7 +1,10 @@
 import { Mark } from "@/components/Mark";
 import { APP_NAME, DISCLAIMER } from "@/lib/constants";
+import { useSources } from "@/components/Sources";
+import { EDUCATION_ONLY } from "@/lib/references";
 
 export function Disclaimer({ onAccept }: { onAccept: () => void }) {
+  const openSources = useSources();
   return (
     <div className="modal" role="dialog" aria-modal="true" aria-labelledby="disc-h">
       <div className="inner">
@@ -14,7 +17,13 @@ export function Disclaimer({ onAccept }: { onAccept: () => void }) {
           {DISCLAIMER.map((l) => (
             <li key={l}>{l}</li>
           ))}
-          <li>It is for education only. It is not nursing or medical advice and is not for client care.</li>
+          <li>{EDUCATION_ONLY} It is not for client care.</li>
+          <li>
+            Every answer shows its sources.{" "}
+            <button type="button" className="linkbtn" onClick={openSources}>
+              Sources &amp; References
+            </button>
+          </li>
           <li>Every item is original. None is taken from NCSBN material or any real exam.</li>
           <li>Every item was reviewed and signed off before release. Check doses and policies against current sources and local policy.</li>
           <li>Scores are a study guide. They do not predict your NCLEX result.</li>

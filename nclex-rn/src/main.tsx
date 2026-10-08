@@ -7,6 +7,7 @@ import "./styles.css";
 import { App } from "./App";
 import { AppProvider } from "./state";
 import { ConfirmProvider } from "./components/Confirm";
+import { SourcesProvider } from "./components/Sources";
 
 async function boot() {
   // Dev only: ?seed=1 loads a sample history for screenshots. Stripped from production builds.
@@ -24,7 +25,9 @@ function render() {
     <React.StrictMode>
       <AppProvider>
         <ConfirmProvider>
-          <App />
+          <SourcesProvider>
+            <App />
+          </SourcesProvider>
         </ConfirmProvider>
       </AppProvider>
     </React.StrictMode>,

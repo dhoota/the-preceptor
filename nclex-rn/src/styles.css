@@ -681,3 +681,12 @@ details[open] > summary::before { transform: rotate(45deg); }
 /* A set runner names its set as the page heading. */
 h1.runtitle { font: 800 calc(18px * var(--fs))/1.2 var(--display); font-stretch: 108%; text-transform: none; letter-spacing: -0.01em; color: var(--ink); }
 .btn:disabled, .btn.ghost:disabled, .btn.quiet:disabled { background: var(--tray-2); border-color: var(--line); color: var(--mut); cursor: not-allowed; }
+
+/* Sources & References */
+.sourcesheet { z-index: 40; }
+.sources .cite { margin-top: 6px; }
+.ext { color: var(--ink); font-weight: 700; text-decoration: underline; text-decoration-thickness: 1.5px; text-underline-offset: 3px; overflow-wrap: anywhere; }
+.ext::after { content: " \2197"; font-weight: 400; }
+.reflist { list-style: none; padding: 0; margin: 8px 0 0; }
+.reflist li { padding: 10px 0; border-bottom: 1px solid var(--line-2); }
+.edu { margin: 12px 0 0; }

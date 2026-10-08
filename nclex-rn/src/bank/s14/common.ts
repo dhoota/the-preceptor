@@ -52,13 +52,12 @@ export const AASM: Source = {
   body: "Edinger JD, Arnedt JT, Bertisch SM, et al. American Academy of Sleep Medicine",
   work: "Behavioral and Psychological Treatments for Chronic Insomnia Disorder in Adults: a Clinical Practice Guideline. Journal of Clinical Sleep Medicine 17(2):255",
   year: 2021,
-  url: "https://jcsm.aasm.org/doi/10.5664/jcsm.8986",
+  url: "https://doi.org/10.5664/jcsm.8986",
 };
 export const STOPBANG: Source = {
   body: "Chung F, Yegneswaran B, Liao P, et al.",
   work: "STOP Questionnaire: a Tool to Screen Patients for Obstructive Sleep Apnea. Anesthesiology 108(5):812",
   year: 2008,
-  url: "http://stopbang.ca/publication/pdf/pub6.pdf",
 };
 export const WOCN: Source = {
   body: "Wound, Ostomy and Continence Nurses Society",
