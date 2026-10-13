@@ -1,4 +1,5 @@
 import { readFileSync } from "node:fs";
+import { join } from "node:path";
 import { describe, expect, it } from "vitest";
 import { FREE_CASES, FREE_ITEMS, canOpenCase, canOpenItem, canOpenMock, freeCaseIds, freeItemIds } from "@/lib/access";
 import {
@@ -236,11 +237,14 @@ describe("Codemagic", () => {
       "nclex-ios-release",
       "nclex-android-production",
       "nclex-ios-appstore",
+      "nclex-asset-library",
+      "nclex-asset-library-write",
+      "nclex-asset-library-place",
     ]);
     const names = [...root.matchAll(/^    name: (.+)$/gm)].map((m) => m[1]);
-    expect(names).toHaveLength(7);
+    expect(names).toHaveLength(10);
     for (const n of names) expect(n).toMatch(/^Preceptor NCLEX /);
-    expect(root.match(/^    working_directory: nclex-rn$/gm)?.length).toBe(6);
+    expect(root.match(/^    working_directory: nclex-rn$/gm)?.length).toBe(9);
     expect(root).not.toMatch(/com\.preceptor\.oral|oral-exam-sim|preceptor_signing|PRECEPTOR_KEYSTORE/);
     // Artifact globs resolve from the working directory, so no nclex-rn/ prefix.
     for (const a of root.match(/^      - [^*\s]\S*\/\S*$/gm) ?? []) expect(a).not.toMatch(/nclex-rn\//);
@@ -285,6 +289,19 @@ describe("Codemagic", () => {
     expect(read("../src/lib/constants.ts")).toContain(`APP_VERSION = "${v}"`);
     expect(read("../android/app/build.gradle")).toContain(`versionName "${v}"`);
     for (const m of read("../ios/App/App.xcodeproj/project.pbxproj").match(/MARKETING_VERSION = [^;]+;/g) ?? []) expect(m).toBe(`MARKETING_VERSION = ${v};`);
+  });
+  it("keeps the creative asset workflows manual, on the existing integration, with a valid 16:9 asset", () => {
+    for (const id of ["nclex-asset-library", "nclex-asset-library-write", "nclex-asset-library-place"]) {
+      const f = flow(root, id);
+      expect(f, id).toContain("app_store_connect: preceptor_appstore");
+      expect(f, id).toContain('APP_APPLE_ID: "6816532704"');
+      expect(f, id).not.toMatch(/triggering:|publishing:|submit_to/);
+    }
+    expect(root).not.toMatch(/^    triggering:\n      events: \[(?!\])/m);
+    const b = readFileSync(join(__dirname, "..", "store", "asset-library", "header-16x9.png"));
+    expect(b.readUInt32BE(0)).toBe(0x89504e47);
+    expect([b.readUInt32BE(16), b.readUInt32BE(20)]).toEqual([5244, 2950]);
+    expect([4, 6]).not.toContain(b[25]);
   });
   it("targets Android API 36 and iOS 15.0", () => {
     const v = read("../android/variables.gradle");

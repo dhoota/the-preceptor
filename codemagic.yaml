@@ -305,3 +305,78 @@ workflows:
         # Removes a version waiting for review and submits this build instead.
         cancel_previous_submissions: true
         release_type: AFTER_APPROVAL
+
+  # App Store creative assets (Asset Library). Ported from HALO. Manual only,
+  # no push trigger, no build, no store release. All three reuse the
+  # preceptor_appstore integration that nclex-ios-release already uses.
+  #   nclex-asset-library        read only. Prints ref data and the library.
+  #   nclex-asset-library-write  uploads store/asset-library/header-16x9.png
+  #                              and submits it for review. The upload is the
+  #                              deliverable and a refused submission keeps it.
+  #   nclex-asset-library-place  assigns the APPROVED asset to every
+  #                              localization, header and search results.
+  nclex-asset-library:
+    name: Preceptor NCLEX creative assets 1. probe (read only)
+    working_directory: nclex-rn
+    instance_type: linux_x2
+    max_build_duration: 20
+    integrations:
+      app_store_connect: preceptor_appstore
+    environment:
+      node: 20
+      vars:
+        APP_APPLE_ID: "6816532704"
+    scripts: &nclex_asset_scripts
+      - name: Confirm the asset is present and correctly shaped
+        script: |
+          f=store/asset-library/header-16x9.png
+          [ -f "$f" ] || { echo "no asset at $f"; exit 1; }
+          node -e '
+            const fs=require("fs");const b=fs.readFileSync(process.argv[1]);
+            if(b.readUInt32BE(0)!==0x89504e47){console.error("not a PNG");process.exit(1)}
+            const w=b.readUInt32BE(16),h=b.readUInt32BE(20),colour=b[25];
+            console.log(`  ${w}x${h}, colour type ${colour}, ${b.length} bytes`);
+            const bad=[];
+            if(w!==5244||h!==2950) bad.push(`expected 5244x2950, got ${w}x${h}`);
+            if(colour===6||colour===4) bad.push("has an alpha channel, which Apple rejects");
+            if(bad.length){console.error("  "+bad.join(". "));process.exit(1)}
+            console.log("  16:9, no transparency");
+          ' "$f"
+      - name: Normalise the App Store Connect API key
+        script: sh tools/asc-key.sh && echo "APP_STORE_CONNECT_KEY_PATH=$CM_BUILD_DIR/asc_key.p8" >> "$CM_ENV"
+      - name: Asset Library
+        script: node tools/asset-library.mjs
+    artifacts:
+      - store/asset-library/*.png
+
+  nclex-asset-library-write:
+    name: Preceptor NCLEX creative assets 2. upload and submit
+    working_directory: nclex-rn
+    instance_type: linux_x2
+    max_build_duration: 30
+    integrations:
+      app_store_connect: preceptor_appstore
+    environment:
+      node: 20
+      vars:
+        APP_APPLE_ID: "6816532704"
+        ASSET_LIBRARY_WRITE: "1"
+    scripts: *nclex_asset_scripts
+    artifacts:
+      - store/asset-library/*.png
+
+  nclex-asset-library-place:
+    name: Preceptor NCLEX creative assets 3. place on every localization
+    working_directory: nclex-rn
+    instance_type: linux_x2
+    max_build_duration: 20
+    integrations:
+      app_store_connect: preceptor_appstore
+    environment:
+      node: 20
+      vars:
+        APP_APPLE_ID: "6816532704"
+        ASSET_LIBRARY_PLACE: "1"
+    scripts: *nclex_asset_scripts
+    artifacts:
+      - store/asset-library/*.png
