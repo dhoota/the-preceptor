@@ -15,6 +15,9 @@
 //   write   ASSET_LIBRARY_WRITE=1      reserve, PUT the bytes, mark uploaded,
 //                                      wait for post-processing, then submit
 //                                      the image in its OWN review submission.
+//                                      Idempotent: a re-run reuses the image
+//                                      and its unsubmitted submission and only
+//                                      retries the submit.
 //   place   ASSET_LIBRARY_PLACE=1      assign an APPROVED asset to every
 //                                      localization of the live version.
 //
@@ -23,6 +26,10 @@
 //   - write opens a NEW review submission, attaches only the image, reads the
 //     submission's items back and submits only if the image is the one and
 //     only item. Anything else and it stops before submitting.
+//   - before the app has an approved iOS version, the submit is refused with
+//     409 RELATIONSHIP.REQUIRED (seen on NCLEX). That is reported as waiting
+//     for the first approved version and exits 0. The app version is never
+//     added to the asset's submission.
 //   - if Apple refuses a new submission (for example
 //     MAX_IN_REVIEW_SUBMISSIONS_PER_PLATFORM_LIMIT_REACHED), the upload is the
 //     deliverable: it reports the asset id and exits 0. Submitting by hand in
@@ -161,105 +168,144 @@ if (WRITE) {
   const bytes = fs.readFileSync(ASSET);
   console.log(`\nupload: ${FILENAME}, ${bytes.length} bytes, category ${CATEGORY}`);
 
+  // IDEMPOTENT. A re-run reuses the image already in the library and any
+  // unsubmitted review submission that holds only that image, and just
+  // retries the submit. It never uploads a second copy.
   const already = (existing.json?.data || []).filter((d) => (d.attributes?.fileName || "") === FILENAME);
+  let img;
   if (already.length) {
-    console.log(`\n  ${already.length} image(s) already named ${FILENAME}; not uploading a second copy.`);
-    dump("first existing image", already[0], 1500);
-    console.log("  Delete the old one in App Store Connect if this is meant to replace it, then re-run.");
-    console.log(`\nasset-library: ${calls} request(s)`);
-    process.exit(0);
+    img = already[0];
+    const st = stateOf(img);
+    console.log(`\n  reusing image ${img.id} already in the library (state ${st || "(unknown)"})`);
+    if (/APPROVED|WAITING_FOR_REVIEW|IN_REVIEW/.test(st)) {
+      console.log(`\nNothing to do: the image is ${st}. Run asset-library-place once it is APPROVED.`);
+      console.log(`\nasset-library: ${calls} request(s)`);
+      process.exit(0);
+    }
+    if (/AWAITING_UPLOAD|FAILED|REJECTED/.test(st)) {
+      dump("existing image", img, 1500);
+      die(`the existing image is ${st}, so it cannot be submitted. Delete it in App Store Connect and re-run.`);
+    }
+  } else {
+    // The attribute is `category` (not `assetCategory`); specId is rejected.
+    const reserve = await api("POST", "/v1/appAssetLibraryImages", {
+      data: {
+        type: "appAssetLibraryImages",
+        attributes: { fileName: FILENAME, fileSize: bytes.length, category: CATEGORY },
+        relationships: { assetLibrary: { data: { type: "appAssetLibraries", id: libId } } },
+      },
+    }, "reserve");
+    if (!reserve.ok) { dump("reserve response", reserve.json); die("the reserve call failed. Nothing was uploaded. If the error names the allowed category values, set ASSET_LIBRARY_CATEGORY."); }
+    img = one(reserve.json);
+    dump("reserved image", img, 3000);
+    const ops = img?.attributes?.uploadOperations || [];
+    if (!ops.length) die("no uploadOperations came back.");
+    for (const [i, op] of ops.entries()) {
+      // Only Apple's requestHeaders. No Authorization on the upload address.
+      const headers = {};
+      for (const h of op.requestHeaders || []) headers[h.name] = h.value;
+      const off = op.offset || 0, len = op.length ?? (bytes.length - off);
+      const res = await fetch(op.url, { method: op.method || "PUT", headers, body: bytes.subarray(off, off + len) });
+      console.log(`  ${op.method || "PUT"} part ${i + 1}/${ops.length} (${len} bytes) -> ${res.status}`);
+      if (!res.ok) die(`the byte upload failed: ${res.status} ${(await res.text()).slice(0, 300)}`);
+    }
+    const done = await api("PATCH", `/v1/appAssetLibraryImages/${img.id}`, {
+      data: { type: "appAssetLibraryImages", id: img.id, attributes: { uploaded: true } },
+    }, "mark uploaded");
+    if (!done.ok) die("the bytes went up but the image could not be marked uploaded.");
   }
-
-  // The attribute is `category` (not `assetCategory`); specId is rejected.
-  const reserve = await api("POST", "/v1/appAssetLibraryImages", {
-    data: {
-      type: "appAssetLibraryImages",
-      attributes: { fileName: FILENAME, fileSize: bytes.length, category: CATEGORY },
-      relationships: { assetLibrary: { data: { type: "appAssetLibraries", id: libId } } },
-    },
-  }, "reserve");
-  if (!reserve.ok) { dump("reserve response", reserve.json); die(`the reserve call failed. Nothing was uploaded. If the error names the allowed category values, set ASSET_LIBRARY_CATEGORY.`); }
-
-  const img = one(reserve.json);
-  dump("reserved image", img, 3000);
-  const ops = img?.attributes?.uploadOperations || [];
-  if (!ops.length) die("no uploadOperations came back.");
-
-  for (const [i, op] of ops.entries()) {
-    // Only Apple's requestHeaders. No Authorization on the upload address.
-    const headers = {};
-    for (const h of op.requestHeaders || []) headers[h.name] = h.value;
-    const off = op.offset || 0, len = op.length ?? (bytes.length - off);
-    const res = await fetch(op.url, { method: op.method || "PUT", headers, body: bytes.subarray(off, off + len) });
-    console.log(`  ${op.method || "PUT"} part ${i + 1}/${ops.length} (${len} bytes) -> ${res.status}`);
-    if (!res.ok) die(`the byte upload failed: ${res.status} ${(await res.text()).slice(0, 300)}`);
-  }
-
-  const done = await api("PATCH", `/v1/appAssetLibraryImages/${img.id}`, {
-    data: { type: "appAssetLibraryImages", id: img.id, attributes: { uploaded: true } },
-  }, "mark uploaded");
-  if (!done.ok) die("the bytes went up but the image could not be marked uploaded.");
 
   // Nothing may reference the asset until it leaves post-processing.
-  let state = "";
+  let state = stateOf(img);
   for (let i = 0; i < 40; i++) {
     const got = await api("GET", `/v1/appAssetLibraryImages/${img.id}`, null, `poll ${i + 1}`);
     const d = one(got.json);
-    if (i === 0) dump("image after upload", d, 2500);
-    state = stateOf(d);
+    if (i === 0) dump("image", d, 2500);
+    state = stateOf(d) || state;
     console.log(`      state: ${state || "(not reported)"}`);
     if (state && state !== "UPLOAD_COMPLETE" && !/PROCESS/i.test(state)) break;
     await new Promise((r) => setTimeout(r, 15000));
   }
 
-  const uploadedOnly = (why) => {
+  const finish = (why) => {
     if (why) console.log(`\n${why}`);
     console.log(`\nUPLOADED. image ${img.id}, state ${state || "(not reported)"}.`);
-    console.log("It is in the Asset Library and can be submitted from App Store Connect under");
-    console.log("Creative Assets. Run asset-library-place once it is APPROVED.");
+    console.log("It is in the Asset Library. Re-running asset-library-write reuses it and only");
+    console.log("retries the submit. Run asset-library-place once it is APPROVED.");
     console.log(`\nasset-library: ${calls} request(s)`);
     process.exit(0);
   };
 
-  const sub = await api("POST", "/v1/reviewSubmissions", {
-    data: { type: "reviewSubmissions", attributes: { platform: "IOS" },
-      relationships: { app: { data: { type: "apps", id: APP_ID } } } },
-  }, "open a NEW review submission for the image only");
-  if (!sub.ok) uploadedOnly("No review submission was opened; that does not undo the upload. A version already in review can cap submissions per platform.");
-  const subId = one(sub.json)?.id;
+  // A submission's items, with what each one points at. An item that points
+  // at an app version (or any other image) makes the submission not ours.
+  async function itemsOf(subId) {
+    let r = await api("GET", `/v1/reviewSubmissions/${subId}/items?include=appAssetLibraryImage,appStoreVersion&limit=50`, null, "items");
+    if (!r.ok) r = await api("GET", `/v1/reviewSubmissions/${subId}/items?limit=50`, null, "items (no include)");
+    return (r.json?.data || []).map((d) => ({
+      id: d.id,
+      image: d.relationships?.appAssetLibraryImage?.data?.id || null,
+      version: d.relationships?.appStoreVersion?.data?.id || null,
+    }));
+  }
+  const onlyOurImage = (items) => items.length === 1 && items[0].image === img.id && !items[0].version;
 
-  // Guard: our submission must be fresh. If Apple handed back one that
-  // already holds items, it is not ours to submit.
-  const before = await api("GET", `/v1/reviewSubmissions/${subId}/items?limit=50`, null, "items before attaching");
-  if ((before.json?.data || []).length) {
-    dump("unexpected items", before.json, 2000);
-    uploadedOnly("The new submission already held items, so it is left untouched and NOT submitted.");
+  // Reuse an unsubmitted submission that holds exactly this image and nothing
+  // else. Any other open submission (for example one holding 1.0.3) is left
+  // alone, never added to and never submitted.
+  let subId = null;
+  const open = await api("GET", `/v1/reviewSubmissions?filter[app]=${APP_ID}&filter[platform]=IOS&filter[state]=READY_FOR_REVIEW&limit=20`, null, "unsubmitted submissions");
+  for (const s of open.json?.data || []) {
+    const items = await itemsOf(s.id);
+    console.log(`    ${s.id}: ${items.length} item(s)${onlyOurImage(items) ? ", only this image: reusing it" : ", not ours: left alone"}`);
+    if (onlyOurImage(items)) { subId = s.id; break; }
   }
 
-  const item = await api("POST", "/v1/reviewSubmissionItems", {
-    data: { type: "reviewSubmissionItems",
-      relationships: {
-        reviewSubmission: { data: { type: "reviewSubmissions", id: subId } },
-        appAssetLibraryImage: { data: { type: "appAssetLibraryImages", id: img.id } },
-      } },
-  }, "attach the image");
-  if (!item.ok) uploadedOnly("The submission exists but the image would not attach to it.");
+  if (!subId) {
+    const sub = await api("POST", "/v1/reviewSubmissions", {
+      data: { type: "reviewSubmissions", attributes: { platform: "IOS" },
+        relationships: { app: { data: { type: "apps", id: APP_ID } } } },
+    }, "open a NEW review submission for the image only");
+    if (!sub.ok) finish("No review submission was opened; that does not undo the upload. A submission already open or in review can cap new ones per platform.");
+    subId = one(sub.json)?.id;
+    const before = await itemsOf(subId);
+    if (before.length) finish(`The new submission ${subId} already held ${before.length} item(s), so it is left untouched and NOT submitted.`);
+    const item = await api("POST", "/v1/reviewSubmissionItems", {
+      data: { type: "reviewSubmissionItems",
+        relationships: {
+          reviewSubmission: { data: { type: "reviewSubmissions", id: subId } },
+          appAssetLibraryImage: { data: { type: "appAssetLibraryImages", id: img.id } },
+        } },
+    }, "attach the image");
+    if (!item.ok) finish("The submission exists but the image would not attach to it.");
+  }
 
-  const after = await api("GET", `/v1/reviewSubmissions/${subId}/items?limit=50`, null, "items before submitting");
-  const items = after.json?.data || [];
-  if (items.length !== 1) {
-    dump("items", after.json, 2000);
-    uploadedOnly(`The submission holds ${items.length} items, not just the image, so it is NOT submitted.`);
+  // Submit only if the image is the one and only item. No app version is
+  // ever added to this submission.
+  const items = await itemsOf(subId);
+  const known = items.length === 1 && (items[0].image === img.id || (!items[0].image && !items[0].version));
+  if (!known || items.some((i) => i.version)) {
+    console.log(`  items: ${JSON.stringify(items)}`);
+    finish(`Submission ${subId} does not hold just this image, so it is NOT submitted.`);
   }
 
   const sent = await api("PATCH", `/v1/reviewSubmissions/${subId}`, {
     data: { type: "reviewSubmissions", id: subId, attributes: { submitted: true } },
   }, "submit");
-  console.log(sent.ok
-    ? `\nSUBMITTED. Asset ${img.id} is with review in submission ${subId}. Run asset-library-place once it is APPROVED.`
-    : "\nCreated but not submitted. It is in App Store Connect, ready to send by hand.");
-  console.log(`\nasset-library: ${calls} request(s)`);
-  process.exit(0);
+  if (sent.ok) {
+    console.log(`\nSUBMITTED. Asset ${img.id} is with review in submission ${subId}. Run asset-library-place once it is APPROVED.`);
+    console.log(`\nasset-library: ${calls} request(s)`);
+    process.exit(0);
+  }
+  // Seen on NCLEX: 409 ENTITY_ERROR.RELATIONSHIP.REQUIRED, "App must have an
+  // approved appStoreVersions for platform IOS, or an appStoreVersions must be
+  // included in this review submission." An asset cannot go to review before
+  // the app has an approved iOS version. That is a wait, not a failure, and
+  // the app version is deliberately NOT added here.
+  const body = JSON.stringify(sent.json || {}) + sent.text;
+  if (sent.status === 409 && /approved appStoreVersions|RELATIONSHIP\.REQUIRED/.test(body)) {
+    finish(`WAITING FOR THE FIRST APPROVED iOS VERSION. Submission ${subId} holds only image ${img.id} and stays unsubmitted. Re-run asset-library-write after an iOS version is approved; it reuses both and only retries the submit.`);
+  }
+  finish(`Submission ${subId} was created but not submitted (HTTP ${sent.status}). It holds only the image and can be sent by hand, or re-run this workflow.`);
 }
 
 // ---------------------------------------------------------------------------

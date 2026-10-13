@@ -34,8 +34,19 @@ Safety rails added for this app, on top of the HALO script:
 - **Upload is the deliverable.** If Apple refuses a new submission while a
   version is in review, the run reports the asset id and exits 0. Submit by
   hand in App Store Connect under Creative Assets.
-- **Re-runs do not duplicate.** If `header-16x9.png` is already in the
-  library, write stops without uploading.
+- **Idempotent re-runs.** If `header-16x9.png` is already in the library,
+  write reuses it (no second upload), reuses an unsubmitted review submission
+  that holds only that image, and just retries the submit. Open submissions
+  holding anything else (an app version such as 1.0.3) are never added to or
+  submitted.
+- **No approved iOS version yet.** Seen on NCLEX: the submit returns `409
+  ENTITY_ERROR.RELATIONSHIP.REQUIRED`, "App must have an approved
+  appStoreVersions for platform IOS, or an appStoreVersions must be included
+  in this review submission." Write treats that as *waiting for the first
+  approved version*: the image stays uploaded, its submission stays open with
+  only the image, and the run exits 0. Re-run `asset-library-write` once an
+  iOS version is approved. The 1.0.2/1.0.3 version is never added to the
+  asset's submission.
 - **Placement targets the live version only**, never one waiting, in review or
   being prepared. `ASSET_PLACE_VERSION_ID` overrides deliberately. Placement is
   NOT verified on any app yet; the first failure body is dumped in full.
