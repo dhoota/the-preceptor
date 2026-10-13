@@ -365,9 +365,9 @@ describe("Codemagic", () => {
     const local = readFileSync(new URL("../codemagic.yaml", import.meta.url), "utf8");
     const ids = (y: string) => [...y.slice(y.indexOf("workflows:")).matchAll(/^  ([a-z0-9-]+):$/gm)].map((m) => m[1]);
     // gitleaks-scan is the manual secret scan; it has no working_directory and touches no store.
-    expect(ids(root)).toEqual(["gitleaks-scan", "android-debug", "android-release", "android-build-only", "android-play-internal", "ios-release", "android-production", "ios-production"]);
+    expect(ids(root)).toEqual(["gitleaks-scan", "android-debug", "android-release", "android-build-only", "android-play-internal", "ios-release", "android-production", "ios-production", "asset-library", "asset-library-write", "asset-library-place"]);
     expect(ids(root)).toEqual(ids(local));
-    expect(root.match(/^    working_directory: oral-exam-sim$/gm)?.length).toBe(7);
+    expect(root.match(/^    working_directory: oral-exam-sim$/gm)?.length).toBe(10);
     for (const s of ["android_signing:\n        - preceptor_upload_key", "preceptor_play", "app_store_connect: preceptor_appstore", "distribution_type: app_store", "bundle_identifier: com.preceptor.oral"]) expect(root, s).toContain(s);
     // Signing comes from Codemagic code signing identities, never from pasted secrets.
     for (const s of ["preceptor_signing", "IOS_CERT_KEY", "PRECEPTOR_KEYSTORE_BASE64"]) expect(root, s).not.toContain(s);

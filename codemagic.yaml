@@ -359,3 +359,82 @@ workflows:
         submit_to_app_store: true
         cancel_previous_submissions: true   # a version already in review is pulled and this build submitted instead
         release_type: AFTER_APPROVAL
+
+  # App Store creative assets (App Asset Library): one 16:9 image for the
+  # product page header and the search results. Manual only, never on a push.
+  # Reviewed without a new app version; nothing here builds, versions or
+  # touches a version's review. Reuses the existing preceptor_appstore
+  # integration key. Recipe and what is verified: docs/ASSET-LIBRARY.md.
+  # Run in order: asset-library (probe), asset-library-write, then
+  # asset-library-place once the image is APPROVED.
+  asset-library:
+    name: Preceptor CCFP-EM creative assets - 1. probe (read only)
+    working_directory: oral-exam-sim
+    max_build_duration: 20
+    instance_type: linux_x2
+    integrations:
+      app_store_connect: preceptor_appstore
+    environment:
+      node: 22
+      vars:
+        APP_APPLE_ID: "6815475888"   # Preceptor: CCFP-EM
+    triggering:
+      events: []
+    scripts: &asset_scripts
+      - name: Confirm the asset is present and correctly shaped
+        # A 16:9 image with an alpha channel is rejected on upload; check first.
+        script: |
+          f=store/asset-library/header-16x9.png
+          [ -f "$f" ] || { echo "no asset at $f"; exit 1; }
+          node -e '
+            const fs=require("fs");const b=fs.readFileSync(process.argv[1]);
+            if(b.readUInt32BE(0)!==0x89504e47){console.error("not a PNG");process.exit(1)}
+            const w=b.readUInt32BE(16),h=b.readUInt32BE(20),depth=b[24],colour=b[25];
+            console.log(`  ${w}x${h}, bit depth ${depth}, colour type ${colour}, ${b.length} bytes`);
+            const bad=[];
+            if(w!==5244||h!==2950) bad.push(`expected 5244x2950, got ${w}x${h}`);
+            if(colour===6||colour===4) bad.push("has an alpha channel, which Apple rejects");
+            if(bad.length){console.error("  "+bad.join("; "));process.exit(1)}
+            console.log("  16:9, no transparency");
+          ' "$f"
+      - name: Normalise the App Store Connect API key
+        script: sh tools/asc-key.sh && echo "APP_STORE_CONNECT_KEY_PATH=$CM_BUILD_DIR/asc_key.p8" >> "$CM_ENV"
+      - name: Asset Library
+        script: node tools/asset-library.mjs
+    artifacts:
+      - store/asset-library/*.png
+
+  asset-library-write:
+    name: Preceptor CCFP-EM creative assets - 2. upload and submit
+    working_directory: oral-exam-sim
+    max_build_duration: 30
+    instance_type: linux_x2
+    integrations:
+      app_store_connect: preceptor_appstore
+    environment:
+      node: 22
+      vars:
+        APP_APPLE_ID: "6815475888"
+        ASSET_LIBRARY_WRITE: "1"
+        ASSET_LIBRARY_CATEGORY: CREATIVE_ASSETS   # verified on HALO
+    triggering:
+      events: []
+    scripts: *asset_scripts
+    artifacts:
+      - store/asset-library/*.png
+
+  asset-library-place:
+    name: Preceptor CCFP-EM creative assets - 3. place on every localization
+    working_directory: oral-exam-sim
+    max_build_duration: 20
+    instance_type: linux_x2
+    integrations:
+      app_store_connect: preceptor_appstore
+    environment:
+      node: 22
+      vars:
+        APP_APPLE_ID: "6815475888"
+        ASSET_LIBRARY_PLACE: "1"
+    triggering:
+      events: []
+    scripts: *asset_scripts
