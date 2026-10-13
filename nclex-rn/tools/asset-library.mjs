@@ -164,6 +164,71 @@ if (WRITE) {
   const bytes = fs.readFileSync(ASSET);
   console.log(`\nupload: ${FILENAME}, ${bytes.length} bytes`);
 
+  // Submitting is idempotent, so a re-run picks up where the last one stopped.
+  // Write run #1 created the image, the submission and the item, then the
+  // submit came back 409 ENTITY_ERROR.RELATIONSHIP.REQUIRED: the app must have
+  // an approved iOS version first. So a re-run looks for an unsubmitted
+  // (READY_FOR_REVIEW) submission that already holds this image and only
+  // re-tries the submit. It creates a submission or item only when none holds
+  // the image yet, and adds to an open submission before opening a new one.
+  async function itemHolds(it, imageId) {
+    if (JSON.stringify(it).includes(imageId)) return true;
+    const link = it?.relationships?.appAssetLibraryImage?.links?.related;
+    if (!link) return false;
+    const got = await api("GET", link, null, "item's image");
+    return (one(got.json)?.id || "") === imageId;
+  }
+  async function openSubmissions() {
+    const r = await api("GET", `/v1/reviewSubmissions?filter[app]=${APP_ID}&filter[platform]=IOS&filter[state]=READY_FOR_REVIEW&limit=20`,
+      null, "unsubmitted review submissions");
+    return r.json?.data || [];
+  }
+  function finish(msg) {
+    console.log(msg);
+    console.log(`\nasset-library: ${calls} request(s)`);
+    process.exit(0);
+  }
+  async function submitImage(imageId) {
+    let subId = "";
+    const open = await openSubmissions();
+    for (const s of open) {
+      const items = await api("GET", s.relationships?.items?.links?.related || `/v1/reviewSubmissions/${s.id}/items`, null, `items of ${s.id}`);
+      for (const it of items.json?.data || []) if (await itemHolds(it, imageId)) { subId = s.id; break; }
+      if (subId) break;
+    }
+    if (subId) {
+      console.log(`\n  submission ${subId} already holds image ${imageId}. Only re-trying the submit.`);
+    } else {
+      subId = open[0]?.id || "";
+      if (subId) console.log(`\n  adding image ${imageId} to open submission ${subId}`);
+      else {
+        const sub = await api("POST", "/v1/reviewSubmissions", {
+          data: { type: "reviewSubmissions", attributes: { platform: "IOS" },
+            relationships: { app: { data: { type: "apps", id: APP_ID } } } },
+        }, "open a review submission");
+        if (!sub.ok) finish(`\nUPLOADED, not submitted. Image ${imageId} is in the Asset Library. No review submission could be opened. It can be submitted by hand from App Store Connect, or by re-running this workflow.`);
+        subId = one(sub.json).id;
+      }
+      const item = await api("POST", "/v1/reviewSubmissionItems", {
+        data: { type: "reviewSubmissionItems",
+          relationships: {
+            reviewSubmission: { data: { type: "reviewSubmissions", id: subId } },
+            appAssetLibraryImage: { data: { type: "appAssetLibraryImages", id: imageId } },
+          } },
+      }, "attach the image");
+      if (!item.ok) finish(`\nUPLOADED, not submitted. Submission ${subId} exists but image ${imageId} would not attach to it.`);
+    }
+
+    const sent = await api("PATCH", `/v1/reviewSubmissions/${subId}`, {
+      data: { type: "reviewSubmissions", id: subId, attributes: { submitted: true } },
+    }, "submit");
+    if (sent.ok) finish(`\nSUBMITTED. Asset ${imageId} is with review in submission ${subId}. Run nclex-asset-library-place once it is APPROVED.`);
+    const needsVersion = (sent.json?.errors || []).some((e) =>
+      e.code === "ENTITY_ERROR.RELATIONSHIP.REQUIRED" && /approved appStoreVersions/i.test(`${e.detail || ""} ${e.title || ""}`));
+    if (needsVersion) finish(`\nWAITING FOR FIRST APPROVED VERSION. Apple needs an approved iOS version before it takes an asset on its own. Image ${imageId} and submission ${subId} are ready and unsubmitted. Re-run nclex-asset-library-write once the app version is approved. Nothing new will be created.`);
+    finish(`\nNOT SUBMITTED. Image ${imageId} is in submission ${subId}, unsubmitted. The error is above. Re-running this workflow retries only the submit.`);
+  }
+
   // Already there? Uploading a second copy of the same asset is not harmful
   // but it is noise in the library, and a re-run after a submission failure
   // is the expected case rather than a rare one.
@@ -173,10 +238,10 @@ if (WRITE) {
     console.log(`\n  ${already.length} image(s) already named ${FILENAME}:`);
     for (const d of already) console.log(`    ${d.id}  state ${stateOf(d) || "(unknown)"}`);
     dump("first existing image", already[0], 1500);
-    console.log("\n  Not uploading again. Delete the old one in App Store Connect if this");
-    console.log("  is meant to replace it, then re-run.");
-    console.log(`\nasset-library: ${calls} request(s)`);
-    process.exit(0);
+    console.log("\n  Not uploading again. To replace the image, delete it in App Store Connect and re-run.");
+    const pending = already.find((d) => stateOf(d) === "PREPARE_FOR_SUBMISSION");
+    if (pending) await submitImage(pending.id);
+    finish(`\n  No image waits for submission. States: ${already.map((d) => stateOf(d) || "(unknown)").join(", ")}.`);
   }
 
   // THE ATTRIBUTE IS "category", NOT "assetCategory". Run #1 said so in two
@@ -285,43 +350,9 @@ if (WRITE) {
     await new Promise((r) => setTimeout(r, 15000));
   }
 
-  const ready = () => {
-    console.log(`\nUPLOADED. image ${img.id}, state ${state || "(not reported)"}.`);
-    console.log("It is in the Asset Library and can be submitted from App Store Connect");
-    console.log("under Creative Assets. Run asset-library-place once it is APPROVED.");
-    console.log(`\nasset-library: ${calls} request(s)`);
-    process.exit(0);
-  };
-
-  const sub = await api("POST", "/v1/reviewSubmissions", {
-    data: { type: "reviewSubmissions", attributes: { platform: "IOS" },
-      relationships: { app: { data: { type: "apps", id: APP_ID } } } },
-  }, "open a review submission");
-
-  if (!sub.ok) {
-    console.log("\nNo review submission was opened, and that does not undo the upload.");
-    console.log("MAX_IN_REVIEW_SUBMISSIONS_PER_PLATFORM_LIMIT_REACHED above means a");
-    console.log("version is already in review and Apple allows one at a time, which is");
-    console.log("a possible answer while a version is Waiting for Review.");
-    ready();
-  }
-
-  const item = await api("POST", "/v1/reviewSubmissionItems", {
-    data: { type: "reviewSubmissionItems",
-      relationships: {
-        reviewSubmission: { data: { type: "reviewSubmissions", id: one(sub.json).id } },
-        appAssetLibraryImage: { data: { type: "appAssetLibraryImages", id: img.id } },
-      } },
-  }, "attach the image");
-  if (!item.ok) { console.log("\nThe submission exists but the image would not attach to it."); ready(); }
-
-  const sent = await api("PATCH", `/v1/reviewSubmissions/${one(sub.json).id}`, {
-    data: { type: "reviewSubmissions", id: one(sub.json).id, attributes: { submitted: true } },
-  }, "submit");
-  console.log(sent.ok
-    ? `\nSUBMITTED. Asset ${img.id} is with review. Run asset-library-place once it is APPROVED.`
-    : "\nCreated but not submitted. It is in App Store Connect, ready to send by hand.");
-  console.log(`\nasset-library: ${calls} request(s)`);
+  if (state !== "PREPARE_FOR_SUBMISSION")
+    finish(`\nUPLOADED. Image ${img.id}, state ${state || "(not reported)"}. Re-run this workflow to submit it once it reaches PREPARE_FOR_SUBMISSION.`);
+  await submitImage(img.id);
   process.exit(0);
 }
 
