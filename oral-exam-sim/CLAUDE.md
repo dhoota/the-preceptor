@@ -31,3 +31,7 @@ These hold for every change to this app. Tests in `tests/launch.test.ts` and
 
 ## Scope
 - CCFP-EM work happens in `oral-exam-sim/`. Do not start store builds or submissions unless asked.
+
+## Android release builds (R8 + deobfuscation file)
+- Release builds are shrunk and obfuscated by R8 (`minifyEnabled true`, `shrinkResources true`, `proguard-android-optimize.txt`). The keep rules in `android/app/proguard-rules.pro` protect Capacitor (`com.getcapacitor.**`, plugins loaded by class name from `capacitor.plugins.json`, `@PluginMethod` methods), the WebView bridge (`@JavascriptInterface`), RevenueCat and Play Billing. Add a rule for every new Capacitor plugin package.
+- Every Play upload goes through `scripts/ci/play-publish.sh`, which publishes the AAB and then uploads `android/app/build/outputs/mapping/release/mapping.txt` as the deobfuscation file for the same versionCode. Do not switch back to Codemagic's built-in Play publishing: it uploads the bundle only.

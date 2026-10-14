@@ -374,16 +374,26 @@ describe("Codemagic", () => {
     expect(root.match(/- preceptor_upload_key/g)?.length).toBe(4);
     // android-release uploads to closed testing as a draft. Production is only
     // android-production, and the production workflows start only from a release tag.
-    expect(root).toContain("track: alpha");
-    expect(root).toContain("submit_as_draft: true");
+    // Play uploads go through scripts/ci/play-publish.sh, which publishes the AAB
+    // and then uploads its R8 mapping (deobfuscation file) for the same versionCode.
+    expect(root).toContain("bash scripts/ci/play-publish.sh alpha --draft");
+    expect(root).not.toMatch(/^      google_play:$/m);
     // One workflow's text: from its id line to the next workflow id, or the end of the file.
     const block = (y: string, id: string) => {
       const start = y.indexOf(`\n  ${id}:\n`);
       const next = y.slice(start + 1).search(/\n  [a-z0-9-]+:\n/);
       return next < 0 ? y.slice(start) : y.slice(start, start + 1 + next);
     };
-    expect(root.match(/track: production/g)?.length).toBe(1);
-    expect(block(root, "android-production")).toContain("track: production");
+    expect(root.match(/play-publish\.sh production/g)?.length).toBe(1);
+    expect(block(root, "android-production")).toContain("bash scripts/ci/play-publish.sh production --draft");
+    for (const id of ["android-release", "android-play-internal", "android-production"]) {
+      expect(block(root, id), id).toMatch(/bash scripts\/ci\/play-publish\.sh /);
+      expect(block(root, id), id).toContain("- android/app/build/outputs/mapping/release/mapping.txt");
+    }
+    const publish = readFileSync(new URL("../scripts/ci/play-publish.sh", import.meta.url), "utf8");
+    expect(publish).toMatch(/google-play bundles publish/);
+    expect(publish).toMatch(/google-play deobfuscation-files upload[\s\S]*--version-code "\$VC"[\s\S]*--deobfuscation-file "\$MAPPING"/);
+    expect(publish).toContain("android/app/build/outputs/mapping/release/mapping.txt");
     for (const id of ["android-production", "ios-production"]) expect(block(root, id), id).toMatch(/events:\n\s+- tag\n\s+tag_patterns:\n\s+- pattern: 'ccfpem-v\*'/);
     expect(root.match(/- tag$/gm)?.length).toBe(2);
     expect(root).not.toMatch(/- push$|- pull_request$/m);

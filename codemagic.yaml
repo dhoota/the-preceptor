@@ -117,14 +117,17 @@ workflows:
           cd android
           chmod +x ./gradlew
           ./gradlew :app:assembleRelease :app:bundleRelease
+      - name: Publish to Google Play (alpha) with the R8 mapping file
+        # Uploads the AAB to the alpha track (closed testing, a draft release,
+        # never production), then its
+        # deobfuscation file (mapping.txt) for the same versionCode so Play
+        # Console can read crashes and ANRs. Codemagic's built-in Play
+        # publishing uploads the bundle only, so this step replaces it.
+        script: bash scripts/ci/play-publish.sh alpha --draft
     artifacts:
+      - android/app/build/outputs/mapping/release/mapping.txt
       - android/app/build/outputs/**/*.apk
       - android/app/build/outputs/**/*.aab
-    publishing:
-      google_play:
-        credentials: $GCLOUD_SERVICE_ACCOUNT_CREDENTIALS
-        track: alpha            # closed testing. Never production.
-        submit_as_draft: true   # the app is still a draft on Play
 
   android-build-only:
     name: Preceptor CCFP-EM Android (build only, no Play upload)
@@ -203,12 +206,15 @@ workflows:
           cd android
           chmod +x ./gradlew
           ./gradlew :app:bundleRelease
+      - name: Publish to Google Play (internal) with the R8 mapping file
+        # Uploads the AAB to the internal track (internal testing track, as before), then its
+        # deobfuscation file (mapping.txt) for the same versionCode so Play
+        # Console can read crashes and ANRs. Codemagic's built-in Play
+        # publishing uploads the bundle only, so this step replaces it.
+        script: bash scripts/ci/play-publish.sh internal
     artifacts:
+      - android/app/build/outputs/mapping/release/mapping.txt
       - android/app/build/outputs/**/*.aab
-    publishing:
-      google_play:
-        credentials: $GCLOUD_SERVICE_ACCOUNT_CREDENTIALS
-        track: internal
 
   ios-release:
     name: Preceptor CCFP-EM iOS (TestFlight)
@@ -303,15 +309,16 @@ workflows:
           cd android
           chmod +x ./gradlew
           ./gradlew :app:bundleRelease
+      - name: Publish to Google Play (production) with the R8 mapping file
+        # Uploads the AAB to the production track (a draft release, sent to
+        # production from Play Console), then its
+        # deobfuscation file (mapping.txt) for the same versionCode so Play
+        # Console can read crashes and ANRs. Codemagic's built-in Play
+        # publishing uploads the bundle only, so this step replaces it.
+        script: bash scripts/ci/play-publish.sh production --draft
     artifacts:
+      - android/app/build/outputs/mapping/release/mapping.txt
       - android/app/build/outputs/**/*.aab
-    publishing:
-      google_play:
-        credentials: $GCLOUD_SERVICE_ACCOUNT_CREDENTIALS
-        track: production
-        # Play accepts only draft releases while the app itself is a draft.
-        # The first production release is sent for review from Play Console.
-        submit_as_draft: true
 
   ios-production:
     name: Preceptor CCFP-EM iOS (App Store)
