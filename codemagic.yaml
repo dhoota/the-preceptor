@@ -19,6 +19,8 @@
 # TestFlight. The two production workflows, nclex-android-production and
 # nclex-ios-appstore, submit to Play production and App Store review. They run
 # only when started by hand. Release notes come from nclex-rn/release_notes.json.
+# Both Android workflows upload with fastlane supply (script *play_upload), not
+# the google_play publisher, so the R8 mapping.txt goes up with every AAB.
 
 definitions:
   scripts:
@@ -34,6 +36,38 @@ definitions:
     - &build_web
       name: Build web bundle (Vite)
       script: npm run build
+    - &play_upload
+      # One Play edit carries the AAB, its R8 mapping (so Play Console has the
+      # deobfuscation file) and the release notes. Track and status come from
+      # PLAY_TRACK and PLAY_RELEASE_STATUS in the workflow's vars. Fails the
+      # build if the bundle or the mapping is missing.
+      name: Upload AAB and R8 mapping to Google Play (fastlane supply)
+      script: |
+        set -euo pipefail
+        AAB=android/app/build/outputs/bundle/release/app-release.aab
+        MAP=android/app/build/outputs/mapping/release/mapping.txt
+        test -s "$AAB" || { echo "No AAB at $AAB"; exit 1; }
+        test -s "$MAP" || { echo "No R8 mapping at $MAP. Play would show no deobfuscation file."; exit 1; }
+        VC=$(grep -oE 'versionCode [0-9]+' android/app/build.gradle | awk '{print $2}')
+        WORK=$(mktemp -d)
+        trap 'rm -rf "$WORK"' EXIT
+        printf '%s' "$GCLOUD_SERVICE_ACCOUNT_CREDENTIALS" > "$WORK/key.json"
+        chmod 600 "$WORK/key.json"
+        node -e 'const fs=require("fs"),p=require("path");for(const n of JSON.parse(fs.readFileSync("release_notes.json","utf8"))){const d=p.join(process.argv[1],n.language,"changelogs");fs.mkdirSync(d,{recursive:true});fs.writeFileSync(p.join(d,process.argv[2]+".txt"),n.text);}' "$WORK/meta" "$VC"
+        command -v fastlane >/dev/null || gem install fastlane --no-document
+        echo "Uploading versionCode $VC to $PLAY_TRACK ($PLAY_RELEASE_STATUS) with $(wc -c < "$MAP") bytes of mapping"
+        fastlane supply \
+          --package_name com.preceptor.nclex \
+          --json_key "$WORK/key.json" \
+          --track "$PLAY_TRACK" \
+          --release_status "$PLAY_RELEASE_STATUS" \
+          --aab "$AAB" \
+          --mapping "$MAP" \
+          --metadata_path "$WORK/meta" \
+          --skip_upload_apk true \
+          --skip_upload_metadata true \
+          --skip_upload_images true \
+          --skip_upload_screenshots true
 
 workflows:
   gitleaks-scan:
@@ -126,6 +160,9 @@ workflows:
         - preceptor_upload_key   # Code signing identities > Android keystores. Sets CM_KEYSTORE_PATH, CM_KEYSTORE_PASSWORD, CM_KEY_ALIAS, CM_KEY_PASSWORD.
       groups:
         - preceptor_play         # GCLOUD_SERVICE_ACCOUNT_CREDENTIALS, the Play service account JSON key (Secure).
+      vars:
+        PLAY_TRACK: alpha              # closed testing. Never production.
+        PLAY_RELEASE_STATUS: draft
     scripts:
       - name: Fail fast if the Play credentials are missing
         script: |
@@ -157,14 +194,11 @@ workflows:
           cd android
           chmod +x ./gradlew
           ./gradlew :app:assembleRelease :app:bundleRelease
+      - *play_upload
     artifacts:
       - android/app/build/outputs/**/*.apk
       - android/app/build/outputs/**/*.aab
-    publishing:
-      google_play:
-        credentials: $GCLOUD_SERVICE_ACCOUNT_CREDENTIALS
-        track: alpha            # closed testing. Never production.
-        submit_as_draft: true   # the app is still a draft on Play
+      - android/app/build/outputs/mapping/release/mapping.txt
 
   nclex-ios-release:
     name: Preceptor NCLEX iOS (TestFlight)
@@ -219,6 +253,9 @@ workflows:
         - preceptor_upload_key
       groups:
         - preceptor_play
+      vars:
+        PLAY_TRACK: production
+        PLAY_RELEASE_STATUS: completed
     scripts:
       - name: Fail fast if the Play credentials are missing
         script: |
@@ -248,14 +285,10 @@ workflows:
           cd android
           chmod +x ./gradlew
           ./gradlew :app:bundleRelease
+      - *play_upload
     artifacts:
       - android/app/build/outputs/**/*.aab
-    publishing:
-      # Release notes come from release_notes.json in this folder.
-      google_play:
-        credentials: $GCLOUD_SERVICE_ACCOUNT_CREDENTIALS
-        track: production
-        submit_as_draft: false
+      - android/app/build/outputs/mapping/release/mapping.txt
 
   nclex-ios-appstore:
     name: Preceptor NCLEX iOS (App Store release)

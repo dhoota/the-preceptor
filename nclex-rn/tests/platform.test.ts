@@ -258,16 +258,47 @@ describe("Codemagic", () => {
     const rel = flow(root, "nclex-android-release");
     expect(rel).toContain("- preceptor_play");
     expect(rel).toContain('--package-name "com.preceptor.nclex"');
-    expect(rel).toMatch(/track: alpha/);
-    expect(rel).toMatch(/submit_as_draft: true/);
-    expect(rel).not.toMatch(/track: production/);
+    expect(rel).toMatch(/PLAY_TRACK: alpha\b/);
+    expect(rel).toMatch(/PLAY_RELEASE_STATUS: draft\b/);
+    expect(rel).not.toMatch(/PLAY_TRACK: production/);
     // Only the hand-started production workflow targets Play production.
     const prod = flow(root, "nclex-android-production");
     expect(prod).toContain("- preceptor_play");
-    expect(prod).toMatch(/track: production/);
-    expect(root.match(/track: production/g)).toHaveLength(1);
+    expect(prod).toMatch(/PLAY_TRACK: production\b/);
+    expect(root.match(/PLAY_TRACK: production/g)).toHaveLength(1);
     const only = flow(root, "nclex-android-build-only");
-    expect(only).not.toMatch(/publishing:|preceptor_play|GCLOUD/);
+    expect(only).not.toMatch(/publishing:|preceptor_play|GCLOUD|play_upload/);
+  });
+  it("uploads the R8 mapping with every Play release, through one fastlane supply step", () => {
+    const up = root.slice(root.indexOf("- &play_upload"), root.indexOf("\nworkflows:"));
+    expect(up).toContain("MAP=android/app/build/outputs/mapping/release/mapping.txt");
+    expect(up).toMatch(/test -s "\$MAP" \|\| \{[^}]*exit 1; \}/);
+    expect(up).toContain('--mapping "$MAP"');
+    expect(up).toContain('--aab "$AAB"');
+    expect(up).toContain('--track "$PLAY_TRACK"');
+    expect(up).toContain('--release_status "$PLAY_RELEASE_STATUS"');
+    for (const id of ["nclex-android-release", "nclex-android-production"]) {
+      const f = flow(root, id);
+      expect(f, id).toContain("- *play_upload");
+      expect(f, id).toContain("- android/app/build/outputs/mapping/release/mapping.txt");
+      // The google_play publisher cannot send a mapping with an AAB, so it must not upload as well.
+      expect(f, id).not.toMatch(/publishing:|google_play:/);
+    }
+    const g = read("../android/app/build.gradle");
+    const rel = g.slice(g.indexOf("buildTypes {"));
+    expect(rel).toMatch(/minifyEnabled true/);
+    expect(rel).toMatch(/shrinkResources true/);
+    expect(rel).toContain("getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'");
+    const pro = read("../android/app/proguard-rules.pro");
+    for (const k of [
+      "-keep class com.getcapacitor.** { *; }",
+      "-keep class com.capacitorjs.plugins.preferences.** { *; }",
+      "-keep class com.getcapacitor.plugin.privacyscreen.** { *; }",
+      "-keep class com.revenuecat.purchases.capacitor.** { *; }",
+      "@android.webkit.JavascriptInterface <methods>;",
+      "-keep class com.android.billingclient.** { *; }",
+    ])
+      expect(pro).toContain(k);
   });
   it("signs iOS with Codemagic managed signing and publishes to TestFlight only", () => {
     const ios = flow(root, "nclex-ios-release");
