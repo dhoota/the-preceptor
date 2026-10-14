@@ -343,6 +343,12 @@ describe("Codemagic", () => {
     expect(pbx).not.toMatch(/IPHONEOS_DEPLOYMENT_TARGET = 1[0-4]\./);
     expect(pbx).toMatch(/IPHONEOS_DEPLOYMENT_TARGET = 15\.0;/);
     expect(read("../android/app/build.gradle")).toContain("System.getenv('CM_KEYSTORE_PATH')");
+    // Play Billing guard (preceptor-mccqe standard section 8): fail bundleRelease if the
+    // merged manifest's com.google.android.play.billingclient.version is missing or below 8.
+    const gradle = read("../android/app/build.gradle");
+    expect(gradle).toContain("def minPlayBillingMajor = 8");
+    expect(gradle).toMatch(/process\.\*ReleaseMainManifest/);
+    expect(gradle).toContain("com\\.google\\.android\\.play\\.billingclient\\.version");
   });
 });
 
