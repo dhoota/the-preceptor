@@ -56,3 +56,33 @@ File: `src/samps/s57/ischemic-heart-disease.ts`. Verdict applied: `docs/reviews/
 - **CCS 1.8 mmol/L (50 q4).** The guideline full text could not be opened (ccs.ca TLS failure, publisher 403). The threshold was confirmed by WebSearch summaries and by an open Canadian paper that applies it (Cardiol Ther 2024, PMC10899549: "in patients treated with the maximally tolerated dose of statin and LDL-C level above the threshold of 1.8 mmol/L, the addition of non-statin lipid-lowering therapies (LLTs) is recommended"). The explanation leaves out the non-HDL and apoB equivalents because I could not see them in a primary text. In mock mode the q4 lead-in ("intensifying lipid-lowering therapy") hints that lipid therapy belongs in his care, which q2 keys. This is a mild cue. I removed the update to keep it as small as possible.
 - **51 q2 dose.** The weight bands (35 mg for 60 to under 70 kg) come from the TNKase monograph. Each question can cite only one source, the verdict asked for the CCS/CAIC guideline for the age rule, and CCS/CAIC has no dosing table, so the monograph is no longer listed. The weight band is stated without its own citation.
 - **51 q1.** The CCS/CAIC recommendation also asks for low bleeding risk. At 78 her bleeding risk is higher, which the explanation says. The key is only the feature that most supports the strategy.
+
+## Round 3
+
+Verdict applied: `docs/reviews/q500-verify2-s57.md`. Only the batch file was edited. SAMPs 48 and 52 are unchanged.
+
+### Fixes
+
+- **49 q1.** The prompt now names the reference: "Under the fourth universal definition of MI, which of the following is the smallest new horizontal ST depression in two contiguous leads that counts as ischemic?" (26 words). The explanation now says "no LVH or left bundle branch block". Key and source (udmi-2018) are unchanged.
+- **50 q4.** The lipid threshold item is removed. The new item is key feature 6: "Which of the following is the most appropriate way for him to seek care if prolonged chest tightness occurs at home?" Key "Summon EMS by calling 911". Distractors are driving himself to the PCI centre, his wife driving him, a taxi, and phoning his family physician first. Source: Gulati 2021, which I read in the local PDF text. Its patient-centric recommendation reads "In patients with acute chest pain, it is recommended that 9-1-1 be activated by patients or bystanders to initiate transport to the closest ED by emergency medical services (EMS)". The office-setting recommendation (class 3, harm) says delayed transfer to the ED should be avoided. Nothing in the lead-in or options mentions lipids or statins, so the cue to q2 is gone. `ccs-dyslipidemia-2021` is removed, and 50 now cites only Gulati.
+- **51 q2.** I could not open the STREAM-2 supplement. The ahajournals supplement pages returned 403. The open copy of the paper (riojasalud.es) lists the supplemental table title but not the table. Europe PMC has no open copy. So I used the fallback.
+  - The TNKase product monograph (https://pdf.hres.ca/dpd_pm/00069984.PDF) is restored as the only source for q2. I opened it again this round (HTTP 200) and confirmed the revision date of March 21, 2023, the dose table (under 60 kg 30 mg, 60 to under 70 kg 35 mg, 70 to under 80 kg 40 mg, 80 to under 90 kg 45 mg, 90 kg or more 50 mg), the geriatrics warning ("benefits ... carefully weighed against the risk of increased adverse events, including bleeding"), and ASSENT-2 Table 3 (intracranial hemorrhage 0.4% under 65 against 1.7% at 75 or older).
+  - The question now has an update that gives the age decision as part of the case: "Because of her age, the team plans to give half of the usual weight-based tenecteplase dose." The prompt asks which dose matches that plan for her weight, so the tested step rests on the monograph alone. Key 17.5 mg (half of 35 mg).
+  - The age rule now sits in q1, which cites CCS/CAIC 2019: "the guideline suggests a half dose may be considered for patients older than 75".
+  - Sources for 51: CCS/CAIC 2019, TNKase monograph, STREAM-2 (3 of 4, all cited).
+- **51 stem.** The onset is now 100 minutes, and the q1 option is "Onset 100 minutes ago", with the explanation to match. "100 minutes" appears in none of the ischemic heart disease, chest pain, EMS or CQI catalogues. The only bank hit is a burns oral case. The options stay alphabetical and the tests pass on length.
+
+### Uniqueness for the new 50 q4
+
+I searched the catalogues and grepped `src/samps` and `src/cases` for 911 and EMS activation, self-transport, private vehicle and "drive himself". No question keys how a patient should reach hospital. The closest item is ischemic-heart-disease-15 q4, which keys which recurrent symptoms should prompt a 911 call (pain at rest, lasting over 15 to 20 minutes, and so on). The new item keys the mode of getting to care and its distractors, not the trigger symptoms. A reviewer may judge these close, so I flag it.
+
+### Checks
+
+- Single key positions, first to fifth: 4, 4, 4, 4, 3. Key is the single longest option in 4 of 19.
+- Questions per key feature: KF1 1, KF2 2, KF3 2, KF4 4, KF5 3, KF6 2, KF7 2, KF8 4.
+- `npx tsc --noEmit -p . | grep samps/s57`: no output. `SAMP_BATCH=s57 npx vitest run tests/samps.test.ts tests/samp-quality.test.ts tests/citations.test.ts`: 128 passed.
+
+### Uncertain
+
+- 50 q4 is tagged KF6 because calling 911 starts prehospital monitoring and ECG on the way to reperfusion. KF1 (start testing immediately) is an arguable alternative tag.
+- 51 q2 now tests applying the half dose to her weight band, not the decision to halve, which the update supplies. That decision is taught in the q1 explanation, with CCS/CAIC 2019 as the source.
