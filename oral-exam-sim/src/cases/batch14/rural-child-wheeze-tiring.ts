@@ -6,7 +6,7 @@ export const ruralChildWheezeTiring: OralCase = {
   id: "rural-child-wheeze-tiring",
   title: "A boy who cannot finish a sentence",
   blueprint: "resp",
-  alsoCovers: ["peds", "resus", "procedures"],
+  alsoCovers: ["peds", "resus", "id"],
   priorityTopic: "asthma-copd",
   keyFeatures: [
     { topic: "asthma-copd", n: 2 },
@@ -111,7 +111,7 @@ export const ruralChildWheezeTiring: OralCase = {
     {
       id: "hour1",
       label: "Reassessment after the first hour",
-      result: "PRAM 9. SpO2 93 percent on 8 L/min by mask. Heart rate 168/minute. Respiratory rate 44/minute. Still speaking in words. Blood pressure 104/60 mmHg.",
+      result: "PRAM 9: suprasternal 2, scalene 2, wheeze 2, air entry 1 (now reduced at the bases only), saturation 2 (89 percent on a brief room air check). SpO2 93 percent on 8 L/min by mask. Heart rate 168/minute. Respiratory rate 44/minute. Still speaking in words. Blood pressure 104/60 mmHg.",
     },
   ],
   start: "s-open",
@@ -295,7 +295,7 @@ export const ruralChildWheezeTiring: OralCase = {
           id: "c-niv",
           label:
             "I recognized impending respiratory failure, put him on CPAP then BiPAP with the respiratory therapist and in line salbutamol, gave a fluid bolus, called the referral centre back and prepared ketamine and rocuronium in case intubation became necessary.",
-          next: "s-ptx",
+          next: "s-worse",
           quality: "strong",
           feedback:
             "Correct. Drowsiness, a quiet chest and a rising pCO2 mean he is tiring. Noninvasive support can buy time and avoid intubation, which is high risk in asthma. Having the drugs ready and a plan is good leadership.",
@@ -303,7 +303,7 @@ export const ruralChildWheezeTiring: OralCase = {
         {
           id: "c-intubate-propofol",
           label: "I intubated him right away with propofol and rocuronium and ventilated him at a rate of 30.",
-          next: "s-intubate",
+          next: "s-propofol",
           quality: "unsafe",
           feedback:
             "Intubation in severe asthma is high risk and rarely needed. Propofol and a fast rate cause hypotension and breath stacking. Try noninvasive support first, and if you must intubate use ketamine, a low rate and a long expiratory time.",
@@ -324,70 +324,81 @@ export const ruralChildWheezeTiring: OralCase = {
       phase: "16:00",
       text:
         "His blood pressure falls to 78/40 mmHg and his saturation will not rise above 84 percent. The respiratory therapist arrives and suggests BiPAP with continuous salbutamol. You give a fluid bolus and start BiPAP.",
-      next: "s-ptx",
+      next: "s-worse",
     },
     {
       kind: "say",
-      id: "s-ptx",
-      phase: "16:20",
+      id: "s-propofol",
+      phase: "16:00",
       text:
-        "On BiPAP he had begun to improve. Suddenly his saturation drops to 80 percent, heart rate 176/minute, blood pressure 80/48 mmHg. Air entry is absent on the right. " +
-        "Your ultrasound shows no lung sliding on the right with a lung point.",
-      next: "q-ptx",
+        "After propofol his blood pressure falls to 62/30 mmHg. Bagged at 30 breaths a minute, his chest stays overinflated and his saturation will not rise. " +
+        "The respiratory therapist arrives and disconnects the circuit to let him breathe out, and his pressure recovers. You give a fluid bolus and set a rate of 14 with a long expiratory time.",
+      next: "s-worse",
+    },
+    {
+      kind: "say",
+      id: "s-worse",
+      phase: "16:30",
+      text:
+        "On positive pressure support he had begun to improve. Over 15 minutes his saturation falls to 85 percent on 60 percent oxygen. Temperature 39.3°C, heart rate 164/minute, blood pressure 100/58 mmHg. " +
+        "The right base is dull with bronchial breathing. Your ultrasound shows lung sliding on both sides, and a solid looking right lower lobe with moving air bronchograms and a small effusion.",
+      next: "q-worse",
     },
     {
       kind: "question",
-      id: "q-ptx",
-      phase: "Sudden change",
+      id: "q-worse",
+      phase: "A new problem",
       prompt: "What is happening, and what do you do?",
       seconds: 75,
       modelAnswer: [
-        "Right tension pneumothorax on positive pressure.",
-        "Immediate needle or finger thoracostomy on the right. Do not wait for an X-ray.",
-        "Then a chest tube.",
-        "Lower the BiPAP pressures. Continue salbutamol.",
-        "Reassess, X-ray after the tube, update the transport team.",
+        "A coexisting right lower lobe pneumonia, likely bacterial after a viral illness, now with respiratory failure.",
+        "Lung sliding on both sides makes a pneumothorax unlikely. Do not put a needle in his chest.",
+        "Blood culture, then a third generation cephalosporin: ceftriaxone 50 mg/kg IV, so 1400 mg, now.",
+        "Raise the oxygen and keep the noninvasive support or ventilator settings safe for asthma. Continue salbutamol.",
+        "Portable chest X-ray to confirm. Update the referral centre and the transport team.",
       ],
       rubric: ["as-a4", "as-m5"],
       choices: [
         {
-          id: "c-decompress",
-          label: "I diagnosed a right tension pneumothorax, decompressed it right away and then placed a chest tube, and lowered the BiPAP pressures.",
+          id: "c-pneumonia",
+          label:
+            "I diagnosed a right lower lobe pneumonia, noted that lung sliding on both sides ruled against a pneumothorax, drew a blood culture, gave ceftriaxone 1400 mg IV, raised his oxygen and updated the transport team.",
           next: "q-grandmother",
           quality: "strong",
           feedback:
-            "Correct. Hypotension, hypoxia and absent air entry with no lung sliding is a tension pneumothorax. It needs decompression now, then a chest tube. Barotrauma is a known complication in asthma on positive pressure.",
+            "Correct. New high fever, focal bronchial breathing and a consolidated lobe on ultrasound mean pneumonia on top of his asthma. A child with pneumonia and respiratory failure gets a third generation cephalosporin, ceftriaxone 50 to 100 mg/kg/day. Lung sliding on both sides argues against a pneumothorax.",
         },
         {
-          id: "c-xray",
-          label: "I ordered a portable chest X-ray to confirm the pneumothorax before decompressing.",
-          next: "s-xray",
+          id: "c-more-pressure",
+          label: "I put the fall down to worse bronchospasm, raised the support pressures and asked the referral centre about IV salbutamol.",
+          next: "s-missed",
           quality: "partial",
           feedback:
-            "A tension pneumothorax is a clinical diagnosis. With hypotension and ultrasound support, waiting for an X-ray wastes minutes. Decompress first.",
+            "More bronchodilator does not treat the new problem. The fever, the focal signs and the ultrasound point to pneumonia, which needs antibiotics now. Higher pressures in an overinflated chest also raise the risk of barotrauma.",
         },
         {
-          id: "c-pressure-up",
-          label: "I increased the BiPAP pressures to improve his oxygen saturation.",
-          next: "s-xray",
+          id: "c-needle",
+          label: "I diagnosed a tension pneumothorax and put a needle into the right side of his chest.",
+          next: "s-missed",
           quality: "unsafe",
           feedback:
-            "More positive pressure makes a tension pneumothorax worse and can cause cardiac arrest. He needs decompression, not higher pressures.",
+            "His blood pressure is holding and lung sliding is present on both sides, so this is not a tension pneumothorax. A needle in an overinflated lung can cause the pneumothorax you feared. The focal signs and fever point to pneumonia, which needs antibiotics now.",
         },
       ],
     },
     {
       kind: "say",
-      id: "s-xray",
-      phase: "16:25",
-      text: "His pulse becomes thready and his blood pressure is 62/30 mmHg. The nurse asks if he is about to arrest. You decompress the right chest, then place a chest tube.",
+      id: "s-missed",
+      phase: "16:45",
+      text:
+        "The portable chest X-ray shows right lower lobe consolidation with a small effusion. His temperature is 39.6°C. The transport physician on the phone asks whether he has had antibiotics. You draw a blood culture and give ceftriaxone 1400 mg IV.",
       next: "q-grandmother",
     },
     {
       kind: "question",
       id: "q-grandmother",
       phase: "His grandmother",
-      prompt: "He is stable on BiPAP with a chest tube. His grandmother asks what she did wrong. What do you tell her, and what needs to change at home?",
+      prompt: "He is more stable now. His grandmother asks what she did wrong. What do you tell her, and what needs to change at home?",
       seconds: 60,
       modelAnswer: [
         "She did not cause this. Explain what happened and the transfer plan.",
@@ -409,7 +420,7 @@ export const ruralChildWheezeTiring: OralCase = {
         "9 years, 28 kg, severe asthma exacerbation with impending respiratory failure.",
         "Risk factors: previous PICU, no controller for 3 months, recent oral steroids.",
         "Drugs and times: salbutamol, ipratropium, dexamethasone 12 mg, magnesium 1400 mg, continuous salbutamol.",
-        "Right tension pneumothorax decompressed, chest tube placed. BiPAP settings.",
+        "Right lower lobe pneumonia: blood culture drawn, ceftriaxone time. Current support and settings.",
         "Latest vital signs, blood gas, potassium 3.1 and glucose. Guardian contact details.",
       ],
       rubric: ["as-c2", "as-l2"],
@@ -419,7 +430,7 @@ export const ruralChildWheezeTiring: OralCase = {
       kind: "end",
       id: "end",
       text:
-        "He is flown to the PICU on BiPAP and is weaned to high flow the next day. He goes home on day 4 with a spacer, daily inhaled steroid and a written action plan. That is the end of the case.",
+        "He is flown to the PICU, where his blood culture grows Streptococcus pneumoniae. He is weaned off respiratory support over 2 days and goes home on day 6 with a spacer, daily inhaled steroid and a written action plan. That is the end of the case.",
     },
   ],
   rubric: [
@@ -491,9 +502,9 @@ export const ruralChildWheezeTiring: OralCase = {
       id: "as-a4",
       competency: "assessment",
       criterion: "physical",
-      text: "Diagnoses a tension pneumothorax from hypotension, hypoxia, absent air entry and absent lung sliding with a lung point.",
+      text: "Recognizes a coexisting right lower lobe pneumonia from new fever, focal bronchial breathing and consolidation on ultrasound, and uses lung sliding on both sides to set aside a pneumothorax.",
       points: 2,
-      teaching: "Positive pressure in asthma can cause a pneumothorax. Absent lung sliding with a lung point on ultrasound confirms it.",
+      teaching: "Deterioration or failure to improve in asthma calls for a search for a second problem with chest X-ray or ultrasound. Focal signs and a consolidated lobe point to pneumonia, and lung sliding at the probe makes a pneumothorax there unlikely.",
       source: "trekk",
     },
     {
@@ -537,11 +548,11 @@ export const ruralChildWheezeTiring: OralCase = {
       id: "as-m5",
       competency: "resuscitation",
       criterion: "management",
-      text: "Decompresses the tension pneumothorax at once, then places a chest tube and lowers the ventilator pressures.",
+      text: "Draws a blood culture and gives ceftriaxone 50 mg/kg IV, 1400 mg, without delay, and does not put a needle into a chest with lung sliding.",
       points: 2,
       critical: true,
-      teaching: "A tension pneumothorax is treated before imaging. Lowering positive pressure reduces the risk of recurrence.",
-      source: "trekk",
+      teaching: "The CPS advises empiric third generation cephalosporin therapy for pneumonia with respiratory failure or septic shock. Ceftriaxone is 50 to 100 mg/kg/day, maximum 4 g a day.",
+      source: "cps-cap",
     },
     {
       id: "as-l1",
@@ -576,7 +587,7 @@ export const ruralChildWheezeTiring: OralCase = {
       criterion: "process",
       text: "Gives the transport team a structured handover with doses, times, procedures, current settings and pending issues.",
       points: 1,
-      teaching: "A structured handover avoids repeated or missed doses and alerts the team to the chest tube and ventilator settings.",
+      teaching: "A structured handover avoids repeated or missed doses and alerts the team to the antibiotic timing and the support settings.",
       source: "cps-asthma",
     },
   ],
@@ -594,6 +605,12 @@ export const ruralChildWheezeTiring: OralCase = {
     {
       id: "pram",
       citation: "Ducharme FM, Chalut D, Plotnick L, et al. The Pediatric Respiratory Assessment Measure. A valid clinical score for assessing acute asthma severity from toddlers to teenagers. Journal of Pediatrics. 2008.",
+    },
+    {
+      id: "cps-cap",
+      citation:
+        "Le Saux N, Robinson JL. Canadian Paediatric Society, Infectious Diseases and Immunization Committee. Uncomplicated pneumonia in healthy Canadian children and youth. Practice points for management. Paediatrics and Child Health. 2015. Updated 2024.",
+      url: "https://cps.ca/en/documents/position/pneumonia-management-children-youth",
     },
     {
       id: "gina",

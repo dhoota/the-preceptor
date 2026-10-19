@@ -228,7 +228,7 @@ export const returnVisitBellyPainGirl: OralCase = {
       prompt: "She rates her pain 8 out of 10. The surgeon will come in after a case and asks you not to give anything that will mask her exam. What do you do?",
       seconds: 60,
       modelAnswer: [
-        "Give analgesia now. Opioids do not increase missed appendicitis or perforation in children.",
+        "Give analgesia now. In children, opioids for acute abdominal pain did not increase perforation or abscess.",
         "Morphine 0.1 mg/kg IV, so 3.6 mg, or intranasal fentanyl 1.5 mcg/kg if there is no IV.",
         "Ondansetron 0.15 mg/kg, maximum 4 mg.",
         "Nothing by mouth. Crystalloid 20 mL/kg, so 720 mL, for her dehydration.",
@@ -239,11 +239,11 @@ export const returnVisitBellyPainGirl: OralCase = {
         {
           id: "c-morphine",
           label:
-            "I gave morphine 3.6 mg IV and ondansetron 4 mg, kept her fasting, gave 720 mL of Ringer's lactate and told the surgeon that analgesia does not hide the diagnosis.",
+            "I gave morphine 3.6 mg IV and ondansetron 4 mg, kept her fasting, gave 720 mL of Ringer's lactate and told the surgeon that the evidence shows analgesia does not worsen outcomes.",
           next: "s-us",
           quality: "strong",
           feedback:
-            "Correct. Opioid analgesia in children with acute abdominal pain does not increase missed appendicitis or perforation. Pain relief often makes the exam easier. Withholding it causes needless suffering.",
+            "Correct. In children with acute abdominal pain, opioid analgesia did not increase perforation or abscess. Pain relief often makes the exam easier. Withholding it causes needless suffering.",
         },
         {
           id: "c-withhold",
@@ -251,7 +251,7 @@ export const returnVisitBellyPainGirl: OralCase = {
           next: "s-withhold",
           quality: "unsafe",
           feedback:
-            "Withholding analgesia is not supported by evidence and leaves a child in severe pain for hours. Opioids do not mask peritonitis. The examiner wanted early weight based analgesia with a clear explanation to the surgeon.",
+            "Withholding analgesia is not supported by evidence and leaves a child in severe pain for hours. Opioids have not been shown to increase perforation or abscess in children. The examiner wanted early weight based analgesia with a clear explanation to the surgeon.",
         },
       ],
     },
@@ -282,7 +282,7 @@ export const returnVisitBellyPainGirl: OralCase = {
         "Perforated appendicitis with an abscess and septic shock.",
         "Call for help. Monitor, oxygen, second IV.",
         "Crystalloid 20 mL/kg, so 720 mL, over 5 to 10 minutes, reassessed after each bolus, up to 40 to 60 mL/kg.",
-        "Blood culture, then antibiotics within 1 hour: piperacillin tazobactam, or ceftriaxone 50 mg/kg plus metronidazole 30 mg/kg/day divided every 8 hours.",
+        "Blood culture, then antibiotics within 1 hour: piperacillin tazobactam, or ceftriaxone 50 to 75 mg/kg/day plus metronidazole 30 to 40 mg/kg/day divided every 8 hours.",
         "Vasoactive infusion if shock persists after fluid.",
         "Tell the surgeon about the change now. She needs source control.",
       ],
@@ -513,7 +513,7 @@ export const returnVisitBellyPainGirl: OralCase = {
       criterion: "management",
       text: "Gives early weight based analgesia, such as morphine 0.1 mg/kg IV, and does not wait for the surgeon.",
       points: 2,
-      teaching: "Opioid analgesia for acute abdominal pain in children does not increase missed appendicitis or perforation.",
+      teaching: "In a meta analysis of children with acute abdominal pain, opioid analgesia did not increase the risk of perforation or abscess.",
       source: "poonai",
     },
     {

@@ -520,8 +520,8 @@ export const postpartumPleuriticChestPain: OralCase = {
       criterion: "process",
       text: "Arranges outpatient treatment with injection teaching, an INR check on day 3 to 5, thrombosis clinic follow up within 72 hours, return precautions and at least 3 months of treatment.",
       points: 2,
-      teaching: "Outpatient care is safe only with a clear follow up plan. A provoked VTE needs at least 3 months of anticoagulation.",
-      source: "hestia",
+      teaching: "Most patients with hemodynamically stable VTE can be treated as outpatients with a clear follow up plan. Every acute VTE needs at least 3 months of anticoagulation.",
+      source: "bc-vte",
     },
     {
       id: "pe-c1",

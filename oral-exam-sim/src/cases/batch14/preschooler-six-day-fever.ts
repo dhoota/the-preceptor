@@ -180,7 +180,7 @@ export const preschoolerSixDayFever: OralCase = {
           next: "q-tests",
           quality: "strong",
           feedback:
-            "Correct. Fever for at least 5 days plus 4 of 5 principal features makes the diagnosis, and he has all 5. The features rarely appear together, so they must be asked about and looked for one by one. The amoxicillin rash was a red herring.",
+            "Correct. Fever for at least 5 days plus 4 of 5 principal features makes the diagnosis, and he has all 5. The features often appear one at a time, so they must be asked about and looked for one by one. The amoxicillin rash was a red herring.",
         },
         {
           id: "c-drug",
@@ -269,9 +269,9 @@ export const preschoolerSixDayFever: OralCase = {
           id: "c-wait-echo",
           label: "I arranged an outpatient echocardiogram at the children's hospital in 3 days and planned to treat if it showed coronary changes.",
           next: "s-wait-echo",
-          quality: "partial",
+          quality: "unsafe",
           feedback:
-            "Echocardiography supports the diagnosis but must not delay treatment when the clinical criteria are met. A normal early echocardiogram does not exclude later aneurysms. Waiting 3 days pushes him to day 9 of fever with no treatment.",
+            "He meets the criteria for complete Kawasaki disease, so he needs IVIG and ASA now, whatever the echocardiogram shows. A normal early echocardiogram does not exclude later aneurysms. Waiting 3 days sends a febrile child home untreated and pushes him to day 9 of fever.",
         },
         {
           id: "c-steroid-home",
@@ -310,7 +310,7 @@ export const preschoolerSixDayFever: OralCase = {
         "Call for help. Oxygen, monitor, second IV or IO.",
         "Crystalloid 10 mL/kg, so 150 mL, over 5 to 10 minutes. Reassess liver, lungs, perfusion and ultrasound after each bolus.",
         "Epinephrine infusion 0.05 to 0.3 mcg/kg/min if shock persists after 40 mL/kg or sooner with signs of overload or poor squeeze.",
-        "Ceftriaxone 50 mg/kg and clindamycin 13 mg/kg IV within the hour after a blood culture, until sepsis and toxic shock are excluded.",
+        "Blood culture, then within the hour ceftriaxone 50 mg/kg (750 mg) and clindamycin 13 mg/kg (about 200 mg) IV every 8 hours, until sepsis and toxic shock are excluded. Add vancomycin where MRSA is common.",
         "Continue with IVIG once it arrives. Check glucose and ionized calcium.",
       ],
       rubric: ["kd-r1", "kd-a4", "kd-m3", "kd-l1"],
@@ -402,7 +402,7 @@ export const preschoolerSixDayFever: OralCase = {
         "Kawasaki disease is hard to diagnose early because the features appear one at a time. Do not criticize the clinics.",
         "The rash was most likely part of Kawasaki disease, not an allergy. The allergy label should be reviewed and probably removed.",
         "ASA is used on purpose here, at a low dose for weeks. Report any flu or chickenpox exposure because of Reye syndrome risk.",
-        "Household members should get the inactivated influenza vaccine. Live vaccines are deferred for 11 months after IVIG.",
+        "He and household members older than 6 months should get the inactivated influenza vaccine. Live vaccines are deferred for 11 months after IVIG.",
         "Avoid ibuprofen while he takes ASA. Give acetaminophen by weight.",
         "Long term follow up with cardiology.",
       ],
@@ -538,10 +538,10 @@ export const preschoolerSixDayFever: OralCase = {
       id: "kd-m3",
       competency: "management",
       criterion: "management",
-      text: "Gives ceftriaxone 50 mg/kg and clindamycin 13 mg/kg IV within 1 hour of recognizing shock, after a blood culture.",
+      text: "Gives a beta-lactam such as ceftriaxone with clindamycin IV within 1 hour of recognizing shock, after a blood culture, and considers vancomycin where MRSA is common.",
       points: 2,
-      teaching: "Septic shock in children calls for antimicrobials within 1 hour. Clindamycin is added when toxic shock syndrome is possible because it reduces toxin production.",
-      source: "ssc-peds",
+      teaching: "The CPS strongly recommends clindamycin with a beta-lactam for severe invasive group A streptococcal disease and toxic shock, because it reduces toxin production. Clindamycin is never used alone.",
+      source: "cps-igas",
     },
     {
       id: "kd-m4",
@@ -595,8 +595,8 @@ export const preschoolerSixDayFever: OralCase = {
       criterion: "process",
       text: "Answers honestly about the earlier visits without blaming the clinics, and arranges review of the amoxicillin allergy label.",
       points: 1,
-      teaching: "An incorrect allergy label can follow a child for life. A rash explained by another illness should be reviewed and delabelled.",
-      source: "aha-kd",
+      teaching: "A polymorphous rash is a principal feature of Kawasaki disease, so a rash that appeared during this illness does not prove a drug allergy. An incorrect label can follow a child for life, so it should be reviewed.",
+      source: "cps-kd",
     },
     {
       id: "kd-c2",
@@ -624,6 +624,12 @@ export const preschoolerSixDayFever: OralCase = {
       id: "ssc-peds",
       citation:
         "Weiss SL, Peters MJ, Alhazzani W, et al. Surviving Sepsis Campaign international guidelines for the management of septic shock and sepsis associated organ dysfunction in children. Pediatric Critical Care Medicine. 2020.",
+    },
+    {
+      id: "cps-igas",
+      citation:
+        "Moore DL, Allen UD, Mailman T. Canadian Paediatric Society, Infectious Diseases and Immunization Committee. Invasive group A streptococcal disease. Management and chemoprophylaxis. Paediatrics and Child Health. 2019. Reaffirmed 2024.",
+      url: "https://cps.ca/en/documents/position/invasive-group-a-streptococcal-disease",
     },
     {
       id: "cps-fever",

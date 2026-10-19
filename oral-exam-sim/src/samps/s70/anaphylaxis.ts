@@ -139,4 +139,194 @@ export const ANAPHYLAXIS_S70: Samp[] = [
     sources: [S.fpies, S.carlisle, S.cig],
     ...META,
   },
+
+  /* 50 Nonverbal adult from a group home ----------------------------------- */
+  {
+    id: "anaphylaxis-50",
+    topic: "anaphylaxis",
+    title: "Collapse in a group home dining room",
+    stem:
+      "A 34-year-old man is brought to the emergency department by ambulance from his group home. He has a severe intellectual disability, is nonverbal and has epilepsy treated with levetiracetam. Staff found him on the dining room floor 15 minutes after lunch, with brief jerking of both arms that stopped within seconds. Before he fell he had been rubbing his mouth and ears and pulling at his shirt. A new support worker had served him a sesame bagel, a food he had not eaten before. He then vomited twice. He has no known allergies. He is drowsy and restless and moans when touched. His neck and upper chest are flushed, and his lips look puffier than in the photos in his file. There is scattered wheeze on both sides. His capillary glucose is 5.9 mmol/L.",
+    vitals: { temperature: "36.8°C tympanic", pulse: "128/minute", resp: "26/minute", bp: "80/46 mmHg", o2sat: "93% on room air", weight: "74 kg" },
+    questions: [
+      {
+        id: "q1",
+        kind: "single",
+        prompt: "Which of the following is the most likely cause of his low blood pressure?",
+        options: ["Aspiration of vomit", "Levetiracetam toxicity", "Postictal hypotension", "Sesame anaphylaxis", "Vasovagal reaction"],
+        correct: 3,
+        explanation:
+          "Within minutes of a first sesame exposure he showed itch behaviour, flushing, lip swelling, vomiting, wheeze and a blood pressure of 80/46 mmHg, which is anaphylaxis involving the skin, gut, airways and circulation. A patient who cannot speak shows itch and throat discomfort through rubbing, pulling at clothes and restlessness. Aspiration can cause wheeze and hypoxia but not flushing, lip swelling and shock within minutes. Seizures do not cause sustained hypotension. Levetiracetam overdose causes drowsiness, not this picture, and nothing suggests extra doses. A vasovagal faint recovers quickly when the patient lies flat.",
+        keyFeature: { topic: "anaphylaxis", n: 1 },
+        source: "wao-2020",
+      },
+      {
+        id: "q2",
+        kind: "single",
+        prompt: "Which of the following best explains the brief jerking of his arms that staff saw when he fell?",
+        options: ["Breakthrough epileptic seizure", "Convulsive syncope from low pressure", "Hypoglycemic seizure", "Psychogenic nonepileptic event", "Rigors from bacteremia"],
+        correct: 1,
+        explanation:
+          "When blood pressure falls far enough to stop flow to the brain, a few brief, irregular jerks are common as the person goes limp. In tilt studies the median was 2 jerks in syncope against 48 in convulsive seizures, and fewer than 10 jerks points to syncope. His jerks lasted seconds as he fell, and his pressure is 80/46 mmHg. Labelling this a breakthrough seizure in a man with epilepsy would send care toward antiseizure drugs and away from epinephrine. His glucose is 5.9 mmol/L, he has no fever to suggest rigors, and a psychogenic event does not explain his shock.",
+        keyFeature: { topic: "anaphylaxis", n: 1 },
+        source: "shmuely-syncope",
+      },
+      {
+        id: "q3",
+        kind: "menu",
+        prompt: "Which of the following findings in him show skin or mucosal involvement in this reaction?",
+        options: ["Brief jerking of both arms", "Flushing of the neck and chest", "Lips puffier than in his photos", "Moaning when he is touched", "Restlessness on the stretcher", "Rubbing at his mouth and ears", "Scattered wheeze on both sides", "Two episodes of vomiting"],
+        select: 3,
+        correct: [1, 2, 5],
+        explanation:
+          "Flushing, swelling of the lips and itch are the skin and mucosal features of anaphylaxis, and in a patient who cannot speak, rubbing at the mouth and ears is how itch and oral tingling show. His lips are judged against his own photos because swelling is easy to miss in a stranger. Wheeze is respiratory involvement and vomiting is gastrointestinal involvement, both of which also count toward the diagnosis but are not skin findings. Jerking came from his fall in pressure. Moaning when touched and restlessness are nonspecific signs of distress.",
+        keyFeature: { topic: "anaphylaxis", n: 2 },
+        source: "wao-2020",
+      },
+      {
+        id: "q4",
+        kind: "single",
+        update: "He recovers after two doses of IM epinephrine and fluids and is observed until the next morning. He will return to the group home with two epinephrine autoinjectors and an allergist referral.",
+        prompt: "Which of the following is the most appropriate plan for keeping his autoinjectors at the group home?",
+        options: ["Kept in the locked medication cabinet", "Kept in the staff office desk drawer", "Kept in the van's glove box", "Kept with the house first aid kit", "With him at all times, carried by staff"],
+        correct: 4,
+        explanation:
+          "People at risk of anaphylaxis should have an autoinjector with them at all times, and a man who cannot carry or use his own needs staff to carry it for him, on outings as well as at home. Autoinjectors must be easy to reach, not in locked cupboards or drawers, and kept away from extreme cold or heat, which rules out the medication cabinet, a desk drawer and a vehicle glove box. A device stored with the house first aid kit is not with him when he is away from the house.",
+        keyFeature: { topic: "anaphylaxis", n: 4 },
+        source: "csaci-settings",
+      },
+      {
+        id: "q5",
+        kind: "single",
+        prompt: "Which of the following is the most appropriate instruction for staff if his symptoms do not improve after the first autoinjector?",
+        options: ["Give a second dose only if he faints", "Give diphenhydramine before a second dose", "Give the second dose after 30 minutes", "Give the second dose after 5 minutes", "Wait for paramedics before a second dose"],
+        correct: 3,
+        explanation:
+          "The Canadian emergency protocol is to give epinephrine, call 9-1-1, and give a second dose as early as 5 minutes after the first if symptoms have not improved. Waiting 30 minutes, waiting for paramedics or waiting until he faints lets the reaction progress while the second device sits unused. Diphenhydramine does not treat airway swelling or shock and must never delay epinephrine. Staff should also know that he goes to hospital even when symptoms improve, because the reaction can worsen or return.",
+        keyFeature: { topic: "anaphylaxis", n: 4 },
+        source: "csaci-protocol",
+      },
+    ],
+    sources: [S.wao, S.shmuely, S.csaci, S.csaciProtocol],
+    ...META,
+  },
+
+  /* 51 Shock that persists after two doses ---------------------------------- */
+  {
+    id: "anaphylaxis-51",
+    topic: "anaphylaxis",
+    title: "Still hypotensive after the second dose",
+    stem:
+      "You are working in a rural hospital emergency department. A 46-year-old woman with a known peanut allergy is brought in by ambulance 35 minutes after eating chicken satay at a work lunch. Within minutes she had hives, wheeze and light-headedness. Paramedics gave epinephrine 0.5 mg IM, and a second dose of 0.5 mg IM was given in the thigh 5 minutes after she arrived. She has received 2 L of normal saline through two IV lines. She has no other medical history and takes no medications. Ten minutes after the second dose she is pale, anxious and wheezing, with hives over her trunk. Her voice is normal and there is no stridor. The nearest ICU is a 90 minute flight away.",
+    vitals: { temperature: "36.6°C oral", pulse: "132/minute", resp: "28/minute", bp: "74/40 mmHg", o2sat: "92% on 10 L/minute by mask", weight: "64 kg" },
+    questions: [
+      {
+        id: "q1",
+        kind: "single",
+        prompt: "Which of the following best describes her condition at this point in her care?",
+        options: ["Allergic coronary vasospasm", "Anaphylaxis refractory to epinephrine", "Biphasic anaphylactic reaction", "Distributive shock from sepsis", "Vasovagal reaction with hives"],
+        correct: 1,
+        explanation:
+          "Refractory anaphylaxis is defined as respiratory or cardiovascular problems that persist despite two appropriate doses of IM epinephrine. She has had two 0.5 mg doses and 2 L of fluid and still has wheeze, a saturation of 92% on oxygen and a pressure of 74/40 mmHg, so she meets it, and the next step is an epinephrine infusion with expert help. A biphasic reaction is a return of symptoms after they have resolved, and hers never resolved. She has no chest pain or ECG change to suggest coronary spasm, no infection to suggest sepsis, and a vasovagal faint does not cause hives and wheeze.",
+        keyFeature: { topic: "anaphylaxis", n: 2 },
+        source: "rcuk-refractory",
+      },
+      {
+        id: "q2",
+        kind: "single",
+        update: "You start a peripheral epinephrine infusion of 1 mg in 100 mL of normal saline, using the Resuscitation Council UK 2021 refractory anaphylaxis algorithm.",
+        prompt: "Which of the following starting infusion rates is most appropriate for her?",
+        options: ["5 mL/hour", "16 mL/hour", "48 mL/hour", "160 mL/hour", "480 mL/hour"],
+        correct: 2,
+        explanation:
+          "The algorithm starts the infusion at 0.5 to 1.0 mL/kg/hour of 1 mg in 100 mL, which is 10 mcg/mL, and titrates to response. At 64 kg that range is 32 to 64 mL/hour, so 48 mL/hour, which delivers 480 mcg/hour or 8 mcg/minute, sits within it. A rate of 16 mL/hour is half the lowest starting rate, and 5 mL/hour is far too low to help. Rates of 160 and 480 mL/hour give 2.5 to 7.5 mL/kg/hour, enough to cause severe hypertension, dysrhythmia and myocardial injury.",
+        keyFeature: { topic: "anaphylaxis", n: 3 },
+        source: "rcuk-refractory",
+      },
+      {
+        id: "q3",
+        kind: "single",
+        prompt: "Which of the following is the most appropriate way to give the infusion?",
+        options: ["Dedicated line, arm without the BP cuff", "Gravity drip without a pump", "Piggybacked onto the saline line", "Same arm as the automated BP cuff", "Through the IV used for fluid boluses"],
+        correct: 0,
+        explanation:
+          "Epinephrine is given by an infusion pump through its own dedicated line, on the arm without the blood pressure cuff. Piggybacking it onto the saline line, or running it through the IV used for boluses, means every bolus or flush pushes an unplanned dose of epinephrine into her. A cuff on the same arm stops the flow with each reading, then releases a surge, and raises the risk of extravasation. A gravity drip cannot deliver a precise, steady dose of a drug this potent.",
+        keyFeature: { topic: "anaphylaxis", n: 3 },
+        source: "rcuk-refractory",
+      },
+      {
+        id: "q4",
+        kind: "single",
+        update: "Twenty minutes later, after two increases in the rate, her BP is 186/104 mmHg and her pulse is 150/minute. She has a pounding headache. Her wheeze and hives have gone.",
+        prompt: "Which of the following is the most appropriate next step in her management?",
+        options: ["Add a labetalol infusion", "Give a second vasopressor", "Give lorazepam 1 mg IV", "Reduce the infusion rate", "Stop all IV fluids"],
+        correct: 3,
+        explanation:
+          "A sharp rise in blood pressure on an epinephrine infusion most likely means too much epinephrine, and her wheeze and hives have resolved, so the rate is reduced and titrated to the lowest dose that keeps her stable, with continuous monitoring. A labetalol infusion would oppose the epinephrine she still needs and could bring back bronchospasm and shock. A second vasopressor is for shock that persists despite the infusion, the opposite of her problem. Lorazepam treats anxiety, not the cause of her hypertension. Stopping fluids does not lower a pressure driven by the drug.",
+        keyFeature: { topic: "anaphylaxis", n: 3 },
+        source: "rcuk-refractory",
+      },
+    ],
+    sources: [S.rcuk],
+    ...META,
+  },
+
+  /* 52 Gluten-free pancakes ------------------------------------------------- */
+  {
+    id: "anaphylaxis-52",
+    topic: "anaphylaxis",
+    title: "Breakfast at a café",
+    stem:
+      "A 31-year-old woman presents to the emergency department 40 minutes after breakfast at a café. She has celiac disease and ordered gluten-free pancakes. Fifteen minutes after eating she had itchy hives on her arms, a tight throat and crampy abdominal pain, and she has had two loose stools. She is sure the kitchen contaminated her meal with gluten. The café later tells her that the pancake batter is made with buckwheat flour. She has never had an allergic reaction before and takes no medications. She is pale and light-headed when she sits up. There are raised hives on her arms and trunk and her lips are mildly swollen. Her voice is normal and her chest is clear. Her abdomen is soft with mild diffuse tenderness.",
+    vitals: { temperature: "36.7°C oral", pulse: "118/minute", resp: "20/minute", bp: "84/50 mmHg", o2sat: "98% on room air", weight: "60 kg" },
+    questions: [
+      {
+        id: "q1",
+        kind: "single",
+        prompt: "Which of the following is the most likely cause of her symptoms after the meal?",
+        options: ["Buckwheat in the batter", "Gluten contamination of the batter", "Lactose in the batter", "Sulphites in the syrup", "Xanthan gum in the batter"],
+        correct: 0,
+        explanation:
+          "Hives, lip swelling, throat tightness, cramps and a blood pressure of 84/50 mmHg starting 15 minutes after a meal are anaphylaxis, an IgE-mediated reaction to a food protein, and buckwheat is a well known cause of severe reactions. It contains no gluten, so it is widely used in gluten-free foods. Gluten exposure in celiac disease causes gut symptoms, usually hours later, without hives, angioedema or shock. Lactose intolerance causes bloating and diarrhea only. Sulphites more often trigger wheeze in people with asthma. Xanthan gum is a rare allergen and fits less well than the flour that made up the batter.",
+        keyFeature: { topic: "anaphylaxis", n: 2 },
+        source: "satoh-buckwheat",
+      },
+      {
+        id: "q2",
+        kind: "single",
+        prompt: "Which of the following best explains her blood pressure of 84/50 mmHg?",
+        options: ["Adrenal crisis with celiac disease", "Bleeding from a gut ulcer", "Fluid loss from two loose stools", "Vasovagal response to abdominal pain", "Vessel dilation and leak from anaphylaxis"],
+        correct: 4,
+        explanation:
+          "Mast cell mediators dilate blood vessels and make capillaries leak, so a large share of circulating volume can shift out of the vessels within minutes. That explains a pressure of 84/50 mmHg with a pulse of 118/minute, beginning with hives and throat tightness after the meal. Two loose stools cannot remove enough fluid to cause shock in 40 minutes. A vasovagal response slows the pulse rather than raising it. Adrenal crisis is more common in celiac disease but does not cause hives and lip swelling, and nothing suggests bleeding.",
+        keyFeature: { topic: "anaphylaxis", n: 1 },
+        source: "wao-2020",
+      },
+      {
+        id: "q3",
+        kind: "single",
+        update: "She recovers after one dose of epinephrine 0.5 mg IM and 1 L of crystalloid. Before discharge she asks how to avoid buckwheat, since she relies on gluten-free products.",
+        prompt: "Which of the following is the most accurate advice about buckwheat in packaged foods sold in Canada?",
+        options: ["Gluten-free labels exclude buckwheat", "It is declared as a gluten source", "It is listed under the word wheat", "It must appear in a Contains statement", "Read each ingredient list for it"],
+        correct: 4,
+        explanation:
+          "Buckwheat is not one of Canada's priority food allergens, which are eggs, milk, mustard, peanuts, crustaceans and molluscs, fish, sesame, soy, sulphites, tree nuts, and wheat and triticale. So it is not flagged the way those foods are, and she must read the full ingredient list of every product. Buckwheat is not related to wheat and contains no gluten, so it is neither declared as a gluten source nor kept out of gluten-free foods. In fact gluten-free flours, pastas and mixes often use it in place of wheat.",
+        keyFeature: { topic: "anaphylaxis", n: 4 },
+        source: "hc-allergens",
+      },
+      {
+        id: "q4",
+        kind: "single",
+        prompt: "Which of the following foods is most likely to contain buckwheat?",
+        options: ["Corn tortillas", "Polenta", "Quinoa salad", "Rice noodles", "Soba noodles"],
+        correct: 4,
+        explanation:
+          "Soba are Japanese noodles made wholly or partly from buckwheat flour, and they are a leading cause of buckwheat reactions where they are eaten often. Polenta and corn tortillas are made from corn. Rice noodles are made from rice flour. Quinoa is a seed from a different plant family. Buckwheat also turns up as a hidden ingredient in pancakes, crepes, breads, pasta, porridge and some burgers, so she should ask about it when eating out as well as reading labels.",
+        keyFeature: { topic: "anaphylaxis", n: 4 },
+        source: "satoh-buckwheat",
+      },
+    ],
+    sources: [S.satoh, S.wao, S.hc],
+    ...META,
+  },
 ];
