@@ -174,7 +174,8 @@ export const ladderFallAnkleSedation: OralCase = {
           quality: "strong",
           feedback:
             "Correct. Hypotension is the most common first sign of anaphylaxis during sedation and anesthesia, and the rash is easy to miss under drapes. " +
-            "Epinephrine is the only first line drug. Delay is the main reason these reactions go badly.",
+            "Epinephrine is the only first line drug. Delay is the main reason these reactions go badly. " +
+            "In a monitored sedation setting, an experienced clinician may instead give IV boluses of 50 mcg, as anesthesia guidance advises.",
         },
         {
           id: "c-pressor",
@@ -227,12 +228,12 @@ export const ladderFallAnkleSedation: OralCase = {
       prompt: "She is not responding well. What now, and how do you run the room?",
       seconds: 75,
       modelAnswer: [
-        "Start an epinephrine infusion through a dedicated IV, for example 0.05 to 0.1 mcg/kg/min, and titrate every few minutes to BP.",
+        "Start an epinephrine infusion through a dedicated IV after two IM doses fail. One protocol uses 1 mg in 100 mL at 0.5 to 1 mL/kg/h, about 0.1 to 0.2 mcg/kg/min, or 40 to 80 mL/h for her. Start at the higher rate when hypotensive and titrate every 5 to 10 minutes.",
         "More crystalloid with reassessment. Anaphylaxis shifts large volumes out of the vessels.",
         "If systolic BP falls below 50, start CPR even without arrest.",
         "Nebulized salbutamol for persistent wheeze after epinephrine.",
         "Watch the airway. Most experienced person to manage it, with a difficult airway plan ready.",
-        "Antihistamine for skin symptoms and a steroid are adjuncts only, never instead of epinephrine.",
+        "Antihistamines for skin symptoms are adjuncts only, never instead of epinephrine. Routine steroids are no longer advised.",
         "Assign roles out loud: airway, drugs, fluids, recorder. Closed loop orders. Call ICU.",
       ],
       rubric: ["an-m3", "an-m4", "an-pr1"],
@@ -324,7 +325,7 @@ export const ladderFallAnkleSedation: OralCase = {
       modelAnswer: [
         "She had anaphylaxis needing an epinephrine infusion within an hour. Ideally the operation waits until she is stable off the infusion, unless the limb is at risk.",
         "Avoid every drug and product she received in the hour before the reaction until she has been tested.",
-        "No beta lactam antibiotics. Choose a non beta lactam for the open fracture with pharmacy or microbiology, such as clindamycin.",
+        "Until testing, avoid cefazolin and, to be safe, other beta lactams. Choose a non beta lactam for the open fracture with pharmacy or microbiology, such as clindamycin. Its gram negative cover is weaker, so ask what the wound needs.",
         "No chlorhexidine skin prep or chlorhexidine coated lines. Use povidone iodine.",
         "Anesthesia should avoid propofol and fentanyl if possible and choose agents with a lower risk.",
         "Flag the chart and her wristband.",
@@ -339,7 +340,8 @@ export const ladderFallAnkleSedation: OralCase = {
           quality: "strong",
           feedback:
             "Correct. Until allergy testing names the culprit, every agent given in the hour before the reaction must be avoided. " +
-            "Chlorhexidine is easy to forget because it hides in skin prep, line coatings and urethral gels.",
+            "Chlorhexidine is easy to forget because it hides in skin prep, line coatings and urethral gels. " +
+            "Avoiding all beta lactams is the cautious choice. Cefazolin has a unique side chain, so some allergists would allow a dissimilar beta lactam, but that call belongs to the allergist.",
         },
         {
           id: "c-cefazolin-only",
@@ -387,7 +389,7 @@ export const ladderFallAnkleSedation: OralCase = {
         "A rise above 1.2 times baseline plus 2 supports mast cell activation. Here 28.6 is far above 1.2 x 4.2 + 2, about 7.",
         "A normal tryptase does not exclude anaphylaxis.",
         "ECG and troponin if there was chest pain or a large epinephrine dose.",
-        "Admit to ICU while on the infusion. She needs close monitoring for a return of symptoms, most often in the first 6 to 12 hours.",
+        "Admit to ICU while on the infusion. She needs close monitoring for a return of symptoms. About half of biphasic reactions occur in the first 6 to 12 hours.",
       ],
       rubric: ["an-p3", "an-pr2"],
       next: "q-family",
@@ -401,10 +403,10 @@ export const ladderFallAnkleSedation: OralCase = {
       modelAnswer: [
         "She had anaphylaxis, a severe allergic reaction, to something given during the procedure.",
         "We do not yet know which one. It could be the antibiotic, the skin antiseptic or one of the sedation drugs.",
-        "This could not have been predicted. Her childhood rash was low risk and cefazolin is usually safe in that situation.",
+        "Her childhood rash was low risk and cefazolin is usually safe in that situation. Reactions like this are rare and usually not predictable.",
         "Until testing, she must avoid all of them. Tell every doctor, dentist and pharmacist. Consider a medical alert bracelet.",
         "Referral to an allergist for testing. Bring the list of exposures with times.",
-        "Mention the hand scrub at work. If chlorhexidine is confirmed, it matters for her job.",
+        "Mention the hand scrub at work. Chlorhexidine is also in mouthwashes, wipes and skin cleansers, so she may meet it outside hospital. Prescribe an epinephrine autoinjector at discharge and teach her when to use it.",
       ],
       rubric: ["an-pr3"],
       next: "q-debrief",
@@ -523,8 +525,8 @@ export const ladderFallAnkleSedation: OralCase = {
       criterion: "management",
       text: "Starts an epinephrine infusion through a dedicated line when IM doses and fluid fail, and starts CPR if systolic BP falls below 50.",
       points: 2,
-      teaching: "Low dose epinephrine infusions treat reactions refractory to IM doses. In adults, CPR should start for a systolic below 50 even without arrest.",
-      source: "wao",
+      teaching: "Start an IV epinephrine infusion when problems persist after two IM doses. In perioperative anaphylaxis, start chest compressions if the systolic stays below 50 even with a pulse.",
+      source: "rcuk",
     },
     {
       id: "an-m4",
@@ -532,7 +534,7 @@ export const ladderFallAnkleSedation: OralCase = {
       criterion: "management",
       text: "Uses antihistamines and steroids only as adjuncts after epinephrine, and keeps epinephrine as the drug for refractory anaphylaxis.",
       points: 1,
-      teaching: "Antihistamines and glucocorticoids are second line. Antihistamines only help skin symptoms and can delay repeat epinephrine.",
+      teaching: "Antihistamines only help skin symptoms and must not delay repeat epinephrine. Routine corticosteroids are no longer advised.",
       source: "wao",
     },
     {
@@ -542,7 +544,7 @@ export const ladderFallAnkleSedation: OralCase = {
       text: "Advises avoiding every agent from the hour before the reaction, including chlorhexidine and all beta lactams, and agrees on a non beta lactam antibiotic for the open fracture.",
       points: 2,
       critical: true,
-      teaching: "Until allergy testing, avoid all drugs and products given before the reaction and all antibiotics of the same class. Discuss the antibiotic choice with microbiology or pharmacy.",
+      teaching: "Until allergy testing, avoid all drugs and products given before the reaction and all antibiotics of the same class. Discuss the antibiotic choice with microbiology or pharmacy, and let the allergist decide later about dissimilar beta lactams.",
       source: "nap6",
     },
     {
@@ -567,9 +569,9 @@ export const ladderFallAnkleSedation: OralCase = {
       id: "an-pr3",
       competency: "communication",
       criterion: "process",
-      text: "Explains to her and her husband what happened, that the culprit is not yet known, what to avoid, and that she will be referred to an allergist.",
+      text: "Explains to her and her husband what happened, that the culprit is not yet known, what to avoid, that she will be referred to an allergist, and that she will go home with an epinephrine autoinjector.",
       points: 2,
-      teaching: "Everyone who has had anaphylaxis should see a specialist to identify the trigger and learn prevention.",
+      teaching: "Everyone who has had anaphylaxis should see a specialist to identify the trigger and learn prevention. WAO advises an epinephrine autoinjector at discharge, which matters here because chlorhexidine is common outside hospital.",
       source: "wao",
     },
     {
@@ -616,6 +618,11 @@ export const ladderFallAnkleSedation: OralCase = {
       citation:
         "Harper NJN, Cook TM, Garcez T, et al. Anaesthesia, surgery, and life-threatening allergic reactions: management and outcomes in the 6th National Audit Project (NAP6). British Journal of Anaesthesia. 2018.",
       url: "https://doi.org/10.1016/j.bja.2018.04.015",
+    },
+    {
+      id: "rcuk",
+      citation: "Resuscitation Council UK. Emergency treatment of anaphylaxis: Guidelines for healthcare providers. 2021.",
+      url: "https://www.resus.org.uk/library/additional-guidance/guidance-anaphylaxis/emergency-treatment",
     },
   ],
   reviewed: false,

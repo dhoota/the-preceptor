@@ -59,7 +59,7 @@ export const stoppedAntiplateletsDentalStemi: OralCase = {
       id: "med-detail",
       label: "Medication details",
       result:
-        "Six days ago the dental office called and told her to stop her 'blood thinners' for 5 days before having two teeth pulled. She stopped both ASA and ticagrelor. " +
+        "Six days ago the dental office called and told her to stop her 'blood thinners' 4 days before having two teeth pulled. She stopped both ASA and ticagrelor. " +
         "She has not restarted either. Her cardiologist was not asked. Other medications taken as prescribed.",
     },
     {
@@ -122,8 +122,8 @@ export const stoppedAntiplateletsDentalStemi: OralCase = {
       id: "transport",
       label: "Transport status",
       result:
-        "The PCI centre accepts her. Both local ambulance crews are out on calls and the next available crew is 50 minutes away. Fog has grounded the air ambulance. " +
-        "The PCI centre estimates she would reach the lab at about 08:50 at the earliest.",
+        "The PCI centre accepts her. Both local ambulance crews are out on calls and the next available crew is 70 minutes away. Fog has grounded the air ambulance. " +
+        "The PCI centre estimates she would reach the lab at about 09:15 at the earliest.",
     },
     {
       id: "husband",
@@ -255,8 +255,8 @@ export const stoppedAntiplateletsDentalStemi: OralCase = {
       id: "s-transport",
       phase: "Minutes later",
       text:
-        "The PCI centre accepts her for primary PCI. Then dispatch calls back. Both local ambulances are out and the next crew is 50 minutes away. Fog has grounded the air ambulance. " +
-        "The PCI centre estimates she would reach the lab at about 08:50 at the earliest.",
+        "The PCI centre accepts her for primary PCI. Then dispatch calls back. Both local ambulances are out and the next crew is 70 minutes away. Fog has grounded the air ambulance. " +
+        "The PCI centre estimates she would reach the lab at about 09:15 at the earliest.",
       next: "q-reperfusion",
     },
     {
@@ -266,12 +266,12 @@ export const stoppedAntiplateletsDentalStemi: OralCase = {
       prompt: "What is your reperfusion plan now? Give me your drugs and doses.",
       seconds: 90,
       modelAnswer: [
-        "First medical contact was 06:40. A lab time of 08:50 puts first contact to device well over 120 minutes.",
+        "First medical contact was 06:40 and the STEMI diagnosis 06:58. A lab time of 09:15 is well over 120 minutes from either.",
         "Switch to fibrinolysis now. Aim for the bolus within 10 minutes of the decision and 30 minutes of arrival.",
-        "Tenecteplase weight based. 40 mg for 70 to under 80 kg. She is under 75, so full dose.",
+        "Tenecteplase weight based. 40 mg for 70 to under 80 kg, so 40 mg for her 74 kg. She is under 75, so full dose.",
         "ASA already given. Clopidogrel 300 mg load.",
         "Enoxaparin 30 mg IV, then 1 mg/kg SC every 12 hours. 74 mg for her.",
-        "The dental extraction 2 days ago is minor and compressible. It is not on the contraindication list. Explain the bleeding risk to her.",
+        "The dental extraction 2 days ago is minor and compressible. It is not a listed contraindication. Weigh it as a relative risk and explain it to her.",
         "Transfer to the PCI centre afterwards for a pharmacoinvasive strategy.",
       ],
       rubric: ["ih-m1", "ih-m2", "ih-m3", "ih-pr2"],
@@ -297,11 +297,11 @@ export const stoppedAntiplateletsDentalStemi: OralCase = {
         },
         {
           id: "c-no-lysis",
-          label: "Because of the recent dental surgery, I decided she could not have a fibrinolytic and gave heparin only while we waited.",
+          label: "Because of the recent dental surgery, I withheld the fibrinolytic and all anticoagulation, gave morphine and waited for the ambulance.",
           next: "s-no-lysis",
           quality: "unsafe",
           feedback:
-            "Withholding reperfusion from an anterior STEMI is the greater risk. Recent major surgery is a contraindication, but a dental extraction with clotted sockets is minor and compressible. " +
+            "Withholding reperfusion and all antithrombotic therapy from an anterior STEMI is the greater risk. Recent major surgery weighs against lysis, but a dental extraction with clotted sockets is minor and compressible. " +
             "Weigh the bleeding risk against a large anterior infarct, and tell her about it.",
         },
       ],
@@ -546,7 +546,7 @@ export const stoppedAntiplateletsDentalStemi: OralCase = {
       criterion: "management",
       text: "Gives correct doses. Tenecteplase 40 mg for 70 to under 80 kg, ASA 160 mg chewed, clopidogrel 300 mg, enoxaparin 30 mg IV then 1 mg/kg SC every 12 hours.",
       points: 2,
-      teaching: "Under age 75, give full weight based tenecteplase and a clopidogrel load. At 75 or older, halve tenecteplase, give clopidogrel 75 mg and omit the enoxaparin bolus.",
+      teaching: "Under age 75, give full weight based tenecteplase, a 300 mg clopidogrel load and an enoxaparin IV bolus. At 75 or older, give clopidogrel 75 mg and omit the enoxaparin bolus.",
       source: "esc17",
     },
     {
@@ -556,8 +556,8 @@ export const stoppedAntiplateletsDentalStemi: OralCase = {
       text: "Weighs the recent dental extraction as a minor, compressible bleeding risk that does not justify withholding reperfusion, and explains the risk to her.",
       points: 2,
       critical: true,
-      teaching: "A dental extraction is not major surgery and is not on the ESC contraindication list. The risk of a large anterior infarct is greater.",
-      source: "esc23",
+      teaching: "The Canadian monograph lists recent major surgery and recent trauma as risks to weigh against benefit. A dental extraction with compressible sockets is a minor risk next to a large anterior infarct.",
+      source: "tnk",
     },
     {
       id: "ih-m4",
@@ -655,6 +655,11 @@ export const stoppedAntiplateletsDentalStemi: OralCase = {
       citation:
         "Grines CL, Bonow RO, Casey DE Jr, et al. Prevention of premature discontinuation of dual antiplatelet therapy in patients with coronary artery stents. A science advisory from the AHA, ACC, SCAI, ACS and ADA. Circulation. 2007.",
       url: "https://pubmed.ncbi.nlm.nih.gov/17224480/",
+    },
+    {
+      id: "tnk",
+      citation: "Hoffmann-La Roche Limited. TNKase (tenecteplase for injection) product monograph. Revised 2023.",
+      url: "https://pdf.hres.ca/dpd_pm/00069984.PDF",
     },
   ],
   reviewed: false,

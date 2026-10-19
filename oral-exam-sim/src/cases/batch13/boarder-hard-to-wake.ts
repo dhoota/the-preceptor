@@ -211,7 +211,7 @@ export const boarderHardToWake: OralCase = {
         "The patient next to him: he fell at about 02:15 and hit his head on the rail. Nobody told a physician.",
         "His wife: his usual state is fully independent and sharp. No alcohol, no sleeping pills at home.",
         "Past history: chronic kidney disease, diabetes, atrial fibrillation on apixaban. No seizures, stroke or dementia.",
-        "Kidney disease slows clearance of hydromorphone metabolites and gliclazide.",
+        "Kidney disease lets hydromorphone metabolites build up and raises the risk of hypoglycemia on a sulfonylurea.",
       ],
       rubric: ["lc-h1", "lc-h2", "lc-h3", "lc-h4"],
       next: "s-better",
@@ -298,7 +298,7 @@ export const boarderHardToWake: OralCase = {
       seconds: 75,
       modelAnswer: [
         "This is a major bleed in a critical site. Hold apixaban.",
-        "Reverse the factor Xa inhibitor: andexanet alfa where it is available, otherwise prothrombin complex concentrate per local protocol, often a fixed 2000 units IV.",
+        "Reverse the factor Xa inhibitor: andexanet alfa where it is available, otherwise prothrombin complex concentrate per local protocol. Canadian regimens are a fixed 2000 units IV, or 25 to 50 units/kg to a maximum of 3000 units. For him, 2000 units is about 29 units/kg.",
         "Do not give frozen plasma or vitamin K for apixaban. They do not reverse it.",
         "Call neurosurgery now through CritiCall. Send the images.",
         "Head of bed up to 30 degrees. Neuro checks every 15 minutes. Avoid hypoxia, hypercapnia, hypoglycemia and hypotension.",
@@ -314,7 +314,8 @@ export const boarderHardToWake: OralCase = {
           quality: "strong",
           feedback:
             "Correct. An intracranial bleed on a factor Xa inhibitor is a life threatening bleed that warrants reversal. " +
-            "Andexanet is the specific agent, and prothrombin complex concentrate is used when it is not available. Early neurosurgical contact allows planning for transfer.",
+            "Andexanet is the specific agent, and prothrombin complex concentrate is used when it is not available. The best PCC dose is uncertain, and a fixed 2000 units or 25 to 50 units/kg are both accepted. " +
+            "Early neurosurgical contact allows planning for transfer.",
         },
         {
           id: "c-plasma",
@@ -331,7 +332,7 @@ export const boarderHardToWake: OralCase = {
           next: "s-no-reverse",
           quality: "unsafe",
           feedback:
-            "Any intracranial bleed is a major bleed. His kidney disease slows apixaban clearance and his last dose was only 9 hours ago. " +
+            "Any intracranial bleed is a major bleed. His kidney disease can slow apixaban clearance and his last dose was only 9 hours ago. " +
             "Anticoagulation must be held and reversal considered now. Restarting is decided later with neurosurgery.",
         },
       ],
@@ -493,7 +494,7 @@ export const boarderHardToWake: OralCase = {
       text: "Asks staff and the neighbouring patient about overnight events and learns of the fall with a head strike at about 02:15.",
       points: 2,
       teaching: "In an anticoagulated patient, any fall with head strike changes the differential. The time of the last dose guides the reversal decision.",
-      source: "acc-bleeding",
+      source: "tc-bleeding",
     },
     {
       id: "lc-h3",
@@ -540,7 +541,7 @@ export const boarderHardToWake: OralCase = {
       points: 2,
       critical: true,
       teaching: "Do not attribute decreased consciousness to medications until head injury is excluded, especially on an anticoagulant.",
-      source: "acc-bleeding",
+      source: "tc-bleeding",
     },
     {
       id: "lc-p4",
@@ -549,7 +550,7 @@ export const boarderHardToWake: OralCase = {
       text: "Interprets the gas as acute respiratory acidosis and the CT as an acute subdural hematoma with midline shift, a major bleed at a critical site.",
       points: 1,
       teaching: "Bleeding in a critical site such as the brain is a major bleed by definition and needs the anticoagulant held.",
-      source: "acc-bleeding",
+      source: "tc-bleeding",
     },
     {
       id: "lc-m1",
@@ -585,8 +586,8 @@ export const boarderHardToWake: OralCase = {
       criterion: "management",
       text: "Holds apixaban and reverses it with andexanet or, if unavailable, prothrombin complex concentrate, and avoids plasma and vitamin K.",
       points: 2,
-      teaching: "Andexanet is recommended for life threatening bleeding on a factor Xa inhibitor. Prothrombin complex concentrate is used when andexanet is not available.",
-      source: "acc-bleeding",
+      teaching: "Thrombosis Canada advises a specific reversal agent, andexanet, if available, and otherwise PCC. Andexanet is rarely stocked in Canada and carries a thrombotic risk, so its role is debated. Plasma and vitamin K do not reverse apixaban.",
+      source: "tc-bleeding",
     },
     {
       id: "lc-m5",
@@ -660,9 +661,9 @@ export const boarderHardToWake: OralCase = {
       url: "https://doi.org/10.3109/15563650.2012.734626",
     },
     {
-      id: "acc-bleeding",
-      citation: "Tomaselli GF, Mahaffey KW, Cuker A, et al. 2020 ACC Expert Consensus Decision Pathway on Management of Bleeding in Patients on Oral Anticoagulants. Journal of the American College of Cardiology. 2020.",
-      url: "https://doi.org/10.1016/j.jacc.2020.04.053",
+      id: "tc-bleeding",
+      citation: "Thrombosis Canada. Clinical guide. DOACs: Management of Bleeding. Version of 5 February 2024.",
+      url: "https://thrombosiscanada.ca/clinical_guides/pdfs/MANAGEMENTOFBLEEDINGINPATIENTS_75.pdf",
     },
     {
       id: "gcs",

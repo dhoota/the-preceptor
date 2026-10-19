@@ -2,9 +2,9 @@
 
 import type { OralCase } from "@/engine/types";
 
-export const backWithTheSameHeadache: OralCase = {
-  id: "back-with-the-same-headache",
-  title: "Back with the same headache",
+export const headacheBuildingOverFiveDays: OralCase = {
+  id: "headache-building-over-five-days",
+  title: "A headache that keeps building",
   blueprint: "neuro",
   alsoCovers: ["comm", "systems"],
   priorityTopic: "headache",
@@ -14,19 +14,19 @@ export const backWithTheSameHeadache: OralCase = {
     { topic: "headache", n: 3 },
     { topic: "headache", n: 6 },
   ],
-  summary: "A young woman returns two days after being sent home with a headache. It is worse, and she is vomiting.",
+  summary: "A young woman has a headache that has been getting worse for days, and now she is vomiting.",
   durationMinutes: 12,
   stem:
     "You are working in the emergency department of a community hospital when the following patient arrives. " +
-    "A 27 year old woman returns with a headache that has worsened over five days. She was seen in this department two days ago and sent home.",
+    "A 27 year old woman is driven in by her partner with a headache that has worsened over five days. Today she cannot stop vomiting.",
   card: {
     vitals: {
       temperature: "37.1°C oral",
-      pulse: "92/minute",
+      pulse: "96/minute",
       resp: "16/minute",
       bp: "132/84 mmHg",
       o2sat: "99% on room air",
-      weight: "74 kg (163 lb)",
+      weight: "66 kg (146 lb)",
     },
     medications: "Combined oral contraceptive pill daily. Ibuprofen and acetaminophen as needed. Ferrous fumarate daily.",
     allergies: "None known",
@@ -46,10 +46,10 @@ export const backWithTheSameHeadache: OralCase = {
         "Since her teens she has had mild pressing headaches around her periods. They settle with ibuprofen and never cause vomiting or visual change. She says, 'This is nothing like my usual headaches. It keeps getting worse.'",
     },
     {
-      id: "prior-visit",
-      label: "Record of the visit two days ago",
+      id: "treatment-so-far",
+      label: "Treatment so far",
       result:
-        "Diagnosis: migraine. She received metoclopramide 10 mg IV and ketorolac 15 mg IV and felt somewhat better. Neurological exam documented as 'grossly normal'. No fundoscopy or visual acuity recorded. Discharged with advice to return if worse.",
+        "She has taken ibuprofen 400 mg three or four times a day for 5 days, with brief relief at first and none since yesterday. Yesterday a pharmacist suggested a migraine. She has not seen a physician for this headache.",
     },
     {
       id: "pmh",
@@ -61,7 +61,7 @@ export const backWithTheSameHeadache: OralCase = {
       id: "meds",
       label: "Medication details",
       result:
-        "Combined oral contraceptive with levonorgestrel 0.15 mg and ethinyl estradiol 30 mcg, started 4 months ago for heavy periods. Ibuprofen 400 mg three or four times a day for 5 days. Ferrous fumarate 300 mg daily. No allergies.",
+        "Combined oral contraceptive with levonorgestrel 0.15 mg and ethinyl estradiol 30 mcg, started 4 months ago for heavy periods. Ibuprofen 400 mg three or four times a day for 5 days. Acetaminophen 500 mg now and then. Ferrous fumarate 300 mg daily. No allergies.",
     },
     {
       id: "family",
@@ -96,7 +96,7 @@ export const backWithTheSameHeadache: OralCase = {
     {
       id: "bedside",
       label: "Bedside tests",
-      result: "Urine beta hCG negative. Capillary glucose 5.4 mmol/L. ECG sinus rhythm at 90/minute, normal intervals.",
+      result: "Urine beta hCG negative. Capillary glucose 5.4 mmol/L. ECG sinus rhythm at 94/minute, normal intervals.",
     },
     {
       id: "labs",
@@ -141,15 +141,15 @@ export const backWithTheSameHeadache: OralCase = {
         "Onset and time course. Gradual over a day, then progressive for 5 days. Compare with her usual headaches.",
         "Red flag features. Worse lying down and on waking, worse with cough, vomiting, transient visual obscurations, transient left hand tingling.",
         "Risk factors for venous thrombosis. Combined oral contraceptive started 4 months ago, smoking, recent dehydration, family history of clots.",
-        "Review the visit two days ago. Was fundoscopy done? What was given and how did she respond?",
+        "Analgesic use and response. Daily ibuprofen for 5 days with fading relief.",
         "Exclude other causes. Fever, trauma, pregnancy, neck pain, rash, analgesic overuse.",
-        "A return visit with a worse headache is a red flag in itself.",
+        "A change from her usual pattern and a steadily worsening course are red flags in themselves.",
       ],
       rubric: ["bs-h1", "bs-h2", "bs-h3", "bs-h4", "bs-h5", "bs-pr1"],
       choices: [
         {
           id: "c-full-history",
-          label: "I compared this with her usual headaches, asked about positional change, vomiting and visual greying, the hand tingling, her new contraceptive pill, smoking, the recent gastroenteritis and her family history of clots, and read the last chart.",
+          label: "I compared this with her usual headaches, asked about positional change, vomiting and visual greying, the hand tingling, her new contraceptive pill, smoking, the recent gastroenteritis, her family history of clots and how much ibuprofen she has taken.",
           next: "q-exam",
           quality: "strong",
           feedback:
@@ -157,19 +157,19 @@ export const backWithTheSameHeadache: OralCase = {
         },
         {
           id: "c-onset-only",
-          label: "I asked about onset and severity. It was not sudden, so I treated it as a recurrence of the migraine diagnosed two days ago.",
+          label: "I asked about onset and severity. It was not sudden, so I treated it as a migraine like her usual headaches.",
           next: "s-onset-only",
           quality: "partial",
           feedback:
-            "Ruling out a thunderclap onset is necessary but not enough. A progressive headache, a change from her usual pattern and a return visit are all red flags. You missed the positional features, the visual symptoms and her clotting risk factors.",
+            "Ruling out a thunderclap onset is necessary but not enough. A progressive headache and a change from her usual pattern are both red flags. You missed the positional features, the visual symptoms and her clotting risk factors.",
         },
         {
           id: "c-cocktail",
-          label: "I repeated the migraine cocktail and planned to send her home if the pain settled, since this was already diagnosed.",
+          label: "I gave a migraine cocktail and planned to send her home if the pain settled, since she has had headaches for years.",
           next: "s-cocktail",
           quality: "unsafe",
           feedback:
-            "Anchoring on the first diagnosis is the classic trap on a return visit. Response to a migraine cocktail does not exclude a secondary headache. She needs a fresh history and a full examination including the fundi.",
+            "She told you this is nothing like her usual headaches. Response to a migraine cocktail does not exclude a secondary headache. She needs a full history and a full examination including the fundi.",
         },
       ],
     },
@@ -322,7 +322,7 @@ export const backWithTheSameHeadache: OralCase = {
       seconds: 90,
       modelAnswer: [
         "Start therapeutic anticoagulation now, even with the hemorrhage. The bleed is caused by venous congestion.",
-        "Low molecular weight heparin, such as enoxaparin 1 mg/kg (74 mg) subcutaneously every 12 hours. Unfractionated heparin if a procedure may be needed soon.",
+        "Low molecular weight heparin, such as enoxaparin 1 mg/kg (66 mg) subcutaneously every 12 hours. Unfractionated heparin is an accepted alternative, often chosen if a procedure may be needed soon.",
         "Not a direct oral anticoagulant in the acute phase. No thrombolysis as first line.",
         "Stop the combined oral contraceptive.",
         "Analgesia with acetaminophen and an antiemetic. Stop ibuprofen. Head of bed up 30 degrees.",
@@ -332,11 +332,11 @@ export const backWithTheSameHeadache: OralCase = {
       choices: [
         {
           id: "c-anticoag",
-          label: "I started enoxaparin 74 mg subcutaneously every 12 hours after speaking with neurology, stopped her pill and the ibuprofen, and gave acetaminophen and ondansetron.",
+          label: "I started enoxaparin 66 mg subcutaneously every 12 hours after speaking with neurology, stopped her pill and the ibuprofen, and gave acetaminophen and ondansetron.",
           next: "s-seizure",
           quality: "strong",
           feedback:
-            "This is the key decision. Guidelines recommend therapeutic heparin for acute venous thrombosis even when there is a hemorrhagic infarct. Anticoagulation stops the clot growing, and the venous bleed usually improves as drainage returns.",
+            "This is the key decision. Guidelines recommend therapeutic heparin for acute venous thrombosis even when there is a hemorrhagic infarct. The ESO guideline prefers low molecular weight heparin, but unfractionated heparin is also accepted, and some centres choose it when a bleed is present or a procedure may follow because it can be stopped quickly. Either is correct if it is started now.",
         },
         {
           id: "c-wait",
@@ -360,7 +360,7 @@ export const backWithTheSameHeadache: OralCase = {
       kind: "say",
       id: "s-wait",
       phase: "Neurology calls back",
-      text: "The neurologist disagrees with waiting. She says the bleed is a venous infarct and asks for heparin now. You start enoxaparin 74 mg subcutaneously.",
+      text: "The neurologist disagrees with waiting. She says the bleed is a venous infarct and asks for heparin now. You start enoxaparin 66 mg subcutaneously.",
       next: "s-seizure",
     },
     {
@@ -386,7 +386,7 @@ export const backWithTheSameHeadache: OralCase = {
       modelAnswer: [
         "Position on her side, suction, oxygen, monitor. Call for help.",
         "Lorazepam 4 mg IV (0.1 mg/kg, maximum 4 mg). Repeat once after 5 minutes if still seizing.",
-        "If seizures persist, levetiracetam 60 mg/kg IV, which is 4440 mg for 74 kg, under the 4500 mg maximum.",
+        "If seizures persist, levetiracetam 60 mg/kg IV, which is 3960 mg for 66 kg, under the 4500 mg maximum.",
         "Prepare for intubation if she does not protect her airway after the seizure stops.",
         "Continue the anticoagulant. Repeat CT once she is stable to look for a new or larger bleed.",
         "Start an antiseizure medication to prevent early recurrence, since she has a supratentorial lesion and a seizure.",
@@ -414,41 +414,41 @@ export const backWithTheSameHeadache: OralCase = {
       kind: "question",
       id: "q-talk",
       phase: "Talking with the patient",
-      prompt: "Before transfer she is more awake. She asks why this was missed two days ago, and whether her pill caused it. What do you say?",
+      prompt: "Before transfer she is more awake. She asks whether her pill caused this, whether she can go back on it, and whether she can still have children. What do you say?",
       seconds: 85,
       modelAnswer: [
         "Sit down. Use plain language. Include her partner if she wishes.",
         "Explain the diagnosis. A clot in a vein that drains the brain, causing pressure and a small bleed.",
-        "Be honest that the diagnosis was not made at the first visit. Apologize. Do not blame the previous physician.",
-        "Explain that the estrogen pill, smoking and dehydration likely contributed. She should not use estrogen again.",
+        "Explain that the estrogen pill, smoking, dehydration and iron deficiency anemia likely added together. She should not use estrogen again.",
         "Discuss safe contraception without estrogen, such as a copper or levonorgestrel IUD. Offer help to stop smoking.",
-        "Tell her the return visit will be reviewed so the department can learn from it.",
+        "A future pregnancy is not ruled out. It should be planned with her specialists, because prophylactic heparin is advised through pregnancy and after delivery.",
+        "Check her understanding and invite questions. The stroke team will review how long she stays on anticoagulation.",
       ],
       rubric: ["bs-pr4", "bs-pr5", "bs-m4"],
       choices: [
         {
           id: "c-honest",
-          label: "I told her what we found and that the diagnosis was not made at her first visit, apologized, explained that the estrogen pill likely contributed and must be stopped for good, discussed non estrogen contraception and smoking, and said the visit would be reviewed.",
+          label: "I explained the clot and the bleed in plain words, said the estrogen pill, smoking and dehydration likely added together, that she should never use estrogen again, offered an IUD and help to stop smoking, and said a future pregnancy is possible if planned with her specialists because she would need heparin.",
           next: "end",
           quality: "strong",
           feedback:
-            "Good. Honest disclosure of what happened, an apology and a commitment to review build trust. Estrogen is contraindicated after venous thrombosis. An IUD is a safe option, and stopping smoking lowers her risk.",
+            "Good. Estrogen containing contraception should be avoided after cerebral venous thrombosis. An IUD is a safe option, and stopping smoking lowers her risk. Pregnancy is not forbidden, but prophylactic heparin through pregnancy and after delivery should be considered.",
         },
         {
           id: "c-defend",
-          label: "I told her this is a very rare diagnosis and nobody could have picked it up two days ago.",
+          label: "I told her the neurologists at the stroke centre would explain everything, and kept my answer short.",
           next: "s-defend",
           quality: "partial",
           feedback:
-            "It is true that this is a hard diagnosis, but you do not yet know what was missed. The chart shows no fundoscopy. Stick to the facts, apologize for the outcome and commit to a review. Do not offer reassurance you cannot back up.",
+            "She asked you a direct question and she is frightened. A short, plain answer now about the pill and the cause is part of your care. Leaving it all to the next team leaves her guessing during a long transfer.",
         },
         {
           id: "c-blame",
-          label: "I told her the doctor who saw her two days ago should have looked in her eyes and ordered a scan.",
+          label: "I told her the clot was mostly from dehydration, so she could restart the same pill once her blood thinner course was finished.",
           next: "s-blame",
           quality: "unsafe",
           feedback:
-            "Blaming a colleague at the bedside is unprofessional and premature. You do not know what was seen or said. The right path is an honest account of the facts, an apology and a formal review of the visit.",
+            "This is wrong and could cause a second clot. Estrogen containing contraception should be avoided for good after cerebral venous thrombosis. Offer a progestin or copper IUD instead.",
         },
       ],
     },
@@ -456,20 +456,20 @@ export const backWithTheSameHeadache: OralCase = {
       kind: "say",
       id: "s-defend",
       phase: "Her partner speaks",
-      text: "Her partner says, 'She told them it was not her usual headache.' You pause, acknowledge that, apologize, and explain that the visit will be reviewed.",
+      text: "Her partner says, 'She keeps asking me if the pill did this.' You sit down with them both and go through the cause, contraception and pregnancy in plain words.",
       next: "end",
     },
     {
       kind: "say",
       id: "s-blame",
-      phase: "Later that evening",
-      text: "Her partner calls patient relations and names the other physician. The department chief asks you to correct what you said and to file a return visit review instead. You speak with the patient again.",
+      phase: "The neurologist calls",
+      text: "During the transfer call, the neurologist hears your advice and corrects it. Estrogen should be avoided for good after this diagnosis. You go back and explain this to the patient and her partner.",
       next: "end",
     },
     {
       kind: "end",
       id: "end",
-      text: "She is transferred to the regional stroke centre on enoxaparin. Her headache and papilledema improve over two weeks, and her left hand recovers. The return visit is reviewed at the department quality rounds. That is the end of the case.",
+      text: "She is transferred to the regional stroke centre on enoxaparin. Her headache and papilledema improve over two weeks, and her left hand recovers. She has a copper IUD placed before discharge. That is the end of the case.",
     },
   ],
   rubric: [
@@ -513,10 +513,10 @@ export const backWithTheSameHeadache: OralCase = {
       id: "bs-h5",
       competency: "assessment",
       criterion: "history",
-      text: "Reviews the record of the visit two days ago, including treatment given and whether fundoscopy was done, and asks about analgesic use.",
+      text: "Asks about analgesic use and response, and about pregnancy.",
       points: 1,
-      teaching: "The earlier chart shows what was examined and what was not. Partial relief with a migraine cocktail does not exclude a secondary headache.",
-      source: "acep-ha",
+      teaching: "Painkiller overuse and pregnancy are both flags in the SNNOOP10 list. Fading relief from daily ibuprofen is a sign of a progressive process, not reassurance.",
+      source: "snnoop",
     },
     {
       id: "bs-p1",
@@ -534,8 +534,8 @@ export const backWithTheSameHeadache: OralCase = {
       criterion: "physical",
       text: "Performs a full neurological exam and finds the left pronator drift, sensory loss and brisk reflexes.",
       points: 2,
-      teaching: "Subtle focal signs are easy to miss in a vomiting patient. A pronator drift test takes seconds.",
-      source: "acep-ha",
+      teaching: "A new neurological deficit is a red flag for a secondary headache. Subtle focal signs are easy to miss in a vomiting patient, and a pronator drift test takes seconds.",
+      source: "snnoop",
     },
     {
       id: "bs-p3",
@@ -571,8 +571,8 @@ export const backWithTheSameHeadache: OralCase = {
       criterion: "management",
       text: "Avoids a lumbar puncture before imaging in a patient with papilledema and a focal deficit.",
       points: 1,
-      teaching: "Imaging comes first when there is papilledema or a focal sign. A lumbar puncture cannot show why the pressure is raised.",
-      source: "acep-ha",
+      teaching: "A focal sign such as arm drift predicts an abnormal CT and calls for imaging before any lumbar puncture. A lumbar puncture cannot show why the pressure is raised.",
+      source: "hasbun",
     },
     {
       id: "bs-m3",
@@ -590,8 +590,8 @@ export const backWithTheSameHeadache: OralCase = {
       criterion: "management",
       text: "Stops the combined oral contraceptive and counsels against future estrogen, with non estrogen contraception and smoking cessation.",
       points: 1,
-      teaching: "Estrogen is contraindicated after a cerebral venous thrombosis. Progestin or copper IUDs are safe alternatives.",
-      source: "aha-cvt",
+      teaching: "Estrogen containing contraceptives should be avoided after a cerebral venous thrombosis. Progestin or copper IUDs are safe alternatives.",
+      source: "eso-cvt",
     },
     {
       id: "bs-m5",
@@ -606,19 +606,19 @@ export const backWithTheSameHeadache: OralCase = {
       id: "bs-m6",
       competency: "management",
       criterion: "management",
-      text: "Gives analgesia and an antiemetic and stops the ibuprofen.",
+      text: "Gives nonopioid analgesia such as acetaminophen with an antiemetic, and stops the ibuprofen.",
       points: 1,
-      teaching: "Treat the symptoms while you work up the cause. Stop NSAIDs once anticoagulation starts.",
+      teaching: "Nonopioid analgesics are preferred for headache in the emergency department. Stop NSAIDs because she has a hemorrhage and is about to start heparin.",
       source: "acep-ha",
     },
     {
       id: "bs-pr1",
       competency: "leadership",
       criterion: "process",
-      text: "Treats the return visit as a red flag and reconsiders the first diagnosis instead of anchoring on it.",
+      text: "Treats the change from her usual headaches as a red flag and does not let a response to treatment close the workup.",
       points: 2,
-      teaching: "A patient back with a worse headache needs a fresh look. Anchoring on a previous label is a common cause of missed diagnosis.",
-      source: "acep-ha",
+      teaching: "A pattern change and a progressive course are SNNOOP10 flags. Labelling a new headache as her usual migraine is a common cause of missed diagnosis.",
+      source: "snnoop",
     },
     {
       id: "bs-pr2",
@@ -626,7 +626,7 @@ export const backWithTheSameHeadache: OralCase = {
       criterion: "process",
       text: "Arranges transfer to a stroke centre through CritiCall with neurology and neurosurgery aware, a structured handover and a monitored escort.",
       points: 2,
-      teaching: "Patients with cerebral venous thrombosis and a seizure or hemorrhage need a stroke unit or ICU. Falling consciousness can mean herniation needing decompressive surgery.",
+      teaching: "Patients with cerebral venous thrombosis and a seizure or hemorrhage need a stroke unit or ICU. Impending herniation from a parenchymal lesion is an indication for decompressive surgery.",
       source: "eso-cvt",
     },
     {
@@ -642,19 +642,19 @@ export const backWithTheSameHeadache: OralCase = {
       id: "bs-pr4",
       competency: "communication",
       criterion: "process",
-      text: "Explains the diagnosis honestly, including that it was not made at the first visit, apologizes and does not blame a colleague.",
+      text: "Explains the diagnosis and its likely causes in plain words, answers her questions directly and checks her understanding before transfer.",
       points: 2,
-      teaching: "Patients want an honest account and an apology. Speculating about a colleague's care is unfair and damages trust.",
-      source: "acep-ha",
+      teaching: "Estrogen, smoking, dehydration and anemia are common contributors to cerebral venous thrombosis in young women. A clear explanation now helps her accept the changes she must make.",
+      source: "aha-cvt",
     },
     {
       id: "bs-pr5",
       competency: "professionalism",
       criterion: "process",
-      text: "Refers the return visit for departmental review and documents the conversation.",
+      text: "Counsels that a future pregnancy is possible but should be planned with her specialists, with prophylactic heparin.",
       points: 1,
-      teaching: "Return visit reviews help a department learn from missed diagnoses without blaming individuals.",
-      source: "acep-ha",
+      teaching: "Pregnancy after cerebral venous thrombosis is considered safe. Prophylactic low molecular weight heparin should be considered through pregnancy and after delivery.",
+      source: "eso-cvt",
     },
   ],
   sources: [
@@ -678,6 +678,12 @@ export const backWithTheSameHeadache: OralCase = {
       id: "acep-ha",
       citation:
         "American College of Emergency Physicians Clinical Policies Subcommittee on Acute Headache, Godwin SA, Cherkas DS, and colleagues. Clinical policy: critical issues in the evaluation and management of adult patients presenting to the emergency department with acute headache. Ann Emerg Med. 2019.",
+      url: "https://pubmed.ncbi.nlm.nih.gov/31543134/",
+    },
+    {
+      id: "hasbun",
+      citation: "Hasbun R, Abrahams J, Jekel J, Quagliarello VJ. Computed tomography of the head before lumbar puncture in adults with suspected meningitis. N Engl J Med. 2001.",
+      url: "https://pubmed.ncbi.nlm.nih.gov/11742046/",
     },
     {
       id: "esett",

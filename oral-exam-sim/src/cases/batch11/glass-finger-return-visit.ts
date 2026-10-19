@@ -234,7 +234,7 @@ export const glassFingerReturnVisit: OralCase = {
           next: "s-results",
           quality: "strong",
           feedback:
-            "Right. In a classic comparison study, plain films found radio-opaque objects such as glass 98 percent of the time, while ultrasound found only about half. " +
+            "Right. In an animal tissue model, plain films found radio-opaque objects such as glass 98 percent of the time, while ultrasound found under half. " +
             "Blood cultures and inflammatory markers help, but do not wait on them.",
         },
         {
@@ -272,7 +272,7 @@ export const glassFingerReturnVisit: OralCase = {
       seconds: 90,
       modelAnswer: [
         "Pyogenic flexor tenosynovitis with a retained glass foreign body.",
-        "IV antibiotics now, after blood cultures. Cover staphylococci, including MRSA where it is common, and streptococci.",
+        "IV antibiotics now, after blood cultures. Cover staphylococci, including MRSA where it is common, and streptococci. Consider gram negative cover because of her diabetes.",
         "Splint in a safe position and elevate. Analgesia. Nothing by mouth.",
         "Treat her glucose.",
         "Tetanus booster. Last dose was 8 years ago and this is not a clean, minor wound.",
@@ -293,12 +293,12 @@ export const glassFingerReturnVisit: OralCase = {
         },
         {
           id: "c-bedside",
-          label: "I opened the wound, removed the glass at the bedside, irrigated it and sent her home on amoxicillin clavulanate with a recheck in 2 days.",
+          label: "I opened the wound under a digital block to find the glass and wash out the sheath myself, and planned to call the hand surgeon only if that failed.",
           next: "s-bedside",
           quality: "partial",
           feedback:
             "Removing the glass is right in principle, but pus in the flexor sheath cannot be drained through a skin wound, and the fragment sits next to the tendons and the nerve. " +
-            "This needs IV antibiotics and operative irrigation by a hand surgeon.",
+            "Bedside exploration also delays antibiotics. This needs IV antibiotics and operative irrigation by a hand surgeon.",
         },
         {
           id: "c-oral",
@@ -480,7 +480,7 @@ export const glassFingerReturnVisit: OralCase = {
       text: "Looks for and finds the four Kanavel signs and diagnoses pyogenic flexor tenosynovitis.",
       points: 3,
       critical: true,
-      teaching: "Flexed posture, fusiform swelling, sheath tenderness and pain on passive extension. Sheath tenderness and pain on passive extension are the strongest predictors.",
+      teaching: "Flexed posture, fusiform swelling, sheath tenderness and pain on passive extension. One study found sheath tenderness and pain on passive extension to be independent predictors.",
       source: "chapman",
     },
     {
@@ -516,7 +516,7 @@ export const glassFingerReturnVisit: OralCase = {
       criterion: "physical",
       text: "Orders plain radiographs for glass and does not rely on ultrasound to exclude a foreign body.",
       points: 2,
-      teaching: "Radiography detects radio-opaque objects such as glass in almost all cases. Ultrasound misses about half.",
+      teaching: "In a tissue model, radiography found radio-opaque objects such as glass 98 percent of the time. Ultrasound found only 43 percent of foreign bodies.",
       source: "manthey",
     },
     {
@@ -526,7 +526,7 @@ export const glassFingerReturnVisit: OralCase = {
       text: "Starts IV antibiotics promptly, after blood cultures, covering staphylococci including MRSA where common and streptococci.",
       points: 3,
       critical: true,
-      teaching: "Staphylococcus aureus causes most flexor sheath infections, and MRSA is rising. Do not delay antibiotics for tests.",
+      teaching: "Staphylococcus aureus is found in up to 75 percent of positive cultures and MRSA in up to 29 percent. Cover gram negative organisms too in a patient with weakened defences.",
       source: "chapman",
     },
     {
@@ -545,7 +545,7 @@ export const glassFingerReturnVisit: OralCase = {
       criterion: "management",
       text: "Splints and elevates the hand, gives analgesia, keeps her nothing by mouth and treats her glucose.",
       points: 1,
-      teaching: "Splinting and elevation reduce pain and swelling while she waits for the operating room.",
+      teaching: "Diabetes is linked to a higher risk of amputation in flexor tenosynovitis. Get her ready for the operating room and control her glucose while she waits.",
       source: "chapman",
     },
     {

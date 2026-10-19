@@ -2,9 +2,9 @@
 
 import type { OralCase } from "@/engine/types";
 
-export const iceHutHeaterContactBurns: OralCase = {
-  id: "ice-hut-heater-contact-burns",
-  title: "Found on the floor of an ice hut",
+export const workTrailerHeaterBurns: OralCase = {
+  id: "work-trailer-heater-burns",
+  title: "Found on the floor of a work trailer",
   blueprint: "enviro",
   alsoCovers: ["trauma", "tox"],
   priorityTopic: "burns",
@@ -14,11 +14,11 @@ export const iceHutHeaterContactBurns: OralCase = {
     { topic: "burns", n: 4 },
     { topic: "burns", n: 5 },
   ],
-  summary: "A man is found confused on the floor of an ice fishing hut on a winter morning and arrives by ambulance at a small hospital.",
+  summary: "A man is found confused on the floor of a heated work trailer at a remote winter job site and arrives by ambulance at a small hospital.",
   durationMinutes: 12,
   stem:
     "You are working in the emergency department of a rural hospital when the following patient arrives. " +
-    "Paramedics bring in a 48 year old man who was found on the floor of his ice fishing hut beside a propane heater. He is confused and has burns on his right side.",
+    "Paramedics bring in a 48 year old man who was found on the floor of a work trailer at a winter road camp beside a propane heater. He is confused and has burns on his right side.",
   card: {
     vitals: {
       temperature: "37.4°C tympanic",
@@ -36,13 +36,13 @@ export const iceHutHeaterContactBurns: OralCase = {
       id: "paramedics",
       label: "Paramedic report",
       result:
-        "Called at 06:30 by his friend. Found on his left side on the hut floor with his back against a portable propane heater that was still running. The hut smelled of exhaust and the roof vent was packed with snow. GCS 9 at the scene, now 13. Vomit on the floor. Non rebreather mask on since 06:50. Arrived at 08:15. No IV analgesia given.",
+        "Called at 06:30 by a coworker. Found on his left side on the trailer floor with his back against a portable propane heater that was still running. The trailer smelled of exhaust and the roof vent was packed with snow. GCS 9 at the scene, now 13. Vomit on the floor. Non rebreather mask on since 06:50. Arrived at 08:15. No IV analgesia given.",
     },
     {
-      id: "friend",
-      label: "Collateral from his friend",
+      id: "coworker",
+      label: "Collateral from his coworker",
       result:
-        "They fished together until 21:30, when the friend went home. The patient planned to sleep in the hut. He had about 6 beers through the evening. The friend found him at 06:30 and stayed in the hut about 15 minutes while waiting for the ambulance. The friend now has a headache and feels sick.",
+        "They finished a shift together and played cards in the trailer until 21:30, when the coworker went to his own trailer. The patient planned to sleep there. He had about 6 beers through the evening. The coworker came to wake him for the 06:30 shift and stayed in the trailer about 15 minutes while waiting for the ambulance. The coworker now has a headache and feels sick.",
     },
     {
       id: "pmh",
@@ -53,7 +53,7 @@ export const iceHutHeaterContactBurns: OralCase = {
       id: "social",
       label: "Social history and intent",
       result:
-        "Lives with his wife. Works as a heavy equipment operator. Drinks 6 to 10 beers on weekends. No drug use. His wife confirms he has been in good spirits. No history of depression or self harm. He says, 'I just lay down to sleep. I never thought the vent would block.'",
+        "Lives with his wife. Heavy equipment operator on a winter road crew, two weeks in and one week out. Drinks 6 to 10 beers on weekends. No drug use. His wife confirms he has been in good spirits. No history of depression or self harm. He says, 'I just lay down to sleep. I never thought the vent would block.'",
     },
     {
       id: "primary",
@@ -134,7 +134,7 @@ export const iceHutHeaterContactBurns: OralCase = {
         "Two large bore IVs. Monitor and 12 lead ECG. Glucose.",
         "Venous gas with co-oximetry, CK, electrolytes, creatinine, troponin, ethanol and urinalysis.",
         "Expose, estimate burn size and depth, then cover with clean dry dressings and keep him warm.",
-        "Ask the paramedics and his friend for the timeline and how he was found.",
+        "Ask the paramedics and his coworker for the timeline and how he was found.",
       ],
       rubric: ["ib-p1", "ib-m1", "ib-c1"],
       choices: [
@@ -152,7 +152,7 @@ export const iceHutHeaterContactBurns: OralCase = {
           next: "s-prongs",
           quality: "unsafe",
           feedback:
-            "Standard pulse oximetry reads carboxyhemoglobin as oxyhemoglobin. He was unconscious in an enclosed hut with a running propane heater. High flow oxygen is the treatment. Stopping it prolongs the carbon monoxide exposure.",
+            "Standard pulse oximetry reads carboxyhemoglobin as oxyhemoglobin. He was unconscious in an enclosed trailer with a running propane heater. High flow oxygen is the treatment. Stopping it prolongs the carbon monoxide exposure.",
         },
         {
           id: "c-parkland",
@@ -184,12 +184,12 @@ export const iceHutHeaterContactBurns: OralCase = {
       kind: "question",
       id: "q-history",
       phase: "History",
-      prompt: "His friend and the paramedics are here. What history do you want, and why?",
+      prompt: "His coworker and the paramedics are here. What history do you want, and why?",
       seconds: 90,
       modelAnswer: [
         "When he was last seen well and when he was found. That gives the downtime and the time of burn injury.",
         "The heater, the ventilation and the smell. Loss of consciousness, vomiting and seizure.",
-        "Who else was exposed. The friend was in the hut for 15 minutes.",
+        "Who else was exposed. The coworker was in the trailer for 15 minutes.",
         "Alcohol, drugs and whether this could have been intentional.",
         "Any fall or trauma. Pain or numbness in any limb he lay on.",
         "Past history, medications such as ramipril, allergies and tetanus status.",
@@ -368,21 +368,21 @@ export const iceHutHeaterContactBurns: OralCase = {
       id: "s-ocular",
       phase: "Back from the operating room",
       text:
-        "The fasciotomy wounds are dressed. His repeat carboxyhemoglobin is 3%. He is alert but slow to answer. His friend, still in the waiting room, tells the triage nurse his headache is worse and he feels dizzy.",
+        "The fasciotomy wounds are dressed. His repeat carboxyhemoglobin is 3%. He is alert but slow to answer. His coworker, still in the waiting room, tells the triage nurse his headache is worse and he feels dizzy.",
       next: "q-co",
     },
     {
       kind: "question",
       id: "q-co",
       phase: "Carbon monoxide",
-      prompt: "Does the patient need hyperbaric oxygen? What do you do about his friend?",
+      prompt: "Does the patient need hyperbaric oxygen? What do you do about his coworker?",
       seconds: 75,
       modelAnswer: [
         "He lost consciousness and is over 36, both risk factors for delayed neurologic sequelae. His troponin is raised.",
         "Hyperbaric oxygen may help selected patients. Weigh severity against distance and time.",
         "Discuss with the hyperbaric physician at the tertiary centre. It also holds the burn unit, so one transfer can serve both.",
         "Do not let hyperbaric oxygen delay life and limb care. Continue high flow oxygen meanwhile.",
-        "Register and assess the friend as a patient. Co-oximetry, ECG and high flow oxygen.",
+        "Register and assess the coworker as a patient. Co-oximetry, ECG and high flow oxygen.",
         "Warn the family about risks of delayed memory and mood problems and arrange follow up.",
       ],
       rubric: ["ib-c2", "ib-c3"],
@@ -408,7 +408,7 @@ export const iceHutHeaterContactBurns: OralCase = {
       kind: "end",
       id: "end",
       text:
-        "He is flown to the tertiary centre that evening. The burn unit grafts his flank and buttock, and he has one hyperbaric treatment. His creatinine peaks and then recovers without dialysis. His friend's carboxyhemoglobin was 9% and he went home after oxygen. That is the end of the case.",
+        "He is flown to the tertiary centre that evening. The burn unit grafts his flank and buttock, and he has one hyperbaric treatment. His creatinine peaks and then recovers without dialysis. His coworker's carboxyhemoglobin was 9% and he went home after oxygen. That is the end of the case.",
     },
   ],
   rubric: [
@@ -434,7 +434,7 @@ export const iceHutHeaterContactBurns: OralCase = {
       id: "ib-h3",
       competency: "assessment",
       criterion: "history",
-      text: "Asks who else was exposed and identifies the friend as a possible patient.",
+      text: "Asks who else was exposed and identifies the coworker as a possible patient.",
       points: 1,
       teaching: "Carbon monoxide rarely poisons one person. Anyone who shared the space needs assessment and co-oximetry.",
       source: "acep-co-2017",
@@ -464,7 +464,7 @@ export const iceHutHeaterContactBurns: OralCase = {
       text: "States that a pulse oximetry reading of 100% is unreliable and measures carboxyhemoglobin by blood co-oximetry.",
       points: 2,
       critical: true,
-      teaching: "Standard pulse oximeters read carboxyhemoglobin as oxyhemoglobin. ACEP advises against relying on noninvasive measurement to diagnose carbon monoxide toxicity.",
+      teaching: "Standard pulse oximeters read carboxyhemoglobin as oxyhemoglobin. ACEP also advises against using noninvasive carboxyhemoglobin readings (pulse co-oximetry) to diagnose carbon monoxide toxicity. Measure it in blood.",
       source: "acep-co-2017",
     },
     {
@@ -566,7 +566,7 @@ export const iceHutHeaterContactBurns: OralCase = {
       text: "Covers the burns with clean dry dressings, keeps him warm and updates tetanus before transfer.",
       points: 1,
       teaching: "Clean dry dressings and warmth are all the burn centre wants before transfer. Avoid creams that hide the wound.",
-      source: "aba-referral",
+      source: "atls",
     },
     {
       id: "ib-c1",
@@ -590,7 +590,7 @@ export const iceHutHeaterContactBurns: OralCase = {
       id: "ib-c3",
       competency: "leadership",
       criterion: "process",
-      text: "Registers and assesses the friend as a patient with co-oximetry and an ECG.",
+      text: "Registers and assesses the coworker as a patient with co-oximetry and an ECG.",
       points: 1,
       teaching: "Second patients from the same exposure are easy to miss in the waiting room. Bring them in.",
       source: "acep-co-2017",

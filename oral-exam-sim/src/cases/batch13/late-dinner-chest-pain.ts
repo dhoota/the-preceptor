@@ -281,9 +281,9 @@ export const lateDinnerChestPain: OralCase = {
     {
       kind: "say",
       id: "s-ctpa",
-      phase: "01:55",
+      phase: "01:00",
       text:
-        "The second troponin is 7 ng/L. The radiologist calls about the CT pulmonary angiogram. There is no embolism but there is pneumomediastinum and a left effusion. He suggests repeating the scan with oral contrast. You order it.",
+        "While you wait for the second troponin, the radiologist calls about the CT pulmonary angiogram. There is no embolism but there is pneumomediastinum and a left effusion. He suggests repeating the scan with water soluble oral contrast. You order it.",
       next: "s-ct",
     },
     {
@@ -297,7 +297,7 @@ export const lateDinnerChestPain: OralCase = {
     {
       kind: "say",
       id: "s-ct",
-      phase: "01:15",
+      phase: "CT result",
       text: "The CT shows oral contrast leaking from the left side of the distal esophagus, pneumomediastinum and a small left hydropneumothorax. There is no dissection and no pulmonary embolism.",
       next: "q-manage",
     },
@@ -489,7 +489,7 @@ export const lateDinnerChestPain: OralCase = {
       kind: "end",
       id: "end",
       text:
-        "He has a primary repair and drainage at the tertiary centre at 06:00, eight hours after the tear. He leaves the ICU on day 6 and goes home on day 19. That is the end of the case.",
+        "He has a primary repair and drainage at the tertiary centre at 06:00, about seven hours after the tear. He leaves the ICU on day 6 and goes home on day 19. That is the end of the case.",
     },
   ],
   rubric: [
@@ -526,7 +526,7 @@ export const lateDinnerChestPain: OralCase = {
       criterion: "history",
       text: "Asks about the antacid, alcohol and reflux history and does not treat a brief response to the antacid as reassuring.",
       points: 1,
-      teaching: "Relief with an antacid does not distinguish cardiac or other serious pain from reflux.",
+      teaching: "Response to a treatment does not establish the cause. Relief after nitroglycerin is not diagnostic of ischemia, and relief after an antacid does not prove reflux.",
       source: "aha-chest-pain",
     },
     {
@@ -620,7 +620,7 @@ export const lateDinnerChestPain: OralCase = {
       text: "Calls thoracic surgery at the tertiary centre as soon as the diagnosis is made and arranges transfer the same night.",
       points: 2,
       critical: true,
-      teaching: "Mortality is under 10 percent when perforation is treated within 24 hours and about 30 percent after that. Delay is the strongest predictor of death.",
+      teaching: "Mortality is under 10 percent when perforation is treated within 24 hours and about 30 percent after that. Delay to treatment is a major, avoidable driver of death.",
       source: "wses-esophagus",
     },
     {
@@ -647,8 +647,8 @@ export const lateDinnerChestPain: OralCase = {
       criterion: "process",
       text: "Explains to the nurse why the antacid response and a normal troponin do not rule out danger, so the team shares one plan.",
       points: 1,
-      teaching: "Saying your reasoning out loud lets the team catch errors and keeps everyone working toward the same diagnosis.",
-      source: "aha-chest-pain",
+      teaching: "Saying your reasoning out loud lets the team catch errors such as premature closure and keeps everyone working toward the same diagnosis.",
+      source: "croskerry",
     },
     {
       id: "cp-pr5",
@@ -656,8 +656,8 @@ export const lateDinnerChestPain: OralCase = {
       criterion: "process",
       text: "Names the cognitive traps at the debrief, anchoring on a benign cause and false reassurance from single normal tests, and thanks the nurse who escalated.",
       points: 1,
-      teaching: "Debriefing turns a near miss into team learning. Recognizing anchoring helps prevent the next one.",
-      source: "aha-chest-pain",
+      teaching: "Anchoring and premature closure are common causes of diagnostic error in emergency medicine. Naming them at a debrief helps the team catch the next one.",
+      source: "croskerry",
     },
     {
       id: "cp-pr6",
@@ -685,6 +685,11 @@ export const lateDinnerChestPain: OralCase = {
       id: "ssc",
       citation: "Evans L, et al. Surviving Sepsis Campaign. International guidelines for management of sepsis and septic shock 2021. Critical Care Medicine. 2021.",
       url: "https://pubmed.ncbi.nlm.nih.gov/34605781/",
+    },
+    {
+      id: "croskerry",
+      citation: "Croskerry P. The importance of cognitive errors in diagnosis and strategies to minimize them. Academic Medicine. 2003.",
+      url: "https://pubmed.ncbi.nlm.nih.gov/12915363/",
     },
   ],
   reviewed: false,

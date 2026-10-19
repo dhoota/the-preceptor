@@ -19,7 +19,7 @@ export const weakAndPaleAfterAStent: OralCase = {
   durationMinutes: 12,
   stem:
     "You are working in the emergency department of a community hospital when the following patient arrives. " +
-    "A 66 year old man is brought by ambulance after nearly fainting at home this morning. He has felt weak for two days.",
+    "A 66 year old man is brought by ambulance after his wife found him grey and sweaty in the bathroom. Earlier today he had chest heaviness on the stairs.",
   card: {
     vitals: {
       temperature: "36.4°C oral",
@@ -199,21 +199,21 @@ export const weakAndPaleAfterAStent: OralCase = {
       seconds: 90,
       modelAnswer: [
         "Two large bore IVs. Crossmatch 4 units. Notify the blood bank.",
-        "Transfuse red cells now. With active ischemia, aim higher than the usual 70 g/L threshold, at least 80 g/L.",
+        "Transfuse red cells now. Consensus guidance uses 80 g/L without cardiovascular disease and a higher threshold with it. While ischemia continues, aim well above 80 g/L. The exact target is debated, and some would aim near 100 g/L.",
         "Small crystalloid boluses only while blood is coming. Avoid diluting him.",
         "No heparin, no extra antiplatelet, no nitroglycerin. The ischemia is from blood loss.",
         "Pantoprazole 80 mg IV. Nothing by mouth.",
-        "Hold metoprolol and ramipril. Glasgow Blatchford score 16. Call gastroenterology for urgent endoscopy.",
+        "Hold metoprolol and ramipril. Glasgow Blatchford score 14 (urea 4, hemoglobin 6, systolic pressure 2, pulse 1, melena 1). Call gastroenterology for urgent endoscopy.",
       ],
       rubric: ["wp-m1", "wp-m2", "wp-pr1"],
       choices: [
         {
           id: "c-blood",
-          label: "I started 2 units of red cells right away aiming for a hemoglobin above 80 g/L, gave pantoprazole 80 mg IV, held his antihypertensives, avoided heparin and nitrates, and called gastroenterology for urgent endoscopy.",
+          label: "I started 2 units of red cells right away aiming for a hemoglobin well above 80 g/L while he is ischemic, gave pantoprazole 80 mg IV, held his antihypertensives, avoided heparin and nitrates, and called gastroenterology for urgent endoscopy.",
           next: "q-antiplatelet",
           quality: "strong",
           feedback:
-            "Right. This is a type 2 myocardial infarction from blood loss. The treatment is oxygen carrying capacity, not anticoagulation. Patients with cardiovascular disease need a higher transfusion threshold than the 70 g/L used in other GI bleeds.",
+            "Right. This is a type 2 myocardial infarction from blood loss, and the treatment is oxygen carrying capacity, not anticoagulation. Consensus guidance suggests 80 g/L for upper GI bleeding without cardiovascular disease and a higher threshold with it. The best target during active ischemia is not settled, so many aim near 100 g/L.",
         },
         {
           id: "c-crystalloid",
@@ -221,7 +221,7 @@ export const weakAndPaleAfterAStent: OralCase = {
           next: "s-crystalloid",
           quality: "partial",
           feedback:
-            "A restrictive threshold of 70 g/L improves survival in most upper GI bleeds, but the main trial excluded massive bleeding and recent coronary syndromes. He is ischemic now. Large volumes of crystalloid dilute his hemoglobin further.",
+            "A restrictive threshold of 70 g/L improved survival in the main trial, but it excluded massive bleeding and recent coronary syndromes. Current consensus uses 80 g/L even without heart disease, and higher with it. He is ischemic now, and 2 L of crystalloid dilutes his hemoglobin further.",
         },
         {
           id: "c-acs",
@@ -251,32 +251,32 @@ export const weakAndPaleAfterAStent: OralCase = {
       kind: "question",
       id: "q-antiplatelet",
       phase: "Antiplatelets",
-      prompt: "The nurse asks what to do with his ASA and ticagrelor, and whether he should get platelets.",
+      prompt: "The gastroenterologist asks you to stop both ASA and ticagrelor before endoscopy. The cardiologist who placed the stent wants both continued. The nurse asks whether he should get platelets. How do you resolve this?",
       seconds: 80,
       modelAnswer: [
         "Continue ASA. Do not hold cardiac ASA for a GI bleed.",
-        "Ticagrelor. Discuss now with cardiology and gastroenterology. With a 5 week old stent, any pause should be as short as possible, with a plan to restart soon after hemostasis.",
+        "Ticagrelor. Discuss now with cardiology and gastroenterology. No guideline settles whether to hold a P2Y12 inhibitor during active bleeding. With a 5 week old stent, any pause should be as short as possible, with a plan to restart soon after hemostasis.",
         "No platelet transfusion. It does not help and may increase harm.",
         "Stop naproxen for good. Treat gout another way.",
-        "Document the plan and who agreed to it.",
+        "Resolve the disagreement on one call with both consultants rather than relaying messages. Document the plan and who agreed to it.",
       ],
       rubric: ["wp-m3", "wp-pr2"],
       choices: [
         {
           id: "c-continue-asa",
-          label: "I continued ASA, gave no platelets, stopped the naproxen, and held a joint call with cardiology and gastroenterology to decide on a short ticagrelor pause with a restart plan.",
+          label: "I continued ASA, gave no platelets, stopped the naproxen, and set up one call with both consultants to agree on whether to pause ticagrelor briefly and when to restart it.",
           next: "s-rebleed",
           quality: "strong",
           feedback:
-            "Correct. Guidelines advise against holding cardiac ASA in acute GI bleeding and against platelet transfusion for antiplatelet drugs. Stent thrombosis this early can be fatal, so the P2Y12 decision belongs to cardiology and gastroenterology together.",
+            "Correct. The ACG and CAG guideline suggests against holding cardiac ASA in acute GI bleeding and against platelet transfusion for antiplatelet drugs. It makes no recommendation on the P2Y12 inhibitor, and practice varies. Stent thrombosis this early can be fatal, so that decision belongs to cardiology and gastroenterology together.",
         },
         {
           id: "c-hold-both",
-          label: "I held both ASA and ticagrelor until after endoscopy.",
+          label: "I went with the gastroenterologist and held both ASA and ticagrelor until after endoscopy.",
           next: "s-hold-both",
           quality: "partial",
           feedback:
-            "Stopping both antiplatelets 5 weeks after a drug eluting stent puts him at real risk of stent thrombosis. Keep the ASA going. Any pause in ticagrelor should be short and agreed with cardiology.",
+            "Stopping both antiplatelets 5 weeks after a drug eluting stent puts him at real risk of stent thrombosis. Guidance suggests keeping the ASA going. Stopping everything is reserved for bleeding that is truly life threatening, and only briefly, with cardiology.",
         },
         {
           id: "c-platelets",
@@ -334,7 +334,7 @@ export const weakAndPaleAfterAStent: OralCase = {
       seconds: 75,
       modelAnswer: [
         "A brisk upper bleed can present with maroon or red stool.",
-        "Clues to an upper source. Melena for 2 days, urea 21.4 mmol/L with near normal creatinine, NSAID on dual antiplatelets, epigastric burning.",
+        "Clues to an upper source. Melena for 2 days, urea 21.4 mmol/L with only a mild rise in creatinine, NSAID on dual antiplatelets, epigastric burning.",
         "He is unstable. He needs upper endoscopy now, once resuscitated, not tomorrow.",
         "If endoscopy cannot stop the bleeding, interventional radiology or surgery.",
       ],
@@ -346,7 +346,7 @@ export const weakAndPaleAfterAStent: OralCase = {
           next: "q-dispo",
           quality: "strong",
           feedback:
-            "Correct. A brisk upper bleed is a well known cause of maroon stool with instability. A high urea with a near normal creatinine supports it. Endoscopy within 24 hours is the standard, and sooner when he is unstable.",
+            "Correct. A brisk upper bleed is a well known cause of maroon stool with instability. A urea far out of proportion to the creatinine supports it. Endoscopy within 24 hours is the standard, and sooner when he is unstable.",
         },
         {
           id: "c-cta",
@@ -374,7 +374,7 @@ export const weakAndPaleAfterAStent: OralCase = {
       modelAnswer: [
         "Admit to ICU or a monitored bed.",
         "High dose PPI for 3 days after endoscopic therapy, such as pantoprazole 80 mg IV then 8 mg per hour. Then oral twice daily to day 14.",
-        "Serial hemoglobin, ECG and troponin. Transfuse to keep him above 80 g/L while ischemic.",
+        "Serial hemoglobin, ECG and troponin. Keep his hemoglobin well above 80 g/L while ischemia persists, with a target agreed with cardiology.",
         "ASA continues. Restart ticagrelor as agreed with cardiology, usually within a few days.",
         "Test and treat Helicobacter pylori. No NSAIDs. Gout treated without them. Long term PPI while on antiplatelets.",
         "Talk about alcohol.",
@@ -420,7 +420,7 @@ export const weakAndPaleAfterAStent: OralCase = {
       criterion: "history",
       text: "Asks about symptoms of hypoperfusion. Near syncope, exertional chest heaviness and confusion.",
       points: 2,
-      teaching: "Syncope and angina can be the presenting features of hidden GI blood loss. Syncope also adds 2 points to the Glasgow Blatchford score.",
+      teaching: "Syncope and angina can be the presenting features of hidden GI blood loss. A true faint adds 2 points to the Glasgow Blatchford score. A near faint, as here, does not.",
       source: "blatchford",
     },
     {
@@ -467,8 +467,8 @@ export const weakAndPaleAfterAStent: OralCase = {
       text: "Interprets the ST depression and troponin as demand ischemia from blood loss, while still considering stent thrombosis.",
       points: 2,
       critical: true,
-      teaching: "Anemia and hypotension can cause a type 2 myocardial infarction. Treating it as a plaque event with heparin worsens the bleeding.",
-      source: "barkun",
+      teaching: "Severe anemia and hypotension cause a type 2 myocardial infarction through supply and demand mismatch. Treating it as a plaque event with heparin worsens the bleeding.",
+      source: "udmi",
     },
     {
       id: "wp-p4",
@@ -476,17 +476,17 @@ export const weakAndPaleAfterAStent: OralCase = {
       criterion: "physical",
       text: "Recognizes that maroon stool with instability can come from an upper source, using the melena, the urea and the history.",
       points: 2,
-      teaching: "A brisk upper bleed can look like a lower bleed. A high urea with a near normal creatinine supports an upper source.",
-      source: "barkun",
+      teaching: "A brisk upper bleed can look like a lower bleed. Blood digested in the upper gut raises the urea, which is why urea is part of the Glasgow Blatchford score.",
+      source: "blatchford",
     },
     {
       id: "wp-m1",
       competency: "resuscitation",
       criterion: "management",
-      text: "Transfuses red cells promptly with a threshold above 70 g/L because of active ischemia, and limits crystalloid.",
+      text: "Transfuses red cells promptly, aims well above 80 g/L because of active ischemia, and limits crystalloid.",
       points: 2,
       critical: true,
-      teaching: "A threshold of 70 g/L suits most upper GI bleeds, but patients with cardiovascular disease need a higher one. The landmark trial excluded massive bleeding and recent coronary syndromes.",
+      teaching: "The landmark trial of a 70 g/L threshold excluded massive bleeding and recent coronary syndromes. Patients with active cardiac ischemia need a higher threshold.",
       source: "villanueva",
     },
     {
@@ -540,7 +540,7 @@ export const weakAndPaleAfterAStent: OralCase = {
       criterion: "process",
       text: "Calculates the Glasgow Blatchford score and calls gastroenterology early while resuscitation continues.",
       points: 1,
-      teaching: "A Glasgow Blatchford score of 16 marks a high risk patient. A score of 1 or less identifies patients who may go home.",
+      teaching: "His Glasgow Blatchford score is 14, a high risk patient. A score of 1 or less identifies patients who may go home.",
       source: "blatchford",
     },
     {
@@ -576,8 +576,8 @@ export const weakAndPaleAfterAStent: OralCase = {
       criterion: "process",
       text: "Explains the cause honestly to his wife and tells the family physician, walk-in clinic and pharmacist about the NSAID and missing gastric protection.",
       points: 2,
-      teaching: "Prescribing gaps across settings caused this bleed. Closing the loop with each prescriber prevents the next one.",
-      source: "abraham",
+      teaching: "After an ulcer bleed, a patient who needs antiplatelet therapy should stay on a PPI. Telling each prescriber about the NSAID and the missing PPI prevents the next bleed.",
+      source: "barkun",
     },
   ],
   sources: [
@@ -591,6 +591,7 @@ export const weakAndPaleAfterAStent: OralCase = {
       id: "abraham",
       citation:
         "Abraham NS, Barkun AN, Sauer BG, and colleagues. American College of Gastroenterology and Canadian Association of Gastroenterology clinical practice guideline. Management of anticoagulants and antiplatelets during acute gastrointestinal bleeding and the periendoscopic period. Am J Gastroenterol. 2022.",
+      url: "https://pmc.ncbi.nlm.nih.gov/articles/PMC8966740/",
     },
     {
       id: "villanueva",
@@ -599,6 +600,11 @@ export const weakAndPaleAfterAStent: OralCase = {
     {
       id: "blatchford",
       citation: "Blatchford O, Murray WR, Blatchford M. A risk score to predict need for treatment for upper gastrointestinal haemorrhage. Lancet. 2000.",
+    },
+    {
+      id: "udmi",
+      citation:
+        "Thygesen K, Alpert JS, Jaffe AS, and colleagues, Executive Group on behalf of the Joint ESC/ACC/AHA/WHF Task Force for the Universal Definition of Myocardial Infarction. Fourth universal definition of myocardial infarction (2018). Circulation. 2018.",
     },
     {
       id: "halt-it",

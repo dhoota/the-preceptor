@@ -20,7 +20,7 @@ export const firstTrimesterLossMechanicalValve: OralCase = {
   durationMinutes: 12,
   stem:
     "You are working in the emergency department of a community hospital when the following patient arrives. " +
-    "A 33 year old woman who is 13 weeks pregnant has had heavy vaginal bleeding with clots since early this morning. She nearly fainted in the triage washroom.",
+    "A 36 year old woman who is 13 weeks pregnant has had heavy vaginal bleeding with clots since early this morning. She nearly fainted at the triage desk.",
   card: {
     vitals: {
       temperature: "36.6°C oral",
@@ -38,13 +38,13 @@ export const firstTrimesterLossMechanicalValve: OralCase = {
       id: "hpi",
       label: "History of the presenting illness",
       result:
-        "Crampy lower abdominal pain began last night. Heavy bleeding with clots started at 05:00. She has soaked 8 pads in 3 hours. At home she passed a large clot with grey tissue in it and flushed it. She felt faint on standing and nearly passed out in the triage washroom. No shoulder tip pain. No fever.",
+        "Crampy lower abdominal pain began last night. Heavy bleeding with clots started at 05:00. She has soaked 6 pads in the last 2 hours. At home she passed a large clot with grey tissue in it and flushed it. She felt faint on standing and nearly passed out at the triage desk. No shoulder tip pain. No fever.",
     },
     {
       id: "pregnancy",
       label: "Pregnancy details",
       result:
-        "Last menstrual period 13 weeks and 1 day ago. Her cycles are regular and she is certain of the date. A home test was positive 3 weeks ago. She has had no ultrasound yet. A dating scan and a first visit with high risk obstetrics are booked for tomorrow. G2P1. One vaginal birth 7 years ago, before her valve surgery. She does not know her blood group and does not recall an injection after that birth.",
+        "Last menstrual period 13 weeks and 4 days ago. Her cycles are regular and she is certain of the date. A home test was positive 3 weeks ago. She has had no ultrasound yet. A dating scan and a first visit with high risk obstetrics are booked for tomorrow. G2P1. One vaginal birth 7 years ago, before her valve surgery. She does not know her blood group and does not recall an injection after that birth.",
     },
     {
       id: "pmh",
@@ -245,7 +245,7 @@ export const firstTrimesterLossMechanicalValve: OralCase = {
         "This is major bleeding. Hemoglobin has fallen by more than 20 g/L and she is hypotensive.",
         "Transfuse red cells now. O negative until crossmatched blood is ready, because she is Rh D negative and of childbearing age.",
         "Give 4 factor PCC now. 2000 IU for an INR of 3 to 5, or 35 IU/kg, about 2240 IU at 64 kg.",
-        "Give IV vitamin K in a dose agreed with cardiology. A 10 mg dose suits only when warfarin will not restart for a week.",
+        "Give IV vitamin K with the PCC, in a dose agreed with cardiology. A 10 mg dose suits only when warfarin will not restart for a week.",
         "Call cardiology. Reversal is worth the small short term risk of valve thrombosis when bleeding is uncontrolled.",
         "Recheck the INR after the PCC. Plan IV unfractionated heparin once bleeding is controlled.",
       ],
@@ -257,7 +257,7 @@ export const firstTrimesterLossMechanicalValve: OralCase = {
           next: "s-settle",
           quality: "strong",
           feedback:
-            "Correct. A hemoglobin drop over 20 g/L with hypotension is major bleeding, and PCC is the indicated reversal. It works within minutes and lasts 12 to 24 hours. Vitamin K sustains the effect. Keeping cardiology in the loop on the vitamin K dose protects the plan to restart anticoagulation.",
+            "Correct. A hemoglobin drop over 20 g/L with hypotension is major bleeding, and PCC is the indicated reversal. It works within minutes, but its effect on the INR fades over about 6 hours as factor VII is cleared. IV vitamin K given at the same time sustains it. Keeping cardiology in the loop on the vitamin K dose protects the plan to restart anticoagulation.",
         },
         {
           id: "c-plasma",
@@ -365,10 +365,10 @@ export const firstTrimesterLossMechanicalValve: OralCase = {
       prompt: "She is Rh D negative with a negative antibody screen. What do you do, and how?",
       seconds: 60,
       modelAnswer: [
-        "She is 13 weeks and 1 day by a certain date, past 12 weeks.",
+        "She is 13 weeks and 4 days by a certain date, past 12 weeks.",
         "SOGC suggests Rh immune globulin 300 mcg after a pregnancy loss beyond 12 weeks.",
         "Give it within 72 hours.",
-        "Give it IV rather than IM while she is anticoagulated, to avoid a muscle hematoma.",
+        "The Canadian product can be given IV or IM, and both routes work. Choose IV while she is anticoagulated, to avoid a muscle hematoma.",
         "Document the dose and tell her why it matters for future pregnancies.",
       ],
       rubric: ["ft-m5"],
@@ -412,7 +412,7 @@ export const firstTrimesterLossMechanicalValve: OralCase = {
           next: "s-blame",
           quality: "partial",
           feedback:
-            "A high INR worsened the bleeding, but it did not cause the pregnancy to fail. Blaming a colleague in front of the patient is speculative and unprofessional. Report the interaction through the proper channel and give her accurate information.",
+            "A high INR worsened the bleeding, but it almost certainly did not cause the pregnancy to fail. Blaming a colleague in front of the patient is speculative and unprofessional. Report the interaction through the proper channel and give her accurate information.",
         },
       ],
     },
@@ -482,7 +482,7 @@ export const firstTrimesterLossMechanicalValve: OralCase = {
       criterion: "history",
       text: "Quantifies the bleeding with pads per hour, clots and passed tissue, and asks about syncope and presyncope.",
       points: 2,
-      teaching: "Soaking more than a pad an hour, passing tissue and presyncope point to significant blood loss and an incomplete loss that may need evacuation.",
+      teaching: "Soaking through pads quickly, passing tissue and presyncope point to significant blood loss. Heavy bleeding makes expectant management a poor choice and points to uterine evacuation.",
       source: "sogc-460",
     },
     {
@@ -547,7 +547,7 @@ export const firstTrimesterLossMechanicalValve: OralCase = {
       criterion: "management",
       text: "Places two large bore IVs, sends a crossmatch, and transfuses O negative then crossmatched red cells for ongoing bleeding with shock.",
       points: 2,
-      teaching: "Use Rh D negative red cells in an Rh negative woman of childbearing age until her own type is known and crossmatched blood is ready.",
+      teaching: "Shock from ongoing bleeding needs red cells, not just crystalloid. A fall in hemoglobin of 20 g/L or a need for 2 or more units defines major bleeding, which justifies PCC. Use Rh D negative cells in a woman of childbearing age until crossmatched blood is ready.",
       source: "nac-pcc",
     },
     {
@@ -582,10 +582,10 @@ export const firstTrimesterLossMechanicalValve: OralCase = {
       id: "ft-m5",
       competency: "management",
       criterion: "management",
-      text: "Gives Rh immune globulin 300 mcg within 72 hours, IV rather than IM while she is anticoagulated.",
+      text: "Gives Rh immune globulin 300 mcg within 72 hours, choosing the IV route while she is anticoagulated.",
       points: 2,
       critical: true,
-      teaching: "SOGC suggests 300 mcg after a pregnancy loss beyond 12 weeks in a non sensitized Rh D negative patient. Before 8 weeks it is not given, and between 8 and 12 weeks it is optional.",
+      teaching: "SOGC suggests 300 mcg after a pregnancy loss beyond 12 weeks in a non sensitized Rh D negative patient. Before 8 weeks it is not given, and between 8 and 12 weeks it is optional. It can be given IV or IM, and the routes work equally well.",
       source: "sogc-448",
     },
     {

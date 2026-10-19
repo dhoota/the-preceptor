@@ -257,7 +257,7 @@ export const intoxicatedDriverHipDislocation: OralCase = {
           next: "s-wait",
           quality: "unsafe",
           feedback:
-            "Waiting 4 to 8 hours pushes reduction well past 6 hours, which raises the risk of avascular necrosis and worsens the outlook for his sciatic nerve. A full stomach raises risk, but fasting time is not a reason to delay an emergency reduction.",
+            "Waiting 4 to 8 hours pushes reduction to or well past 6 hours from the injury, which raises the risk of avascular necrosis and worsens the outlook for his sciatic nerve. A full stomach raises risk, but fasting time is not a reason to delay an emergency reduction.",
         },
       ],
     },
@@ -313,9 +313,9 @@ export const intoxicatedDriverHipDislocation: OralCase = {
           id: "c-reverse",
           label: "I gave naloxone 0.4 mg and flumazenil 0.2 mg IV and waited for them to work.",
           next: "s-reverse",
-          quality: "partial",
+          quality: "unsafe",
           feedback:
-            "Neither drug reverses propofol, and flumazenil can provoke seizures. The fentanyl is a minor player now. The fix is opening the airway and ventilating.",
+            "Neither drug reverses propofol, and flumazenil can provoke seizures. Waiting for them while he is apneic and desaturating wastes the minutes that matter. The fix is opening the airway and ventilating now.",
         },
         {
           id: "c-oxygen",
@@ -563,8 +563,8 @@ export const intoxicatedDriverHipDislocation: OralCase = {
       criterion: "process",
       text: "Admits under orthopedics with a structured handover and offers a brief alcohol intervention once he is sober.",
       points: 2,
-      teaching: "An alcohol related injury is a teachable moment. Screening and brief intervention in trauma patients reduce future harm.",
-      source: "atls",
+      teaching: "An alcohol related injury is a teachable moment. In a randomized trial at a trauma centre, a brief alcohol intervention cut drinking and was associated with fewer repeat injuries.",
+      source: "gentilello",
     },
     {
       id: "hd-c5",
@@ -604,6 +604,12 @@ export const intoxicatedDriverHipDislocation: OralCase = {
     {
       id: "atls",
       citation: "American College of Surgeons Committee on Trauma. Advanced Trauma Life Support Student Course Manual. 10th edition. 2018.",
+    },
+    {
+      id: "gentilello",
+      citation:
+        "Gentilello LM, Rivara FP, Donovan DM, et al. Alcohol interventions in a trauma center as a means of reducing the risk of injury recurrence. Ann Surg. 1999.",
+      url: "https://pubmed.ncbi.nlm.nih.gov/10522717/",
     },
   ],
   reviewed: false,

@@ -167,7 +167,7 @@ export const peritonealDialysisWheezeOverload: OralCase = {
           next: "q-history",
           quality: "strong",
           feedback:
-            "Correct. The ERS and ATS suggest bilevel ventilation or CPAP for respiratory failure from cardiogenic pulmonary edema. " +
+            "Correct. The ERS and ATS recommend bilevel ventilation or CPAP for respiratory failure from cardiogenic pulmonary edema. " +
             "Nitrates lower preload and afterload fast in a hypertensive patient. The wheeze is cardiac. B lines on ultrasound confirm it within minutes.",
         },
         {
@@ -285,7 +285,7 @@ export const peritonealDialysisWheezeOverload: OralCase = {
       modelAnswer: [
         "Peritoneal dialysis peritonitis causing loss of fluid removal and pulmonary edema.",
         "Empiric antibiotics now. Cover gram positive organisms with vancomycin or a first generation cephalosporin and gram negative organisms with a third generation cephalosporin or an aminoglycoside.",
-        "Intraperitoneal dosing is preferred unless he has systemic sepsis. Do not delay therapy to set up the IP route.",
+        "Intraperitoneal dosing is preferred unless he has systemic sepsis. With fever, tachycardia, a WBC of 15.8 and new confusion, giving the first doses IV now is reasonable. Do not delay therapy to set up the IP route.",
         "Call the home dialysis nephrologist now. Agree on antibiotic doses and how to remove fluid, such as adjusted exchanges or urgent hemodialysis.",
         "High dose IV furosemide for his remaining urine output. Continue nitrates and bilevel.",
         "Troponin is chronically raised with a small rise. Treat as demand for now and keep watching.",
@@ -312,7 +312,7 @@ export const peritonealDialysisWheezeOverload: OralCase = {
         "Septic shock from peritonitis in a patient who is also fluid overloaded. Nitrate effect adds to the low pressure.",
         "Stop the nitroglycerin.",
         "Repeat bedside ultrasound. No tamponade. Lungs still wet.",
-        "Systemic sepsis means IV antibiotics now, not waiting for the intraperitoneal route.",
+        "Systemic sepsis means IV antibiotics now if not already given, not waiting for the intraperitoneal route.",
         "Start norepinephrine, peripherally if needed, for a MAP of 65 or more. Avoid large fluid boluses.",
         "Call CritiCall for transfer to an ICU with dialysis.",
       ],
@@ -321,7 +321,7 @@ export const peritonealDialysisWheezeOverload: OralCase = {
         {
           id: "c-pressor",
           label:
-            "I stopped the nitroglycerin, gave the antibiotics IV at once, started norepinephrine for a MAP over 65 instead of fluid boluses, and called CritiCall for an ICU with dialysis.",
+            "I stopped the nitroglycerin, made sure the antibiotics went in IV at once, started norepinephrine for a MAP over 65 instead of fluid boluses, and called CritiCall for an ICU with dialysis.",
           next: "q-airway",
           quality: "strong",
           feedback:
@@ -343,7 +343,7 @@ export const peritonealDialysisWheezeOverload: OralCase = {
           next: "s-bolus",
           quality: "unsafe",
           feedback:
-            "He is anuric in practice and already in pulmonary edema. Large boluses will flood his lungs further. " +
+            "He makes little urine and is already in pulmonary edema. Large boluses will flood his lungs further. " +
             "Use a vasopressor, give antibiotics at once, and remove fluid when the pressure allows.",
         },
       ],
@@ -373,7 +373,7 @@ export const peritonealDialysisWheezeOverload: OralCase = {
         "Bilevel is failing. Falling consciousness, rising pCO2 and high oxygen needs. Intubate now, before he arrests.",
         "Preoxygenate on bilevel with high FiO2 and PEEP.",
         "Hemodynamically stable induction at a reduced dose, such as ketamine. Norepinephrine running and a push dose vasopressor ready.",
-        "Choose rocuronium rather than succinylcholine, since his potassium is 5.4 and he has kidney failure.",
+        "Rocuronium is a sound choice. Succinylcholine raises potassium by about 0.5 mmol/L, and his is already 5.4 with acidosis.",
         "After intubation, PEEP for the edema. Lung protective volumes.",
         "He needs intubation anyway for a safe 220 km transfer.",
       ],
@@ -387,7 +387,7 @@ export const peritonealDialysisWheezeOverload: OralCase = {
           quality: "strong",
           feedback:
             "Good. Failure of noninvasive ventilation should lead to timely intubation. Delay raises the risk of a crash intubation. " +
-            "A pressor running before induction protects his pressure, and avoiding succinylcholine avoids a further rise in potassium.",
+            "A pressor running before induction protects his pressure. Rocuronium avoids adding to a potassium that is already 5.4.",
         },
         {
           id: "c-stay-niv",
@@ -405,7 +405,7 @@ export const peritonealDialysisWheezeOverload: OralCase = {
           quality: "unsafe",
           feedback:
             "A full dose of propofol in septic shock without a pressor running risks collapse. " +
-            "Succinylcholine raises potassium and is a poor choice in a patient with kidney failure and a potassium of 5.4.",
+            "Succinylcholine adds a small rise in potassium to a level that is already 5.4 in an acidotic patient, so rocuronium is the safer choice.",
         },
       ],
     },
@@ -555,7 +555,7 @@ export const peritonealDialysisWheezeOverload: OralCase = {
       text: "Starts noninvasive ventilation and nitrates early, before the cause is known.",
       points: 3,
       critical: true,
-      teaching: "The ERS and ATS suggest bilevel ventilation or CPAP for respiratory failure from cardiogenic pulmonary edema. Nitrates work quickly when the pressure is high.",
+      teaching: "The ERS and ATS recommend bilevel ventilation or CPAP for respiratory failure from cardiogenic pulmonary edema. Nitrates work quickly when the pressure is high.",
       source: "rochwerg",
     },
     {
@@ -590,7 +590,7 @@ export const peritonealDialysisWheezeOverload: OralCase = {
       id: "pd-m5",
       competency: "resuscitation",
       criterion: "management",
-      text: "Intubates promptly when noninvasive ventilation fails, with a vasopressor running, a reduced dose stable induction agent and rocuronium.",
+      text: "Intubates promptly when noninvasive ventilation fails, with a vasopressor running and a plan for hypotension after induction.",
       points: 2,
       teaching: "Drowsiness, a rising pCO2 and shock signal failure of noninvasive ventilation. Plan the intubation before the crash.",
       source: "rochwerg",

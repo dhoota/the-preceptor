@@ -12,18 +12,18 @@ export const broughtDownFromTheEighthFloor: OralCase = {
     { topic: "environmental", n: 1 },
     { topic: "environmental", n: 2 },
   ],
-  summary: "An older woman is found confused in her apartment on a July afternoon. More residents of her building are on the way.",
+  summary: "An older woman is found confused in her apartment on a July evening. More residents of her building are on the way.",
   durationMinutes: 12,
   stem:
     "You are working in the emergency department of a community hospital when the following patient arrives. " +
-    "An 82 year old woman is brought by ambulance on a July afternoon after the superintendent of her seniors' apartment building found her confused on her bedroom floor.",
+    "An 82 year old woman is brought by ambulance on a July evening after firefighters forced the door of her apartment when she stopped answering her daughter's calls. She was confused and on the floor.",
   card: {
     vitals: {
-      temperature: "41.3°C rectal",
-      pulse: "128/minute",
-      resp: "30/minute",
-      bp: "92/50 mmHg",
-      o2sat: "93% on room air",
+      temperature: "41.8°C rectal",
+      pulse: "118/minute",
+      resp: "26/minute",
+      bp: "86/48 mmHg",
+      o2sat: "92% on room air",
       weight: "54 kg (119 lb)",
     },
     medications: "Furosemide 40 mg daily, metoprolol 50 mg twice daily, oxybutynin 5 mg twice daily, quetiapine 25 mg at bedtime",
@@ -34,13 +34,13 @@ export const broughtDownFromTheEighthFloor: OralCase = {
       id: "scene",
       label: "Scene and paramedic report",
       result:
-        "It is day 3 of a heat warning. The building's air conditioning failed 2 days ago. The superintendent found her at 16:00. Her windows were closed and the thermostat read 34°C. A neighbour last saw her well at 19:00 yesterday. " +
+        "It is day 3 of a heat warning. The central air conditioning in her seniors' building failed 2 days ago. Her daughter could not reach her all day and called 911. Firefighters forced the door at 17:30. Her windows were closed and the thermostat read 34°C. A neighbour last saw her well at 19:00 yesterday. " +
         "She was incontinent of urine. Paramedics found GCS 11, glucose 6.1 mmol/L, and sponged and fanned her on the way. No pill bottles were out of place.",
     },
     {
       id: "triage-temp",
       label: "Triage temperature",
-      result: "Tympanic temperature at triage 38.6°C. The nurse then placed a rectal probe, which reads 41.3°C.",
+      result: "Tympanic temperature at triage 38.6°C. The nurse then placed a rectal probe, which reads 41.8°C.",
     },
     {
       id: "pmh",
@@ -80,7 +80,7 @@ export const broughtDownFromTheEighthFloor: OralCase = {
     {
       id: "ecg",
       label: "ECG",
-      result: "Sinus tachycardia at 126/minute. QTc 470 ms. No ST elevation. No peaked T waves.",
+      result: "Sinus tachycardia at 116/minute. QTc 470 ms. No ST elevation. No peaked T waves.",
     },
     {
       id: "labs",
@@ -127,8 +127,8 @@ export const broughtDownFromTheEighthFloor: OralCase = {
     {
       kind: "say",
       id: "s-open",
-      phase: "17:10",
-      text: "She is moved to the free resus bay. She moans to voice and pulls at the oxygen mask. The rectal probe reads 41.3°C.",
+      phase: "18:20",
+      text: "She is moved to the free resus bay. She moans to voice and pulls at the oxygen mask. The rectal probe reads 41.8°C.",
       next: "q-first",
     },
     {
@@ -140,7 +140,7 @@ export const broughtDownFromTheEighthFloor: OralCase = {
       modelAnswer: [
         "Recognize heat stroke. Core temperature over 40°C with brain dysfunction after heat exposure.",
         "Start cooling now, before the cause is confirmed. Every minute above 40°C adds harm.",
-        "Conductive cooling. Ice and cold water in a body bag or tarp up to the chest, with fans, while monitoring continues. Ice packs over the whole body if immersion is not possible.",
+        "Conductive cooling. Ice and cold water in a body bag or tarp up to the chest, while monitoring continues. In an older patient, wet ice packs over the whole body with misting and fans are an accepted alternative if immersion is not practical.",
         "Continuous rectal or esophageal temperature. Tympanic and oral readings are unreliable.",
         "Airway, oxygen, monitor, two IVs, glucose. Cold saline in small boluses.",
         "No antipyretics. They do not work in heat stroke.",
@@ -153,7 +153,7 @@ export const broughtDownFromTheEighthFloor: OralCase = {
           next: "q-history",
           quality: "strong",
           feedback:
-            "Correct. Cool first and investigate in parallel. Conductive cooling with ice water is the fastest method you have. A body bag lets you keep her monitored and reach her chest and lines.",
+            "Correct. Cool first and investigate in parallel. Ice water cooling is about twice as fast as evaporative cooling. In classic heat stroke in older adults the evidence is weaker and evaporative cooling with whole body ice packs is also accepted, but a body bag keeps her monitored and reachable while you use the fastest method you have.",
         },
         {
           id: "c-sponge",
@@ -161,7 +161,7 @@ export const broughtDownFromTheEighthFloor: OralCase = {
           next: "s-sponge",
           quality: "partial",
           feedback:
-            "Evaporative cooling helps but is much slower than conductive cooling with ice water. Acetaminophen does not lower a heat stroke temperature and may add to liver injury. You need faster cooling now.",
+            "Evaporative cooling is accepted in classic heat stroke, but tepid sponging without ice is about half as fast as ice water. Acetaminophen does not lower a heat stroke temperature and may add to liver injury. You need faster cooling now.",
         },
         {
           id: "c-ct-first",
@@ -176,15 +176,15 @@ export const broughtDownFromTheEighthFloor: OralCase = {
     {
       kind: "say",
       id: "s-sponge",
-      phase: "17:40",
+      phase: "18:50",
       text: "After 30 minutes her rectal temperature is 40.8°C and she is less responsive. The charge nurse brings ice from the cafeteria and a body bag. You start ice water cooling.",
       next: "q-history",
     },
     {
       kind: "say",
       id: "s-ct-first",
-      phase: "17:35",
-      text: "On the CT table she has a generalized seizure. Her rectal temperature is now 42.0°C. She is brought back to resus. You give lorazepam and start ice water cooling in a body bag.",
+      phase: "18:45",
+      text: "On the CT table she has a generalized seizure. Her rectal temperature is now 42.3°C. She is brought back to resus. You give lorazepam and start ice water cooling in a body bag.",
       next: "q-history",
     },
     {
@@ -194,7 +194,7 @@ export const broughtDownFromTheEighthFloor: OralCase = {
       prompt: "Cooling is under way. What history do you want, and from whom?",
       seconds: 75,
       modelAnswer: [
-        "Paramedics and the superintendent. Indoor temperature, air conditioning failure, closed windows, how long since last seen well.",
+        "Paramedics and firefighters. Indoor temperature, air conditioning failure, closed windows, how long since last seen well.",
         "Medications. Diuretic, beta blocker, anticholinergic oxybutynin and quetiapine all raise heat risk.",
         "Any possible overdose. Check the pill organizer.",
         "Infection symptoms. Cough, urinary symptoms, headache.",
@@ -230,7 +230,7 @@ export const broughtDownFromTheEighthFloor: OralCase = {
       modelAnswer: [
         "Classic heat stroke is most likely, made worse by her medications.",
         "Anticholinergic effect from oxybutynin and quetiapine. Dry skin and urinary retention fit.",
-        "Sepsis. Send cultures and give an empiric antibiotic until infection is excluded.",
+        "Sepsis. She is hypotensive with a lactate of 4.6 mmol/L. Send cultures and give an empiric antibiotic until infection is excluded. If her mental state does not clear as she cools, consider a lumbar puncture and meningitic doses that cover Listeria at her age.",
         "Neuroleptic malignant syndrome is unlikely without rigidity. Serotonin toxicity is unlikely without clonus.",
         "Thyroid storm is unlikely with a normal TSH. Intracranial bleed from the fall needs CT once cooling is going.",
         "Keep cooling. Catheterize the bladder. Hold oxybutynin, quetiapine, furosemide and metoprolol.",
@@ -239,11 +239,11 @@ export const broughtDownFromTheEighthFloor: OralCase = {
       choices: [
         {
           id: "c-broad",
-          label: "I kept cooling, catheterized her, held the oxybutynin, quetiapine, furosemide and metoprolol, sent cultures and gave ceftriaxone, and arranged a CT head once her temperature was falling.",
+          label: "I kept cooling, catheterized her, held the oxybutynin, quetiapine, furosemide and metoprolol, sent cultures and gave an empiric antibiotic, and arranged a CT head once her temperature was falling.",
           next: "q-endpoint",
           quality: "strong",
           feedback:
-            "This is the right balance. You treat the most likely cause and keep the dangerous alternatives covered. Anticholinergic drugs impair sweating and trap heat. Her retention needed a catheter.",
+            "This is the right balance. You treat the most likely cause and keep the dangerous alternatives covered. Hypotension with a high lactate is possible septic shock, so antibiotics should not wait for proof. Anticholinergic drugs impair sweating and trap heat, and her retention needed a catheter.",
         },
         {
           id: "c-heat-only",
@@ -297,7 +297,7 @@ export const broughtDownFromTheEighthFloor: OralCase = {
     {
       kind: "say",
       id: "s-surge",
-      phase: "18:00",
+      phase: "19:15",
       text: "Paramedic dispatch calls. Four more residents from the same building are on the way. Two are confused and hot. The building still has no air conditioning, and repair is not expected until tomorrow.",
       next: "q-surge",
     },
@@ -322,7 +322,7 @@ export const broughtDownFromTheEighthFloor: OralCase = {
           next: "q-dispo",
           quality: "strong",
           feedback:
-            "Good. A cluster of heat illness means a population at risk, not a run of single patients. In the 2021 British Columbia heat dome, most deaths were older people alone at home without cooling. Public health can reach the people who have not called for help.",
+            "Good. A cluster of heat illness means a population at risk, not a run of single patients. In the 2021 British Columbia heat dome, 98% of deaths were indoors, two thirds were aged 70 or older, and over half lived alone. Public health can reach the people who have not called for help.",
         },
         {
           id: "c-one-by-one",
@@ -345,14 +345,14 @@ export const broughtDownFromTheEighthFloor: OralCase = {
     {
       kind: "say",
       id: "s-one-by-one",
-      phase: "18:20",
+      phase: "19:35",
       text: "Two hot, confused patients arrive at once. There is no ice ready and only one nurse free. The charge nurse sends a porter to the cafeteria and calls in staff.",
       next: "q-dispo",
     },
     {
       kind: "say",
       id: "s-divert",
-      phase: "18:05",
+      phase: "19:20",
       text: "Dispatch tells you the paramedics are 3 minutes away and the patients cannot safely travel another hour. The charge nurse starts setting up cooling stations.",
       next: "q-dispo",
     },
@@ -399,7 +399,7 @@ export const broughtDownFromTheEighthFloor: OralCase = {
       id: "bd-h1",
       competency: "assessment",
       criterion: "history",
-      text: "Gets the scene history from paramedics and the superintendent. Indoor temperature, air conditioning failure, closed windows and time since last seen well.",
+      text: "Gets the scene history from paramedics and firefighters. Indoor temperature, air conditioning failure, closed windows and time since last seen well.",
       points: 2,
       teaching: "Classic heat stroke builds over days of indoor heat. The exposure history makes the diagnosis and estimates how long she was hot.",
       source: "epstein",
@@ -410,7 +410,7 @@ export const broughtDownFromTheEighthFloor: OralCase = {
       criterion: "history",
       text: "Reviews medications that impair heat loss. Diuretic, beta blocker, anticholinergic and antipsychotic.",
       points: 2,
-      teaching: "Diuretics reduce volume, beta blockers limit cardiac output, and anticholinergics and antipsychotics impair sweating and thermoregulation.",
+      teaching: "Diuretics reduce volume, beta blockers limit the cardiac output response, anticholinergics impair sweating, and antipsychotics disrupt the body's ability to lower core temperature.",
       source: "hc-heat",
     },
     {
@@ -429,7 +429,7 @@ export const broughtDownFromTheEighthFloor: OralCase = {
       text: "Gets collateral from her daughter on baseline cognition, recent symptoms and her wishes for care.",
       points: 2,
       teaching: "Collateral sets the baseline you are trying to restore. Confirmed wishes allow full treatment without delay.",
-      source: "hc-heat",
+      source: "epstein",
     },
     {
       id: "bd-p1",
@@ -475,7 +475,7 @@ export const broughtDownFromTheEighthFloor: OralCase = {
       text: "Starts rapid conductive cooling with ice water right away, before the cause is confirmed.",
       points: 3,
       critical: true,
-      teaching: "Ice water cooling is about twice as fast as evaporative cooling. Duration of hyperthermia drives outcome, so cooling comes before imaging.",
+      teaching: "Ice water cooling is about twice as fast as evaporative cooling, 0.2 compared with 0.1°C per minute. Duration of hyperthermia drives outcome, so cooling comes before imaging.",
       source: "wms-heat",
     },
     {
@@ -493,8 +493,8 @@ export const broughtDownFromTheEighthFloor: OralCase = {
       criterion: "management",
       text: "Holds the offending medications, catheterizes for urinary retention and covers for sepsis with cultures and an empiric antibiotic.",
       points: 2,
-      teaching: "Treat the likely cause and cover the dangerous ones. Urinary retention points to an anticholinergic effect.",
-      source: "hc-heat",
+      teaching: "Hypotension with a raised lactate may be septic shock. When septic shock is possible, antimicrobials should start immediately, ideally within an hour. Treat the likely cause and cover the dangerous ones.",
+      source: "ssc",
     },
     {
       id: "bd-m3",
@@ -548,7 +548,7 @@ export const broughtDownFromTheEighthFloor: OralCase = {
       criterion: "process",
       text: "Calls public health and emergency management about the building and the residents still at home.",
       points: 2,
-      teaching: "In the 2021 British Columbia heat dome, most deaths were older people alone at home without cooling. A cluster in the ED is a signal to reach the people who have not called.",
+      teaching: "In the 2021 British Columbia heat dome, 98% of deaths were indoors, most in homes without adequate cooling, and over half of those who died lived alone. A cluster in the ED is a signal to reach the people who have not called.",
       source: "bc-coroners",
     },
     {
@@ -579,6 +579,11 @@ export const broughtDownFromTheEighthFloor: OralCase = {
     {
       id: "epstein",
       citation: "Epstein Y, Yanovich R. Heatstroke. N Engl J Med. 2019.",
+    },
+    {
+      id: "ssc",
+      citation:
+        "Evans L, Rhodes A, Alhazzani W, and colleagues. Surviving Sepsis Campaign. International guidelines for management of sepsis and septic shock 2021. Crit Care Med. 2021.",
     },
     {
       id: "hc-heat",

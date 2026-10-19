@@ -53,7 +53,7 @@ export const PULMONARY_EDEMA_S60: Samp[] = [
         kind: "single",
         update: "The chest radiograph shows an enlarged cardiac silhouette with increased pulmonary vascular markings. Bedside ultrasound shows a dilated, poorly contracting left ventricle.",
         prompt: "Which of the following is the most appropriate initial treatment for his pulmonary congestion?",
-        options: ["IV furosemide", "IV normal saline bolus", "Nebulized 3% saline", "Nebulized epinephrine", "Nebulized salbutamol"],
+        options: ["IV furosemide", "IV normal saline bolus", "Nebulized epinephrine", "Nebulized hypertonic saline", "Nebulized salbutamol"],
         correct: 0,
         explanation:
           "He has a dilated, poorly contracting ventricle with congestion on the film and in the liver, and loop diuretics such as furosemide are the preferred first-line treatment for congestion in children with heart failure. A saline bolus adds volume to a failing ventricle that is already congested and can worsen his pulmonary edema. Nebulized hypertonic saline, epinephrine and salbutamol are bronchiolitis or bronchospasm treatments that do nothing for fluid in the lungs from a weak heart.",
@@ -102,7 +102,7 @@ export const PULMONARY_EDEMA_S60: Samp[] = [
         id: "q2",
         kind: "single",
         prompt: "Which of the following investigations is most likely to confirm the cause of her pulmonary edema?",
-        options: ["Blood culture", "Chest radiograph", "Echocardiogram", "Throat swab culture", "Urinalysis with microscopy"],
+        options: ["Bedside echocardiogram", "Blood cultures, two sets", "Portable chest radiograph", "Throat swab culture", "Urinalysis with microscopy"],
         correct: 4,
         explanation:
           "Cola-coloured urine, falling urine output, edema and hypertension 2 weeks after a sore throat suggest acute post-streptococcal glomerulonephritis, and urinalysis showing blood and red cell casts confirms a glomerular cause for her fluid overload. A chest radiograph would show the edema but not why it happened. An echocardiogram looks for a cardiomyopathy, which her urine findings do not fit. A throat swab taken after the infection has settled is often negative and does not prove kidney involvement. Blood cultures look for sepsis, and she is afebrile.",

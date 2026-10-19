@@ -150,7 +150,7 @@ export const emsPatchRupturedAaa: OralCase = {
         "Ask about a known aneurysm, anticoagulants and major history.",
         "Name the likely problem. Ruptured abdominal aortic aneurysm until proven otherwise.",
         "Come to the closest emergency department now. He is unstable and the crew cannot give blood.",
-        "Do not delay on scene. Limit fluid. Small boluses only if he becomes confused or systolic falls well below 80.",
+        "Do not delay on scene. Limit fluid. A 250 mL bolus only if he becomes confused or his systolic falls below 70.",
         "Keep him flat. Monitor. Call back if he deteriorates.",
       ],
       rubric: ["ap-h1", "ap-pr1", "ap-m1"],
@@ -171,8 +171,8 @@ export const emsPatchRupturedAaa: OralCase = {
           next: "s-bypass",
           quality: "partial",
           feedback:
-            "The destination is right in the end, but he is hypotensive and has already lost consciousness. A primary care crew has no blood, and an arrest on the highway would be unrecoverable. " +
-            "The examiner wanted the closest emergency department first, with a fast transfer to vascular surgery.",
+            "Some systems take ruptured aneurysms straight to a vascular centre, and the ESVS notes that such transfers can be safe. But he is hypotensive, has already lost consciousness, and faces 55 minutes with a primary care crew that has no blood. " +
+            "The examiner wanted the closest emergency department 12 minutes away first, with blood and a fast transfer arranged in parallel.",
         },
         {
           id: "c-fluids",
@@ -181,7 +181,7 @@ export const emsPatchRupturedAaa: OralCase = {
           quality: "unsafe",
           feedback:
             "This delays definitive care and pushes the pressure up, which can break up the clot that is holding the rupture. " +
-            "The PCP directive allows 10 mL/kg to a maximum of 1 000 mL, reassessed every 250 mL. It does not ask for a normal pressure. Load and go, and accept a low systolic while he is awake.",
+            "The PCP directive allows 20 mL/kg to a maximum of 2 000 mL, reassessed every 250 mL, and says a bolus should not delay transport. Load and go, and accept a low systolic while he is awake.",
         },
       ],
     },
@@ -198,7 +198,7 @@ export const emsPatchRupturedAaa: OralCase = {
       id: "s-scene",
       phase: "14:40",
       text:
-        "Scene time reaches 25 minutes. After 1 000 mL of saline his systolic briefly reaches 98, then falls to 64 and he becomes confused. The crew patches again and you tell them to leave now.",
+        "Scene time reaches 25 minutes. After 1 500 mL of saline his systolic briefly reaches 98, then falls to 64 and he becomes confused. The crew patches again and you tell them to leave now.",
       next: "s-enroute",
     },
     {
@@ -216,7 +216,7 @@ export const emsPatchRupturedAaa: OralCase = {
       seconds: 60,
       modelAnswer: [
         "Resus bay. Assign a team leader and roles. Brief the team on the likely diagnosis.",
-        "O negative blood to the bedside. Activate the massive hemorrhage protocol. Warmer and rapid infuser ready.",
+        "Uncrossmatched group O red cells to the bedside. O positive is acceptable for an older man. Activate the massive hemorrhage protocol. Warmer and rapid infuser ready.",
         "Ultrasound machine in the room.",
         "General surgeon to the bedside to help, knowing he will not repair it here.",
         "Call CritiCall early to start the vascular surgery and transport conversation.",
@@ -375,7 +375,7 @@ export const emsPatchRupturedAaa: OralCase = {
         {
           id: "c-blood-awake",
           label:
-            "I started warmed O negative blood through the rapid infuser, asked for plasma, and aimed for a systolic of 70 to 90 while he stayed awake. I told the RT we would not intubate him here.",
+            "I started warmed uncrossmatched O positive red cells through the rapid infuser, asked for plasma, and aimed for a systolic of 70 to 90 while he stayed awake. I told the RT we would not intubate him here.",
           next: "q-package",
           quality: "strong",
           feedback:
@@ -406,7 +406,7 @@ export const emsPatchRupturedAaa: OralCase = {
       kind: "say",
       id: "s-dilute",
       phase: "Ten minutes later",
-      text: "His systolic reaches 104, then falls to 60. A repeat INR is 1.6 and fibrinogen 1.3 g/L. You start the O negative blood and ask for plasma.",
+      text: "His systolic reaches 104, then falls to 60. A repeat INR is 1.6 and fibrinogen 1.3 g/L. You start uncrossmatched red cells and ask for plasma.",
       next: "q-package",
     },
     {
@@ -414,7 +414,7 @@ export const emsPatchRupturedAaa: OralCase = {
       id: "s-collapse",
       phase: "Two minutes later",
       text:
-        "Two minutes after induction he has no palpable pulse. You start CPR and squeeze in 3 units of O negative blood and give epinephrine. A pulse returns after 4 minutes, with a BP of 72/40 on a norepinephrine infusion.",
+        "Two minutes after induction he has no palpable pulse. You start CPR and squeeze in 3 units of uncrossmatched red cells and give epinephrine. A pulse returns after 4 minutes, with a BP of 72/40 on a norepinephrine infusion.",
       next: "q-package",
     },
     {
@@ -424,7 +424,7 @@ export const emsPatchRupturedAaa: OralCase = {
       prompt: "The flight crew is here. What must be in place before he leaves, and what goes with him?",
       seconds: 75,
       modelAnswer: [
-        "Two large bore IVs that work. Blood running through a warmer. Remaining O negative units in a validated cooler.",
+        "Two large bore IVs that work. Blood running through a warmer. Remaining uncrossmatched units in a validated cooler.",
         "Clear targets for the crew. Systolic 70 to 90 while conscious. No crystalloid boluses.",
         "Structured handover to the flight crew. Timeline, products given, last vitals and labs.",
         "Ultrasound and any CT images pushed electronically. Copies of notes, blood product records and the call report.",
@@ -460,7 +460,7 @@ export const emsPatchRupturedAaa: OralCase = {
         "Give the crew feedback on the diagnosis and on what helped.",
         "Document the patch. Time, information received and the orders given.",
         "Record the door in and door out times and the transfusion record.",
-        "Restock O negative blood and the massive hemorrhage cooler.",
+        "Restock the emergency release blood and the massive hemorrhage cooler.",
         "Short team debrief. Note any delays for review.",
       ],
       rubric: ["ap-pr7"],
@@ -609,14 +609,14 @@ export const emsPatchRupturedAaa: OralCase = {
       criterion: "process",
       text: "Directs an unstable patient with a primary care crew to the closest emergency department, without scene delay, and within the crew's scope.",
       points: 2,
-      teaching: "Ontario standards limit a PCP fluid bolus to 10 mL/kg, at most 1 000 mL, and require paramedics to say when an order exceeds their scope.",
+      teaching: "Ontario standards set the PCP fluid bolus at 20 mL/kg, at most 2 000 mL, say it should not delay transport, and require paramedics to say when an order exceeds their scope.",
       source: "als",
     },
     {
       id: "ap-pr2",
       competency: "leadership",
       criterion: "process",
-      text: "Prepares before arrival. Resus bay, roles, O negative blood, rapid infuser, ultrasound, surgeon and lab alerted.",
+      text: "Prepares before arrival. Resus bay, roles, emergency release blood, rapid infuser, ultrasound, surgeon and lab alerted.",
       points: 2,
       teaching: "The SVS frames the 90 minute door to intervention goal as time slices. Preparation before arrival saves the first slice.",
       source: "svs",

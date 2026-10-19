@@ -2,9 +2,9 @@
 
 import type { OralCase } from "@/engine/types";
 
-export const postpartumHeadacheReturnVisit: OralCase = {
-  id: "postpartum-headache-return-visit",
-  title: "Back with the same headache",
+export const postpartumHeadacheSixthDay: OralCase = {
+  id: "postpartum-headache-sixth-day",
+  title: "Six days after the birth",
   blueprint: "obgyn",
   alsoCovers: ["neuro", "comm"],
   priorityTopic: "pre-eclampsia",
@@ -14,19 +14,19 @@ export const postpartumHeadacheReturnVisit: OralCase = {
     { topic: "pre-eclampsia", n: 3 },
     { topic: "pre-eclampsia", n: 4 },
   ],
-  summary: "A woman who recently gave birth returns with a headache two days after she was sent home from your department.",
+  summary: "A woman who gave birth less than a week ago comes in with a headache that has lasted three days.",
   durationMinutes: 12,
   stem:
     "You are working in the emergency department of a community hospital when the following patient arrives. " +
-    "A 33 year old woman who gave birth 6 days ago comes back with a headache. She was seen in your department for the same headache 2 days ago and sent home.",
+    "A 33 year old woman who gave birth 6 days ago has had a headache for 3 days. Her partner has driven her in with the baby.",
   card: {
     vitals: {
       temperature: "36.9°C oral",
-      pulse: "92/minute",
+      pulse: "96/minute",
       resp: "18/minute",
       bp: "164/108 mmHg",
       o2sat: "98% on room air",
-      weight: "74 kg (163 lb)",
+      weight: "78 kg (172 lb)",
     },
     medications: "Ibuprofen, acetaminophen, prenatal vitamin",
     allergies: "None known",
@@ -41,11 +41,11 @@ export const postpartumHeadacheReturnVisit: OralCase = {
         "No fever, neck stiffness, weakness, numbness or trouble speaking. It did not start suddenly.",
     },
     {
-      id: "first-visit",
-      label: "Record of the visit 2 days ago",
+      id: "midwife",
+      label: "Midwife home visit 2 days ago",
       result:
-        "Day 4 after birth. Triage BP 138/88, not repeated. Diagnosis: tension headache from lack of sleep. Given metoclopramide 10 mg IV and ketorolac 30 mg IV with relief. " +
-        "No urine or blood tests. Discharged on ibuprofen 600 mg every 6 hours. The note says 'normotensive, return if worse'.",
+        "Day 4 after birth. Her midwife measured one BP of 138/88 at the end of the visit. She had a mild headache, which they put down to poor sleep. " +
+        "No urine or blood tests. The midwife advised ibuprofen and acetaminophen, a BP recheck on day 7, and a call if the headache got worse or her vision changed.",
     },
     {
       id: "obstetric",
@@ -63,7 +63,7 @@ export const postpartumHeadacheReturnVisit: OralCase = {
     {
       id: "meds",
       label: "Medications and allergies",
-      result: "Ibuprofen 600 mg every 6 hours since the last visit. Acetaminophen 1 g every 6 hours. Prenatal vitamin. No hormonal contraception yet. No allergies.",
+      result: "Ibuprofen 400 mg every 6 hours for the last 2 days. Acetaminophen 1 g every 6 hours. Prenatal vitamin. No hormonal contraception yet. No allergies.",
     },
     {
       id: "social",
@@ -79,7 +79,7 @@ export const postpartumHeadacheReturnVisit: OralCase = {
     {
       id: "repeat-bp",
       label: "Repeat blood pressure",
-      result: "15 minutes after triage, seated, with a large adult cuff: 168/110 mmHg. Pulse 90.",
+      result: "15 minutes after triage, seated, with a large adult cuff: 168/110 mmHg. Pulse 94.",
     },
     {
       id: "neuro",
@@ -134,7 +134,7 @@ export const postpartumHeadacheReturnVisit: OralCase = {
       id: "s-open",
       phase: "14:10",
       text:
-        "She is squinting under the lights. Her partner holds the baby. The triage nurse says: \"She was here two days ago with the same thing. Do you want the usual headache cocktail?\"",
+        "She is squinting under the lights. Her partner holds the baby. The triage nurse says: \"She had a migraine history and she is not sleeping. Do you want the usual headache cocktail?\"",
       next: "q-first",
     },
     {
@@ -147,10 +147,10 @@ export const postpartumHeadacheReturnVisit: OralCase = {
         "Treat this as postpartum pre-eclampsia with severe features until proven otherwise. It can appear up to 6 weeks after birth.",
         "Repeat the BP in 15 minutes with the right cuff. If it stays at 160/110 or more, treat within 30 to 60 minutes.",
         "Labetalol 20 mg IV, or immediate release nifedipine 10 mg orally, or hydralazine 5 to 10 mg IV.",
-        "Magnesium sulfate 4 g IV over 15 minutes, then 1 g/h.",
+        "Magnesium sulfate 4 g IV over 15 to 20 minutes, then 1 g/h.",
         "Monitor, IV access. CBC, smear, liver enzymes, LDH, creatinine, INR, fibrinogen, urine protein to creatinine ratio.",
         "Call the obstetrician early.",
-        "No triptan and no more NSAID.",
+        "No triptan and no more NSAID until the kidneys and platelets are known.",
       ],
       rubric: ["pe-p1", "pe-m1", "pe-m2", "pe-pr4"],
       choices: [
@@ -180,7 +180,7 @@ export const postpartumHeadacheReturnVisit: OralCase = {
           quality: "unsafe",
           feedback:
             "A new severe headache with visual symptoms and a pressure of 164/108 after birth is pre-eclampsia until proven otherwise. " +
-            "Triptans are vasoconstrictors and should be avoided with uncontrolled hypertension. This repeats the trap of the first visit.",
+            "Triptans are vasoconstrictors and should be avoided with uncontrolled hypertension. Anchoring on an old migraine history is the trap here.",
         },
       ],
     },
@@ -210,7 +210,7 @@ export const postpartumHeadacheReturnVisit: OralCase = {
         "Headache: onset, speed of onset, position effect, progression. A thunderclap onset points to bleeding or vasoconstriction. A positional headache points to a dural puncture leak.",
         "Visual symptoms, right upper quadrant or epigastric pain, nausea, shortness of breath, seizure.",
         "The pregnancy BP trend, the trace protein at 37 weeks and the BP at discharge.",
-        "The record of the first visit: one BP of 138/88, not repeated, no tests.",
+        "The midwife's reading of 138/88 on day 4. BP peaks 3 to 6 days after birth, and her readings are climbing from her own baseline.",
         "Epidural, migraine history, medications including ibuprofen, breastfeeding.",
         "Risk factors: her sister had pre-eclampsia, body mass index 31.",
         "Collateral: forgetfulness and irritability since yesterday.",
@@ -229,7 +229,7 @@ export const postpartumHeadacheReturnVisit: OralCase = {
         "Postpartum pre-eclampsia with severe features is most likely.",
         "Also consider posterior reversible encephalopathy syndrome, cerebral venous sinus thrombosis, intracranial hemorrhage, reversible cerebral vasoconstriction syndrome, post dural puncture headache, migraine and meningitis.",
         "Imaging is needed. Visual change, confusion and a severe headache are atypical enough. The postpartum state raises the risk of venous thrombosis.",
-        "CT head with CT venogram once BP treatment and magnesium have started, or MRI with venography if quickly available.",
+        "CT head with CT venogram once BP treatment and magnesium have started, or MRI with venography if quickly available. Breastfeeding can continue after contrast.",
       ],
       rubric: ["pe-p2", "pe-p3"],
       choices: [
@@ -295,9 +295,9 @@ export const postpartumHeadacheReturnVisit: OralCase = {
       seconds: 75,
       modelAnswer: [
         "Postpartum pre-eclampsia with HELLP syndrome: hemolysis, raised liver enzymes and platelets under 100.",
-        "Acute kidney injury. Creatinine has risen by two thirds.",
+        "Acute kidney injury. Creatinine has risen by about two thirds, to above 90 µmol/L.",
         "PRES on CT. She is at high risk of eclampsia.",
-        "Stop ibuprofen. NSAIDs can worsen kidney function and BP, and her platelets are falling.",
+        "Stop ibuprofen. NSAIDs are acceptable after birth in most hypertensive disorders, but not with acute kidney injury, hard to control BP and falling platelets.",
         "Magnesium is cleared by the kidney. Watch reflexes, breathing and urine output hourly. Check a level.",
         "Repeat CBC, liver enzymes and creatinine every 6 to 12 hours. Limit total fluids to about 80 mL/h.",
         "No neuraxial procedures while platelets are falling.",
@@ -321,10 +321,10 @@ export const postpartumHeadacheReturnVisit: OralCase = {
       seconds: 75,
       modelAnswer: [
         "Labetalol has failed after 20, 40 and 80 mg. Switch class.",
-        "Hydralazine 10 mg IV over 2 minutes, repeated after 20 minutes if still severe.",
+        "Hydralazine 10 mg IV over 2 minutes, with a BP recheck in 20 minutes.",
         "Or immediate release nifedipine 10 to 20 mg orally. Never the extended release tablet for acute control.",
-        "Aim first for under 160/110, then about 140 to 150 over 90 to 100. Avoid a sudden fall.",
-        "If two agents fail, call anesthesia, obstetric medicine or critical care for an infusion in a monitored bed.",
+        "Aim first for under 160/110 without a sudden fall. Then lower it gradually with oral agents. SOGC targets a diastolic of about 85 in pregnancy. ACOG accepts 140 to 150 over 90 to 100 as the first goal.",
+        "If the second agent fails, call anesthesia, obstetric medicine or critical care for an infusion in a monitored bed.",
         "Keep magnesium running. Recheck BP every 10 to 15 minutes.",
       ],
       rubric: ["pe-m3", "pe-m1"],
@@ -378,70 +378,70 @@ export const postpartumHeadacheReturnVisit: OralCase = {
       id: "s-partner",
       phase: "17:15",
       text:
-        "Her BP is now 150/96. Her partner stops you in the hallway with the baby in his arms. " +
-        "\"We were here two days ago. The doctor said it was stress and lack of sleep. Now you are telling me she could have a seizure or a stroke. Why did nobody check her properly?\"",
-      next: "q-disclose",
+        "Her BP is now 150/96. The baby is crying. Her partner says: \"She has been breastfeeding him. Someone said all these drugs mean he has to go on formula. " +
+        "And can she come home tonight once the pressure is down? I can't manage our son and a newborn on my own.\"",
+      next: "q-feeding",
     },
     {
       kind: "question",
-      id: "q-disclose",
+      id: "q-feeding",
       phase: "Her partner",
-      prompt: "What do you say to him?",
+      prompt: "What do you tell them?",
       seconds: 75,
       modelAnswer: [
-        "Move to a private space. Include the patient if she is able and agrees.",
-        "Explain her condition now: pre-eclampsia after birth, with effects on the blood, liver, kidneys and brain. The treatment is working.",
-        "Be honest about the earlier visit: her pressure was measured once and not rechecked, and no tests were done.",
-        "Say you are sorry this was not recognized sooner.",
-        "Do not speculate about whether it changed the outcome, and do not blame the colleague.",
-        "Tell him the visit will be reviewed, the physician involved will be told, and you will follow up.",
-        "Document the conversation.",
+        "Speak to both of them, in plain language. She has pre-eclampsia after birth, with effects on her blood, liver, kidneys and brain. The treatment is working.",
+        "She cannot go home tonight. The risk of a seizure or stroke is highest in the next 24 to 48 hours. She needs magnesium for 24 hours, close monitoring and repeat blood tests.",
+        "Breastfeeding can continue. Labetalol, nifedipine and enalapril are compatible, and very little magnesium reaches the baby. No pumping and discarding.",
+        "The baby can stay with her on the unit with a support person. Nurses and a lactation consultant help with feeds while she is drowsy on magnesium.",
+        "Ask about help at home for her partner and the 4 year old. Involve social work if needed.",
+        "Check what they understood and answer questions.",
       ],
       rubric: ["pe-pr1", "pe-pr2", "pe-pr6"],
       choices: [
         {
-          id: "c-disclose",
+          id: "c-explain",
           label:
-            "I sat down with both of them, explained the diagnosis and treatment, said her pressure two days ago was checked only once and no tests were done, apologized, and said the visit would be reviewed and I would let them know what we learned.",
+            "I explained the diagnosis and why she must stay for at least 24 hours of magnesium and monitoring. I said she can keep breastfeeding on these drugs, arranged for the baby to stay with her with lactation help, and asked social work to help with care at home.",
           next: "q-dispo",
           quality: "strong",
           feedback:
-            "Good disclosure. You shared the facts, apologized and committed to a review without blaming a colleague or guessing at causes. " +
-            "The duty to disclose applies even when you were not the physician involved.",
+            "Good. You were clear about the danger, kept mother and baby together and protected breastfeeding. " +
+            "Labetalol, nifedipine and enalapril are compatible with breastfeeding, and magnesium is not a reason to stop. Practical help at home makes it easier for the family to accept admission.",
         },
         {
-          id: "c-deflect",
-          label: "I told him I could not comment on another doctor's care and that we should focus on today.",
-          next: "s-deflect",
+          id: "c-pump-dump",
+          label: "I told her to pump and discard her milk until the magnesium was stopped and to give formula in the meantime.",
+          next: "s-pump-dump",
           quality: "partial",
           feedback:
-            "Focusing on her current care is right, but refusing to speak about the earlier visit sounds evasive. " +
-            "The examiner wanted the known facts, an apology and a commitment to review.",
+            "Admission was right, but interrupting breastfeeding is not needed. Little magnesium reaches the milk and the baby absorbs it poorly. " +
+            "A day of formula can upset feeding and supply. The examiner wanted breastfeeding supported on compatible drugs.",
         },
         {
-          id: "c-reassure",
-          label: "I told him her pressure was normal two days ago, so nothing could have been done differently.",
-          next: "s-reassure",
+          id: "c-home",
+          label: "I agreed she could go home tonight once her BP was under 160/110, on nifedipine XL with a BP check in 3 days, because the baby needs her.",
+          next: "s-home",
           quality: "unsafe",
           feedback:
-            "That is not accurate. One unrepeated reading of 138/88 six days after birth, with a new headache and no tests, was not enough to exclude pre-eclampsia. " +
-            "False reassurance damages trust and is inconsistent with the duty of honest disclosure.",
+            "She has HELLP syndrome, acute kidney injury and PRES. She needs 24 hours of magnesium, serial labs and close BP control in hospital. " +
+            "Discharge now risks eclampsia, stroke and death. Address the family's needs without compromising her safety.",
         },
       ],
     },
     {
       kind: "say",
-      id: "s-deflect",
-      phase: "17:30",
-      text: "He says he will file a complaint. You pause, sit down with him and the patient, and go through what is known about the first visit, with an apology.",
+      id: "s-pump-dump",
+      phase: "17:40",
+      text:
+        "The obstetric nurse calls you. The patient is upset about stopping feeds and is already uncomfortable. The lactation consultant confirms she can breastfeed on magnesium and labetalol. You correct your advice with the couple.",
       next: "q-dispo",
     },
     {
       kind: "say",
-      id: "s-reassure",
-      phase: "The next day",
+      id: "s-home",
+      phase: "17:40",
       text:
-        "He reads the first visit note on the patient portal and sees that no urine or blood was tested. He asks patient relations why he was told otherwise. You meet the couple again to correct what you said.",
+        "The obstetrician hears the plan and refuses to discharge her. Her platelets on the repeat sample are 84. You go back to the couple, explain why she must stay, and ask social work to help the family.",
       next: "q-dispo",
     },
     {
@@ -453,37 +453,35 @@ export const postpartumHeadacheReturnVisit: OralCase = {
       modelAnswer: [
         "Admit to the obstetric unit in a high acuity bed with one to one nursing. ICU if BP stays refractory or she seizes.",
         "Magnesium 1 g/h for 24 hours. Hourly reflexes, resp rate and urine output. Calcium gluconate at the bedside.",
-        "BP every 15 minutes until stable. Oral labetalol or nifedipine, adding enalapril if needed. All are compatible with breastfeeding.",
+        "BP every 15 minutes until stable. Oral labetalol or nifedipine, adding enalapril if needed.",
         "Total fluids about 80 mL/h. Repeat HELLP labs every 6 to 12 hours.",
-        "No NSAIDs. Acetaminophen for pain.",
-        "The baby stays with her and she can keep breastfeeding when she is well enough.",
+        "No NSAIDs while she has kidney injury. Acetaminophen for pain.",
         "Neurology or repeat imaging if the visual symptoms persist.",
       ],
       rubric: ["pe-pr3"],
-      next: "q-system",
+      next: "q-future",
     },
     {
       kind: "question",
-      id: "q-system",
-      phase: "Follow up",
-      prompt: "What do you do after this shift so this does not happen again?",
+      id: "q-future",
+      phase: "Looking ahead",
+      prompt: "Before she goes to the ward she asks: \"Will this happen again, and is there anything I should do?\" What do you tell her?",
       seconds: 60,
       modelAnswer: [
-        "File a patient safety report. This is a missed diagnosis, not a personal failing.",
-        "Talk to the physician from the first visit in private, as feedback.",
-        "Suggest a triage flag for anyone pregnant or within 6 weeks of birth with headache, visual change or abdominal pain.",
-        "Repeat any BP of 140/90 or more and treat 160/110 or more within the hour, with an order set.",
-        "Discharge teaching after birth on warning signs, with a BP check in 3 to 6 days.",
-        "Share the case at department rounds.",
+        "Pre-eclampsia can come back in a future pregnancy. About 1 in 6 people with pre-eclampsia have it again.",
+        "In a future pregnancy, see her care provider early. Low dose ASA at bedtime started before 16 weeks lowers the risk. SOGC favours 162 mg a day.",
+        "Pre-eclampsia raises her lifelong risk of high BP, heart disease, stroke and kidney disease.",
+        "Have her BP, kidney function, lipids and glucose checked after this, and keep a yearly BP check with her family doctor.",
+        "Before discharge from the ward: home BP monitoring, a written list of warning signs and a BP check within days.",
       ],
-      rubric: ["pe-pr5", "pe-pr2"],
+      rubric: ["pe-pr5"],
       next: "end",
     },
     {
       kind: "end",
       id: "end",
       text:
-        "She is admitted to the obstetric unit on magnesium. Her platelets bottom out at 71 the next morning and recover by day 4. Her vision returns to normal. She goes home on day 5 on nifedipine with a BP check in 3 days. That is the end of the case.",
+        "She is admitted to the obstetric unit on magnesium with the baby. Her platelets bottom out at 71 the next morning and recover by day 4. Her vision returns to normal. She goes home on day 5 on nifedipine with a BP check in 3 days. That is the end of the case.",
     },
   ],
   rubric: [
@@ -500,9 +498,9 @@ export const postpartumHeadacheReturnVisit: OralCase = {
       id: "pe-h2",
       competency: "assessment",
       criterion: "history",
-      text: "Reviews the BP trend in pregnancy, the trace protein at 37 weeks, the discharge BP and the first ED visit, where one BP of 138/88 was never repeated.",
+      text: "Reviews the BP trend in pregnancy, the trace protein at 37 weeks, the discharge BP and the midwife's single reading of 138/88 on day 4.",
       points: 2,
-      teaching: "A rise from her own baseline matters more than any one number. Pre-eclampsia can present after birth even when an earlier reading looked normal.",
+      teaching: "BP peaks 3 to 6 days after birth. A rise from her own baseline matters more than any one number, and pre-eclampsia can first appear after birth.",
       source: "sogc-hdp",
     },
     {
@@ -602,28 +600,28 @@ export const postpartumHeadacheReturnVisit: OralCase = {
       id: "pe-m4",
       competency: "management",
       criterion: "management",
-      text: "Stops ibuprofen, avoids triptans, and avoids neuraxial procedures while platelets are falling.",
+      text: "Stops ibuprofen because of acute kidney injury and hard to control BP, avoids triptans, and avoids neuraxial procedures while platelets are falling.",
       points: 1,
-      teaching: "NSAIDs can raise BP and worsen kidney function. Triptans are vasoconstrictors. Falling platelets make any neuraxial procedure risky.",
-      source: "sogc-hdp",
+      teaching: "NSAIDs are not contraindicated after birth in most hypertensive disorders, but kidney injury and uncontrolled BP are reasons to stop them. Triptans are vasoconstrictors.",
+      source: "aom-hdp",
     },
     {
       id: "pe-pr1",
       competency: "communication",
       criterion: "process",
-      text: "Discloses the earlier missed opportunity: shares the facts, apologizes and commits to a review and follow up.",
+      text: "Tells her and her partner that breastfeeding can continue on her medications, without pumping and discarding, and keeps the baby with her.",
       points: 2,
-      teaching: "Disclosure starts as soon as the harm is recognized, with facts, an apology and next steps, even when another physician was involved.",
-      source: "cpsi-disclosure",
+      teaching: "Labetalol, nifedipine and enalapril are compatible with breastfeeding. Keeping mother and baby together supports feeding and makes admission easier to accept.",
+      source: "aom-hdp",
     },
     {
       id: "pe-pr2",
-      competency: "professionalism",
+      competency: "disposition",
       criterion: "process",
-      text: "Avoids both blame and false reassurance about the first visit, tells the physician involved, files a safety report and documents the disclosure.",
+      text: "Declines the request for discharge tonight, explains the risk of seizure and stroke, and arranges practical help for the family.",
       points: 1,
-      teaching: "Honest disclosure means no blame and no cover up. The chart records the facts and the conversation.",
-      source: "cpso-disclosure",
+      teaching: "Postpartum HELLP and PRES need 24 hours of magnesium and close monitoring. Social barriers to admission are solved, not accepted.",
+      source: "sogc-hdp",
     },
     {
       id: "pe-pr3",
@@ -631,7 +629,7 @@ export const postpartumHeadacheReturnVisit: OralCase = {
       criterion: "process",
       text: "Admits to a high acuity obstetric bed with one to one nursing, magnesium for 24 hours, serial labs and breastfeeding compatible oral agents, with ICU if BP stays refractory.",
       points: 2,
-      teaching: "Labetalol, nifedipine and enalapril are compatible with breastfeeding. Postpartum HELLP can worsen over the first 24 to 48 hours.",
+      teaching: "Postpartum HELLP can worsen over the first 24 to 48 hours. Total fluids are limited to about 80 mL/h to avoid pulmonary edema.",
       source: "sogc-hdp",
     },
     {
@@ -645,20 +643,20 @@ export const postpartumHeadacheReturnVisit: OralCase = {
     },
     {
       id: "pe-pr5",
-      competency: "leadership",
+      competency: "communication",
       criterion: "process",
-      text: "Proposes system fixes: a triage flag for patients within 6 weeks of birth, a repeat BP rule and order set, and discharge teaching on warning signs.",
+      text: "Counsels her on recurrence in a future pregnancy, low dose ASA started before 16 weeks, and her lifelong cardiovascular risk with yearly follow up.",
       points: 1,
-      teaching: "Institutions should have ready mechanisms so severe hypertension in and after pregnancy is recognized and treated promptly.",
-      source: "acog-767",
+      teaching: "About 16 percent of people with pre-eclampsia have it again in the next pregnancy. Pre-eclampsia also raises later risk of hypertension, heart disease, stroke and kidney disease.",
+      source: "aom-hdp",
     },
     {
       id: "pe-pr6",
       competency: "communication",
       criterion: "process",
-      text: "Explains the diagnosis, the treatment and the plan for the baby and breastfeeding in plain language.",
+      text: "Explains the diagnosis and treatment to her and her partner in plain language and checks their understanding.",
       points: 1,
-      teaching: "New parents worry first about the baby. Say clearly that breastfeeding can continue on her medications.",
+      teaching: "New parents worry first about the baby and the family at home. Plain words and a teach back check keep them engaged in the plan.",
       source: "sogc-hdp",
     },
   ],
@@ -676,14 +674,9 @@ export const postpartumHeadacheReturnVisit: OralCase = {
       url: "https://doi.org/10.1097/AOG.0000000000003075",
     },
     {
-      id: "cpsi-disclosure",
-      citation: "Canadian Patient Safety Institute, now Healthcare Excellence Canada. Canadian Disclosure Guidelines. Being open and honest with patients and families. 2011.",
-      url: "https://www.healthcareexcellence.ca/resources/canadian-disclosure-guidelines/",
-    },
-    {
-      id: "cpso-disclosure",
-      citation: "College of Physicians and Surgeons of Ontario. Policy. Disclosure of Harm. Updated 2019.",
-      url: "https://www.cpso.on.ca/physicians/policies-guidance/policies/disclosure-of-harm",
+      id: "aom-hdp",
+      citation: "Carnegie C, MacDonald T, Minichiello A. Association of Ontario Midwives. Clinical Practice Guideline No. 15: Hypertensive Disorders of Pregnancy. 2023.",
+      url: "https://www.ontariomidwives.ca/sites/default/files/2023-05/CPG-HDP-2023-PUB.pdf",
     },
   ],
   reviewed: false,

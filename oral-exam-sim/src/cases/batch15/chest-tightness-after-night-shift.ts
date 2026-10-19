@@ -252,7 +252,7 @@ export const chestTightnessAfterNightShift: OralCase = {
         "Risk factors. Major depression, recent bereavement, father died by suicide, rising alcohol use, insomnia, access to opioids and benzodiazepines, health care worker with knowledge and access, first weeks of an antidepressant.",
         "Protective factors. No intent or plan, no past attempts, children and partner, close sister, future plans, help seeking, insight, no psychosis.",
         "Mental status. Depressed mood, reactive affect, linear thought, good insight and judgment.",
-        "Formulation. Passive ideation with modifiable risk factors and strong supports. Acute risk is not high enough to need admission if means are removed and follow up is fast.",
+        "Formulation. Passive ideation with a method considered but no plan or intent, several serious risk factors, many of them modifiable, and strong supports. Not at imminent risk. Some would call this moderate rather than low risk. An outpatient plan is reasonable only if means are removed, a same day mental health assessment agrees and follow up is fast.",
         "Tools such as scales inform the judgment but do not replace it.",
       ],
       rubric: ["ns-p2", "ns-p3"],
@@ -276,18 +276,18 @@ export const chestTightnessAfterNightShift: OralCase = {
         "She does not meet criteria for an involuntary assessment. There is no threat or attempt and no likely serious bodily harm with a safe plan.",
         "Acknowledge his fear. With her consent explain why admission is not needed and may not help.",
         "Give him a role. Remove the pills, stay with her this week, know the warning signs and the crisis numbers.",
-        "Crisis nurse assessment before she leaves. Urgent psychiatry within 72 hours.",
+        "Crisis nurse assessment and a call to the on call psychiatrist before she leaves. Urgent psychiatry within 72 hours.",
         "Make clear she can come back at any time, and when she should.",
       ],
       rubric: ["ns-m1", "ns-pr1"],
       choices: [
         {
           id: "c-collab",
-          label: "With her consent I explained to her husband why I judged it safe for her to go home with a plan. I involved him in removing the pills and the safety plan, asked the crisis nurse to see her before discharge and booked urgent psychiatry follow up.",
+          label: "With her consent I explained to her husband why I judged it safe for her to go home with a plan. I involved him in removing the pills and the safety plan, had the crisis nurse assess her and reviewed the plan with the on call psychiatrist before discharge, and booked urgent psychiatry follow up.",
           next: "q-means",
           quality: "strong",
           feedback:
-            "Right. A low risk patient who is engaged is best served by a collaborative plan with fast follow up. Admission does not reduce suicide risk on its own and can disrupt the supports that protect her. Her husband becomes part of the plan.",
+            "Right. She has no intent, plan or psychosis, and she is engaged, so a collaborative plan with fast follow up fits. Her father's suicide and her access to drugs make some clinicians grade her as moderate risk, which is why a same day mental health assessment before discharge is the safer standard. Admission does not reduce risk on its own, and her husband becomes part of the plan.",
         },
         {
           id: "c-admit",
@@ -303,7 +303,7 @@ export const chestTightnessAfterNightShift: OralCase = {
           next: "s-form1",
           quality: "unsafe",
           feedback:
-            "A Form 1 under the Ontario Mental Health Act needs reasonable cause to believe a mental disorder will likely result in serious bodily harm. She has passive thoughts, no intent and is accepting help voluntarily. Detaining her takes away her trust and gives no benefit.",
+            "A Form 1 under the Ontario Mental Health Act needs reasonable cause to believe she has threatened or attempted self harm, or cannot care for herself, and that a mental disorder will likely result in serious bodily harm. She has passive thoughts, no intent and is accepting help voluntarily. Detaining her takes away her trust and gives no benefit.",
         },
       ],
     },
@@ -311,7 +311,7 @@ export const chestTightnessAfterNightShift: OralCase = {
       kind: "say",
       id: "s-admit",
       phase: "10:30",
-      text: "The psychiatrist on call reviews her by phone and in person. She agrees she is safe for an outpatient plan and asks you to finish discharge planning with the family. The patient says she is relieved to go home to her children.",
+      text: "The psychiatrist on call comes in and assesses her. She agrees an outpatient plan is safe and asks you to finish discharge planning with the family. The patient says she is relieved to go home to her children.",
       next: "q-means",
     },
     {
@@ -422,8 +422,8 @@ export const chestTightnessAfterNightShift: OralCase = {
       criterion: "history",
       text: "Takes a focused history of the episodes, including cardiac and pulmonary embolism risk factors.",
       points: 1,
-      teaching: "Chest tightness needs a medical cause excluded before a psychiatric label. Panic is a diagnosis of exclusion at the first visit.",
-      source: "mhcc",
+      teaching: "Acute chest pain needs a structured history, an early ECG and high sensitivity troponin before a non cardiac label. Panic is a diagnosis of exclusion at the first visit.",
+      source: "chest-pain",
     },
     {
       id: "ns-h2",
@@ -431,8 +431,8 @@ export const chestTightnessAfterNightShift: OralCase = {
       criterion: "history",
       text: "Takes a mood history. Recent loss, sleep, appetite, interest, guilt and alcohol.",
       points: 2,
-      teaching: "Hidden depression often presents as a physical complaint. A recent loss with insomnia and rising alcohol use calls for a direct suicide screen.",
-      source: "mhcc",
+      teaching: "Insomnia, night shift work and alcohol use are linked to depression. A recent loss with these features calls for a direct suicide screen, which CANMAT advises as a routine part of emergency assessment.",
+      source: "canmat",
     },
     {
       id: "ns-h3",
@@ -450,8 +450,8 @@ export const chestTightnessAfterNightShift: OralCase = {
       criterion: "history",
       text: "Asks about family history of suicide, past depression and alcohol use.",
       points: 2,
-      teaching: "A parent who died by suicide and increasing alcohol use raise risk. A past depression that responded to treatment is a useful guide.",
-      source: "mhcc",
+      teaching: "A parent who died by suicide is a known risk factor, but fixed historical factors predict poorly. Modifiable factors such as alcohol use, insomnia and access to means guide the plan.",
+      source: "canmat",
     },
     {
       id: "ns-h5",
@@ -459,8 +459,8 @@ export const chestTightnessAfterNightShift: OralCase = {
       criterion: "history",
       text: "Asks about protective factors and reasons for living. Children, partner, sister, future plans.",
       points: 1,
-      teaching: "Protective factors and future orientation are part of the formulation. They also become the reasons for living in her safety plan.",
-      source: "stanley-brown",
+      teaching: "Protective factors and supports are part of every suicide risk assessment. They also become the reasons for living in her safety plan.",
+      source: "mhcc",
     },
     {
       id: "ns-p1",
@@ -468,8 +468,8 @@ export const chestTightnessAfterNightShift: OralCase = {
       criterion: "physical",
       text: "Excludes medical causes with an exam, ECG, serial troponin and basic labs including TSH and sodium.",
       points: 2,
-      teaching: "Tachycardia and chest tightness can come from ACS, PE, thyroid disease, alcohol withdrawal or early SSRI side effects. Rule these out before closing on panic.",
-      source: "canmat",
+      teaching: "An ECG within 10 minutes and serial high sensitivity troponin exclude myocardial injury. Thyroid disease, PE, alcohol withdrawal and early SSRI side effects are other causes to consider before closing on panic.",
+      source: "chest-pain",
     },
     {
       id: "ns-p2",
@@ -477,8 +477,8 @@ export const chestTightnessAfterNightShift: OralCase = {
       criterion: "physical",
       text: "Performs and reports a mental status examination, including mood, affect, thought content, insight and judgment.",
       points: 2,
-      teaching: "The mental status exam is the physical exam of psychiatry. Absent psychosis, good insight and engagement support an outpatient plan.",
-      source: "mhcc",
+      teaching: "The mental status exam is the physical exam of psychiatry. CANMAT reserves inpatient care mainly for intent to act or psychotic symptoms, so absent psychosis, good insight and engagement support an outpatient plan.",
+      source: "canmat",
     },
     {
       id: "ns-p3",
@@ -496,7 +496,7 @@ export const chestTightnessAfterNightShift: OralCase = {
       text: "Chooses a collaborative outpatient plan and recognizes that she does not meet criteria for an involuntary psychiatric assessment.",
       points: 2,
       critical: true,
-      teaching: "A Form 1 in Ontario needs reasonable cause to believe a mental disorder will likely cause serious bodily harm. An engaged, low risk patient is best served by a plan made with her.",
+      teaching: "A Form 1 in Ontario needs a threat, attempt or inability to care for oneself, plus a mental disorder likely to cause serious bodily harm. An engaged patient without intent is best served by a plan made with her.",
       source: "ontario-mha",
     },
     {
@@ -506,8 +506,8 @@ export const chestTightnessAfterNightShift: OralCase = {
       text: "Arranges removal of the hydromorphone and lorazepam from the home today, with her husband's help.",
       points: 3,
       critical: true,
-      teaching: "Restricting access to a lethal method is a core part of a safety plan. Suicidal crises are often short, and barriers buy time.",
-      source: "stanley-brown",
+      teaching: "Lethal means counselling is a core step of the safety planning intervention. Suicidal crises are often short, and barriers buy time.",
+      source: "stanley",
     },
     {
       id: "ns-m3",
@@ -515,8 +515,8 @@ export const chestTightnessAfterNightShift: OralCase = {
       criterion: "management",
       text: "Addresses alcohol use and time away from night shifts and workplace drug access.",
       points: 1,
-      teaching: "Alcohol increases impulsivity. Night shifts worsen insomnia and give access to controlled drugs.",
-      source: "mhcc",
+      teaching: "Alcohol use and sleep disorders are modifiable suicide risk factors in depression. Night shifts worsen insomnia and give her access to controlled drugs.",
+      source: "canmat",
     },
     {
       id: "ns-m4",
@@ -533,8 +533,8 @@ export const chestTightnessAfterNightShift: OralCase = {
       criterion: "management",
       text: "Builds a written safety plan with warning signs, coping steps, support people, professional contacts and 9-8-8.",
       points: 2,
-      teaching: "A safety plan made with the patient is a brief, effective emergency department intervention. 9-8-8 is available across Canada by call or text, 24 hours a day.",
-      source: "phac-988",
+      teaching: "CANMAT puts evidence based safety planning at the centre of suicide risk management. 9-8-8 gives rapid crisis help across Canada by phone or text.",
+      source: "canmat",
     },
     {
       id: "ns-pr1",
@@ -542,8 +542,8 @@ export const chestTightnessAfterNightShift: OralCase = {
       criterion: "process",
       text: "With her consent, involves her husband, acknowledges his fear and explains the reasons for the plan.",
       points: 2,
-      teaching: "Families are part of safety. Explaining the reasons for discharge turns a frightened relative into a partner in the plan.",
-      source: "stanley-brown",
+      teaching: "Support people are a step in the safety plan. Explaining the reasons for discharge turns a frightened relative into a partner in the plan.",
+      source: "stanley",
     },
     {
       id: "ns-pr2",
@@ -551,8 +551,8 @@ export const chestTightnessAfterNightShift: OralCase = {
       criterion: "process",
       text: "Arranges timely follow up. Crisis nurse before discharge, psychiatry within 72 hours, a call the next day and her family physician this week.",
       points: 2,
-      teaching: "The days after an emergency visit carry high risk. Fast, booked follow up and a caring contact close the gap.",
-      source: "stanley-brown",
+      teaching: "The days after an emergency visit carry high risk. A safety plan with follow up calls after discharge was linked to about half the rate of suicidal behaviour over 6 months.",
+      source: "stanley",
     },
     {
       id: "ns-pr3",
@@ -560,8 +560,8 @@ export const chestTightnessAfterNightShift: OralCase = {
       criterion: "process",
       text: "Protects her confidentiality with her employer and offers a work note without a diagnosis.",
       points: 1,
-      teaching: "Fear of work consequences keeps health care workers from seeking help. Confidential care makes it safer to come forward.",
-      source: "mhcc",
+      teaching: "Her health information cannot be disclosed to her employer without her consent. A work note can state she is unfit for work without a diagnosis, and confidential care makes it safer for health care workers to come forward.",
+      source: "phipa",
     },
     {
       id: "ns-pr4",
@@ -569,7 +569,7 @@ export const chestTightnessAfterNightShift: OralCase = {
       criterion: "process",
       text: "Documents the risk assessment, the reasons for the disposition and the plan, and sends a summary to her family physician and psychiatry.",
       points: 2,
-      teaching: "Clear documentation of the assessment and the reasoning shows a sound decision and keeps the next team informed.",
+      teaching: "When you decide she does not meet Form 1 criteria, write down why. Clear documentation of the assessment and the reasoning shows a sound decision and keeps the next team informed.",
       source: "ontario-mha",
     },
   ],
@@ -581,22 +581,28 @@ export const chestTightnessAfterNightShift: OralCase = {
       url: "https://www.mentalhealthcommission.ca/wp-content/uploads/drupal/2021-01/mhcc_cpsi_suicide_risk_assessment_toolkit_eng.pdf",
     },
     {
-      id: "stanley-brown",
-      citation: "Stanley B, Brown GK. Safety planning intervention. A brief intervention to mitigate suicide risk. Cogn Behav Pract. 2012.",
+      id: "stanley",
+      citation:
+        "Stanley B, Brown GK, Brenner LA, and colleagues. Comparison of the safety planning intervention with follow-up vs usual care of suicidal patients treated in the emergency department. JAMA Psychiatry. 2018.",
+    },
+    {
+      id: "chest-pain",
+      citation:
+        "Gulati M, Levy PD, Mukherjee D, and colleagues. 2021 AHA/ACC/ASE/CHEST/SAEM/SCCT/SCMR guideline for the evaluation and diagnosis of chest pain. Circulation. 2021.",
     },
     {
       id: "canmat",
       citation:
         "Lam RW, Kennedy SH, Adams C, and colleagues. Canadian Network for Mood and Anxiety Treatments (CANMAT) 2023 update on clinical guidelines for management of major depressive disorder in adults. Can J Psychiatry. 2024.",
+      url: "https://pmc.ncbi.nlm.nih.gov/articles/PMC11351064/",
     },
     {
       id: "ontario-mha",
       citation: "Government of Ontario. Mental Health Act, R.S.O. 1990, c. M.7, section 15.",
     },
     {
-      id: "phac-988",
-      citation: "Public Health Agency of Canada. 9-8-8. Suicide Crisis Helpline. News release. 2023.",
-      url: "https://www.canada.ca/en/public-health/news/2023/11/9-8-8-suicide-crisis-helpline.html",
+      id: "phipa",
+      citation: "Government of Ontario. Personal Health Information Protection Act, 2004, S.O. 2004, c. 3, Sched. A.",
     },
   ],
   reviewed: false,
