@@ -7,13 +7,13 @@ const META = { topic: "infectious-diseases", reviewed: false, author: "Preceptor
 
 const S = {
   ehra: { id: "ehra-cied-2020", citation: "Blomström-Lundqvist C, Traykov V, Erba PA, et al. European Heart Rhythm Association (EHRA) international consensus document on how to prevent, diagnose, and treat cardiac implantable electronic device infections. Europace. 2020.", url: "https://pubmed.ncbi.nlm.nih.gov/31702000/" },
-  ssc: { id: "ssc-2021", citation: "Evans L, Rhodes A, Alhazzani W, et al. Surviving Sepsis Campaign: international guidelines for management of sepsis and septic shock 2021. Crit Care Med. 2021.", url: "https://pubmed.ncbi.nlm.nih.gov/34605781/" },
   sepsis3: { id: "sepsis-3", citation: "Singer M, Deutschman CS, Seymour CW, et al. The Third International Consensus Definitions for Sepsis and Septic Shock (Sepsis-3). JAMA. 2016.", url: "https://pubmed.ncbi.nlm.nih.gov/26903338/" },
   idsaDiarrhea: { id: "idsa-diarrhea-2017", citation: "Shane AL, Mody RK, Crump JA, et al. 2017 Infectious Diseases Society of America clinical practice guidelines for the diagnosis and management of infectious diarrhea. Clin Infect Dis. 2017.", url: "https://academic.oup.com/cid/article/65/12/e45/4557073" },
   sickDay: { id: "diabetes-canada-sick-day", citation: "Diabetes Canada Clinical Practice Guidelines Expert Committee. Appendix 8: sick-day medication list. Diabetes Canada 2018 Clinical Practice Guidelines. 2018.", url: "https://www.diabetes.ca/for-professionals/appendices/appendix-8" },
   coughlin: { id: "coughlin-drug-arterial", citation: "Coughlin PA, Mavor AI. Arterial consequences of recreational drug use. Eur J Vasc Endovasc Surg. 2006.", url: "https://pubmed.ncbi.nlm.nih.gov/16682239/" },
   guelbi: { id: "guelbi-ifap", citation: "Guelbi M, Hajri M, Hadrich Z, Atallah A, Mestiri H, Omrani S. Differentiating infected femoral pseudoaneurysms from inguinal abscesses: the hidden menace in intravenous drug users. A case report. Int J Surg Case Rep. 2025.", url: "https://pubmed.ncbi.nlm.nih.gov/40541023/" },
-  idsaSsti: { id: "idsa-ssti-2014", citation: "Stevens DL, Bisno AL, Chambers HF, et al. Practice guidelines for the diagnosis and management of skin and soft tissue infections: 2014 update by the Infectious Diseases Society of America. Clin Infect Dis. 2014.", url: "https://pubmed.ncbi.nlm.nih.gov/24973422/" },
+  tresson: { id: "tresson-groin", citation: "Tresson P, Huvelle U, Bordet M. Femoral artery ligature for treatment of infected groin pseudoaneurysm in injected drug abusers. Clin Anat. 2022.", url: "https://pmc.ncbi.nlm.nih.gov/articles/PMC9796184/" },
+  rybak: { id: "rybak-vancomycin-2020", citation: "Rybak MJ, Le J, Lodise T, et al. Executive summary: therapeutic monitoring of vancomycin for serious methicillin-resistant Staphylococcus aureus infections: a revised consensus guideline and review of the American Society of Health-System Pharmacists, the Infectious Diseases Society of America, the Pediatric Infectious Diseases Society, and the Society of Infectious Diseases Pharmacists. J Pediatric Infect Dis Soc. 2020.", url: "https://pmc.ncbi.nlm.nih.gov/articles/PMC7358040/" },
   phacSyphClin: { id: "phac-syphilis-clinical", citation: "Public Health Agency of Canada. Syphilis guide: risk factors and clinical manifestations. Canadian guidelines on sexually transmitted infections. 2023.", url: "https://www.canada.ca/en/public-health/services/infectious-diseases/sexual-health-sexually-transmitted-infections/canadian-guidelines/syphilis/risk-factors-clinical-manifestation.html" },
   phacSyphTest: { id: "phac-syphilis-testing", citation: "Public Health Agency of Canada. Syphilis guide: screening and diagnostic testing. Canadian guidelines on sexually transmitted infections. 2024.", url: "https://www.canada.ca/en/public-health/services/infectious-diseases/sexual-health-sexually-transmitted-infections/canadian-guidelines/syphilis/screening-diagnostic-testing.html" },
   phacSyphTx: { id: "phac-syphilis-treatment", citation: "Public Health Agency of Canada. Syphilis guide: treatment and follow-up. Canadian guidelines on sexually transmitted infections. Updated 2026.", url: "https://www.canada.ca/en/public-health/services/infectious-diseases/sexual-health-sexually-transmitted-infections/canadian-guidelines/syphilis/treatment-follow-up.html" },
@@ -50,7 +50,7 @@ export const INFECTIOUS_DISEASES_S55: Samp[] = [
       {
         id: "q2",
         kind: "single",
-        update: "There is warmth, swelling and redness over the pacemaker pocket. After 2.4 L of Ringer's lactate over 1 hour, his BP is 84/50 mmHg with a MAP of 61 mmHg, and his lactate is 4.6 mmol/L.",
+        update: "There is warmth, swelling and redness over the pacemaker pocket. After 2.4 L of Ringer's lactate over 1 hour, his BP is 86/48 mmHg with a MAP of 61 mmHg, and his lactate is 5.1 mmol/L.",
         prompt: "Which of the following best describes this patient's condition at this point?",
         options: [
           "Bacteremia without sepsis",
@@ -61,27 +61,27 @@ export const INFECTIOUS_DISEASES_S55: Samp[] = [
         ],
         correct: 3,
         explanation:
-          "Sepsis-3 defines septic shock as sepsis that needs a vasopressor to keep the MAP at 65 mmHg or more, with a lactate above 2 mmol/L, despite adequate fluid. After 2.4 L, which is 30 mL/kg for his 80 kg, his MAP is 61 mmHg and his lactate is 4.6 mmol/L. He already has organ dysfunction, with drowsiness and a high lactate, so this is more than bacteremia or a local pocket infection, and more than sepsis without shock. Toxic shock syndrome is a toxin mediated illness with a diffuse rash and is not suggested here.",
+          "Sepsis-3 defines septic shock as sepsis that needs a vasopressor to keep the MAP at 65 mmHg or more, with a lactate above 2 mmol/L, despite adequate fluid. After 2.4 L, which is 30 mL/kg for his 80 kg, his MAP is still 61 mmHg, so he needs a vasopressor, and his lactate is 5.1 mmol/L. He already has organ dysfunction, with drowsiness and a high lactate, so this is more than bacteremia or a local pocket infection, and more than sepsis without shock. Toxic shock syndrome is a toxin mediated illness with a diffuse rash and is not suggested here.",
         keyFeature: { topic: "infectious-diseases", n: 2 },
         source: "sepsis-3",
       },
       {
         id: "q3",
         kind: "single",
-        update: "His only IV is a peripheral catheter in the right antecubital fossa. A central line will take at least 30 minutes to place.",
-        prompt: "Which of the following is the most appropriate next step for his blood pressure?",
+        update: "Norepinephrine is started through a peripheral IV, and his MAP rises to 67 mmHg.",
+        prompt: "Which of the following is the most appropriate definitive management of his infected pacemaker?",
         options: [
-          "Dopamine by peripheral IV now",
-          "Further 2 L crystalloid bolus",
-          "Norepinephrine by peripheral IV now",
-          "Vasopressin by peripheral IV now",
-          "Wait for central access for norepinephrine",
+          "Antibiotics alone for 6 weeks",
+          "Complete removal of device and leads",
+          "Generator removal, leads left in place",
+          "Incision and drainage of the pocket",
+          "Pocket washout with the device kept",
         ],
-        correct: 2,
+        correct: 1,
         explanation:
-          "The Surviving Sepsis Campaign recommends norepinephrine as the first-line vasopressor and suggests starting it through a peripheral vein rather than delaying until central access is secured. Peripheral use is kept short, in a vein at or above the antecubital fossa, with close checks for extravasation. Waiting 30 minutes leaves his MAP at 61 mmHg. He has had 30 mL/kg, so another 2 L risks fluid overload without fixing vasodilation. Dopamine causes more arrhythmias than norepinephrine. Vasopressin is added to norepinephrine, not used as the first agent.",
+          "A pocket infection with septic shock is a definite device infection, and the EHRA consensus recommends complete removal of the generator and every lead, without unnecessary delay and ideally within 3 days, by percutaneous extraction where possible. Source control is part of treating his shock. Antibiotics alone, a pocket washout or incision and drainage leave infected hardware behind, and removing the generator while leaving the leads leaves infected material in the veins and heart. He has complete heart block, so he will need temporary pacing when the system comes out.",
         keyFeature: { topic: "infectious-diseases", n: 2 },
-        source: "ssc-2021",
+        source: "ehra-cied-2020",
       },
       {
         id: "q4",
@@ -96,30 +96,30 @@ export const INFECTIOUS_DISEASES_S55: Samp[] = [
         ],
         correct: 3,
         explanation:
-          "The EHRA consensus advises that patients with sepsis or septic shock receive empiric antibiotics right after two sets of blood cultures, so that treatment is not delayed, and the Surviving Sepsis Campaign recommends antimicrobials immediately, ideally within 1 hour, for possible septic shock. The three sets drawn 30 minutes apart that EHRA advises for stable patients would delay treatment here. EHRA advises against sampling the pocket through the skin, because it risks seeding infection. Echocardiography and culture results take hours to days and must not delay the first dose.",
+          "The EHRA consensus advises that patients with sepsis or septic shock receive empiric antibiotics right after two sets of blood cultures, so that treatment is not delayed. The three sets drawn 30 minutes apart that EHRA advises for stable patients would delay treatment here. EHRA advises against sampling the pocket through the skin, because it risks seeding infection. Echocardiography and culture results take hours to days and must not delay the first dose.",
         keyFeature: { topic: "infectious-diseases", n: 1 },
         source: "ehra-cied-2020",
       },
       {
         id: "q5",
         kind: "single",
-        update: "Thirty minutes later, on norepinephrine 0.3 mcg/kg/minute through a new central line, his MAP is 60 mmHg.",
-        prompt: "Which of the following is the most appropriate addition to his vasopressor therapy?",
+        update: "Both sets of blood cultures grow Staphylococcus aureus. A transthoracic echocardiogram shows no vegetation.",
+        prompt: "Which of the following investigations is most appropriate next for him?",
         options: [
-          "dopamine infusion IV",
-          "levosimendan infusion IV",
-          "phenylephrine infusion IV",
-          "sodium bicarbonate infusion IV",
-          "vasopressin infusion IV",
+          "CT of the abdomen and pelvis",
+          "Lumbar puncture",
+          "Transesophageal echocardiogram",
+          "Upper limb venous Doppler",
+          "Urine culture and analysis",
         ],
-        correct: 4,
+        correct: 2,
         explanation:
-          "The Surviving Sepsis Campaign suggests adding vasopressin rather than escalating norepinephrine when the MAP stays low, and in practice vasopressin is usually started once norepinephrine reaches 0.25 to 0.5 mcg/kg/minute. He is on 0.3 mcg/kg/minute with a MAP of 60 mmHg. The guideline suggests against levosimendan, and against bicarbonate to improve hemodynamics in lactic acidemia. Dopamine causes more arrhythmias and is kept for settings without norepinephrine. Phenylephrine is not among the agents the guideline recommends for septic shock.",
-        keyFeature: { topic: "infectious-diseases", n: 2 },
-        source: "ssc-2021",
+          "Staphylococcus aureus in every blood culture with an infected pacemaker raises the question of lead or valve endocarditis, and a normal transthoracic study does not exclude it. The EHRA consensus recommends both transthoracic and transesophageal echocardiography when device infection is suspected, because the transesophageal view is more sensitive for vegetations on the leads, and their size shapes the extraction plan. He has no abdominal, neurologic or urinary symptoms and his urinalysis was negative, so CT, lumbar puncture and urine studies do not fit. Arm swelling, which would prompt a Doppler, has not been described.",
+        keyFeature: { topic: "infectious-diseases", n: 7 },
+        source: "ehra-cied-2020",
       },
     ],
-    sources: [S.ehra, S.sepsis3, S.ssc],
+    sources: [S.ehra, S.sepsis3],
     ...META,
   },
 
@@ -170,7 +170,7 @@ export const INFECTIOUS_DISEASES_S55: Samp[] = [
         id: "q3",
         kind: "menu",
         select: 3,
-        prompt: "Which of the following of her medications should be held until she is eating and drinking normally again?",
+        prompt: "Which of the following of her medications most increase her risk of complications from this illness?",
         options: [
           "atorvastatin 20 mg daily",
           "calcium carbonate 500 mg daily",
@@ -182,7 +182,7 @@ export const INFECTIOUS_DISEASES_S55: Samp[] = [
         ],
         correct: [2, 4, 5],
         explanation:
-          "Diabetes Canada's sick-day list advises holding drugs that worsen kidney function when fluid intake cannot keep up, such as ACE inhibitors like ramipril and diuretics like hydrochlorothiazide, and drugs that build up when the kidneys falter, such as metformin. Her creatinine has risen from 82 to 148 umol/L, so these host factors are already turning a mild viral illness into a kidney injury. Atorvastatin, levothyroxine, calcium and vitamin D are not on the list and can continue.",
+          "Diabetes Canada's sick-day list advises holding drugs that worsen kidney function when fluid intake cannot keep up, such as ACE inhibitors like ramipril and diuretics like hydrochlorothiazide, and drugs that build up when the kidneys falter, such as metformin. Her creatinine has risen from 82 to 148 umol/L, so these host factors are already turning a mild viral illness into a kidney injury, and they are held until she eats and drinks normally. Atorvastatin, levothyroxine, calcium and vitamin D are not on the list and can continue.",
         keyFeature: { topic: "infectious-diseases", n: 3 },
         source: "diabetes-canada-sick-day",
       },
@@ -229,9 +229,9 @@ export const INFECTIOUS_DISEASES_S55: Samp[] = [
         ],
         correct: 0,
         explanation:
-          "People who inject drugs often move to the femoral vessels in the groin when arm veins are used up, and they may not say so. Her right thigh ache and limp point to the right groin, which stays hidden under jeans unless she is undressed. Injection injury there can cause an abscess, septic thrombosis or an infected femoral pseudoaneurysm. The neck is another hidden injection site, but her symptoms point to the leg. The mouth, scalp and feet are worth checking if the groin is clear.",
+          "People who inject drugs often move to the groin when their superficial veins are used up, and Tresson and colleagues describe the femoral vessels as one of the most common injection sites. Patients may not say so. Her right thigh ache and limp point to the right groin, which stays hidden under jeans unless she is undressed. Injection injury there can cause an abscess, septic thrombosis or an infected femoral pseudoaneurysm. The neck is another hidden injection site, but her symptoms point to the leg. The mouth, scalp and feet are worth checking if the groin is clear.",
         keyFeature: { topic: "infectious-diseases", n: 6 },
-        source: "coughlin-drug-arterial",
+        source: "tresson-groin",
       },
       {
         id: "q2",
@@ -247,7 +247,7 @@ export const INFECTIOUS_DISEASES_S55: Samp[] = [
         ],
         correct: 3,
         explanation:
-          "A pulsatile groin swelling with a bruit in a person who injects into the groin is an infected femoral pseudoaneurysm until imaging shows otherwise. It can look exactly like an abscess, and incision or needle aspiration can open the artery and cause catastrophic bleeding, so imaging with Doppler ultrasound or CT angiography comes first and vascular surgery is called. Oral antibiotics with review in 2 days, or compresses with antibiotics, treat neither the infection in the arterial wall nor the risk of rupture.",
+          "A pulsatile groin swelling with a bruit in a person who injects into the groin is an infected femoral pseudoaneurysm until imaging shows otherwise. It can look exactly like an abscess, and incision or needle aspiration can open the artery and cause catastrophic bleeding, so imaging with Doppler ultrasound or CT angiography comes first and vascular surgery is called. Excision and ligation is then the usual repair in an infected field. Oral antibiotics with review in 2 days, or compresses with antibiotics, treat neither the infection in the arterial wall nor the risk of rupture.",
         keyFeature: { topic: "infectious-diseases", n: 4 },
         source: "guelbi-ifap",
       },
@@ -264,9 +264,9 @@ export const INFECTIOUS_DISEASES_S55: Samp[] = [
         ],
         correct: 4,
         explanation:
-          "She has a deep purulent infection with fever and tachycardia, and IDSA advises empiric coverage of methicillin-resistant Staphylococcus aureus with an agent such as vancomycin for severe purulent infections with systemic signs. For her 52 kg, a 25 mg/kg load is 1.3 g IV. Ceftriaxone and cephalexin do not cover MRSA. Oral clindamycin is not adequate for an endovascular infection with systemic signs. Metronidazole covers only anaerobes.",
+          "An infected arterial wall with fever and tachycardia is a serious endovascular infection, and in a person who injects drugs Staphylococcus aureus, including MRSA, is the organism that cannot be missed, so vancomycin is started. The 2020 vancomycin consensus guideline advises a loading dose of 20 to 35 mg/kg by actual body weight, up to 3 000 mg, for seriously ill patients with suspected MRSA infection. For her 52 kg, 25 mg/kg is 1 300 mg, or 1.3 g IV. Ceftriaxone and cephalexin do not cover MRSA. Oral clindamycin is not adequate for an endovascular infection with systemic signs. Metronidazole covers only anaerobes.",
         keyFeature: { topic: "infectious-diseases", n: 8 },
-        source: "idsa-ssti-2014",
+        source: "rybak-vancomycin-2020",
       },
       {
         id: "q4",
@@ -286,7 +286,7 @@ export const INFECTIOUS_DISEASES_S55: Samp[] = [
         source: "coughlin-drug-arterial",
       },
     ],
-    sources: [S.coughlin, S.guelbi, S.idsaSsti],
+    sources: [S.tresson, S.guelbi, S.rybak, S.coughlin],
     ...META,
   },
 
@@ -295,7 +295,7 @@ export const INFECTIOUS_DISEASES_S55: Samp[] = [
     id: "infectious-diseases-51",
     title: "Rash and tiredness in a young woman",
     stem:
-      "A 27-year-old woman presents to the emergency department with 10 days of fatigue, low-grade fevers, headache and a sore throat. Three days ago a rash that does not itch appeared on her trunk. A walk-in clinic diagnosed a viral illness last week. She has had two male partners in the past 4 months and uses condoms inconsistently. She does not recall any genital sore. She takes an oral contraceptive and has no allergies. There is a faint pink macular rash on her trunk, and the lymph nodes in her neck and groins are enlarged and nontender. Her pharynx is mildly red. Her neck is supple, and her neurologic and eye examinations are normal.",
+      "A 27-year-old woman presents to the emergency department with 10 days of fatigue, low-grade fevers, headache and a sore throat. Three days ago a rash that does not itch appeared on her trunk. A walk-in clinic diagnosed a viral illness last week. She has had two male partners in the past 3 months and uses condoms inconsistently. She does not recall any genital sore. She takes an oral contraceptive and has no allergies. There is a faint pink macular rash on her trunk, and the lymph nodes in her neck and groins are enlarged and nontender. Her pharynx is mildly red. Her neck is supple, and her neurologic and eye examinations are normal.",
     vitals: { temperature: "37.9°C oral", pulse: "92/minute", resp: "16/minute", bp: "116/72 mmHg", o2sat: "99% on room air", weight: "61 kg" },
     questions: [
       {
@@ -373,7 +373,7 @@ export const INFECTIOUS_DISEASES_S55: Samp[] = [
       {
         id: "q5",
         kind: "single",
-        prompt: "Which of the following is the most appropriate plan for her two sexual partners from the past 4 months?",
+        prompt: "Which of the following is the most appropriate plan for her two sexual partners from the past 3 months?",
         options: [
           "Test and treat with penicillin now",
           "Test only if symptoms appear",
@@ -383,7 +383,7 @@ export const INFECTIOUS_DISEASES_S55: Samp[] = [
         ],
         correct: 0,
         explanation:
-          "Both partners fall within the 6 month trace-back period that PHAC sets for secondary syphilis, and PHAC advises strongly considering epidemiological treatment for sexual contacts from the previous 90 days, because a recently infected partner can still have negative serology. So both are tested and treated now with the same single injection of benzathine penicillin G. Waiting for symptoms or a positive result risks onward spread. Azithromycin is not a recommended syphilis treatment. Inconsistent condom use does not remove the risk. Syphilis is also reportable to public health in every province and territory.",
+          "Both partners fall within the 6 month trace-back period that PHAC sets for secondary syphilis and within the previous 90 days, for which PHAC advises strongly considering epidemiological treatment, because a recently infected partner can still have negative serology. So both are tested and treated now with the same single injection of benzathine penicillin G. Waiting for symptoms or a positive result risks onward spread. Azithromycin is not a recommended syphilis treatment. Inconsistent condom use does not remove the risk. Syphilis is also reportable to public health in every province and territory.",
         keyFeature: { topic: "infectious-diseases", n: 10 },
         source: "phac-syphilis-treatment",
       },
