@@ -298,7 +298,7 @@ export const MULTIPLE_TRAUMA_S66: Samp[] = [
           "Reduced glargine and correction",
         ],
         correct: 4,
-        explanation: "Diabetes Canada advises that bolus insulin can be withheld or reduced in people who are not eating regularly, but that basal insulin should not be withheld. It recommends a proactive plan with basal, bolus and correction insulin rather than only correcting high readings, and it suggests changing therapy after a glucose of 3.9 mmol/L or less. He was hypoglycemic enough to leave the road, so his glargine is continued at a lower dose, with correction aspart and a preprandial target of 5.0 to 8.0 mmol/L. Holding all insulin, or giving correction doses alone, leaves an insulin-treated patient without basal cover. His full home doses with little food risk another low. He is not critically ill, so an IV insulin infusion is not needed.",
+        explanation: "Diabetes Canada advises that bolus insulin can be withheld or reduced in people who are not eating regularly, but that basal insulin should not be withheld. It recommends a proactive plan with basal, bolus and correction insulin rather than only correcting high readings, and it lists a sudden fall in oral intake as a risk factor for hypoglycemia. He will eat little, and a low glucose may have caused his crash, so his glargine is continued at a lower dose, with correction aspart and a preprandial target of 5.0 to 8.0 mmol/L. Holding all insulin, or giving correction doses alone, leaves an insulin-treated patient without basal cover. His full home doses with little food risk hypoglycemia. He is not critically ill, so an IV insulin infusion is not needed.",
         keyFeature: { topic: T, n: 4 },
         source: "dc-inhospital",
       },
