@@ -62,3 +62,30 @@ I read the whole abdominal-pain catalogue and searched the infectious-diseases, 
 ## Checks run
 
 `npx tsc --noEmit -p . | grep samps/s62`: no output. `SAMP_BATCH=s62 npx vitest run tests/samps.test.ts tests/samp-quality.test.ts tests/citations.test.ts`: 3 files, 132 tests passed. One intermediate run failed on duplicate ids abuse-domestic-40 to -43 in `src/samps/s67/abuse-domestic.ts`, which another agent was editing. The rerun passed, and no failure involved s62. No em dashes, en dashes or semicolons in content strings.
+
+## Round 3 (verdict `docs/reviews/q500-verify2-s62.md`)
+
+abdominal-pain-48 passed and was not changed. Ids are unchanged.
+
+| Required fix | Done |
+|---|---|
+| 49 q2 (ultrasound first for a stone to spare radiation) repeats abdominal-pain-12 q1 and the oral case. Keep a new KF7 item. | Replaced. New 49 q2 (analgesia-sedation KF3): after ketorolac 15 mg IV leaves her at 7 out of 10, the next analgesic is acetaminophen 750 mg IV (about 14 mg/kg at 52 kg), before an opioid (NICE NG118 1.2.2 and 1.2.3). Distractors are more ketorolac, ibuprofen, morphine and oral codeine. The old q4 (low-dose noncontrast CT after a nondiagnostic ultrasound) is now q3, tagged KF7, with the explanation rewritten around the dose choice (NICE 1.1.3 and the committee's concern about radiation in young people). abdominal-pain-37 q2 is a statement that low-dose CT performs well for appendicitis in a young adult. This is a choice of next test for a suspected stone in an adolescent after ultrasound, so the decision differs. |
+| 49 q3 (decline hyoscine) repeats abdominal-pain-12 q3 and analgesia-sedation-02 q1, and its key carried a reason. | Removed. New 49 q4 (tagged KF1, see below): after a first stone in a young person, referral for metabolic assessment (NICE 1.7.3). Distractors are rejected by NICE 1.8.1 and 1.8.4 (no calcium restriction, potassium citrate only for recurrent calcium oxalate stones with hypercalciuria or hypocitraturia) or add radiation. No option carries a reason. |
+| 52 q3 CTPA key repeated about 30 times. Not V/Q or serial leg ultrasound. | Replaced with a KF7 statement question. Chest imaging is planned and she asks about radiation. Key "It may raise her breast cancer risk" (the Thrombosis Canada caution for young women), against "equals a chest radiograph", "too small to matter", "matters only in pregnancy" and "outweighs the risk of no scan". The explanation keeps the Wells 7.0 arithmetic and says the caution does not argue against imaging. No V/Q or leg ultrasound key. The update says only "Chest imaging is planned". |
+| 52 q4 update named PE and CT angiography. | Now "Imaging confirms a cause outside the urinary tract, and treatment is started. She asks what to do with the ciprofloxacin." |
+| 50 q4 "no stone was seen" not in the update. | The update now says "Both kidneys enhance normally, with no ureteric stone or hydronephrosis". |
+| 51 q2 "IV opioids" not in the stem. | The stem now says "two doses of IV hydromorphone". |
+| 52 q1 "without lung disease" not in the stem. | The stem adds "She has no other medical problems." The explanation now says "a 27-year-old with no other medical problems". |
+| Physician note: walk-in clinic dipstick UTI opening shared by 48, 52 and abdominal-pain-34. | 52 now opens with self-treatment: "thinking it was a kidney infection, she started ciprofloxacin left over from an earlier bladder infection". It has no clinic, dipstick or virtual visit (abdominal-pain-34 uses a virtual visit). The dipstick option in 52 q1 became "Temperature of 37.3°C", with the explanation updated. The 52 q4 explanation now refers to "the kidney infection she treated herself for". 48 is unchanged. |
+
+**Uniqueness check.** Searched all catalogues. No key says IV acetaminophen is the next step after an NSAID, refers a young person with a stone for metabolic assessment, or states that CT radiation may raise breast cancer risk. Every bank key mentioning radiation is listed in the search output: abdominal-pain-37 q2 is the only abdominal one, and it is a different statement. No stem uses leftover-antibiotic self-treatment.
+
+**Key feature coverage now (abdominal pain).** KF1 2 (50 q2, 49 q4), KF2 2, KF3 2 (52 q1, q2), KF4 1 (50 q5), KF5 2 (48 q2, 50 q3), KF6 1 (49 q1), KF7 2 (49 q3, 52 q3), KF8 3 (48 q1, 50 q1, 52 q4). Other topics: analgesia-sedation KF2 (48 q3) and KF3 (49 q2), shock KF3 (48 q4), infectious-diseases KF3 (51 q2, q4) and KF8 (51 q3). Single key positions, first to fifth: 5, 3, 3, 5, 4.
+
+**Uncertain, for the reviewer.**
+- 49 q4 is tagged KF1, because a young age prompts a search for a metabolic cause. That fit is loose. No abdominal pain key feature covers follow-up.
+- 49 q2: many EDs would add morphine at this point. The key follows NICE's order (IV acetaminophen before opioids).
+- 52 q3: "a chest CT gives far more radiation than a plain radiograph" is general knowledge, not quoted from the guide. The teaching about breast dose sits behind the V/Q keys elsewhere in the bank, but no question keys it.
+- 52 q3 update "Chest imaging is planned" points toward the chest. It does not name q2's key.
+
+**Checks.** `npx tsc --noEmit -p . | grep samps/s62`: no output. `SAMP_BATCH=s62 npx vitest run tests/samps.test.ts tests/samp-quality.test.ts tests/citations.test.ts`: 3 files, 132 tests passed.

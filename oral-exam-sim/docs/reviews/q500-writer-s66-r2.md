@@ -155,3 +155,7 @@ Checks: the s66 tsc grep prints nothing. `SAMP_BATCH=s66` vitest: 3 files, 136 t
 
 - The year for chapter 16 is the 2018 guideline edition, the same as the chapter 21 citation already in this SAMP. The chapter web page itself does not print a year.
 - 50 q4 says the IV insulin infusion is unnecessary because he is not critically ill. That is general practice. The chapter text I read does not state it in those words.
+
+## Round 5
+
+50 q4 explanation only (per `docs/reviews/q500-verify4-s66.md`): the text from "and it suggests changing therapy" to "risk another low." is replaced with the reviewer's wording. The reason now rests on the case facts (he will eat little, which Diabetes Canada chapter 16 lists as a hypoglycemia risk factor, "sudden reduction in oral intake", and a low glucose may have caused his crash) and ends "risk hypoglycemia." No glucose value was added anywhere. Key, options and update unchanged. The s66 tsc grep prints nothing and the s66 tests pass (3 files, 136 tests).

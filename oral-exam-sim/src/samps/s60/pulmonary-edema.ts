@@ -9,7 +9,6 @@ const S = {
   price: { id: "price-peds-hf", citation: "Price JF. Congestive heart failure in children. Pediatr Rev. 2019.", url: "https://doi.org/10.1542/pir.2016-0168" },
   ong: { id: "ong-apsgn", citation: "Ong LT. Management and outcomes of acute post-streptococcal glomerulonephritis in children. World J Nephrol. 2022.", url: "https://doi.org/10.5527/wjn.v11.i5.139" },
   abugrain: { id: "abugrain-apsgn", citation: "Abugrain K, McCulloch MI, Muloiwa R, Luyckx VA, Buys H. A 6-year review of acute post-streptococcal glomerulonephritis at a public children's hospital in Cape Town, South Africa. Pediatr Nephrol. 2024.", url: "https://pmc.ncbi.nlm.nih.gov/articles/PMC11026274/" },
-  panetti: { id: "panetti-peds-arf", citation: "Panetti B, Bucci I, Di Ludovico A, et al. Acute respiratory failure in children. A clinical update on diagnosis. Children (Basel). 2024.", url: "https://pmc.ncbi.nlm.nih.gov/articles/PMC11506303/" },
   caep: { id: "caep-ahf", citation: "Stiell IG, Almufleh A, Archambault PM, et al. CAEP Acute Heart Failure Best Practices Checklist. CJEM. 2025.", url: "https://doi.org/10.1007/s43678-025-00961-y" },
   ohfrs: { id: "ohfrs-2017", citation: "Stiell IG, Perry JJ, Clement CM, et al. Prospective and explicit clinical validation of the Ottawa Heart Failure Risk Scale, with and without use of quantitative NT-proBNP. Acad Emerg Med. 2017.", url: "https://doi.org/10.1111/acem.13141" },
   escAmyloid: { id: "esc-amyloid", citation: "Garcia-Pavia P, Rapezzi C, Adler Y, et al. Diagnosis and treatment of cardiac amyloidosis. A position statement of the ESC Working Group on Myocardial and Pericardial Diseases. Eur Heart J. 2021.", url: "https://pmc.ncbi.nlm.nih.gov/articles/PMC8060056/" },
@@ -18,7 +17,7 @@ const S = {
   heartrisk6: { id: "heartrisk6", citation: "Stiell IG, Perry JJ, Eagles D, et al. The HEARTRISK6 Scale. Predicting short-term serious outcomes in emergency department acute heart failure patients. JACC Adv. 2024.", url: "https://doi.org/10.1016/j.jacadv.2024.100988" },
   asco: { id: "asco-survivors", citation: "Armenian SH, Lacchetti C, Barac A, et al. Prevention and monitoring of cardiac dysfunction in survivors of adult cancers. American Society of Clinical Oncology clinical practice guideline. J Clin Oncol. 2017.", url: "https://doi.org/10.1200/JCO.2016.70.5400" },
   icos: { id: "icos", citation: "Herrmann J, Lenihan D, Armenian S, et al. Defining cardiovascular toxicities of cancer therapies. An International Cardio-Oncology Society (IC-OS) consensus statement. Eur Heart J. 2022.", url: "https://pmc.ncbi.nlm.nih.gov/articles/PMC8803367/" },
-  btsPleural: { id: "bts-pleural-2010", citation: "Hooper C, Lee YCG, Maskell N, BTS Pleural Guideline Group. Investigation of a unilateral pleural effusion in adults. British Thoracic Society pleural disease guideline 2010. Thorax. 2010.", url: "https://doi.org/10.1136/thx.2010.136978" },
+  cmajPleural: { id: "cmaj-pleural", citation: "Beaudoin S, Gonzalez AV. Evaluation of the patient with pleural effusion. CMAJ. 2018.", url: "https://pmc.ncbi.nlm.nih.gov/articles/PMC5849448/" },
 } satisfies Record<string, Source>;
 
 export const PULMONARY_EDEMA_S60: Samp[] = [
@@ -130,19 +129,19 @@ export const PULMONARY_EDEMA_S60: Samp[] = [
       {
         id: "q4",
         kind: "single",
-        update: "Three hours later he still breathes 38/minute with retractions, with a pulse of 124/minute and BP 146/96 mmHg. His saturation is 95% on a nonrebreather mask, and a capillary gas shows pH 7.25 and PCO2 59 mmHg.",
-        prompt: "Which of the following findings best shows that his breathing is now failing?",
-        options: ["Blood pressure of 146/96 mmHg", "Heart rate of 124/minute", "PCO2 of 59 mmHg on capillary gas", "Respiratory rate of 38/minute", "Saturation of 95% on the mask"],
-        correct: 2,
+        update: "Two hours later he is alert but still breathes 38/minute on a face mask, with crackles to the mid zones. His BP has risen to 162/108 mmHg and potassium is 5.4 mmol/L.",
+        prompt: "Which of the following is the most appropriate medication to lower his blood pressure now?",
+        options: ["captopril PO", "enalaprilat IV", "eplerenone PO", "losartan PO", "nifedipine PO"],
+        correct: 4,
         explanation:
-          "A PCO2 of 59 mmHg with a pH of 7.25 shows that he can no longer clear carbon dioxide, which is hypercapnic respiratory failure, and his ventilatory support needs to be escalated now. His saturation of 95% looks reassuring, but pulse oximetry reflects oxygenation, not carbon dioxide clearance, so it cannot show failing ventilation while he breathes high-flow oxygen. A blood gas or capnography is needed for that. His fast heart rate and respiratory rate show distress he has had since arrival rather than a new change, and his blood pressure reflects the nephritis, not his breathing.",
+          "His pulmonary edema is not settling and his blood pressure has risen to 162/108 mmHg, so treatment should be escalated with a vasodilator. Short-acting nifedipine is safe in children with severe hypertension who need a rapid fall in blood pressure, and a calcium channel blocker added to a diuretic is a recognized combination for the volume-driven hypertension of post-streptococcal glomerulonephritis. Captopril, enalaprilat and losartan are usually avoided in the acute phase because they can further reduce glomerular filtration and worsen hyperkalemia, and his potassium is already 5.4 mmol/L. Eplerenone also raises potassium and does not lower blood pressure quickly.",
         keyFeature: { topic: "pulmonary-edema", n: 4 },
-        source: "panetti-peds-arf",
+        source: "ong-apsgn",
       },
       {
         id: "q5",
         kind: "single",
-        update: "He is started on bilevel ventilation and his PCO2 falls, but his urine output drops to 5 mL/hour despite a second diuretic dose. Potassium is now 6.6 mmol/L and creatinine 236 umol/L.",
+        update: "He is started on bilevel ventilation and his breathing settles, but his urine output drops to 5 mL/hour despite a second diuretic dose. Potassium is now 6.6 mmol/L and creatinine 236 umol/L.",
         prompt: "Which of the following is the most appropriate definitive management for his worsening fluid overload?",
         options: ["Albumin with furosemide", "Continuous furosemide infusion", "Metolazone added orally", "Sodium bicarbonate infusion", "Urgent renal replacement therapy"],
         correct: 4,
@@ -152,7 +151,7 @@ export const PULMONARY_EDEMA_S60: Samp[] = [
         source: "ong-apsgn",
       },
     ],
-    sources: [S.ong, S.abugrain, S.panetti],
+    sources: [S.ong, S.abugrain],
     ...META,
   },
 
@@ -179,6 +178,18 @@ export const PULMONARY_EDEMA_S60: Samp[] = [
       },
       {
         id: "q2",
+        kind: "menu",
+        prompt: "Which of the following tests are most appropriate to confirm the underlying cause of his heart failure?",
+        options: ["Bone scintigraphy", "Coronary angiography", "Holter monitoring", "Serum ferritin", "Serum free light chain assay", "Thyroid function tests", "Transthyretin gene testing"],
+        select: 2,
+        correct: [0, 4],
+        explanation:
+          "When cardiac amyloidosis is suspected, bone scintigraphy is paired with tests for a monoclonal protein. Grade 2 or 3 cardiac uptake on scintigraphy, with typical imaging and no monoclonal protein, allows transthyretin amyloidosis to be diagnosed without a biopsy. A clonal plasma cell disorder, which would point to light-chain amyloidosis, is excluded only when the serum free light chain assay and serum and urine immunofixation are all normal. Transthyretin gene testing follows a confirmed transthyretin diagnosis to separate the hereditary from the wild-type form, so it does not confirm the cause. Coronary angiography, Holter monitoring, ferritin and thyroid tests look for causes his findings do not suggest.",
+        keyFeature: { topic: "pulmonary-edema", n: 2 },
+        source: "esc-amyloid",
+      },
+      {
+        id: "q3",
         kind: "single",
         update: "After furosemide 80 mg IV he passes 1.4 L of urine. Urea is 13.6 mmol/L, serum CO2 29 mmol/L, troponin is below the infarction level and NT-proBNP is 4 300 pg/mL. On a 3-minute walk his pulse peaks at 104/minute.",
         prompt: "Which of the following is his total score on the Ottawa Heart Failure Risk Scale?",
@@ -190,13 +201,13 @@ export const PULMONARY_EDEMA_S60: Samp[] = [
         source: "ohfrs-2017",
       },
       {
-        id: "q3",
+        id: "q4",
         kind: "single",
         prompt: "Which of the following is the most appropriate disposition for him now?",
         options: ["Discharge after a second walk test", "Discharge with clinic in 7 days", "Discharge with home care nursing", "Hospital admission under medicine", "Observation for 6 hours, then discharge"],
         correct: 3,
         explanation:
-          "A score of 5 is far above the threshold of more than 1 point at which the validation study found admission would capture 91.8% of serious adverse events, so he should be admitted. His arrival tachycardia and hypoxemia, raised urea and prior transient ischemic attack all add risk, even though he feels better and walked without tachycardia. Home nursing, an early clinic or a repeated walk test do not lower that risk. A few hours of observation would not change his score either, because it is built from arrival and laboratory findings.",
+          "A score of 5 is far above the threshold of more than 1 point at which the validation study found admission would capture 91.8% of serious adverse events, so he should be admitted. His arrival tachycardia and hypoxemia, raised urea and prior transient ischemic attack all add risk, even though he walked without tachycardia. Home nursing, an early clinic or a repeated walk test do not lower that risk. A few hours of observation would not change his score either, because it is built from arrival and laboratory findings.",
         keyFeature: { topic: "pulmonary-edema", n: 6 },
         source: "ohfrs-2017",
       },
@@ -254,8 +265,8 @@ export const PULMONARY_EDEMA_S60: Samp[] = [
         kind: "single",
         update: "By the next morning she is comfortable on room air at rest. Her pH is 7.39 and her ankles are less swollen. She wants to go home, and the team plans a 3-minute walk test.",
         prompt: "Which of the following is the most appropriate way to perform her walk test before discharge?",
-        options: ["At a brisk pace on room air", "Own pace on room air", "Seated arm exercise on room air", "Treadmill test on 4 L/minute", "Walk at own pace on usual oxygen"],
-        correct: 4,
+        options: ["At a brisk pace on room air", "Own pace on room air", "Own pace on usual oxygen", "Seated arm exercise on room air", "Treadmill test on 4 L/minute"],
+        correct: 2,
         explanation:
           "The emergency department walk test asks the patient to walk at her own pace for 3 minutes, whatever the distance, on room air or her usual oxygen. She always walks on 1 L/minute, so testing her on it shows how she will manage at home. The test fails if her saturation drops below 90%, her pulse rises above 110/minute, her respiratory rate rises above 28/minute, or she cannot finish. Testing her walking on room air measures a state she never walks in. A brisk pace, a treadmill or seated arm exercise is not the validated test.",
         keyFeature: { topic: "pulmonary-edema", n: 6 },
@@ -272,7 +283,7 @@ export const PULMONARY_EDEMA_S60: Samp[] = [
     topic: "pulmonary-edema",
     title: "Sent from the cancer clinic for a drain",
     stem:
-      "A 58-year-old woman is sent to the emergency department by her oncologist to have fluid drained from around her lungs. She received doxorubicin and trastuzumab for breast cancer 4 years ago and has had no sign of recurrence since. For 3 weeks she has been short of breath doing housework, and she now sleeps propped up on pillows. A chest radiograph this morning showed moderate effusions on both sides, slightly larger on the right. She has no fever, sputum, chest pain or weight loss. She has never smoked and takes no medications. Her albumin is 39 g/L. She is comfortable sitting up. The JVP is 6 cm above the sternal angle. Breath sounds are reduced at both bases, and there is pitting edema to the mid shin.",
+      "A 58-year-old woman is sent to the emergency department by her oncologist to have fluid drained from around her lungs. She received doxorubicin and trastuzumab for breast cancer 4 years ago and has had no sign of recurrence since. For 3 weeks she has been short of breath doing housework, and she now sleeps propped up on pillows. A chest radiograph this morning showed moderate effusions on both sides, slightly larger on the right. She has no fever, sputum, chest pain or weight loss. She has never smoked and takes no medications. Her albumin is 39 g/L and creatinine 74 umol/L. She is comfortable sitting up. The JVP is 6 cm above the sternal angle. Breath sounds are reduced at both bases, and there is pitting edema to the mid shin.",
     vitals: { temperature: "36.6°C oral", pulse: "96/minute", resp: "22/minute", bp: "128/78 mmHg", o2sat: "93% on room air", weight: "66 kg" },
     questions: [
       {
@@ -306,24 +317,24 @@ export const PULMONARY_EDEMA_S60: Samp[] = [
         options: ["CT of the chest with contrast", "Diagnostic tap of the right side", "Drainage of both effusions", "IV diuretic, then reassess", "PET scan for recurrence"],
         correct: 3,
         explanation:
-          "Effusions on both sides in a setting that strongly suggests a transudate, here heart failure with a reduced ejection fraction, a raised JVP and leg edema, should not be aspirated unless there are atypical features or they fail to respond to treatment. A loop diuretic treats the cause, and reassessment shows whether the effusions shrink. A diagnostic tap now carries a risk of pneumothorax and bleeding for a result that would not change today's plan, and draining both sides removes fluid that diuresis should clear. CT and PET look for recurrence, which her clinical picture does not suggest.",
+          "In heart failure with no clinical clue to an exudate, thoracentesis may be deferred until the outcome of a trial of diuretic therapy is known. She has a reduced ejection fraction, a raised JVP and leg edema, and no fever, sputum or weight loss to point to infection or malignancy. A loop diuretic treats the cause, and reassessment shows whether the effusions improve. A diagnostic tap now adds procedural risk, including pneumothorax, for a result unlikely to change today's plan, and draining both sides removes fluid that diuresis should clear. CT and PET look for recurrence, which her clinical picture does not suggest.",
         keyFeature: { topic: "pulmonary-edema", n: 3 },
-        source: "bts-pleural-2010",
+        source: "cmaj-pleural",
       },
       {
         id: "q4",
         kind: "menu",
-        prompt: "Which of the following later findings would most justify sampling her pleural fluid?",
-        options: ["Bilateral effusions on radiograph", "Breathless lying flat", "Ejection fraction of 35%", "Fever with pleuritic chest pain", "JVP 6 cm above sternal angle", "No shrinkage after diuresis", "Right side slightly larger"],
+        prompt: "Which of the following findings over the next 3 days would most justify sampling her pleural fluid?",
+        options: ["Ankle edema less but still present", "Creatinine up from 74 to 92 umol/L", "Effusions smaller but still present", "Effusions unchanged on repeat imaging", "Fever with purulent sputum", "Pulse down to 78/minute", "Weight down by 2 kg"],
         select: 2,
-        correct: [3, 5],
+        correct: [3, 4],
         explanation:
-          "Fluid should be sampled when effusions thought to be from heart failure fail to respond to its treatment or develop atypical features. Effusions that do not shrink with diuresis, or new fever with pleuritic chest pain, raise the possibility of an exudate such as infection or malignancy, and fluid analysis is then needed. Effusions on both sides, slightly larger on the right, are typical of heart failure. Orthopnea, a raised JVP and a reduced ejection fraction all support heart failure and are reasons to treat it, not to sample the fluid.",
+          "When a heart failure effusion is treated first, more investigation is needed if the effusion fails to improve, so effusions unchanged on repeat imaging after several days of treatment call for sampling to look for another cause such as malignancy. Fever or purulent sputum should prompt urgent evaluation and raises a parapneumonic effusion, which should be sampled. Smaller effusions, less edema, a lower weight and a slower pulse show that treatment is working. A small rise in creatinine during diuresis calls for review of her kidney function and diuretic dose, not a tap.",
         keyFeature: { topic: "pulmonary-edema", n: 2 },
-        source: "bts-pleural-2010",
+        source: "cmaj-pleural",
       },
     ],
-    sources: [S.asco, S.icos, S.btsPleural],
+    sources: [S.asco, S.icos, S.cmajPleural],
     ...META,
   },
 ];
