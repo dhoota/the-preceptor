@@ -101,3 +101,15 @@ Revision against `docs/reviews/q500-verify2-s64.md`. asthma-copd-50 and asthma-c
 Checks: `npx tsc --noEmit -p .` shows no s64 errors. `SAMP_BATCH=s64 npx vitest run tests/samps.test.ts tests/samp-quality.test.ts tests/citations.test.ts` passes (128 tests). Single key positions are now 4, 4, 4, 3, 4. No dashes or semicolons in any string.
 
 Uncertain: 51 q3 assumes a ventilator without an integral blender, as stated in the update. The key follows the BTS/ICS good practice point. In a department whose NIV ventilators all have blenders, the same decision would be to raise the FiO2 on the blender.
+
+## Round 4
+
+Revision against `docs/reviews/q500-verify3-s64.md`. Only asthma-copd-51 q3 failed. That fix, plus one wording change in the 48 q1 explanation, are the only edits.
+
+| SAMP | Question | Required fix | What was done |
+|---|---|---|---|
+| 51 | q3 | The update named the key's own word ("blender") | The update no longer says "blender". It now reads "Bilevel ventilation runs at IPAP 16 and EPAP 5 cm H2O, with wall oxygen bled in at the mask at 4 L/minute. A chest X-ray shows no pneumothorax. At 1 hour her pH is 7.31, PaCO2 64 mmHg and SpO2 85% with little leak." The key text is unchanged. |
+| 51 | stem vitals and q3 | The saturation fell with no stated cause | Stem vitals now read "90% on 4 L/minute by nasal prongs", so her pre-NIV oxygen need was already 4 L/minute. The update rules out a pneumothorax. The explanation now adds the BTS/ICS 2016 text, read in the downloaded PDF: bled-in oxygen gives a limited inspired fraction (mean FiO2 44% at 4 L/minute in the cited study), and flows above 4 L/minute "provided minimal additional increase" while promoting mask leak and delayed triggering. The explanation also says that her bleed-in site is already at the mask, which keeps "Entrain oxygen at the ventilator end" wrong. The q1 and q2 explanations do not use the oxygen flow, and no other text depended on the old values. |
+| 48 | q1 explanation | Match the stem's timing | "within an hour of a storm front" is now "within hours of a storm front". |
+
+Checks: `npx tsc --noEmit -p .` shows no s64 errors. `SAMP_BATCH=s64 npx vitest run tests/samps.test.ts tests/samp-quality.test.ts tests/citations.test.ts` passes (128 tests), including the duplicate stem test. Key positions are unchanged.

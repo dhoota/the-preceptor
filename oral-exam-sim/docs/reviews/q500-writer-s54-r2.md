@@ -114,3 +114,29 @@ No new stem or patient reuses another item's numbers. The bank-wide near-duplica
 ## Tests
 
 `npx tsc --noEmit -p . 2>&1 | grep 'samps/s54'` printed nothing. `SAMP_BATCH=s54 npx vitest run tests/samps.test.ts tests/samp-quality.test.ts tests/citations.test.ts`: 3 files, 128 tests passed.
+
+## Round 3 (fixes from q500-verify2-s54.md and the coordinator ruling)
+
+msk-39 passed in round 2 and was not changed.
+
+| Item | Required fix | What was done |
+|---|---|---|
+| msk-40 q1 | Cite a source that states the forehead and hyperextension point, and take the central cord sentences out of the explanation | Added Aresco C, Gambert SR, Stein DM. Cervical spine injuries in the geriatric patient. Consultant360. 2010. I read the page. It says that an older patient with abrasions on the forehead or face, with a hyperextension history, should raise strong suspicion of a cervical extension injury. q1 now cites it. The central cord, canal narrowing and "puts him in that group" sentences are gone. The explanation now holds only the mechanism and the distractor reasons. Divi stays cited by q2. |
+| msk-41 q1 | False "follows a fall" reason | Replaced with the reviewer's sentence: a fragility fracture can follow a minor twist but does not produce a lucent, expanded area with a scalloped cortex, or months of night pain. The code comment now reads "rib". |
+| msk-42 stem | Scenario retells analgesia-sedation-20 (coordinator ruling: overlap counts) | Changed to a 12-year-old girl whose knee buckled when her foot slipped on a stair at home, brought by her grandmother to a community hospital with no MRI on site. There is no sport, no athlete and no twisting landing. "Wet kitchen floor" was avoided because msk-34 and msk-37 use it. The four decisions are kept: reduction manoeuvre, effusion sign, brace, and fragment repair. The q3 and q4 updates now say MRI is at the regional hospital in 2 days. |
+| msk-42 q2 | Update cued the q1 answer | The update now reads "The patella is reduced." It no longer gives a direction of movement. |
+| msk-42 q3 | Hinged brace distractor defensible, explanation too strong | Changed to "Hinged brace locked in extension for 6 weeks". The explanation is softened: Sinikumpu advises against a cast or rigid orthosis and says an elastic brace "may be useful", and ESSKA 2024 finds no brace proven better than none but allows a brace with free motion for a short time. Menu option lengths stay within limits. |
+| msk-43 q3 | Common peroneal nerve repeats msk-15 q1 and q3 | Replaced. The fracture moved from the fibular neck to the mid fibular shaft. The new q3 (KF8) asks what is most likely for the fracture itself after debridement. Key "Nonoperative care of the fracture" (Walters BB, Constant D, Anand P. Fibula fractures. StatPearls. 2023). The record and abstract were confirmed via Europe PMC (PMID 32310599): most isolated fibular shaft fractures are treated nonoperatively, and the shaft is not weight bearing. No catalogue item keys fibular fracture care. The Lezak source was removed. |
+| msk-43 q4 | Same urgency angle as q1, echoes msk-34 q4 and msk-11 q3, cues q1 | Replaced with the total duration of prophylactic antibiotics when the wound will close on day 5. Key "3 days after injury". EAST 2011 (level II): for type III fractures, which include farm injuries, antibiotics continue for 72 hours after injury and no more than 24 hours after soft tissue coverage. Only 3 days meets both limits. No catalogue item keys an antibiotic duration. Neither the q4 update nor its options mention timing of surgery or transfer. |
+| msk-43 q1 | Note: 5 mm repeats msk-34 | The wound is now 4 mm. |
+
+Other changes made for balance: msk-42 q1 "Axial traction on the lower leg" became "Longitudinal traction on the leg", so the key moved to the first position. In msk-43 q3, a lag screw option replaced the spanning external fixator. Keys are unchanged.
+
+Key features: msk-40 2, 3, 4, 7. msk-41 2, 2, 2, 8. msk-42 5, 1, 8, 7. msk-43 6, 6, 8, 6. Every key feature is still tested. KF1 is now carried only by msk-42 q2. KF7 is carried by msk-39 q2, msk-40 q4 and msk-42 q4. There are 19 singles and 1 menu, and the tests confirm position and length balance.
+
+Uncertain, for the reviewer:
+- Aresco 2010 is shown on Consultant360 as Volume 18, Number 2, February 2010. It may first have appeared in Clinical Geriatrics. I cited it as the page names itself.
+- msk-43 q4 and q2 both draw on EAST antibiotic recommendations, but the decisions differ (agent against duration). A reviewer may see one angle.
+- For Walters 2023, only the abstract could be read. The full text sits behind a browser check on both NCBI and StatPearls. The explanation uses only the abstract's claims.
+
+Tests: the s54 tsc grep printed nothing. `SAMP_BATCH=s54 npx vitest run tests/samps.test.ts tests/samp-quality.test.ts tests/citations.test.ts`: 128 of 128 passed.
