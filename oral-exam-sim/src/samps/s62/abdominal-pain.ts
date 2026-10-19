@@ -103,36 +103,37 @@ export const ABDOMINAL_PAIN_S62: Samp[] = [
       {
         id: "q2",
         kind: "single",
-        prompt: "Which of the following is the most appropriate first imaging test for her?",
-        options: ["Abdominal radiograph", "Kidney and bladder ultrasound", "MR urography with gadolinium", "Noncontrast CT of the abdomen", "Pelvic ultrasound with Doppler"],
-        correct: 1,
+        update: "She receives ketorolac 15 mg IV. Thirty minutes later she still rates her pain 7 out of 10.",
+        prompt: "Which of the following is the most appropriate next analgesic for her?",
+        options: ["acetaminophen 750 mg IV", "codeine 30 mg PO", "ibuprofen 400 mg PO", "ketorolac 15 mg IV again", "morphine 5 mg IV"],
+        correct: 0,
         explanation:
-          "NICE advises ultrasound as the first imaging test for children and young people with suspected renal colic. CT detects more stones, but the committee chose ultrasound first because of serious concern about radiation exposure at her age, keeping low-dose noncontrast CT for when the diagnosis is still uncertain. In the adult evidence NICE reviewed, MRI and plain radiographs were also less accurate than CT. A pelvic Doppler study looks at the ovaries and does not image the kidney or ureter.",
-        keyFeature: { topic: "abdominal-pain", n: 7 },
+          "NICE offers IV acetaminophen when an NSAID is not giving enough relief in suspected renal colic, and keeps opioids for when both the NSAID and IV acetaminophen are contraindicated or not enough. At 52 kg, 750 mg is about 14 mg/kg. More ketorolac or added ibuprofen only gives a second NSAID dose on top of the one she has just had, rather than a drug that works differently. Morphine and codeine are opioids, the next step after IV acetaminophen, and oral codeine is a poor choice while she is vomiting.",
+        keyFeature: { topic: "analgesia-sedation", n: 3 },
         source: "nice-ng118-2019",
       },
       {
         id: "q3",
-        kind: "single",
-        update: "She has received ketorolac 15 mg IV. Her father asks whether she can also have hyoscine butylbromide, which helped him when he had a kidney stone.",
-        prompt: "Which of the following is the most appropriate response to her father's request?",
-        options: ["Add it to her ketorolac", "Alternate it with ketorolac", "Decline, as it does not help", "Give it if pain persists", "Give it instead of ketorolac"],
-        correct: 2,
-        explanation:
-          "NICE advises against antispasmodics for suspected renal colic in adults, children and young people. It offers an NSAID first, IV acetaminophen if the NSAID is contraindicated or not enough, and opioids if both fail or cannot be used. Adding hyoscine butylbromide or alternating it with ketorolac gives her a drug the guideline does not support, and giving it instead of ketorolac removes the first-line treatment. Keeping it for persistent pain skips IV acetaminophen and opioids, the recommended next steps.",
-        keyFeature: { topic: "analgesia-sedation", n: 2 },
-        source: "nice-ng118-2019",
-      },
-      {
-        id: "q4",
         kind: "single",
         update: "Ultrasound shows normal kidneys with no hydronephrosis and no stone seen. Two hours later the colicky pain returns and she vomits again.",
         prompt: "Which of the following is the most appropriate next step to find the cause of her pain?",
         options: ["Abdominal radiograph", "CT abdomen with IV contrast", "Low-dose noncontrast CT", "Repeat ultrasound in 1 week", "Urgent ureteroscopy"],
         correct: 2,
         explanation:
-          "When the diagnosis of renal colic is still uncertain after ultrasound in a young person, NICE advises considering low-dose noncontrast CT. Ultrasound misses more stones than CT, and her pain has returned with vomiting. A noncontrast study is the test for stones, so IV contrast adds nothing for this question. In the adult evidence NICE reviewed, a plain radiograph was less accurate than CT. Waiting a week for another ultrasound leaves her symptoms unexplained, and ureteroscopy is a treatment that needs a confirmed stone first.",
-        keyFeature: { topic: "abdominal-pain", n: 5 },
+          "When renal colic is still uncertain after ultrasound in a young person, NICE advises considering a low-dose noncontrast CT. The committee chose the low-dose study, and ultrasound before it, because of serious concern about radiation exposure in children and young people. A standard CT with IV contrast gives a larger dose and the contrast adds nothing to finding a stone. In the adult evidence NICE reviewed, a plain radiograph was less accurate than CT. A week of waiting leaves her returning pain unexplained, and ureteroscopy treats a stone that has not been confirmed.",
+        keyFeature: { topic: "abdominal-pain", n: 7 },
+        source: "nice-ng118-2019",
+      },
+      {
+        id: "q4",
+        kind: "single",
+        update: "Low-dose CT shows a 4 mm stone at the left vesicoureteric junction. Her pain settles, she drinks without vomiting and she will go home.",
+        prompt: "Which of the following is the most appropriate follow-up plan for her first kidney stone?",
+        options: ["Daily potassium citrate", "Referral for metabolic assessment", "Repeat low-dose CT in 1 month", "Strict low-calcium diet", "Water intake advice alone"],
+        correct: 1,
+        explanation:
+          "NICE suggests considering referral of children and young people with a kidney or ureteric stone to a pediatric nephrologist or urologist for assessment and metabolic investigations, because finding a treatable metabolic cause can lower the risk of further stones. Advice to drink more water belongs in her plan, but on its own it does not look for a cause. NICE advises against restricting calcium, and keeps potassium citrate for recurrent calcium oxalate stones with hypercalciuria or hypocitraturia. A repeat CT adds radiation without a clinical question to answer.",
+        keyFeature: { topic: "abdominal-pain", n: 1 },
         source: "nice-ng118-2019",
       },
     ],
@@ -186,7 +187,7 @@ export const ABDOMINAL_PAIN_S62: Samp[] = [
       {
         id: "q4",
         kind: "single",
-        update: "CT angiography shows a type B aortic dissection from the left subclavian artery to both iliac arteries. The superior mesenteric artery arises from the false lumen, and a segment of jejunum enhances poorly. Both kidneys enhance normally and there is no rupture. Lactate is 4.6 mmol/L. Despite IV hydromorphone her pain remains severe and her abdomen is still soft.",
+        update: "CT angiography shows a type B aortic dissection from the left subclavian artery to both iliac arteries. The superior mesenteric artery arises from the false lumen, and a segment of jejunum enhances poorly. Both kidneys enhance normally, with no ureteric stone or hydronephrosis, and there is no rupture. Lactate is 4.6 mmol/L. Despite IV hydromorphone her pain remains severe and her abdomen is still soft.",
         prompt: "Which of the following best explains her ongoing severe pain with a soft abdomen?",
         options: ["Extension into the ascending aorta", "Left renal infarction", "Mesenteric malperfusion", "Opioid-resistant renal colic", "Retroperitoneal rupture"],
         correct: 2,
@@ -218,7 +219,7 @@ export const ABDOMINAL_PAIN_S62: Samp[] = [
     alsoTopics: ["infectious-diseases"],
     title: "Severe pain but a soft abdomen",
     stem:
-      "A 69-year-old woman presents to the emergency department with 2 days of left lower abdominal pain that is now constant and severe. She has needed two doses of hydromorphone since she arrived. She has polymyalgia rheumatica treated with prednisone 20 mg daily for 8 months, type 2 diabetes and known sigmoid diverticulosis. She has had no vomiting or rectal bleeding. Her abdomen is soft and mildly tender in the left lower quadrant, without guarding or rebound. Bowel sounds are reduced. Her white cell count is 10.8 x 10^9/L.",
+      "A 69-year-old woman presents to the emergency department with 2 days of left lower abdominal pain that is now constant and severe. She has needed two doses of IV hydromorphone since she arrived. She has polymyalgia rheumatica treated with prednisone 20 mg daily for 8 months, type 2 diabetes and known sigmoid diverticulosis. She has had no vomiting or rectal bleeding. Her abdomen is soft and mildly tender in the left lower quadrant, without guarding or rebound. Bowel sounds are reduced. Her white cell count is 10.8 x 10^9/L.",
     vitals: { temperature: "37.4°C oral", pulse: "106/minute", resp: "20/minute", bp: "128/70 mmHg", o2sat: "97% on room air", weight: "64 kg" },
     questions: [
       {
@@ -280,17 +281,17 @@ export const ABDOMINAL_PAIN_S62: Samp[] = [
     alsoTopics: ["dvt-pe"],
     title: "Sharp pain under the right ribs",
     stem:
-      "A 27-year-old woman presents to the emergency department with 3 days of sharp right upper abdominal pain that is worse when she takes a deep breath. Two days ago a walk-in clinic diagnosed pyelonephritis from a dipstick showing trace leukocytes and trace blood, and prescribed ciprofloxacin. The pain is no better, and this morning she coughed up a streak of blood. Apart from that she has no cough or sputum, and she has had no fever, vomiting, dysuria, vaginal discharge or pelvic pain. Three years ago she had a leg DVT while taking a combined oral contraceptive. She stopped the contraceptive and completed 3 months of anticoagulation. She has mild right upper quadrant tenderness without guarding and no costovertebral angle tenderness. The legs are not swollen. A right upper quadrant ultrasound today is normal.",
+      "A 27-year-old woman presents to the emergency department with 3 days of sharp right upper abdominal pain that is worse when she takes a deep breath. Two days ago, thinking it was a kidney infection, she started ciprofloxacin left over from an earlier bladder infection. The pain is no better, and this morning she coughed up a streak of blood. Apart from that she has no cough or sputum, and she has had no fever, vomiting, dysuria, vaginal discharge or pelvic pain. Three years ago she had a leg DVT while taking a combined oral contraceptive. She stopped the contraceptive and completed 3 months of anticoagulation. She has no other medical problems. She has mild right upper quadrant tenderness without guarding and no costovertebral angle tenderness. The legs are not swollen. A right upper quadrant ultrasound today is normal.",
     vitals: { temperature: "37.3°C oral", pulse: "116/minute", resp: "24/minute", bp: "118/74 mmHg", o2sat: "94% on room air", weight: "66 kg" },
     questions: [
       {
         id: "q1",
         kind: "single",
         prompt: "Which of the following findings most suggests that the cause of her pain lies outside the abdomen?",
-        options: ["Absent costovertebral tenderness", "Mild right upper quadrant tenderness", "Normal right upper quadrant ultrasound", "Oxygen saturation of 94%", "Trace blood on dipstick"],
+        options: ["Absent costovertebral tenderness", "Mild right upper quadrant tenderness", "Normal right upper quadrant ultrasound", "Oxygen saturation of 94%", "Temperature of 37.3°C"],
         correct: 3,
         explanation:
-          "A saturation of 94% on room air in a 27-year-old without lung disease is not explained by a gallbladder or kidney problem, and with pleuritic pain and a pulse of 116/minute it points to the chest. Hypoxemia, tachycardia and pleuritic pain are recognized features of pulmonary embolism. A normal ultrasound and absent costovertebral tenderness argue against biliary and renal disease but do not by themselves show where the cause lies. Mild upper quadrant tenderness and trace blood on a dipstick are nonspecific.",
+          "A saturation of 94% on room air in a 27-year-old with no other medical problems is not explained by a gallbladder or kidney problem, and with pleuritic pain and a pulse of 116/minute it points to the chest. Hypoxemia, tachycardia and pleuritic pain are recognized features of pulmonary embolism. A normal ultrasound and absent costovertebral tenderness argue against biliary and renal disease but do not by themselves show where the cause lies. Mild upper quadrant tenderness is nonspecific, and a normal temperature argues against infection without pointing to a site.",
         keyFeature: { topic: "abdominal-pain", n: 3 },
         source: "tc-pe-dx",
       },
@@ -308,23 +309,24 @@ export const ABDOMINAL_PAIN_S62: Samp[] = [
       {
         id: "q3",
         kind: "single",
-        prompt: "Which of the following imaging tests is most appropriate to confirm the cause of her pain?",
-        options: ["CT abdomen with IV contrast", "CT angiography of the chest", "HIDA scan of the gallbladder", "MR cholangiopancreatography", "Noncontrast CT of the kidneys"],
-        correct: 1,
+        update: "Chest imaging is planned. She asks whether the radiation from the scan should worry her.",
+        prompt: "Which of the following statements about the radiation from her planned scan is most accurate?",
+        options: ["It equals a chest radiograph", "It is too small to matter", "It matters only in pregnancy", "It may raise her breast cancer risk", "It outweighs the risk of no scan"],
+        correct: 3,
         explanation:
-          "Her Wells score is 7.0: 1.5 for a previous DVT, 1.5 for a pulse over 100/minute, 1 for hemoptysis and 3 because embolism is the most likely diagnosis. That is a high pretest probability, so she needs imaging. The Thrombosis Canada guide names CT pulmonary angiography and ventilation-perfusion scanning as the imaging tests, and of these options only CT angiography of the chest shows the pulmonary arteries. An abdominal CT, a HIDA scan, MR cholangiography and a renal CT all look below the diaphragm, where her ultrasound has already found nothing.",
-        keyFeature: { topic: "abdominal-pain", n: 5 },
+          "The Thrombosis Canada guide lists radiation exposure that might increase breast cancer rates in young women among the limitations of CT pulmonary angiography, so the concern is real for a 27-year-old woman and is worth discussing. It is not a reason to skip imaging. Her Wells score is 7.0 (1.5 for a previous DVT, 1.5 for a pulse over 100/minute, 1 for hemoptysis and 3 because embolism is the most likely diagnosis), a high pretest probability, and a missed embolism can be fatal. A chest CT gives far more radiation than a plain radiograph, and the breast concern applies outside pregnancy too.",
+        keyFeature: { topic: "abdominal-pain", n: 7 },
         source: "tc-pe-dx",
       },
       {
         id: "q4",
         kind: "single",
-        update: "CT angiography shows emboli in the segmental arteries of the right lower lobe. Anticoagulation is started. She asks what to do with the ciprofloxacin.",
+        update: "Imaging confirms a cause outside the urinary tract, and treatment is started. She asks what to do with the ciprofloxacin.",
         prompt: "Which of the following is the most appropriate advice about her ciprofloxacin?",
         options: ["Change to nitrofurantoin", "Complete the 7-day course", "Continue until culture results", "Stop taking it today", "Switch to IV ceftriaxone"],
         correct: 3,
         explanation:
-          "Her pain has another cause, and she has no fever, dysuria or costovertebral angle tenderness, so nothing supports the pyelonephritis that trace dipstick findings suggested. The Canadian ciprofloxacin monograph says that prescribing it without a proven or strongly suspected bacterial infection is unlikely to help and risks drug-resistant bacteria, and it warns of disabling and potentially persistent adverse reactions. Finishing the course, waiting for a culture or changing to another antibiotic all keep treating an infection she does not have.",
+          "Her pain has another cause, and she has no fever, dysuria or costovertebral angle tenderness, so nothing supports the kidney infection she treated herself for. The Canadian ciprofloxacin monograph says that prescribing it without a proven or strongly suspected bacterial infection is unlikely to help and risks drug-resistant bacteria, and it warns of disabling and potentially persistent adverse reactions. Finishing the course, waiting for a culture or changing to another antibiotic all keep treating an infection she does not have.",
         keyFeature: { topic: "abdominal-pain", n: 8 },
         source: "pms-ciprofloxacin-pm-2022",
       },
