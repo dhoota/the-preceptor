@@ -402,7 +402,7 @@ export const headacheBuildingOverFiveDays: OralCase = {
       seconds: 70,
       modelAnswer: [
         "She needs admission to a stroke unit or ICU at a centre with neurology, neurosurgery and endovascular care.",
-        "Call the regional stroke centre through CritiCall Ontario. Speak with neurology and let neurosurgery know.",
+        "Call the regional stroke centre through the provincial transfer service, such as CritiCall in Ontario. Speak with neurology and let neurosurgery know.",
         "Give a structured handover. Diagnosis, timeline, CT findings, anticoagulant dose and time, seizure and drugs given.",
         "Transfer with a nurse who can monitor her airway and neurological status. Hourly neuro checks.",
         "Signs that should prompt urgent action. Falling GCS, new pupil asymmetry, more weakness. These can mean herniation needing decompressive surgery.",
@@ -624,7 +624,7 @@ export const headacheBuildingOverFiveDays: OralCase = {
       id: "bs-pr2",
       competency: "disposition",
       criterion: "process",
-      text: "Arranges transfer to a stroke centre through CritiCall with neurology and neurosurgery aware, a structured handover and a monitored escort.",
+      text: "Arranges transfer to a stroke centre through the provincial transfer service with neurology and neurosurgery aware, a structured handover and a monitored escort.",
       points: 2,
       teaching: "Patients with cerebral venous thrombosis and a seizure or hemorrhage need a stroke unit or ICU. Impending herniation from a parenchymal lesion is an indication for decompressive surgery.",
       source: "eso-cvt",
