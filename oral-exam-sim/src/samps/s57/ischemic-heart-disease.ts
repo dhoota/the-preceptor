@@ -314,36 +314,19 @@ export const ISCHEMIC_HEART_DISEASE_S57: Samp[] = [
         source: "stream-2-2023",
       },
       {
-        id: "q3",
+        id: "q4",
         kind: "single",
         update: "Seventy-five minutes after tenecteplase she still has pressure rated 6 out of 10. The ST elevation in V2 now measures 4 mm.",
         prompt: "Which of the following is the ST-segment resolution in lead V2 at this point?",
         options: ["17%", "25%", "33%", "50%", "67%"],
         correct: 2,
         explanation:
-          "ST resolution is measured in the lead with the most elevation. In V2 it fell from 6 mm to 4 mm, a drop of 2 mm, and 2 divided by 6 is 33%. Resolution of less than 50% by 90 minutes after fibrinolysis, with ongoing pain, marks failed reperfusion. The figure of 67% is the share of elevation that remains, not the share that resolved. The figure of 50% divides the drop by the current 4 mm. The figures of 17% and 25% do not follow from her measurements.",
+          "ST resolution is measured in the lead with maximal ST elevation, which for her is V2. It fell from 6 mm to 4 mm, a drop of 2 mm, and 2 divided by 6 is 33%. Failure to reach more than 50% resolution, or persistent chest pain, 60 to 90 minutes after fibrinolysis defines failed fibrinolysis, so she meets both parts. The figure of 67% is the share of elevation that remains, not the share that resolved. The figure of 50% divides the drop by the current 4 mm. The figures of 17% and 25% do not follow from her measurements.",
         keyFeature: { topic: TOPIC, n: 2 },
-        source: "react-2005",
-      },
-      {
-        id: "q4",
-        kind: "single",
-        prompt: "Which of the following is the most appropriate next step in her management?",
-        options: [
-          "Angiography at the PCI centre in 6 to 24 hours",
-          "Nitroglycerin infusion with monitoring",
-          "Observation and repeat ECG in 1 hour",
-          "Repeat tenecteplase at the same dose",
-          "Urgent transfer for rescue PCI",
-        ],
-        correct: 4,
-        explanation:
-          "Failed fibrinolysis calls for emergency angiography, so she needs urgent transfer for rescue PCI even though the trip takes 3 hours. Rescue PCI gave better event-free survival than repeated fibrinolysis or conservative care. Repeating tenecteplase adds bleeding risk without that benefit. Angiography at 6 to 24 hours is the plan after successful fibrinolysis, which she has not had. A nitroglycerin infusion may ease pain but does not open the artery, and an hour of observation only delays reperfusion.",
-        keyFeature: { topic: TOPIC, n: 6 },
-        source: "stream-2013",
+        source: "ccs-stemi-2019",
       },
     ],
-    sources: [S.tnk, S.stream2, S.react, S.stream],
+    sources: [S.ccs2019, S.stream2],
     ...META,
   },
 
@@ -353,8 +336,8 @@ export const ISCHEMIC_HEART_DISEASE_S57: Samp[] = [
     topic: TOPIC,
     title: "Vomiting and deep breathing in a man with diabetes",
     stem:
-      "A 66-year-old man is brought to the emergency department by his wife with 1 day of vomiting, malaise and vague upper abdominal discomfort. He has had no chest pain, diarrhea, fever or urinary symptoms. He has had type 2 diabetes for 20 years, with peripheral neuropathy and gastroparesis, and he becomes light-headed when he stands. He takes metformin, empagliflozin and insulin glargine and has not missed a dose. He looks dry and is breathing deeply. His abdomen is soft and not tender. Glucose is 13.8 mmol/L, pH 7.14, bicarbonate 8 mmol/L, anion gap 25 mmol/L and beta-hydroxybutyrate 6.2 mmol/L. Lipase and urinalysis are normal. His ECG shows sinus tachycardia with new 2 mm horizontal ST depression in V3 to V6. High sensitivity troponin I is 640 ng/L (male 99th percentile 34 ng/L).",
-    vitals: { temperature: "36.9°C oral", pulse: "118/minute", resp: "28/minute", bp: "104/66 mmHg", o2sat: "97% on room air", weight: "84 kg" },
+      "A 66-year-old man is brought to the emergency department by his wife with 1 day of vomiting, malaise and vague upper abdominal discomfort. He has had no chest pain, diarrhea, fever or urinary symptoms. He has had type 2 diabetes for 20 years, with peripheral neuropathy and gastroparesis, and he becomes light-headed when he stands. He takes metformin, empagliflozin and insulin glargine and has not missed a dose. He looks dry and is breathing deeply. His abdomen is soft and not tender. Glucose is 12.6 mmol/L, pH 7.17, bicarbonate 9 mmol/L, anion gap 25 mmol/L and beta-hydroxybutyrate 5.4 mmol/L. Lipase and urinalysis are normal. His ECG shows sinus tachycardia with new 2 mm horizontal ST depression in V3 to V6. High sensitivity troponin I is 640 ng/L (male 99th percentile 34 ng/L).",
+    vitals: { temperature: "36.9°C oral", pulse: "118/minute", resp: "28/minute", bp: "104/66 mmHg", o2sat: "97% on room air", weight: "91 kg" },
     questions: [
       {
         id: "q1",
@@ -363,7 +346,7 @@ export const ISCHEMIC_HEART_DISEASE_S57: Samp[] = [
         options: ["Acute pancreatitis", "Gastroparesis flare", "Missed insulin doses", "Myocardial infarction", "Urinary tract infection"],
         correct: 3,
         explanation:
-          "MI is a recognized precipitant of DKA, and new 2 mm ST depression in V3 to V6 with a troponin of 640 ng/L, about 19 times the 99th percentile, points to it. Empagliflozin lowered his threshold for ketoacidosis and kept his glucose at 13.8 mmol/L, but an acute stress still tipped him over. A normal lipase argues against pancreatitis, and a normal urinalysis without fever argues against urinary infection. He has not missed insulin. Gastroparesis explains vomiting but not ST depression with troponin release.",
+          "MI is a recognized precipitant of DKA, and new 2 mm ST depression in V3 to V6 with a troponin of 640 ng/L, about 19 times the 99th percentile, points to it. Empagliflozin lowered his threshold for ketoacidosis and kept his glucose at 12.6 mmol/L, but an acute stress still tipped him over. A normal lipase argues against pancreatitis, and a normal urinalysis without fever argues against urinary infection. He has not missed insulin. Gastroparesis explains vomiting but not ST depression with troponin release.",
         keyFeature: { topic: TOPIC, n: 5 },
         source: "dc-hyperglycemic-2018",
       },
@@ -380,9 +363,9 @@ export const ISCHEMIC_HEART_DISEASE_S57: Samp[] = [
         ],
         correct: 1,
         explanation:
-          "Twenty years of diabetes with peripheral neuropathy, gastroparesis and light-headedness on standing point to autonomic neuropathy, which is linked to silent coronary disease. People with diabetes have a high rate of silent ischemia, and almost one third of their MIs occur without recognized or typical symptoms. Acidosis does not abolish ischemic pain. ST depression across V3 to V6 does not suggest a small territory. Gastroparesis causes vomiting but does not hide chest pain, and a troponin of 640 ng/L shows that infarction has occurred.",
+          "Twenty years of type 2 diabetes with peripheral neuropathy, gastroparesis and light-headedness on standing point to diabetic autonomic neuropathy, including its cardiac form. Cardiac autonomic neuropathy may be present in up to 60% of people with type 2 diabetes after 15 years, and it is an independent risk factor for silent ischemia. Acidosis does not abolish ischemic pain. ST depression across V3 to V6 does not suggest a small territory. Gastroparesis causes vomiting but does not hide chest pain, and a troponin of 640 ng/L shows that infarction has occurred.",
         keyFeature: { topic: TOPIC, n: 5 },
-        source: "dc-cvd-screening-2018",
+        source: "ada-neuropathy-2017",
       },
       {
         id: "q3",
@@ -407,20 +390,20 @@ export const ISCHEMIC_HEART_DISEASE_S57: Samp[] = [
         kind: "single",
         prompt: "Which of the following features of his presentation is linked to higher in-hospital mortality from MI?",
         options: [
-          "Glucose below 14 mmol/L",
+          "Glucose of 12.6 mmol/L",
+          "Malaise for 1 day",
           "Male sex at age 66",
           "Metformin therapy",
           "Painless presentation",
-          "Vomiting before arrival",
         ],
-        correct: 3,
+        correct: 4,
         explanation:
-          "In a registry of more than 430 000 patients, MI without chest pain carried an in-hospital mortality of 23.3% compared with 9.3% for MI with chest pain, with an adjusted odds ratio of 2.21. Patients without pain arrived later and less often received reperfusion, ASA, beta blockers or heparin. A painless presentation like his is therefore a marker of higher risk and a reason to start ACS care without delay. The other features listed do not carry this documented excess risk.",
+          "In a registry of 434 877 patients with MI, the one third who arrived without chest pain had an in-hospital mortality of 23.3% against 9.3% for those with chest pain, an adjusted odds ratio of 2.21. They arrived later and less often received reperfusion, ASA, beta blockers or heparin, so his painless presentation marks higher risk and is a reason to start ACS care now. Patients without chest pain were older, with a mean age of 74, and more often women, so male sex at 66 is not the marker. His glucose of 12.6 mmol/L reflects empagliflozin, which lets ketoacidosis develop with only modest hyperglycemia. Malaise is a nonspecific symptom of both ketoacidosis and MI, and the registry compared patients by the presence of chest pain. Metformin is routine therapy, and in the registry it was diabetes itself that was more common among patients without chest pain.",
         keyFeature: { topic: TOPIC, n: 3 },
         source: "canto-2000",
       },
     ],
-    sources: [S.dcHyper, S.dcCvd, S.canto],
+    sources: [S.dcHyper, S.popBusui, S.canto],
     ...META,
   },
 ];

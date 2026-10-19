@@ -9,7 +9,6 @@ const S = {
   cag: { id: "cag-calcium-gluconate", citation: "Centre antipoison du Quebec and CIUSSS de la Capitale-Nationale. Canadian Antidote Guide in Acute Care Toxicology. Calcium gluconate. Updated 2026.", url: "https://www.ciusss-capitalenationale.gouv.qc.ca/en/antidotes/calcium-gluconate" },
   abaRef: { id: "aba-referral", citation: "American Burn Association. Guidelines for burn patient referral. 2025.", url: "https://ameriburn.org/burnreferral" },
   anderson: { id: "anderson-buprenorphine", citation: "Anderson TA, Quaye ANA, Ward EN, Wilens TE, Hilliard PE, Brummett CM. To stop or not, that is the question: acute pain management for the patient on chronic buprenorphine. Anesthesiology. 2017.", url: "https://pmc.ncbi.nlm.nih.gov/articles/PMC7041233/" },
-  kohan: { id: "kohan-buprenorphine", citation: "Kohan L, Potru S, Barreveld AM, and colleagues. Buprenorphine management in the perioperative period: educational review and recommendations from a multisociety expert panel. Reg Anesth Pain Med. 2021.", url: "https://asra.com/guidelines-articles/original-articles/article-item/guidelines/2021/08/12/buprenorphine-management-in-the-perioperative-period" },
   hampson: { id: "hampson-co", citation: "Hampson NB, Piantadosi CA, Thom SR, Weaver LK. Practice recommendations in the diagnosis, management, and prevention of carbon monoxide poisoning. Am J Respir Crit Care Med. 2012." },
   walker: { id: "walker-inhalation", citation: "Walker PF, Buehner MF, Wood LA, and colleagues. Diagnosis and management of inhalation injury: an updated review. Crit Care. 2015.", url: "https://pmc.ncbi.nlm.nih.gov/articles/PMC4624587/" },
   padis: { id: "padis-2018", citation: "Devlin JW, Skrobik Y, Gelinas C, and colleagues. Clinical practice guidelines for the prevention and management of pain, agitation/sedation, delirium, immobility, and sleep disruption in adult patients in the ICU. Crit Care Med. 2018." },
@@ -84,18 +83,19 @@ export const BURNS_S69: Samp[] = [
     topic: "burns",
     title: "Toddler who will not use her hands",
     stem:
-      "A 2-year-old girl is brought to the emergency department by her parents at 16:00 because she has cried and refused to use her hands for the past 2 hours. At 10:00 her mother was removing rust stains from the bathtub with a liquid rust remover. She left the room for a minute and came back to find the girl sitting in a puddle of the spilled product, with both hands and forearms wet. She washed the girl's arms at the sink with soap and water for about 2 minutes. There was no liquid near her mouth, and she has not coughed or vomited. She is healthy and her immunizations are up to date. She is screaming and holds her arms away from her body. The skin of both hands and both forearms is faintly red, with no blisters. Together these areas cover about 10% of her body surface area.",
+      "You are working in a community hospital emergency department. The paediatric ward has no cardiac monitoring, and the nearest paediatric burn centre is 2 hours away. A 2-year-old girl is brought in at 16:00 because she has cried and refused to use her hands since 14:00. At 10:00 her mother, cleaning the bathtub with a liquid rust remover, left the room for a minute. She returned to find the girl leaning over the tub, splashing both arms up to the elbows in a puddle of the product. Her clothes and other skin stayed dry. Her mother washed her arms with soap and water for about 2 minutes. The girl often sucks her fingers. She has not coughed. She is screaming and holds her arms away from her body. Her face and eyes look normal. Both hands and forearms are faintly red without blisters, about 10% of her body surface.",
     vitals: { temperature: "37.1°C axillary", pulse: "156/minute", resp: "30/minute", bp: "98/60 mmHg", o2sat: "99% on room air", weight: "12 kg" },
     questions: [
       {
         id: "q1",
         kind: "single",
-        prompt: "Which of the following ingredients in the rust remover best explains her presentation?",
-        options: ["Hydrochloric acid", "Hydrofluoric acid", "Phosphoric acid", "Sodium hydroxide", "Sodium hypochlorite"],
-        correct: 1,
+        update: "The label shows that the rust remover contains dilute hydrofluoric acid.",
+        prompt: "Which of the following additional routes of exposure is most important to assess in her now?",
+        options: ["Acid splashed into her eyes", "Acid vapour inhaled at the tub", "Product on her legs and feet", "Product soaked into her clothes", "Product swallowed from her fingers"],
+        correct: 4,
         explanation:
-          "Many household rust removers contain dilute hydrofluoric acid. At concentrations below 20% the pain can start many hours after contact and progress while the skin shows little more than redness, which fits a girl who was settled after a brief wash and is now screaming 6 hours later. Hydrochloric and phosphoric acids injure the surface at the moment of contact, so pain and visible damage would have been present from the start. Sodium hydroxide causes an immediate, deepening alkali burn with slippery skin. Sodium hypochlorite is bleach, which irritates on contact and is not a rust remover.",
-        keyFeature: { topic: "burns", n: 6 },
+          "A toddler who sucks her fingers may have swallowed some of the product before the wash, and ingestion of hydrofluoric acid is a recognized route to systemic fluoride toxicity on top of her skin exposure. Her mouth and throat need examining, and her mother should be asked about drooling, vomiting or abdominal pain since the spill. Her clothes and the rest of her skin stayed dry, so her legs, feet and clothing were not exposed. Her face and eyes look normal, which makes an important eye exposure unlikely, although they remain part of her examination. She has not coughed, and nothing suggests she breathed in enough vapour from a brief spill to matter.",
+        keyFeature: { topic: "burns", n: 1 },
         source: "mckee-hf",
       },
       {
@@ -125,15 +125,15 @@ export const BURNS_S69: Samp[] = [
         kind: "single",
         update: "Her ECG shows sinus tachycardia with a QTc of 470 ms. Her ionized calcium is 1.02 mmol/L. She settles a little once the gel is on.",
         prompt: "Which of the following is the most appropriate disposition for her?",
-        options: ["Admit with cardiac monitoring", "Discharge home with gel to apply", "Discharge with burn clinic review", "Observe 4 hours then discharge", "Refer to plastic surgery clinic"],
-        correct: 0,
+        options: ["Admit to the local paediatric ward", "Discharge home with gel to apply", "Discharge with burn clinic review", "Monitored paediatric burn centre transfer", "Refer to plastic surgery clinic"],
+        correct: 3,
         explanation:
-          "Her ionized calcium is below normal and her QTc is long, so fluoride is already acting beyond the skin. She needs admission with continuous cardiac monitoring, IV calcium as needed, and repeat calcium, magnesium and potassium until the values are stable, with burn centre and poison centre advice. Discharge home with gel or with clinic review would leave a child with a falling calcium unmonitored. A fixed 4 hour observation is too short when fluoride can keep binding calcium for hours. A plastic surgery clinic referral addresses the skin but not the systemic risk.",
+          "Her ionized calcium is low and her QTc is long, so fluoride is already acting beyond her skin, and she needs continuous cardiac monitoring, repeated electrolytes and IV calcium as needed. The American Burn Association places all chemical injuries in its group for immediate burn centre consultation with consideration of transfer, and notes that all paediatric burns may benefit from burn centre referral. Your paediatric ward has no cardiac monitoring, so admitting her there would leave a falling calcium unwatched. She travels with a monitor, IV calcium ready and the gel in place, after a call to the burn centre and the poison centre. Discharge with gel or clinic review, or a plastic surgery clinic referral, treats the skin and ignores the systemic toxicity.",
         keyFeature: { topic: "burns", n: 5 },
-        source: "cag-calcium-gluconate",
+        source: "aba-referral",
       },
     ],
-    sources: [S.mckee, S.cag],
+    sources: [S.mckee, S.cag, S.abaRef],
     ...META,
   },
 
@@ -141,9 +141,9 @@ export const BURNS_S69: Samp[] = [
   {
     id: "burns-41",
     topic: "burns",
-    title: "Flash fire while refuelling in the garage",
+    title: "Flash fire in the boathouse",
     stem:
-      "A 34-year-old man is brought to the emergency department by ambulance 50 minutes after gasoline vapour ignited while he refuelled a running snowblower inside his closed garage. For about 20 minutes before the flash he had a headache and felt nauseated. He has opioid use disorder and takes buprenorphine-naloxone 16 mg SL daily, last taken at 08:00 today. He has no other medical history. Paramedics gave fentanyl 100 mcg IV with little effect. He is alert, oriented and crying out in pain. His voice is normal, his face is not burned and there is no soot in his mouth. There are moist, blistered partial thickness burns over the front of both thighs and both lower legs, about 18% TBSA.",
+      "A 34-year-old man is brought to the emergency department by ambulance 50 minutes after gasoline vapour ignited while he refuelled a running generator inside the closed boathouse at his cottage. For about 20 minutes before the flash he had a headache and felt nauseated. He has opioid use disorder and takes buprenorphine-naloxone 16 mg SL daily, last taken at 08:00 today. He has no other medical history. Paramedics gave fentanyl 100 mcg IV with little effect. He is alert, oriented and crying out in pain. His voice is normal, his face is not burned and there is no soot in his mouth. There are moist, blistered partial thickness burns over the front of both thighs and both lower legs, about 18% TBSA.",
     vitals: { temperature: "36.6°C oral", pulse: "118/minute", resp: "22/minute", bp: "138/84 mmHg", o2sat: "99% on room air", weight: "82 kg" },
     questions: [
       {
@@ -153,7 +153,7 @@ export const BURNS_S69: Samp[] = [
         options: ["Chest radiograph for aspiration", "Co-oximetry for carboxyhemoglobin", "Creatine kinase for rhabdomyolysis", "Serum lactate for cyanide", "Urine drug screen for fentanyl"],
         correct: 1,
         explanation:
-          "A gasoline engine running in a closed garage produces carbon monoxide, and his headache and nausea before the flash are typical early symptoms. A standard pulse oximeter reads carboxyhemoglobin as oxyhemoglobin, so his saturation of 99% does not exclude poisoning, and co-oximetry is needed. Cyanide comes from burning nitrogen-containing materials such as plastics and foam in house fires, not from a brief gasoline vapour flash. Creatine kinase matters after electrical injury, crush or long immobility. A urine drug screen would show the buprenorphine and fentanyl already known and would not change care. He has no airway signs to suggest aspiration.",
+          "A gasoline generator running in a closed boathouse produces carbon monoxide, and his headache and nausea before the flash are typical early symptoms. A standard pulse oximeter reads carboxyhemoglobin as oxyhemoglobin, so his saturation of 99% does not exclude poisoning, and co-oximetry is needed. Cyanide comes from burning nitrogen-containing materials such as plastics and foam in house fires, not from a brief gasoline vapour flash. Creatine kinase matters after electrical injury, crush or long immobility. A urine drug screen would show the buprenorphine and fentanyl already known and would not change care. He has no airway signs to suggest aspiration.",
         keyFeature: { topic: "burns", n: 1 },
         source: "hampson-co",
       },
@@ -171,29 +171,29 @@ export const BURNS_S69: Samp[] = [
       {
         id: "q3",
         kind: "single",
-        update: "After hydromorphone 2 mg IV three times over 30 minutes, his pain is 5 out of 10 and he is alert. He worries that the burn team will stop his usual medication.",
-        prompt: "Which of the following is the most appropriate plan for his buprenorphine-naloxone while he is in hospital?",
-        options: ["Hold it until his pain settles", "Keep giving his usual daily dose", "Replace it with methadone", "Replace it with oral morphine", "Taper it to 4 mg daily"],
-        correct: 1,
-        explanation:
-          "Buprenorphine should not be routinely stopped or tapered around acute pain or surgery, because interruption raises the risk of relapse and overdose after discharge. His usual 16 mg continues, and full agonists and other analgesics are added on top, as the hydromorphone has shown. Holding or tapering it removes the protection it gives him. A switch to methadone or to oral morphine is a major change of addiction treatment with its own risks of overdose and withdrawal, and is not needed to treat burn pain.",
-        keyFeature: { topic: "burns", n: 3 },
-        source: "kohan-buprenorphine",
-      },
-      {
-        id: "q4",
-        kind: "single",
-        update: "His carboxyhemoglobin is 9% and falls with oxygen. His headache has gone and his neurologic examination is normal. His pain is controlled.",
+        update: "After hydromorphone 2 mg IV three times over 30 minutes, his pain is 5 out of 10 and he is alert. His carboxyhemoglobin is 9% and falls with oxygen. His headache has gone and his neurologic examination is normal.",
         prompt: "Which of the following is the most appropriate disposition for him?",
         options: ["Admit to general surgery locally", "Discharge with burn clinic follow-up", "Hyperbaric oxygen centre referral", "Observe overnight then discharge", "Transfer to a burn centre"],
         correct: 4,
         explanation:
-          "Partial thickness burns of 10% TBSA or more call for immediate burn centre consultation with consideration for transfer, and his burns cover about 18% and need formal fluid resuscitation and specialized wound care. His carboxyhemoglobin of 9% with no loss of consciousness, no neurologic signs and resolved symptoms is treated with normobaric oxygen and does not call for hyperbaric therapy. Admission to a general surgery service without burn expertise, overnight observation or discharge all fall short of the care a burn of this size needs. His buprenorphine dose and analgesic plan go with him.",
+          "Partial thickness burns of 10% TBSA or more call for immediate burn centre consultation with consideration for transfer, and his burns cover about 18% of his body and will need specialized wound care and difficult pain control. His carboxyhemoglobin of 9% with no loss of consciousness, no neurologic signs and resolved symptoms is treated with normobaric oxygen and does not call for hyperbaric therapy. Admission to a general surgery service without burn expertise, overnight observation or discharge all fall short of the care a burn of this size needs.",
         keyFeature: { topic: "burns", n: 5 },
         source: "aba-referral",
       },
+      {
+        id: "q4",
+        kind: "single",
+        update: "He will stay in your department for at least 6 hours before he leaves. His usual buprenorphine-naloxone dose is continued, and his pain rises again between hydromorphone doses.",
+        prompt: "Which of the following is the most appropriate way to give his opioid analgesia over the next several hours?",
+        options: ["Fentanyl patch 25 mcg/hour", "Hydromorphone 2 mg IM every 3 hours", "Hydromorphone PCA, bolus doses only", "Hydromorphone PCA with basal infusion", "Oral oxycodone as needed"],
+        correct: 2,
+        explanation:
+          "A patient on buprenorphine has a high but unpredictable need for full agonist opioid, so patient-controlled analgesia lets him match the dose to his pain while the device limits each dose and the interval between them. Guidance on acute pain in patients taking buprenorphine advises patient-controlled analgesia when systemic opioids are needed, without a basal infusion, which adds opioid when he is asleep and raises the risk of respiratory depression. IM opioid is avoided in burns over 10% TBSA because poor peripheral perfusion makes its absorption slow and unpredictable. A fentanyl patch takes many hours to reach effect and cannot be adjusted to his pain. Oral oxycodone as needed is slow and too weak for his need.",
+        keyFeature: { topic: "burns", n: 3 },
+        source: "anderson-buprenorphine",
+      },
     ],
-    sources: [S.hampson, S.anderson, S.kohan, S.abaRef],
+    sources: [S.hampson, S.anderson, S.abaRef],
     ...META,
   },
 
