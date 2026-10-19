@@ -305,7 +305,7 @@ export const ASTHMA_COPD_S64: Samp[] = [
         kind: "single",
         update: "She is to be admitted to the ward on prednisone 50 mg PO daily.",
         prompt: "Which of the following plans for her daily fluticasone is most appropriate while she is in hospital?",
-        options: ["Continue it at her usual dose", "Hold it while on nebulizers", "Replace it with montelukast", "Stop it during the prednisone course", "Switch to salmeterol alone"],
+        options: ["Continue her usual daily dose", "Hold it while on nebulizers", "Replace it with montelukast", "Stop it during the prednisone course", "Switch to salmeterol alone"],
         correct: 0,
         explanation:
           "GINA advises that patients admitted to hospital for an asthma exacerbation should continue, or be prescribed, ICS-containing treatment, because inhaled corticosteroids lower the risk of later severe attacks and asthma death. Prednisone treats this flare but does not replace her daily controller, so holding or stopping it while she takes prednisone or nebulizers leaves a gap. Montelukast is less effective than an inhaled corticosteroid. GINA advises against treating asthma with a long-acting beta2-agonist such as salmeterol without an inhaled corticosteroid.",
