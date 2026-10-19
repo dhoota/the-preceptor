@@ -32,7 +32,7 @@ export const ASTHMA_COPD_S64: Samp[] = [
         options: ["Anaphylaxis to a food", "Carbon monoxide exposure", "Thunderstorm asthma", "Upper airway obstruction", "Viral bronchitis"],
         correct: 2,
         explanation:
-          "A cluster of people wheezing within an hour of a storm front in grass pollen season, in a woman with lifelong grass season hay fever, fits epidemic thunderstorm asthma. In the Melbourne event of 2016, grass pollen counts were extremely high when the gust front arrived, emergency visits surged within hours, and only 28% of those who presented had a current diagnosis of asthma. She ate nothing new and has no hives, lip swelling or vomiting, which argues against anaphylaxis. Upper airway obstruction gives a harsh inspiratory noise over the neck, not expiratory wheeze through both lungs. A virus does not strike 21 people at the same hour, and carbon monoxide does not cause diffuse wheeze.",
+          "A cluster of people wheezing within hours of a storm front in grass pollen season, in a woman with lifelong grass season hay fever, fits epidemic thunderstorm asthma. In the Melbourne event of 2016, grass pollen counts were extremely high when the gust front arrived, emergency visits surged within hours, and only 28% of those who presented had a current diagnosis of asthma. She ate nothing new and has no hives, lip swelling or vomiting, which argues against anaphylaxis. Upper airway obstruction gives a harsh inspiratory noise over the neck, not expiratory wheeze through both lungs. A virus does not strike 21 people at the same hour, and carbon monoxide does not cause diffuse wheeze.",
         keyFeature: { topic: "asthma-copd", n: 1 },
         source: "thien-thunderstorm-2018",
       },
@@ -201,7 +201,7 @@ export const ASTHMA_COPD_S64: Samp[] = [
     title: "Hard to rouse after a bad week",
     stem:
       "A 74-year-old woman is brought to the emergency department by ambulance with 3 days of increasing breathlessness and purulent sputum. She has COPD with an FEV1 of 31% of predicted. She takes tiotropium-olodaterol, amlodipine, rosuvastatin and acetaminophen, and 3 weeks ago she started gabapentin 300 mg twice daily for pain after shingles. Her eGFR is 38 mL/minute/1.73 m2. She lives with her husband, walks to the corner store daily and has told her family physician she wants full treatment. After 1 hour of nebulized salbutamol and ipratropium, prednisone, doxycycline and oxygen titrated to 88 to 92%, she is drowsy but rousable and follows commands. Arterial gas: pH 7.29, PaCO2 69 mmHg, PaO2 60 mmHg, bicarbonate 32 mmol/L.",
-    vitals: { temperature: "37.4°C oral", pulse: "104/minute", resp: "26/minute", bp: "146/82 mmHg", o2sat: "90% on 2 L/minute by nasal prongs", weight: "61 kg" },
+    vitals: { temperature: "37.4°C oral", pulse: "104/minute", resp: "26/minute", bp: "146/82 mmHg", o2sat: "90% on 4 L/minute by nasal prongs", weight: "61 kg" },
     questions: [
       {
         id: "q1",
@@ -229,12 +229,12 @@ export const ASTHMA_COPD_S64: Samp[] = [
       {
         id: "q3",
         kind: "single",
-        update: "Bilevel ventilation runs at IPAP 16 and EPAP 5 cm H2O, with oxygen entrained at 4 L/minute. The ventilator has no oxygen blender. After 1 hour her pH is 7.31 and PaCO2 64 mmHg, but her SpO2 is 85% with little leak.",
+        update: "Bilevel ventilation runs at IPAP 16 and EPAP 5 cm H2O, with wall oxygen bled in at the mask at 4 L/minute. A chest X-ray shows no pneumothorax. At 1 hour her pH is 7.31, PaCO2 64 mmHg and SpO2 85% with little leak.",
         prompt: "Which of the following is the most appropriate change to her oxygen delivery during bilevel ventilation?",
         options: ["Accept an SpO2 of 85% for now", "Entrain oxygen at the ventilator end", "Increase entrained oxygen to 10 L/minute", "Switch to high-flow nasal oxygen", "Use a ventilator with an oxygen blender"],
         correct: 4,
         explanation:
-          "Her pH has risen from 7.29 to 7.31, so bilevel ventilation is working, but an SpO2 of 85% is below the BTS and ICS target of 88 to 92% for hypercapnic failure on NIV. The guidance warns that entrained oxygen flows above 4 L/minute can cause mask leak and delayed triggering, and recommends a ventilator with an integral oxygen blender when 4 L/minute fails to keep the saturation above 88%. Raising the flow to 10 L/minute risks the asynchrony it describes. Oxygen should be entrained as close to the patient as possible, not at the ventilator end. Accepting 85% leaves her below target, and switching to high-flow oxygen abandons support that is lowering her PaCO2.",
+          "Her pH has risen from 7.29 to 7.31, so bilevel ventilation is working, but an SpO2 of 85% is below the BTS and ICS target of 88 to 92% for hypercapnic failure on NIV. Oxygen bled into a bilevel circuit gives only a limited inspired fraction, and the guideline notes that flows above 4 L/minute add little while promoting mask leak and delayed triggering. It therefore recommends a ventilator with an integral oxygen blender when 4 L/minute fails to keep the saturation above 88%. Raising the flow to 10 L/minute adds little oxygen and risks asynchrony. Oxygen should be entrained as close to the patient as possible, as it already is at her mask, not at the ventilator end. Accepting 85% leaves her below target, and switching to high-flow oxygen abandons support that is lowering her PaCO2.",
         keyFeature: { topic: "asthma-copd", n: 7 },
         source: "bts-ics-ahrf-2016",
       },

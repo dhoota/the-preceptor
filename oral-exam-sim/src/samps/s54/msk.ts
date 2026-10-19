@@ -273,13 +273,13 @@ export const MSK_S54: Samp[] = [
         kind: "single",
         prompt: "Which of the following manoeuvres is most appropriate to reduce this injury?",
         options: [
-          "Axial traction on the lower leg",
           "Extension with medial patellar push",
           "Flexion of the knee past 90 degrees",
           "Internal rotation of the tibia",
+          "Longitudinal traction on the leg",
           "Valgus stress with the knee flexed",
         ],
-        correct: 1,
+        correct: 0,
         explanation:
           "A lateral bulge with a flat front of the knee, held in flexion after the knee buckled inward, is a lateral patellar dislocation. Sinikumpu and Nicolaou advise that the patella be reduced and the reduction confirmed clinically before any other care, by extending the knee with pressure on the lateral side of the patella, which guides it medially back into its groove. Traction along the leg, flexing the knee further and rotating the tibia do not move the patella back. A valgus stress adds to the lateral pull on the patella. Pulses, sensation and movement were checked before the reduction and are checked again after it.",
         keyFeature: { topic: "msk", n: 5 },
@@ -390,13 +390,13 @@ export const MSK_S54: Samp[] = [
         options: [
           "Above knee cast for 6 weeks",
           "Intramedullary nail of the fibula",
+          "Lag screw fixation of the fibula",
           "Nonoperative care of the fracture",
           "Plate fixation of the fibula",
-          "Spanning external fixator",
         ],
-        correct: 2,
+        correct: 3,
         explanation:
-          "Walters and colleagues note that the vast majority of isolated fibular shaft fractures are treated without surgery, and that the fibular shaft is not a weight bearing part of the leg. His tibia, knee and ankle are intact, so once the wound has been debrided the fracture itself is usually treated without fixation. Plating or nailing the fibula, or a spanning external fixator, would stabilize a bone that does not need it here. An above knee cast for 6 weeks would hold the knee and ankle still for a fracture of a bone that does not carry the load.",
+          "Walters and colleagues note that the vast majority of isolated fibular shaft fractures are treated without surgery, and that the fibular shaft is not a weight bearing part of the leg. His tibia, knee and ankle are intact, so once the wound has been debrided the fracture itself is usually treated without fixation. Plating, nailing or screwing the fibula would stabilize a bone that does not need it here. An above knee cast for 6 weeks would hold the knee and ankle still for a fracture of a bone that does not carry the load.",
         keyFeature: { topic: "msk", n: 8 },
         source: "walters-fibula",
       },
