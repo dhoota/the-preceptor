@@ -2,8 +2,8 @@
 
 import type { OralCase } from "@/engine/types";
 
-export const neckNodeFeverReturnVisit: OralCase = {
-  id: "neck-node-fever-return-visit",
+export const neckNodeFeverDayFive: OralCase = {
+  id: "neck-node-fever-day-five",
   title: "Still hot two days after the neck lump visit",
   blueprint: "peds",
   alsoCovers: ["resus", "comm"],
@@ -69,8 +69,8 @@ export const neckNodeFeverReturnVisit: OralCase = {
       id: "pmh",
       label: "Past history and immunizations",
       result:
-        "Born at term. No admissions. No heart disease. Immunizations up to date to 18 months on the Ontario schedule. " +
-        "Her 4 to 6 year vaccines, including MMRV, are booked with her family doctor next week. No influenza vaccine this season.",
+        "Born at term. No admissions. No heart disease. Immunizations up to date. " +
+        "No new medicines before this illness. No joint pain or swelling, weight loss, night sweats or easy bruising.",
     },
     {
       id: "social",
@@ -87,7 +87,7 @@ export const neckNodeFeverReturnVisit: OralCase = {
       id: "neck",
       label: "Neck, throat and airway",
       result:
-        "A matted group of several firm, rubbery, tender nodes in the left anterior neck, the largest about 3 cm. No fluctuance and no overlying redness. " +
+        "A group of several firm, rubbery, tender nodes in the left anterior neck, the largest about 3 cm. No fluctuance and no overlying redness. " +
         "Full neck movement, with pain. No trismus, no drooling, no stridor. Tonsils mildly red without exudate. The posterior pharyngeal wall does not bulge.",
     },
     {
@@ -158,7 +158,8 @@ export const neckNodeFeverReturnVisit: OralCase = {
         "Every other Kawasaki feature, including any that came and went: red eyes, lip and mouth changes, rash, hand and foot swelling.",
         "The first visit and the response to 2 days of cephalexin.",
         "Exact antipyretic doses compared with her weight.",
-        "Red flags for a deep neck infection: drooling, painful swallowing, trismus, stridor. Exposures: cat scratches, sick contacts, tuberculosis, travel. Immunizations.",
+        "Red flags for a deep neck infection: drooling, painful swallowing, trismus, stridor. Exposures: cat scratches, sick contacts, tuberculosis, travel.",
+        "Clues to other causes: new drugs, joint pain, weight loss, night sweats, bruising.",
         "Intake and urine output.",
       ],
       rubric: ["kd-h1", "kd-h2", "kd-h3", "kd-h4", "kd-h5"],
@@ -183,7 +184,7 @@ export const neckNodeFeverReturnVisit: OralCase = {
         {
           id: "c-node-first",
           label:
-            "I found a matted group of solid, non fluctuant nodes, bilateral non purulent conjunctival injection and red cracked lips. With 5 days of fever and no response to cephalexin, I suspected Kawasaki disease presenting with a neck node first, and kept a neck abscess, cat scratch disease and Epstein Barr virus on my differential.",
+            "I found a group of firm, non fluctuant nodes, bilateral non purulent conjunctival injection and red cracked lips. With 5 days of fever and no response to cephalexin, I suspected Kawasaki disease presenting with a neck node first, and kept a neck abscess, cat scratch disease and Epstein Barr virus on my differential.",
           next: "q-tests",
           quality: "strong",
           feedback:
@@ -227,14 +228,14 @@ export const neckNodeFeverReturnVisit: OralCase = {
       kind: "question",
       id: "q-tests",
       phase: "Investigations",
-      prompt: "What investigations do you want, and how will you use them to decide?",
+      prompt: "What investigations do you want, and how will they help you separate the causes of her neck mass?",
       seconds: 60,
       modelAnswer: [
         "Neck ultrasound first. A cluster of solid nodes with no liquid centre favours Kawasaki disease. A liquid centre favours an abscess.",
-        "CBC with differential, CRP, ESR, albumin, ALT, electrolytes, urinalysis and blood culture. Monospot and Bartonella serology for the differential.",
-        "Incomplete Kawasaki disease: fever for 5 days or more with 2 or 3 principal features, and CRP 30 mg/L or more or ESR 40 mm/hour or more.",
-        "Then 3 of 6 supplementary criteria, or echocardiography findings: albumin 30 g/L or less, raised ALT, white cells 15 x 10^9/L or more, anemia, sterile pyuria of 10 or more white cells per high power field, platelets 450 x 10^9/L or more after day 7.",
-        "ECG. Echocardiography must not delay the diagnosis or treatment.",
+        "CT only if ultrasound cannot exclude a deep neck abscess. Retropharyngeal edema on CT is as common in node first Kawasaki disease as in bacterial infection and must not be read as proof of an abscess.",
+        "CBC with differential and CRP: a high band count and CRP with a lower white count favour Kawasaki disease over bacterial adenitis.",
+        "Blood culture, monospot and Bartonella serology for the other causes. ECG.",
+        "The same blood work, with ESR, albumin, ALT and urinalysis, also tests the CPS incomplete Kawasaki criteria.",
       ],
       rubric: ["kd-a3", "kd-a5"],
       next: "s-results",
@@ -255,8 +256,8 @@ export const neckNodeFeverReturnVisit: OralCase = {
       prompt: "What is your diagnosis, and what treatment do you start? Give doses.",
       seconds: 90,
       modelAnswer: [
-        "Incomplete Kawasaki disease: 3 principal features, CRP 168 mg/L and 4 supplementary criteria (albumin, ALT, anemia, sterile pyuria).",
-        "IVIG 2 g/kg as a single infusion, so 48 g over 10 to 12 hours, now, on day 5 of fever. Do not wait for echocardiography.",
+        "Kawasaki disease that started with a neck node. With 3 principal features it is incomplete disease, and her laboratory results meet the CPS criteria.",
+        "IVIG 2 g/kg as a single infusion, so 48 g over 10 to 12 hours, now, on day 5 of fever. Do not wait to see whether antibiotics work.",
         "ASA 30 to 50 mg/kg/day divided every 6 hours, so 240 mg every 6 hours (40 mg/kg/day), then 3 to 5 mg/kg once daily when afebrile. Low dose from the start is also acceptable. Platelets must be over 80 x 10^9/L.",
         "Stop ibuprofen. NSAIDs are avoided with ASA.",
         "Acetaminophen 15 mg/kg, so 360 mg every 4 to 6 hours.",
@@ -267,11 +268,11 @@ export const neckNodeFeverReturnVisit: OralCase = {
         {
           id: "c-ivig",
           label:
-            "I diagnosed incomplete Kawasaki disease with 4 supplementary criteria, started IVIG 48 g and ASA 240 mg every 6 hours, stopped the ibuprofen, gave acetaminophen 360 mg and called the children's hospital about echocardiography.",
+            "I diagnosed Kawasaki disease that started with a neck node, started IVIG 48 g and ASA 240 mg every 6 hours, stopped the ibuprofen, gave acetaminophen 360 mg and called the children's hospital about echocardiography.",
           next: "s-shock",
           quality: "strong",
           feedback:
-            "Correct. Two or 3 principal features with a CRP over 30 mg/L and 3 or more supplementary criteria make incomplete Kawasaki disease, and she has 4. IVIG 2 g/kg within 10 days of fever onset lowers the coronary aneurysm risk to under 5 percent. ASA 240 mg every 6 hours is 40 mg/kg/day.",
+            "Correct. Her laboratory results meet the incomplete criteria, so treatment is due now. IVIG 2 g/kg within 10 days of fever onset lowers the coronary aneurysm risk to under 5 percent. ASA 240 mg every 6 hours is 40 mg/kg/day.",
         },
         {
           id: "c-ivig-ibuprofen",
@@ -282,12 +283,12 @@ export const neckNodeFeverReturnVisit: OralCase = {
             "IVIG and ASA are right. NSAIDs should not be given with ASA in Kawasaki disease. Use acetaminophen at 15 mg/kg, 360 mg, instead, since her home dose of 240 mg is only 10 mg/kg.",
         },
         {
-          id: "c-echo-first",
-          label: "I told her mother that Kawasaki disease cannot be confirmed without echocardiography and booked one at the children's hospital next week.",
-          next: "s-echo",
+          id: "c-wait-antibiotics",
+          label: "I admitted her on IV antibiotics for adenitis and planned to consider Kawasaki disease if she was no better in 48 hours.",
+          next: "s-wait-antibiotics",
           quality: "unsafe",
           feedback:
-            "She already meets the incomplete criteria through her laboratory results, so echocardiography is not needed to make the diagnosis. Treatment should not wait for it. Next week pushes her past day 10 of fever and leaves a febrile child untreated.",
+            "Waiting for a second antibiotic to fail is how node first Kawasaki disease gets missed. She has new eye and lip changes, a cluster of solid nodes and a CRP of 168, and node first disease carries the same coronary risk as typical disease. IVIG is due now, not on day 7.",
         },
       ],
     },
@@ -300,10 +301,10 @@ export const neckNodeFeverReturnVisit: OralCase = {
     },
     {
       kind: "say",
-      id: "s-echo",
+      id: "s-wait-antibiotics",
       phase: "Phone call",
       text:
-        "The pediatrician at the children's hospital calls back. She says the incomplete criteria are met and asks you to start IVIG 48 g and ASA now rather than wait for echocardiography. You place the orders.",
+        "The pediatrician at the children's hospital calls back about the admission for adenitis. When you mention the red eyes, the cracked lips and the CRP of 168, she asks you to start IVIG 48 g and ASA now and to stop the ibuprofen. You place the orders.",
       next: "s-shock",
     },
     {
@@ -421,7 +422,7 @@ export const neckNodeFeverReturnVisit: OralCase = {
       id: "q-family",
       phase: "Her mother",
       prompt:
-        "While you wait for the transport team, her mother asks why this was missed here 2 days ago, whether her vaccines next week should go ahead, and whether ASA is safe for a child. What do you tell her?",
+        "While you wait for the transport team, her mother asks what this means for her heart, whether the IVIG will work and whether ASA is safe for a child. What do you tell her?",
       seconds: 60,
       modelAnswer: [
         "Kawasaki disease that starts with a neck node often looks like a bacterial infection at first. The eye and lip changes appeared after the first visit.",

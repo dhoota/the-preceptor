@@ -307,7 +307,7 @@ export const FIRST_TRIMESTER_BLEEDING_S65: Samp[] = [
         kind: "single",
         update: "She asks whether a test on her blood could show if the fetus is Rh D positive, so that she might avoid Rh immune globulin.",
         prompt: "Which of the following is the most accurate answer to her question about testing the fetal Rh D type?",
-        options: ["Amniocentesis is offered instead", "It is not routine care in Canada", "It must precede any injection", "Its results are not reliable", "Partner blood is used for it"],
+        options: ["Amniocentesis is offered instead", "It is not routine in Canada", "It must precede any injection", "Its results are not reliable", "Partner blood is used for it"],
         correct: 1,
         explanation:
           "Fetal RHD genotyping on cell-free DNA in the pregnant person's blood is accurate, with a false-negative rate of up to 0.2%, and some countries use it routinely. In Canada it is sent to international reference laboratories at added cost, and SOGC states that universal testing is not currently the standard of care. The test uses her blood, not her partner's, and it is not a step that must come before Rh immune globulin. Amniocentesis is invasive and is itself an event for which Rh immune globulin is suggested, so it is not used for this purpose.",
