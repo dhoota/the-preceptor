@@ -76,6 +76,7 @@ import { SAMPS_S67 } from "./s67";
 import { SAMPS_S68 } from "./s68";
 import { SAMPS_S69 } from "./s69";
 import { SAMPS_S70 } from "./s70";
+import { SAMPS_S71 } from "./s71";
 
 export const SAMP_BATCHES: Record<string, Samp[]> = {
   s01: SAMPS_S01,
@@ -148,6 +149,7 @@ export const SAMP_BATCHES: Record<string, Samp[]> = {
   s68: SAMPS_S68,
   s69: SAMPS_S69,
   s70: SAMPS_S70,
+  s71: SAMPS_S71,
 };
 
 /** Every authored SAMP, including any held back from release. Tests check all of these. */

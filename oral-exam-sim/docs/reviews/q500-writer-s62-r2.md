@@ -111,3 +111,15 @@ Abdominal pain key feature coverage: KF1 1 (50 q2), KF2 2 (50 q4, 51 q1), KF3 2 
 - 49 q2: many Canadian EDs would add an opioid at this point. The key follows NICE, which the previous verdict accepted.
 
 **Checks.** `npx tsc --noEmit -p . | grep samps/s62`: no output. `SAMP_BATCH=s62 npx vitest run tests/samps.test.ts tests/samp-quality.test.ts tests/citations.test.ts`: 3 files, 124 tests passed.
+
+## Round 5 (verdict `docs/reviews/q500-verify4-s62.md`)
+
+Only abdominal-pain-51 failed. Nothing else was changed.
+
+- 51 q3 (oral antibiotic regimen) was dropped, per the coordinator ruling. I did not attempt the full rebuild with a fourth source. 51 now has 3 questions: q1 (KF2), q2 (admission with antibiotics, infectious-diseases KF3) and q3 (elective resection review, the former q4, infectious-diseases KF3).
+- The former q4 update gave away the q2 key ("She improves and is ready for discharge on the fourth day."). It now reads "Several days later her pain has settled and she is eating." It does not mention admission or discharge.
+- The ciprofloxacin monograph is no longer cited in 51, so it was removed from 51's sources. It is still cited in abdominal-pain-52 q3.
+
+**Batch now.** 17 questions: 16 single and 1 menu. Single key positions, first to fifth: 3, 3, 3, 4, 4, so no position is above 25%. The longest-option rate is within the test limit. Abdominal pain key feature coverage is unchanged: KF1 1, KF2 2, KF3 2, KF4 1, KF5 2, KF6 1, KF7 1, KF8 3.
+
+**Checks.** `npx tsc --noEmit -p . | grep samps/s62`: no output. `SAMP_BATCH=s62 npx vitest run tests/samps.test.ts tests/samp-quality.test.ts tests/citations.test.ts`: 3 files, 120 tests passed.

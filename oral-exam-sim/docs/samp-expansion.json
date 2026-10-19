@@ -1,5 +1,5 @@
 {
- "note": "Expansion to 1,500 SAMPs. One batch per priority topic. New ids continue the topic numbering from 16. Batches s54 to s70 (tier Q500, October 2026) add 5 SAMPs each to the 17 topics with the thinnest key feature coverage.",
+ "note": "Expansion to 1,500 SAMPs. One batch per priority topic. New ids continue the topic numbering from 16. Batches s54 to s70 (tier Q500, October 2026) add 5 SAMPs each to the 17 topics with the thinnest key feature coverage. Batch s71 (tier Q500) adds 3 critical appraisal SAMPs, the least covered topic, to keep the round at 500 questions after review removed repeats.",
  "batches": {
   "s19": {
    "topic": "abdominal-pain",
@@ -364,6 +364,13 @@
    "count": 5,
    "tier": "Q500",
    "firstId": 48
+  },
+  "s71": {
+   "topic": "critical-appraisal",
+   "name": "Critical appraisal",
+   "count": 3,
+   "tier": "Q500",
+   "firstId": 37
   }
  }
 }

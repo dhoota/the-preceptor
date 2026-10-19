@@ -237,19 +237,7 @@ export const ABDOMINAL_PAIN_S62: Samp[] = [
       {
         id: "q3",
         kind: "single",
-        update: "She is admitted. She is drinking fluids without vomiting and has no drug allergies.",
-        prompt: "Which of the following antibiotic regimens is most appropriate for her?",
-        options: ["amoxicillin-clavulanate PO", "ciprofloxacin and metronidazole PO", "levofloxacin and metronidazole PO", "moxifloxacin PO alone", "No antibiotic until cultures return"],
-        correct: 0,
-        explanation:
-          "WSES advises antibiotics against gram-negative bacilli and anaerobes for immunocompromised patients, by mouth whenever possible, and describes amoxicillin-clavulanate, given IV and then by mouth, as the antibiotic arm of a diverticulitis trial. The Canadian ciprofloxacin monograph warns that fluoroquinolones as a class raise the risk of tendinitis and tendon rupture, and that the risk is further increased in patients over 60 and in those taking corticosteroids. She is 69 and on prednisone, so the ciprofloxacin, levofloxacin and moxifloxacin regimens all carry that added risk. Withholding antibiotics is advised only for immunocompetent patients.",
-        keyFeature: { topic: "infectious-diseases", n: 8 },
-        source: "pms-ciprofloxacin-pm-2022",
-      },
-      {
-        id: "q4",
-        kind: "single",
-        update: "She improves and is ready for discharge on the fourth day.",
+        update: "Several days later her pain has settled and she is eating.",
         prompt: "Which of the following is the most appropriate plan for her after this episode?",
         options: ["Daily antibiotic to prevent recurrence", "Family physician review only", "High-fibre diet alone", "Repeat CT in 6 weeks", "Surgical review for elective resection"],
         correct: 4,
@@ -259,7 +247,7 @@ export const ABDOMINAL_PAIN_S62: Samp[] = [
         source: "wses-diverticulitis-2020",
       },
     ],
-    sources: [S.brandl, S.wses, S.cipro],
+    sources: [S.brandl, S.wses],
     ...META,
   },
 
