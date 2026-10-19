@@ -185,26 +185,26 @@ export const MSK_S54: Samp[] = [
   /* 41 Pathologic humeral fracture from myeloma --------------------------- */
   {
     id: "msk-41",
-    title: "Arm pain while lifting a kettle",
+    title: "Pain in the side after reaching back",
     stem:
-      "A 68-year-old man presents to the emergency department 1 hour after he felt a crack in his right upper arm while lifting a full kettle. He has not been able to lift the arm since. For 2 months the same arm has ached at night, and he has felt tired and thirsty. He has lost 4 kg. He has hypertension treated with ramipril and no history of cancer. The right upper arm is swollen and tender in its middle third. The radial pulse is strong, and he can extend his wrist and fingers with normal sensation on the back of the hand. Blood tests drawn at triage show hemoglobin 96 g/L, creatinine 188 umol/L, and total protein 98 g/L with albumin 31 g/L.",
-    vitals: { temperature: "36.8°C oral", pulse: "92/minute", resp: "16/minute", bp: "138/80 mmHg", o2sat: "97% on room air", weight: "74 kg" },
+      "A 68-year-old man presents to the emergency department 6 hours after he felt a crack in his right side as he twisted to reach the back seat of his car. Breathing deeply has hurt since. For 2 months the same area has ached at night, and he has felt tired and thirsty. He has lost 4 kg. He has hypertension treated with ramipril and no history of cancer. He has point tenderness over the right eighth rib in the midaxillary line. Breath sounds are equal and there is no subcutaneous emphysema. Blood tests drawn at triage show hemoglobin 96 g/L, creatinine 188 umol/L, and total protein 98 g/L with albumin 31 g/L.",
+    vitals: { temperature: "36.8°C oral", pulse: "92/minute", resp: "18/minute", bp: "138/80 mmHg", o2sat: "96% on room air", weight: "74 kg" },
     questions: [
       {
         id: "q1",
         kind: "single",
-        update: "X-rays show a transverse fracture of the humeral shaft through a well defined lytic lesion. Smaller round lucencies are seen elsewhere in the humerus.",
-        prompt: "Which of the following best explains the fracture in this patient's arm?",
+        update: "X-rays show a displaced fracture of the right eighth rib at a lucent, slightly expanded area with a thinned and scalloped cortex. Smaller round lucencies are seen in two other ribs. There is no pneumothorax.",
+        prompt: "Which of the following best explains the fracture of this patient's rib?",
         options: [
-          "Direct blow from a fall",
+          "Direct blow to the chest wall",
           "Fragility fracture of osteoporosis",
-          "Pathologic fracture through a lesion",
-          "Spiral fracture from a twisting force",
+          "Pathologic fracture",
           "Stress fracture from repeated loading",
+          "Twisting injury of normal bone",
         ],
         correct: 2,
         explanation:
-          "A long bone that breaks while lifting a kettle, after 2 months of night pain at the same site, with a fracture line through a lytic lesion, is a pathologic fracture. The BOA standard notes that a low energy fracture in a patient without osteoporosis should raise suspicion of an underlying malignancy. Osteoporotic fractures follow falls and do not cause lytic lesions or months of night pain. He did not fall or twist the arm. A stress fracture follows repeated loading and has no lytic lesion.",
+          "A rib that breaks with a simple twist, after 2 months of night pain at the same site, at a lucent area with a thinned and scalloped cortex, is a pathologic fracture. The BOA standard notes that a low energy fracture in a patient without osteoporosis should raise suspicion of an underlying malignancy. A fragility fracture of osteoporosis follows a fall and does not produce a lucent, expanded area or months of night pain. He was not struck on the chest. A stress fracture follows repeated loading and shows no lucent lesion, and a twist alone does not break a normal rib.",
         keyFeature: { topic: "msk", n: 2 },
         source: "boast-mbd",
       },

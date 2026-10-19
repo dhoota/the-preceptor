@@ -65,3 +65,58 @@ No new D1 repeat was created.
 - 51 q2 maps antibiotic prophylaxis to key feature 3 (iatrogenic problems: resistant flora, no benefit). A reviewer may prefer another key feature. Coverage does not depend on it.
 - 48 q3: the statement does not mention side lying. It is rejected on the statement's requirement to keep head, neck and torso aligned on a device. She is conscious with a clear airway, so the lateral trauma position used for airway protection does not apply.
 - Mock-mode cues already flagged by QA (48 q1 by the flight in q3 and q4, 49 q2 by the q3 update) are unchanged.
+
+## Round 3
+
+Fixes for `docs/reviews/q500-verify2-s66.md`. Only multiple-trauma-48 and multiple-trauma-50 changed. 49, 51 and 52 (passed) were not touched.
+
+### Required fixes and how each was done
+
+| Item | Required fix | Change made |
+|---|---|---|
+| 48 q1 | Repeated abdominal-pain-39 q2 (transfer now for a bleeding spleen). Replace it, and make the transfer a fact in a later update | Replaced by a menu question (KF6): which of her findings count toward the Assessment of Blood Consumption score for massive transfusion (key: pulse 124/minute, systolic BP 88 mmHg, free fluid on eFAST, so 3 of 4 points). Source: Nunez et al. J Trauma 2009 (penetrating mechanism, positive FAST, arrival SBP 90 mmHg or less, arrival pulse 120/minute or more, and a score of 2 or more 75% sensitive and 86% specific). The transfer is now a fact in the q3 update ("The trauma centre accepts her"). This also removes the mock-mode cue the first QA flagged for 48 q1. |
+| 48 q3 (old) | Backboard-time sentence came from the statement's section on children | That question is now q4. The sentence now reads as the reviewer suggested. It cites item 8 (remove patients from a long backboard as soon as possible after arrival), then says that the section on children advises a vacuum mattress or padding when board time will be prolonged, to lower the risk of pain and pressure ulcers, and that the same risks apply to her for about 90 more minutes. |
+| 48 q4 (old) | Repeated ems-35 q3 (tranexamic acid 1 g over 8 hours). Replace with a non-TXA decision | Replaced by a new q3 (KF4, modifying factor): her mother brings a blood bank card showing an anti-Kell antibody, and antigen-negative units are 3 hours away. Key: keep giving uncrossmatched group O red cells. Source: Ringel et al. Transfus Med Hemother 2022 (6 109 emergency transfusions, 19 against clinically significant alloantibodies, none with significant hemolysis, "highly safe"). The CRASH-2 source was removed from the file. The ATLS source was dropped from 48 because no 48 question cites it any more. |
+| 50 q2 | Repeated burns-18 q2 (myoglobinuria) with reused labs. Needs a new KF5 decision and new labs | Replaced by KF5: after 4 L of 0.9% saline his bicarbonate falls. Is this hidden bleeding or an iatrogenic hyperchloremic acidosis? New labs: Na 142, Cl 119, HCO3 16, lactate 1.1, beta-hydroxybutyrate 0.2 mmol/L, creatinine 81 umol/L, venous pH 7.28. Anion gap 142 minus (119 plus 16) = 7. Key: hyperchloremic acidosis from saline. Source: European trauma bleeding guideline, sixth edition, 2023 (text under recommendation 10: base deficit reflects hypoperfusion "provided there is no other cause of metabolic acidosis such as renal failure or hyperchloremia", and lactate reflects it more specifically). The text under recommendation 15 also notes the concern that saline causes hyperchloremic acidosis. No CK, creatinine or potassium value from burns-18 or the trench case is reused. |
+| 50 q3 | Repeated environmental-13 q3 and burns-06 q3 (urine target), and overstated mannitol. Needs a KF6 decision outside rhabdomyolysis fluids | Replaced by KF6: before fixation of an undisplaced tibial plateau fracture he is not bleeding and takes no anticoagulant, and his INR is 1.5 after 5 L of crystalloid. Key: no correction of the INR. Source: Canadian Society for Transfusion Medicine, Choosing Wisely Canada list (last updated June 2018), item 3: "Don't transfuse plasma to correct a mildly elevated (<1.8) INR ... before a procedure." The Chavez source and every rhabdomyolysis fluid, mannitol and urine target claim are gone from the file. |
+| 50 stem | Follows from the above | Legs changed from "swollen and bruised" to "Both shins are bruised, the calves are soft and the foot pulses are palpable", so the case no longer points to crush syndrome. q1 and q4 (passed) still read correctly. The glucose result is no longer restated in the q2 update, which removes a mock-mode cue to the q1 key. |
+
+### Uniqueness check, round 3
+
+Grepped all catalogues (multiple-trauma, abdominal-pain, ems, burns, environmental, airway and the rest), plus `src/samps` and `src/cases`:
+
+- ABC score or massive transfusion prediction: absent everywhere.
+- Uncrossmatched blood despite an alloantibody: absent. The bank's blood bank items are about group O RhD negative in women (multiple-trauma-42) and Rh immune globulin, which are different decisions.
+- Hyperchloremic acidosis: no question keys it. It appears only as a harm in a gi-bleed and shock list, and in explanations that prefer Ringer's lactate for burns (burns s26) and sepsis (shock s16). Those teach fluid choice. 50 q2 tests reading a falling bicarbonate as iatrogenic rather than as hidden bleeding.
+- I also considered and rejected these, because each was already in the bank: transient responder classification (taught in multiple-trauma-21's explanation), recurrent hypoglycemia (cva, loc), compartment syndrome (burns, environmental, analgesia-sedation), central cord syndrome (msk s54), Hb not yet fallen (gi-bleed, shock, s45, s50), euglycemic DKA (abdominal-pain), ITP with platelets and IVIG (loc), LMWH reversal (no verifiable Canadian source found).
+
+### For the reviewer
+
+- 50 q3 and gi-bleed-33 q1 (s39) both key a choice not to correct an INR. gi-bleed-33 is an active variceal bleed in cirrhosis with an INR of 2.0 (rebalanced hemostasis). 50 q3 is a non-bleeding, noncirrhotic trauma patient before a procedure, with an INR under the CSTM 1.8 threshold. The population, phase of care and evidence differ, but the reviewer should decide whether this counts as the same decision.
+- 50 q2 is mapped to KF5. A worsening base deficit is the subtle change, and the complication it signals is iatrogenic, not hemorrhage. A reviewer may see it as KF6 (fluid targets). Coverage holds either way only if 50 q2 stays KF5, because it is the batch's only KF5 item.
+- 48 q3: the case does not say how common Kell-negative donor units are, so the explanation rests only on the Ringel data.
+
+### Coverage and key positions after round 3
+
+20 single questions and 2 menus (48 q1, 49 q1). Single key positions, first to fifth: 5, 4, 2, 4, 5. No position is above 25 percent and every position is used.
+
+| Key feature | Questions |
+|---|---|
+| 1 | 52 q1 |
+| 2 | 49 q2, 49 q5, 52 q3 |
+| 3 | 50 q4, 51 q1, 51 q2 |
+| 4 | 48 q3, 50 q1 |
+| 5 | 50 q2 |
+| 6 | 48 q1, 50 q3, 51 q3 |
+| 7 | 48 q2, 49 q1, 49 q3, 49 q4, 52 q2 |
+| 8 | 48 q4, 51 q4, 52 q4, 52 q5 |
+
+Checks: the s66 tsc grep prints nothing. `SAMP_BATCH=s66` vitest: 3 files, 136 tests passed. No dashes or semicolons in strings.
+
+### Sources verified in round 3
+
+- Nunez TC et al. Early prediction of massive transfusion in trauma: simple as ABC (assessment of blood consumption)? J Trauma. 2009. https://pubmed.ncbi.nlm.nih.gov/19204506/ (abstract read through PubMed E-utilities).
+- Ringel F et al. Safety of uncrossmatched ABO-compatible RBCs in alloimmunized patients with bleeding. Transfus Med Hemother. 2022. https://pmc.ncbi.nlm.nih.gov/articles/PMC9421688/ (abstract read through Europe PMC).
+- Rossaint R et al. The European guideline on management of major bleeding and coagulopathy following trauma: sixth edition. Crit Care. 2023. https://pmc.ncbi.nlm.nih.gov/articles/PMC9977110/ (full text read through Europe PMC: recommendations 10 and 15 and their text).
+- Canadian Society for Transfusion Medicine. Transfusion medicine: ten things physicians and patients should question. Choosing Wisely Canada. Last updated June 2018. https://choosingwiselycanada.org/wp-content/uploads/2017/02/Transfusion-medicine.pdf (PDF text read, item 3). The same wording is on https://www.transfusion.ca/Education/Choosing-Wisely/CSTM-Choosing-Wisely-List
+- Fischer PE et al. 2018 (ENA full text), items 6, 8 and 10.v. Reread for the 48 q4 wording.

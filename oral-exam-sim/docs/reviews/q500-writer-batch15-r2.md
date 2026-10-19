@@ -168,3 +168,28 @@ Revision against `docs/reviews/q500-verify2-batch15.md`. headache-building-over-
 
 - GI case: he still has exertional chest heaviness and a type 2 infarction from anemia. That is the case's mechanism and the reason for `q-scope`. Only the data and the graded resuscitation decisions that mirrored gi-bleed-14 were changed.
 - Unchanged from round 2: the sertraline and alcohol question, the lorazepam dose with a low GCS, and whether antibiotics are needed for early aspiration in the heat case.
+
+## Round 4
+
+This round changed weak-and-pale-after-a-stent only, against `docs/reviews/q500-verify3-batch15.md`. The other three cases passed and were not touched.
+
+Required fix 1: `q-handover` repeated cqi-39 q1 in s59, so it is non-branching again.
+- Deleted `c-honest`, `c-blame`, `c-vague`, `s-blame` and `s-vague`.
+- `next` is now "end". The prompt and model answer are unchanged.
+- `wp-pr5` and its CPSI 2011 source stay as ungraded content.
+
+Required fix 2: the ECG no longer points at the LAD territory.
+- The `ecg` finding now reads "Sinus tachycardia at 116/minute. New 1 mm downsloping ST depression in II, III, aVF, V5 and V6 compared with his discharge ECG. No ST elevation."
+- The `q-resus` prompt now reads "the ECG shows new diffuse ST depression".
+- The `response` finding now reads "ST depression improving".
+- `wp-p3` now reads "Interprets the new diffuse ST depression and troponin as demand ischemia".
+
+Optional fixes, both applied:
+- `wp-h4` is dropped from the `q-handover` rubric list, because `q-history` already tests it.
+- `s-open` now says the chest heaviness came back as he was lifted onto the stretcher. This replaces "feels better lying flat", so the later "eased" and "gone" lines make sense.
+
+Checks:
+- The batch15 tsc grep has no output.
+- `CASE_BATCH=batch15 npx vitest run tests/cases.test.ts tests/citations.test.ts` passed 45 of 45.
+- A path walk shows 8 questions, 3 branching questions (`q-history`, `q-scope`, `q-source`) and 635 s on every path.
+- Rubric points are unchanged at 7, 6, 10 and 8, 31 in total.

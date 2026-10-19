@@ -107,7 +107,7 @@ export const ABDOMINAL_PAIN_S62: Samp[] = [
         options: ["Abdominal radiograph", "Kidney and bladder ultrasound", "MR urography with gadolinium", "Noncontrast CT of the abdomen", "Pelvic ultrasound with Doppler"],
         correct: 1,
         explanation:
-          "NICE advises ultrasound as the first imaging test for children and young people with suspected renal colic. CT detects more stones, but the committee chose ultrasound first because of serious concern about radiation exposure at her age, keeping low-dose noncontrast CT for when the diagnosis is still uncertain. In the evidence NICE reviewed, MRI and plain radiographs were also less accurate than CT. A pelvic Doppler study looks at the ovaries and does not image the kidney or ureter.",
+          "NICE advises ultrasound as the first imaging test for children and young people with suspected renal colic. CT detects more stones, but the committee chose ultrasound first because of serious concern about radiation exposure at her age, keeping low-dose noncontrast CT for when the diagnosis is still uncertain. In the adult evidence NICE reviewed, MRI and plain radiographs were also less accurate than CT. A pelvic Doppler study looks at the ovaries and does not image the kidney or ureter.",
         keyFeature: { topic: "abdominal-pain", n: 7 },
         source: "nice-ng118-2019",
       },
@@ -131,7 +131,7 @@ export const ABDOMINAL_PAIN_S62: Samp[] = [
         options: ["Abdominal radiograph", "CT abdomen with IV contrast", "Low-dose noncontrast CT", "Repeat ultrasound in 1 week", "Urgent ureteroscopy"],
         correct: 2,
         explanation:
-          "When the diagnosis of renal colic is still uncertain after ultrasound in a young person, NICE advises considering low-dose noncontrast CT. Ultrasound misses more stones than CT, and her pain has returned with vomiting. A noncontrast study is the test for stones, so IV contrast adds nothing for this question. A plain radiograph is less accurate than CT. Waiting a week for another ultrasound leaves her symptoms unexplained, and ureteroscopy is a treatment that needs a confirmed stone first.",
+          "When the diagnosis of renal colic is still uncertain after ultrasound in a young person, NICE advises considering low-dose noncontrast CT. Ultrasound misses more stones than CT, and her pain has returned with vomiting. A noncontrast study is the test for stones, so IV contrast adds nothing for this question. In the adult evidence NICE reviewed, a plain radiograph was less accurate than CT. Waiting a week for another ultrasound leaves her symptoms unexplained, and ureteroscopy is a treatment that needs a confirmed stone first.",
         keyFeature: { topic: "abdominal-pain", n: 5 },
         source: "nice-ng118-2019",
       },
