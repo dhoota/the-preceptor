@@ -7,11 +7,12 @@ const META = { reviewed: false, author: "Preceptor", version: 1 } as const;
 
 const S = {
   phacPid: { id: "phac-pid", citation: "Public Health Agency of Canada. STI-associated syndromes guide: pelvic inflammatory disease. Canadian guidelines on sexually transmitted infections. Page modified 2026.", url: "https://www.canada.ca/en/public-health/services/infectious-diseases/sexual-health-sexually-transmitted-infections/canadian-guidelines/sti-associated-syndromes/pelvic-inflammatory-disease.html" },
-  cpsUti: { id: "cps-uti-2014", citation: "Robinson JL, Finlay JC, Lang ME, Bortolussi R, Canadian Paediatric Society Infectious Diseases and Immunization Committee and Community Paediatrics Committee. Urinary tract infections in infants and children: diagnosis and management. Paediatr Child Health. 2014." },
+  cpsUti: { id: "cps-uti-2014", citation: "Robinson JL, Finlay JC, Lang ME, Bortolussi R, Canadian Paediatric Society Infectious Diseases and Immunization Committee and Community Paediatrics Committee. Urinary tract infections in infants and children: diagnosis and management. Paediatr Child Health. 2014.", url: "https://doi.org/10.1093/pch/19.6.315" },
   cwcCar: { id: "cwc-radiology", citation: "Canadian Association of Radiologists. Radiology: recommendations. Choosing Wisely Canada. Last updated 2026.", url: "https://choosingwiselycanada.org/recommendation/radiology/" },
-  ohle: { id: "ohle-aas-2020", citation: "Ohle R, Yan JW, Yadav K, et al. Diagnosing acute aortic syndrome: a Canadian clinical practice guideline. CMAJ. 2020." },
-  escAorta: { id: "esc-aorta-2024", citation: "Mazzolai L, Teixido-Tura G, Lanzi S, et al. 2024 ESC Guidelines for the management of peripheral arterial and aortic diseases. Eur Heart J. 2024.", url: "https://doi.org/10.1093/eurheartj/ehae179" },
-  brandl: { id: "brandl-immunosuppressed-diverticulitis", citation: "Brandl A, Kratzer T, Kafka-Ritsch R, et al. Diverticulitis in immunosuppressed patients: a fatal outcome requiring a new approach? Can J Surg. 2016." },
+  ohle: { id: "ohle-aas-2020", citation: "Ohle R, Yan JW, Yadav K, et al. Diagnosing acute aortic syndrome: a Canadian clinical practice guideline. CMAJ. 2020.", url: "https://pmc.ncbi.nlm.nih.gov/articles/PMC7828987/" },
+  accAorta: { id: "acc-aha-aorta-2022", citation: "Isselbacher EM, Preventza O, Hamilton Black J, et al. 2022 ACC/AHA guideline for the diagnosis and management of aortic disease. A report of the American Heart Association/American College of Cardiology Joint Committee on Clinical Practice Guidelines. Circulation. 2022.", url: "https://pmc.ncbi.nlm.nih.gov/articles/PMC9876736/" },
+  brandl: { id: "brandl-immunosuppressed-diverticulitis", citation: "Brandl A, Kratzer T, Kafka-Ritsch R, et al. Diverticulitis in immunosuppressed patients: a fatal outcome requiring a new approach? Can J Surg. 2016.", url: "https://doi.org/10.1503/cjs.012915" },
+  wsesAmi: { id: "wses-ami-2022", citation: "Bala M, Catena F, Kashuk J, et al. Acute mesenteric ischemia: updated guidelines of the World Society of Emergency Surgery. World J Emerg Surg. 2022.", url: "https://doi.org/10.1186/s13017-022-00443-x" },
   wses: { id: "wses-diverticulitis-2020", citation: "Sartelli M, Weber DG, Kluger Y, et al. 2020 update of the WSES guidelines for the management of acute colonic diverticulitis in the emergency setting. World J Emerg Surg. 2020.", url: "https://doi.org/10.1186/s13017-020-00313-4" },
   tcPe: { id: "tc-pe-dx", citation: "Thrombosis Canada. Clinical guide. Pulmonary embolism (PE): diagnosis. 2025.", url: "https://thrombosiscanada.ca/clinical_guides/pdfs/PULMONARYEMBOLISMDIAGNOSISANDM_83.pdf" },
 } satisfies Record<string, Source>;
@@ -180,7 +181,7 @@ export const ABDOMINAL_PAIN_S62: Samp[] = [
         explanation:
           "Severe pain that persists despite opioids while the abdomen stays soft, with a raised lactate and poorly enhancing jejunum supplied from the false lumen, means the dissection is starving the bowel of blood. Malperfusion makes this a complicated type B dissection. The CT shows that the ascending aorta is not involved, both kidneys enhance normally and there is no rupture. No stone was seen to explain renal colic, and the blood on her dipstick does not outweigh the CT findings.",
         keyFeature: { topic: "abdominal-pain", n: 2 },
-        source: "esc-aorta-2024",
+        source: "acc-aha-aorta-2022",
       },
       {
         id: "q5",
@@ -189,12 +190,12 @@ export const ABDOMINAL_PAIN_S62: Samp[] = [
         options: ["Cardiac surgery for ascending repair", "General surgery for bowel resection", "ICU for blood pressure control alone", "Repeat CT angiography in 6 hours", "Vascular surgery for endovascular repair"],
         correct: 4,
         explanation:
-          "Type B dissection complicated by malperfusion needs urgent repair, and thoracic endovascular repair to cover the entry tear and restore true lumen flow is the recommended first approach. The bowel is assessed once flow is restored, so resection alone would leave the cause untreated. Blood pressure and heart rate control are needed but are not enough once malperfusion is present. Ascending aortic surgery is for type A dissection. Waiting 6 hours for a repeat CT allows the jejunum to infarct.",
+          "Type B dissection complicated by malperfusion needs intervention, and an endovascular approach that covers the entry tear and restores true lumen flow is preferred over open repair. The bowel is assessed once flow is restored, so resection alone would leave the cause untreated. IV beta blockade to a heart rate of 60 to 80/minute and a systolic pressure below 120 mmHg is needed, but it is not enough once malperfusion is present. Ascending aortic surgery is for type A dissection. Waiting 6 hours for a repeat CT allows the jejunum to infarct.",
         keyFeature: { topic: "abdominal-pain", n: 4 },
-        source: "esc-aorta-2024",
+        source: "acc-aha-aorta-2022",
       },
     ],
-    sources: [S.ohle, S.escAorta],
+    sources: [S.ohle, S.accAorta],
     ...META,
   },
 
@@ -221,13 +222,13 @@ export const ABDOMINAL_PAIN_S62: Samp[] = [
       {
         id: "q2",
         kind: "single",
-        prompt: "Which of the following statements about the softness of her abdomen is most accurate?",
-        options: ["It excludes a perforation", "It favours constipation", "It is expected with diabetes", "It may reflect prednisone use", "It rules out complicated disease"],
-        correct: 3,
+        prompt: "Which of the following diagnoses must be excluded alongside complicated diverticulitis in her?",
+        options: ["Acute mesenteric ischemia", "Biliary colic", "Irritable bowel syndrome", "Left ureteric colic", "Musculoskeletal wall pain"],
+        correct: 0,
         explanation:
-          "Long-term corticosteroids can blunt the inflammatory response, so peritoneal signs such as guarding and rebound may be absent even when the colon has perforated. In immunosuppressed patients with diverticulitis, perforation was common and in-hospital mortality was 20%, compared with 4.7% in immunocompetent patients. A soft abdomen therefore cannot exclude perforation or complicated disease in her. Diabetes does not explain it, and constipation does not cause pain this severe.",
-        keyFeature: { topic: "abdominal-pain", n: 6 },
-        source: "brandl-immunosuppressed-diverticulitis",
+          "Severe abdominal pain out of proportion to the examination should be assumed to be acute mesenteric ischemia until it is disproven, and she is 69 with diabetes and needs repeated opioids for an abdomen that feels soft. Mesenteric ischemia carries a mortality of about 50% if untreated, and no laboratory test is accurate enough to exclude it. Ureteric colic can be severe but is not lethal and does not explain reduced bowel sounds. Biliary colic is felt in the right upper quadrant. Irritable bowel syndrome and abdominal wall pain are diagnoses made only after serious causes are excluded.",
+        keyFeature: { topic: "abdominal-pain", n: 2 },
+        source: "wses-ami-2022",
       },
       {
         id: "q3",
@@ -236,7 +237,7 @@ export const ABDOMINAL_PAIN_S62: Samp[] = [
         options: ["Abdominal ultrasound", "CT abdomen with IV contrast", "Observe and reassess tomorrow", "Upright chest radiograph", "Urgent colonoscopy"],
         correct: 1,
         explanation:
-          "Contrast-enhanced CT is the imaging of first choice for suspected acute colonic diverticulitis, and the diagnosis should not rest on clinical examination alone, which is even less reliable in a patient on steroids. CT shows extraluminal gas, abscess and the extent of disease. An upright chest radiograph may show free air but cannot grade the disease, and an ambiguous ultrasound needs CT anyway. Observation delays the diagnosis in a patient at high risk of perforation. Colonoscopy has no role in acute assessment.",
+          "Contrast-enhanced CT is the imaging of first choice for suspected acute colonic diverticulitis, and the diagnosis should not rest on clinical examination alone, which is even less reliable in a patient on steroids. CT shows extraluminal gas, abscess and the extent of disease, and with an arterial phase it also shows the mesenteric vessels. An upright chest radiograph may show free air but cannot grade the disease, and an ambiguous ultrasound needs CT anyway. Observation delays the diagnosis in a patient at high risk of perforation. Colonoscopy has no role in acute assessment.",
         keyFeature: { topic: "abdominal-pain", n: 2 },
         source: "wses-diverticulitis-2020",
       },
@@ -248,12 +249,12 @@ export const ABDOMINAL_PAIN_S62: Samp[] = [
         options: ["Admit to medicine on oral antibiotics", "Observation with bowel rest", "Percutaneous drainage only", "Repeat CT in 48 hours", "Surgical consultation now"],
         correct: 4,
         explanation:
-          "Diffuse free air from a perforated sigmoid in a patient on long-term steroids needs a surgeon now, along with IV antibiotics and resuscitation. Immunocompromised patients are at high risk of failing non-operative treatment, and in one published series they needed emergency surgery more often. Percutaneous drainage can treat a contained abscess but not generalized free air. Oral antibiotics on a medical ward, bowel rest alone or a repeat CT in 2 days all delay source control as her blood pressure falls.",
+          "Diffuse free air from a perforated sigmoid in a patient on long-term steroids needs a surgeon now, along with IV antibiotics and resuscitation. Immunocompromised patients are at high risk of failing non-operative treatment. Percutaneous drainage can treat a contained abscess but not generalized free air. Oral antibiotics on a medical ward, bowel rest alone or a repeat CT in 2 days all delay source control as her blood pressure falls.",
         keyFeature: { topic: "abdominal-pain", n: 4 },
         source: "wses-diverticulitis-2020",
       },
     ],
-    sources: [S.brandl, S.wses],
+    sources: [S.brandl, S.wsesAmi, S.wses],
     ...META,
   },
 
@@ -264,7 +265,7 @@ export const ABDOMINAL_PAIN_S62: Samp[] = [
     alsoTopics: ["dvt-pe"],
     title: "Sharp pain under the right ribs",
     stem:
-      "A 31-year-old woman presents to the emergency department with 3 days of sharp right upper abdominal pain that is worse when she takes a deep breath. Two days ago a walk-in clinic diagnosed pyelonephritis from a dipstick showing trace leukocytes and trace blood, and prescribed ciprofloxacin. The pain is no better. She has had no fever, vomiting or dysuria. She takes a combined oral contraceptive and had surgical fixation of an ankle fracture 3 weeks ago. She has mild right upper quadrant tenderness without guarding and no costovertebral angle tenderness. The legs are not swollen. A right upper quadrant ultrasound today is normal.",
+      "A 31-year-old woman presents to the emergency department with 3 days of sharp right upper abdominal pain that is worse when she takes a deep breath. Two days ago a walk-in clinic diagnosed pyelonephritis from a dipstick showing trace leukocytes and trace blood, and prescribed ciprofloxacin. The pain is no better, and this morning she coughed up a streak of blood. She has had no fever, vomiting or dysuria. She takes a combined oral contraceptive and had surgical fixation of an ankle fracture 3 weeks ago. She has mild right upper quadrant tenderness without guarding and no costovertebral angle tenderness. The legs are not swollen. A right upper quadrant ultrasound today is normal.",
     vitals: { temperature: "37.1°C oral", pulse: "112/minute", resp: "22/minute", bp: "124/78 mmHg", o2sat: "93% on room air", weight: "70 kg" },
     questions: [
       {
@@ -285,7 +286,7 @@ export const ABDOMINAL_PAIN_S62: Samp[] = [
         options: ["Acute cholecystitis", "Acute pyelonephritis", "Fitz-Hugh-Curtis syndrome", "Pulmonary embolism", "Right lower lobe pneumonia"],
         correct: 3,
         explanation:
-          "Surgery 3 weeks ago and a combined oral contraceptive are provoking factors for venous thromboembolism, and pleuritic pain with tachycardia and hypoxemia fits pulmonary embolism irritating the pleura over the liver. A normal ultrasound makes cholecystitis unlikely. She has no fever, dysuria or flank tenderness for pyelonephritis, and no fever or cough for pneumonia. Fitz-Hugh-Curtis perihepatitis follows pelvic infection, and she has no pelvic symptoms.",
+          "Surgery 3 weeks ago and a combined oral contraceptive are provoking factors for venous thromboembolism, and pleuritic pain with tachycardia, hypoxemia and a streak of hemoptysis fits pulmonary embolism irritating the pleura over the liver. A normal ultrasound makes cholecystitis unlikely. She has no fever, dysuria or flank tenderness for pyelonephritis, and no fever or cough for pneumonia. Fitz-Hugh-Curtis perihepatitis follows pelvic infection, and she has no pelvic symptoms.",
         keyFeature: { topic: "abdominal-pain", n: 3 },
         source: "tc-pe-dx",
       },
@@ -296,7 +297,7 @@ export const ABDOMINAL_PAIN_S62: Samp[] = [
         options: ["CT abdomen with IV contrast", "D-dimer, image only if positive", "HIDA scan of the gallbladder", "Imaging for pulmonary embolism now", "Repeat urine culture"],
         correct: 3,
         explanation:
-          "Her Wells score is 6.0: 1.5 for a pulse over 100/minute, 1.5 for surgery in the past 4 weeks and 3 because pulmonary embolism is the most likely diagnosis. A score above 4.5 means embolism is likely, and patients with a likely pretest probability go straight to imaging with CT pulmonary angiography or a ventilation-perfusion scan. A negative D-dimer rules out embolism only when the pretest probability is unlikely. Abdominal CT, a HIDA scan and another urine culture keep looking below the diaphragm.",
+          "Her Wells score is 7.0: 1.5 for a pulse over 100/minute, 1.5 for surgery in the past 4 weeks, 1 for hemoptysis and 3 because pulmonary embolism is the most likely diagnosis. A score above 6 is a high pretest probability, and above 4.5 embolism is likely, so she goes straight to imaging with CT pulmonary angiography or a ventilation-perfusion scan. A negative D-dimer rules out embolism only when the pretest probability is low or moderate. Abdominal CT, a HIDA scan and another urine culture keep looking below the diaphragm.",
         keyFeature: { topic: "abdominal-pain", n: 5 },
         source: "tc-pe-dx",
       },
