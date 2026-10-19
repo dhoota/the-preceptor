@@ -112,3 +112,7 @@ The stem now ends "She is treated for septic shock." The ICU outcome moved to th
 
 ### Checks
 The type check shows no s59 errors. `SAMP_BATCH=s59` samps, samp-quality and citations tests pass (132).
+
+## Round 5
+
+Per `docs/reviews/q500-verify4-s59.md`, cqi-37 q2 update set to "She is admitted to the ICU. The incident is reported the same day." and q3 update set to "She recovers in the ICU. The hospital starts an incident analysis." Nothing else changed. s59 type check clean and tests pass (132).
