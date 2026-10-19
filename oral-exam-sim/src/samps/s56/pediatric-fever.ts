@@ -25,6 +25,7 @@ export const PEDIATRIC_FEVER_S56: Samp[] = [
   {
     id: "pediatric-fever-48",
     title: "Hot, restless toddler after a weekend away",
+    alsoTopics: ["tox", "infectious-diseases"],
     stem:
       "A 3-year-old girl is brought to the emergency department by her parents at 21:00 because she has been hot, restless and confused for 3 hours. She cries out at shadows on the wall and reaches for things that are not there. The family drove home this afternoon from a cool, rainy weekend at a cottage and arrived at 15:00. She has had no cough, vomiting, diarrhea or rash, and she has not passed urine since noon. She is healthy and her immunizations are up to date. Her face and chest are red and hot, with no sweat on her scalp or in her groin. Her lips are cracked and her tongue is dry. Her pupils are wide and barely constrict to light. Her abdomen is soft with few bowel sounds, and there is a dull swelling above the pubis. Her neck is supple and she moves all limbs.",
     vitals: { temperature: "38.9°C rectal", pulse: "168/minute", resp: "28/minute", bp: "102/64 mmHg", o2sat: "98% on room air", weight: "15 kg" },
@@ -102,7 +103,7 @@ export const PEDIATRIC_FEVER_S56: Samp[] = [
         ],
         correct: 1,
         explanation:
-          "Low-grade fever with weight loss despite a big appetite, palpitations, tremor, warm moist skin, a diffuse goitre and lid retraction point to Graves hyperthyroidism, an uncommon cause of persistent fever in a child with no source. Temperature is one of the features scored in the ATA point scale for thyroid storm. Inflammatory bowel disease causes weight loss with abdominal pain and diarrhea, not tremor and a goitre. Leukemia causes pallor, bruising and bone pain. Endocarditis is unlikely without a murmur or heart disease, and lupus would bring a rash or joint pain.",
+          "Low-grade fever with weight loss despite a big appetite, palpitations, tremor, warm moist skin, a diffuse goitre and lid retraction point to Graves hyperthyroidism, an uncommon cause of persistent fever in a child with no source. Temperature is one of the features scored in the Burch-Wartofsky point scale for thyroid storm, which the ATA guideline uses. Inflammatory bowel disease causes weight loss with abdominal pain and diarrhea, not tremor and a goitre. Leukemia causes pallor, bruising and bone pain. Endocarditis is unlikely without a murmur or heart disease, and lupus would bring a rash or joint pain.",
         keyFeature: { topic: "pediatric-fever", n: 5 },
         source: "ata-hyperthyroidism-2016",
       },
@@ -138,7 +139,7 @@ export const PEDIATRIC_FEVER_S56: Samp[] = [
         ],
         correct: 0,
         explanation:
-          "Fever, sore throat and mouth ulcers weeks after starting methimazole for Graves disease raise concern for agranulocytosis. The ATA advises that a child on an antithyroid drug who develops fever, mouth sores or pharyngitis stop the drug at once and have a white count measured. A CBC with differential shows whether her neutrophils are gone, which decides how urgent her care is. A rapid strep test, a viral throat swab and a monospot test look for common causes of a sore throat but would miss a neutrophil count near zero. A chest X-ray is not needed without cough or chest signs.",
+          "With Graves disease, her daily tablet is most likely an antithyroid drug such as methimazole, and fever, sore throat and mouth ulcers weeks after starting it raise concern for agranulocytosis. The ATA advises that a child on an antithyroid drug who develops fever, mouth sores or pharyngitis stop the drug at once and have a white count measured. A CBC with differential shows whether her neutrophils are gone, which decides how urgent her care is. A rapid strep test, a viral throat swab and a monospot test look for common causes of a sore throat but would miss a neutrophil count near zero. A chest X-ray is not needed without cough or chest signs.",
         keyFeature: { topic: "pediatric-fever", n: 1 },
         source: "ata-hyperthyroidism-2016",
       },
@@ -233,6 +234,7 @@ export const PEDIATRIC_FEVER_S56: Samp[] = [
   {
     id: "pediatric-fever-51",
     title: "Girl whose legs hurt too much to walk",
+    alsoTopics: ["shock"],
     stem:
       "An 11-year-old girl is brought to the emergency department by her father 9 hours after a fever began at school. She has vomited twice. For the past 2 hours she has said her legs hurt so much that she does not want to walk, and her father says her hands and feet feel cold although she feels hot. She has no cough, sore throat, rash or urinary symptoms. She is healthy, takes no medications and her immunizations are up to date. She is pale and quiet but answers questions. Her hands and feet are cool and her capillary refill is 4 seconds. Her neck is supple. A full skin examination shows no rash. Her throat, ears and chest are normal.",
     vitals: { temperature: "39.4°C oral", pulse: "142/minute", resp: "28/minute", bp: "104/62 mmHg", o2sat: "98% on room air", weight: "38 kg" },
