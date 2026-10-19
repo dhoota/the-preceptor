@@ -391,4 +391,86 @@ export const INFECTIOUS_DISEASES_S55: Samp[] = [
     sources: [S.phacSyphClin, S.phacSyphTest, S.phacSyphTx],
     ...META,
   },
+
+  /* 52 Influenza in a long-term care resident with kidney disease --------- */
+  {
+    id: "infectious-diseases-52",
+    title: "Cough and aches from a long-term care home",
+    stem:
+      "An 84-year-old woman is sent to the emergency department from her long-term care home with 1 day of fever, dry cough, sore throat and muscle aches. Four other residents on her unit became ill with similar symptoms in the past 3 days, and one has tested positive for influenza A. She received this season's influenza vaccine. She has hypertension and chronic kidney disease, and takes amlodipine. She is alert and drinking. There are scattered wheezes but no crackles. A chest X-ray shows no consolidation. A nasopharyngeal swab is positive for influenza A. Her creatinine is 142 umol/L, and her estimated creatinine clearance is 26 mL/minute.",
+    vitals: { temperature: "38.3°C oral", pulse: "96/minute", resp: "20/minute", bp: "138/76 mmHg", o2sat: "94% on room air", weight: "54 kg" },
+    questions: [
+      {
+        id: "q1",
+        kind: "single",
+        prompt: "Which of the following is the most appropriate antimicrobial treatment for this patient's illness?",
+        options: [
+          "amoxicillin-clavulanate 875 mg PO twice daily",
+          "ceftriaxone 1 g IV daily",
+          "oseltamivir 30 mg PO once daily",
+          "oseltamivir 75 mg PO once daily",
+          "oseltamivir 75 mg PO twice daily",
+        ],
+        correct: 2,
+        explanation:
+          "A positive swab with a clear chest X-ray and no crackles means influenza without a bacterial pneumonia, so an antibacterial adds harm without benefit. AMMI Canada lists residents of nursing homes and other chronic care facilities as high risk, so she is treated with an antiviral. Her creatinine clearance of 26 mL/minute falls in the 10 to 30 mL/minute band, where the treatment dose is 30 mg once daily for 5 days rather than the usual 75 mg twice daily. 75 mg once daily is the prophylaxis dose for normal kidney function.",
+        keyFeature: { topic: "infectious-diseases", n: 9 },
+        source: "ammi-antivirals-2019",
+      },
+      {
+        id: "q2",
+        kind: "single",
+        prompt: "Which of the following findings over the next week would most justify adding an antibacterial to her treatment?",
+        options: [
+          "Cough lasting into the second week",
+          "Fever returning after initial improvement",
+          "Green sputum on day 3",
+          "Muscle aches lasting 5 days",
+          "Wheeze persisting after the fever ends",
+        ],
+        correct: 1,
+        explanation:
+          "IDSA 2018 advises investigating and empirically treating bacterial coinfection in patients with influenza who deteriorate after initial improvement, especially after antiviral treatment. A fever that returns after she has started to recover is that pattern, and Streptococcus pneumoniae and Staphylococcus aureus are the usual causes. A cough that lingers into the second week, aches for 5 days, coloured sputum and wheeze after the fever ends are all common in influenza alone and are not by themselves a reason for an antibiotic.",
+        keyFeature: { topic: "infectious-diseases", n: 9 },
+        source: "idsa-influenza-2018",
+      },
+      {
+        id: "q3",
+        kind: "single",
+        prompt: "Which of the following is the most appropriate plan for the residents on her unit who are not ill?",
+        options: [
+          "Influenza vaccine booster for all residents",
+          "Isolation of the unit without antivirals",
+          "Oseltamivir only for unvaccinated residents",
+          "Prophylactic oseltamivir for all residents",
+          "Swab all residents and treat positives",
+        ],
+        correct: 3,
+        explanation:
+          "IDSA 2018 recommends antiviral chemoprophylaxis for all exposed residents of a long-term care facility once an influenza outbreak is identified, regardless of their vaccination history, along with other outbreak control measures. Vaccine protection is often incomplete in frail older adults, so limiting prophylaxis to the unvaccinated leaves most of the unit exposed. A booster dose of vaccine cannot protect them in time. Isolation alone does not stop spread on a unit that already has five cases. Swabbing people without symptoms and treating only positives misses those in the incubation period.",
+        keyFeature: { topic: "infectious-diseases", n: 10 },
+        source: "idsa-influenza-2018",
+      },
+      {
+        id: "q4",
+        kind: "single",
+        update: "One exposed resident has an estimated creatinine clearance of 45 mL/minute.",
+        prompt: "Which of the following oseltamivir regimens is most appropriate as prophylaxis for this resident?",
+        options: [
+          "oseltamivir 30 mg PO on alternate days",
+          "oseltamivir 75 mg PO once daily",
+          "oseltamivir 30 mg PO once daily",
+          "oseltamivir 75 mg PO twice daily",
+          "oseltamivir 30 mg PO twice daily",
+        ],
+        correct: 2,
+        explanation:
+          "AMMI Canada adjusts oseltamivir to creatinine clearance. For a clearance of 30 to 60 mL/minute, the prophylaxis dose is 30 mg once daily until the outbreak is over, and treatment would be 75 mg once daily or 30 mg twice daily. 75 mg once daily is the prophylaxis dose above 60 mL/minute, and 30 mg on alternate days is for a clearance of 10 to 30 mL/minute. Twice daily dosing is a treatment schedule, not prevention.",
+        keyFeature: { topic: "infectious-diseases", n: 10 },
+        source: "ammi-antivirals-2019",
+      },
+    ],
+    sources: [S.ammi, S.idsaFlu],
+    ...META,
+  },
 ];
