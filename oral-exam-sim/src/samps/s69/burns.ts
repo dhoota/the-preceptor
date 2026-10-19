@@ -212,10 +212,10 @@ export const BURNS_S69: Samp[] = [
         kind: "single",
         update: "Her only IV, in the burned skin of her left forearm, has started to leak. Her legs have no usable veins, so a long cannula is placed through burned skin of her right forearm.",
         prompt: "Which of the following is the most appropriate way to secure the new cannula in her burned forearm?",
-        options: ["Adhesive transparent dressing", "Circumferential elastic bandage", "Sutures to the skin", "Tape wrapped around the forearm", "Tissue adhesive over the hub"],
-        correct: 2,
+        options: ["Sutures to the skin", "Tape wrapped around the forearm", "Tissue adhesive over the hub", "Transparent adhesive dressing", "Wrapped elastic bandage"],
+        correct: 0,
         explanation:
-          "A line placed through burned skin is best sutured in place, because tape and adhesive dressings often fail to stick to burned tissue, especially when it is wet and weeping. An adhesive transparent dressing or tissue adhesive over the hub has nothing reliable to hold on to. Tape or an elastic bandage wrapped around the forearm also tightens as the arm swells and can restrict blood flow to a burned limb.",
+          "A line placed through burned skin is best sutured in place, because tape and adhesive dressings often fail to stick to burned tissue, especially when it is wet and weeping. A transparent adhesive dressing or tissue adhesive over the hub has nothing reliable to hold on to. Tape or an elastic bandage wrapped around the forearm also tightens as the arm swells and can restrict blood flow to a burned limb.",
         keyFeature: { topic: "burns", n: 4 },
         source: "nb-burn-care",
       },

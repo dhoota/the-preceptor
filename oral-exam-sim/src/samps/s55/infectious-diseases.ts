@@ -153,6 +153,24 @@ export const INFECTIOUS_DISEASES_S55: Samp[] = [
       {
         id: "q3",
         kind: "single",
+        update: "She asks for something to slow the diarrhea before she goes back to the residence.",
+        prompt: "Which of the following is the most appropriate medication to reduce her stool frequency?",
+        options: [
+          "bismuth subsalicylate 524 mg PO",
+          "cholestyramine 4 g PO",
+          "codeine 30 mg PO",
+          "loperamide 4 mg PO",
+          "octreotide 100 mcg SC",
+        ],
+        correct: 3,
+        explanation:
+          "IDSA 2017 states that loperamide may be given to immunocompetent adults with acute watery diarrhea, and that it should be avoided where toxic megacolon may result, as in bloody or inflammatory diarrhea. Her stools are watery without blood and her temperature is 37.6°C, so it is reasonable alongside oral fluids. The usual dose is 4 mg, then 2 mg after each loose stool, to a maximum of 16 mg a day. Codeine sedates an older adult and is not used to treat diarrhea. Bismuth subsalicylate adds a salicylate load while her creatinine is raised. Cholestyramine treats bile acid diarrhea, and octreotide is for secretory diarrhea from tumours or chemotherapy.",
+        keyFeature: { topic: "infectious-diseases", n: 9 },
+        source: "idsa-diarrhea-2017",
+      },
+      {
+        id: "q4",
+        kind: "single",
         prompt: "Which of the following new findings would most justify stool testing and possible antibiotic treatment for her?",
         options: [
           "Blood in stools with fever and tenesmus",
@@ -177,7 +195,7 @@ export const INFECTIOUS_DISEASES_S55: Samp[] = [
     id: "infectious-diseases-50",
     title: "Fever and a limp in a woman who uses drugs",
     stem:
-      "A 31-year-old woman presents to the emergency department with 4 days of fever, chills and an ache in her right thigh that makes her limp. She injects fentanyl and methamphetamine and says she uses the veins in her arms. She is housed in a supportive housing building and has no other medical history. She has no cough, urinary symptoms or abdominal pain. She is wearing jeans and a hooded sweatshirt. Her forearms show old scars without redness or swelling. Her teeth are in poor repair but her gums are not swollen. Heart sounds are normal with no murmur. Her chest is clear.",
+      "A 31-year-old woman presents to the emergency department with 4 days of fever, chills and an ache in her right thigh that makes her limp. She injects fentanyl, smokes methamphetamine and says she uses the veins in her arms. She has HIV and stopped antiretroviral therapy 18 months ago. Her last CD4 count, 2 months ago, was 150 x 10^6/L. Her hepatitis C was cured with treatment 2 years ago. She smokes a pack of cigarettes a day. She has no cough, urinary symptoms or abdominal pain. She is wearing jeans and a hooded sweatshirt. Her forearms show old scars without redness or swelling. Her teeth are in poor repair but her gums are not swollen. Heart sounds are normal with no murmur. Her chest is clear.",
     vitals: { temperature: "38.8°C oral", pulse: "116/minute", resp: "20/minute", bp: "108/66 mmHg", o2sat: "98% on room air", weight: "52 kg" },
     questions: [
       {
@@ -218,22 +236,39 @@ export const INFECTIOUS_DISEASES_S55: Samp[] = [
       {
         id: "q3",
         kind: "single",
-        prompt: "Which of the following features of her drug use most increased her risk of this complication?",
+        prompt: "Which of the following organisms is the most likely cause of the infection in her groin?",
         options: [
-          "Drinking alcohol most days",
-          "Injecting into the groin",
-          "Smoking crack cocaine",
-          "Snorting crushed tablets",
-          "Using drugs alone at home",
+          "Eikenella corrodens",
+          "Klebsiella pneumoniae",
+          "Pseudomonas aeruginosa",
+          "Staphylococcus aureus",
+          "Streptococcus anginosus group",
         ],
-        correct: 1,
+        correct: 3,
         explanation:
-          "The femoral vein in the groin lies right beside the femoral artery, and repeated groin injection punctures or infects the arterial wall, which is how infected pseudoaneurysms form in people who inject drugs. Coughlin and Mavor describe pseudoaneurysm as a serious consequence of injection, with ligation of the femoral artery often the safest repair. Using alone raises the risk of a fatal overdose rather than of this infection. Smoking, snorting and alcohol carry their own harms but do not puncture the artery.",
+          "Staphylococcus aureus grew in 90% of infected femoral pseudoaneurysms in a 10 year series of people who inject drugs, so her empiric antibiotic must cover it first, including MRSA where local rates or her history call for it. Skin organisms are carried into the vessel wall by repeated nonsterile punctures. Pseudomonas aeruginosa, Klebsiella and the Streptococcus anginosus group were each found only occasionally in that series. Eikenella corrodens comes from mouth flora, for example when a needle is licked, and is an uncommon cause. Blood and operative cultures then guide the final choice.",
+        keyFeature: { topic: "infectious-diseases", n: 8 },
+        source: "samarakoon-ifp",
+      },
+      {
+        id: "q4",
+        kind: "single",
+        prompt: "Which of the following other features of her history most increases her risk of a bloodstream infection?",
+        options: [
+          "Cured hepatitis C",
+          "Daily tobacco smoking",
+          "HIV with a low CD4 count",
+          "Methamphetamine smoking",
+          "Poor dental health",
+        ],
+        correct: 2,
+        explanation:
+          "In a large HIV clinic cohort, a low CD4 count was an independent predictor of MRSA bacteremia, alongside injection drug use, with the risk highest at the lowest counts. Her count of 150 x 10^6/L after 18 months off antiretroviral therapy adds this host factor to her injecting, and reconnecting her with HIV care belongs in the admission plan. Hepatitis C that has been cured no longer adds this risk. Tobacco and methamphetamine smoking and poor dental health carry other harms but were not among the predictors that study found.",
         keyFeature: { topic: "infectious-diseases", n: 3 },
-        source: "coughlin-drug-arterial",
+        source: "burkey-hiv-mrsa",
       },
     ],
-    sources: [S.tresson, S.guelbi, S.coughlin],
+    sources: [S.tresson, S.guelbi, S.samarakoon, S.burkey],
     ...META,
   },
 
@@ -324,7 +359,7 @@ export const INFECTIOUS_DISEASES_S55: Samp[] = [
         options: ["1 month", "3 months", "6 months", "12 months", "24 months"],
         correct: 2,
         explanation:
-          "PHAC sets the partner notification period by stage of syphilis: 3 months before symptom onset for primary syphilis, 6 months for secondary syphilis and 1 year for early latent syphilis. She has secondary syphilis, so partners from the past 6 months are traced, tested and treated, and those from the previous 90 days are strongly considered for treatment without waiting for results. One month misses contacts who may already be infected. Three months is the primary syphilis period. Twelve months is the early latent syphilis period, and 24 months is longer than any early stage, not to a rash she has had for days. Syphilis is reportable to public health in every province and territory, and public health can help with notification.",
+          "PHAC sets the partner notification period by stage of syphilis: 3 months before symptom onset for primary syphilis, 6 months for secondary syphilis and 1 year for early latent syphilis. She has secondary syphilis, so partners from the past 6 months are traced, tested and treated, and those from the previous 90 days are strongly considered for treatment without waiting for results. One month misses contacts who may already be infected. Three months is the primary syphilis period. Twelve months is the early latent syphilis period, and 24 months goes beyond any early stage. Syphilis is reportable to public health in every province and territory, and public health can help with notification.",
         keyFeature: { topic: "infectious-diseases", n: 10 },
         source: "phac-syphilis-treatment",
       },
@@ -338,7 +373,7 @@ export const INFECTIOUS_DISEASES_S55: Samp[] = [
     id: "infectious-diseases-52",
     title: "Cough and aches from a long-term care home",
     stem:
-      "An 84-year-old woman is sent to the emergency department from her long-term care home with 1 day of fever, dry cough, sore throat and muscle aches. Four other residents on her unit became ill with similar symptoms in the past 3 days, and one has tested positive for influenza A. She received this season's influenza vaccine. She has hypertension and chronic kidney disease, and takes amlodipine. She is alert and drinking. There are scattered wheezes but no crackles. A chest X-ray shows no consolidation. A nasopharyngeal swab is positive for influenza A. Her creatinine is 142 umol/L, and her estimated creatinine clearance is 26 mL/minute.",
+      "An 84-year-old woman is sent to the emergency department from her long-term care home with 1 day of fever, dry cough, sore throat and muscle aches. Four other residents on her unit became ill with similar symptoms in the past 3 days, and one has tested positive for influenza A. She received this season's influenza vaccine. She has hypertension and chronic kidney disease, and takes amlodipine. She is alert and drinking. There are scattered wheezes but no crackles. A chest X-ray shows no consolidation. A nasopharyngeal swab is positive for influenza A. Her creatinine is 142 umol/L, and her estimated creatinine clearance is 22 mL/minute.",
     vitals: { temperature: "38.3°C oral", pulse: "96/minute", resp: "20/minute", bp: "138/76 mmHg", o2sat: "94% on room air", weight: "54 kg" },
     questions: [
       {
@@ -354,7 +389,7 @@ export const INFECTIOUS_DISEASES_S55: Samp[] = [
         ],
         correct: 2,
         explanation:
-          "A positive swab with a clear chest X-ray and no crackles means influenza without a bacterial pneumonia, so an antibacterial adds harm without benefit. AMMI Canada lists residents of nursing homes and other chronic care facilities as high risk, so she is treated with an antiviral. Her creatinine clearance of 26 mL/minute falls in the 10 to 30 mL/minute band, where the treatment dose is 30 mg once daily for 5 days rather than the usual 75 mg twice daily. 75 mg once daily is the prophylaxis dose for normal kidney function.",
+          "A positive swab with a clear chest X-ray and no crackles means influenza without a bacterial pneumonia, so an antibacterial adds harm without benefit. AMMI Canada lists residents of nursing homes and other chronic care facilities as high risk, so she is treated with an antiviral. Her creatinine clearance of 22 mL/minute falls in the 10 to 30 mL/minute band, where the treatment dose is 30 mg once daily for 5 days rather than the usual 75 mg twice daily. 75 mg once daily is the prophylaxis dose for normal kidney function.",
         keyFeature: { topic: "infectious-diseases", n: 9 },
         source: "ammi-antivirals-2019",
       },
