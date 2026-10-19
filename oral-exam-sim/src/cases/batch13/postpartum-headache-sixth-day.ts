@@ -4,7 +4,7 @@ import type { OralCase } from "@/engine/types";
 
 export const postpartumHeadacheSixthDay: OralCase = {
   id: "postpartum-headache-sixth-day",
-  title: "Six days after the birth",
+  title: "Sparkling lights in both eyes",
   blueprint: "obgyn",
   alsoCovers: ["neuro", "comm"],
   priorityTopic: "pre-eclampsia",
@@ -79,7 +79,7 @@ export const postpartumHeadacheSixthDay: OralCase = {
     {
       id: "repeat-bp",
       label: "Repeat blood pressure",
-      result: "15 minutes after triage, seated, with a large adult cuff: 168/110 mmHg. Pulse 94.",
+      result: "15 minutes after triage, seated, with a large adult cuff: 176/104 mmHg. Pulse 94.",
     },
     {
       id: "neuro",
@@ -157,7 +157,7 @@ export const postpartumHeadacheSixthDay: OralCase = {
         {
           id: "c-treat",
           label:
-            "I repeated the BP in 15 minutes and got 168/110. I gave labetalol 20 mg IV, started magnesium sulfate 4 g IV over 15 minutes then 1 g/h, sent pre-eclampsia labs and urine, and called the obstetrician.",
+            "I repeated the BP in 15 minutes and got 176/104. I gave labetalol 20 mg IV, started magnesium sulfate 4 g IV over 15 minutes then 1 g/h, sent pre-eclampsia labs and urine, and called the obstetrician.",
           next: "q-history",
           quality: "strong",
           feedback:
@@ -376,7 +376,7 @@ export const postpartumHeadacheSixthDay: OralCase = {
     {
       kind: "say",
       id: "s-partner",
-      phase: "17:15",
+      phase: "Later that afternoon",
       text:
         "Her BP is now 150/96. The baby is crying. Her partner says: \"She has been breastfeeding him. Someone said all these drugs mean he has to go on formula. " +
         "And can she come home tonight once the pressure is down? I can't manage our son and a newborn on my own.\"",

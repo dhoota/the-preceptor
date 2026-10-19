@@ -157,7 +157,7 @@ export const firstTrimesterLossMechanicalValve: OralCase = {
           next: "q-history",
           quality: "strong",
           feedback:
-            "This is the right frame. A young woman compensates well, so a pulse of 118 and a 30 mmHg drop on sitting are late signs, not reassurance. Running the speculum exam and the ultrasound in parallel with resuscitation finds the cause fastest. Calling gynecology early buys time if she needs evacuation.",
+            "This is the right frame. A young woman compensates well, so a pulse rise of 24 and an 18 mmHg fall in systolic pressure on sitting are late signs, not reassurance. Running the speculum exam and the ultrasound in parallel with resuscitation finds the cause fastest. Calling gynecology early buys time if she needs evacuation.",
         },
         {
           id: "c-wait-us",
@@ -245,7 +245,7 @@ export const firstTrimesterLossMechanicalValve: OralCase = {
         "This is major bleeding. Hemoglobin has fallen by more than 20 g/L and she is hypotensive.",
         "Transfuse red cells now. O negative until crossmatched blood is ready, because she is Rh D negative and of childbearing age.",
         "Give 4 factor PCC now. 2000 IU for an INR of 3 to 5, or 35 IU/kg, about 2240 IU at 64 kg.",
-        "Give IV vitamin K with the PCC, in a dose agreed with cardiology. A 10 mg dose suits only when warfarin will not restart for a week.",
+        "Give IV vitamin K with the PCC. Canadian guidance gives them together because the PCC effect fades over about 6 hours. Agree the dose with cardiology, since anticoagulation restarts within days.",
         "Call cardiology. Reversal is worth the small short term risk of valve thrombosis when bleeding is uncontrolled.",
         "Recheck the INR after the PCC. Plan IV unfractionated heparin once bleeding is controlled.",
       ],
@@ -564,10 +564,10 @@ export const firstTrimesterLossMechanicalValve: OralCase = {
       id: "ft-m3",
       competency: "management",
       criterion: "management",
-      text: "Gives IV vitamin K with the dose agreed with cardiology, knowing 10 mg suits only when warfarin will not restart within a week.",
+      text: "Gives IV vitamin K with the PCC, with the dose agreed with cardiology because anticoagulation restarts within days.",
       points: 1,
-      teaching: "In mechanical valves with uncontrollable bleeding, PCC is reasonable and adjunctive IV vitamin K is reasonable when warfarin will not resume for 7 days. Lower doses keep restarting simple.",
-      source: "acc-valve",
+      teaching: "PCC corrects the INR for about 6 hours. IV vitamin K given at the same time sustains the correction and, at appropriate doses, does not cause warfarin resistance.",
+      source: "nac-pcc",
     },
     {
       id: "ft-m4",

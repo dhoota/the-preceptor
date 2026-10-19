@@ -4,7 +4,7 @@ import type { OralCase } from "@/engine/types";
 
 export const lateDinnerChestPain: OralCase = {
   id: "late-dinner-chest-pain",
-  title: "Chest pain after a family dinner",
+  title: "Driven in late by his wife",
   blueprint: "cardio",
   alsoCovers: ["id", "procedures"],
   priorityTopic: "chest-pain",

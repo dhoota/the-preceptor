@@ -333,9 +333,9 @@ export const workTrailerHeaterBurns: OralCase = {
           id: "c-elevate",
           label: "I elevated the arm on two pillows, gave more fentanyl and planned to reassess in 2 hours.",
           next: "s-elevate",
-          quality: "partial",
+          quality: "unsafe",
           feedback:
-            "Rising analgesic needs are a warning sign, not a solution. High elevation lowers arterial inflow and can worsen compartment ischemia. Pain on passive stretch with numbness needs a surgeon now.",
+            "Rising analgesic needs are a warning sign, not a solution. High elevation lowers arterial inflow and can worsen compartment ischemia. Pain on passive stretch with numbness needs a surgeon now. Waiting 2 hours risks permanent muscle and nerve loss.",
         },
         {
           id: "c-transfer",

@@ -99,7 +99,7 @@ export const stoppedAntiplateletsDentalStemi: OralCase = {
     },
     {
       id: "ecg2",
-      label: "ECG at 06:58",
+      label: "Repeat ECG",
       result: "Sinus rhythm at 102. ST elevation of 3 mm in V1 to V4 and 1.5 mm in I and aVL. Reciprocal 1 mm ST depression in III and aVF.",
     },
     {
@@ -123,7 +123,7 @@ export const stoppedAntiplateletsDentalStemi: OralCase = {
       label: "Transport status",
       result:
         "The PCI centre accepts her. Both local ambulance crews are out on calls and the next available crew is 70 minutes away. Fog has grounded the air ambulance. " +
-        "The PCI centre estimates she would reach the lab at about 09:15 at the earliest.",
+        "The PCI centre estimates she would reach the lab at about 09:30 at the earliest.",
     },
     {
       id: "husband",
@@ -256,7 +256,7 @@ export const stoppedAntiplateletsDentalStemi: OralCase = {
       phase: "Minutes later",
       text:
         "The PCI centre accepts her for primary PCI. Then dispatch calls back. Both local ambulances are out and the next crew is 70 minutes away. Fog has grounded the air ambulance. " +
-        "The PCI centre estimates she would reach the lab at about 09:15 at the earliest.",
+        "The PCI centre estimates she would reach the lab at about 09:30 at the earliest.",
       next: "q-reperfusion",
     },
     {
@@ -266,7 +266,7 @@ export const stoppedAntiplateletsDentalStemi: OralCase = {
       prompt: "What is your reperfusion plan now? Give me your drugs and doses.",
       seconds: 90,
       modelAnswer: [
-        "First medical contact was 06:40 and the STEMI diagnosis 06:58. A lab time of 09:15 is well over 120 minutes from either.",
+        "First medical contact was 06:40 and the diagnostic ECG followed. A lab time of 09:30 is more than 120 minutes from either.",
         "Switch to fibrinolysis now. Aim for the bolus within 10 minutes of the decision and 30 minutes of arrival.",
         "Tenecteplase weight based. 40 mg for 70 to under 80 kg, so 40 mg for her 74 kg. She is under 75, so full dose.",
         "ASA already given. Clopidogrel 300 mg load.",
@@ -311,7 +311,7 @@ export const stoppedAntiplateletsDentalStemi: OralCase = {
       id: "s-wait",
       phase: "07:45",
       text:
-        "At 07:45 she is still in pain and has runs of ventricular ectopy. The cardiologist calls back and asks why she has not been lysed, given the delay. You give tenecteplase 40 mg, clopidogrel and enoxaparin.",
+        "At 07:45 she is still in pain and has runs of ventricular ectopy. The cardiologist calls back and asks why she has not been lysed, given the delay. You give tenecteplase 40 mg and keep the heparin running. She has already had ticagrelor, so you do not add clopidogrel.",
       next: "s-after",
     },
     {

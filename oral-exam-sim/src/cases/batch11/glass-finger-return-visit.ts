@@ -324,14 +324,14 @@ export const glassFingerReturnVisit: OralCase = {
       id: "s-oral",
       phase: "Next morning",
       text:
-        "She returns at 07:00 with a temperature of 39.0°C and swelling into her palm. The hand surgeon is called, asks why she was sent home, and takes her to the operating room that morning.",
+        "She returns at 07:00 with a temperature of 39.0°C and swelling into her palm. You call the hand surgeon, who asks why she was sent home.",
       next: "s-surgeon",
     },
     {
       kind: "say",
       id: "s-surgeon",
       phase: "The call",
-      text: "The plastic surgeon on call at the regional centre is on the phone. She can take the patient to the operating room tonight and asks for your summary.",
+      text: "The plastic surgeon on call at the regional centre is on the phone. She can take the patient to the operating room as soon as she arrives and asks for your summary.",
       next: "q-handover",
     },
     {
@@ -362,7 +362,7 @@ export const glassFingerReturnVisit: OralCase = {
         "Give the known facts. No X ray was done at the first visit. Today's X ray shows glass in the finger.",
         "Say you are sorry this has happened.",
         "Do not speculate about why, and do not blame the colleague. A review will look at what happened.",
-        "Explain the plan. Antibiotics and surgery tonight, and the nerve repair.",
+        "Explain the plan. Antibiotics, urgent surgery and the nerve repair.",
         "Tell her how she will hear about the review and who to contact. Document the conversation.",
       ],
       rubric: ["lc-pr1", "lc-pr2"],
@@ -390,7 +390,7 @@ export const glassFingerReturnVisit: OralCase = {
           id: "c-blame",
           label: "I told her the first doctor should have done an X ray and that it was a mistake.",
           next: "s-blame",
-          quality: "unsafe",
+          quality: "partial",
           feedback:
             "Disclosure is required, but blaming a colleague before any review is unfair and unprofessional. " +
             "You do not know the full circumstances of that night. Give the facts, say you are sorry, and let the review find the causes.",
@@ -400,14 +400,14 @@ export const glassFingerReturnVisit: OralCase = {
     {
       kind: "say",
       id: "s-deflect",
-      phase: "19:00",
+      phase: "Minutes later",
       text: "Her partner arrives and reads the discharge sheet from the first visit. He asks you directly whether anyone took an X ray last time. You tell them both that no X ray was done and that today's shows glass.",
       next: "q-review",
     },
     {
       kind: "say",
       id: "s-blame",
-      phase: "19:00",
+      phase: "Minutes later",
       text: "She says she wants to make a complaint about the first doctor. Your charge nurse asks you to step out and reminds you that the review has not happened yet.",
       next: "q-review",
     },

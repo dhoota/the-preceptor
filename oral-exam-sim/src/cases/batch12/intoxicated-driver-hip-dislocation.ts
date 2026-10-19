@@ -274,7 +274,7 @@ export const intoxicatedDriverHipDislocation: OralCase = {
       id: "s-wait",
       phase: "Two hours later",
       text:
-        "The orthopedic attending calls in. She says the hip has now been out for nearly 3 hours and needs reduction now, in the ED. The operating room is still busy. You prepare for ED sedation with propofol.",
+        "The orthopedic attending calls in. She says the hip has now been out for more than 3 hours and needs reduction now, in the ED. The operating room is still busy. You prepare for ED sedation with propofol.",
       next: "s-apnea",
     },
     {

@@ -4,7 +4,7 @@ import type { OralCase } from "@/engine/types";
 
 export const ladderFallAnkleSedation: OralCase = {
   id: "ladder-fall-ankle-sedation",
-  title: "A fall from a ladder",
+  title: "Cleaning the eavestrough",
   blueprint: "procedures",
   alsoCovers: ["resus", "trauma"],
   priorityTopic: "anaphylaxis",

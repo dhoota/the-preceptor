@@ -9,13 +9,14 @@ const S = {
   scharman: { id: "scharman-dimenhydrinate", citation: "Scharman EJ, Erdman AR, Wax PM, et al. Diphenhydramine and dimenhydrinate poisoning: an evidence-based consensus guideline for out-of-hospital management. Clin Toxicol (Phila). 2006.", url: "https://pubmed.ncbi.nlm.nih.gov/16749537/" },
   cagPhyso: { id: "cag-physostigmine", citation: "Centre antipoison du Quebec and CIUSSS de la Capitale-Nationale. Canadian Antidote Guide in Acute Care Toxicology. Physostigmine. Updated 2026.", url: "https://www.ciusss-capitalenationale.gouv.qc.ca/en/antidotes/physostigmine" },
   dawson: { id: "dawson-anticholinergic", citation: "Dawson AH, Buckley NA. Pharmacological management of anticholinergic delirium: theory, evidence and practice. Br J Clin Pharmacol. 2016.", url: "https://pubmed.ncbi.nlm.nih.gov/26589572/" },
-  sscPeds: { id: "ssc-peds-2020", citation: "Weiss SL, Peters MJ, Alhazzani W, et al. Surviving Sepsis Campaign international guidelines for the management of septic shock and sepsis-associated organ dysfunction in children. Intensive Care Med. 2020.", url: "https://pubmed.ncbi.nlm.nih.gov/32030529/" },
+  sscPeds: { id: "ssc-peds-2026", citation: "Weiss SL, Peters MJ, Oczkowski SJ, et al. Surviving Sepsis Campaign international guidelines for the management of sepsis and septic shock in children 2026. Pediatr Crit Care Med. 2026.", url: "https://www.sccm.org/clinical-resources/guidelines/guidelines/surviving-sepsis-campaign-international-guidelines-for-the-management-of-sepsis-and-septic-shock-in" },
   ata: { id: "ata-hyperthyroidism-2016", citation: "Ross DS, Burch HB, Cooper DS, et al. 2016 American Thyroid Association guidelines for diagnosis and management of hyperthyroidism and other causes of thyrotoxicosis. Thyroid. 2016.", url: "https://pubmed.ncbi.nlm.nih.gov/27521067/" },
   akhDose: { id: "akh-antipyretic-dosing", citation: "SickKids AboutKidsHealth. Acetaminophen and ibuprofen dose recommendations. 2024.", url: "https://www.aboutkidshealth.ca/globalassets/assets/acetaminophen-and-ibuprofen-dose-recommendations.pdf" },
+  cwcSinus: { id: "cwc-peds-ent-2021", citation: "McDonough M, Hathi K, et al. Choosing Wisely Canada pediatric otolaryngology recommendations. J Otolaryngol Head Neck Surg. 2021.", url: "https://pmc.ncbi.nlm.nih.gov/articles/PMC8557011/" },
   aapSinus: { id: "aap-sinusitis-2013", citation: "Wald ER, Applegate KE, Bordley C, et al. Clinical practice guideline for the diagnosis and management of acute bacterial sinusitis in children aged 1 to 18 years. Pediatrics. 2013.", url: "https://pubmed.ncbi.nlm.nih.gov/23796742/" },
   thompson: { id: "thompson-mening", citation: "Thompson MJ, Ninis N, Perera R, et al. Clinical recognition of meningococcal disease in children and adolescents. Lancet. 2006.", url: "https://pubmed.ncbi.nlm.nih.gov/16458763/" },
   fn: { id: "fn-peds-2023", citation: "Lehrnbecher T, Robinson PD, Ammann RA, et al. Guideline for the management of fever and neutropenia in pediatric patients with cancer and hematopoietic cell transplantation recipients: 2023 update. J Clin Oncol. 2023.", url: "https://pubmed.ncbi.nlm.nih.gov/36689694/" },
-  almatrafi: { id: "almatrafi-ecthyma", citation: "Almatrafi MA, Alidrisi D, Alhusaini E, et al. Severe ecthyma gangrenosum in a pediatric patient with neutropenia and a novel HELLS variant: case report. Clin Case Rep. 2026.", url: "https://doi.org/10.1002/ccr3.73143" },
+  galazka: { id: "galazka-ecthyma", citation: "Gałązka P, Kaczor P, Kałużny K, Leis K. Ecthyma gangrenosum as a serious complication of Pseudomonas aeruginosa infection in departments of paediatric oncology. Postepy Dermatol Alergol. 2021.", url: "https://pmc.ncbi.nlm.nih.gov/articles/PMC8501443/" },
 } satisfies Record<string, Source>;
 
 export const PEDIATRIC_FEVER_S56: Samp[] = [
@@ -52,7 +53,7 @@ export const PEDIATRIC_FEVER_S56: Samp[] = [
         options: ["CT of the head", "Lumbar puncture", "Serum ammonia", "Twelve lead ECG", "Urine drug screen"],
         correct: 3,
         explanation:
-          "Five 50 mg tablets is up to 250 mg, or about 17 mg/kg for her 15 kg. Dimenhydrinate contains diphenhydramine, and Scharman's consensus guideline sends children with more than mild drowsiness or stimulation to the emergency department. A large ingestion can block cardiac sodium channels and widen the QRS, and the Canadian Antidote Guide warns against physostigmine when the QRS is wide, so the ECG decides the next treatment. With a known drug and no focal signs, head CT and lumbar puncture are not needed now. Ammonia and a urine drug screen do not change her care.",
+          "Five 50 mg tablets is up to 250 mg, or about 17 mg/kg for her 15 kg, well above the 7.5 mg/kg at which Scharman's consensus guideline refers a child under 6 to the emergency department. Dimenhydrinate contains diphenhydramine, which can widen the QRS in overdose, and the Canadian Antidote Guide advises against physostigmine when the QRS is wide or the poisoning is mixed or unknown, so the ECG decides the next treatment. With a known drug and no focal signs, head CT and lumbar puncture are not needed now. Ammonia and a urine drug screen do not change her care.",
         keyFeature: { topic: "pediatric-fever", n: 6 },
         source: "cag-physostigmine",
       },
@@ -70,7 +71,7 @@ export const PEDIATRIC_FEVER_S56: Samp[] = [
         ],
         correct: 2,
         explanation:
-          "Pure anticholinergic delirium that has not settled with calming measures is the indication for physostigmine in the Canadian Antidote Guide, which gives 0.01 to 0.02 mg/kg IV, up to 0.5 mg per dose, in children. For 15 kg, 0.02 mg/kg is 0.3 mg, given slowly. Her QRS of 82 ms is normal and the ingestion is a single known anticholinergic. Dawson and Buckley advise waiting at least 10 to 15 minutes before a repeat dose. Haloperidol, quetiapine and risperidone add their own anticholinergic or QT effects and do not reverse the cause. Ketamine sedates without treating the delirium.",
+          "Pure anticholinergic delirium that has not settled with calming measures is the indication for physostigmine in the Canadian Antidote Guide, which gives 0.01 to 0.02 mg/kg IV, up to 0.5 mg per dose, in children. For 15 kg, 0.02 mg/kg is 0.3 mg, given slowly. Her QRS of 82 ms is normal and the ingestion is a single known anticholinergic. The guide allows a repeat dose after 20 to 30 minutes if needed, and Dawson and Buckley also favour low doses with an unhurried interval, because the effect in the brain builds slowly. Haloperidol, quetiapine and risperidone add their own anticholinergic or QT effects and do not reverse the cause. Ketamine sedates without treating the delirium.",
         keyFeature: { topic: "pediatric-fever", n: 6 },
         source: "dawson-anticholinergic",
       },
@@ -87,9 +88,9 @@ export const PEDIATRIC_FEVER_S56: Samp[] = [
         ],
         correct: 1,
         explanation:
-          "Anticholinergic poisoning leaves the skin hot, dry and flushed. Cool, mottled legs with a slow capillary refill show impaired perfusion, which the Surviving Sepsis Campaign counts as cardiovascular dysfunction in septic shock even before the blood pressure falls, and it would send the team looking for infection. Delirium with picking, dry axillae and mouth, wide pupils and urinary retention are all part of the toxidrome she already has.",
+          "Anticholinergic poisoning leaves the skin hot, dry and flushed. Cool, mottled legs with a slow capillary refill show impaired perfusion. Extremity temperature and capillary refill are among the markers of circulation that the 2026 Surviving Sepsis Campaign guideline for children asks clinicians to follow, and this finding would send the team looking for infection. Delirium with picking, dry axillae and mouth, wide pupils and urinary retention are all part of the toxidrome she already has.",
         keyFeature: { topic: "pediatric-fever", n: 2 },
-        source: "ssc-peds-2020",
+        source: "ssc-peds-2026",
       },
     ],
     sources: [S.scharman, S.cagPhyso, S.dawson, S.sscPeds],
@@ -129,7 +130,7 @@ export const PEDIATRIC_FEVER_S56: Samp[] = [
         correct: 3,
         explanation:
           "The ATA recommends beta-adrenergic blockade for children with symptoms of hyperthyroidism, especially with a resting heart rate above 100/minute, and her pulse is 108/minute. Propranolol eases palpitations and tremor within hours, while antithyroid drugs take weeks. The ATA advises that PTU generally not be used in children because of its risk of liver failure. Ceftriaxone treats an infection she does not have, which is the trap in a febrile child with no source. Lorazepam sedates without treating the cause. She does not have thyroid storm. On the ATA point scale a temperature of 37.8°C scores 10 and a pulse of 108/minute scores 5, with no points for the nervous system, gut or heart, a total of 15 that is well below 25, so corticosteroids are not needed.",
-        keyFeature: { topic: "pediatric-fever", n: 6 },
+        keyFeature: { topic: "pediatric-fever", n: 5 },
         source: "ata-hyperthyroidism-2016",
       },
       {
@@ -158,7 +159,7 @@ export const PEDIATRIC_FEVER_S56: Samp[] = [
         correct: 1,
         explanation:
           "Methimazole is the antithyroid drug the ATA recommends for virtually every patient with Graves disease who chooses drug therapy, and it is the drug used in children. The ATA advises that propylthiouracil generally not be used in children because of the risk of severe liver injury. Potassium iodide is part of thyroid storm and preoperative care, not first-line therapy. Radioactive iodine is a later, planned decision, not an emergency start. Levothyroxine would add thyroid hormone and worsen her thyrotoxicosis.",
-        keyFeature: { topic: "pediatric-fever", n: 6 },
+        keyFeature: { topic: "pediatric-fever", n: 5 },
         source: "ata-hyperthyroidism-2016",
       },
     ],
@@ -171,7 +172,7 @@ export const PEDIATRIC_FEVER_S56: Samp[] = [
     id: "pediatric-fever-50",
     title: "Boy with a cold and green discharge",
     stem:
-      "A 6-year-old boy is brought to the emergency department by his mother with 6 days of runny nose, nasal congestion and daytime cough. He had a temperature of 38.4°C on the first 2 days only. Since yesterday his nasal discharge has turned thick and green. He is eating, drinking and playing, but he slept poorly last night because of his cough. He has no headache, eye swelling or ear pain. His mother asks for an antibiotic for a sinus infection. He has no medical history and his immunizations are up to date. He is alert and playful. There is thick green discharge in both nostrils and mild redness of the throat. His eyelids are normal, his eye movements are full and painless, and his ears and chest are normal.",
+      "A 6-year-old boy is brought to the emergency department by his mother with 6 days of runny nose, nasal congestion and daytime cough. He had a temperature of 38.4°C on the first 2 days only. Since yesterday his nasal discharge has turned thick and green, but his congestion and cough have not worsened. He is eating, drinking and playing, but he slept poorly last night because of his cough. He has no headache, eye swelling or ear pain. His mother asks for an antibiotic for a sinus infection. He has no medical history and his immunizations are up to date. He is alert and playful. There is thick green discharge in both nostrils and mild redness of the throat. His eyelids are normal, his eye movements are full and painless, and his ears and chest are normal.",
     vitals: { temperature: "37.6°C oral", pulse: "104/minute", resp: "22/minute", o2sat: "99% on room air", weight: "20 kg" },
     questions: [
       {
@@ -187,7 +188,7 @@ export const PEDIATRIC_FEVER_S56: Samp[] = [
         ],
         correct: 4,
         explanation:
-          "The AAP diagnoses acute bacterial sinusitis only with persistent illness beyond 10 days without improvement, a worsening course after initial improvement, or a severe onset with a temperature of 39°C or more and purulent discharge for at least 3 days in a row. He has had 6 days of symptoms, his fever of 38.4°C lasted only 2 days and he is improving, so this is a viral cold. Green discharge alone does not mean a bacterial infection. Amoxicillin, amoxicillin-clavulanate, azithromycin and cefuroxime would add side effects and resistance without benefit.",
+          "The AAP diagnoses acute bacterial sinusitis only with persistent illness beyond 10 days without improvement, a worsening course after initial improvement, or a severe onset with a temperature of 39°C or more and purulent discharge for at least 3 days in a row. He has had 6 days of symptoms, his fever of 38.4°C lasted only 2 days and his congestion and cough have not worsened, so this is a viral cold. Green discharge alone does not mean a bacterial infection. Amoxicillin, amoxicillin-clavulanate, azithromycin and cefuroxime would add side effects and resistance without benefit.",
         keyFeature: { topic: "pediatric-fever", n: 7 },
         source: "aap-sinusitis-2013",
       },
@@ -204,9 +205,9 @@ export const PEDIATRIC_FEVER_S56: Samp[] = [
         ],
         correct: 4,
         explanation:
-          "The AAP advises against imaging of any kind to tell acute bacterial sinusitis from a viral cold, because it does not help the diagnosis, and it keeps contrast CT for a child with suspected orbital or intracranial complications. His eyelids, eye movements and neurologic state are normal, so there is no such concern. The diagnosis rests on the history, so a nasal swab culture, a blood count and a CRP add nothing to the decision and may prompt needless antibiotics.",
+          "Choosing Wisely Canada advises against imaging to tell acute bacterial sinusitis from a viral infection, because the diagnosis rests on clinical criteria and abnormal sinus images are common in colds. Imaging is kept for a child who is immunocompromised or has orbital, intracranial or suppurative complications. He is healthy, and his eyelids, eye movements and neurologic state are normal. The diagnosis rests on the history, so a nasal swab culture, a blood count and a CRP add nothing to the decision and may prompt needless antibiotics.",
         keyFeature: { topic: "pediatric-fever", n: 7 },
-        source: "aap-sinusitis-2013",
+        source: "cwc-peds-ent-2021",
       },
       {
         id: "q3",
@@ -243,7 +244,7 @@ export const PEDIATRIC_FEVER_S56: Samp[] = [
         source: "akh-antipyretic-dosing",
       },
     ],
-    sources: [S.aapSinus, S.akhDose],
+    sources: [S.aapSinus, S.cwcSinus, S.akhDose],
     ...META,
   },
 
@@ -277,17 +278,17 @@ export const PEDIATRIC_FEVER_S56: Samp[] = [
         kind: "single",
         prompt: "Which of the following best describes the state of her circulation at this point?",
         options: [
-          "Dehydration from vomiting only",
-          "Normal circulation for her fever",
-          "Sepsis without circulatory failure",
-          "Septic shock despite a normal BP",
-          "Vasovagal response to pain",
+          "Dehydration from vomiting alone",
+          "Fever-related tachycardia only",
+          "Hypotensive septic shock",
+          "Poor perfusion, normal BP",
+          "Warm shock with bounding pulses",
         ],
         correct: 3,
         explanation:
-          "The Surviving Sepsis Campaign defines septic shock in children as severe infection with cardiovascular dysfunction, which includes impaired perfusion, hypotension or the need for a vasoactive drug. Her cool hands and feet, capillary refill of 4 seconds and pulse of 142/minute show impaired perfusion, so she is in shock even though her BP of 104/62 mmHg is normal. Children keep their BP up until late, so waiting for hypotension delays treatment. Two vomits do not explain cold extremities at 39.4°C, and a vasovagal response causes slowing of the pulse, not tachycardia.",
+          "Her cool hands and feet, capillary refill of 4 seconds and pulse of 142/minute show poor perfusion, even though her BP of 104/62 mmHg is normal. The 2026 Surviving Sepsis Campaign guideline for children asks clinicians to judge circulation by heart rate, capillary refill, extremity temperature, pulse quality, level of consciousness and urine output, not by BP alone, and she needs treatment now rather than after hypotension appears. Her BP is normal, so this is not hypotensive shock. Two vomits do not explain cold extremities at 39.4°C, and fever alone does not lengthen capillary refill or cool the feet. Warm shock brings flushed skin and bounding pulses, the opposite of her findings.",
         keyFeature: { topic: "pediatric-fever", n: 2 },
-        source: "ssc-peds-2020",
+        source: "ssc-peds-2026",
       },
       {
         id: "q3",
@@ -297,9 +298,9 @@ export const PEDIATRIC_FEVER_S56: Samp[] = [
         options: ["azithromycin IV", "cefazolin IV", "ceftriaxone IV", "gentamicin IV", "metronidazole IV"],
         correct: 2,
         explanation:
-          "In children with septic shock the Surviving Sepsis Campaign recommends antimicrobials as soon as possible, within 1 hour of recognition, and notes that a third-generation cephalosporin such as ceftriaxone may be enough for a previously healthy child with community-acquired sepsis. Ceftriaxone covers Neisseria meningitidis and Streptococcus pneumoniae and reaches the cerebrospinal fluid. Cefazolin does not reliably reach the CSF and is not used for meningococcal disease. Gentamicin alone, azithromycin and metronidazole do not cover the likely organisms adequately.",
+          "She has sepsis with signs of shock, and the 2026 Surviving Sepsis Campaign guideline for children recommends antimicrobials as soon as possible, ideally within 1 hour, in septic shock. It advises empiric broad-spectrum therapy that covers all likely pathogens and keeps multidrug regimens for children who are immunocompromised or at high risk of resistant organisms, and she is neither. Ceftriaxone covers Neisseria meningitidis and Streptococcus pneumoniae and reaches the cerebrospinal fluid. Cefazolin does not reliably reach the CSF and is not used for meningococcal disease. Gentamicin alone, azithromycin and metronidazole do not cover the likely organisms adequately.",
         keyFeature: { topic: "pediatric-fever", n: 3 },
-        source: "ssc-peds-2020",
+        source: "ssc-peds-2026",
       },
       {
         id: "q4",
@@ -314,9 +315,9 @@ export const PEDIATRIC_FEVER_S56: Samp[] = [
         ],
         correct: 0,
         explanation:
-          "The Surviving Sepsis Campaign titrates fluid to clinical markers of cardiac output such as heart rate, capillary refill, level of consciousness and urine output. A capillary refill back to 2 seconds with warm feet shows that her peripheral perfusion is recovering. A falling temperature and less leg pain after an antipyretic say nothing about her circulation. A rising respiratory rate may be a sign of fluid overload or worsening acidosis. A urine output of 0.3 mL/kg/hour is still low.",
+          "The 2026 Surviving Sepsis Campaign guideline for children titrates each fluid bolus to clinical markers of cardiac output such as heart rate, capillary refill, extremity temperature, level of consciousness and urine output, and reassesses after every bolus. A capillary refill back to 2 seconds with warm feet shows that her peripheral perfusion is recovering. A falling temperature and less leg pain after an antipyretic say nothing about her circulation. A rising respiratory rate may be a sign of fluid overload or worsening acidosis. A urine output of 0.3 mL/kg/hour is still low.",
         keyFeature: { topic: "pediatric-fever", n: 2 },
-        source: "ssc-peds-2020",
+        source: "ssc-peds-2026",
       },
     ],
     sources: [S.thompson, S.sscPeds],
@@ -328,7 +329,7 @@ export const PEDIATRIC_FEVER_S56: Samp[] = [
     id: "pediatric-fever-52",
     title: "Fever and a dark spot during treatment",
     stem:
-      "A 7-year-old boy is brought to the emergency department by his mother 2 hours after a temperature of 38.6°C at home. He has acute lymphoblastic leukemia and is in the delayed intensification phase of chemotherapy, with his last dose 8 days ago. He has a tunnelled central venous line in the right side of his chest. Since this morning he has had a painful spot on his left buttock. He has no cough, diarrhea or urinary symptoms. He is tired but alert. On the left buttock there is a 2 cm round, raised lesion with a dark, almost black centre and a red, tender rim. The line exit site is clean. Capillary refill is 2 seconds.",
+      "A 7-year-old boy is brought to the emergency department by his mother 2 hours after a temperature of 38.6°C at home. He has acute lymphoblastic leukemia and is in the delayed intensification phase of chemotherapy, with his last dose 8 days ago. He has a tunnelled central venous line in the right side of his chest. Since this morning he has had a dark spot on his left buttock. He has no cough, diarrhea or urinary symptoms. He is tired but alert. On the left buttock there is a 2 cm round, raised lesion with a black centre and a red rim. The line exit site is clean. Capillary refill is 2 seconds.",
     vitals: { temperature: "38.9°C oral", pulse: "132/minute", resp: "24/minute", bp: "98/58 mmHg", o2sat: "98% on room air", weight: "23 kg" },
     questions: [
       {
@@ -344,9 +345,9 @@ export const PEDIATRIC_FEVER_S56: Samp[] = [
         ],
         correct: 1,
         explanation:
-          "A painful round lesion with a black necrotic centre and a red rim, in a febrile child on chemotherapy, is ecthyma gangrenosum, a severe skin sign usually caused by Pseudomonas aeruginosa in an immunocompromised host and often a marker of bloodstream infection. It is a dangerous rash that needs urgent treatment. A bruise from thrombocytopenia is flat and not tender, an insect bite is small and itchy, a pressure injury sits over a bony prominence after immobility, and varicella starts as crops of vesicles rather than one necrotic lesion.",
+          "A round lesion with a black eschar surrounded by redness on the buttock, in a febrile child on chemotherapy, is ecthyma gangrenosum. Gałązka and colleagues describe it as a complication mostly of Pseudomonas aeruginosa bloodstream infection in children with neutropenia, most often on the lower back, perineum and buttocks, and progressing to necrotic ulcers within 12 to 24 hours. It is a dangerous rash that needs urgent treatment. A bruise from thrombocytopenia is flat with no eschar, an insect bite is small and itchy, a pressure injury sits over a bony prominence after immobility, and varicella starts as crops of vesicles rather than one necrotic lesion.",
         keyFeature: { topic: "pediatric-fever", n: 4 },
-        source: "almatrafi-ecthyma",
+        source: "galazka-ecthyma",
       },
       {
         id: "q2",
@@ -404,7 +405,7 @@ export const PEDIATRIC_FEVER_S56: Samp[] = [
         source: "fn-peds-2023",
       },
     ],
-    sources: [S.almatrafi, S.fn],
+    sources: [S.galazka, S.fn],
     ...META,
   },
 ];

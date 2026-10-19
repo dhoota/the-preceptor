@@ -4,7 +4,7 @@ import type { OralCase } from "@/engine/types";
 
 export const boarderHardToWake: OralCase = {
   id: "boarder-hard-to-wake",
-  title: "Hard to wake before morning rounds",
+  title: "The 05:30 vital signs round",
   blueprint: "geri",
   alsoCovers: ["neuro", "tox", "systems"],
   priorityTopic: "loc",
