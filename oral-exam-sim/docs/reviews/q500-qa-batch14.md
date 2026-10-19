@@ -36,7 +36,7 @@ Final checks: `npx tsc --noEmit -p . | grep cases/batch14` gives no output. `CAS
 3. pe-m5 teaching: replaced the vague "not advised" with the 2024 U.S. MEC categories (category 4 under 21 days postpartum, category 3 during anticoagulation for DVT or PE). This resolves the writer's flag.
 4. pe-d1: the claim that every VTE needs at least 3 months of treatment was cited to the Hestia study, which does not say that. Source changed to the BC guideline, which does, and teaching reworded to its text.
 
-Writer flags: Hestia authorship confirmed (Zondag W, Mos IC, Creemers-Schild D, et al. J Thromb Haemost 2011;9:1500 to 1507). The combined pill category is now stated correctly. ASH recommendation 13 is a strong recommendation against DOACs in breastfeeding, so the "unsafe" label on rivaroxaban while breastfeeding is defensible.
+Writer flags: Hestia authorship confirmed (Zondag W, Mos IC, Creemers-Schild D, et al. J Thromb Haemost 2011, volume 9, pages 1500 to 1507). The combined pill category is now stated correctly. ASH recommendation 13 is a strong recommendation against DOACs in breastfeeding, so the "unsafe" label on rivaroxaban while breastfeeding is defensible.
 
 Uniqueness: the bank PE cases are a syncope with intermediate risk PE at a tertiary centre and a maternal arrest at 33 weeks. The PE SAMPs on pregnancy are antepartum. batch13 `postpartum-headache-return-visit` also teaches breastfeeding compatible drug choice, but for antihypertensives in pre-eclampsia, so the overlap is a theme, not a scenario. No near-duplicate.
 
@@ -81,16 +81,16 @@ Uniqueness: Kawasaki appears in SAMPs only (incomplete disease in an infant, MIS
 - Singh N, McLean K. CMAJ 2012. Opened https://pmc.ncbi.nlm.nih.gov/articles/PMC3470645/ (under 1 percent to milk, about 0.01 percent absorbed).
 - TREKK. Pediatric severe asthma exacerbation algorithm v2.0. 2024. Opened and read https://cms.trekk.ca/wp-content/uploads/2024/02/2024-02-19_Asthma-Algorithm_v2.0-FINAL.pdf (all doses, PRAM table, stepwise support, magnesium after the first hour, consider pneumothorax).
 - Trottier ED, et al. CPS. Managing an acute asthma exacerbation in children. 2021. Confirmed by search (cps.ca listing). No URL added.
-- Ducharme FM, et al. PRAM. J Pediatr 2008;152:476 to 480. Confirmed by search.
+- Ducharme FM, et al. PRAM. J Pediatr 2008, volume 152, pages 476 to 480. Confirmed by search.
 - Global Initiative for Asthma. 2024 report. Unchanged, confirmed by the writer.
 - Le Saux N, Robinson JL. CPS. Uncomplicated pneumonia in healthy Canadian children and youth. 2015, updated 2024. Opened https://cps.ca/en/documents/position/pneumonia-management-children-youth (third generation cephalosporin for respiratory failure or septic shock, ceftriaxone 50 to 100 mg/kg/day, max 4 g). New.
 - Di Saverio S, et al. WSES 2020. URL as given by the writer.
-- Koberlein GC, et al. ACR Appropriateness Criteria, suspected appendicitis, child. JACR 2019;16(5S):S252 to S263. Confirmed by search, https://scholarlyexchange.childrensmercy.org/papers/2645.
-- Bundy DG, et al. JAMA 2007;298:438 to 451. Confirmed by search.
-- Poonai N, et al. Acad Emerg Med 2014;21:1183 to 1192. Confirmed by search (no increase in perforation or abscess).
+- Koberlein GC, et al. ACR Appropriateness Criteria, suspected appendicitis, child. JACR 2019, volume 16(5S), pages S252 to S263. Confirmed by search, https://scholarlyexchange.childrensmercy.org/papers/2645.
+- Bundy DG, et al. JAMA 2007, volume 298, pages 438 to 451. Confirmed by search.
+- Poonai N, et al. Acad Emerg Med 2014, volume 21, pages 1183 to 1192. Confirmed by search (no increase in perforation or abscess).
 - Solomkin JS, et al. CID 2010. Confirmed by search, including the pediatric dosing ranges for ceftriaxone and metronidazole.
 - Weiss SL, et al. SSC pediatric 2020. Confirmed by search (antimicrobials within 1 hour in shock, 10 to 20 mL/kg boluses to 40 to 60 mL/kg).
-- Chen A, et al. CPS. Kawasaki disease. Paediatr Child Health 2026;31(5):550 to 555. Opened https://cps.ca/en/documents/position/kawasaki-disease (criteria, IVIG under 5 percent aneurysms, ASA options, platelets over 80, NSAIDs, shock definition, influenza vaccine, live vaccines 11 months).
+- Chen A, et al. CPS. Kawasaki disease. Paediatr Child Health 2026, volume 31(5), pages 550 to 555. Opened https://cps.ca/en/documents/position/kawasaki-disease (criteria, IVIG under 5 percent aneurysms, ASA options, platelets over 80, NSAIDs, shock definition, influenza vaccine, live vaccines 11 months).
 - McCrindle BW, et al. AHA 2017. Confirmed by search. An AHA update (Jone et al., Circulation 2024) exists. The 2017 statement still supports every point it is cited for.
 - Moore DL, Allen UD, Mailman T. CPS. Invasive group A streptococcal disease. 2019, reaffirmed 2024. Opened https://cps.ca/en/documents/position/invasive-group-a-streptococcal-disease (clindamycin with a beta-lactam, vancomycin where MRSA is common). New.
 - CPS Caring for Kids. Fever and temperature taking. URL as given by the writer.

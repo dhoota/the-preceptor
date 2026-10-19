@@ -13,7 +13,6 @@ const S = {
   csaciProtocol: { id: "csaci-protocol", citation: "Canadian Society of Allergy and Clinical Immunology. Anaphylaxis in schools and other settings. 3rd edition. Emergency protocol. 2015.", url: "https://csaci.ca/EN/files/basic-html/page8.html" },
   shmuely: { id: "shmuely-syncope", citation: "Shmuely S, Bauer PR, van Zwet EW, van Dijk JG, Thijs RD. Differentiating motor phenomena in tilt-induced syncope and convulsive seizures. Neurology. 2018." },
   rcuk: { id: "rcuk-refractory", citation: "Resuscitation Council UK. Refractory anaphylaxis algorithm. Guidelines 2021.", url: "https://resus.org.uk/media/334/download" },
-  whyte: { id: "whyte-anaphylaxis", citation: "Whyte AF, Soar J, Dodd A, Hughes A, Sargant N, Turner PJ. Emergency treatment of anaphylaxis: concise clinical guidance. Clin Med (Lond). 2022.", url: "https://pmc.ncbi.nlm.nih.gov/articles/PMC9345203/" },
   satoh: { id: "satoh-buckwheat", citation: "Satoh R, Jensen-Jarolim E, Teshima R. Understanding buckwheat allergies for the management of allergic reactions in humans and animals. Breed Sci. 2020.", url: "https://pmc.ncbi.nlm.nih.gov/articles/PMC7180145/" },
   hc: { id: "hc-allergens", citation: "Health Canada. Food allergies and priority food allergens. Modified 2026.", url: "https://www.canada.ca/en/health-canada/services/food-nutrition/food-safety/food-allergies-intolerances/food-allergies.html" },
 } satisfies Record<string, Source>;
