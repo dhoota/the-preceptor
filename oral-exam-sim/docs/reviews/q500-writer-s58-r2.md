@@ -163,3 +163,31 @@ This round answers `docs/reviews/q500-verify2-s58.md`. shock-48 and shock-49 pas
 
 - **q3, Hedges.** The abstract lists desmopressin among the uremic bleeding treatments but gives no dose or onset. The item therefore states neither. A small 1996 study of fistula oozing (Hong) found no clear benefit, so desmopressin is the best of the five options here rather than a proven therapy.
 - **q1, Marwah and Korbet.** The source supports the timing figures and names perinephric hematoma as a biopsy complication. The ultrasound appearance is standard teaching and is not quoted from the source.
+
+## Round 4
+
+This round answers `docs/reviews/q500-verify3-s58.md`. shock-48, shock-49 and shock-50 passed and were not touched. Only `src/samps/s58/shock.ts` was edited. The s58 type-check grep is clean, and the batch tests pass (132).
+
+### Fixes applied
+
+- **shock-51 q4.** The update now reads "Her initial treatment is running. Her systolic pressure is still 74 mmHg and the flushing persists." The word "crisis" is gone, so it no longer cues the q1 key.
+- **shock-52 q1.**
+  - The key is now "Collection around the left kidney", with `correct` set to 0, in the option order the verdict gave.
+  - The explanation opens with the verdict's sentence and no longer uses "hypoechoic".
+  - The bladder clot and collecting system reason now reads "his urine is only pink, so they do not explain this blood loss".
+- **shock-52 q2.**
+  - Options are now "Crystalloid until transplant advice", "darbepoetin IV and recheck hemoglobin", "iron sucrose 200 mg IV", "red cells 2 units IV now" and "Wait for HLA antibody screen". The key is at `correct` 3.
+  - The explanation uses the verdict's wording ("advises", "advises considering"), not "recommends" or "suggests".
+  - The source is now KDIGO 2026 (Kidney Int. 2026, doi 10.1016/j.kint.2025.06.006). Crossref confirms the title, Kidney International volume 109, issue 1, January 2026.
+  - I read the full guideline PDF from kdigo.org:
+    - Practice Point 4.2: "In people with anemia and CKD eligible for organ transplantation, avoid, when possible, RBC transfusions to minimize the risk of allosensitization."
+    - Practice Point 4.5: "consider RBC transfusion when the benefits outweigh the risks, including ... When rapid correction of anemia is required to stabilize the patient's condition (e.g., acute hemorrhage or unstable coronary artery disease)".
+    - The rationale adds: "RBC transfusion may be needed for the immediate correction of anemia. These include acute severe hemorrhage".
+  - KDIGO 2012 was removed, since nothing cites it now.
+  - Grep of the bank: darbepoetin appears only in a dialysis oral case's medication list. "Iron sucrose IV now" is an option in s41 infectious-diseases, for an unrelated decision. "HLA antibody" appears nowhere.
+- **shock-52 q4.** The explanation now names "the European trauma bleeding guideline" and says it is "applied here to bleeding after a procedure". It also adds the guideline's caution that permissive hypotension may not suit patients with chronic hypertension, which applies because he takes amlodipine. The distractor sentences are unchanged.
+
+### Balance
+
+- Single-answer keys by position (first to fifth): 4, 5, 2, 5, 4 of 20. No position is above 25%, and every position is used.
+- The q1 key is not the longest option. The q2 key is shorter than the mean of the distractors. The batch length test passes.

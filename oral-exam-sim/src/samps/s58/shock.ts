@@ -19,7 +19,7 @@ const S = {
   andromeda: { id: "andromeda-shock-2019", citation: "Hernández G, Ospina-Tascón GA, Damiani LP, et al. Effect of a resuscitation strategy targeting peripheral perfusion status vs serum lactate levels on 28-day mortality among patients with septic shock: the ANDROMEDA-SHOCK randomized clinical trial. JAMA. 2019.", url: "https://doi.org/10.1001/jama.2019.0071" },
   enets: { id: "enets-cs-2022", citation: "Grozinsky-Glasberg S, Davar J, Hofland J, et al. European Neuroendocrine Tumor Society (ENETS) 2022 guidance paper for carcinoid syndrome and carcinoid heart disease. J Neuroendocrinol. 2022.", url: "https://doi.org/10.1111/jne.13146" },
   marwah: { id: "marwah-korbet-1996", citation: "Marwah DS, Korbet SM. Timing of complications in percutaneous renal biopsy: what is the optimal period of observation? Am J Kidney Dis. 1996.", url: "https://doi.org/10.1016/s0272-6386(96)90129-8" },
-  kdigo: { id: "kdigo-anemia-2012", citation: "Kidney Disease: Improving Global Outcomes (KDIGO) Anemia Work Group. KDIGO clinical practice guideline for anemia in chronic kidney disease. Chapter 4: red cell transfusion to treat anemia in CKD. Kidney Int Suppl. 2012.", url: "https://pmc.ncbi.nlm.nih.gov/articles/PMC4089676/" },
+  kdigo: { id: "kdigo-anemia-2026", citation: "Kidney Disease: Improving Global Outcomes (KDIGO) Anemia Work Group. KDIGO 2026 clinical practice guideline for the management of anemia in chronic kidney disease (CKD). Kidney Int. 2026.", url: "https://doi.org/10.1016/j.kint.2025.06.006" },
   hedges: { id: "hedges-2007", citation: "Hedges SJ, Dehoney SB, Hooper JS, Amanzadeh J, Busti AJ. Evidence-based treatment recommendations for uremic bleeding. Nat Clin Pract Nephrol. 2007.", url: "https://doi.org/10.1038/ncpneph0421" },
   euroTrauma: { id: "euro-trauma-2023", citation: "Rossaint R, Afshari A, Bouillon B, et al. The European guideline on management of major bleeding and coagulopathy following trauma: sixth edition. Crit Care. 2023.", url: "https://doi.org/10.1186/s13054-023-04327-7" },
 } satisfies Record<string, Source>;
@@ -349,7 +349,7 @@ export const SHOCK_S58: Samp[] = [
       {
         id: "q4",
         kind: "single",
-        update: "Her initial treatment for the crisis is running. Her systolic pressure is still 74 mmHg and the flushing persists.",
+        update: "Her initial treatment is running. Her systolic pressure is still 74 mmHg and the flushing persists.",
         prompt: "Which of the following vasoactive agents is most appropriate for her now?",
         options: [
           "dobutamine infusion",
@@ -383,15 +383,15 @@ export const SHOCK_S58: Samp[] = [
         kind: "single",
         prompt: "Which of the following bedside ultrasound findings would best explain his shock?",
         options: [
+          "Collection around the left kidney",
           "Dilated left renal collecting system",
           "Free fluid in the hepatorenal space",
-          "Hypoechoic collection around the left kidney",
           "Large clot within the bladder",
           "Small effusion around the heart",
         ],
-        correct: 2,
+        correct: 0,
         explanation:
-          "A hypoechoic collection around the biopsied kidney is a perinephric hematoma, the bleeding complication that fits his tender, full flank, his fall in hemoglobin from 116 to 84 g/L and his shock. In one biopsy series, 77% of complications had appeared by 8 hours and 95% by 12 hours, so bleeding that declares itself after a 6 hour observation period is expected in some patients. A dilated collecting system or a bladder clot can follow bleeding into the urine but does not explain this blood loss. Free fluid in the hepatorenal space points to an intraperitoneal source, and a small pericardial effusion does not cause hemorrhagic shock.",
+          "A collection around the kidney that was just biopsied is most likely a perinephric hematoma, the bleeding complication that fits his tender, full flank, his fall in hemoglobin from 116 to 84 g/L and his shock. In one biopsy series, 77% of complications had appeared by 8 hours and 95% by 12 hours, so bleeding that declares itself after a 6 hour observation period is expected in some patients. A dilated collecting system or a bladder clot can follow bleeding into the urine, but his urine is only pink, so they do not explain this blood loss. Free fluid in the hepatorenal space points to an intraperitoneal source, and a small pericardial effusion does not cause hemorrhagic shock.",
         keyFeature: { topic: TOPIC, n: 6 },
         source: "marwah-korbet-1996",
       },
@@ -400,17 +400,17 @@ export const SHOCK_S58: Samp[] = [
         kind: "single",
         prompt: "Which of the following is the most appropriate resuscitation fluid for him now?",
         options: [
-          "albumin 5% 500 mL IV",
           "Crystalloid until transplant advice",
+          "darbepoetin IV and recheck hemoglobin",
+          "iron sucrose 200 mg IV",
           "red cells 2 units IV now",
-          "Ringer's lactate 2 L IV",
-          "sodium chloride 0.9% 2 L IV",
+          "Wait for HLA antibody screen",
         ],
-        correct: 2,
+        correct: 3,
         explanation:
-          "He is in hemorrhagic shock with a hemoglobin that has fallen from 116 to 84 g/L and is still bleeding, so he needs red cells now. KDIGO recommends avoiding red cell transfusion when possible in patients eligible for a transplant, because transfusion can create antibodies against future donor tissue. The same guideline suggests transfusion when rapid correction of anemia is needed to stabilize the patient, as in acute hemorrhage. Waiting for transplant advice before giving blood puts his life at risk. Crystalloid and albumin carry no oxygen and dilute his clotting factors.",
+          "He is in hemorrhagic shock with a hemoglobin that has fallen from 116 to 84 g/L and is still bleeding, so he needs red cells now. KDIGO advises avoiding red cell transfusion when possible in people eligible for a transplant, because it can create antibodies against future donor tissue. The same guideline advises considering transfusion when rapid correction of anemia is needed to stabilize the patient, as in acute hemorrhage. Darbepoetin and IV iron cannot correct anemia immediately. Waiting for an antibody screen or for transplant advice delays blood he needs to survive, and crystalloid carries no oxygen and dilutes his clotting factors.",
         keyFeature: { topic: TOPIC, n: 3 },
-        source: "kdigo-anemia-2012",
+        source: "kdigo-anemia-2026",
       },
       {
         id: "q3",
@@ -444,7 +444,7 @@ export const SHOCK_S58: Samp[] = [
         ],
         correct: 3,
         explanation:
-          "His systolic pressure of 66 mmHg is well below the 80 to 90 mmHg target used until bleeding is controlled in a patient without brain injury, and he is now drowsy. The European bleeding guideline recommends noradrenaline, which is norepinephrine, in addition to fluids when a restricted volume replacement strategy does not reach the target pressure, while blood and definitive control of the bleeding continue. Dobutamine is for myocardial dysfunction and can lower blood pressure. Epinephrine use was linked to higher mortality in retrospective trauma data. Dopamine and phenylephrine are not the agents the guideline recommends.",
+          "His systolic pressure of 66 mmHg with new drowsiness shows critical hypoperfusion despite blood, and it is below even the 80 to 90 mmHg target that the European trauma bleeding guideline accepts until bleeding is controlled. That guideline, applied here to bleeding after a procedure, recommends noradrenaline, which is norepinephrine, in addition to fluids when restricted volume replacement does not reach the target pressure, while blood and definitive control of the bleeding continue. The same guideline cautions that permissive hypotension may not suit patients with chronic hypertension, and he takes amlodipine, which is one more reason not to accept this pressure. Dobutamine is for myocardial dysfunction and can lower blood pressure. Epinephrine use was linked to higher mortality in retrospective trauma data. Dopamine and phenylephrine are not the agents the guideline recommends.",
         keyFeature: { topic: TOPIC, n: 7 },
         source: "euro-trauma-2023",
       },
