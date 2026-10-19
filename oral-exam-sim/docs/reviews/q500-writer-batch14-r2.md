@@ -194,3 +194,13 @@ Revision against `docs/reviews/q500-verify3-batch14.md`. Only `rural-breathless-
 - `CASE_BATCH=batch14 npx vitest run tests/cases.test.ts tests/citations.test.ts`: 45 of 45 passed.
 - No git command was run this round.
 - Follow up to Round 4: as-c2 now cites a sixth source, `ipass`: Starmer AJ, Spector ND, Srivastava R, et al. Changes in medical errors after implementation of a handoff program. N Engl J Med 2014;371(19):1803-1812, PMID 25372088. The abstract was read through PubMed E-utilities. The PMID 25390085 given in the brief points to an unrelated paper. The as-c2 teaching now states what the study found: across 9 hospitals, a standardized oral and written handover program lowered medical errors by 23 percent and preventable adverse events by 30 percent, without longer handovers. Checks after this change: batch14 tsc grep gives no output, and tests pass 45 of 45.
+
+## Round 5
+
+rural-child-wheeze-tiring only, against `docs/reviews/q500-verify4-batch14.md`:
+- as-h4 now reads "Asks about tobacco smoke at home, who cares for him and how far he lives from follow up." The controller clause is gone because as-h2 already grades it.
+- "and poor adherence" is gone from the as-h4 teaching.
+- The last q-history model answer line now matches as-h4.
+- "cost" is gone from the as-c1 text.
+
+Nothing else was changed. The batch14 tsc grep gives no output, and the tests pass 45 of 45.

@@ -94,3 +94,7 @@ Uncertain:
 - 43 q3 rejects bleeding time and a platelet function screen only because CPS does not list them. CPS gives no further reason against them.
 - 41 q3 says a family physician referral adds delay. That is my reasoning, not a WHO statement.
 - The URL for the WHO 2014 handbook is the UNFPA Philippines copy that the reviewer found. I did not find a working WHO IRIS PDF link.
+
+## Round 4
+
+As required by docs/reviews/q500-verify3-s67.md, the 41 q3 update now reads "She asks for help, but her partner still has her phone." The explanation already says her partner holds her phone, so it needed no change. In the 43 q3 explanation, the platelet test sentence was replaced with the reviewer's wording. The s67 type check and tests pass (128 tests).
