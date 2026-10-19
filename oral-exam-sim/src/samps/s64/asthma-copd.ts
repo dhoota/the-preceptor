@@ -22,7 +22,7 @@ export const ASTHMA_COPD_S64: Samp[] = [
     topic: "asthma-copd",
     title: "Wheezing after the walk home",
     stem:
-      "You are working in a community hospital emergency department on a June evening. Since 18:00, when a thunderstorm with strong winds crossed the town, 21 people have arrived with cough and wheeze. A 29-year-old woman was walking home from a soccer field when the storm hit, and within 30 minutes she had chest tightness, cough and wheeze. She has had hay fever every June since childhood and uses a mometasone nasal spray in season. She has never been told she has asthma and has no inhalers. She has no hives, lip swelling, vomiting or fever, and she ate nothing new. She sits upright, speaks in words and uses her neck muscles. There is loud expiratory wheeze in both lungs. Her peak flow is 160 L/minute, and her predicted value is 450 L/minute. Every pulse oximeter in the department is in use.",
+      "You are working in a community hospital emergency department on a June evening. Since 18:00, when a storm front with strong gusts and a sudden drop in temperature crossed the town, 21 people have arrived with cough and wheeze. A 29-year-old woman was walking home from a soccer field when the storm hit, and within 30 minutes she had chest tightness, cough and wheeze. She has had hay fever every June since childhood and uses a mometasone nasal spray in season. She has never been told she has asthma and has no inhalers. She has no hives, lip swelling, vomiting or fever, and she ate nothing new. She sits upright, speaks in words and uses her neck muscles. There is loud expiratory wheeze in both lungs. Her peak flow is 160 L/minute, and her predicted value is 450 L/minute. Every pulse oximeter in the department is in use.",
     vitals: { temperature: "36.9°C oral", pulse: "124/minute", resp: "32/minute", bp: "132/80 mmHg", weight: "64 kg" },
     questions: [
       {
@@ -43,7 +43,7 @@ export const ASTHMA_COPD_S64: Samp[] = [
         options: ["Arterial gas before any oxygen", "High-concentration oxygen by reservoir mask", "Low-flow oxygen by nasal prongs", "Oxygen once an oximeter is free", "No oxygen unless cyanosis appears"],
         correct: 2,
         explanation:
-          "She has a severe exacerbation: she speaks in words, her respiratory rate is 32/minute, her pulse is 124/minute and her peak flow of 160 L/minute is 36% of predicted. GINA states that oxygen should not be withheld when pulse oximetry is not available, and that in severe adult exacerbations controlled low-flow oxygen gives better physiological outcomes than high-concentration oxygen. Once an oximeter is free, the flow is titrated to a saturation of 93 to 95%. Blood gases are not routinely needed, and controlled oxygen continues while one is drawn. Waiting for an oximeter or for cyanosis withholds a treatment she needs now.",
+          "She has a severe exacerbation: she speaks in words, her respiratory rate is 32/minute, her pulse is 124/minute and her peak flow of 160 L/minute is 36% of predicted. GINA states that oxygen should not be withheld when pulse oximetry is not available, and that in severe adult exacerbations controlled low-flow oxygen gives better physiological outcomes than high-concentration oxygen. Once an oximeter is free, the flow is titrated to a saturation of 93 to 95%. GINA suggests considering a blood gas when peak flow is below 50% of predicted, as hers is, but controlled oxygen continues while it is drawn, so a gas never comes before oxygen. Waiting for an oximeter or for cyanosis withholds a treatment she needs now.",
         keyFeature: { topic: "asthma-copd", n: 5 },
         source: "gina-2026",
       },
@@ -89,10 +89,10 @@ export const ASTHMA_COPD_S64: Samp[] = [
         id: "q1",
         kind: "single",
         prompt: "Which of the following findings best shows that he perceives his airflow limitation poorly?",
-        options: ["Full sentences when speaking", "His rating of 3 out of 10", "Pulse of 108/minute", "Reliever used 10 times a day", "SpO2 of 93% on room air"],
+        options: ["Full sentences when speaking", "His rating of 3 out of 10", "Pulse of 108/minute", "Using about 10 inhalations a day", "SpO2 of 93% on room air"],
         correct: 1,
         explanation:
-          "His peak flow of 150 L/minute is 31% of his personal best of 480 L/minute, yet he rates his breathing as only 3 out of 10. GINA describes impaired perception as few symptoms despite low lung function, and names poor perception as one reason asthma is missed in older adults. Full sentences, a pulse of 108/minute and an SpO2 of 93% are signs measured by others, not his own sense of breathlessness. Using his reliever 10 times a day shows that he did notice something and acted on it.",
+          "His peak flow of 150 L/minute is 31% of his personal best of 480 L/minute, yet he rates his breathing as only 3 out of 10. GINA describes impaired perception as few symptoms despite low lung function, and names poor perception as one reason asthma is missed in older adults. Full sentences, a pulse of 108/minute and an SpO2 of 93% are signs measured by others, not his own sense of breathlessness. Using about 10 inhalations a day shows that he did notice something and acted on it.",
         keyFeature: { topic: "asthma-copd", n: 3 },
         source: "gina-2026",
       },
@@ -229,19 +229,19 @@ export const ASTHMA_COPD_S64: Samp[] = [
       {
         id: "q3",
         kind: "single",
-        update: "Bilevel ventilation runs at IPAP 16 and EPAP 5 cm H2O. After 1 hour her pH is 7.28 and PaCO2 72 mmHg. Air hisses from around the interface, and the ventilator often misses her breaths.",
-        prompt: "Which of the following is the most appropriate next step in her ventilation?",
-        options: ["Increase oxygen to 6 L/minute", "Intubate for failed NIV", "Lower the IPAP to 10 cm H2O", "Refit or change the mask", "Switch to high-flow nasal oxygen"],
-        correct: 3,
+        update: "Bilevel ventilation runs at IPAP 16 and EPAP 5 cm H2O, with oxygen entrained at 4 L/minute. The ventilator has no oxygen blender. After 1 hour her pH is 7.31 and PaCO2 64 mmHg, but her SpO2 is 85% with little leak.",
+        prompt: "Which of the following is the most appropriate change to her oxygen delivery during bilevel ventilation?",
+        options: ["Accept an SpO2 of 85% for now", "Entrain oxygen at the ventilator end", "Increase entrained oxygen to 10 L/minute", "Switch to high-flow nasal oxygen", "Use a ventilator with an oxygen blender"],
+        correct: 4,
         explanation:
-          "A large leak explains both the missed breaths and the unchanged gas. BTS and ICS guidance says that before NIV is judged to have failed, common technical problems must be fixed, and excessive leak is the first cause to correct when the ventilator does not trigger despite visible effort. Failure means acidosis that persists or worsens despite optimized delivery, which has not yet been tried. Oxygen flows above 4 L/minute can worsen leak and asynchrony, and settings should be optimized before FiO2 is raised. Lowering the IPAP reduces her ventilation. Switching to high-flow oxygen abandons pressure support before it has been delivered properly.",
+          "Her pH has risen from 7.29 to 7.31, so bilevel ventilation is working, but an SpO2 of 85% is below the BTS and ICS target of 88 to 92% for hypercapnic failure on NIV. The guidance warns that entrained oxygen flows above 4 L/minute can cause mask leak and delayed triggering, and recommends a ventilator with an integral oxygen blender when 4 L/minute fails to keep the saturation above 88%. Raising the flow to 10 L/minute risks the asynchrony it describes. Oxygen should be entrained as close to the patient as possible, not at the ventilator end. Accepting 85% leaves her below target, and switching to high-flow oxygen abandons support that is lowering her PaCO2.",
         keyFeature: { topic: "asthma-copd", n: 7 },
         source: "bts-ics-ahrf-2016",
       },
       {
         id: "q4",
         kind: "menu",
-        update: "The leak is fixed. A resident wonders whether intensive care would be futile for someone with her lung function if she later needs intubation.",
+        update: "A resident wonders whether intensive care would be futile for someone with her lung function if she later needs intubation.",
         prompt: "Which of the following statements about her outcome if she needs invasive ventilation are most accurate?",
         options: ["FEV1 below 35% rules out intubation", "Her age alone makes ICU care futile", "Most intubated patients die in hospital", "Most survivors would choose it again", "Prognostic scores predict her outcome well", "Survival is often underestimated"],
         select: 2,

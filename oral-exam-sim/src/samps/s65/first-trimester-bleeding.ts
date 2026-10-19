@@ -74,7 +74,7 @@ export const FIRST_TRIMESTER_BLEEDING_S65: Samp[] = [
         options: ["Admit for a repeat hCG in 48 hours", "Discharge with hCG in 48 hours", "Expectant care at home", "Formal ultrasound tomorrow", "Gynecology now for surgery"],
         correct: 4,
         explanation:
-          "A positive pregnancy test, an empty uterus and fluid behind it make a bleeding ectopic pregnancy highly likely, and blood can seep into the abdomen over days before the BP falls. Once the diagnosis is highly likely, the step is to prepare for surgery or refer urgently, with IV access and Ringer's lactate, close monitoring of pulse, BP and bleeding, her blood type determined and blood ready for transfusion. Expectant care, discharge, a formal scan tomorrow or admission to wait for a repeat hCG would all leave a likely intraperitoneal bleed without definitive treatment.",
+          "A positive pregnancy test, an empty uterus and fluid behind it make a bleeding ectopic pregnancy highly likely, and blood can seep into the abdomen over days or weeks. Once the diagnosis is highly likely, the step is to prepare for surgery or refer urgently, with IV access and Ringer's lactate, close monitoring of pulse, BP and bleeding, her blood type determined and blood ready for transfusion. Expectant care, discharge, a formal scan tomorrow or admission to wait for a repeat hCG would all leave a likely intraperitoneal bleed without definitive treatment.",
         keyFeature: { topic: "first-trimester-bleeding", n: 2 },
         source: "msf-ectopic",
       },
@@ -136,7 +136,7 @@ export const FIRST_TRIMESTER_BLEEDING_S65: Samp[] = [
         options: ["Equal to the risk after a miscarriage", "Higher than usual given her features", "Lower than usual given her age", "Present only if bleeding continues", "Removed once the uterus is empty"],
         correct: 1,
         explanation:
-          "Her age of 41, an hCG of 310 000 IU/L and theca lutein cysts are each markers of a high-risk mole, and with these features the rate of postmolar gestational trophoblastic neoplasia can reach 40 to 50%. She should hear this plainly before discharge, because it is why her hCG follow-up must not lapse. Age over 40 raises the risk rather than lowering it. Emptying the uterus does not remove the risk, and persistent disease is often silent, so it is found by an hCG that plateaus or rises rather than by bleeding. Even an average complete mole progresses to postmolar neoplasia in about 20% of cases, so her risk is not that of an ordinary pregnancy loss.",
+          "Her age of 41, an hCG of 310 000 IU/L and theca lutein cysts are each markers of a high-risk mole, and with these features the rate of postmolar gestational trophoblastic neoplasia can reach 40 to 50%. She should hear this plainly before discharge, because it is why her hCG follow-up must not lapse. Age over 40 raises the risk rather than lowering it. Emptying the uterus does not remove the risk, and persistent disease is often silent, so it is found by an hCG that plateaus or rises rather than by bleeding. Even after complete evacuation, about 20% of molar pregnancies progress to postmolar neoplasia, so her risk is not that of an ordinary pregnancy loss.",
         keyFeature: { topic: "first-trimester-bleeding", n: 6 },
         source: "braga-mole-2025",
       },
