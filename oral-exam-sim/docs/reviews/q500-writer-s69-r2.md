@@ -72,3 +72,23 @@ KF1 5 (40 q1, 40 q2, 41 q1, 42 q3, 43 q2). KF2 2 (43 q1, 43 q3). KF3 2 (41 q2, 4
 3. burns-40 q1 rests on McKee listing ingestion as a route to systemic toxicity. No source gives a paediatric hand-to-mouth figure. The key depends on the stem facts (finger sucking, normal eyes, dry clothes, no cough).
 4. burns-41 q4: PCA in the emergency department for a patient waiting several hours is less common than on a ward. The update states the 6 hour stay to make the plan reasonable.
 5. burns-42 q3: the 36.5°C threshold comes from a provincial consensus statement (New Brunswick), not a national guideline.
+
+## Round 3
+
+This round answers `docs/reviews/q500-verify2-s69.md`. burns-39, burns-40 and burns-43 are unchanged. burns-41 has only the two explanation fixes below, and its keys are unchanged. Only `src/samps/s69/burns.ts` was edited. The type check shows no s69 errors, and the s69 tests pass (128 of 128).
+
+| Fix | What was done |
+|---|---|
+| burns-42 q1 repeated burns-16 q1 (fluid clock from the injury) | Replaced with a new KF4 decision: how to secure a cannula placed through burned skin. The update says her only IV, in the burned left forearm, is leaking and her legs have no usable veins, so a long cannula goes through burned skin of the right forearm. Key "Sutures to the skin". Distractors: tape wrapped around the forearm, tissue adhesive over the hub, transparent adhesive dressing, wrapped elastic bandage. Source: Trauma New Brunswick 2025, which says to suture lines placed through burned tissue "as standard taping and adhesives are often ineffective on burned tissue, particularly if wet" (PDF text reread). The catalogue for burns, environmental and multiple-trauma has no item keying how to secure a line through a burn. The stem times are unchanged. The q2 explanation now says "20:50, 8 hours after the fire at about 12:50", so it stands without the old q1. |
+| burns-42 q3 repeated burns-24 q2 (remove the wet towels and warm) | Rebuilt on the reviewer's route. The wet towels are gone: she "arrived under dry blankets". The update names "the Trauma New Brunswick 2025 consensus statement". The question asks how to describe a rectal temperature of 36.0°C. Key "Hypothermia needing active warming". Distractors: expected after an air transfer, mild cooling needing no action, normal for an adult at rest, probe error to be repeated later. None of them involves a wet or cool covering. NB point 9: hypothermia in a burn patient is an internal temperature below 36.5°C, not 35°C. The warming measures in the explanation (Bair Hugger or warm blankets, warmed Ringer's lactate, dry sheets, regular temperature checks) are all from NB. The unsupported clause "burned skin cannot hold heat" was not used. |
+| burns-42 q4 update named the q3 key | Deleted "Her towels are replaced with dry sheets and a warming blanket." The update now reads only "A urinary catheter is placed at 19:30 and at once drains 520 mL of clear yellow urine." No q4 text names the new q3 key. |
+| burns-41 q4 IM absorption claim (physician list) | Removed. The sentence now reads "Scheduled IM doses every 3 hours cannot be adjusted as his pain changes, and each injection adds pain of its own." The key is unchanged. |
+| burns-41 q1 urine drug screen claim (physician list) | Reworded to "A urine drug screen would not change his care whatever it showed, because his buprenorphine and the paramedics' fentanyl are already known." It no longer claims standard panels detect either drug. The key is unchanged. |
+
+Single key positions were rebalanced by the alphabetical order of the new q1 options, so the q1 key sits first. Positions now run 3, 4, 4, 4, 4 of 19.
+
+Key feature coverage: KF1 5 (40 q1, 40 q2, 41 q1, 42 q3, 43 q2). KF2 2. KF3 2. KF4 3 (42 q1, 42 q2, 42 q4). KF5 4. KF6 4. There is still one menu question.
+
+Uncertain:
+- burns-42 q1 is tagged KF4 because the line exists to deliver the burn resuscitation. A reviewer could argue for no better fit. It is not airway, analgesia or disposition.
+- The 36.5°C threshold in q3 is from one provincial statement, now named in the update as SAMP_SPEC section 9 requires.

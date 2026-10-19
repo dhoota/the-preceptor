@@ -66,3 +66,14 @@ Every key feature is covered. There are two menu questions (50 q3, 51 q3). Singl
 1. anaphylaxis-49 q3 assumes oxygen is indicated for an infant in shock with a normal saturation. Carlisle supports it, and the WAO text quoted above ties high-flow oxygen to respiratory distress and repeated epinephrine.
 2. anaphylaxis-51 q3 uses a single Canadian hospital protocol rather than a national guideline. No national Canadian extravasation guideline was found. The hyaluronidase distractor reason (it is used for non-vasoconstricting irritant leaks) is standard pharmacology and is not stated in the LHSC protocol.
 3. anaphylaxis-48 q4 describes biphasic recurrence by its usual meaning: return after recovery without re-exposure. The WAO text read gives the timing but no formal definition.
+
+## Round 3
+
+This round answers `docs/reviews/q500-verify2-s70.md`. anaphylaxis-48, -50 and -52 are unchanged. Only `src/samps/s70/anaphylaxis.ts` was edited. The type check shows no s70 errors, and the s70 tests pass (128 of 128).
+
+| Fix | What was done |
+|---|---|
+| 49 q3 source and explanation | I opened TREKK, Bottom Line Recommendations: Anaphylaxis, at https://trekk.ca/resources/bottom-line-recommendations-anaphylaxis/. The page says "Last Updated Jul 2025". I also read the linked PDF, whose footer says "© JULY 2025, TREKK; FOR REVISION 2027. VERSION 2.2" and which reads "Provide O2 (10-15 L) by non-rebreather mask if signs of shock or respiratory distress." Added the source `trekk-anaphylaxis` ("TREKK (Translating Emergency Knowledge for Kids). Bottom line recommendations: anaphylaxis. Version 2.2. 2025.") to the SAMP sources, which now number 4 and are all cited. q3 now cites TREKK, and Carlisle stays cited by q2. The update now restates the TREKK indication: "His skin is still mottled with a capillary refill of 4 seconds". The explanation now opens with those signs of shock and says Canadian pediatric emergency guidance calls for oxygen at 10 to 15 L/minute by mask in any child with signs of shock or respiratory distress, whatever the saturation. Key, options and position are unchanged. |
+| 51 q4 update cue | Deleted "The infusion now runs well through a new IV." The update now starts "Twenty minutes later". |
+
+Uncertain: the 49 q3 key reads "Face mask oxygen at 10 L/minute", while TREKK names a non-rebreather mask. The flow matches TREKK's 10 to 15 L and the key was kept as instructed, so the reviewer may want the option wording aligned.
