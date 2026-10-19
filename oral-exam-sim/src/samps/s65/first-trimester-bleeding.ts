@@ -197,7 +197,7 @@ export const FIRST_TRIMESTER_BLEEDING_S65: Samp[] = [
         kind: "single",
         update: "Before she leaves, she says they want another child and asks how long they should wait before trying again.",
         prompt: "Which of the following is the most accurate advice about when they can start trying to conceive?",
-        options: ["Once she feels ready", "Only after 3 normal periods", "Only after 6 months of waiting", "Only after a year of contraception", "Only after karyotypes of both partners"],
+        options: ["Once she feels ready", "Only after a year of contraception", "Only after karyotypes of both partners", "Only after 6 months of waiting", "Only after 3 normal periods"],
         correct: 0,
         explanation:
           "There is no physiologic reason to delay trying after an early pregnancy loss that was not ectopic or molar. In a large trial cohort, couples who started trying within 3 months of a loss had a higher live birth rate than those who waited longer, 53.2% against 36.1%, with a shorter time to pregnancy. Waiting 6 months or a year, or for 3 periods, adds delay without benefit, so the timing is hers to choose once she is emotionally ready. Parental karyotypes belong to the work-up of recurrent loss, not a single loss.",
