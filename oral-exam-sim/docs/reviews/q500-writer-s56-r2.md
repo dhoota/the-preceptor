@@ -122,3 +122,15 @@ I read the full catalogues for pediatric-fever, tox, delirium-agitation, infecti
 ## Tests
 
 `npx tsc --noEmit -p . 2>&1 | grep 'samps/s56'` printed nothing. `SAMP_BATCH=s56 npx vitest run tests/samps.test.ts tests/samp-quality.test.ts tests/citations.test.ts`: 3 files, 112 tests passed.
+
+## Round 3
+
+Applied the fixes from `docs/reviews/q500-verify2-s56.md`. SAMPs 50 and 52 passed and were not touched. Nothing else changed.
+
+- pediatric-fever-48: added `alsoTopics: ["tox", "infectious-diseases"]`, which matches its q2 and q3 tags.
+- pediatric-fever-51: added `alsoTopics: ["shock"]`, which matches its q3 tag.
+- pediatric-fever-49 q3: the explanation now presents methimazole as an inference ("her daily tablet is most likely an antithyroid drug such as methimazole"). The update still says only "a daily tablet".
+- pediatric-fever-49 q1 (optional fix, done): the scale is now named "the Burch-Wartofsky point scale for thyroid storm, which the ATA guideline uses".
+- Coordinator ruling noted: 3-question SAMPs are acceptable where no new decision exists.
+
+Tests: the s56 type check grep printed nothing. `SAMP_BATCH=s56 npx vitest run tests/samps.test.ts tests/samp-quality.test.ts tests/citations.test.ts`: 112 tests passed.
