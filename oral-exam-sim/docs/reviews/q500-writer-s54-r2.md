@@ -140,3 +140,14 @@ Uncertain, for the reviewer:
 - For Walters 2023, only the abstract could be read. The full text sits behind a browser check on both NCBI and StatPearls. The explanation uses only the abstract's claims.
 
 Tests: the s54 tsc grep printed nothing. `SAMP_BATCH=s54 npx vitest run tests/samps.test.ts tests/samp-quality.test.ts tests/citations.test.ts`: 128 of 128 passed.
+
+## Round 4 (fixes from q500-verify3-s54.md)
+
+msk-39 and msk-41 passed and were not changed. Only the four listed items were edited.
+
+1. msk-40 q1 source: the citation now reads "Aresco C, Gambert SR, Stein DM. Cervical spine injuries in the geriatric patient. Clin Geriatr. 2010." The URL is unchanged.
+2. msk-42 title: now "Knee that gave way on the stairs".
+3. msk-43 q3: "Above knee cast for 6 weeks" is replaced by "External fixator spanning the leg". It sorts first, and the key stays at index 3. The explanation gives the reason: a spanning frame immobilizes the tibia, knee and ankle, but his tibia is intact and carries his weight, so the frame adds pin sites without stability that the fracture needs.
+4. msk-43 q4: the update now sets wound closure at 72 hours after injury, in line with the BOAST 2017 standard for definitive cover within 72 hours. The numbers were recomputed: 72 hours after injury falls on day 3, and 24 hours after closure falls on day 4. Only "3 days after injury" meets both EAST limits, so the key holds. One sentence was reworded to say that the published discussion notes a consensus that routine prophylaxis for more than 72 hours after surgery is more likely to be harmful than beneficial.
+
+Tests: the s54 tsc grep printed nothing. `SAMP_BATCH=s54 npx vitest run tests/samps.test.ts tests/samp-quality.test.ts tests/citations.test.ts`: 128 of 128 passed.

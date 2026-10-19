@@ -89,3 +89,25 @@ abdominal-pain-48 passed and was not changed. Ids are unchanged.
 - 52 q3 update "Chest imaging is planned" points toward the chest. It does not name q2's key.
 
 **Checks.** `npx tsc --noEmit -p . | grep samps/s62`: no output. `SAMP_BATCH=s62 npx vitest run tests/samps.test.ts tests/samp-quality.test.ts tests/citations.test.ts`: 3 files, 132 tests passed.
+
+## Round 4 (verdict `docs/reviews/q500-verify3-s62.md`)
+
+abdominal-pain-48 and -50 passed and were not touched.
+
+| Required fix | Done |
+|---|---|
+| 49 q2 dose: Canadian monographs dose by weight only under 50 kg. | The key is now "acetaminophen 1000 mg IV". I opened and read the B. Braun Acetaminophen Injection monograph (DPD 00069718, initial authorization 24 February 2023). Section 4.2, Table 1: adults and adolescents of 50 kg or more take 650 mg every 4 hours or 1000 mg every 6 hours, and those of 50 kg or less take 12.5 mg/kg every 4 hours or 15 mg/kg every 6 hours. The AVIR monograph (00048547) gives the same 1000 mg dose for 50 kg or more. The B. Braun monograph is added as a third source in 49 and is cited on q2. The explanation now says she takes 1000 mg every 6 hours, or 650 mg every 4 hours, at 52 kg. To keep key positions balanced, the codeine distractor became "acetaminophen 500 mg IV", an underdose by the monograph. The test sort ignores dose for the same drug, so the key sits second. The NICE order (IV acetaminophen before opioids) is still stated. |
+| 49 q3: "the contrast adds nothing to finding a stone" was not sourced. | Replaced with "NICE recommends the low-dose noncontrast study, and a standard CT with IV contrast gives a larger dose." |
+| 49 q4: KF1 tag was not a fit, and the update gave away keys. | Dropped, per the coordinator ruling that a 3-question SAMP is acceptable. I found no clean replacement that is unique, honestly tagged and free of cues. 49 now has q1 (KF6), q2 (analgesia-sedation KF3) and q3 (KF7). |
+| 51 q3: the antibiotic spectrum claims had no source. | I removed the spectrum claims instead of adding a fourth source. The distractors are now all fluoroquinolone regimens (ciprofloxacin with metronidazole, levofloxacin with metronidazole, moxifloxacin alone), plus "No antibiotic until cultures return". The monograph rejects every fluoroquinolone option: it warns of tendinitis and tendon rupture for "fluoroquinolones including" ciprofloxacin, further increased over age 60 and with corticosteroids. WSES 2020 rejects withholding antibiotics, since that is advised only for immunocompetent patients. The key is supported by WSES: coverage of gram-negative bacilli and anaerobes, oral treatment whenever possible, and amoxicillin-clavulanate, IV and then by mouth, as the antibiotic arm of the diverticulitis trial it describes. The key stays in the first position. |
+| 52 q3: the radiation statement had a stem gap, a mock-mode cue and an unsourced claim. | Dropped (3 questions accepted). The ciprofloxacin question moves from q4 to q3. 52 now has q1 (KF3), q2 (KF3) and q3 (KF8). |
+
+**Batch now.** 18 questions: 17 single and 1 menu. 48 and 50 are unchanged, and 49 and 52 have 3 questions each. Single key positions, first to fifth: 4, 3, 3, 4, 4 (no position above 25%). The longest-option rate is within the test limit.
+
+Abdominal pain key feature coverage: KF1 1 (50 q2), KF2 2 (50 q4, 51 q1), KF3 2 (52 q1, q2), KF4 1 (50 q5), KF5 2 (48 q2, 50 q3), KF6 1 (49 q1), KF7 1 (49 q3), KF8 3 (48 q1, 50 q1, 52 q3). Every key feature is still covered.
+
+**Uncertain, for the reviewer.**
+- 51 q3: three distractors share one flaw (fluoroquinolone with a corticosteroid at age 69). A candidate who knows the warning finds the key quickly, but each reason is sourced. Amoxicillin-clavulanate as the key rests on WSES describing it in a trial, not on a regimen recommendation.
+- 49 q2: many Canadian EDs would add an opioid at this point. The key follows NICE, which the previous verdict accepted.
+
+**Checks.** `npx tsc --noEmit -p . | grep samps/s62`: no output. `SAMP_BATCH=s62 npx vitest run tests/samps.test.ts tests/samp-quality.test.ts tests/citations.test.ts`: 3 files, 124 tests passed.

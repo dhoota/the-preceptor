@@ -179,3 +179,13 @@ I grepped the gi-bleed, shock and abdominal-pain catalogues and the batch15 oral
 - 52 q3: a reviewer may judge that the key's point is foreshadowed in the 52 q1 explanation ("endoscopy is often normal between episodes"). That explanation was left untouched because q1 passed.
 - 51 q3: applying melena persistence to swallowed blood is reasoning from the Merck statement, not a direct quote about swallowed blood.
 - **48 q4 (coordinator ruling).** The distractor reason now reads "Octreotide does not remove the shear stress that causes her bleeding." The OCEAN transfusion claim is removed, so every claim in the explanation rests on Lourdusamy 2021. The key, options and source are unchanged. The s68 tests pass.
+
+## Round 5
+
+Applied `docs/reviews/q500-verify4-s68.md` and nothing else:
+
+- In 52 q1, the clause "and endoscopy is often normal between episodes" is deleted, so the sentence now ends "fits this pattern."
+- In 48 q4, the sentence now reads "Octreotide, a somatostatin analogue, does not remove the shear stress that causes her bleeding."
+- In 51 q3, the Merck point is now followed by "so blood already in his gut can still appear in his stool", so the reasoning no longer reads as quoted from Merck.
+
+The s68 tests pass.
