@@ -22,14 +22,14 @@ export const ASTHMA_COPD_S64: Samp[] = [
     topic: "asthma-copd",
     title: "Wheeze after a cold in a line cook",
     stem:
-      "You are working in a community hospital emergency department in Sault Ste. Marie, Ontario. A 31-year-old man presents with 2 days of worsening wheeze and cough that began with a cold. He has had asthma since childhood and has allergic rhinitis. At age 22 he was intubated in an intensive care unit for asthma. He stopped his budesonide-formoterol inhaler 4 months ago because of the cost, and he has used two salbutamol inhalers in the past 3 weeks. He works as a line cook. He sits upright, speaks in short phrases and uses his neck muscles. He has diffuse expiratory wheeze with fair air entry.",
+      "You are working in a community hospital emergency department in Sault Ste. Marie, Ontario. A 31-year-old man presents with 2 days of worsening wheeze and cough that began with a cold. He has had asthma since early childhood and allergic rhinitis since his teens. At age 22 he was intubated in an intensive care unit for asthma. He stopped his budesonide-formoterol inhaler 4 months ago because of the cost, and he has used two salbutamol inhalers in the past 3 weeks. He works as a line cook. He sits upright, speaks in short phrases and uses his neck muscles. He has diffuse expiratory wheeze with fair air entry.",
     vitals: { temperature: "37.3°C oral", pulse: "124/minute", resp: "30/minute", bp: "136/84 mmHg", o2sat: "89% on room air", weight: "78 kg" },
     questions: [
       {
         id: "q1",
         kind: "menu",
         prompt: "Which of the following features of his history most increase his risk of dying from asthma?",
-        options: ["Allergic rhinitis", "Asthma since childhood", "Cold for 2 days", "ICU intubation at age 22", "Stopped his inhaled corticosteroid", "Two salbutamol inhalers in 3 weeks", "Work as a line cook"],
+        options: ["Allergic rhinitis since his teens", "Asthma since early childhood", "Cold for the past 2 days", "ICU intubation at age 22", "Off his inhaled steroid", "Two salbutamol inhalers in 3 weeks", "Works as a line cook"],
         select: 3,
         correct: [3, 4, 5],
         explanation:
@@ -53,7 +53,7 @@ export const ASTHMA_COPD_S64: Samp[] = [
         kind: "single",
         update: "After an hour of salbutamol, ipratropium and prednisone he feels a little better, but his respiratory rate is 28/minute and pulse 134/minute. Arterial gas: pH 7.36, PaCO2 44 mmHg, PaO2 68 mmHg. Lactate 3.6 mmol/L, potassium 3.2 mmol/L, glucose 10.4 mmol/L.",
         prompt: "Which of the following results is most concerning for impending respiratory failure?",
-        options: ["Arterial PaCO2 of 44 mmHg", "Glucose of 10.4 mmol/L", "Lactate of 3.6 mmol/L", "Potassium of 3.2 mmol/L", "Pulse of 134/minute"],
+        options: ["Arterial PaCO2 of 44 mmHg", "Glucose of 10.4 mmol/L", "Lactate of 3.6 mmol/L", "Potassium of 3.2 mmol/L", "Pulse rising to 134/minute"],
         correct: 0,
         explanation:
           "A man breathing 28 times a minute with acute asthma should be blowing off CO2, and GINA notes that the PaCO2 is usually below 40 mmHg during an exacerbation. A PaCO2 of 44 mmHg is therefore not reassuring. It suggests fatigue, and a normal or rising PaCO2 marks respiratory failure and the possible need for airway support. A raised lactate, a mild fall in potassium, a high glucose and tachycardia are expected effects of repeated salbutamol and corticosteroid. They need monitoring but do not signal exhaustion.",
@@ -123,7 +123,7 @@ export const ASTHMA_COPD_S64: Samp[] = [
         id: "q4",
         kind: "single",
         prompt: "Which of the following discharge measures best addresses how he underestimated this attack?",
-        options: ["Home nebulizer for salbutamol", "Home oximeter for saturation checks", "Salbutamol added to his MART inhaler", "Spirometry in 6 months", "Written action plan with peak flow meter"],
+        options: ["Home nebulizer for salbutamol", "Home oximeter for daily saturation checks", "Salbutamol added to his MART inhaler", "Spirometry in 6 months", "Written action plan with peak flow meter"],
         correct: 4,
         explanation:
           "He felt only a little tight with a peak flow of 31% of his best, so his symptoms cannot be trusted to warn him. GINA suggests regular peak flow monitoring for poor perceivers, and patients discharged from the ED with an action plan and a peak flow meter do better than those without. A home nebulizer offers no advantage over his inhaler, and nebulized salbutamol use is itself a marker of fatal asthma risk. An oximeter does not measure airflow, and his saturation was 93% even with a peak flow of 31%. Patients on maintenance and reliever therapy use budesonide-formoterol as their reliever rather than adding salbutamol, and spirometry in 6 months does not help him detect the next attack.",
@@ -219,8 +219,8 @@ export const ASTHMA_COPD_S64: Samp[] = [
         id: "q2",
         kind: "single",
         prompt: "Which of the following values best indicates the severity of his acute respiratory failure?",
-        options: ["Bicarbonate of 36 mmol/L", "PaCO2 of 82 mmHg", "PaO2 of 92 mmHg", "pH of 7.26", "SpO2 of 97%"],
-        correct: 3,
+        options: ["Arterial pH of 7.26", "Bicarbonate of 36 mmol/L", "PaCO2 of 82 mmHg", "PaO2 of 92 mmHg", "SpO2 of 97% on 8 L/minute"],
+        correct: 0,
         explanation:
           "His kidneys have retained bicarbonate for years, so his PaCO2 runs high even when he is well, and the absolute PaCO2 does not show how much has changed today. The pH falls only when CO2 rises faster than that compensation, so it measures the acute component. BTS and ICS guidance defines acute respiratory acidosis by a pH below 7.35 with a raised PCO2 and has used more severe acidosis, such as a pH below 7.25, as the point to consider invasive ventilation, so 7.26 is serious. A bicarbonate of 36 mmol/L reflects chronic compensation, and a PaO2 of 92 mmHg with an SpO2 of 97% reflects too much oxygen, not stability.",
         keyFeature: { topic: "asthma-copd", n: 3 },
@@ -292,7 +292,7 @@ export const ASTHMA_COPD_S64: Samp[] = [
         id: "q3",
         kind: "single",
         prompt: "Which of the following features of her current treatment most increases her risk of death from asthma?",
-        options: ["Daily inhaled fluticasone", "Montelukast at bedtime", "Salbutamol by home nebulizer", "Spacer for her inhaler", "Yearly influenza vaccine"],
+        options: ["Daily inhaled fluticasone", "Montelukast 10 mg at bedtime", "Salbutamol by home nebulizer", "Spacer for her inhaler", "Yearly influenza vaccine"],
         correct: 2,
         explanation:
           "GINA lists over-use of short-acting beta agonists, and specifically the use of nebulized salbutamol, among the factors linked to asthma-related death. Heavy home nebulizer use often reflects poor control and can let patients delay seeking care. Not using an inhaled corticosteroid is a risk factor, so her supervised daily fluticasone is protective. Montelukast, a spacer and influenza vaccination are reasonable parts of her care and are not markers of fatal asthma.",

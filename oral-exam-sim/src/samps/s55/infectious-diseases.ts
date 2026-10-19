@@ -289,4 +289,106 @@ export const INFECTIOUS_DISEASES_S55: Samp[] = [
     sources: [S.coughlin, S.guelbi, S.idsaSsti],
     ...META,
   },
+
+  /* 51 Secondary syphilis labelled as a viral illness --------------------- */
+  {
+    id: "infectious-diseases-51",
+    title: "Rash and tiredness in a young woman",
+    stem:
+      "A 27-year-old woman presents to the emergency department with 10 days of fatigue, low-grade fevers, headache and a sore throat. Three days ago a rash that does not itch appeared on her trunk. A walk-in clinic diagnosed a viral illness last week. She has had two male partners in the past 4 months and uses condoms inconsistently. She does not recall any genital sore. She takes an oral contraceptive and has no allergies. There is a faint pink macular rash on her trunk, and the lymph nodes in her neck and groins are enlarged and nontender. Her pharynx is mildly red. Her neck is supple, and her neurologic and eye examinations are normal.",
+    vitals: { temperature: "37.9°C oral", pulse: "92/minute", resp: "16/minute", bp: "116/72 mmHg", o2sat: "99% on room air", weight: "61 kg" },
+    questions: [
+      {
+        id: "q1",
+        kind: "single",
+        prompt: "Which of the following parts of the examination is most likely to show the cause of her illness?",
+        options: [
+          "Auscultation for a heart murmur",
+          "Inspection of the palms and soles",
+          "Kernig and Brudzinski signs",
+          "Palpation of the spleen tip",
+          "Tonsils for exudate and swelling",
+        ],
+        correct: 1,
+        explanation:
+          "A truncal rash with fever, sore throat and widespread lymph nodes after new partners is secondary syphilis until tested, and PHAC describes its rash as rough red or reddish brown spots on the palms and soles that patients may not notice. The genitals and mouth should also be examined for mucosal lesions and condylomata lata. Her neck is supple and her neurologic examination is normal, so meningeal signs add little. A murmur, a spleen tip or tonsillar exudate would point to endocarditis or mononucleosis, which fit her picture less well.",
+        keyFeature: { topic: "infectious-diseases", n: 6 },
+        source: "phac-syphilis-clinical",
+      },
+      {
+        id: "q2",
+        kind: "single",
+        update: "There are scaly reddish brown macules on both palms and soles. On the labia there are two flat, moist, grey plaques.",
+        prompt: "Which of the following is the most likely diagnosis for this patient's illness?",
+        options: [
+          "Acute HIV infection",
+          "Disseminated gonorrhea",
+          "Hand, foot and mouth disease",
+          "Pityriasis rosea",
+          "Secondary syphilis",
+        ],
+        correct: 4,
+        explanation:
+          "Reddish brown macules on the palms and soles, condylomata lata on the labia, fever, headache and generalized lymph nodes are features PHAC lists for secondary syphilis, which usually appears 2 to 12 weeks after infection and can follow a chancre that went unnoticed. Acute HIV can cause fever, rash and lymph nodes but not condylomata lata, and she will be tested for it. Disseminated gonorrhea causes a few pustules on the limbs with joint pain. Pityriasis rosea spares the palms and soles. Hand, foot and mouth disease causes vesicles, not scaly macules or genital plaques.",
+        keyFeature: { topic: "infectious-diseases", n: 5 },
+        source: "phac-syphilis-clinical",
+      },
+      {
+        id: "q3",
+        kind: "menu",
+        select: 3,
+        prompt: "Which of the following investigations are most appropriate for her in the emergency department today?",
+        options: [
+          "Blood cultures, two sets",
+          "Chlamydia and gonorrhea NAAT",
+          "HIV antigen and antibody test",
+          "Lumbar puncture",
+          "Monospot test",
+          "Syphilis serology with RPR",
+          "Throat swab for group A strep",
+        ],
+        correct: [1, 2, 5],
+        explanation:
+          "Syphilis is diagnosed by serology, and most provinces screen with a treponemal test followed by a quantitative RPR, which also gives the baseline titre for follow-up. PHAC advises that anyone diagnosed with syphilis also be screened for chlamydia, gonorrhea and HIV. Lumbar puncture is for neurologic, eye or ear findings, and her examinations are normal. Blood cultures, a monospot and a throat swab look for other causes that the palm and sole rash and genital plaques have made unlikely.",
+        keyFeature: { topic: "infectious-diseases", n: 7 },
+        source: "phac-syphilis-testing",
+      },
+      {
+        id: "q4",
+        kind: "single",
+        prompt: "Which of the following is the most appropriate treatment for this patient's infection?",
+        options: [
+          "benzathine penicillin G IM single dose",
+          "ceftriaxone IM single dose",
+          "doxycycline PO for 14 days",
+          "minocycline PO for 14 days",
+          "penicillin V PO for 10 days",
+        ],
+        correct: 0,
+        explanation:
+          "PHAC recommends long-acting benzathine penicillin G 2.4 million units IM as a single dose for primary, secondary and early latent syphilis. Doxycycline 100 mg twice daily for 14 days is the alternative for penicillin allergy, which she does not have. A single dose of ceftriaxone is not a syphilis regimen, and ceftriaxone is kept for exceptional cases as a 10 day course. Minocycline and oral penicillin V are not recommended. She should be warned that fever, headache and muscle aches within hours of the injection may be a Jarisch-Herxheimer reaction, which is most common in secondary syphilis.",
+        keyFeature: { topic: "infectious-diseases", n: 8 },
+        source: "phac-syphilis-treatment",
+      },
+      {
+        id: "q5",
+        kind: "single",
+        prompt: "Which of the following is the most appropriate plan for her two sexual partners from the past 4 months?",
+        options: [
+          "Test and treat with penicillin now",
+          "Test only if symptoms appear",
+          "Treat only if their serology is positive",
+          "Treat with azithromycin, no testing",
+          "No action, as condoms were sometimes used",
+        ],
+        correct: 0,
+        explanation:
+          "Both partners fall within the 6 month trace-back period that PHAC sets for secondary syphilis, and PHAC advises strongly considering epidemiological treatment for sexual contacts from the previous 90 days, because a recently infected partner can still have negative serology. So both are tested and treated now with the same single injection of benzathine penicillin G. Waiting for symptoms or a positive result risks onward spread. Azithromycin is not a recommended syphilis treatment. Inconsistent condom use does not remove the risk. Syphilis is also reportable to public health in every province and territory.",
+        keyFeature: { topic: "infectious-diseases", n: 10 },
+        source: "phac-syphilis-treatment",
+      },
+    ],
+    sources: [S.phacSyphClin, S.phacSyphTest, S.phacSyphTx],
+    ...META,
+  },
 ];
