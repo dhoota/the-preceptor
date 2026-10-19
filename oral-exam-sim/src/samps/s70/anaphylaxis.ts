@@ -211,7 +211,7 @@ export const ANAPHYLAXIS_S70: Samp[] = [
       {
         id: "q1",
         kind: "single",
-        update: "You ask the nurse to prepare an epinephrine infusion, which will take several minutes.",
+        update: "Using the Resuscitation Council UK 2021 refractory anaphylaxis algorithm, you ask the nurse to prepare an epinephrine infusion, which will take several minutes.",
         prompt: "Which of the following is the most appropriate treatment for her while the infusion is prepared?",
         options: ["epinephrine 0.5 mg IM", "epinephrine 0.1 mg IV push", "glucagon 1 mg IV", "methylprednisolone 125 mg IV", "No further epinephrine until the infusion"],
         correct: 0,
@@ -223,18 +223,7 @@ export const ANAPHYLAXIS_S70: Samp[] = [
       {
         id: "q2",
         kind: "single",
-        update: "You start a peripheral epinephrine infusion of 1 mg in 100 mL of normal saline, using the Resuscitation Council UK 2021 refractory anaphylaxis algorithm.",
-        prompt: "Which of the following starting infusion rates is most appropriate for her?",
-        options: ["5 mL/hour", "16 mL/hour", "48 mL/hour", "160 mL/hour", "480 mL/hour"],
-        correct: 2,
-        explanation:
-          "The algorithm starts the infusion at 0.5 to 1.0 mL/kg/hour of 1 mg in 100 mL, which is 10 mcg/mL, and titrates to response. At 64 kg that range is 32 to 64 mL/hour, so 48 mL/hour, which delivers 480 mcg/hour or 8 mcg/minute, sits within it. A rate of 16 mL/hour is half the lowest starting rate, and 5 mL/hour is far too low to help. Rates of 160 and 480 mL/hour give 2.5 to 7.5 mL/kg/hour, enough to cause severe hypertension, dysrhythmia and myocardial injury.",
-        keyFeature: { topic: "anaphylaxis", n: 3 },
-        source: "rcuk-refractory",
-      },
-      {
-        id: "q3",
-        kind: "single",
+        update: "The nurse has prepared 1 mg of epinephrine in 100 mL of normal saline for a peripheral infusion.",
         prompt: "Which of the following is the most appropriate way to give the infusion?",
         options: ["Dedicated line, arm without the BP cuff", "Gravity drip without a pump", "Piggybacked onto the saline line", "Same arm as the automated BP cuff", "Through the IV used for fluid boluses"],
         correct: 0,
@@ -244,9 +233,21 @@ export const ANAPHYLAXIS_S70: Samp[] = [
         source: "rcuk-refractory",
       },
       {
+        id: "q3",
+        kind: "single",
+        update: "The infusion starts and her BP rises to 98/60 mmHg. Ten minutes later her voice becomes hoarse and soft inspiratory stridor appears. The anesthetist is on the way.",
+        prompt: "Which of the following is the most appropriate added treatment for her stridor while airway help arrives?",
+        options: ["budesonide 2 mg nebulized", "dexamethasone 10 mg IV", "epinephrine 0.5 mg nebulized", "epinephrine 5 mg nebulized", "salbutamol 5 mg nebulized"],
+        correct: 3,
+        explanation:
+          "New hoarseness and stridor mean laryngeal swelling is partly obstructing her upper airway. The algorithm treats partial upper airway obstruction with nebulized epinephrine, 5 mL of the 1 mg/mL solution, which is 5 mg, alongside the infusion while the airway team prepares. A dose of 0.5 mg is a tenth of that and too little for an adult. Salbutamol relaxes the lower airways and treats wheeze, not swelling of the larynx. Budesonide and dexamethasone are steroids that act over hours, as in croup, and cannot shrink anaphylactic airway swelling in the minutes that matter.",
+        keyFeature: { topic: "anaphylaxis", n: 3 },
+        source: "rcuk-refractory",
+      },
+      {
         id: "q4",
         kind: "single",
-        update: "Twenty minutes later, after two increases in the rate, her BP is 186/104 mmHg and her pulse is 150/minute. She has a pounding headache. Her wheeze and hives have gone.",
+        update: "Twenty minutes later, after two increases in the rate, her BP is 186/104 mmHg and her pulse is 150/minute. She has a pounding headache. Her stridor, wheeze and hives have gone.",
         prompt: "Which of the following is the most appropriate next step in her management?",
         options: ["Add a labetalol infusion", "Give a second vasopressor", "Give lorazepam 1 mg IV", "Reduce the infusion rate", "Stop all IV fluids"],
         correct: 3,

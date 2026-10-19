@@ -246,17 +246,16 @@ export const ISCHEMIC_HEART_DISEASE_S57: Samp[] = [
       {
         id: "q4",
         kind: "single",
-        update: "He asks whether he can use a sublingual nitroglycerin spray for future episodes.",
-        prompt: "Which of the following is the minimum interval after a dose of sildenafil before nitroglycerin may be used?",
-        options: ["2 hours", "6 hours", "12 hours", "24 hours", "48 hours"],
+        prompt: "Which of the following LDL cholesterol levels is the 2021 CCS threshold for intensifying lipid-lowering therapy in coronary disease?",
+        options: ["1.0 mmol/L", "1.4 mmol/L", "1.6 mmol/L", "1.8 mmol/L", "2.6 mmol/L"],
         correct: 3,
         explanation:
-          "Sildenafil and nitrates both raise cyclic GMP in vascular smooth muscle, and together they can cause profound hypotension. Nitrates should not be given within 24 hours of sildenafil or vardenafil, or within 48 hours of tadalafil. Intervals of 2 to 12 hours are too short because the effect of sildenafil persists. The 48 hour interval applies to the longer acting tadalafil. If pain starts within 24 hours of a sildenafil dose, he should call 911 rather than use the spray.",
-        keyFeature: { topic: TOPIC, n: 7 },
-        source: "aha-nste-acs-2014",
+          "For patients with atherosclerotic disease on a maximally tolerated statin, the 2021 CCS guideline uses a treatment threshold of LDL cholesterol 1.8 mmol/L or higher for adding ezetimibe or a PCSK9 inhibitor. His LAD plaque places him in that secondary prevention group. Levels of 1.0, 1.4 and 1.6 mmol/L sit below the CCS threshold, so a patient at those values does not meet it. A threshold of 2.6 mmol/L would leave patients between 1.8 and 2.6 mmol/L without the added therapy the guideline recommends.",
+        keyFeature: { topic: TOPIC, n: 8 },
+        source: "ccs-dyslipidemia-2021",
       },
     ],
-    sources: [S.gulati, S.amsterdam],
+    sources: [S.gulati, S.lipids],
     ...META,
   },
 
@@ -266,7 +265,7 @@ export const ISCHEMIC_HEART_DISEASE_S57: Samp[] = [
     topic: TOPIC,
     title: "Chest pressure on the island",
     stem:
-      "You are working in a hospital on an island. Transfer to the nearest PCI centre takes at least 3 hours by ferry and road, and no aircraft can fly tonight. A 78-year-old woman presents to the emergency department with 90 minutes of central chest pressure and nausea. She has hypertension treated with amlodipine. She has no history of bleeding, stroke, recent surgery or trauma, and she takes no anticoagulant. She is pale and her lungs are clear. Her ECG shows 6 mm ST elevation in V2, 3 to 5 mm ST elevation in V1, V3 and V4, and no Q waves. Creatinine is 84 umol/L. The team decides on fibrinolysis, and she chews ASA 160 mg.",
+      "You are working in a hospital on an island with no airstrip. Transfer to the nearest PCI centre takes at least 3 hours by ferry and road. A 78-year-old woman presents to the emergency department with 90 minutes of central chest pressure and nausea. She has hypertension treated with amlodipine. She has no history of bleeding, stroke, recent surgery or trauma, and she takes no anticoagulant. She is pale and her lungs are clear. Her ECG shows 6 mm ST elevation in V2, 3 to 5 mm ST elevation in V1, V3 and V4, and no Q waves. Creatinine is 84 umol/L. The team decides on fibrinolysis, and she chews ASA 160 mg.",
     vitals: { temperature: "36.5°C oral", pulse: "92/minute", resp: "18/minute", bp: "146/84 mmHg", o2sat: "96% on room air", weight: "62 kg" },
     questions: [
       {

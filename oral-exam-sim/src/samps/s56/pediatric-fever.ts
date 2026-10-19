@@ -121,13 +121,13 @@ export const PEDIATRIC_FEVER_S56: Samp[] = [
         kind: "single",
         prompt: "Which of the following acetaminophen doses is most appropriate for her evening fevers?",
         options: [
-          "acetaminophen 540 mg PO",
           "acetaminophen 180 mg PO",
+          "acetaminophen 540 mg PO",
           "acetaminophen 900 mg PO",
           "acetaminophen 1 080 mg PO",
           "acetaminophen 1 440 mg PO",
         ],
-        correct: 0,
+        correct: 1,
         explanation:
           "Acetaminophen is dosed at 10 to 15 mg/kg every 4 to 6 hours, up to 5 doses a day. For her 36 kg, 15 mg/kg is 540 mg. 180 mg is 5 mg/kg, too little to help. 900 mg is 25 mg/kg, 1 080 mg is 30 mg/kg and 1 440 mg is 40 mg/kg, all above the single dose range and a risk to the liver if repeated. Dosing by weight rather than by age avoids both errors.",
         keyFeature: { topic: "pediatric-fever", n: 8 },
