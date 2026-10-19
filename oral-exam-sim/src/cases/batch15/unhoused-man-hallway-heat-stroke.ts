@@ -4,7 +4,7 @@ import type { OralCase } from "@/engine/types";
 
 export const unhousedManHallwayHeatStroke: OralCase = {
   id: "unhoused-man-hallway-heat-stroke",
-  title: "From a park bench in August",
+  title: "Found in a tent by the river",
   blueprint: "enviro",
   alsoCovers: ["tox", "systems"],
   priorityTopic: "environmental",
@@ -12,11 +12,11 @@ export const unhousedManHallwayHeatStroke: OralCase = {
     { topic: "environmental", n: 1 },
     { topic: "environmental", n: 2 },
   ],
-  summary: "A man brought in from a city park on a hot afternoon is triaged as intoxicated and left to sleep.",
+  summary: "A man brought in from a riverside encampment on a hot afternoon is triaged as intoxicated and left to sleep.",
   durationMinutes: 12,
   stem:
     "You are working in the emergency department of a community hospital when the following patient arrives. " +
-    "A 57 year old man is brought by ambulance at 16:10 on a hot August afternoon from a city park, where an outreach worker could not wake him properly on a bench.",
+    "A 57 year old man is brought by ambulance at 16:10 on a hot August afternoon from a riverside encampment, where an outreach worker could not wake him properly in his tent.",
   card: {
     vitals: {
       temperature: "38.9°C tympanic",
@@ -34,7 +34,7 @@ export const unhousedManHallwayHeatStroke: OralCase = {
       id: "scene",
       label: "Paramedic report",
       result:
-        "Outdoor temperature 33°C with a humidex of 41. A heat warning was issued this morning. He was lying on a bench in full sun, wearing a winter jacket over two sweaters. An empty rye bottle lay under the bench. " +
+        "Outdoor temperature 33°C with a humidex of 41. A heat warning was issued this morning. His tent stood in full sun and was very hot inside. He was lying in it wearing a winter jacket over two sweaters. An empty rye bottle lay beside him. " +
         "He opened his eyes to pain and mumbled. Glucose 5.9 mmol/L. Pupils 4 mm and equal. Breathing fast and deep, so no naloxone was given. He vomited once in the ambulance. He was not cooled on the way.",
     },
     {
@@ -52,7 +52,7 @@ export const unhousedManHallwayHeatStroke: OralCase = {
       label: "Outreach worker, by phone",
       result:
         "She has known him for 2 years. He sleeps in an encampment by the river. He usually drinks a bottle of rye a day when he can get one. Yesterday evening he was talking normally. " +
-        "This morning he was shaky and sweaty and said he had not had a drink since the night before because his money was stolen. A friend shared the last of a bottle with him around noon. He sat in the sun from late morning. She knows of no pills or other drugs.",
+        "This morning he was shaky and sweaty and said he had not had a drink since the night before because his money was stolen. A friend shared the last of a bottle with him around noon. He went into his tent around noon to sleep. She knows of no pills or other drugs.",
     },
     {
       id: "chart",
@@ -103,7 +103,7 @@ export const unhousedManHallwayHeatStroke: OralCase = {
       id: "encampment",
       label: "The encampment",
       result:
-        "About 20 people, many older or with chronic illness. Little shade and one water tap at the park washroom. The city cooling centre is a 20 minute walk and closes at 20:00. Two outreach workers are on shift. The local public health unit leads the city heat response.",
+        "About 20 people, many older or with chronic illness. Little shade and one water tap at a washroom nearby. The city cooling centre is a 20 minute walk and closes at 20:00. Two outreach workers are on shift. The local public health unit leads the city heat response.",
     },
     {
       id: "services",
@@ -159,7 +159,7 @@ export const unhousedManHallwayHeatStroke: OralCase = {
           next: "s-sleep",
           quality: "unsafe",
           feedback:
-            "This delays time critical care. A man found down in the sun who cannot be woken has heat stroke until a core temperature says otherwise, and his ethanol level, when it returns, is far too low to explain his coma. A hallway stretcher also leaves his airway unwatched after vomiting.",
+            "This delays time critical care. A man found in a hot tent who cannot be woken has heat stroke until a core temperature says otherwise, and his ethanol level, when it returns, is far too low to explain his coma. A hallway stretcher also leaves his airway unwatched after vomiting.",
         },
       ],
     },
@@ -201,7 +201,7 @@ export const unhousedManHallwayHeatStroke: OralCase = {
       prompt: "Cooling is under way. Who do you call for history, and what do you want to know?",
       seconds: 70,
       modelAnswer: [
-        "Paramedics and the outreach worker. Time in the sun, clothing, water, shade and when he was last well.",
+        "Paramedics and the outreach worker. Time in the heat, clothing, water, shade and when he was last well.",
         "Alcohol. Usual amount, last drink, past withdrawal seizures or delirium.",
         "Other drugs, including stimulants and opioids, and any pills.",
         "Falls or head injury, cough, fever before today.",
@@ -250,7 +250,7 @@ export const unhousedManHallwayHeatStroke: OralCase = {
           next: "s-withdrawal",
           quality: "unsafe",
           feedback:
-            "His core temperature was still above 40°C. Withdrawal does not explain a temperature like that after a day in the sun, and stopping cooling lets the heat injury continue. Treat withdrawal alongside cooling, not instead of it.",
+            "His core temperature was still above 40°C. Withdrawal does not explain a temperature like that after hours in a hot tent, and stopping cooling lets the heat injury continue. Treat withdrawal alongside cooling, not instead of it.",
         },
       ],
     },
@@ -341,7 +341,7 @@ export const unhousedManHallwayHeatStroke: OralCase = {
         "Admit to the ICU. Heat stroke with kidney, muscle, liver and clotting injury, possible aspiration and alcohol withdrawal.",
         "Serial CK, creatinine, potassium, magnesium, phosphate, liver tests, INR and platelets. Fluids for rhabdomyolysis with care.",
         "Withdrawal monitored with a scale. Parenteral thiamine for at least 5 days, then oral.",
-        "No discharge back to the park during the heat warning. Social work arranges a shelter or respite bed with air conditioning.",
+        "No discharge back to the encampment during the heat warning. Social work arranges a shelter or respite bed with air conditioning.",
         "Offer treatment for alcohol use disorder, and link him with primary care for his hepatitis C.",
       ],
       rubric: ["bd-d1"],
@@ -358,7 +358,7 @@ export const unhousedManHallwayHeatStroke: OralCase = {
       id: "bd-h1",
       competency: "assessment",
       criterion: "history",
-      text: "Does not accept intoxication as the cause of his coma, and gets the exposure history from the paramedics. Time in the sun, clothing and when he was last well.",
+      text: "Does not accept intoxication as the cause of his coma, and gets the exposure history from the paramedics. Time in the heat, clothing and when he was last well.",
       points: 2,
       teaching: "Heavy alcohol use dulls awareness of heat and adds to heat risk. The exposure history makes the diagnosis and shows how long he has been hot.",
       source: "hc-heat",
