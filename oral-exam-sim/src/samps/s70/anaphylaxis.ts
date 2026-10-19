@@ -13,6 +13,7 @@ const S = {
   shmuely: { id: "shmuely-syncope", citation: "Shmuely S, Bauer PR, van Zwet EW, van Dijk JG, Thijs RD. Differentiating motor phenomena in tilt-induced syncope and convulsive seizures. Neurology. 2018." },
   rcuk: { id: "rcuk-refractory", citation: "Resuscitation Council UK. Refractory anaphylaxis algorithm. Guidelines 2021.", url: "https://resus.org.uk/media/334/download" },
   lhsc: { id: "lhsc-extravasation", citation: "London Health Sciences Centre, Drugs and Therapeutics Committee. Vasopressor extravasation management protocol (adults). 2019.", url: "https://lhsc.on.ca/media/8366/download" },
+  trekk: { id: "trekk-anaphylaxis", citation: "TREKK (Translating Emergency Knowledge for Kids). Bottom line recommendations: anaphylaxis. Version 2.2. 2025.", url: "https://trekk.ca/resources/bottom-line-recommendations-anaphylaxis/" },
   satoh: { id: "satoh-buckwheat", citation: "Satoh R, Jensen-Jarolim E, Teshima R. Understanding buckwheat allergies for the management of allergic reactions in humans and animals. Breed Sci. 2020.", url: "https://pmc.ncbi.nlm.nih.gov/articles/PMC7180145/" },
   hc: { id: "hc-allergens", citation: "Health Canada. Food allergies and priority food allergens. Modified 2026.", url: "https://www.canada.ca/en/health-canada/services/food-nutrition/food-safety/food-allergies-intolerances/food-allergies.html" },
 } satisfies Record<string, Source>;
@@ -114,14 +115,14 @@ export const ANAPHYLAXIS_S70: Samp[] = [
       {
         id: "q3",
         kind: "single",
-        update: "He receives IM epinephrine, and a nurse attaches a cardiac monitor and pulse oximeter. His saturation still reads 97% on room air.",
+        update: "He receives IM epinephrine, and a nurse attaches a cardiac monitor and pulse oximeter. His skin is still mottled with a capillary refill of 4 seconds, and his saturation reads 97% on room air.",
         prompt: "Which of the following is the most appropriate oxygen therapy for him now?",
         options: ["Bag-valve-mask ventilation", "Blow-by oxygen near his face", "Face mask oxygen at 10 L/minute", "Nasal prongs at 1 L/minute", "No oxygen while saturation is normal"],
         correct: 2,
         explanation:
-          "He is in shock, and his tissues are short of oxygen because too little blood reaches them, not because his blood is poorly saturated. A review of infant anaphylaxis advises high-flow oxygen at 8 to 10 L/minute by an infant face mask while epinephrine and fluids take effect. A reading of 97% from mottled, poorly perfused skin is also less reliable. Blow-by oxygen gives a low and changing concentration as a distressed infant turns his head, and nasal prongs at 1 L/minute add little. He breathes 40 times a minute with a clear chest, so bag-valve-mask ventilation is not needed. Withholding oxygen because the saturation looks normal ignores the shock.",
+          "Mottled skin, a capillary refill of 4 seconds and a pressure of 64/38 mmHg are signs of shock. Canadian pediatric emergency guidance calls for oxygen at 10 to 15 L/minute by mask in any child with signs of shock or respiratory distress, whatever the saturation, because the problem is too little blood reaching the tissues, not poorly saturated blood. A reading of 97% from mottled, poorly perfused skin is also less reliable. Blow-by oxygen gives a low and changing concentration as a distressed infant turns his head, and nasal prongs at 1 L/minute add little. He breathes 40 times a minute with a clear chest, so bag-valve-mask ventilation is not needed. Withholding oxygen because the saturation looks normal ignores the shock.",
         keyFeature: { topic: "anaphylaxis", n: 3 },
-        source: "carlisle-infant",
+        source: "trekk-anaphylaxis",
       },
       {
         id: "q4",
@@ -136,7 +137,7 @@ export const ANAPHYLAXIS_S70: Samp[] = [
         source: "cig-contraindications",
       },
     ],
-    sources: [S.fpies, S.carlisle, S.cig],
+    sources: [S.fpies, S.carlisle, S.trekk, S.cig],
     ...META,
   },
 
@@ -249,7 +250,7 @@ export const ANAPHYLAXIS_S70: Samp[] = [
       {
         id: "q4",
         kind: "single",
-        update: "The infusion now runs well through a new IV. Twenty minutes later, after two increases in the rate, her BP is 186/104 mmHg and her pulse is 150/minute. She has a pounding headache. Her wheeze and hives have gone.",
+        update: "Twenty minutes later, after two increases in the rate, her BP is 186/104 mmHg and her pulse is 150/minute. She has a pounding headache. Her wheeze and hives have gone.",
         prompt: "Which of the following is the most appropriate next step in her management?",
         options: ["Add a labetalol infusion", "Give a second vasopressor", "Give lorazepam 1 mg IV", "Reduce the infusion rate", "Stop all IV fluids"],
         correct: 3,

@@ -283,7 +283,7 @@ export const ruralBreathlessAfterUlcerBleed: OralCase = {
       id: "s-specialist",
       phase: "19:20",
       text:
-        "You call the thrombosis physician on call at the regional hospital. She advises apixaban 10 mg twice daily for 7 days, then 5 mg twice daily, with pantoprazole continued and no filter. You follow her advice. If he has not yet had apixaban, you give the first dose now.",
+        "You call the thrombosis physician on call at the regional hospital. She advises apixaban 10 mg twice daily for 7 days, then 5 mg twice daily, with pantoprazole continued and no filter. You follow her advice. If he has had no anticoagulant yet, you give the first apixaban dose now. If he has already had a dose, apixaban starts when his next dose is due.",
       next: "s-gi",
     },
     {
@@ -322,7 +322,7 @@ export const ruralBreathlessAfterUlcerBleed: OralCase = {
         "Pain controlled with oral acetaminophen. No active bleeding. Creatinine clearance well above 15.",
         "sPESI 0: under 80, no cancer, no chronic heart or lung disease, heart rate under 110, systolic 100 or more, saturation 90 percent or more.",
         "Reliable follow up: a phone, his wife at home, a family doctor in town.",
-        "He meets none of the criteria for hospital care, so home treatment is reasonable. Give the first dose here.",
+        "He meets none of the criteria for hospital care, so home treatment is reasonable. Give the first dose here if he has not already had one.",
       ],
       rubric: ["pe-a4", "pe-d1"],
       choices: [
@@ -360,7 +360,7 @@ export const ruralBreathlessAfterUlcerBleed: OralCase = {
       prompt: "The town pharmacy is closed until Monday. How do you discharge him safely?",
       seconds: 60,
       modelAnswer: [
-        "Give the first dose here and dispense a starter supply from the hospital pharmacy so no doses are missed.",
+        "Give the first dose here if he has not already had one, and dispense a starter supply from the hospital pharmacy so no doses are missed.",
         "Explain the twice daily schedule and the drop to 5 mg twice daily on day 8.",
         "Return now for worse breathlessness, chest pain, fainting, tarry stools, vomiting blood or dizziness. Iron makes stool dark but not tarry.",
         "Hemoglobin and review with his family doctor or a thrombosis clinic within 1 week. Leave the timing of the Helicobacter pylori test of cure to gastroenterology, since a PPI can make a breath test falsely negative.",

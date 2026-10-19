@@ -170,3 +170,26 @@ Rubric rows are unchanged at 9, 10, 11 and 7 of 37 (history 24%, management 30%)
 ### Process note
 
 When I renamed the Kawasaki file, my shell command tried `git mv` first and only fell back to `mv` if that failed. This broke the no-git rule. If `git mv` succeeded, it staged the rename `neck-node-fever-return-visit.ts` to `neck-node-fever-day-five.ts` in the git index. The working tree is correct either way. I ran no further git command to check. The coordinator should check `git status` before landing.
+
+## Round 4
+
+Revision against `docs/reviews/q500-verify3-batch14.md`. Only `rural-breathless-after-ulcer-bleed.ts` and `rural-child-wheeze-tiring.ts` were edited. return-visit-belly-pain-girl and neck-node-fever-day-five passed and were not touched.
+
+### rural-breathless-after-ulcer-bleed
+
+- s-specialist now ends exactly: "You follow her advice. If he has had no anticoagulant yet, you give the first apixaban dose now. If he has already had a dose, apixaban starts when his next dose is due." This is safe after the apixaban dose on the c-transfer path and after the rivaroxaban dose on the c-rivaroxaban path.
+- q-site and q-discharge model answers are now path neutral: "Give the first dose here if he has not already had one".
+
+### rural-child-wheeze-tiring
+
+- as-c2 now grades the handover only: "Gives the transport team a structured handover with doses, times, procedures, current settings and pending issues." Its teaching is restored to the round 1 wording and its source to `cps-asthma`, as the coordinator allowed. I did not find and open a handover source within the time of this round. As before, cps-asthma does not itself discuss handover, so a reviewer may still flag this under ruling C2 as recommended only.
+- as-l1 teaching now carries the CPS sentence on calling a tertiary pediatric emergency department or PICU specialist to discuss management and transport, plus the early call in a rural hospital. Its source changed from `trekk` to `cps-asthma`, which states that sentence. The as-l1 text and points are unchanged.
+- Follow up is now "within 4 weeks of discharge", matching CPS 2021, in the q-grandmother model answer and the as-c1 teaching.
+- as-h4 no longer claims cost barriers. It now asks about tobacco smoke at home, the carer, controller use and distance from follow up. The teaching rests on what the CPS page states: tobacco smoke as a trigger to review, low socioeconomic status, psychosocial concerns and poor adherence as risk factors, and distance to care as a limit on follow up. The CPS 2021 page at https://cps.ca/en/documents/position/managing-an-acute-asthma-exacerbation was reopened this round to check these points and the 4 week follow up.
+- "paediatric" is no longer used outside citations. The rewritten as-c2 and as-l1 teaching use "pediatric".
+
+### Checks
+
+- `npx tsc --noEmit -p . 2>&1 | grep cases/batch14`: no output.
+- `CASE_BATCH=batch14 npx vitest run tests/cases.test.ts tests/citations.test.ts`: 45 of 45 passed.
+- No git command was run this round.
