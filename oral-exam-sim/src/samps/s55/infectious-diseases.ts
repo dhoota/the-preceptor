@@ -9,11 +9,9 @@ const S = {
   ehra: { id: "ehra-cied-2020", citation: "Blomström-Lundqvist C, Traykov V, Erba PA, et al. European Heart Rhythm Association (EHRA) international consensus document on how to prevent, diagnose, and treat cardiac implantable electronic device infections. Europace. 2020.", url: "https://pubmed.ncbi.nlm.nih.gov/31702000/" },
   sepsis3: { id: "sepsis-3", citation: "Singer M, Deutschman CS, Seymour CW, et al. The Third International Consensus Definitions for Sepsis and Septic Shock (Sepsis-3). JAMA. 2016.", url: "https://pubmed.ncbi.nlm.nih.gov/26903338/" },
   idsaDiarrhea: { id: "idsa-diarrhea-2017", citation: "Shane AL, Mody RK, Crump JA, et al. 2017 Infectious Diseases Society of America clinical practice guidelines for the diagnosis and management of infectious diarrhea. Clin Infect Dis. 2017.", url: "https://academic.oup.com/cid/article/65/12/e45/4557073" },
-  sickDay: { id: "diabetes-canada-sick-day", citation: "Diabetes Canada Clinical Practice Guidelines Expert Committee. Appendix 8: sick-day medication list. Diabetes Canada 2018 Clinical Practice Guidelines. 2018.", url: "https://www.diabetes.ca/for-professionals/appendices/appendix-8" },
   coughlin: { id: "coughlin-drug-arterial", citation: "Coughlin PA, Mavor AI. Arterial consequences of recreational drug use. Eur J Vasc Endovasc Surg. 2006.", url: "https://pubmed.ncbi.nlm.nih.gov/16682239/" },
   guelbi: { id: "guelbi-ifap", citation: "Guelbi M, Hajri M, Hadrich Z, Atallah A, Mestiri H, Omrani S. Differentiating infected femoral pseudoaneurysms from inguinal abscesses: the hidden menace in intravenous drug users. A case report. Int J Surg Case Rep. 2025.", url: "https://pubmed.ncbi.nlm.nih.gov/40541023/" },
   tresson: { id: "tresson-groin", citation: "Tresson P, Huvelle U, Bordet M. Femoral artery ligature for treatment of infected groin pseudoaneurysm in injected drug abusers. Clin Anat. 2022.", url: "https://pmc.ncbi.nlm.nih.gov/articles/PMC9796184/" },
-  rybak: { id: "rybak-vancomycin-2020", citation: "Rybak MJ, Le J, Lodise T, et al. Executive summary: therapeutic monitoring of vancomycin for serious methicillin-resistant Staphylococcus aureus infections: a revised consensus guideline and review of the American Society of Health-System Pharmacists, the Infectious Diseases Society of America, the Pediatric Infectious Diseases Society, and the Society of Infectious Diseases Pharmacists. J Pediatric Infect Dis Soc. 2020.", url: "https://pmc.ncbi.nlm.nih.gov/articles/PMC7358040/" },
   phacSyphClin: { id: "phac-syphilis-clinical", citation: "Public Health Agency of Canada. Syphilis guide: risk factors and clinical manifestations. Canadian guidelines on sexually transmitted infections. 2023.", url: "https://www.canada.ca/en/public-health/services/infectious-diseases/sexual-health-sexually-transmitted-infections/canadian-guidelines/syphilis/risk-factors-clinical-manifestation.html" },
   phacSyphTest: { id: "phac-syphilis-testing", citation: "Public Health Agency of Canada. Syphilis guide: screening and diagnostic testing. Canadian guidelines on sexually transmitted infections. 2024.", url: "https://www.canada.ca/en/public-health/services/infectious-diseases/sexual-health-sexually-transmitted-infections/canadian-guidelines/syphilis/screening-diagnostic-testing.html" },
   phacSyphTx: { id: "phac-syphilis-treatment", citation: "Public Health Agency of Canada. Syphilis guide: treatment and follow-up. Canadian guidelines on sexually transmitted infections. Updated 2026.", url: "https://www.canada.ca/en/public-health/services/infectious-diseases/sexual-health-sexually-transmitted-infections/canadian-guidelines/syphilis/treatment-follow-up.html" },
@@ -72,12 +70,12 @@ export const INFECTIOUS_DISEASES_S55: Samp[] = [
         prompt: "Which of the following is the most appropriate definitive management of his infected pacemaker?",
         options: [
           "Antibiotics alone for 6 weeks",
-          "Complete removal of device and leads",
           "Generator removal, leads left in place",
           "Incision and drainage of the pocket",
           "Pocket washout with the device kept",
+          "Removal of the device and all leads",
         ],
-        correct: 1,
+        correct: 4,
         explanation:
           "A pocket infection with septic shock is a definite device infection, and the EHRA consensus recommends complete removal of the generator and every lead, without unnecessary delay and ideally within 3 days, by percutaneous extraction where possible. Source control is part of treating his shock. Antibiotics alone, a pocket washout or incision and drainage leave infected hardware behind, and removing the generator while leaving the leads leaves infected material in the veins and heart. He has complete heart block, so he will need temporary pacing when the system comes out.",
         keyFeature: { topic: "infectious-diseases", n: 2 },
@@ -98,24 +96,6 @@ export const INFECTIOUS_DISEASES_S55: Samp[] = [
         explanation:
           "The EHRA consensus advises that patients with sepsis or septic shock receive empiric antibiotics right after two sets of blood cultures, so that treatment is not delayed. The three sets drawn 30 minutes apart that EHRA advises for stable patients would delay treatment here. EHRA advises against sampling the pocket through the skin, because it risks seeding infection. Echocardiography and culture results take hours to days and must not delay the first dose.",
         keyFeature: { topic: "infectious-diseases", n: 1 },
-        source: "ehra-cied-2020",
-      },
-      {
-        id: "q5",
-        kind: "single",
-        update: "Both sets of blood cultures grow Staphylococcus aureus. A transthoracic echocardiogram shows no vegetation.",
-        prompt: "Which of the following investigations is most appropriate next for him?",
-        options: [
-          "CT of the abdomen and pelvis",
-          "Lumbar puncture",
-          "Transesophageal echocardiogram",
-          "Upper limb venous Doppler",
-          "Urine culture and analysis",
-        ],
-        correct: 2,
-        explanation:
-          "Staphylococcus aureus in every blood culture with an infected pacemaker raises the question of lead or valve endocarditis, and a normal transthoracic study does not exclude it. The EHRA consensus recommends both transthoracic and transesophageal echocardiography when device infection is suspected, because the transesophageal view is more sensitive for vegetations on the leads, and their size shapes the extraction plan. He has no abdominal, neurologic or urinary symptoms and his urinalysis was negative, so CT, lumbar puncture and urine studies do not fit. Arm swelling, which would prompt a Doppler, has not been described.",
-        keyFeature: { topic: "infectious-diseases", n: 7 },
         source: "ehra-cied-2020",
       },
     ],
@@ -168,26 +148,6 @@ export const INFECTIOUS_DISEASES_S55: Samp[] = [
       },
       {
         id: "q3",
-        kind: "menu",
-        select: 3,
-        prompt: "Which of the following of her medications most increase her risk of complications from this illness?",
-        options: [
-          "atorvastatin 20 mg daily",
-          "calcium carbonate 500 mg daily",
-          "hydrochlorothiazide 25 mg daily",
-          "levothyroxine 75 mcg daily",
-          "metformin 1 000 mg twice daily",
-          "ramipril 10 mg daily",
-          "vitamin D 1 000 IU daily",
-        ],
-        correct: [2, 4, 5],
-        explanation:
-          "Diabetes Canada's sick-day list advises holding drugs that worsen kidney function when fluid intake cannot keep up, such as ACE inhibitors like ramipril and diuretics like hydrochlorothiazide, and drugs that build up when the kidneys falter, such as metformin. Her creatinine has risen from 82 to 148 umol/L, so these host factors are already turning a mild viral illness into a kidney injury, and they are held until she eats and drinks normally. Atorvastatin, levothyroxine, calcium and vitamin D are not on the list and can continue.",
-        keyFeature: { topic: "infectious-diseases", n: 3 },
-        source: "diabetes-canada-sick-day",
-      },
-      {
-        id: "q4",
         kind: "single",
         prompt: "Which of the following new findings would most justify stool testing and possible antibiotic treatment for her?",
         options: [
@@ -204,7 +164,7 @@ export const INFECTIOUS_DISEASES_S55: Samp[] = [
         source: "idsa-diarrhea-2017",
       },
     ],
-    sources: [S.idsaDiarrhea, S.sickDay],
+    sources: [S.idsaDiarrhea],
     ...META,
   },
 
@@ -254,23 +214,6 @@ export const INFECTIOUS_DISEASES_S55: Samp[] = [
       {
         id: "q3",
         kind: "single",
-        prompt: "Which of the following empiric antibiotics is most appropriate while she awaits vascular surgery?",
-        options: [
-          "ceftriaxone 2 g IV daily",
-          "cephalexin 500 mg PO four times daily",
-          "clindamycin 300 mg PO three times daily",
-          "metronidazole 500 mg IV twice daily",
-          "vancomycin 25 mg/kg IV loading dose",
-        ],
-        correct: 4,
-        explanation:
-          "An infected arterial wall with fever and tachycardia is a serious endovascular infection, and in a person who injects drugs Staphylococcus aureus, including MRSA, is the organism that cannot be missed, so vancomycin is started. The 2020 vancomycin consensus guideline advises a loading dose of 20 to 35 mg/kg by actual body weight, up to 3 000 mg, for seriously ill patients with suspected MRSA infection. For her 52 kg, 25 mg/kg is 1 300 mg, or 1.3 g IV. Ceftriaxone and cephalexin do not cover MRSA. Oral clindamycin is not adequate for an endovascular infection with systemic signs. Metronidazole covers only anaerobes.",
-        keyFeature: { topic: "infectious-diseases", n: 8 },
-        source: "rybak-vancomycin-2020",
-      },
-      {
-        id: "q4",
-        kind: "single",
         prompt: "Which of the following features of her drug use most increased her risk of this complication?",
         options: [
           "Drinking alcohol most days",
@@ -286,7 +229,7 @@ export const INFECTIOUS_DISEASES_S55: Samp[] = [
         source: "coughlin-drug-arterial",
       },
     ],
-    sources: [S.tresson, S.guelbi, S.rybak, S.coughlin],
+    sources: [S.tresson, S.guelbi, S.coughlin],
     ...META,
   },
 
@@ -373,17 +316,11 @@ export const INFECTIOUS_DISEASES_S55: Samp[] = [
       {
         id: "q5",
         kind: "single",
-        prompt: "Which of the following is the most appropriate plan for her two sexual partners from the past 3 months?",
-        options: [
-          "Test and treat with penicillin now",
-          "Test only if symptoms appear",
-          "Treat only if their serology is positive",
-          "Treat with azithromycin, no testing",
-          "No action, as condoms were sometimes used",
-        ],
-        correct: 0,
+        prompt: "Which of the following is the most appropriate look-back period for notifying her sexual partners?",
+        options: ["1 month", "3 months", "6 months", "12 months", "24 months"],
+        correct: 2,
         explanation:
-          "Both partners fall within the 6 month trace-back period that PHAC sets for secondary syphilis and within the previous 90 days, for which PHAC advises strongly considering epidemiological treatment, because a recently infected partner can still have negative serology. So both are tested and treated now with the same single injection of benzathine penicillin G. Waiting for symptoms or a positive result risks onward spread. Azithromycin is not a recommended syphilis treatment. Inconsistent condom use does not remove the risk. Syphilis is also reportable to public health in every province and territory.",
+          "PHAC sets the partner notification period by stage of syphilis: 3 months before symptom onset for primary syphilis, 6 months for secondary syphilis and 1 year for early latent syphilis. She has secondary syphilis, so partners from the past 6 months are traced, tested and treated, and those from the previous 90 days are strongly considered for treatment without waiting for results. One month misses contacts who may already be infected. Three months is the primary syphilis period. Twelve months is the early latent syphilis period, and 24 months is longer than any early stage, not to a rash she has had for days. Syphilis is reportable to public health in every province and territory, and public health can help with notification.",
         keyFeature: { topic: "infectious-diseases", n: 10 },
         source: "phac-syphilis-treatment",
       },

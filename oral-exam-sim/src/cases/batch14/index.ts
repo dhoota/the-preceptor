@@ -1,8 +1,8 @@
 import type { OralCase } from "@/engine/types";
-import { preschoolerSixDayFever } from "./preschooler-six-day-fever";
+import { neckNodeFeverReturnVisit } from "./neck-node-fever-return-visit";
 import { returnVisitBellyPainGirl } from "./return-visit-belly-pain-girl";
 import { ruralChildWheezeTiring } from "./rural-child-wheeze-tiring";
-import { postpartumPleuriticChestPain } from "./postpartum-pleuritic-chest-pain";
+import { ruralBreathlessAfterUlcerBleed } from "./rural-breathless-after-ulcer-bleed";
 
 /** Batch 14. Q500 expansion: pediatric fever, abdominal pain, asthma and COPD, DVT and PE. */
-export const BATCH_14: OralCase[] = [postpartumPleuriticChestPain, ruralChildWheezeTiring, returnVisitBellyPainGirl, preschoolerSixDayFever];
+export const BATCH_14: OralCase[] = [ruralBreathlessAfterUlcerBleed, ruralChildWheezeTiring, returnVisitBellyPainGirl, neckNodeFeverReturnVisit];
