@@ -10,7 +10,6 @@ const S = {
   fpies: { id: "fpies-consensus", citation: "Nowak-Wegrzyn A, Chehade M, Groetch ME, and colleagues. International consensus guidelines for the diagnosis and management of food protein-induced enterocolitis syndrome: executive summary. J Allergy Clin Immunol. 2017." },
   cig: { id: "cig-contraindications", citation: "Public Health Agency of Canada. Canadian Immunization Guide. Part 2. Contraindications, precautions and concerns. Updated 2026.", url: "https://www.canada.ca/en/public-health/services/publications/healthy-living/canadian-immunization-guide-part-2-vaccine-safety/page-3-contraindications-precautions-concerns.html" },
   csaci: { id: "csaci-settings", citation: "Canadian Society of Allergy and Clinical Immunology. Anaphylaxis in schools and other settings. 3rd edition. 2015.", url: "https://csaci.ca/EN/files/basic-html/page16.html" },
-  csaciProtocol: { id: "csaci-protocol", citation: "Canadian Society of Allergy and Clinical Immunology. Anaphylaxis in schools and other settings. 3rd edition. Emergency protocol. 2015.", url: "https://csaci.ca/EN/files/basic-html/page8.html" },
   shmuely: { id: "shmuely-syncope", citation: "Shmuely S, Bauer PR, van Zwet EW, van Dijk JG, Thijs RD. Differentiating motor phenomena in tilt-induced syncope and convulsive seizures. Neurology. 2018." },
   rcuk: { id: "rcuk-refractory", citation: "Resuscitation Council UK. Refractory anaphylaxis algorithm. Guidelines 2021.", url: "https://resus.org.uk/media/334/download" },
   satoh: { id: "satoh-buckwheat", citation: "Satoh R, Jensen-Jarolim E, Teshima R. Understanding buckwheat allergies for the management of allergic reactions in humans and animals. Breed Sci. 2020.", url: "https://pmc.ncbi.nlm.nih.gov/articles/PMC7180145/" },
@@ -18,14 +17,14 @@ const S = {
 } satisfies Record<string, Source>;
 
 export const ANAPHYLAXIS_S70: Samp[] = [
-  /* 48 Collapse in the garden with a known aneurysm ------------------------ */
+  /* 48 Collapse at the woodpile with a known aneurysm ---------------------- */
   {
     id: "anaphylaxis-48",
     topic: "anaphylaxis",
     alsoTopics: ["shock"],
-    title: "Older man found in his vegetable garden",
+    title: "Older man found beside the woodpile",
     stem:
-      "A 71-year-old man is brought to the emergency department by ambulance after his wife found him collapsed in their vegetable garden. When she reached him he was scratching at his neck and chest and said his stomach was cramping. He then vomited and had a loose stool. He has hypertension treated with amlodipine and a 4.2 cm abdominal aortic aneurysm under yearly ultrasound surveillance. He is drowsy but answers questions. He is still wearing long-sleeved coveralls buttoned to the neck and a wide-brimmed hat. His abdomen is soft and mildly tender throughout, with no pulsatile mass. Bedside ultrasound shows a 4.3 cm infrarenal aorta, no free fluid, a small hyperdynamic left ventricle and a collapsed IVC.",
+      "A 71-year-old man is brought to the emergency department by ambulance after his wife found him collapsed beside the woodpile behind their house. When she reached him he was scratching at his neck and chest and said his stomach was cramping. He then vomited and had a loose stool. He has hypertension treated with amlodipine and a 4.2 cm abdominal aortic aneurysm under yearly ultrasound surveillance. He is drowsy but answers questions. He is still wearing long-sleeved coveralls buttoned to the neck and a wide-brimmed hat. His abdomen is soft and mildly tender throughout, with no pulsatile mass. Bedside ultrasound shows a 4.3 cm infrarenal aorta, no free fluid, a small hyperdynamic left ventricle and a collapsed IVC.",
     vitals: { temperature: "36.9°C oral", pulse: "124/minute", resp: "24/minute", bp: "76/40 mmHg", o2sat: "94% on room air", weight: "80 kg" },
     questions: [
       {
@@ -42,24 +41,24 @@ export const ANAPHYLAXIS_S70: Samp[] = [
       {
         id: "q2",
         kind: "single",
-        update: "Under the coveralls there are raised hives over his chest, back and thighs. A honeybee stinger is embedded in the skin behind his left ear.",
+        update: "Under the coveralls there are raised hives over his chest, back and thighs. There is a red sting mark at the back of his neck under the collar, and a dead wasp falls from the coveralls.",
         prompt: "Which of the following is the most likely cause of his shock?",
-        options: ["Acute mesenteric ischemia", "Anaphylaxis to a bee sting", "Inferior myocardial infarction", "Ruptured aortic aneurysm", "Septic shock from colitis"],
+        options: ["Acute mesenteric ischemia", "Anaphylaxis to a wasp sting", "Inferior myocardial infarction", "Ruptured aortic aneurysm", "Septic shock from colitis"],
         correct: 1,
         explanation:
-          "Generalized hives with cramps, vomiting, diarrhea and a blood pressure of 76/40 mmHg minutes after a bee sting meet the criteria for anaphylaxis, which involves the skin, the gut and the circulation. The small hyperdynamic ventricle and collapsed IVC fit the vasodilation and capillary leak of anaphylaxis. Rupture of his aneurysm remains a concern in any shocked patient who has one, but the aorta has not grown, there is no free fluid and rupture does not cause hives. Mesenteric ischemia, colitis with sepsis and an inferior infarction would not explain sudden generalized hives after a sting.",
+          "Generalized hives with cramps, vomiting, diarrhea and a blood pressure of 76/40 mmHg after a wasp sting meet the criteria for anaphylaxis, which involves the skin, the gut and the circulation. The small hyperdynamic ventricle and collapsed IVC fit the vasodilation and capillary leak of anaphylaxis. Rupture of his aneurysm remains a concern in any shocked patient who has one, but the aorta has not grown, there is no free fluid and rupture does not cause hives. Mesenteric ischemia, colitis with sepsis and an inferior infarction would not explain sudden generalized hives after a sting.",
         keyFeature: { topic: "anaphylaxis", n: 1 },
         source: "wao-2020",
       },
       {
         id: "q3",
         kind: "single",
-        update: "The nurse is worried that epinephrine will raise his blood pressure and strain his aneurysm.",
-        prompt: "Which of the following is the most appropriate first treatment for him?",
-        options: ["diphenhydramine 50 mg IV", "epinephrine 0.15 mg IM", "epinephrine 0.5 mg IM", "epinephrine 0.1 mg IV push", "norepinephrine infusion IV"],
-        correct: 2,
+        update: "You give epinephrine 0.5 mg IM into the anterolateral thigh. The nurse asks whether IV fluid should be limited because of his aneurysm.",
+        prompt: "Which of the following is the most appropriate fluid plan for him now?",
+        options: ["Albumin 5% 250 mL IV", "Crystalloid 1 L IV as a rapid bolus", "Crystalloid 250 mL IV over 1 hour", "Crystalloid to a systolic of 70 mmHg", "O negative red cells 2 units IV"],
+        correct: 1,
         explanation:
-          "Epinephrine 0.01 mg/kg IM, to a maximum of 0.5 mg, is the first treatment for anaphylaxis, and at 80 kg he receives the full 0.5 mg in the anterolateral thigh, repeated every 5 to 15 minutes as needed. Age, vascular disease and an aneurysm are not contraindications, and untreated anaphylactic shock is the immediate threat to his life. A reduced dose of 0.15 mg undertreats him. An IV push carries a higher risk of dysrhythmia and dangerous hypertension and is kept for arrest or for specialists. Norepinephrine raises pressure but lacks the beta effects that relieve bronchospasm and mediator release. Diphenhydramine does not treat shock.",
+          "Anaphylaxis dilates vessels and makes them leak, and his small hyperdynamic ventricle and collapsed IVC show that he is empty. The World Allergy Organization advises a 20 mL/kg crystalloid bolus for cardiovascular instability, about 1.6 L at 80 kg, so a rapid first litre goes in with the epinephrine and more follows as his pressure requires. Holding the systolic near 70 mmHg is a strategy for bleeding from a ruptured aneurysm, which nothing here suggests, and would leave his shock undertreated. A slow 250 mL infusion is far too little. Albumin is not needed as a first fluid, and red cells treat blood loss he does not have.",
         keyFeature: { topic: "anaphylaxis", n: 3 },
         source: "wao-2020",
       },
@@ -86,17 +85,17 @@ export const ANAPHYLAXIS_S70: Samp[] = [
     topic: "anaphylaxis",
     title: "Pale infant after lunch",
     stem:
-      "You are working in a community hospital emergency department. A 10-month-old boy is brought in by his father 35 minutes after his first taste of scrambled egg at lunch. Within 10 minutes a few hives appeared around his mouth and he began rubbing his ears. He then vomited three times. His father says he has become pale, quiet and floppy and no longer wants to play. The hives around his mouth have faded. He has moderate eczema. He has had no fever or recent illness, and his immunizations are up to date for his age. He lies still on his father's lap and responds weakly to his name. His skin is pale and mottled, and capillary refill is 4 seconds. His chest is clear and there is no stridor. His capillary glucose is 5.6 mmol/L.",
-    vitals: { temperature: "36.9°C rectal", pulse: "182/minute", resp: "40/minute", bp: "68/40 mmHg", o2sat: "97% on room air", weight: "9 kg" },
+      "You are working in a community hospital emergency department. A 10-month-old boy is brought in by his father 35 minutes after his first taste of scrambled egg at lunch. Within 10 minutes hives appeared around his mouth and spread to his neck, and he began rubbing his ears and face. He then vomited twice. His father says he has suddenly become pale and floppy. He has had no fever or recent illness, and his immunizations are up to date for his age. He lies still on his father's lap and responds weakly to his name. Hives remain on his neck and upper chest. His skin is pale and mottled, and capillary refill is 4 seconds. His chest is clear and there is no stridor. His capillary glucose is 5.6 mmol/L.",
+    vitals: { temperature: "36.9°C rectal", pulse: "184/minute", resp: "40/minute", bp: "64/38 mmHg", o2sat: "97% on room air", weight: "9 kg" },
     questions: [
       {
         id: "q1",
         kind: "single",
-        prompt: "Which of the following is the most likely diagnosis for this infant?",
-        options: ["Anaphylaxis to egg", "Bacterial sepsis", "Food protein enterocolitis to egg", "Ileocolic intussusception", "Viral gastroenteritis"],
-        correct: 0,
+        prompt: "Which of the following features of his reaction most clearly distinguishes it from food protein-induced enterocolitis?",
+        options: ["Egg as the trigger food", "Hives within minutes of eating", "Lethargy and pallor", "Onset after a first feeding", "Repeated vomiting"],
+        correct: 1,
         explanation:
-          "Hives and ear rubbing within 10 minutes of a first exposure to egg, then repeated vomiting, then pallor, mottling, floppiness and a capillary refill of 4 seconds, involve the skin, the gut and the circulation, which is anaphylaxis. Infants cannot report itch or throat symptoms, so rubbing, fussiness and sudden quietness stand in for them. Food protein-induced enterocolitis also follows a new food and causes vomiting and lethargy, but the vomiting begins 1 to 4 hours after the meal and there are no hives or other skin or respiratory signs. Intussusception, sepsis and gastroenteritis do not begin with hives minutes after a new food.",
+          "Food protein-induced enterocolitis is not IgE mediated. Its defining feature is vomiting that begins 1 to 4 hours after the food without classic allergic skin or respiratory signs, so hives within 10 minutes of the egg mark an IgE-mediated reaction, which here is anaphylaxis. Repeated vomiting, lethargy and pallor are typical of both conditions, and severe enterocolitis can also cause hypotension. Egg is a recognized trigger of both, and both can follow a first feeding of a new food.",
         keyFeature: { topic: "anaphylaxis", n: 2 },
         source: "fpies-consensus",
       },
@@ -107,7 +106,7 @@ export const ANAPHYLAXIS_S70: Samp[] = [
         options: ["Dehydration from vomiting", "Hypoglycemia after vomiting", "Hypoperfusion from anaphylaxis", "Normal tiredness after vomiting", "Postictal state after a seizure"],
         correct: 2,
         explanation:
-          "A pulse of 182/minute, mottled skin, a capillary refill of 4 seconds, a blood pressure of 68/40 mmHg and reduced responsiveness show poor perfusion. In infants, tachycardia is an early sign of cardiovascular involvement and a falling blood pressure comes late, so these signs mean anaphylactic shock is already under way. Three vomits over 25 minutes cannot cause this degree of fluid loss. His glucose is 5.6 mmol/L. Nobody saw a seizure. Calling this ordinary tiredness after vomiting is the error that delays epinephrine in infants.",
+          "A pulse of 184/minute, mottled skin, a capillary refill of 4 seconds, a systolic pressure of 64 mmHg and reduced responsiveness show poor perfusion. In infants, tachycardia is an early sign of cardiovascular involvement and a falling blood pressure comes late, so these signs mean anaphylactic shock is already under way. Two vomits in under half an hour cannot cause this degree of fluid loss. His glucose is 5.6 mmol/L. Nobody saw a seizure. Calling this ordinary tiredness after vomiting is the error that delays epinephrine in infants.",
         keyFeature: { topic: "anaphylaxis", n: 1 },
         source: "carlisle-infant",
       },
@@ -118,9 +117,9 @@ export const ANAPHYLAXIS_S70: Samp[] = [
         options: ["epinephrine 0.009 mg IM", "epinephrine 0.018 mg IM", "epinephrine 0.045 mg IM", "epinephrine 0.09 mg IM", "epinephrine 0.9 mg IM"],
         correct: 3,
         explanation:
-          "The IM dose of epinephrine is 0.01 mg/kg, and at 9 kg that is 0.09 mg, or 0.09 mL of the 1 mg/mL solution, into the anterolateral thigh. It can be repeated every 5 to 15 minutes. A dose of 0.9 mg is ten times too much, the error made when the 0.1 mL/kg volume used for the 0.1 mg/mL arrest solution is drawn from the 1 mg/mL ampoule. Doses of 0.009, 0.018 and 0.045 mg come from decimal slips or from halving the dose out of fear of side effects, and leave a shocked infant undertreated.",
+          "The IM dose of epinephrine is 0.01 mg/kg, and at 9 kg that is 0.09 mg, or 0.09 mL of the 1 mg/mL solution, into the anterolateral thigh, repeated every 5 to 15 minutes if needed. A dose of 0.9 mg is ten times too much, the error made when the 0.1 mL/kg volume used for the 0.1 mg/mL arrest solution is drawn from the 1 mg/mL ampoule. Doses of 0.009, 0.018 and 0.045 mg come from decimal slips or from halving the dose out of fear of side effects, and leave a shocked infant undertreated.",
         keyFeature: { topic: "anaphylaxis", n: 3 },
-        source: "carlisle-infant",
+        source: "wao-2020",
       },
       {
         id: "q4",
@@ -135,7 +134,7 @@ export const ANAPHYLAXIS_S70: Samp[] = [
         source: "cig-contraindications",
       },
     ],
-    sources: [S.fpies, S.carlisle, S.cig],
+    sources: [S.fpies, S.carlisle, S.wao, S.cig],
     ...META,
   },
 
@@ -145,7 +144,7 @@ export const ANAPHYLAXIS_S70: Samp[] = [
     topic: "anaphylaxis",
     title: "Collapse in a group home dining room",
     stem:
-      "A 34-year-old man is brought to the emergency department by ambulance from his group home. He has a severe intellectual disability, is nonverbal and has epilepsy treated with levetiracetam. Staff found him on the dining room floor 15 minutes after lunch, with brief jerking of both arms that stopped within seconds. Before he fell he had been rubbing his mouth and ears and pulling at his shirt. A new support worker had served him a sesame bagel, a food he had not eaten before. He then vomited twice. He has no known allergies. He is drowsy and restless and moans when touched. His neck and upper chest are flushed, and his lips look puffier than in the photos in his file. There is scattered wheeze on both sides. His capillary glucose is 5.9 mmol/L.",
+      "A 34-year-old man is brought to the emergency department by ambulance from his group home. He has a severe intellectual disability, is nonverbal and has epilepsy treated with levetiracetam. Fifteen minutes after lunch, staff saw him slump from his chair to the dining room floor, with brief jerking of both arms that stopped within seconds. Before he fell he had been rubbing his mouth and ears and pulling at his shirt. A new support worker had served him a sesame bagel, a food he had not eaten before. He then vomited twice. He has no known allergies. He is drowsy and restless and moans when touched. His neck and upper chest are flushed, and his lips look puffier than in the photos in his file. There is scattered wheeze on both sides. His capillary glucose is 5.9 mmol/L.",
     vitals: { temperature: "36.8°C tympanic", pulse: "128/minute", resp: "26/minute", bp: "80/46 mmHg", o2sat: "93% on room air", weight: "74 kg" },
     questions: [
       {
@@ -166,7 +165,7 @@ export const ANAPHYLAXIS_S70: Samp[] = [
         options: ["Breakthrough epileptic seizure", "Convulsive syncope from low pressure", "Hypoglycemic seizure", "Psychogenic nonepileptic event", "Rigors from bacteremia"],
         correct: 1,
         explanation:
-          "When blood pressure falls far enough to stop flow to the brain, a few brief, irregular jerks are common as the person goes limp. In tilt studies the median was 2 jerks in syncope against 48 in convulsive seizures, and fewer than 10 jerks points to syncope. His jerks lasted seconds as he fell, and his pressure is 80/46 mmHg. Labelling this a breakthrough seizure in a man with epilepsy would send care toward antiseizure drugs and away from epinephrine. His glucose is 5.9 mmol/L, he has no fever to suggest rigors, and a psychogenic event does not explain his shock.",
+          "When blood pressure falls far enough to stop flow to the brain, a few brief, irregular jerks are common as the person goes limp. In a video study of tilt-induced syncope in adults, syncope caused a median of 2 jerks against 48 in convulsive seizures, and fewer than 10 jerks pointed to syncope. His jerks lasted seconds as he fell, and his pressure is 80/46 mmHg. Labelling this a breakthrough seizure in a man with epilepsy would send care toward antiseizure drugs and away from epinephrine. His glucose is 5.9 mmol/L, he has no fever to suggest rigors, and a psychogenic event does not explain his shock.",
         keyFeature: { topic: "anaphylaxis", n: 1 },
         source: "shmuely-syncope",
       },
@@ -194,19 +193,8 @@ export const ANAPHYLAXIS_S70: Samp[] = [
         keyFeature: { topic: "anaphylaxis", n: 4 },
         source: "csaci-settings",
       },
-      {
-        id: "q5",
-        kind: "single",
-        prompt: "Which of the following is the most appropriate instruction for staff if his symptoms do not improve after the first autoinjector?",
-        options: ["Give a second dose only if he faints", "Give diphenhydramine before a second dose", "Give the second dose after 30 minutes", "Give the second dose after 5 minutes", "Wait for paramedics before a second dose"],
-        correct: 3,
-        explanation:
-          "The Canadian emergency protocol is to give epinephrine, call 9-1-1, and give a second dose as early as 5 minutes after the first if symptoms have not improved. Waiting 30 minutes, waiting for paramedics or waiting until he faints lets the reaction progress while the second device sits unused. Diphenhydramine does not treat airway swelling or shock and must never delay epinephrine. Staff should also know that he goes to hospital even when symptoms improve, because the reaction can worsen or return.",
-        keyFeature: { topic: "anaphylaxis", n: 4 },
-        source: "csaci-protocol",
-      },
     ],
-    sources: [S.wao, S.shmuely, S.csaci, S.csaciProtocol],
+    sources: [S.wao, S.shmuely, S.csaci],
     ...META,
   },
 
@@ -222,12 +210,13 @@ export const ANAPHYLAXIS_S70: Samp[] = [
       {
         id: "q1",
         kind: "single",
-        prompt: "Which of the following best describes her condition at this point in her care?",
-        options: ["Allergic coronary vasospasm", "Anaphylaxis refractory to epinephrine", "Biphasic anaphylactic reaction", "Distributive shock from sepsis", "Vasovagal reaction with hives"],
-        correct: 1,
+        update: "You ask the nurse to prepare an epinephrine infusion, which will take several minutes.",
+        prompt: "Which of the following is the most appropriate treatment for her while the infusion is prepared?",
+        options: ["epinephrine 0.5 mg IM", "epinephrine 0.1 mg IV push", "glucagon 1 mg IV", "methylprednisolone 125 mg IV", "No further epinephrine until the infusion"],
+        correct: 0,
         explanation:
-          "Refractory anaphylaxis is defined as respiratory or cardiovascular problems that persist despite two appropriate doses of IM epinephrine. She has had two 0.5 mg doses and 2 L of fluid and still has wheeze, a saturation of 92% on oxygen and a pressure of 74/40 mmHg, so she meets it, and the next step is an epinephrine infusion with expert help. A biphasic reaction is a return of symptoms after they have resolved, and hers never resolved. She has no chest pain or ECG change to suggest coronary spasm, no infection to suggest sepsis, and a vasovagal faint does not cause hives and wheeze.",
-        keyFeature: { topic: "anaphylaxis", n: 2 },
+          "Wheeze, hypoxia and a pressure of 74/40 mmHg after two appropriate IM doses meet the definition of refractory anaphylaxis, and the next step is an infusion. The Resuscitation Council UK algorithm continues IM epinephrine every 5 minutes until the infusion has started, and her last dose was 10 minutes ago, so 0.5 mg IM is due now. Withholding epinephrine while the infusion is drawn up and primed leaves her untreated. IV boluses are not recommended outside specialist settings such as the operating room because of dysrhythmia and severe hypertension. Glucagon is for patients taking beta-blockers, and she takes no medications. A corticosteroid acts too slowly to treat shock.",
+        keyFeature: { topic: "anaphylaxis", n: 3 },
         source: "rcuk-refractory",
       },
       {

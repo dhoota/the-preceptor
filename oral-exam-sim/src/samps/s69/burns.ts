@@ -8,10 +8,11 @@ const S = {
   mckee: { id: "mckee-hf", citation: "McKee D, Thoma A, Bailey K, Fish J. A review of hydrofluoric acid burn management. Plast Surg (Oakv). 2014.", url: "https://pmc.ncbi.nlm.nih.gov/articles/PMC4116323/" },
   cag: { id: "cag-calcium-gluconate", citation: "Centre antipoison du Quebec and CIUSSS de la Capitale-Nationale. Canadian Antidote Guide in Acute Care Toxicology. Calcium gluconate. Updated 2026.", url: "https://www.ciusss-capitalenationale.gouv.qc.ca/en/antidotes/calcium-gluconate" },
   abaRef: { id: "aba-referral", citation: "American Burn Association. Guidelines for burn patient referral. 2025.", url: "https://ameriburn.org/burnreferral" },
+  anderson: { id: "anderson-buprenorphine", citation: "Anderson TA, Quaye ANA, Ward EN, Wilens TE, Hilliard PE, Brummett CM. To stop or not, that is the question: acute pain management for the patient on chronic buprenorphine. Anesthesiology. 2017.", url: "https://pmc.ncbi.nlm.nih.gov/articles/PMC7041233/" },
   kohan: { id: "kohan-buprenorphine", citation: "Kohan L, Potru S, Barreveld AM, and colleagues. Buprenorphine management in the perioperative period: educational review and recommendations from a multisociety expert panel. Reg Anesth Pain Med. 2021.", url: "https://asra.com/guidelines-articles/original-articles/article-item/guidelines/2021/08/12/buprenorphine-management-in-the-perioperative-period" },
   hampson: { id: "hampson-co", citation: "Hampson NB, Piantadosi CA, Thom SR, Weaver LK. Practice recommendations in the diagnosis, management, and prevention of carbon monoxide poisoning. Am J Respir Crit Care Med. 2012." },
   walker: { id: "walker-inhalation", citation: "Walker PF, Buehner MF, Wood LA, and colleagues. Diagnosis and management of inhalation injury: an updated review. Crit Care. 2015.", url: "https://pmc.ncbi.nlm.nih.gov/articles/PMC4624587/" },
-  abaPain: { id: "aba-pain", citation: "Romanowski KS, Carson J, Pape K, and colleagues. American Burn Association guidelines on the management of acute pain in the adult burn patient: a review of the literature, a compilation of expert opinion, and next steps. J Burn Care Res. 2020." },
+  padis: { id: "padis-2018", citation: "Devlin JW, Skrobik Y, Gelinas C, and colleagues. Clinical practice guidelines for the prevention and management of pain, agitation/sedation, delirium, immobility, and sleep disruption in adult patients in the ICU. Crit Care Med. 2018." },
   berry: { id: "berry-eye", citation: "Berry J, Ashley J, Jeffery S. Ophthalmological evaluation of facial burns in a regional burns centre. Burns. 2020.", url: "https://pureportal.bcu.ac.uk/en/publications/ophthalmological-evaluation-of-facial-burns-in-a-regional-burns-c/" },
 } satisfies Record<string, Source>;
 
@@ -34,17 +35,17 @@ export const BURNS_S69: Samp[] = [
         explanation:
           "Glass etching creams contain fluoride salts such as ammonium bifluoride, which release hydrofluoric acid on the skin. Dilute fluoride burns cause deep, throbbing pain that can begin hours after contact while the skin looks almost normal, which matches pain that began hours after she wiped the cream with bare fingertips. A felon and a paronychia are bacterial infections that cause a tense, swollen pulp or redness and pus at the nail fold, and she has neither. A herpetic whitlow shows grouped vesicles. Raynaud phenomenon causes episodes of colour change with cold, not constant pain confined to the two fingers that touched the cream.",
         keyFeature: { topic: "burns", n: 6 },
-        source: "cag-calcium-gluconate",
+        source: "mckee-hf",
       },
       {
         id: "q2",
         kind: "single",
         update: "The hospital pharmacy has no commercial calcium gluconate gel in stock.",
         prompt: "Which of the following is the most appropriate way to prepare a topical gel for her fingers?",
-        options: ["calcium chloride 10% 10 mL in 30 mL lubricant", "calcium gluconate 10% 1 mL in 30 mL lubricant", "calcium gluconate 10% 10 mL in 30 mL lubricant", "calcium gluconate 10% 10 mL in 30 mL saline", "magnesium sulfate 50% 10 mL in 30 mL lubricant"],
-        correct: 2,
+        options: ["calcium gluconate 10% 1 mL in 30 mL lubricant", "calcium gluconate 10% 10 mL in 30 mL lubricant", "calcium gluconate 10% 30 mL in 10 mL lubricant", "calcium gluconate 10% 10 mL in 30 mL saline", "magnesium sulfate 50% 10 mL in 30 mL lubricant"],
+        correct: 1,
         explanation:
-          "When commercial gel is not available, the Canadian Antidote Guide makes one by mixing 10 mL of calcium gluconate 10% for injection, which holds 1000 mg, into 30 mL of water-soluble lubricant. That gives 1000 mg in about 40 mL, or about 2.5%, the strength of the commercial gel, and it goes inside a surgical glove over her fingers. Only 1 mL in 30 mL gives about 0.3%, far too weak. Saline runs off the skin and does not hold calcium against it. Calcium chloride is toxic to tissue and is avoided in these burns. Magnesium sulfate is not the topical agent the guide recommends.",
+          "When commercial gel is not available, the Canadian Antidote Guide makes one by mixing 10 mL of calcium gluconate 10% for injection, which holds 1000 mg, into 30 mL of water-soluble lubricant. That gives 1000 mg in about 40 mL, or about 2.5%, the strength of the commercial gel, and it goes inside a surgical glove over her fingers. Only 1 mL in 30 mL gives about 0.3%, far too weak. Reversing the proportions gives a thin liquid of about 7.5% that will not stay in place, and saline runs off the skin and does not hold calcium against it. Magnesium sulfate is not the topical agent the guide recommends.",
         keyFeature: { topic: "burns", n: 6 },
         source: "cag-calcium-gluconate",
       },
@@ -159,13 +160,13 @@ export const BURNS_S69: Samp[] = [
       {
         id: "q2",
         kind: "single",
-        prompt: "Which of the following is the most appropriate analgesic for him now?",
-        options: ["hydromorphone 2 mg IV", "ketorolac 30 mg IV", "morphine 10 mg IM", "naloxone 0.4 mg IV first", "oxycodone 10 mg PO"],
+        prompt: "Which of the following best explains his poor response to the fentanyl given by paramedics?",
+        options: ["Buprenorphine occupying his mu receptors", "Fentanyl dose too low for his weight", "Neuropathic pain from deep burns", "Opioid-induced hyperalgesia", "Rapid redistribution of fentanyl"],
         correct: 0,
         explanation:
-          "Buprenorphine binds mu receptors tightly, so usual doses of a full agonist give little relief, as the fentanyl 100 mcg showed. Severe burn pain in a patient taking buprenorphine is treated with a high affinity full agonist such as hydromorphone, given IV in larger doses and repeated every few minutes to effect with close monitoring. IM morphine is absorbed unpredictably from burned and swollen tissue and cannot be titrated. Oral oxycodone acts too slowly for pain of this severity. Ketorolac alone is not enough for an 18% burn and adds kidney risk during fluid resuscitation. Naloxone would not free receptors from buprenorphine at that dose and could precipitate withdrawal.",
+          "Buprenorphine binds mu receptors with very high affinity and leaves them slowly, so at 16 mg daily it occupies most of them and blunts the effect of a usual dose of a full agonist. Fentanyl 100 mcg is about 1.2 mcg/kg for him, a standard first dose that would normally bring relief. Redistribution shortens the effect of a fentanyl bolus but does not stop it working at first. Opioid-induced hyperalgesia develops over long exposure to escalating full agonist doses and does not explain the failure of one dose. His partial thickness burns hurt because their nerve endings survive, and that pain responds to opioids. He needs larger, titrated IV doses of a full agonist with close monitoring.",
         keyFeature: { topic: "burns", n: 3 },
-        source: "kohan-buprenorphine",
+        source: "anderson-buprenorphine",
       },
       {
         id: "q3",
@@ -175,7 +176,7 @@ export const BURNS_S69: Samp[] = [
         options: ["Hold it until his pain settles", "Keep giving his usual daily dose", "Replace it with methadone", "Replace it with oral morphine", "Taper it to 4 mg daily"],
         correct: 1,
         explanation:
-          "Buprenorphine should not be routinely stopped or tapered around acute pain or surgery, because interruption raises the risk of relapse and overdose after discharge. His usual 16 mg continues, and full agonists and other analgesics are added on top, with the buprenorphine dose split through the day if that helps his pain. Holding or tapering it removes the protection it gives him. A switch to methadone or to oral morphine is a major change of addiction treatment with its own risks of overdose and withdrawal, and is not needed to treat burn pain.",
+          "Buprenorphine should not be routinely stopped or tapered around acute pain or surgery, because interruption raises the risk of relapse and overdose after discharge. His usual 16 mg continues, and full agonists and other analgesics are added on top, as the hydromorphone has shown. Holding or tapering it removes the protection it gives him. A switch to methadone or to oral morphine is a major change of addiction treatment with its own risks of overdose and withdrawal, and is not needed to treat burn pain.",
         keyFeature: { topic: "burns", n: 3 },
         source: "kohan-buprenorphine",
       },
@@ -192,7 +193,7 @@ export const BURNS_S69: Samp[] = [
         source: "aba-referral",
       },
     ],
-    sources: [S.hampson, S.kohan, S.abaRef],
+    sources: [S.hampson, S.anderson, S.kohan, S.abaRef],
     ...META,
   },
 
@@ -236,7 +237,7 @@ export const BURNS_S69: Samp[] = [
         options: ["Albumin started in the first hour", "Fluid restricted to protect the lungs", "Less fluid than the formula predicts", "More fluid than the formula predicts", "Same fluid as the formula predicts"],
         correct: 3,
         explanation:
-          "The inflammatory response to smoke inhalation adds to the capillary leak of the burn itself, so patients with inhalation injury often need more fluid than the formula estimate. The formula is a starting point, and the rate is titrated hourly to urine output. Restricting fluid to spare the lungs risks under resuscitation, shock and kidney injury. Assuming his needs will match or fall below the estimate ignores that leak. Albumin is considered when resuscitation is failing or running far over the estimate, and is not a routine first hour treatment.",
+          "The inflammatory response to smoke inhalation adds to the capillary leak of the burn itself, so patients with inhalation injury often need more fluid than the formula estimate. The formula is a starting point, and the rate is titrated hourly to urine output. Restricting fluid to spare the lungs risks under resuscitation, shock and kidney injury. Assuming his needs will match or fall below the estimate ignores that leak. Starting albumin in the first hour is not part of routine initial resuscitation and does not change the estimate.",
         keyFeature: { topic: "burns", n: 4 },
         source: "walker-inhalation",
       },
@@ -247,12 +248,12 @@ export const BURNS_S69: Samp[] = [
         options: ["fentanyl and propofol infusions", "midazolam infusion alone", "propofol infusion alone", "rocuronium and midazolam infusions", "rocuronium infusion alone"],
         correct: 0,
         explanation:
-          "A ventilated patient with a 27% burn has severe pain whether or not he can report it, so his plan starts with an opioid infusion such as fentanyl, with boluses before he is moved, and adds a sedative such as propofol for tolerance of the tube. Propofol or midazolam alone sedates without treating pain. A neuromuscular blocker alone, or with only a benzodiazepine, can leave a paralysed patient in pain and unable to show it. Paralysis is added only when ventilation needs it, and always with analgesia and sedation in place.",
+          "A ventilated patient with a 27% burn has severe pain whether or not he can report it. Critical care guidance treats pain first and then adds a sedative, preferring propofol over a benzodiazepine, so his plan is a fentanyl infusion, with boluses before he is moved, plus propofol for tolerance of the tube. Propofol or midazolam alone sedates without treating pain. A neuromuscular blocker alone, or with only a benzodiazepine, can leave a paralysed patient in pain and unable to show it. Paralysis is added only when ventilation needs it, and always with analgesia and sedation in place.",
         keyFeature: { topic: "burns", n: 3 },
-        source: "aba-pain",
+        source: "padis-2018",
       },
     ],
-    sources: [S.walker, S.abaPain],
+    sources: [S.walker, S.padis],
     ...META,
   },
 
@@ -283,7 +284,7 @@ export const BURNS_S69: Samp[] = [
         options: ["Bilateral eye patching", "Delay exam until swelling settles", "Erythromycin ointment only", "Slit lamp fluorescein exam", "Topical steroid drops"],
         correct: 3,
         explanation:
-          "Painful, watering eyes after steam struck her face may mean a corneal burn, and facial burns call for prompt examination with fluorescein staining as part of the initial burn assessment. Her lids will swell over the next hours as her facial burns progress, which makes a later examination harder, so delay is the wrong choice. Ointment or patching before the cornea has been examined treats an injury that has not been defined. Topical steroid drops are not started in the emergency department without an ophthalmology assessment, because they can slow epithelial healing.",
+          "Painful, watering eyes after steam struck her face may mean a corneal burn, and facial burns call for prompt examination with fluorescein staining. A review of facial burns at a regional burns centre found that this examination was often left undone and eye review often delayed. Her lids will swell over the next hours as her facial burns progress, which makes a later examination harder, so delay is the wrong choice. Ointment or patching before the cornea has been examined treats an injury that has not been defined. Topical steroid drops are not started in the emergency department without an ophthalmology assessment, because they can slow epithelial healing.",
         keyFeature: { topic: "burns", n: 1 },
         source: "berry-eye",
       },
@@ -295,7 +296,7 @@ export const BURNS_S69: Samp[] = [
         options: ["Arterial blood gas", "Chest CT scan", "Chest radiograph", "Fibreoptic bronchoscopy", "Ventilation perfusion scan"],
         correct: 3,
         explanation:
-          "Fibreoptic bronchoscopy through her tube shows the mucosa directly, with redness, soot, ulceration or sloughing, and is the standard way to diagnose and grade inhalation injury. It can also clear secretions and casts. A chest radiograph is often normal early. Chest CT may add detail and help with prognosis but does not replace direct viewing. A blood gas measures gas exchange, which is affected by many other problems. A ventilation perfusion scan has been studied in research but is not a practical test in this setting.",
+          "Fibreoptic bronchoscopy through her tube shows the mucosa directly, with redness, soot, ulceration or sloughing, and is the standard way to diagnose and grade inhalation injury. It can also clear secretions and casts. A chest radiograph is often normal early. Chest CT may add detail and help with prognosis but does not replace direct viewing. A blood gas measures gas exchange, which is affected by many other problems. A ventilation perfusion scan is a test for pulmonary embolism. Radionuclide ventilation scanning with xenon has been studied for inhalation injury but is not a practical test in this setting.",
         keyFeature: { topic: "burns", n: 2 },
         source: "walker-inhalation",
       },
