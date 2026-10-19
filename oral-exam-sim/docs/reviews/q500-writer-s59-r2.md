@@ -92,3 +92,23 @@ SAMP_SPEC sets Canadian spelling but does not choose between "analyse" and "anal
 ### Uncertain
 - cqi-37 q1 rests on a Canadian survey paper that describes smart pumps as preventing infusion errors and as standard practice. It is not a guideline. Accreditation Canada's infusion pump standard was not available to open.
 - cqi-37 q3: the "check other recent phoned results" action is my application of CIAF's general instruction to protect other patients at risk. CIAF does not name this specific action.
+
+## Round 4
+
+Verdict applied: `docs/reviews/q500-verify3-s59.md`. Only cqi-37 in `src/samps/s59/cqi.ts` changed, plus this report.
+
+### cqi-37 q1
+- **Update.** Now reads "She needs a norepinephrine infusion. Nurses in the department calculate and enter each infusion rate by hand." The drug library cue is removed.
+- **Prompt.** Now reads "Which of the following changes would best reduce infusion programming errors in this department?" It is a department-level change, so it fits the equipment key.
+- **Explanation, first sentence.** Smart pumps now flag or block "a rate outside those limits". A new sentence follows: "An error that falls within the limits can still get through."
+- **Explanation, distractor sentence.** Now reads "all depend on a person calculating or entering the number correctly with no automated check."
+- **Unchanged.** Options, key (fifth position), key feature 5 and source.
+
+### cqi-37 order
+Old q3 (immediate protective action) is now q2. Old q2 (initial information gathering, update "The hospital starts an incident analysis.") is now q3. Ids were renumbered to match. Options, keys and explanations are unchanged. Both keys were already at their positions, so the position balance stays at 4, 4, 4, 4, 4.
+
+### Advisory applied
+The stem now ends "She is treated for septic shock." The ICU outcome moved to the start of the new q2 update: "She is admitted to the ICU, where she recovers. The incident is reported the same day." This one added sentence is the only wording change outside q1, and it comes from the advisory.
+
+### Checks
+The type check shows no s59 errors. `SAMP_BATCH=s59` samps, samp-quality and citations tests pass (132).

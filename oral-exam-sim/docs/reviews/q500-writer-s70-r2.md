@@ -16,7 +16,7 @@ The teaching point is that skin involvement with severe gastrointestinal symptom
 
 ### anaphylaxis-49 q3 (third weight-based IM dose with tenfold distractors, an unrecorded D1 claim)
 
-Replaced with an infant-specific KF3 decision. No D1 row was added. After IM epinephrine, his saturation still reads 97% on room air. The prompt asks for the most appropriate oxygen therapy. Key "Face mask oxygen at 10 L/minute". Distractors: blow-by oxygen, nasal prongs at 1 L/minute, bag-valve-mask ventilation, and "No oxygen while saturation is normal". Source: Carlisle and Lieberman 2021, which advises "high-flow supplemental oxygen (8–10 L/m)" by infant face mask. The question does not touch dose, IM site or positioning.
+Replaced with an infant-specific KF3 decision. No D1 row was added. After IM epinephrine, his saturation still reads 97% on room air. The prompt asks for the most appropriate oxygen therapy. Key "Face mask oxygen at 10 L/minute". Distractors: blow-by oxygen, nasal prongs at 1 L/minute, bag-valve-mask ventilation, and "No oxygen while saturation is normal". Source: Carlisle and Lieberman 2021, which advises "high-flow supplemental oxygen (8 to 10 L/m)" by infant face mask. The question does not touch dose, IM site or positioning.
 
 The other options were rejected for these reasons:
 - Intraosseous access after failed IV attempts was considered and rejected, because shock-02 q2 and pediatric-fever-21 q3 key it.
@@ -55,7 +55,7 @@ Every key feature is covered. There are two menu questions (50 q3, 51 q3). Singl
 
 ## Sources (opened this round)
 
-- Cardona V and colleagues. World Allergy Organization anaphylaxis guidance 2020. https://pmc.ncbi.nlm.nih.gov/articles/PMC7607509/. Table 2 criterion 1c reads "Severe gastrointestinal symptoms (eg, severe crampy abdominal pain, repetitive vomiting), especially after exposure to non-food allergens". The guidance also says "Around half of biphasic reactions occur within the first 6–12 h".
+- Cardona V and colleagues. World Allergy Organization anaphylaxis guidance 2020. https://pmc.ncbi.nlm.nih.gov/articles/PMC7607509/. Table 2 criterion 1c reads "Severe gastrointestinal symptoms (eg, severe crampy abdominal pain, repetitive vomiting), especially after exposure to non-food allergens". The guidance also says "Around half of biphasic reactions occur within the first 6 to 12 h".
 - Carlisle A, Lieberman J. Clinical management of infant anaphylaxis. J Asthma Allergy. 2021. https://www.dovepress.com/clinical-management-of-infant-anaphylaxis-peer-reviewed-fulltext-article-JAA. Confirmed the high-flow oxygen of 8 to 10 L/minute by infant face mask.
 - Resuscitation Council UK. Refractory anaphylaxis algorithm. 2021. https://resus.org.uk/media/334/download. PDF downloaded and the text reread.
 - London Health Sciences Centre, Drugs and Therapeutics Committee. Vasopressor extravasation management protocol (adults). 2019. https://lhsc.on.ca/media/8366/download. PDF downloaded and the text read. The approval date is 5 February 2019.

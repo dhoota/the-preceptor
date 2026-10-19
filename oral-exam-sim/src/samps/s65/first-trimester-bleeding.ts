@@ -30,7 +30,7 @@ export const FIRST_TRIMESTER_BLEEDING_S65: Samp[] = [
     topic: "first-trimester-bleeding",
     title: "Walked in with spotting and cramps",
     stem:
-      "You are working in a community hospital emergency department. A 26-year-old woman walks in with 1 day of light vaginal spotting and left lower abdominal cramps. Her last menstrual period was 7 weeks ago. She had chlamydia treated 3 years ago. She says she feels fine apart from the cramps and wants to go home soon. A urine pregnancy test is positive. Her hemoglobin is 124 g/L. She has mild left lower quadrant tenderness without guarding.",
+      "You are working in a community hospital emergency department. A 26-year-old woman walks in with 1 day of light vaginal spotting and left lower abdominal cramps. Her last menstrual period was 7 weeks ago. She had chlamydia treated 3 years ago. She rates the cramps 3 out of 10, says she feels fine otherwise and wants to go home soon. A urine pregnancy test is positive. Her hemoglobin is 124 g/L. She has mild left lower quadrant tenderness without guarding.",
     vitals: { temperature: "36.8°C oral", pulse: "104/minute", resp: "18/minute", bp: "112/70 mmHg", o2sat: "99% on room air", weight: "62 kg" },
     questions: [
       {
@@ -47,13 +47,13 @@ export const FIRST_TRIMESTER_BLEEDING_S65: Samp[] = [
       {
         id: "q2",
         kind: "single",
-        prompt: "Which of the following statements about her vital signs is most accurate?",
-        options: ["Her shock index suggests rupture", "Normal BP excludes major bleeding", "Normal hemoglobin excludes bleeding", "Tachycardia is normal at 7 weeks", "Vital signs are reassuring today"],
-        correct: 0,
+        prompt: "Which of the following Canadian Triage and Acuity Scale levels best fits her when she is triaged on arrival?",
+        options: ["CTAS level 1", "CTAS level 2", "CTAS level 3", "CTAS level 4", "CTAS level 5"],
+        correct: 1,
         explanation:
-          "A shock index above 0.85 made a ruptured ectopic pregnancy 15 times more likely in one ED cohort, and it correlated with the volume of blood in the abdomen better than heart rate or blood pressure alone. On their own, tachycardia and hypotension had sensitivities of only 28% and 36% for rupture, so her normal systolic pressure is not reassuring. A hemoglobin drawn early in acute bleeding has not yet fallen. The heart rate rises only modestly in early pregnancy and does not explain 104/minute.",
+          "A pulse of 104/minute that her mild cramps do not explain is unexplained tachycardia, which CTAS lists under hemodynamic compromise, evidence of borderline perfusion, at level 2. CTAS assigns the highest level reached by any modifier, so her light spotting and a pain score of 3 out of 10 do not pull her down. Level 1 is shock, with marked pallor, cool skin, hypotension, postural syncope, significant tachycardia or a reduced level of consciousness, and she has none of these. Level 3 is for vital signs at the upper or lower end of normal, and level 4 for normal vital signs, while her pulse is above the normal range.",
         keyFeature: { topic: "first-trimester-bleeding", n: 1 },
-        source: "birkhahn-vitals-2003",
+        source: "ctas-2004",
       },
       {
         id: "q3",
@@ -77,10 +77,10 @@ export const FIRST_TRIMESTER_BLEEDING_S65: Samp[] = [
         explanation:
           "A positive pregnancy test, no intrauterine pregnancy, free fluid behind the uterus and a shock index near 1 point to a leaking or ruptured ectopic pregnancy, even though her blood pressure is normal. She needs gynecology now for surgery, with IV access, her blood type determined and blood ready for transfusion. Expectant care, discharge, a formal scan tomorrow or admission to wait for a repeat hCG would all leave an ongoing bleed untreated, and methotrexate takes days to work and cannot stop it either.",
         keyFeature: { topic: "first-trimester-bleeding", n: 2 },
-        source: "msf-ectopic",
+        source: "sogc-ectopic",
       },
     ],
-    sources: [S.birkhahn2002, S.birkhahn2003, S.msfEctopic],
+    sources: [S.birkhahn2002, S.ctas2004, S.msfEctopic, S.sogc414],
     ...META,
   },
 
@@ -108,13 +108,14 @@ export const FIRST_TRIMESTER_BLEEDING_S65: Samp[] = [
       {
         id: "q2",
         kind: "single",
-        prompt: "Which of the following bimanual examination findings would best fit this diagnosis?",
-        options: ["Exquisite cervical motion pain", "Firm uterus smaller than dates", "Soft uterus larger than dates", "Tender adnexal mass", "Uterus matching 13 weeks"],
-        correct: 2,
+        update: "Bimanual examination finds smooth, mobile, nontender masses about 7 cm across in both adnexa. She has had no pelvic pain or fever.",
+        prompt: "Which of the following is the most likely explanation for the masses found on her bimanual examination?",
+        options: ["Bilateral dermoid cysts", "Bilateral tubal pregnancies", "Endometriomas", "Theca lutein cysts", "Tubo-ovarian abscesses"],
+        correct: 3,
         explanation:
-          "A molar uterus is typically softer and larger than expected for the gestational age, especially with a complete mole, because the cavity fills with swollen villi and blood. A firm uterus smaller than dates suggests a failed or completed miscarriage or wrong dates. Cervical motion pain and a tender adnexal mass point toward an ectopic pregnancy, infection or torsion, although large ovarian theca lutein cysts can occur with a mole. A uterus matching dates does not exclude a mole but does not support it.",
+          "Smooth, mobile, painless masses in both adnexa beside a molar pregnancy are most likely theca lutein cysts. Very high hCG overstimulates the ovaries, and 25 to 50% of patients with a mole develop these cysts. They usually regress after evacuation, and rupture is rare, at about 1 to 2%. Tubo-ovarian abscesses are tender and come with fever. Bilateral tubal pregnancies are extremely rare and would not explain the vesicles at the os. Dermoid cysts and endometriomas are not caused by the pregnancy and are seldom bilateral and this large at once.",
         keyFeature: { topic: "first-trimester-bleeding", n: 3 },
-        source: "msf-mole",
+        source: "braga-mole-2025",
       },
       {
         id: "q3",
@@ -132,16 +133,16 @@ export const FIRST_TRIMESTER_BLEEDING_S65: Samp[] = [
         id: "q4",
         kind: "single",
         update: "Suction aspiration is uncomplicated and her bleeding settles.",
-        prompt: "Which of the following is the most important advice for her follow-up after the evacuation?",
-        options: ["Reliable contraception during hCG follow-up", "Repeat ultrasound monthly for a year", "Serum hCG only if bleeding recurs", "Try to conceive again in 1 month", "No follow-up once bleeding stops"],
-        correct: 0,
+        prompt: "Which of the following is the most accurate counselling about her risk that the disease persists after the evacuation?",
+        options: ["Equal to the risk after a miscarriage", "Higher than usual given her features", "Lower than usual given her age", "Present only if bleeding continues", "Removed once the uterus is empty"],
+        correct: 1,
         explanation:
-          "After a molar evacuation, serum hCG is followed until it normalizes and then for a period after, to detect gestational trophoblastic neoplasia. Reliable contraception throughout this follow-up is essential, because a new pregnancy would raise the hCG and hide a recurrence. Surveillance is by scheduled serial hCG, not by monthly ultrasound, and checking hCG only if bleeding recurs would miss silent neoplasia. Follow-up continues even after bleeding stops, and trying to conceive in a month would confuse the results.",
+          "Her age of 41, an hCG of 310 000 IU/L and theca lutein cysts are each markers of a high-risk mole, and with these features the rate of postmolar gestational trophoblastic neoplasia can reach 40 to 50%. She should hear this plainly before discharge, because it is why her hCG follow-up must not lapse. Age over 40 raises the risk rather than lowering it. Emptying the uterus does not remove the risk, and persistent disease is often silent, so it is found by falling or rising hCG rather than by bleeding. A miscarriage carries no comparable risk.",
         keyFeature: { topic: "first-trimester-bleeding", n: 6 },
         source: "braga-mole-2025",
       },
     ],
-    sources: [S.braga, S.msfMole, S.sogc448],
+    sources: [S.braga, S.sogc448],
     ...META,
   },
 
