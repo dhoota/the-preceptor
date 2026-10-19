@@ -89,7 +89,7 @@ export const ASTHMA_COPD_S64: Samp[] = [
         id: "q1",
         kind: "single",
         prompt: "Which of the following findings best shows that he perceives his airflow limitation poorly?",
-        options: ["Full sentences when speaking", "His rating of 3 out of 10", "Pulse of 108/minute", "Using about 10 inhalations a day", "SpO2 of 93% on room air"],
+        options: ["Full sentences when speaking", "His rating of 3 out of 10", "Pulse of 108/minute", "SpO2 of 93% on room air", "Using about 10 inhalations a day"],
         correct: 1,
         explanation:
           "His peak flow of 150 L/minute is 31% of his personal best of 480 L/minute, yet he rates his breathing as only 3 out of 10. GINA describes impaired perception as few symptoms despite low lung function, and names poor perception as one reason asthma is missed in older adults. Full sentences, a pulse of 108/minute and an SpO2 of 93% are signs measured by others, not his own sense of breathlessness. Using about 10 inhalations a day shows that he did notice something and acted on it.",
