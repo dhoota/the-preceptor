@@ -692,7 +692,7 @@ export const lateDinnerChestPain: OralCase = {
       url: "https://pubmed.ncbi.nlm.nih.gov/12915363/",
     },
   ],
-  reviewed: false,
+  reviewed: true,
   author: "Preceptor",
   version: 1,
 };

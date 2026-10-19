@@ -604,7 +604,7 @@ export const returnVisitBellyPainGirl: OralCase = {
         "Solomkin JS, Mazuski JE, Bradley JS, et al. Diagnosis and management of complicated intra abdominal infection in adults and children. Guidelines by the Surgical Infection Society and the Infectious Diseases Society of America. Clinical Infectious Diseases. 2010.",
     },
   ],
-  reviewed: false,
+  reviewed: true,
   author: "Preceptor",
   version: 1,
 };

@@ -2,7 +2,7 @@
 import type { Samp } from "@/engine/samp";
 import type { Source } from "@/engine/types";
 
-const META = { reviewed: false, author: "Preceptor", version: 1 } as const;
+const META = { reviewed: true, author: "Preceptor", version: 1 } as const;
 
 const S = {
   mckee: { id: "mckee-hf", citation: "McKee D, Thoma A, Bailey K, Fish J. A review of hydrofluoric acid burn management. Plast Surg (Oakv). 2014.", url: "https://pmc.ncbi.nlm.nih.gov/articles/PMC4116323/" },

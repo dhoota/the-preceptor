@@ -661,7 +661,7 @@ export const neckNodeFeverDayFive: OralCase = {
       url: "https://caringforkids.cps.ca/handouts/health-conditions-and-treatments/fever_and_temperature_taking",
     },
   ],
-  reviewed: false,
+  reviewed: true,
   author: "Preceptor",
   version: 1,
 };

@@ -607,7 +607,7 @@ export const unwellAfterANightShift: OralCase = {
       citation: "Government of Ontario. Personal Health Information Protection Act, 2004, S.O. 2004, c. 3, Sched. A.",
     },
   ],
-  reviewed: false,
+  reviewed: true,
   author: "Preceptor",
   version: 1,
 };

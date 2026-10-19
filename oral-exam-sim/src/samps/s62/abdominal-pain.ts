@@ -3,7 +3,7 @@
 import type { Samp } from "@/engine/samp";
 import type { Source } from "@/engine/types";
 
-const META = { reviewed: false, author: "Preceptor", version: 1 } as const;
+const META = { reviewed: true, author: "Preceptor", version: 1 } as const;
 
 const S = {
   cfasOhss: { id: "cfas-ohss-2026", citation: "Buckett W, Sylvestre C, Liu K, et al. Management of moderate and severe ovarian hyperstimulation syndrome: a Canadian Fertility and Andrology Society clinical practice guideline. Reprod Biomed Online. 2026.", url: "https://cfas.ca/_Library/Clinical_Practice_Guidance_Documents_/OHSS_RBMO_CFAS_CPG.pdf" },

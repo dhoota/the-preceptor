@@ -3,7 +3,7 @@
 import type { Samp } from "@/engine/samp";
 import type { Source } from "@/engine/types";
 
-const META = { topic: "pediatric-fever", reviewed: false, author: "Preceptor", version: 1 } as const;
+const META = { topic: "pediatric-fever", reviewed: true, author: "Preceptor", version: 1 } as const;
 
 const S = {
   scharman: { id: "scharman-dimenhydrinate", citation: "Scharman EJ, Erdman AR, Wax PM, et al. Diphenhydramine and dimenhydrinate poisoning: an evidence-based consensus guideline for out-of-hospital management. Clin Toxicol (Phila). 2006.", url: "https://pubmed.ncbi.nlm.nih.gov/16749537/" },

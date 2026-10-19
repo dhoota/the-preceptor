@@ -548,7 +548,7 @@ export const unhousedManHallwayHeatStroke: OralCase = {
       url: "https://pmc.ncbi.nlm.nih.gov/articles/PMC10581718/",
     },
   ],
-  reviewed: false,
+  reviewed: true,
   author: "Preceptor",
   version: 1,
 };

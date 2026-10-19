@@ -2,7 +2,7 @@
 import type { Samp } from "@/engine/samp";
 import type { Source } from "@/engine/types";
 
-const META = { reviewed: false, author: "Preceptor", version: 1 } as const;
+const META = { reviewed: true, author: "Preceptor", version: 1 } as const;
 
 const S = {
   wao: { id: "wao-2020", citation: "Cardona V, Ansotegui IJ, Ebisawa M, and colleagues. World Allergy Organization anaphylaxis guidance 2020. World Allergy Organ J. 2020.", url: "https://pmc.ncbi.nlm.nih.gov/articles/PMC7607509/" },

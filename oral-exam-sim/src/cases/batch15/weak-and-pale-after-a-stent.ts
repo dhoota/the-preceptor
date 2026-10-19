@@ -575,7 +575,7 @@ export const weakAndPaleAfterAStent: OralCase = {
         "HALT-IT Trial Collaborators, Roberts I, Shakur-Still H, and colleagues. Effects of a high-dose 24-h infusion of tranexamic acid on death and thromboembolic events in patients with acute gastrointestinal bleeding (HALT-IT). Lancet. 2020.",
     },
   ],
-  reviewed: false,
+  reviewed: true,
   author: "Preceptor",
   version: 1,
 };

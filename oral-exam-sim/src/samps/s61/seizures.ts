@@ -3,7 +3,7 @@
 import type { Samp } from "@/engine/samp";
 import type { Source } from "@/engine/types";
 
-const META = { reviewed: false, author: "Preceptor", version: 1 } as const;
+const META = { reviewed: true, author: "Preceptor", version: 1 } as const;
 
 const S = {
   aapEval: { id: "aap-fs-eval", citation: "American Academy of Pediatrics Subcommittee on Febrile Seizures. Neurodiagnostic evaluation of the child with a simple febrile seizure. Pediatrics. 2011.", url: "https://pubmed.ncbi.nlm.nih.gov/21285335/" },

@@ -3,7 +3,7 @@
 import type { Samp } from "@/engine/samp";
 import type { Source } from "@/engine/types";
 
-const META = { reviewed: false, author: "Preceptor", version: 1 } as const;
+const META = { reviewed: true, author: "Preceptor", version: 1 } as const;
 
 const S = {
   gina: { id: "gina-2026", citation: "Global Initiative for Asthma. Global Strategy for Asthma Management and Prevention. 2026 update.", url: "https://ginasthma.org/wp-content/uploads/2026/05/GINA-2026-Strategy-Report-WMS.pdf" },

@@ -3,7 +3,7 @@
 import type { Samp } from "@/engine/samp";
 import type { Source } from "@/engine/types";
 
-const META = { topic: "msk", reviewed: false, author: "Preceptor", version: 1 } as const;
+const META = { topic: "msk", reviewed: true, author: "Preceptor", version: 1 } as const;
 
 const S = {
   robertson: { id: "robertson-fnsf", citation: "Robertson GA, Wood AM. Femoral neck stress fractures in sport: a current concepts review. Sports Med Int Open. 2017.", url: "https://pubmed.ncbi.nlm.nih.gov/30539087/" },

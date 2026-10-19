@@ -3,7 +3,7 @@
 import type { Samp } from "@/engine/samp";
 import type { Source } from "@/engine/types";
 
-const META = { topic: "infectious-diseases", reviewed: false, author: "Preceptor", version: 1 } as const;
+const META = { topic: "infectious-diseases", reviewed: true, author: "Preceptor", version: 1 } as const;
 
 const S = {
   idsaNvo: { id: "idsa-nvo-2015", citation: "Berbari EF, Kanj SS, Kowalski TJ, et al. 2015 Infectious Diseases Society of America (IDSA) clinical practice guidelines for the diagnosis and treatment of native vertebral osteomyelitis in adults. Clin Infect Dis. 2015.", url: "https://academic.oup.com/cid/article/61/6/e26/2196013" },

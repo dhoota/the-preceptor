@@ -625,7 +625,7 @@ export const ladderFallAnkleSedation: OralCase = {
       url: "https://www.resus.org.uk/library/additional-guidance/guidance-anaphylaxis/emergency-treatment",
     },
   ],
-  reviewed: false,
+  reviewed: true,
   author: "Preceptor",
   version: 1,
 };

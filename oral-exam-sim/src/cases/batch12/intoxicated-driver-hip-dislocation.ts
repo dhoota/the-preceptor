@@ -612,7 +612,7 @@ export const intoxicatedDriverHipDislocation: OralCase = {
       url: "https://pubmed.ncbi.nlm.nih.gov/10522717/",
     },
   ],
-  reviewed: false,
+  reviewed: true,
   author: "Preceptor",
   version: 1,
 };

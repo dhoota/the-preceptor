@@ -4,7 +4,7 @@ import type { Source } from "@/engine/types";
 
 /* Every study, device, drug, test and number in these SAMPs is fictional and invented for teaching. None reports a real trial's results. */
 
-const META = { reviewed: false, author: "Preceptor", version: 1 } as const;
+const META = { reviewed: true, author: "Preceptor", version: 1 } as const;
 
 const S: Record<string, Source> = {
   blandAltman: {

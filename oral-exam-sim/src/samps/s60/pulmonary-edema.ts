@@ -3,7 +3,7 @@
 import type { Samp } from "@/engine/samp";
 import type { Source } from "@/engine/types";
 
-const META = { reviewed: false, author: "Preceptor", version: 1 } as const;
+const META = { reviewed: true, author: "Preceptor", version: 1 } as const;
 
 const S = {
   price: { id: "price-peds-hf", citation: "Price JF. Congestive heart failure in children. Pediatr Rev. 2019.", url: "https://doi.org/10.1542/pir.2016-0168" },

@@ -3,7 +3,7 @@
 import type { Samp } from "@/engine/samp";
 import type { Source } from "@/engine/types";
 
-const META = { reviewed: false, author: "Preceptor", version: 1 } as const;
+const META = { reviewed: true, author: "Preceptor", version: 1 } as const;
 
 const S = {
   birkhahn2002: { id: "birkhahn-si-2002", citation: "Birkhahn RH, Gaeta TJ, Bei R, Bove JJ. Shock index in the first trimester of pregnancy and its relationship to ruptured ectopic pregnancy. Acad Emerg Med. 2002.", url: "https://doi.org/10.1111/j.1553-2712.2002.tb00226.x" },

@@ -561,7 +561,7 @@ export const ruralBreathlessAfterUlcerBleed: OralCase = {
         "Dawwas GK, Leonard CE, Lewis JD, Cuker A. Risk for recurrent venous thromboembolism and bleeding with apixaban compared with rivaroxaban. An analysis of real-world data. Annals of Internal Medicine. 2022.",
     },
   ],
-  reviewed: false,
+  reviewed: true,
   author: "Preceptor",
   version: 1,
 };

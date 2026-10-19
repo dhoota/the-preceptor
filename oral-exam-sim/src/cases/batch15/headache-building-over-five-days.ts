@@ -690,7 +690,7 @@ export const headacheBuildingOverFiveDays: OralCase = {
       citation: "Kapur J, Elm J, Chamberlain JM, and colleagues. Randomized trial of three anticonvulsant medications for status epilepticus. N Engl J Med. 2019.",
     },
   ],
-  reviewed: false,
+  reviewed: true,
   author: "Preceptor",
   version: 1,
 };

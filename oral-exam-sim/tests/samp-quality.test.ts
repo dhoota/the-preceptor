@@ -6,6 +6,7 @@ import expansion from "../docs/samp-expansion.json";
 import conformance from "../docs/conformance.json";
 import signoffKeys from "../docs/signoff-keys-2026-09.json";
 import signoffKeys2 from "../docs/signoff-keys-2026-10.json";
+import signoffKeys3 from "../docs/signoff-keys-2026-10-q500.json";
 import keyEdits from "../docs/conformance-key-edits.json";
 
 /**
@@ -216,7 +217,7 @@ describe("signed-off answer keys", () => {
   // the snapshot. A keyed option may be reworded for length parity only when the
   // edit is logged in docs/conformance-key-edits.json for physician review.
   type Snap = { id: string; kind: string; keyed?: string[]; select?: number; required?: number; accept?: unknown; unacceptable?: unknown };
-  const snap = { ...signoffKeys, ...signoffKeys2 } as Record<string, Snap[]>;
+  const snap = { ...signoffKeys, ...signoffKeys2, ...signoffKeys3 } as Record<string, Snap[]>;
   const edits = keyEdits.edits as Record<string, { before: string[]; after: string[] }>;
   const signed = SAMPS.filter((x) => x.reviewed && (!only || SAMP_BATCHES[only]?.includes(x)));
   // New batches ship reviewed: false, so there may be nothing to check here.

@@ -662,7 +662,7 @@ export const stoppedAntiplateletsDentalStemi: OralCase = {
       url: "https://pdf.hres.ca/dpd_pm/00069984.PDF",
     },
   ],
-  reviewed: false,
+  reviewed: true,
   author: "Preceptor",
   version: 1,
 };

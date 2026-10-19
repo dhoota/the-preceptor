@@ -702,7 +702,7 @@ export const emsPatchRupturedAaa: OralCase = {
       url: "https://pubmed.ncbi.nlm.nih.gov/14707589/",
     },
   ],
-  reviewed: false,
+  reviewed: true,
   author: "Preceptor",
   version: 1,
 };

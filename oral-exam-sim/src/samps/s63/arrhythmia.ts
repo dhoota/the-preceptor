@@ -3,7 +3,7 @@
 import type { Samp } from "@/engine/samp";
 import type { Source } from "@/engine/types";
 
-const META = { reviewed: false, author: "Preceptor", version: 1 } as const;
+const META = { reviewed: true, author: "Preceptor", version: 1 } as const;
 
 const S = {
   abbas: { id: "abbas-cpvt-2022", citation: "Abbas M, Miles C, Behr E. Catecholaminergic polymorphic ventricular tachycardia. Arrhythm Electrophysiol Rev. 2022.", url: "https://pmc.ncbi.nlm.nih.gov/articles/PMC9820193/" },

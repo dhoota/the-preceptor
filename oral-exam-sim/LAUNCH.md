@@ -182,6 +182,7 @@ To regenerate the screenshots after content changes, build a seeded static copy 
 ## 10. Legal and disclaimer checklist
 
 - [x] First 525 SAMPs and 100 oral cases signed off by a physician (24 September 2026).
+- [x] Q500 round (88 SAMPs in s54 to s71, 20 oral cases in batch11 to batch15) signed off on 19 October 2026, recorded at the physician's instruction in `docs/signoff-2026-10-q500.json`.
 - [ ] Every SAMP added after that signed off and set to `reviewed: true`.
 - [ ] No CFPC logos or trademarks in the app, icon, screenshots or listing. "CCFP-EM" names the certificate the exam leads to. Say clearly that the app is independent and not affiliated. Consider asking the CFPC whether it objects to the name.
 - [ ] No CFPC sample question or recalled exam content in the app. The Official CFPC resources screen only links out.

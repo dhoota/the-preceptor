@@ -679,7 +679,7 @@ export const postpartumHeadacheSixthDay: OralCase = {
       url: "https://www.ontariomidwives.ca/sites/default/files/2023-05/CPG-HDP-2023-PUB.pdf",
     },
   ],
-  reviewed: false,
+  reviewed: true,
   author: "Preceptor",
   version: 1,
 };

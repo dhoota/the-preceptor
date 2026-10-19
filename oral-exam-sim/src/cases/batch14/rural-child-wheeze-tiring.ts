@@ -617,7 +617,7 @@ export const ruralChildWheezeTiring: OralCase = {
       citation: "Global Initiative for Asthma. Global strategy for asthma management and prevention. 2024 update.",
     },
   ],
-  reviewed: false,
+  reviewed: true,
   author: "Preceptor",
   version: 1,
 };
