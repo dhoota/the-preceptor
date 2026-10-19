@@ -99,7 +99,7 @@ export const ARRHYTHMIA_S63: Samp[] = [
         options: ["Inhaled sevoflurane through the ventilator", "Lorazepam 2 mg IV every 2 hours", "Midazolam and fentanyl infusions", "Neuromuscular blockade with propofol", "Propofol and remifentanil infusions"],
         correct: 4,
         explanation:
-          "ERC-ESICM 2025 guidance suggests short-acting IV sedatives, with daily sedation holds, for ventilated patients after cardiac arrest, so that neurological examination is less confounded by drug effect. In comatose patients under temperature control, propofol with remifentanil was linked with far less delayed awakening than midazolam with fentanyl, which accumulates, as does repeated lorazepam. Watch her BP, because propofol may raise the need for a vasopressor. Routine neuromuscular blockade is not recommended and is kept for critical hypoxemia with ARDS, and it would also mask seizures. Inhaled sevoflurane caused fewer ventilator-free days and higher mortality than propofol in a trial.",
+          "ERC-ESICM 2025 guidance suggests short-acting IV sedatives, with daily sedation holds, for ventilated patients after cardiac arrest, so that neurological examination is less confounded by drug effect. In comatose patients under temperature control, propofol with remifentanil was linked with far less delayed awakening than midazolam with fentanyl, which accumulates, as does repeated lorazepam. Watch her BP, because propofol may raise the need for a vasopressor. Routine neuromuscular blockade is not recommended and is kept for critical hypoxemia with ARDS, and it would also mask seizures. Inhaled sevoflurane is not a short-acting IV agent, and in a trial of ventilated adults with ARDS it gave fewer ventilator-free days and higher 90-day mortality than propofol.",
         keyFeature: { topic: "arrhythmia", n: 8 },
         source: "erc-esicm-post-2025",
       },
@@ -123,7 +123,7 @@ export const ARRHYTHMIA_S63: Samp[] = [
         options: ["amiodarone 300 mg IV", "atropine 3 mg IV", "calcium chloride 1 g IV", "Transcutaneous pacing", "Unsynchronized defibrillation"],
         correct: 3,
         explanation:
-          "P waves without QRS complexes show that the atria are still active, so the ventricles may respond to an external stimulus. ERC 2025 guidance advises checking every apparent asystole for P waves, because unlike true asystole it is more likely to respond to pacing, alongside continued CPR and epinephrine, and advises against pacing asystole without P waves. AHA guidance does not recommend routine pacing in cardiac arrest, so the ERC exception applies only to asystole with P waves. Defibrillation and amiodarone treat VF or pulseless VT, not a non-shockable rhythm. Atropine is not among the drugs ERC lists for cardiac arrest. Calcium chloride treats hyperkalemia, hypocalcemia or calcium channel blocker toxicity, and her potassium and ionized calcium are normal and she takes no such drug.",
+          "P waves without QRS complexes show that the atria are still active, so the ventricles may respond to an external stimulus. ERC 2025 guidance advises checking every apparent asystole for P waves, because unlike true asystole it is more likely to respond to pacing, alongside continued CPR and epinephrine, and advises against pacing asystole without P waves. AHA guidance does not recommend routine pacing in cardiac arrest. ERC makes an exception only for asystole with P waves. Defibrillation and amiodarone treat VF or pulseless VT, not a non-shockable rhythm. Atropine is not among the drugs ERC lists for cardiac arrest. Calcium chloride treats hyperkalemia, hypocalcemia or calcium channel blocker toxicity, and her potassium and ionized calcium are normal and she takes no such drug.",
         keyFeature: { topic: "arrhythmia", n: 4 },
         source: "erc-als-2025",
       },
@@ -157,7 +157,7 @@ export const ARRHYTHMIA_S63: Samp[] = [
         id: "q1",
         kind: "single",
         prompt: "Which of the following details of her history adds a point to her Canadian Syncope Risk Score?",
-        options: ["Age of 41 years", "Atrial fibrillation at 33", "Brief jerks of her arms", "Nausea after waking", "Sweating after the faint"],
+        options: ["Age of 41 years", "Atrial fibrillation", "Brief jerks of her arms", "Nausea after waking", "Sweating after the faint"],
         correct: 1,
         explanation:
           "The Canadian Syncope Risk Score adds 1 point for heart disease, which its authors define to include a documented history of atrial or ventricular arrhythmia, so her atrial fibrillation diagnosed at 33 scores. Age is not a score item. Brief limb jerks are common in syncope from any cause and are not scored. Sweating and nausea afterward are not the vasovagal predisposition item, which counts a trigger such as a warm crowded place, prolonged standing, fear, emotion or pain. Her QTc of 305 ms scores nothing, because only a QTc over 480 ms counts.",
@@ -294,13 +294,13 @@ export const ARRHYTHMIA_S63: Samp[] = [
         correct: 3,
         explanation:
           "Atrial fibrillation is the most common supraventricular arrhythmia in ACS, and ESC guidance notes that most episodes are well tolerated and need no specific treatment apart from anticoagulation, which his enoxaparin already provides. His rate of 98/minute, normal BP, clear lungs and absent pain mean no rate control is needed. IV beta blockers are recommended only when rate control is needed without heart failure or hypotension. Amiodarone is for rate control with acute heart failure, and digoxin is preferred with hypotension. Electrical cardioversion is for hemodynamic instability or a rate that cannot be controlled with drugs.",
-        keyFeature: { topic: "arrhythmia", n: 7 },
+        keyFeature: { topic: "arrhythmia", n: 4 },
         source: "esc-acs-2023",
       },
       {
         id: "q3",
         kind: "single",
-        update: "Forty minutes later his pain has gone and the ST elevation is 1 mm. PR intervals lengthen until a P wave is not conducted, with narrow QRS complexes and a ventricular rate of 56/minute. He is warm and alert, with BP 124/76 mmHg.",
+        update: "Forty minutes later he is in sinus rhythm, still pain free, and the ST elevation is 1 mm. PR intervals lengthen until a P wave is not conducted, with narrow QRS complexes and a ventricular rate of 56/minute. He is warm and alert, with BP 124/76 mmHg.",
         prompt: "Which of the following is the most appropriate management of this rhythm?",
         options: ["atropine 1 mg IV", "dopamine 5 mcg/kg/minute IV", "isoproterenol 2 mcg/minute IV", "Observation on the monitor", "Transcutaneous pacing now"],
         correct: 3,
