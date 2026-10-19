@@ -8,7 +8,7 @@ const META = { topic: "msk", reviewed: false, author: "Preceptor", version: 1 } 
 const S = {
   robertson: { id: "robertson-fnsf", citation: "Robertson GA, Wood AM. Femoral neck stress fractures in sport: a current concepts review. Sports Med Int Open. 2017.", url: "https://pubmed.ncbi.nlm.nih.gov/30539087/" },
   reds: { id: "ioc-reds-2023", citation: "Mountjoy M, Ackerman KE, Bailey DM, et al. 2023 International Olympic Committee's (IOC) consensus statement on Relative Energy Deficiency in Sport (REDs). Br J Sports Med. 2023.", url: "https://pubmed.ncbi.nlm.nih.gov/37752011/" },
-  aresco: { id: "aresco-geriatric-cspine", citation: "Aresco C, Gambert SR, Stein DM. Cervical spine injuries in the geriatric patient. Consultant360. 2010.", url: "https://www.consultant360.com/articles/cervical-spine-injuries-geriatric-patient" },
+  aresco: { id: "aresco-geriatric-cspine", citation: "Aresco C, Gambert SR, Stein DM. Cervical spine injuries in the geriatric patient. Clin Geriatr. 2010.", url: "https://www.consultant360.com/articles/cervical-spine-injuries-geriatric-patient" },
   divi: { id: "divi-atccs", citation: "Divi SN, Schroeder GD, Mangan JJ, et al. Management of acute traumatic central cord syndrome: a narrative review. Global Spine J. 2019.", url: "https://pmc.ncbi.nlm.nih.gov/articles/PMC6512200/" },
   fehlingsMri: { id: "fehlings-sci-mri", citation: "Fehlings MG, Martin AR, Tetreault LA, et al. A clinical practice guideline for the management of patients with acute spinal cord injury: recommendations on the role of baseline magnetic resonance imaging in clinical decision making and outcome prediction. Global Spine J. 2017.", url: "https://pmc.ncbi.nlm.nih.gov/articles/PMC5684845/" },
   fehlingsTiming: { id: "fehlings-sci-timing-2024", citation: "Fehlings MG, Tetreault LA, Hachem L, et al. An update of a clinical practice guideline for the management of patients with acute spinal cord injury: recommendations on the role and timing of decompressive surgery. Global Spine J. 2024.", url: "https://pmc.ncbi.nlm.nih.gov/articles/PMC10964895/" },
@@ -263,7 +263,7 @@ export const MSK_S54: Samp[] = [
   /* 42 First-time lateral patellar dislocation at home ------------------- */
   {
     id: "msk-42",
-    title: "Knee that gave way on a wet floor",
+    title: "Knee that gave way on the stairs",
     stem:
       "You are working in a community hospital emergency department. MRI is available only at the regional hospital. A 12-year-old girl is brought to the emergency department by her grandmother 1 hour after her right foot slipped on a stair at home and her knee buckled inward as she fell. She cannot straighten the knee. This has never happened before. She is healthy and takes no medications. She was given intranasal fentanyl at triage and is now more comfortable. Her right knee is held in about 40 degrees of flexion. There is a firm bulge on the lateral side of the knee, and the front of the knee looks flat. The dorsalis pedis pulse is strong, and sensation and toe movement are normal.",
     vitals: { temperature: "36.9°C oral", pulse: "106/minute", resp: "20/minute", bp: "110/66 mmHg", o2sat: "99% on room air", weight: "41 kg" },
@@ -388,7 +388,7 @@ export const MSK_S54: Samp[] = [
         kind: "single",
         prompt: "Which of the following is most likely for the fibular fracture itself once the wound is debrided?",
         options: [
-          "Above knee cast for 6 weeks",
+          "External fixator spanning the leg",
           "Intramedullary nail of the fibula",
           "Lag screw fixation of the fibula",
           "Nonoperative care of the fracture",
@@ -396,14 +396,14 @@ export const MSK_S54: Samp[] = [
         ],
         correct: 3,
         explanation:
-          "Walters and colleagues note that the vast majority of isolated fibular shaft fractures are treated without surgery, and that the fibular shaft is not a weight bearing part of the leg. His tibia, knee and ankle are intact, so once the wound has been debrided the fracture itself is usually treated without fixation. Plating, nailing or screwing the fibula would stabilize a bone that does not need it here. An above knee cast for 6 weeks would hold the knee and ankle still for a fracture of a bone that does not carry the load.",
+          "Walters and colleagues note that the vast majority of isolated fibular shaft fractures are treated without surgery, and that the fibular shaft is not a weight bearing part of the leg. His tibia, knee and ankle are intact, so once the wound has been debrided the fracture itself is usually treated without fixation. Plating, nailing or screwing the fibula would stabilize a bone that does not need it here. An external fixator spanning the leg would hold the tibia, knee and ankle still, but his tibia is intact and still carries his weight, so the frame adds pin sites without adding stability that the fracture needs.",
         keyFeature: { topic: "msk", n: 8 },
         source: "walters-fibula",
       },
       {
         id: "q4",
         kind: "single",
-        update: "The receiving surgeon expects to close his wound 5 days after the injury.",
+        update: "The receiving surgeon expects to close his wound 72 hours after the injury.",
         prompt: "Which of the following is the most appropriate total duration of his prophylactic antibiotics?",
         options: [
           "1 day after injury",
@@ -414,7 +414,7 @@ export const MSK_S54: Samp[] = [
         ],
         correct: 1,
         explanation:
-          "EAST advises that for type III open fractures, which include farm injuries, prophylactic antibiotics continue for 72 hours after injury, and for no more than 24 hours after soft tissue coverage. Stopping 3 days after injury meets both limits, because his wound is closed on day 5. Stopping after 1 day is too short for a type III fracture, since the 24 hour rule after wound closure applies to type I and II fractures. Courses of 7, 10 or 14 days run past both limits, and EAST notes consensus that prophylaxis continued well beyond 72 hours is more likely to harm than help.",
+          "EAST advises that for type III open fractures, which include farm injuries, prophylactic antibiotics continue for 72 hours after injury, and for no more than 24 hours after soft tissue coverage. His wound is to be closed 72 hours after injury, as the BOAST standard sets for definitive cover. So 72 hours after injury falls on day 3, and 24 hours after closure falls on day 4. Stopping 3 days after injury meets both limits. Stopping after 1 day is too short for a type III fracture, since the 24 hour rule after wound closure applies to type I and II fractures. Courses of 7, 10 or 14 days run past both limits. The published discussion of the guideline also notes a consensus that routine prophylaxis continued for more than 72 hours after surgery is more likely to be harmful than beneficial.",
         keyFeature: { topic: "msk", n: 6 },
         source: "east-open-fracture-2011",
       },
