@@ -4,7 +4,7 @@ import type { OralCase } from "@/engine/types";
 
 export const postpartumHeadacheSixthDay: OralCase = {
   id: "postpartum-headache-sixth-day",
-  title: "Sparkling lights in both eyes",
+  title: "Her partner holds the baby",
   blueprint: "obgyn",
   alsoCovers: ["neuro", "comm"],
   priorityTopic: "pre-eclampsia",

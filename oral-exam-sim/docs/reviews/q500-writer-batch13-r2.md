@@ -28,3 +28,10 @@ New titles were checked against every case and SAMP title in the bank (`grep -rh
 - `npx tsc --noEmit -p .` shows no errors in `cases/batch13`.
 - `CASE_BATCH=batch13 npx vitest run tests/cases.test.ts tests/citations.test.ts`: 45 of 45 pass.
 - No em dashes, en dashes or semicolons were added.
+
+## Round 3
+
+Against `docs/reviews/q500-verify2-batch13.md`.
+
+- postpartum-headache-sixth-day, `title`: "Sparkling lights in both eyes" is now "Her partner holds the baby", the reviewer's suggestion taken from `s-open`. It names no symptom, sign or diagnosis, and it does not reuse the "Driven in ..." pattern. It appears exactly once among all case and SAMP titles (`grep -rh 'title:' src/cases src/samps`).
+- `npx tsc --noEmit -p .` shows no errors in `cases/batch13`. `CASE_BATCH=batch13` cases and citations tests: 45 of 45 pass.

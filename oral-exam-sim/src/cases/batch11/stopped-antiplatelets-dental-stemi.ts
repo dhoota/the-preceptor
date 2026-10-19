@@ -358,7 +358,7 @@ export const stoppedAntiplateletsDentalStemi: OralCase = {
         },
         {
           id: "c-amio",
-          label: "I treated it as slow VT with amiodarone 150 mg IV and held the enoxaparin because of the bleeding.",
+          label: "I treated it as slow VT with amiodarone 150 mg IV and held the anticoagulant because of the bleeding.",
           next: "s-amio",
           quality: "partial",
           feedback:
@@ -380,7 +380,7 @@ export const stoppedAntiplateletsDentalStemi: OralCase = {
       kind: "say",
       id: "s-amio",
       phase: "08:00",
-      text: "The rhythm settles to sinus at 76. The pharmacist reminds you that accelerated idioventricular rhythm does not need treatment. You restart the enoxaparin and apply gauze pressure. The ooze stops.",
+      text: "The rhythm settles to sinus at 76. The pharmacist reminds you that accelerated idioventricular rhythm does not need treatment. You restart the anticoagulant and apply gauze pressure. The ooze stops.",
       next: "q-transfer",
     },
     {

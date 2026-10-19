@@ -30,3 +30,10 @@ Advisory items (lc-pr4 source, the 2 mm glass figure, the title) were not change
 - `npx tsc --noEmit -p .` shows no errors in `cases/batch11`.
 - `CASE_BATCH=batch11 npx vitest run tests/cases.test.ts tests/citations.test.ts`: 45 of 45 pass.
 - No em dashes, en dashes or semicolons were added.
+
+## Round 3
+
+Against `docs/reviews/q500-verify2-batch11.md`.
+
+- stopped-antiplatelets-dental-stemi, choice `c-amio` in `q-complications`: "held the enoxaparin" is now "held the anticoagulant". Node `s-amio`: "You restart the enoxaparin" is now "You restart the anticoagulant". On the `c-wait` path she is on heparin, so the generic word reads correctly on every path. Feedback, grade and everything else unchanged.
+- `npx tsc --noEmit -p .` shows no errors in `cases/batch11`. `CASE_BATCH=batch11` cases and citations tests: 45 of 45 pass.
