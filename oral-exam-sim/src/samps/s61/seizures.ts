@@ -15,7 +15,6 @@ const S = {
   ilaeSelects: { id: "ilae-selects", citation: "International League Against Epilepsy. EpilepsyDiagnosis.org. Self-limited epilepsy with centrotemporal spikes (SeLECTS). Diagnostic criteria and imaging. Last updated 2024.", url: "https://epilepsydiagnosis.org/syndrome/ects-diagcriteria.html" },
   ilaeSelectsOverview: { id: "ilae-selects-overview", citation: "International League Against Epilepsy. EpilepsyDiagnosis.org. Self-limited epilepsy with centrotemporal spikes (SeLECTS). Overview. Last updated 2024.", url: "https://epilepsydiagnosis.org/syndrome/ects-overview.html" },
   medlineChild: { id: "medlineplus-epilepsy-children", citation: "US National Library of Medicine. MedlinePlus Medical Encyclopedia. Epilepsy in children, discharge. Reviewed 2024.", url: "https://medlineplus.gov/ency/patientinstructions/000127.htm" },
-  trinka: { id: "ilae-se-definition-2015", citation: "Trinka E, Cock H, Hesdorffer D, et al. A definition and classification of status epilepticus. Report of the ILAE Task Force on Classification of Status Epilepticus. Epilepsia. 2015.", url: "https://doi.org/10.1111/epi.13121" },
   levPm: { id: "sandoz-levetiracetam-iv", citation: "Sandoz Canada Inc. Product monograph. Levetiracetam for injection, 100 mg/mL. Date of authorization 21 January 2026.", url: "https://pdf.hres.ca/dpd_pm/00083259.PDF" },
   metoPm: { id: "jamp-metoclopramide-iv", citation: "JAMP Pharma Corporation. Product monograph. Metoclopramide hydrochloride injection, 5 mg/mL. Date of preparation 20 April 2023.", url: "https://pdf.hres.ca/dpd_pm/00070463.PDF" },
   epAction: { id: "epilepsy-action-parenting", citation: "Epilepsy Action. Looking after a baby or young child when you have epilepsy. A guide for parents and carers. 2026.", url: "https://www.epilepsy.org.uk/info/caring-children" },
@@ -111,7 +110,7 @@ export const SEIZURES_S61: Samp[] = [
         correct: 1,
         explanation:
           "Midazolam 0.1 mg/kg IV is 0.68 mg for 6.8 kg, given here as 0.7 mg, and a second dose should follow if the seizure has not stopped within 5 minutes of the first, so at 10:07. Benzodiazepines work less well the longer a seizure runs, so waiting until 10:12 or 10:17 lets it become harder to stop. Waiting until 10:32 mistakes the conventional 30-minute definition of status epilepticus for the time to treat. A repeat at 10:04 does not give the first dose time to work and adds to respiratory depression. If he is still seizing 5 minutes after the second dose, a second-line drug follows.",
-        keyFeature: { topic: "seizures", n: 4 },
+        keyFeature: { topic: "seizures", n: 3 },
         source: "cps-status-epilepticus",
       },
       {
@@ -188,27 +187,16 @@ export const SEIZURES_S61: Samp[] = [
       {
         id: "q4",
         kind: "single",
-        prompt: "Which of the following findings at a follow-up visit would most warrant urgent further assessment?",
+        prompt: "Which of the following findings at a follow-up visit would most warrant prompt further assessment?",
         options: ["A brief event every few months", "An event during a febrile illness", "Another event after a late night", "Declining language and school work", "Tiredness the morning after an event"],
         correct: 3,
         explanation:
-          "New problems with language, learning or behaviour call for a sleep EEG to look for a developmental and epileptic encephalopathy with spike-wave activation in sleep, which needs specialist treatment. An occasional further event, one brought on by a fever or by a short night's sleep, and tiredness the next morning are expected in his condition and do not by themselves call for new tests.",
+          "The ILAE overview of this condition names cognitive or language deterioration as the change that calls for a sleep EEG, to look for a developmental and epileptic encephalopathy with spike-wave activation in sleep. A further brief event while the condition is active, whether it comes every few months, during a fever or after a late night, does not by itself point to a new process. Tiredness the morning after an event likewise does not signal a change in his condition. None of these is the deterioration the overview warns about.",
         keyFeature: { topic: "seizures", n: 7 },
         source: "ilae-selects-overview",
       },
-      {
-        id: "q5",
-        kind: "single",
-        prompt: "Which of the following durations of a seizure with impaired awareness and no convulsive movements defines status epilepticus?",
-        options: ["5 minutes", "10 minutes", "20 minutes", "30 minutes", "60 minutes"],
-        correct: 1,
-        explanation:
-          "Under the ILAE operational definition, a seizure with impaired awareness but no convulsive movements becomes status epilepticus, and needs treatment, once it lasts 10 minutes. That is the threshold for a focal seizure with impaired awareness and the lower end of the 10 to 15 minutes set for an absence seizure. Five minutes is the threshold for a generalized tonic-clonic seizure. Thirty minutes is the older definition and the point of likely lasting injury in convulsive status, and more than 60 minutes is that point in focal status with impaired awareness. Twenty minutes matches no threshold.",
-        keyFeature: { topic: "seizures", n: 3 },
-        source: "ilae-se-definition-2015",
-      },
     ],
-    sources: [S.ilaeSelects, S.medlineChild, S.ilaeSelectsOverview, S.trinka],
+    sources: [S.ilaeSelects, S.medlineChild, S.ilaeSelectsOverview],
     ...META,
   },
 
