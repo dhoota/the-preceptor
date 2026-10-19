@@ -164,10 +164,10 @@ export const MSK_S54: Samp[] = [
         id: "q4",
         kind: "single",
         prompt: "Which of the following is the most common initial misdiagnosis in patients with a ruptured abdominal aortic aneurysm?",
-        options: ["Diverticulitis", "Hip osteoarthritis", "Lumbar disc herniation", "Myocardial infarction", "Ureteric colic"],
+        options: ["Acute pancreatitis", "Diverticulitis", "Hip osteoarthritis", "Lumbar disc herniation", "Ureteric colic"],
         correct: 4,
         explanation:
-          "In a meta-analysis of 1 109 patients, 42% of ruptured aneurysms were first misdiagnosed, and ureteric colic and myocardial infarction were the most common wrong diagnoses. Flank pain spreading to the groin with blood in the urine, as he has, makes the error easy. Abdominal pain, shock and a pulsatile mass were present in only 61%, 46% and 45% of cases, so their absence does not exclude rupture. Diverticulitis, hip arthritis and disc herniation can also be mistaken for a leaking aneurysm, but none was a leading misdiagnosis.",
+          "In a meta-analysis of 1 109 patients, 42% of ruptured aneurysms were first misdiagnosed, and ureteric colic and myocardial infarction were the most common wrong diagnoses. Flank pain spreading to the groin with blood in the urine, as he has, makes the error easy. Abdominal pain, shock and a pulsatile mass were present in only 61%, 46% and 45% of cases, so their absence does not exclude rupture. Pancreatitis, diverticulitis, hip arthritis and disc herniation can also be mistaken for a leaking aneurysm, but none was a leading misdiagnosis.",
         keyFeature: { topic: "msk", n: 3 },
         source: "azhar-raaa",
       },

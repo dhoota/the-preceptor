@@ -37,7 +37,7 @@ export const SEIZURES_S61: Samp[] = [
         options: ["Bacterial meningitis", "Complex febrile seizure", "Encephalitis from the vaccine", "Rigors from vaccine fever", "Simple febrile seizure"],
         correct: 4,
         explanation:
-          "A single generalized seizure lasting 2 minutes with fever, in a child aged 6 to 60 months who is back to baseline with a normal examination, is a simple febrile seizure. Fever and febrile seizures are more likely 7 to 10 days after measles-containing vaccines, which fits her timing. A complex febrile seizure is focal, lasts 15 minutes or more, or recurs within 24 hours. Her supple neck and full recovery make meningitis and encephalitis unlikely. Rigors do not cause unresponsiveness.",
+          "A single generalized seizure lasting 2 minutes with fever, in a child aged 6 to 60 months who is back to baseline with a normal examination, is a simple febrile seizure. A complex febrile seizure is focal, lasts longer than 15 minutes, or recurs within 24 hours. Her supple neck and full recovery make meningitis and encephalitis unlikely. Rigors do not cause unresponsiveness.",
         keyFeature: { topic: "seizures", n: 8 },
         source: "aap-fs-eval",
       },
@@ -49,7 +49,7 @@ export const SEIZURES_S61: Samp[] = [
         options: ["Continue on the usual schedule", "Delay all vaccines until age 2", "Give future doses in hospital", "Omit the second measles dose", "Separate each vaccine by 1 month"],
         correct: 0,
         explanation:
-          "A history of febrile seizures is not a contraindication to measles-containing vaccines, including the combined measles, mumps, rubella and varicella vaccine, so she should continue on the usual schedule. Her second dose is needed for reliable protection. Delaying or omitting doses leaves her exposed to measles and the other diseases without reducing her small risk of another febrile seizure. Vaccines do not need to be given in hospital or spaced a month apart because of this event.",
+          "A history of febrile seizures is not a contraindication to measles-containing vaccines, including the combined measles, mumps, rubella and varicella vaccine, so she should continue on the usual schedule. Fever is common 6 to 23 days after a measles-containing vaccine, which fits the timing of this seizure. Her second dose is needed for reliable protection. Delaying or omitting doses leaves her exposed to measles and the other diseases without reducing her small risk of another febrile seizure. Vaccines do not need to be given in hospital or spaced a month apart because of this event.",
         keyFeature: { topic: "seizures", n: 8 },
         source: "cig-measles",
       },
