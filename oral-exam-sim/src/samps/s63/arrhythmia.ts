@@ -17,7 +17,6 @@ const S = {
   merckSqts: { id: "merck-sqts", citation: "Mitchell LB. Short QT interval syndromes. Merck Manual Professional Version. Merck and Co. Reviewed 2026.", url: "https://www.merckmanuals.com/professional/cardiovascular-disorders/arrhythmogenic-cardiac-disorders/short-qt-interval-syndromes" },
   dayal: { id: "dayal-bradycardia-2018", citation: "Dayal NB, Burri H. Acute management of bradycardia in the emergency setting. Cardiovasc Med. 2018.", url: "https://doi.org/10.4414/cvm.2018.00554" },
   armour: { id: "armour-atropine-2022", citation: "Armour R, Learning C, Trojanowski J. Paradoxical worsening of bradycardia following atropine administration. Br Paramed J. 2022.", url: "https://pmc.ncbi.nlm.nih.gov/articles/PMC9662156/" },
-  frampton: { id: "frampton-post-mi-2023", citation: "Frampton J, Ortengren AR, Zeitler EP. Arrhythmias after acute myocardial infarction. Yale J Biol Med. 2023.", url: "https://pmc.ncbi.nlm.nih.gov/articles/PMC10052595/" },
 } satisfies Record<string, Source>;
 
 /** Expansion batch s63: arrhythmia-48 to arrhythmia-52. 2027 MCQ and menu format only. */
