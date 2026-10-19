@@ -63,7 +63,7 @@ export const MSK_S54: Samp[] = [
       {
         id: "q3",
         kind: "single",
-        update: "MRI shows marrow edema and a fracture line running from the superior cortex of the right femoral neck, the tension side, across one third of its width. It is not displaced.",
+        update: "MRI shows marrow edema and a fracture line running from the superior cortex of the right femoral neck, the tension side, across more than half of its width. It is not displaced.",
         prompt: "Which of the following is the most appropriate management of this fracture?",
         options: [
           "Crutches with partial weight bearing",
@@ -74,7 +74,7 @@ export const MSK_S54: Samp[] = [
         ],
         correct: 4,
         explanation:
-          "A fracture on the tension side of the femoral neck is prone to displacement, and Robertson and Wood list surgical fixation for tension-sided fractures, while incomplete compression-sided fractures can be managed without surgery. A displaced femoral neck fracture in a young adult threatens the blood supply of the femoral head and has a much worse outcome. So she needs urgent orthopedic consultation, with no weight bearing until fixation. Partial weight bearing, a spica cast or rest at home leave a fracture that can displace even with muscle contraction around the hip. A planned return to running ignores the fracture.",
+          "A tension-sided fracture line is vertical and unstable, and Robertson and Wood list surgical fixation for a tension-sided fracture that crosses more than half of the femoral neck, while incomplete compression-sided fractures can be managed without surgery. A displaced femoral neck fracture in a young adult threatens the blood supply of the femoral head and has a much worse outcome. So she needs urgent orthopedic consultation, with no weight bearing until fixation. Partial weight bearing, a spica cast or rest at home leave a fracture that can displace even with muscle contraction around the hip. A planned return to running ignores the fracture.",
         keyFeature: { topic: "msk", n: 7 },
         source: "robertson-fnsf",
       },
@@ -91,7 +91,7 @@ export const MSK_S54: Samp[] = [
         ],
         correct: 3,
         explanation:
-          "Amenorrhea for 8 months, a 5 kg weight loss and a body mass index of about 17.4 kg/m2 (49 kg at 1.68 m) in an endurance runner point to low energy availability, the driver of Relative Energy Deficiency in Sport. It suppresses reproductive hormones and harms bone health. Robertson and Wood link disordered eating, amenorrhea and low bone density to the higher rate of femoral neck stress fractures in women. Pronation, hip weakness, footwear and running surfaces are training factors, but none explains amenorrhea and weight loss, and correcting them alone leaves her at risk of the next fracture.",
+          "Amenorrhea for 8 months, a 5 kg weight loss and a body mass index of about 17.4 kg/m2 (49 kg at 1.68 m) in an endurance runner point to low energy availability, the driver of Relative Energy Deficiency in Sport. It suppresses reproductive hormones and harms bone health. Robertson and Wood link disordered eating, amenorrhea and low bone density to the higher rate of femoral neck stress fractures in women. Fatigue of the hip abductors can add to tension-sided fractures, and pronation, footwear and running surfaces are training factors, but none explains amenorrhea and weight loss, and correcting them alone leaves her at risk of the next fracture.",
         keyFeature: { topic: "msk", n: 2 },
         source: "ioc-reds-2023",
       },

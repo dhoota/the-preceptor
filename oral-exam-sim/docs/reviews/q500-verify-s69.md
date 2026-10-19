@@ -59,7 +59,7 @@ Not required but noted: q2 key "Twelve lead ECG and ionized calcium" is the only
 | burns-41 q3 explanation | Dose splitting removed | The text is accurate (ASRA summary: "should not be routinely discontinued"). The question fails on overlap, above. |
 | burns-42 q3 explanation | Albumin softened | Acceptable as worded. The "Albumin started in the first hour" option does not answer a lead-in about fluid volume. This is minor, and the rebuild should give it a parallel option. |
 | burns-42 q4 | Re-sourced to PADIS 2018 | The source supports analgesia first and propofol over benzodiazepines (Devlin 2018, Crit Care Med, doi 10.1097/CCM.0000000000003299). The question fails on overlap with the oral case, above. |
-| burns-43 q2 explanation | States only the audit finding | Acceptable. Berry J, Ashley J, Jeffery S. Burns 2020;46(4):970 to 973 confirmed on the BCU record. The point that lid swelling makes later examination harder is not attributed to the source, which is fine. |
+| burns-43 q2 explanation | States only the audit finding | Acceptable. Berry J, Ashley J, Jeffery S. Burns 2020, volume 46, issue 4, pages 970 to 973, confirmed on the BCU record. The point that lid swelling makes later examination harder is not attributed to the source, which is fine. |
 | burns-43 q3 explanation | xenon scanning instead of V/Q | Acceptable. |
 
 ## First QA residual uncertainty list
