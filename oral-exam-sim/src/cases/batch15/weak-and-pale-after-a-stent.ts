@@ -19,7 +19,7 @@ export const weakAndPaleAfterAStent: OralCase = {
   durationMinutes: 12,
   stem:
     "You are working in the emergency department of a community hospital when the following patient arrives. " +
-    "A 66 year old man is brought by ambulance after his wife found him grey and sweaty in the bathroom. Earlier today he had chest heaviness on the stairs.",
+    "A 72 year old man is brought by ambulance after his wife found him grey and sweaty in the bathroom. Earlier today he had chest heaviness on the stairs.",
   card: {
     vitals: {
       temperature: "36.4°C oral",
@@ -85,13 +85,13 @@ export const weakAndPaleAfterAStent: OralCase = {
       id: "ecg",
       label: "ECG",
       result:
-        "Sinus tachycardia at 116/minute. New 1.5 mm horizontal ST depression in V4 to V6, I and aVL compared with his discharge ECG. No ST elevation.",
+        "Sinus tachycardia at 116/minute. New T wave inversion in I, aVL and V2 to V4 compared with his discharge ECG. No ST elevation or depression.",
     },
     {
       id: "labs",
       label: "Blood work",
       result:
-        "Hemoglobin 71 g/L (134 g/L at discharge 5 weeks ago). MCV 90 fL. Platelets 248 x 10^9/L. INR 1.1. aPTT 30 seconds. Urea 21.4 mmol/L. Creatinine 112 µmol/L (baseline 88). " +
+        "Hemoglobin 64 g/L (134 g/L at discharge 5 weeks ago). MCV 90 fL. Platelets 248 x 10^9/L. INR 1.1. aPTT 30 seconds. Urea 21.4 mmol/L. Creatinine 112 µmol/L (baseline 88). " +
         "Lactate 3.4 mmol/L. Albumin 38 g/L. Bilirubin and ALT normal. High sensitivity troponin I 64 ng/L, then 118 ng/L at 2 hours (upper reference limit 26 ng/L).",
     },
     {
@@ -108,7 +108,7 @@ export const weakAndPaleAfterAStent: OralCase = {
     {
       id: "response",
       label: "After 2 units of red cells",
-      result: "Blood pressure 112/66 mmHg. Pulse 98/minute. Chest heaviness gone. ST depression improving. Hemoglobin 84 g/L.",
+      result: "Blood pressure 112/66 mmHg. Pulse 98/minute. Chest heaviness gone. T wave changes improving. Hemoglobin 82 g/L.",
     },
     {
       id: "endoscopy",
@@ -195,11 +195,11 @@ export const weakAndPaleAfterAStent: OralCase = {
       kind: "question",
       id: "q-resus",
       phase: "Resuscitation",
-      prompt: "His hemoglobin is 71 g/L and the ECG shows new ST depression. Troponin is 64 ng/L. How do you resuscitate him?",
+      prompt: "His hemoglobin is 64 g/L and the ECG shows new T wave inversion. Troponin is 64 ng/L. How do you resuscitate him?",
       seconds: 90,
       modelAnswer: [
         "Two large bore IVs. Crossmatch 4 units. Notify the blood bank.",
-        "Transfuse red cells now. Consensus guidance uses 80 g/L without cardiovascular disease and a higher threshold with it. While ischemia continues, aim well above 80 g/L. The exact target is debated, and some would aim near 100 g/L.",
+        "Transfuse red cells now. Uncrossmatched O blood if crossmatched units are not ready. Consensus guidance uses 80 g/L without cardiovascular disease and a higher threshold with it. While ischemia continues, aim well above 80 g/L. The exact target is debated, and some would aim near 100 g/L.",
         "Small crystalloid boluses only while blood is coming. Avoid diluting him.",
         "No heparin, no extra antiplatelet, no nitroglycerin. The ischemia is from blood loss.",
         "Pantoprazole 80 mg IV. Nothing by mouth.",
@@ -207,45 +207,6 @@ export const weakAndPaleAfterAStent: OralCase = {
         "Antiplatelets. Continue ASA, no platelet transfusion, stop naproxen, and plan ticagrelor with cardiology.",
       ],
       rubric: ["wp-m1", "wp-m2", "wp-pr1"],
-      choices: [
-        {
-          id: "c-blood",
-          label: "I started 2 units of red cells right away aiming for a hemoglobin well above 80 g/L while he is ischemic, gave pantoprazole 80 mg IV, held his antihypertensives, avoided heparin and nitrates, and called gastroenterology for urgent endoscopy.",
-          next: "q-scope",
-          quality: "strong",
-          feedback:
-            "Right. This is a type 2 myocardial infarction from blood loss, and the treatment is oxygen carrying capacity, not anticoagulation. Consensus guidance suggests 80 g/L for upper GI bleeding without cardiovascular disease and a higher threshold with it. The best target during active ischemia is not settled, so many aim near 100 g/L.",
-        },
-        {
-          id: "c-crystalloid",
-          label: "I gave 2 L of normal saline and planned to transfuse only if his hemoglobin fell below 70 g/L.",
-          next: "s-crystalloid",
-          quality: "unsafe",
-          feedback:
-            "He is in hemorrhagic shock with active ischemia, and withholding red cells delays the treatment he needs. A restrictive threshold of 70 g/L improved survival in the main trial, but it excluded massive bleeding and recent coronary syndromes. Current consensus uses 80 g/L even without heart disease, and higher with it. Two litres of crystalloid dilute his hemoglobin further.",
-        },
-        {
-          id: "c-acs",
-          label: "I treated it as an NSTEMI with a heparin infusion and nitroglycerin, and called cardiology for catheterization.",
-          next: "s-acs",
-          quality: "unsafe",
-          feedback:
-            "This treats the ECG, not the patient. Heparin feeds an active GI bleed, and nitroglycerin drops the pressure in a hypovolemic patient. The ischemia here is supply and demand from anemia.",
-        },
-      ],
-    },
-    {
-      kind: "say",
-      id: "s-crystalloid",
-      phase: "Thirty minutes later",
-      text: "After 2 L of saline his chest heaviness returns. The repeat hemoglobin is 63 g/L and the ST depression is deeper. You start red cells.",
-      next: "q-scope",
-    },
-    {
-      kind: "say",
-      id: "s-acs",
-      phase: "Twenty minutes later",
-      text: "After nitroglycerin his pressure falls to 76/40. The cardiologist on the phone asks for his hemoglobin and tells you to stop the heparin and transfuse. You stop the infusion and start red cells.",
       next: "q-scope",
     },
     {
@@ -331,7 +292,7 @@ export const weakAndPaleAfterAStent: OralCase = {
       kind: "question",
       id: "q-source",
       phase: "Where is it coming from",
-      prompt: "Seeing the maroon stool, the gastroenterologist wonders whether this is a lower bleed and suggests a colonoscopy tomorrow instead of the upper endoscopy. How do you respond?",
+      prompt: "Seeing the maroon stool, the admitting internist wonders whether this is a lower bleed and suggests a colonoscopy tomorrow instead of the upper endoscopy. How do you respond?",
       seconds: 75,
       modelAnswer: [
         "A brisk upper bleed can present with maroon or red stool.",
@@ -397,6 +358,45 @@ export const weakAndPaleAfterAStent: OralCase = {
         "Make sure he leaves hospital on a PPI and a written list of drugs to avoid.",
       ],
       rubric: ["wp-pr5", "wp-h4"],
+      choices: [
+        {
+          id: "c-honest",
+          label: "With his consent I told his wife plainly that an ulcer bled, made worse by naproxen on top of two antiplatelet drugs with no stomach protection. I called the walk-in clinic and wrote to his family physician and pharmacist with the facts, and made sure he leaves on a PPI with a list of drugs to avoid.",
+          next: "end",
+          quality: "strong",
+          feedback:
+            "Good. The family hears the cause honestly and in plain words, with his consent. The prescribers hear the facts, not a verdict, so the gap is closed for him and for the next patient. Long term PPI is advised while he needs antiplatelet therapy.",
+        },
+        {
+          id: "c-blame",
+          label: "I told his wife the walk-in clinic had made a serious mistake with the naproxen and that she should file a complaint.",
+          next: "s-blame",
+          quality: "partial",
+          feedback:
+            "Honest about the cause, but you judged another clinician without the facts. The clinic may not have known about the stent, and no PPI was started at his cardiac discharge either. Explain what happened, then report the gap factually to each prescriber so it is fixed.",
+        },
+        {
+          id: "c-vague",
+          label: "I told his wife that ulcers can happen to anyone and did not mention the naproxen or contact the other prescribers.",
+          next: "s-vague",
+          quality: "partial",
+          feedback:
+            "This hides the cause from the family and leaves the prescribing gap open. Naproxen could be restarted for his next gout flare. Tell the family the cause plainly and tell each prescriber about the NSAID and the missing PPI.",
+        },
+      ],
+    },
+    {
+      kind: "say",
+      id: "s-blame",
+      phase: "The next day",
+      text: "The walk-in physician calls the unit, upset. The clinic had no record of his stent or his ticagrelor. You agree to send a factual summary to the clinic, his family physician and his pharmacist, and you explain this to his wife.",
+      next: "end",
+    },
+    {
+      kind: "say",
+      id: "s-vague",
+      phase: "Before discharge",
+      text: "His pharmacist calls to ask whether the naproxen refill should go ahead. You explain the bleed, cancel the naproxen, and write to the clinic and his family physician. You then sit down with his wife and explain the cause.",
       next: "end",
     },
     {
@@ -465,7 +465,7 @@ export const weakAndPaleAfterAStent: OralCase = {
       id: "wp-p3",
       competency: "assessment",
       criterion: "physical",
-      text: "Interprets the ST depression and troponin as demand ischemia from blood loss, while still considering stent thrombosis.",
+      text: "Interprets the new T wave inversion and troponin as demand ischemia from blood loss, while still considering stent thrombosis.",
       points: 2,
       critical: true,
       teaching: "Severe anemia and hypotension cause a type 2 myocardial infarction through supply and demand mismatch. Treating it as a plaque event with heparin worsens the bleeding.",

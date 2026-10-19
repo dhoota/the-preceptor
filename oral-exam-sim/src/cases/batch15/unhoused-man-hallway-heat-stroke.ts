@@ -221,7 +221,7 @@ export const unhousedManHallwayHeatStroke: OralCase = {
         "Heat stroke is still the main diagnosis. Keep cooling to about 39°C.",
         "Alcohol withdrawal. Early withdrawal can add tremor, sweating and tachycardia, and he has had a withdrawal seizure. Treat it with a benzodiazepine, which also helps agitation and shivering during cooling.",
         "Wernicke encephalopathy. Give parenteral thiamine to a malnourished man who drinks heavily and has altered consciousness.",
-        "Aspiration pneumonia or sepsis. Cultures and an empiric antibiotic now. He is hypotensive with a lactate of 4.9 mmol/L. Lumbar puncture if his mental state does not clear with cooling.",
+        "Aspiration pneumonia or sepsis. Cultures and an empiric antibiotic now. His pressure is low for an untreated hypertensive man and his lactate is 4.9 mmol/L. Lumbar puncture if his mental state does not clear with cooling.",
         "Head injury from a fall. CT head once cooling is under way.",
         "Toxic ingestion. Acetaminophen and salicylate are undetectable and the osmolar gap is normal.",
         "Replace potassium, magnesium and phosphate. Watch for rhabdomyolysis, kidney injury and coagulopathy.",
@@ -242,7 +242,7 @@ export const unhousedManHallwayHeatStroke: OralCase = {
           next: "s-heat-only",
           quality: "partial",
           feedback:
-            "Heat stroke is the main diagnosis, but you left treatable problems waiting. He needs parenteral thiamine, a benzodiazepine if withdrawal is adding to his picture, and an antibiotic now for possible aspiration with hypotension and a lactate of 4.9 mmol/L.",
+            "Heat stroke is the main diagnosis, but you left treatable problems waiting. He needs parenteral thiamine, a benzodiazepine if withdrawal is adding to his picture, and an antibiotic now for possible aspiration with a soft pressure and a lactate of 4.9 mmol/L.",
         },
         {
           id: "c-withdrawal",
@@ -271,7 +271,7 @@ export const unhousedManHallwayHeatStroke: OralCase = {
     {
       kind: "say",
       id: "s-outreach",
-      phase: "17:45",
+      phase: "18:00",
       text: "The outreach worker calls back. Two more people at the encampment are lying in the shade and will not leave their belongings to go to the cooling centre. One is an older woman who seems muddled. The heat warning continues tomorrow.",
       next: "q-public",
     },
@@ -460,9 +460,9 @@ export const unhousedManHallwayHeatStroke: OralCase = {
       id: "bd-m4",
       competency: "management",
       criterion: "management",
-      text: "Sends cultures and gives an empiric antibiotic for possible aspiration pneumonia with hypotension and a raised lactate.",
+      text: "Sends cultures and gives an empiric antibiotic for possible aspiration pneumonia with a soft pressure and a raised lactate.",
       points: 2,
-      teaching: "When septic shock is possible, antimicrobials should start immediately, ideally within an hour. Treat the likely cause and cover the dangerous ones.",
+      teaching: "When sepsis is likely or septic shock is possible, antimicrobials should start immediately, ideally within an hour. Treat the likely cause and cover the dangerous ones.",
       source: "ssc",
     },
     {

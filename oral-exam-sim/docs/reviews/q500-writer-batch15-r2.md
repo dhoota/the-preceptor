@@ -118,3 +118,48 @@ Catalogue and grep checks:
 - Heat case: thiamine 300 mg IV is at the top of the CRISM daily range. Many centres give higher doses for suspected Wernicke. Lorazepam 1 mg IV in a patient with a GCS near 9 to 12 needs airway monitoring, and the label says so.
 - Heat case: the cooling content in `q-cool` (ice water or combined methods, rectal probe, stop at about 39°C, no antipyretics) is still the bank's standard heat stroke teaching. Key feature 2 requires it. It is now ungraded model answer text, not a branching decision. The 2024 WMS update could still not be read, so the 2019 stop temperature stands.
 - Heat case: capacity and emergency treatment in `q-leave` is written in national terms, because the stem names no province. It cites no consent statute.
+
+## Round 3
+
+Revision against `docs/reviews/q500-verify2-batch15.md`. headache-building-over-five-days passed and was not touched. Checks after the edits: the batch15 tsc grep gave no output, and `CASE_BATCH=batch15 npx vitest run tests/cases.test.ts tests/citations.test.ts` passed 45 of 45. Paths: 8, 8, 8 and 7 questions on every path. Longest paths 650, 640, 635 and 525 s. Rubric rows are unchanged from round 2.
+
+### unwell-after-a-night-shift
+
+- Required fix 1 (clock): the end node now reads "She leaves at 18:30 with her husband and a written safety plan. Her husband hands the pills in at a pharmacy on the way home."
+
+### unhoused-man-hallway-heat-stroke
+
+- Required fix 1 (clock): `s-outreach` phase is now 18:00.
+- Required fix 2 (blood pressure): the card and the response pressures are unchanged (100/58 and 108/64 mmHg). The four lines now use the verdict's wording:
+  - `q-ddx` model answer line 4: "His pressure is low for an untreated hypertensive man and his lactate is 4.9 mmol/L."
+  - `c-heat-only` feedback: "with a soft pressure".
+  - `bd-m4` text: "with a soft pressure and a raised lactate".
+  - `bd-m4` teaching: "When sepsis is likely or septic shock is possible, antimicrobials should start immediately, ideally within an hour."
+- No line in the case calls him hypotensive now.
+
+### weak-and-pale-after-a-stent
+
+- Required fix 1 (the gi-bleed-14 mirror):
+  - The age is now 72.
+  - The ECG is now "New T wave inversion in I, aVL and V2 to V4 compared with his discharge ECG. No ST elevation or depression."
+  - The hemoglobin is now 64 g/L, and 82 g/L after 2 units.
+  - The `q-resus` prompt and `wp-p3` text were updated to match. The response finding now reads "T wave changes improving".
+  - Glasgow Blatchford score recomputed: urea 21.4 mmol/L = 4, hemoglobin 64 g/L in a man = 6, systolic 94 mmHg = 2, pulse 118 = 1, melena = 1, near faint = 0, no liver disease, no heart failure. The total is still 14, so the lines that quote it (`q-resus`, `q-scope`, `c-wait-peak` feedback, `wp-pr1`) stay correct.
+- Required fix 2: `q-resus` is now non-branching and goes to `q-scope`.
+  - Removed: `c-blood`, `c-crystalloid`, `c-acs`, `s-crystalloid` and `s-acs`.
+  - Kept as ungraded content: the model answer, `wp-m1`, `wp-m2` and `wp-pr1`. One model answer line now adds uncrossmatched O blood if crossmatched units are not ready.
+- Required fix 3 (collision with s68): the coordinator ruled that this case keeps `q-source` and `q-scope` as graded questions and that the s68 writer will change instead. Both stay.
+- Recommended fix applied: the colonoscopy suggestion in `q-source` now comes from the admitting internist, not the gastroenterologist.
+- Required fix 4: `q-handover` is now a graded question on explaining and reporting another clinician's prescribing gap.
+  - Strong (`c-honest`): with his consent, tells his wife the cause plainly and reports the facts to the walk-in clinic, the family physician and the pharmacist. He leaves on a PPI with a list of drugs to avoid.
+  - Partial (`c-blame`): blames the clinic and suggests a complaint.
+  - Partial (`c-vague`): hides the cause and contacts no prescriber.
+  - Both wrong choices are partial, as C1 requires. New consequence nodes `s-blame` (the clinic had no record of the stent) and `s-vague` (the pharmacist asks about a naproxen refill) lead to the end.
+  - Catalogue check: cqi.md and gi-bleed.md have no item that keys this decision, and no s68 item mentions a walk-in prescriber.
+- Required fix 5: the case now has 4 branching questions on every path out of 8 questions: q-history, q-scope, q-source and q-handover. That is more than one graded decision per three questions.
+
+### Still for the physician
+
+- GI case: `wp-pr5` (disclosure and reporting) is still cited to Barkun 2019, which supports only the long term PPI part. The case is at the 6 source limit. A disclosure source such as CMPA guidance would need to replace an existing source.
+- GI case: he still has exertional chest heaviness and a type 2 infarction from anemia. That is the case's mechanism and the reason for `q-scope`. Only the data and the graded resuscitation decisions that mirrored gi-bleed-14 were changed.
+- Unchanged from round 2: the sertraline and alcohol question, the lorazepam dose with a low GCS, and whether antibiotics are needed for early aspiration in the heat case.

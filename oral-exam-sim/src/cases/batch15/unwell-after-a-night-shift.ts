@@ -413,7 +413,7 @@ export const unwellAfterANightShift: OralCase = {
     {
       kind: "end",
       id: "end",
-      text: "She leaves at 18:30 with her husband and a written safety plan. The pills are handed in at a pharmacy that afternoon. The crisis nurse calls the next day. She sees psychiatry on day 3 and her family physician on Friday. That is the end of the case.",
+      text: "She leaves at 18:30 with her husband and a written safety plan. Her husband hands the pills in at a pharmacy on the way home. The crisis nurse calls the next day. She sees psychiatry on day 3 and her family physician on Friday. That is the end of the case.",
     },
   ],
   rubric: [

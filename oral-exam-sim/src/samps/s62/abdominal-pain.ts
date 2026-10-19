@@ -6,14 +6,14 @@ import type { Source } from "@/engine/types";
 const META = { reviewed: false, author: "Preceptor", version: 1 } as const;
 
 const S = {
-  phacPid: { id: "phac-pid", citation: "Public Health Agency of Canada. STI-associated syndromes guide: pelvic inflammatory disease. Canadian guidelines on sexually transmitted infections. Page modified 2026.", url: "https://www.canada.ca/en/public-health/services/infectious-diseases/sexual-health-sexually-transmitted-infections/canadian-guidelines/sti-associated-syndromes/pelvic-inflammatory-disease.html" },
-  cpsUti: { id: "cps-uti-2014", citation: "Robinson JL, Finlay JC, Lang ME, Bortolussi R, Canadian Paediatric Society Infectious Diseases and Immunization Committee and Community Paediatrics Committee. Urinary tract infections in infants and children: diagnosis and management. Paediatr Child Health. 2014.", url: "https://doi.org/10.1093/pch/19.6.315" },
+  cfasOhss: { id: "cfas-ohss-2026", citation: "Buckett W, Sylvestre C, Liu K, et al. Management of moderate and severe ovarian hyperstimulation syndrome: a Canadian Fertility and Andrology Society clinical practice guideline. Reprod Biomed Online. 2026.", url: "https://cfas.ca/_Library/Clinical_Practice_Guidance_Documents_/OHSS_RBMO_CFAS_CPG.pdf" },
+  samuelPas: { id: "samuel-pas-2002", citation: "Samuel M. Pediatric appendicitis score. J Pediatr Surg. 2002.", url: "https://doi.org/10.1053/jpsu.2002.32893" },
   cwcCar: { id: "cwc-radiology", citation: "Canadian Association of Radiologists. Radiology: recommendations. Choosing Wisely Canada. Last updated 2026.", url: "https://choosingwiselycanada.org/recommendation/radiology/" },
   ohle: { id: "ohle-aas-2020", citation: "Ohle R, Yan JW, Yadav K, et al. Diagnosing acute aortic syndrome: a Canadian clinical practice guideline. CMAJ. 2020.", url: "https://pmc.ncbi.nlm.nih.gov/articles/PMC7828987/" },
   accAorta: { id: "acc-aha-aorta-2022", citation: "Isselbacher EM, Preventza O, Hamilton Black J, et al. 2022 ACC/AHA guideline for the diagnosis and management of aortic disease. A report of the American Heart Association/American College of Cardiology Joint Committee on Clinical Practice Guidelines. Circulation. 2022.", url: "https://pmc.ncbi.nlm.nih.gov/articles/PMC9876736/" },
   brandl: { id: "brandl-immunosuppressed-diverticulitis", citation: "Brandl A, Kratzer T, Kafka-Ritsch R, et al. Diverticulitis in immunosuppressed patients: a fatal outcome requiring a new approach? Can J Surg. 2016.", url: "https://doi.org/10.1503/cjs.012915" },
-  wsesAmi: { id: "wses-ami-2022", citation: "Bala M, Catena F, Kashuk J, et al. Acute mesenteric ischemia: updated guidelines of the World Society of Emergency Surgery. World J Emerg Surg. 2022.", url: "https://doi.org/10.1186/s13017-022-00443-x" },
   wses: { id: "wses-diverticulitis-2020", citation: "Sartelli M, Weber DG, Kluger Y, et al. 2020 update of the WSES guidelines for the management of acute colonic diverticulitis in the emergency setting. World J Emerg Surg. 2020.", url: "https://doi.org/10.1186/s13017-020-00313-4" },
+  cipro: { id: "pms-ciprofloxacin-pm-2022", citation: "Pharmascience Inc. pms-CIPROFLOXACIN (ciprofloxacin tablets) product monograph. Health Canada Drug Product Database. Revised 2022.", url: "https://pdf.hres.ca/dpd_pm/00067730.PDF" },
   tcPe: { id: "tc-pe-dx", citation: "Thrombosis Canada. Clinical guide. Pulmonary embolism (PE): diagnosis. 2025.", url: "https://thrombosiscanada.ca/clinical_guides/pdfs/PULMONARYEMBOLISMDIAGNOSISANDM_83.pdf" },
 } satisfies Record<string, Source>;
 
