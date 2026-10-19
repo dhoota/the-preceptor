@@ -87,3 +87,29 @@ Before writing, I read the full catalogues for pulmonary-edema, sob, headache, a
    - 43 q2 update shows heart failure on ultrasound, which supports the q1 key.
    - 43 q4 ("no shrinkage after diuresis") implies the q3 plan.
    - 40 q5 update mentions a second diuretic dose.
+
+## Round 3
+
+This round answers `docs/reviews/q500-verify2-s60.md`. pulmonary-edema-39 is unchanged.
+
+| Fix | What was done |
+|---|---|
+| 40 q4 repeated signed decisions (asthma-copd-15 q1, pulmonary-edema-08 q1, tox-17 q3) | Replaced with a KF4 vasoactive escalation, one of the angles the reviewer found open. The child's edema is not settling, BP has risen to 162/108 mmHg and K is 5.4 mmol/L. Which drug lowers his BP now? Key "nifedipine PO" (short-acting). Distractors: captopril PO, enalaprilat IV, eplerenone PO, losartan PO. Source: Ong 2022, full text re-read. Short-acting nifedipine is safe in children with severe hypertension who need a rapid reduction. A diuretic plus a calcium channel blocker is used for APSGN hypertension. ACE inhibitors and ARBs are usually avoided in the acute phase because of reduced filtration and hyperkalemia. Beta blockers were left out as options because Ong lists them as acceptable. Panetti 2024 is no longer cited and was removed. |
+| 40 q5 update gave away q4 | Now reads "He is started on bilevel ventilation and his breathing settles, but ...". It names no q4 finding or drug. |
+| 41 had 3 questions | Added a new q2 (menu, select 2, KF2): which tests confirm the underlying cause. Keys "Bone scintigraphy" and "Serum free light chain assay". Distractors: coronary angiography, Holter monitoring, serum ferritin, thyroid function tests, transthyretin gene testing. Verified in ESC 2021 (PMC8060056, reopened): scintigraphy is "coupled to assessment for monoclonal proteins", and "clonal dyscrasia is excluded by all the following tests" (serum free light chain assay, serum and urine immunofixation). Grade 2 or 3 uptake without a monoclonal protein allows a non-invasive ATTR diagnosis. Genetic TTR testing follows a confirmed ATTR diagnosis. The Ottawa question is now q3 and the disposition question q4. The new question is a menu, so the single-key position counts are unchanged. |
+| 41 disposition explanation said "he feels better" | Deleted. It now reads "even though he walked without tachycardia". |
+| 42 q4 key was the only verb-led option and the longest | Key is now "Own pace on usual oxygen", parallel to the distractors and not the longest (24 characters against 31). It moves to position 3. To keep balance, 40 q4's key "nifedipine PO" sits in position 5. Single keys by position, first to fifth: 4, 4, 4, 4, 3 of 19. |
+| 43 q3 and q4 cited BTS 2010 | Both are re-cited to Beaudoin S, Gonzalez AV. Evaluation of the patient with pleural effusion. CMAJ. 2018. https://pmc.ncbi.nlm.nih.gov/articles/PMC5849448/, opened and read. BTS 2010 was removed from the file. The q3 explanation now follows CMAJ: thoracentesis "may be deferred until the outcome of a trial of diuretic therapy is known". The q4 explanation follows CMAJ: more investigation "if the effusion fails to improve", and fever or purulent sputum "should prompt an urgent evaluation". "Fever with pleuritic chest pain" is gone. |
+| 43 q4 lead-in "later" and options she already had | Prompt is now "Which of the following findings over the next 3 days would most justify sampling her pleural fluid?". Every option is a plausible future finding, and only the keys justify a tap. Keys: "Effusions unchanged on repeat imaging", "Fever with purulent sputum". Distractors: ankle edema less but still present, creatinine up from 74 to 92 umol/L, effusions smaller but still present, pulse down to 78/minute, weight down by 2 kg. "Creatinine 74 umol/L" was added to the stem so the creatinine option traces to the case. "No shrinkage after diuresis" is gone, so diuresis is no longer named. |
+
+Uniqueness: I searched all the catalogues again.
+- No bank item mentions scintigraphy (only environmental's frostbite viability question), free light chains or immunofixation.
+- Nifedipine is keyed only in adult pregnancy (pre-eclampsia), in HAPE (pulmonary-edema-27) and in adult hypertensive edema lists. None of these is a child with nephritic hypertension.
+- The creatinine, potassium and BP numbers are new.
+
+Checks: `npx tsc --noEmit -p . | grep samps/s60` gave no output. `SAMP_BATCH=s60 npx vitest run tests/samps.test.ts tests/samp-quality.test.ts tests/citations.test.ts` passed 132 of 132.
+
+For the reviewer:
+- No source gives a pediatric nifedipine dose, so 40 q4 options give no doses. Every option has the same specificity.
+- The line "eplerenone does not lower blood pressure quickly" is general pharmacology, not a statement from Ong.
+- Key features after this round: KF1 3, KF2 6, KF3 4, KF4 1, KF5 4, KF6 3. The menus are 41 q2 and 43 q4.
