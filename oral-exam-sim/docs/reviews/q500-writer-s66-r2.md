@@ -120,3 +120,38 @@ Checks: the s66 tsc grep prints nothing. `SAMP_BATCH=s66` vitest: 3 files, 136 t
 - Rossaint R et al. The European guideline on management of major bleeding and coagulopathy following trauma: sixth edition. Crit Care. 2023. https://pmc.ncbi.nlm.nih.gov/articles/PMC9977110/ (full text read through Europe PMC: recommendations 10 and 15 and their text).
 - Canadian Society for Transfusion Medicine. Transfusion medicine: ten things physicians and patients should question. Choosing Wisely Canada. Last updated June 2018. https://choosingwiselycanada.org/wp-content/uploads/2017/02/Transfusion-medicine.pdf (PDF text read, item 3). The same wording is on https://www.transfusion.ca/Education/Choosing-Wisely/CSTM-Choosing-Wisely-List
 - Fischer PE et al. 2018 (ENA full text), items 6, 8 and 10.v. Reread for the 48 q4 wording.
+
+## Round 4
+
+Fixes for `docs/reviews/q500-verify3-s66.md`. Only multiple-trauma-48 q1 and multiple-trauma-50 changed. 49, 51 and 52 were not touched.
+
+| Item | Required fix | Change made |
+|---|---|---|
+| 48 q1 | Only the keyed vitals were labelled "Arrival", and "validation cohort" misdescribed the study | All four vital-sign options now start with "Arrival" (pulse, respiratory rate, systolic BP, temperature). The options were re-sorted and `correct` changed from [0, 1, 3] to [0, 2, 5], which is the same three keyed findings. "In the validation cohort" now reads "In the original study of the score". |
+| 50 q2 (now q3), acid-base | Arrival chloride and bicarbonate, and the saline volume, were missing from the case | The update now reads: "He is alert after 4 L more of 0.9% saline through peripheral lines over 4 hours. ... chloride 119 (106 on arrival), bicarbonate 16 (24 on arrival) ...". That is 45 words. The explanation now traces the rise in chloride (106 to 119) and the fall in bicarbonate (24 to 16) to the case. Anion gap now 142 minus (119 plus 16) = 7. Arrival gap with a sodium in the 140s is normal (about 12). Still key feature 5. |
+| 50 acid-base, advisory | Saline limit | Added: "It favours a balanced solution and limits 0.9% saline to a maximum of 1 to 1.5 L when it is used." Verified in the full text of the sixth edition (PMC9977110): that 0.9% sodium chloride, if used, "should be limited to a maximum of" 1 to 1.5 L. |
+| 50 q3 (INR) | Repeated signed gi-bleed-33 q1. Replace with a decision not in the bank, key not in first position | Replaced by a new q4 (KF4, modifying factor): insulin orders for his first ward day, when he will eat little after a hypoglycemic crash. Home doses: glargine 40 units and aspart 10 units with meals. Key: "Reduced glargine and correction" (fifth position). Source: Diabetes Canada 2018 chapter 16, In-hospital management of diabetes. It says basal insulin "should not be withheld", bolus "can be withheld or reduced in people who are not eating regularly", a proactive basal, bolus and correction plan is recommended "instead of only correcting high BG", therapy should be modified after BG of 3.9 mmol/L or less, and the preprandial target is 5.0 to 8.0 mmol/L. The tibial plateau fracture, the 5 L total and the CSTM source are gone, so no later text depends on a 5 L figure. |
+| 50 q4, advisory | Timeline of the humeral needle | Taken. The arm-swelling question (IO extravasation) moved from q4 to q2, straight after the glucose question, and the acid-base update says the saline ran through peripheral lines. The key positions of the moved questions did not change (IO stays fifth, acid-base stays third). |
+
+New order of multiple-trauma-50: q1 capillary glucose (KF4), q2 IO extravasation (KF3), q3 hyperchloremic acidosis (KF5), q4 insulin plan (KF4). Sources: Diabetes Canada chapter 21, European guideline sixth edition, Diabetes Canada chapter 16 and Petitpas 2016.
+
+### Uniqueness, round 4
+
+- Inpatient insulin plan (keep basal, reduce dose, add correction, avoid correction-only): grepped every catalogue and `src/samps` and `src/cases` for sliding scale, basal-bolus, correction insulin, basal insulin, and holding or continuing glargine. The only hit is the DKA insulin question in abdominal-pain s19, which is a different decision.
+- Driving advice after hypoglycemia was considered and rejected, because seizures s16 already keys it as a write-in.
+
+### Coverage and positions after round 4
+
+20 single questions and 2 menus. Single key positions, first to fifth: 5, 4, 2, 4, 5. KF4 is now 48 q3, 50 q1 and 50 q4. KF5 is 50 q3. The other key features are as in round 3, except that KF3 now lists 50 q2 (moved from q4) and KF6 is 48 q1 and 51 q3.
+
+Checks: the s66 tsc grep prints nothing. `SAMP_BATCH=s66` vitest: 3 files, 136 tests passed. No dashes or semicolons in strings.
+
+### Sources verified in round 4
+
+- Diabetes Canada Clinical Practice Guidelines Expert Committee, Malcolm J, Halperin I, et al. In-hospital management of diabetes. Can J Diabetes. 2018. https://www.diabetes.ca/for-professionals/full-guidelines/chapter-16 (page read: recommendations 4, 5 and 9, and the text on basal insulin when not eating).
+- Rossaint R et al. European guideline, sixth edition. Crit Care. 2023. https://pmc.ncbi.nlm.nih.gov/articles/PMC9977110/ (saline limit sentence read in the full text).
+
+### For the reviewer
+
+- The year for chapter 16 is the 2018 guideline edition, the same as the chapter 21 citation already in this SAMP. The chapter web page itself does not print a year.
+- 50 q4 says the IV insulin infusion is unnecessary because he is not critically ill. That is general practice. The chapter text I read does not state it in those words.

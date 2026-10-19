@@ -262,7 +262,7 @@ export const ABUSE_DOMESTIC_S67: Samp[] = [
       {
         id: "q3",
         kind: "single",
-        update: "Later that night, alone with the nurse, she says he took her bank card when she stopped working and buys her insulin only when she behaves. She does not want police involved. She asks for help but has no phone of her own.",
+        update: "Later that night, alone with the nurse, she says he took her bank card when she stopped working and buys her insulin only when she behaves. She does not want police involved. She asks for help, but her partner still has her phone.",
         prompt: "Which of the following is the most appropriate way to connect her with a violence support service?",
         options: [
           "Ask her to call once she is home",
@@ -447,7 +447,7 @@ export const ABUSE_DOMESTIC_S67: Samp[] = [
           "No further bleeding tests",
         ],
         correct: 1,
-        explanation: "A subdural hemorrhage needs a full search for a bleeding disorder before it is attributed to injury. The Canadian Paediatric Society lists factor VIII, von Willebrand antigen and platelet-dependent von Willebrand activity, with his blood group to interpret them, and factors IX and XIII, in addition to the CBC, smear, INR, PTT and fibrinogen. Normal screening tests therefore do not complete the workup. A bleeding time and a platelet function screen are not among the tests it lists. Repeating the INR and PTT adds nothing, and stopping now leaves untested the disorders that the specific factor tests look for.",
+        explanation: "A subdural hemorrhage needs a full search for a bleeding disorder before it is attributed to injury. The Canadian Paediatric Society lists factor VIII, von Willebrand antigen and platelet-dependent von Willebrand activity, with his blood group to interpret them, and factors IX and XIII, in addition to the CBC, smear, INR, PTT and fibrinogen. Normal screening tests therefore do not complete the workup. A bleeding time or a platelet function screen looks at platelet plug formation and does not measure factors VIII, IX or XIII, so neither can exclude hemophilia or factor XIII deficiency. Repeating the INR and PTT adds nothing, and stopping now leaves untested the disorders that the specific factor tests look for.",
         keyFeature: { topic: T, n: 3 },
         source: "cps-thi",
       },
