@@ -24,7 +24,7 @@ export const PULMONARY_EDEMA_S60: Samp[] = [
     title: "Infant who breathes fast during feeds",
     stem:
       "A 4-month-old boy is brought to the emergency department by his parents with 5 days of fast breathing that is worse during feeds. A walk-in clinic diagnosed bronchiolitis 3 days ago. He now takes 60 mL per feed instead of 120 mL and sweats on his forehead while feeding. He has had no fever, cough or runny nose, and no one at home is sick. He was born at term weighing 3.6 kg, and his weight has fallen from the 50th to the 10th percentile. He is pale with subcostal retractions. There are fine crackles at both lung bases and no wheeze. A gallop is heard and there is no murmur. The liver edge is 4 cm below the right costal margin. Femoral pulses are equal to the brachial pulses. His feet are cool with a capillary refill of 3 seconds.",
-    vitals: { temperature: "36.9°C rectal", pulse: "176/minute", resp: "68/minute", bp: "84/52 mmHg", o2sat: "93% on room air", weight: "5.4 kg" },
+    vitals: { temperature: "36.9°C rectal", pulse: "176/minute", resp: "68/minute", bp: "84/52 mmHg", o2sat: "93% on room air", weight: "6.1 kg" },
     questions: [
       {
         id: "q1",
@@ -33,7 +33,7 @@ export const PULMONARY_EDEMA_S60: Samp[] = [
         options: ["Fine crackles at both lung bases", "Liver edge 4 cm below costal margin", "Oxygen saturation of 93%", "Respiratory rate of 68/minute at rest", "Subcostal retractions"],
         correct: 1,
         explanation:
-          "Hepatomegaly is one of the commonest signs of congestion in infants with heart failure, and bronchiolitis does not explain a liver edge 4 cm below the costal margin. The rest of his story points the same way, with no fever or coryza, no sick contacts, sweating with feeds and weight falling across percentiles. Crackles, a fast respiratory rate, retractions and a saturation of 93% are all seen in viral lower respiratory infection as well, so none of them separates the two diagnoses.",
+          "Hepatomegaly is one of the commonest signs of congestion in infants with heart failure. Hyperinflated lungs in bronchiolitis can push a normal liver down, but he has no wheeze, and a liver edge 4 cm below the costal margin with a gallop is more than that. The rest of his story points the same way, with no fever or coryza, no sick contacts, sweating with feeds and weight falling across percentiles. Crackles, a fast respiratory rate, retractions and a saturation of 93% are all seen in viral lower respiratory infection as well, so none of them separates the two diagnoses.",
         keyFeature: { topic: "pulmonary-edema", n: 5 },
         source: "price-peds-hf",
       },
@@ -156,7 +156,7 @@ export const PULMONARY_EDEMA_S60: Samp[] = [
     topic: "pulmonary-edema",
     title: "Breathless after a walk-in clinic visit",
     stem:
-      "A 78-year-old woman presents to the emergency department with 4 days of increasing shortness of breath and 2 nights of sleeping in a chair. She has heart failure with an ejection fraction of 30% and had a transient ischemic attack 3 years ago. She takes sacubitril-valsartan, bisoprolol, spironolactone, dapagliflozin, furosemide 40 mg daily and apixaban for atrial fibrillation. Ten days ago a walk-in clinic added diltiazem 120 mg daily for palpitations. She has crackles at both bases and pitting edema to the knees. The ECG shows atrial fibrillation at 116/minute with no new ischemic changes.",
+      "A 78-year-old woman presents to the emergency department with 4 days of increasing shortness of breath and 2 nights of sleeping in a chair. She has heart failure with an ejection fraction of 30% and had a transient ischemic attack 3 years ago. She has never been intubated. She takes sacubitril-valsartan, bisoprolol, spironolactone, dapagliflozin, furosemide 40 mg daily and apixaban for atrial fibrillation. Ten days ago a walk-in clinic added diltiazem 120 mg daily for palpitations. She has crackles at both bases and pitting edema to the knees. The ECG shows atrial fibrillation at 116/minute with no new ischemic changes.",
     vitals: { temperature: "36.7°C oral", pulse: "116/minute irregular", resp: "28/minute", bp: "142/84 mmHg", o2sat: "88% on room air", weight: "71 kg" },
     questions: [
       {
@@ -178,7 +178,7 @@ export const PULMONARY_EDEMA_S60: Samp[] = [
         options: ["3 points", "4 points", "5 points", "6 points", "7 points"],
         correct: 2,
         explanation:
-          "Her score is 5. The prior transient ischemic attack scores 1, a heart rate over 110/minute on arrival scores 2 (hers was 116/minute), a saturation below 90% on arrival scores 1 (hers was 88%) and a urea of 12 mmol/L or more scores 1. Her walk test pulse stayed under 110/minute, the ECG shows no new ischemia, CO2 is below 35 mmol/L, troponin is not at the infarction level and NT-proBNP is under 5 000 pg/mL, so none of these adds points. A total of 4 misses the stroke history, and 6 counts the NT-proBNP.",
+          "Her score is 5. The prior transient ischemic attack scores 1, a heart rate over 110/minute on arrival scores 2 (hers was 116/minute), a saturation below 90% on arrival scores 1 (hers was 88%) and a urea of 12 mmol/L or more scores 1. She has never been intubated, her walk test pulse stayed under 110/minute, the ECG shows no new ischemia, CO2 is below 35 mmol/L, troponin is not at the infarction level and NT-proBNP is under 5 000 pg/mL, so none of these adds points. A total of 4 misses the stroke history, and 6 counts the NT-proBNP.",
         keyFeature: { topic: "pulmonary-edema", n: 6 },
         source: "ohfrs-2017",
       },
@@ -237,7 +237,7 @@ export const PULMONARY_EDEMA_S60: Samp[] = [
         options: ["88 to 92%", "90 to 95%", "92 to 96%", "94 to 98%", "96 to 100%"],
         correct: 0,
         explanation:
-          "She is hypercapnic with severe COPD, and the target for patients at risk of hypercapnic respiratory failure is 88 to 92%. Aiming higher, at 92 to 96% or above, risks more carbon dioxide retention and a worsening acidosis. A target of 90 to 95% also lets her saturation climb above 92%. Titrating to 88 to 92% corrects her hypoxemia while the bilevel ventilation and diuresis treat the cause.",
+          "She is hypercapnic with severe COPD, and the target for patients at risk of hypercapnic respiratory failure is 88 to 92%. Aiming higher, at 92 to 96% or above, risks more carbon dioxide retention and a worsening acidosis. A target of 90 to 95% also lets her saturation climb above 92%. The general heart failure advice to keep saturation above 90% does not account for her chronic hypercapnia. Titrating to 88 to 92% corrects her hypoxemia while the bilevel ventilation and diuresis treat the cause.",
         keyFeature: { topic: "pulmonary-edema", n: 1 },
         source: "bts-oxygen",
       },
@@ -249,7 +249,7 @@ export const PULMONARY_EDEMA_S60: Samp[] = [
         options: ["At a brisk pace on room air", "Own pace on room air", "Seated arm exercise on room air", "Treadmill test on 4 L/minute", "Usual pace on her home oxygen"],
         correct: 4,
         explanation:
-          "The emergency department walk test asks the patient to walk at her own pace for 3 minutes, whatever the distance, on room air or her usual oxygen. She lives on 2 L/minute, so testing her on it shows how she will manage at home. The test fails if her saturation drops below 90%, her pulse reaches 110/minute, her respiratory rate reaches 28/minute, or she cannot finish. Testing her on room air measures a state she never lives in. A brisk pace, a treadmill or seated arm exercise is not the validated test.",
+          "The emergency department walk test asks the patient to walk at her own pace for 3 minutes, whatever the distance, on room air or her usual oxygen. She lives on 2 L/minute, so testing her on it shows how she will manage at home. The test fails if her saturation drops below 90%, her pulse rises above 110/minute, her respiratory rate rises above 28/minute, or she cannot finish. Testing her on room air measures a state she never lives in. A brisk pace, a treadmill or seated arm exercise is not the validated test.",
         keyFeature: { topic: "pulmonary-edema", n: 6 },
         source: "heartrisk6",
       },
@@ -298,7 +298,7 @@ export const PULMONARY_EDEMA_S60: Samp[] = [
         options: ["Constrictive pericarditis", "Hypertensive heart disease", "Ischemic cardiomyopathy", "Late chemotherapy cardiotoxicity", "Thyrotoxic heart disease"],
         correct: 3,
         explanation:
-          "Doxorubicin and trastuzumab both cause cancer therapy-related cardiac dysfunction, defined by a fall in left ventricular ejection fraction, and anthracycline injury can appear years after treatment ends. She has a newly reduced ejection fraction of 35%, has never smoked, is normotensive and has no Q waves, so ischemic and hypertensive heart disease are less likely. Constrictive pericarditis does not reduce the ejection fraction. Nothing in her history or examination suggests thyrotoxicosis.",
+          "Doxorubicin and trastuzumab both cause cancer therapy-related cardiac dysfunction, defined by a fall in left ventricular ejection fraction, and this dysfunction may first be found during survivorship, as in her case 3 years after treatment. She has a newly reduced ejection fraction of 35%, has never smoked, is normotensive and has no Q waves, so ischemic and hypertensive heart disease are less likely. Constrictive pericarditis does not reduce the ejection fraction. Nothing in her history or examination suggests thyrotoxicosis.",
         keyFeature: { topic: "pulmonary-edema", n: 2 },
         source: "icos",
       },
