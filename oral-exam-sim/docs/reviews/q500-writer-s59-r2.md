@@ -61,3 +61,34 @@ I read the full catalogue at `scratchpad/q500/catalog/cqi.md`: cqi-01 to cqi-35,
 - 38 q5: the preconditions come from a 2006 IHI white paper, not from a Canadian source. No Canadian guidance on spread was found.
 - 39 q1 asks for the "first step". The CPSO policy lists discussing with the previous physician (16.1) before ensuring disclosure (16.2), and that order is what the key relies on. A reviewer may want to check that disclosing to him straight away is not equally defensible. The explanation presents it as the next duty, not as an alternative.
 - 37 q4: CIAF says team composition varies, so the key is worded as the most appropriate makeup, not the only one. Executives may support the analysis at arm's length, so the distractor is "legal counsel and senior executives" as the whole team.
+
+## Round 3
+
+Verdict applied: `docs/reviews/q500-verify2-s59.md`. Only `src/samps/s59/cqi.ts` and this report were edited. Ids unchanged.
+
+### cqi-37 q3 (repeat of prompt disclosure, cqi-06 q3, cqi-16 q4, cqi-02 q3)
+Replaced with a key feature 1 decision: the immediate action that best protects other patients who may already be at risk. Key "Review other recent phoned results". Distractors: wait for the analysis, email a reminder to clerks, move the clerk to other duties, post the critical result policy. Update: "The incident is reported the same day." Source: CIAF 2012 section 3.4 (Immediate response), read in full this round. It places "ensuring the safety of other patients who may be at risk" with the first actions, and says "local actions to reduce the risk of imminent recurrence may need to be taken immediately". Catalogue check: no item keys this action. cqi-22 q1 (contact the 37 known exposed patients) is the nearest. That is a disclosure decision for a known exposed group, not a search for results that have not been acted on. cqi-16 q2 (secure items) and cqi-10 q3 (report the incident) are other immediate-response steps, and neither is reused. The disclosure source `cdg-2011` is now uncited and has been removed. Key feature 2 stays covered by cqi-39 q1 and q2.
+
+### cqi-37 q1 and stem (repeat of multiple-patients-12 and cqi-02 q1)
+- **Stem.** The stem no longer tells a lost hyperkalemia result with a wide QRS return. The new case: blood cultures were drawn at a discharge 2 days ago. Gram-negative bacilli were phoned to the desk at 23:05, and the clerk's note never reached a physician. She now returns in septic shock (lactate 5.1 mmol/L, BP 78/40 mmHg) and recovers in the ICU. The Alberta setting was dropped because the Alberta bulletin is no longer cited. The title is now "A call to the desk at night", because "A result that arrived after discharge" echoed "A result that fell through the cracks". q2 and q4 still read correctly against the new stem. Neither relied on the potassium.
+- **New q1 (key feature 5, safe medication use).** Update: she needs a norepinephrine infusion, and the pumps have no drug library, so rates are entered by hand. Key "Smart pump with a drug library". Distractors: hourly volume check, manual rate calculation, a rate set from a printed table, a rate written on the bag label.
+- **Source.** Sproul A, Newman H. Get smart, Canada. Can J Hosp Pharm. 2023. https://doi.org/10.4212/cjhp.3286. I read the full PDF. It states that smart pumps with a dose error reduction system "prevent medication infusion errors", that they are a standard of practice, and that 89% of Canadian hospitals use them. The DOI resolves to the CJHP article page.
+- **Catalogue check.** The list of key feature 5 decisions already taken (identifiers, hand hygiene, do-not-use abbreviations, BPMH and reconciliation, high-alert lists, SBAR, graded assertion) was avoided. I grepped every catalogue and `src/samps/s54` to `s70` for "pump", "drug library" and "dose error". The only hit is the cqi-09 stem ("pumps often have no drug library loaded"). That SAMP keys just culture and safety culture, not a pump practice, so this key is new.
+- **Sources.** `ahs-critical-results-2014` is now uncited and has been removed.
+
+### cqi-39 q4
+The last explanation sentence was replaced with the verdict's wording: "Anchoring, availability, premature closure and search satisficing can affect any reasoning, including the team's, but the comment here rests on knowing the outcome, which is what defines hindsight bias."
+
+### Spelling
+SAMP_SPEC sets Canadian spelling but does not choose between "analyse" and "analyze". The bank uses "analyze" or "analyzed" 7 times and "analyse" once (this file). The verdict notes that Canadian usage prefers "analyze", so the cqi-37 q4 update now reads "analyze".
+
+### Checks
+- The type check shows no s59 errors. `SAMP_BATCH=s59` samps, samp-quality and citations tests pass (132).
+- Single-question key positions, first to fifth: 4, 4, 4, 4, 4. Both replaced keys sit in the fifth position, filling the two fifth-position slots that cqi-37 q1 and q3 vacated.
+- The key is the single longest option in 4 of 20 single questions.
+- Key features: KF1 5, KF2 2, KF3 4, KF4 3, KF5 1, KF6 6.
+- No semicolons or dashes.
+
+### Uncertain
+- cqi-37 q1 rests on a Canadian survey paper that describes smart pumps as preventing infusion errors and as standard practice. It is not a guideline. Accreditation Canada's infusion pump standard was not available to open.
+- cqi-37 q3: the "check other recent phoned results" action is my application of CIAF's general instruction to protect other patients at risk. CIAF does not name this specific action.
