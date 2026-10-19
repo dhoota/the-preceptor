@@ -6,7 +6,9 @@ import type { Source } from "@/engine/types";
 const META = { topic: "infectious-diseases", reviewed: false, author: "Preceptor", version: 1 } as const;
 
 const S = {
-  ehra: { id: "ehra-cied-2020", citation: "Blomström-Lundqvist C, Traykov V, Erba PA, et al. European Heart Rhythm Association (EHRA) international consensus document on how to prevent, diagnose, and treat cardiac implantable electronic device infections. Europace. 2020.", url: "https://pubmed.ncbi.nlm.nih.gov/31702000/" },
+  idsaNvo: { id: "idsa-nvo-2015", citation: "Berbari EF, Kanj SS, Kowalski TJ, et al. 2015 Infectious Diseases Society of America (IDSA) clinical practice guidelines for the diagnosis and treatment of native vertebral osteomyelitis in adults. Clin Infect Dis. 2015.", url: "https://academic.oup.com/cid/article/61/6/e26/2196013" },
+  kondo: { id: "kondo-beta-lactam-first", citation: "Kondo Y, Klompas M, McKenna CS, et al. Association between the sequence of beta-lactam and vancomycin administration and mortality in patients with suspected sepsis. Clin Infect Dis. 2025.", url: "https://pmc.ncbi.nlm.nih.gov/articles/PMC12043061/" },
+  ssc2026: { id: "ssc-2026", citation: "Prescott HC, Antonelli M, Alhazzani W, et al. Surviving Sepsis Campaign: international guidelines for management of sepsis and septic shock 2026. Crit Care Med. 2026.", url: "https://doi.org/10.1097/CCM.0000000000007075" },
   sepsis3: { id: "sepsis-3", citation: "Singer M, Deutschman CS, Seymour CW, et al. The Third International Consensus Definitions for Sepsis and Septic Shock (Sepsis-3). JAMA. 2016.", url: "https://pubmed.ncbi.nlm.nih.gov/26903338/" },
   idsaDiarrhea: { id: "idsa-diarrhea-2017", citation: "Shane AL, Mody RK, Crump JA, et al. 2017 Infectious Diseases Society of America clinical practice guidelines for the diagnosis and management of infectious diarrhea. Clin Infect Dis. 2017.", url: "https://academic.oup.com/cid/article/65/12/e45/4557073" },
   coughlin: { id: "coughlin-drug-arterial", citation: "Coughlin PA, Mavor AI. Arterial consequences of recreational drug use. Eur J Vasc Endovasc Surg. 2006.", url: "https://pubmed.ncbi.nlm.nih.gov/16682239/" },

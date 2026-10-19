@@ -215,7 +215,7 @@ export const BURNS_S69: Samp[] = [
         options: ["Adhesive transparent dressing", "Circumferential elastic bandage", "Sutures to the skin", "Tape wrapped around the forearm", "Tissue adhesive over the hub"],
         correct: 2,
         explanation:
-          "A line placed through burned skin is best sutured in place, because tape and adhesive dressings often fail to stick to burned tissue, especially when it is wet and weeping. A longer cannula, as used here, tolerates the swelling that comes as her resuscitation continues, and the site needs frequent checks. An adhesive transparent dressing or tissue adhesive over the hub has nothing reliable to hold on to. Tape or an elastic bandage wrapped around the forearm also tightens as the arm swells and can restrict blood flow to a burned limb.",
+          "A line placed through burned skin is best sutured in place, because tape and adhesive dressings often fail to stick to burned tissue, especially when it is wet and weeping. An adhesive transparent dressing or tissue adhesive over the hub has nothing reliable to hold on to. Tape or an elastic bandage wrapped around the forearm also tightens as the arm swells and can restrict blood flow to a burned limb.",
         keyFeature: { topic: "burns", n: 4 },
         source: "nb-burn-care",
       },
@@ -227,7 +227,7 @@ export const BURNS_S69: Samp[] = [
         options: ["105 mL/hour", "210 mL/hour", "280 mL/hour", "420 mL/hour", "500 mL/hour"],
         correct: 1,
         explanation:
-          "Her 24-hour estimate is 2 x 70 kg x 24% = 3360 mL, and half of it, 1680 mL, is planned for the first 8 hours after the burn, which is 210 mL/hour. The Alaska guideline starts the calculated hourly rate whatever has already been given. The 2500 mL is documented but is neither subtracted nor made up, and the rate is then adjusted hourly to her urine output. A rate of 105 mL/hour belongs to the next 16 hours, which start at 20:50, and cutting to it now because she is ahead is the subtraction the guideline advises against. Rates of 280 and 420 mL/hour come from a 4 mL/kg formula, spread evenly over 24 hours or front-loaded into the first 8 hours, which gives twice the volume the 2 mL/kg starting point calls for. 500 mL/hour is the interim adult rate for the first hour before the burn size is known.",
+          "Her 24-hour estimate is 2 x 70 kg x 24% = 3360 mL, and half of it, 1680 mL, is planned for the first 8 hours after the burn, which is 210 mL/hour. The Alaska guideline starts the calculated hourly rate whatever has already been given. The 2500 mL is documented but is neither subtracted nor made up, and the rate is then adjusted hourly to her urine output. A rate of 105 mL/hour belongs to the next 16 hours, which start at 20:50, 8 hours after the fire at about 12:50, and cutting to it now because she is ahead is the subtraction the guideline advises against. Rates of 280 and 420 mL/hour come from a 4 mL/kg formula, spread evenly over 24 hours or front-loaded into the first 8 hours, which gives twice the volume the 2 mL/kg starting point calls for. 500 mL/hour is the interim adult rate for the first hour before the burn size is known.",
         keyFeature: { topic: "burns", n: 4 },
         source: "alaska-burns",
       },
@@ -239,7 +239,7 @@ export const BURNS_S69: Samp[] = [
         options: ["Expected after an air transfer", "Hypothermia needing active warming", "Mild cooling needing no action", "Normal for an adult at rest", "Probe error to be repeated later"],
         correct: 1,
         explanation:
-          "The New Brunswick statement defines hypothermia in a burn patient as an internal temperature below 36.5°C, higher than the 35°C used for an uninjured person, because burned skin cannot hold heat and early hypothermia worsens outcome. At 36.0°C she needs active rewarming, with a forced-air or warm blanket, warmed Ringer's lactate, dry sheets over the burns and regular temperature checks. Calling 36.0°C normal, expected after a flight or too mild to act on uses the threshold for an uninjured adult. A rectal reading is a core temperature, and dismissing it as probe error delays warming.",
+          "The New Brunswick statement defines hypothermia in a burn patient as an internal temperature below 36.5°C, higher than the 35°C used for an uninjured person, and early hypothermia after a burn worsens outcome. At 36.0°C she needs active rewarming, with a forced-air or warm blanket, warmed Ringer's lactate, dry sheets over the burns and regular temperature checks. Calling 36.0°C normal, expected after a flight or too mild to act on uses the threshold for an uninjured adult. A rectal reading is a core temperature, and dismissing it as probe error delays warming.",
         keyFeature: { topic: "burns", n: 1 },
         source: "nb-burn-care",
       },
