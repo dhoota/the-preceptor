@@ -257,4 +257,66 @@ export const PULMONARY_EDEMA_S60: Samp[] = [
     sources: [S.caep, S.ersNiv, S.bts, S.heartrisk6],
     ...META,
   },
+
+  /* 43 Exertional dyspnea years after cancer therapy ------------------------ */
+  {
+    id: "pulmonary-edema-43",
+    topic: "pulmonary-edema",
+    title: "Walks the dog more slowly than before",
+    stem:
+      "A 61-year-old woman presents to the emergency department with 6 weeks of breathlessness when walking uphill with her dog. For 1 week she has also been short of breath climbing one flight of stairs and has woken twice at night coughing. A walk-in clinic prescribed an inhaler for a post-viral cough, and it has not helped. She completed doxorubicin and trastuzumab for breast cancer 3 years ago. She has no other history and has never smoked. She is comfortable at rest. There are a few fine crackles at both bases and trace ankle edema, with no wheeze. A chest radiograph taken at the clinic was reported as normal.",
+    vitals: { temperature: "36.6°C oral", pulse: "86/minute", resp: "18/minute", bp: "128/76 mmHg", o2sat: "96% on room air", weight: "64 kg" },
+    questions: [
+      {
+        id: "q1",
+        kind: "single",
+        prompt: "Which of the following is the most appropriate next test to evaluate her for heart failure in the emergency department?",
+        options: ["Exercise stress ECG", "NT-proBNP level", "Repeat chest radiograph", "Serum D-dimer level", "Spirometry with bronchodilator"],
+        correct: 1,
+        explanation:
+          "Progressive exertional dyspnea, night cough, basal crackles and new ankle edema in a survivor of cardiotoxic chemotherapy suggest heart failure despite a normal film, and NT-proBNP is strongly recommended in the emergency department assessment of possible acute heart failure. A level below 300 pg/mL makes it unlikely. Repeating the radiograph adds little to one taken recently. Spirometry tests for the airway disease she has already been treated for without benefit. A D-dimer answers a different question, and a stress ECG looks for ischemia rather than ventricular failure.",
+        keyFeature: { topic: "pulmonary-edema", n: 5 },
+        source: "caep-ahf",
+      },
+      {
+        id: "q2",
+        kind: "single",
+        update: "Her NT-proBNP is 1 250 pg/mL.",
+        prompt: "Which of the following best describes this NT-proBNP result for a patient of her age?",
+        options: ["Heart failure ruled out", "In the grey zone for her age", "Raised by her age alone", "Unreliable after past chemotherapy", "Within the likely range for her age"],
+        correct: 4,
+        explanation:
+          "For patients aged 50 to 75 years, an NT-proBNP above 900 pg/mL makes acute heart failure likely, and her 1 250 pg/mL is above that line at age 61. The grey zone at her age runs from 300 to 900 pg/mL, and only a level under 300 pg/mL makes heart failure unlikely. Age raises NT-proBNP, which is why the cut-off for her age group is set higher than for younger adults, but she is above it. Past chemotherapy does not make the test unreliable, and cardiotoxicity is a reason to take it seriously.",
+        keyFeature: { topic: "pulmonary-edema", n: 5 },
+        source: "caep-ahf",
+      },
+      {
+        id: "q3",
+        kind: "single",
+        update: "Bedside ultrasound shows a mildly dilated left ventricle with an estimated ejection fraction of 35%, a few B-lines at both bases and no pericardial effusion. The ECG shows sinus rhythm with no Q waves.",
+        prompt: "Which of the following is the most likely cause of her heart failure?",
+        options: ["Constrictive pericarditis", "Hypertensive heart disease", "Ischemic cardiomyopathy", "Late chemotherapy cardiotoxicity", "Thyrotoxic heart disease"],
+        correct: 3,
+        explanation:
+          "Doxorubicin and trastuzumab both cause cancer therapy-related cardiac dysfunction, defined by a fall in left ventricular ejection fraction, and anthracycline injury can appear years after treatment ends. She has a newly reduced ejection fraction of 35%, has never smoked, is normotensive and has no Q waves, so ischemic and hypertensive heart disease are less likely. Constrictive pericarditis does not reduce the ejection fraction. Nothing in her history or examination suggests thyrotoxicosis.",
+        keyFeature: { topic: "pulmonary-edema", n: 2 },
+        source: "icos",
+      },
+      {
+        id: "q4",
+        kind: "menu",
+        update: "She walks for 3 minutes at her own pace with a saturation of 95% and a pulse of 98/minute. Troponin is normal twice. After discussion with cardiology she will be discharged, and her husband will stay with her.",
+        prompt: "Which of the following are the most appropriate parts of her discharge plan from the emergency department?",
+        options: ["Bed rest until clinic review", "Clinician follow-up within 7 days", "Creatinine and potassium in 7 days", "Fluid intake of at least 3 L daily", "furosemide 20 mg PO daily", "metolazone 5 mg PO daily", "Repeat NT-proBNP in 24 hours", "Stop her inhaler and all exercise"],
+        select: 3,
+        correct: [1, 2, 4],
+        explanation:
+          "A typical starting diuretic for a patient sent home with volume overload is furosemide 20 mg once or twice daily, with creatinine and electrolytes checked within 7 days. She should be seen within 7 days by her family physician, an internist, a cardiologist or a heart failure clinic, with written instructions and advice to return if she worsens. Metolazone is for diuretic resistance, not a first prescription. A daily intake of at least 3 L works against diuresis. A repeat NT-proBNP the next day does not change her plan, and bed rest or stopping all activity is not advised.",
+        keyFeature: { topic: "pulmonary-edema", n: 6 },
+        source: "caep-ahf",
+      },
+    ],
+    sources: [S.caep, S.icos],
+    ...META,
+  },
 ];
