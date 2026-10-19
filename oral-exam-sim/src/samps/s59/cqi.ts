@@ -139,7 +139,7 @@ export const CQI_S59: Samp[] = [
       {
         id: "q2",
         kind: "single",
-        update: "She is admitted to the ICU, where she recovers. The incident is reported the same day.",
+        update: "She is admitted to the ICU. The incident is reported the same day.",
         prompt: "Which of the following immediate actions best protects other patients who may already be at risk?",
         options: [
           "Await the analysis before changing",
@@ -157,7 +157,7 @@ export const CQI_S59: Samp[] = [
       {
         id: "q3",
         kind: "single",
-        update: "The hospital starts an incident analysis.",
+        update: "She recovers in the ICU. The hospital starts an incident analysis.",
         prompt: "Which of the following should be part of the initial information gathering for this analysis?",
         options: [
           "A review of the clerk's personnel file",

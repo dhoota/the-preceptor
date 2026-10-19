@@ -473,7 +473,7 @@ export const returnVisitBellyPainGirl: OralCase = {
       id: "ap-a3",
       competency: "assessment",
       criterion: "physical",
-      text: "States that a normal white count, a low grade temperature or mild pyuria does not rule out appendicitis.",
+      text: "States that a normal white count or a low grade temperature does not rule out appendicitis.",
       points: 2,
       critical: true,
       teaching: "No single finding rules appendicitis in or out in children. A white count under 10 x 10^9/L lowers the likelihood but misses some cases, especially early.",

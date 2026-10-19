@@ -190,7 +190,7 @@ export const ruralBreathlessAfterUlcerBleed: OralCase = {
           next: "s-results",
           quality: "strong",
           feedback:
-            "Correct. When PE is likely, skip the D-dimer. A proximal DVT confirms VTE in a patient with chest symptoms, so you can treat without CT. Two point ultrasound done by trained emergency physicians had a sensitivity of about 91 percent and a specificity of about 98 percent in pooled studies.",
+            "Correct. When PE is likely, skip the D-dimer. A proximal DVT confirms VTE in a patient with chest symptoms, so you can treat without CT. In pooled studies, 2 point ultrasound in the emergency department had a sensitivity of about 91 percent and a specificity of about 98 percent, and did best in the hands of trained attending physicians.",
         },
         {
           id: "c-transfer",
@@ -283,7 +283,7 @@ export const ruralBreathlessAfterUlcerBleed: OralCase = {
       id: "s-specialist",
       phase: "19:20",
       text:
-        "You call the thrombosis physician on call at the regional hospital. She advises apixaban 10 mg twice daily for 7 days, then 5 mg twice daily, with pantoprazole continued and no filter. You give the first dose.",
+        "You call the thrombosis physician on call at the regional hospital. She advises apixaban 10 mg twice daily for 7 days, then 5 mg twice daily, with pantoprazole continued and no filter. You follow her advice. If he has not yet had apixaban, you give the first dose now.",
       next: "s-gi",
     },
     {
@@ -363,7 +363,7 @@ export const ruralBreathlessAfterUlcerBleed: OralCase = {
         "Give the first dose here and dispense a starter supply from the hospital pharmacy so no doses are missed.",
         "Explain the twice daily schedule and the drop to 5 mg twice daily on day 8.",
         "Return now for worse breathlessness, chest pain, fainting, tarry stools, vomiting blood or dizziness. Iron makes stool dark but not tarry.",
-        "Hemoglobin and review with his family doctor or a thrombosis clinic within 1 week. Helicobacter pylori breath test as booked.",
+        "Hemoglobin and review with his family doctor or a thrombosis clinic within 1 week. Leave the timing of the Helicobacter pylori test of cure to gastroenterology, since a PPI can make a breath test falsely negative.",
         "At least 3 months of anticoagulation for VTE after a hospital stay, then review.",
         "Written plan and contact numbers for him and his wife.",
       ],
@@ -374,7 +374,7 @@ export const ruralBreathlessAfterUlcerBleed: OralCase = {
       kind: "end",
       id: "end",
       text:
-        "He goes home at 21:00 with a starter supply. His hemoglobin is 124 g/L at 1 week and his breath test confirms cure. He has no bleeding and finishes 3 months of apixaban. That is the end of the case.",
+        "He goes home at 21:00 with a starter supply. His hemoglobin is 124 g/L at 1 week. He has no bleeding and finishes 3 months of apixaban. That is the end of the case.",
     },
   ],
   rubric: [
@@ -466,7 +466,7 @@ export const ruralBreathlessAfterUlcerBleed: OralCase = {
       criterion: "management",
       text: "Performs a 2 point compression ultrasound of both legs at the bedside in a hospital without CT.",
       points: 2,
-      teaching: "In pooled studies, 2 point ultrasound by emergency physicians had a sensitivity of about 91 percent and a specificity of about 98 percent. Trained attending physicians performed best.",
+      teaching: "In pooled studies, 2 point ultrasound in the emergency department had a sensitivity of about 91 percent and a specificity of about 98 percent. Trained attending physicians performed best.",
       source: "lee-pocus",
     },
     {
@@ -483,7 +483,7 @@ export const ruralBreathlessAfterUlcerBleed: OralCase = {
       id: "pe-m3",
       competency: "management",
       criterion: "management",
-      text: "Starts apixaban 10 mg twice daily for 7 days, then 5 mg twice daily, and does not withhold anticoagulation or request a filter for a treated ulcer.",
+      text: "Starts full dose therapeutic anticoagulation now, preferably apixaban 10 mg twice daily for 7 days then 5 mg twice daily, and does not withhold anticoagulation or request a filter for a treated ulcer.",
       points: 3,
       critical: true,
       teaching: "Apixaban and rivaroxaban are first line for most patients. A retrievable IVC filter is considered only when therapeutic anticoagulation cannot be given because of active or very high risk bleeding.",
