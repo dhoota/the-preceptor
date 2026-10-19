@@ -25,6 +25,11 @@ These hold for every change to this app. Tests in `tests/launch.test.ts` and
 - "Educational exam preparation only. Not medical advice." (`EDU_ONLY`) stays visible on the result, review and sources screens.
 - `tests/citations.test.ts` fails if any question lacks a citation or link.
 
+## Android / Google Play
+- Play rejects updates built with Billing < 8 (deadline 1 Nov 2026). BillingClient arrives only through RevenueCat (`purchases-hybrid-common` 17.25.0 -> BillingClient 8.0.0); do not pin `com.android.billingclient:billing` yourself.
+- `android/app/build.gradle` carries the brand-wide "Play Billing compliance guard" (preceptor-mccqe PR #3, standard section 8): every release build fails if `com.google.android.play.billingclient.version` is missing from the merged manifest or below 8. Keep it.
+- `compileSdk` and `targetSdk` stay at 36 (`android/variables.gradle`).
+
 ## Layout and controls
 - Full-height containers use `100dvh` (with a `100vh` fallback first) and pad for `env(safe-area-inset-bottom)`.
 - Every primary action is a real `<button>` with `onClick`. No clickable divs or spans for primary actions.

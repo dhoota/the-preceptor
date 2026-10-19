@@ -72,6 +72,32 @@ dependencies {
 
 apply from: 'capacitor.build.gradle'
 
+// ---- Play Billing compliance guard -----------------------------------------
+// Play reads com.google.android.play.billingclient.version from the merged
+// manifest and rejects updates built with Billing < 8 (deadline Nov 1 2026).
+// BillingClient arrives transitively (purchases-capacitor -> hybrid-common ->
+// purchases-android -> com.android.billingclient:billing), so a plugin
+// downgrade or a manifest-merge rule could silently drop below 8. Fail the
+// release build instead of finding out from Play Console.
+def minPlayBillingMajor = 8
+afterEvaluate {
+    tasks.matching { it.name ==~ /process.*ReleaseMainManifest/ }.configureEach { t ->
+        t.doLast {
+            def merged = t.outputs.files.asFileTree.matching { include '**/AndroidManifest.xml' }.files
+            if (merged.isEmpty()) throw new GradleException("Play Billing guard: no merged AndroidManifest.xml from ${t.name}")
+            merged.each { f ->
+                def m = (f.text =~ /android:name="com\.google\.android\.play\.billingclient\.version"\s+android:value="([0-9.]+)"/)
+                if (!m.find()) throw new GradleException("Play Billing guard: com.google.android.play.billingclient.version missing from ${f}")
+                def v = m.group(1)
+                if ((v.tokenize('.')[0] as int) < minPlayBillingMajor) {
+                    throw new GradleException("Play Billing guard: merged manifest has BillingClient ${v}; Play requires >= ${minPlayBillingMajor}.0.0")
+                }
+                logger.lifecycle("Play Billing guard: BillingClient ${v} in merged manifest (${f.name})")
+            }
+        }
+    }
+}
+
 try {
     def servicesJSON = file('google-services.json')
     if (servicesJSON.text) {
