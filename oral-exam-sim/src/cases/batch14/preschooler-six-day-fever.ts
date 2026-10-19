@@ -27,7 +27,7 @@ export const preschoolerSixDayFever: OralCase = {
       resp: "30/minute",
       bp: "94/56 mmHg",
       o2sat: "98% on room air",
-      weight: "15 kg (33.1 lb)",
+      weight: "15 kg (33 lb)",
     },
     medications: "Amoxicillin, stopped 2 days ago. Cetirizine. Acetaminophen and ibuprofen as needed.",
     allergies: "Amoxicillin (rash), recorded at a walk-in clinic 2 days ago",

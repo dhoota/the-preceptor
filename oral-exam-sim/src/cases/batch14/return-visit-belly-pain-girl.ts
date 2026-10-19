@@ -28,7 +28,7 @@ export const returnVisitBellyPainGirl: OralCase = {
       resp: "24/minute",
       bp: "102/60 mmHg",
       o2sat: "98% on room air",
-      weight: "36 kg (79.4 lb)",
+      weight: "36 kg (79 lb)",
     },
     medications: "Cephalexin and ondansetron since yesterday. Ibuprofen as needed.",
     allergies: "None known",

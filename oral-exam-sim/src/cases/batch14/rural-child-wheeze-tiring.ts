@@ -28,7 +28,7 @@ export const ruralChildWheezeTiring: OralCase = {
       resp: "40/minute",
       bp: "108/64 mmHg",
       o2sat: "89% on room air",
-      weight: "28 kg (61.7 lb)",
+      weight: "28 kg (62 lb)",
     },
     medications: "Salbutamol inhaler as needed. Fluticasone 100 mcg twice daily.",
     allergies: "None known",

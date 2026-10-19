@@ -120,7 +120,7 @@ export const stoppedAntiplateletsDentalStemi: OralCase = {
     },
     {
       id: "transport",
-      label: "Transport status at 07:00",
+      label: "Transport status",
       result:
         "The PCI centre accepts her. Both local ambulance crews are out on calls and the next available crew is 50 minutes away. Fog has grounded the air ambulance. " +
         "The PCI centre estimates she would reach the lab at about 08:50 at the earliest.",
@@ -253,7 +253,7 @@ export const stoppedAntiplateletsDentalStemi: OralCase = {
     {
       kind: "say",
       id: "s-transport",
-      phase: "07:00",
+      phase: "Minutes later",
       text:
         "The PCI centre accepts her for primary PCI. Then dispatch calls back. Both local ambulances are out and the next crew is 50 minutes away. Fog has grounded the air ambulance. " +
         "The PCI centre estimates she would reach the lab at about 08:50 at the earliest.",
@@ -388,7 +388,7 @@ export const stoppedAntiplateletsDentalStemi: OralCase = {
       id: "s-reverse",
       phase: "08:00",
       text:
-        "The cardiologist on the phone stops the protamine order. Ten minutes later she has new chest pain and the ST segments rise again. You call for rescue PCI and arrange the first available ambulance.",
+        "After the shock she has 4 seconds of asystole before sinus rhythm returns. The cardiologist on the phone cancels the protamine and cryoprecipitate before they are given. Gauze pressure stops the ooze.",
       next: "q-transfer",
     },
     {
