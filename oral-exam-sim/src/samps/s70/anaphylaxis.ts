@@ -252,7 +252,7 @@ export const ANAPHYLAXIS_S70: Samp[] = [
         options: ["Add a labetalol infusion", "Give a second vasopressor", "Give lorazepam 1 mg IV", "Reduce the infusion rate", "Stop all IV fluids"],
         correct: 3,
         explanation:
-          "A sharp rise in blood pressure on an epinephrine infusion most likely means too much epinephrine, and her wheeze and hives have resolved, so the rate is reduced and titrated to the lowest dose that keeps her stable, with continuous monitoring. A labetalol infusion would oppose the epinephrine she still needs and could bring back bronchospasm and shock. A second vasopressor is for shock that persists despite the infusion, the opposite of her problem. Lorazepam treats anxiety, not the cause of her hypertension. Stopping fluids does not lower a pressure driven by the drug.",
+          "A sharp rise in blood pressure on an epinephrine infusion most likely means too much epinephrine, and her stridor, wheeze and hives have resolved, so the rate is reduced and titrated to the lowest dose that keeps her stable, with continuous monitoring. A labetalol infusion would oppose the epinephrine she still needs and could bring back bronchospasm and shock. A second vasopressor is for shock that persists despite the infusion, the opposite of her problem. Lorazepam treats anxiety, not the cause of her hypertension. Stopping fluids does not lower a pressure driven by the drug.",
         keyFeature: { topic: "anaphylaxis", n: 3 },
         source: "rcuk-refractory",
       },

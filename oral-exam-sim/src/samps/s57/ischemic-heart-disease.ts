@@ -271,16 +271,33 @@ export const ISCHEMIC_HEART_DISEASE_S57: Samp[] = [
       {
         id: "q1",
         kind: "single",
+        prompt: "Apart from the long transfer, which of the following features of her presentation most supports fibrinolysis for her?",
+        options: [
+          "Age of 78 years",
+          "Creatinine of 84 umol/L",
+          "Nausea with the pressure",
+          "Onset 90 minutes ago",
+          "Treated hypertension",
+        ],
+        correct: 3,
+        explanation:
+          "Fibrinolysis gives its greatest benefit in the first 2 to 3 hours after symptom onset, and the CCS/CAIC guideline suggests a pharmacoinvasive strategy for early presenters, with symptoms for under 3 hours, who cannot have rapid primary PCI. Her pressure began 90 minutes ago. Older age raises the risk of intracranial hemorrhage with fibrinolysis, so her age weighs against it rather than for it. A normal creatinine does not decide between fibrinolysis and PCI. Nausea is a common accompanying symptom and does not change the strategy. Her treated hypertension, with BP 146/84 mmHg, does not bar fibrinolysis but gives no reason to choose it.",
+        keyFeature: { topic: TOPIC, n: 6 },
+        source: "ccs-stemi-2019",
+      },
+      {
+        id: "q2",
+        kind: "single",
         prompt: "Which of the following tenecteplase doses is most appropriate for her?",
         options: ["tenecteplase 15 mg IV", "tenecteplase 17.5 mg IV", "tenecteplase 30 mg IV", "tenecteplase 35 mg IV", "tenecteplase 50 mg IV"],
         correct: 1,
         explanation:
-          "At 62 kg she falls in the band of 60 to under 70 kg, where the full tenecteplase dose is 35 mg. Because she is 78, the dose is halved to 17.5 mg. Full doses in patients aged 75 or older were linked with excess intracranial hemorrhage in the STREAM trial, and halving the dose removed that excess. A full 35 mg ignores her age. The 30 mg dose is the full dose for under 60 kg, and 15 mg halves the wrong band. The 50 mg maximum is for 90 kg or more.",
+          "At 62 kg she falls in the band of 60 to under 70 kg, where the full weight-based tenecteplase dose is 35 mg. She is 78, and the CCS/CAIC guideline advises that a half dose may be considered for patients older than 75 in a pharmacoinvasive strategy, which gives 17.5 mg. In the STREAM trial an excess of intracranial hemorrhage in older patients was negated after a half dose was adopted above age 75. A full 35 mg ignores her age. The 30 mg dose is the full dose for under 60 kg, and 15 mg halves the wrong band. The 50 mg maximum is for 90 kg or more.",
         keyFeature: { topic: TOPIC, n: 7 },
-        source: "tnkase-pm-2023",
+        source: "ccs-stemi-2019",
       },
       {
-        id: "q2",
+        id: "q3",
         kind: "single",
         prompt: "Which of the following anticoagulant regimens should accompany her tenecteplase?",
         options: [
