@@ -1,5 +1,5 @@
 {
- "note": "Expansion to 1,500 SAMPs. One batch per priority topic. New ids continue the topic numbering from 16.",
+ "note": "Expansion to 1,500 SAMPs. One batch per priority topic. New ids continue the topic numbering from 16. Batches s54 to s70 (tier Q500, October 2026) add 5 SAMPs each to the 17 topics with the thinnest key feature coverage.",
  "batches": {
   "s19": {
    "topic": "abdominal-pain",
@@ -245,6 +245,125 @@
    "count": 32,
    "tier": "A",
    "firstId": 16
+  },
+  "s54": {
+   "topic": "msk",
+   "name": "Common fractures/MSK",
+   "count": 5,
+   "tier": "Q500",
+   "firstId": 39
+  },
+  "s55": {
+   "topic": "infectious-diseases",
+   "name": "Infectious diseases",
+   "count": 5,
+   "tier": "Q500",
+   "firstId": 48
+  },
+  "s56": {
+   "topic": "pediatric-fever",
+   "name": "Pediatric fever",
+   "count": 5,
+   "tier": "Q500",
+   "firstId": 48
+  },
+  "s57": {
+   "topic": "ischemic-heart-disease",
+   "name": "Ischemic heart disease",
+   "count": 5,
+   "tier": "Q500",
+   "firstId": 48
+  },
+  "s58": {
+   "topic": "shock",
+   "name": "Shock/dehydration",
+   "count": 5,
+   "tier": "Q500",
+   "firstId": 48
+  },
+  "s59": {
+   "topic": "cqi",
+   "name": "Continuous quality improvement (CQI)",
+   "count": 5,
+   "tier": "Q500",
+   "firstId": 36
+  },
+  "s60": {
+   "topic": "pulmonary-edema",
+   "name": "Pulmonary edema",
+   "count": 5,
+   "tier": "Q500",
+   "firstId": 39
+  },
+  "s61": {
+   "topic": "seizures",
+   "name": "Seizures",
+   "count": 5,
+   "tier": "Q500",
+   "firstId": 48
+  },
+  "s62": {
+   "topic": "abdominal-pain",
+   "name": "Abdominal pain",
+   "count": 5,
+   "tier": "Q500",
+   "firstId": 48
+  },
+  "s63": {
+   "topic": "arrhythmia",
+   "name": "Arrhythmia",
+   "count": 5,
+   "tier": "Q500",
+   "firstId": 48
+  },
+  "s64": {
+   "topic": "asthma-copd",
+   "name": "Asthma/COPD",
+   "count": 5,
+   "tier": "Q500",
+   "firstId": 48
+  },
+  "s65": {
+   "topic": "first-trimester-bleeding",
+   "name": "First trimester bleeding",
+   "count": 5,
+   "tier": "Q500",
+   "firstId": 39
+  },
+  "s66": {
+   "topic": "multiple-trauma",
+   "name": "Multiple trauma",
+   "count": 5,
+   "tier": "Q500",
+   "firstId": 48
+  },
+  "s67": {
+   "topic": "abuse-domestic",
+   "name": "Abuse (domestic)",
+   "count": 5,
+   "tier": "Q500",
+   "firstId": 39
+  },
+  "s68": {
+   "topic": "gi-bleed",
+   "name": "Gastrointestinal (GI) bleed",
+   "count": 5,
+   "tier": "Q500",
+   "firstId": 48
+  },
+  "s69": {
+   "topic": "burns",
+   "name": "Burns",
+   "count": 5,
+   "tier": "Q500",
+   "firstId": 39
+  },
+  "s70": {
+   "topic": "anaphylaxis",
+   "name": "Anaphylaxis",
+   "count": 5,
+   "tier": "Q500",
+   "firstId": 48
   }
  }
 }

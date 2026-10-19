@@ -18,6 +18,11 @@ import { BATCH_07 } from "./batch07";
 import { BATCH_08 } from "./batch08";
 import { BATCH_09 } from "./batch09";
 import { BATCH_10 } from "./batch10";
+import { BATCH_11 } from "./batch11";
+import { BATCH_12 } from "./batch12";
+import { BATCH_13 } from "./batch13";
+import { BATCH_14 } from "./batch14";
+import { BATCH_15 } from "./batch15";
 
 export const BATCHES: Record<string, OralCase[]> = {
   seed: SEED,
@@ -31,6 +36,11 @@ export const BATCHES: Record<string, OralCase[]> = {
   batch08: BATCH_08,
   batch09: BATCH_09,
   batch10: BATCH_10,
+  batch11: BATCH_11,
+  batch12: BATCH_12,
+  batch13: BATCH_13,
+  batch14: BATCH_14,
+  batch15: BATCH_15,
 };
 
 /** Seed cases first. The first two cases are the free sample. */

@@ -59,6 +59,23 @@ import { SAMPS_S50 } from "./s50";
 import { SAMPS_S51 } from "./s51";
 import { SAMPS_S52 } from "./s52";
 import { SAMPS_S53 } from "./s53";
+import { SAMPS_S54 } from "./s54";
+import { SAMPS_S55 } from "./s55";
+import { SAMPS_S56 } from "./s56";
+import { SAMPS_S57 } from "./s57";
+import { SAMPS_S58 } from "./s58";
+import { SAMPS_S59 } from "./s59";
+import { SAMPS_S60 } from "./s60";
+import { SAMPS_S61 } from "./s61";
+import { SAMPS_S62 } from "./s62";
+import { SAMPS_S63 } from "./s63";
+import { SAMPS_S64 } from "./s64";
+import { SAMPS_S65 } from "./s65";
+import { SAMPS_S66 } from "./s66";
+import { SAMPS_S67 } from "./s67";
+import { SAMPS_S68 } from "./s68";
+import { SAMPS_S69 } from "./s69";
+import { SAMPS_S70 } from "./s70";
 
 export const SAMP_BATCHES: Record<string, Samp[]> = {
   s01: SAMPS_S01,
@@ -114,6 +131,23 @@ export const SAMP_BATCHES: Record<string, Samp[]> = {
   s51: SAMPS_S51,
   s52: SAMPS_S52,
   s53: SAMPS_S53,
+  s54: SAMPS_S54,
+  s55: SAMPS_S55,
+  s56: SAMPS_S56,
+  s57: SAMPS_S57,
+  s58: SAMPS_S58,
+  s59: SAMPS_S59,
+  s60: SAMPS_S60,
+  s61: SAMPS_S61,
+  s62: SAMPS_S62,
+  s63: SAMPS_S63,
+  s64: SAMPS_S64,
+  s65: SAMPS_S65,
+  s66: SAMPS_S66,
+  s67: SAMPS_S67,
+  s68: SAMPS_S68,
+  s69: SAMPS_S69,
+  s70: SAMPS_S70,
 };
 
 /** Every authored SAMP, including any held back from release. Tests check all of these. */
