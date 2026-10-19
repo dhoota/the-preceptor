@@ -106,3 +106,43 @@ Single key positions (first to fifth): 4, 4, 3, 4, 4. The key is the longest opt
 - 50 q1 cites Tintinalli for the reasoning about a medical cause behind a crash. No guideline was found that states it directly.
 - 51 q3: the AAFP review reserves CT for an abnormal film, recurrent hemoptysis or cancer risk. Two days of streaky sputum could be read as recurrent. CT of the chest is not offered as an option, so the key stays unambiguous.
 - Unrequested changes: 48's PPI question dropped, 50's old q2 dropped, 50's old q5 removed under the coordinator's ruling, and the distractor wording changes needed to keep the key from being the longest option.
+
+## Round 3
+
+This round answers `docs/reviews/q500-verify2-s68.md` and the coordinator's rulings: no D1 slot, 51 q1 rebuilt, 52 q3 replaced. Only `src/samps/s68/gi-bleed.ts` and this report were edited. The type check shows no s68 errors. `SAMP_BATCH=s68` samps, samp-quality and citations tests passed: 3 files, 128 tests. Single key positions (first to fifth) are 4, 4, 3, 4, 4. The key is the longest option in 3 of 19 single questions.
+
+### Fixes
+
+- **48 q4.** The octreotide sentence now reads: "Octreotide, a somatostatin analogue, can reduce transfusion needs in angiodysplasia bleeding, but it does not remove the shear stress that causes her bleeding." This matches the OCEAN trial, whose abstract I read on PubMed (38158089): 11.0 against 21.2 transfusion units, a reduction of 10.2, 95% CI 2.4 to 18.1. The review is no longer cited for "no benefit". The key is unchanged. The trial is not added as a source, because each question cites one source and the key rests on the review.
+- **49 q3 (new menu, select one, KF1, a medication clue).** It asks which recently started drug would most have raised her rivaroxaban level. The key is itraconazole 200 mg PO.
+  - The distractors are peer prescriptions: amoxicillin, azithromycin, carbamazepine, doxycycline, levofloxacin and rifampin.
+  - Source: 2021 EHRA practical guide (Steffel, Europace 2021, https://pubmed.ncbi.nlm.nih.gov/33895845/). I read the full accepted manuscript from openaccess.sgul.ac.uk.
+  - The guide gives itraconazole and ketoconazole +160% AUC with rivaroxaban, a strong inhibitor that "should not be used". It says rifampicin and carbamazepine "markedly reduce NOAC plasma levels". It gives azithromycin "No PK data". Amoxicillin, doxycycline and levofloxacin are not listed.
+  - I excluded clarithromycin (+50%) and fluconazole (+42%) so that the single key is not arguable.
+  - It is not gi-bleed-03 q3. It does not name rivaroxaban as held or reversed. It stays before q4.
+- **50 q1.**
+  - The key is now the stem fact "Car drifting slowly off the road".
+  - The explanation now says a negative eFAST "makes a large intraperitoneal bleed less likely but does not exclude retroperitoneal or pelvic bleeding, so it cannot point to an illness", which no longer undercuts the key.
+  - The missing full stop is fixed.
+  - The 2 days of weakness are now supporting text only, not the key (chest-pain-29 q4 keys a symptom before the event).
+- **50 q4 update.** It now reads "a 9 mm ulcer is found on the posterior wall of the duodenum, and its visible vessel is injected and closed with a hemoclip". That is away from the oral case's q-dispo wording. The decision is unchanged.
+- **51 q1 (rebuilt, KF1, coagulopathy as the clue).** The blood test most likely to show a treatable contributor is the prothrombin time (INR), because of vitamin K deficiency from malabsorption.
+  - The stem adds that he takes fat-soluble vitamins but often skips his enzymes and vitamins.
+  - Source: Debray 2011 (ECFS), full text read: "An isolated decrease in cofactors VII, X and II suggest vitamin K deficiency that should be corrected with oral or intramuscular vitamin K supplementation."
+- **51 q2.** It is re-cited to Fried MP, Epistaxis, Merck Manual Professional Version, 2025 (page read): "Swallowed blood may lead to gastric irritation followed by vomiting, hematemesis, or melena." The explanation now says that swallowed blood appearing as melena is well described after a nosebleed, and that blood swallowed from the airway behaves the same way. The CF Foundation guideline is no longer cited anywhere and has been removed from the sources. The AAFP source was dropped with the old q3.
+- **51 q3 (replaced, KF4).** It asks which finding would most suggest blood loss beyond what he has coughed up. The key is a hemoglobin fall of 35 g/L. The arithmetic: 70 mL/kg x 52 kg is about 3.6 L of blood, and a quarter of that is about 900 mL, against 100 mL of hemoptysis. The other findings are expected from swallowed blood, from fever or from his lung disease. Source: Tintinalli, accepted earlier as a standard text, though its text was not read.
+- **52 q3 (replaced, KF1).** The most likely bleeding artery is the splenic artery. Tarar 2022 (page read) gives splenic 54%, gastroduodenal 16%, and hepatic and pancreaticoduodenal 11% each. The q4 update now says "a 2 cm arterial pseudoaneurysm", so it does not name the q3 key.
+
+### Uniqueness checks
+
+I grepped the gi-bleed, shock and abdominal-pain catalogues and the batch15 oral case for: itraconazole, P-glycoprotein, interaction, prothrombin time and INR keys, vitamin K, splenic artery, drift, and hemoglobin fall. None of these is a key in any of them. Contacts named for the reviewer:
+
+- 51 q3: signed gi-bleed-22 q1 keys "Fall in hemoglobin of 61 g/L" as the sign of hidden blood loss in shock. Ours keys a hemoglobin fall disproportionate to visible hemoptysis, which means a second source. The decision differs (proportion against the visible loss), but the finding type is shared. If the reviewer judges it a repeat, I have no clean KF4 alternative left in this case that avoids gi-bleed-05, 18, 19, 23, 24 and 47.
+- 51 q1: gi-bleed-17 (newborn vitamin K deficiency bleeding) keys the diagnosis, CT head, then plasma and vitamin K. Ours keys the choice of test (prothrombin time) for an acquired deficiency from cystic fibrosis malabsorption.
+- 49 q3: a cva item keys interactions that lower DOAC levels (rifampin, carbamazepine) as a cause of stroke on a DOAC. Ours keys a strong inhibitor raising the level as a bleeding clue, and the inducers are distractors.
+- 52 q3: no artery-identity key exists. gi-bleed-01 keys splenic embolization for varices due to splenic vein thrombosis, which is a different decision.
+
+### Uncertain
+
+- 49 q3 tags a drug interaction as key feature 1 (medications as a clue to the source and cause of bleeding). The physician may prefer to read it as risk assessment.
+- 51 q1 assumes he has a prolonged prothrombin time. The cited guidance supports the test as the way to detect vitamin K deficiency in cystic fibrosis, but the question gives no result.

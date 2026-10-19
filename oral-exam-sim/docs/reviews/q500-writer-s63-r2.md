@@ -58,3 +58,43 @@ I read the whole arrhythmia catalogue (`scratchpad/q500/catalog/arrhythmia.md`),
 - arrhythmia-49 q1 distractor "Cool to 31°C for 24 hours": ERC-ESICM 2022 considers 32 to 36°C and AHA uses 32 to 37.5°C, so 31°C is outside both.
 - arrhythmia-52 q4: the ERC wording on instability was read in the official German translation, not the English text. The key is the only option that matches a listed life-threatening feature. A rate of 168/minute is the tempting distractor, and the explanation says why it is not enough on its own.
 - arrhythmia-50 q1: ESC lists a family history of young sudden death as a minor high-risk feature, which matters when the syncope looks arrhythmic. The other options are low-risk or neutral, so only one answer is defensible.
+
+## Round 3
+
+Fixes from `docs/reviews/q500-verify2-s63.md` and the coordinator rulings. Only `src/samps/s63/arrhythmia.ts` and this report were edited. arrhythmia-48 and arrhythmia-51 are unchanged. 52 q1, q3 and q4 are unchanged except that q4 now cites ERC 2025.
+
+| SAMP | Question | Required fix | What was done |
+|---|---|---|---|
+| arrhythmia-49 | q1 | Ruling (a): an oral-case model line counts as a repeat. Rebuild q1 on a temperature-control decision the bank does not hold, keeping KF8 | New q1 (KF8): temperature control starts in the department while she boards. The question asks for the sedation plan during temperature control. Key "Propofol and remifentanil infusions". Distractors: midazolam with fentanyl, repeated lorazepam, neuromuscular blockade with propofol, and inhaled sevoflurane. Source: ERC-ESICM 2025 post-resuscitation guideline, full text read. It suggests short-acting IV sedatives with daily holds so the neurological examination is not confounded, says propofol-remifentanil had far lower odds of delayed awakening than midazolam-fentanyl under temperature control, and recommends against systematic neuromuscular blockade except in ARDS with critical hypoxemia. It also reports higher 90-day mortality with sevoflurane than propofol in a trial. The no-rewarming and fever decisions are gone. The stem temperature changed from 35.1°C to 35.6°C, so no number from the drowning case is reused. |
+| arrhythmia-49 | q3 | Ruling (c): name ERC, add the AHA position, check ERC 2025 | The update now says "Your department follows European Resuscitation Council guidance", and the prompt says "under this guidance". The prompt still starts "Which of the following". The explanation adds: "AHA guidance does not recommend routine pacing in cardiac arrest, so the ERC exception applies only to asystole with P waves." ERC 2025 adult ALS was opened in full. It keeps the statement ("check the ECG carefully for the presence of P waves because, unlike true asystole, this is more likely to respond to cardiac pacing", and "Do not attempt pacing for asystole unless P waves are present"), so q2, q3 and 52 q4 now cite `erc-als-2025`. The atropine sentence now reads "Atropine is not among the drugs ERC lists for cardiac arrest". |
+| arrhythmia-49 | q4 | Ruling (d): the update names neither the q1 nor the q3 answer, and "artifact" spelling | The update now reads "After her LAD is stented she is admitted to the ICU. During chest physiotherapy, lead II shows ...". No pacing and no device temperature are mentioned. The option and the explanation now say "artifact". The source id `jafary-artefact-2007` is unchanged, as allowed. |
+| arrhythmia-50 | q1 | Ruling (e): a new KF1 decision (not family history, not posture), and a key that is not the longest option | New q1: "Which of the following details of her history adds a point to her Canadian Syncope Risk Score?" Key "Atrial fibrillation at 33". Distractors are age, brief limb jerks, nausea afterward and sweating afterward. Every option is a detail of her history (ruling B8). The key (24 characters) ties with "Sweating after the faint", so it is not the single longest option. The explanation adds that her QTc of 305 ms scores nothing, because only a QTc over 480 ms counts. Source: Thiruganasambandamoorthy 2016 (CMAJ), replacing ESC syncope 2018, which is no longer cited in the file. |
+| arrhythmia-52 | q2 | Ruling (b): no D1 row, rebuild as a new KF7 decision | The menu was replaced by a single question. Thirty minutes after the reperfusion VF he goes into AF at 98/minute, with BP 128/76 mmHg, clear lungs and no pain, and his enoxaparin is already given. Key "Monitor on enoxaparin". Distractors are amiodarone, digoxin, IV metoprolol and synchronized cardioversion. ESC ACS 2023 text: AF in ACS is mostly well tolerated and needs no specific treatment apart from anticoagulation. IV beta blockers are for when rate control is needed without HF or hypotension, amiodarone is for acute HF, digoxin is for hypotension, and cardioversion is for instability. It stays tagged KF7 (supportive care for a rhythm that arises at reperfusion, with drugs only when clearly needed). |
+
+### Uniqueness (round 3)
+
+I reread the arrhythmia and ischemic heart disease catalogues and grepped environmental.md, loc.md, chest-pain.md and all of `src/samps` and `src/cases`.
+- Sedation choice during post-arrest temperature control: no item. Remifentanil and sevoflurane appear nowhere in the bank as a post-arrest decision. The oral cases mention sedation only for shivering or seizures (propofol is raised for seizures).
+- CSRS: arrhythmia-46 q1 keys the total score in a vasovagal faint (-3). No item keys which history detail scores, or that a documented atrial arrhythmia counts as heart disease.
+- AF after fibrinolysis or reperfusion in STEMI: no item keys its management. arrhythmia-27 has permanent AF with a STEMI, but its keys are about potassium, vagal slowing, torsades and clarithromycin.
+
+### Batch figures after round 3
+
+- 20 questions: 18 single, 2 menu (50 q3 and 51 q2). The batch still has at least one menu.
+- Single key positions (first to fifth): 3, 4, 3, 4, 4. Maximum 22%.
+- The key is the single longest option in 5 of 18 singles (28%).
+- Every key feature is covered. KF8: 49 q1. KF7: 52 q1 to q3. KF1: 48 q1 and 50 q1. KF4: 49 q3, 51 q3 and 52 q4.
+- Checks: type check clean for s63, and tests 128 of 128 pass.
+
+### Sources (round 3)
+
+- Nolan JP, Sandroni C, Cariou A, and colleagues. ERC-ESICM Guidelines 2025: post-resuscitation care. Resuscitation 2025;215:110809. Full text read from a public PDF copy (certifico.com attachment 45829). The DOI https://doi.org/10.1016/j.resuscitation.2025.110809 was confirmed in Europe PMC.
+- Soar J and colleagues. ERC Guidelines 2025: adult advanced life support. Resuscitation 2025;215:110769. Full text read from a public PDF copy (certifico.com attachment 45831). The DOI https://doi.org/10.1016/j.resuscitation.2025.110769 was confirmed in Europe PMC (PMID 41117572). Its instability list (shock, syncope, heart failure, myocardial ischemia) matches the 52 q4 explanation.
+- Thiruganasambandamoorthy V and colleagues. Canadian Syncope Risk Score. CMAJ 2016. The abstract and the 9 items were confirmed in Europe PMC, and the item weights in the Uit Het Broek 2023 scoping review (PMC10508018). The heart-disease footnote, which counts a documented history of atrial or ventricular arrhythmia, was confirmed from a reproduction at https://resus.com.au/canadian-syncope-risk-score/. The cited URL is the DOI https://doi.org/10.1503/cmaj.151469, confirmed in Europe PMC. The CMAJ page itself was not opened (403).
+- ESC ACS 2023, from the reviewer's downloaded text: section 12.2.5.1 and the atrial fibrillation rows of Recommendation Table 14.
+
+### Uncertain (round 3)
+
+- 49 q1 is tagged KF8 because sedation is a core part of delivering temperature control, and the bank holds no untaken temperature-control decision. A reviewer may judge the KF8 fit loose. The propofol-remifentanil evidence is a before-and-after study plus a small trial, presented by ERC as supporting short-acting agents. ERC notes that propofol raises the need for a vasopressor, and the explanation says to watch her BP.
+- 52 q2 is tagged KF7. AF is not a classic reperfusion rhythm the way AIVR is, but it arises in the reperfusion window and the decision is supportive care without a drug. It could be retagged KF4 if the reviewer prefers. 52 q2 and q3 both lead to monitoring without a drug, for different rhythms (AF with anticoagulation, then Mobitz I).
+- 50 q1 rests on the score's footnote definition of heart disease. MDCalc's shorter wording ("atrial fibrillation or flutter") agrees.
