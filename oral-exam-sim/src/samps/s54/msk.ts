@@ -242,13 +242,13 @@ export const MSK_S54: Samp[] = [
         update: "His corrected calcium is 3.18 mmol/L. He is alert, and his pain is controlled with acetaminophen and a small dose of IV opioid.",
         prompt: "Which of the following is the most appropriate plan for this patient after his initial care?",
         options: [
-          "Analgesia and fracture clinic in 1 week",
           "Discharge and hematology clinic in 1 week",
           "Hospital admission with IV saline",
           "Oral fluids and family physician review",
           "Outpatient skeletal survey, then review",
+          "Rib fracture clinic review in 1 week",
         ],
-        correct: 2,
+        correct: 1,
         explanation:
           "A corrected calcium of 3.18 mmol/L with a creatinine of 188 umol/L needs IV saline and monitoring in hospital, and the IMWG advises high fluid intake for myeloma-related kidney injury. Admission also allows prompt hematology assessment of a likely new myeloma. Discharge to a hematology clinic in a week, or an outpatient skeletal survey first, leaves the hypercalcemia and kidney injury untreated. Oral fluids are not enough at this calcium and creatinine. A fracture clinic visit treats only the rib.",
         keyFeature: { topic: "msk", n: 8 },
