@@ -10,7 +10,7 @@ const S = {
   gulati: { id: "aha-chest-pain-2021", citation: "Gulati M, Levy PD, Mukherjee D, et al. 2021 AHA/ACC/ASE/CHEST/SAEM/SCCT/SCMR guideline for the evaluation and diagnosis of chest pain: executive summary. J Am Coll Cardiol. 2021.", url: "https://doi.org/10.1016/j.jacc.2021.07.052" },
   granger: { id: "grace-2003", citation: "Granger CB, Goldberg RJ, Dabbous O, et al. Predictors of hospital mortality in the Global Registry of Acute Coronary Events. Arch Intern Med. 2003.", url: "https://doi.org/10.1001/archinte.163.19.2345" },
   udmi: { id: "udmi-2018", citation: "Thygesen K, Alpert JS, Jaffe AS, et al. Fourth universal definition of myocardial infarction (2018). J Am Coll Cardiol. 2018.", url: "https://doi.org/10.1016/j.jacc.2018.08.1038" },
-  lipids: { id: "ccs-dyslipidemia-2021", citation: "Pearson GJ and colleagues. 2021 Canadian Cardiovascular Society guidelines for the management of dyslipidemia for the prevention of cardiovascular disease in adults. Can J Cardiol. 2021.", url: "https://doi.org/10.1016/j.cjca.2021.03.016" },
+  tnk: { id: "tnkase-pm-2023", citation: "Hoffmann-La Roche Limited. Product monograph. TNKase (tenecteplase for injection). Date of revision 21 March 2023.", url: "https://pdf.hres.ca/dpd_pm/00069984.PDF" },
   ccs2019: { id: "ccs-stemi-2019", citation: "Wong GC, Welsford M, Ainsworth C, et al. 2019 Canadian Cardiovascular Society/Canadian Association of Interventional Cardiology guidelines on the acute management of ST-elevation myocardial infarction: focused update on regionalization and reperfusion. Can J Cardiol. 2019.", url: "https://doi.org/10.1016/j.cjca.2018.11.031" },
   stream2: { id: "stream-2-2023", citation: "Van de Werf F, Ristic AD, Averkov OV, et al. STREAM-2: half-dose tenecteplase or primary percutaneous coronary intervention in older patients with ST-segment-elevation myocardial infarction. Circulation. 2023.", url: "https://doi.org/10.1161/CIRCULATIONAHA.123.064521" },
   dcHyper: { id: "dc-hyperglycemic-2018", citation: "Diabetes Canada Clinical Practice Guidelines Expert Committee, Goguen J, Gilbert J. Hyperglycemic emergencies in adults. Can J Diabetes. 2018.", url: "https://doi.org/10.1016/j.jcjd.2017.10.013" },
@@ -115,11 +115,11 @@ export const ISCHEMIC_HEART_DISEASE_S57: Samp[] = [
       {
         id: "q1",
         kind: "single",
-        prompt: "Which of the following is the smallest new horizontal ST depression in two contiguous leads that counts as an ischemic ECG change?",
+        prompt: "Under the fourth universal definition of MI, which of the following is the smallest new horizontal ST depression in two contiguous leads that counts as ischemic?",
         options: ["0.5 mm", "1 mm", "1.5 mm", "2 mm", "3 mm"],
         correct: 0,
         explanation:
-          "The universal definition of MI counts new horizontal or downsloping ST depression of 0.5 mm or more in two contiguous leads as an ECG sign of ischemia when there is no LVH or bundle branch block. Her new 1 mm horizontal depression in V4 to V6 meets that criterion. A cutoff of 1 mm would miss new depression of 0.5 to under 1 mm that already meets it, and cutoffs of 1.5 to 3 mm would miss more. Small new depressions are easy to dismiss, so they are judged against this threshold and against old tracings.",
+          "The universal definition of MI counts new horizontal or downsloping ST depression of 0.5 mm or more in two contiguous leads as an ECG sign of ischemia when there is no LVH or left bundle branch block. Her new 1 mm horizontal depression in V4 to V6 meets that criterion. A cutoff of 1 mm would miss new depression of 0.5 to under 1 mm that already meets it, and cutoffs of 1.5 to 3 mm would miss more. Small new depressions are easy to dismiss, so they are judged against this threshold and against old tracings.",
         keyFeature: { topic: TOPIC, n: 2 },
         source: "udmi-2018",
       },
@@ -265,7 +265,7 @@ export const ISCHEMIC_HEART_DISEASE_S57: Samp[] = [
     topic: TOPIC,
     title: "Chest pressure on the island",
     stem:
-      "You are working in a hospital on an island with no airstrip. Transfer to the nearest PCI centre takes at least 3 hours by ferry and road. A 78-year-old woman presents to the emergency department with 90 minutes of central chest pressure and nausea. She has hypertension treated with amlodipine. She has no history of bleeding, stroke, recent surgery or trauma, and she takes no anticoagulant. She is pale and her lungs are clear. Her ECG shows 6 mm ST elevation in V2, 3 to 5 mm ST elevation in V1, V3 and V4, and no Q waves. Creatinine is 84 umol/L. The team decides on fibrinolysis, and she chews ASA 160 mg.",
+      "You are working in a hospital on an island with no airstrip. Transfer to the nearest PCI centre takes at least 3 hours by ferry and road. A 78-year-old woman presents to the emergency department with 100 minutes of central chest pressure and nausea. She has hypertension treated with amlodipine. She has no history of bleeding, stroke, recent surgery or trauma, and she takes no anticoagulant. She is pale and her lungs are clear. Her ECG shows 6 mm ST elevation in V2, 3 to 5 mm ST elevation in V1, V3 and V4, and no Q waves. Creatinine is 84 umol/L. The team decides on fibrinolysis, and she chews ASA 160 mg.",
     vitals: { temperature: "36.5°C oral", pulse: "92/minute", resp: "18/minute", bp: "146/84 mmHg", o2sat: "96% on room air", weight: "62 kg" },
     questions: [
       {
@@ -276,25 +276,26 @@ export const ISCHEMIC_HEART_DISEASE_S57: Samp[] = [
           "Age of 78 years",
           "Creatinine of 84 umol/L",
           "Nausea with the pressure",
-          "Onset 90 minutes ago",
+          "Onset 100 minutes ago",
           "Treated hypertension",
         ],
         correct: 3,
         explanation:
-          "Fibrinolysis gives its greatest benefit in the first 2 to 3 hours after symptom onset, and the CCS/CAIC guideline suggests a pharmacoinvasive strategy for early presenters, with symptoms for under 3 hours, who cannot have rapid primary PCI. Her pressure began 90 minutes ago. Older age raises the risk of intracranial hemorrhage with fibrinolysis, so her age weighs against it rather than for it. A normal creatinine does not decide between fibrinolysis and PCI. Nausea is a common accompanying symptom and does not change the strategy. Her treated hypertension, with BP 146/84 mmHg, does not bar fibrinolysis but gives no reason to choose it.",
+          "Fibrinolysis gives its greatest benefit in the first 2 to 3 hours after symptom onset, and the CCS/CAIC guideline suggests a pharmacoinvasive strategy for early presenters, with symptoms for under 3 hours, who cannot have rapid primary PCI. Her pressure began 100 minutes ago. Older age raises the risk of intracranial hemorrhage with fibrinolysis, so her age weighs against it rather than for it, and the guideline suggests a half dose may be considered for patients older than 75. A normal creatinine does not decide between fibrinolysis and PCI. Nausea is a common accompanying symptom and does not change the strategy. Her treated hypertension, with BP 146/84 mmHg, does not bar fibrinolysis but gives no reason to choose it.",
         keyFeature: { topic: TOPIC, n: 6 },
         source: "ccs-stemi-2019",
       },
       {
         id: "q2",
         kind: "single",
-        prompt: "Which of the following tenecteplase doses is most appropriate for her?",
+        update: "Because of her age, the team plans to give half of the usual weight-based tenecteplase dose.",
+        prompt: "Which of the following tenecteplase doses matches that plan for her weight?",
         options: ["tenecteplase 15 mg IV", "tenecteplase 17.5 mg IV", "tenecteplase 30 mg IV", "tenecteplase 35 mg IV", "tenecteplase 50 mg IV"],
         correct: 1,
         explanation:
-          "At 62 kg she falls in the band of 60 to under 70 kg, where the full weight-based tenecteplase dose is 35 mg. She is 78, and the CCS/CAIC guideline advises that a half dose may be considered for patients older than 75 in a pharmacoinvasive strategy, which gives 17.5 mg. In the STREAM trial an excess of intracranial hemorrhage in older patients was negated after a half dose was adopted above age 75. A full 35 mg ignores her age. The 30 mg dose is the full dose for under 60 kg, and 15 mg halves the wrong band. The 50 mg maximum is for 90 kg or more.",
+          "The TNKase monograph sets the full tenecteplase dose by weight band, and 60 to under 70 kg takes 35 mg. At 62 kg she is in that band, so half the usual dose is 17.5 mg. The 35 mg dose is the full dose, not the planned half dose. The 30 mg dose is the full dose for under 60 kg, and 15 mg is half of that wrong band. The 50 mg dose is the full dose for 90 kg or more. The monograph asks that benefit be weighed against bleeding in elderly patients, and in ASSENT-2 intracranial hemorrhage occurred in 1.7% of those aged 75 or older against 0.4% of those under 65.",
         keyFeature: { topic: TOPIC, n: 7 },
-        source: "ccs-stemi-2019",
+        source: "tnkase-pm-2023",
       },
       {
         id: "q3",
@@ -326,7 +327,7 @@ export const ISCHEMIC_HEART_DISEASE_S57: Samp[] = [
         source: "ccs-stemi-2019",
       },
     ],
-    sources: [S.ccs2019, S.stream2],
+    sources: [S.ccs2019, S.tnk, S.stream2],
     ...META,
   },
 

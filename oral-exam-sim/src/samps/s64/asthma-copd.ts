@@ -194,5 +194,126 @@ export const ASTHMA_COPD_S64: Samp[] = [
     sources: [S.huh, S.sehgal],
     ...META,
   },
-  /* CHUNK2 */
+  /* 51 Hypercapnic COPD on a new drug, bilevel ventilation set-up ---------- */
+  {
+    id: "asthma-copd-51",
+    topic: "asthma-copd",
+    title: "Hard to rouse after a bad week",
+    stem:
+      "A 74-year-old woman is brought to the emergency department by ambulance with 3 days of increasing breathlessness and purulent sputum. She has COPD with an FEV1 of 31% of predicted. She takes tiotropium-olodaterol, amlodipine, rosuvastatin and acetaminophen, and 3 weeks ago she started gabapentin 300 mg twice daily for pain after shingles. Her eGFR is 38 mL/minute/1.73 m2. She lives with her husband, walks to the corner store daily and has told her family physician she wants full treatment. After 1 hour of nebulized salbutamol and ipratropium, prednisone, doxycycline and oxygen titrated to 88 to 92%, she is drowsy but rousable and follows commands. Arterial gas: pH 7.29, PaCO2 69 mmHg, PaO2 60 mmHg, bicarbonate 32 mmol/L.",
+    vitals: { temperature: "37.4°C oral", pulse: "104/minute", resp: "26/minute", bp: "146/82 mmHg", o2sat: "90% on 2 L/minute by nasal prongs", weight: "61 kg" },
+    questions: [
+      {
+        id: "q1",
+        kind: "single",
+        prompt: "Which of the following medications most likely contributed to her drowsiness and hypercapnia?",
+        options: ["gabapentin", "ipratropium", "prednisone", "rosuvastatin", "tiotropium-olodaterol"],
+        correct: 0,
+        explanation:
+          "Health Canada reviewed reports of serious breathing problems with gabapentin, including when it is taken alone, and found the risk higher in older adults and in people with lung or kidney disease that affects breathing. She is 74, has severe COPD and an eGFR of 38, and started gabapentin 3 weeks ago, so it may be adding to her drowsiness and hypoventilation. Its prescriber should be told and the drug reviewed. Ipratropium, prednisone and rosuvastatin are not known to depress breathing, and tiotropium-olodaterol is her long-acting bronchodilator.",
+        keyFeature: { topic: "asthma-copd", n: 4 },
+        source: "health-canada-gabapentin-2016",
+      },
+      {
+        id: "q2",
+        kind: "single",
+        update: "Bilevel ventilation is to be started in the resuscitation room with a respiratory therapist.",
+        prompt: "Which of the following is the most appropriate interface for starting her bilevel ventilation?",
+        options: ["Full face mask", "Helmet interface", "High-flow nasal cannula", "Nasal mask only", "Nasal pillows"],
+        correct: 0,
+        explanation:
+          "BTS and ICS guidance advises a full face mask as the usual first interface, because mouth breathing predominates in acute hypercapnic failure, and a range of mask sizes should be at hand. A nasal mask or nasal pillows leak through the open mouth, and pillows dislodge more easily, so they are kept for patients who cannot tolerate a full face mask. A helmet triggers poorly and cannot deliver humidified gas. High-flow nasal cannula does not deliver bilevel pressure support.",
+        keyFeature: { topic: "asthma-copd", n: 7 },
+        source: "bts-ics-ahrf-2016",
+      },
+      {
+        id: "q3",
+        kind: "single",
+        update: "Bilevel ventilation runs at IPAP 16 and EPAP 5 cm H2O. After 1 hour her pH is 7.28 and PaCO2 72 mmHg. Air hisses from around the interface, and the ventilator often misses her breaths.",
+        prompt: "Which of the following is the most appropriate next step in her ventilation?",
+        options: ["Increase oxygen to 6 L/minute", "Intubate for failed NIV", "Lower the IPAP to 10 cm H2O", "Refit or change the mask", "Switch to high-flow nasal oxygen"],
+        correct: 3,
+        explanation:
+          "A large leak explains both the missed breaths and the unchanged gas. BTS and ICS guidance says that before NIV is judged to have failed, common technical problems must be fixed, and excessive leak is the first cause to correct when the ventilator does not trigger despite visible effort. Failure means acidosis that persists or worsens despite optimized delivery, which has not yet been tried. Oxygen flows above 4 L/minute can worsen leak and asynchrony, and settings should be optimized before FiO2 is raised. Lowering the IPAP reduces her ventilation. Switching to high-flow oxygen abandons pressure support before it has been delivered properly.",
+        keyFeature: { topic: "asthma-copd", n: 7 },
+        source: "bts-ics-ahrf-2016",
+      },
+      {
+        id: "q4",
+        kind: "menu",
+        update: "The leak is fixed. A resident wonders whether intensive care would be futile for someone with her lung function if she later needs intubation.",
+        prompt: "Which of the following statements about her outcome if she needs invasive ventilation are most accurate?",
+        options: ["FEV1 below 35% rules out intubation", "Her age alone makes ICU care futile", "Most intubated patients die in hospital", "Most survivors would choose it again", "Prognostic scores predict her outcome well", "Survival is often underestimated"],
+        select: 2,
+        correct: [3, 5],
+        explanation:
+          "BTS and ICS guidance warns that clinicians are likely to underestimate survival in COPD exacerbations treated with invasive ventilation. In one study, 62% of patients survived to 180 days when the predicted survival was 49%, and most patients who survive invasive ventilation say they would choose it again. Prognostic tools can inform the discussion but predict poorly for one patient, so neither her FEV1 of 31% nor her age alone settles the question. Since most intubated patients survive to leave hospital, her stated wish for full treatment should guide the plan.",
+        keyFeature: { topic: "asthma-copd", n: 7 },
+        source: "bts-ics-ahrf-2016",
+      },
+    ],
+    sources: [S.hcGabapentin, S.btsIcs],
+    ...META,
+  },
+
+  /* 52 Drowsy teenager with a nearly silent chest --------------------------- */
+  {
+    id: "asthma-copd-52",
+    topic: "asthma-copd",
+    title: "Brought in from a group home",
+    stem:
+      "A 16-year-old girl is brought to the emergency department by ambulance from her group home with 6 hours of worsening breathlessness after a cold. She has asthma and takes fluticasone 250 mcg twice daily, which staff watch her take. She uses salbutamol by pMDI and spacer and has taken 12 puffs since this morning. She sits hunched forward, uses her accessory muscles and speaks in single words. She is drowsy and slow to respond, and her chest is nearly silent.",
+    vitals: { temperature: "37.0°C oral", pulse: "138/minute", resp: "34/minute", bp: "118/70 mmHg", o2sat: "87% on room air", weight: "55 kg" },
+    questions: [
+      {
+        id: "q1",
+        kind: "single",
+        update: "She tries to blow into a peak flow meter but cannot complete the effort.",
+        prompt: "Which of the following is the most appropriate approach to measuring the severity of her airflow obstruction?",
+        options: ["Arterial gas before starting oxygen", "Treat now and measure peak flow later", "Use her SpO2 alone to grade severity", "Venous gas to grade severity first", "Wait for a peak flow before treating"],
+        correct: 1,
+        explanation:
+          "GINA strongly recommends measuring peak flow or FEV1, before treatment if possible but without unduly delaying it, and again at 1 hour and until a response or plateau is clear. She is drowsy with a nearly silent chest, so salbutamol, ipratropium, oxygen and a systemic corticosteroid start now and peak flow is measured once she can blow. Blood gases are considered in patients not responding, and controlled oxygen continues while they are drawn. A gas does not need to come first. Saturation alone underestimates airflow obstruction, and oximeters can overestimate saturation in people with dark skin.",
+        keyFeature: { topic: "asthma-copd", n: 3 },
+        source: "gina-2026",
+      },
+      {
+        id: "q2",
+        kind: "single",
+        prompt: "Which of the following is the most appropriate way to deliver her salbutamol?",
+        options: ["Breath-actuated pMDI", "Dry powder inhaler with a breath hold", "IV infusion titrated to response", "Nebulizer by face mask", "pMDI and spacer with a mouthpiece"],
+        correct: 3,
+        explanation:
+          "She is drowsy, speaks in single words and moves very little air, so she cannot seal a mouthpiece, time a breath or draw hard enough to trigger a breath-actuated or dry powder device. GINA notes that a pMDI with a spacer works as well as a nebulizer in most exacerbations, but patients with life-threatening asthma were not included in those studies and the evidence is weaker in near-fatal asthma. A nebulizer by face mask needs no effort from her and runs alongside her oxygen. GINA does not support routine IV beta2-agonists in severe exacerbations.",
+        keyFeature: { topic: "asthma-copd", n: 5 },
+        source: "gina-2026",
+      },
+      {
+        id: "q3",
+        kind: "single",
+        update: "Forty minutes later she is more alert and speaks in short phrases. Her wheeze is now loud throughout both lungs.",
+        prompt: "Which of the following best explains the louder wheeze she now has?",
+        options: ["Increasing bronchospasm", "Mucus plugging", "New pneumothorax", "Salbutamol toxicity", "Widening of her airways"],
+        correct: 4,
+        explanation:
+          "GINA notes that wheeze may be absent in a severe exacerbation because airflow is so reduced, and that a quiet chest means too little ventilation to produce a wheeze. Her louder wheeze, together with better alertness and longer phrases, means more air is moving through airways that are opening. Worsening bronchospasm would bring more distress, not less. A mucus plug or a pneumothorax reduces breath sounds over one area rather than making wheeze louder everywhere. Salbutamol toxicity causes tachycardia, tremor, low potassium and lactic acidosis, not wheeze.",
+        keyFeature: { topic: "asthma-copd", n: 3 },
+        source: "gina-2026",
+      },
+      {
+        id: "q4",
+        kind: "single",
+        update: "She is to be admitted to the ward on prednisone 50 mg PO daily.",
+        prompt: "Which of the following plans for her daily fluticasone is most appropriate while she is in hospital?",
+        options: ["Continue it at her usual dose", "Hold it while on nebulizers", "Replace it with montelukast", "Stop it during the prednisone course", "Switch to salmeterol alone"],
+        correct: 0,
+        explanation:
+          "GINA advises that patients admitted to hospital for an asthma exacerbation should continue, or be prescribed, ICS-containing treatment, because inhaled corticosteroids lower the risk of later severe attacks and asthma death. Prednisone treats this flare but does not replace her daily controller, so holding or stopping it while she takes prednisone or nebulizers leaves a gap. Montelukast is less effective than an inhaled corticosteroid. GINA advises against treating asthma with a long-acting beta2-agonist such as salmeterol without an inhaled corticosteroid.",
+        keyFeature: { topic: "asthma-copd", n: 6 },
+        source: "gina-2026",
+      },
+    ],
+    sources: [S.gina],
+    ...META,
+  },
 ];
