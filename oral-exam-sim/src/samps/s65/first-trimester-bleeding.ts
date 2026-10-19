@@ -113,7 +113,7 @@ export const FIRST_TRIMESTER_BLEEDING_S65: Samp[] = [
         options: ["Bilateral dermoid cysts", "Bilateral tubal pregnancies", "Endometriomas", "Theca lutein cysts", "Tubo-ovarian abscesses"],
         correct: 3,
         explanation:
-          "Smooth, mobile, painless masses in both adnexa beside a molar pregnancy are most likely theca lutein cysts. Very high hCG overstimulates the ovaries, and 25 to 50% of patients with a mole develop these cysts. They usually regress after evacuation, and rupture is rare, at about 1 to 2%. Tubo-ovarian abscesses are tender and come with fever. Bilateral tubal pregnancies are extremely rare and would not explain the vesicles at the os. Dermoid cysts and endometriomas are not caused by the pregnancy and are seldom bilateral and this large at once.",
+          "Smooth, mobile, painless masses in both adnexa beside a molar pregnancy are most likely theca lutein cysts. Very high hCG overstimulates the ovaries, and 25 to 50% of patients with a mole develop these cysts. They usually regress after evacuation, and rupture is rare, at about 1 to 2%. Tubo-ovarian abscesses are tender and come with fever. Bilateral tubal pregnancies are extremely rare and would not explain the vesicles at the os. Dermoid cysts and endometriomas do not arise from the pregnancy, so they would be a coincidence beside a mole.",
         keyFeature: { topic: "first-trimester-bleeding", n: 3 },
         source: "braga-mole-2025",
       },
@@ -137,7 +137,7 @@ export const FIRST_TRIMESTER_BLEEDING_S65: Samp[] = [
         options: ["Equal to the risk after a miscarriage", "Higher than usual given her features", "Lower than usual given her age", "Present only if bleeding continues", "Removed once the uterus is empty"],
         correct: 1,
         explanation:
-          "Her age of 41, an hCG of 310 000 IU/L and theca lutein cysts are each markers of a high-risk mole, and with these features the rate of postmolar gestational trophoblastic neoplasia can reach 40 to 50%. She should hear this plainly before discharge, because it is why her hCG follow-up must not lapse. Age over 40 raises the risk rather than lowering it. Emptying the uterus does not remove the risk, and persistent disease is often silent, so it is found by falling or rising hCG rather than by bleeding. A miscarriage carries no comparable risk.",
+          "Her age of 41, an hCG of 310 000 IU/L and theca lutein cysts are each markers of a high-risk mole, and with these features the rate of postmolar gestational trophoblastic neoplasia can reach 40 to 50%. She should hear this plainly before discharge, because it is why her hCG follow-up must not lapse. Age over 40 raises the risk rather than lowering it. Emptying the uterus does not remove the risk, and persistent disease is often silent, so it is found by an hCG that plateaus or rises rather than by bleeding. Her risk is far from that of a usual miscarriage.",
         keyFeature: { topic: "first-trimester-bleeding", n: 6 },
         source: "braga-mole-2025",
       },
