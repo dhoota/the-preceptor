@@ -92,7 +92,7 @@ export const ABDOMINAL_PAIN_S62: Samp[] = [
         id: "q1",
         kind: "single",
         prompt: "Which of the following findings today most strongly suggests a cause other than a urinary infection?",
-        options: ["Fever of 38.7°C", "Leukocytes on the urine dipstick", "Pain when the stretcher is bumped", "Pulse of 148/minute", "Vomiting four times today"],
+        options: ["Fever of 38.7°C at triage", "Leukocytes on the urine dipstick", "Pain when the stretcher is bumped", "Pulse of 148/minute", "Vomiting four times today"],
         correct: 2,
         explanation:
           "Crying when the stretcher is bumped is pain on jarring, a sign of peritoneal irritation that a bladder or kidney infection does not cause. Cough, percussion or hopping tenderness in the right lower quadrant was the strongest single predictor of appendicitis in the study that built the Pediatric Appendicitis Score. Fever, vomiting and a fast pulse occur with a urinary infection as well as with appendicitis, so they do not separate the two. The leukocytes on her dipstick were the basis of the first diagnosis and cannot argue against it.",
@@ -209,10 +209,11 @@ export const ABDOMINAL_PAIN_S62: Samp[] = [
     ...META,
   },
 
-  /* 51 Perforated diverticulitis masked by prednisone ------------------------ */
+  /* 51 Diverticulitis in a patient on long-term prednisone ------------------ */
   {
     id: "abdominal-pain-51",
     topic: "abdominal-pain",
+    alsoTopics: ["infectious-diseases"],
     title: "Severe pain but a soft abdomen",
     stem:
       "A 69-year-old woman presents to the emergency department with 2 days of left lower abdominal pain that is now constant and severe. She has needed two doses of hydromorphone since she arrived. She has polymyalgia rheumatica treated with prednisone 20 mg daily for 8 months, type 2 diabetes and known sigmoid diverticulosis. She has had no vomiting or rectal bleeding. Her abdomen is soft and mildly tender in the left lower quadrant, without guarding or rebound. Bowel sounds are reduced. Her white cell count is 10.8 x 10^9/L.",
@@ -232,39 +233,41 @@ export const ABDOMINAL_PAIN_S62: Samp[] = [
       {
         id: "q2",
         kind: "single",
-        prompt: "Which of the following diagnoses must be excluded alongside complicated diverticulitis in her?",
-        options: ["Acute mesenteric ischemia", "Biliary colic", "Irritable bowel syndrome", "Left ureteric colic", "Musculoskeletal wall pain"],
-        correct: 0,
+        update: "CT abdomen with IV contrast shows sigmoid diverticulitis with wall thickening and fat stranding. There is no abscess, extraluminal gas or free fluid.",
+        prompt: "Which of the following is the most appropriate treatment plan for her?",
+        options: ["Emergency sigmoid resection", "Home on oral antibiotics", "Home without antibiotics", "Hospital admission with antibiotics", "Observation without antibiotics"],
+        correct: 3,
         explanation:
-          "Severe abdominal pain out of proportion to the examination should be assumed to be acute mesenteric ischemia until it is disproven, and she is 69 with diabetes and needs repeated opioids for an abdomen that feels soft. Mesenteric ischemia carries a mortality of about 50% if untreated, and no laboratory test is accurate enough to exclude it. Ureteric colic can be severe but is not lethal and does not explain reduced bowel sounds. Biliary colic is felt in the right upper quadrant. Irritable bowel syndrome and abdominal wall pain are diagnoses made only after serious causes are excluded.",
-        keyFeature: { topic: "abdominal-pain", n: 2 },
-        source: "wses-ami-2022",
+          "Her CT shows uncomplicated diverticulitis, but she has taken prednisone 20 mg daily for 8 months, has diabetes and has needed IV opioids. WSES advises antibiotics against gram-negative bacilli and anaerobes in high-risk patients such as the immunocompromised, and regards immunocompromised patients as being at high risk of failing non-operative treatment, so she needs admission and close review. Care at home is suggested only for uncomplicated disease without significant comorbidities, and withholding antibiotics applies to immunocompetent patients. Nothing on her CT calls for emergency resection now.",
+        keyFeature: { topic: "infectious-diseases", n: 3 },
+        source: "wses-diverticulitis-2020",
       },
       {
         id: "q3",
         kind: "single",
-        prompt: "Which of the following is the most appropriate next step to evaluate her pain?",
-        options: ["Abdominal ultrasound", "CT abdomen with IV contrast", "Observe and reassess tomorrow", "Upright chest radiograph", "Urgent colonoscopy"],
-        correct: 1,
+        update: "She is admitted. She is drinking fluids without vomiting and has no drug allergies.",
+        prompt: "Which of the following antibiotic regimens is most appropriate for her?",
+        options: ["amoxicillin-clavulanate PO", "cefuroxime axetil PO", "ciprofloxacin and metronidazole PO", "metronidazole monotherapy PO", "trimethoprim-sulfamethoxazole PO"],
+        correct: 0,
         explanation:
-          "Contrast-enhanced CT is the imaging of first choice for suspected acute colonic diverticulitis, and the diagnosis should not rest on clinical examination alone, which is even less reliable in a patient on steroids. CT shows extraluminal gas, abscess and the extent of disease, and with an arterial phase it also shows the mesenteric vessels. An upright chest radiograph may show free air but cannot grade the disease, and an ambiguous ultrasound needs CT anyway. Observation delays the diagnosis in a patient at high risk of perforation. Colonoscopy has no role in acute assessment.",
-        keyFeature: { topic: "abdominal-pain", n: 2 },
-        source: "wses-diverticulitis-2020",
+          "Amoxicillin-clavulanate covers gram-negative bacilli and anaerobes by mouth, and WSES prefers oral antibiotics whenever possible. Ciprofloxacin with metronidazole also covers both groups, but the Canadian ciprofloxacin monograph warns that the risk of tendinitis and tendon rupture is further increased in patients over 60 and in those taking corticosteroids, and she is both 69 and on prednisone. Cefuroxime and trimethoprim-sulfamethoxazole on their own leave out anaerobes, and metronidazole on its own leaves out gram-negative bacilli.",
+        keyFeature: { topic: "infectious-diseases", n: 8 },
+        source: "pms-ciprofloxacin-pm-2022",
       },
       {
         id: "q4",
         kind: "single",
-        update: "CT shows perforated sigmoid diverticulitis with a 4 cm pelvic abscess and free air throughout the abdomen. Her BP is now 104/62 mmHg.",
-        prompt: "Which of the following is the most appropriate next step in her management?",
-        options: ["Admit to medicine on oral antibiotics", "Observation with bowel rest", "Percutaneous drainage only", "Repeat CT in 48 hours", "Surgical consultation now"],
+        update: "She improves and is ready for discharge on the fourth day.",
+        prompt: "Which of the following is the most appropriate plan for her after this episode?",
+        options: ["Daily antibiotic to prevent recurrence", "Family physician review only", "High-fibre diet alone", "Repeat CT in 6 weeks", "Surgical review for elective resection"],
         correct: 4,
         explanation:
-          "Diffuse free air from a perforated sigmoid in a patient on long-term steroids needs a surgeon now, along with IV antibiotics and resuscitation. Immunocompromised patients are at high risk of failing non-operative treatment. Percutaneous drainage can treat a contained abscess but not generalized free air. Oral antibiotics on a medical ward, bowel rest alone or a repeat CT in 2 days all delay source control as her blood pressure falls.",
-        keyFeature: { topic: "abdominal-pain", n: 4 },
+          "After an episode treated without surgery, WSES suggests planning an elective sigmoid resection in high-risk patients such as the immunocompromised. Immunocompromised patients who fail non-operative treatment often need urgent surgery, which carries a much higher mortality, and in one series patients on long-term corticosteroids needed emergency surgery more often than other immunosuppressed groups. Family physician review, diet advice or daily antibiotics alone do not address that risk. A repeat CT adds radiation without changing the decision.",
+        keyFeature: { topic: "infectious-diseases", n: 3 },
         source: "wses-diverticulitis-2020",
       },
     ],
-    sources: [S.brandl, S.wsesAmi, S.wses],
+    sources: [S.brandl, S.wses, S.cipro],
     ...META,
   },
 
