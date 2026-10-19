@@ -104,11 +104,6 @@ export const ruralChildWheezeTiring: OralCase = {
       result: "Sodium 138 mmol/L. Potassium 3.1 mmol/L. Glucose 10.4 mmol/L. Lactate 3.8 mmol/L.",
     },
     {
-      id: "cxr",
-      label: "Chest X-ray at 1 hour",
-      result: "Hyperinflation and peribronchial thickening. No focal consolidation. No pneumothorax. No pneumomediastinum.",
-    },
-    {
       id: "hour1",
       label: "Reassessment after the first hour",
       result: "PRAM 9: suprasternal 2, scalene 2, wheeze 2, air entry 1 (now reduced at the bases only), saturation 2 (89 percent on a brief room air check). SpO2 93 percent on 8 L/min by mask. Heart rate 168/minute. Respiratory rate 44/minute. Still speaking in words. Blood pressure 104/60 mmHg.",
@@ -212,7 +207,7 @@ export const ruralChildWheezeTiring: OralCase = {
       id: "s-hour1",
       phase: "15:05",
       text:
-        "After three rounds of salbutamol and ipratropium and dexamethasone, his PRAM is 9. SpO2 is 93 percent on 8 L/min by mask. Heart rate 168/minute. He is still speaking in words. The chest X-ray shows hyperinflation only.",
+        "After three rounds of salbutamol and ipratropium and dexamethasone, his PRAM is 9. SpO2 is 93 percent on 8 L/min by mask. Heart rate 168/minute. He is still speaking in words.",
       next: "q-next",
     },
     {
@@ -312,7 +307,7 @@ export const ruralChildWheezeTiring: OralCase = {
           id: "c-nrb",
           label: "I kept him on the non rebreather and waited for the transport team.",
           next: "s-intubate",
-          quality: "partial",
+          quality: "unsafe",
           feedback:
             "Oxygen alone does not support a tiring child. Escalate through high flow, CPAP and BiPAP. A 75 minute wait is too long to watch a rising pCO2.",
         },
@@ -353,6 +348,7 @@ export const ruralChildWheezeTiring: OralCase = {
       modelAnswer: [
         "A coexisting right lower lobe pneumonia, likely bacterial after a viral illness, now with respiratory failure.",
         "Lung sliding on both sides makes a pneumothorax unlikely. Do not put a needle in his chest.",
+        "New high fever and air bronchograms that move with breathing favour pneumonia over a mucus plug with collapse.",
         "Blood culture, then a third generation cephalosporin: ceftriaxone 50 mg/kg IV, so 1400 mg, now.",
         "Raise the oxygen and keep the noninvasive support or ventilator settings safe for asthma. Continue salbutamol.",
         "Portable chest X-ray to confirm. Update the referral centre and the transport team.",

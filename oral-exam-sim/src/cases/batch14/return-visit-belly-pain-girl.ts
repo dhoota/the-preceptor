@@ -298,10 +298,10 @@ export const returnVisitBellyPainGirl: OralCase = {
             "Correct. This is septic shock from a perforated appendix. Push 20 mL/kg boluses with reassessment after each and give broad spectrum antibiotics that cover gut flora within 1 hour. The surgeon needs to know right away.",
         },
         {
-          id: "c-cefazolin",
+          id: "c-wait-surgeon",
           label: "I asked the surgeon to choose the antibiotic when he arrives and kept the IV fluids running at maintenance.",
           next: "s-delay",
-          quality: "partial",
+          quality: "unsafe",
           feedback:
             "Septic shock in a child needs a 20 mL/kg bolus now, not maintenance fluid. Antibiotics are due within 1 hour of recognizing shock. Waiting for the surgeon delays both.",
         },

@@ -2,9 +2,9 @@
 
 import type { OralCase } from "@/engine/types";
 
-export const chestTightnessAfterNightShift: OralCase = {
-  id: "chest-tightness-after-night-shift",
-  title: "Chest tightness after a night shift",
+export const unwellAfterANightShift: OralCase = {
+  id: "unwell-after-a-night-shift",
+  title: "Unwell after a night shift",
   blueprint: "psych",
   alsoCovers: ["comm", "ethics"],
   priorityTopic: "suicide-risk",
@@ -14,17 +14,17 @@ export const chestTightnessAfterNightShift: OralCase = {
     { topic: "suicide-risk", n: 4 },
     { topic: "suicide-risk", n: 5 },
   ],
-  summary: "A nurse comes in after a night shift with chest tightness and a racing heart. Her workup raises a different question.",
+  summary: "A nurse comes in vomiting after a night shift. Her story raises a different question.",
   durationMinutes: 12,
   stem:
-    "You are working in the emergency department of a community hospital when the following patient arrives. " +
-    "A 44 year old woman walks in at 07:30, straight from a night shift, with chest tightness and a pounding heart that began in the parking lot.",
+    "You are working in the emergency department of a community hospital in Ontario when the following patient arrives. " +
+    "A 44 year old woman arrives by taxi at 10:30 with vomiting and upper abdominal pain that began at home after a night shift.",
   card: {
     vitals: {
-      temperature: "36.8°C oral",
-      pulse: "104/minute",
-      resp: "20/minute",
-      bp: "138/86 mmHg",
+      temperature: "36.9°C oral",
+      pulse: "108/minute",
+      resp: "18/minute",
+      bp: "124/80 mmHg",
       o2sat: "99% on room air",
       weight: "68 kg (150 lb)",
     },
@@ -36,8 +36,8 @@ export const chestTightnessAfterNightShift: OralCase = {
       id: "hpi",
       label: "History of the presenting illness",
       result:
-        "At 07:00, walking to her car after a 12 hour night shift, she felt sudden chest tightness, a pounding heart, tingling fingers and a feeling she could not get enough air. It peaked within 10 minutes and is now easing. " +
-        "This is her third episode in 2 weeks. No exertional pain, no fainting, no pleuritic pain, no leg swelling, no recent travel or surgery.",
+        "She finished a 12 hour night shift at 07:30. At home she drank most of a bottle of wine alone 'to get to sleep'. She woke at 09:30 and has vomited 7 times, first food and then yellow fluid, with burning upper abdominal pain. " +
+        "No blood or coffee grounds, no black stool, no diarrhea, no fever. She says she took no tablets. Last menstrual period 2 weeks ago. She has drunk this way after night shifts several times since her mother died, but this is the first time she has been sick.",
     },
     {
       id: "mood",
@@ -72,7 +72,7 @@ export const chestTightnessAfterNightShift: OralCase = {
     {
       id: "substances",
       label: "Alcohol and drugs",
-      result: "Two to three glasses of wine most nights since her mother died. Before that, one or two a week. No cannabis or other drugs. Breath alcohol is zero this morning.",
+      result: "Two to three glasses of wine most nights since her mother died, and most of a bottle after some night shifts. Before that, one or two glasses a week. No morning shakes, no withdrawal seizures. No cannabis or other drugs.",
     },
     {
       id: "meds",
@@ -96,30 +96,30 @@ export const chestTightnessAfterNightShift: OralCase = {
       id: "mse",
       label: "Mental status examination",
       result:
-        "Neatly dressed, tired, tearful at times. Good eye contact. Normal speech. Mood 'empty'. Affect constricted but reactive. Thought process linear. No delusions or hallucinations. Oriented. Good insight and judgment. Engages in planning.",
+        "At 13:30, clinically sober. Neatly dressed, tired, tearful at times. Good eye contact. Normal speech. Mood 'empty'. Affect constricted but reactive. Thought process linear. No delusions or hallucinations. Oriented. Good insight and judgment. Engages in planning.",
     },
     {
       id: "exam",
       label: "Physical examination",
       result:
-        "Heart rate settles to 88/minute at rest. Heart sounds normal, no murmur. Chest clear. Calves soft and not tender. Thyroid not enlarged. No tremor. No marks of self harm on her forearms or wrists.",
+        "Smells of alcohol, with slightly slurred speech at 10:45 that is clear by 13:30. Mild epigastric tenderness with no guarding or rebound. Normal bowel sounds. No jaundice. Heart and chest normal. No tremor. No marks of self harm on her forearms or wrists. Heart rate 86/minute at 13:30.",
     },
     {
       id: "ecg",
       label: "ECG",
-      result: "Sinus tachycardia at 102/minute. Normal axis. No ST or T wave change. QTc 438 ms.",
+      result: "Sinus tachycardia at 106/minute. Normal axis. No ST or T wave change. QTc 438 ms.",
     },
     {
       id: "labs",
       label: "Blood work",
       result:
-        "High sensitivity troponin I under 3 ng/L at 07:45 and 08:45. Hemoglobin 132 g/L. Sodium 138 mmol/L. Potassium 4.1 mmol/L. Glucose 5.6 mmol/L. TSH 1.8 mIU/L. Serum ethanol undetectable. Urine beta hCG negative.",
+        "Drawn at 10:45. Serum ethanol 19 mmol/L. Lipase 42 U/L. AST 48 U/L. ALT 39 U/L. Bilirubin normal. Hemoglobin 132 g/L. Sodium 136 mmol/L. Potassium 3.6 mmol/L. Creatinine 74 µmol/L. Glucose 5.4 mmol/L. TSH 1.8 mIU/L. Acetaminophen and salicylate undetectable. Serum beta hCG negative.",
     },
     {
       id: "services",
       label: "Local services",
       result:
-        "The hospital crisis nurse works 08:00 to 20:00 and can see her this morning. The urgent psychiatry clinic can see her within 72 hours. Psychiatry is on call by phone. Her family physician has a slot on Friday, 4 days from now.",
+        "The hospital crisis nurse works 08:00 to 20:00 and can see her this afternoon. The urgent psychiatry clinic can see her within 72 hours. Psychiatry is on call by phone. Her family physician has a slot on Friday, 4 days from now.",
     },
   ],
   start: "s-open",
@@ -127,8 +127,8 @@ export const chestTightnessAfterNightShift: OralCase = {
     {
       kind: "say",
       id: "s-open",
-      phase: "07:40",
-      text: "She is on a monitor in a hallway stretcher, still in her scrubs. The ECG shows sinus tachycardia with no ischemic change. She apologizes for taking up a bed.",
+      phase: "10:40",
+      text: "She is on a stretcher with a basin, still in her scrubs. She is tearful and says she should have known better. She asks for something for the nausea so she can go home and sleep.",
       next: "q-approach",
     },
     {
@@ -138,52 +138,53 @@ export const chestTightnessAfterNightShift: OralCase = {
       prompt: "How do you approach her?",
       seconds: 80,
       modelAnswer: [
-        "Exclude a medical cause first. ACS, PE, arrhythmia, thyroid disease, stimulants, alcohol withdrawal, early SSRI side effects.",
-        "History of the episodes, cardiac and PE risk factors, ECG and troponin.",
-        "Recurrent panic like episodes with a recent loss need a mood history.",
-        "Ask about her mother's death, sleep, appetite, interest, guilt, alcohol.",
-        "Ask directly about thoughts of suicide. Asking does not plant the idea.",
+        "Treat the symptoms. IV fluid and an antiemetic. Ondansetron is reasonable with a normal QTc.",
+        "Exclude complications. Abdominal exam, blood in the vomit, lipase, liver tests, beta hCG.",
+        "Ask what she took and when. If any pills could have gone with the wine, treat the history as unreliable and check acetaminophen and salicylate levels.",
+        "Drinking alone to sleep after a loss is a cue. Take a mood history. Ask about her mother's death, sleep, appetite, interest and guilt.",
+        "Once she is clinically sober, ask directly about thoughts of suicide. Asking does not plant the idea.",
+        "She cannot leave while she is still intoxicated.",
       ],
       rubric: ["ns-h1", "ns-h2", "ns-p1"],
       choices: [
         {
           id: "c-both",
-          label: "I took a cardiac and PE history and sent troponins, then asked about her mood, the loss of her mother, her sleep and alcohol, and asked directly whether she had thought of ending her life.",
+          label: "I gave fluids and an antiemetic, sent lipase, liver tests, a beta hCG and acetaminophen and salicylate levels, asked why her drinking had changed, took a mood history and, once she was clinically sober, asked directly whether she had thought of ending her life.",
           next: "q-explore",
           quality: "strong",
           feedback:
-            "Good. Medical causes come first, but recurrent panic like episodes after a bereavement are a cue to screen for depression and suicidal thinking. Asking directly is safe and is how hidden suicidality is found.",
+            "Good. You treated the vomiting and looked for complications and a hidden ingestion. Drinking alone to get to sleep after a bereavement, weeks into an antidepressant, is a cue to screen for depression and suicidal thinking. Asking directly once she can engage is how hidden suicidality is found.",
         },
         {
-          id: "c-cardiac-only",
-          label: "I completed a cardiac workup. Both troponins were negative, so I diagnosed a panic attack and planned discharge with follow up with her family physician.",
-          next: "s-cardiac-only",
+          id: "c-gastritis",
+          label: "I treated alcohol related gastritis with fluids, ondansetron and pantoprazole, advised her to cut down, and planned discharge to her family physician once the vomiting settled and she was sober.",
+          next: "s-gastritis",
           quality: "partial",
           feedback:
-            "The medical workup was appropriate, but you stopped there. A panic diagnosis without a mood and suicide screen misses the main risk in this patient. Many people who die by suicide saw a physician in the weeks before.",
+            "The medical care was sound, but you stopped there. A change in drinking after a loss, in a woman who has just started an antidepressant, needs a mood and suicide screen. Many people who die by suicide saw a physician in the weeks before.",
         },
         {
-          id: "c-lorazepam",
-          label: "I labelled it a panic attack, gave lorazepam 1 mg by mouth and planned to discharge her once she settled.",
-          next: "s-lorazepam",
+          id: "c-early-discharge",
+          label: "I took her word that she had taken nothing else, gave ondansetron and sent her home by taxi as soon as she stopped vomiting.",
+          next: "s-early-discharge",
           quality: "unsafe",
           feedback:
-            "Premature closure. You have not excluded a cardiac cause, and you have not asked about mood or suicide. A benzodiazepine on top of nightly alcohol, in a patient with sedatives and opioids at home, adds risk.",
+            "She was still intoxicated and not safe to leave. An uncertain ingestion history needs acetaminophen and salicylate levels, because an early overdose can look like nothing. You also did not ask about mood or suicide, so every risk she carries went home with her.",
         },
       ],
     },
     {
       kind: "say",
-      id: "s-cardiac-only",
-      phase: "08:50",
-      text: "As you write the discharge, the nurse tells you the patient was crying and said, 'Maybe it would be easier if I just did not wake up.' You go back to the bedside.",
+      id: "s-gastritis",
+      phase: "13:40",
+      text: "As you write the discharge, the nurse tells you the patient was crying and said she had hoped the wine would switch everything off for good. You go back to the bedside.",
       next: "q-explore",
     },
     {
       kind: "say",
-      id: "s-lorazepam",
-      phase: "08:30",
-      text: "The nurse asks whether you want a second troponin before discharge. While she draws it, the patient tells her that her mother's pills are still in the kitchen. The nurse asks you to come back and talk with her.",
+      id: "s-early-discharge",
+      phase: "11:20",
+      text: "The nurse stops the discharge because the patient is still unsteady and her blood work is not back. While the nurse helps her to the washroom, the patient says her mother's pills are still in the kitchen and that she thought about them before she opened the wine. The nurse asks you to come back and talk with her once she is sober.",
       next: "q-explore",
     },
     {
@@ -246,10 +247,10 @@ export const chestTightnessAfterNightShift: OralCase = {
       kind: "question",
       id: "q-formulate",
       phase: "Risk formulation",
-      prompt: "Her troponins are negative and her mental status exam is documented. Summarize her risk and protective factors. How do you judge her risk?",
+      prompt: "She is now clinically sober, her blood work is reassuring and her mental status exam is documented. Summarize her risk and protective factors. How do you judge her risk?",
       seconds: 80,
       modelAnswer: [
-        "Risk factors. Major depression, recent bereavement, father died by suicide, rising alcohol use, insomnia, access to opioids and benzodiazepines, health care worker with knowledge and access, first weeks of an antidepressant.",
+        "Risk factors. Major depression, recent bereavement, father died by suicide, rising alcohol use and drinking alone to sleep, insomnia, access to opioids and benzodiazepines, health care worker with knowledge and access, first weeks of an antidepressant.",
         "Protective factors. No intent or plan, no past attempts, children and partner, close sister, future plans, help seeking, insight, no psychosis.",
         "Mental status. Depressed mood, reactive affect, linear thought, good insight and judgment.",
         "Formulation. Passive ideation with a method considered but no plan or intent, several serious risk factors, many of them modifiable, and strong supports. Not at imminent risk. Some would call this moderate rather than low risk. An outpatient plan is reasonable only if means are removed, a same day mental health assessment agrees and follow up is fast.",
@@ -261,7 +262,7 @@ export const chestTightnessAfterNightShift: OralCase = {
     {
       kind: "say",
       id: "s-husband",
-      phase: "09:15",
+      phase: "15:00",
       text: "With her permission you call her husband, and he arrives. He is frightened. He says, 'I had no idea. Please keep her here. Can't you just admit her until she is better?'",
       next: "q-dispo",
     },
@@ -301,7 +302,7 @@ export const chestTightnessAfterNightShift: OralCase = {
           id: "c-form1",
           label: "I completed a Form 1 because she had thought about taking her mother's pills.",
           next: "s-form1",
-          quality: "unsafe",
+          quality: "partial",
           feedback:
             "A Form 1 under the Ontario Mental Health Act needs reasonable cause to believe she has threatened or attempted self harm, or cannot care for herself, and that a mental disorder will likely result in serious bodily harm. She has passive thoughts, no intent and is accepting help voluntarily. Detaining her takes away her trust and gives no benefit.",
         },
@@ -310,7 +311,7 @@ export const chestTightnessAfterNightShift: OralCase = {
     {
       kind: "say",
       id: "s-admit",
-      phase: "10:30",
+      phase: "16:30",
       text: "The psychiatrist on call comes in and assesses her. She agrees an outpatient plan is safe and asks you to finish discharge planning with the family. The patient says she is relieved to go home to her children.",
       next: "q-means",
     },
@@ -412,7 +413,7 @@ export const chestTightnessAfterNightShift: OralCase = {
     {
       kind: "end",
       id: "end",
-      text: "She leaves at 11:00 with her husband and a written safety plan. The pills are handed in at a pharmacy that afternoon. The crisis nurse calls the next day. She sees psychiatry on day 3 and her family physician on Friday. That is the end of the case.",
+      text: "She leaves at 18:30 with her husband and a written safety plan. The pills are handed in at a pharmacy that afternoon. The crisis nurse calls the next day. She sees psychiatry on day 3 and her family physician on Friday. That is the end of the case.",
     },
   ],
   rubric: [
@@ -420,10 +421,10 @@ export const chestTightnessAfterNightShift: OralCase = {
       id: "ns-h1",
       competency: "assessment",
       criterion: "history",
-      text: "Takes a focused history of the episodes, including cardiac and pulmonary embolism risk factors.",
+      text: "Takes a history of the drinking episode. Amount and timing, any pills taken, blood in the vomit, pregnancy, and why her drinking has changed.",
       points: 1,
-      teaching: "Acute chest pain needs a structured history, an early ECG and high sensitivity troponin before a non cardiac label. Panic is a diagnosis of exclusion at the first visit.",
-      source: "chest-pain",
+      teaching: "A recent change in drinking, especially drinking alone to sleep, is a modifiable risk factor that CANMAT asks clinicians to assess and address in depression. Ask what was taken and when before you call it alcohol alone.",
+      source: "canmat",
     },
     {
       id: "ns-h2",
@@ -466,10 +467,10 @@ export const chestTightnessAfterNightShift: OralCase = {
       id: "ns-p1",
       competency: "assessment",
       criterion: "physical",
-      text: "Excludes medical causes with an exam, ECG, serial troponin and basic labs including TSH and sodium.",
+      text: "Examines her and excludes complications and a hidden ingestion with lipase, liver tests, beta hCG and acetaminophen and salicylate levels.",
       points: 2,
-      teaching: "An ECG within 10 minutes and serial high sensitivity troponin exclude myocardial injury. Thyroid disease, PE, alcohol withdrawal and early SSRI side effects are other causes to consider before closing on panic.",
-      source: "chest-pain",
+      teaching: "When the ingestion history is in doubt, treat it as unreliable. An undetectable acetaminophen level 2 to 4 hours or more after a possible ingestion typically excludes a significant one.",
+      source: "dart",
     },
     {
       id: "ns-p2",
@@ -586,9 +587,10 @@ export const chestTightnessAfterNightShift: OralCase = {
         "Stanley B, Brown GK, Brenner LA, and colleagues. Comparison of the safety planning intervention with follow-up vs usual care of suicidal patients treated in the emergency department. JAMA Psychiatry. 2018.",
     },
     {
-      id: "chest-pain",
+      id: "dart",
       citation:
-        "Gulati M, Levy PD, Mukherjee D, and colleagues. 2021 AHA/ACC/ASE/CHEST/SAEM/SCCT/SCMR guideline for the evaluation and diagnosis of chest pain. Circulation. 2021.",
+        "Dart RC, Mullins ME, Matoushek T, and colleagues. Management of acetaminophen poisoning in the US and Canada. A consensus statement. JAMA Netw Open. 2023.",
+      url: "https://jamanetwork.com/journals/jamanetworkopen/fullarticle/2808062",
     },
     {
       id: "canmat",
