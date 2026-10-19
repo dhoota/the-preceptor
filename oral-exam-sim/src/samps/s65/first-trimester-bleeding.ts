@@ -14,6 +14,8 @@ const S = {
   sogc448: { id: "sogc-448", citation: "Society of Obstetricians and Gynaecologists of Canada. Guideline No. 448. Prevention of Rh D alloimmunization. J Obstet Gynaecol Can. 2024.", url: "https://delphi.sogc.org/wp-content/uploads/2025/02/gui448CPG2404E.pdf" },
   msfEonc: { id: "msf-eonc-2019", citation: "Medecins Sans Frontieres. Essential obstetric and newborn care. Practical guide for midwives, doctors with obstetrics training and health care personnel. 2019 edition. Section 2.1, Abortion.", url: "https://medicalguidelines.msf.org/sites/default/files/pdf/guideline-449-en.pdf" },
   sogcEpl: { id: "sogc-epl-2025", citation: "Society of Obstetricians and Gynaecologists of Canada. SOGC releases new national guidance to improve care for women after early pregnancy loss. News release on Guideline No. 460, Diagnosis and management of intrauterine early pregnancy loss. 2025.", url: "https://sogc.org/en/content/featured-news/SOGC-Releases-New-National-Guidance-to-Improve-Care-for-Women-After-Early-Pregnancy-Loss.aspx" },
+  silva: { id: "silva-hcg-2006", citation: "Silva C, Sammel MD, Zhou L, Gracia C, Hummel AC, Barnhart K. Human chorionic gonadotropin profile for women with ectopic pregnancy. Obstet Gynecol. 2006.", url: "https://doi.org/10.1097/01.AOG.0000198635.25135.e7" },
+  morse: { id: "morse-hcg-2012", citation: "Morse CB, Sammel MD, Shaunik A, et al. Performance of human chorionic gonadotropin curves in women at risk for ectopic pregnancy: exceptions to the rules. Fertil Steril. 2012.", url: "https://pmc.ncbi.nlm.nih.gov/articles/PMC3246395/" },
 } satisfies Record<string, Source>;
 
 /** Expansion batch s65: first-trimester-bleeding-39 to first-trimester-bleeding-43. 2027 MCQ and menu format only. */
@@ -198,6 +200,66 @@ export const FIRST_TRIMESTER_BLEEDING_S65: Samp[] = [
       },
     ],
     sources: [S.msfEonc, S.sogc448, S.sogcEpl],
+    ...META,
+  },
+
+  /* 42 A reassuring rise that is not reassuring ----------------------------- */
+  {
+    id: "first-trimester-bleeding-42",
+    topic: "first-trimester-bleeding",
+    title: "Planned recheck after two days",
+    stem:
+      "A 30-year-old woman returns to the emergency department for a planned recheck 48 hours after a visit for light spotting. Her last menstrual period was 6 weeks ago. Two days ago her quantitative hCG was 820 IU/L, and a formal transvaginal ultrasound showed no intrauterine pregnancy, no adnexal mass and no free fluid. She had a right salpingectomy for an ectopic pregnancy 3 years ago. Today she has mild left pelvic cramps and ongoing spotting. Her quantitative hCG today is 1 480 IU/L. Her abdomen is soft, with mild left lower quadrant tenderness.",
+    vitals: { temperature: "36.7°C oral", pulse: "78/minute", resp: "16/minute", bp: "118/74 mmHg", o2sat: "99% on room air", weight: "70 kg" },
+    questions: [
+      {
+        id: "q1",
+        kind: "single",
+        prompt: "Which of the following is the most accurate interpretation of the change in her hCG over 48 hours?",
+        options: ["Confirms a viable intrauterine pregnancy", "Excludes an ectopic pregnancy", "Normal rise, ectopic still possible", "Rise too slow for a viable pregnancy", "Shows a failing pregnancy"],
+        correct: 2,
+        explanation:
+          "Her hCG rose from 820 to 1 480 IU/L, an increase of 660 IU/L or 80% in 48 hours, which is above the minimal rise of about 35% expected for a viable intrauterine pregnancy. That pattern does not settle the location. In a large ED series about 21% of women with an ectopic pregnancy had an initial rise similar to a viable pregnancy, and serial hCG alone misclassified about 17% of ectopic pregnancies in a multisite cohort. With a previous ectopic and left-sided cramps, she still needs the pregnancy located.",
+        keyFeature: { topic: "first-trimester-bleeding", n: 4 },
+        source: "silva-hcg-2006",
+      },
+      {
+        id: "q2",
+        kind: "single",
+        prompt: "Which of the following statements about her normal pulse and blood pressure is most accurate?",
+        options: ["A pulse under 100 rules out bleeding", "Low BP is the earliest sign of rupture", "Normal vitals exclude a tubal leak", "They do not exclude a leaking ectopic", "Vitals matter only after 12 weeks"],
+        correct: 3,
+        explanation:
+          "In women with ectopic pregnancy, tachycardia and hypotension identified tubal rupture with sensitivities of only 28% and 36%, and the authors concluded that normal vital signs alone are poor predictors of rupture. Hypotension is a late sign, not an early one, and a pulse under 100/minute does not rule out bleeding. Vital signs matter at every gestation. Her reassuring numbers should not shorten her work-up or her return instructions.",
+        keyFeature: { topic: "first-trimester-bleeding", n: 1 },
+        source: "birkhahn-vitals-2003",
+      },
+      {
+        id: "q3",
+        kind: "single",
+        update: "A repeat transvaginal ultrasound today again shows no intrauterine pregnancy, no adnexal mass and no free fluid.",
+        prompt: "Which of the following is the most appropriate plan for her today?",
+        options: ["Discharge with no follow-up", "Early pregnancy clinic, hCG in 48 hours", "methotrexate 50 mg/m2 IM today", "Prenatal care booking at 12 weeks", "Uterine aspiration today"],
+        correct: 1,
+        explanation:
+          "She has a pregnancy of unknown location with a prior ectopic, so surveillance continues until the location is known, with a third hCG and repeat ultrasound. The authors of a multisite cohort advised a third hCG when values are low or near thresholds, because two values alone misclassify outcomes. An early pregnancy clinic can arrange this with clear return instructions. Methotrexate or uterine aspiration today could end a wanted intrauterine pregnancy that is still possible. Discharge without follow-up, or waiting for prenatal care at 12 weeks, leaves a possible ectopic unwatched.",
+        keyFeature: { topic: "first-trimester-bleeding", n: 2 },
+        source: "morse-hcg-2012",
+      },
+      {
+        id: "q4",
+        kind: "single",
+        update: "Forty-eight hours later her hCG is 1 030 IU/L. The ultrasound is unchanged and her cramps have settled.",
+        prompt: "Which of the following is the most accurate interpretation of this new hCG result?",
+        options: ["Confirms a completed miscarriage", "Follow-up can now stop", "Methotrexate is now required", "Rise was a laboratory error", "Still consistent with an ectopic"],
+        correct: 4,
+        explanation:
+          "Her hCG fell from 1 480 to 1 030 IU/L, a fall of about 30% in 48 hours. That is slower than the decline of roughly 36 to 47% expected after a completed miscarriage, and in women with ectopic pregnancy the median 2-day decline was 27%, with about 8% falling as fast as a completed miscarriage. A falling hCG therefore does not exclude an ectopic, so she is followed until the hCG is undetectable. Methotrexate is not needed while the value falls in a well patient, and an earlier rise followed by a fall is a recognized ectopic pattern rather than a laboratory error.",
+        keyFeature: { topic: "first-trimester-bleeding", n: 4 },
+        source: "morse-hcg-2012",
+      },
+    ],
+    sources: [S.silva, S.birkhahn2003, S.morse],
     ...META,
   },
 ];
