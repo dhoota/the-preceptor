@@ -159,7 +159,7 @@ export const ASTHMA_COPD_S64: Samp[] = [
       {
         id: "q2",
         kind: "single",
-        prompt: "Which of the following is the most likely cause of his cough, wheeze and fever?",
+        prompt: "Which of the following diagnoses best explains his illness over the past 9 days?",
         options: ["Adult-onset asthma", "Aspirated dental material", "Endobronchial carcinoid tumour", "Inhaled corticosteroid reaction", "Pulmonary embolism"],
         correct: 1,
         explanation:

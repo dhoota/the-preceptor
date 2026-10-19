@@ -16,6 +16,7 @@ const S = {
   sogcEpl: { id: "sogc-epl-2025", citation: "Society of Obstetricians and Gynaecologists of Canada. SOGC releases new national guidance to improve care for women after early pregnancy loss. News release on Guideline No. 460, Diagnosis and management of intrauterine early pregnancy loss. 2025.", url: "https://sogc.org/en/content/featured-news/SOGC-Releases-New-National-Guidance-to-Improve-Care-for-Women-After-Early-Pregnancy-Loss.aspx" },
   silva: { id: "silva-hcg-2006", citation: "Silva C, Sammel MD, Zhou L, Gracia C, Hummel AC, Barnhart K. Human chorionic gonadotropin profile for women with ectopic pregnancy. Obstet Gynecol. 2006.", url: "https://doi.org/10.1097/01.AOG.0000198635.25135.e7" },
   morse: { id: "morse-hcg-2012", citation: "Morse CB, Sammel MD, Shaunik A, et al. Performance of human chorionic gonadotropin curves in women at risk for ectopic pregnancy: exceptions to the rules. Fertil Steril. 2012.", url: "https://pmc.ncbi.nlm.nih.gov/articles/PMC3246395/" },
+  sogc388: { id: "sogc-388", citation: "Butt K, Lim KI. Guideline No. 388. Determination of gestational age by ultrasound. J Obstet Gynaecol Can. 2019.", url: "https://doi.org/10.1016/j.jogc.2019.04.010" },
 } satisfies Record<string, Source>;
 
 /** Expansion batch s65: first-trimester-bleeding-39 to first-trimester-bleeding-43. 2027 MCQ and menu format only. */
@@ -260,6 +261,67 @@ export const FIRST_TRIMESTER_BLEEDING_S65: Samp[] = [
       },
     ],
     sources: [S.silva, S.birkhahn2003, S.morse],
+    ...META,
+  },
+
+  /* 43 Dates that do not match the uterus ----------------------------------- */
+  {
+    id: "first-trimester-bleeding-43",
+    topic: "first-trimester-bleeding",
+    title: "Unsure of her dates",
+    stem:
+      "A 29-year-old woman presents to the emergency department with 1 day of light vaginal bleeding and mild cramps. By her last menstrual period she is 14 weeks pregnant, but her cycles are irregular and she is unsure of the date. She has had no prenatal care or ultrasound in this pregnancy. Her blood group from a previous pregnancy is B Rh D negative, and today's antibody screen is negative. She takes no medications. She is well, with a soft, nontender abdomen.",
+    vitals: { temperature: "36.6°C oral", pulse: "80/minute", resp: "16/minute", bp: "114/70 mmHg", o2sat: "99% on room air", weight: "66 kg" },
+    questions: [
+      {
+        id: "q1",
+        kind: "single",
+        update: "Speculum examination shows a small amount of blood coming from a closed os and a normal cervix. Bimanual examination finds a nontender uterus about 10 weeks in size and no adnexal mass.",
+        prompt: "Which of the following is the most likely explanation for the size of her uterus?",
+        options: ["Cervical ectopic pregnancy", "Hydatidiform mole", "Twin intrauterine pregnancy", "Uterine fibroids", "Wrong dates or failed pregnancy"],
+        correct: 4,
+        explanation:
+          "A uterus smaller than her menstrual dates means either she is earlier than she thinks, which is likely with irregular cycles, or the pregnancy stopped growing. A molar pregnancy makes the uterus larger and softer than dates, and twins and fibroids also enlarge it. A cervical ectopic pregnancy distends the cervix, and her cervix looks normal. The bimanual examination has done its job by showing the mismatch, and ultrasound now has to settle which explanation is right.",
+        keyFeature: { topic: "first-trimester-bleeding", n: 3 },
+        source: "msf-mole",
+      },
+      {
+        id: "q2",
+        kind: "single",
+        update: "Bedside ultrasound shows a single live intrauterine pregnancy with a crown-rump length of 38 mm, consistent with 10 weeks and 3 days.",
+        prompt: "Which of the following should be used to assign her gestational age?",
+        options: ["Average of scan and menstrual dates", "Her last menstrual period", "Quantitative hCG level", "Today's crown-rump length", "Uterine size on bimanual examination"],
+        correct: 3,
+        explanation:
+          "SOGC guidance on dating holds that ultrasound measurement in the first trimester, using the crown-rump length, assigns gestational age more accurately than menstrual dates. Her uncertain date and irregular cycles make the menstrual estimate even less reliable. Uterine size on examination is too imprecise to date a pregnancy, and hCG levels vary too widely between pregnancies to give an age. Averaging two estimates keeps the error of the weaker one.",
+        keyFeature: { topic: "first-trimester-bleeding", n: 4 },
+        source: "sogc-388",
+      },
+      {
+        id: "q3",
+        kind: "single",
+        prompt: "Based on her ultrasound dating and SOGC Guideline No. 448, which of the following Rh immune globulin plans fits best?",
+        options: ["Discuss it, give only if she prefers", "Kleihauer-Betke test first", "Rh immune globulin 300 mcg now", "Wait until the 28-week dose", "No Rh assessment needed"],
+        correct: 0,
+        explanation:
+          "By ultrasound she is 10 weeks and 3 days. For a threatened miscarriage between 8 and 12 weeks, SOGC suggests not giving Rh immune globulin, but it may be considered for a patient who is more risk averse, so it becomes a shared decision. Had her menstrual dates of 14 weeks been used, 300 mcg would have been suggested, so accurate dating changed the plan. Kleihauer-Betke testing is for events after 20 weeks. Waiting for the 28-week dose does not address today's event if she wants protection now, and Rh typing and antibody screening are still recommended after 8 weeks.",
+        keyFeature: { topic: "first-trimester-bleeding", n: 5 },
+        source: "sogc-448",
+      },
+      {
+        id: "q4",
+        kind: "single",
+        update: "She chooses to have the injection but worries because it is made from donated blood.",
+        prompt: "Which of the following statements about Rh immune globulin is most accurate for her counselling?",
+        options: ["It carries a 1% risk of hepatitis C", "It is a synthetic monoclonal antibody", "It must be given into a muscle", "It works only if given before bleeding", "No infections reported with current products"],
+        correct: 4,
+        explanation:
+          "Rh immune globulin is a pooled human plasma product. An outbreak of hepatitis C in Ireland in the late 1970s was linked to an early preparation, but no transmission of infection has been reported in North America since the purer current products were introduced. The Canadian product can be given IV or IM, and the route can follow patient or physician preference. It is given within 72 hours after a sensitizing event, not only before one. A recombinant monoclonal product is not available for routine use in Canada.",
+        keyFeature: { topic: "first-trimester-bleeding", n: 5 },
+        source: "sogc-448",
+      },
+    ],
+    sources: [S.msfMole, S.sogc388, S.sogc448],
     ...META,
   },
 ];

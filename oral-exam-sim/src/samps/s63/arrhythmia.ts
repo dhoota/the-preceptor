@@ -56,7 +56,7 @@ export const ARRHYTHMIA_S63: Samp[] = [
       {
         id: "q3",
         kind: "single",
-        prompt: "Which of the following is the most likely underlying cause of her faints and her rhythm?",
+        prompt: "Which of the following conditions best accounts for both her faints and the run on the monitor?",
         options: ["Arrhythmogenic cardiomyopathy", "Brugada syndrome", "Catecholaminergic polymorphic VT", "Long QT syndrome type 1", "Wolff-Parkinson-White syndrome"],
         correct: 2,
         explanation:
@@ -156,7 +156,7 @@ export const ARRHYTHMIA_S63: Samp[] = [
       {
         id: "q1",
         kind: "single",
-        prompt: "Which of the following features of her faint most suggests an arrhythmic cause?",
+        prompt: "Which of the following details of last night's event points most strongly toward an arrhythmia?",
         options: ["Age of 41 years", "Faint while lying in bed", "Nausea after waking", "Recovery within a minute", "Sweating after the faint"],
         correct: 1,
         explanation:
@@ -167,7 +167,7 @@ export const ARRHYTHMIA_S63: Samp[] = [
       {
         id: "q2",
         kind: "single",
-        prompt: "Which of the following findings on her ECG is the most important warning sign?",
+        prompt: "Which of the following features of her tracing most raises concern for a dangerous inherited rhythm disorder?",
         options: ["PR interval of 168 ms", "QTc of 305 ms", "rSr' pattern in V1", "Sinus rate of 62/minute", "T wave inversion in V1"],
         correct: 1,
         explanation:
