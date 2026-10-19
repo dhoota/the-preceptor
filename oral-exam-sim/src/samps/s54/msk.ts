@@ -265,7 +265,7 @@ export const MSK_S54: Samp[] = [
     id: "msk-42",
     title: "Knee that gave way on a wet floor",
     stem:
-      "You are working in a community hospital emergency department. MRI is available only at the regional hospital. A 12-year-old girl is brought in by her grandmother 1 hour after her right foot slid on a wet kitchen floor at home and her knee buckled inward as she fell. She cannot straighten the knee. This has never happened before. She is healthy and takes no medications. She was given intranasal fentanyl at triage and is now more comfortable. Her right knee is held in about 40 degrees of flexion. There is a firm bulge on the lateral side of the knee, and the front of the knee looks flat. The dorsalis pedis pulse is strong, and sensation and toe movement are normal.",
+      "You are working in a community hospital emergency department. MRI is available only at the regional hospital. A 12-year-old girl is brought to the emergency department by her grandmother 1 hour after her right foot slipped on a stair at home and her knee buckled inward as she fell. She cannot straighten the knee. This has never happened before. She is healthy and takes no medications. She was given intranasal fentanyl at triage and is now more comfortable. Her right knee is held in about 40 degrees of flexion. There is a firm bulge on the lateral side of the knee, and the front of the knee looks flat. The dorsalis pedis pulse is strong, and sensation and toe movement are normal.",
     vitals: { temperature: "36.9°C oral", pulse: "106/minute", resp: "20/minute", bp: "110/66 mmHg", o2sat: "99% on room air", weight: "41 kg" },
     questions: [
       {
@@ -346,18 +346,18 @@ export const MSK_S54: Samp[] = [
     ...META,
   },
 
-  /* 43 Open fibular neck fracture from a cow kick ------------------------- */
+  /* 43 Open fibular shaft fracture from a cow kick ------------------------ */
   {
     id: "msk-43",
     title: "Dairy farmer kicked during milking",
     stem:
-      "You are working in a rural hospital emergency department in Manitoba. The nearest orthopedic surgeon is 2 hours away by road. A 54-year-old man presents 3 hours after a dairy cow kicked the outside of his right leg just below the knee while he was milking. He wore coveralls tucked into rubber boots. He drove himself in and limps. He has type 2 diabetes treated with metformin. The right leg of his coveralls is stained with manure and blood. The lateral leg below the knee is swollen and bruised, with tenderness over the head and neck of the fibula. The dorsalis pedis pulse is palpable.",
+      "You are working in a rural hospital emergency department in Manitoba. The nearest orthopedic surgeon is 2 hours away by road. A 54-year-old man presents 3 hours after a dairy cow kicked the outside of his right leg, midway between the knee and the ankle, while he was milking. He wore coveralls tucked into rubber boots. He drove himself in and limps. He has type 2 diabetes treated with metformin. The right leg of his coveralls is stained with manure and blood. The lateral leg is swollen and bruised at that level, with tenderness over the fibula. The dorsalis pedis pulse is palpable.",
     vitals: { temperature: "36.8°C oral", pulse: "92/minute", resp: "16/minute", bp: "148/86 mmHg", o2sat: "98% on room air", weight: "102 kg" },
     questions: [
       {
         id: "q1",
         kind: "single",
-        update: "With the coveralls cut away, there is a 5 mm puncture over the neck of the fibula, oozing blood. X-rays show a transverse fracture of the fibular neck. The tibia and the knee joint are intact.",
+        update: "With the coveralls cut away, there is a 4 mm puncture over the bruised area, oozing blood. X-rays show a transverse fracture of the middle of the fibular shaft. The tibia, knee and ankle are intact.",
         prompt: "Which of the following is the most appropriate target time for surgical debridement of this fracture?",
         options: [
           "After the swelling settles in 1 week",
@@ -386,40 +386,40 @@ export const MSK_S54: Samp[] = [
       {
         id: "q3",
         kind: "single",
-        prompt: "Which of the following associated injuries is most likely with a fracture at this site?",
+        prompt: "Which of the following is most likely for the fibular fracture itself once the wound is debrided?",
         options: [
-          "Common peroneal nerve injury",
-          "Lateral tibial plateau fracture",
-          "Popliteal artery injury",
-          "Saphenous nerve injury",
-          "Tibial nerve injury",
+          "Above knee cast for 6 weeks",
+          "Intramedullary nail of the fibula",
+          "Nonoperative care of the fracture",
+          "Plate fixation of the fibula",
+          "Spanning external fixator",
         ],
-        correct: 0,
+        correct: 2,
         explanation:
-          "The common peroneal nerve wraps around the neck of the fibula, and Lezak and colleagues list a direct impact on the fibular neck and a fracture of the proximal fibula among the traumatic causes of its injury. Damage causes foot drop, with weak ankle and toe dorsiflexion and weak eversion, and numbness of the lateral leg and the dorsum of the foot, so these are tested and recorded before he is splinted or moved. The tibial nerve runs behind the knee and deep in the calf, away from the fibular neck. The popliteal artery is injured mainly with knee dislocation, and his dorsalis pedis pulse is palpable. His X-rays show an intact tibia, and the saphenous nerve lies on the medial side of the leg.",
-        keyFeature: { topic: "msk", n: 1 },
-        source: "lezak-peroneal",
+          "Walters and colleagues note that the vast majority of isolated fibular shaft fractures are treated without surgery, and that the fibular shaft is not a weight bearing part of the leg. His tibia, knee and ankle are intact, so once the wound has been debrided the fracture itself is usually treated without fixation. Plating or nailing the fibula, or a spanning external fixator, would stabilize a bone that does not need it here. An above knee cast for 6 weeks would hold the knee and ankle still for a fracture of a bone that does not carry the load.",
+        keyFeature: { topic: "msk", n: 8 },
+        source: "walters-fibula",
       },
       {
         id: "q4",
         kind: "single",
-        update: "His antibiotics have been given. He is alert and has capacity. He asks to go home to milk his cows tonight and to return for surgery tomorrow.",
-        prompt: "Which of the following is the most appropriate response to his request?",
+        update: "The receiving surgeon expects to close his wound 5 days after the injury.",
+        prompt: "Which of the following is the most appropriate total duration of his prophylactic antibiotics?",
         options: [
-          "Admit locally for IV antibiotics overnight",
-          "Agree to surgery tomorrow morning",
-          "Discharge with oral amoxicillin-clavulanate",
-          "Explain the risk and transfer him now",
-          "Hold him under mental health legislation",
+          "1 day after injury",
+          "3 days after injury",
+          "7 days after injury",
+          "10 days after injury",
+          "14 days after injury",
         ],
-        correct: 3,
+        correct: 1,
         explanation:
-          "The BOAST standard sets debridement immediately for agricultural contamination and notes that the consequences of infection after an open fracture can be great. He needs to hear plainly that waiting overnight raises his risk of deep infection, and transfer is arranged now, with help sought for his farm work. Surgery tomorrow, an overnight local admission for IV antibiotics alone and discharge on oral antibiotics all delay the debridement that a manure-contaminated fracture needs. He has capacity, so mental health legislation, which applies to mental disorder, does not allow him to be held.",
-        keyFeature: { topic: "msk", n: 7 },
-        source: "boast-open-fractures",
+          "EAST advises that for type III open fractures, which include farm injuries, prophylactic antibiotics continue for 72 hours after injury, and for no more than 24 hours after soft tissue coverage. Stopping 3 days after injury meets both limits, because his wound is closed on day 5. Stopping after 1 day is too short for a type III fracture, since the 24 hour rule after wound closure applies to type I and II fractures. Courses of 7, 10 or 14 days run past both limits, and EAST notes consensus that prophylaxis continued well beyond 72 hours is more likely to harm than help.",
+        keyFeature: { topic: "msk", n: 6 },
+        source: "east-open-fracture-2011",
       },
     ],
-    sources: [S.boastOpen, S.east, S.lezak],
+    sources: [S.boastOpen, S.east, S.walters],
     ...META,
   },
 ];
