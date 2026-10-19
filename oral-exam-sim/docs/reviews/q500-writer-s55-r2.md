@@ -86,3 +86,39 @@ Key features: KF1 1 (48 q2), KF2 2 (48 q3, q4), KF3 1 (50 q4), KF4 1 (50 q2), KF
 ## Tests
 
 `npx tsc --noEmit -p . 2>&1 | grep 'samps/s55'` printed nothing. `SAMP_BATCH=s55 npx vitest run tests/samps.test.ts tests/samp-quality.test.ts tests/citations.test.ts`: 3 files, 132 tests passed.
+
+## Round 3
+
+Authority: `docs/reviews/q500-verify2-s55.md`. 48, 51 and 52 passed and were not touched. Only `src/samps/s55/infectious-diseases.ts` was edited.
+
+### infectious-diseases-49 q3: replaced
+
+The loperamide question is gone, and with it the dishonest KF9 tag and the false codeine sentence. I did not remove the question outright. Removing it would leave 19 singles, and position three would then hold 5 of 19 (26 percent), which breaks the 25 percent limit while 48, 51 and 52 are frozen. So the question was replaced with a single whose key is in position four.
+
+New q3 (KF3, host factors such as immunosuppression):
+- Prompt: "Which of the following conditions, if present, would most justify empiric antibiotics for watery diarrhea like hers?"
+- Key: "Kidney transplant on tacrolimus".
+- Distractors: age over 70, chronic kidney disease, hypothyroidism on levothyroxine, and type 2 diabetes on metformin.
+- Source: IDSA 2017 recommendation 36 (strong, low). Empiric antimicrobial therapy is not recommended in most people with acute watery diarrhea and no recent international travel, and "an exception may be made in people who are immunocompromised". I read the recommendation again on the guideline page: https://academic.oup.com/cid/article/65/12/e45/4557073
+
+Uniqueness:
+- No catalogue key uses immunosuppression as the exception to withholding antibiotics in diarrhea.
+- headache-45 (s40) keys "Tacrolimus therapy" as the cause of a seizure after a transplant. That is a different decision.
+- Different from 49 q2 (no antimicrobial for her) and 49 q4 (dysentery findings): this question tests the host factor, not her own illness or new clinical findings.
+- Not in multiple-patients-22 or shock-46.
+
+Key feature tally after the change: KF3 2 (49 q3, 50 q4) and KF9 4. Single key positions: 4, 3, 5, 4, 4, unchanged.
+
+### infectious-diseases-50 q4: distractor reasons rewritten
+
+The key, options and stem are unchanged. The last two sentences now say:
+- The Burkey cohort put the odds of MRSA bacteremia at about six times higher with a CD4 count of 51 to 200 x 10^6/L than with a count above 500. The verifier read this adjusted OR of 6.43 in the full text (PMC2581476).
+- The cohort did not study hepatitis C, tobacco or methamphetamine smoking, or dental health.
+- Her hepatitis C has been cured, so she no longer has that infection.
+- Smoking and poor dental health are not forms of immune suppression, unlike a low CD4 count.
+
+No unsourced claim about relative risk remains.
+
+### Tests
+
+The s55 tsc grep printed nothing. `SAMP_BATCH=s55 npx vitest run tests/samps.test.ts tests/samp-quality.test.ts tests/citations.test.ts`: 132 passed.
