@@ -115,14 +115,14 @@ export const CQI_S59: Samp[] = [
     topic: TOPIC,
     title: "A call to the desk at night",
     stem:
-      "A 79-year-old woman is brought to the emergency department by ambulance with fever and confusion. Two days ago she was seen in the department with 1 day of fever, had blood cultures drawn and was discharged with a diagnosis of viral illness. At 23:05 last night the laboratory telephoned the department to report Gram-negative bacilli growing in her blood culture. A unit clerk wrote the result on a note at the desk, and it never reached a physician. No one called the patient. Today her lactate is 5.1 mmol/L. She is treated for septic shock and admitted to the ICU, where she recovers.",
+      "A 79-year-old woman is brought to the emergency department by ambulance with fever and confusion. Two days ago she was seen in the department with 1 day of fever, had blood cultures drawn and was discharged with a diagnosis of viral illness. At 23:05 last night the laboratory telephoned the department to report Gram-negative bacilli growing in her blood culture. A unit clerk wrote the result on a note at the desk, and it never reached a physician. No one called the patient. Today her lactate is 5.1 mmol/L. She is treated for septic shock.",
     vitals: { temperature: "38.9°C oral", pulse: "118/minute", resp: "26/minute", bp: "78/40 mmHg", o2sat: "93% on room air" },
     questions: [
       {
         id: "q1",
         kind: "single",
-        update: "She needs a norepinephrine infusion. The department's infusion pumps have no drug library, and nurses enter each rate by hand.",
-        prompt: "Which of the following pump practices best reduces the risk of an error in programming her infusion?",
+        update: "She needs a norepinephrine infusion. Nurses in the department calculate and enter each infusion rate by hand.",
+        prompt: "Which of the following changes would best reduce infusion programming errors in this department?",
         options: [
           "Hourly check of the remaining volume",
           "Manual rate calculation by the nurse",
@@ -132,12 +132,30 @@ export const CQI_S59: Samp[] = [
         ],
         correct: 4,
         explanation:
-          "Pumps with a dose error reduction system, known as smart pumps, check each programmed dose and rate against a drug library with set limits, so a mistyped rate is caught before the infusion runs. They are now standard in most Canadian hospitals because they prevent infusion errors. A printed table, a rate written on the bag and a manual calculation all still rely on a person entering the right number by hand, which is the step that fails. An hourly volume check finds an error only after the wrong dose has been given.",
+          "Pumps with a dose error reduction system, known as smart pumps, check each programmed dose and rate against a drug library with set limits, so a rate outside those limits is flagged or blocked before the infusion runs. An error that falls within the limits can still get through. They are now standard in most Canadian hospitals because they prevent infusion errors. A printed table, a rate written on the bag and a manual calculation all depend on a person calculating or entering the number correctly with no automated check. An hourly volume check finds an error only after the wrong dose has been given.",
         keyFeature: { topic: TOPIC, n: 5 },
         source: "sproul-smart-pumps-2023",
       },
       {
         id: "q2",
+        kind: "single",
+        update: "She is admitted to the ICU, where she recovers. The incident is reported the same day.",
+        prompt: "Which of the following immediate actions best protects other patients who may already be at risk?",
+        options: [
+          "Await the analysis before changing",
+          "Email a reminder to all clerks",
+          "Move the clerk to other duties",
+          "Post the critical result policy",
+          "Review other recent phoned results",
+        ],
+        correct: 4,
+        explanation:
+          "The Canadian Incident Analysis Framework places the safety of other patients who may be at risk among the first actions after an incident, and local actions to reduce the risk of imminent recurrence may be needed at once. A note at the desk could have lost other phoned results too, so the results phoned in recently need checking to confirm each reached a physician and was acted on. A reminder email or a posted policy may help with future calls but finds no patient already missed. Moving the clerk blames one person for a system gap. Waiting for the analysis leaves any missed patient at risk for weeks.",
+        keyFeature: { topic: TOPIC, n: 1 },
+        source: "ciaf-2012",
+      },
+      {
+        id: "q3",
         kind: "single",
         update: "The hospital starts an incident analysis.",
         prompt: "Which of the following should be part of the initial information gathering for this analysis?",
@@ -151,24 +169,6 @@ export const CQI_S59: Samp[] = [
         correct: 1,
         explanation:
           "The Canadian Incident Analysis Framework holds that the patient or family and the healthcare workers involved must be part of the initial information gathering, because their accounts show how the system really worked that night. A call log alone shows that a call was made but not why the result went no further. A personnel file and statements from managers turn attention to individuals rather than to the system. Legal review is not a precondition for gathering the facts.",
-        keyFeature: { topic: TOPIC, n: 1 },
-        source: "ciaf-2012",
-      },
-      {
-        id: "q3",
-        kind: "single",
-        update: "The incident is reported the same day.",
-        prompt: "Which of the following immediate actions best protects other patients who may already be at risk?",
-        options: [
-          "Await the analysis before changing",
-          "Email a reminder to all clerks",
-          "Move the clerk to other duties",
-          "Post the critical result policy",
-          "Review other recent phoned results",
-        ],
-        correct: 4,
-        explanation:
-          "The Canadian Incident Analysis Framework places the safety of other patients who may be at risk among the first actions after an incident, and local actions to reduce the risk of imminent recurrence may be needed at once. A note at the desk could have lost other phoned results too, so the results phoned in recently need checking to confirm each reached a physician and was acted on. A reminder email or a posted policy may help with future calls but finds no patient already missed. Moving the clerk blames one person for a system gap. Waiting for the analysis leaves any missed patient at risk for weeks.",
         keyFeature: { topic: TOPIC, n: 1 },
         source: "ciaf-2012",
       },

@@ -158,8 +158,13 @@ Revision against `docs/reviews/q500-verify2-batch15.md`. headache-building-over-
   - Catalogue check: cqi.md and gi-bleed.md have no item that keys this decision, and no s68 item mentions a walk-in prescriber.
 - Required fix 5: the case now has 4 branching questions on every path out of 8 questions: q-history, q-scope, q-source and q-handover. That is more than one graded decision per three questions.
 
+### Source change for wp-pr5 (coordinator request)
+
+- Villanueva 2013 was the least used source, cited only by `wp-m1`. It is removed. `wp-m1` (prompt transfusion, a higher threshold with active ischemia, limited crystalloid) is now cited to Barkun 2019. Barkun suggests 80 g/L without cardiovascular disease and a higher threshold with it, and the teaching was rewritten to say only that. The case no longer mentions the 70 g/L trial anywhere.
+- New source: Canadian Patient Safety Institute. Canadian disclosure guidelines. Being open with patients and families. 2011. The PDF at https://cfhi-fcass.ca/media/v4zni14t/cpsi-canadian-disclosure-guidelines-final-ua.pdf was downloaded and read. It says patients want the facts about what happened and what will prevent it in future. It says only agreed facts are shared, with "the avoidance of blame and speculation". It also covers learning and system improvement, and involving others with the patient's consent.
+- `wp-pr5` is now cited to it, with teaching rewritten to match. Every source is still cited and the case keeps 6 sources. tsc grep clean, 45 of 45 tests passed.
+
 ### Still for the physician
 
-- GI case: `wp-pr5` (disclosure and reporting) is still cited to Barkun 2019, which supports only the long term PPI part. The case is at the 6 source limit. A disclosure source such as CMPA guidance would need to replace an existing source.
 - GI case: he still has exertional chest heaviness and a type 2 infarction from anemia. That is the case's mechanism and the reason for `q-scope`. Only the data and the graded resuscitation decisions that mirrored gi-bleed-14 were changed.
 - Unchanged from round 2: the sertraline and alcohol question, the lorazepam dose with a low GCS, and whether antibiotics are needed for early aspiration in the heat case.

@@ -32,7 +32,7 @@ export const ABDOMINAL_PAIN_S62: Samp[] = [
         id: "q1",
         kind: "single",
         prompt: "Which of the following is the most likely cause of her symptoms?",
-        options: ["Ovarian hyperstimulation syndrome", "Pelvic infection after retrieval", "Resistant bladder infection", "Ruptured hemorrhagic cyst", "Torsion of an enlarged ovary"],
+        options: ["Ovarian hyperstimulation syndrome", "Pelvic infection after the retrieval", "Resistant bladder infection", "Ruptured hemorrhagic cyst", "Torsion of an enlarged ovary"],
         correct: 0,
         explanation:
           "Bloating, weight gain, ascites and scanty dark urine 5 days after the retrieval of 27 eggs, in a woman with polycystic ovaries who received gonadotropins, fit early ovarian hyperstimulation syndrome. Her small urine volumes reflect fluid leaving the circulation, not a bladder infection, and she has no dysuria. The syndrome is not usually associated with fever, and her normal temperature also makes a pelvic infection after the retrieval less likely. Torsion and a ruptured cyst stay on the differential, but neither explains ascites with steady weight gain.",
@@ -235,7 +235,7 @@ export const ABDOMINAL_PAIN_S62: Samp[] = [
         kind: "single",
         update: "CT abdomen with IV contrast shows sigmoid diverticulitis with wall thickening and fat stranding. There is no abscess, extraluminal gas or free fluid.",
         prompt: "Which of the following is the most appropriate treatment plan for her?",
-        options: ["Emergency sigmoid resection", "Home on oral antibiotics", "Home without antibiotics", "Hospital admission with antibiotics", "Observation without antibiotics"],
+        options: ["Emergency sigmoid resection", "Home on oral antibiotics", "Home without antibiotics", "Hospital admission with antibiotics", "Observation in hospital without antibiotics"],
         correct: 3,
         explanation:
           "Her CT shows uncomplicated diverticulitis, but she has taken prednisone 20 mg daily for 8 months, has diabetes and has needed IV opioids. WSES advises antibiotics against gram-negative bacilli and anaerobes in high-risk patients such as the immunocompromised, and regards immunocompromised patients as being at high risk of failing non-operative treatment, so she needs admission and close review. Care at home is suggested only for uncomplicated disease without significant comorbidities, and withholding antibiotics applies to immunocompetent patients. Nothing on her CT calls for emergency resection now.",
