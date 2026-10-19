@@ -8,7 +8,6 @@ const META = { reviewed: false, author: "Preceptor", version: 1 } as const;
 const S = {
   birkhahn2002: { id: "birkhahn-si-2002", citation: "Birkhahn RH, Gaeta TJ, Bei R, Bove JJ. Shock index in the first trimester of pregnancy and its relationship to ruptured ectopic pregnancy. Acad Emerg Med. 2002.", url: "https://doi.org/10.1111/j.1553-2712.2002.tb00226.x" },
   ctas2004: { id: "ctas-2004", citation: "Murray M, Bullard M, Grafstein E, for the CTAS and CEDIS National Working Groups. Revisions to the Canadian Emergency Department Triage and Acuity Scale implementation guidelines. CJEM. 2004.", url: "https://doi.org/10.1017/S1481803500009428" },
-  sogc414: { id: "sogc-ectopic", citation: "Po L, Thomas J, Mills K, et al. Guideline No. 414: management of pregnancy of unknown location and tubal and nontubal ectopic pregnancies. J Obstet Gynaecol Can. 2021.", url: "https://pubmed.ncbi.nlm.nih.gov/33453378/" },
   verhaegen: { id: "verhaegen-progesterone-2012", citation: "Verhaegen J, Gallos ID, van Mello NM, et al. Accuracy of single progesterone test to predict early pregnancy outcome in women with pain or bleeding: meta-analysis of cohort studies. BMJ. 2012.", url: "https://doi.org/10.1136/bmj.e6077" },
   barnhart: { id: "barnhart-pul-2011", citation: "Barnhart K, van Mello NM, Bourne T, et al. Pregnancy of unknown location: a consensus statement of nomenclature, definitions, and outcome. Fertil Steril. 2011.", url: "https://doi.org/10.1016/j.fertnstert.2010.09.006" },
   carson: { id: "aabb-transfusion-2023", citation: "Carson JL, Stanworth SJ, Guyatt G, et al. Red blood cell transfusion: 2023 AABB international guidelines. JAMA. 2023.", url: "https://doi.org/10.1001/jama.2023.12914" },
@@ -72,15 +71,15 @@ export const FIRST_TRIMESTER_BLEEDING_S65: Samp[] = [
         kind: "single",
         update: "Bedside ultrasound shows no intrauterine pregnancy and free fluid in the pouch of Douglas, with none in the hepatorenal space. Her pulse is 108/minute and her BP 110/70 mmHg.",
         prompt: "Which of the following is the most appropriate next step in her management?",
-        options: ["Admit for a repeat hCG in 48 hours", "Discharge with hCG in 48 hours", "Expectant care at home", "Formal ultrasound tomorrow", "Gynecology now for laparoscopy"],
+        options: ["Admit for a repeat hCG in 48 hours", "Discharge with hCG in 48 hours", "Expectant care at home", "Formal ultrasound tomorrow", "Gynecology now for surgery"],
         correct: 4,
         explanation:
-          "A positive pregnancy test, no intrauterine pregnancy, free fluid behind the uterus and a shock index near 1 point to a leaking or ruptured ectopic pregnancy, even though her blood pressure is normal. She needs gynecology now for surgery, with IV access, her blood type determined and blood ready for transfusion. Expectant care, discharge, a formal scan tomorrow or admission to wait for a repeat hCG would all leave an ongoing bleed untreated, and methotrexate takes days to work and cannot stop it either.",
+          "A positive pregnancy test, an empty uterus and fluid behind it make a bleeding ectopic pregnancy highly likely, and blood can seep into the abdomen over days before the BP falls. Once the diagnosis is highly likely, the step is to prepare for surgery or refer urgently, with IV access and Ringer's lactate, close monitoring of pulse, BP and bleeding, her blood type determined and blood ready for transfusion. Expectant care, discharge, a formal scan tomorrow or admission to wait for a repeat hCG would all leave a likely intraperitoneal bleed without definitive treatment.",
         keyFeature: { topic: "first-trimester-bleeding", n: 2 },
-        source: "sogc-ectopic",
+        source: "msf-ectopic",
       },
     ],
-    sources: [S.birkhahn2002, S.ctas2004, S.msfEctopic, S.sogc414],
+    sources: [S.birkhahn2002, S.ctas2004, S.msfEctopic],
     ...META,
   },
 
@@ -122,7 +121,7 @@ export const FIRST_TRIMESTER_BLEEDING_S65: Samp[] = [
         kind: "single",
         update: "Ultrasound shows a heterogeneous intrauterine mass with many small cystic spaces and no fetus. Quantitative hCG is 310 000 IU/L. Suction aspiration is planned today, and pathology will take a week.",
         prompt: "Using SOGC Guideline No. 448, which of the following is the most appropriate Rh immune globulin plan for her?",
-        options: ["Kleihauer-Betke test to set the dose", "Rh immune globulin 120 mcg IM", "Rh immune globulin 300 mcg IM", "Wait for pathology to decide", "No Rh immune globulin for a mole"],
+        options: ["Kleihauer-Betke test to set the dose", "Rh immune globulin 120 mcg IM", "Rh immune globulin 300 mcg IM", "Wait for pathology to decide", "No Rh immune globulin needed"],
         correct: 2,
         explanation:
           "SOGC suggests 300 mcg of Rh immune globulin for a non-sensitized Rh D negative patient with a molar pregnancy after 12 weeks. It may be omitted only when a complete mole is certain, because trophoblast does not carry the D antigen, whereas a partial mole contains fetal red cells. Her pathology is pending, so the diagnosis is not yet certain, and the dose belongs within 72 hours of the event rather than a week later. A dose of 120 mcg is the minimum used after chorionic villus sampling in the first 12 weeks. Kleihauer-Betke testing is advised after 20 weeks.",
@@ -137,7 +136,7 @@ export const FIRST_TRIMESTER_BLEEDING_S65: Samp[] = [
         options: ["Equal to the risk after a miscarriage", "Higher than usual given her features", "Lower than usual given her age", "Present only if bleeding continues", "Removed once the uterus is empty"],
         correct: 1,
         explanation:
-          "Her age of 41, an hCG of 310 000 IU/L and theca lutein cysts are each markers of a high-risk mole, and with these features the rate of postmolar gestational trophoblastic neoplasia can reach 40 to 50%. She should hear this plainly before discharge, because it is why her hCG follow-up must not lapse. Age over 40 raises the risk rather than lowering it. Emptying the uterus does not remove the risk, and persistent disease is often silent, so it is found by an hCG that plateaus or rises rather than by bleeding. Her risk is far from that of a usual miscarriage.",
+          "Her age of 41, an hCG of 310 000 IU/L and theca lutein cysts are each markers of a high-risk mole, and with these features the rate of postmolar gestational trophoblastic neoplasia can reach 40 to 50%. She should hear this plainly before discharge, because it is why her hCG follow-up must not lapse. Age over 40 raises the risk rather than lowering it. Emptying the uterus does not remove the risk, and persistent disease is often silent, so it is found by an hCG that plateaus or rises rather than by bleeding. Even an average complete mole progresses to postmolar neoplasia in about 20% of cases, so her risk is not that of an ordinary pregnancy loss.",
         keyFeature: { topic: "first-trimester-bleeding", n: 6 },
         source: "braga-mole-2025",
       },
