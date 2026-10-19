@@ -99,3 +99,42 @@ The verdict asked for a KF4 decision in 52 q3 while moving the scenario away fro
 7. 52 has three KF7 items (q1, q2, q4).
 8. Non-Canadian sources were used where no Canadian guidance was found: Am Fam Physician for the recurrence rule, MedlinePlus for child safety and Epilepsy Action (UK) for parenting safety. I found no Caring for Kids or CPS page on these points.
 9. 50 q1 was changed without a request (one distractor swapped, explanation updated) to remove the mock-mode cue that the new q2 would otherwise create.
+
+## Round 3
+
+This round applies `docs/reviews/q500-verify2-s61.md`. seizures-52 passed and was not touched. Only `src/samps/s61/seizures.ts` was edited.
+
+Checks: the s61 tsc grep printed nothing. `SAMP_BATCH=s61 npx vitest run tests/samps.test.ts tests/samp-quality.test.ts tests/citations.test.ts` passed 132 of 132, including the key feature coverage and near-duplicate stem checks. The batch now has 21 questions (20 single, 1 menu). Single keys sit 4, 4, 4, 4, 4 across positions 0 to 4.
+
+Key feature tags:
+
+| KF | Items |
+|---|---|
+| 1 | 50 q1, 51 q1, 51 q3 |
+| 2 | 51 q4 |
+| 3 | 50 q5 |
+| 4 | 49 q2, 49 q3 |
+| 5 | 48 q3, 48 q4, 50 q2, 52 q3 |
+| 6 | 49 q4, 50 q3, 51 q2 |
+| 7 | 50 q4, 52 q1, 52 q2, 52 q4 |
+| 8 | 48 q1, 48 q2, 49 q1 |
+
+| Fix | What was done |
+|---|---|
+| 48 q4, stem gap | The stem now says the fever and rash "began about 6 hours before the seizure" and adds "There is no family history of febrile seizures or epilepsy." The explanation now counts the points explicitly. Age under 18 months and temperature under 40°C score. Fever over 1 hour and no family history do not. That gives 2 of 4, about 32%. Key and options are unchanged. |
+| 49 q3 fails (key and tag) | q2 is retagged KF4. He is still convulsing, and the decision is the timing of the next benzodiazepine dose, a stepwise step. q3 is replaced with a decision taken while he is still convulsing after the second dose: the most important monitoring. Key "Pulse oximetry and respiratory rate" (CPS 2021: continuous cardiorespiratory and saturation monitoring during drug administration, with respiratory depression after two doses). Distractors are BP every 15 minutes, glucose every 5 minutes (his glucose is 5.2), continuous EEG (CPS keeps EEG for failure to wake or paralysis) and hourly neurological checks. Tagged KF4 (support breathing in an actively seizing patient). The q4 update now opens "The convulsion stops after the second dose" and does not name q2's time or q3's key. |
+| 49 q3, KF3 | I found no new KF3 decision in this infant. Each candidate is already keyed: refractory infusions and EEG for nonconvulsive status (seizures-17, the batch04 oral case), status in pregnancy and eclampsia (seizures-27 q4, seizures-03, pre-eclampsia-04), isoniazid (seizures-04), hyponatremia (seizures-06, seizures-19, loc-40, the batch06 oral case), the benzodiazepine dose cap and IO access (oral cases) and failure to wake leading to EEG (loc-05). Rigors were rejected because young infants rarely shiver. KF3 is covered instead by a new 50 q5 (below). This departs from the reviewer's suggested route, which put KF3 in 49 q3, and is flagged for the reviewer. |
+| 50 q4, mock-mode cue | Reworded. Prompt: "Which of the following findings at a follow-up visit would most warrant urgent further assessment?", with no neurologist and no "seizure". Options: "A brief event every few months", "An event during a febrile illness", "Another event after a late night", "Declining language and school work" (key) and "Tiredness the morning after an event". None describes a syndrome-defining feature. Same decision (DEE-SWAS), same source. |
+| 50 q5 (new, KF3) | Under the ILAE 2015 operational definition, a seizure with impaired awareness and no convulsive movements is status epilepticus at 10 minutes. That is t1 for focal status with impaired awareness and the lower end of the 10 to 15 minutes for absence status. Distractors are 5 minutes (t1 for tonic-clonic), 20 minutes, 30 minutes (old definition and t2 for convulsive status) and 60 minutes (t2 for focal status with impaired awareness). The prompt avoids the word "focal" so it favours neither seizure option in q1. Grep found no catalogue item that keys the 10-minute threshold. Bank items key only the 5-minute convulsive threshold (seizures-23 q1, seizures-29 q3). |
+| 51 q4, ECG repeat | Reframed to recognising the red flag, with no ECG key and no update. New lead-in: "Which of the following features of a future spell would most warrant a cardiac assessment for him?" Key "Onset at rest without a trigger". The other options are typical spell features: pallor after a minor head bump, recovery within about a minute, starting when he is told no, and stiffening after going limp. Leung 2019: precipitating factors are almost always present, and arrhythmias rarely cause pallid spells. The explanation does not say every pallid spell needs an ECG. Still KF2 (searching for an arrhythmia). |
+| 51 q1, physician note 5 | The lead-in now says "features of his presentation" so the examination finding "Pallor on examination" fits. |
+
+New source: Trinka E et al. A definition and classification of status epilepticus. Report of the ILAE Task Force on Classification of Status Epilepticus. Epilepsia. 2015. https://doi.org/10.1111/epi.13121.
+- The DOI resolved to the Wiley record for epi.13121. The full text returned 403, so I could not read it directly.
+- I checked the values in MedLink's nonconvulsive status review (https://www.medlink.com/articles/nonconvulsive-status), which cites Trinka 2015. It gives t1 of 10 minutes for focal status with impaired awareness and 10 to 15 minutes for absence status. It gives t2 of more than 60 minutes for focal status and unknown for absence status.
+- Search summaries of the ILAE definition confirm 5 and 30 minutes for tonic-clonic status.
+
+Uncertain, for the reviewer:
+1. KF3 sits in 50 q5, not 49 q3, as explained above. 50 q5 is a definition recall item, not tied to the boy's own events.
+2. 49 q3 monitoring is a new single key, but seizures-01 q1 (write-in, adult) lists "continuous capnography and oximetry monitoring" as one of seven airway items. I judged the decision distinct: a single-best monitoring choice in an infant after a second benzodiazepine dose.
+3. Trinka 2015 values were confirmed through a secondary source because the publisher page blocked access.
