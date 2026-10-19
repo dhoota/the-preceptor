@@ -115,7 +115,7 @@ export const BURNS_S69: Samp[] = [
         options: ["Petroleum jelly gauze dressing", "Topical calcium chloride 10% gel", "Topical calcium gluconate 2.5% gel", "Topical lidocaine 4% cream", "Topical silver sulfadiazine 1%"],
         correct: 2,
         explanation:
-          "Calcium gluconate 2.5% gel binds the fluoride that is still diffusing through her skin. The Canadian Antidote Guide applies it in gloves over the hands and under a non-absorbent bandage elsewhere, changed every 4 hours, and topical treatment is preferred in children once the skin is washed. Calcium chloride is avoided on burned tissue because it injures it. Silver sulfadiazine and petroleum gauze are dressings for thermal burns and do not bind fluoride. Lidocaine cream numbs only the surface and hides the pain that shows whether the calcium is working.",
+          "Calcium gluconate 2.5% gel binds the fluoride that is still diffusing through her skin. The Canadian Antidote Guide applies it in gloves over the hands and under a non-absorbent bandage elsewhere, changed every 4 hours, and topical treatment is preferred in children once the skin is washed. Calcium chloride is directly toxic to tissue and is not used for these burns. Silver sulfadiazine and petroleum gauze are dressings for thermal burns and do not bind fluoride. Lidocaine cream numbs only the surface and hides the pain that shows whether the calcium is working.",
         keyFeature: { topic: "burns", n: 6 },
         source: "cag-calcium-gluconate",
       },
@@ -187,7 +187,7 @@ export const BURNS_S69: Samp[] = [
         options: ["Admit to general surgery locally", "Discharge with burn clinic follow-up", "Hyperbaric oxygen centre referral", "Observe overnight then discharge", "Transfer to a burn centre"],
         correct: 4,
         explanation:
-          "Partial thickness burns of 10% TBSA or more call for immediate burn centre consultation and transfer, and his burns cover about 18% and need formal fluid resuscitation and specialized wound care. His carboxyhemoglobin of 9% with no loss of consciousness, no neurologic signs and resolved symptoms is treated with normobaric oxygen and does not call for hyperbaric therapy. Admission to a general surgery service without burn expertise, overnight observation or discharge all fall short of the care a burn of this size needs. His buprenorphine dose and analgesic plan go with him.",
+          "Partial thickness burns of 10% TBSA or more call for immediate burn centre consultation with consideration for transfer, and his burns cover about 18% and need formal fluid resuscitation and specialized wound care. His carboxyhemoglobin of 9% with no loss of consciousness, no neurologic signs and resolved symptoms is treated with normobaric oxygen and does not call for hyperbaric therapy. Admission to a general surgery service without burn expertise, overnight observation or discharge all fall short of the care a burn of this size needs. His buprenorphine dose and analgesic plan go with him.",
         keyFeature: { topic: "burns", n: 5 },
         source: "aba-referral",
       },

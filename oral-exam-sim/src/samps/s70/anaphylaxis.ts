@@ -321,7 +321,7 @@ export const ANAPHYLAXIS_S70: Samp[] = [
         options: ["Corn tortillas", "Polenta", "Quinoa salad", "Rice noodles", "Soba noodles"],
         correct: 4,
         explanation:
-          "Soba are Japanese noodles made wholly or partly from buckwheat flour, and they are a leading cause of buckwheat reactions where they are eaten often. Polenta and corn tortillas are made from corn. Rice noodles are made from rice flour. Quinoa is a seed from a different plant family. Buckwheat also turns up as a hidden ingredient in pancakes, crepes, breads, pasta, porridge and some burgers, so she should ask about it when eating out as well as reading labels.",
+          "Soba are Japanese noodles made wholly or partly from buckwheat flour, so they carry an obvious risk for her. Polenta and corn tortillas are made from corn. Rice noodles are made from rice flour. Quinoa is a seed from a different plant family. Outside East Asia buckwheat also acts as a hidden allergen in dishes such as pizza, pasta, porridge and burgers, as well as pancakes like hers, so she should ask about it when eating out as well as reading labels.",
         keyFeature: { topic: "anaphylaxis", n: 4 },
         source: "satoh-buckwheat",
       },
