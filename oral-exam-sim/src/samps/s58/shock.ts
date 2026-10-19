@@ -401,7 +401,7 @@ export const SHOCK_S58: Samp[] = [
         prompt: "Which of the following is the most appropriate resuscitation fluid for him now?",
         options: [
           "albumin 5% 500 mL IV",
-          "Crystalloid only, pending transplant advice",
+          "Crystalloid until transplant advice",
           "red cells 2 units IV now",
           "Ringer's lactate 2 L IV",
           "sodium chloride 0.9% 2 L IV",
