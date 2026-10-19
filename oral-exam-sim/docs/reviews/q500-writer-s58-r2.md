@@ -116,3 +116,50 @@ Every key feature is covered, and key features 1, 5, 7 and 8 are restored as the
 - **51:** The evidence for treating carcinoid crisis is low quality and mostly expert opinion. The 2022 ENETS guidance is the most current source, and every keyed claim was checked against its wording.
 - **52 q3:** The CAR wording was confirmed through secondary summaries (First10EM and NICE NG148 documents), and the bibliographic details through Crossref. The full text was not opened.
 - **52 q4:** The guideline also cautions that permissive hypotension should be considered carefully in older patients. The stem makes her pressure (64 mmHg with drowsiness) clearly below any target.
+
+## Round 3
+
+This round answers `docs/reviews/q500-verify2-s58.md`. shock-48 and shock-49 passed and were not touched. The only file edited is `src/samps/s58/shock.ts`. The s58 type check grep is clean, and the batch tests pass (132).
+
+### Mock-mode cue fixes (ruling B6)
+
+- **shock-50 q3.** The update now reads "His first beta-lactam dose ran IV over 30 minutes within the first hour." The prompt now asks about "his next beta-lactam doses". Piperacillin-tazobactam is no longer named, and the explanation never named it.
+- **shock-50 q5.** "on norepinephrine" was removed. The update now reads "Three hours later his MAP is 67 mmHg."
+- **shock-51 q3.** The update now opens "An hour after arrival her JVP is at the angle of the jaw." It no longer says crystalloid was given.
+- **shock-51 q4.** The update now opens "Her initial treatment for the crisis is running." None of the q2 answers is named.
+
+### shock-52 rebuilt
+
+**New scenario.** A 52-year-old man with stage 4 chronic kidney disease is being assessed for a living donor kidney transplant. He bled into the tissue around his left kidney 9 hours after an outpatient needle biopsy of that kidney, and he had been sent home after 6 hours of observation. He takes no anticoagulant and stopped ASA 7 days before the biopsy. There is no fall, no fracture, no DOAC, no FAST and no contrast decision. A grep of `src/samps` and `src/cases` for "kidney biopsy" and "renal biopsy" finds nothing.
+
+| q | KF | Decision | Key | Source |
+|---|---|---|---|---|
+| q1 | 6 | Which bedside ultrasound finding explains the shock | Hypoechoic collection around the left kidney (perinephric hematoma) | Marwah and Korbet 1996: 77% of complications seen by 8 h, 95% by 12 h, and perinephric hematoma counted as a complication |
+| q2 | 3 | Resuscitation fluid for a transplant candidate in hemorrhagic shock | red cells 2 units IV now | KDIGO 2012 anemia guideline, chapter 4 |
+| q3 | 8 | Clotting treatment with normal platelets, INR and aPTT but a urea of 34 mmol/L | desmopressin IV | Hedges 2007 review of uremic bleeding treatment |
+| q4 | 7 | The passing round 2 decision, carried over: add norepinephrine at a systolic of 66 mmHg while waiting for interventional radiology | norepinephrine infusion | European bleeding guideline, Recommendations 13 and 14 |
+
+**KDIGO wording behind q2.** The guideline was read in full text through Europe PMC (PMC4089676).
+- Recommendation 4.1.2: "we specifically recommend avoiding, when possible, red cell transfusions to minimize the risk of allosensitization."
+- Recommendation 4.2: transfuse "when rapid correction of anemia is required to stabilize the patient's condition (e.g., acute hemorrhage...)".
+
+**Uniqueness, checked by grep across `src/samps` and `src/cases`:**
+- Transfusion in a transplant candidate is not keyed anywhere. No item links "transplant" with "transfus", "sensitiz" or "HLA".
+- Desmopressin appears in s11, s14, s39, s45 and s50, always as a distractor and never in a uremic context. Uremic platelet dysfunction appears only as a distractor in s68 gi-bleed q3, a von Willebrand question.
+- The q4 decision is not keyed anywhere else in the bank.
+
+**Mock-mode check within shock-52.**
+- No update names an earlier key. The q3 update gives laboratory results only, and the q4 update says "the resuscitation given so far".
+- The q3 options carry no doses, so the item does not depend on a desmopressin dose.
+
+**Key feature coverage.** Every shock key feature is still covered. Key feature 8 is now carried by 51 q2 and 52 q3. Single-answer keys by position are 3, 5, 4, 4, 4 of 20, so no position is above 25% and every position is used.
+
+**Sources.** Friese 2007 and CAR 2022 were removed, since nothing cites them now. Three were added, and each was confirmed through Crossref and Europe PMC:
+- Marwah DS, Korbet SM. Am J Kidney Dis. 1996. https://doi.org/10.1016/s0272-6386(96)90129-8 (abstract read).
+- KDIGO Anemia Work Group. Kidney Int Suppl. 2012. Chapter 4. https://pmc.ncbi.nlm.nih.gov/articles/PMC4089676/ (full text read).
+- Hedges SJ, et al. Nat Clin Pract Nephrol. 2007. https://doi.org/10.1038/ncpneph0421 (abstract read).
+
+### Uncertain, for the reviewer
+
+- **q3, Hedges.** The abstract lists desmopressin among the uremic bleeding treatments but gives no dose or onset. The item therefore states neither. A small 1996 study of fistula oozing (Hong) found no clear benefit, so desmopressin is the best of the five options here rather than a proven therapy.
+- **q1, Marwah and Korbet.** The source supports the timing figures and names perinephric hematoma as a biopsy complication. The ultrasound appearance is standard teaching and is not quoted from the source.
