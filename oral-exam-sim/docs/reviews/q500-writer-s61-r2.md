@@ -138,3 +138,31 @@ Uncertain, for the reviewer:
 1. KF3 sits in 50 q5, not 49 q3, as explained above. 50 q5 is a definition recall item, not tied to the boy's own events.
 2. 49 q3 monitoring is a new single key, but seizures-01 q1 (write-in, adult) lists "continuous capnography and oximetry monitoring" as one of seven airway items. I judged the decision distinct: a single-best monitoring choice in an infant after a second benzodiazepine dose.
 3. Trinka 2015 values were confirmed through a secondary source because the publisher page blocked access.
+
+## Round 4
+
+This round applies `docs/reviews/q500-verify3-s61.md`. seizures-48, -49, -51 and -52 passed and are unchanged apart from the 49 q2 tag. Only `src/samps/s61/seizures.ts` was edited.
+
+| Fix | What was done |
+|---|---|
+| 50 q5 repeats signed seizures-23 q1 | Removed q5. Removed the `trinka` entry from `S` and from seizures-50 `sources`. seizures-50 is back to 4 questions with 3 sources. |
+| KF3 coverage | 49 q2 is retagged KF3, the route the reviewer accepted in advance. 49 q3 keeps KF4. |
+| 50 q4, "urgent" | The prompt now reads "...would most warrant prompt further assessment?". It does not name the EEG. Key and options are unchanged. |
+| 50 q4, distractor reasons | The explanation now rests only on the cited ILAE overview: cognitive or language deterioration is the change that calls for a sleep EEG for DEE-SWAS. The other options are rejected because they are not that deterioration. A further brief event, whether every few months, during a fever or after a late night, does not by itself point to a new process. Tiredness the morning after an event does not signal a change. The explanation no longer claims that fever and sleep loss are triggers, or that post-seizure tiredness is expected, so no new source was needed. |
+
+Key feature tags after this round:
+
+| KF | Items |
+|---|---|
+| 1 | 50 q1, 51 q1, 51 q3 |
+| 2 | 51 q4 |
+| 3 | 49 q2 |
+| 4 | 49 q3 |
+| 5 | 48 q3, 48 q4, 50 q2, 52 q3 |
+| 6 | 49 q4, 50 q3, 51 q2 |
+| 7 | 50 q4, 52 q1, 52 q2, 52 q4 |
+| 8 | 48 q1, 48 q2, 49 q1 |
+
+Single keys across positions 0 to 4: 4, 3, 4, 4, 4 (19 singles). The highest is 21%.
+
+Checks: the s61 tsc grep printed nothing. `SAMP_BATCH=s61 npx vitest run tests/samps.test.ts tests/samp-quality.test.ts tests/citations.test.ts` passed 128 of 128, including key feature coverage.
