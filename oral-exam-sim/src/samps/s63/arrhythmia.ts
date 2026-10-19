@@ -96,8 +96,8 @@ export const ARRHYTHMIA_S63: Samp[] = [
         kind: "single",
         update: "Temperature control is to start in the department, because no ICU bed is free for several hours. She needs sedation and analgesia while she is ventilated.",
         prompt: "Which of the following sedation plans is most appropriate during her temperature control?",
-        options: ["Inhaled sevoflurane through the ventilator", "Lorazepam 2 mg IV every 2 hours", "Midazolam and fentanyl infusions", "Propofol and remifentanil infusions", "Rocuronium and propofol infusions"],
-        correct: 3,
+        options: ["Inhaled sevoflurane through the ventilator", "Lorazepam 2 mg IV every 2 hours", "Midazolam and fentanyl infusions", "Neuromuscular blockade with propofol", "Propofol and remifentanil infusions"],
+        correct: 4,
         explanation:
           "ERC-ESICM 2025 guidance suggests short-acting IV sedatives, with daily sedation holds, for ventilated patients after cardiac arrest, so that neurological examination is less confounded by drug effect. In comatose patients under temperature control, propofol with remifentanil was linked with far less delayed awakening than midazolam with fentanyl, which accumulates, as does repeated lorazepam. Watch her BP, because propofol may raise the need for a vasopressor. Routine neuromuscular blockade is not recommended and is kept for critical hypoxemia with ARDS, and it would also mask seizures. Inhaled sevoflurane caused fewer ventilator-free days and higher mortality than propofol in a trial.",
         keyFeature: { topic: "arrhythmia", n: 8 },
@@ -118,8 +118,8 @@ export const ARRHYTHMIA_S63: Samp[] = [
       {
         id: "q3",
         kind: "single",
-        update: "Epinephrine 1 mg IV has been given. The rhythm is unchanged at the next pulse check.",
-        prompt: "Using European Resuscitation Council guidance, which of the following is the most appropriate treatment to add to CPR and epinephrine?",
+        update: "Epinephrine 1 mg IV has been given and the rhythm is unchanged at the next pulse check. Your department follows European Resuscitation Council guidance.",
+        prompt: "Which of the following is the most appropriate treatment to add to CPR and epinephrine under this guidance?",
         options: ["amiodarone 300 mg IV", "atropine 3 mg IV", "calcium chloride 1 g IV", "Transcutaneous pacing", "Unsynchronized defibrillation"],
         correct: 3,
         explanation:

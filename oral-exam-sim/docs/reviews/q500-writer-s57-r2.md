@@ -86,3 +86,35 @@ I searched the catalogues and grepped `src/samps` and `src/cases` for 911 and EM
 
 - 50 q4 is tagged KF6 because calling 911 starts prehospital monitoring and ECG on the way to reperfusion. KF1 (start testing immediately) is an arguable alternative tag.
 - 51 q2 now tests applying the half dose to her weight band, not the decision to halve, which the update supplies. That decision is taught in the q1 explanation, with CCS/CAIC 2019 as the source.
+
+## Round 4
+
+Verdict applied: `docs/reviews/q500-verify3-s57.md`. I did not change SAMPs 48, 49 or 52. Only the batch file was edited.
+
+### Fixes
+
+- **50 q4.** The 911 item is removed. The new item is key feature 1 (biomarker testing in possible ACS).
+  - Update: "A colleague has added CK-MB and myoglobin to his blood work."
+  - Prompt: "Which of the following best describes what these two added markers contribute to his assessment for MI?"
+  - Key: "They have no added diagnostic value" (fourth position). Distractors: they detect MI earlier than troponin, they detect unstable angina, they exclude MI within 1 hour, they show ischemia without necrosis.
+  - Source: Gulati 2021, already listed and still cited by 50 q1 to q3. I checked the text in the PDF: "3: No benefit B-NR. 4. With availability of cTn, creatine kinase myocardial (CK-MB) isoenzyme and myoglobin are not useful for diagnosis of acute myocardial injury."
+  - It is not discharge or return advice. It names no lipid or statin therapy and does not mention the intermediate risk judgement.
+  - Uniqueness: "CK-MB" appears nowhere in `src/samps` or `src/cases`. "Myoglobin" appears only in burns, environmental and EMS items about rhabdomyolysis. No catalogue keys a biomarker choice of this kind.
+- **51 q2.**
+  - The update is now "Her full weight-based tenecteplase dose would be 35 mg." The prompt is "Which of the following tenecteplase doses is most appropriate for her?"
+  - Options, low to high: 8.75, 17.5 (key, second position), 26.25, 35 and 52.5 mg. Each distractor's reason traces to the update or the guideline: 35 mg is the full dose and ignores her age, 8.75 mg (a quarter) and 26.25 mg (three quarters) are not the half dose the guideline describes, and 52.5 mg is more than her full dose.
+  - Source: `ccs-stemi-2019`. The explanation says "older than 75" and gives the STREAM sentence as the guideline reports it. It does not mention a STREAM-2 age threshold.
+  - The TNKase monograph is no longer cited, so it is removed from `sources` and from the source list at the top of the file. 51 now lists CCS/CAIC 2019 and STREAM-2, both cited.
+- **Change the verdict did not ask for (51 q1 explanation).** I removed the sentence "and the guideline suggests a half dose may be considered for patients older than 75". q2 now tests that decision, and in one-question-at-a-time mode the q1 explanation would show before q2 is answered.
+
+### Checks
+
+- A scripted edit briefly duplicated the new 50 q4 text into other SAMPs. I found it at once through the type check, removed every stray copy, and confirmed the structure: ids and `sources` lines for all five SAMPs are as before, and only 50 q4 holds the new text.
+- Single key positions, first to fifth: 4, 4, 4, 4, 3. Key is the single longest option in 3 of 19.
+- Questions per key feature: KF1 2, KF2 2, KF3 2, KF4 4, KF5 3, KF6 1, KF7 2, KF8 4.
+- `npx tsc --noEmit -p . | grep samps/s57`: no output. `SAMP_BATCH=s57 npx vitest run tests/samps.test.ts tests/samp-quality.test.ts tests/citations.test.ts`: 128 passed.
+
+### Uncertain
+
+- 50 q4: "Neither marker detects MI earlier than a high sensitivity troponin" and "myoglobin also rises with skeletal muscle injury" are standard teaching, given in support of the cited recommendation. The guideline text itself says only that the markers are not useful once troponin is available.
+- 51 q2: the quarter and three quarter doses are plausible guesses rather than regimens anyone uses. Their only rejection reason is that the guideline describes a half dose.
