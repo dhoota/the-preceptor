@@ -197,4 +197,64 @@ export const PULMONARY_EDEMA_S60: Samp[] = [
     sources: [S.caep, S.ohfrs],
     ...META,
   },
+
+  /* 42 Pulmonary edema with hypercapnic COPD on home oxygen ------------------ */
+  {
+    id: "pulmonary-edema-42",
+    topic: "pulmonary-edema",
+    alsoTopics: ["asthma-copd"],
+    title: "Home oxygen user who cannot get comfortable",
+    stem:
+      "A 74-year-old woman is brought to the emergency department by ambulance with 2 days of worsening shortness of breath. She has severe COPD and uses home oxygen at 2 L/minute, with a usual saturation of 91 to 93%. She also has heart failure with an ejection fraction of 35%. Paramedics gave salbutamol and ipratropium with little change. For 4 nights she has slept upright, and her ankles are more swollen. Her sputum is unchanged in colour. She is drowsy but answers questions. She has scattered expiratory wheeze, crackles at both bases and pitting edema to mid shin. A venous gas shows pH 7.27 and PCO2 71 mmHg. Lung ultrasound shows multiple B-lines in both lungs.",
+    vitals: { temperature: "36.9°C oral", pulse: "108/minute", resp: "30/minute", bp: "164/90 mmHg", o2sat: "84% on 2 L/minute by nasal prongs" },
+    questions: [
+      {
+        id: "q1",
+        kind: "single",
+        prompt: "Which of the following findings most supports pulmonary edema as the main cause of her worsening breathlessness?",
+        options: ["Little response to bronchodilators", "Multiple B-lines in both lungs", "PCO2 of 71 mmHg on venous gas", "Scattered expiratory wheeze", "Sputum unchanged in colour"],
+        correct: 1,
+        explanation:
+          "Multiple B-lines in both lungs on point-of-care ultrasound show lung congestion, and with orthopnea and worsening edema they point to heart failure as the main driver. Wheeze occurs in acute heart failure as well as in COPD, so it does not separate them. A PCO2 of 71 mmHg shows hypercapnic failure, which either condition can produce in a patient with severe COPD. A poor response to bronchodilators and unchanged sputum argue against a simple infective exacerbation but do not by themselves show congestion.",
+        keyFeature: { topic: "pulmonary-edema", n: 5 },
+        source: "caep-ahf",
+      },
+      {
+        id: "q2",
+        kind: "single",
+        prompt: "Which of the following is the most appropriate respiratory support to start for her now?",
+        options: ["CPAP by face mask", "High-flow nasal oxygen", "Noninvasive bilevel ventilation", "Nonrebreather mask at 15 L/minute", "Rapid sequence intubation"],
+        correct: 2,
+        explanation:
+          "She has cardiogenic pulmonary edema and acute hypercapnic acidosis with a pH of 7.27, and bilevel noninvasive ventilation is recommended for COPD with acute respiratory acidosis at a pH of 7.35 or less. Bilevel ventilation is also recommended for cardiogenic pulmonary edema, so it treats both problems. CPAP helps the edema but gives no inspiratory support for her hypercapnia. High-flow oxygen and a nonrebreather mask do not support ventilation. She is drowsy but answering questions, so a trial of noninvasive ventilation with close watching comes before intubation.",
+        keyFeature: { topic: "pulmonary-edema", n: 1 },
+        source: "ers-ats-niv",
+      },
+      {
+        id: "q3",
+        kind: "single",
+        prompt: "Which of the following oxygen saturation targets is most appropriate while she is treated?",
+        options: ["88 to 92%", "90 to 95%", "92 to 96%", "94 to 98%", "96 to 100%"],
+        correct: 0,
+        explanation:
+          "She is hypercapnic with severe COPD, and the target for patients at risk of hypercapnic respiratory failure is 88 to 92%. Aiming higher, at 92 to 96% or above, risks more carbon dioxide retention and a worsening acidosis. A target of 90 to 95% also lets her saturation climb above 92%. Titrating to 88 to 92% corrects her hypoxemia while the bilevel ventilation and diuresis treat the cause.",
+        keyFeature: { topic: "pulmonary-edema", n: 1 },
+        source: "bts-oxygen",
+      },
+      {
+        id: "q4",
+        kind: "single",
+        update: "By the next morning she is off bilevel ventilation and back on 2 L/minute. Her pH is 7.38 and her ankles are less swollen. She wants to go home, and the team plans a 3-minute walk test.",
+        prompt: "Which of the following is the most appropriate way to perform her walk test before discharge?",
+        options: ["At a brisk pace on room air", "Own pace on room air", "Seated arm exercise on room air", "Treadmill test on 4 L/minute", "Usual pace on her home oxygen"],
+        correct: 4,
+        explanation:
+          "The emergency department walk test asks the patient to walk at her own pace for 3 minutes, whatever the distance, on room air or her usual oxygen. She lives on 2 L/minute, so testing her on it shows how she will manage at home. The test fails if her saturation drops below 90%, her pulse reaches 110/minute, her respiratory rate reaches 28/minute, or she cannot finish. Testing her on room air measures a state she never lives in. A brisk pace, a treadmill or seated arm exercise is not the validated test.",
+        keyFeature: { topic: "pulmonary-edema", n: 6 },
+        source: "heartrisk6",
+      },
+    ],
+    sources: [S.caep, S.ersNiv, S.bts, S.heartrisk6],
+    ...META,
+  },
 ];
