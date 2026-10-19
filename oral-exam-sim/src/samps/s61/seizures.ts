@@ -15,6 +15,7 @@ const S = {
   ilaeSelects: { id: "ilae-selects", citation: "International League Against Epilepsy. EpilepsyDiagnosis.org. Self-limited epilepsy with centrotemporal spikes (SeLECTS). Diagnostic criteria and imaging. Last updated 2024.", url: "https://epilepsydiagnosis.org/syndrome/ects-diagcriteria.html" },
   ilaeSelectsOverview: { id: "ilae-selects-overview", citation: "International League Against Epilepsy. EpilepsyDiagnosis.org. Self-limited epilepsy with centrotemporal spikes (SeLECTS). Overview. Last updated 2024.", url: "https://epilepsydiagnosis.org/syndrome/ects-overview.html" },
   medlineChild: { id: "medlineplus-epilepsy-children", citation: "US National Library of Medicine. MedlinePlus Medical Encyclopedia. Epilepsy in children, discharge. Reviewed 2024.", url: "https://medlineplus.gov/ency/patientinstructions/000127.htm" },
+  trinka: { id: "ilae-se-definition-2015", citation: "Trinka E, Cock H, Hesdorffer D, et al. A definition and classification of status epilepticus. Report of the ILAE Task Force on Classification of Status Epilepticus. Epilepsia. 2015.", url: "https://doi.org/10.1111/epi.13121" },
   levPm: { id: "sandoz-levetiracetam-iv", citation: "Sandoz Canada Inc. Product monograph. Levetiracetam for injection, 100 mg/mL. Date of authorization 21 January 2026.", url: "https://pdf.hres.ca/dpd_pm/00083259.PDF" },
   metoPm: { id: "jamp-metoclopramide-iv", citation: "JAMP Pharma Corporation. Product monograph. Metoclopramide hydrochloride injection, 5 mg/mL. Date of preparation 20 April 2023.", url: "https://pdf.hres.ca/dpd_pm/00070463.PDF" },
   epAction: { id: "epilepsy-action-parenting", citation: "Epilepsy Action. Looking after a baby or young child when you have epilepsy. A guide for parents and carers. 2026.", url: "https://www.epilepsy.org.uk/info/caring-children" },
@@ -27,7 +28,7 @@ export const SEIZURES_S61: Samp[] = [
     topic: "seizures",
     title: "Toddler a week after her one-year shots",
     stem:
-      "A 13-month-old girl is brought to the emergency department by her parents after a seizure at home. Eight days ago she received her 12-month vaccines, including MMR and varicella vaccines given separately. Since this morning she has had a fever and a faint pink rash on her trunk. One hour ago she became unresponsive and stiff, then jerked all four limbs for about 2 minutes, timed by her mother. She was sleepy for 20 minutes and is now crawling and babbling. She was born at term, is developing normally and has never had a seizure. Her ears and throat are normal, her neck is supple and the rash blanches. The neurological examination is normal.",
+      "A 13-month-old girl is brought to the emergency department by her parents after a seizure at home. Eight days ago she received her 12-month vaccines, including MMR and varicella vaccines given separately. Her fever and a faint pink rash on her trunk began about 6 hours before the seizure. One hour ago she became unresponsive and stiff, then jerked all four limbs for about 2 minutes, timed by her mother. She was sleepy for 20 minutes and is now crawling and babbling. She was born at term, is developing normally and has never had a seizure. There is no family history of febrile seizures or epilepsy. Her ears and throat are normal, her neck is supple and the rash blanches. The neurological examination is normal.",
     vitals: { temperature: "39.3°C rectal", pulse: "150/minute", resp: "32/minute", o2sat: "99% on room air", weight: "10 kg" },
     questions: [
       {
@@ -72,7 +73,7 @@ export const SEIZURES_S61: Samp[] = [
         options: ["Generalized jerking of all limbs", "Normal growth and development", "Onset at 13 months of age", "Seizure lasting about 2 minutes", "Sleepy for 20 minutes afterward"],
         correct: 2,
         explanation:
-          "A first febrile seizure before 18 months of age is one of four features that predict another, along with a temperature below 40°C at the seizure, fever for less than 1 hour before it and a family history of febrile seizures. At 13 months with a temperature of 39.3°C she has two of the four, which carries a recurrence risk of about 32%, compared with 13% when none is present. Generalized jerking, a seizure of about 2 minutes and a short sleepy spell describe her simple febrile seizure but are not part of this prediction rule. Normal development does not lower her risk of another febrile seizure.",
+          "A first febrile seizure before 18 months of age is one of four features that predict another, along with a temperature below 40°C at the seizure, fever for less than 1 hour before it and a family history of febrile seizures. At 13 months, with a temperature of 39.3°C, fever for about 6 hours before the seizure and no family history, she has two of the four, which carries a recurrence risk of about 32%, compared with 13% when none is present. Generalized jerking, a seizure of about 2 minutes and a short sleepy spell describe her simple febrile seizure but are not part of this prediction rule. Normal development does not lower her risk of another febrile seizure.",
         keyFeature: { topic: "seizures", n: 5 },
         source: "afp-fs-recurrence",
       },
@@ -110,25 +111,25 @@ export const SEIZURES_S61: Samp[] = [
         correct: 1,
         explanation:
           "Midazolam 0.1 mg/kg IV is 0.68 mg for 6.8 kg, given here as 0.7 mg, and a second dose should follow if the seizure has not stopped within 5 minutes of the first, so at 10:07. Benzodiazepines work less well the longer a seizure runs, so waiting until 10:12 or 10:17 lets it become harder to stop. Waiting until 10:32 mistakes the conventional 30-minute definition of status epilepticus for the time to treat. A repeat at 10:04 does not give the first dose time to work and adds to respiratory depression. If he is still seizing 5 minutes after the second dose, a second-line drug follows.",
-        keyFeature: { topic: "seizures", n: 3 },
+        keyFeature: { topic: "seizures", n: 4 },
         source: "cps-status-epilepticus",
       },
       {
         id: "q3",
         kind: "single",
-        update: "The convulsion stops after the second dose of midazolam. Ten minutes later he is crying, moving all four limbs and breathing 36/minute with a saturation of 97% on oxygen.",
-        prompt: "Which of the following is the most appropriate next step in his anticonvulsant treatment?",
-        options: ["levetiracetam 408 mg IV", "midazolam 0.7 mg IV", "midazolam 0.7 mg/hour IV", "phenobarbital 136 mg IV", "No further anticonvulsant now"],
+        update: "He is still convulsing when the second dose of midazolam is given. His saturation is 95% on oxygen by face mask.",
+        prompt: "Which of the following is the most important monitoring for him while the second dose takes effect?",
+        options: ["Blood pressure every 15 minutes", "Capillary glucose every 5 minutes", "Continuous EEG recording", "Hourly neurological checks", "Pulse oximetry and respiratory rate"],
         correct: 4,
         explanation:
-          "Second-line drugs are for seizures that persist after two benzodiazepine doses. His convulsion stopped after the second dose of midazolam, and he is crying, moving all four limbs and breathing well, so no further anticonvulsant is needed now while the cause is sought. Loading levetiracetam 408 mg (60 mg/kg) or phenobarbital 136 mg (20 mg/kg) treats a seizure that is no longer present, and phenobarbital adds respiratory depression on top of two benzodiazepine doses. A third midazolam dose raises that risk further. A midazolam infusion is for refractory status epilepticus. If he seizes again, the stepwise plan resumes.",
+          "Two benzodiazepine doses in a 4-month-old can depress his breathing, so continuous cardiorespiratory monitoring with pulse oximetry and close watch of his respiratory rate and effort shows at once whether he needs assisted ventilation. His convulsion is visible, so an EEG is not needed to follow it. An EEG is kept for a child who does not wake as expected or who has been paralyzed. His glucose was 5.2 mmol/L, so checking it every 5 minutes adds nothing. Blood pressure every 15 minutes and hourly neurological checks are too infrequent to catch respiratory depression.",
         keyFeature: { topic: "seizures", n: 4 },
         source: "cps-status-epilepticus",
       },
       {
         id: "q4",
         kind: "single",
-        update: "Blood cultures are drawn, and ceftriaxone and vancomycin are given. His vital signs are stable and he has not seized again. His fontanelle is soft, he cries when examined and he has no focal neurological signs.",
+        update: "The convulsion stops after the second dose. Blood cultures are drawn, and ceftriaxone and vancomycin are given. He has not seized again and his vital signs are stable. His fontanelle is soft, he cries when examined and he has no focal neurological signs.",
         prompt: "Which of the following investigations is most important next to identify the cause of his seizures?",
         options: ["CT head without contrast", "EEG within 24 hours", "Lumbar puncture", "MRI brain under sedation", "Urine culture by catheter"],
         correct: 2,
@@ -187,16 +188,27 @@ export const SEIZURES_S61: Samp[] = [
       {
         id: "q4",
         kind: "single",
-        prompt: "Which of the following new features at a follow-up visit would most warrant prompt reassessment by his neurologist?",
-        options: ["Brief events only from sleep", "Declining language and school work", "Drooling during the events", "One event every few months", "Tingling of one cheek first"],
-        correct: 1,
+        prompt: "Which of the following findings at a follow-up visit would most warrant urgent further assessment?",
+        options: ["A brief event every few months", "An event during a febrile illness", "Another event after a late night", "Declining language and school work", "Tiredness the morning after an event"],
+        correct: 3,
         explanation:
-          "New problems with language, learning or behaviour in this syndrome call for a sleep EEG to look for a developmental and epileptic encephalopathy with spike-wave activation in sleep, which needs specialist treatment. Brief seizures from sleep, drooling and sensory or motor symptoms of one side of the face are the expected pattern of the syndrome, which usually ends by puberty. An occasional further seizure of the same kind does not by itself call for new tests.",
+          "New problems with language, learning or behaviour call for a sleep EEG to look for a developmental and epileptic encephalopathy with spike-wave activation in sleep, which needs specialist treatment. An occasional further event, one brought on by a fever or by a short night's sleep, and tiredness the next morning are expected in his condition and do not by themselves call for new tests.",
         keyFeature: { topic: "seizures", n: 7 },
         source: "ilae-selects-overview",
       },
+      {
+        id: "q5",
+        kind: "single",
+        prompt: "Which of the following durations of a seizure with impaired awareness and no convulsive movements defines status epilepticus?",
+        options: ["5 minutes", "10 minutes", "20 minutes", "30 minutes", "60 minutes"],
+        correct: 1,
+        explanation:
+          "Under the ILAE operational definition, a seizure with impaired awareness but no convulsive movements becomes status epilepticus, and needs treatment, once it lasts 10 minutes. That is the threshold for a focal seizure with impaired awareness and the lower end of the 10 to 15 minutes set for an absence seizure. Five minutes is the threshold for a generalized tonic-clonic seizure. Thirty minutes is the older definition and the point of likely lasting injury in convulsive status, and more than 60 minutes is that point in focal status with impaired awareness. Twenty minutes matches no threshold.",
+        keyFeature: { topic: "seizures", n: 3 },
+        source: "ilae-se-definition-2015",
+      },
     ],
-    sources: [S.ilaeSelects, S.medlineChild, S.ilaeSelectsOverview],
+    sources: [S.ilaeSelects, S.medlineChild, S.ilaeSelectsOverview, S.trinka],
     ...META,
   },
 
@@ -212,7 +224,7 @@ export const SEIZURES_S61: Samp[] = [
       {
         id: "q1",
         kind: "single",
-        prompt: "Which of the following features of his history most strongly suggests this was not an epileptic seizure?",
+        prompt: "Which of the following features of his presentation most strongly suggests this was not an epileptic seizure?",
         options: ["Brief jerks of the arms", "Crying and cyanosis came first", "Limp for about 20 seconds", "Pallor on examination", "Three episodes in total"],
         correct: 1,
         explanation:
@@ -246,12 +258,11 @@ export const SEIZURES_S61: Samp[] = [
       {
         id: "q4",
         kind: "single",
-        update: "Six weeks later he is brought back after a spell that began while he sat quietly watching television, with nothing to upset him. He turned pale and went limp for about 30 seconds.",
-        prompt: "Which of the following investigations is most important for him now?",
-        options: ["CT head without contrast", "Repeat ferritin level", "Serum lead level", "Twelve-lead ECG", "Urine drug screen"],
-        correct: 3,
+        prompt: "Which of the following features of a future spell would most warrant a cardiac assessment for him?",
+        options: ["Onset at rest without a trigger", "Pallor after a minor head bump", "Recovery within about a minute", "Starts when he is told no", "Stiffening after going limp"],
+        correct: 0,
         explanation:
-          "Breath-holding spells almost always follow a trigger such as anger, frustration, a fright or a minor injury, so a spell that begins while he sits quietly, without crying, does not fit and needs another explanation. A cardiac arrhythmia, such as one from a long QT interval, can cause sudden pallor and limpness, and an ECG helps rule it out before he goes home. A repeat ferritin will not explain this new kind of event, and nothing suggests a head injury, lead exposure or an ingestion.",
+          "Breath-holding spells almost always follow a precipitating event such as frustration, anger or a minor injury. A spell that begins at rest with nothing to provoke it does not fit that pattern and raises the possibility of a cardiac arrhythmia, a rare cause of pallid spells, so it calls for a cardiac assessment. Pallor after a minor bump is typical of a pallid spell, being told no is a common trigger, stiffening can follow the limp phase, and recovery within about a minute is expected.",
         keyFeature: { topic: "seizures", n: 2 },
         source: "leung-breath-holding",
       },

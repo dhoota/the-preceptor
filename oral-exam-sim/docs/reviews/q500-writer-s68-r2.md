@@ -146,3 +146,35 @@ I grepped the gi-bleed, shock and abdominal-pain catalogues and the batch15 oral
 
 - 49 q3 tags a drug interaction as key feature 1 (medications as a clue to the source and cause of bleeding). The physician may prefer to read it as risk assessment.
 - 51 q1 assumes he has a prolonged prothrombin time. The cited guidance supports the test as the way to detect vitamin K deficiency in cystic fibrosis, but the question gives no result.
+
+## Round 4
+
+This round answers `docs/reviews/q500-verify3-s68.md`, plus the coordinator ruling that naming the bleeding artery is anatomy recall. gi-bleed-48, 49 and 50 were not touched, and neither were 51 q1, 51 q2, 52 q1, q2 and q4. The type check shows no s68 errors. The `SAMP_BATCH=s68` samps, samp-quality and citations tests passed: 3 files, 128 tests. Single key positions (first to fifth) are 4, 4, 3, 4, 4. The key is the longest option in 4 of 19 single questions.
+
+### Fixes
+
+- **51 stem.** "for several minutes" and "into the sink" are cut, so the stem is now 150 words. Every fact a question uses is kept: fat-soluble vitamins, skipped enzymes and vitamins, no iron, spleen not palpable, and the fever.
+- **51 q3 (replaced, KF4, apparent melena).**
+  - Update: over 3 days his hemoptysis stops and his hemoglobin stays at 131 g/L, but his stools remain dark.
+  - The key is "Old blood still passing through". The distractors are a bleeding duodenal ulcer, continued lung bleeding, small-bowel angiodysplasia, and varices from liver disease.
+  - Source, page opened: Ansari P, Overview of gastrointestinal bleeding, Merck Manual Professional Version, 2025 (https://www.merckmanuals.com/professional/gastrointestinal-disorders/gi-bleeding/overview-of-gi-bleeding). It states that melena "may persist for several days after bleeding has ceased".
+  - No hemoglobin fall is keyed, so it is clear of sob-39 q1 and gi-bleed-22 q1. Tintinalli is no longer cited in 51 and was removed from its sources. Tintinalli stays only in 49 and 50, where it was accepted.
+- **51 q4.** The verdict's replacement sentence is used word for word. The distractor reason no longer contradicts q1.
+- **52 q3 (replaced, KF2).** It asks why his upper endoscopy 10 days ago was normal. The key is "The bleeding had paused".
+  - The teaching is that a normal endoscopy between bleeding episodes does not exclude an upper source of maroon stools.
+  - Tarar 2022 (page opened) says "initial endoscopic evaluation can frequently be negative for active bleeding" and "Hemorrhage is usually intermittent". Its Table 4 shows bleeding at the ampulla in 46% of cases.
+  - Conventional endoscopy can also miss the papilla, so that reason is deliberately not offered as a distractor, which keeps the key single.
+  - No artery figures remain anywhere, so the Ru 2019 misattribution is gone. The q4 update still says "arterial pseudoaneurysm".
+- **48 q4 OCEAN citation (advisory): not done.** Each question carries one `source`, and every listed source must be cited by a question. Adding OCEAN would mean re-pointing q4's citation away from Lourdusamy, which supports the key, or listing an uncited source, which the citation tests forbid. Both would change a passed SAMP beyond the citation. If the physician wants it, the cleaner option is the verdict's shorter sentence, "Octreotide does not remove the shear stress that causes her bleeding."
+
+### Uniqueness checks
+
+I grepped the gi-bleed, shock and abdominal-pain catalogues and the batch15 oral case for: persisting melena, old blood, intermittent bleeding, a normal endoscopy between episodes, and "paused". None of these is a key or a model-answer decision.
+
+- 51 q3 sits next to 51 q2 (swallowed blood darkens the stool), but tests a different decision. q2 asks the cause. q3 asks whether ongoing dark stool means ongoing bleeding.
+- 52 q3 adds a second KF2 question beside 52 q2. Its teaching (a negative endoscopy during a pause) is not keyed elsewhere. gi-bleed-38 keys a side-viewing scope, which this item does not offer.
+
+### Uncertain
+
+- 52 q3: a reviewer may judge that the key's point is foreshadowed in the 52 q1 explanation ("endoscopy is often normal between episodes"). That explanation was left untouched because q1 passed.
+- 51 q3: applying melena persistence to swallowed blood is reasoning from the Merck statement, not a direct quote about swallowed blood.
