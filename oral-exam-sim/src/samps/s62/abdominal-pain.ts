@@ -14,6 +14,7 @@ const S = {
   brandl: { id: "brandl-immunosuppressed-diverticulitis", citation: "Brandl A, Kratzer T, Kafka-Ritsch R, et al. Diverticulitis in immunosuppressed patients: a fatal outcome requiring a new approach? Can J Surg. 2016.", url: "https://doi.org/10.1503/cjs.012915" },
   wses: { id: "wses-diverticulitis-2020", citation: "Sartelli M, Weber DG, Kluger Y, et al. 2020 update of the WSES guidelines for the management of acute colonic diverticulitis in the emergency setting. World J Emerg Surg. 2020.", url: "https://doi.org/10.1186/s13017-020-00313-4" },
   cipro: { id: "pms-ciprofloxacin-pm-2022", citation: "Pharmascience Inc. pms-CIPROFLOXACIN (ciprofloxacin tablets) product monograph. Health Canada Drug Product Database. Revised 2022.", url: "https://pdf.hres.ca/dpd_pm/00067730.PDF" },
+  apapIv: { id: "acetaminophen-injection-pm-2023", citation: "B. Braun of Canada. Acetaminophen Injection product monograph. Health Canada Drug Product Database. 2023.", url: "https://pdf.hres.ca/dpd_pm/00069718.PDF" },
   tcPe: { id: "tc-pe-dx", citation: "Thrombosis Canada. Clinical guide. Pulmonary embolism (PE): diagnosis. 2025.", url: "https://thrombosiscanada.ca/clinical_guides/pdfs/PULMONARYEMBOLISMDIAGNOSISANDM_83.pdf" },
 } satisfies Record<string, Source>;
 
@@ -105,12 +106,12 @@ export const ABDOMINAL_PAIN_S62: Samp[] = [
         kind: "single",
         update: "She receives ketorolac 15 mg IV. Thirty minutes later she still rates her pain 7 out of 10.",
         prompt: "Which of the following is the most appropriate next analgesic for her?",
-        options: ["acetaminophen 750 mg IV", "codeine 30 mg PO", "ibuprofen 400 mg PO", "ketorolac 15 mg IV again", "morphine 5 mg IV"],
-        correct: 0,
+        options: ["acetaminophen 500 mg IV", "acetaminophen 1000 mg IV", "ibuprofen 400 mg PO", "ketorolac 15 mg IV again", "morphine 5 mg IV"],
+        correct: 1,
         explanation:
-          "NICE offers IV acetaminophen when an NSAID is not giving enough relief in suspected renal colic, and keeps opioids for when both the NSAID and IV acetaminophen are contraindicated or not enough. At 52 kg, 750 mg is about 14 mg/kg. More ketorolac or added ibuprofen only gives a second NSAID dose on top of the one she has just had, rather than a drug that works differently. Morphine and codeine are opioids, the next step after IV acetaminophen, and oral codeine is a poor choice while she is vomiting.",
+          "NICE offers IV acetaminophen when an NSAID is not giving enough relief in suspected renal colic, and keeps opioids for when both the NSAID and IV acetaminophen are contraindicated or not enough, so morphine comes after this step. The Canadian acetaminophen injection monograph doses by weight only below 50 kg. At 52 kg she takes the adolescent and adult dose of 1000 mg every 6 hours, or 650 mg every 4 hours, so 500 mg underdoses her. More ketorolac or added ibuprofen only gives a second NSAID dose on top of the one she has just had, rather than a drug that works differently.",
         keyFeature: { topic: "analgesia-sedation", n: 3 },
-        source: "nice-ng118-2019",
+        source: "acetaminophen-injection-pm-2023",
       },
       {
         id: "q3",
@@ -120,24 +121,12 @@ export const ABDOMINAL_PAIN_S62: Samp[] = [
         options: ["Abdominal radiograph", "CT abdomen with IV contrast", "Low-dose noncontrast CT", "Repeat ultrasound in 1 week", "Urgent ureteroscopy"],
         correct: 2,
         explanation:
-          "When renal colic is still uncertain after ultrasound in a young person, NICE advises considering a low-dose noncontrast CT. The committee chose the low-dose study, and ultrasound before it, because of serious concern about radiation exposure in children and young people. A standard CT with IV contrast gives a larger dose and the contrast adds nothing to finding a stone. In the adult evidence NICE reviewed, a plain radiograph was less accurate than CT. A week of waiting leaves her returning pain unexplained, and ureteroscopy treats a stone that has not been confirmed.",
+          "When renal colic is still uncertain after ultrasound in a young person, NICE advises considering a low-dose noncontrast CT. The committee chose the low-dose study, and ultrasound before it, because of serious concern about radiation exposure in children and young people. NICE recommends the low-dose noncontrast study, and a standard CT with IV contrast gives a larger dose. In the adult evidence NICE reviewed, a plain radiograph was less accurate than CT. A week of waiting leaves her returning pain unexplained, and ureteroscopy treats a stone that has not been confirmed.",
         keyFeature: { topic: "abdominal-pain", n: 7 },
         source: "nice-ng118-2019",
       },
-      {
-        id: "q4",
-        kind: "single",
-        update: "Low-dose CT shows a 4 mm stone at the left vesicoureteric junction. Her pain settles, she drinks without vomiting and she will go home.",
-        prompt: "Which of the following is the most appropriate follow-up plan for her first kidney stone?",
-        options: ["Daily potassium citrate", "Referral for metabolic assessment", "Repeat low-dose CT in 1 month", "Strict low-calcium diet", "Water intake advice alone"],
-        correct: 1,
-        explanation:
-          "NICE suggests considering referral of children and young people with a kidney or ureteric stone to a pediatric nephrologist or urologist for assessment and metabolic investigations, because finding a treatable metabolic cause can lower the risk of further stones. Advice to drink more water belongs in her plan, but on its own it does not look for a cause. NICE advises against restricting calcium, and keeps potassium citrate for recurrent calcium oxalate stones with hypercalciuria or hypocitraturia. A repeat CT adds radiation without a clinical question to answer.",
-        keyFeature: { topic: "abdominal-pain", n: 1 },
-        source: "nice-ng118-2019",
-      },
     ],
-    sources: [S.luchs, S.nice],
+    sources: [S.luchs, S.nice, S.apapIv],
     ...META,
   },
 
@@ -250,10 +239,10 @@ export const ABDOMINAL_PAIN_S62: Samp[] = [
         kind: "single",
         update: "She is admitted. She is drinking fluids without vomiting and has no drug allergies.",
         prompt: "Which of the following antibiotic regimens is most appropriate for her?",
-        options: ["amoxicillin-clavulanate PO", "cefuroxime axetil PO", "ciprofloxacin and metronidazole PO", "metronidazole monotherapy PO", "trimethoprim-sulfamethoxazole PO"],
+        options: ["amoxicillin-clavulanate PO", "ciprofloxacin and metronidazole PO", "levofloxacin and metronidazole PO", "moxifloxacin PO alone", "No antibiotic until cultures return"],
         correct: 0,
         explanation:
-          "Amoxicillin-clavulanate covers gram-negative bacilli and anaerobes by mouth, and WSES prefers oral antibiotics whenever possible. Ciprofloxacin with metronidazole also covers both groups, but the Canadian ciprofloxacin monograph warns that the risk of tendinitis and tendon rupture is further increased in patients over 60 and in those taking corticosteroids, and she is both 69 and on prednisone. Cefuroxime and trimethoprim-sulfamethoxazole on their own leave out anaerobes, and metronidazole on its own leaves out gram-negative bacilli.",
+          "WSES advises antibiotics against gram-negative bacilli and anaerobes for immunocompromised patients, by mouth whenever possible, and describes amoxicillin-clavulanate, given IV and then by mouth, as the antibiotic arm of a diverticulitis trial. The Canadian ciprofloxacin monograph warns that fluoroquinolones as a class raise the risk of tendinitis and tendon rupture, and that the risk is further increased in patients over 60 and in those taking corticosteroids. She is 69 and on prednisone, so the ciprofloxacin, levofloxacin and moxifloxacin regimens all carry that added risk. Withholding antibiotics is advised only for immunocompetent patients.",
         keyFeature: { topic: "infectious-diseases", n: 8 },
         source: "pms-ciprofloxacin-pm-2022",
       },
@@ -308,18 +297,6 @@ export const ABDOMINAL_PAIN_S62: Samp[] = [
       },
       {
         id: "q3",
-        kind: "single",
-        update: "Chest imaging is planned. She asks whether the radiation from the scan should worry her.",
-        prompt: "Which of the following statements about the radiation from her planned scan is most accurate?",
-        options: ["It equals a chest radiograph", "It is too small to matter", "It matters only in pregnancy", "It may raise her breast cancer risk", "It outweighs the risk of no scan"],
-        correct: 3,
-        explanation:
-          "The Thrombosis Canada guide lists radiation exposure that might increase breast cancer rates in young women among the limitations of CT pulmonary angiography, so the concern is real for a 27-year-old woman and is worth discussing. It is not a reason to skip imaging. Her Wells score is 7.0 (1.5 for a previous DVT, 1.5 for a pulse over 100/minute, 1 for hemoptysis and 3 because embolism is the most likely diagnosis), a high pretest probability, and a missed embolism can be fatal. A chest CT gives far more radiation than a plain radiograph, and the breast concern applies outside pregnancy too.",
-        keyFeature: { topic: "abdominal-pain", n: 7 },
-        source: "tc-pe-dx",
-      },
-      {
-        id: "q4",
         kind: "single",
         update: "Imaging confirms a cause outside the urinary tract, and treatment is started. She asks what to do with the ciprofloxacin.",
         prompt: "Which of the following is the most appropriate advice about her ciprofloxacin?",
