@@ -25,7 +25,7 @@ export const PEDIATRIC_FEVER_S56: Samp[] = [
     id: "pediatric-fever-48",
     title: "Hot, restless toddler after a weekend away",
     stem:
-      "A 3-year-old girl is brought to the emergency department by her parents at 21:00 because she has been hot, restless and not making sense for 3 hours. She keeps picking at things in the air and does not seem to recognize her mother. The family returned this afternoon from a cool, rainy weekend at her grandparents' cottage. She has had no cough, vomiting, diarrhea or rash, and she has not passed urine since noon. She is healthy and her immunizations are up to date. She is flushed and agitated. Her pupils are 7 mm and react sluggishly. Her skin, mouth and axillae are dry. Bowel sounds are quiet and her bladder is palpable. Her neck is supple and she moves all limbs.",
+      "A 3-year-old girl is brought to the emergency department by her parents at 21:00 because she has been hot, restless and not making sense for 3 hours. She talks to people who are not there, grabs at the bedsheets and does not know where she is. The family returned this afternoon from a cool, rainy weekend at her grandparents' cottage. She has had no cough, vomiting, diarrhea or rash, and she has not passed urine since noon. She is healthy and her immunizations are up to date. She is flushed and agitated. Her pupils are 6 mm and react slowly. Her skin and mouth are dry. Bowel sounds are quiet and her bladder is palpable. Her neck is supple and she moves all limbs.",
     vitals: { temperature: "38.9°C rectal", pulse: "168/minute", resp: "28/minute", bp: "102/64 mmHg", o2sat: "98% on room air", weight: "15 kg" },
     questions: [
       {
@@ -41,7 +41,7 @@ export const PEDIATRIC_FEVER_S56: Samp[] = [
         ],
         correct: 0,
         explanation:
-          "Fever, agitated delirium with picking at the air, dilated pupils, flushed dry skin with dry axillae, quiet bowel sounds and a full bladder form the anticholinergic toxidrome, a noninfectious cause of fever in a child with no source. Serotonin toxicity causes sweating, clonus and diarrhea rather than dry skin and urinary retention. Meningitis and encephalitis cause fever and confusion but do not explain dry skin, wide pupils and retention together, and her neck is supple. Classic heat stroke needs a hot environment, and her weekend was cool and rainy.",
+          "Fever, agitated delirium with hallucinations, dilated pupils, flushed dry skin, quiet bowel sounds and a full bladder form the anticholinergic toxidrome, a noninfectious cause of fever in a child with no source. Serotonin toxicity causes sweating, clonus and diarrhea rather than dry skin and urinary retention. Meningitis and encephalitis cause fever and confusion but do not explain dry skin, wide pupils and retention together, and her neck is supple. Classic heat stroke needs a hot environment, and her weekend was cool and rainy.",
         keyFeature: { topic: "pediatric-fever", n: 6 },
         source: "scharman-dimenhydrinate",
       },
@@ -75,25 +75,8 @@ export const PEDIATRIC_FEVER_S56: Samp[] = [
         keyFeature: { topic: "pediatric-fever", n: 6 },
         source: "dawson-anticholinergic",
       },
-      {
-        id: "q4",
-        kind: "single",
-        prompt: "Which of the following findings would most suggest that sepsis rather than her ingestion explains her illness?",
-        options: [
-          "Agitation with picking at the air",
-          "Cool mottled legs with slow refill",
-          "Dry axillae and a dry mouth",
-          "Pupils of 7 mm that react slowly",
-          "Urinary retention",
-        ],
-        correct: 1,
-        explanation:
-          "Anticholinergic poisoning leaves the skin hot, dry and flushed. Cool, mottled legs with a slow capillary refill show impaired perfusion. Extremity temperature and capillary refill are among the markers of circulation that the 2026 Surviving Sepsis Campaign guideline for children asks clinicians to follow, and this finding would send the team looking for infection. Delirium with picking, dry axillae and mouth, wide pupils and urinary retention are all part of the toxidrome she already has.",
-        keyFeature: { topic: "pediatric-fever", n: 2 },
-        source: "ssc-peds-2026",
-      },
     ],
-    sources: [S.scharman, S.cagPhyso, S.dawson, S.sscPeds],
+    sources: [S.scharman, S.cagPhyso, S.dawson],
     ...META,
   },
 
@@ -149,18 +132,6 @@ export const PEDIATRIC_FEVER_S56: Samp[] = [
           "Acetaminophen is dosed at 10 to 15 mg/kg every 4 to 6 hours, up to 5 doses a day. For her 36 kg, 15 mg/kg is 540 mg. 180 mg is 5 mg/kg, too little to help. 900 mg is 25 mg/kg, 1 080 mg is 30 mg/kg and 1 440 mg is 40 mg/kg, all above the single dose range and a risk to the liver if repeated. Dosing by weight rather than by age avoids both errors.",
         keyFeature: { topic: "pediatric-fever", n: 8 },
         source: "akh-antipyretic-dosing",
-      },
-      {
-        id: "q4",
-        kind: "single",
-        update: "Her TSH is below 0.01 mIU/L and her free T4 is 58 pmol/L. The pediatric endocrinologist agrees with starting an antithyroid drug today.",
-        prompt: "Which of the following antithyroid treatments is most appropriate to start for her?",
-        options: ["levothyroxine PO", "methimazole PO", "potassium iodide PO", "propylthiouracil PO", "radioactive iodine PO"],
-        correct: 1,
-        explanation:
-          "Methimazole is the antithyroid drug the ATA recommends for virtually every patient with Graves disease who chooses drug therapy, and it is the drug used in children. The ATA advises that propylthiouracil generally not be used in children because of the risk of severe liver injury. Potassium iodide is part of thyroid storm and preoperative care, not first-line therapy. Radioactive iodine is a later, planned decision, not an emergency start. Levothyroxine would add thyroid hormone and worsen her thyrotoxicosis.",
-        keyFeature: { topic: "pediatric-fever", n: 5 },
-        source: "ata-hyperthyroidism-2016",
       },
     ],
     sources: [S.ata, S.akhDose],
@@ -226,25 +197,8 @@ export const PEDIATRIC_FEVER_S56: Samp[] = [
         keyFeature: { topic: "pediatric-fever", n: 7 },
         source: "aap-sinusitis-2013",
       },
-      {
-        id: "q4",
-        kind: "single",
-        prompt: "Which of the following ibuprofen doses is most appropriate for his discomfort and any fever?",
-        options: [
-          "ibuprofen 50 mg PO",
-          "ibuprofen 400 mg PO",
-          "ibuprofen 200 mg PO",
-          "ibuprofen 600 mg PO",
-          "ibuprofen 800 mg PO",
-        ],
-        correct: 2,
-        explanation:
-          "Ibuprofen is dosed at 5 to 10 mg/kg every 6 to 8 hours, up to 4 doses a day, in children 6 months and older. For his 20 kg, 10 mg/kg is 200 mg. 50 mg is 2.5 mg/kg, too little to help. 400 mg is 20 mg/kg, 600 mg is 30 mg/kg and 800 mg is 40 mg/kg, all well above the single dose range and a risk to the stomach and kidneys. Dosing by his weight rather than his age gives the right amount.",
-        keyFeature: { topic: "pediatric-fever", n: 8 },
-        source: "akh-antipyretic-dosing",
-      },
     ],
-    sources: [S.aapSinus, S.cwcSinus, S.akhDose],
+    sources: [S.aapSinus, S.cwcSinus],
     ...META,
   },
 
@@ -276,24 +230,7 @@ export const PEDIATRIC_FEVER_S56: Samp[] = [
       {
         id: "q2",
         kind: "single",
-        prompt: "Which of the following best describes the state of her circulation at this point?",
-        options: [
-          "Dehydration from vomiting alone",
-          "Fever-related tachycardia only",
-          "Hypotensive septic shock",
-          "Poor perfusion, normal BP",
-          "Warm shock with bounding pulses",
-        ],
-        correct: 3,
-        explanation:
-          "Her cool hands and feet, capillary refill of 4 seconds and pulse of 142/minute show poor perfusion, even though her BP of 104/62 mmHg is normal. The 2026 Surviving Sepsis Campaign guideline for children asks clinicians to judge circulation by heart rate, capillary refill, extremity temperature, pulse quality, level of consciousness and urine output, not by BP alone, and she needs treatment now rather than after hypotension appears. Her BP is normal, so this is not hypotensive shock. Two vomits do not explain cold extremities at 39.4°C, and fever alone does not lengthen capillary refill or cool the feet. Warm shock brings flushed skin and bounding pulses, the opposite of her findings.",
-        keyFeature: { topic: "pediatric-fever", n: 2 },
-        source: "ssc-peds-2026",
-      },
-      {
-        id: "q3",
-        kind: "single",
-        update: "A peripheral IV is placed and blood cultures are drawn. A 20 mL/kg bolus of crystalloid is running.",
+        update: "Her capillary refill of 4 seconds, cool hands and feet and pulse of 142/minute show poor perfusion despite her normal BP. A peripheral IV is placed and blood cultures are drawn. A 20 mL/kg bolus of crystalloid is running.",
         prompt: "Which of the following is the most appropriate empiric antibiotic for her now?",
         options: ["azithromycin IV", "cefazolin IV", "ceftriaxone IV", "gentamicin IV", "metronidazole IV"],
         correct: 2,
@@ -303,7 +240,7 @@ export const PEDIATRIC_FEVER_S56: Samp[] = [
         source: "ssc-peds-2026",
       },
       {
-        id: "q4",
+        id: "q3",
         kind: "single",
         prompt: "Which of the following findings after her fluid bolus would best show that her perfusion is improving?",
         options: [

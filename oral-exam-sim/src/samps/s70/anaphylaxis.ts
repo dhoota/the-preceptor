@@ -46,7 +46,7 @@ export const ANAPHYLAXIS_S70: Samp[] = [
         options: ["Acute mesenteric ischemia", "Anaphylaxis to a wasp sting", "Inferior myocardial infarction", "Ruptured aortic aneurysm", "Septic shock from colitis"],
         correct: 1,
         explanation:
-          "Generalized hives with cramps, vomiting, diarrhea and a blood pressure of 76/40 mmHg after a wasp sting meet the criteria for anaphylaxis, which involves the skin, the gut and the circulation. The small hyperdynamic ventricle and collapsed IVC fit the vasodilation and capillary leak of anaphylaxis. Rupture of his aneurysm remains a concern in any shocked patient who has one, but the aorta has not grown, there is no free fluid and rupture does not cause hives. Mesenteric ischemia, colitis with sepsis and an inferior infarction would not explain sudden generalized hives after a sting.",
+          "Generalized hives with cramps, vomiting, diarrhea and a blood pressure of 76/40 mmHg after a wasp sting meet the criteria for anaphylaxis, which involves the skin, the gut and the circulation. The small hyperdynamic ventricle and collapsed IVC fit the vasodilation and capillary leak of anaphylaxis. Rupture of his aneurysm remains a concern in any shocked patient who has one. Bedside ultrasound can miss a retroperitoneal leak, so the unchanged aorta and absent free fluid do not exclude it, but rupture does not cause generalized hives after a sting. Mesenteric ischemia, colitis with sepsis and an inferior infarction would not explain sudden generalized hives after a sting.",
         keyFeature: { topic: "anaphylaxis", n: 1 },
         source: "wao-2020",
       },
@@ -65,12 +65,12 @@ export const ANAPHYLAXIS_S70: Samp[] = [
       {
         id: "q4",
         kind: "single",
-        update: "He recovers after two doses of IM epinephrine and 2 L of crystalloid. A serum tryptase drawn 1 hour after his collapse is 18.6 mcg/L. A baseline tryptase drawn 2 days later is 6.0 mcg/L.",
-        prompt: "Which of the following best describes the meaning of his two tryptase results?",
-        options: ["Confirms acute mast cell activation", "Excludes anaphylaxis as the cause", "Points to systemic mastocytosis", "Uninterpretable without IgE testing", "Within normal day to day variation"],
+        update: "He recovers after two IM doses and 2 L of crystalloid. Five hours later, still undressed and with no new sting, itchy hives return over his trunk and he vomits four times in 20 minutes. His BP is 128/74 mmHg and his chest is clear.",
+        prompt: "Which of the following best describes the episode that began 5 hours after his recovery?",
+        options: ["Biphasic anaphylaxis", "Epinephrine side effect", "Recurrent hives without anaphylaxis", "Vasovagal reaction", "Viral gastroenteritis"],
         correct: 0,
         explanation:
-          "A rise in tryptase above 1.2 times the baseline plus 2 confirms acute mast cell activation. His threshold is 1.2 x 6.0 + 2 = 9.2 mcg/L, and his acute value of 18.6 mcg/L is about twice that, which supports anaphylaxis as the cause of his collapse. It was drawn at 1 hour, close to the peak at 1 to 2 hours. A baseline of 6.0 mcg/L is normal and does not suggest mastocytosis, which raises the baseline itself. The rise is far beyond day to day variation, and tryptase is interpreted on its own without IgE results.",
+          "Hives with repeated vomiting meet the World Allergy Organization criteria for anaphylaxis even with a normal blood pressure and a clear chest, because skin involvement with severe gastrointestinal symptoms counts, especially after a non-food trigger such as a sting. Symptoms returning after recovery without a new exposure are a biphasic reaction, and about half of these occur within 6 to 12 hours, which is why severe reactions needing several doses are observed. He needs IM epinephrine again. Calling this hives alone ignores the four vomits. Side effects of epinephrine such as tremor and palpitations come within minutes of a dose, not hives hours later. Gastroenteritis does not bring hives, and a vasovagal reaction causes fainting with a low blood pressure, which he does not have.",
         keyFeature: { topic: "anaphylaxis", n: 2 },
         source: "wao-2020",
       },
@@ -113,13 +113,14 @@ export const ANAPHYLAXIS_S70: Samp[] = [
       {
         id: "q3",
         kind: "single",
-        prompt: "Which of the following is the most appropriate first dose of epinephrine for him, drawn from the 1 mg/mL ampoule?",
-        options: ["epinephrine 0.009 mg IM", "epinephrine 0.018 mg IM", "epinephrine 0.045 mg IM", "epinephrine 0.09 mg IM", "epinephrine 0.9 mg IM"],
-        correct: 3,
+        update: "He receives IM epinephrine, and a nurse attaches a cardiac monitor and pulse oximeter. His saturation still reads 97% on room air.",
+        prompt: "Which of the following is the most appropriate oxygen therapy for him now?",
+        options: ["Bag-valve-mask ventilation", "Blow-by oxygen near his face", "Face mask oxygen at 10 L/minute", "Nasal prongs at 1 L/minute", "No oxygen while saturation is normal"],
+        correct: 2,
         explanation:
-          "The IM dose of epinephrine is 0.01 mg/kg, and at 9 kg that is 0.09 mg, or 0.09 mL of the 1 mg/mL solution, into the anterolateral thigh, repeated every 5 to 15 minutes if needed. A dose of 0.9 mg is ten times too much, the error made when the 0.1 mL/kg volume used for the 0.1 mg/mL arrest solution is drawn from the 1 mg/mL ampoule. Doses of 0.009, 0.018 and 0.045 mg come from decimal slips or from halving the dose out of fear of side effects, and leave a shocked infant undertreated.",
+          "He is in shock, and his tissues are short of oxygen because too little blood reaches them, not because his blood is poorly saturated. A review of infant anaphylaxis advises high-flow oxygen at 8 to 10 L/minute by an infant face mask while epinephrine and fluids take effect. A reading of 97% from mottled, poorly perfused skin is also less reliable. Blow-by oxygen gives a low and changing concentration as a distressed infant turns his head, and nasal prongs at 1 L/minute add little. He breathes 40 times a minute with a clear chest, so bag-valve-mask ventilation is not needed. Withholding oxygen because the saturation looks normal ignores the shock.",
         keyFeature: { topic: "anaphylaxis", n: 3 },
-        source: "wao-2020",
+        source: "carlisle-infant",
       },
       {
         id: "q4",
@@ -134,7 +135,7 @@ export const ANAPHYLAXIS_S70: Samp[] = [
         source: "cig-contraindications",
       },
     ],
-    sources: [S.fpies, S.carlisle, S.wao, S.cig],
+    sources: [S.fpies, S.carlisle, S.cig],
     ...META,
   },
 

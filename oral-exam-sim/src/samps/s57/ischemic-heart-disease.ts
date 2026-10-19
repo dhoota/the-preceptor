@@ -9,13 +9,12 @@ const TOPIC = "ischemic-heart-disease";
 const S = {
   gulati: { id: "aha-chest-pain-2021", citation: "Gulati M, Levy PD, Mukherjee D, et al. 2021 AHA/ACC/ASE/CHEST/SAEM/SCCT/SCMR guideline for the evaluation and diagnosis of chest pain: executive summary. J Am Coll Cardiol. 2021.", url: "https://doi.org/10.1016/j.jacc.2021.07.052" },
   granger: { id: "grace-2003", citation: "Granger CB, Goldberg RJ, Dabbous O, et al. Predictors of hospital mortality in the Global Registry of Acute Coronary Events. Arch Intern Med. 2003.", url: "https://doi.org/10.1001/archinte.163.19.2345" },
-  amsterdam: { id: "aha-nste-acs-2014", citation: "Amsterdam EA, Wenger NK, Brindis RG, et al. 2014 AHA/ACC guideline for the management of patients with non-ST-elevation acute coronary syndromes. Circulation. 2014.", url: "https://doi.org/10.1161/CIR.0000000000000134" },
-  tnk: { id: "tnkase-pm-2023", citation: "Hoffmann-La Roche Limited. Product monograph. TNKase (tenecteplase for injection). Date of revision 21 March 2023.", url: "https://pdf.hres.ca/dpd_pm/00069984.PDF" },
-  stream: { id: "stream-2013", citation: "Armstrong PW, Gershlick AH, Goldstein P, et al. Fibrinolysis or primary PCI in ST-segment elevation myocardial infarction. N Engl J Med. 2013.", url: "https://doi.org/10.1056/NEJMoa1301092" },
+  udmi: { id: "udmi-2018", citation: "Thygesen K, Alpert JS, Jaffe AS, et al. Fourth universal definition of myocardial infarction (2018). J Am Coll Cardiol. 2018.", url: "https://doi.org/10.1016/j.jacc.2018.08.1038" },
+  lipids: { id: "ccs-dyslipidemia-2021", citation: "Pearson GJ and colleagues. 2021 Canadian Cardiovascular Society guidelines for the management of dyslipidemia for the prevention of cardiovascular disease in adults. Can J Cardiol. 2021.", url: "https://doi.org/10.1016/j.cjca.2021.03.016" },
+  ccs2019: { id: "ccs-stemi-2019", citation: "Wong GC, Welsford M, Ainsworth C, et al. 2019 Canadian Cardiovascular Society/Canadian Association of Interventional Cardiology guidelines on the acute management of ST-elevation myocardial infarction: focused update on regionalization and reperfusion. Can J Cardiol. 2019.", url: "https://doi.org/10.1016/j.cjca.2018.11.031" },
   stream2: { id: "stream-2-2023", citation: "Van de Werf F, Ristic AD, Averkov OV, et al. STREAM-2: half-dose tenecteplase or primary percutaneous coronary intervention in older patients with ST-segment-elevation myocardial infarction. Circulation. 2023.", url: "https://doi.org/10.1161/CIRCULATIONAHA.123.064521" },
-  react: { id: "react-2005", citation: "Gershlick AH, Stephens-Lloyd A, Hughes S, et al. Rescue angioplasty after failed thrombolytic therapy for acute myocardial infarction. N Engl J Med. 2005.", url: "https://doi.org/10.1056/NEJMoa050849" },
   dcHyper: { id: "dc-hyperglycemic-2018", citation: "Diabetes Canada Clinical Practice Guidelines Expert Committee, Goguen J, Gilbert J. Hyperglycemic emergencies in adults. Can J Diabetes. 2018.", url: "https://doi.org/10.1016/j.jcjd.2017.10.013" },
-  dcCvd: { id: "dc-cvd-screening-2018", citation: "Diabetes Canada Clinical Practice Guidelines Expert Committee, Poirier P, Bertrand OF, Leipsic J, et al. Screening for the presence of cardiovascular disease. Can J Diabetes. 2018.", url: "https://doi.org/10.1016/j.jcjd.2017.10.025" },
+  popBusui: { id: "ada-neuropathy-2017", citation: "Pop-Busui R, Boulton AJ, Feldman EL, et al. Diabetic neuropathy: a position statement by the American Diabetes Association. Diabetes Care. 2017.", url: "https://doi.org/10.2337/dc16-2042" },
   canto: { id: "canto-2000", citation: "Canto JG, Shlipak MG, Rogers WJ, et al. Prevalence, clinical characteristics, and mortality among patients with myocardial infarction presenting without chest pain. JAMA. 2000.", url: "https://doi.org/10.1001/jama.283.24.3223" },
 } satisfies Record<string, Source>;
 
@@ -110,26 +109,26 @@ export const ISCHEMIC_HEART_DISEASE_S57: Samp[] = [
     topic: TOPIC,
     title: "Another attack after supper",
     stem:
-      "A 74-year-old woman presents to the emergency department with 2 hours of aching in her upper abdomen and lower chest that began after supper. She says it feels like the gallstone attacks she had last year, which settled without surgery. She also became short of breath and sweaty while walking in from the car. She has type 2 diabetes and hypertension and takes metformin and ramipril. Triage placed her in the waiting room with a note of biliary colic, and her ECG was recorded 50 minutes after arrival. She is diaphoretic. Her abdomen is soft, with mild epigastric tenderness and no Murphy sign. Bedside ultrasound shows several gallstones with a normal gallbladder wall and no pericholecystic fluid. Her ECG shows sinus rhythm with new 1 mm horizontal ST depression in V4 to V6.",
+      "A 74-year-old woman presents to the emergency department with 2 hours of aching in her upper abdomen and lower chest that began after supper. She says it feels like the gallstone attacks she had last year, which settled without surgery. She also became short of breath and sweaty while walking in from the car. She has type 2 diabetes and hypertension and takes metformin and ramipril. She is diaphoretic. Her abdomen is soft, with mild epigastric tenderness and no Murphy sign. Bedside ultrasound shows several gallstones with a normal gallbladder wall and no pericholecystic fluid. Her ECG shows sinus rhythm with new 1 mm horizontal ST depression in V4 to V6.",
     vitals: { temperature: "36.8°C oral", pulse: "98/minute", resp: "20/minute", bp: "148/84 mmHg", o2sat: "95% on room air", weight: "70 kg" },
     questions: [
       {
         id: "q1",
         kind: "single",
-        prompt: "Which of the following is the target time from arrival to the first ECG for a presentation like hers?",
-        options: ["10 minutes", "20 minutes", "30 minutes", "45 minutes", "60 minutes"],
+        prompt: "Which of the following is the smallest new horizontal ST depression in two contiguous leads that counts as an ischemic ECG change?",
+        options: ["0.5 mm", "1 mm", "1.5 mm", "2 mm", "3 mm"],
         correct: 0,
         explanation:
-          "Acute chest discomfort, including lower chest and upper abdominal aching with breathlessness and sweating, calls for an ECG that is recorded and reviewed for STEMI within 10 minutes of arrival in any setting. Her ECG at 50 minutes was late because the triage label of biliary colic took her off the chest pain pathway. Targets of 20 to 60 minutes would let an occlusion MI go unrecognized while myocardium is lost. Troponin is also drawn as soon as possible after arrival.",
-        keyFeature: { topic: TOPIC, n: 1 },
-        source: "aha-chest-pain-2021",
+          "The universal definition of MI counts new horizontal or downsloping ST depression of 0.5 mm or more in two contiguous leads as an ECG sign of ischemia when there is no LVH or bundle branch block. Her new 1 mm horizontal depression in V4 to V6 meets that criterion. A cutoff of 1 mm would miss new depression of 0.5 to under 1 mm that already meets it, and cutoffs of 1.5 to 3 mm would miss more. Small new depressions are easy to dismiss, so they are judged against this threshold and against old tracings.",
+        keyFeature: { topic: TOPIC, n: 2 },
+        source: "udmi-2018",
       },
       {
         id: "q2",
         kind: "menu",
         prompt: "Which of the following features of her presentation most raise the likelihood of a cardiac cause?",
         options: [
-          "Ache after a large supper",
+          "Ache that began after supper",
           "Breathless walking in from the car",
           "Epigastric tenderness on palpation",
           "Gallstones on bedside ultrasound",
@@ -179,7 +178,7 @@ export const ISCHEMIC_HEART_DISEASE_S57: Samp[] = [
         source: "grace-2003",
       },
     ],
-    sources: [S.gulati, S.granger],
+    sources: [S.udmi, S.gulati, S.granger],
     ...META,
   },
 
@@ -189,7 +188,7 @@ export const ISCHEMIC_HEART_DISEASE_S57: Samp[] = [
     topic: TOPIC,
     title: "Tightness on the hill to his house",
     stem:
-      "A 58-year-old man presents to the emergency department with 3 weeks of central chest tightness that comes on when he walks up the hill to his house and eases within 3 minutes of rest. He has not had these symptoms before. The last episode was 5 hours ago, and he is pain free. A CT coronary angiogram 3 years ago, done to investigate chest discomfort, showed 30% plaque in the proximal LAD and no other stenosis. He was prescribed atorvastatin 40 mg daily but stopped it a year ago because he felt well. He has hypertension and takes ASA 81 mg daily, bisoprolol 5 mg daily and sildenafil 50 mg as needed. His examination and ECG are normal. High sensitivity troponin T is below 5 ng/L at arrival and 6 ng/L at 1 hour (99th percentile 14 ng/L).",
+      "A 58-year-old man presents to the emergency department with 3 weeks of central chest tightness that comes on when he walks up the hill to his house and eases within 3 minutes of rest. He has never had exertional symptoms before. The last episode was 5 hours ago, and he is pain free. A CT coronary angiogram 3 years ago, done to investigate chest discomfort, showed 30% plaque in the proximal LAD and no other stenosis. He was prescribed atorvastatin 40 mg daily but stopped it a year ago because he felt well. He has hypertension and takes ASA 81 mg daily, bisoprolol 5 mg daily and sildenafil 50 mg as needed. His examination and ECG are normal. High sensitivity troponin T is below 5 ng/L at arrival and 6 ng/L at 1 hour (99th percentile 14 ng/L).",
     vitals: { temperature: "36.7°C oral", pulse: "64/minute", resp: "14/minute", bp: "138/82 mmHg", o2sat: "98% on room air", weight: "88 kg" },
     questions: [
       {
