@@ -254,7 +254,7 @@ export const FIRST_TRIMESTER_BLEEDING_S65: Samp[] = [
         options: ["Confirms a completed miscarriage", "Follow-up can now stop", "Methotrexate is now required", "Rise was a laboratory error", "Still consistent with an ectopic"],
         correct: 4,
         explanation:
-          "Her hCG fell from 1 480 to 1 030 IU/L, a fall of about 30% in 48 hours. That is slower than the decline of roughly 36 to 47% expected after a completed miscarriage, and in women with ectopic pregnancy the median 2-day decline was 27%, with about 8% falling as fast as a completed miscarriage. A falling hCG therefore does not exclude an ectopic, so she is followed until the hCG is undetectable. Methotrexate is not needed while the value falls in a well patient, and an earlier rise followed by a fall is a recognized ectopic pattern rather than a laboratory error.",
+          "Her hCG fell from 1 480 to 1 030 IU/L, a fall of about 30% in 48 hours. That is slower than the decline of roughly 36 to 47% expected after a completed miscarriage, and in women with ectopic pregnancy the median 2-day decline was 27%, with about 8% falling as fast as a completed miscarriage. A falling hCG therefore does not exclude an ectopic, so she is followed until the hCG is undetectable. Methotrexate is not needed while the value falls in a well patient, and nothing suggests a laboratory error, since both results fit known ectopic patterns.",
         keyFeature: { topic: "first-trimester-bleeding", n: 4 },
         source: "morse-hcg-2012",
       },

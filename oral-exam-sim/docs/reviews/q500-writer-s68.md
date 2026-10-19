@@ -9,12 +9,12 @@ gi-bleed-48 to gi-bleed-52, in `src/samps/s68/gi-bleed.ts`.
 | Id | Case | Questions |
 |---|---|---|
 | gi-bleed-48 | 58-year-old with maroon stools, clear nasogastric aspirate, negative CT angiography | 4 single |
-| gi-bleed-49 | 74-year-old with COPD whose breathlessness is anemia, on apixaban and ibuprofen | 4 single |
+| gi-bleed-49 | 74-year-old with COPD whose breathlessness is anemia, on apixaban and ibuprofen | 3 single, 1 menu |
 | gi-bleed-50 | 81-year-old who fainted and broke her wrist, naproxen with sertraline | 5 single |
 | gi-bleed-51 | 16-year-old with cystic fibrosis whose "vomited blood" is hemoptysis | 4 single |
 | gi-bleed-52 | 49-year-old with chronic pancreatitis, blood from the papilla (hemosuccus pancreaticus) | 4 single |
 
-21 questions, all single. The batch has no menu question, which the Q500 brief requires. See "For the reviewers". Key positions (first to fifth): 4, 4, 5, 5, 3.
+21 questions: 20 single, 1 menu (49 q4). Single key positions (first to fifth): 4, 3, 5, 5, 3.
 
 ## Key feature coverage
 
@@ -31,7 +31,7 @@ gi-bleed-48 to gi-bleed-52, in `src/samps/s68/gi-bleed.ts`.
 
 All 47 existing gi-bleed SAMPs and the GI bleeding items in shock and pulmonary edema were read. New angles: shock index classification, a clear aspirate does not exclude an upper source, immediate upper endoscopy after a negative CT angiogram, 72 hours of high-dose PPI after hemostasis, anemia presenting as a COPD flare, a normal MCV in acute loss, no DOAC reversal agent in GI bleeding (ACG and CAG 2022), presyncope as the cause of a fall, the early hemoglobin, endoscopy timing from the Lau trial, SSRI with NSAID risk, melena turning maroon, cystic fibrosis hemoptysis, and hemosuccus pancreaticus.
 
-Possible overlaps for the reviewers: 50 q3 (within 24 hours) has the same key as gi-bleed-44 q4, though the decision here is against urgent endoscopy within 6 hours. 52 q4 (embolization of a pseudoaneurysm) is close in teaching to gi-bleed-30 (hemobilia). 49 q4 and 50 q4 are medication-risk questions like gi-bleed-22 q2 but test different drug pairs.
+Possible overlaps for the reviewers: 50 q3 (within 24 hours) has the same key as gi-bleed-44 q4, though the decision here is against urgent endoscopy within 6 hours. 52 q4 (embolization of a pseudoaneurysm) is close in teaching to gi-bleed-30 (hemobilia). 49 q4 (menu) and 50 q4 are medication-risk questions like gi-bleed-22 q2 but test different drugs.
 
 ## Sources and verification
 
@@ -47,7 +47,6 @@ Possible overlaps for the reviewers: 50 q3 (within 24 hours) has the same key as
 
 ## For the reviewers
 
-- No menu question. The Q500 brief asks for at least one per batch, but the batch tests do not check it. Converting 48 q3 or 52 q3 to a menu would fix this.
 - 49 q1, q2, q4 and 50 q1, q2 cite Tintinalli for standard teaching (hemodilution lag, normocytic anemia in acute loss, NSAID ulcer risk). A readable guideline source would be stronger.
 - 49 q3 follows the ACG and CAG suggestion against PCC and andexanet in DOAC-related GI bleeding. Thrombosis Canada supports reversal for life-threatening bleeding, so the update makes him stable after transfusion.
 - 50 q3: the Glasgow-Blatchford score of 12 was recomputed: urea 6, syncope 2, melena 1, pulse 1, systolic BP 1, hemoglobin 1.
