@@ -92,7 +92,7 @@ export const ASTHMA_COPD_S64: Samp[] = [
         options: ["Full sentences when speaking", "His rating of 3 out of 10", "Pulse of 108/minute", "Reliever used 10 times a day", "SpO2 of 93% on room air"],
         correct: 1,
         explanation:
-          "His peak flow of 150 L/minute is 31% of his personal best of 480 L/minute, yet he rates his breathing as only 3 out of 10. GINA describes impaired perception as few symptoms despite low lung function, and notes it is common in older adults. Full sentences, a pulse of 108/minute and an SpO2 of 93% are signs measured by others, not his own sense of breathlessness. Using his reliever 10 times a day shows that he did notice something and acted on it.",
+          "His peak flow of 150 L/minute is 31% of his personal best of 480 L/minute, yet he rates his breathing as only 3 out of 10. GINA describes impaired perception as few symptoms despite low lung function, and names poor perception as one reason asthma is missed in older adults. Full sentences, a pulse of 108/minute and an SpO2 of 93% are signs measured by others, not his own sense of breathlessness. Using his reliever 10 times a day shows that he did notice something and acted on it.",
         keyFeature: { topic: "asthma-copd", n: 3 },
         source: "gina-2026",
       },

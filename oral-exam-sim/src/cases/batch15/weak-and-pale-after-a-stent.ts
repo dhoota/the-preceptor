@@ -85,7 +85,7 @@ export const weakAndPaleAfterAStent: OralCase = {
       id: "ecg",
       label: "ECG",
       result:
-        "Sinus tachycardia at 116/minute. New T wave inversion in I, aVL and V2 to V4 compared with his discharge ECG. No ST elevation or depression.",
+        "Sinus tachycardia at 116/minute. New 1 mm downsloping ST depression in II, III, aVF, V5 and V6 compared with his discharge ECG. No ST elevation.",
     },
     {
       id: "labs",
@@ -108,7 +108,7 @@ export const weakAndPaleAfterAStent: OralCase = {
     {
       id: "response",
       label: "After 2 units of red cells",
-      result: "Blood pressure 112/66 mmHg. Pulse 98/minute. Chest heaviness gone. T wave changes improving. Hemoglobin 82 g/L.",
+      result: "Blood pressure 112/66 mmHg. Pulse 98/minute. Chest heaviness gone. ST depression improving. Hemoglobin 82 g/L.",
     },
     {
       id: "endoscopy",
@@ -129,7 +129,7 @@ export const weakAndPaleAfterAStent: OralCase = {
       kind: "say",
       id: "s-open",
       phase: "On arrival",
-      text: "The paramedics say he was grey and sweaty on the bathroom floor. He is on the monitor and an IV is running. He says he feels better lying flat.",
+      text: "The paramedics say he was grey and sweaty on the bathroom floor. He is on the monitor and an IV is running. He says the chest heaviness came back as they lifted him onto the stretcher.",
       next: "q-history",
     },
     {
@@ -195,7 +195,7 @@ export const weakAndPaleAfterAStent: OralCase = {
       kind: "question",
       id: "q-resus",
       phase: "Resuscitation",
-      prompt: "His hemoglobin is 64 g/L and the ECG shows new T wave inversion. Troponin is 64 ng/L. How do you resuscitate him?",
+      prompt: "His hemoglobin is 64 g/L and the ECG shows new diffuse ST depression. Troponin is 64 ng/L. How do you resuscitate him?",
       seconds: 90,
       modelAnswer: [
         "Two large bore IVs. Crossmatch 4 units. Notify the blood bank.",
@@ -357,46 +357,7 @@ export const weakAndPaleAfterAStent: OralCase = {
         "Give a structured handover to the ICU and gastroenterology.",
         "Make sure he leaves hospital on a PPI and a written list of drugs to avoid.",
       ],
-      rubric: ["wp-pr5", "wp-h4"],
-      choices: [
-        {
-          id: "c-honest",
-          label: "With his consent I told his wife plainly that an ulcer bled, made worse by naproxen on top of two antiplatelet drugs with no stomach protection. I called the walk-in clinic and wrote to his family physician and pharmacist with the facts, and made sure he leaves on a PPI with a list of drugs to avoid.",
-          next: "end",
-          quality: "strong",
-          feedback:
-            "Good. The family hears the cause honestly and in plain words, with his consent. The prescribers hear the facts, not a verdict, so the gap is closed for him and for the next patient. Long term PPI is advised while he needs antiplatelet therapy.",
-        },
-        {
-          id: "c-blame",
-          label: "I told his wife the walk-in clinic had made a serious mistake with the naproxen and that she should file a complaint.",
-          next: "s-blame",
-          quality: "partial",
-          feedback:
-            "Honest about the cause, but you judged another clinician without the facts. The clinic may not have known about the stent, and no PPI was started at his cardiac discharge either. Explain what happened, then report the gap factually to each prescriber so it is fixed.",
-        },
-        {
-          id: "c-vague",
-          label: "I told his wife that ulcers can happen to anyone and did not mention the naproxen or contact the other prescribers.",
-          next: "s-vague",
-          quality: "partial",
-          feedback:
-            "This hides the cause from the family and leaves the prescribing gap open. Naproxen could be restarted for his next gout flare. Tell the family the cause plainly and tell each prescriber about the NSAID and the missing PPI.",
-        },
-      ],
-    },
-    {
-      kind: "say",
-      id: "s-blame",
-      phase: "The next day",
-      text: "The walk-in physician calls the unit, upset. The clinic had no record of his stent or his ticagrelor. You agree to send a factual summary to the clinic, his family physician and his pharmacist, and you explain this to his wife.",
-      next: "end",
-    },
-    {
-      kind: "say",
-      id: "s-vague",
-      phase: "Before discharge",
-      text: "His pharmacist calls to ask whether the naproxen refill should go ahead. You explain the bleed, cancel the naproxen, and write to the clinic and his family physician. You then sit down with his wife and explain the cause.",
+      rubric: ["wp-pr5"],
       next: "end",
     },
     {
@@ -465,7 +426,7 @@ export const weakAndPaleAfterAStent: OralCase = {
       id: "wp-p3",
       competency: "assessment",
       criterion: "physical",
-      text: "Interprets the new T wave inversion and troponin as demand ischemia from blood loss, while still considering stent thrombosis.",
+      text: "Interprets the new diffuse ST depression and troponin as demand ischemia from blood loss, while still considering stent thrombosis.",
       points: 2,
       critical: true,
       teaching: "Severe anemia and hypotension cause a type 2 myocardial infarction through supply and demand mismatch. Treating it as a plaque event with heparin worsens the bleeding.",
