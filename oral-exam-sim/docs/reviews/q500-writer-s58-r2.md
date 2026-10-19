@@ -191,3 +191,7 @@ This round answers `docs/reviews/q500-verify3-s58.md`. shock-48, shock-49 and sh
 
 - Single-answer keys by position (first to fifth): 4, 5, 2, 5, 4 of 20. No position is above 25%, and every position is used.
 - The q1 key is not the longest option. The q2 key is shorter than the mean of the distractors. The batch length test passes.
+
+## Round 5
+
+shock-52 q2 only, per `docs/reviews/q500-verify4-s58.md`. The prompt now reads "Which of the following is the most appropriate next step in his resuscitation?" and the explanation now says "Waiting for an HLA antibody screen". Nothing else changed. The s58 type-check grep is clean, and the batch tests pass (132).

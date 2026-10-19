@@ -398,7 +398,7 @@ export const SHOCK_S58: Samp[] = [
       {
         id: "q2",
         kind: "single",
-        prompt: "Which of the following is the most appropriate resuscitation fluid for him now?",
+        prompt: "Which of the following is the most appropriate next step in his resuscitation?",
         options: [
           "Crystalloid until transplant advice",
           "darbepoetin IV and recheck hemoglobin",
@@ -408,7 +408,7 @@ export const SHOCK_S58: Samp[] = [
         ],
         correct: 3,
         explanation:
-          "He is in hemorrhagic shock with a hemoglobin that has fallen from 116 to 84 g/L and is still bleeding, so he needs red cells now. KDIGO advises avoiding red cell transfusion when possible in people eligible for a transplant, because it can create antibodies against future donor tissue. The same guideline advises considering transfusion when rapid correction of anemia is needed to stabilize the patient, as in acute hemorrhage. Darbepoetin and IV iron cannot correct anemia immediately. Waiting for an antibody screen or for transplant advice delays blood he needs to survive, and crystalloid carries no oxygen and dilutes his clotting factors.",
+          "He is in hemorrhagic shock with a hemoglobin that has fallen from 116 to 84 g/L and is still bleeding, so he needs red cells now. KDIGO advises avoiding red cell transfusion when possible in people eligible for a transplant, because it can create antibodies against future donor tissue. The same guideline advises considering transfusion when rapid correction of anemia is needed to stabilize the patient, as in acute hemorrhage. Darbepoetin and IV iron cannot correct anemia immediately. Waiting for an HLA antibody screen or for transplant advice delays blood he needs to survive, and crystalloid carries no oxygen and dilutes his clotting factors.",
         keyFeature: { topic: TOPIC, n: 3 },
         source: "kdigo-anemia-2026",
       },
