@@ -238,7 +238,7 @@ export const BURNS_S69: Samp[] = [
         options: ["Cool water soaks for pain", "Dry sheets and forced-air warming", "Recheck temperature in 4 hours", "Saline-soaked gauze dressings", "No warming above 35.0°C"],
         correct: 1,
         explanation:
-          "In a burn patient hypothermia starts below 36.5°C, not at 35°C as in an uninjured person, and early hypothermia after a burn worsens outcome. The wet towels come off, her burns are covered with clean dry sheets, and active warming with a forced-air blanket and warmed Ringer's lactate begins. Cooling is reserved for small burns of 5% TBSA or less, so more cool soaks over 24% of her body would drive her temperature down further. Saline-soaked gauze does the same, and dressings are not applied before the burn centre has been consulted. Rechecking in 4 hours, or waiting for 35°C, lets her cool through the hours that matter.",
+          "In a burn patient hypothermia starts below 36.5°C, not at 35°C as in an uninjured person, and early hypothermia after a burn worsens outcome. The wet towels come off, her burns are covered with clean dry sheets, and active warming with a forced-air blanket and warmed Ringer's lactate begins. Cooling with cool water is accepted only for burns of 5% TBSA or less, so more cool soaks over 24% of her body would drive her temperature down further. Saline-soaked gauze does the same, and dressings are not applied before the burn centre has been consulted. Rechecking in 4 hours, or waiting for 35°C, lets her cool through the hours that matter.",
         keyFeature: { topic: "burns", n: 1 },
         source: "nb-burn-care",
       },
