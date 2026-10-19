@@ -153,19 +153,18 @@ export const INFECTIOUS_DISEASES_S55: Samp[] = [
       {
         id: "q3",
         kind: "single",
-        update: "She asks for something to slow the diarrhea before she goes back to the residence.",
-        prompt: "Which of the following is the most appropriate medication to reduce her stool frequency?",
+        prompt: "Which of the following conditions, if present, would most justify empiric antibiotics for watery diarrhea like hers?",
         options: [
-          "bismuth subsalicylate 524 mg PO",
-          "cholestyramine 4 g PO",
-          "codeine 30 mg PO",
-          "loperamide 4 mg PO",
-          "octreotide 100 mcg SC",
+          "Age over 70 years",
+          "Chronic kidney disease",
+          "Hypothyroidism on levothyroxine",
+          "Kidney transplant on tacrolimus",
+          "Type 2 diabetes on metformin",
         ],
         correct: 3,
         explanation:
-          "IDSA 2017 states that loperamide may be given to immunocompetent adults with acute watery diarrhea, and that it should be avoided where toxic megacolon may result, as in bloody or inflammatory diarrhea. Her stools are watery without blood and her temperature is 37.6°C, so it is reasonable alongside oral fluids. The usual dose is 4 mg, then 2 mg after each loose stool, to a maximum of 16 mg a day. Codeine sedates an older adult and is not used to treat diarrhea. Bismuth subsalicylate adds a salicylate load while her creatinine is raised. Cholestyramine treats bile acid diarrhea, and octreotide is for secretory diarrhea from tumours or chemotherapy.",
-        keyFeature: { topic: "infectious-diseases", n: 9 },
+          "IDSA 2017 advises against empiric antimicrobial therapy for most people with acute watery diarrhea and no recent international travel, and makes an exception for people who are immunocompromised. A kidney transplant recipient taking tacrolimus is immunocompromised, so empiric treatment would be considered while stool tests are pending. Older age, chronic kidney disease, hypothyroidism and type 2 diabetes are not the immune suppression that the exception names. On their own they do not change the advice against an antibiotic for her, although age and kidney disease raise her risk from dehydration.",
+        keyFeature: { topic: "infectious-diseases", n: 3 },
         source: "idsa-diarrhea-2017",
       },
       {
@@ -263,7 +262,7 @@ export const INFECTIOUS_DISEASES_S55: Samp[] = [
         ],
         correct: 2,
         explanation:
-          "In a large HIV clinic cohort, a low CD4 count was an independent predictor of MRSA bacteremia, alongside injection drug use, with the risk highest at the lowest counts. Her count of 150 x 10^6/L after 18 months off antiretroviral therapy adds this host factor to her injecting, and reconnecting her with HIV care belongs in the admission plan. Hepatitis C that has been cured no longer adds this risk. Tobacco and methamphetamine smoking and poor dental health carry other harms but were not among the predictors that study found.",
+          "In a large HIV clinic cohort, a low CD4 count was an independent predictor of MRSA bacteremia, alongside injection drug use, with the risk highest at the lowest counts. Her count of 150 x 10^6/L after 18 months off antiretroviral therapy adds this host factor to her injecting, and reconnecting her with HIV care belongs in the admission plan. In that cohort a CD4 count of 51 to 200 x 10^6/L carried about six times the odds of MRSA bacteremia of a count above 500 x 10^6/L. The cohort did not study hepatitis C, tobacco or methamphetamine smoking, or dental health. Her hepatitis C has been cured, so she no longer has that infection. Smoking and poor dental health are not forms of immune suppression, unlike a low CD4 count.",
         keyFeature: { topic: "infectious-diseases", n: 3 },
         source: "burkey-hiv-mrsa",
       },

@@ -98,3 +98,22 @@ I reread the arrhythmia and ischemic heart disease catalogues and grepped enviro
 - 49 q1 is tagged KF8 because sedation is a core part of delivering temperature control, and the bank holds no untaken temperature-control decision. A reviewer may judge the KF8 fit loose. The propofol-remifentanil evidence is a before-and-after study plus a small trial, presented by ERC as supporting short-acting agents. ERC notes that propofol raises the need for a vasopressor, and the explanation says to watch her BP.
 - 52 q2 is tagged KF7. AF is not a classic reperfusion rhythm the way AIVR is, but it arises in the reperfusion window and the decision is supportive care without a drug. It could be retagged KF4 if the reviewer prefers. 52 q2 and q3 both lead to monitoring without a drug, for different rhythms (AF with anticoagulation, then Mobitz I).
 - 50 q1 rests on the score's footnote definition of heart disease. MDCalc's shorter wording ("atrial fibrillation or flutter") agrees.
+
+## Round 4
+
+These are the fixes from `docs/reviews/q500-verify3-s63.md`, applied exactly as the coordinator directed. Only the items listed here were changed. Only `src/samps/s63/arrhythmia.ts` and this report were edited.
+
+| SAMP | Question | Change |
+|---|---|---|
+| arrhythmia-49 | q1 explanation | The sevoflurane sentence now reads: "Inhaled sevoflurane is not a short-acting IV agent, and in a trial of ventilated adults with ARDS it gave fewer ventilator-free days and higher 90-day mortality than propofol." |
+| arrhythmia-49 | q3 explanation (recommended) | The AHA sentence was split into two: "AHA guidance does not recommend routine pacing in cardiac arrest. ERC makes an exception only for asystole with P waves." The ERC exception no longer reads as a consequence of the AHA position. |
+| arrhythmia-50 | q1 key (recommended) | The key "Atrial fibrillation at 33" is shortened to "Atrial fibrillation" (19 characters). The stem and the explanation still give the age at diagnosis, so the key stays accurate. It stays at the same position (second) and is no longer the longest option. My round 3 note called it a tie with "Sweating after the faint" (24 characters). That was wrong: the old key was 25 characters. |
+| arrhythmia-52 | q2 | Retagged from key feature 7 to key feature 4. KF7 is still covered by 52 q1 and q3. |
+| arrhythmia-52 | q3 update | The first sentence is now "Forty minutes later he is in sinus rhythm, still pain free, and the ST elevation is 1 mm." |
+
+Batch figures after round 4:
+- The key is the single longest option in 4 of 18 singles (22%).
+- Key positions are unchanged: 3, 4, 3, 4, 4.
+- Every key feature is covered. KF4 is tested by 49 q3, 51 q3, 52 q2 and 52 q4. KF7 is tested by 52 q1 and q3.
+
+The type check for s63 is clean, and the batch tests pass (128 of 128).

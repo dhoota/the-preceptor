@@ -8,6 +8,7 @@ const META = { topic: "msk", reviewed: false, author: "Preceptor", version: 1 } 
 const S = {
   robertson: { id: "robertson-fnsf", citation: "Robertson GA, Wood AM. Femoral neck stress fractures in sport: a current concepts review. Sports Med Int Open. 2017.", url: "https://pubmed.ncbi.nlm.nih.gov/30539087/" },
   reds: { id: "ioc-reds-2023", citation: "Mountjoy M, Ackerman KE, Bailey DM, et al. 2023 International Olympic Committee's (IOC) consensus statement on Relative Energy Deficiency in Sport (REDs). Br J Sports Med. 2023.", url: "https://pubmed.ncbi.nlm.nih.gov/37752011/" },
+  aresco: { id: "aresco-geriatric-cspine", citation: "Aresco C, Gambert SR, Stein DM. Cervical spine injuries in the geriatric patient. Consultant360. 2010.", url: "https://www.consultant360.com/articles/cervical-spine-injuries-geriatric-patient" },
   divi: { id: "divi-atccs", citation: "Divi SN, Schroeder GD, Mangan JJ, et al. Management of acute traumatic central cord syndrome: a narrative review. Global Spine J. 2019.", url: "https://pmc.ncbi.nlm.nih.gov/articles/PMC6512200/" },
   fehlingsMri: { id: "fehlings-sci-mri", citation: "Fehlings MG, Martin AR, Tetreault LA, et al. A clinical practice guideline for the management of patients with acute spinal cord injury: recommendations on the role of baseline magnetic resonance imaging in clinical decision making and outcome prediction. Global Spine J. 2017.", url: "https://pmc.ncbi.nlm.nih.gov/articles/PMC5684845/" },
   fehlingsTiming: { id: "fehlings-sci-timing-2024", citation: "Fehlings MG, Tetreault LA, Hachem L, et al. An update of a clinical practice guideline for the management of patients with acute spinal cord injury: recommendations on the role and timing of decompressive surgery. Global Spine J. 2024.", url: "https://pmc.ncbi.nlm.nih.gov/articles/PMC10964895/" },
@@ -18,7 +19,7 @@ const S = {
   esska2: { id: "esska-ftpd-2", citation: "Balcarek P, Blønd L, Beaufils P, et al. Management of first-time patellar dislocation: the ESSKA 2024 formal consensus, part 2. Knee Surg Sports Traumatol Arthrosc. 2025.", url: "https://pmc.ncbi.nlm.nih.gov/articles/PMC12684363/" },
   boastOpen: { id: "boast-open-fractures", citation: "British Orthopaedic Association. BOAST: open fractures. 2017.", url: "https://www.boa.ac.uk/resource/boast-4-pdf.html" },
   east: { id: "east-open-fracture-2011", citation: "Hoff WS, Bonadies JA, Cachecho R, Dorlac WC. EAST Practice Management Guidelines Work Group: update to practice management guidelines for prophylactic antibiotic use in open fractures. J Trauma. 2011.", url: "https://pubmed.ncbi.nlm.nih.gov/21610369/" },
-  lezak: { id: "lezak-peroneal", citation: "Lezak B, Massel DH, Varacallo MA. Peroneal nerve injury. StatPearls. 2024.", url: "https://pubmed.ncbi.nlm.nih.gov/31751049/" },
+  walters: { id: "walters-fibula", citation: "Walters BB, Constant D, Anand P. Fibula fractures. StatPearls. 2023.", url: "https://pubmed.ncbi.nlm.nih.gov/32310599/" },
 } satisfies Record<string, Source>;
 
 export const MSK_S54: Samp[] = [
@@ -120,9 +121,9 @@ export const MSK_S54: Samp[] = [
         options: ["Axial compression", "Flexion with rotation", "Hyperextension", "Hyperflexion", "Lateral flexion"],
         correct: 2,
         explanation:
-          "A forward fall that drives the forehead into the ground pushes the head backward and forces the neck into hyperextension, so the forehead wound marks the mechanism. Divi and colleagues describe hyperextension as the most common mechanism of acute traumatic central cord syndrome, in which the cord is compressed within a canal already narrowed by spondylosis, often without a fracture and most often in older adults after falls. His age and the arthritis of his neck put him in that group, and his lack of neck pain does not exclude it. Axial compression follows a blow to the top of the head, as in a dive into shallow water. Hyperflexion, with or without rotation, follows a blow to the back of the head or a sudden stop that throws the chin to the chest. Lateral flexion follows a blow to the side of the head.",
+          "A forward fall that drives the forehead into the ground pushes the head backward and forces the neck into hyperextension. Aresco and colleagues advise that an older patient with abrasions on the forehead or face after such a fall should raise strong suspicion of a cervical extension injury, so his forehead wound marks the mechanism even though he has no neck pain. Axial compression follows a blow to the top of the head, as in a dive into shallow water. Hyperflexion, with or without rotation, follows a blow to the back of the head or a sudden stop that throws the chin to the chest. Lateral flexion follows a blow to the side of the head.",
         keyFeature: { topic: "msk", n: 2 },
-        source: "divi-atccs",
+        source: "aresco-geriatric-cspine",
       },
       {
         id: "q2",
@@ -178,11 +179,11 @@ export const MSK_S54: Samp[] = [
         source: "fehlings-sci-timing-2024",
       },
     ],
-    sources: [S.divi, S.fehlingsMri, S.fehlingsTiming],
+    sources: [S.aresco, S.divi, S.fehlingsMri, S.fehlingsTiming],
     ...META,
   },
 
-  /* 41 Pathologic humeral fracture from myeloma --------------------------- */
+  /* 41 Pathologic rib fracture from myeloma ------------------------------ */
   {
     id: "msk-41",
     title: "Pain in the side after reaching back",
@@ -204,7 +205,7 @@ export const MSK_S54: Samp[] = [
         ],
         correct: 2,
         explanation:
-          "A rib that breaks with a simple twist, after 2 months of night pain at the same site, at a lucent area with a thinned and scalloped cortex, is a pathologic fracture. The BOA standard notes that a low energy fracture in a patient without osteoporosis should raise suspicion of an underlying malignancy. A fragility fracture of osteoporosis follows a fall and does not produce a lucent, expanded area or months of night pain. He was not struck on the chest. A stress fracture follows repeated loading and shows no lucent lesion, and a twist alone does not break a normal rib.",
+          "A rib that breaks with a simple twist, after 2 months of night pain at the same site, at a lucent area with a thinned and scalloped cortex, is a pathologic fracture. The BOA standard notes that a low energy fracture in a patient without osteoporosis should raise suspicion of an underlying malignancy. A fragility fracture of osteoporosis can follow a minor twist, but it does not produce a lucent, expanded area with a scalloped cortex, or months of night pain at the site. He was not struck on the chest. A stress fracture follows repeated loading and shows no lucent lesion, and a twist alone does not break a normal rib.",
         keyFeature: { topic: "msk", n: 2 },
         source: "boast-mbd",
       },
@@ -259,13 +260,13 @@ export const MSK_S54: Samp[] = [
     ...META,
   },
 
-  /* 42 First-time lateral patellar dislocation in a teenager -------------- */
+  /* 42 First-time lateral patellar dislocation at home ------------------- */
   {
     id: "msk-42",
-    title: "Twisted knee at a trampoline park",
+    title: "Knee that gave way on a wet floor",
     stem:
-      "A 14-year-old boy is brought to the emergency department by his father 45 minutes after he twisted his right knee while landing a jump at a trampoline park. He felt something shift on the outside of the knee and has not been able to straighten it since. This has never happened before. He is healthy and takes no medications. He was given intranasal fentanyl at triage and is now more comfortable. His right knee is held in about 40 degrees of flexion. There is a firm bulge on the lateral side of the knee, and the front of the knee looks flat. The dorsalis pedis pulse is strong, and sensation and toe movement are normal.",
-    vitals: { temperature: "36.7°C oral", pulse: "102/minute", resp: "18/minute", bp: "118/70 mmHg", o2sat: "99% on room air", weight: "52 kg" },
+      "You are working in a community hospital emergency department. MRI is available only at the regional hospital. A 12-year-old girl is brought in by her grandmother 1 hour after her right foot slid on a wet kitchen floor at home and her knee buckled inward as she fell. She cannot straighten the knee. This has never happened before. She is healthy and takes no medications. She was given intranasal fentanyl at triage and is now more comfortable. Her right knee is held in about 40 degrees of flexion. There is a firm bulge on the lateral side of the knee, and the front of the knee looks flat. The dorsalis pedis pulse is strong, and sensation and toe movement are normal.",
+    vitals: { temperature: "36.9°C oral", pulse: "106/minute", resp: "20/minute", bp: "110/66 mmHg", o2sat: "99% on room air", weight: "41 kg" },
     questions: [
       {
         id: "q1",
@@ -280,14 +281,14 @@ export const MSK_S54: Samp[] = [
         ],
         correct: 1,
         explanation:
-          "A lateral bulge with a flat front of the knee, held in flexion after a twisting landing, is a lateral patellar dislocation. Sinikumpu and Nicolaou advise that the patella be reduced and the reduction confirmed clinically before any other care, by extending the knee with pressure on the lateral side of the patella, which guides it medially back into its groove. Traction along the leg, flexing the knee further and rotating the tibia do not move the patella back. A valgus stress adds to the lateral pull on the patella. Pulses, sensation and movement were checked before the reduction and are checked again after it.",
+          "A lateral bulge with a flat front of the knee, held in flexion after the knee buckled inward, is a lateral patellar dislocation. Sinikumpu and Nicolaou advise that the patella be reduced and the reduction confirmed clinically before any other care, by extending the knee with pressure on the lateral side of the patella, which guides it medially back into its groove. Traction along the leg, flexing the knee further and rotating the tibia do not move the patella back. A valgus stress adds to the lateral pull on the patella. Pulses, sensation and movement were checked before the reduction and are checked again after it.",
         keyFeature: { topic: "msk", n: 5 },
         source: "sinikumpu-patella",
       },
       {
         id: "q2",
         kind: "single",
-        update: "The patella returns to its groove as the knee is extended. He can now do a straight leg raise. AP, lateral and axial X-rays of the knee show no fracture.",
+        update: "The patella is reduced. She can now do a straight leg raise. AP, lateral and axial X-rays of the knee show no fracture.",
         prompt: "Which of the following findings over the next hours would most suggest an associated osteochondral fracture?",
         options: [
           "Apprehension on lateral patellar push",
@@ -306,27 +307,27 @@ export const MSK_S54: Samp[] = [
         id: "q3",
         kind: "menu",
         select: 1,
-        update: "An MRI of the knee is booked for the next morning, and he will go home overnight.",
-        prompt: "Which of the following is the most appropriate way to support his knee for now?",
+        update: "An MRI of the knee is booked at the regional hospital in 2 days, and she will go home until then.",
+        prompt: "Which of the following is the most appropriate way to support her knee for now?",
         options: [
           "Cylinder cast for 6 weeks",
           "Elastic patellar brace",
-          "Hinged brace locked in extension",
+          "Hinged brace locked in extension for 6 weeks",
           "Infrapatellar tendon strap",
           "Knee immobilizer for 6 weeks",
           "Long leg back slab for 3 weeks",
         ],
         correct: [1],
         explanation:
-          "Sinikumpu and Nicolaou do not recommend a cast or rigid orthosis after a first dislocation, because it prevents the recovery of motion and the early muscle strengthening that recovery depends on. They suggest an elastic patella-specific brace, which encourages weight bearing and reduces anxiety, used for no more than several weeks, with weight bearing as tolerated and crutches at first if needed. A cylinder cast, a knee immobilizer or slab for weeks, and a brace locked in extension are the rigid options they advise against. An infrapatellar strap is used for patellar tendon pain and does not hold the patella.",
+          "Sinikumpu and Nicolaou advise against a cast or rigid orthosis after a first dislocation, because it prevents the recovery of motion and the early muscle strengthening that recovery depends on. They suggest that an elastic patella-specific brace may be useful, because it encourages weight bearing and reduces anxiety, used for no more than several weeks, with weight bearing as tolerated and crutches at first if needed. The ESSKA 2024 consensus finds no brace proven better than none and allows a brace with free motion for a short time after the injury. A cylinder cast, a knee immobilizer or slab for weeks, and a brace locked in extension for 6 weeks are prolonged rigid immobilization. An infrapatellar strap is used for patellar tendon pain and does not hold the patella.",
         keyFeature: { topic: "msk", n: 8 },
         source: "sinikumpu-patella",
       },
       {
         id: "q4",
         kind: "single",
-        update: "MRI the next morning shows a 15 mm by 12 mm osteochondral fragment from the patella lying loose in the joint.",
-        prompt: "Which of the following is the most appropriate plan for him?",
+        update: "MRI 2 days later shows a 15 mm by 12 mm osteochondral fragment from the patella lying loose in the joint.",
+        prompt: "Which of the following is the most appropriate plan for her?",
         options: [
           "Activity as tolerated, no follow-up",
           "Discharge with review in 3 months",
@@ -336,7 +337,7 @@ export const MSK_S54: Samp[] = [
         ],
         correct: 4,
         explanation:
-          "The fragment measures 15 mm by 12 mm, about 1.8 cm2. The ESSKA consensus advises repairing chondral or osteochondral fractures of 1 cm2 or more in the patellofemoral area, with refixation of the fragment preferred over its removal, so he needs prompt referral for surgery. Physiotherapy with a review in 6 weeks is the plan for a first dislocation without a repairable fragment. Discharge with a 3 month review, a repeat MRI in 6 weeks or no follow-up all leave a loose fragment that the consensus advises repairing.",
+          "The fragment measures 15 mm by 12 mm, about 1.8 cm2. The ESSKA consensus advises repairing chondral or osteochondral fractures of 1 cm2 or more in the patellofemoral area, with refixation of the fragment preferred over its removal, so she needs prompt referral for surgery. Physiotherapy with a review in 6 weeks is the plan for a first dislocation without a repairable fragment. Discharge with a 3 month review, a repeat MRI in 6 weeks or no follow-up all leave a loose fragment that the consensus advises repairing.",
         keyFeature: { topic: "msk", n: 7 },
         source: "esska-ftpd-2",
       },
