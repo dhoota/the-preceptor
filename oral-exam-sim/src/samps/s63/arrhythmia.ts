@@ -14,6 +14,9 @@ const S = {
   escSyncope: { id: "esc-syncope-2018", citation: "Brignole M, Moya A, de Lange FJ, and colleagues. 2018 ESC guidelines for the diagnosis and management of syncope. Eur Heart J. 2018.", url: "https://doi.org/10.1093/eurheartj/ehy037" },
   patel: { id: "patel-sqts-2010", citation: "Patel C, Yan GX, Antzelevitch C. Short QT syndrome: from bench to bedside. Circ Arrhythm Electrophysiol. 2010.", url: "https://pmc.ncbi.nlm.nih.gov/articles/PMC2933105/" },
   merckSqts: { id: "merck-sqts", citation: "Mitchell LB. Short QT interval syndromes. Merck Manual Professional Version. Merck and Co. Reviewed 2026.", url: "https://www.merckmanuals.com/professional/cardiovascular-disorders/arrhythmogenic-cardiac-disorders/short-qt-interval-syndromes" },
+  dayal: { id: "dayal-bradycardia-2018", citation: "Dayal NB, Burri H. Acute management of bradycardia in the emergency setting. Cardiovasc Med. 2018.", url: "https://doi.org/10.4414/cvm.2018.00554" },
+  armour: { id: "armour-atropine-2022", citation: "Armour R, Learning C, Trojanowski J. Paradoxical worsening of bradycardia following atropine administration. Br Paramed J. 2022.", url: "https://pmc.ncbi.nlm.nih.gov/articles/PMC9662156/" },
+  frampton: { id: "frampton-post-mi-2023", citation: "Frampton J, Ortengren AR, Zeitler EP. Arrhythmias after acute myocardial infarction. Yale J Biol Med. 2023.", url: "https://pmc.ncbi.nlm.nih.gov/articles/PMC10052595/" },
 } satisfies Record<string, Source>;
 
 /** Expansion batch s63: arrhythmia-48 to arrhythmia-52. 2027 MCQ and menu format only. */
@@ -198,6 +201,128 @@ export const ARRHYTHMIA_S63: Samp[] = [
       },
     ],
     sources: [S.escSyncope, S.patel, S.merckSqts],
+    ...META,
+  },
+
+  /* 51 Every second beat dropped, with a wide QRS ---------------------------- */
+  {
+    id: "arrhythmia-51",
+    topic: "arrhythmia",
+    title: "Nearly fainted carrying firewood",
+    stem:
+      "You are working in a rural hospital emergency department in the West Kootenay region of British Columbia. Transvenous pacing is not available on site. A 74-year-old man presents with 2 weeks of fatigue and breathlessness on stairs. This morning he nearly fainted while carrying firewood. He has paroxysmal atrial fibrillation. Three weeks ago his flecainide was increased from 50 mg to 100 mg twice daily. He also takes metoprolol 25 mg twice daily, apixaban 5 mg twice daily, rosuvastatin and tamsulosin. He is alert, with clear lungs and no edema. His ECG shows sinus P waves at 88/minute, and every second P wave is not followed by a QRS. The conducted beats have a PR interval of 160 ms and a QRS of 152 ms with a left bundle branch block pattern.",
+    vitals: { temperature: "36.6°C oral", pulse: "44/minute regular", resp: "18/minute", bp: "138/72 mmHg", o2sat: "96% on room air", weight: "84 kg" },
+    questions: [
+      {
+        id: "q1",
+        kind: "single",
+        prompt: "Which of the following best describes the rhythm on his ECG?",
+        options: ["2:1 second-degree AV block", "Blocked premature atrial beats", "Complete heart block", "Junctional escape rhythm", "Sinus bradycardia"],
+        correct: 0,
+        explanation:
+          "Regular sinus P waves at 88/minute with every second one not conducted, and a constant PR of 160 ms in the beats that conduct, is 2:1 second-degree AV block. With only one conducted beat between blocked P waves there is no chance to see whether the PR lengthens, so a 2:1 block cannot be labelled Mobitz I or Mobitz II from this tracing. Complete heart block would show P waves with no fixed relation to the QRS. Blocked premature atrial beats come early, but these P waves march out regularly. Sinus bradycardia and a junctional rhythm have no unconducted P waves.",
+        keyFeature: { topic: "arrhythmia", n: 3 },
+        source: "dayal-bradycardia-2018",
+      },
+      {
+        id: "q2",
+        kind: "menu",
+        prompt: "Which of the following features suggest that a 2:1 AV block lies below the AV node?",
+        options: ["Better conduction after atropine", "Block only during sleep", "Long PR in conducted beats", "Narrow QRS complexes", "Normal PR in conducted beats", "Wenckebach cycles on the monitor", "Wide QRS complexes", "Worse block with exertion"],
+        select: 3,
+        correct: [4, 6, 7],
+        explanation:
+          "Block in the His-Purkinje system is suggested by a normal PR in the conducted beats, a wide QRS and block that worsens with exertion or a faster sinus rate, and all three fit his story. Block in the AV node is suggested by a long PR in conducted beats, a narrow QRS, Wenckebach cycles elsewhere on the monitor, block only during sleep when vagal tone is high, and better conduction after atropine. The level matters because infranodal block can progress without warning to complete block with a slow, unreliable escape rhythm.",
+        keyFeature: { topic: "arrhythmia", n: 2 },
+        source: "dayal-bradycardia-2018",
+      },
+      {
+        id: "q3",
+        kind: "single",
+        update: "Pacing pads are applied while transfer is arranged. Forty minutes later he is grey and confused. The monitor shows 3:1 block with a ventricular rate of 30/minute, and his BP is 74/40 mmHg.",
+        prompt: "Which of the following is the most appropriate immediate treatment for him?",
+        options: ["atropine 1 mg IV", "glucagon 5 mg IV", "magnesium sulfate 2 g IV", "Normal saline 1 L IV bolus", "Transcutaneous pacing"],
+        correct: 4,
+        explanation:
+          "He is hypotensive and confused from a ventricular rate of 30/minute, the pads are already on, and his block lies below the AV node, so transcutaneous pacing should start now. Atropine works on the AV node. In infranodal block it is unlikely to help, and by speeding the sinus rate it can raise the grade of block and slow the ventricular rate further. Glucagon is for beta blocker overdose, and his low dose of metoprolol does not explain this picture. A fluid bolus does not fix a rate of 30/minute, and magnesium has no role in AV block.",
+        keyFeature: { topic: "arrhythmia", n: 4 },
+        source: "armour-atropine-2022",
+      },
+      {
+        id: "q4",
+        kind: "single",
+        prompt: "Which of the following medications is most likely to have caused his conduction block?",
+        options: ["apixaban", "flecainide", "metoprolol", "rosuvastatin", "tamsulosin"],
+        correct: 1,
+        explanation:
+          "Flecainide slows conduction through the His-Purkinje system and widens the QRS, so it causes block below the AV node, the level that his normal PR, wide QRS and exertional symptoms suggest. His dose was doubled 3 weeks ago and his symptoms began a week later. Metoprolol slows the AV node and would more often give a long PR with a narrow QRS, although it should also be reviewed. Apixaban, rosuvastatin and tamsulosin do not impair AV conduction. Stopping flecainide may help, but he still needs transfer for pacing because the block may persist.",
+        keyFeature: { topic: "arrhythmia", n: 5 },
+        source: "dayal-bradycardia-2018",
+      },
+    ],
+    sources: [S.dayal, S.armour],
+    ...META,
+  },
+
+  /* 52 Rhythms after prehospital fibrinolysis -------------------------------- */
+  {
+    id: "arrhythmia-52",
+    topic: "arrhythmia",
+    alsoTopics: ["ischemic-heart-disease"],
+    title: "Chest pain treated in the ambulance",
+    stem:
+      "You are working in a regional hospital emergency department in central Alberta with no catheterization laboratory. A 59-year-old man is brought in by ambulance with chest pain that began 2 hours ago. Paramedics recorded inferior ST elevation and gave tenecteplase, ASA, clopidogrel and enoxaparin in the field 35 minutes ago. Ten minutes after the tenecteplase he had ventricular fibrillation, and one shock restored his circulation. He is now awake and his pain is easing. He has hyperlipidemia and smokes. His ECG shows sinus rhythm at 78/minute with 2 mm ST elevation in II, III and aVF, down from 5 mm on the paramedic tracing. Potassium is 4.1 mmol/L and magnesium 0.88 mmol/L.",
+    vitals: { temperature: "36.7°C oral", pulse: "78/minute", resp: "16/minute", bp: "132/80 mmHg", o2sat: "97% on room air", weight: "88 kg" },
+    questions: [
+      {
+        id: "q1",
+        kind: "single",
+        prompt: "Which of the following best explains his ventricular fibrillation ten minutes after the tenecteplase?",
+        options: ["Coronary artery spasm", "Failed fibrinolysis", "Low potassium level", "Pericardial bleeding", "Reperfusion of the artery"],
+        correct: 4,
+        explanation:
+          "Ventricular fibrillation soon after fibrinolysis, followed by easing pain and ST elevation falling from 5 mm to 2 mm, is a reperfusion arrhythmia from the sudden reopening of the artery. ESC guidance notes that malignant arrhythmias at the time of reperfusion do not carry the poor prognosis of VT or VF during ongoing ischemia or late after infarction. Failed fibrinolysis would leave his pain and ST elevation unchanged. His potassium is 4.1 mmol/L. Pericardial bleeding causes tamponade with PEA rather than VF, and spasm does not fit his steady improvement.",
+        keyFeature: { topic: "arrhythmia", n: 7 },
+        source: "esc-acs-2023",
+      },
+      {
+        id: "q2",
+        kind: "menu",
+        prompt: "Which of the following rhythms, if they occurred over the next hours, would need specific treatment?",
+        options: ["Accelerated idioventricular rhythm at 90/minute", "Complete heart block with BP 72/40 mmHg", "Isolated premature ventricular beats", "Mobitz I block with BP 126/74 mmHg", "Nonsustained monomorphic VT of 6 beats", "Polymorphic VT lasting 40 seconds", "Sinus bradycardia, 54/minute, BP 122/70 mmHg"],
+        select: 2,
+        correct: [1, 5],
+        explanation:
+          "Reperfusion often brings rhythms that look alarming but need only monitoring. ESC guidance calls AIVR at reperfusion benign, needs no specific therapy for premature ventricular beats or nonsustained monomorphic VT in the first day, and advises against antiarrhythmic drugs for asymptomatic, hemodynamically irrelevant ventricular arrhythmias. Sinus bradycardia and Mobitz I block with a normal BP also need only observation. Sustained polymorphic VT needs electrical therapy and an IV beta blocker or amiodarone, and complete heart block with hypotension needs chronotropic drugs or pacing.",
+        keyFeature: { topic: "arrhythmia", n: 7 },
+        source: "esc-acs-2023",
+      },
+      {
+        id: "q3",
+        kind: "single",
+        update: "Forty minutes later his pain has gone and the ST elevation is 1 mm. PR intervals lengthen until a P wave is not conducted, with narrow QRS complexes and a ventricular rate of 56/minute. He is warm and alert, with BP 124/76 mmHg.",
+        prompt: "Which of the following is the most appropriate management of this rhythm?",
+        options: ["atropine 1 mg IV", "dopamine 5 mcg/kg/minute IV", "isoproterenol 2 mcg/minute IV", "Observation on the monitor", "Transcutaneous pacing now"],
+        correct: 3,
+        explanation:
+          "Lengthening PR intervals ending in a dropped beat, with narrow QRS complexes, is Mobitz I block at the AV node, a common and usually transient effect of vagal tone and nodal ischemia after inferior reperfusion. He is warm, alert and normotensive at 56/minute, and ESC guidance keeps chronotropic drugs and pacing for bradycardia with hemodynamic intolerance or high-grade block without a stable escape. Atropine, dopamine and isoproterenol add the risk of tachycardia and ectopy without benefit here, and pacing is not needed for a stable nodal block.",
+        keyFeature: { topic: "arrhythmia", n: 7 },
+        source: "esc-acs-2023",
+      },
+      {
+        id: "q4",
+        kind: "single",
+        update: "Two hours later the monitor shows complete heart block with a narrow junctional escape at 38/minute. He is pale, clammy and slow to answer, with BP 76/44 mmHg.",
+        prompt: "Which of the following is the most appropriate first treatment while transfer for angiography is arranged?",
+        options: ["atropine 1 mg IV", "calcium gluconate 3 g IV", "glucagon 5 mg IV", "lidocaine 100 mg IV", "naloxone 0.4 mg IV"],
+        correct: 0,
+        explanation:
+          "In an inferior infarct, complete heart block usually arises in the AV node from vagal tone and ischemia, gives a narrow junctional escape and tends to respond to atropine. He is hypotensive and drowsy, so atropine 1 mg IV comes first, and ESC guidance moves to temporary pacing if he does not respond. Calcium is for hyperkalemia or calcium channel blocker toxicity, and glucagon for beta blocker toxicity, and he has neither. Lidocaine suppresses ventricular escape and could cause asystole. Naloxone reverses opioids, which do not cause complete heart block.",
+        keyFeature: { topic: "arrhythmia", n: 4 },
+        source: "frampton-post-mi-2023",
+      },
+    ],
+    sources: [S.escAcs, S.frampton],
     ...META,
   },
 ];

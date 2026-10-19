@@ -1,0 +1,573 @@
+// DRAFT. Clinical content written for simulation only. Requires physician review before release. Verify every dose and threshold against current guidelines.
+
+import type { OralCase } from "@/engine/types";
+
+export const hyperacutePurulentRedEye: OralCase = {
+  id: "hyperacute-purulent-red-eye",
+  title: "Pink eye that is not getting better",
+  blueprint: "id",
+  alsoCovers: ["ethics"],
+  priorityTopic: "eye",
+  keyFeatures: [
+    { topic: "eye", n: 1 },
+    { topic: "eye", n: 2 },
+    { topic: "eye", n: 3 },
+  ],
+  summary: "A young man returns with a worsening red eye two days after a walk in clinic treated it as conjunctivitis.",
+  durationMinutes: 12,
+  stem:
+    "You are working in the emergency department of a community hospital when the following patient arrives. " +
+    "A 26 year old man has a red, swollen right eye with thick discharge that has worsened over 3 days. A walk in clinic treated it as pink eye 2 days ago.",
+  card: {
+    vitals: {
+      temperature: "37.9°C oral",
+      pulse: "96/minute",
+      resp: "16/minute",
+      bp: "128/76 mmHg",
+      o2sat: "99% on room air",
+      weight: "78 kg (172 lb)",
+    },
+    medications: "Erythromycin eye ointment four times daily, started 2 days ago. Ibuprofen as needed.",
+    allergies: "No known drug allergies",
+  },
+  findings: [
+    {
+      id: "hpi",
+      label: "History of the eye complaint",
+      result:
+        "Started 3 days ago as a gritty right eye. Within a day it was pouring thick yellow green pus. He wipes it every few minutes and the lids were glued shut this morning. Vision in the right eye has been blurry since this morning. Moderate aching pain and mild light sensitivity. No injury. No contact lenses. No previous eye problems. The left eye is fine. The ointment has not helped.",
+    },
+    {
+      id: "systemic",
+      label: "Systemic and genitourinary symptoms",
+      result:
+        "Burning on urination and a creamy discharge from the penis for 5 days. He thought it was a bladder infection. Since last night his right wrist and the back of his hand ache and are swollen. Today he noticed two small sore bumps on his fingers. He felt feverish overnight. No headache or neck stiffness.",
+    },
+    {
+      id: "sexual",
+      label: "Sexual history, asked privately",
+      result:
+        "He lives with his girlfriend of 3 years. Twelve days ago he had condomless oral and vaginal sex with a new female partner at a wedding out of town. He has her phone number. No male partners. No previous STI. Never tested for HIV. He asks that you not tell his girlfriend.",
+    },
+    {
+      id: "pmh",
+      label: "Past history, medications and social history",
+      result:
+        "Healthy. Erythromycin eye ointment from the walk in clinic. Ibuprofen for the wrist. No drug allergies. Line cook. Occasional cannabis. Drinks socially. No injection drug use.",
+    },
+    {
+      id: "acuity",
+      label: "Visual acuity",
+      result: "Right eye 20/80, 20/70 with pinhole. Left eye 20/20.",
+    },
+    {
+      id: "external",
+      label: "Lids, conjunctiva and pupils",
+      result:
+        "Marked right upper and lower lid swelling and redness. Copious purulent discharge that reaccumulates within a minute of wiping. Marked chemosis. Tender right preauricular node. Eye movements full and painless. No proptosis. Pupils equal and reactive with no relative afferent pupillary defect.",
+    },
+    {
+      id: "slitlamp",
+      label: "Slit lamp with fluorescein",
+      result:
+        "Diffuse conjunctival injection. A 2 mm epithelial defect that stains with fluorescein at the superior peripheral cornea at 11 o'clock, with a grey white infiltrate beneath it. No obvious thinning. Anterior chamber quiet. No hypopyon. Left eye normal. Intraocular pressure 14 mmHg on the right by gentle tonometry.",
+    },
+    {
+      id: "msk-skin",
+      label: "Joints and skin",
+      result:
+        "Swelling and tenderness along the extensor tendons on the back of the right wrist and hand. Pain when the fingers are bent passively. No wrist effusion. Three small pustules on a red base on the backs of the right index finger and left ring finger.",
+    },
+    {
+      id: "systemic-exam",
+      label: "Cardiac, neurologic and genital exam",
+      result: "No murmur. No meningismus. Urethral discharge on genital exam. No genital ulcers. No inguinal nodes.",
+    },
+    {
+      id: "gram",
+      label: "Gram stain of eye discharge",
+      result: "Many neutrophils with gram negative intracellular diplococci. Culture and susceptibility pending.",
+    },
+    {
+      id: "labs",
+      label: "Blood work",
+      result: "WBC 13.1 x 10^9/L. CRP 86 mg/L. Creatinine 74 µmol/L. Blood cultures x 2 drawn.",
+    },
+    {
+      id: "sti-tests",
+      label: "STI testing",
+      result:
+        "Urine NAAT for gonorrhea and chlamydia sent. Throat swab sent. HIV, syphilis, hepatitis B and hepatitis C serology sent with his consent. Results in 2 to 3 days.",
+    },
+    {
+      id: "resources",
+      label: "Hospital resources",
+      result:
+        "Friday, 21:30. Community hospital with internal medicine and a slit lamp. Ophthalmology is on call from the regional centre 45 minutes away. Infectious diseases by phone. Local public health unit reachable Monday or by its after hours line.",
+    },
+  ],
+  start: "s-open",
+  nodes: [
+    {
+      kind: "say",
+      id: "s-open",
+      phase: "Triage",
+      text:
+        "Triage has labelled him 'pink eye, failed treatment' and placed him in the fast track chairs. He is holding a wad of gauze to his eye. The nurse asks if you can just switch his ointment to drops so he can go home.",
+      next: "q-first",
+    },
+    {
+      kind: "question",
+      id: "q-first",
+      phase: "First look",
+      prompt: "How do you respond to the nurse, and how do you approach this eye?",
+      seconds: 75,
+      modelAnswer: [
+        "Not yet. Failed treatment of a red eye means it is not simple conjunctivitis until proven otherwise.",
+        "Visual acuity in each eye first, with pinhole.",
+        "Look at the discharge. Copious pus that reaccumulates fast is hyperacute and gonococcal until proven otherwise.",
+        "Full exam with slit lamp and fluorescein for corneal involvement.",
+        "Culture and Gram stain the discharge.",
+        "Move him to a room with a slit lamp. No patching and no steroid drops.",
+      ],
+      rubric: ["gk-p1", "gk-p3", "gk-c1"],
+      choices: [
+        {
+          id: "c-assess",
+          label: "I said no. I checked acuity in both eyes first, noted pus that reaccumulates within a minute, moved him to the slit lamp room and planned a fluorescein exam and a Gram stain and culture of the discharge.",
+          next: "q-history",
+          quality: "strong",
+          feedback:
+            "Right. A red eye that fails treatment needs a fresh look, and acuity comes first every time. Hyperacute purulent discharge signals Neisseria gonorrhoeae, which can invade an intact cornea. Culture is mandatory for severe purulent discharge.",
+        },
+        {
+          id: "c-switch",
+          label: "I switched him to moxifloxacin drops for a resistant bacterial conjunctivitis and told him to see his family doctor next week.",
+          next: "s-switch",
+          quality: "partial",
+          feedback:
+            "You never measured his vision or looked at his cornea. Topical drops alone will not treat a gonococcal infection, which needs systemic therapy. Next week may be too late for this cornea.",
+        },
+        {
+          id: "c-steroid",
+          label: "I gave tobramycin and dexamethasone drops to settle the swelling and patched the eye for comfort.",
+          next: "s-steroid",
+          quality: "unsafe",
+          feedback:
+            "Steroid drops in an undiagnosed infected eye can speed corneal melt. Patching a purulent eye traps organisms against the cornea. Neither belongs in a red eye that has not been examined with fluorescein.",
+        },
+      ],
+    },
+    {
+      kind: "say",
+      id: "s-switch",
+      phase: "At the door",
+      text:
+        "As he collects his prescription, he tells the nurse his vision is getting worse and his wrist hurts. The nurse brings him back and asks you to see him properly.",
+      next: "q-history",
+    },
+    {
+      kind: "say",
+      id: "s-steroid",
+      phase: "Ten minutes later",
+      text:
+        "The charge nurse questions the order. She notes the discharge is soaking through the patch and that no acuity is recorded. You remove the patch, cancel the steroid drops and start again.",
+      next: "q-history",
+    },
+    {
+      kind: "question",
+      id: "q-history",
+      phase: "History",
+      prompt: "What history do you take, and how do you take it?",
+      seconds: 90,
+      modelAnswer: [
+        "Eye. Onset and speed, discharge, vision change, pain, light sensitivity, trauma, contact lenses, previous episodes.",
+        "Ask what the walk in clinic gave and whether it helped.",
+        "Sexual history in private, without judgment. Partners, timing, condom use, genital discharge and dysuria.",
+        "Systemic. Fever, joint or tendon pain, skin lesions, headache.",
+        "Past STI, HIV testing, medications and allergies, especially to cephalosporins.",
+      ],
+      rubric: ["gk-h1", "gk-h2", "gk-h3", "gk-h4"],
+      next: "q-exam",
+    },
+    {
+      kind: "question",
+      id: "q-exam",
+      phase: "Examination",
+      prompt: "Describe your eye examination and what else you examine. What is your differential diagnosis?",
+      seconds: 90,
+      modelAnswer: [
+        "Acuity each eye with pinhole. Lids, discharge, chemosis, preauricular nodes.",
+        "Pupils, eye movements and proptosis to exclude orbital cellulitis.",
+        "Slit lamp with fluorescein. Corneal epithelial defect, infiltrate, thinning, anterior chamber cells or hypopyon.",
+        "Intraocular pressure only with gentle technique once perforation is not suspected.",
+        "Wrist and tendons, skin, genitals, heart and meninges.",
+        "Differential. Gonococcal keratoconjunctivitis, chlamydial conjunctivitis, severe adenoviral conjunctivitis, bacterial keratitis, preseptal or orbital cellulitis.",
+      ],
+      rubric: ["gk-p2", "gk-p4", "gk-p5"],
+      next: "s-gram",
+    },
+    {
+      kind: "say",
+      id: "s-gram",
+      phase: "An hour later",
+      text:
+        "The lab calls. The Gram stain shows gram negative intracellular diplococci. His temperature is now 38.4°C. He shows you his right wrist, which is swollen along the tendons, and two pustules on his fingers.",
+      next: "q-treat",
+    },
+    {
+      kind: "question",
+      id: "q-treat",
+      phase: "Treatment",
+      prompt: "What is your diagnosis, and what treatment do you start?",
+      seconds: 90,
+      modelAnswer: [
+        "Gonococcal keratoconjunctivitis with corneal involvement and disseminated gonococcal infection. Tenosynovitis, dermatitis and fever.",
+        "Ceftriaxone 1 g IV every 24 hours, with step down only after improvement, for at least 7 days in total.",
+        "Saline lavage of the eye now.",
+        "Doxycycline 100 mg orally twice daily for 7 days unless chlamydia is excluded.",
+        "Blood cultures before antibiotics. Look for endocarditis and meningitis.",
+        "Admit with infectious diseases consultation. Ophthalmology to direct topical therapy for the cornea.",
+      ],
+      rubric: ["gk-m1", "gk-m2", "gk-m3", "gk-m4", "gk-m5"],
+      choices: [
+        {
+          id: "c-dgi",
+          label: "I diagnosed gonococcal keratoconjunctivitis with disseminated infection. I gave ceftriaxone 1 g IV, irrigated the eye with saline, started doxycycline for chlamydia, and admitted him with infectious diseases input.",
+          next: "s-ophtho-call",
+          quality: "strong",
+          feedback:
+            "Correct. Disseminated infection needs ceftriaxone 1 g IV daily and admission for initial therapy. Lavage clears the pus that damages the cornea. Chlamydia is treated unless a negative test excludes it.",
+        },
+        {
+          id: "c-im",
+          label: "I gave ceftriaxone 500 mg IM once, which is the Canadian dose for gonorrhea, with doxycycline, and sent him home with a follow up visit.",
+          next: "s-im",
+          quality: "partial",
+          feedback:
+            "500 mg IM is the Canadian dose for uncomplicated anogenital infection. He is not uncomplicated. Fever, tenosynovitis and pustules mean disseminated infection, which needs daily IV ceftriaxone in hospital. The cornea also needs close watching.",
+        },
+        {
+          id: "c-topical",
+          label: "I started hourly moxifloxacin drops and oral ciprofloxacin and arranged an eye clinic visit.",
+          next: "s-topical",
+          quality: "unsafe",
+          feedback:
+            "Fluoroquinolone resistance in gonorrhea is common, so ciprofloxacin is not reliable. Topical drops cannot treat a systemic infection. Ceftriaxone is the agent of choice.",
+        },
+      ],
+    },
+    {
+      kind: "say",
+      id: "s-im",
+      phase: "Before discharge",
+      text:
+        "The internist, passing by, looks at his wrist and his fingers and asks why a patient with disseminated gonococcal infection is going home. You admit him and change to ceftriaxone 1 g IV daily.",
+      next: "s-ophtho-call",
+    },
+    {
+      kind: "say",
+      id: "s-topical",
+      phase: "The pharmacist calls",
+      text:
+        "The pharmacist points out that local surveillance shows high ciprofloxacin resistance in gonorrhea and that ceftriaxone is first line. You give ceftriaxone 1 g IV and admit him.",
+      next: "s-ophtho-call",
+    },
+    {
+      kind: "say",
+      id: "s-ophtho-call",
+      phase: "Calling ophthalmology",
+      text:
+        "You reach the on call ophthalmologist. She says, 'Sounds like a bad conjunctivitis. Put him on drops and I will see him in clinic on Monday.'",
+      next: "q-ophtho",
+    },
+    {
+      kind: "question",
+      id: "q-ophtho",
+      phase: "Advocacy",
+      prompt: "How do you respond?",
+      seconds: 75,
+      modelAnswer: [
+        "Give a focused, structured summary. Gonococcus on Gram stain, acuity 20/80, a corneal epithelial defect with infiltrate.",
+        "State the concern clearly. Gonococcal keratitis can perforate within days.",
+        "Ask for a same day exam. Offer to send him to her or ask her to come in.",
+        "Agree on topical therapy and lavage in the meantime.",
+        "Document the call and the agreed plan. Escalate if you cannot agree.",
+      ],
+      rubric: ["gk-c2"],
+      choices: [
+        {
+          id: "c-advocate",
+          label: "I gave her the key facts, gonococcus on Gram stain, acuity 20/80 and a corneal infiltrate, said I was worried about perforation and asked her to see him tonight. We agreed on transfer to her eye room.",
+          next: "q-confid",
+          quality: "strong",
+          feedback:
+            "That is clear and specific. Consultants respond to facts and a stated concern. Corneal involvement in gonococcal infection is an emergency because the organism can penetrate the cornea quickly.",
+        },
+        {
+          id: "c-accept",
+          label: "I accepted Monday, since she is the specialist, and documented her advice.",
+          next: "s-accept",
+          quality: "unsafe",
+          feedback:
+            "Accepting a plan you believe is unsafe is not deference. It is a missed duty. She did not hear about the Gram stain or the corneal infiltrate. Give her the facts and ask again.",
+        },
+      ],
+    },
+    {
+      kind: "say",
+      id: "s-accept",
+      phase: "Overnight",
+      text:
+        "At 03:00 the ward nurse calls. He says the right eye is more painful and his vision is worse. You call the ophthalmologist back with the Gram stain and the slit lamp findings, and she agrees to see him first thing.",
+      next: "q-confid",
+    },
+    {
+      kind: "question",
+      id: "q-confid",
+      phase: "A private request",
+      prompt: "He asks you not to tell his girlfriend or anyone else. What do you say, and what has to happen next?",
+      seconds: 90,
+      modelAnswer: [
+        "Reassure him. You will not tell his girlfriend. His health information stays confidential.",
+        "Be honest that gonorrhea is a notifiable infection. The lab and physician report it to public health.",
+        "All partners from the 60 days before symptoms need testing and empiric treatment, whatever their results.",
+        "He can tell them himself, or public health can notify them without naming him.",
+        "His girlfriend is at risk. Encourage him to tell her and to abstain until both are treated.",
+        "Offer HIV, syphilis and hepatitis testing and counsel on prevention.",
+      ],
+      rubric: ["gk-c3", "gk-c4", "gk-c5"],
+      next: "q-dispo",
+    },
+    {
+      kind: "question",
+      id: "q-dispo",
+      phase: "Disposition",
+      prompt: "Summarize your admission plan and what must be followed up.",
+      seconds: 75,
+      modelAnswer: [
+        "Admit to medicine with infectious diseases. Ceftriaxone 1 g IV every 24 hours, then step down by susceptibility, for at least 7 days.",
+        "Ophthalmology exam tonight and daily. Topical therapy and lavage as directed.",
+        "Follow the blood cultures, the eye culture and susceptibility, and the NAAT and serology results.",
+        "Test of cure at each positive site.",
+        "Public health report and partner follow up.",
+        "Clear handover to the admitting team.",
+      ],
+      rubric: ["gk-d1"],
+      next: "end",
+    },
+    {
+      kind: "end",
+      id: "end",
+      text:
+        "The ophthalmologist sees him that night and adds intensive topical therapy. The infiltrate stops spreading and the cornea heals without perforation. Cultures grow ceftriaxone susceptible gonorrhea. He tells his girlfriend himself, and both are treated. That is the end of the case.",
+    },
+  ],
+  rubric: [
+    {
+      id: "gk-h1",
+      competency: "assessment",
+      criterion: "history",
+      text: "Asks the onset and speed, discharge, vision change, pain, light sensitivity, trauma, contact lens use and the walk in treatment.",
+      points: 2,
+      teaching: "A red eye history sorts benign from dangerous. Rapid copious pus, reduced vision and pain are red flags that take this beyond simple conjunctivitis.",
+      source: "azari",
+    },
+    {
+      id: "gk-h2",
+      competency: "assessment",
+      criterion: "history",
+      text: "Takes a private, nonjudgmental sexual history including partners, timing, condom use and genital symptoms.",
+      points: 2,
+      critical: true,
+      teaching: "Hyperacute conjunctivitis in a sexually active adult is gonococcal until proven otherwise. Genital symptoms often go unmentioned unless asked in private.",
+      source: "cdc-sti",
+    },
+    {
+      id: "gk-h3",
+      competency: "assessment",
+      criterion: "history",
+      text: "Asks about fever, joint or tendon pain and skin lesions.",
+      points: 2,
+      teaching: "Tenosynovitis, dermatitis and polyarthralgia make up the disseminated gonococcal infection syndrome. Asking finds what the patient thought was unrelated.",
+      source: "cdc-sti",
+    },
+    {
+      id: "gk-h4",
+      competency: "assessment",
+      criterion: "history",
+      text: "Asks about past STIs, HIV testing, medications and allergies.",
+      points: 1,
+      teaching: "Prior testing and cephalosporin allergy shape treatment. An STI diagnosis is the moment to offer testing for HIV and syphilis.",
+      source: "phac-gonorrhea",
+    },
+    {
+      id: "gk-p1",
+      competency: "assessment",
+      criterion: "physical",
+      text: "Measures visual acuity in each eye, with pinhole, before any other step.",
+      points: 2,
+      critical: true,
+      teaching: "Acuity is the vital sign of the eye. A drop from normal changes the diagnosis and the urgency of referral.",
+      source: "azari",
+    },
+    {
+      id: "gk-p2",
+      competency: "assessment",
+      criterion: "physical",
+      text: "Uses the slit lamp with fluorescein and identifies a peripheral corneal epithelial defect with an infiltrate.",
+      points: 2,
+      teaching: "Corneal involvement is the red flag that turns conjunctivitis into a sight threat. Gonococcus can invade intact epithelium.",
+      source: "azari",
+    },
+    {
+      id: "gk-p3",
+      competency: "assessment",
+      criterion: "physical",
+      text: "Recognizes copious, rapidly reaccumulating pus as hyperacute conjunctivitis and suspects gonorrhea.",
+      points: 2,
+      teaching: "Hyperacute bacterial conjunctivitis presents with copious purulent discharge and decreased vision and carries a high risk of corneal perforation.",
+      source: "azari",
+    },
+    {
+      id: "gk-p4",
+      competency: "assessment",
+      criterion: "physical",
+      text: "Examines joints, tendons, skin, genitals, heart and meninges, and recognizes disseminated gonococcal infection.",
+      points: 2,
+      teaching: "Disseminated infection needs examination for endocarditis and meningitis. Tenosynovitis with pustules is the classic pattern.",
+      source: "cdc-sti",
+    },
+    {
+      id: "gk-p5",
+      competency: "assessment",
+      criterion: "physical",
+      text: "Sends a Gram stain and culture of the discharge, blood cultures and NAAT testing.",
+      points: 1,
+      teaching: "Severe purulent discharge should always be cultured. Culture gives susceptibility, which matters as ceftriaxone resistance emerges.",
+      source: "azari",
+    },
+    {
+      id: "gk-m1",
+      competency: "management",
+      criterion: "management",
+      text: "Gives ceftriaxone 1 g IV every 24 hours for disseminated infection rather than a single IM dose.",
+      points: 3,
+      critical: true,
+      teaching: "Gonococcal conjunctivitis alone is treated with ceftriaxone 1 g IM once. Disseminated infection needs 1 g IV or IM daily for at least 7 days in total.",
+      source: "cdc-sti",
+    },
+    {
+      id: "gk-m2",
+      competency: "management",
+      criterion: "management",
+      text: "Irrigates the eye with saline.",
+      points: 1,
+      teaching: "Lavage removes the purulent material that injures the cornea. Consider it at least once in every gonococcal conjunctivitis.",
+      source: "cdc-sti",
+    },
+    {
+      id: "gk-m3",
+      competency: "management",
+      criterion: "management",
+      text: "Treats chlamydia with doxycycline 100 mg twice daily for 7 days unless it has been excluded.",
+      points: 1,
+      teaching: "Co-infection is common. Treat chlamydia concurrently unless a negative test excludes it.",
+      source: "cdc-sti",
+    },
+    {
+      id: "gk-m4",
+      competency: "management",
+      criterion: "management",
+      text: "Avoids steroid drops and patching in the infected eye.",
+      points: 1,
+      teaching: "Steroid containing drops should not be used routinely in a red eye. They can worsen corneal infection and lead to corneal melt.",
+      source: "azari",
+    },
+    {
+      id: "gk-m5",
+      competency: "disposition",
+      criterion: "management",
+      text: "Admits him for initial therapy with infectious diseases consultation.",
+      points: 1,
+      teaching: "Hospitalization is recommended for the initial treatment of disseminated gonococcal infection.",
+      source: "phac-gonorrhea",
+    },
+    {
+      id: "gk-c1",
+      competency: "leadership",
+      criterion: "process",
+      text: "Overrides the fast track label and moves him to a room with a slit lamp for a full assessment.",
+      points: 1,
+      teaching: "A triage label is a starting point. Failed treatment of a red eye is a reason to look again, not to repeat the same plan.",
+      source: "azari",
+    },
+    {
+      id: "gk-c2",
+      competency: "communication",
+      criterion: "process",
+      text: "Gives the ophthalmologist the key facts and a stated concern and secures a same day exam.",
+      points: 2,
+      teaching: "Corneal involvement and severe purulent discharge warrant prompt ophthalmology review. A structured call with the Gram stain and acuity gets the right response.",
+      source: "azari",
+    },
+    {
+      id: "gk-c3",
+      competency: "professionalism",
+      criterion: "process",
+      text: "Keeps his information confidential from his girlfriend and explains honestly that gonorrhea is reported to public health.",
+      points: 2,
+      teaching: "Gonococcal infection is nationally notifiable. Physicians report to local public health, which protects identity during partner notification.",
+      source: "phac-gonorrhea",
+    },
+    {
+      id: "gk-c4",
+      competency: "communication",
+      criterion: "process",
+      text: "Arranges notification, testing and empiric treatment of all partners from the past 60 days and advises abstinence until treatment is complete.",
+      points: 2,
+      teaching: "All partners from the 60 days before symptoms need testing and empiric treatment regardless of findings. Patient or public health referral both work.",
+      source: "phac-gonorrhea",
+    },
+    {
+      id: "gk-c5",
+      competency: "communication",
+      criterion: "process",
+      text: "Offers HIV, syphilis and hepatitis testing with consent and discusses prevention.",
+      points: 1,
+      teaching: "One STI is a marker of risk for others. Testing at the same visit avoids a missed chance.",
+      source: "phac-gonorrhea",
+    },
+    {
+      id: "gk-d1",
+      competency: "disposition",
+      criterion: "process",
+      text: "Arranges follow up of cultures and susceptibility, test of cure at each positive site and a clear handover.",
+      points: 1,
+      teaching: "Test of cure is recommended at all positive sites. Culture can be repeated 3 days after treatment, NAAT after 3 to 4 weeks.",
+      source: "phac-gonorrhea",
+    },
+  ],
+  sources: [
+    {
+      id: "azari",
+      citation: "Azari AA, Barney NP. Conjunctivitis: a systematic review of diagnosis and treatment. JAMA. 2013.",
+      url: "https://pmc.ncbi.nlm.nih.gov/articles/PMC4049531/",
+    },
+    {
+      id: "cdc-sti",
+      citation:
+        "Workowski KA, Bachmann LH, Chan PA, et al. Centers for Disease Control and Prevention. Sexually transmitted infections treatment guidelines, 2021. Gonococcal infections among adolescents and adults. MMWR Recomm Rep. 2021.",
+      url: "https://www.cdc.gov/std/treatment-guidelines/gonorrhea-adults.htm",
+    },
+    {
+      id: "phac-gonorrhea",
+      citation:
+        "Public Health Agency of Canada. Canadian guidelines on sexually transmitted infections. Gonorrhea guide: treatment and follow up. Updated 2026.",
+      url: "https://www.canada.ca/en/public-health/services/infectious-diseases/sexual-health-sexually-transmitted-infections/canadian-guidelines/gonorrhea/treatment-follow-up.html",
+    },
+  ],
+  reviewed: false,
+  author: "Preceptor",
+  version: 1,
+};
