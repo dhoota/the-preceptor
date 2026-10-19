@@ -18,76 +18,86 @@ const S = {
 } satisfies Record<string, Source>;
 
 export const ABDOMINAL_PAIN_S62: Samp[] = [
-  /* 48 Pelvic inflammatory disease treated as a bladder infection ------------ */
+  /* 48 Ovarian hyperstimulation syndrome treated as a bladder infection ----- */
   {
     id: "abdominal-pain-48",
     topic: "abdominal-pain",
-    alsoTopics: ["infectious-diseases"],
-    title: "Young woman no better on her antibiotic",
+    alsoTopics: ["analgesia-sedation", "shock"],
+    title: "Bloating and dark urine after a clinic visit",
     stem:
-      "A 22-year-old woman presents to the emergency department with 4 days of lower abdominal pain. Two days ago a walk-in clinic diagnosed a bladder infection from a urine dipstick positive for leukocytes and blood, and prescribed nitrofurantoin. Her pain has worsened, she now has a fever and she feels nauseated. She has some burning when she passes urine but no frequency. Her last menstrual period ended 6 days ago. She has had a new male partner for 2 months and they use condoms inconsistently. She has no medical history. She has tenderness across the lower abdomen, worse on the right, without guarding.",
-    vitals: { temperature: "38.6°C oral", pulse: "108/minute", resp: "18/minute", bp: "118/72 mmHg", o2sat: "99% on room air", weight: "60 kg" },
+      "A 29-year-old woman presents to the emergency department with 3 days of lower abdominal pain, bloating and nausea. Yesterday a walk-in clinic diagnosed a bladder infection because she was passing small amounts of dark urine and a dipstick showed trace leukocytes, and prescribed nitrofurantoin. She has no dysuria, fever or vaginal discharge. She has polycystic ovary syndrome. Five days ago a fertility clinic retrieved 27 eggs after a course of gonadotropin injections. All the embryos were frozen and none were transferred. She has gained 3 kg since the retrieval and rates her pain 7 out of 10. Her abdomen is distended, with shifting dullness and mild diffuse lower abdominal tenderness. There is no guarding or rebound.",
+    vitals: { temperature: "37.1°C oral", pulse: "106/minute", resp: "20/minute", bp: "104/66 mmHg", o2sat: "98% on room air", weight: "61 kg" },
     questions: [
       {
         id: "q1",
         kind: "single",
-        prompt: "Which of the following is the most appropriate next step in her assessment?",
-        options: ["Change to oral ciprofloxacin", "CT abdomen with contrast", "Pelvic examination", "Renal ultrasound", "Repeat urine culture"],
-        correct: 2,
+        prompt: "Which of the following is the most likely cause of her symptoms?",
+        options: ["Ovarian hyperstimulation syndrome", "Pelvic infection after retrieval", "Resistant bladder infection", "Ruptured hemorrhagic cyst", "Torsion of an enlarged ovary"],
+        correct: 0,
         explanation:
-          "Fever and worsening lower abdominal pain in a sexually active young woman with a new partner and inconsistent condom use call for pelvic inflammatory disease to be looked for, and its minimum clinical criteria are lower abdominal, cervical motion and adnexal tenderness, which only a pelvic examination can show. Changing the antibiotic or repeating the urine culture keeps treating a bladder infection that has not explained her course. A renal ultrasound looks for obstruction, and a CT before an examination and pregnancy test skips the steps that point to the diagnosis.",
+          "Bloating, weight gain, ascites and scanty dark urine 5 days after the retrieval of 27 eggs, in a woman with polycystic ovaries who received gonadotropins, fit early ovarian hyperstimulation syndrome. Her small urine volumes reflect fluid leaving the circulation, not a bladder infection, and she has no dysuria. The syndrome is not usually associated with fever, and her normal temperature also makes a pelvic infection after the retrieval less likely. Torsion and a ruptured cyst stay on the differential, but neither explains ascites with steady weight gain.",
         keyFeature: { topic: "abdominal-pain", n: 8 },
-        source: "phac-pid",
+        source: "cfas-ohss-2026",
       },
       {
         id: "q2",
         kind: "menu",
-        update: "Pelvic examination shows mucopurulent cervical discharge, cervical motion tenderness and right adnexal tenderness with fullness.",
         prompt: "Which of the following investigations are most appropriate for her now?",
-        options: ["Abdominal radiograph", "Cystoscopy referral", "NAAT for gonorrhea and chlamydia", "Pelvic ultrasound", "Renal ultrasound", "Repeat urine culture", "Serum lipase level", "Urine pregnancy test"],
+        options: ["Abdominal and pelvic ultrasound", "Abdominal radiograph", "Blood cultures", "CBC with hematocrit", "CT abdomen with IV contrast", "Electrolytes and creatinine", "Repeat urine culture", "Serum lipase level"],
         select: 3,
-        correct: [2, 3, 7],
+        correct: [0, 3, 5],
         explanation:
-          "She meets the clinical criteria for pelvic inflammatory disease. A pregnancy test is needed to rule out ectopic pregnancy and guide treatment. Nucleic acid amplification testing for gonorrhea and chlamydia identifies the organisms, which matters for her and her partner. A pelvic ultrasound is advised when a tubo-ovarian abscess is suspected, as her adnexal fullness suggests. A repeat urine culture, renal ultrasound or cystoscopy keeps chasing the urinary diagnosis. An abdominal radiograph and lipase do not help with pelvic infection.",
-        keyFeature: { topic: "abdominal-pain", n: 8 },
-        source: "phac-pid",
+          "The Canadian Fertility and Andrology Society lists a CBC with hematocrit, electrolytes with urea and creatinine, liver tests, albumin, hCG and abdominal and pelvic ultrasound as the first investigations when this syndrome is suspected. The hematocrit measures hemoconcentration, the electrolytes and creatinine show the sodium, potassium and kidney changes that grade severity, and ultrasound shows ovarian size and ascites. She has no fever, so blood cultures are not needed. A plain radiograph, CT, lipase and a repeat urine culture are not among the recommended tests, and CT adds radiation without changing the grading.",
+        keyFeature: { topic: "abdominal-pain", n: 5 },
+        source: "cfas-ohss-2026",
       },
       {
         id: "q3",
         kind: "single",
-        update: "The pregnancy test is negative. Transvaginal ultrasound shows a 5 cm complex right adnexal collection consistent with a tubo-ovarian abscess. She is still nauseated.",
-        prompt: "Which of the following is the most appropriate management plan for her?",
-        options: ["Admit under gynecology for IV therapy", "Continue nitrofurantoin, add pain relief", "Outpatient ceftriaxone and doxycycline", "Outpatient treatment, review in 3 days", "Urology referral for cystoscopy"],
+        prompt: "Which of the following is the most appropriate analgesic plan for her pain?",
+        options: ["acetaminophen and oral morphine", "celecoxib and acetaminophen", "ibuprofen and acetaminophen", "ketorolac IV and acetaminophen", "naproxen and acetaminophen"],
         correct: 0,
         explanation:
-          "A tubo-ovarian abscess, high fever and nausea are each indications to hospitalize a patient with pelvic inflammatory disease, and her care needs gynecology involvement for parenteral antibiotics and possible drainage. Outpatient regimens, including ceftriaxone with doxycycline, are for milder disease in a patient who can take oral treatment and has no abscess. Nitrofurantoin does not treat pelvic infection. Cystoscopy chases a urinary diagnosis that the examination and ultrasound have replaced.",
-        keyFeature: { topic: "abdominal-pain", n: 4 },
-        source: "phac-pid",
+          "Nonsteroidal anti-inflammatory drugs should be avoided in ovarian hyperstimulation syndrome because they may compromise kidney function, and her scanty urine already suggests poor kidney perfusion. The Canadian guideline offers acetaminophen with or without an opioid, or oral opioids, and parenteral opioids if pain stays uncontrolled. Every other option pairs acetaminophen with an NSAID. Giving the NSAID as IV ketorolac or as a selective agent such as celecoxib does not remove the kidney risk.",
+        keyFeature: { topic: "analgesia-sedation", n: 2 },
+        source: "cfas-ohss-2026",
+      },
+      {
+        id: "q4",
+        kind: "single",
+        update: "Her hematocrit is 0.49 L/L, sodium 131 mmol/L, potassium 4.8 mmol/L and creatinine 104 umol/L. Ultrasound shows enlarged multicystic ovaries with moderate ascites. She has vomited three times and passed 120 mL of urine in 6 hours.",
+        prompt: "Which of the following is the most appropriate next step in her management?",
+        options: ["Cabergoline 0.5 mg PO daily", "Fluid restriction to 1 L a day", "Oral fluids to thirst at home", "Paracentesis without IV fluid", "Titrated IV crystalloid"],
+        correct: 4,
+        explanation:
+          "She cannot keep oral fluids down and is passing 20 mL of urine an hour, so oral rehydration has failed. The Canadian guideline then starts IV crystalloid, titrated to a urine output of 20 to 30 mL an hour and to reversal of hemoconcentration, and admits her with LMWH thromboprophylaxis. Salt or water restriction is not recommended because it does not improve weight, edema or intravascular volume. Paracentesis can ease symptoms, but restoring intravascular volume comes first. Starting cabergoline for established disease is generally not recommended.",
+        keyFeature: { topic: "shock", n: 3 },
+        source: "cfas-ohss-2026",
       },
     ],
-    sources: [S.phacPid],
+    sources: [S.cfasOhss],
     ...META,
   },
 
-  /* 49 Toddler appendicitis after a bag urine diagnosis ---------------------- */
+  /* 49 Preschool appendicitis after a dipstick urine diagnosis --------------- */
   {
     id: "abdominal-pain-49",
     topic: "abdominal-pain",
-    title: "Toddler who will not walk after two days of antibiotics",
+    title: "Preschooler who will not walk after two days of antibiotics",
     stem:
-      "A 3-year-old girl is brought to the emergency department by her mother with 3 days of abdominal pain, fever and vomiting. She is not yet toilet trained. Two days ago a walk-in clinic diagnosed a urinary tract infection from a bag urine specimen that showed leukocytes, and prescribed cephalexin. The bag urine culture has since grown mixed bacteria. She is worse today, will not walk and has vomited four times. She has had no diarrhea. She lies still on the stretcher and cries when it is bumped. Her abdomen is tender in the right lower quadrant with guarding.",
-    vitals: { temperature: "38.7°C tympanic", pulse: "152/minute", resp: "30/minute", bp: "98/60 mmHg", o2sat: "98% on room air", weight: "14 kg" },
+      "A 4-year-old girl is brought to the emergency department by her mother with 3 days of abdominal pain, fever and vomiting. Two days ago a walk-in clinic diagnosed a urinary tract infection from a urine dipstick that showed leukocytes, and prescribed cephalexin. She is worse today, will not walk and has vomited four times. She has had no diarrhea. She lies still on the stretcher and cries when it is bumped. Her abdomen is tender in the right lower quadrant with guarding.",
+    vitals: { temperature: "38.7°C tympanic", pulse: "148/minute", resp: "28/minute", bp: "100/62 mmHg", o2sat: "98% on room air", weight: "16 kg" },
     questions: [
       {
         id: "q1",
         kind: "single",
-        prompt: "Which of the following features of her first visit made the diagnosis of urinary tract infection unreliable?",
-        options: ["Bag specimen for urine", "Cephalexin as first choice", "Fever above 38°C", "Lack of blood tests", "Vomiting at presentation"],
-        correct: 0,
+        prompt: "Which of the following findings today most strongly suggests a cause other than a urinary infection?",
+        options: ["Fever of 38.7°C", "Leukocytes on the urine dipstick", "Pain when the stretcher is bumped", "Pulse of 148/minute", "Vomiting four times today"],
+        correct: 2,
         explanation:
-          "In a child who is not toilet trained, urine for culture should be collected by catheter or suprapubic aspiration, because a bag specimen may be used for urinalysis but not for culture. Her bag culture grew mixed bacteria, the typical result of skin contamination, so it never confirmed infection. Fever and vomiting fit a urinary infection as well as appendicitis, so they did not make the diagnosis unreliable. Cephalexin is a reasonable oral choice, and blood tests would not have confirmed a urinary source.",
+          "Crying when the stretcher is bumped is pain on jarring, a sign of peritoneal irritation that a bladder or kidney infection does not cause. Cough, percussion or hopping tenderness in the right lower quadrant was the strongest single predictor of appendicitis in the study that built the Pediatric Appendicitis Score. Fever, vomiting and a fast pulse occur with a urinary infection as well as with appendicitis, so they do not separate the two. The leukocytes on her dipstick were the basis of the first diagnosis and cannot argue against it.",
         keyFeature: { topic: "abdominal-pain", n: 8 },
-        source: "cps-uti-2014",
+        source: "samuel-pas-2002",
       },
       {
         id: "q2",
@@ -96,7 +106,7 @@ export const ABDOMINAL_PAIN_S62: Samp[] = [
         options: ["Abdominal radiograph", "Abdominal ultrasound", "CT abdomen with IV contrast", "MRI abdomen and pelvis", "Renal and bladder ultrasound"],
         correct: 1,
         explanation:
-          "Ultrasound is the preferred first test for suspected appendicitis in children because it avoids ionizing radiation and, in experienced hands, has a sensitivity and specificity of about 94%. CT should not be done until ultrasound has been considered, and it is kept for an inconclusive ultrasound. MRI in a 3-year-old usually needs sedation. A renal and bladder ultrasound does not examine the appendix. A plain radiograph does not show the appendix itself.",
+          "Ultrasound is the preferred first test for suspected appendicitis in children because it avoids ionizing radiation and, in experienced hands, has a sensitivity and specificity of about 94%. CT should not be done until ultrasound has been considered, and it is kept for an inconclusive ultrasound. MRI in a 4-year-old usually needs sedation. A renal and bladder ultrasound does not examine the appendix. A plain radiograph does not show the appendix itself.",
         keyFeature: { topic: "abdominal-pain", n: 7 },
         source: "cwc-radiology",
       },
@@ -124,7 +134,7 @@ export const ABDOMINAL_PAIN_S62: Samp[] = [
         source: "cwc-radiology",
       },
     ],
-    sources: [S.cpsUti, S.cwcCar],
+    sources: [S.samuelPas, S.cwcCar],
     ...META,
   },
 
