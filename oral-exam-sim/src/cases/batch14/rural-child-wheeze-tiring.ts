@@ -583,11 +583,15 @@ export const ruralChildWheezeTiring: OralCase = {
       criterion: "process",
       text: "Gives the transport team a structured handover with doses, times, procedures, current settings and pending issues.",
       points: 1,
-      teaching: "A structured handover avoids repeated or missed doses and alerts the team to the antibiotic timing and the support settings.",
-      source: "cps-asthma",
+      teaching: "In a study across 9 hospitals, a standardized oral and written handover program lowered medical errors by 23 percent and preventable adverse events by 30 percent, without making handovers longer.",
+      source: "ipass",
     },
   ],
   sources: [
+    {
+      id: "ipass",
+      citation: "Starmer AJ, Spector ND, Srivastava R, et al. Changes in medical errors after implementation of a handoff program. New England Journal of Medicine. 2014.",
+    },
     {
       id: "trekk",
       citation: "Translating Emergency Knowledge for Kids (TREKK). Pediatric severe asthma exacerbation algorithm. Version 2.0. 2024.",
