@@ -226,8 +226,8 @@ export const SHOCK_S58: Samp[] = [
       {
         id: "q3",
         kind: "single",
-        update: "His first dose of piperacillin-tazobactam 4.5 g IV ran over 30 minutes within the first hour.",
-        prompt: "Which of the following is the most appropriate way to give his next piperacillin-tazobactam doses?",
+        update: "His first beta-lactam dose ran IV over 30 minutes within the first hour.",
+        prompt: "Which of the following is the most appropriate way to give his next beta-lactam doses?",
         options: [
           "Each dose as an IV push",
           "Each dose IV over 4 hours",
@@ -262,7 +262,7 @@ export const SHOCK_S58: Samp[] = [
       {
         id: "q5",
         kind: "single",
-        update: "Three hours later his MAP is 67 mmHg on norepinephrine. His capillary refill is 2 seconds and the mottling has gone, but his lactate is 3.9 mmol/L.",
+        update: "Three hours later his MAP is 67 mmHg. His capillary refill is 2 seconds and the mottling has gone, but his lactate is 3.9 mmol/L.",
         prompt: "Which of the following is the most appropriate next step in his resuscitation at this point?",
         options: [
           "Add dobutamine to raise cardiac output",
@@ -330,7 +330,7 @@ export const SHOCK_S58: Samp[] = [
       {
         id: "q3",
         kind: "single",
-        update: "After 2 L of crystalloid her JVP is at the angle of the jaw. Bedside echocardiography shows a dilated right ventricle, thickened tricuspid leaflets that do not close fully and severe tricuspid regurgitation. The left ventricle contracts well.",
+        update: "An hour after arrival her JVP is at the angle of the jaw. Bedside echocardiography shows a dilated right ventricle, thickened tricuspid leaflets that do not close fully and severe tricuspid regurgitation. The left ventricle contracts well.",
         prompt: "Which of the following best explains the findings on her bedside echocardiogram?",
         options: [
           "Acute pulmonary embolism",
@@ -348,7 +348,7 @@ export const SHOCK_S58: Samp[] = [
       {
         id: "q4",
         kind: "single",
-        update: "Octreotide, hydrocortisone and further fluid are running. Her systolic pressure is still 74 mmHg and the flushing persists.",
+        update: "Her initial treatment for the crisis is running. Her systolic pressure is still 74 mmHg and the flushing persists.",
         prompt: "Which of the following vasoactive agents is most appropriate for her now?",
         options: [
           "dobutamine infusion",
