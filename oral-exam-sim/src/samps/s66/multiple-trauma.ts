@@ -104,7 +104,6 @@ export const MULTIPLE_TRAUMA_S66: Samp[] = [
       },
     ],
     sources: [
-      S.atls,
       S.ford,
       S.fischer,
       {

@@ -246,16 +246,22 @@ export const ISCHEMIC_HEART_DISEASE_S57: Samp[] = [
       {
         id: "q4",
         kind: "single",
-        prompt: "Which of the following LDL cholesterol levels is the 2021 CCS threshold for intensifying lipid-lowering therapy in coronary disease?",
-        options: ["1.0 mmol/L", "1.4 mmol/L", "1.6 mmol/L", "1.8 mmol/L", "2.6 mmol/L"],
+        prompt: "Which of the following is the most appropriate way for him to seek care if prolonged chest tightness occurs at home?",
+        options: [
+          "Drive himself to the PCI centre",
+          "Have his wife drive him in",
+          "Phone his family physician first",
+          "Summon EMS by calling 911",
+          "Take a taxi to the hospital",
+        ],
         correct: 3,
         explanation:
-          "For patients with atherosclerotic disease on a maximally tolerated statin, the 2021 CCS guideline uses a treatment threshold of LDL cholesterol 1.8 mmol/L or higher for adding ezetimibe or a PCSK9 inhibitor. His LAD plaque places him in that secondary prevention group. Levels of 1.0, 1.4 and 1.6 mmol/L sit below the CCS threshold, so a patient at those values does not meet it. A threshold of 2.6 mmol/L would leave patients between 1.8 and 2.6 mmol/L without the added therapy the guideline recommends.",
-        keyFeature: { topic: TOPIC, n: 8 },
-        source: "ccs-dyslipidemia-2021",
+          "The chest pain guideline recommends that patients with acute chest pain activate 911 so that EMS transport to the closest emergency department begins at once. Paramedics can monitor his rhythm, defibrillate and record an ECG on the way, which shortens the path to reperfusion if the episode is a STEMI. Driving himself risks collapse at the wheel with no one to treat an arrhythmia. A ride from his wife or a taxi is just as unmonitored and gives no ECG before arrival. Phoning his family physician first delays assessment, and the guideline warns against delaying transfer to the emergency department for suspected ACS seen outside it.",
+        keyFeature: { topic: TOPIC, n: 6 },
+        source: "aha-chest-pain-2021",
       },
     ],
-    sources: [S.gulati, S.lipids],
+    sources: [S.gulati],
     ...META,
   },
 
