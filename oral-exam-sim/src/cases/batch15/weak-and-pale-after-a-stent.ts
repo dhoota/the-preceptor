@@ -487,8 +487,8 @@ export const weakAndPaleAfterAStent: OralCase = {
       text: "Transfuses red cells promptly, aims well above 80 g/L because of active ischemia, and limits crystalloid.",
       points: 2,
       critical: true,
-      teaching: "The landmark trial of a 70 g/L threshold excluded massive bleeding and recent coronary syndromes. Patients with active cardiac ischemia need a higher threshold.",
-      source: "villanueva",
+      teaching: "Consensus guidance suggests transfusing at 80 g/L in upper GI bleeding without cardiovascular disease and at a higher threshold with it. Active cardiac ischemia calls for the higher threshold, and crystalloid alone dilutes the hemoglobin further.",
+      source: "barkun",
     },
     {
       id: "wp-m2",
@@ -577,8 +577,8 @@ export const weakAndPaleAfterAStent: OralCase = {
       criterion: "process",
       text: "Explains the cause honestly to his wife and tells the family physician, walk-in clinic and pharmacist about the NSAID and missing gastric protection.",
       points: 2,
-      teaching: "After an ulcer bleed, a patient who needs antiplatelet therapy should stay on a PPI. Telling each prescriber about the NSAID and the missing PPI prevents the next bleed.",
-      source: "barkun",
+      teaching: "Patients and families want the facts about what happened and what will prevent it next time. Share the agreed facts without blame or speculation, and tell each prescriber so the gap in the system is fixed.",
+      source: "disclosure",
     },
   ],
   sources: [
@@ -595,8 +595,9 @@ export const weakAndPaleAfterAStent: OralCase = {
       url: "https://pmc.ncbi.nlm.nih.gov/articles/PMC8966740/",
     },
     {
-      id: "villanueva",
-      citation: "Villanueva C, Colomo A, Bosch A, and colleagues. Transfusion strategies for acute upper gastrointestinal bleeding. N Engl J Med. 2013.",
+      id: "disclosure",
+      citation: "Canadian Patient Safety Institute, Disclosure Working Group. Canadian disclosure guidelines. Being open with patients and families. 2011.",
+      url: "https://cfhi-fcass.ca/media/v4zni14t/cpsi-canadian-disclosure-guidelines-final-ua.pdf",
     },
     {
       id: "blatchford",

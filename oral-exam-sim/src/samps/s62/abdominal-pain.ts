@@ -278,17 +278,17 @@ export const ABDOMINAL_PAIN_S62: Samp[] = [
     alsoTopics: ["dvt-pe"],
     title: "Sharp pain under the right ribs",
     stem:
-      "A 31-year-old woman presents to the emergency department with 3 days of sharp right upper abdominal pain that is worse when she takes a deep breath. Two days ago a walk-in clinic diagnosed pyelonephritis from a dipstick showing trace leukocytes and trace blood, and prescribed ciprofloxacin. The pain is no better, and this morning she coughed up a streak of blood. She has had no fever, vomiting or dysuria. She takes a combined oral contraceptive and had surgical fixation of an ankle fracture 3 weeks ago. She has mild right upper quadrant tenderness without guarding and no costovertebral angle tenderness. The legs are not swollen. A right upper quadrant ultrasound today is normal.",
-    vitals: { temperature: "37.1°C oral", pulse: "112/minute", resp: "22/minute", bp: "124/78 mmHg", o2sat: "93% on room air", weight: "70 kg" },
+      "A 27-year-old woman presents to the emergency department with 3 days of sharp right upper abdominal pain that is worse when she takes a deep breath. Two days ago a walk-in clinic diagnosed pyelonephritis from a dipstick showing trace leukocytes and trace blood, and prescribed ciprofloxacin. The pain is no better, and this morning she coughed up a streak of blood. Apart from that she has no cough or sputum, and she has had no fever, vomiting, dysuria, vaginal discharge or pelvic pain. Three years ago she had a leg DVT while taking a combined oral contraceptive. She stopped the contraceptive and completed 3 months of anticoagulation. She has mild right upper quadrant tenderness without guarding and no costovertebral angle tenderness. The legs are not swollen. A right upper quadrant ultrasound today is normal.",
+    vitals: { temperature: "37.3°C oral", pulse: "116/minute", resp: "24/minute", bp: "118/74 mmHg", o2sat: "94% on room air", weight: "66 kg" },
     questions: [
       {
         id: "q1",
         kind: "single",
         prompt: "Which of the following findings most suggests that the cause of her pain lies outside the abdomen?",
-        options: ["Absent costovertebral tenderness", "Mild right upper quadrant tenderness", "Normal right upper quadrant ultrasound", "Oxygen saturation of 93%", "Trace blood on dipstick"],
+        options: ["Absent costovertebral tenderness", "Mild right upper quadrant tenderness", "Normal right upper quadrant ultrasound", "Oxygen saturation of 94%", "Trace blood on dipstick"],
         correct: 3,
         explanation:
-          "A saturation of 93% on room air in a healthy 31-year-old is not explained by a gallbladder or kidney problem, and with pleuritic pain and a pulse of 112/minute it points to the chest. Hypoxemia, tachycardia and pleuritic pain are recognized features of pulmonary embolism. A normal ultrasound and absent costovertebral tenderness argue against biliary and renal disease but do not by themselves show where the cause lies. Mild upper quadrant tenderness and trace blood on a dipstick are nonspecific.",
+          "A saturation of 94% on room air in a 27-year-old without lung disease is not explained by a gallbladder or kidney problem, and with pleuritic pain and a pulse of 116/minute it points to the chest. Hypoxemia, tachycardia and pleuritic pain are recognized features of pulmonary embolism. A normal ultrasound and absent costovertebral tenderness argue against biliary and renal disease but do not by themselves show where the cause lies. Mild upper quadrant tenderness and trace blood on a dipstick are nonspecific.",
         keyFeature: { topic: "abdominal-pain", n: 3 },
         source: "tc-pe-dx",
       },
@@ -299,23 +299,35 @@ export const ABDOMINAL_PAIN_S62: Samp[] = [
         options: ["Acute cholecystitis", "Acute pyelonephritis", "Fitz-Hugh-Curtis syndrome", "Pulmonary embolism", "Right lower lobe pneumonia"],
         correct: 3,
         explanation:
-          "Surgery 3 weeks ago and a combined oral contraceptive are provoking factors for venous thromboembolism, and pleuritic pain with tachycardia, hypoxemia and a streak of hemoptysis fits pulmonary embolism irritating the pleura over the liver. A normal ultrasound makes cholecystitis unlikely. She has no fever, dysuria or flank tenderness for pyelonephritis, and no fever or cough for pneumonia. Fitz-Hugh-Curtis perihepatitis follows pelvic infection, and she has no pelvic symptoms.",
+          "A previous DVT raises her risk of venous thromboembolism, and pleuritic pain with tachycardia, hypoxemia and a streak of hemoptysis fits pulmonary embolism irritating the pleura over the liver. A normal ultrasound makes cholecystitis unlikely. She has no fever, dysuria or costovertebral angle tenderness for pyelonephritis, and no fever, sputum or productive cough for pneumonia. Fitz-Hugh-Curtis perihepatitis follows pelvic infection, and she has no vaginal discharge or pelvic pain.",
         keyFeature: { topic: "abdominal-pain", n: 3 },
         source: "tc-pe-dx",
       },
       {
         id: "q3",
         kind: "single",
-        prompt: "Which of the following is the most appropriate next step in her investigation?",
-        options: ["CT abdomen with IV contrast", "D-dimer, image only if positive", "HIDA scan of the gallbladder", "Imaging for pulmonary embolism now", "Repeat urine culture"],
-        correct: 3,
+        prompt: "Which of the following imaging tests is most appropriate to confirm the cause of her pain?",
+        options: ["CT abdomen with IV contrast", "CT angiography of the chest", "HIDA scan of the gallbladder", "MR cholangiopancreatography", "Noncontrast CT of the kidneys"],
+        correct: 1,
         explanation:
-          "Her Wells score is 7.0: 1.5 for a pulse over 100/minute, 1.5 for surgery in the past 4 weeks, 1 for hemoptysis and 3 because pulmonary embolism is the most likely diagnosis. A score above 6 is a high pretest probability, and above 4.5 embolism is likely, so she goes straight to imaging with CT pulmonary angiography or a ventilation-perfusion scan. A negative D-dimer rules out embolism only when the pretest probability is low or moderate. Abdominal CT, a HIDA scan and another urine culture keep looking below the diaphragm.",
+          "Her Wells score is 7.0: 1.5 for a previous DVT, 1.5 for a pulse over 100/minute, 1 for hemoptysis and 3 because embolism is the most likely diagnosis. That is a high pretest probability, so she needs imaging. The Thrombosis Canada guide names CT pulmonary angiography and ventilation-perfusion scanning as the imaging tests, and of these options only CT angiography of the chest shows the pulmonary arteries. An abdominal CT, a HIDA scan, MR cholangiography and a renal CT all look below the diaphragm, where her ultrasound has already found nothing.",
         keyFeature: { topic: "abdominal-pain", n: 5 },
         source: "tc-pe-dx",
       },
+      {
+        id: "q4",
+        kind: "single",
+        update: "CT angiography shows emboli in the segmental arteries of the right lower lobe. Anticoagulation is started. She asks what to do with the ciprofloxacin.",
+        prompt: "Which of the following is the most appropriate advice about her ciprofloxacin?",
+        options: ["Change to nitrofurantoin", "Complete the 7-day course", "Continue until culture results", "Stop taking it today", "Switch to IV ceftriaxone"],
+        correct: 3,
+        explanation:
+          "Her pain has another cause, and she has no fever, dysuria or costovertebral angle tenderness, so nothing supports the pyelonephritis that trace dipstick findings suggested. The Canadian ciprofloxacin monograph says that prescribing it without a proven or strongly suspected bacterial infection is unlikely to help and risks drug-resistant bacteria, and it warns of disabling and potentially persistent adverse reactions. Finishing the course, waiting for a culture or changing to another antibiotic all keep treating an infection she does not have.",
+        keyFeature: { topic: "abdominal-pain", n: 8 },
+        source: "pms-ciprofloxacin-pm-2022",
+      },
     ],
-    sources: [S.tcPe],
+    sources: [S.tcPe, S.cipro],
     ...META,
   },
 ];
