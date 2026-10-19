@@ -113,3 +113,14 @@ For the reviewer:
 - No source gives a pediatric nifedipine dose, so 40 q4 options give no doses. Every option has the same specificity.
 - The line "eplerenone does not lower blood pressure quickly" is general pharmacology, not a statement from Ong.
 - Key features after this round: KF1 3, KF2 6, KF3 4, KF4 1, KF5 4, KF6 3. The menus are 41 q2 and 43 q4.
+
+## Round 4
+
+This round answers `docs/reviews/q500-verify3-s60.md`. pulmonary-edema-39, -42 and -43 are untouched.
+
+| Fix | What was done |
+|---|---|
+| 40 q4: BP 162/108 mmHg matched headache-43 q3 | Changed to 156/106 mmHg in both the update and the explanation. A grep of `src/samps` and `src/cases` found no other item with this value. It is still well above the stage 2 threshold for a 6-year-old, so it remains severe hypertension. |
+| 41 q2: "Transthyretin gene testing" named a q1 option | Replaced with "Serum ACE level". The explanation now says it is a nonspecific marker of sarcoidosis, another infiltrative disease, and can neither confirm nor exclude amyloidosis. In alphabetical order the keys are now indices 0 (Bone scintigraphy) and 5 (Serum free light chain assay), and `correct` is updated to [0, 5]. Longest to shortest option ratio is 2.0. |
+
+Checks: `npx tsc --noEmit -p . | grep samps/s60` gave no output. `SAMP_BATCH=s60 npx vitest run tests/samps.test.ts tests/samp-quality.test.ts tests/citations.test.ts` passed.
