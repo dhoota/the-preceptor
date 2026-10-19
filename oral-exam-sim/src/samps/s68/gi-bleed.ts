@@ -93,7 +93,7 @@ export const GI_BLEED_S68: Samp[] = [
           "Tranexamic acid by mouth daily",
         ],
         correct: 1,
-        explanation: "Correcting the stenotic valve removes the shear stress that destroys the large von Willebrand multimers. The review by Lourdusamy and colleagues reports that valve replacement leads to resolution of GI bleeding in most patients, and in one surgical series 79% had no recurrence over 15 years of follow-up. She is already waiting for a transcatheter valve, so the bleeding is a reason to proceed. Iron infusions treat the anemia but not the bleeding. Octreotide, a somatostatin analogue, can reduce transfusion needs in angiodysplasia bleeding, but it does not remove the shear stress that causes her bleeding. Angiodysplasias are often multiple, so a right hemicolectomy can leave lesions elsewhere. Daily tranexamic acid does not remove the cause.",
+        explanation: "Correcting the stenotic valve removes the shear stress that destroys the large von Willebrand multimers. The review by Lourdusamy and colleagues reports that valve replacement leads to resolution of GI bleeding in most patients, and in one surgical series 79% had no recurrence over 15 years of follow-up. She is already waiting for a transcatheter valve, so the bleeding is a reason to proceed. Iron infusions treat the anemia but not the bleeding. Octreotide does not remove the shear stress that causes her bleeding. Angiodysplasias are often multiple, so a right hemicolectomy can leave lesions elsewhere. Daily tranexamic acid does not remove the cause.",
         keyFeature: { topic: T, n: 6 },
         source: "lourdusamy-heyde",
       },
