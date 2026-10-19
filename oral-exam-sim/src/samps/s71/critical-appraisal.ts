@@ -201,7 +201,7 @@ export const CRITICAL_APPRAISAL_S71: Samp[] = [
     topic: "critical-appraisal",
     title: "A strip on joint fluid",
     stem:
-      "You are working in a community hospital emergency department. A 58-year-old man presents with 2 days of a painful, swollen right knee, and he cannot bear weight. He has type 2 diabetes treated with metformin and no injury or previous joint disease. The knee is warm with a large effusion, and passive flexion is painful. You aspirate 30 mL of cloudy fluid and send it to the laboratory. A fictional study evaluated a bedside leukocyte esterase reagent strip on synovial fluid in 320 adults with acute atraumatic monoarthritis at 3 emergency departments. Patients with crystals on synovial fluid microscopy were excluded. Strips were read at the bedside before the cell count was known, and every patient had synovial culture. The reference standard was an expert panel diagnosis based on culture, cell count, clinical course and the strip result.",
+      "You are working in a community hospital emergency department. A 58-year-old man presents with 2 days of a painful, swollen right knee, and he cannot bear weight. He has type 2 diabetes treated with metformin and no injury or previous joint disease. The knee is warm with a large effusion, and passive flexion is painful. You aspirate 30 mL of cloudy fluid and send it to the laboratory. A fictional prospective study evaluated a bedside leukocyte esterase reagent strip on synovial fluid in 320 adults with acute atraumatic monoarthritis at 3 emergency departments. Patients with crystals on synovial fluid microscopy were excluded. Strips were read at the bedside before the cell count was known, and every patient had synovial culture. The reference standard was an expert panel diagnosis based on culture, cell count, clinical course and the strip result.",
     vitals: { temperature: "38.3°C oral", pulse: "102/minute", resp: "18/minute", bp: "132/78 mmHg", o2sat: "98% on room air" },
     questions: [
       {
@@ -272,7 +272,7 @@ export const CRITICAL_APPRAISAL_S71: Samp[] = [
         ],
         correct: 4,
         explanation:
-          "Even with the study's own likelihood ratio his probability of septic arthritis is about 9%, and the study's design flatters the strip, so his true probability is likely higher. He has fever, a warm effusion, cloudy fluid and cannot bear weight, and the fluid has already been sent for culture. Septic arthritis is managed with IV antibiotics and orthopedic surgery consultation. There is no role for intra-articular corticosteroids in the emergency department for these patients. Discharge with naproxen or oral cephalexin leaves a possibly infected joint without definitive care. A second strip repeats the same test with the same limits.",
+          "Even with the study's own likelihood ratio his probability of septic arthritis is about 9%, and his fever and inability to bear weight keep it from being low enough to stop. He has fever, a warm effusion, cloudy fluid and cannot bear weight, and the fluid has already been sent for culture. Septic arthritis is managed with IV antibiotics and orthopedic surgery consultation. There is no role for intra-articular corticosteroids in the emergency department for these patients. Discharge with naproxen or oral cephalexin leaves a possibly infected joint without definitive care. A second strip repeats the same test with the same limits.",
         keyFeature: { topic: "critical-appraisal", n: 5 },
         source: "long-septic-arthritis-2019",
       },

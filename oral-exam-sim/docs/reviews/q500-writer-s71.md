@@ -111,3 +111,12 @@ critical-appraisal-39:
 4. critical-appraisal-39 q5 keys IV antibiotics and orthopedics at an estimated 9% probability or more. The reason given is the fever, the inability to bear weight and the biased strip. Long 2019 does not give a probability threshold.
 5. critical-appraisal-38 q3: deaths from injury could in theory be read as a safety outcome. The update states that drug T has no known way to prevent them, which makes "negative control" the only fit.
 6. The q4 explanation in critical-appraisal-38 makes general claims about the distractor biases (lead time, recall, spectrum) that Suissa does not address directly.
+
+## Round 2
+
+These are the fixes from docs/reviews/q500-qa-s71.md. Nothing else changed.
+
+1. critical-appraisal-39 stem. "A fictional study evaluated" now reads "A fictional prospective study evaluated". The stem now states the prospective design that the q1 menu option "Prospective data collection" depends on.
+2. critical-appraisal-39 q5 explanation. "and the study's design flatters the strip, so his true probability is likely higher" now reads "and his fever and inability to bear weight keep it from being low enough to stop". This follows the reviewer's physician note. The sentence now rests on stem facts and on Long 2019, which says management needs antibiotics and orthopedic consultation.
+
+After the change, the s71 tsc grep printed nothing. The s71 samps, samp-quality and citations tests passed (86 of 86), including the bank-wide near-duplicate stem test.
