@@ -65,3 +65,31 @@ The bank-wide near-duplicate stem test has a 5 second limit. It timed out twice 
 5. 43 q2 calls the feet a common hidden source of infection in diabetes. Gower supports a thorough exam and occult infection but does not name the feet.
 6. 39 is set in a community hospital that has MRI the next day. Only Aasheim is cited for treating without waiting for MRI. The EFNS guideline (Galvin 2010) is not cited because its full text could not be opened.
 7. The web search limit for this session ran out while I was planning. Every source above was opened directly (PMC, PubMed E-utilities abstract, e-Laws or the publisher page). No citation rests on memory. A terminal delirium SAMP (ESMO 2018) and a driving question were dropped because their sources could not be opened.
+
+## Revision 1
+
+This revision answers docs/reviews/q500b-qa-s77.md. I applied each of the 10 fixes as written or with an equivalent that fully resolves the point. Before rewriting 43 q1 I searched the whole bank (src/samps and src/cases) for late-onset psychosis and for disorientation keys. No question separates delirium from a late-onset psychosis. Disorientation appears in delirium-agitation-16 and delirium-agitation-23 only as a distractor in delirium-versus-dementia questions, where it is correctly wrong because it also occurs in dementia.
+
+| Item | Change |
+|---|---|
+| 39 q4 | The update now reads "Five days later her nystagmus has gone." The explanation adds the reviewer's sentence that Korsakoff syndrome is confirmed only if the amnesia persists. |
+| 40 q3 | The update now opens "A few minutes later". The key is now the one-sentence "Thanks for sitting, but kicking is not okay". To keep position balance, the distractor "Tell me again why you broke the wall" became "Why did you break the wall tonight?" and the explanation was adjusted to match. The key now sits first. |
+| 40 q4 | The explanation now says that BETA gives the IM dose as half the oral 0.5 to 5 mg dose, and that 2.5 mg is well under the 6 mg daily maximum for 15 to 40 kg. It also now says that BETA does not recommend ketamine for agitation, and that 150 mg is about 4 mg/kg. |
+| 41 q3 | The unsourced diphenhydramine sentence was replaced with the reviewer's wording from Wilson. |
+| 42 q1 | The first two sentences now follow the stem ("moves his hands quickly") and Gower (hearing impairment as a risk factor only). |
+| 42 q2 | No interpreter source could be opened, so I used the reviewer's fallback: "A paramedic who knows a few signs is not a qualified interpreter. Written notes are slow and are no substitute for his own language." |
+| 42 q4 | The update now opens "Before the interpreter connects". |
+| 43 q1 | Rebuilt. It now separates delirium from a late-onset psychotic disorder, and the key is the finding "Stating the year as 2016" (disorientation in time). The stem now carries the time course: the neighbour saw him doing his farm accounts 4 days ago. It also says he has no psychiatric history and gives the year as 2016. The inattention sentence was removed, so that disorientation is the only cognitive finding among the options. I verified Gower again by WebFetch. It defines delirium as a disturbance of consciousness with a change in cognition that develops over a short time, and says that inattention and disorientation are not usually seen until late dementia. The key no longer repeats delirium-agitation-16 q1 (decline from baseline) or delirium-agitation-19 q1 (inattention). |
+| 43 q2 | The baseline sentence was removed from the update and now sits in the stem. The lumbar puncture reason now follows Gower: meningeal signs are often absent in older adults, but the bedside exam comes first. The feet reason now cites Gower's naming of skin as a common infection site. |
+| 43 q3 | The update now reads "A soft tissue infection is found and IV antibiotics are advised." |
+| Source | Aasheim now carries https://doi.org/10.1097/SLA.0b013e3181884308. I checked by WebFetch that the DOI resolves to Annals of Surgery, November 2008, and it matches the DOI in the PubMed record. |
+
+Unavoidable mock-mode cues, left in place and flagged under ruling B6:
+- 39 q3: thiamine is named, which hints at the q2 key.
+- 42 q2: the Deaf card hints at the q1 key.
+- 42 q3: the interpreter hints at the q2 key.
+- 43 q4: the nephew being reached hints at the q3 key.
+
+Key feature counts are unchanged: n1 5, n2 3, n3 6, n4 3, n5 3. There are still 20 questions (19 single, 1 menu). Single key positions are 4, 4, 4, 4 and 3.
+
+Test result: `SAMP_BATCH=s77 npx vitest run tests/samps.test.ts tests/samp-quality.test.ts tests/citations.test.ts --testTimeout=120000` gave 3 files and 128 tests passed. tsc reports nothing for samps/s77.
