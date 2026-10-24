@@ -173,7 +173,7 @@ export const MULTIPLE_PATIENTS_S78: Samp[] = [
       {
         id: "q3",
         kind: "single",
-        prompt: "Which of the following is the most appropriate place for the woman to wait for the second team?",
+        prompt: "Which of the following is the most appropriate place for the woman before her angiography?",
         options: [
           "Hallway stretcher with hourly vital signs",
           "Seated in the chest pain waiting area",
@@ -183,14 +183,14 @@ export const MULTIPLE_PATIENTS_S78: Samp[] = [
         ],
         correct: 4,
         explanation:
-          "Ventricular fibrillation and high grade block are most likely in the first hours of STEMI, so she needs continuous monitoring, defibrillator pads in place and a nurse who can act at once, with repeat vital signs and ECGs. A hallway stretcher or a chair in a waiting area leaves an arrhythmia unseen. A ward telemetry bed moves her away from the team that will treat her within the hour. Sending her alone to a holding area leaves no one to respond to an arrest.",
+          "Early STEMI carries a risk of ventricular fibrillation and high grade block, so she needs continuous monitoring, defibrillator pads in place and a nurse who can act at once, with repeat vital signs and ECGs. Keeping her in the department also keeps the delay to PCI short, which the CCS guideline stresses. A hallway stretcher or a chair in a waiting area leaves an arrhythmia unseen. A ward telemetry bed moves her away from the team that will treat her. Sending her alone to a holding area leaves no one to respond to an arrest.",
         keyFeature: { topic: "multiple-patients", n: 2 },
         source: "ccs-stemi",
       },
       {
         id: "q4",
         kind: "single",
-        update: "EMS calls about a third STEMI patient 15 minutes away. Both teams will be busy for at least 90 minutes. The city's other PCI centre is 20 minutes away and has a free team.",
+        update: "EMS calls about a third STEMI patient 15 minutes away. Your catheterization laboratory will be busy for at least 90 minutes. The city's other PCI centre is 20 minutes away and has a free team.",
         prompt: "Which of the following is the most appropriate advice to EMS for this third patient?",
         options: [
           "Bring the patient here to wait for a team",
@@ -263,15 +263,15 @@ export const MULTIPLE_PATIENTS_S78: Samp[] = [
         kind: "single",
         prompt: "Which of the following is the most appropriate plan for repeat neurovascular checks of her leg until the hip is reduced?",
         options: [
-          "Checks only after the reduction",
-          "Checks when she reports new pain",
-          "Hourly checks by you in person",
-          "One check before CT of the pelvis",
-          "Timed nurse checks with triggers to call you",
+          "Checks by you only after the reduction",
+          "Hourly checks by you between patients",
+          "Nurse checks only when she reports pain",
+          "One check by you before CT of the pelvis",
+          "Timed nurse checks with call triggers",
         ],
         correct: 4,
         explanation:
-          "Sciatic nerve injury complicates about 10% of posterior hip dislocations, most often in the peroneal division, and the dislocation is a time sensitive emergency. A nurse repeating foot sensation, ankle dorsiflexion and pulses at set times, with clear triggers such as new weakness or numbness to call you, catches a change early without tying you to her bedside. A single check, or none until after reduction, cannot show a change as it happens. Waiting for her to report pain misses painless weakness. Hourly checks by the only physician pull you away from the other patients.",
+          "Sciatic nerve injury complicates about 10% of posterior hip dislocations, most often in the peroneal division, and the dislocation is a time sensitive emergency. A nurse repeating foot sensation, ankle dorsiflexion and pulses at set times, with clear triggers such as new weakness or numbness to call you, catches a change early without tying you to her bedside. A single check, or none until after reduction, cannot show a change as it happens. Checks only when she reports pain miss painless weakness. Hourly checks by you, the only physician, pull you away from the other patients and are less frequent than she needs.",
         keyFeature: { topic: "multiple-patients", n: 3 },
         source: "dawson-amoah-hip",
       },
