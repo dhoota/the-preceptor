@@ -62,3 +62,61 @@ Bank before this batch (grep of `topic: "chest-pain", n:`): KF1 40, KF2 45, KF3 
 5. chest-pain-51 q2 keys no further testing after a normal ECG. Kofman says testing is rarely needed once precordial catch is diagnosed. The ECG is already in the stem, so the key does not depend on whether an ECG is routine.
 6. With the machine at a load average near 19 from parallel agents, the bank-wide near duplicate test hit its 5 second timeout on the last runs of the standard command. Every other test passed. The same suite passed in full (104 of 104) with `--testTimeout=120000`, and it passed under the standard command earlier in the session. The highest similarity of a new stem is 0.10 against a limit of 0.5.
 7. The web search budget ran out late in the session. All citations above were checked before that, by direct fetch or Europe PMC record.
+
+## Revision 1
+
+This revision answers `docs/reviews/q500b-qa-s85.md`. It replaces the earlier tables wherever they disagree.
+
+### chest-pain-48 replaced
+
+- The aortic SAMP is gone. Its four teaching points were already in `batch17/bench-press-chest-pain`, chest-pain-01, ems-30 and the seed case. The ACC/AHA 2022 and ADvISED sources were removed with it.
+- New SAMP, same id: "Pain near the collarbone after yard work". A 61-year-old man with diabetes and an infected foot ulcer has 12 days of worsening pain at the right sternoclavicular joint, with night chills and a temperature of 37.6°C. The diagnosis is sternoclavicular septic arthritis.
+- Bank grep before writing: no hits for sternoclavicular septic arthritis in `src/samps` or `src/cases`. The only sternoclavicular hit is the s29 msk posterior dislocation item, which is unrelated. Highest stem trigram Jaccard is 0.08.
+- Same key feature map as before:
+  - q1 KF3: chills with steadily worsening pain point to infection over strain.
+  - q2 KF4: infected diabetic foot ulcer, which counts as both a distant infection and diabetes.
+  - q3 KF5: a temperature of 37.6°C does not exclude it, because only 65% were febrile.
+  - q4 KF2: blood cultures and CT of the chest wall.
+- Source: Ross JJ, Shamsuddin H. Sternoclavicular septic arthritis: review of 180 cases. Medicine (Baltimore). 2004. Verified on the Europe PMC record for PMID 15118542, abstract read in full: chest pain 78%, shoulder pain 24%, median 14 days, 65% febrile, bacteremia 62%, intravenous drug use 21%, distant infection 15%, diabetes 13%, trauma 12%, central line 9%, abscess or phlegmon 25%, mediastinitis 13%, S. aureus 49%, routine CT or MRI, MRSA cover. No URL was added: the DOI goes to a paywall (402), and the Europe PMC and PubMed pages returned 403 or a cookie wall.
+- The ",." typo goes away with the old q1.
+
+### chest-pain-50
+
+- q3: the key now reads "It may be normal early in this illness", so it no longer names the mediastinum. The other options and the key position are unchanged.
+- q4: the update now says "on-call surgical services" instead of "thoracic surgery".
+
+### chest-pain-51
+
+- q1: "not by exclusion" is now "It is a clinical diagnosis made from the history and examination."
+
+### chest-pain-52
+
+- q1: the explanation now says COPD with emphysema is "a common cause", and the question cites BTS 2023 instead of Cheng.
+- q2: replaced with a menu (select 2) on the 2023 BTS high-risk characteristics she has: age over 50 with a heavy smoking history, and a saturation of 86%. Underlying lung disease is left off the options so the q1 key is not shown. The new list is verified in Cheng 2024 (re-fetched). Its key feature is now KF4.
+- q4: replaced with the choice of drainage device. The key is a 12 Fr small-bore drain. Distractors are an 8 Fr ambulatory vent, 24, 28 and 32 Fr large-bore drains. Cheng 2024, re-fetched, gives:
+  - 12 to 14 Fr: less pain, shorter drainage time, fewer complications, success similar to large-bore drains.
+  - Large-bore drains: kept for a large air leak, surgical emphysema or mechanical ventilation. Drains over 28 Fr give no added flow.
+  - Ambulatory vent: failed in 46% against 15% in secondary pneumothorax.
+
+  Needle aspiration is not used as a distractor, because Cheng reports a higher immediate success in the one secondary pneumothorax trial. Neither drain plus admission nor the 88 to 92% oxygen target is keyed.
+
+### Batch after revision
+
+- 5 SAMPs, 20 questions: 17 single, 3 menu (49 q2, 51 q3, 52 q2).
+- Single key positions 1 to 5: 3, 3, 4, 4, 3. The key is the single longest option in 4 of 17.
+
+| Key feature | Questions |
+|---|---|
+| KF1 | 2 (49 q4, 50 q2) |
+| KF2 | 4 (48 q4, 49 q3, 50 q4, 52 q4) |
+| KF3 | 6 (48 q1, 49 q1, 50 q1, 51 q1, 51 q2, 51 q3) |
+| KF4 | 5 (48 q2, 49 q2, 51 q4, 52 q1, 52 q2) |
+| KF5 | 3 (48 q3, 50 q3, 52 q3) |
+
+- Tests: `SAMP_BATCH=s85 npx vitest run tests/samps.test.ts tests/samp-quality.test.ts tests/citations.test.ts --testTimeout=120000` passed 128 of 128. tsc reports no errors for samps/s85.
+
+### Still uncertain
+
+1. Ross 2004 is a 2004 review with no current guideline behind it. It is the largest case series of this infection.
+2. chest-pain-52 q4 shows that she will be drained, and in mock mode that is visible while q3 (size against symptoms) is answered. The earlier q4 (drain plus admission) carried the same cue and q3 passed review.
+3. In chest-pain-52 q2, "significant hypoxia" has no numeric cut-off in the source. The saturation of 86% against her usual 92% is offered as significant.

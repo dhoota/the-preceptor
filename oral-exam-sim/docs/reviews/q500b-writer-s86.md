@@ -63,3 +63,37 @@ I read all 47 cva SAMPs and every other SAMP with a cva key feature (loc, eye, h
 5. cva-50 q3. The sentence that warfarin is no better than antiplatelet therapy for intracranial stenosis and causes more bleeding comes from WASID (Chimowitz 2005), not from the cited SAMMPRIS paper. It is true, but a reviewer may want it trimmed or sourced.
 6. cva-49 q4. A distal A1 occlusion is not one of the standard large vessel targets in the 2025 update, so the key says "urgent EVT review" rather than thrombectomy. Thrombolysis is the clear part of the key.
 7. cva-48 q4. Reversing apixaban before drainage is left to neurosurgery, and reversal is not among the options. Her last dose was 3 hours before arrival.
+
+## Revision 1
+
+This revision answers `docs/reviews/q500b-qa-s86.md` (10 failed items) and the coordinator's rulings. Ids, key features and question kinds are unchanged.
+
+| QA item | Change |
+|---|---|
+| 1 cva-48 stem | No change, on the coordinator's ruling (headache-48 is being replaced on its side). |
+| 2 cva-48 q4 | Rebuilt as a menu on her anticoagulant. A new update gives the time (11:40), creatinine 82 umol/L, no anti-Xa level and planned drainage. The keys are "Hold apixaban" and "Andexanet alfa, low-dose regimen" (apixaban 5 mg or less, last dose under 8 hours ago). The explanation says urgent reversal is normally indicated for an intracranial bleed, all the more before surgery, and names PCC 25 to 50 units/kg as the alternative. The distractors are ASA, a lower apixaban dose, idarucizumab, protamine and vitamin K. The dexamethasone option, the Dex-CSDH sentence and the `s86-dex-csdh` source are removed. The new source is `s86-tc-bleed` (Thrombosis Canada order set, June 2024). Also in q2, "shows" now reads "can show". |
+| 3 cva-49 stem | New patient: an 81-year-old woman who slid from her chair at a quilting group in a church hall. Last known well 14:20, arrival 15:05, 62 kg, hypertension and diabetes. The left leg is weaker than the right. The occlusion is the distal right A1, and the left A1 is absent. The Forsberg case report is cited only for the mechanism. The title changed to "Slid from her chair". Tenecteplase is recomputed as 0.25 x 62 = 15.5 mg. The timings are recomputed as 45 minutes at arrival and 1 hour 10 minutes at 15:30. |
+| 4 cva-49 q2 | The stem now states "no back pain, bruising, spinal tenderness or step" and "radial and femoral pulses are equal and strong". The explanation rejects the aortic and spinal options on those findings. |
+| 5 cva-49 q4 | The update now reads only "CT angiography shows occlusion of the distal right A1 segment. It is now 15:30." The absent left A1 is given in the q3 explanation. |
+| 6 cva-50 stem | New patient: a 72-year-old woman who has never smoked. Her spells are spinning vertigo, numbness around the mouth and difficulty swallowing, at rest. The closing sentences are rewritten. The q1 explanation now centres on the point that spells fluctuating over more than 48 hours still need urgent work-up (CSBPR clinical consideration 1.1.2). Pronouns are updated in q2 to q4. |
+| 7 cva-50 q3 | The warfarin sentence is deleted. The distractor "Heparin infusion then warfarin" is replaced by "Balloon angioplasty without a stent", which is rejected on CSBPR 9.4 (angioplasty, with or without a stent, only after recurrence on full medical therapy). I did not add WASID: `validateSamp` fails any listed source that no question cites, and q3 cites SAMMPRIS for its numbers. |
+| 8 cva-51 q1 | The stem now opens "You are working in a regional hospital emergency department with CT and CT angiography." |
+| 9 cva-51 q2 | The prompt is now "Which of the following is the most appropriate antiplatelet treatment to start now?" |
+| 10 cva-52 | The locked-in basilar scenario stays, on the coordinator's ruling (the batch18 oral case was replaced). q3 is new: why a GCS of 6 is expected in locked-in syndrome (loss of motor and verbal output). It cites Smith and Delargy, and it no longer repeats cva-50 q1, cva-43 or cva-47. The day-before prodrome is removed from the stem, so `s86-csbpr-sp` is no longer cited in this SAMP and is dropped from its sources. q2 now says vertical gaze and lid control are "usually spared". In q4, "an aware patient" now reads "a man who may be fully conscious". BP is lowered to 172/94 mmHg, below the 185/110 threshold. The q4 key is reworded to "Thrombectomy now", which moves it to the fifth position to keep key positions balanced. The phrase "his GCS of 6 hides it" is removed from q1 so it does not repeat q3. |
+
+### Grep before writing changed stems
+
+Searched `src/samps` and `src/cases` for "quilting", "church hall", "slid from her chair", "numbness around the mouth", "betahistine", "trouble swallowing" and "Radial and femoral pulses". There are no scenario matches. The pulse sentence and "trouble swallowing" appear only in unrelated items (chest pain, airway, toxicology).
+
+### After revision
+
+- Single key positions, first to fifth: 4, 4, 4, 3, 4. The key is the longest option in 4 of 19 singles. There is still one menu (cva-48 q4).
+- Key features: 1: 4, 2: 6, 3: 3, 4: 7.
+- Stems run 95 to 149 words.
+- Sources now in the batch: s86-csbpr-sp, s86-csbpr-acute, s86-russell-csdh, s86-tc-bleed (read in full from the Thrombosis Canada PDF, including the major bleed definition, "Hold anticoagulant therapy", and andexanet dosing by dose and time of the last dose), s86-forsberg-aca, s86-sammpris and s86-locked-in.
+- `npx tsc --noEmit -p . 2>&1 | grep samps/s86` prints nothing. `SAMP_BATCH=s86 npx vitest run tests/samps.test.ts tests/samp-quality.test.ts tests/citations.test.ts --testTimeout=120000` passes 128 of 128.
+
+### Still open
+
+- Mock-mode cues accepted under B6 in the review: the cva-48 q3 update (hematoma), the cva-49 q3 update (CT and CT perfusion) and the cva-50 q2 update (basilar stenosis).
+- cva-48 q4: andexanet is keyed because Thrombosis Canada prefers a targeted agent where one is available. A centre without andexanet would use PCC, and the explanation says so.

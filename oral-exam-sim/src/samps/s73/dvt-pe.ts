@@ -81,14 +81,14 @@ export const DVT_PE_S73: Samp[] = [
     ...META,
   },
 
-  /* 49 Breathless ten days after an emergency caesarean -------------------- */
+  /* 49 Breathless sixteen days after an emergency caesarean ---------------- */
   {
     id: "dvt-pe-49",
     topic: "dvt-pe",
     title: "Breathless new mother",
     stem:
-      "A 34-year-old woman presents to the emergency department 10 days after the birth of her first baby, with two days of shortness of breath and right-sided pleuritic chest pain. After 20 hours of labour with an epidural, she had an emergency caesarean section for fetal distress. On day 3 she developed endometritis and received IV antibiotics for 48 hours. She is breastfeeding every 3 hours. Her blood pressure was normal throughout pregnancy. She has no previous VTE and takes only iron and a prenatal vitamin. Her lochia is light and her wound is healing well.",
-    vitals: { temperature: "37.2°C oral", pulse: "112/minute", resp: "22/minute", bp: "118/74 mmHg", o2sat: "94% on room air", weight: "78 kg" },
+      "A 34-year-old woman presents to the emergency department 16 days after the birth of her first baby, with 12 hours of shortness of breath on climbing stairs and sharp pain under the left breast that is worse on deep breathing. After 20 hours of labour with an epidural, she had an emergency caesarean section for fetal distress. On day 3 she developed endometritis and received IV antibiotics for 48 hours. She is breastfeeding every 3 hours. Her blood pressure was normal throughout pregnancy. She has no previous VTE and takes only iron and a prenatal vitamin. Her lochia is light and her wound is healing well.",
+    vitals: { temperature: "37.0°C oral", pulse: "106/minute", resp: "20/minute", bp: "124/78 mmHg", o2sat: "95% on room air", weight: "66 kg" },
     questions: [
       {
         id: "q1",
@@ -116,7 +116,7 @@ export const DVT_PE_S73: Samp[] = [
       {
         id: "q3",
         kind: "single",
-        update: "Her lungs are clear, there are no added heart sounds and her calves are normal. A CT pulmonary angiogram is booked. She asks whether she must stop breastfeeding after the scan.",
+        update: "The rest of her examination is unremarkable. A CT pulmonary angiogram is booked. She asks whether she must stop breastfeeding after the scan.",
         prompt: "Which of the following is the most appropriate advice about breastfeeding after her contrast CT scan?",
         options: ["Express and discard milk for 12 hours", "Express and discard milk for 24 hours", "Feed only stored milk for 24 hours", "Formula feed for 48 hours", "No interruption to breastfeeding"],
         correct: 4,
@@ -128,12 +128,12 @@ export const DVT_PE_S73: Samp[] = [
       {
         id: "q4",
         kind: "single",
-        update: "Imaging confirms a right lower lobe segmental PE with a normal right ventricle. Hemoglobin, platelets, creatinine and liver enzymes are normal. She starts LMWH and would prefer tablets once she is home.",
-        prompt: "Which of the following oral anticoagulants is most appropriate for her while she continues to breastfeed?",
-        options: ["apixaban", "dabigatran", "edoxaban", "rivaroxaban", "warfarin"],
-        correct: 4,
+        update: "Imaging confirms a left lower lobe segmental PE with a normal right ventricle. She starts weight-based LMWH and asks how long she will need treatment.",
+        prompt: "Which of the following is the minimum total duration of anticoagulation for this postpartum PE?",
+        options: ["Lifelong anticoagulation", "Six months in total", "Three months in total", "Twelve months in total", "Until 6 weeks after delivery"],
+        correct: 2,
         explanation:
-          "Thrombosis Canada states that UFH, LMWH and warfarin are safe for the breastfed infant, so warfarin is the oral choice for her. It is started alongside LMWH, with an overlap of at least 5 days and until the INR is 2.0 or more for over 24 hours. Rivaroxaban and dabigatran have been found in breast milk, and the makers of apixaban, dabigatran, edoxaban and rivaroxaban all advise against their use while breastfeeding. A direct oral anticoagulant becomes an option only for a woman who chooses not to breastfeed.",
+          "Thrombosis Canada advises at least 3 months of treatment in total for pregnancy-associated VTE, with treatment also continued for at least 6 weeks after delivery. Her PE began 16 days after birth, so stopping 6 weeks after delivery would give her less than 4 weeks of treatment, and the 3 month minimum is the longer of the two limits. A clot provoked by pregnancy, an emergency caesarean and infection does not call for 6 or 12 months, or lifelong treatment, as a minimum.",
         keyFeature: { topic: "dvt-pe", n: 6 },
         source: "tc-preg-vte-tx",
       },
@@ -177,7 +177,7 @@ export const DVT_PE_S73: Samp[] = [
       {
         id: "q3",
         kind: "single",
-        update: "His chest is clear, his neck veins are not distended and his temperature is normal. The left leg is swollen around the healing wounds. You think PE is the most likely diagnosis.",
+        update: "His chest examination is otherwise unremarkable. The left leg is swollen around the healing wounds. You think PE is the most likely diagnosis.",
         prompt: "Which of the following best describes the use of the Wells score for PE in a patient of his age?",
         options: ["Excludes PE when below 2 points", "Not studied in patients his age", "Reliable once heart rate is age adjusted", "Valid when used with a D-dimer", "Weakly separates children with PE"],
         correct: 4,
