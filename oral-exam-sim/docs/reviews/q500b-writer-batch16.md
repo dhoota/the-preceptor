@@ -108,3 +108,15 @@ Advisories applied:
 - Not changed: fascial closure in q-repair, which is not keyed, and the s21 false passage echo, which the reviewer passed.
 
 Tests after revision 2: `CASE_BATCH=batch16 npx vitest run tests/cases.test.ts tests/citations.test.ts --testTimeout=120000` passed 41 of 41, and `REALIGN=batch16 CASE_BATCH=batch16 npx vitest run tests/cases.test.ts --testTimeout=120000` passed 39 of 39. tsc printed nothing for cases/batch16.
+
+## Revision 3 (fresh review docs/reviews/q500b-verify-batch16.md, 3 fails in wildfire-evacuees-host-hospital)
+
+1. q-others prompt is now "Your colleague has arrived. How do you manage the other evacuees now?"
+2. The q-cord prompt now says "and the fetal heart is slow and does not recover" in place of "80/minute", so it agrees with the 70/minute on the c-in-order path.
+3. s-delivered now says "A baby boy was born by caesarean section at 20:32 and is pink and crying." The interval that was wrong on two paths is removed.
+
+Physician notes applied:
+- The opening node no longer has the triage nurse mention "something between her legs" or the sideways lie, so it does not give away wf-h1. She now says only that the woman reports her waters broke on the walk over.
+- s-delivered now states who held the presenting part up: "You kept a gloved hand in the vagina holding the presenting part up, from the bay to the operating room, until the obstetrician delivered the baby."
+
+Nothing else changed. Tests after revision 3: `CASE_BATCH=batch16 npx vitest run tests/cases.test.ts tests/citations.test.ts --testTimeout=120000` passed 41 of 41, and `REALIGN=batch16 CASE_BATCH=batch16 npx vitest run tests/cases.test.ts --testTimeout=120000` passed 39 of 39.

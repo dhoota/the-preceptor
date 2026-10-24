@@ -98,7 +98,7 @@ export const wildfireEvacueesHostHospital: OralCase = {
       kind: "say",
       id: "s-open",
       phase: "20:00",
-      text: "She sits in the waiting room with her sister and the community health representative, behind eight people who arrived before her. The triage nurse tells you she feels something between her legs and that her baby was lying sideways at her last check. The waiting room is filling with families carrying bags and blankets.",
+      text: "She sits in the waiting room with her sister and the community health representative, behind eight people who arrived before her. The triage nurse tells you she says her waters broke on the walk over. The waiting room is filling with families carrying bags and blankets.",
       next: "q-first",
     },
     {
@@ -161,7 +161,7 @@ export const wildfireEvacueesHostHospital: OralCase = {
       kind: "question",
       id: "q-cord",
       phase: "The pregnant woman",
-      prompt: "A loop of pulsating cord lies at the introitus, a shoulder is high in the pelvis and the fetal heart is 80/minute. What do you do now?",
+      prompt: "A loop of pulsating cord lies at the introitus, a shoulder is high in the pelvis and the fetal heart is slow and does not recover. What do you do now?",
       seconds: 90,
       modelAnswer: [
         "Call the obstetrician, the anesthetist, the pediatrician and the operating room team now for a category 1 caesarean section.",
@@ -178,14 +178,14 @@ export const wildfireEvacueesHostHospital: OralCase = {
       kind: "say",
       id: "s-delivered",
       phase: "20:40",
-      text: "With the presenting part held up the fetal heart rose to 130/minute. A baby boy was born by caesarean section at 20:32, 24 minutes after the cord was seen, and is pink and crying. Your colleague has arrived. The waiting room now holds 19 evacuees.",
+      text: "You kept a gloved hand in the vagina holding the presenting part up, from the bay to the operating room, until the obstetrician delivered the baby. The fetal heart rose to 130/minute. A baby boy was born by caesarean section at 20:32 and is pink and crying. Your colleague has arrived. The waiting room now holds 19 evacuees.",
       next: "q-others",
     },
     {
       kind: "question",
       id: "q-others",
       phase: "The waiting room",
-      prompt: "Your colleague has arrived. How do you manage the other evacuees while he is treated?",
+      prompt: "Your colleague has arrived. How do you manage the other evacuees now?",
       seconds: 100,
       modelAnswer: [
         "Divide the work. Your colleague takes the waiting room while you finish the handover from the operating room.",
