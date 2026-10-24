@@ -53,12 +53,6 @@ const S = {
       "Kindel TL, Wang AY, Wadhwa A, and colleagues. Multi-society clinical practice guidance for the safe use of glucagon-like peptide-1 receptor agonists in the perioperative period. Surg Endosc. 2025.",
     url: "https://pmc.ncbi.nlm.nih.gov/articles/PMC11666732/",
   },
-  white: {
-    id: "white-ankle-intra-articular",
-    citation:
-      "White BJ, Walsh M, Egol KA, Tejwani NC. Intra-articular block compared with conscious sedation for closed reduction of ankle fracture-dislocations. A prospective randomized trial. J Bone Joint Surg Am. 2008.",
-    url: "https://pubmed.ncbi.nlm.nih.gov/18381308/",
-  },
 } satisfies Record<string, Source>;
 
 export const ANALGESIA_SEDATION_S81: Samp[] = [
@@ -148,10 +142,10 @@ export const ANALGESIA_SEDATION_S81: Samp[] = [
         kind: "single",
         update: "Twenty minutes later he lies quietly with his father beside him and lets the nurse touch his leg. He says it hurts a little. His GCS is 15.",
         prompt: "Which of the following is the most appropriate plan for his head CT now?",
-        options: ["CT after intranasal midazolam", "CT after IV ketamine sedation", "CT under general anesthesia", "CT with his father beside him", "Delay CT until he falls asleep"],
-        correct: 3,
+        options: ["CT after intranasal midazolam", "CT after IV ketamine sedation", "CT with his father beside him", "Delay CT for general anesthesia", "Delay CT until he falls asleep"],
+        correct: 2,
         explanation:
-          "He is now calm, cooperative and lying still, so the scan can go ahead with his father beside him for comfort. The Canadian Paediatric Society places sedation as an adjunct only when distress persists after pain control, parental presence and distraction. Midazolam, ketamine or general anesthesia would add airway risk and dull his neurologic examination after a head injury, for no benefit now that he is settled. Waiting for him to fall asleep delays an imaging decision the team has already made, and a sleeping child is harder to assess.",
+          "He is now calm, cooperative and lying still, so the scan can go ahead with his father beside him for comfort. The Canadian Paediatric Society places sedation as an adjunct only when distress persists after pain control, parental presence and distraction. Midazolam, ketamine or waiting for general anesthesia would add airway risk or delay and dull his neurologic examination after a head injury, for no benefit now that he is settled. Waiting for him to fall asleep delays an imaging decision the team has already made, and a sleeping child is harder to assess.",
         keyFeature: { topic: "analgesia-sedation", n: 4 },
         source: "cps-procedural-distress-2019",
       },
@@ -220,10 +214,10 @@ export const ANALGESIA_SEDATION_S81: Samp[] = [
         kind: "single",
         update: "She is receiving scheduled acetaminophen and small doses of an IV opioid. The orthopedic resident offers an interscalene brachial plexus block for her shoulder pain.",
         prompt: "Which of the following statements about an interscalene block for her today is most accurate?",
-        options: ["Acceptable if her INR is 1.5 or less", "Acceptable now under ultrasound guidance", "Acceptable once apixaban is held 24 hours", "Deferred until 72 hours off apixaban", "Preferred, with no effect on breathing"],
-        correct: 3,
+        options: ["Acceptable if her INR is 1.5 or less", "Acceptable now under ultrasound guidance", "Acceptable once apixaban is held 24 hours", "Better than opioids and safe for breathing", "Deferred until 72 hours off apixaban"],
+        correct: 4,
         explanation:
-          "She took apixaban this morning. The trauma pain guideline applies the American Society of Regional Anesthesia and Pain Medicine rules for deep plexus blocks to brachial plexus blocks, and its table advises holding apixaban for 72 hours before such a block. A block today, or after only a 24-hour hold, falls inside that window, and ultrasound guidance does not change the bleeding rule. The INR threshold of 1.5 applies to warfarin and does not measure the effect of apixaban. The guideline also notes that an interscalene block invariably weakens the diaphragm on the same side, so it does affect breathing. Her pain is better served for now by acetaminophen, titrated opioid and immobilization in a sling.",
+          "She took apixaban this morning. The trauma pain guideline applies the American Society of Regional Anesthesia and Pain Medicine rules for deep plexus blocks to brachial plexus blocks, and its table advises holding apixaban for 72 hours before such a block. A block today, or after only a 24-hour hold, falls inside that window, and ultrasound guidance does not change the bleeding rule. The INR threshold of 1.5 applies to warfarin and does not measure the effect of apixaban. The guideline also notes that an interscalene block invariably weakens the diaphragm on the same side, so it is not free of effects on breathing. Her pain is better served for now by acetaminophen, titrated opioid and immobilization in a sling.",
         keyFeature: { topic: "analgesia-sedation", n: 2 },
         source: "acs-tqip-acute-pain-2020",
       },
@@ -315,14 +309,14 @@ export const ANALGESIA_SEDATION_S81: Samp[] = [
     ...META,
   },
 
-  /* 52 Ankle fracture-dislocation in a patient on a weekly injection ------- */
+  /* 52 Elbow dislocation in a patient on a weekly injection --------------- */
   {
     id: "analgesia-sedation-52",
     topic: "analgesia-sedation",
-    title: "Missed step on the way to the car",
+    title: "Fall while carrying groceries",
     stem:
-      "A 54-year-old woman presents to the emergency department 1 hour after she missed a step and twisted her left ankle. The ankle is grossly deformed, and the skin over the medial malleolus is tented and blanched. The foot is warm with a palpable dorsalis pedis pulse. X-ray shows a bimalleolar fracture with lateral dislocation of the talus. She has type 2 diabetes and obesity treated with metformin and weekly subcutaneous semaglutide, which was increased from 0.5 mg to 1 mg 10 days ago. She has had nausea and bloating since the increase. She also takes ramipril for hypertension. She last ate 7 hours ago. Her airway examination shows a Mallampati class II view and full neck movement. She rates her pain 9 out of 10.",
-    vitals: { temperature: "36.7°C oral", pulse: "98/minute", resp: "18/minute", bp: "148/88 mmHg", o2sat: "97% on room air", weight: "100 kg" },
+      "A 54-year-old woman presents to the emergency department 1 hour after she fell backward onto her outstretched left hand while carrying groceries up her front steps. She holds the left elbow bent and will not let anyone move it. The olecranon juts out behind the joint. Her left hand is cool and pale, and no radial pulse can be felt. X-ray shows a posterior dislocation of the elbow without fracture. She has type 2 diabetes and obesity treated with metformin and weekly subcutaneous semaglutide, which was increased from 0.5 mg to 1 mg 10 days ago. She has had nausea and bloating since the increase. She also takes ramipril for hypertension. She last ate 7 hours ago. Her airway examination shows a Mallampati class II view and full neck movement. She rates her pain 9 out of 10.",
+    vitals: { temperature: "36.7°C oral", pulse: "102/minute", resp: "18/minute", bp: "152/90 mmHg", o2sat: "97% on room air", weight: "100 kg" },
     questions: [
       {
         id: "q1",
@@ -349,29 +343,29 @@ export const ANALGESIA_SEDATION_S81: Samp[] = [
       {
         id: "q3",
         kind: "single",
-        update: "Ultrasound shows a distended gastric antrum filled with solid food. The skin over the medial malleolus is still blanched.",
-        prompt: "Which of the following is the most appropriate approach to reducing her ankle now?",
-        options: ["Etomidate sedation and reduction", "Ketamine sedation and reduction", "Lidocaine into the ankle joint", "Propofol sedation and reduction", "Wait 8 hours, then sedate"],
-        correct: 2,
+        update: "Bedside assessment confirms a large volume of solid food in her stomach. Her hand is still cool and the radial pulse is still absent.",
+        prompt: "Which of the following is the most appropriate plan for reducing her elbow?",
+        options: ["General anesthesia with RSI", "Ketamine sedation in the ED", "Midazolam and fentanyl in the ED", "Postpone 24 hours on clear fluids", "Propofol sedation in the ED"],
+        correct: 0,
         explanation:
-          "Solid food in the stomach makes sedation risky, and the tented, blanched skin needs reduction now to protect the soft tissues. In a randomized trial of ankle fracture-dislocations, an intra-articular lidocaine block relieved pain as well as conscious sedation, allowed acceptable reductions and took less time on average. The authors studied it as a lower-risk alternative to sedation, which is what she needs. Etomidate, propofol and ketamine all blunt protective reflexes to some degree and carry a real risk of vomiting or aspiration with a full stomach. Waiting 8 hours risks skin necrosis over the malleolus and may not empty a stomach slowed by semaglutide.",
+          "Her elbow needs reduction now, because the cool hand and absent radial pulse show that the dislocation is compromising blood flow. The multi-society guidance advises that when retained gastric contents are confirmed or strongly suspected, rapid sequence induction of general anesthesia with tracheal intubation should be weighed against cancelling the procedure. Cancelling is not an option for a threatened limb, so the reduction should proceed under general anesthesia with RSI, which protects her airway. Ketamine, propofol, or midazolam with fentanyl in the ED would leave an unprotected airway over a stomach full of solids. A 24-hour liquid diet is the guidance's option for planned procedures and would leave her hand without circulation.",
         keyFeature: { topic: "analgesia-sedation", n: 5 },
-        source: "white-ankle-intra-articular",
+        source: "kindel-glp1-perioperative",
       },
       {
         id: "q4",
         kind: "single",
-        update: "During the first manipulation she rates her pain 6 out of 10 and asks for more medication. She is alert and her O2 sat is 97%.",
-        prompt: "Which of the following is the most appropriate addition for her pain during the reduction?",
-        options: ["fentanyl 50 mcg IV", "fentanyl 250 mcg IV", "ketamine 100 mg IV", "lorazepam 2 mg IV", "midazolam 2 mg IV"],
-        correct: 0,
+        update: "While the team prepares for the reduction, she rates her pain 9 out of 10 and asks for medication. She is alert and her O2 sat is 97%.",
+        prompt: "Which of the following is the most appropriate analgesic for her while she waits?",
+        options: ["diazepam 5 mg IV", "fentanyl 50 mcg IV", "fentanyl 250 mcg IV", "ketamine 100 mg IV", "midazolam 2 mg IV"],
+        correct: 1,
         explanation:
-          "She is alert with residual pain, so a small dose of a short-acting opioid tops up the block without deep sedation. The American College of Surgeons trauma pain guideline lists IV fentanyl at 25 to 50 mcg every 30 to 60 minutes. A 250 mcg bolus risks apnea and loss of airway reflexes in a patient with food in her stomach. Ketamine 100 mg is 1 mg/kg at her actual weight, a dissociative dose rather than the guideline's analgesic bolus of 0.3 mg/kg, which should be based on ideal body weight in obesity. Midazolam and lorazepam add sedation and aspiration risk but no analgesia.",
+          "She is alert with severe pain, and a small dose of a short-acting opioid treats it without deeply sedating a patient with food in her stomach. The American College of Surgeons trauma pain guideline lists IV fentanyl at 25 to 50 mcg every 30 to 60 minutes, repeated as she needs it. A 250 mcg bolus risks apnea and loss of airway reflexes. Ketamine 100 mg is 1 mg/kg at her actual weight, a dissociative dose rather than the guideline's analgesic bolus of 0.3 mg/kg, which should be based on ideal body weight in obesity. Midazolam and diazepam add sedation and aspiration risk but no analgesia.",
         keyFeature: { topic: "analgesia-sedation", n: 3 },
         source: "acs-tqip-acute-pain-2020",
       },
     ],
-    sources: [S.kindel, S.white, S.tqip],
+    sources: [S.kindel, S.tqip],
     ...META,
   },
 ];
