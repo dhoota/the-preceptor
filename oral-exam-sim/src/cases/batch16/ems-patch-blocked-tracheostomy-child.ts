@@ -22,11 +22,11 @@ export const emsPatchBlockedTracheostomyChild: OralCase = {
     "A primary care paramedic crew patches from a home 12 minutes away. A 6 year old boy with a tracheostomy is working hard to breathe, and his oxygen saturation is falling.",
   card: {
     vitals: {
-      temperature: "38.4°C axillary",
-      pulse: "138/minute",
-      resp: "36/minute",
-      bp: "102/64 mmHg",
-      o2sat: "93% on 6 L/minute by tracheostomy mask",
+      temperature: "38.5°C axillary, measured at home by his mother",
+      pulse: "152/minute",
+      resp: "48/minute",
+      bp: "108/68 mmHg",
+      o2sat: "84% on 10 L/minute by tracheostomy mask",
       weight: "21 kg (46 lb)",
     },
     medications: "Salbutamol inhaler as needed. Nebulized saline as needed. Omeprazole daily.",
@@ -37,7 +37,7 @@ export const emsPatchBlockedTracheostomyChild: OralCase = {
       id: "patch-report",
       label: "The first patch report (18:10)",
       result:
-        "The crew arrived 4 minutes ago. The boy is sitting up with deep chest indrawing and a quiet, whistling noise from the tube. Pulse 152/minute, respirations 48/minute, saturation 84% on 10 L/minute by tracheostomy mask. " +
+        "The crew arrived 4 minutes ago. The boy is sitting up with deep chest indrawing and a quiet, whistling noise from the tube. Pulse 152/minute, respirations 48/minute, BP 108/68 mmHg, saturation 84% on 10 L/minute by tracheostomy mask. " +
         "His mother suctioned him twice. The catheter stops about 3 cm in. The crew has no capnography. His mother has a go-bag and is asking whether she should change the tube.",
     },
     {
@@ -84,7 +84,7 @@ export const emsPatchBlockedTracheostomyChild: OralCase = {
       id: "exam-arrival",
       label: "Examination on arrival",
       result:
-        "Alert and clinging to his mother. Mild subcostal indrawing. The 4.0 tube is tied with two fingers of slack. Air moves freely through the tube. Coarse crackles at the right base. " +
+        "At 18:32: temperature 38.4°C axillary, pulse 138/minute, respirations 36/minute, BP 102/64 mmHg, saturation 93% on 6 L/minute by tracheostomy mask. Alert and clinging to his mother. Mild subcostal indrawing. The 4.0 tube is tied with two fingers of slack. Air moves freely through the tube. Coarse crackles at the right base. " +
         "The stoma is slightly red with a little dried blood. No neck swelling or crepitus. Capillary refill 2 seconds. Capnography through the tube shows a normal waveform with end tidal CO2 of 46 mmHg.",
     },
     {
@@ -140,7 +140,7 @@ export const emsPatchBlockedTracheostomyChild: OralCase = {
         "Ask why he has a tracheostomy, the tube size and type, whether it is cuffed, and whether his upper airway is patent. Ask what the emergency card says.",
         "Ask what has been tried. Attachments off, how far the suction catheter goes, and whether spare tubes and a trained parent are there.",
         "A catheter that will not pass with falling saturation means a blocked tube. Direct a tube change now, at home, before transport.",
-        "The trained mother changes the tube with the crew's help. Try the same size first, then the half size smaller tube. Within their directive the crew can reinsert a tube themselves.",
+        "The trained mother changes the tube with the crew's help. Try the same size first, then the half size smaller tube. Once the tube is out, the crew can reinsert one themselves under their directive, up to 2 attempts.",
         "Oxygen to the stoma and the face. If no tube will go in, oxygenate and bag through the stoma. Do not rely on bag mask ventilation over the mouth, because his upper airway is blocked.",
         "Confirm the plan back with the crew, ask for a call back after the change, and get their arrival time.",
       ],
@@ -382,7 +382,7 @@ export const emsPatchBlockedTracheostomyChild: OralCase = {
           next: "s-send-now",
           quality: "partial",
           feedback:
-            "Getting him to the right place matters, but the escort must match the risk. He displaced his tube an hour ago and has air in his neck. A further displacement on the road would need skills this crew does not have. Wait for the pediatric transport team, or send someone with airway skills.",
+            "Getting him to the right place matters, but the escort must match the risk. He displaced his tube less than half an hour ago and has air in his neck. A further displacement on the road would need skills this crew does not have. Wait for the pediatric transport team, or send someone with airway skills.",
         },
       ],
     },
@@ -407,7 +407,7 @@ export const emsPatchBlockedTracheostomyChild: OralCase = {
         "Advise that the go-bag always holds the same size and a smaller tube.",
         "Call the crew back with feedback, and document the patch and your directions.",
       ],
-      rubric: ["tr-pr5", "tr-pr1"],
+      rubric: ["tr-pr5", "tr-pr6", "tr-pr1"],
       next: "end",
     },
     {
@@ -434,7 +434,7 @@ export const emsPatchBlockedTracheostomyChild: OralCase = {
       text: "Asks what has been tried. Attachments removed, how far the suction catheter passes, and whether spare tubes and a trained caregiver are present.",
       points: 2,
       teaching:
-        "A suction catheter that will not pass means a blocked or displaced tube. Spare tubes and a trained parent at the scene make a field tube change possible.",
+        "Paramedics may suction a tracheostomy for obstruction or increased secretions, and may reinsert a tube once it is out. Spare tubes and a trained parent at the scene make a field tube change possible.",
       source: "als-pcs",
     },
     {
@@ -585,11 +585,19 @@ export const emsPatchBlockedTracheostomyChild: OralCase = {
       id: "tr-pr5",
       competency: "communication",
       criterion: "process",
-      text: "Thanks the mother for her tube change, explains the narrowed stoma, discloses the in-hospital displacement honestly and reports it, and advises keeping a smaller tube in the go-bag.",
-      points: 2,
-      teaching:
-        "Parents are part of the emergency team for a child with a tracheostomy. Honest disclosure of an event in hospital supports trust and learning.",
+      text: "Thanks the mother for her tube change, explains the narrowed stoma, and advises keeping the same size and a smaller tube in the go-bag.",
+      points: 1,
+      teaching: "Parents and carers are part of the emergency team for a child with a tracheostomy. Their preparation and education reduce the harm from tracheostomy emergencies.",
       source: "doherty",
+    },
+    {
+      id: "tr-pr6",
+      competency: "professionalism",
+      criterion: "process",
+      text: "Tells the mother honestly that the tube came out during a tie change in the department, with sympathy and the facts known, and reports the event.",
+      points: 1,
+      teaching: "Disclosure of harm from care starts as soon as reasonably possible, with the facts known so far and without speculation. An expression of sorrow is not an admission of fault.",
+      source: "cmpa",
     },
   ],
   sources: [
@@ -603,6 +611,11 @@ export const emsPatchBlockedTracheostomyChild: OralCase = {
       citation:
         "Ontario Ministry of Health, Emergency Health Regulatory and Accountability Branch. Advanced Life Support Patient Care Standards, version 5.4. 2025.",
       url: "https://www.ontario.ca/files/2025-04/moh-advanced-life-support-als-patient-care-standards-pcs-5.4-en-2025-04-23.pdf",
+    },
+    {
+      id: "cmpa",
+      citation: "Canadian Medical Protective Association. Disclosing harm from healthcare delivery: open and honest communication with patients. Version 3. 2017.",
+      url: "https://www.cmpa-acpm.ca/en/advice-publications/handbooks/disclosing-harm-from-healthcare-delivery-open-and-honest-communication-with-patients",
     },
     {
       id: "imist",

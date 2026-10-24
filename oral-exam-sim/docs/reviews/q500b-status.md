@@ -29,7 +29,7 @@ Branch `content/q500b`. Nothing in this round is signed off. Every item is `revi
 | s87 loc | FAIL 10 | Rev 1 in progress | | finish revision |
 | s88 ems | FAIL 5 | not started | | revise |
 | batch16 | not run | two cases replaced for overlap | | first review |
-| batch17 | FAIL 12 | Rev 1 done | not run | fresh review |
+| batch17 | FAIL 12 | Rev 1 to 3 done | Rev 1 FAIL 2, Rev 2 FAIL 2, Rev 3 PASS | ready for sign-off |
 | batch18 | cut off | | | first review |
 | batch19 | 1 case only | | | finish or drop |
 | batch20 | 1 draft, unregistered | | | finish or drop |

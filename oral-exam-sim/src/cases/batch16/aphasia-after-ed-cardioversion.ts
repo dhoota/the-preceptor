@@ -255,7 +255,7 @@ export const aphasiaAfterEdCardioversion: OralCase = {
           next: "s-heparin",
           quality: "unsafe",
           feedback:
-            "Urgent anticoagulation is not a treatment for acute cardioembolic stroke. It raises the risk of bleeding into the infarct and does not open the artery. It also rules out thrombolysis. She needs tenecteplase and thrombectomy.",
+            "Heparin does not open the artery, and starting it now would rule out thrombolysis and delay thrombectomy. Canadian guidance avoids antithrombotics for 24 hours after thrombolysis and starts the anticoagulant later according to infarct size. She needs tenecteplase and thrombectomy.",
         },
       ],
     },
@@ -313,7 +313,7 @@ export const aphasiaAfterEdCardioversion: OralCase = {
       modelAnswer: [
         "Find a quiet place, sit down and include her. Express sorrow for what has happened.",
         "Give the known facts in plain words. She had a stroke from a clot, likely from her heart after the rhythm was restored. Treatment reopened the artery.",
-        "Say honestly that the palpitations probably began last night. With her risk factors, a cardioversion that late usually needs blood thinners first. The care will be reviewed.",
+        "Say honestly that the palpitations probably began last night. The timing of the rhythm and whether blood thinners were needed first will be part of the review.",
         "Do not speculate or blame the colleague. Do not admit legal fault.",
         "Explain the next steps, who will follow up, and that they will hear the results of the review.",
         "Document the conversation, and invite questions.",
@@ -481,7 +481,7 @@ export const aphasiaAfterEdCardioversion: OralCase = {
       text: "Does not start heparin for the acute cardioembolic stroke and holds antithrombotics for 24 hours after thrombolysis.",
       points: 2,
       teaching:
-        "Early full anticoagulation does not treat acute stroke and adds bleeding risk. The stroke team times the start of an anticoagulant after the 24 hour scan.",
+        "Antithrombotics are avoided for 24 hours after thrombolysis until the 24 hour scan excludes hemorrhage. With atrial fibrillation, the stroke team starts the anticoagulant according to infarct size, about day 3 after a minor stroke.",
       source: "csbpr-acute",
     },
     {

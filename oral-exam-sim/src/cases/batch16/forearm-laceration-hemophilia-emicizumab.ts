@@ -18,7 +18,7 @@ export const forearmLacerationHemophiliaEmicizumab: OralCase = {
   durationMinutes: 12,
   stem:
     "You are working in the emergency department of a community hospital when the following patient arrives. " +
-    "A 17 year old boy walks in with his mother 70 minutes after he cut his left forearm on a metal shelf at work. The dressing is soaked through.",
+    "A 15 year old boy walks in with his mother 70 minutes after he cut his left forearm on a metal shelf at work. The dressing is soaked through.",
   card: {
     vitals: {
       temperature: "36.6°C oral",
@@ -26,7 +26,7 @@ export const forearmLacerationHemophiliaEmicizumab: OralCase = {
       resp: "16/minute",
       bp: "128/72 mmHg",
       o2sat: "99% on room air",
-      weight: "64 kg (141 lb)",
+      weight: "58 kg (128 lb)",
     },
     medications: "Emicizumab subcutaneously once a week.",
     allergies: "None known",
@@ -48,17 +48,17 @@ export const forearmLacerationHemophiliaEmicizumab: OralCase = {
       id: "meds",
       label: "Medication details",
       result:
-        "Emicizumab 96 mg subcutaneously every week for prophylaxis, last dose 3 days ago. He keeps recombinant factor VIII at home for breakthrough bleeds and has a treatment letter on his phone from the treatment centre. He took ibuprofen 400 mg at work an hour ago. No allergies.",
+        "Emicizumab 87 mg subcutaneously every week for prophylaxis, last dose 3 days ago. He keeps recombinant factor VIII at home for breakthrough bleeds and has a treatment letter on his phone from the treatment centre. He took ibuprofen 400 mg at work an hour ago. No allergies.",
     },
     {
       id: "immunization",
       label: "Immunizations",
-      result: "All routine vaccines. A Tdap booster at age 14, 3 years ago.",
+      result: "All routine vaccines. A Tdap booster at school at age 14, 1 year ago.",
     },
     {
       id: "social",
       label: "Social history",
-      result: "In grade 12. Plays guitar and wants to study carpentry. Lives with his mother. No alcohol or drugs.",
+      result: "In grade 10. Plays guitar and wants to study carpentry. Lives with his mother. No alcohol or drugs.",
     },
     {
       id: "wound",
@@ -232,13 +232,13 @@ export const forearmLacerationHemophiliaEmicizumab: OralCase = {
         "Look for and control any bleeding vessel. Close the fascia loosely if needed, then the skin.",
         "Refer the superficial radial nerve injury to plastic surgery for review and possible repair within days.",
         "No antibiotics. This is a clean, recent wound from a metal edge.",
-        "No tetanus vaccine. His last dose was 3 years ago. If a vaccine is needed in future, give it subcutaneously or after factor.",
+        "No tetanus vaccine. His last dose was 1 year ago. If a vaccine is needed in future, give it subcutaneously or after factor.",
       ],
       rubric: ["hf-m4", "hf-m5", "hf-m7", "hf-pr1"],
       choices: [
         {
           id: "c-clean-close",
-          label: "I infiltrated the wound edges, irrigated well, explored to the base, closed it, referred the sensory nerve injury to plastic surgery, and gave no antibiotics and no tetanus vaccine because his last dose was 3 years ago.",
+          label: "I infiltrated the wound edges, irrigated well, explored to the base, closed it, referred the sensory nerve injury to plastic surgery, and gave no antibiotics and no tetanus vaccine because his last dose was 1 year ago.",
           next: "s-reassess",
           quality: "strong",
           feedback:
@@ -360,7 +360,7 @@ export const forearmLacerationHemophiliaEmicizumab: OralCase = {
       text: "Asks about how much it has bled, drugs that worsen bleeding such as the ibuprofen he took, tetanus status and hand dominance.",
       points: 2,
       teaching:
-        "Apart from selective COX-2 inhibitors, NSAIDs should not be used in hemophilia. His Tdap at age 14 means no vaccine is needed now.",
+        "Apart from selective COX-2 inhibitors, NSAIDs should not be used in hemophilia.",
       source: "wfh",
     },
     {
@@ -387,7 +387,7 @@ export const forearmLacerationHemophiliaEmicizumab: OralCase = {
       criterion: "physical",
       text: "Recognizes a compartment syndrome from a muscle bleed by the tense forearm, pain out of proportion and pain on passive stretch, despite a strong pulse.",
       points: 2,
-      teaching: "In hemophilia a muscle bleed can progress to compartment syndrome, so the forearm needs continued evaluation. A tense compartment with pain out of proportion needs urgent surgical review even when the pulse is strong.",
+      teaching: "The hemophilia guideline (chapter 10.4) advises continuous monitoring of a muscle bleed for compartment syndrome, with rising pain as an indirect sign of rising pressure. Measure the pressure if in doubt.",
       source: "wfh",
     },
     {
@@ -443,7 +443,7 @@ export const forearmLacerationHemophiliaEmicizumab: OralCase = {
       id: "hf-m7",
       competency: "management",
       criterion: "management",
-      text: "Withholds tetanus vaccine because his last dose was 3 years ago.",
+      text: "Withholds tetanus vaccine because his last dose was 1 year ago.",
       points: 1,
       teaching: "For any wound, no tetanus vaccine is needed after a complete series when the last dose was less than 5 years ago.",
       source: "cig-tetanus",
@@ -454,7 +454,7 @@ export const forearmLacerationHemophiliaEmicizumab: OralCase = {
       criterion: "management",
       text: "For the compartment syndrome, gives more factor VIII with the treatment centre, calls orthopaedics urgently, removes tight dressings, keeps the arm at heart level and gives IV analgesia.",
       points: 2,
-      teaching: "Surgery in hemophilia is safe only with factor cover planned with the hematologist. Treat the bleed and the compartment together.",
+      teaching: "If compartment syndrome is confirmed, fasciotomy should be done within 12 hours of onset under factor cover planned with the hematologist (WFH chapter 10.4).",
       source: "wfh",
     },
     {
