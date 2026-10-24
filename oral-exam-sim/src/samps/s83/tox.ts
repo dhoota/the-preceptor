@@ -93,8 +93,8 @@ export const TOX_S83: Samp[] = [
     alsoTopics: ["pediatric-fever"],
     title: "Crying newborn on day five",
     stem:
-      "You are working in a community hospital emergency department. A 5-day-old boy is brought in by his parents with 1 day of high-pitched crying, poor feeding and loose stools. He was born at 39 weeks by vaginal delivery after an uncomplicated labour and went home at 36 hours of age. His mother has taken methadone 60 mg daily for opioid use disorder throughout the pregnancy, and her HIV test was negative. She is breastfeeding. He has had no fever and no vomiting. He sneezes often, and he has a tremor and increased tone when handled. His anterior fontanelle is flat, his abdomen is soft and not distended, and his capillary refill is 2 seconds. His birth weight was 3.40 kg.",
-    vitals: { temperature: "37.2°C rectal", pulse: "168/minute", resp: "54/minute", o2sat: "98% on room air", weight: "3.12 kg" },
+      "You are working in a community hospital emergency department. A 5-day-old boy is brought in by his parents with 1 day of high-pitched crying, poor feeding and loose stools. He was born at 39 weeks by vaginal delivery after an uncomplicated labour and went home at 36 hours of age. His mother has taken methadone 60 mg daily for opioid use disorder throughout the pregnancy, and her HIV test was negative. She is breastfeeding. He has had no fever and no vomiting. He sneezes often, and he has a tremor and increased tone when handled. His anterior fontanelle is flat, his abdomen is soft and not distended, and his capillary refill is 2 seconds. His birth weight was 3.4 kg.",
+    vitals: { temperature: "37.2°C rectal", pulse: "168/minute", resp: "54/minute", o2sat: "98% on room air", weight: "3.1 kg" },
     questions: [
       {
         id: "q1",
@@ -127,7 +127,7 @@ export const TOX_S83: Samp[] = [
         options: ["Discharge with formula feeds", "Morphine 0.05 mg/kg PO now", "Phenobarbital 20 mg/kg IV load", "Transfer to a regional NICU", "Ward admission with mother rooming in"],
         correct: 4,
         explanation:
-          "He cannot feed, sleep or be consoled, and he has lost 0.28 kg, about 8% of his birth weight of 3.40 kg, so he needs admission. The Canadian Paediatric Society puts non-drug care first, with the mother rooming in, skin-to-skin contact, feeding support and a quiet, dim room, and adds medication only when these measures are not enough. Oral morphine is a first-line drug but comes after non-drug care has been tried. Phenobarbital is not first line for opioid withdrawal. He is a stable term infant, so transfer to a NICU would separate him from his mother without need. Discharge is unsafe.",
+          "He cannot feed, sleep or be consoled, and he has lost 0.3 kg, about 9% of his birth weight of 3.4 kg, so he needs admission. The Canadian Paediatric Society puts non-drug care first, with the mother rooming in, skin-to-skin contact, feeding support and a quiet, dim room, and adds medication only when these measures are not enough. Oral morphine is a first-line drug but comes after non-drug care has been tried. Phenobarbital is not first line for opioid withdrawal. He is a stable term infant, so transfer to a NICU would separate him from his mother without need. Discharge is unsafe.",
         keyFeature: { topic: "tox", n: 8 },
         source: "cps-nows-2025",
       },
@@ -173,7 +173,7 @@ export const TOX_S83: Samp[] = [
         id: "q2",
         kind: "single",
         prompt: "Which of the following sources is most likely to identify exactly what she swallowed?",
-        options: ["Community pharmacy dispensing record", "Her family physician's chart", "Photo of the empty package", "School counsellor's account", "Urine drug screen"],
+        options: ["Her family physician's chart", "Pharmacy dispensing record", "Photo of the empty package", "School counsellor's account", "Urine drug screen"],
         correct: 2,
         explanation:
           "The package names every ingredient and its strength, so a photo taken at home shows whether the tablets combined acetaminophen with another drug, as many nighttime pain products do. These products are bought without a prescription, so neither the pharmacy dispensing record nor her family physician's chart would list them. A school counsellor may know about the breakup but not the product. A urine drug screen reports a few drug classes, gives no amount and does not measure acetaminophen, so it would not tell her team what or how much she took.",

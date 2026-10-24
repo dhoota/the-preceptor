@@ -246,12 +246,83 @@ export const ANALGESIA_SEDATION_S81: Samp[] = [
         options: ["fentanyl 26 mcg IN", "fentanyl 80 mcg IN", "lorazepam 1 mg SL", "midazolam 5 mg IN", "nitrous oxide 50% by mask"],
         correct: 0,
         explanation:
-          "A score of 6 with frowning and stiffening on movement means her pain is still poorly controlled, so the next step is more analgesia, not sedation. The Canadian Paediatric Society allows a second intranasal fentanyl dose, at 1 to 2 mcg/kg, to a total of 100 mcg. At 26 kg, 1 mcg/kg is 26 mcg, bringing her total to 66 mcg. A second dose of 80 mcg would take the total to 120 mcg, above that cap. Lorazepam and midazolam would quiet her while the fracture still hurts. Nitrous oxide needs a cooperative child who can hold the mask, which she cannot do.",
+          "A score of 6 with frowning and stiffening on movement means her pain is still poorly controlled, so the next step is more analgesia, not sedation. The Canadian Paediatric Society allows a second intranasal fentanyl dose, at 1 to 2 mcg/kg, to a total of 100 mcg. At 26 kg, 1 mcg/kg is 26 mcg, bringing her total to 66 mcg. A second dose of 80 mcg would take the total to 120 mcg, above that cap. Lorazepam and midazolam would quiet her while the fracture still hurts. Nitrous oxide by mask depends on a child who can cooperate with the mask, which her spastic quadriplegia and inability to follow requests rule out.",
         keyFeature: { topic: "analgesia-sedation", n: 4 },
         source: "cps-pain-best-practices-2022",
       },
     ],
     sources: [S.cpsPain, S.malviya],
+    ...META,
+  },
+
+  /* 51 Shoulder dislocation at 30 weeks ------------------------------------- */
+  {
+    id: "analgesia-sedation-51",
+    topic: "analgesia-sedation",
+    title: "Fall on an icy step in pregnancy",
+    stem:
+      "A 33-year-old woman who is 30 weeks pregnant presents to the emergency department 1 hour after she slipped on an icy step and fell onto her outstretched right arm. She did not strike her abdomen. She has no abdominal pain, contractions, vaginal bleeding or fluid loss, and she feels the baby moving. Her pregnancy has been uncomplicated and she is Rh positive. She takes a prenatal vitamin and last ate 5 hours ago. She holds the right arm slightly abducted and externally rotated and rates her pain 9 out of 10. Axillary nerve and distal neurovascular function are normal. X-ray shows an anterior shoulder dislocation without fracture. The fetal heart rate is 140/minute. Two attempts at reduction by external rotation without medication have failed.",
+    vitals: { temperature: "36.8°C oral", pulse: "104/minute", resp: "18/minute", bp: "118/70 mmHg", o2sat: "99% on room air", weight: "74 kg" },
+    questions: [
+      {
+        id: "q1",
+        kind: "single",
+        prompt: "Which of the following is the most appropriate next approach to pain control for her reduction?",
+        options: ["Etomidate sedation", "Ketamine sedation", "Lidocaine into the joint", "Midazolam and fentanyl sedation", "Propofol sedation"],
+        correct: 2,
+        explanation:
+          "Intra-articular lidocaine gives analgesia for the reduction without systemic sedation, which spares her and her fetus the airway and blood pressure risks of sedating a woman in the third trimester. A Cochrane review of five trials found no difference in immediate reduction success between intra-articular lidocaine and IV analgesia with or without sedation, with fewer adverse effects and a much shorter emergency department stay for the injection. Etomidate, ketamine, propofol and midazolam with fentanyl remain options if the injection fails, but each adds the risks of sedation that the injection avoids.",
+        keyFeature: { topic: "analgesia-sedation", n: 2 },
+        source: "wakai-intra-articular-lidocaine",
+      },
+      {
+        id: "q2",
+        kind: "menu",
+        select: 2,
+        update: "After two more attempts the shoulder is still dislocated. You plan procedural sedation.",
+        prompt: "Which of the following are the most appropriate preparations for her procedural sedation?",
+        options: [
+          "Cricoid pressure throughout",
+          "Fasting for 8 hours first",
+          "Left uterine displacement",
+          "Oxygen to keep O2 sat above 95%",
+          "Phenylephrine infusion started first",
+          "Supine flat positioning",
+          "Trendelenburg positioning",
+          "Urinary catheter insertion",
+        ],
+        correct: [2, 3],
+        explanation:
+          "After mid-pregnancy the uterus compresses the inferior vena cava when she lies supine, so the SOGC advises moving it off the vena cava by manual displacement or left lateral tilt to protect venous return and cardiac output. The SOGC also advises oxygen to keep maternal saturation above 95% for fetal oxygenation, which matters during sedation when breathing may slow. Lying supine and flat, or head down, worsens caval compression. A phenylephrine infusion is not started routinely, and the SOGC reserves vasopressors for hypotension that does not respond to fluid. Delaying for a longer fast leaves the shoulder dislocated, and cricoid pressure and a urinary catheter are not part of preparing a short sedation in a woman who is breathing on her own.",
+        keyFeature: { topic: "analgesia-sedation", n: 5 },
+        source: "sogc-pregnant-trauma-2015",
+      },
+      {
+        id: "q3",
+        kind: "single",
+        update: "The resident plans to give midazolam alone, saying that an opioid could harm the fetus.",
+        prompt: "Which of the following sedation regimens is most appropriate for her shoulder reduction?",
+        options: ["diazepam IV alone, titrated", "haloperidol IV alone, titrated", "lorazepam IV alone, titrated", "midazolam IV alone, titrated", "midazolam with fentanyl IV, titrated"],
+        correct: 4,
+        explanation:
+          "Reducing a dislocated shoulder is painful, and a benzodiazepine sedates without giving any analgesia, so she needs an opioid with it. The American College of Surgeons trauma pain guideline states that pregnancy does not preclude treating pain after injury, that untreated pain harms both mother and fetus, and it lists IV and intranasal fentanyl as generally considered safe for a short course in every trimester. Small titrated doses keep her breathing and blood pressure steady. Midazolam, diazepam or lorazepam alone would leave her in pain during the reduction. Haloperidol is an antipsychotic with no analgesic effect.",
+        keyFeature: { topic: "analgesia-sedation", n: 4 },
+        source: "acs-tqip-acute-pain-2020",
+      },
+      {
+        id: "q4",
+        kind: "single",
+        update: "The shoulder is reduced. Thirty minutes later she is alert and comfortable, with no contractions, abdominal pain or bleeding.",
+        prompt: "Which of the following fetal assessments is most appropriate before she leaves the emergency department?",
+        options: ["A single Doppler fetal heart check", "An obstetric ultrasound next week", "Electronic fetal monitoring for 4 hours", "Kleihauer-Betke test only", "No further fetal assessment"],
+        correct: 2,
+        explanation:
+          "She is 30 weeks pregnant and has had a fall, which is trauma in pregnancy even without a blow to the abdomen. The SOGC advises electronic fetal monitoring for at least 4 hours in every pregnant trauma patient with a viable pregnancy of 23 weeks or more, and admission for 24 hours if adverse features such as uterine tenderness, bleeding or sustained contractions appear. The same window also covers her recovery from sedation. A single Doppler check or an ultrasound next week would miss contractions or a changing heart rate pattern in the hours after the fall. A Kleihauer-Betke test measures fetal bleeding into the mother and does not replace monitoring. Leaving with no assessment ignores her risk.",
+        keyFeature: { topic: "analgesia-sedation", n: 6 },
+        source: "sogc-pregnant-trauma-2015",
+      },
+    ],
+    sources: [S.wakai, S.sogc, S.tqip],
     ...META,
   },
 ];

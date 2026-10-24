@@ -15,6 +15,8 @@ const S = {
   ncpc: { id: "ncpc-battery", citation: "National Capital Poison Center. Button battery ingestion triage and treatment guideline. Revised 2018.", url: "https://www.poison.org/battery/guideline" },
   elso: { id: "elso-ecpr", citation: "Richardson ASC, Tonna JE, Nanjayya V, et al. Extracorporeal cardiopulmonary resuscitation in adults. Interim guideline consensus statement from the Extracorporeal Life Support Organization. ASAIO J. 2021.", url: "https://pmc.ncbi.nlm.nih.gov/articles/PMC7984716/" },
   arrest: { id: "arrest-trial", citation: "Yannopoulos D, Bartos J, Raveendran G, et al. Advanced reperfusion strategies for patients with out-of-hospital cardiac arrest and refractory ventricular fibrillation (ARREST): a phase 2, single centre, open-label, randomised controlled trial. Lancet. 2020." },
+  cdc: { id: "cdc-rca", citation: "US Centers for Disease Control and Prevention. Chemical emergencies. Riot control agents fact sheet. Reviewed 2026.", url: "https://www.cdc.gov/chemical-emergencies/chemical-fact-sheets/riot-control-agents.html" },
+  gina: { id: "gina-2026", citation: "Global Initiative for Asthma. Global Strategy for Asthma Management and Prevention. 2026 update.", url: "https://ginasthma.org/reports/" },
 } satisfies Record<string, Source>;
 
 export const EMS_S88: Samp[] = [
@@ -271,6 +273,68 @@ export const EMS_S88: Samp[] = [
       },
     ],
     sources: [S.elso, S.arrest],
+    ...META,
+  },
+
+  /* 41 Bear spray in a school hallway -------------------------------------- */
+  {
+    id: "ems-41",
+    topic: "ems",
+    alsoTopics: ["multiple-patients"],
+    title: "A call from a high school",
+    stem:
+      "You are working in a community hospital emergency department in Alberta. At 1105 the EMS supervisor calls from a high school 6 minutes away. A student discharged a can of bear spray in a crowded hallway 15 minutes ago. About 40 students and 3 teachers have burning eyes and skin, tearing, coughing and runny noses. Staff have moved everyone outside into fresh air. Two students with asthma are wheezing, and the vital signs below belong to the more breathless of them, a 15-year-old girl. A teacher fell and was trampled as students ran from the hallway. Three ambulances are on scene. The supervisor asks for direction.",
+    vitals: { pulse: "118/minute", resp: "30/minute", o2sat: "90% on room air", weight: "52 kg" },
+    questions: [
+      {
+        id: "q1",
+        kind: "single",
+        prompt: "Which of the following decontamination measures should you advise for the students with burning skin and eyes?",
+        options: ["Bleach solution wash of the skin", "Dry wiping of skin and face", "Eye patching until hospital assessment", "Remove clothing, wash skin, rinse eyes", "No decontamination in fresh air"],
+        correct: 3,
+        explanation:
+          "Bear spray is a concentrated pepper spray, and the CDC advice for this kind of exposure is to remove contaminated clothing, cutting it off rather than pulling it over the head, wash the skin with plenty of soap and water and rinse burning eyes with plain water for 10 to 15 minutes, with contact lenses removed. Fresh air helps, but resin left on skin and clothing keeps burning and can spread to others, including staff and crews. Dry wiping smears the resin. Bleach is a decontaminant for some other agents and only adds skin irritation here. Patching an eye keeps the irritant against the cornea.",
+        keyFeature: { topic: "ems", n: 4 },
+        source: "cdc-rca",
+      },
+      {
+        id: "q2",
+        kind: "single",
+        update: "Thirty minutes after decontamination the supervisor asks which students can be released to school staff without transport to hospital.",
+        prompt: "Which of the following students is most appropriate to release at the scene to school staff?",
+        options: ["Blurred vision despite eye rinsing", "Cough and chest tightness at 45 minutes", "Throat pain and hoarseness at 45 minutes", "Well after 30 minutes outside, exam normal", "Wheeze with oxygen saturation of 91%"],
+        correct: 3,
+        explanation:
+          "The CDC notes that the effects of these agents usually last only 15 to 30 minutes once a person is away from the source and cleaned off, and that long-term harm is unlikely when symptoms fade soon after exposure. A student who is well with a normal examination after 30 minutes outside can safely be released to school staff with advice to return if symptoms recur. Blurred vision that persists after rinsing needs an eye examination for corneal injury. Ongoing cough, chest tightness or wheeze points to airway injury or asthma, and persistent throat pain with hoarseness raises concern for injury to the throat, so each of these students needs assessment in hospital.",
+        keyFeature: { topic: "ems", n: 4 },
+        source: "cdc-rca",
+      },
+      {
+        id: "q3",
+        kind: "single",
+        update: "The 15-year-old girl with asthma speaks in short phrases and has wheeze over both lungs. She has no hives, no lip swelling and no vomiting.",
+        prompt: "Which of the following is the most appropriate field treatment to direct for this student?",
+        options: ["epinephrine 0.5 mg IM", "Nebulized sodium bicarbonate", "Observation in fresh air alone", "Rinse of the mouth and nose", "Salbutamol inhaled with oxygen"],
+        correct: 4,
+        explanation:
+          "Speaking in short phrases with a respiratory rate of 30/minute and a saturation of 90% is a moderate to severe asthma flare set off by an airway irritant. GINA advises repeated inhaled short-acting beta2 agonist with controlled oxygen, aiming for a saturation of 93% to 95% in adolescents, and urgent transport for a flare this severe. IM epinephrine is reserved for asthma with anaphylaxis or angioedema, and she has no hives, swelling or vomiting. Nebulized sodium bicarbonate has no established role in asthma. Observation alone leaves her hypoxic, and rinsing the mouth and nose does not relieve bronchospasm.",
+        keyFeature: { topic: "ems", n: 4 },
+        source: "gina-2026",
+      },
+      {
+        id: "q4",
+        kind: "single",
+        update: "The teacher who was trampled, a 58-year-old man, arrives by ambulance with left chest pain and a pulse of 110/minute. The crew begins the handover.",
+        prompt: "Which of the following handover details is most important to obtain from the crew for this teacher?",
+        options: ["Areas of his body that were stepped on", "Brand of the bear spray used", "Length of time he spent outdoors", "Number of people exposed to spray", "Time the ambulance left the school"],
+        correct: 0,
+        explanation:
+          "A crowd running over a fallen man is a crush mechanism, and only the crew and witnesses know where he was stepped on, whether on the chest, abdomen, head or limbs. IMIST-AMBO handover starts with the mechanism and the injuries found, and here those details direct the search for rib fractures, pneumothorax and abdominal injury behind his chest pain and pulse of 110/minute. The brand of spray does not change his care, since all bear sprays are capsaicin based. The time spent outdoors, the number exposed and the ambulance departure time matter to the incident record but not to his injuries.",
+        keyFeature: { topic: "ems", n: 2 },
+        source: "imist-ambo",
+      },
+    ],
+    sources: [S.cdc, S.gina, S.imist],
     ...META,
   },
 ];

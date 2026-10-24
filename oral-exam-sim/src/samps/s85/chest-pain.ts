@@ -198,4 +198,122 @@ export const CHEST_PAIN_S85: Samp[] = [
     sources: [S.chaulk, S.eacts],
     ...META,
   },
+
+  /* 51 Brief sharp pain in a schoolgirl ------------------------------------ */
+  {
+    id: "chest-pain-51",
+    topic: "chest-pain",
+    title: "Girl sent from a school assembly",
+    stem:
+      "A 12-year-old girl is brought to the emergency department by her mother after a sudden sharp pain under her left breast during a school assembly. She was standing still and slouching. The pain lasted about 2 minutes, caught her when she tried to breathe in, and stopped after she straightened up and took one deep breath. She has had three similar brief episodes over 2 months, all at rest, and feels well between them. She plays soccer twice a week without symptoms. She has no medical history and takes no medications. She points to the spot with one finger. She is comfortable and pain free. Heart sounds are normal with no murmur, rub or gallop, and there is no chest wall tenderness. The lungs are clear and femoral pulses are normal. Her ECG is normal.",
+    vitals: { temperature: "36.8°C oral", pulse: "84/minute", resp: "16/minute", bp: "104/64 mmHg", o2sat: "99% on room air", weight: "41 kg" },
+    questions: [
+      {
+        id: "q1",
+        kind: "single",
+        prompt: "Which of the following is the most likely cause of her episodes of chest pain?",
+        options: ["Acute pericarditis", "Anxiety-related chest pain", "Costochondritis", "Exercise-induced asthma", "Precordial catch syndrome"],
+        correct: 4,
+        explanation:
+          "Sudden, sharp pain under the left breast that lasts a few minutes, starts at rest, catches on inspiration, eases when she straightens up and takes a deep breath, and can be pointed to with one finger is precordial catch syndrome. It is diagnosed from the history and examination, not by exclusion. Costochondritis causes tenderness over the costal cartilages, which she does not have. Pericarditis causes longer pain with a rub or ECG changes. Asthma brought on by exercise does not cause brief pain at rest, and nothing in her history points to anxiety.",
+        keyFeature: { topic: "chest-pain", n: 3 },
+        source: "cps-precordial-catch-s85",
+      },
+      {
+        id: "q2",
+        kind: "single",
+        prompt: "Which of the following is the most appropriate plan for her after this assessment?",
+        options: ["Echocardiogram before discharge", "Exercise stress test next week", "Holter monitor for 48 hours", "Reassurance and posture advice", "Troponin and chest X-ray now"],
+        correct: 3,
+        explanation:
+          "With a typical history, a normal examination, a normal ECG and no red flags, precordial catch syndrome needs no further testing. Naming the condition and explaining that it is benign and usually fades with age eases the worry of the child and her family. She can be shown how to sit upright, roll her shoulders back and breathe through an episode. Extra tests add anxiety and uncertainty without benefit. An echocardiogram is kept for red flags. An exercise test and a Holter monitor look for exertional or rhythm problems that nothing in her story suggests, and she has had no palpitations. A troponin and chest X-ray are not needed in a well child with a normal examination.",
+        keyFeature: { topic: "chest-pain", n: 3 },
+        source: "cps-precordial-catch-s85",
+      },
+      {
+        id: "q3",
+        kind: "menu",
+        select: 3,
+        prompt: "Which of the following features, if they were present in her history, would call for further cardiac testing such as echocardiography?",
+        options: ["Brief pain when slouching", "Chest pain during soccer", "Fainting while running", "Fever with the pain", "Pain eased by a deep breath", "Pain under the left breast", "Pain worse breathing in", "Pointing to one spot"],
+        correct: [1, 2, 3],
+        explanation:
+          "Pain with exercise, syncope and recent fever are red flags in a child with chest pain and call for ECG and echocardiography. Exertional pain and syncope raise concern for cardiomyopathy, a coronary anomaly or an outflow obstruction, and fever with pain raises concern for pericarditis or myocarditis. In the Boston plan exertional pain was the commonest reason for an echocardiogram. Brief pain at rest when slouching, pain under the left breast that catches on inspiration and eases with a deep breath, and pain that can be pointed to with one finger are the reassuring features of precordial catch.",
+        keyFeature: { topic: "chest-pain", n: 3 },
+        source: "chest-pain-scamp-s85",
+      },
+      {
+        id: "q4",
+        kind: "single",
+        prompt: "Which of the following family history findings would most change your assessment of her chest pain?",
+        options: ["Brother died suddenly at age 19", "Father with hypertension at 45", "Grandfather with MI at age 76", "Mother with migraine headaches", "Sister with childhood asthma"],
+        correct: 0,
+        explanation:
+          "A sudden or unexplained death in a first-degree relative is a pertinent positive in the Boston pediatric chest pain plan and calls for an echocardiogram and cardiology assessment, because inherited cardiomyopathies and arrhythmia syndromes can first show themselves as chest pain or syncope. A brother who died suddenly at 19 is exactly that history. Hypertension in a parent at 45 and a heart attack in a grandparent at 76 are common and do not point to an inherited heart condition in a child. Migraine and asthma in relatives do not change her cardiac risk.",
+        keyFeature: { topic: "chest-pain", n: 4 },
+        source: "chest-pain-scamp-s85",
+      },
+    ],
+    sources: [S.kofman, S.scamp],
+    ...META,
+  },
+
+  /* 52 Sudden one-sided pain in severe emphysema, rural -------------------- */
+  {
+    id: "chest-pain-52",
+    topic: "chest-pain",
+    title: "Gardener with emphysema and new pain",
+    stem:
+      "You are working in a rural hospital emergency department with X-ray but no CT. A 71-year-old woman presents with 4 hours of sharp right-sided chest pain and worsening breathlessness. The pain came on suddenly as she bent to lift a bag of potting soil. She has severe COPD with emphysema and uses tiotropium-olodaterol, with home oxygen at night. Her usual daytime oxygen saturation is 92% on room air. She also has hypertension treated with amlodipine. She has had no change in cough or sputum and no fever. She smoked for 50 years and quit 3 years ago. She says this does not feel like her usual flare-ups. She is speaking in short sentences. Her chest is barrel-shaped and hyperresonant on both sides. Breath sounds are quiet throughout and perhaps slightly quieter on the right. The trachea is midline.",
+    vitals: { temperature: "36.9°C oral", pulse: "108/minute", resp: "28/minute", bp: "142/84 mmHg", o2sat: "86% on room air" },
+    questions: [
+      {
+        id: "q1",
+        kind: "single",
+        prompt: "Which of the following in her history most raises her pretest probability of a pneumothorax?",
+        options: ["Age of 71 years", "Bending to lift a heavy bag", "Hypertension on amlodipine", "Severe emphysematous COPD", "Use of tiotropium-olodaterol"],
+        correct: 3,
+        explanation:
+          "COPD with emphysema is the commonest lung disease behind a secondary spontaneous pneumothorax, because thin-walled diseased lung ruptures into the pleural space, and her disease is severe enough to need home oxygen. Underlying lung disease is also one of the high-risk characteristics that shape treatment. Age raises the risk only through the lung disease that comes with it. Bending and lifting are not recognized triggers. Her inhaler treats the COPD and does not cause a pneumothorax, and hypertension has no link to it.",
+        keyFeature: { topic: "chest-pain", n: 4 },
+        source: "ptx-review-2024-s85",
+      },
+      {
+        id: "q2",
+        kind: "single",
+        prompt: "Which of the following features of her presentation most favours a pneumothorax over an exacerbation of her COPD?",
+        options: ["Breathlessness worse than usual", "Fifty years of past smoking", "Onset while bending to lift", "Speaking in short sentences", "Sudden one-sided sharp pain"],
+        correct: 4,
+        explanation:
+          "Sudden sharp pain on one side with breathlessness is the typical start of a pneumothorax, while an exacerbation of COPD builds over days with more cough, more sputum or a change in its colour, and she has none of those. Her own sense that this is unlike her usual flare-ups supports the difference. Worse breathlessness and speaking in short sentences happen with both conditions and only show how unwell she is. Her smoking history explains her COPD but does not separate the two causes, and bending to lift is not a known trigger.",
+        keyFeature: { topic: "chest-pain", n: 3 },
+        source: "bts-pleural-2023-s85",
+      },
+      {
+        id: "q3",
+        kind: "single",
+        update: "Chest X-ray shows a right apical pneumothorax with a visible pleural line, a 1.5 cm rim at the apex and no mediastinal shift. No bullae are seen near the pleural line.",
+        prompt: "Which of the following statements about the size of her pneumothorax is most accurate?",
+        options: ["It allows discharge with clinic review", "It calls for needle decompression", "It excludes a tension pneumothorax", "It is less important than her symptoms", "It makes oxygen alone sufficient"],
+        correct: 3,
+        explanation:
+          "Under the 2023 BTS approach, the decision to intervene rests on symptoms and on high-risk characteristics such as underlying lung disease and significant hypoxia, not on the size of the rim. She has both, with a saturation of 86% against her usual 92%, so a small rim does not make her safe. Oxygen alone and discharge are options only for a patient with minimal symptoms. Her trachea is midline and her BP is 142/84 mmHg, so there is no tension physiology to decompress, but a small pneumothorax can still enlarge and become a tension pneumothorax in damaged lungs.",
+        keyFeature: { topic: "chest-pain", n: 5 },
+        source: "ptx-review-2024-s85",
+      },
+      {
+        id: "q4",
+        kind: "single",
+        prompt: "Which of the following is the most appropriate management for her pneumothorax?",
+        options: ["Ambulatory valve and discharge", "Chest drain and admission", "Needle aspiration then discharge", "Needle decompression at 2nd space", "Transfer for CT before any drain"],
+        correct: 1,
+        explanation:
+          "A symptomatic secondary pneumothorax with hypoxia in a patient with severe emphysema usually needs a chest drain, which removes the air at once and relieves her symptoms, and she should be admitted. An ambulatory valve failed in 46% of patients with secondary pneumothorax in a randomized trial, against 15% with standard care, and discharge after aspiration is unsafe at a saturation of 86%. Needle decompression is for tension physiology, which she does not have. The X-ray shows a clear pleural line with no bullae nearby, so CT is not needed before the drain, and a long transfer would delay it.",
+        keyFeature: { topic: "chest-pain", n: 2 },
+        source: "ptx-review-2024-s85",
+      },
+    ],
+    sources: [S.bts, S.cheng],
+    ...META,
+  },
 ];

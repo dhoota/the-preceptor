@@ -373,9 +373,9 @@ export const MULTIPLE_PATIENTS_S78: Samp[] = [
         options: [
           "Man, 63, palpitations, pulse 172, BP 86/54",
           "Teen, 16, deformed wrist, pulses intact",
+          "Woman, 81, fall on apixaban, scalp hematoma",
           "Woman, 29, migraine, pain 8 out of 10",
           "Woman, 44, renal colic, pain 9 out of 10",
-          "Woman, 81, fall on apixaban, scalp hematoma",
         ],
         correct: 0,
         explanation:

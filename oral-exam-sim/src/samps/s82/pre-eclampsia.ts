@@ -18,11 +18,6 @@ const S = {
     id: "brookfield-im-mg",
     citation: "Brookfield K, Galadanci H, Du L, and colleagues. Magnesium sulfate pharmacokinetics after intramuscular dosing in women with preeclampsia. AJOG Glob Rep. 2021.",
   },
-  sogc426: {
-    id: "sogc-426",
-    citation:
-      "Magee LA, Smith GN, Bloch C, et al. Guideline No. 426: Hypertensive disorders of pregnancy: diagnosis, prediction, prevention, and management. J Obstet Gynaecol Can. 2022.",
-  },
   sogc364: {
     id: "sogc-364",
     citation: "Skoll A, Boutin A, Bujold E, et al. No. 364: Antenatal corticosteroid therapy for improving neonatal outcomes. J Obstet Gynaecol Can. 2018.",
@@ -297,6 +292,182 @@ export const PRE_ECLAMPSIA_S82: Samp[] = [
       },
     ],
     sources: [S.nice, S.acog222],
+    ...META,
+  },
+
+  /* 42 Facial swelling blamed on a seafood dinner ------------------------- */
+  {
+    id: "pre-eclampsia-42",
+    topic: "pre-eclampsia",
+    alsoTopics: ["anaphylaxis"],
+    title: "Swollen face after a seafood dinner",
+    stem:
+      "A 33-year-old woman, G1P0 at 36 weeks and 2 days, presents to the emergency department with swelling of her face and hands that has built up over 2 days. She ate shrimp at a restaurant last night and is worried about an allergy. She has eaten shellfish before without a problem. She has no itch, rash, throat tightness, wheeze or vomiting. She has had a mild headache since this morning. She takes no medications and has never had angioedema. At 20 weeks her BP was 110 mmHg systolic and 70 mmHg diastolic.\n\nHer eyelids and face are puffy, with pitting edema of the hands and shins. Her lips and tongue are normal, the chest is clear and there are no hives. Reflexes are 3+. The fetal heart rate is 140/minute. The triage nurse has drawn up epinephrine and asks you to sign the order.",
+    vitals: { temperature: "36.9°C oral", pulse: "88/minute", resp: "16/minute", bp: "156/102 mmHg", o2sat: "99% on room air", weight: "82 kg" },
+    questions: [
+      {
+        id: "q1",
+        kind: "single",
+        prompt: "Which of the following is the most likely cause of the swelling of her face and hands?",
+        options: [
+          "Acute glomerulonephritis",
+          "Allergic reaction to shrimp",
+          "Hereditary angioedema",
+          "Normal pregnancy edema",
+          "Pre-eclampsia",
+        ],
+        correct: 4,
+        explanation:
+          "Her BP has risen from 110/70 mmHg at 20 weeks to 156/102 mmHg, and she has a headache and brisk reflexes at 36 weeks, so pre-eclampsia is the most likely cause. NICE lists sudden swelling of the face, hands or feet among its symptoms. The swelling began a day before the shrimp, and she has no itch, hives, wheeze or throat symptoms, so an allergic reaction is unlikely. Hereditary angioedema causes non-pitting swelling, usually with a history of attacks. Normal pregnancy edema affects the legs and does not come with new hypertension. Glomerulonephritis is possible but far less common than pre-eclampsia at this stage of pregnancy.",
+        keyFeature: { topic: "pre-eclampsia", n: 1 },
+        source: "nice-ng133",
+      },
+      {
+        id: "q2",
+        kind: "single",
+        prompt: "Which of the following tests is the most useful to send now?",
+        options: [
+          "Complement C4 level",
+          "Serum mast cell tryptase",
+          "Shrimp-specific IgE level",
+          "TSH and free T4",
+          "Urine protein-creatinine ratio",
+        ],
+        correct: 4,
+        explanation:
+          "A urine protein to creatinine ratio of 30 mg/mmol or more confirms proteinuria, which with her new hypertension would establish pre-eclampsia. It is sent with platelets, creatinine and liver enzymes to look for other organ involvement. Tryptase supports a diagnosis of anaphylaxis, which nothing in her presentation suggests. A C4 level screens for hereditary angioedema, which is unlikely with pitting swelling and no past attacks. Shrimp-specific IgE does not change acute care, and she has eaten shellfish safely before. Thyroid tests do not explain new hypertension with a headache.",
+        keyFeature: { topic: "pre-eclampsia", n: 2 },
+        source: "nice-ng133",
+      },
+      {
+        id: "q3",
+        kind: "single",
+        update:
+          "Urine protein-creatinine ratio is 74 mg/mmol. Platelets 168 x 10^9/L, AST 30 U/L and creatinine 66 umol/L. Her BP is 158/104 mmHg on repeat.",
+        prompt: "Which of the following medications carries the greatest risk for her now?",
+        options: [
+          "cetirizine 10 mg PO",
+          "epinephrine 0.5 mg IM",
+          "famotidine 20 mg PO",
+          "labetalol 200 mg PO",
+          "prednisone 50 mg PO",
+        ],
+        correct: 1,
+        explanation:
+          "Epinephrine raises BP through its alpha effect, and she already has pre-eclampsia with a BP of 158/104 mmHg, so a surge would raise her risk of stroke and could reduce placental blood flow. She does not meet the World Allergy Organization criteria for anaphylaxis, which need acute skin or mucosal signs with breathing, circulatory or severe gut involvement, or sudden hypotension or airway involvement after an allergen. Her swelling built over 2 days and she has none of these. Cetirizine and famotidine are unnecessary but low risk. Oral labetalol is an appropriate treatment for her BP. A single dose of prednisone is not indicated but carries little acute risk.",
+        keyFeature: { topic: "pre-eclampsia", n: 4 },
+        source: "wao-2020",
+      },
+      {
+        id: "q4",
+        kind: "single",
+        update:
+          "Two hours later she has nausea and has vomited once. Repeat platelets are 131 x 10^9/L, AST is 88 U/L and LDH is 390 U/L.",
+        prompt: "Which of the following best interprets the change in her blood results?",
+        options: [
+          "Progressive pre-eclampsia",
+          "Sampling or laboratory error",
+          "Thrombocytopenia of pregnancy",
+          "Viral gastroenteritis",
+          "Viral hepatitis",
+        ],
+        correct: 0,
+        explanation:
+          "In 2 hours her platelets fell from 168 to 131 x 10^9/L and her AST rose from 30 to 88 U/L, while she developed nausea and vomiting. NICE counts platelets below 150 x 10^9/L and transaminases above 40 U/L as organ involvement, and lists progressive deterioration in liver function or platelet count among reasons for planned birth. She does not yet have HELLP, since her platelets are above 100 x 10^9/L and LDH is below 600 U/L, but the trend shows it may be developing. Gestational thrombocytopenia is a slow, mild fall without liver injury. Two values moving together with new symptoms are unlikely to be error. Gastroenteritis and hepatitis do not explain her hypertension and proteinuria.",
+        keyFeature: { topic: "pre-eclampsia", n: 3 },
+        source: "nice-ng133",
+      },
+    ],
+    sources: [S.nice, S.wao],
+    ...META,
+  },
+
+  /* 43 Night-time chest pain pathway -------------------------------------- */
+  {
+    id: "pre-eclampsia-43",
+    topic: "pre-eclampsia",
+    alsoTopics: ["chest-pain"],
+    title: "Chest pain pathway at three in the morning",
+    stem:
+      "A 43-year-old woman, G3P2 at 34 weeks and 2 days, presents to the emergency department at 0300 with 4 hours of pressure across her lower chest and upper abdomen, with nausea. Her last birth was 12 years ago. Her two earlier pregnancies were normotensive. She smokes 10 cigarettes a day. Her BMI was 37 kg/m2 at her first prenatal visit. At 16 weeks her BP was 118 mmHg systolic and 76 mmHg diastolic. She takes a prenatal vitamin.\n\nTriage started the chest pain pathway. The ECG shows sinus tachycardia without ST changes. She is tender in the epigastrium and right upper quadrant. The chest is clear, and the calves are soft and symmetric. Reflexes are 3+. The fetal heart rate is 150/minute.",
+    vitals: { temperature: "37.0°C oral", pulse: "102/minute", resp: "18/minute", bp: "152/100 mmHg", o2sat: "97% on room air", weight: "98 kg" },
+    questions: [
+      {
+        id: "q1",
+        kind: "single",
+        prompt: "Which of the following is the most likely explanation for her pain?",
+        options: [
+          "Acute coronary syndrome",
+          "Acute pericarditis",
+          "Biliary colic",
+          "Gastroesophageal reflux",
+          "Pre-eclampsia",
+        ],
+        correct: 4,
+        explanation:
+          "Epigastric and right upper quadrant tenderness with nausea, a BP that has risen from 118/76 mmHg at 16 weeks to 152/100 mmHg, and brisk reflexes at 34 weeks point to pre-eclampsia with liver involvement. Pain under the ribs is easily read as cardiac in a 43-year-old smoker. An ECG without ST changes does not support acute coronary syndrome, and it would not explain the new hypertension or brisk reflexes. Pericarditis gives pleuritic, positional pain, often with ECG changes. Reflux and biliary colic can cause this pain, but neither explains the rise in BP.",
+        keyFeature: { topic: "pre-eclampsia", n: 1 },
+        source: "nice-ng133",
+      },
+      {
+        id: "q2",
+        kind: "menu",
+        select: 3,
+        prompt: "Which of the following features of her history increase her risk of pre-eclampsia?",
+        options: [
+          "Age of 43 years",
+          "BMI of 37 kg/m2",
+          "Pregnancy interval of 12 years",
+          "Prenatal vitamin use",
+          "Smoking 10 cigarettes a day",
+          "Two earlier normotensive births",
+        ],
+        correct: [0, 1, 2],
+        explanation:
+          "NICE lists age of 40 years or older, a pregnancy interval of more than 10 years and a BMI of 35 kg/m2 or more at the first visit as moderate risk factors for pre-eclampsia, and she has all three. Smoking harms the pregnancy in many ways, but a systematic review of nearly 834 000 women found it linked with a lower risk of pre-eclampsia, with a relative risk of about 0.68, so it does not add to her risk. Two earlier normotensive births lower her risk compared with a first pregnancy. Prenatal vitamins do not raise the risk.",
+        keyFeature: { topic: "pre-eclampsia", n: 2 },
+        source: "conde-agudelo-smoking",
+      },
+      {
+        id: "q3",
+        kind: "single",
+        update:
+          "Troponin is below the reference limit. Hemoglobin 108 g/L, platelets 84 x 10^9/L, AST 264 U/L, ALT 221 U/L, LDH 780 U/L, haptoglobin below the detection limit, creatinine 74 umol/L, glucose 4.9 mmol/L and INR 1.0.",
+        prompt: "Which of the following is the most likely diagnosis given these results?",
+        options: [
+          "Acute cholecystitis",
+          "Autoimmune hepatitis",
+          "HELLP syndrome",
+          "Myocardial infarction",
+          "Viral hepatitis",
+        ],
+        correct: 2,
+        explanation:
+          "Platelets of 84 x 10^9/L, an AST of 264 U/L and an LDH of 780 U/L with undetectable haptoglobin show hemolysis, liver injury and a low platelet count, which in a woman with new hypertension at 34 weeks is HELLP syndrome. ACOG uses an LDH of 600 U/L or more, transaminases more than twice normal and platelets below 100 x 10^9/L. A normal troponin and ECG argue against myocardial infarction. Cholecystitis and viral or autoimmune hepatitis do not cause hemolysis with a falling platelet count, and none explains her new hypertension. A normal glucose and INR argue against acute fatty liver of pregnancy.",
+        keyFeature: { topic: "pre-eclampsia", n: 3 },
+        source: "acog-222",
+      },
+      {
+        id: "q4",
+        kind: "single",
+        update:
+          "The chest pain order set generated the medication orders below before the results returned. None has been given. Obstetrics plans birth today.",
+        prompt: "Which of the following ordered medications is most important to cancel now?",
+        options: [
+          "acetaminophen 1 g PO",
+          "enoxaparin 100 mg SC",
+          "morphine 2.5 mg IV",
+          "nitroglycerin 0.4 mg SL",
+          "ondansetron 4 mg IV",
+        ],
+        correct: 1,
+        explanation:
+          "Enoxaparin 100 mg SC is a therapeutic dose of about 1 mg/kg for her 98 kg, ordered for an acute coronary syndrome she does not have. With HELLP and platelets of 84 x 10^9/L it adds bleeding risk at the liver and at surgery. The SOAP consensus advises waiting at least 24 hours after a therapeutic dose before neuraxial anesthesia, so it could force general anesthesia for a caesarean today. Nitroglycerin is not needed without ischemia, but it is a short-acting drug that would not block neuraxial anesthesia. Morphine, ondansetron and acetaminophen are reasonable for her pain and nausea.",
+        keyFeature: { topic: "pre-eclampsia", n: 3 },
+        source: "soap-anticoagulants",
+      },
+    ],
+    sources: [S.nice, S.conde, S.acog222, S.leffert],
     ...META,
   },
 ];

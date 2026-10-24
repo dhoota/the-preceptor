@@ -271,4 +271,65 @@ export const LOC_S87: Samp[] = [
     sources: [S.edlow, S.dawson, S.gcsAid],
     ...META,
   },
+  /* 52 Confusion with bruising, history through a language barrier ----------- */
+  {
+    id: "loc-52",
+    topic: "loc",
+    alsoTopics: ["headache"],
+    title: "Confused and bruised, four months in Canada",
+    stem:
+      "A 41-year-old woman is brought to the emergency department by her husband because she has been confused and sleepy since last night. The family arrived in Canada from Afghanistan 4 months ago. She and her husband speak Dari and little English. Their 11-year-old son, who speaks English well, offers to interpret. Using gestures, the husband shows that she has had headaches and easy bruising for a week and has been sad since leaving family behind. She takes no medications. She opens her eyes to voice, is confused and obeys commands. There are petechiae on her legs and bruises on both arms. Her neck is supple, and there is no focal weakness. Capillary glucose is 5.8 mmol/L.",
+    vitals: { temperature: "37.6°C oral", pulse: "108/minute", resp: "18/minute", bp: "148/88 mmHg", o2sat: "98% on room air", weight: "62 kg" },
+    questions: [
+      {
+        id: "q1",
+        kind: "single",
+        prompt: "Which of the following is the most appropriate way to obtain a detailed history from her husband?",
+        options: ["Ask a bilingual cleaner to help", "Ask her son to interpret", "Machine translation app on a phone", "Professional interpreter by phone", "Simple English with gestures"],
+        correct: 3,
+        explanation:
+          "A professional Dari interpreter, here by phone, gives the most accurate account of how she differs from her usual self and protects both the patient and the child. Karliner and colleagues found that professional interpreters improve communication, including errors and comprehension, as well as use of services, clinical outcomes and satisfaction, compared with ad hoc interpreters such as relatives. An 11-year-old son lacks medical vocabulary, may leave out or soften what he hears and should not carry his mother's illness. A bilingual cleaner is untrained and breaches her privacy. Machine translation and simple English with gestures risk errors in the details that matter most: timing, bleeding, medicines and her usual state.",
+        keyFeature: { topic: "loc", n: 3 },
+        source: "karliner-interpreters",
+      },
+      {
+        id: "q2",
+        kind: "single",
+        update: "A walk-in clinic note from 3 days ago reads 'headache, likely stress after immigration'.",
+        prompt: "Which of the following findings is most important in deciding that stress cannot explain her presentation?",
+        options: ["Bruises and petechiae on her limbs", "Headaches over the past week", "Low mood since leaving family", "Pulse of 108/minute", "Recent move to a new country"],
+        correct: 0,
+        explanation:
+          "New bruising and petechiae mean a low platelet count or a bleeding disorder, and with confusion they point to a serious systemic cause such as a thrombotic microangiopathy or an intracranial bleed. Edlow and colleagues list psychiatric causes as a rare mechanism of coma, after structural lesions and diffuse neuronal dysfunction, so stress is a conclusion reached only once treatable causes are excluded. Headache, low mood and a recent move are common with stress and do not separate it from organic disease. A pulse of 108/minute can follow anxiety, fever or anemia and is not specific.",
+        keyFeature: { topic: "loc", n: 4 },
+        source: "edlow-coma",
+      },
+      {
+        id: "q3",
+        kind: "single",
+        update: "Through an interpreter, her husband says she has never had cancer or a transplant. Hemoglobin is 74 g/L, platelets 12 x 10^9/L, MCV 86 fL, reticulocytes 6%, haptoglobin undetectable, INR 1.1 and creatinine 118 umol/L. The film shows schistocytes. CT head is normal.",
+        prompt: "Which of the following is the most likely cause of her decreased level of consciousness?",
+        options: ["Bacterial meningitis", "Disseminated intravascular coagulation", "Hemolytic uremic syndrome", "Immune thrombocytopenia", "Thrombotic thrombocytopenic purpura"],
+        correct: 4,
+        explanation:
+          "Hemolysis with schistocytes, an undetectable haptoglobin and reticulocytes of 6%, platelets of 12 x 10^9/L and confusion point to thrombotic thrombocytopenic purpura. Her PLASMIC score is 7 of 7: platelets below 30 x 10^9/L, hemolysis, no cancer, no transplant, MCV below 90 fL, INR below 1.5 and creatinine below 177 umol/L. Bendapudi and colleagues place a score of 6 or 7 at high risk of severe ADAMTS13 deficiency. An INR of 1.1 argues against disseminated intravascular coagulation. Hemolytic uremic syndrome usually follows bloody diarrhea and causes more kidney injury than a creatinine of 118 umol/L. Immune thrombocytopenia does not cause schistocytes or hemolysis. Meningitis does not explain the blood film.",
+        keyFeature: { topic: "loc", n: 1 },
+        source: "plasmic-2017",
+      },
+      {
+        id: "q4",
+        kind: "menu",
+        prompt: "Which of the following treatments are most appropriate to start for her now?",
+        options: ["Eculizumab infusion", "Heparin infusion", "IV immunoglobulin", "Methylprednisolone IV", "Plasma exchange", "Platelet transfusion", "Tranexamic acid IV", "Vitamin K IV"],
+        select: 2,
+        correct: [3, 4],
+        explanation:
+          "The ISTH good practice statements advise emergency plasma exchange together with corticosteroids when the suspicion of thrombotic thrombocytopenic purpura is high, with urgent transfer to a centre that can perform the exchange if needed. Exchange removes the autoantibody and replaces ADAMTS13, and methylprednisolone suppresses antibody production. The same statements say platelet transfusion is usually avoided and unnecessary in most cases, despite a count of 12 x 10^9/L. Heparin, tranexamic acid and vitamin K do not treat the cause, and her INR is normal. Eculizumab treats complement-mediated thrombotic microangiopathy, and IV immunoglobulin is a treatment for immune thrombocytopenia.",
+        keyFeature: { topic: "loc", n: 2 },
+        source: "isth-ttp-gps",
+      },
+    ],
+    sources: [S.karliner, S.edlow, S.plasmic, S.isthGps],
+    ...META,
+  },
 ];

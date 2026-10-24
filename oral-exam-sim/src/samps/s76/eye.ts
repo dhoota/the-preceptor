@@ -34,11 +34,6 @@ const S = {
     citation: "Public Health Agency of Canada. Syphilis guide: risk factors and clinical manifestations. Canadian guidelines on sexually transmitted infections. 2023.",
     url: "https://www.canada.ca/en/public-health/services/infectious-diseases/sexual-health-sexually-transmitted-infections/canadian-guidelines/syphilis/risk-factors-clinical-manifestation.html",
   },
-  phacSyphTx: {
-    id: "phac-syphilis-treatment",
-    citation: "Public Health Agency of Canada. Syphilis guide: treatment and follow-up. Canadian guidelines on sexually transmitted infections. Updated 2026.",
-    url: "https://www.canada.ca/en/public-health/services/infectious-diseases/sexual-health-sexually-transmitted-infections/canadian-guidelines/syphilis/treatment-follow-up.html",
-  },
   cdcSti: {
     id: "cdc-sti-2021",
     citation: "Workowski KA, Bachmann LH, Chan PA, et al. Sexually transmitted infections treatment guidelines, 2021. MMWR Recomm Rep. 2021.",
@@ -247,6 +242,181 @@ export const EYE_S76: Samp[] = [
       },
     ],
     sources: [S.lay, S.azari],
+    ...META,
+  },
+  /* 41 Floaters and drops that did not help ------------------------------------ */
+  {
+    id: "eye-41",
+    topic: "eye",
+    title: "Blurred vision after a faded rash",
+    stem:
+      "A 34-year-old man presents to the emergency department with 10 days of blurred vision and floaters in both eyes, worse on the left. Both eyes ache, look mildly red and are sensitive to light. A walk in clinic diagnosed conjunctivitis a week ago and prescribed antibiotic drops, which have not helped. Three weeks ago he had a rash on his palms and soles that faded without treatment. He has sex with men and has had several new partners this year. He welds for a living and wears a welding mask. He had a head cold 2 weeks ago. Since moving apartments last month his low back has ached. He takes no medications. Visual acuity is 20/40 on the right and 20/100 on the left. Pupils are equal and reactive with no relative afferent defect. There is redness around each cornea.",
+    vitals: { temperature: "37.1°C oral", pulse: "80/minute", resp: "14/minute", bp: "126/80 mmHg", o2sat: "99% on room air" },
+    questions: [
+      {
+        id: "q1",
+        kind: "single",
+        prompt: "Which of the following features of his history best points to the cause of his eye disease?",
+        options: [
+          "Back ache since moving apartments",
+          "Faded rash on palms and soles",
+          "Head cold 2 weeks ago",
+          "Light sensitivity in both eyes",
+          "Welding at work for many years",
+        ],
+        correct: 1,
+        explanation:
+          "Rough red spots on the palms and soles are the rash of secondary syphilis, and the Canadian guide lists uveitis and retinitis, with blurred vision, red eyes and floaters, among its signs. New partners add to the risk. Back pain that began after lifting is mechanical, not the inflammatory back pain linked to anterior uveitis. Welding causes a painful surface burn of the cornea, not floaters, and he wears a mask. A cold causes a surface conjunctivitis without floaters. Light sensitivity occurs with any uveitis and does not point to a cause.",
+        keyFeature: { topic: "eye", n: 2 },
+        source: "phac-syphilis-clinical",
+      },
+      {
+        id: "q2",
+        kind: "single",
+        prompt: "Which of the following is the most important next part of the examination of his eyes?",
+        options: [
+          "Dilated fundus examination",
+          "Fluorescein staining of the corneas",
+          "Gonioscopy of both angles",
+          "Tonometry of both eyes",
+          "Upper lid eversion",
+        ],
+        correct: 0,
+        explanation:
+          "Floaters with acuity of 20/100 point to inflammation behind the lens, so the vitreous, retina and optic disc must be seen through a dilated pupil. Ocular syphilis can cause uveitis, retinitis, neuroretinitis and optic neuritis, and a person with eye symptoms and possible syphilis needs a full eye examination. Fluorescein and lid eversion look at the surface and would not explain floaters. Tonometry is part of the examination of a uveitis, but it does not find the cause of his vision loss. Gonioscopy is an ophthalmology test of the drainage angle.",
+        keyFeature: { topic: "eye", n: 3 },
+        source: "cdc-sti-2021",
+      },
+      {
+        id: "q3",
+        kind: "single",
+        update:
+          "Dilated examination shows vitreous cells in both eyes and a pale yellow patch at the left macula. Rapid plasma reagin is reactive at 1:128 and a treponemal test is reactive. His neurologic examination is normal.",
+        prompt: "Which of the following is the most likely cause of the loss of vision in this patient?",
+        options: [
+          "Acute retinal necrosis",
+          "HLA-B27 anterior uveitis",
+          "Sarcoid panuveitis",
+          "Syphilitic uveitis",
+          "Toxoplasma retinochoroiditis",
+        ],
+        correct: 3,
+        explanation:
+          "Inflammation of both eyes with vitreous cells and a macular lesion, a recent rash on the palms and soles and reactive nontreponemal and treponemal tests make this syphilitic uveitis. Floaters and reduced vision did not fit the walk in label of conjunctivitis. Acute retinal necrosis causes spreading white patches of dead retina, usually in one eye. HLA-B27 uveitis is an anterior uveitis, usually in one eye at a time, without a macular lesion. Toxoplasma usually causes one focal scar and lesion in one eye. None of these explains the rash or the serology.",
+        keyFeature: { topic: "eye", n: 1 },
+        source: "phac-syphilis-clinical",
+      },
+      {
+        id: "q4",
+        kind: "menu",
+        select: 3,
+        prompt: "Which of the following are the most appropriate steps in the management of this patient?",
+        options: [
+          "Benzathine penicillin G IM once",
+          "HIV test at diagnosis",
+          "IV penicillin G for 10 to 14 days",
+          "Lumbar puncture before any treatment",
+          "MRI of the brain and orbits",
+          "Oral doxycycline for 28 days",
+          "Prednisolone drops as sole therapy",
+          "Same day ophthalmology consultation",
+        ],
+        correct: [1, 2, 7],
+        explanation:
+          "Ocular syphilis is treated like neurosyphilis, with aqueous crystalline penicillin G 3 to 4 million units IV every 4 hours for 10 to 14 days, and needs prompt ophthalmology involvement. Everyone with ocular syphilis should be tested for HIV. With isolated eye findings, reactive serology and a normal neurologic examination, CSF testing is not needed before treatment, and an MRI adds delay without changing it. A single IM dose of benzathine penicillin or oral doxycycline treats early syphilis, not eye disease. Steroid drops alone leave the infection untreated.",
+        keyFeature: { topic: "eye", n: 2 },
+        source: "cdc-sti-2021",
+      },
+    ],
+    sources: [S.phacSyphClin, S.cdcSti],
+    ...META,
+  },
+  /* 42 Ring of blood after a fall ----------------------------------------------- */
+  {
+    id: "eye-42",
+    topic: "eye",
+    title: "Older woman who fell against the counter",
+    stem:
+      "An 81-year-old woman is brought to the emergency department by ambulance 1 hour after she tripped at home and struck her left eye on the corner of a kitchen counter. She did not lose consciousness. The left eye is painful and she says she cannot see well with it. She had cataract surgery through a large incision in both eyes 25 years ago. She has hypertension treated with amlodipine and takes no anticoagulant or antiplatelet drug. The left lids are swollen and bruised. A bulging, bright red hemorrhage covers the whole white of the left eye in a full ring around the cornea. The right eye is normal. The triage note reads subconjunctival hemorrhage after a fall.",
+    vitals: { temperature: "36.6°C oral", pulse: "88/minute", resp: "16/minute", bp: "168/90 mmHg", o2sat: "97% on room air" },
+    questions: [
+      {
+        id: "q1",
+        kind: "single",
+        prompt: "Which of the following is the most appropriate next step in the assessment of her left eye?",
+        options: [
+          "Applanation tonometry",
+          "Dilated fundus examination",
+          "Ocular ultrasound",
+          "Upper lid eversion",
+          "Visual acuity in each eye",
+        ],
+        correct: 4,
+        explanation:
+          "Visual acuity is the first measurement in every eye complaint, and after trauma it is the baseline that guides urgency and predicts outcome. It needs no pressure on the globe. A dense ring of bulging hemorrhage after a fall raises concern for an open globe, so pressure measurement is contraindicated and any pressure on the eye, such as everting the lid, must be avoided because it can push out the eye contents. Ultrasound is not advised when an open globe is likely. A dilated fundus view comes after the front of the eye has been examined.",
+        keyFeature: { topic: "eye", n: 3 },
+        source: "open-globe",
+      },
+      {
+        id: "q2",
+        kind: "single",
+        update:
+          "Visual acuity is hand motion on the left and 20/30 on the right. Slit lamp examination, with no pressure on the lids, shows a 1 mm layer of blood in the left anterior chamber. The left anterior chamber is deeper than the right.",
+        prompt: "Which of the following is the most likely diagnosis in her left eye?",
+        options: [
+          "Isolated traumatic hyphema",
+          "Occult scleral rupture",
+          "Orbital floor fracture",
+          "Retrobulbar hemorrhage",
+          "Traumatic optic neuropathy",
+        ],
+        correct: 1,
+        explanation:
+          "A dense ring of subconjunctival hemorrhage after a fall, a hyphema, a chamber deeper than the other eye and vision of hand motion point to a posterior rupture hidden under the blood. In adults over 65, globe ruptures are the most common open globe injury and usually follow falls, and old large cataract incisions are weak points. A 1 mm hyphema alone would not reduce vision to hand motion or deepen the chamber. Retrobulbar hemorrhage causes a tense, proptotic orbit. A floor fracture causes double vision or cheek numbness. Optic neuropathy does not explain the chamber findings.",
+        keyFeature: { topic: "eye", n: 5 },
+        source: "open-globe",
+      },
+      {
+        id: "q3",
+        kind: "single",
+        update: "A rigid shield is placed over the left eye. CT of the orbits shows no fracture, no foreign body and no clear defect in the globe.",
+        prompt: "Which of the following is the most appropriate next step in the management of her left eye?",
+        options: [
+          "Discharge with clinic review tomorrow",
+          "MRI of the orbits within 24 hours",
+          "Ocular ultrasound to confirm rupture",
+          "Ophthalmology for surgical exploration",
+          "Repeat CT of the orbits in 24 hours",
+        ],
+        correct: 3,
+        explanation:
+          "CT is specific for an open globe but its sensitivity is only about 50 to 80%, so a normal scan does not rule one out. Her clinical signs remain those of an occult rupture, and the eye needs exploration by ophthalmology in the operating room. Ultrasound is not advised when an open globe is suspected because the probe presses on the eye. A repeat CT or an MRI delays repair without excluding the injury. Discharge would leave an open eye unrepaired overnight with a risk of infection and loss of contents.",
+        keyFeature: { topic: "eye", n: 5 },
+        source: "open-globe",
+      },
+      {
+        id: "q4",
+        kind: "menu",
+        select: 4,
+        prompt: "Which of the following are appropriate for this patient while she waits for surgery on her left eye?",
+        options: [
+          "Antiemetic medication",
+          "Applanation tonometry",
+          "Broad spectrum IV antibiotics",
+          "Nothing by mouth",
+          "Ocular ultrasound",
+          "Pressure patch",
+          "Tetanus prophylaxis",
+          "Upper lid eversion",
+        ],
+        correct: [0, 2, 3, 6],
+        explanation:
+          "While an open globe waits for repair, an antiemetic prevents the straining of vomiting that can push out eye contents. Broad spectrum IV antibiotics, such as vancomycin with ceftazidime, are given for at least 48 hours, and tetanus status is brought up to date. She is kept nothing by mouth for the anesthetic. Tonometry is contraindicated, and a pressure patch or lid eversion presses on the globe. Ultrasound is not advised once an open globe is likely. A rigid shield, already in place, protects the eye without touching it.",
+        keyFeature: { topic: "eye", n: 5 },
+        source: "open-globe",
+      },
+    ],
+    sources: [S.zhou],
     ...META,
   },
 ];
