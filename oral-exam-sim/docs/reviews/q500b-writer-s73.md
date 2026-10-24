@@ -68,3 +68,48 @@ Bank counts before this batch (all batches and alsoTopics questions): KF1 15, KF
 - dvt-pe-48 q2: the source says a pulsatile mass is present in only a few patients with pseudoaneurysm. The explanation says so.
 - Thrombosis Canada guide years follow the bank's existing citations (2025). The PDFs carry no printed date.
 - The web search budget ran out late in drafting. Every source above had been verified before that point.
+
+## Revision 1
+
+Fixes for every failed item in `docs/reviews/q500b-qa-s73.md`. Before rebuilding, each new angle was checked by keyword across all of `src/samps` and `src/cases`, not only `topic: "dvt-pe"` (septic thrombophlebitis, whole leg ultrasound, postpartum duration, gestalt for arm and neck DVT, anti-Xa monitoring in pregnancy, apixaban drug levels). No new source was added. Every rebuilt explanation draws only on sources already verified for this batch.
+
+| Item | Fix |
+|---|---|
+| dvt-pe-48 stem | New patient frame, so it no longer reads as infectious-diseases-50: a 46-year-old man who injects fentanyl into the left groin. No hepatitis C and no smoking. He sleeps at a shelter, has no phone and has missed clinic visits. Added "The right leg is normal." so "pitting edema confined to the symptomatic leg" traces to the stem. q1 distractors changed to match (alcohol, fentanyl, forearm cellulitis, shelter). |
+| dvt-pe-48 q2 | Pseudoaneurysm question replaced. KF2 now asks which finding suggests the thrombosed femoral vein is infected (septic thrombophlebitis). The key is fever with rigors and a groin sinus (Jackman 2026: large proximal veins in long-term injectors, fever, chills, rigors and a draining sinus, diagnosed by CT or duplex). The only other bank item is the superficial vein in dvt-pe-11. |
+| dvt-pe-48 q3 | Update is now "The rest of his examination is unremarkable." It no longer names a q2 option. Pronouns changed. Score unchanged at 4. |
+| dvt-pe-48 q4 | Rebuilt as a choice of ultrasound strategy for a likely patient who may not return. The key is whole leg compression ultrasound. Thrombosis Canada: a negative proximal scan needs a D-dimer and a repeat in 5 to 7 days, while a negative whole leg scan needs neither. This differs from dvt-pe-28 q4, which keys the repeat scan, and from dvt-pe-36 q2. |
+| dvt-pe-49 stem | Moved away from chest-pain-04: now day 16 postpartum, 12 hours of symptoms, pain under the left breast, pulse 106, resp 20, O2 sat 95%, weight 66 kg, and a left lower lobe PE. |
+| dvt-pe-49 q3 | Update is now "The rest of her examination is unremarkable." It no longer names the q2 key. |
+| dvt-pe-49 q4 | Breastfeeding anticoagulant question replaced with KF6 duration. A PE 16 days after birth needs at least 3 months in total. Stopping 6 weeks after delivery would give less than 4 weeks of treatment. Thrombosis Canada pregnancy VTE treatment guide: minimum total 3 months, and at least 6 weeks postpartum. This contrasts with dvt-pe-40, an antepartum clot keyed at 6 weeks after delivery. |
+| dvt-pe-50 q3 | Update is now "His chest examination is otherwise unremarkable." It no longer names the q2 key. The key was reworded to "Poor at separating children with PE" for position balance. Content unchanged. |
+| dvt-pe-51 stem | Added "she has no chest pain or shortness of breath". |
+| dvt-pe-51 q2 | The collateral vein and abscess question (a repeat of dvt-pe-17 q1) was replaced with KF3. Pretest probability for arm and neck DVT is set by physician gestalt (Thrombosis Canada DVT diagnosis guide: Constans has had only limited validation). The distractors are rules built for leg DVT or for PE. |
+| dvt-pe-51 q3 | The duplex first question (a repeat of dvt-pe-17 and dvt-pe-43) was replaced with KF2. Which finding, if present, would suggest PE as well as the jugular clot: a respiratory rate of 26/minute (Thrombosis Canada PE diagnosis guide signs). The other options are local signs of the clot. Its update no longer names a q2 key. The unsupported "no chest symptoms" claim is now a stem fact. |
+| dvt-pe-51 q4 | Weight-based LMWH dosing (a repeat of dvt-pe-05 and dvt-pe-30) was replaced with KF6 laboratory monitoring in pregnancy. The key is no routine laboratory monitoring. Thrombosis Canada: no routine peak anti-Xa testing except at extremes of weight, after a breakthrough clot or at very high risk. Trough anti-Xa only in severe renal dysfunction. Routine platelet counts not suggested. The Arya 2001 source is no longer cited and was removed. |
+| dvt-pe-52 q2 | The straight-to-CT question was replaced with KF6. The test that measures apixaban is an apixaban-calibrated anti-Xa level, because the INR and aPTT are often normal on apixaban (Thrombosis Canada apixaban guide). Imaging confirmation moved into its update. q3's update is now "You review his medications with him and his daughter." The pleural effusion moved to the q4 update, so the q4 distractor still traces to the case. tc-pe-dx is no longer listed for 52. Related bank items: cva-05 (a write-in drug-specific anti-Xa level before thrombolysis) and multiple-trauma (dabigatran and thrombin time). Neither is a VTE breakthrough setting. |
+
+### After revision
+
+- Questions: 20 (18 single, 2 menu).
+- Single key positions 0 to 4: 4, 4, 3, 3, 4 (max 22 percent).
+- The key is the single longest option in 5 of 18 singles (28 percent, under 35).
+- Key features:
+
+| Key feature | Count | Items |
+|---|---|---|
+| KF1 | 5 | 48 q1, 49 q1, 50 q1, 51 q1, 52 q3 |
+| KF2 | 4 | 48 q2, 49 q2, 50 q2, 51 q3 |
+| KF3 | 4 | 48 q3, 50 q3, 51 q2, 52 q1 |
+| KF4 | 1 | 48 q4 |
+| KF5 | 2 | 49 q3, 50 q4 |
+| KF6 | 3 | 49 q4, 51 q4, 52 q2 |
+| KF7 | 1 | 52 q4 |
+
+- Tests: `SAMP_BATCH=s73 npx vitest run tests/samps.test.ts tests/samp-quality.test.ts tests/citations.test.ts --testTimeout=120000` passes 128 of 128. tsc shows nothing for samps/s73.
+
+### For the re-review
+
+- 52 q2 tests anticoagulant level testing, tagged KF6. It is borderline for "choose anticoagulation that fits the patient". The explanation stays within the Thrombosis Canada apixaban guide.
+- 48 q2 says the antibiotics should cover Staphylococcus aureus and that blood cultures are needed. Jackman's table lists vancomycin or flucloxacillin for endovascular infection. Blood cultures are standard practice, not quoted from the source.
+- 49 q4 relies on the Thrombosis Canada wording "at least 6 weeks postpartum (with a minimum total duration of 3 months)".

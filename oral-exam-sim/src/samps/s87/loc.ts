@@ -90,7 +90,7 @@ export const LOC_S87: Samp[] = [
     sources: [S.edlow, S.jones, S.btf],
     ...META,
   },
-  /* 49 Nonverbal group home resident in a heat wave -------------------------- */
+  /* 49 Nonverbal group home resident, double dosing -------------------------- */
   {
     id: "loc-49",
     topic: "loc",
@@ -186,14 +186,14 @@ export const LOC_S87: Samp[] = [
       {
         id: "q3",
         kind: "single",
-        update: "The nurse is about to record his Glasgow Coma Scale score and asks how to rate his speech, since he does not yet say words.",
-        prompt: "Which of the following is the most appropriate way to score his verbal response?",
-        options: ["Adult verbal scale, scored as V2", "Age-adapted pediatric verbal scale", "AVPU scale in place of the GCS", "Motor score alone as a proxy", "Not testable as he is preverbal"],
-        correct: 1,
+        update: "Twenty minutes later he is awake, babbling and reaching for his father's keys. His father asks whether this means the tests can be cancelled.",
+        prompt: "Which of the following is the most appropriate response to this change in his alertness?",
+        options: ["Cancel tests now that he is alert", "Check again only if he vomits", "Discharge with teething advice", "Record the change and keep trending", "Stop checks while he is playing"],
+        correct: 3,
         explanation:
-          "The adult verbal scale rates orientation and words, which a 9-month-old cannot give. The Glasgow Coma Scale guidance states that the adult verbal and motor criteria often cannot be used in infants and young children and points to the pediatric adaptation, which rates cooing, babbling and crying instead. Scoring him V2 on the adult scale would record a reduced response that may be normal for his age. Not testable is meant for a barrier such as an endotracheal tube, not for normal development. AVPU is coarser and misses small changes, and the motor score alone discards the eye and verbal information needed to trend him.",
+          "Kleizen and colleagues describe fluctuating consciousness among the neurological presentations of intussusception, so a lively spell does not end the concern raised by an infant who was pale, floppy and hard to keep awake. Recording the time, what he is doing and his responses, in plain words and as a score, lets the team compare the next spell with this one and see whether he is settling or cycling. Cancelling tests or discharging him with teething advice treats a fluctuation as recovery. Checking again only if he vomits, or stopping checks while he plays, leaves gaps in which the next drowsy spell goes unrecorded.",
         keyFeature: { topic: "loc", n: 5 },
-        source: "gcs-faq",
+        source: "kleizen-intussusception",
       },
       {
         id: "q4",
@@ -207,7 +207,7 @@ export const LOC_S87: Samp[] = [
         source: "lin-martore-pocus",
       },
     ],
-    sources: [S.kleizen, S.edlow, S.gcsFaq, S.linMartore],
+    sources: [S.kleizen, S.edlow, S.linMartore],
     ...META,
   },
   /* 51 Drowsy after the headache medications --------------------------------- */
