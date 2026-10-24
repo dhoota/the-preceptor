@@ -1,0 +1,233 @@
+import type { Item } from "@/engine/types";
+import { AAO_SSNHL, AGS_DRIVE, BHOF, ENDO_MEN, FDA_OTC_HA, PIROZZO, POTTER, USPSTF_PSA, USPSTF_TESTIS, meta } from "./common";
+
+export const PART2: Item[] = [
+  {
+    ...meta("rn-s32-11", {
+      need: "HPM",
+      topic: "Telling the epididymis from a testicular lump",
+      cjmm: "evaluate",
+      process: "teaching",
+      difficulty: 2,
+      stem: "A 20-year-old client had surgery for an undescended right testicle at age 2. Because of this history, the nurse teaches testicular self-examination. Which statement by the client shows understanding?",
+      rationale:
+        "A history of an undescended testicle raises the risk of testicular cancer, so the client learns what is normal for him. The usual sign of cancer is a firm, painless lump on the testicle. The soft, cordlike epididymis at the back of each testicle is normal. The exam is easiest after a warm shower, when the scrotal skin is relaxed. Routine screening of men without risk factors is not recommended.",
+      sources: [POTTER, USPSTF_TESTIS],
+    }),
+    kind: "mc",
+    options: [
+      { text: "\"I will check right after a cold swim, when the skin is tight.\"", why: "Cold tightens the scrotum. A warm shower relaxes the skin so each testicle is easier to feel." },
+      { text: "\"I will report the soft cord that I can feel at the back of each testicle.\"", why: "The soft cord at the back is the epididymis, a normal structure." },
+      { text: "\"I only need to be seen if a lump I find is painful.\"", why: "Testicular cancer usually presents as a painless lump, so pain is not the trigger." },
+      { text: "\"I will report a firm lump on the testicle even if it does not hurt.\"", why: "A firm, painless lump is the most common sign of testicular cancer." },
+    ],
+    correct: 3,
+  },
+  {
+    ...meta("rn-s32-12", {
+      need: "HPM",
+      topic: "Answering a question about PSA testing at 58",
+      cjmm: "action",
+      process: "communication",
+      difficulty: 3,
+      stem: "A 58-year-old client has no urinary symptoms and no family history of prostate cancer. He asks the clinic nurse, \"Should I get the PSA blood test?\" Which response is most appropriate?",
+      rationale:
+        "For men aged 55 to 69 the choice to have PSA screening is an individual one. The small chance of fewer prostate cancer deaths is weighed against false positives, biopsies, overdiagnosis and treatment harms. The nurse supports an informed decision with the provider. Screening is not advised for all men of 58. The recommendation against screening starts at 70. A rectal exam is not a recommended screening test.",
+      refs: ["PSA screening for men 55 to 69 years is an individual decision. Screening is not recommended from 70 years."],
+      sources: [USPSTF_PSA],
+    }),
+    kind: "mc",
+    options: [
+      { text: "\"Yes. Every man your age should have a yearly PSA test.\"", why: "PSA screening at this age is an individual choice, not a routine test for every man." },
+      { text: "\"It is your choice. Let's go over its benefits and harms first.\"", why: "Shared decision making fits the 55 to 69 age group, where benefit and harm are closely balanced." },
+      { text: "\"No. PSA testing is not advised until you turn 70.\"", why: "The recommendation against screening applies from 70, not before it." },
+      { text: "\"A rectal exam alone is enough to screen for prostate cancer at your age.\"", why: "A digital rectal exam is not recommended as a screening test for prostate cancer." },
+    ],
+    correct: 1,
+  },
+  {
+    ...meta("rn-s32-13", {
+      need: "HPM",
+      topic: "Content of a prostate screening decision talk",
+      cjmm: "generate",
+      process: "teaching",
+      difficulty: 3,
+      stem: "A 63-year-old client wants to decide with his primary health care provider whether to have PSA screening. The nurse prepares points for the discussion. Which points are accurate? Select all that apply.",
+      rationale:
+        "Screening men aged 55 to 69 may slightly lower the chance of dying of prostate cancer. A raised PSA is often a false positive and can lead to biopsy with pain and infection risk. Some cancers found would never have caused harm in the man's lifetime. Surgery and radiation can cause erectile dysfunction and urinary incontinence. A normal PSA does not rule out cancer. Screening is not recommended from 70 years.",
+      refs: ["PSA screening for men 55 to 69 years is an individual decision. Screening is not recommended from 70 years."],
+      sources: [USPSTF_PSA],
+    }),
+    kind: "sata",
+    options: [
+      { text: "Screening may slightly lower the risk of prostate cancer death", why: "Trials show a small reduction in prostate cancer deaths for men aged 55 to 69." },
+      { text: "A normal PSA result means prostate cancer is not present", why: "Some cancers occur with a PSA in the normal range, so a normal result does not exclude cancer." },
+      { text: "A raised PSA can lead to biopsy and its complications", why: "False positives are common and biopsy can cause pain, bleeding and infection." },
+      { text: "Screening is advised for all men aged 70 years and older", why: "The recommendation is against PSA screening from 70 years." },
+      { text: "Some cancers found would cause no harm in his lifetime", why: "Overdiagnosis is a known harm. Slow cancers may be treated without benefit." },
+      { text: "Treatment can cause erectile dysfunction or incontinence", why: "Surgery and radiation carry these long-term risks." },
+      { text: "A yearly digital rectal exam can replace the PSA blood test", why: "The digital rectal exam is not recommended as a screening test." },
+    ],
+    correct: [0, 2, 4, 5],
+  },
+  {
+    ...meta("rn-s32-14", {
+      need: "HPM",
+      topic: "Bone density testing in a man on hormone therapy for cancer",
+      cjmm: "prioritize",
+      process: "clinical-judgment",
+      difficulty: 3,
+      stem: "The clinic nurse reviews four male clients for bone health follow-up. None has had a bone density test. Which client should the nurse identify as most in need of bone density testing?",
+      rationale:
+        "Androgen deprivation therapy lowers testosterone and speeds bone loss, so men receiving it are tested for osteoporosis. Two years of leuprolide puts this client at high risk. A wrist fracture from a ladder fall is a trauma fracture, not a fragility fracture. A man of 55 with a BMI of 31 who walks daily has no listed risk factor. Controlled hypertension on amlodipine does not cause bone loss.",
+      sources: [ENDO_MEN, BHOF],
+    }),
+    kind: "mc",
+    options: [
+      { text: "A 67-year-old who has taken leuprolide for prostate cancer for 2 years", why: "Androgen deprivation therapy causes rapid bone loss and is an indication for bone density testing." },
+      { text: "A 48-year-old who broke a wrist falling from a ladder", why: "A fracture from a fall from height is a trauma fracture, not a sign of fragile bone." },
+      { text: "A 55-year-old with a BMI of 31 who walks every day", why: "Higher body weight and regular walking are not risk factors for bone loss." },
+      { text: "A 60-year-old whose hypertension is well controlled with daily amlodipine", why: "Amlodipine and controlled hypertension do not cause bone loss." },
+    ],
+    correct: 0,
+  },
+  {
+    ...meta("rn-s32-15", {
+      need: "HPM",
+      topic: "Risk factors for bone loss in men",
+      cjmm: "recognize",
+      process: "nursing-process",
+      difficulty: 2,
+      stem: "A 62-year-old man attends a health screening. The nurse reviews his history. Which findings increase his risk for osteoporosis? Select all that apply.",
+      rationale:
+        "Glucocorticoids taken for 3 months or more cause bone loss, and this client has taken prednisone for 9 months. Heavy alcohol use, smoking and a low body weight each raise fracture risk. Low testosterone reduces bone formation in men. Walking daily and a calcium intake that meets daily needs support bone health.",
+      refs: ["Glucocorticoid use for 3 months or more raises osteoporosis risk."],
+      sources: [ENDO_MEN, BHOF],
+    }),
+    kind: "sata",
+    options: [
+      { text: "Walks for 30 minutes each day", why: "Weight-bearing activity supports bone strength." },
+      { text: "Takes prednisone 10 mg daily for 9 months", why: "Long-term glucocorticoid use is a major cause of bone loss." },
+      { text: "Gets 1000 mg of calcium a day from food", why: "Meeting calcium needs supports bone health and does not raise risk." },
+      { text: "Drinks 4 beers each day", why: "Three or more alcoholic drinks a day raise the risk of osteoporosis and fracture." },
+      { text: "Has a BMI of 19", why: "Low body weight is linked to low bone mass." },
+      { text: "Smokes 1 pack of cigarettes a day", why: "Smoking speeds bone loss and raises fracture risk." },
+      { text: "Has a low morning testosterone level", why: "Hypogonadism reduces bone formation in men." },
+    ],
+    correct: [1, 3, 4, 5, 6],
+  },
+  {
+    ...meta("rn-s32-16", {
+      need: "HPM",
+      topic: "Warning signs of unsafe driving in an older adult",
+      cjmm: "recognize",
+      process: "nursing-process",
+      difficulty: 3,
+      stem: "The daughter of an 81-year-old client tells the clinic nurse she is worried about her father's driving. The nurse records her report. Click to highlight the findings that suggest unsafe driving.",
+      rationale:
+        "Getting lost on a familiar route, new dents and a missed stop sign are warning signs of unsafe driving in older adults. Trouble turning the head limits checks of traffic at junctions and when merging. Driving only by day, wearing glasses, having had a recent eye exam and using a GPS are adaptive habits that support safety.",
+      sources: [AGS_DRIVE],
+    }),
+    kind: "highlight",
+    passage:
+      "Daughter reports her father [[got lost driving to the church he has attended for 30 years]]. His car has [[two new dents on the rear bumper]]. A neighbor saw him [[drive through a stop sign without slowing]]. He [[drives only in daylight]] and [[wears his glasses when driving]]. He [[had an eye exam 2 months ago]]. He [[has trouble turning his head to check traffic]]. He [[uses a GPS for new places]].",
+    spans: [
+      { text: "got lost driving to the church he has attended for 30 years", why: "Getting lost on a familiar route can signal cognitive decline that affects driving." },
+      { text: "two new dents on the rear bumper", why: "New, unexplained damage to the car is a warning sign of driving errors." },
+      { text: "drive through a stop sign without slowing", why: "Missing traffic signs points to problems with attention or judgment." },
+      { text: "drives only in daylight", why: "Avoiding night driving is a sensible adaptation, not a warning sign." },
+      { text: "wears his glasses when driving", why: "Wearing corrective lenses supports safe driving." },
+      { text: "had an eye exam 2 months ago", why: "A recent eye exam is a protective health habit." },
+      { text: "has trouble turning his head to check traffic", why: "Limited neck movement reduces the ability to scan for traffic." },
+      { text: "uses a GPS for new places", why: "Using a GPS on unfamiliar routes is an adaptive strategy." },
+    ],
+    correct: [0, 1, 2, 6],
+  },
+  {
+    ...meta("rn-s32-17", {
+      need: "HPM",
+      topic: "Next step when an older driver's safety is uncertain",
+      cjmm: "action",
+      process: "clinical-judgment",
+      difficulty: 4,
+      stem: "A 79-year-old client has mild cognitive impairment. His wife reports that he missed a turn last week and braked late at a red light. He has had no crashes and says, \"Driving is how I stay independent.\" Which action should the nurse take?",
+      rationale:
+        "The client shows warning signs but his driving ability is uncertain. A comprehensive driving evaluation by a driver rehabilitation specialist tests skills on the road and can suggest adaptations or a plan to stop. It respects his independence while guarding safety. Saying a license proves safety ignores the warning signs. Reporting to the licensing agency before any evaluation is premature. Waiting for a crash accepts preventable harm.",
+      sources: [AGS_DRIVE],
+    }),
+    kind: "mc",
+    options: [
+      { text: "Reassure him that a valid license shows he drives safely", why: "A license does not reflect recent changes in cognition or driving errors." },
+      { text: "Report him to the state licensing agency today", why: "Reporting comes after evaluation or when danger is imminent, which the stem does not show." },
+      { text: "Suggest an on-road evaluation by a driving specialist", why: "An on-road evaluation gives an objective answer when driving safety is uncertain." },
+      { text: "Advise the family to wait and act only if he has a crash", why: "Waiting for a crash accepts harm that an evaluation could prevent." },
+    ],
+    correct: 2,
+  },
+  {
+    ...meta("rn-s32-18", {
+      need: "HPM",
+      topic: "Hearing complaint needing same-day evaluation",
+      cjmm: "prioritize",
+      process: "clinical-judgment",
+      difficulty: 4,
+      stem: "A clinic nurse returns four telephone calls about hearing. Which client should the nurse arrange to be seen today?",
+      rationale:
+        "Hearing loss in one ear that develops over hours to days may be sudden sensorineural hearing loss. It needs prompt assessment, because treatment works best when started early. A slow change over 3 years fits age-related loss and can be scheduled. Itching and fullness after swimming suggests an outer ear problem that is not urgent. A routine work screen can be booked.",
+      sources: [AAO_SSNHL],
+    }),
+    kind: "mc",
+    options: [
+      { text: "A 72-year-old who has found restaurants harder to hear in over 3 years", why: "A gradual change in both ears fits age-related hearing loss and can be scheduled." },
+      { text: "A 35-year-old with an itchy, full ear after swimming", why: "Itching after swimming suggests outer ear irritation that does not need same-day care." },
+      { text: "A 60-year-old who needs a hearing screen for a new job", why: "A routine screen without symptoms can be booked at any time." },
+      { text: "A 47-year-old who woke yesterday with muffled hearing in the right ear", why: "Sudden one-sided hearing loss may be sensorineural and needs prompt evaluation." },
+    ],
+    correct: 3,
+  },
+  {
+    ...meta("rn-s32-19", {
+      need: "HPM",
+      topic: "Technique for the whispered voice test",
+      cjmm: "action",
+      process: "nursing-process",
+      difficulty: 2,
+      stem: "The nurse screens the hearing of a 68-year-old client with the whispered voice test. Which technique should the nurse use?",
+      rationale:
+        "The examiner stands behind the client at about arm's length so the client cannot lip-read. The ear not being tested is blocked by a finger rubbing the tragus. The examiner breathes out before whispering a mix of numbers and letters so the whisper stays quiet and steady. Familiar single words are easy to guess. Breathing in first makes the whisper louder.",
+      sources: [PIROZZO],
+    }),
+    kind: "mc",
+    options: [
+      { text: "Stand in front so the client can see the nurse's face", why: "Facing the client allows lip-reading and makes the test invalid." },
+      { text: "Stand at arm's length behind the client", why: "Standing behind at arm's length stops lip-reading and keeps the distance standard." },
+      { text: "Whisper common single words the client may expect", why: "A mix of numbers and letters stops the client from guessing the words." },
+      { text: "Take a deep breath in before each whisper", why: "Breathing out first keeps the whisper quiet. A full breath in makes it louder." },
+    ],
+    correct: 1,
+  },
+  {
+    ...meta("rn-s32-20", {
+      need: "HPM",
+      topic: "Counseling about over-the-counter hearing aids",
+      cjmm: "generate",
+      process: "teaching",
+      difficulty: 3,
+      stem: "A 66-year-old client has noticed mild trouble following conversation in both ears for a year. He asks about buying hearing aids over the counter. Which points should the nurse include? Select all that apply.",
+      rationale:
+        "Over-the-counter hearing aids are for adults aged 18 years or older with perceived mild to moderate hearing loss. No prescription or hearing test is needed to buy them. Their labels list red flag conditions that need a clinician first, such as ear drainage in the past 6 months or hearing loss or ringing in only one ear. Severe loss needs a prescription device fitted by a professional.",
+      sources: [FDA_OTC_HA],
+    }),
+    kind: "sata",
+    options: [
+      { text: "They are sold for adults aged 18 years or older", why: "The over-the-counter category is limited to adults 18 years or older." },
+      { text: "They need a prescription from an audiologist or a provider", why: "No prescription or professional fitting is needed to buy them." },
+      { text: "They are meant for mild to moderate hearing loss", why: "The category covers perceived mild to moderate loss." },
+      { text: "They are designed for severe or profound hearing loss", why: "Severe loss needs a prescription device fitted by a professional." },
+      { text: "See a clinician first after ear drainage in the past 6 months", why: "Recent drainage is a red flag that needs medical evaluation before use." },
+      { text: "A formal hearing test is required before they can be bought", why: "A hearing test is advised but is not required to buy them." },
+      { text: "See a clinician first if the loss or ringing is in one ear only", why: "One-sided symptoms are a red flag that need evaluation before use." },
+    ],
+    correct: [0, 2, 4, 6],
+  },
+];

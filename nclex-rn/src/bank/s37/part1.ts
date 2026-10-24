@@ -1,0 +1,245 @@
+import type { Item } from "@/engine/types";
+import { ABLS, ADA_TECH, AHA_ECG, AHA_EXERCISE, CDC_BCX, HINKLE, ISBI, SSC2021, SSC_BUNDLE, meta } from "./common";
+
+export const PART1: Item[] = [
+  {
+    ...meta("rn-s37-01", {
+      need: "RRP",
+      topic: "Waveform artifact in an alert client",
+      cjmm: "action",
+      process: "nursing-process",
+      difficulty: 2,
+      stem: "A 58-year-old client is on telemetry while syncope is investigated. The central monitor alarms and shows a chaotic, irregular waveform with no clear QRS complexes in lead II. In the room the nurse finds the client sitting up, brushing teeth and talking. The radial pulse is 76/minute and regular. What should the nurse do first?",
+      rationale:
+        "The client is talking and has a regular radial pulse of 76/minute. A client in ventricular fibrillation has no pulse and does not respond. The waveform is artifact from arm movement while brushing teeth. The nurse confirms the client is stable, then checks electrode contact and the tracing with the client at rest. Compressions or a rapid response call would treat a rhythm the client does not have.",
+      sources: [AHA_ECG, HINKLE],
+    }),
+    kind: "mc",
+    options: [
+      { text: "Call the rapid response team for ventricular fibrillation", why: "A talking client with a regular pulse is not in ventricular fibrillation." },
+      { text: "Check the electrodes and tracing with the client at rest", why: "Motion causes artifact. A tracing taken at rest with good electrode contact shows the true rhythm." },
+      { text: "Begin chest compressions while a defibrillator is brought", why: "Compressions are for a pulseless client. This client has a pulse of 76/minute." },
+      { text: "Print the strip and send it to the provider for review", why: "Printing the artifact does not find its cause and delays checking the client and the leads." },
+    ],
+    correct: 1,
+  },
+  {
+    ...meta("rn-s37-02", {
+      need: "PA",
+      topic: "Timing a repeat lactate in sepsis",
+      cjmm: "generate",
+      process: "clinical-judgment",
+      difficulty: 3,
+      stem: "A 66-year-old client is admitted with sepsis from a kidney infection. At 0900 blood cultures were drawn and IV ceftriaxone was started. The first serum lactate was 3.4 mmol/L. BP is 104/62 mmHg and heart rate 108/minute. The unit follows the hour-1 sepsis bundle. Which plan for the lactate should the nurse expect?",
+      rationale:
+        "The hour-1 bundle measures lactate on recognition and repeats it when the first value is above 2 mmol/L. The value of 3.4 mmol/L meets that rule. A repeat within 2 to 4 hours shows whether resuscitation is clearing lactate. The repeat does not depend on a low BP or on the temperature. A level drawn the next morning comes too late to guide fluids.",
+      refs: ["A first lactate above 2 mmol/L is remeasured, within 2 to 4 hours, to guide resuscitation."],
+      sources: [SSC_BUNDLE, SSC2021],
+    }),
+    kind: "mc",
+    options: [
+      { text: "Repeat the lactate only if the BP falls below 90 mmHg", why: "The repeat is triggered by a first value above 2 mmol/L, not by the BP." },
+      { text: "Repeat the lactate once the temperature is back to normal", why: "Temperature does not set the timing. Lactate clearance is used to guide resuscitation." },
+      { text: "Repeat the lactate with the routine morning blood work", why: "A level drawn the next morning is too late to guide early fluid resuscitation." },
+      { text: "Repeat the lactate within 2 to 4 hours of the first level", why: "A first value of 3.4 mmol/L is above 2 mmol/L, so it is remeasured within 2 to 4 hours." },
+    ],
+    correct: 3,
+  },
+  {
+    ...meta("rn-s37-03", {
+      need: "RRP",
+      topic: "Collecting blood culture sets",
+      cjmm: "action",
+      process: "nursing-process",
+      difficulty: 2,
+      stem: "The nurse prepares to draw two sets of blood cultures for a 49-year-old client with a temperature of 39.2°C (102.6°F). A peripheral IV in the left forearm has 0.9% sodium chloride infusing. The first antibiotic dose is ready. Which actions should the nurse take? Select all that apply.",
+      rationale:
+        "Contamination of blood cultures happens during collection, mostly from skin or from catheter hubs. The skin is cleaned with an alcohol-based antiseptic that is left to dry. Bottle tops are disinfected before filling. Each set comes from its own peripheral venipuncture rather than the infusing catheter. Cultures go before the antibiotic so the organism can still grow. Underfilled bottles lower the chance of detecting bacteremia.",
+      sources: [CDC_BCX],
+    }),
+    kind: "sata",
+    options: [
+      { text: "Draw both sets through the existing IV catheter", why: "Catheter hubs are a common source of contamination. Peripheral venipuncture is preferred." },
+      { text: "Clean the skin with an alcohol-based antiseptic and let it dry", why: "Drying time lets the antiseptic work and lowers skin contamination." },
+      { text: "Disinfect each bottle top before filling it", why: "Bottle tops are disinfected before inoculation as standard practice." },
+      { text: "Palpate the cleaned site again with a bare finger", why: "Touching the prepared skin brings back skin flora and contaminates the sample." },
+      { text: "Obtain each set by a separate venipuncture", why: "Two sets from separate venipunctures help tell true bacteremia from contamination." },
+      { text: "Put a small volume in each bottle to spare blood", why: "Low blood volume lowers the sensitivity of the culture." },
+      { text: "Collect both sets before the first antibiotic dose", why: "Antibiotics given first can stop the organism from growing in the bottles." },
+    ],
+    correct: [1, 2, 4, 6],
+  },
+  {
+    ...meta("rn-s37-04", {
+      need: "RRP",
+      topic: "Skin flora in one blood culture set",
+      cjmm: "analyze",
+      process: "clinical-judgment",
+      difficulty: 3,
+      stem: "A 72-year-old client with pneumonia had two sets of blood cultures drawn on admission. One set came from a venipuncture. The other was drawn through a peripheral IV catheter as it was placed. On day 2 one bottle from the catheter set grows coagulase-negative staphylococci. The venipuncture set shows no growth. Temperature is 37.1°C (98.8°F). Which interpretation is most likely?",
+      rationale:
+        "Coagulase-negative staphylococci live on skin and are among the most common blood culture contaminants. Growth in one bottle of one set, with the other set negative, points to contamination. The positive set was drawn through a catheter, which carries a higher contamination rate than venipuncture. The client is afebrile. Endocarditis causes continuous bacteremia that grows in several sets. The nurse reports the result so the provider can decide on repeat cultures.",
+      sources: [CDC_BCX],
+    }),
+    kind: "mc",
+    options: [
+      { text: "Probable contamination from skin or the catheter hub", why: "A skin organism in one bottle of a catheter-drawn set, with the other set negative, fits contamination." },
+      { text: "Endocarditis that needs urgent echocardiography", why: "Endocarditis seeds the blood steadily, so several sets usually grow the organism." },
+      { text: "Bacteremia spreading from the pneumonia", why: "Coagulase-negative staphylococci are not usual pneumonia pathogens, and the venipuncture set is negative." },
+      { text: "A false result from an error inside the laboratory", why: "Nearly all blood culture contamination happens during collection, not in the laboratory." },
+    ],
+    correct: 0,
+  },
+  {
+    ...meta("rn-s37-05", {
+      need: "PA",
+      topic: "Burn size with the rule of nines",
+      cjmm: "analyze",
+      process: "nursing-process",
+      difficulty: 3,
+      stem: "A 40-year-old client was burned in a flash fire. Blistered deep partial-thickness burns cover the entire front of the trunk and the entire front of both legs. The face is red with no blisters. The unit chart lists the front of the trunk as 18%, the front of each leg as 9% and the face as part of the head. What percentage of body surface should the nurse record as burned?",
+      rationale:
+        "Only partial-thickness and full-thickness burns count toward the burned body surface. The red face without blisters is a superficial burn and is left out. The front of the trunk is 18% and the front of each leg is 9%. The total is 36%. Counting the whole of each leg doubles the leg area.",
+      calc: { expr: "18 + 9 + 9", answer: 36, unit: "%", round: 0, steps: ["18 + 9 + 9 = 36"] },
+      sources: [ABLS, ISBI],
+    }),
+    kind: "mc",
+    options: [
+      { text: "27%", why: "This counts the trunk and only one leg. Both legs are burned on the front." },
+      { text: "36%", why: "The front of the trunk at 18% plus the front of each leg at 9% gives 36%." },
+      { text: "40.5%", why: "This adds the red face. A superficial burn without blisters is left out of the total." },
+      { text: "54%", why: "This counts the whole of each leg. Only the front of each leg is burned." },
+    ],
+    correct: 1,
+  },
+  {
+    ...meta("rn-s37-06", {
+      need: "RRP",
+      topic: "Five-electrode monitor placement",
+      cjmm: "action",
+      process: "nursing-process",
+      difficulty: 2,
+      stem: "The nurse attaches a 5-electrode bedside cardiac monitor that uses the American Heart Association color code. The chest electrode will record lead V1. Drag the electrode that belongs at each position.",
+      rationale:
+        "In the American Heart Association code, white goes on the right arm position and black on the left arm position, both just below the clavicles. Red goes on the left leg position and green on the right leg position, on the lower torso. The brown chest electrode records V1 at the fourth intercostal space at the right sternal border. Yellow belongs to a different international color code.",
+      sources: [AHA_ECG],
+    }),
+    kind: "dnd",
+    scoring: "zero-one",
+    targets: [
+      "Right upper chest below the clavicle",
+      "Left upper chest below the clavicle",
+      "Left lower torso",
+      "Right lower torso",
+      "Fourth intercostal space at the right sternal border",
+    ],
+    tokens: [
+      { text: "Green electrode", why: "Green is the right leg electrode and goes on the right lower torso." },
+      { text: "White electrode", why: "White is the right arm electrode and goes below the right clavicle." },
+      { text: "Yellow electrode", why: "Yellow is used in the international code, not the American Heart Association code." },
+      { text: "Brown electrode", why: "Brown is the chest electrode and records V1 at the right sternal border." },
+      { text: "Black electrode", why: "Black is the left arm electrode and goes below the left clavicle." },
+      { text: "Red electrode", why: "Red is the left leg electrode and goes on the left lower torso." },
+    ],
+    correct: [1, 4, 5, 0, 3],
+  },
+  {
+    ...meta("rn-s37-07", {
+      need: "PA",
+      topic: "Starting a vasopressor before central access",
+      cjmm: "action",
+      process: "clinical-judgment",
+      difficulty: 3,
+      stem: "A 70-year-old client with septic shock from an infected bile duct has received 30 mL/kg of lactated Ringer's. The MAP is 58 mmHg. The client has an 18-gauge IV in each antecubital vein and a 22-gauge IV in the back of the left hand. The provider prescribes norepinephrine. Central line placement is 2 hours away. Which action should the nurse take?",
+      rationale:
+        "The MAP of 58 mmHg is below the initial target of 65 mmHg after the fluid bolus. Guidelines suggest starting a vasopressor through a peripheral vein rather than delaying until central access. The vein should be at or above the antecubital fossa, and the site is watched closely. A small hand vein raises the risk of tissue injury from extravasation. More fluid without reassessment delays the vasopressor the client needs.",
+      refs: [
+        "The initial MAP target in septic shock is 65 mmHg.",
+        "A vasopressor may start through a peripheral vein in or above the antecubital fossa rather than waiting for central access.",
+      ],
+      sources: [SSC2021],
+    }),
+    kind: "mc",
+    options: [
+      { text: "Hold the norepinephrine until the central line is placed", why: "Waiting 2 hours leaves the MAP below 65 mmHg. Peripheral start is preferred over delay." },
+      { text: "Start the norepinephrine through an antecubital IV", why: "A large proximal vein is suitable for a short peripheral start while central access is arranged." },
+      { text: "Start the norepinephrine through the IV in the hand", why: "A small distal vein raises the risk of tissue injury if the drug leaks." },
+      { text: "Give a second 30 mL/kg bolus while waiting", why: "The prescription is for a vasopressor. Repeat bolus without reassessment risks overload and delays the MAP target." },
+    ],
+    correct: 1,
+  },
+  {
+    ...meta("rn-s37-08", {
+      need: "RRP",
+      topic: "Stopping an exercise stress test",
+      cjmm: "recognize",
+      process: "clinical-judgment",
+      difficulty: 3,
+      stem: "A 61-year-old client is in minute 6 of a treadmill exercise stress test. The baseline BP was 138/84 mmHg. The nurse records the findings below. Which two findings should prompt the nurse to stop the test? Select two.",
+      rationale:
+        "A fall in systolic BP of more than 10 mmHg despite rising workload, with signs of ischemia, is a reason to stop. Here the systolic fell from 138 to 124 mmHg with chest pain of 6 of 10. Feeling faint with an unsteady gait is a central nervous system warning sign and also stops the test. A rising heart rate, a rising systolic BP, faster breathing and sweating are expected responses to exercise.",
+      refs: ["A systolic BP drop of more than 10 mmHg with ischemia, moderate to severe angina, and near syncope or ataxia are absolute reasons to stop an exercise test."],
+      sources: [AHA_EXERCISE],
+    }),
+    kind: "msn",
+    select: 2,
+    options: [
+      { text: "Heart rate rises from 78 to 132/minute", why: "Heart rate rises with workload. This is the expected response to exercise." },
+      { text: "Systolic BP falls to 124 mmHg with chest pain of 6/10", why: "A drop from 138 to 124 mmHg with chest pain points to ischemia and stops the test." },
+      { text: "Reports feeling faint and walks unsteadily", why: "Near syncope and an unsteady gait are central nervous system signs that stop the test." },
+      { text: "Systolic BP rises from 138 to 176 mmHg", why: "Systolic BP normally rises with exercise. This rise is below the level that stops a test." },
+      { text: "Respirations rise to 26/minute with deeper breaths", why: "Faster, deeper breathing is the expected response to exercise." },
+      { text: "Skin becomes warm, flushed and sweaty", why: "Sweating and flushing help shed heat during exercise and are expected." },
+    ],
+    correct: [1, 2],
+  },
+  {
+    ...meta("rn-s37-09", {
+      need: "RRP",
+      topic: "Symptoms that disagree with a glucose sensor",
+      cjmm: "action",
+      process: "nursing-process",
+      difficulty: 2,
+      stem: "A 34-year-old client with type 1 diabetes wears a continuous glucose monitor. At 1500 the client reports shakiness, sweating and a pounding heart. The sensor reads 112 mg/dL (6.2 mmol/L) with a steady trend arrow. The client finished a 40-minute run an hour ago. What should the nurse do first?",
+      rationale:
+        "The sensor measures glucose in interstitial fluid, which lags behind blood glucose when levels change fast, as after exercise. The client has the symptoms of hypoglycemia despite a normal sensor value. When symptoms do not match the sensor, a fingerstick blood glucose decides treatment. Reassurance based on the sensor alone could miss a low. Rechecking the sensor later or replacing it delays the answer.",
+      sources: [ADA_TECH],
+    }),
+    kind: "mc",
+    options: [
+      { text: "Recheck the sensor reading in 30 minutes", why: "Waiting 30 minutes leaves a possible low untreated while symptoms continue." },
+      { text: "Tell the client the sensor value is within range", why: "Symptoms of hypoglycemia need a blood check even when the sensor reads normal." },
+      { text: "Remove the sensor and insert a new one", why: "Replacing the sensor takes time and still needs a warm-up before it reads." },
+      { text: "Check a fingerstick blood glucose now", why: "A blood glucose check settles the mismatch between symptoms and the sensor value." },
+    ],
+    correct: 3,
+  },
+  {
+    ...meta("rn-s37-10", {
+      need: "PA",
+      topic: "Narrowing pulse pressure in early shock",
+      cjmm: "recognize",
+      process: "clinical-judgment",
+      difficulty: 3,
+      stem: "A 45-year-old client is admitted with vomiting of blood from a duodenal ulcer. The nurse writes the note below 2 hours after admission. The arrival BP was 124/78 mmHg, a pulse pressure of 46 mmHg. Click to highlight the findings that suggest compensated shock.",
+      rationale:
+        "In compensated shock the body keeps the systolic BP near normal by raising the heart rate and constricting vessels. The diastolic rises, so the pulse pressure narrows from 46 to 22 mmHg. Restlessness, a heart rate of 118/minute, cool pale skin and a capillary refill of 4 seconds show sympathetic compensation. Urine output of 20 mL in an hour shows the kidneys are underperfused. Normal temperature, orientation and SpO2 do not point to shock.",
+      sources: [HINKLE],
+    }),
+    kind: "highlight",
+    passage:
+      "[[Anxious and restless]], [[oriented to person, place and time]]. [[BP 118/96 mmHg, pulse pressure 22 mmHg]]. [[Heart rate 118/minute]]. [[Skin cool and pale]]. [[Capillary refill 4 seconds]]. [[Temperature 36.8°C (98.2°F)]]. [[SpO2 97% on room air]]. [[Urine output 20 mL in the past hour]].",
+    spans: [
+      { text: "Anxious and restless", why: "Restlessness is an early sign of falling brain perfusion and sympathetic activity." },
+      { text: "oriented to person, place and time", why: "Orientation is intact and does not point to shock." },
+      { text: "BP 118/96 mmHg, pulse pressure 22 mmHg", why: "The systolic is near normal but the pulse pressure has narrowed from 46 to 22 mmHg." },
+      { text: "Heart rate 118/minute", why: "A fast heart rate keeps cardiac output up as volume falls." },
+      { text: "Skin cool and pale", why: "Vasoconstriction moves blood away from the skin in compensated shock." },
+      { text: "Capillary refill 4 seconds", why: "Slow refill shows poor peripheral perfusion." },
+      { text: "Temperature 36.8°C (98.2°F)", why: "A normal temperature does not point to shock." },
+      { text: "SpO2 97% on room air", why: "Normal oxygen saturation does not suggest a problem here." },
+      { text: "Urine output 20 mL in the past hour", why: "Low urine output shows reduced kidney perfusion." },
+    ],
+    correct: [0, 2, 3, 4, 5, 8],
+  },
+];
