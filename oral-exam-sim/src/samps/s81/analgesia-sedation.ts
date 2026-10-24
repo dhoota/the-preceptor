@@ -17,12 +17,6 @@ const S = {
       "Warden V, Hurley AC, Volicer L. Development and psychometric evaluation of the Pain Assessment in Advanced Dementia (PAINAD) scale. J Am Med Dir Assoc. 2003.",
     url: "https://pubmed.ncbi.nlm.nih.gov/12807591/",
   },
-  cpsPain: {
-    id: "cps-pain-best-practices-2022",
-    citation:
-      "Trottier ED, Ali S, Doré-Bergeron MJ, Chauvin-Kimoff L, Canadian Paediatric Society Acute Care Committee. Best practices in pain assessment and management for children. Paediatr Child Health. 2022.",
-    url: "https://cps.ca/en/documents/position/pain-assessment-and-management",
-  },
   cpsDistress: {
     id: "cps-procedural-distress-2019",
     citation:
@@ -115,7 +109,7 @@ export const ANALGESIA_SEDATION_S81: Samp[] = [
       {
         id: "q4",
         kind: "single",
-        update: "After a second dose he settles. An hour later he is asleep with a relaxed face and rouses to voice. His pupils are 3 mm and his resp. is 12/minute and regular. His wife asks whether the morphine will stop his breathing.",
+        update: "Later he settles. An hour later he is asleep with a relaxed face and rouses to voice. His pupils are 3 mm and his resp. is 12/minute and regular. His wife asks whether the morphine will stop his breathing.",
         prompt: "Which of the following is the most appropriate plan for his opioid from now on?",
         options: ["Continue regular doses and observe", "Give naloxone 0.4 mg IV now", "Halve the regular SC dose", "Hold opioids until he is fully awake", "Switch to midazolam alone"],
         correct: 0,
@@ -129,63 +123,63 @@ export const ANALGESIA_SEDATION_S81: Samp[] = [
     ...META,
   },
 
-  /* 49 Fall from a pony, head CT and a forearm fracture -------------------- */
+  /* 49 Dirt bike crash, head CT and a shin fracture ------------------------ */
   {
     id: "analgesia-sedation-49",
     topic: "analgesia-sedation",
-    title: "Girl who fell from a pony",
+    title: "Boy thrown from a dirt bike",
     stem:
-      "You are working in a community hospital emergency department. A 6-year-old girl is brought to the emergency department by her father 1 hour after she fell from a pony and landed on her head and left arm. She cried at once and has vomited four times since. She is healthy, takes no medications and has no allergies. She is screaming and holding her left forearm, which is visibly angulated. The skin is intact, and her hand is pink and warm with normal sensation. Her GCS is 15. There is a 4 cm boggy swelling over the right parietal scalp. The team has decided that she needs CT of the head, but she will not lie still. She has no IV. The resident orders intranasal midazolam so that the scan can be done.",
-    vitals: { temperature: "36.8°C tympanic", pulse: "132/minute", resp: "26/minute", bp: "104/66 mmHg", o2sat: "99% on room air", weight: "20 kg" },
+      "You are working in a community hospital emergency department. An 11-year-old boy is brought to the emergency department by his father 1 hour after he was thrown from a dirt bike and struck his head and right leg. He did not lose consciousness, but he has vomited four times since and has a headache. He is healthy, takes no medications and has no allergies. He is crying out and gripping his right shin, which is angulated halfway down, with intact skin. His foot is warm, with normal pulses and sensation. His GCS is 15. The team has decided that he needs CT of the head, but he cannot keep still on the stretcher. He has no IV. The resident orders intranasal midazolam so that the scan can be done.",
+    vitals: { temperature: "36.9°C tympanic", pulse: "118/minute", resp: "22/minute", bp: "112/70 mmHg", o2sat: "98% on room air", weight: "38 kg" },
     questions: [
       {
         id: "q1",
         kind: "single",
-        prompt: "Which of the following is the most appropriate medication to give her first?",
-        options: ["acetaminophen 300 mg PO", "fentanyl 30 mcg IN", "ibuprofen 200 mg PO", "lorazepam 1 mg SL", "midazolam 8 mg IN"],
-        correct: 1,
+        prompt: "Which of the following is the most appropriate response to the resident's order before his scan?",
+        options: ["Give midazolam, analgesia after the CT", "Give midazolam as ordered", "Restrain him gently for the scan", "Sedate with IV ketamine for the CT", "Treat his pain first, then reassess"],
+        correct: 4,
         explanation:
-          "Her screaming and guarding of an angulated forearm show severe fracture pain, and her distress is the reason she cannot lie still. The Canadian Paediatric Society names intranasal fentanyl the first-line opioid for moderate to severe pain in children, at 1 to 2 mcg/kg per dose to a maximum of 100 mcg, so 1.5 mcg/kg at 20 kg is 30 mcg. It needs no IV and acts quickly. Midazolam and lorazepam ease anxiety but do nothing for the broken arm, and sedation before a head CT also clouds her neurologic checks. Oral acetaminophen and ibuprofen are good co-analgesics, but after four vomits they may not stay down and alone they are too weak for a displaced fracture.",
+          "He is crying out and gripping an angulated shin, so untreated fracture pain is why he cannot keep still. The Canadian Paediatric Society builds procedure care on pain control and comfort measures first, and uses sedation only as an adjunct when distress persists despite them. For moderate to severe fracture pain it adds intranasal fentanyl, which needs no IV, with a splint. Midazolam, given now or with analgesia delayed until after the scan, calms him without touching the pain, and sedation before a head CT also clouds his neurologic checks. Restraint leaves the pain untreated and adds distress. IV ketamine sedation brings airway risk and an IV for a scan he may manage once comfortable.",
         keyFeature: { topic: "analgesia-sedation", n: 4 },
-        source: "cps-pain-best-practices-2022",
+        source: "cps-procedural-distress-2019",
       },
       {
         id: "q2",
         kind: "single",
-        update: "Fifteen minutes after her first medication and a padded splint, she lies quietly on her father's lap and lets the nurse touch her arm. She says it hurts a little. Her GCS is 15.",
-        prompt: "Which of the following is the most appropriate plan for her head CT now?",
-        options: ["CT after intranasal midazolam", "CT after IV ketamine sedation", "CT under general anesthesia", "CT with her father beside her", "Delay CT until she falls asleep"],
+        update: "Twenty minutes later he lies quietly with his father beside him and lets the nurse touch his leg. He says it hurts a little. His GCS is 15.",
+        prompt: "Which of the following is the most appropriate plan for his head CT now?",
+        options: ["CT after intranasal midazolam", "CT after IV ketamine sedation", "CT under general anesthesia", "CT with his father beside him", "Delay CT until he falls asleep"],
         correct: 3,
         explanation:
-          "Once her pain is treated she is calm, cooperative and lying still, so the scan can go ahead now with her father beside her for comfort. The Canadian Paediatric Society places sedation as an adjunct only when distress persists after pain control, parental presence and distraction. Midazolam, ketamine or general anesthesia would add airway risk and dull her neurologic examination after a head injury, for no benefit now that she is settled. Waiting for her to fall asleep delays an imaging decision the team has already made, and a sleeping child is harder to assess.",
+          "He is now calm, cooperative and lying still, so the scan can go ahead with his father beside him for comfort. The Canadian Paediatric Society places sedation as an adjunct only when distress persists after pain control, parental presence and distraction. Midazolam, ketamine or general anesthesia would add airway risk and dull his neurologic examination after a head injury, for no benefit now that he is settled. Waiting for him to fall asleep delays an imaging decision the team has already made, and a sleeping child is harder to assess.",
         keyFeature: { topic: "analgesia-sedation", n: 4 },
         source: "cps-procedural-distress-2019",
       },
       {
         id: "q3",
         kind: "single",
-        update: "Her CT is normal. X-ray shows displaced fractures of the left radius and ulna that need closed reduction. You plan ketamine sedation. It is 03:00 and you are the only physician in the hospital.",
-        prompt: "Which of the following is the minimum team needed for her sedation and fracture reduction?",
-        options: ["You alone with continuous monitoring", "You and a nurse dedicated to monitoring", "You and a nurse who also holds traction", "You and her father holding her arm", "You with a nurse checking every 5 minutes"],
+        update: "His CT is normal. X-ray shows displaced fractures of the right tibial and fibular shafts that need closed reduction. You plan ketamine sedation. It is 03:00 and you are the only physician in the hospital.",
+        prompt: "Which of the following is the minimum team needed for his sedation and fracture reduction?",
+        options: ["You alone with continuous monitoring", "You and a nurse dedicated to monitoring", "You and a nurse who also holds traction", "You and his father holding his leg", "You with a nurse checking every 5 minutes"],
         correct: 1,
         explanation:
-          "The Canadian Paediatric Society requires at least two health care providers for procedural sedation, one of them skilled in sedation, airway management and resuscitation. One provider must be dedicated to watching the patient continuously and responding to changes. When the physician giving the sedation also performs the reduction, monitoring and the giving of drugs on direction pass to a second qualified provider such as a nurse. Machines alone do not meet this standard, and a nurse who checks in every 5 minutes or is busy holding traction is not continuously watching her airway. Her father can comfort her but is not a trained monitor.",
+          "The Canadian Paediatric Society requires at least two health care providers for procedural sedation, one of them skilled in sedation, airway management and resuscitation. One provider must be dedicated to watching the patient continuously and responding to changes. When the physician giving the sedation also performs the reduction, monitoring and the giving of drugs on direction pass to a second qualified provider such as a nurse. Machines alone do not meet this standard, and a nurse who checks in every 5 minutes or is busy holding traction is not continuously watching his airway. His father can comfort him but is not a trained monitor.",
         keyFeature: { topic: "analgesia-sedation", n: 6 },
         source: "cps-procedural-sedation-2021",
       },
       {
         id: "q4",
         kind: "single",
-        prompt: "Which of the following findings, had it been in her history, would most favour anesthesia consultation before her sedation?",
-        options: ["Allergy to amoxicillin", "Ear tubes placed at age 2", "Eczema on both elbows", "Uneventful ketamine sedation last year", "Wheeze on prednisolone last week"],
-        correct: 4,
+        prompt: "Which of the following findings, had it been in his history, would most favour anesthesia consultation before his sedation?",
+        options: ["Allergy to amoxicillin", "Difficult intubation at past surgery", "Ear tubes placed at age 2", "Eczema on both elbows", "Uneventful ketamine sedation last year"],
+        correct: 1,
         explanation:
-          "Sedation by a non-anesthesiologist suits children in ASA class I and II. The Canadian Paediatric Society advises considering anesthesia consultation when a child has an active chronic condition, such as a recent asthma exacerbation, or an acute illness, because these children have more bronchospasm, laryngospasm and desaturation. Wheeze treated with prednisolone a week ago is that kind of recent exacerbation. A penicillin allergy does not affect ketamine. Old ear tubes and mild eczema leave her healthy. A previous uneventful ketamine sedation is reassuring, not a reason for referral.",
+          "Sedation by a non-anesthesiologist suits children in ASA class I and II. The Canadian Paediatric Society lists features of a potentially difficult airway, such as a history of difficult intubation, among the high-risk findings that should prompt anesthesia consultation, because a child who obstructs or stops breathing under sedation may need airway rescue. A penicillin allergy does not affect ketamine. Old ear tubes and mild eczema leave him a healthy child. A previous uneventful ketamine sedation is reassuring, not a reason for referral.",
         keyFeature: { topic: "analgesia-sedation", n: 5 },
         source: "cps-procedural-sedation-2021",
       },
     ],
-    sources: [S.cpsPain, S.cpsDistress, S.cpsSedation],
+    sources: [S.cpsDistress, S.cpsSedation],
     ...META,
   },
 

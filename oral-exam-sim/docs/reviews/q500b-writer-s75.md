@@ -9,14 +9,14 @@ The original task named headache-47 to headache-51. headache-47 already exists i
 | Id | Scenario | Setting | Questions |
 |---|---|---|---|
 | headache-48 | Leptomeningeal metastasis after breast cancer, 58-year-old woman | Community hospital with CT, MRI at the regional centre | 4 (3 single, 1 menu) |
-| headache-49 | Upper cervical herpes zoster hidden in the scalp, 72-year-old woman | Tertiary | 4 single |
-| headache-50 | Migraine in a breastfeeding mother after nasal dihydroergotamine | Tertiary | 5 single |
+| headache-49 | Occipital neuralgia, 44-year-old man | Community hospital | 4 single |
+| headache-50 | Migraine in a breastfeeding mother after nasal dihydroergotamine | Tertiary | 4 single |
 | headache-51 | Petrous apicitis (Gradenigo syndrome) after otitis media, 8-year-old boy | Remote northern hospital, no CT | 4 single |
 | headache-52 | Cardiac cephalalgia labelled as migraine, 66-year-old man | Tertiary | 4 single |
 
-Total 21 questions: 20 single and 1 menu (headache-48 q4, select two).
+Total 20 questions: 19 single and 1 menu (headache-48 q4, select two).
 
-Single key positions (first to fifth): 5, 3, 5, 5, 2 of 20. The key is the single longest option in 4 of 20.
+Single key positions (first to fifth): 4, 4, 4, 4, 3 of 19. The key is the single longest option in 4 of 19.
 
 ## Key feature coverage
 
@@ -26,9 +26,9 @@ Before this batch the bank had: n1 21, n2 27, n3 16, n4 18, n5 20, n6 35. The ex
 |---|---|---|
 | 1 History | 3 | 48 q1, 50 q1, 52 q1 |
 | 2 Dangerous causes | 3 | 48 q3, 48 q4 (menu), 52 q2 |
-| 3 Examination for red flags | 5 | 48 q2, 49 q1, 50 q2, 51 q1, 51 q4 |
+| 3 Examination for red flags | 4 | 48 q2, 49 q1, 51 q1, 51 q4 |
 | 4 Other sources | 6 | 49 q2, 49 q3, 49 q4, 51 q2, 52 q3, 52 q4 |
-| 5 Migraine | 3 | 50 q3, 50 q4, 50 q5 |
+| 5 Migraine | 3 | 50 q2, 50 q3, 50 q4 |
 | 6 Prompt investigation, empiric therapy first | 1 | 51 q3 |
 
 ## Uniqueness checks
@@ -39,8 +39,8 @@ I read every SAMP on the topic (s11 headache-01 to 15, s40 headache-16 to 47) an
 
 - Le Rhun E, Weller M, van den Bent M, and colleagues. Leptomeningeal metastasis from solid tumours: EANO-ESMO Clinical Practice Guideline. ESMO Open. 2023. Opened at https://pmc.ncbi.nlm.nih.gov/articles/PMC10619142/ (multifocal deficits highly suggestive, radicular and cauda equina signs, consider in breast and lung cancer and melanoma, MRI of brain and spine within 7 days and before LP, CSF over 10 mL and at least 5 mL, one repeat LP, CT only when MRI is not possible or in emergencies).
 - Le Saux N, Robinson JL, Canadian Paediatric Society. Management of acute otitis media. Paediatr Child Health. 2016, reaffirmed 2024. Opened at https://cps.ca/en/documents/position/acute-otitis-media (mastoiditis the most common complication, pain or swelling behind the ear, sixth nerve palsy, facial palsy, venous sinus thrombosis, meningitis).
-- Cohen JI. Herpes zoster. N Engl J Med. 2013. Opened at https://pmc.ncbi.nlm.nih.gov/articles/PMC4789101/ (prodrome 2 to 3 days, Table 3 doses, cervical dermatomes common, steroids not without an antiviral).
-- Public Health Agency of Canada. Canadian Immunization Guide, herpes zoster chapter, updated 2025. Opened at canada.ca (spread to people who never had varicella by contact with the lesions, infectious until all lesions are crusted).
+- International Headache Society. ICHD-3, 13.4 Occipital neuralgia, 4.7 Primary stabbing headache and 11.2.1 Cervicogenic headache. 2018. Each page was opened on ichd-3.org (13.4 criteria and comments, 4.7 note that fixed stabs need a structural search, 11.2.1 reduced range of motion with provocation).
+- Blumenfeld A and colleagues, American Headache Society. Expert consensus recommendations for peripheral nerve blocks for headaches. Headache. 2013. Abstract read through PubMed E-utilities (PMID 23406160): cranial neuralgias as an indication, greater occipital block described, cutaneous anesthesia as technical success, anticoagulant precaution.
 - Do TP and colleagues. SNNOOP10. Neurology. 2019. Abstract checked through Europe PMC (sudden onset and papilledema are listed).
 - Orr SL and colleagues. Canadian Headache Society emergency migraine review. Cephalalgia. 2015. Abstract checked through Europe PMC (metoclopramide strongly for, dexamethasone strongly against).
 - LactMed (NICHD). Entries on dihydroergotamine, ketorolac, codeine and sumatriptan, checked through Europe PMC records (PMIDs 34554670, 30000057, 30000271, 30000314). NCBI Bookshelf pages showed a captcha, so no URL is given.
@@ -55,11 +55,23 @@ I read every SAMP on the topic (s11 headache-01 to 15, s40 headache-16 to 47) an
 - The sources for the old headache-48 (Dziho, Teitelbaum, Schulman, Dex-CSDH) were removed with it.
 - The key is now the longest option in 4 of 20 single questions, down from 6.
 
+## Revision 2 (independent QA, docs/reviews/q500b-qa-s75.md)
+
+- headache-48 q1: rewrote the last sentences so snoring with daytime sleepiness is described as sleep apnea, a possible cause of morning headache, not as a primary headache feature.
+- headache-48 q2: the key is now "Multiple lesions on both sides", parallel with the lesion-site distractors (`correct` 2).
+- headache-48 q3: removed the back pain sentence from the update, so it no longer gives away the q1 key, and removed "new radicular pain" from the explanation. I also swapped myasthenia for brainstem infarction and moved the Lyme option, to balance key positions. The explanation now gives the reason against infarction.
+- headache-49: replaced in full. The zoster SAMP repeated abdominal-pain-29 and eye-05, and q3 resembled abdominal-pain-29 q3. The new headache-49 is occipital neuralgia in a 44-year-old man at a community hospital: q1 a long tract sign as the true red flag among findings that belong to the neuralgia (n3), q2 the diagnosis (n4), q3 a greater occipital nerve block (n4), q4 the features that point to cervicogenic headache instead (n4). Before writing I searched the whole bank (src/samps and src/cases) for occipital neuralgia, greater occipital and occipital nerve. Occipital neuralgia appears only as a distractor in s40 headache-25, and no item keys a nerve block for headache. No antiviral, zoster or contact question remains.
+- headache-50: the stem now says the attack built up gradually over about an hour, and the q1 explanation matches. The old q2 (bilateral optic disc swelling, a repeat of headache-17 q2) was dropped, along with the cueing update that came with it. The SAMP now has 4 questions. In q4 (old q5), the explanation now gives the sumatriptan manufacturer's 12 hour advice and LactMed's view. In q3 (old q4), "Give formula for 24 hours" became "Wait 6 hours, then breastfeed", for key position balance.
+- headache-51 q2: removed the tenderness behind the ear sentence from the update and corrected the pontine glioma reason. q4: the update no longer says ceftriaxone was given, and the key now reads "Neck stiffness and drowsiness".
+- headache-52 q4: the update now says "within 5 minutes of treatment". q1: the last distractor reads "Pain worse when lying down". q3: morphine replaces sumatriptan as a distractor. The explanation still states the triptan contraindication and gives the reason against morphine. These two changes were made for key position balance.
+- Key feature 3 now has 4 questions in the batch instead of 5, because 50 q2 was dropped. Every key feature is still tested. The bank count for key feature 3 goes from 16 to 20.
+- The Cohen 2013 and Canadian Immunization Guide sources left with the zoster SAMP.
+
 ## Tests
 
 `npx tsc --noEmit -p . 2>&1 | grep samps/s75` prints nothing.
 
-`SAMP_BATCH=s75 npx vitest run tests/samps.test.ts tests/samp-quality.test.ts tests/citations.test.ts --testTimeout=120000`: all 132 pass after revision 1. Without the longer timeout, the bank-wide near-duplicate test timed out at 5 seconds on the first run, while other agents were running.
+`SAMP_BATCH=s75 npx vitest run tests/samps.test.ts tests/samp-quality.test.ts tests/citations.test.ts --testTimeout=120000`: all 128 pass after revision 2. Without the longer timeout, the bank-wide near-duplicate test timed out at 5 seconds on the first run, while other agents were running.
 
 ## Uncertain, for reviewers
 

@@ -94,7 +94,7 @@ export const AIRWAY_S80: Samp[] = [
         select: 2,
         correct: [3, 4],
         explanation:
-          "A supraglottic airway is her planned backup if laryngoscopy fails, so predictors of trouble with it shape the plan. The Canadian Airway Focus Group lists poor or absent teeth and a neck circumference over 44 cm among the predictors of difficult supraglottic airway use, along with a higher BMI, which she also has. Missing teeth leave the device poorly supported and the seal unstable, and a large neck raises the pressure needed to ventilate past soft tissue. Female sex appears in the same guidance as a predictor of a difficult front of neck airway, not of a difficult supraglottic airway. Her age, pulse, temperature and the length of her seizure describe her illness, and a bitten tongue may bleed but is not a listed predictor.",
+          "A supraglottic airway is her planned backup if laryngoscopy fails, so predictors of trouble with it shape the plan. The Canadian Airway Focus Group lists poor or absent teeth and a neck circumference over 44 cm among the predictors of difficult supraglottic airway use, along with a higher BMI, which she also has. Missing teeth and a large neck both make a good seal harder to achieve. Female sex appears in the same guidance as a predictor of a difficult front of neck airway, not of a difficult supraglottic airway. Her age, pulse, temperature and the length of her seizure describe her illness, and a bitten tongue may bleed but is not a listed predictor.",
         keyFeature: { topic: "airway", n: 3 },
         source: "cafg-2021-part2",
       },
@@ -154,17 +154,17 @@ export const AIRWAY_S80: Samp[] = [
         kind: "single",
         update: "After induction with ketamine and rocuronium, your first attempt with a direct laryngoscope fails. A nurse holds the mask with one hand and squeezes the bag. His chest barely rises and his O2 saturation falls to 84%.",
         prompt: "Which of the following is the most appropriate next step to improve his ventilation?",
-        options: ["Faster bag squeezes at 40/minute", "Higher bag pressure through the mask", "Insert a supraglottic airway", "Neck flexion on a pillow", "Two-handed hold with an oral airway"],
+        options: ["Faster bag squeezes at 40/minute", "Higher bag pressure through the mask", "Insert a supraglottic airway", "Neck flexed forward on a pillow", "Two-handed hold with an oral airway"],
         correct: 4,
         explanation:
-          "Face-mask ventilation has not yet been optimized, because one person is holding a one-handed seal with no airway adjunct. The Canadian Airway Focus Group advises a two-handed mask hold with an exaggerated jaw lift, an assistant squeezing the bag, and an oropharyngeal airway in all emergency airway management. Higher pressure and faster breaths drive gas into the stomach, which the same guidance warns against, and do not open an obstructed airway. Flexing the neck of a young child, whose large occiput already tips the head forward, closes the airway further. A supraglottic airway is the next rescue if an optimized mask still fails.",
+          "Face-mask ventilation has not yet been optimized, because one person is holding a one-handed seal with no airway adjunct. The Canadian Airway Focus Group advises a two-handed mask hold with an exaggerated jaw lift, an assistant squeezing the bag, and an oropharyngeal airway in all emergency airway management. Higher pressure and faster breaths drive gas into the stomach, which the same guidance warns against, and do not open an obstructed airway. Flexing his neck forward on a pillow kinks the airway further. At 3 years the head is placed neutral or slightly extended, with the ear canal level with the front of the shoulder. A supraglottic airway is the next rescue if an optimized mask still fails.",
         keyFeature: { topic: "airway", n: 1 },
         source: "cafg-2021-part1",
       },
       {
         id: "q2",
         kind: "single",
-        update: "With a two-handed hold and an oral airway, his chest rises and his O2 saturation returns to 96%. A second attempt with the direct laryngoscope also fails, with a view of the epiglottis only.",
+        update: "Mask ventilation now moves his chest, and his O2 saturation returns to 96%. A second attempt with the direct laryngoscope also fails, with a view of the epiglottis only.",
         prompt: "Which of the following is the most appropriate next step?",
         options: ["Change to a videolaryngoscope", "Nasotracheal intubation without a scope", "Needle cricothyroidotomy", "Scalpel cricothyrotomy", "Third attempt with a straight blade"],
         correct: 0,
@@ -176,7 +176,7 @@ export const AIRWAY_S80: Samp[] = [
       {
         id: "q3",
         kind: "single",
-        update: "A cuffed tube is placed with the videolaryngoscope. Ten minutes later his abdomen is tense and distended, each breath needs more pressure, and his BP falls to 62/34 mmHg. Breath sounds are equal and his trachea is midline.",
+        update: "A cuffed tube is placed on the next attempt. Ten minutes later his abdomen is tense and distended, each breath needs more pressure, and his BP falls to 62/34 mmHg. Breath sounds are equal and his trachea is midline.",
         prompt: "Which of the following is the most appropriate next step?",
         options: ["Abdominal X-ray before acting", "Bilateral needle thoracostomy", "Increase the ventilator pressure", "Orogastric tube to free drainage", "Pull the tube back 2 cm"],
         correct: 3,
@@ -188,7 +188,7 @@ export const AIRWAY_S80: Samp[] = [
       {
         id: "q4",
         kind: "single",
-        update: "After decompression his ventilation is easier, but his BP is 64/36 mmHg despite the epinephrine infusion. The capnography waveform is small, with a normal shape on every breath, and the end-tidal CO2 is 14 mmHg. A blood gas shows a PaCO2 of 48 mmHg.",
+        update: "His ventilation is now easier, but his BP is 64/36 mmHg despite the epinephrine infusion. The capnography waveform is small, with a normal shape on every breath, and the end-tidal CO2 is 14 mmHg. A blood gas shows a PaCO2 of 48 mmHg.",
         prompt: "Which of the following best explains his low end-tidal CO2?",
         options: ["Esophageal placement of the tube", "Hyperventilation by the bag", "Partial obstruction of the tube", "Right mainstem intubation", "Shock reducing lung blood flow"],
         correct: 4,
@@ -215,7 +215,7 @@ export const AIRWAY_S80: Samp[] = [
         id: "q1",
         kind: "single",
         prompt: "Which of the following is the most appropriate plan for his airway?",
-        options: ["Admit to the ward with dexamethasone", "Discharge with an urgent clinic visit", "Heliox and reassess in the morning", "Secure the airway today with otolaryngology", "Transfer to a cancer centre by road"],
+        options: ["Admit to the ward with dexamethasone", "Discharge with an urgent clinic visit", "Heliox and reassess in the morning", "Secure the airway today", "Transfer to a cancer centre by road"],
         correct: 3,
         explanation:
           "Stridor at rest after months of hoarseness and weight loss points to a malignant glottic obstruction that is still growing, and a small further loss of calibre, swelling or a plug of mucus can close it completely. The Canadian Airway Focus Group recommends securing the obstructed airway when resources allow, and the surgeon and anesthesiologist he needs are available now. Dexamethasone and heliox may buy time but do not treat a tumour, and a ward bed lacks the monitoring and staff to rescue a sudden obstruction overnight. A long road transfer with an unsecured, narrowing airway risks complete obstruction in a vehicle. Discharge is unsafe with stridor at rest.",
@@ -252,7 +252,7 @@ export const AIRWAY_S80: Samp[] = [
         kind: "single",
         update: "While the operating room is prepared, he becomes anxious and asks for something to help him relax. His O2 saturation is 94% on high-flow nasal oxygen and his stridor is unchanged.",
         prompt: "Which of the following is the most appropriate response to his request?",
-        options: ["Haloperidol 5 mg IV", "Lorazepam 1 mg IV", "Midazolam 2 mg IV", "Propofol 30 mg IV", "No sedative, with reassurance at his side"],
+        options: ["Haloperidol 5 mg IV", "Lorazepam 1 mg IV", "Midazolam 2 mg IV", "Propofol 30 mg IV", "No sedative"],
         correct: 4,
         explanation:
           "For a patient with stridor, the Difficult Airway Society guideline on awake tracheal intubation advises avoiding or minimizing sedation, because oversedation can have critical consequences. Even a small dose of a benzodiazepine or propofol can relax the pharynx and larynx and blunt his drive to breathe, which can close a 4 mm opening. Haloperidol can also sedate and causes dystonic reactions that can involve the airway. A calm explanation, a familiar person or clinician at his side, and high-flow oxygen address his fear without risking his airway. New or worsening anxiety should also prompt a check for rising hypoxemia or hypercapnia.",
