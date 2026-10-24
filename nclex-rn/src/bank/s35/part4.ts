@@ -222,7 +222,7 @@ export const PART4: Item[] = [
       topic: "Oseltamivir after 48 hours in a hospitalized client",
       cjmm: "action",
       process: "clinical-judgment",
-      difficulty: 3,
+      difficulty: 4,
       stem: "A 67-year-old client is admitted with influenza A and pneumonia on day 4 of symptoms. SpO2 is 90% on room air. The primary health care provider prescribes oseltamivir 75 mg by mouth twice daily. A colleague says the drug is pointless because symptoms began more than 48 hours ago. What should the nurse do?",
       rationale:
         "The 48-hour window comes from studies of outpatients with uncomplicated influenza. CDC guidance states that antiviral treatment can reduce illness and death in hospitalized clients even when started more than 48 hours after onset. This client is hospitalized with pneumonia and low oxygen saturation, so the nurse gives the dose as prescribed. Holding the drug or waiting for a culture delays treatment that can help.",

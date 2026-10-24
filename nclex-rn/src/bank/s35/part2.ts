@@ -216,7 +216,7 @@ export const PART2: Item[] = [
       topic: "Care after an olanzapine pamoate injection",
       cjmm: "generate",
       process: "nursing-process",
-      difficulty: 3,
+      difficulty: 2,
       stem: "A 33-year-old client with schizophrenia receives a scheduled injection of olanzapine pamoate extended-release in the clinic. This is the client's fifth monthly injection. The client drove to the appointment. Which actions should the nurse include in the plan after the injection? Select all that apply.",
       rationale:
         "Olanzapine pamoate can cause a post-injection delirium and sedation syndrome when drug enters the blood too fast. Most cases start within 3 hours, so the client is observed for at least 3 hours after every injection. Before release, the nurse confirms the client is alert and oriented. The client is accompanied to the destination and does not drive for the rest of the day.",
