@@ -67,7 +67,7 @@ export const TIP33: Source = {
   body: "Substance Abuse and Mental Health Services Administration",
   work: "TIP 33: Treatment for Stimulant Use Disorders, Publication No. PEP21-02-01-004",
   year: 2021,
-  url: "https://www.ncbi.nlm.nih.gov/books/NBK576541/",
+  url: "https://www.govinfo.gov/content/pkg/GOVPUB-HE20_400-PURL-gpo171771/pdf/GOVPUB-HE20_400-PURL-gpo171771.pdf",
 };
 export const BZD_TAPER: Source = {
   body: "Brunner E, Chen CA, Klein T, Maust D, et al. American Society of Addiction Medicine and partner organizations",
@@ -82,7 +82,7 @@ export const CANNABIS_WD: Source = {
   url: "https://pmc.ncbi.nlm.nih.gov/articles/PMC9110555/",
 };
 export const KRATOM: Source = {
-  body: "Leong Bin Abdullah MFI",
+  body: "Bin Abdullah MFIL",
   work: "Kratom Dependence and Treatment Options: A Comprehensive Review of the Literature. Current Drug Targets 21(15):1566",
   year: 2020,
   url: "https://pubmed.ncbi.nlm.nih.gov/32682371/",
@@ -139,7 +139,7 @@ export const TICS: Source = {
   body: "Pringsheim T, Okun MS, Muller-Vahl K, et al. American Academy of Neurology",
   work: "Practice Guideline Recommendations Summary: Treatment of Tics in People With Tourette Syndrome and Chronic Tic Disorders. Neurology 92(19):896",
   year: 2019,
-  url: "https://depts.washington.edu/dbpeds/TS[Pringsheim2019-New Practice Guidelines].pdf",
+  url: "https://doi.org/10.1212/WNL.0000000000007466",
 };
 export const HINDU_QLD: Source = {
   body: "Queensland Health, Division of the Chief Health Officer",
@@ -176,4 +176,40 @@ export const SLOW_BREATH: Source = {
   work: "Effects of Slow Deep Breathing on Acute Clinical Pain in Adults: A Systematic Review and Meta-Analysis of Randomized Controlled Trials. Journal of Evidence-Based Integrative Medicine 27:2515690X221078006",
   year: 2022,
   url: "https://pmc.ncbi.nlm.nih.gov/articles/PMC8891889/",
+};
+export const NICE_PTSD: Source = {
+  body: "National Institute for Health and Care Excellence",
+  work: "Post-Traumatic Stress Disorder (NG116)",
+  year: 2018,
+  url: "https://www.nice.org.uk/guidance/ng116",
+};
+export const WHO_DISCLOSURE: Source = {
+  body: "World Health Organization",
+  work: "Guideline on HIV Disclosure Counselling for Children up to 12 Years of Age",
+  year: 2011,
+  url: "https://iris.who.int/handle/10665/44777",
+};
+export const AUTISM_INJURY: Source = {
+  body: "Guan J, Li G",
+  work: "Injury Mortality in Individuals With Autism. American Journal of Public Health 107(5):791",
+  year: 2017,
+  url: "https://doi.org/10.2105/AJPH.2017.303696",
+};
+export const NAS_MELTDOWN: Source = {
+  body: "National Autistic Society",
+  work: "Meltdowns: A Guide for All Audiences",
+  year: 2020,
+  url: "https://www.autism.org.uk/advice-and-guidance/topics/behaviour/meltdowns/all-audiences",
+};
+export const HINDU_HT: Source = {
+  body: "Hinduism Today, reprinting Queensland Health",
+  work: "Educational Insight: A Health Care Provider's Handbook on Hindu Patients. Hinduism Today, January to March issue",
+  year: 2013,
+  url: "https://www.hinduismtoday.com/magazine/january-february-march-2013/2013-01-educational-insight-a-health-care-provider-s-handbook-on-hindu-patients/",
+};
+export const PAPERNOW: Source = {
+  body: "Papernow PL",
+  work: "Surviving and Thriving in Stepfamily Relationships: What Works and What Doesn't. Routledge",
+  year: 2013,
+  url: "https://doi.org/10.4324/9780203813645",
 };

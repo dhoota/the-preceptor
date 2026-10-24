@@ -192,7 +192,7 @@ export const PART1: Item[] = [
       cjmm: "prioritize",
       process: "clinical-judgment",
       difficulty: 3,
-      stem: "A home health nurse visits a 78-year-old client with hoarding disorder who lives alone. Stacks of newspapers block the back door. A space heater runs beside a pile of papers in the living room. The client refuses to discard anything and says, \"No one visits anymore.\" Which concern should the nurse address first?",
+      stem: "A home health nurse visits a 78-year-old client with hoarding disorder who lives alone. Stacks of newspapers block the back door. A space heater runs beside a pile of papers in the living room. Thick dust covers the shelves. The client refuses to discard anything and says, \"No one visits anymore.\" Which concern should the nurse address first?",
       rationale:
         "A space heater beside paper is an immediate fire danger, and the back door is blocked. Moving the heater away from the papers removes the most urgent threat to life. Refusal to discard, loneliness and dust are real problems. They are addressed over time once the client is safe.",
       sources: [HALTER, DSM],
