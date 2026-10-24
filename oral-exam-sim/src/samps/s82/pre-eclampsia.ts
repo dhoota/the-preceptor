@@ -18,10 +18,6 @@ const S = {
     id: "brookfield-im-mg",
     citation: "Brookfield K, Galadanci H, Du L, and colleagues. Magnesium sulfate pharmacokinetics after intramuscular dosing in women with preeclampsia. AJOG Glob Rep. 2021.",
   },
-  sogc364: {
-    id: "sogc-364",
-    citation: "Skoll A, Boutin A, Bujold E, et al. No. 364: Antenatal corticosteroid therapy for improving neonatal outcomes. J Obstet Gynaecol Can. 2018.",
-  },
   acog222: {
     id: "acog-222",
     citation: "American College of Obstetricians and Gynecologists. Practice Bulletin No. 222: Gestational hypertension and preeclampsia. Obstet Gynecol. 2020.",
@@ -60,7 +56,7 @@ export const PRE_ECLAMPSIA_S82: Samp[] = [
     topic: "pre-eclampsia",
     title: "Aches during a household flu outbreak",
     stem:
-      "You are working at a nursing station in a fly-in community in northern Ontario. Blood samples go out on the scheduled flight, and results take about 24 hours. A 24-year-old woman, G3P2 at 31 weeks and 5 days, presents with 2 days of body aches, fatigue and nausea. She has vomited twice today and has a dull ache under her right ribs. Three people in her household have had influenza this week. Her two earlier pregnancies were normotensive. At 20 weeks her BP was 104 mmHg systolic and 66 mmHg diastolic. She takes a prenatal vitamin.\n\nShe has epigastric and right upper quadrant tenderness without guarding. The uterus is soft and nontender. Reflexes are 3+ without clonus. The fetal heart rate is 144/minute by Doppler. Urine dipstick shows 2+ protein. Capillary glucose is 5.2 mmol/L.",
+      "You are working at a nursing station in a fly-in community in northern Ontario. Blood samples go out on the scheduled flight, and results take about 24 hours. A 24-year-old woman, G3P2 at 31 weeks and 5 days, presents with 2 days of body aches, fatigue and nausea. She has vomited twice today and has a dull ache under her right ribs. She has no dysuria or urinary frequency. Three people in her household have had influenza this week. Her two earlier pregnancies were normotensive. At 20 weeks her BP was 104 mmHg systolic and 66 mmHg diastolic. She takes a prenatal vitamin.\n\nShe has epigastric and right upper quadrant tenderness without guarding. The uterus is soft and nontender. Reflexes are 3+ without clonus. The fetal heart rate is 144/minute by Doppler. Urine dipstick shows 2+ protein. Capillary glucose is 5.2 mmol/L.",
     vitals: { temperature: "37.1°C oral", pulse: "96/minute", resp: "18/minute", bp: "158/104 mmHg", o2sat: "98% on room air" },
     questions: [
       {
@@ -95,7 +91,7 @@ export const PRE_ECLAMPSIA_S82: Samp[] = [
         id: "q3",
         kind: "single",
         update:
-          "You cannot measure her platelets or liver enzymes at the station. The obstetrician on call at the referral centre asks how you plan to proceed.",
+          "No blood results will be available for about 24 hours. The obstetrician on call at the referral centre asks how you plan to proceed.",
         prompt: "Which of the following is the most appropriate disposition for her?",
         options: [
           "Admit to the nursing station overnight",
@@ -195,23 +191,23 @@ export const PRE_ECLAMPSIA_S82: Samp[] = [
         id: "q4",
         kind: "single",
         update:
-          "Obstetrics plans birth within 24 hours, once she is stable. Magnesium sulfate and labetalol have been started.",
-        prompt: "Which of the following is the most appropriate corticosteroid plan for her?",
+          "Obstetrics plans birth within 24 hours, once she is stable. Magnesium sulfate and labetalol have been started, and she is waiting in the emergency department for the obstetric team.",
+        prompt: "Which of the following is the most appropriate fetal assessment while she waits?",
         options: [
-          "betamethasone 12 mg IM, repeated in 24 hours",
-          "dexamethasone 10 mg IV every 12 hours",
-          "hydrocortisone 100 mg IV every 8 hours",
-          "methylprednisolone 1 g IV once daily",
-          "No corticosteroid until after the birth",
+          "Continuous fetal heart rate tracing",
+          "Doppler heart rate every 4 hours",
+          "Fetal movement counts",
+          "Ultrasound biophysical profile tomorrow",
+          "No fetal assessment until birth",
         ],
         correct: 0,
         explanation:
-          "At 32 weeks with birth expected within 7 days, antenatal corticosteroids reduce neonatal respiratory distress and death. The SOGC recommends them from 24 to 34 weeks and 6 days, and betamethasone 12 mg IM, repeated in 24 hours, is a standard course. Starting it now is worthwhile even if birth comes before the second dose. Dexamethasone 10 mg IV every 12 hours is the high-dose regimen once used to raise platelets in HELLP, and NICE advises against corticosteroids to treat HELLP because they do not improve maternal outcomes. Hydrocortisone and methylprednisolone do not give the fetal lung benefit. Withholding steroids gives up a proven benefit at 32 weeks.",
+          "NICE advises cardiotocography at the diagnosis of pre-eclampsia and again when there is abdominal pain or the mother's condition worsens. She has new HELLP syndrome, ongoing pain and a magnesium infusion at 32 weeks, so the tracing continues while she waits. HELLP can bring sudden fetal compromise or placental abruption, which a Doppler check every 4 hours would miss for hours. Fetal movement counts are a tool for outpatients and depend on her attention while she is unwell. A biophysical profile tomorrow comes too late when birth is planned within 24 hours. A viable fetus at 32 weeks needs surveillance, so no assessment until birth is unsafe.",
         keyFeature: { topic: "pre-eclampsia", n: 4 },
-        source: "sogc-364",
+        source: "nice-ng133",
       },
     ],
-    sources: [S.nice, S.simerville, S.tamir, S.sogc364],
+    sources: [S.nice, S.simerville, S.tamir],
     ...META,
   },
 
@@ -318,7 +314,7 @@ export const PRE_ECLAMPSIA_S82: Samp[] = [
         ],
         correct: 4,
         explanation:
-          "Her BP has risen from 110/70 mmHg at 20 weeks to 156/102 mmHg, and she has a headache and brisk reflexes at 36 weeks, so pre-eclampsia is the most likely cause. NICE lists sudden swelling of the face, hands or feet among its symptoms. The swelling began a day before the shrimp, and she has no itch, hives, wheeze or throat symptoms, so an allergic reaction is unlikely. Hereditary angioedema causes non-pitting swelling, usually with a history of attacks. Normal pregnancy edema affects the legs and does not come with new hypertension. Glomerulonephritis is possible but far less common than pre-eclampsia at this stage of pregnancy.",
+          "Her BP has risen from 110/70 mmHg at 20 weeks to 156/102 mmHg, and she has a headache and brisk reflexes at 36 weeks, so pre-eclampsia is the most likely cause. NICE lists sudden swelling of the face, hands or feet among its symptoms. The swelling began a day before the shrimp, and she has no itch, hives, wheeze or throat symptoms, so an allergic reaction is unlikely. Hereditary angioedema causes non-pitting swelling, usually with a history of attacks. Normal pregnancy edema is mostly in the legs, builds slowly and does not come with new hypertension or a headache. Glomerulonephritis is possible but far less common than pre-eclampsia at this stage of pregnancy.",
         keyFeature: { topic: "pre-eclampsia", n: 1 },
         source: "nice-ng133",
       },
@@ -335,7 +331,7 @@ export const PRE_ECLAMPSIA_S82: Samp[] = [
         ],
         correct: 4,
         explanation:
-          "A urine protein to creatinine ratio of 30 mg/mmol or more confirms proteinuria, which with her new hypertension would establish pre-eclampsia. It is sent with platelets, creatinine and liver enzymes to look for other organ involvement. Tryptase supports a diagnosis of anaphylaxis, which nothing in her presentation suggests. A C4 level screens for hereditary angioedema, which is unlikely with pitting swelling and no past attacks. Shrimp-specific IgE does not change acute care, and she has eaten shellfish safely before. Thyroid tests do not explain new hypertension with a headache.",
+          "A urine protein to creatinine ratio of 30 mg/mmol or more confirms proteinuria, which with her new hypertension would establish pre-eclampsia. It is sent with platelets, creatinine and liver enzymes to look for other organ involvement. Tryptase supports a diagnosis of anaphylaxis, which nothing in her presentation suggests. A C4 level screens for hereditary angioedema, which is unlikely with pitting swelling and no past attacks. Shrimp-specific IgE does not change acute care, and she has eaten shellfish safely before. Thyroid disease is far less likely. Hypothyroid swelling is non-pitting and comes with slow reflexes, and hyperthyroidism does not cause pitting edema of the face and hands.",
         keyFeature: { topic: "pre-eclampsia", n: 2 },
         source: "nice-ng133",
       },
@@ -443,7 +439,7 @@ export const PRE_ECLAMPSIA_S82: Samp[] = [
         ],
         correct: 2,
         explanation:
-          "Platelets of 84 x 10^9/L, an AST of 264 U/L and an LDH of 780 U/L with undetectable haptoglobin show hemolysis, liver injury and a low platelet count, which in a woman with new hypertension at 34 weeks is HELLP syndrome. ACOG uses an LDH of 600 U/L or more, transaminases more than twice normal and platelets below 100 x 10^9/L. A normal troponin and ECG argue against myocardial infarction. Cholecystitis and viral or autoimmune hepatitis do not cause hemolysis with a falling platelet count, and none explains her new hypertension. A normal glucose and INR argue against acute fatty liver of pregnancy.",
+          "Platelets of 84 x 10^9/L, an AST of 264 U/L and an LDH of 780 U/L with undetectable haptoglobin show hemolysis, liver injury and a low platelet count, which in a woman with new hypertension at 34 weeks is HELLP syndrome. ACOG uses an LDH of 600 U/L or more, transaminases more than twice normal and platelets below 100 x 10^9/L. A normal troponin and ECG argue against myocardial infarction. Cholecystitis and viral or autoimmune hepatitis do not cause hemolysis with a low platelet count, and none explains her new hypertension. A normal glucose and INR argue against acute fatty liver of pregnancy.",
         keyFeature: { topic: "pre-eclampsia", n: 3 },
         source: "acog-222",
       },

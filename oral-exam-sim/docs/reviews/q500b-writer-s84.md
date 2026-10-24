@@ -63,3 +63,52 @@ The web search budget ran out partway through. All the checks above used WebFetc
 6. environmental-42 q4: the 12 to 24 hour figure for uneventful dives comes from general flying-after-diving guidance (DAN 2004), not from the cited UHMS document.
 7. environmental-43 q3 keys "No further cardiac testing" on Bailey 2007. That study included tetany and current across the chest. An older reference that lists those as reasons to monitor would disagree.
 8. The bank-wide near-duplicate stem test times out at the default 5 seconds while the machine is under heavy load (load average about 14 on 4 cores). It passes with `--testTimeout=120000`, so no duplicate stems were found.
+
+## Revision 1
+
+This revision answers `docs/reviews/q500b-qa-s84.md`, which failed 8 items. No D1 slot was used. Every replacement was checked against the whole bank by keyword search of `src/samps` and `src/cases`.
+
+| Item | QA finding | Change |
+|---|---|---|
+| 39 q1 | Same keyed decision as cooling before tests (environmental-02, environmental-17, s36) | Removed. The SAMP now opens with the lithium level question. Its update says cooling is under way, so cooling first is shown, not tested. |
+| 39 q4 | Same keyed decision as hemodialysis in tox-07, and it misquoted the EXTRIP criterion | Removed, so the SAMP no longer has an EXTRIP dialysis key. Two new KF2 questions added (q3, q4, below). |
+| 39 new q3 (KF2) | | Hydration advice on lithium in hot weather. The key is water through the day, and the distractors are electrolyte solutions, salt tablets and fluid restriction. Health Canada 2011 says lithium levels run higher in summer, that 11.5% of lithium poisonings needing hospital care came from heat and dehydration, and that patients should drink water and avoid electrolyte solutions because of hypernatremia. Bank search found no item on lithium with electrolyte solutions or sports drinks. |
+| 39 new q4 (KF2) | | Plan after discharge while the heat warning continues. The key is an air-conditioned place, and the distractors are a fan, a fan with open windows, a fan with extra fluids, and an evening shower. Health Canada 2011 says air conditioning is one of the most protective factors, evidence for fans is mixed, a fan warms the body by convection above a skin temperature of about 36°C, and people at risk need a daily check-in plan. Bank search found no SAMP on fans or air conditioning. The batch15 oral case teaches discharge to a cooled setting, but not this choice. |
+| 40 q1 | "Lying BP" was not in the stem | Now reads "Her BP of 104/60 mmHg". |
+| 40 q3 | Mock-mode cue: the update gave the 38.9°C end point | Update now reads "Cooling is completed and she is lifted out of the tank." |
+| 40 q5 | Explanation overstated NATA on transport | First sentences rewritten to the reviewer's wording: NATA's conditional transport, the tachycardia and tachypnea, no laboratory in the tent, and readiness for explosive rhabdomyolysis. |
+| 41 q2 | Mock-mode cue: the update named the q1 key | Update now opens "Ultrasound shows slow coordinated ventricular contractions". A weak remaining cue is flagged under B6. |
+| 42 q4 | The 12 to 24 hour sentence was not in UHMS and was wrong against DAN 2004 | Sentence deleted. The explanation now rests on UHMS alone. |
+| 43 q2 | Same teaching as msk-03 q2 and s36 subway q1 (AC tetany mechanism) | Replaced with a new KF5 decision on the extent of the examination for hidden injury. The key is a full musculoskeletal examination, from Smith 2026: "All patients with electrical injuries should undergo a thorough musculoskeletal examination", because injury can be present without visible wounds. Bank search found no electrical item that keys this. q1 is now the only shoulder question. |
+
+Other changes:
+- Bouchama 2022 is no longer cited and has been removed from the sources.
+- Health Canada 2011 was added, verified by WebFetch of the full guide, with the URL listed.
+- The Bailey 2007 URL was added (https://pmc.ncbi.nlm.nih.gov/articles/PMC2658483/, confirmed by the reviewer).
+
+### Coverage after Revision 1
+
+22 questions: 21 single, 1 menu. Every key feature is still tested, and the extra questions still go mainly to KF1 (the thinnest), then KF4 and KF5.
+
+| Key feature | Questions in this batch |
+|---|---|
+| KF1 | 5 |
+| KF2 | 4 |
+| KF3 | 4 |
+| KF4 | 4 |
+| KF5 | 5 |
+
+- environmental-39 is now KF2 x4.
+- Single key positions (0 to 4): 5, 3, 4, 4, 5. The longest-option and position gates pass.
+
+### Still flagged
+
+- environmental-39: the q2 update reports the lithium level, which implies the q1 key in mock mode. Left in under rule B6.
+- environmental-40: the q2 update implies the q1 key in mock mode. Left in under rule B6.
+- environmental-41: the q2 update still implies a check was done. Left in under rule B6.
+- environmental-39 q3 and q4 are tagged KF2 as the coordinator asked. They test heat risk in a patient on a drug that impairs heat tolerance, at discharge. A physician may prefer another tag.
+- environmental-40 q3 and q5 need the physician decisions the reviewer listed.
+
+### Tests
+
+`SAMP_BATCH=s84 npx vitest run tests/samps.test.ts tests/samp-quality.test.ts tests/citations.test.ts --testTimeout=120000`: 3 files, 136 of 136 tests passed. tsc shows no errors in `samps/s84`.

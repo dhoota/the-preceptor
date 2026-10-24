@@ -67,3 +67,48 @@ Read every existing eye SAMP (eye-01 to eye-38) and the SAMPs that list eye as a
 6. eye-42 q1 keys visual acuity over the other steps. A reviewer may want the stem to state more plainly that acuity has not been measured yet.
 7. The airbag disposition (eye-43 q3) relies on EyeWiki's outpatient criteria. Next day ophthalmology review is assumed to be possible 2 hours away by road.
 8. Web search ran out partway through the work. Every citation above was opened with WebFetch or read on PubMed, but a few distractor reasons rest on standard teaching, not on the cited source. Examples are the incubation of adenovirus (left out on purpose), HLA-B27 uveitis findings and toxoplasma findings.
+
+## Revision 1
+
+This revision answers every fail in `docs/reviews/q500b-qa-s76.md`. It does not use the last D1 repeat slot. Before writing each new decision I searched all of `src/samps` and `src/cases` by keyword (enterovirus, hyphema grade, von Willebrand, Ocular Trauma Score or visual outcome, afferent defect after trauma, airbag and sodium hydroxide, subconjunctival hemorrhage investigations). None of the new keys is keyed anywhere else in the bank.
+
+### Changes by item
+
+| Item | QA finding | Change |
+|---|---|---|
+| eye-39 q2 | "no floaters" not in stem | Explanation now reads "His vision is 20/20". |
+| eye-39 q3 | Update named the q2 key | The update now opens "The cornea is clear." |
+| eye-39 q5 | Repeat of eye-03, update cue | Removed. eye-39 now has 4 questions. Return to wrestling had no source with exact criteria, so I dropped the question rather than replace it. `aao-hsv` is no longer cited and has been removed from the sources. |
+| eye-40 q1 | "red discharge" | Now "watery discharge". |
+| eye-40 q3 | Repeat of eye-04 q4 and eye-21 q3, lead-in cue, TF-IDF 0.53 with eye-39 q3 | Replaced with a new menu (select 1 or None). Which investigations do her subconjunctival hemorrhages need? The key is None, because the hemorrhages are part of the illness (82% in Lay 2026). The question shares no option or wording with eye-39 q3. It differs from eye-36 q1, where the key is an INR for a patient on warfarin. |
+| eye-40 q4 | Repeat of eye-04 q3 (hand washing) | Replaced with a new single question. Which test confirms the outbreak virus? The key is a conjunctival swab for enterovirus PCR (Lay 2026: RT-PCR of conjunctival swabs, then sequencing to the coxsackievirus A24 variant). Azari is no longer cited in eye-40 and has been removed from its sources. |
+| eye-41 q1 | Detail added beyond the stem and source | Now "A rash on the palms and soles is the rash of secondary syphilis, and the Canadian guide lists uveitis and retinitis among its eye signs." Also "Back pain that began with a move". |
+| eye-41 q3 | Update named the q2 key | The update now opens "Further examination shows". Sarcoid has its own reason: it can cause a panuveitis but does not explain a reactive treponemal test. |
+| eye-41 q4 | Doxycycline duration wrong | Now "A single IM dose of benzathine penicillin treats early syphilis, and oral doxycycline for 28 days treats late latent syphilis. Neither treats eye disease." |
+| eye-42 stem | Echoed eye-11 (kitchen counter) | She now gets up in the dark and falls against her bedside table. Title changed to "Older woman who fell in the night". The large incision cataract history stays. |
+| eye-42 q4 | Repeat of eye-13 q4 and the batch18 airgun case, lead-in cue | Replaced with prognosis. Which factor most predicts poor final vision? The key is a relative afferent pupillary defect. Zhou 2022 (re-read by WebFetch) names preoperative acuity, an afferent defect and the wound site as the strongest predictors, and repair within 12 to 24 hours and anterior wounds as predictors of a better result. The lead-in does not mention surgery. The question is tagged KF3 because it tests the pupil examination. |
+| eye-43 | Rebuilt | q1 is now recognition: the most likely cause of the burning in both eyes is sodium hydroxide from the airbag (Barnes 2012). Immediate irrigation is taught in the explanation, not keyed. The old q2 slit lamp search is gone. The new q2 asks for the hyphema grade (grade 0 microhyphema, EyeWiki), and its update no longer names a key ("Further examination shows"). The new q3 asks which finding would support admission (a known bleeding disorder, from the EyeWiki admission criteria). q4 is the disposition, with the IOP corrected from 22 to 16 mmHg and called normal. The head raised and no NSAID question (repeat of eye-10 and eye-25), and the wrong "drainage angle" phrase, are gone. Stein 1999 is no longer cited and has been removed from the sources. |
+
+### Coverage after revision
+
+20 questions (18 single, 2 menu: eye-40 q3 and eye-41 q4).
+
+| Key feature | Count | Questions |
+|---|---|---|
+| 1 | 5 | eye-40 q2, q3, q4, eye-41 q3, eye-43 q1 |
+| 2 | 5 | eye-39 q1, eye-40 q1, eye-41 q1, eye-41 q4, eye-43 q3 |
+| 3 | 4 | eye-39 q2, eye-41 q2, eye-42 q1, eye-42 q4 |
+| 4 | 2 | eye-39 q3, eye-39 q4 |
+| 5 | 4 | eye-42 q2, eye-42 q3, eye-43 q2, eye-43 q4 |
+
+Single key positions, first to fifth: 4, 4, 4, 4, 2 of 18. The key is the single longest option in 4 of 18.
+
+### Still uncertain
+
+1. Key feature 4 dropped from 4 to 2 questions. Its two repeat items (eye-39 q5 and eye-40 q3) were removed, and I found no steroid decision for a viral eye infection that the bank does not already key. Every key feature is still tested. The reviewer may want one more key feature 4 item if the physician can name a new angle.
+2. eye-42 q2 (dense ring of hemorrhage means occult rupture) passed QA. Signed eye-36 q2 mentions the same sign in its explanation, but there it is not the key.
+3. eye-40 q4: a few distractor reasons rest on standard teaching rather than Lay 2026, namely that antibody testing gives no answer during the illness and that HSV is one sided with lid vesicles.
+
+### Tests after revision
+
+`npx tsc --noEmit -p . 2>&1 | grep samps/s76` prints nothing. `SAMP_BATCH=s76 npx vitest run tests/samps.test.ts tests/samp-quality.test.ts tests/citations.test.ts --testTimeout=120000`: 128 of 128 pass.
