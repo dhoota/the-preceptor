@@ -309,7 +309,7 @@ export const DVT_PE_S73: Samp[] = [
       {
         id: "q4",
         kind: "single",
-        update: "His pain settles with acetaminophen and his pulse falls to 92/minute. His O2 sat is 93% on room air and his BP is 134/80 mmHg. His daughter can stay with him at home.",
+        update: "His chest X-ray shows a small right pleural effusion. His pain settles with acetaminophen and his pulse falls to 92/minute. His O2 sat is 93% on room air and his BP is 134/80 mmHg. His daughter can stay with him at home.",
         prompt: "Which of the following findings makes him unsuitable for outpatient treatment under the Hestia criteria?",
         options: ["Age of 76 years", "Atrial fibrillation", "O2 saturation of 93%", "PE while on apixaban", "Small pleural effusion"],
         correct: 3,
