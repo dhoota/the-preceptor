@@ -34,19 +34,19 @@ export const TOX_S83: Samp[] = [
         options: ["Alcohol withdrawal", "GHB withdrawal", "Serotonin toxicity", "Sympathomimetic toxicity", "Thyrotoxic crisis"],
         correct: 1,
         explanation:
-          "Gamma-butyrolactone is sold as an industrial solvent and is converted to GHB in the body within minutes. Dosing every 2 to 3 hours around the clock is the pattern of a dependent user, and tremor, sweating, anxiety and a fast pulse starting within hours of the last dose fit withdrawal from a drug with a half-life of 20 to 30 minutes. He does not drink, so alcohol withdrawal does not fit. Serotonin toxicity brings clonus and hyperreflexia, which he does not have. A sympathomimetic would not explain why symptoms began when his supply ran out. Thyrotoxic crisis does not follow stopping a drug.",
+          "Gamma-butyrolactone is sold as an industrial solvent and is converted to GHB in the body within minutes. Dosing every 2 to 3 hours around the clock is the pattern of a dependent user, and tremor, sweating, anxiety and a fast pulse starting within hours of the last dose fit withdrawal from a drug with a half-life of 20 to 30 minutes. He does not drink, so alcohol withdrawal does not fit. Serotonin toxicity brings clonus and hyperreflexia, which he does not have. A sympathomimetic would not explain why symptoms began when his supply ran out. Nothing in his history suggests thyroid disease, and his symptoms began when his supply ran out.",
         keyFeature: { topic: "tox", n: 2 },
         source: "weaver-ghb",
       },
       {
         id: "q2",
         kind: "single",
-        update: "Four hours later his pulse is 112/minute. He says he has not slept and wants the liquid. He now believes he is in a hotel and is talking to people who are not in the room.",
+        update: "Thirty minutes later, while his IV is being placed, his pulse is 112/minute. He says he has not slept and wants the liquid. He now believes he is in a hotel and is talking to people who are not in the room.",
         prompt: "Which of the following findings best shows that his withdrawal has become severe?",
-        options: ["Craving for the liquid", "Delirium with hallucinations", "Lack of sleep overnight", "Pulse of 112/minute", "Systolic BP of 150 mmHg"],
-        correct: 1,
+        options: ["BP of 158/94 mmHg", "Craving for the liquid", "Delirium with hallucinations", "Lack of sleep overnight", "Pulse of 112/minute"],
+        correct: 2,
         explanation:
-          "His disorientation to place and his conversation with people who are not there show delirium with hallucinations, the observed signs that mark severe withdrawal and that can progress to seizures or death without treatment. Craving and lack of sleep are common in mild withdrawal and are reported by the patient, so they do not grade severity. His pulse has fallen from 118 to 112/minute, and a modest rise in pulse or blood pressure appears early in withdrawal of any severity. These signs are repeated with each dose, but on their own they do not mark severe withdrawal.",
+          "His disorientation to place and his conversation with people who are not there show delirium with hallucinations, the observed signs that mark severe withdrawal and that can progress to seizures or death without treatment. Craving and lack of sleep are common in mild withdrawal and are reported by the patient, so they do not grade severity. His pulse has fallen from 118 to 112/minute, and a modest rise in pulse or blood pressure appears early in withdrawal of any severity. On their own, pulse and blood pressure do not mark severe withdrawal.",
         keyFeature: { topic: "tox", n: 8 },
         source: "tay-ghb",
       },
@@ -97,7 +97,7 @@ export const TOX_S83: Samp[] = [
     alsoTopics: ["pediatric-fever"],
     title: "Crying newborn on day five",
     stem:
-      "You are working in a community hospital emergency department. A 5-day-old boy is brought in by his parents with 1 day of high-pitched crying, poor feeding and loose stools. He was born at 39 weeks by vaginal delivery after an uncomplicated labour and went home at 36 hours of age. His mother has taken methadone 60 mg daily for opioid use disorder throughout the pregnancy, and her HIV test was negative. She is breastfeeding. He has had no fever and no vomiting. He sneezes often, and he has a tremor and increased tone when handled. His anterior fontanelle is flat, his abdomen is soft and not distended, and his capillary refill is 2 seconds. His birth weight was 3.4 kg.",
+      "You are working in a community hospital emergency department. A 5-day-old boy is brought in by his parents with 1 day of high-pitched crying, poor feeding and loose stools. He was born at 39 weeks by vaginal delivery after an uncomplicated labour and went home at 96 hours of age after a period of observation. His mother has taken methadone 60 mg daily for opioid use disorder throughout the pregnancy, and her HIV test was negative. She is breastfeeding. He has had no fever and no vomiting. He sneezes often, and he has a tremor and increased tone when handled. His anterior fontanelle is flat, his abdomen is soft and not distended, and his capillary refill is 2 seconds. His birth weight was 3.4 kg.",
     vitals: { temperature: "37.2°C rectal", pulse: "168/minute", resp: "54/minute", o2sat: "98% on room air", weight: "3.1 kg" },
     questions: [
       {
@@ -114,12 +114,11 @@ export const TOX_S83: Samp[] = [
       {
         id: "q2",
         kind: "single",
-        update: "His capillary glucose is 4.1 mmol/L. The examination is otherwise normal.",
         prompt: "Which of the following approaches does the Canadian Paediatric Society recommend for assessing his withdrawal?",
         options: ["Eat, Sleep, Console assessment", "Lipsitz neonatal drug withdrawal tool", "Modified Finnegan scoring", "Serial daily weights", "Serum methadone level"],
         correct: 0,
         explanation:
-          "The Canadian Paediatric Society recommends the Eat, Sleep, Console approach for every newborn at risk, a family-centred, functional assessment of whether the infant can feed well, sleep and be consoled. It is repeated at regular intervals so that care can be stepped up or down. Finnegan scoring counts many nonspecific signs and is being replaced. The Lipsitz tool is an older sign checklist. Daily weights follow feeding but do not grade withdrawal, and a methadone level in the infant does not guide care.",
+          "The Canadian Paediatric Society recommends the Eat, Sleep, Console approach for every newborn at risk, a family-centred, functional assessment of whether the infant can feed well, sleep and be consoled. It is repeated at regular intervals so that care can be stepped up or down. Finnegan scoring is still widely used but counts many nonspecific signs, and the CPS recommends ESC as the evidence-based alternative. The Lipsitz tool is an older sign checklist. Daily weights follow feeding but do not grade withdrawal, and a methadone level in the infant does not guide care.",
         keyFeature: { topic: "tox", n: 8 },
         source: "cps-nows-2025",
       },
@@ -204,20 +203,8 @@ export const TOX_S83: Samp[] = [
         options: ["Clear her for psychiatric review", "INR and lactate now", "Repeat AST in 12 hours", "Repeat level in 4 hours", "Urine acetaminophen screen"],
         correct: 3,
         explanation:
-          "Her 4 hour level of 480 umol/L sits below the treatment line of 1000 umol/L (150 mg/L) but above 66 umol/L (10 mg/L). With an anticholinergic or opioid co-ingestant, absorption can be delayed, so the consensus advises a second level 4 to 6 hours after the first rather than relying on one value. Clearing her now could miss a later rise above the line. A normal AST this early does not exclude liver injury to come, and waiting 12 hours delays treatment. The INR and lactate grade established toxicity. A urine screen does not give a concentration to plot.",
+          "Her 4 hour level of 480 umol/L sits below the treatment line of 1000 umol/L (150 mg/L) but above 66 umol/L (10 mg/L). With an anticholinergic or opioid co-ingestant, absorption can be delayed, so the consensus advises a second level 4 to 6 hours after the first rather than relying on one value. Clearing her now could miss a later rise above the line. A normal AST this early does not exclude liver injury to come, and waiting 12 hours delays treatment. The INR and lactate grade established toxicity. A urine screen does not give a concentration to plot. If the repeat level at 8 hours were 690 umol/L (about 104 mg/L), it would sit above the 8 hour line of about 500 umol/L (75 mg/L), and she would need a full course of acetylcysteine.",
         keyFeature: { topic: "tox", n: 7 },
-        source: "apap-consensus",
-      },
-      {
-        id: "q5",
-        kind: "single",
-        update: "She has been under constant observation. A second level, 8 hours after the ingestion, is 690 umol/L (about 104 mg/L).",
-        prompt: "Which of the following best explains the rise in her acetaminophen level since the first sample?",
-        options: ["Extended-release formulation", "Laboratory error", "Reduced renal clearance", "Second hidden ingestion", "Slowed gastric emptying"],
-        correct: 4,
-        explanation:
-          "An anticholinergic drug slows the stomach and gut, as her reduced bowel sounds show, so acetaminophen keeps being absorbed for hours and the level can rise after a reassuring first sample. At 8 hours the treatment line is about 500 umol/L (75 mg/L), so 690 umol/L now calls for a full course of acetylcysteine. Extra strength 500 mg tablets are immediate release, not an extended-release product. She has been observed throughout, so a second ingestion is unlikely. Acetaminophen is cleared mainly by the liver, so reduced renal clearance would not explain a rise. Two consistent samples make a laboratory error unlikely.",
-        keyFeature: { topic: "tox", n: 3 },
         source: "apap-consensus",
       },
     ],
