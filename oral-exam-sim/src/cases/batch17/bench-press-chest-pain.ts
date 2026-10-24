@@ -329,8 +329,8 @@ export const benchPressChestPain: OralCase = {
       seconds: 80,
       modelAnswer: [
         "IV opioid first. Fentanyl 50 mcg IV, repeated to effect.",
-        "IV beta blocker first. Esmolol 500 mcg/kg over 1 minute, which is 42 mg, then 50 to 300 mcg/kg/min, or labetalol 20 mg IV.",
-        "Targets. Heart rate 60 or lower and systolic pressure under 120 mmHg, or as low as perfusion allows. Use the right arm, which reads higher.",
+        "Then an IV beta blocker before any vasodilator. Esmolol 500 mcg/kg over 1 minute, which is 42 mg, then 50 to 300 mcg/kg/min, or labetalol 20 mg IV.",
+        "Targets. Heart rate 60 to 80 and systolic pressure under 120 mmHg, or the lowest that keeps organs perfused. Use the right arm, which reads higher. Watch for worsening regurgitation as the rate falls.",
         "Add a vasodilator only after the heart rate is controlled.",
         "No antiplatelet, anticoagulant or NSAID. Cancel the naproxen.",
         "Two large IV lines. Cross matched blood ready.",
@@ -339,7 +339,7 @@ export const benchPressChestPain: OralCase = {
       choices: [
         {
           id: "c-impulse",
-          label: "I gave fentanyl 50 mcg IV, then esmolol 42 mg IV and an infusion, aiming for a heart rate of 60 or lower and a systolic under 120 using the right arm, and I cancelled the naproxen and gave no antithrombotic drugs.",
+          label: "I gave fentanyl 50 mcg IV, then esmolol 42 mg IV and an infusion, aiming for a heart rate of 60 to 80 and a systolic under 120 using the right arm, and I cancelled the naproxen and gave no antithrombotic drugs.",
           next: "q-call",
           quality: "strong",
           feedback:
@@ -388,7 +388,7 @@ export const benchPressChestPain: OralCase = {
         "Use the provincial transfer service to set up the call and transport.",
         "Send the CT images electronically.",
         "Air or land transport with a critical care escort and the infusion running.",
-        "Tell the surgeon about the aspirin or other drugs given, if any.",
+        "Tell the surgeon about the ibuprofen at 16:00 and any ASA or anticoagulant given.",
       ],
       rubric: ["cp-m4", "cp-pr6"],
       next: "s-refuse",
@@ -565,7 +565,7 @@ export const benchPressChestPain: OralCase = {
       id: "cp-m2",
       competency: "resuscitation",
       criterion: "management",
-      text: "Gives IV opioid analgesia, then an IV beta blocker first, aiming for a heart rate of 60 or lower and a systolic pressure under 120 mmHg, using the higher arm reading.",
+      text: "Gives IV opioid analgesia, then an IV beta blocker before any vasodilator, aiming for a heart rate of 60 to 80 and a systolic pressure under 120 mmHg, using the higher arm reading.",
       points: 2,
       teaching: "Pain control and beta blockade reduce the rate of rise of aortic pressure. Add a vasodilator only after the heart rate is controlled.",
       source: "aha-aorta",

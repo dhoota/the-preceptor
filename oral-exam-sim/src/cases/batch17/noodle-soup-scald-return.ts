@@ -83,7 +83,7 @@ export const noodleSoupScaldReturn: OralCase = {
       label: "History at the return visit",
       result:
         "Fever to 39.5°C since last evening. Vomited three times overnight and four watery stools. Sleepy and irritable. This morning a red rash spread over his whole body. Only one wet diaper in 12 hours. " +
-        "The burn dressing has stayed on since discharge. The burn clinic video review is booked for tomorrow. He has had acetaminophen and ibuprofen at home.",
+        "The burn dressing has stayed on since discharge. The burn clinic video review is booked for this evening. He has had acetaminophen and ibuprofen at home.",
     },
     {
       id: "return-exam",
@@ -265,7 +265,7 @@ export const noodleSoupScaldReturn: OralCase = {
           next: "s-fp",
           quality: "partial",
           feedback:
-            "A week is too long for a child with a possibly deep burn, and 'looks infected' misses the danger. Toxic shock often starts with fever, rash and diarrhea while the wound looks clean. Involve the burn centre and give specific warning signs.",
+            "A week is too long for a child with a possibly deep burn, and 'looks infected' misses the danger. Toxic shock often starts with fever, rash, vomiting and diarrhea. Involve the burn centre and give specific warning signs.",
         },
         {
           id: "c-transfer",
@@ -310,7 +310,7 @@ export const noodleSoupScaldReturn: OralCase = {
         "Normal saline or balanced crystalloid 10 to 20 mL/kg (150 to 300 mL) per bolus, reassessing after each, up to 40 to 60 mL/kg in the first hour.",
         "Blood culture if it does not delay antibiotics. Antibiotics within 1 hour.",
         "An antistaphylococcal beta lactam such as cloxacillin or cefazolin, plus clindamycin to suppress toxin. Add vancomycin if MRSA is possible.",
-        "Remove the dressing, inspect and swab the burn. A clean looking wound does not exclude toxic shock.",
+        "Remove the dressing, inspect and swab the burn. The burn is the likely source.",
       ],
       rubric: ["bn-h4", "bn-p3", "bn-p4", "bn-m3", "bn-m4"],
       choices: [
@@ -324,7 +324,7 @@ export const noodleSoupScaldReturn: OralCase = {
         },
         {
           id: "c-ceftriaxone",
-          label: "I treated septic shock with fluid boluses and ceftriaxone and left the dressing on because it was due to be changed tomorrow.",
+          label: "I treated septic shock with fluid boluses and ceftriaxone and left the dressing on because it was due to be reviewed this evening.",
           next: "s-ceftriaxone",
           quality: "partial",
           feedback:
@@ -401,7 +401,7 @@ export const noodleSoupScaldReturn: OralCase = {
       seconds: 70,
       modelAnswer: [
         "Sit down and speak plainly.",
-        "Explain toxic shock. A toxin from bacteria on the skin can cause a severe illness even after a small, clean burn.",
+        "Explain toxic shock. A toxin from bacteria on the skin can cause a severe illness even after a small burn.",
         "It is not caused by how they cared for him. Bringing him back quickly was exactly right.",
         "Explain the treatment, the transfer and that he will be in intensive care.",
         "Answer his questions and make sure he has a way to get to the burn centre.",
@@ -410,7 +410,7 @@ export const noodleSoupScaldReturn: OralCase = {
       choices: [
         {
           id: "c-reassure",
-          label: "I explained toxic shock in plain words, said it can follow small clean burns and was not caused by their care, said coming back quickly was the right thing, and went over the transfer and how he could get there.",
+          label: "I explained toxic shock in plain words, said it can follow small burns and was not caused by their care, said coming back quickly was the right thing, and went over the transfer and how he could get there.",
           next: "end",
           quality: "strong",
           feedback:
@@ -422,7 +422,7 @@ export const noodleSoupScaldReturn: OralCase = {
           next: "s-dressing",
           quality: "partial",
           feedback:
-            "This speculates and assigns blame without evidence. The dressing was planned to stay on, and toxic shock often occurs with a clean looking wound. Give the facts and support him.",
+            "This speculates and assigns blame without evidence. The dressing was planned to stay on, and toxic shock can follow small burns without any lapse in care. Give the facts and support him.",
         },
         {
           id: "c-virus",
@@ -516,9 +516,9 @@ export const noodleSoupScaldReturn: OralCase = {
       id: "bn-p4",
       competency: "assessment",
       criterion: "physical",
-      text: "Takes down the dressing, inspects the burn and swabs it, and does not accept a clean looking wound as reassurance.",
+      text: "Takes down the dressing, inspects the burn and swabs it as the likely source.",
       points: 1,
-      teaching: "The burn is the likely source, so inspect and swab it. A wound without obvious infection does not exclude toxic shock.",
+      teaching: "The burn is the likely source, so inspect and swab it. Toxic shock is caused by toxin, and it has followed burns of under 1% of body surface area.",
       source: "gutzler",
     },
     {
@@ -574,7 +574,7 @@ export const noodleSoupScaldReturn: OralCase = {
       criterion: "process",
       text: "Gives specific return advice about toxic shock: fever, rash, vomiting, diarrhea, drowsiness or fewer wet diapers.",
       points: 2,
-      teaching: "Toxic shock can follow small burns treated as outpatients. Families who know the warning signs return early.",
+      teaching: "Toxic shock can follow small burns. Families who know the warning signs can return early.",
       source: "gutzler",
     },
     {
@@ -592,7 +592,7 @@ export const noodleSoupScaldReturn: OralCase = {
       criterion: "process",
       text: "Explains toxic shock to his father honestly and without blame, and confirms he returned at the right time.",
       points: 1,
-      teaching: "Toxic shock can occur after small, clean, well cared for burns. Parents need honest information and reassurance that they did not cause it.",
+      teaching: "Toxic shock can follow small burns. Parents need honest information and reassurance that they did not cause it.",
       source: "gutzler",
     },
     {

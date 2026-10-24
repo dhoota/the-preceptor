@@ -120,7 +120,7 @@ export const hoistTransferThighFracture: OralCase = {
       id: "event",
       label: "Observations at 21:30",
       result:
-        "Responds only to a firm sternal rub. Respiratory rate 6/minute with snoring. O2 sat 86% on room air. End tidal CO2 68 mmHg by nasal capnography. Pulse 74/minute. BP 104/62 mmHg. Pupils 2 mm.",
+        "At 21:00 the nurse gave hydromorphone 0.2 mg IV as a breakthrough dose when she moaned during a splint check. Now she responds only to a firm sternal rub. Respiratory rate 6/minute with snoring. O2 sat 86% on room air. End tidal CO2 68 mmHg by nasal capnography. Pulse 74/minute. BP 104/62 mmHg. Pupils 2 mm.",
     },
   ],
   start: "s-open",
@@ -258,7 +258,7 @@ export const hoistTransferThighFracture: OralCase = {
           next: "s-hydromorphone",
           quality: "partial",
           feedback:
-            "Titrating opioid for severe pain is right in principle. But 1 mg hourly is an adult dose for a 36 kg woman who became hypoxic on morphine before. A regional block would give better relief with less respiratory risk.",
+            "Titrating opioid for severe pain is right in principle. But 1 mg hourly is a standard adult dose and is too much for a 36 kg woman who became hypoxic on morphine before. A regional block would give better relief with less respiratory risk.",
         },
         {
           id: "c-big-block",
@@ -289,7 +289,7 @@ export const hoistTransferThighFracture: OralCase = {
       id: "s-event",
       phase: "21:30",
       text:
-        "The block worked within 20 minutes and she fell asleep. The nurse now calls you urgently. The patient responds only to a firm sternal rub. Respiratory rate 6/minute and snoring. O2 sat 86% on room air. End tidal CO2 68 mmHg. Pupils 2 mm. " +
+        "The block worked within 20 minutes and she fell asleep. At 21:00 the nurse gave a breakthrough dose of hydromorphone 0.2 mg IV when she moaned during a splint check. The nurse now calls you urgently. The patient responds only to a firm sternal rub. Respiratory rate 6/minute and snoring. O2 sat 86% on room air. End tidal CO2 68 mmHg. Pupils 2 mm. " +
         "Her mother says she gave her usual 20:00 clobazam and baclofen through the tube while you were at the bedside of another patient.",
       next: "q-event",
     },
@@ -300,7 +300,7 @@ export const hoistTransferThighFracture: OralCase = {
       prompt: "What is happening, and what do you do?",
       seconds: 80,
       modelAnswer: [
-        "Opioid induced respiratory depression made worse by clobazam and baclofen. The block took away the pain that had been driving her breathing.",
+        "Opioid induced respiratory depression from the breakthrough hydromorphone on top of the earlier fentanyl, made worse by clobazam and baclofen. The block took away the pain that had been keeping her awake.",
         "Stimulate her, open the airway with a jaw thrust, give oxygen and bag mask ventilation if needed. Suction ready because she aspirates.",
         "Naloxone 0.04 mg IV, repeated every 2 to 3 minutes until her breathing is adequate.",
         "Avoid flumazenil. She takes clobazam daily and has epilepsy, so it can cause seizures.",
@@ -330,7 +330,7 @@ export const hoistTransferThighFracture: OralCase = {
           next: "s-sleeping",
           quality: "unsafe",
           feedback:
-            "An end tidal CO2 of 68 mmHg and a rate of 6 are respiratory failure, not comfortable sleep. Opioids with benzodiazepines and other sedatives cause most deaths from opioid toxicity. This needs action now.",
+            "An end tidal CO2 of 68 mmHg and a rate of 6 are respiratory failure, not comfortable sleep. Opioids combined with benzodiazepines and other sedatives are strongly linked with deaths from opioid toxicity. This needs action now.",
         },
       ],
     },
@@ -355,7 +355,7 @@ export const hoistTransferThighFracture: OralCase = {
       prompt: "She is breathing at 14/minute with an end tidal CO2 of 44 mmHg. What orders do you write for the rest of the night?",
       seconds: 70,
       modelAnswer: [
-        "Continuous SpO2 and capnography while she has opioid on board and for the duration of naloxone risk.",
+        "Continuous SpO2 and capnography until the risk of recurrent respiratory depression has passed. Naloxone lasts 20 to 90 minutes, shorter than many opioids.",
         "Behavioural pain scores every hour with her mother's input.",
         "Lower breakthrough opioid doses now that the block works. Plan for the block wearing off in about 8 to 12 hours.",
         "Reconcile home medicines with her mother. Write when clobazam and baclofen are given and by whom. Do not stop them abruptly.",
@@ -453,8 +453,8 @@ export const hoistTransferThighFracture: OralCase = {
       criterion: "history",
       text: "Asks about past responses to analgesics and learns of oversedation with morphine and good relief from a regional technique.",
       points: 2,
-      teaching: "Past responses predict future ones. A history of opioid related hypoxia calls for smaller doses, closer monitoring and opioid sparing choices.",
-      source: "boyer",
+      teaching: "Every patient given opioids needs an assessment of the risk of advancing sedation and respiratory depression, and the dose and monitoring plan should follow that risk. Her past opioid related hypoxia puts her at high risk.",
+      source: "jungquist",
     },
     {
       id: "at-h4",
@@ -508,7 +508,7 @@ export const hoistTransferThighFracture: OralCase = {
       text: "Recognizes opioid induced respiratory depression from the low rate, high end tidal CO2 and small pupils, worsened by clobazam, baclofen and the loss of pain stimulus after the block.",
       points: 2,
       critical: true,
-      teaching: "Respiratory depression is the defining feature of opioid toxicity. Capnography shows hypoventilation before the O2 sat falls, especially on oxygen.",
+      teaching: "Respiratory depression is the defining feature of opioid toxicity. Stupor with a respiratory rate of 12 or less calls for bag mask ventilation while naloxone is given.",
       source: "boyer",
     },
     {
@@ -543,19 +543,19 @@ export const hoistTransferThighFracture: OralCase = {
       id: "at-m4",
       competency: "management",
       criterion: "management",
-      text: "Adds scheduled acetaminophen by weight, splints the leg and limits opioid to small doses for breakthrough pain.",
+      text: "Splints the leg and limits opioid to small doses for breakthrough pain once the block works.",
       points: 1,
-      teaching: "Combining a block, acetaminophen and splinting reduces the opioid she needs. Avoid NSAIDs in a patient whose stomach does not tolerate them.",
+      teaching: "A nerve block is the core of a multimodal, opioid sparing pain plan. With the block working, opioid becomes a small top up rather than the main treatment.",
       source: "acep-ugnb",
     },
     {
       id: "at-m5",
       competency: "resuscitation",
       criterion: "management",
-      text: "Supports ventilation and gives naloxone 0.04 mg IV, repeated until breathing is adequate, and avoids flumazenil.",
+      text: "Supports ventilation and gives naloxone 0.04 mg IV, repeated until breathing is adequate.",
       points: 2,
       critical: true,
-      teaching: "Start naloxone at 0.04 mg and titrate to breathing. Support ventilation in the meantime. Flumazenil can trigger seizures in a patient on long term benzodiazepines.",
+      teaching: "Start naloxone at 0.04 mg and increase the dose every 2 minutes if there is no response. Support ventilation in the meantime.",
       source: "boyer",
     },
     {
@@ -571,10 +571,10 @@ export const hoistTransferThighFracture: OralCase = {
       id: "at-pr2",
       competency: "disposition",
       criterion: "process",
-      text: "Keeps her on continuous SpO2 and capnography after opioids and lowers opioid doses once the block works.",
+      text: "Keeps her on continuous SpO2 and capnography after opioids and after naloxone, and lowers opioid doses once the block works.",
       points: 2,
-      teaching: "Pain stimulates breathing. When a block removes the pain, the same opioid dose can become too much. Monitor for renarcotization after naloxone.",
-      source: "boyer",
+      teaching: "High risk patients on opioids need extra vigilance, with electronic monitoring and repeated reassessment. Reversal with naloxone is often brief, so keep monitoring after she responds.",
+      source: "jungquist",
     },
     {
       id: "at-pr3",
@@ -624,6 +624,11 @@ export const hoistTransferThighFracture: OralCase = {
       id: "asra-checklist",
       citation:
         "Neal JM, Neal EJ, Weinberg GL. American Society of Regional Anesthesia and Pain Medicine local anesthetic systemic toxicity checklist. 2020 version. Reg Anesth Pain Med. 2021.",
+    },
+    {
+      id: "jungquist",
+      citation:
+        "Jungquist CR, Quinlan-Colwell A, Vallerand A, and colleagues. American Society for Pain Management Nursing guidelines on monitoring for opioid-induced advancing sedation and respiratory depression. Revisions. Pain Manag Nurs. 2020.",
     },
     {
       id: "boyer",

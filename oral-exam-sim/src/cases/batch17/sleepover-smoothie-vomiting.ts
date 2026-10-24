@@ -288,7 +288,7 @@ export const sleepoverSmoothieVomiting: OralCase = {
         "Past reactions. Two milder kiwi reactions, no allergist, no autoinjector.",
         "Latex. A hand reaction to balloons may point to latex allergy, which is linked with some fruit allergies such as kiwi and banana.",
         "Asthma control. Frequent salbutamol and poor controller use raise the risk of severe and fatal anaphylaxis.",
-        "Cofactors. Exercise, NSAIDs, illness. She danced for 2 hours.",
+        "Cofactors. Exercise around the meal, NSAIDs, illness.",
         "Other medicines, allergies and family history.",
       ],
       rubric: ["an-h1", "an-h2", "an-h3", "an-h4"],
