@@ -98,3 +98,46 @@ Sources no longer used were removed: Auf der Heide, ATSDR chlorine, Moore 2007, 
 2. 39 q4: the bulk cylinder resupply key rests on the Stoller survey and general continuity planning, not a Canadian standard. CSA Z7396.1 could not be opened.
 3. 40 q3: D10W 5 mL/kg dosing appears elsewhere in the bank as single patient care (seizures, shock, tox). Here it sits inside the parallel care of two patients. The batch06 pediatric septic shock case also uses dextrose for hypoglycemia, though on a different scenario.
 4. 40 q2 names a British Columbia service. The stem sets the province.
+
+## Revision 2
+
+This revision responds to `docs/reviews/q500b-verify-s78.md`. multiple-patients-36 passed and was not touched.
+
+### What changed
+
+| Item | Change |
+|---|---|
+| 37 q3 | Prompt now reads "Which of the following is the most appropriate place for the woman before her angiography?", so it no longer reveals the q1 or q2 key. The explanation now says "Early STEMI carries a risk of ventricular fibrillation and high grade block" and keeps the CCS point on short delay to PCI. It no longer credits CCS with an arrhythmia timing claim. |
+| 37 q4 | Update now reads "Your catheterization laboratory will be busy for at least 90 minutes." |
+| 38 q3 | Key shortened to "Timed nurse checks with call triggers" (37 characters). Distractors now carry wrong detail of the same kind: "Checks by you only after the reduction", "Hourly checks by you between patients", "Nurse checks only when she reports pain", "One check by you before CT of the pelvis". The key stays in position 5, and the explanation was matched to the new distractors. |
+| 39 q3 | Replaced. The COPD target question is gone. New KF2 question: an arriving 77-year-old man with heart failure on a non-rebreather at 15 L/minute from a full 680 L cylinder. How long will it last? 680 / 15 = about 45 minutes, so a named nurse watches the gauge and has the next cylinder ready. Distractors are 30, 60, 75 and 90 minutes (90 fits 7.5 L/minute, 75 fits about 9, 60 fits about 11, and 30 wastes a third-full cylinder). The update names a new patient, not a q1 key patient, and does not show titration (the q2 key). |
+| 40 q2 | Changed to a menu question (select 3): what BC Real-Time Virtual Support can provide at 02:00. Keys: guidance on the infant's resuscitation (pediatric pathway, 24/7), help coordinating patient transport, and point-of-care ultrasound support. Distractors: a physician sent on site (the service is virtual), critical care pathway advice at 02:00 (ROCCi runs 08:00 to 21:00), and weekday quick reply advice (business hours only). The explanation no longer says the pathway is staffed by pediatric emergency physicians. It says "a physician on that pathway". |
+| 40 q3 | Replaced. No infant fluid or dextrose dosing and no tourniquet tasks. New KF2 question: after resuscitation, disposition is admission for ongoing fluids and monitoring. TREKK lists severe dehydration and young infant among its admission criteria. |
+| 40 q4 | Replaced. No CTAS modifier. New KF2 question: the infant's 3-year-old brother with mild to moderate dehydration gets nurse-run oral rehydration at the TREKK rate of 30 mL every 10 minutes for 6 months to under 5 years. 60 and 90 mL are the rates for older children. |
+| 40 spelling | "pediatric" is used throughout. The PaedCTAS citation keeps its published title. CTAS 2016 was dropped from 40's sources because q4 no longer cites it. |
+
+### Uniqueness checks (whole bank)
+
+- "680 L", "cylinder will last", "cylinder duration", "L of oxygen": no hits outside s78.
+- "Real-Time Virtual", "RTVS": none outside s78.
+- "30 mL every 10" and "per 10 minutes" oral rehydration rates: none. s16 shock-02 uses the 50 to 100 mL/kg deficit for an infant, not the per 10 minute rate for a toddler.
+- Gastroenteritis disposition or admission: no SAMP keys admission after severe dehydration (grep of gastroenteritis with admit, discharge or transfer finds only a pre-eclampsia stem and a CQI return visit).
+- "Before her angiography" and the new 37 wording add no new decision.
+
+### Counts after Revision 2
+
+- 21 questions: 17 single, 4 menu (36 q2, 38 q2, 39 q1, 40 q2).
+- Single key positions, first to fifth: 4, 3, 4, 3, 3.
+- Key features: KF1 3, KF2 6, KF3 6, KF4 6.
+
+### Sources for the new items, all opened in this session
+
+- Stoller 2000 (PubMed record and abstract) for 39 q3: cylinders become the only supply when the pipe fails. The arithmetic uses the volume and flow stated in the update.
+- RCCbc RTVS page (opened): pathway names and hours (RUDi, MaBAL and CHARLiE 24/7, ROCCi 08:00 to 21:00, Quick Reply weekdays), Zoom or phone access, help coordinating patient transport, point-of-care ultrasound support.
+- TREKK gastroenteritis bottom line recommendations, version 5.0, October 2025. The PDF was downloaded through the resource page and its text extracted. It gives the admission criteria (severe dehydration, young infant) and the oral rates of 30, 60 and 90 mL every 10 minutes by age band.
+
+### Uncertain points
+
+1. 40 q2 tests features of one provincial service. The stem sets British Columbia, as ruling A17 asks.
+2. 40 q3: admission "here or at the referral centre" is keyed together. The distractors are all discharge options.
+3. 39 q3: the cylinder volume is given in the update rather than taken from a manufacturer's sheet, which I could not open.
