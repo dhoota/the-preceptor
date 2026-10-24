@@ -271,7 +271,7 @@ export const MULTIPLE_PATIENTS_S78: Samp[] = [
         ],
         correct: 4,
         explanation:
-          "Sciatic nerve injury complicates about 10% of posterior hip dislocations, most often in the peroneal division, and the dislocation is a time sensitive emergency. A nurse repeating foot sensation, ankle dorsiflexion and pulses at set times, with clear triggers such as new weakness or numbness to call you, catches a change early without tying you to her bedside. Checking only after reduction or before CT gives no baseline for the change. Waiting for her to report pain misses painless weakness. Hourly checks by the only physician pull you away from the other patients.",
+          "Sciatic nerve injury complicates about 10% of posterior hip dislocations, most often in the peroneal division, and the dislocation is a time sensitive emergency. A nurse repeating foot sensation, ankle dorsiflexion and pulses at set times, with clear triggers such as new weakness or numbness to call you, catches a change early without tying you to her bedside. A single check, or none until after reduction, cannot show a change as it happens. Waiting for her to report pain misses painless weakness. Hourly checks by the only physician pull you away from the other patients.",
         keyFeature: { topic: "multiple-patients", n: 3 },
         source: "dawson-amoah-hip",
       },

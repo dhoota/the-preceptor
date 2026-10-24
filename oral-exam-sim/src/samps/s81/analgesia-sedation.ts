@@ -145,7 +145,7 @@ export const ANALGESIA_SEDATION_S81: Samp[] = [
         options: ["CT after intranasal midazolam", "CT after IV ketamine sedation", "CT with his father beside him", "Delay CT for general anesthesia", "Delay CT until he falls asleep"],
         correct: 2,
         explanation:
-          "He is now calm, cooperative and lying still, so the scan can go ahead with his father beside him for comfort. The Canadian Paediatric Society places sedation as an adjunct only when distress persists after pain control, parental presence and distraction. Midazolam, ketamine or waiting for general anesthesia would add airway risk or delay and dull his neurologic examination after a head injury, for no benefit now that he is settled. Waiting for him to fall asleep delays an imaging decision the team has already made, and a sleeping child is harder to assess.",
+          "He is now calm, cooperative and lying still, so the scan can go ahead with his father beside him for comfort. The Canadian Paediatric Society places sedation as an adjunct only when distress persists after pain control, parental presence and distraction. Midazolam or ketamine would add airway risk and dull his neurologic examination after a head injury, for no benefit now that he is settled, and waiting for general anesthesia would delay the scan for the same lack of benefit. Waiting for him to fall asleep delays an imaging decision the team has already made, and a sleeping child is harder to assess.",
         keyFeature: { topic: "analgesia-sedation", n: 4 },
         source: "cps-procedural-distress-2019",
       },

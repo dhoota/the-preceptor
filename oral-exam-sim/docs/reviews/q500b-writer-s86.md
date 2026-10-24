@@ -97,3 +97,23 @@ Searched `src/samps` and `src/cases` for "quilting", "church hall", "slid from h
 
 - Mock-mode cues accepted under B6 in the review: the cva-48 q3 update (hematoma), the cva-49 q3 update (CT and CT perfusion) and the cva-50 q2 update (basilar stenosis).
 - cva-48 q4: andexanet is keyed because Thrombosis Canada prefers a targeted agent where one is available. A centre without andexanet would use PCC, and the explanation says so.
+
+## Revision 2
+
+This revision answers `docs/reviews/q500b-verify-s86.md`, which passed cva-49 to cva-52 and failed cva-48 on two items. Only cva-48 changed.
+
+| Item | Change |
+|---|---|
+| cva-48 stem (repeat of delirium-agitation-10) | New patient: a 74-year-old man who struck his head 5 weeks ago standing up under the raised hatchback of his car. He has stable coronary artery disease and hypertension and takes ASA 81 mg daily, bisoprolol and atorvastatin. He takes no anticoagulant. The stem now states that the ECG shows sinus rhythm. The q3 update now gives a 19 mm subdural hematoma with 4 mm of shift, not 14 to 16 mm with 6 to 7 mm. The title is now "Spells of losing his words". The q1 option "Age older than 80 years" now reads "Age older than 70 years". The q1, q2 and q3 explanations now refer to a man taking ASA, 4 mm of shift, sinus rhythm and age 74. |
+| cva-48 q4 (repeat of the factor Xa reversal decision) | Rebuilt on the suggested key feature 1 decision as a menu with select 1, which keeps one menu question in the batch. The prompt reads "Had these spells been treated as a high-risk transient ischemic attack without brain imaging, which of the following would have caused the most harm?" The key is "ASA and clopidogrel loading". The distractors are carotid Doppler, a 24-hour Holter, lipids and HbA1c, an outpatient echocardiogram and a stroke clinic referral. Each would delay the diagnosis but would not worsen the bleed. The question cites `s86-csbpr-sp` 6.1 i: give the antiplatelet load only after brain imaging has excluded hemorrhage. `s86-tc-bleed` is removed because no question cites it, and Dex-CSDH stays out. |
+
+### Grep before writing
+
+I searched `src/samps` and `src/cases` for "hatchback", "stepladder", "cupboard", "door frame" and "truck door", and for subdural cases with ASA. A ladder fall was rejected because multiple-trauma (s45) has an 83-year-old man who fell from a ladder with a 12 mm subdural on antiplatelets. A cupboard door was rejected because it appears in s30, s52 and s67. "Hatchback" has no match in the bank.
+
+### After revision
+
+- Single key positions, first to fifth: 4, 4, 4, 3, 4. The key is the longest option in 4 of 19 singles. There is one menu (cva-48 q4).
+- Key features: 1: 4, 2: 6, 3: 3, 4: 7.
+- Sources in the batch: s86-csbpr-sp, s86-csbpr-acute, s86-russell-csdh, s86-forsberg-aca, s86-sammpris and s86-locked-in.
+- `npx tsc --noEmit -p . 2>&1 | grep samps/s86` prints nothing. `SAMP_BATCH=s86 npx vitest run tests/samps.test.ts tests/samp-quality.test.ts tests/citations.test.ts --testTimeout=120000` passes 128 of 128.
