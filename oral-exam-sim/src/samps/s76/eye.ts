@@ -19,11 +19,6 @@ const S = {
     citation: "Azari AA, Barney NP. Conjunctivitis: a systematic review of diagnosis and treatment. JAMA. 2013.",
     url: "https://pmc.ncbi.nlm.nih.gov/articles/PMC4049531/",
   },
-  aaoHsv: {
-    id: "aao-hsv",
-    citation: "White ML, Chodosh J. Herpes simplex virus keratitis: a treatment guideline. American Academy of Ophthalmology. 2014.",
-    url: "https://www.aao.org/education/clinical-statement/herpes-simplex-virus-keratitis-treatment-guideline",
-  },
   lay: {
     id: "lay-ahc",
     citation: "Lay K, Chukmol K, Chea G, et al. Acute haemorrhagic conjunctivitis outbreak attributed to coxsackievirus A24 in Ratanakiri, Cambodia, 2023. Western Pac Surveill Response J. 2026.",
@@ -43,11 +38,6 @@ const S = {
     id: "open-globe",
     citation: "Zhou Y, DiSclafani M, Jeang L, Shah AA. Open globe injuries: review of evaluation, management, and surgical pearls. Clin Ophthalmol. 2022.",
     url: "https://doi.org/10.2147/OPTH.S372011",
-  },
-  stein: {
-    id: "stein-airbag",
-    citation: "Stein JD, Jaeger EA, Jeffers JB. Air bags and ocular injuries. Trans Am Ophthalmol Soc. 1999.",
-    url: "https://pmc.ncbi.nlm.nih.gov/articles/PMC1298254/",
   },
   barnes: {
     id: "barnes-airbag-alkali",
