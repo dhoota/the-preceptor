@@ -1,4 +1,477 @@
 // DRAFT. Written for exam practice only. Requires physician review before release. Verify every dose and threshold against current guidelines.
 import type { Samp } from "@/engine/samp";
+import type { Source } from "@/engine/types";
 
-export const MULTIPLE_PATIENTS_S78: Samp[] = [];
+const META = { reviewed: false, author: "Preceptor", version: 1 } as const;
+
+const S = {
+  tjc: { id: "tjc-sea67", citation: "The Joint Commission. Sentinel Event Alert, Issue 67. Preserving patient safety after a cyberattack. 2023.", url: "https://digitalassets.jointcommission.org/api/public/content/8bd6addf4df943f383a074f2d9d4af64" },
+  ssc: { id: "ssc-2026", citation: "Prescott HC, Antonelli M, Alhazzani W, et al. Surviving Sepsis Campaign. International guidelines for management of sepsis and septic shock 2026. Crit Care Med. 2026.", url: "https://doi.org/10.1097/CCM.0000000000007075" },
+  aufderheide: { id: "auf-der-heide", citation: "Auf der Heide E. The importance of evidence-based disaster planning. Ann Emerg Med. 2006.", url: "https://pubmed.ncbi.nlm.nih.gov/16387217/" },
+  atsdrChlorine: { id: "atsdr-chlorine", citation: "Agency for Toxic Substances and Disease Registry. Medical management guidelines for chlorine. Page last reviewed 2014.", url: "https://wwwn.cdc.gov/TSP/MMG/MMGDetails.aspx?mmgid=198&toxid=36" },
+  godwin: { id: "acep-psa-2014", citation: "Godwin SA, Burton JH, Gerardo CJ, et al. American College of Emergency Physicians. Clinical policy. Procedural sedation and analgesia in the emergency department. Ann Emerg Med. 2014." },
+  dawson: { id: "dawson-amoah-hip", citation: "Dawson-Amoah K, Raszewski J, Duplantier N, Waddell BS. Dislocation of the hip. A review of types, causes, and treatment. Ochsner J. 2018.", url: "https://pmc.ncbi.nlm.nih.gov/articles/PMC6162140/" },
+  atls: { id: "atls", citation: "American College of Surgeons Committee on Trauma. Advanced Trauma Life Support (ATLS) Student Course Manual. 11th edition. 2025.", url: "https://www.facs.org/quality-programs/trauma/education/advanced-trauma-life-support/atls-11/" },
+  moore: { id: "moore-morison", citation: "Moore C, Todd WM, O'Brien E, Lin H. Free fluid in Morison's pouch on bedside ultrasound predicts need for operative intervention in suspected ectopic pregnancy. Acad Emerg Med. 2007.", url: "https://pubmed.ncbi.nlm.nih.gov/17554008/" },
+  acog: { id: "acog-193", citation: "American College of Obstetricians and Gynecologists. Practice Bulletin No. 193. Tubal ectopic pregnancy. Obstet Gynecol. 2018." },
+  ctas2016: { id: "ctas-2016", citation: "Bullard MJ, Musgrave E, Warren D, et al. Revisions to the Canadian Emergency Department Triage and Acuity Scale (CTAS) Guidelines 2016. CJEM. 2017.", url: "https://doi.org/10.1017/cem.2017.365" },
+  rose: { id: "rose-co", citation: "Rose JJ, Wang L, Xu Q, et al. Carbon monoxide poisoning. Pathogenesis, management, and future directions of therapy. Am J Respir Crit Care Med. 2017.", url: "https://pmc.ncbi.nlm.nih.gov/articles/PMC5363978/" },
+  creswell: { id: "mmwr-ice-arena", citation: "Creswell PD, Meiman JG, Nehls-Lowe H, et al. Exposure to elevated carbon monoxide levels at an indoor ice arena. Wisconsin, 2014. MMWR Morb Mortal Wkly Rep. 2015.", url: "https://www.cdc.gov/mmwr/preview/mmwrhtml/mm6445a3.htm" },
+} satisfies Record<string, Source>;
+
+export const MULTIPLE_PATIENTS_S78: Samp[] = [
+  /* 36 Ransomware downtime with a septic patient ------------------------- */
+  {
+    id: "multiple-patients-36",
+    topic: "multiple-patients",
+    alsoTopics: ["cqi", "shock"],
+    title: "Screens go dark at shift change",
+    stem:
+      "A 74-year-old man is brought to the emergency department by ambulance with 2 days of fever, productive cough and new confusion. He has type 2 diabetes and chronic kidney disease. As he is moved onto a stretcher at 18:40, every hospital computer displays a ransom demand. The electronic record, order entry, laboratory interface, image viewing and electronic tracking board all stop working. Telephones, cardiac monitors, the CT scanner and the laboratory analyzers still work, and the laboratory can phone results. There are 32 patients in the department and 11 more in the waiting room. He is oriented to person only. He has crackles at the right lung base.",
+    vitals: { temperature: "39.1°C oral", pulse: "118/minute", resp: "28/minute", bp: "86/48 mmHg", o2sat: "90% on room air", weight: "78 kg" },
+    questions: [
+      {
+        id: "q1",
+        kind: "single",
+        prompt: "Which of the following is the most appropriate first step for the department?",
+        options: [
+          "Activate the hospital downtime procedures",
+          "Divert all ambulances to other hospitals",
+          "Hold new orders until access returns",
+          "Send waiting patients to walk-in clinics",
+          "Wait for an IT estimate of repair time",
+        ],
+        correct: 0,
+        explanation:
+          "A ransomware attack can keep critical systems down for days or weeks, and the Joint Commission advises against delaying decisive action. Declaring downtime starts the paper ordering, registration and result reporting processes so care goes on for all 43 patients. Holding orders or waiting for an IT estimate delays treatment for a septic man who cannot wait. Diverting every ambulance pushes the load onto neighbouring hospitals, which may also be affected, and it is a hospital level decision after a risk review. Sending waiting patients away unassessed is unsafe.",
+        keyFeature: { topic: "multiple-patients", n: 4 },
+        source: "tjc-sea67",
+      },
+      {
+        id: "q2",
+        kind: "menu",
+        select: 3,
+        update: "The charge nurse opens the downtime cart. She asks which practices the team should follow while the systems are down.",
+        prompt: "Which of the following downtime practices are most appropriate in the emergency department?",
+        options: [
+          "Charting deferred until systems return",
+          "Extra blood work drawn on every patient",
+          "Independent double check of high alert drugs",
+          "Laboratory tests ordered only if they change care",
+          "Paper forms matching the electronic layout",
+          "Pre-electronic order forms from storage",
+          "Verbal orders for routine medications",
+        ],
+        correct: [2, 3, 4],
+        explanation:
+          "Without barcode scanning and order checking, the Joint Commission advises manual or double check processes for medications, especially high alert drugs such as insulin and heparin. It advises ordering tests judiciously so the laboratory can keep reporting critical results. Paper forms should match the current electronic workflow, not older forms retired when the electronic record began. Deferring charting loses the history, allergies and orders that must be entered once systems return. Extra blood work overloads a laboratory that now phones every result. Routine verbal orders leave no written record for the pharmacy and the double check to work from.",
+        keyFeature: { topic: "multiple-patients", n: 4 },
+        source: "tjc-sea67",
+      },
+      {
+        id: "q3",
+        kind: "single",
+        update: "His lactate on the stand-alone blood gas analyzer is 4.6 mmol/L. Two sets of blood cultures have been drawn.",
+        prompt: "Which of the following is the most appropriate next step in his care?",
+        options: [
+          "CT chest before antibiotics",
+          "Delay antibiotics until order entry returns",
+          "Fluids only until the record is available",
+          "Paper order for IV antibiotics now",
+          "Transfer to a hospital with working systems",
+        ],
+        correct: 3,
+        explanation:
+          "His BP of 86/48 mmHg, lactate of 4.6 mmol/L, confusion and right basal crackles point to septic shock from pneumonia. The Surviving Sepsis Campaign recommends immediate antimicrobials for possible septic shock, so a handwritten order must not wait for the computers. Fluids alone treat the shock without its cause. A CT chest adds delay when the examination already shows the likely source. Transfer of an unstable man delays antibiotics further and moves the problem rather than treating it.",
+        keyFeature: { topic: "multiple-patients", n: 2 },
+        source: "ssc-2026",
+      },
+      {
+        id: "q4",
+        kind: "single",
+        update: "An hour later, staff ask how they will learn which systems are working and when each one returns.",
+        prompt: "Which of the following is the most appropriate way to keep the emergency team informed?",
+        options: [
+          "Email updates to each staff member",
+          "Messages on the electronic tracking board",
+          "Scheduled huddles with the charge nurse",
+          "Updates only when IT declares recovery",
+          "Written memo at the end of each shift",
+        ],
+        correct: 2,
+        explanation:
+          "Short huddles at set times give the team one shared picture of which systems are down, which still work and what has changed. The Joint Commission advises frequent huddles among unit staff and leadership rounding, with frequent status updates. Email and the electronic tracking board are among the systems that failed. Waiting for IT to declare recovery leaves staff guessing for hours. A memo at the end of each shift is too slow for a situation that changes by the hour.",
+        keyFeature: { topic: "multiple-patients", n: 3 },
+        source: "tjc-sea67",
+      },
+      {
+        id: "q5",
+        kind: "single",
+        update: "Systems return 30 hours later. Hundreds of paper orders, results and notes were created during the outage.",
+        prompt: "Which of the following is the most appropriate step as the electronic systems return?",
+        options: [
+          "Discard paper notes once systems return",
+          "Keep paper charts as the only record",
+          "Re-register every current patient",
+          "Resume electronic orders without review",
+          "Transcribe records with assigned staff",
+        ],
+        correct: 4,
+        explanation:
+          "The Joint Commission advises restoring systems deliberately, with staff assigned to scan or enter the paper record and every transcribed order authenticated, so the electronic chart is current and accurate. Resuming electronic orders without review leaves medications and results given on paper invisible to the next clinician. Discarding the paper notes destroys part of the medical record. Keeping paper as the only record splits each chart in two. Re-registering every patient adds work at triage and does not fill in the missing information.",
+        keyFeature: { topic: "multiple-patients", n: 4 },
+        source: "tjc-sea67",
+      },
+    ],
+    sources: [S.tjc, S.ssc],
+    ...META,
+  },
+  /* 37 Chlorine gas release at a swim meet ------------------------------ */
+  {
+    id: "multiple-patients-37",
+    topic: "multiple-patients",
+    alsoTopics: ["tox"],
+    title: "Cars arriving from the aquatic centre",
+    stem:
+      "You are working in a community hospital emergency department. A 9-year-old girl is driven to the emergency department by her father from an indoor aquatic centre 4 km away. Twenty minutes ago a worker added acid to a tank of sodium hypochlorite, and a greenish cloud drifted across the pool deck during a swim meet. She has a cough, a sore throat and stinging eyes. Her father says about 60 swimmers, parents and staff were on the deck, and he passed other families leaving by car. EMS has not called your department. She speaks in full sentences and has scattered expiratory wheeze. Both conjunctivae are red.",
+    vitals: { temperature: "36.8°C oral", pulse: "116/minute", resp: "26/minute", bp: "104/66 mmHg", o2sat: "95% on room air", weight: "30 kg" },
+    questions: [
+      {
+        id: "q1",
+        kind: "single",
+        prompt: "Which of the following is the most appropriate first action for your hospital?",
+        options: [
+          "Close the entrance until EMS confirms the event",
+          "Direct the cars to the regional hospital",
+          "Register arrivals as routine walk-in patients",
+          "Start the hospital chemical incident plan",
+          "Wait for poison centre advice before acting",
+        ],
+        correct: 3,
+        explanation:
+          "After a disaster most casualties reach hospital by private vehicle, often before any official notice, and the nearest hospital receives far more than its share. The first arrivals are usually the least injured, so this girl signals many more to come. Starting the plan now opens a triage and decontamination point at the door and calls in staff. Closing the entrance leaves exposed children outside without care. Families driving themselves cannot be redirected reliably, and symptomatic people should not drive further. Routine registration mixes exposed patients into the waiting room. Poison centre advice helps but does not replace preparation.",
+        keyFeature: { topic: "multiple-patients", n: 4 },
+        source: "auf-der-heide",
+      },
+      {
+        id: "q2",
+        kind: "single",
+        prompt: "Which of the following is the most appropriate decontamination plan for the arriving patients?",
+        options: [
+          "Decontaminate only those who entered the pool",
+          "Eye and skin rinsing only if irritated",
+          "Full shower decontamination for every arrival",
+          "Hold all arrivals outside for a hazmat team",
+          "No decontamination for any arrival",
+        ],
+        correct: 1,
+        explanation:
+          "People exposed only to chlorine gas pose little risk of secondary contamination, so those without skin or eye irritation can go straight to treatment. Those with irritation have clothing removed, skin flushed with water and eyes irrigated for at least 15 minutes, which this girl needs for her red, stinging eyes. Full showers for everyone delay care and risk chilling wet children. Holding arrivals outside for a hazmat team delays treatment of airway injury. Exposure came from gas over the deck, so being in the pool does not decide who needs rinsing. Skipping decontamination entirely leaves irritated eyes untreated.",
+        keyFeature: { topic: "multiple-patients", n: 4 },
+        source: "atsdr-chlorine",
+      },
+      {
+        id: "q3",
+        kind: "menu",
+        select: 2,
+        update: "Eleven more people arrive within 15 minutes. Six of them are described below.",
+        prompt: "Which of the following arrivals should be moved to the resuscitation room first?",
+        options: [
+          "Boy, 6, crying, wheeze, O2 sat 95%",
+          "Coach, 52, chest tightness, O2 sat 96%",
+          "Grandfather, 78, stridor, O2 sat 89%",
+          "Lifeguard, 24, drowsy, O2 sat 84%",
+          "Mother, 38, burning eyes and throat",
+          "Swimmer, 15, cough, O2 sat 97%",
+        ],
+        correct: [2, 3],
+        explanation:
+          "Stridor means upper airway swelling that may need early intubation, and the grandfather is already hypoxemic at 89%. The drowsy lifeguard has an O2 sat of 84% and a falling level of consciousness, so his breathing and airway are failing. Both need airway support and oxygen first. The crying boy with wheeze and an O2 sat of 95% needs a bronchodilator and close reassessment. The coach needs oxygen, monitoring and an ECG. The mother needs eye irrigation, and the coughing swimmer can be watched in the treatment area.",
+        keyFeature: { topic: "multiple-patients", n: 1 },
+        source: "atsdr-chlorine",
+      },
+      {
+        id: "q4",
+        kind: "single",
+        update: "Two hours after arrival the mother is free of symptoms. Her eyes are comfortable, her lungs are clear and her O2 sat is 99% on room air.",
+        prompt: "Which of the following is the most appropriate disposition for this woman?",
+        options: [
+          "Admit for overnight observation",
+          "Arterial blood gas before discharge",
+          "Bronchodilator inhaler and discharge",
+          "Discharge with 24 hour return advice",
+          "Oral prednisone course and discharge",
+        ],
+        correct: 3,
+        explanation:
+          "Patients with only minor burning of the eyes or throat who become free of symptoms may be released, with advice to return promptly if cough, wheeze, breathing difficulty or chest pain appear in the next 24 hours. Her normal examination and O2 sat of 99% support this, and her bed is needed. Admission is for persistent shortness of breath, severe cough or chest tightness, which she does not have. A blood gas is for patients with respiratory complaints. Chlorine has no specific antidote, so care is supportive. She has no wheeze to need an inhaler.",
+        keyFeature: { topic: "multiple-patients", n: 2 },
+        source: "atsdr-chlorine",
+      },
+    ],
+    sources: [S.aufderheide, S.atsdrChlorine],
+    ...META,
+  },
+  /* 38 Planned sedation interrupted by a chest stab wound --------------- */
+  {
+    id: "multiple-patients-38",
+    topic: "multiple-patients",
+    alsoTopics: ["analgesia-sedation", "multiple-trauma"],
+    title: "Propofol drawn up in bay two",
+    stem:
+      "You are working in a rural hospital emergency department as the only physician, with three nurses and a respiratory therapist. A general surgeon takes call from home 20 minutes away, and the nearest trauma centre is 50 minutes away by air. A 27-year-old woman presents to the emergency department 90 minutes after her car struck a guardrail and her right knee hit the dashboard. Radiographs show an isolated posterior dislocation of the right hip without fracture. Foot sensation, ankle dorsiflexion and foot pulses are normal. Fentanyl has controlled her pain. You are drawing up propofol for a closed reduction when EMS arrives with a 19-year-old man stabbed in the left chest. The vital signs listed are hers.",
+    vitals: { temperature: "36.7°C oral", pulse: "92/minute", resp: "16/minute", bp: "128/76 mmHg", o2sat: "99% on room air", weight: "64 kg" },
+    questions: [
+      {
+        id: "q1",
+        kind: "single",
+        update: "The man is pale and gasping. Pulse 136/minute, BP 78/44 mmHg, O2 sat 86% on room air. Breath sounds are absent on the left.",
+        prompt: "Which of the following is the most appropriate plan for the woman with the hip dislocation?",
+        options: [
+          "Ask the respiratory therapist to sedate her",
+          "Postpone sedation and keep her analgesia going",
+          "Reduce the hip now without sedation",
+          "Start the sedation and leave a nurse with her",
+          "Transfer her by road for reduction elsewhere",
+        ],
+        correct: 1,
+        explanation:
+          "The man is in shock with an absent left breath sound, and as the only physician you must lead his resuscitation now. Procedural sedation needs the physician doing the procedure plus a second qualified person monitoring, and it should be coordinated with the department's workload. Starting propofol and then leaving her means no one can manage apnea or hypotension. Her limb is neurovascularly intact and her pain is controlled, so a short delay is safe. Handing the sedation to the respiratory therapist takes the person you need for the man's breathing. Reduction without sedation is painful and often fails. Transfer adds hours for a procedure you can do here.",
+        keyFeature: { topic: "multiple-patients", n: 2 },
+        source: "acep-psa-2014",
+      },
+      {
+        id: "q2",
+        kind: "menu",
+        select: 3,
+        update: "You place a left chest tube. It drains 1 600 mL of blood at once. After 2 units of O-negative red cells his BP is 84/50 mmHg.",
+        prompt: "Which of the following calls are most appropriate to make now for this man?",
+        options: [
+          "Blood bank to activate massive transfusion",
+          "Cardiology for an urgent echocardiogram",
+          "CT technologist for a chest CT",
+          "General surgeon to come in now",
+          "Interventional radiology for embolization",
+          "Pulmonology for bronchoscopy",
+          "Trauma centre to arrange air transfer",
+        ],
+        correct: [0, 3, 6],
+        explanation:
+          "Immediate drainage of 1 500 mL or more of blood is a massive hemothorax, and with ongoing hypotension he will likely need an operative thoracotomy. He needs a massive transfusion protocol, early transfer to definitive surgical care, and the local surgeon in the building in case he cannot wait for the aircraft. Calling all three at once saves the minutes that sequential calls would cost. An echocardiogram, a CT scan or bronchoscopy adds delay and does not stop intrathoracic bleeding in an unstable patient. Embolization is not the treatment for a bleeding chest wound in shock.",
+        keyFeature: { topic: "multiple-patients", n: 3 },
+        source: "atls",
+      },
+      {
+        id: "q3",
+        kind: "single",
+        update: "The man leaves by air 70 minutes later. The woman is now 3 hours from her injury. Her foot sensation, ankle dorsiflexion and foot pulses remain normal.",
+        prompt: "Which of the following is the most appropriate next step for the woman?",
+        options: [
+          "CT of the pelvis before any reduction",
+          "Overnight skeletal traction and reassess",
+          "Reduction under procedural sedation now",
+          "Splint and wait for orthopedics in the morning",
+          "Transfer for reduction at the trauma centre",
+        ],
+        correct: 2,
+        explanation:
+          "A hip dislocation is a time sensitive emergency, and no more than 6 hours should pass before reduction. Avascular necrosis follows in about 2% to 10% of dislocations and rises when reduction is late. At 3 hours, with the man gone and the team free, closed reduction under sedation should happen now. CT of the pelvis is done after reduction to confirm a concentric joint and find fragments. Overnight traction, waiting until morning or a transfer would each push her past the 6 hour window.",
+        keyFeature: { topic: "multiple-patients", n: 2 },
+        source: "dawson-amoah-hip",
+      },
+      {
+        id: "q4",
+        kind: "single",
+        prompt: "Which of the following staffing plans is most appropriate for her sedation?",
+        options: [
+          "A nurse monitors her while you sedate and reduce",
+          "Nurse-administered propofol while you reduce",
+          "The respiratory therapist sedates and monitors her",
+          "Wait for an anaesthetist to manage the sedation",
+          "You sedate, reduce and monitor her yourself",
+        ],
+        correct: 0,
+        explanation:
+          "A nurse or other qualified person should be present to monitor the patient continuously, in addition to the physician doing the procedure. You give the propofol and reduce the hip while the nurse watches her airway, breathing and monitor. Doing all three yourself leaves no one watching while both hands pull on the leg. Having a nurse or the respiratory therapist give propofol separates the drug from the physician responsible for the sedation. Propofol is safe in the emergency department in trained hands, so waiting for an anaesthetist only adds delay.",
+        keyFeature: { topic: "multiple-patients", n: 3 },
+        source: "acep-psa-2014",
+      },
+    ],
+    sources: [S.godwin, S.atls, S.dawson],
+    ...META,
+  },
+  /* 39 Ruptured ectopic with the team at home --------------------------- */
+  {
+    id: "multiple-patients-39",
+    topic: "multiple-patients",
+    alsoTopics: ["first-trimester-bleeding", "shock"],
+    title: "A faint at home after midnight",
+    stem:
+      "You are working in a community hospital emergency department at 02:10. A 31-year-old woman is brought to the emergency department by ambulance after fainting at home. She has had left lower abdominal pain since the evening. Her last menstrual period was 7 weeks ago, and her urine hCG test is positive. A gynecologist, an anaesthetist and the operating room team take call from home. Eight other patients are in the department, two of them in monitored beds. She is pale and drowsy but answers questions. Her abdomen is tender with guarding in the left lower quadrant. Bedside ultrasound shows no intrauterine pregnancy and free fluid in the hepatorenal space.",
+    vitals: { temperature: "36.6°C oral", pulse: "128/minute", resp: "24/minute", bp: "78/46 mmHg", o2sat: "98% on room air", weight: "60 kg" },
+    questions: [
+      {
+        id: "q1",
+        kind: "single",
+        prompt: "Which of the following is the most appropriate next step in her care?",
+        options: [
+          "CT abdomen and pelvis with contrast",
+          "Formal pelvic ultrasound before surgery",
+          "Quantitative hCG level before calling",
+          "Repeat bedside ultrasound after 1 L of fluid",
+          "Urgent call to the gynecologist for surgery",
+        ],
+        correct: 4,
+        explanation:
+          "A positive pregnancy test, no intrauterine pregnancy, shock and free fluid in the hepatorenal space mean a ruptured ectopic pregnancy until proven otherwise. In suspected ectopic pregnancy, free fluid in Morison's pouch on bedside ultrasound strongly predicted the need for surgery, with 9 of 10 such patients going to the operating room. Because the gynecologist and the operating room team are at home, the call must go out now. A formal ultrasound, a quantitative hCG or a CT scan delays surgery without changing it. Repeating the bedside scan after fluid only wastes time.",
+        keyFeature: { topic: "multiple-patients", n: 3 },
+        source: "moore-morison",
+      },
+      {
+        id: "q2",
+        kind: "menu",
+        select: 3,
+        prompt: "Which of the following tasks should you assign to the nurses now?",
+        options: [
+          "Anti-D immune globulin now",
+          "Booking for formal pelvic ultrasound",
+          "Group and crossmatch sent stat",
+          "Methotrexate IM by body surface area",
+          "Oral contrast for an abdominal CT",
+          "Two large-bore IV catheters",
+          "Uncrossmatched red cells to the bedside",
+        ],
+        correct: [2, 5, 6],
+        explanation:
+          "She is in hemorrhagic shock and needs two large-bore IV lines, a stat group and crossmatch, and uncrossmatched red cells at the bedside while the operating room is readied. Giving each nurse one named task lets them happen at once. Methotrexate is for a stable, unruptured ectopic pregnancy and is contraindicated with hemodynamic instability or signs of rupture. Anti-D immune globulin is decided once her blood group is known and does nothing for the bleeding. A formal ultrasound booking or oral contrast for CT only delays surgery.",
+        keyFeature: { topic: "multiple-patients", n: 3 },
+        source: "acog-193",
+      },
+      {
+        id: "q3",
+        kind: "single",
+        update: "The gynecologist answers your page. She asks you to arrange a formal pelvic ultrasound and call her back with the result.",
+        prompt: "Which of the following is the most appropriate response to the gynecologist?",
+        options: [
+          "Accept the plan and book the ultrasound",
+          "Ask the general surgeon to operate instead",
+          "Restate her shock and ask her to come now",
+          "Start transfer to a tertiary centre",
+          "Wait and repeat the bedside ultrasound",
+        ],
+        correct: 2,
+        explanation:
+          "The consultant may not have heard how sick the patient is. Restate the facts plainly: BP 78/46 mmHg, pulse 128/minute, positive hCG, no intrauterine pregnancy and free fluid in the hepatorenal space, then ask for surgery now and for the anaesthetist and operating room team to be called in at the same time. An unstable ectopic pregnancy needs surgical management. Accepting the plan or waiting to rescan delays the operation. Going around the gynecologist to the general surgeon skips a clear escalation with the right specialist. Transfer of a woman in shock is unsafe when surgery is available here.",
+        keyFeature: { topic: "multiple-patients", n: 3 },
+        source: "acog-193",
+      },
+      {
+        id: "q4",
+        kind: "single",
+        update: "As she leaves for the operating room, the triage nurse asks which waiting patient should take the monitored bed she vacated.",
+        prompt: "Which of the following waiting patients should take the free monitored bed?",
+        options: [
+          "Man, 63, palpitations, pulse 172, BP 86/54",
+          "Teen, 16, deformed wrist, pulses intact",
+          "Woman, 29, migraine, pain 8 out of 10",
+          "Woman, 44, renal colic, pain 9 out of 10",
+          "Woman, 81, fall on apixaban, scalp hematoma",
+        ],
+        correct: 0,
+        explanation:
+          "A pulse of 172/minute with a BP of 86/54 mmHg is a tachyarrhythmia with hemodynamic compromise, the highest CTAS acuity of the group, and he needs a monitor, defibrillator pads and a physician first. Severe renal colic and migraine are urgent for pain control but can be treated in an assessment space. The older woman on apixaban needs early CT of the head and close neurological checks, but not the monitored bed ahead of a man in shock. The wrist with intact pulses can wait for splinting and analgesia.",
+        keyFeature: { topic: "multiple-patients", n: 1 },
+        source: "ctas-2016",
+      },
+    ],
+    sources: [S.moore, S.acog, S.ctas2016],
+    ...META,
+  },
+  /* 40 Carbon monoxide at a youth hockey tournament --------------------- */
+  {
+    id: "multiple-patients-40",
+    topic: "multiple-patients",
+    alsoTopics: ["tox"],
+    title: "Saturday at the arena",
+    stem:
+      "You are working in a community hospital emergency department on a Saturday morning. A 14-year-old boy is brought to the emergency department by his coach from a youth hockey tournament at the local arena. He had a headache and nausea during his game and then fainted on the bench. He recovered within a minute. Several other players and parents feel unwell, and families are driving people in. The arena uses a propane-powered ice resurfacer. He is now alert with a mild headache and a normal neurological examination.",
+    vitals: { temperature: "36.9°C oral", pulse: "104/minute", resp: "20/minute", bp: "118/70 mmHg", o2sat: "99% on room air", weight: "55 kg" },
+    questions: [
+      {
+        id: "q1",
+        kind: "menu",
+        select: 2,
+        update: "Fourteen more people from the arena arrive within 20 minutes. Six of them are described below.",
+        prompt: "Which of the following arrivals should be seen by a physician first?",
+        options: [
+          "Father, 41, headache, O2 sat 99%",
+          "Girl, 12, headache and vomiting, O2 sat 100%",
+          "Grandmother, 70, confused, O2 sat 99%",
+          "Player, 13, mild nausea, O2 sat 99%",
+          "Referee, 29, dizzy, now settled, O2 sat 98%",
+          "Resurfacer driver, 59, chest pressure, ST depression",
+        ],
+        correct: [2, 5],
+        explanation:
+          "Pulse oximetry cannot tell carboxyhemoglobin from oxyhemoglobin, so every normal saturation here is falsely reassuring. New confusion in the grandmother is a neurological sign of serious poisoning. The driver, closest to the source, has chest pressure and ST depression, and up to one third of patients with moderate to severe poisoning have myocardial injury. Both need a physician first. Headache, nausea, vomiting and dizziness that has settled are common milder features. Those patients need oxygen and a carboxyhemoglobin level, which nurses can start, and reassessment.",
+        keyFeature: { topic: "multiple-patients", n: 1 },
+        source: "rose-co",
+      },
+      {
+        id: "q2",
+        kind: "single",
+        prompt: "Which of the following treatments should nurses start at triage for every symptomatic arrival?",
+        options: [
+          "Hydroxocobalamin 70 mg/kg IV",
+          "Non-rebreather mask oxygen",
+          "Oxygen only if O2 sat is below 94%",
+          "Room air until COHb levels return",
+          "Simple face mask at 5 L/minute",
+        ],
+        correct: 1,
+        explanation:
+          "High flow oxygen by non-rebreather mask shortens the elimination half-life of carbon monoxide from about 320 minutes on room air to about 74 minutes, so it should start for every symptomatic arrival before carboxyhemoglobin (COHb) results return. Using a saturation target fails because pulse oximetry reads falsely normal. Room air while waiting leaves CO bound for hours. A simple face mask at 5 L/minute delivers far less oxygen. Hydroxocobalamin treats cyanide from fire smoke, not exhaust from a resurfacer.",
+        keyFeature: { topic: "multiple-patients", n: 2 },
+        source: "rose-co",
+      },
+      {
+        id: "q3",
+        kind: "single",
+        update: "The arena manager calls. The tournament is continuing on the second ice pad, and about 150 spectators are still in the building.",
+        prompt: "Which of the following calls is most important to make now?",
+        options: [
+          "Arena evacuation and testing by fire service",
+          "EMS to bring all spectators to your hospital",
+          "Hyperbaric centre to book every patient",
+          "Local radio to ask people to stay home",
+          "Poison centre for antidote advice",
+        ],
+        correct: 0,
+        explanation:
+          "The source may still be producing carbon monoxide, and 150 people remain exposed. Fire services can measure CO in the building, clear it and ventilate it, which stops new casualties. In a similar arena event, fire crews measured CO of 45 to 165 ppm, and attendees were urged to seek medical assessment. Bringing every spectator to one community hospital overloads it when the load could be shared. Hyperbaric oxygen is for selected severe cases, not everyone. Telling people to stay home discourages assessment of those exposed. No antidote exists, so the poison centre call can wait.",
+        keyFeature: { topic: "multiple-patients", n: 4 },
+        source: "mmwr-ice-arena",
+      },
+      {
+        id: "q4",
+        kind: "single",
+        update: "The boy who fainted has a COHb of 19%. Three others have levels of 8% to 14% with headache only. The nearest hyperbaric chamber is 2 hours away.",
+        prompt: "Which of the following is the most appropriate step for the boy who fainted?",
+        options: [
+          "Admit on nasal prongs overnight",
+          "Discharge once his headache settles",
+          "Repeat COHb in 4 hours before deciding",
+          "Six hours of room air observation",
+          "Urgent hyperbaric consultation",
+        ],
+        correct: 4,
+        explanation:
+          "Loss of consciousness marks serious carbon monoxide poisoning, and hyperbaric oxygen should be considered even though his COHb is below 25% and his examination is now normal. With the chamber 2 hours away, an early call lets the centre plan transport and treatment while he stays on high flow oxygen. Neurological outcome does not track the COHb level, so a repeat level after hours of oxygen will be lower and will not guide the decision. Discharge ignores the faint. Room air or nasal prongs slow the clearance of CO.",
+        keyFeature: { topic: "multiple-patients", n: 3 },
+        source: "rose-co",
+      },
+    ],
+    sources: [S.rose, S.creswell],
+    ...META,
+  },
+];
