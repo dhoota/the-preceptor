@@ -6,11 +6,11 @@ Batch s73, topic `dvt-pe` (Deep venous thrombosis (DVT) and pulmonary embolus (P
 
 | Id | Title | Setting and patient | Questions |
 |---|---|---|---|
-| dvt-pe-48 | Swollen leg after months of groin injecting | Tertiary ED, 31-year-old woman who injects into the femoral vein | 4 single |
-| dvt-pe-49 | Breathless new mother | Tertiary ED, 34-year-old woman 10 days after an emergency caesarean, breastfeeding | 1 menu, 3 single |
+| dvt-pe-48 | Swollen leg after months of groin injecting | Tertiary ED, 46-year-old man who injects fentanyl into the femoral vein (revised) | 4 single |
+| dvt-pe-49 | Breathless new mother | Tertiary ED, 34-year-old woman 16 days after an emergency caesarean, breastfeeding (revised) | 1 menu, 3 single |
 | dvt-pe-50 | Teenager home from a ski trip | Tertiary ED, 15-year-old boy after tibial nailing and a long flight | 1 menu, 3 single |
 | dvt-pe-51 | Painful neck early in pregnancy | Tertiary ED, 33-year-old woman at 9 weeks after IVF with severe OHSS, jugular thrombosis | 4 single |
-| dvt-pe-52 | Older man with chest pain on a blood thinner | Rural hospital, 76-year-old man with PE despite apixaban (St John's wort) | 4 single |
+| dvt-pe-52 | Chest pain at the end of a night shift | Rural hospital, 61-year-old woman with PE on rivaroxaban taken without food (revised) | 4 single |
 
 20 questions: 18 single, 2 menu. Single key positions 0 to 4: 3, 3, 4, 4, 4 (max 22 percent). The key is the single longest option in 1 of 18 singles.
 
@@ -151,3 +151,37 @@ Before rebuilding, I searched the whole bank by keyword (`src/samps` and `src/ca
 
 - 52 q3 keys the standard rivaroxaban treatment phase dose, which dvt-pe-20 and dvt-pe-33 (s33) also key as a first regimen. The decision tested here is different: restart the acute phase after a breakthrough PE, rather than continue the 20 mg maintenance dose. Neither guide states a breakthrough plan in so many words. The key rests on treating the new PE as an acute VTE, using the guide's treatment dosing. If that is judged too close to the s33 items, the fallback is to move KF6 out of 52.
 - Missing meals is related to the general cause "absorption or dosing problems" listed in the legacy s05 cva write-in item. It is not keyed as an MCQ there.
+
+## Revision 3
+
+Fixes for the two dvt-pe-52 fails in `docs/reviews/q500b-verify2-s73.md`. dvt-pe-48 to dvt-pe-51 and 52 q1 and q4 are unchanged. The "Ids written" table at the top now describes the final 48, 49 and 52.
+
+| Item | Fix |
+|---|---|
+| dvt-pe-52 q2 | Options replaced with the reviewer's list: "Calcium carbonate at 06:00", "Levothyroxine 100 mcg at 06:00", "Rivaroxaban taken without food", "Rosuvastatin 10 mg at 06:00", "Vitamin D at 06:00". The key stays at index 2, and every timing now matches the stem. The levothyroxine sentence is qualified: an empty stomach suits levothyroxine, but calcium taken with it lowers its absorption and should be separated by several hours. Neither drug lowers rivaroxaban levels. |
+| dvt-pe-52 q3 | KF6 moved out of 52. The rivaroxaban reload question is gone. q3 is now KF4: the anticoagulant plan while awaiting imaging depends on pretest probability. The resident asks about another patient: low pretest probability, a positive D-dimer and CT in 16 hours. The key is "No anticoagulant before the CT". Source: Thrombosis Canada PE treatment guide (version dated 1 May 2025, https://thrombosiscanada.ca/clinical_guides/pdfs/44_60.pdf, downloaded and read): "Treatment can be withheld in patients with intermediate and low pre-test probabilities of PE if definitive diagnostic testing will be completed within 4 or 24 hours, respectively." I searched the whole bank first. dvt-pe-31 q3 (high probability, treat while CT is down) and dvt-pe-28 q2 (likely DVT, LMWH overnight) key the treat side. No item keys withholding for low probability. The options name no food and no rivaroxaban timing, so q3 does not imply the q2 key (B6). The q4 update now opens "Back with her" so it reads as her case again. "Embolus while on rivaroxaban" still fits. |
+| Sources | tc-dvt-tx removed from this batch (no longer cited). Added tc-pe-tx. |
+
+### After revision 3
+
+- Single key positions 0 to 4: 4, 3, 4, 3, 4 (max 22 percent).
+- The key is the single longest option in 4 of 18 singles.
+- Key features:
+
+| Key feature | Count | Items |
+|---|---|---|
+| KF1 | 5 | 48 q1, 49 q1, 50 q1, 51 q1, 52 q2 |
+| KF2 | 4 | 48 q2, 49 q2, 50 q2, 51 q3 |
+| KF3 | 4 | 48 q3, 50 q3, 51 q2, 52 q1 |
+| KF4 | 2 | 48 q4, 52 q3 |
+| KF5 | 2 | 49 q3, 50 q4 |
+| KF6 | 2 | 49 q4, 51 q4 |
+| KF7 | 1 | 52 q4 |
+
+- All 7 key features are covered.
+- Tests: `SAMP_BATCH=s73 npx vitest run tests/samps.test.ts tests/samp-quality.test.ts tests/citations.test.ts --testTimeout=120000` passes 128 of 128. tsc shows nothing for samps/s73.
+
+### For the re-review
+
+- 52 q3 is tagged KF4 because the decision turns on pretest probability. It could also be read as an anticoagulation decision (KF6).
+- 52 q3 uses an "another patient" update, as signed sob-10 q4 does.
