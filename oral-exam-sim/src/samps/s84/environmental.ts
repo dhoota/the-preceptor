@@ -274,7 +274,7 @@ export const ENVIRONMENTAL_S84: Samp[] = [
     alsoTopics: ["msk"],
     title: "A shock while replacing an outlet",
     stem:
-      "A 38-year-old man is brought to the emergency department by ambulance after an electric shock at home. He was replacing a 240 volt dryer outlet in his basement after switching off what he thought was the right breaker. He gripped a live wire with his right hand while kneeling on the damp concrete floor. His arm locked and he could not let go for about 2 seconds, until his wife switched off the main power. He felt the current run through his chest to his knees. His wife says he did not lose consciousness and talked throughout. He has no medical history.\n\nHe holds his painful right arm against his body, internally rotated, and cannot rotate it outward. The back of the shoulder is prominent and the coracoid stands out in front. There is a 4 mm grey burn on the right palm and a 3 mm burn over the left knee. The forearm is soft and the hand is neurovascularly intact. His ECG shows normal sinus rhythm with normal intervals.",
+      "A 38-year-old man is brought to the emergency department by ambulance after an electric shock at home. He was replacing a 240 volt dryer outlet in his basement after switching off what he thought was the right breaker. He gripped a live wire with his right hand while kneeling on the damp concrete floor. His arm locked and he could not let go for about 2 seconds, until his wife switched off the main power. He felt the current run through his chest to his knees. His wife says he did not lose consciousness and talked throughout. He is otherwise well.\n\nHe holds his painful right arm against his body, internally rotated, and cannot rotate it outward. The back of the shoulder is prominent and the coracoid stands out in front. There is a 4 mm grey burn on the right palm and a 3 mm burn over the left knee. The forearm is soft and the hand is neurovascularly intact. His ECG shows normal sinus rhythm with normal intervals.",
     vitals: { temperature: "36.8°C oral", pulse: "92/minute", resp: "18/minute", bp: "138/84 mmHg", o2sat: "99% on room air", weight: "88 kg" },
     questions: [
       {
@@ -314,11 +314,11 @@ export const ENVIRONMENTAL_S84: Samp[] = [
         id: "q4",
         kind: "menu",
         prompt: "Which of the following laboratory investigations are most appropriate for him at this visit?",
-        options: ["Complete blood count", "Creatine kinase", "CT of the chest", "Electrolytes and creatinine", "INR and PTT", "Serum lipase", "Urine drug screen"],
+        options: ["Coagulation profile with INR", "Complete blood count", "Creatine kinase", "CT of the chest", "Electrolytes and creatinine", "Serum lipase and amylase", "Urine drug screen"],
         select: 3,
-        correct: [0, 1, 3],
+        correct: [1, 2, 4],
         explanation:
-          "A blood count, electrolytes with kidney function and a creatine kinase are advised for patients with electrical injury. Current passing through muscle and tetanic contraction can injure muscle out of sight, and creatine kinase on arrival screens for rhabdomyolysis. Normal creatine kinase and creatinine are part of the evidence that a patient can safely go home. CT of the chest is not indicated without chest trauma or abnormal findings. Coagulation tests, lipase and a urine drug screen have no indication in his history or examination.",
+          "A blood count, electrolytes with kidney function and a creatine kinase are advised for patients with electrical injury. Current passing through muscle and tetanic contraction can injure muscle out of sight, and creatine kinase on arrival screens for rhabdomyolysis. Normal creatine kinase and creatinine are part of the evidence that a patient can safely go home. CT of the chest is not indicated without chest trauma or abnormal findings. A coagulation profile, lipase and amylase, and a urine drug screen have no indication in his history or examination.",
         keyFeature: { topic: "environmental", n: 5 },
         source: "smith-electrical",
       },

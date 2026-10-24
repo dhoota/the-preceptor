@@ -136,7 +136,7 @@ export const EYE_S76: Samp[] = [
         ],
         correct: 3,
         explanation:
-          "Stromal keratitis with an intact epithelium is an immune reaction with little live virus, and it is treated with a topical steroid plus antiviral prophylaxis directed by ophthalmology. Dendritic and geographic ulcers are epithelial disease with replicating virus, which is treated with an antiviral and not a steroid because steroids can badly worsen it. Lid vesicles and a follicular conjunctivitis are also active viral infection, so they need antiviral treatment alone. This is why steroids are never a routine emergency department prescription for a herpetic eye.",
+          "Stromal keratitis with an intact epithelium is an immune reaction with little live virus, and it is treated with a topical steroid plus antiviral prophylaxis directed by ophthalmology. Dendritic and geographic ulcers are epithelial disease with replicating virus, which is treated with an antiviral and not a steroid because steroids can badly worsen it. Lid vesicles and a follicular conjunctivitis are also active viral infection, so they need antiviral treatment alone. This is why a steroid is not a routine emergency department prescription for a herpetic eye.",
         keyFeature: { topic: "eye", n: 4 },
         source: "rveeh-hsv",
       },
@@ -460,7 +460,7 @@ export const EYE_S76: Samp[] = [
         ],
         correct: 2,
         explanation:
-          "A blow strong enough to cause a subconjunctival hemorrhage, with acuity of 20/60 on that side against 20/25 with the same punctate staining on the other, needs a slit lamp search for a hyphema. A microhyphema is red cells suspended in the aqueous that only a close examination shows, so a clear penlight view does not exclude it. In a review of airbag eye injuries, 43% of occupants had a hyphema. Pressure is measured once the chamber has been examined and an open globe excluded. The fundus is examined after the front of the eye, and ultrasound is kept for a posterior view that cannot be seen directly. Fields add little with normal pupils.",
+          "A blow strong enough to cause a subconjunctival hemorrhage, with acuity of 20/60 on that side against 20/25 with the same punctate staining on the other, needs a slit lamp search for a hyphema. A microhyphema is red cells suspended in the aqueous that only a close examination shows, so a clear penlight view does not exclude it. In a review of 97 occupants with airbag eye injuries, 43% had a hyphema. Pressure is measured once the chamber has been examined and an open globe excluded. The fundus is examined after the front of the eye, and ultrasound is kept for a posterior view that cannot be seen directly. Fields add little with normal pupils.",
         keyFeature: { topic: "eye", n: 5 },
         source: "stein-airbag",
       },

@@ -62,3 +62,8 @@ Bank counts before this batch (all SAMPs, all topics): KF1 24, KF2 54, KF3 29, K
 5. 52 applies the GLP-1 guidance, written for elective procedures, to an unscheduled ED sedation. White 2008 is a single trial of 42 patients.
 6. New ACEP-approved guidelines on unscheduled procedural sedation came out in September 2026 (Green SM, Roback MG, Bhatt M and colleagues, Ann Emerg Med, Parts 1 and 2). Only the PubMed records could be reached, not the full text, so they are not cited. A reviewer with access should check 49 q3 and q4, 51 q2 and 52 q1 to q3 against them.
 7. The web search limit was reached partway through. After that, sources were checked by opening the publisher, CPS, Fraser Health, ACS and PMC pages directly, and the PubMed, Europe PMC and Crossref records.
+
+## Checks
+
+- `npx tsc --noEmit -p . 2>&1 | grep samps/s81` prints nothing.
+- `SAMP_BATCH=s81 npx vitest run tests/samps.test.ts tests/samp-quality.test.ts tests/citations.test.ts`: 127 of 128 pass. Every s81 test passes. The one failure is the bank-wide near-duplicate stem test, which hit its 5 second timeout because the machine was under heavy load from other agents (load average about 24). Run alone with `--testTimeout=120000` it passes in about 25 seconds, so no s81 stem is a near duplicate.

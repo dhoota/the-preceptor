@@ -402,7 +402,7 @@ export const lockedInBasilarBusShelter: OralCase = {
       modelAnswer: [
         "Sixty one year old man. Basilar artery occlusion. Last known well 11:15.",
         "Before intubation he was awake, locked in and answered yes and no by looking up. GCS was E4 V1 M1, which understated him.",
-        "Tenecteplase 23 mg IV at 14:52. Labetalol 10 mg before it. Keep BP below 185/110 for 24 hours.",
+        "Tenecteplase 23 mg IV and the exact time it was given. Labetalol 10 mg before it. Keep BP below 185/110 for 24 hours.",
         "Intubated for secretions and hypoxia. Ketamine and rocuronium, then propofol and fentanyl. Keep him sedated.",
         "Wife updated and travelling separately. Accepted for thrombectomy.",
       ],
