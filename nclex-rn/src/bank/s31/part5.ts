@@ -142,15 +142,15 @@ export const PART5: Item[] = [
       stem: "A 31-year-old runner collapses near the finish of a marathon on a hot day. The runner says, \"I drank water at every station to avoid heat stroke.\" The runner is confused and has vomited twice. Rectal temperature is 38.1°C (100.6°F). Weight is 2 kg above the prerace weight. A point-of-care serum sodium is 124 mEq/L (124 mmol/L). Complete the diagram by choosing the condition the client is most likely experiencing, 2 actions to take and 2 parameters to monitor.",
       rationale:
         "Heavy water intake, a 2 kg weight gain, vomiting, confusion and a sodium of 124 mEq/L fit exercise-associated hyponatremia. The temperature of 38.1°C rules out heat stroke. Confusion means the brain is swelling, so 3% sodium chloride is given as a 100 mL IV bolus as prescribed. Fluids are restricted. Water and sports drinks add free water. Level of consciousness and repeat sodium levels show the response.",
-      refs: ["Symptomatic exercise-associated hyponatremia is treated with a 100 mL IV bolus of 3% sodium chloride, repeated if symptoms persist."],
+      refs: ["Exertional heat stroke involves a core temperature above 40°C (104°F).", "Symptomatic exercise-associated hyponatremia is treated with a 100 mL IV bolus of 3% sodium chloride, repeated if symptoms persist."],
       sources: [WMS_EAH],
     }),
     kind: "bowtie",
     conditions: [
       { text: "Exercise-associated hyponatremia", why: "Overdrinking, weight gain, confusion and a sodium of 124 mEq/L fit this condition." },
       { text: "Exertional heat stroke", why: "Heat stroke needs a core temperature above 40°C. This runner's is 38.1°C." },
-      { text: "Heat exhaustion", why: "Heat exhaustion does not explain a sodium of 124 mEq/L or a gain in weight." },
-      { text: "Hypoglycemia", why: "Low glucose does not cause a low sodium or weight gain." },
+      { text: "Heat exhaustion with dehydration", why: "Dehydration lowers weight rather than raising it and does not explain a sodium of 124 mEq/L." },
+      { text: "Hypoglycemia after exercise", why: "Low glucose does not cause a low sodium or weight gain." },
     ],
     actions: [
       { text: "Give 3% sodium chloride 100 mL IV as prescribed", why: "A hypertonic bolus raises sodium and reduces brain swelling." },
