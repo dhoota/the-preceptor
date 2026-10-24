@@ -44,7 +44,7 @@ export const wildfireEvacueesHostHospital: OralCase = {
       id: "department",
       label: "The department at 20:00",
       result:
-        "14 of 16 stretchers are full. One resuscitation bay is free. 11 evacuees are in the waiting room with family members, and more are walking over from the arena. One triage nurse. Two ambulances are on the road with other patients.",
+        "14 of 16 stretchers are full. One resuscitation bay is free. The pregnant woman and 11 other evacuees are in the waiting room with family members, and more are walking over from the arena. One triage nurse. Two ambulances are on the road with other patients.",
     },
     {
       id: "staff",
@@ -219,7 +219,7 @@ export const wildfireEvacueesHostHospital: OralCase = {
       kind: "say",
       id: "s-send-back",
       phase: "21:15",
-      text: "The community health representative comes back from the arena. The boy's glucose is now 24 mmol/L, and the 2 month old is breathing fast. Your colleague brings them back, and the pharmacist opens a refill station.",
+      text: "The community health representative comes back from the arena. The boy's glucose is now 24 mmol/L, and the 2 month old is breathing fast. Your colleague brings them back, and the pharmacist opens a refill station. The 84 year old woman is still in the waiting room, because the nurses would not send her back without family.",
       next: "s-second-plane",
     },
     {

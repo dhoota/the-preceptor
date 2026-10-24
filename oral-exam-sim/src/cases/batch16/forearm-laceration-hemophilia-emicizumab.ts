@@ -472,7 +472,7 @@ export const forearmLacerationHemophiliaEmicizumab: OralCase = {
       criterion: "process",
       text: "Reassesses the forearm before discharge instead of discharging on the plan, and escalates at once when it changes.",
       points: 2,
-      teaching: "A plan made at 19:00 can be wrong by 20:30. Reassessment before discharge catches a delayed muscle bleed.",
+      teaching: "A plan made earlier in the visit can be wrong by the time of discharge. Reassessment before discharge catches a delayed muscle bleed.",
       source: "wfh",
     },
     {

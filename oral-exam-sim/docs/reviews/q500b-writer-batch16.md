@@ -141,3 +141,11 @@ Own walk of every path in all four cases. A finding can be opened from any path,
 Not changed (physician notes, not fails): terbutaline in the q-cord model answer, who holds the presenting part, reopening the wound on the c-close-now path, and loose fascial closure.
 
 Tests after revision 4: `CASE_BATCH=batch16 npx vitest run tests/cases.test.ts tests/citations.test.ts --testTimeout=120000` and `REALIGN=batch16 CASE_BATCH=batch16 npx vitest run tests/cases.test.ts --testTimeout=120000`. Both passed: 41 of 41 and 39 of 39. tsc printed nothing for cases/batch16.
+
+## Revision 5 (review docs/reviews/q500b-verify3-batch16.md, 1 path fail and 2 notes)
+
+1. wildfire-evacuees-host-hospital, s-send-back. It now ends: "Your colleague brings them back, and the pharmacist opens a refill station. The 84 year old woman is still in the waiting room, because the nurses would not send her back without family." This keeps s-elder true on the c-send-back path.
+2. wildfire, department finding. "11 evacuees are in the waiting room" became "The pregnant woman and 11 other evacuees are in the waiting room", so the 20:00 count includes her.
+3. forearm-laceration-hemophilia-emicizumab, hf-pr2 teaching. "A plan made at 19:00 can be wrong by 20:30." became "A plan made earlier in the visit can be wrong by the time of discharge." It now holds on every path.
+
+Nothing else changed. Tests after revision 5: `CASE_BATCH=batch16 npx vitest run tests/cases.test.ts tests/citations.test.ts --testTimeout=120000` passed 41 of 41, and `REALIGN=batch16 CASE_BATCH=batch16 npx vitest run tests/cases.test.ts --testTimeout=120000` passed 39 of 39. tsc printed nothing for cases/batch16.
