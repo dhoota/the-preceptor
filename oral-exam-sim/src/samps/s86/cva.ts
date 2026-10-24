@@ -9,7 +9,6 @@ const S = {
   csbprAcute: { id: "s86-csbpr-acute", citation: "Heart and Stroke Foundation of Canada. Canadian Stroke Best Practice Recommendations: acute stroke management, 7th edition 2022, with the endovascular thrombectomy interim update 2025.", url: "https://www.strokebestpractices.ca/recommendations/acute-stroke-management" },
   russell: { id: "s86-russell-csdh", citation: "Russell NA, Goumnerova L, Atack EA, Atack DM, Benoit BG. Chronic subdural hematoma mimicking transient ischemic attacks. J Trauma. 1985.", url: "https://pubmed.ncbi.nlm.nih.gov/4057306/" },
   tcBleed: { id: "s86-tc-bleed", citation: "Thrombosis Canada. Anticoagulant-related bleeding management order set. June 2024.", url: "https://thrombosiscanada.ca/uploads/publications/Bleed%20Management%20Order%20Set%20June%202024.pdf" },
-  wasid: { id: "s86-wasid", citation: "Chimowitz MI and colleagues, WASID Trial Investigators. Comparison of warfarin and aspirin for symptomatic intracranial arterial stenosis. N Engl J Med. 2005.", url: "https://pubmed.ncbi.nlm.nih.gov/15800226/" },
   forsberg: { id: "s86-forsberg-aca", citation: "Forsberg J, Blaabjerg M, Diaz A, Gaist TA, Christensen A, Gaist D. Bilateral anterior cerebral artery infarction presenting with acute paraparesis and parkinsonism. Neurol Clin Pract. 2019.", url: "https://pmc.ncbi.nlm.nih.gov/articles/PMC6927436/" },
   sammpris: { id: "s86-sammpris", citation: "Chimowitz MI and colleagues, SAMMPRIS Trial Investigators. Stenting versus aggressive medical therapy for intracranial arterial stenosis. N Engl J Med. 2011.", url: "https://pubmed.ncbi.nlm.nih.gov/21899409/" },
   lis: { id: "s86-locked-in", citation: "Smith E, Delargy M. Locked-in syndrome. BMJ. 2005.", url: "https://pmc.ncbi.nlm.nih.gov/articles/PMC549115/" },
@@ -143,17 +142,17 @@ export const CVA_S86: Samp[] = [
     topic: "cva",
     title: "Spells blamed on the inner ear",
     stem:
-      "You are working in a community hospital emergency department with CT and CT angiography. A 69-year-old man presents at 13:00 after four spells in 3 days of double vision, slurred speech and unsteadiness. Each lasted 5 to 15 minutes and resolved fully. The last ended at 11:30. Two days ago his family physician diagnosed an inner ear problem and prescribed betahistine. He has hypertension, type 2 diabetes and dyslipidemia, and he smokes. Medications: metformin, ramipril and atorvastatin 10 mg daily. He takes no antiplatelet. Capillary glucose is 8.4 mmol/L. Neurologic examination, including eye movements and gait, is normal. ECG shows sinus rhythm. Non-contrast CT head is normal.",
-    vitals: { temperature: "36.7°C oral", pulse: "72/minute", resp: "16/minute", bp: "158/86 mmHg", o2sat: "97% on room air", weight: "92 kg" },
+      "You are working in a community hospital emergency department with CT and CT angiography. A 72-year-old woman presents at 13:00 after four spells in 3 days of spinning vertigo, numbness around her mouth and difficulty swallowing. Each lasted 5 to 15 minutes, came on while she was sitting or lying still and cleared completely. The last ended at 11:30. Two days ago her family physician diagnosed an inner ear problem and prescribed betahistine. She has hypertension, type 2 diabetes and dyslipidemia. She has never smoked. Medications: metformin, ramipril and atorvastatin 10 mg daily. She takes no antiplatelet. Capillary glucose is 8.4 mmol/L. On examination now, eye movements, facial sensation, swallowing, speech, strength and walking are all normal. Her ECG is in sinus rhythm, and a non-contrast CT of the head shows only mild small-vessel change.",
+    vitals: { temperature: "36.7°C oral", pulse: "72/minute", resp: "16/minute", bp: "158/86 mmHg", o2sat: "97% on room air", weight: "74 kg" },
     questions: [
       {
         id: "q1",
         kind: "single",
-        prompt: "Which of the following best describes the significance of his spells recurring over 3 days?",
-        options: ["Fits a benign peripheral vestibular cause", "Lowers his risk below that of one TIA", "Makes a vascular cause unlikely", "Suggests migraine with brainstem aura", "Supports fluctuating vertebrobasilar ischemia"],
+        prompt: "Which of the following best describes the significance of her spells recurring over 3 days?",
+        options: ["Fits a benign peripheral vestibular cause", "Lowers her risk below that of one TIA", "Makes a vascular cause unlikely", "Suggests migraine with brainstem aura", "Supports fluctuating vertebrobasilar ischemia"],
         correct: 4,
         explanation:
-          "Canadian guidance warns that vertebrobasilar ischemia often presents with fluctuating diplopia, dysarthria and ataxia over more than 48 hours and is easily mistaken for a mimic, yet it needs urgent neurovascular imaging. Double vision and slurred speech are not features of a peripheral vestibular disorder. Repeated spells mark an unstable lesion and a higher, not lower, risk. A first migraine with brainstem aura at 69, with no headache and several vascular risk factors, is far less likely than ischemia.",
+          "Canadian guidance warns that vertebrobasilar ischemia can fluctuate over more than 48 hours, and that this longer course leads it to be mistaken for a stroke mimic. Spells that keep recurring over 3 days are therefore not reassuring. They mark an unstable lesion that still needs urgent neurovascular imaging and treatment today. Numbness around the mouth and difficulty swallowing are brainstem symptoms that a peripheral vestibular disorder does not cause, and her spells came at rest rather than with head movement. A first migraine with brainstem aura at 72, with no headache and several vascular risk factors, is far less likely than ischemia.",
         keyFeature: { topic: "cva", n: 2 },
         source: "s86-csbpr-sp",
       },
@@ -165,30 +164,30 @@ export const CVA_S86: Samp[] = [
         options: ["Apixaban 5 mg twice daily", "ASA alone, 81 mg daily", "ASA and clopidogrel for 21 days", "ASA and clopidogrel for 90 days", "Clopidogrel alone, 75 mg daily"],
         correct: 3,
         explanation:
-          "His spells are attributed to a symptomatic 80% intracranial stenosis, within the 70 to 99% range for which Canadian guidance recommends medical therapy based on the SAMMPRIS protocol. That protocol used ASA and clopidogrel for 3 months, then a single agent. The usual 21 days of dual therapy applies to high-risk TIA without this lesion, and the guideline names symptomatic intracranial stenosis as a reason to continue longer. A single agent alone gives less protection in the high-risk early months. Anticoagulation has no role without atrial fibrillation or another cardiac source.",
+          "Her spells are attributed to a symptomatic 80% intracranial stenosis, within the 70 to 99% range for which Canadian guidance recommends medical therapy based on the SAMMPRIS protocol. That protocol used ASA and clopidogrel for 3 months, then a single agent. The usual 21 days of dual therapy applies to high-risk TIA without this lesion, and the guideline names symptomatic intracranial stenosis as a reason to continue longer. A single agent alone gives less protection in the high-risk early months. Anticoagulation has no role without atrial fibrillation or another cardiac source.",
         keyFeature: { topic: "cva", n: 4 },
         source: "s86-csbpr-sp",
       },
       {
         id: "q3",
         kind: "single",
-        prompt: "Which of the following is the most appropriate approach to his basilar artery stenosis at this time?",
-        options: ["Aggressive medical management", "Angioplasty and stenting this week", "Heparin infusion then warfarin", "Stenting after 21 days of DAPT", "Stenting if LDL stays above target"],
+        prompt: "Which of the following is the most appropriate approach to her basilar artery stenosis at this time?",
+        options: ["Aggressive medical management", "Angioplasty and stenting this week", "Balloon angioplasty without a stent", "Stenting after 21 days of DAPT", "Stenting if LDL stays above target"],
         correct: 0,
         explanation:
-          "In SAMMPRIS, patients with a recent TIA or stroke from a 70 to 99% intracranial stenosis had a 30-day rate of stroke or death of 14.7% with angioplasty and stenting, against 5.8% with aggressive medical management alone. Medical therapy meant dual antiplatelets, intensive statin treatment, BP control and lifestyle change, and it stays the first-line approach. Stenting is reserved for carefully selected patients who have another stroke despite full medical therapy, not timed to a fixed date or an LDL value. Warfarin is not better than antiplatelet therapy for intracranial stenosis and causes more bleeding.",
+          "In SAMMPRIS, patients with a recent TIA or stroke from a 70 to 99% intracranial stenosis had a 30-day rate of stroke or death of 14.7% with angioplasty and stenting, against 5.8% with aggressive medical management alone. Medical therapy meant dual antiplatelets, intensive statin treatment, BP control and lifestyle change, and Canadian guidance keeps it as the first-line approach. Angioplasty, with or without a stent, is reserved for carefully selected patients who have another stroke despite full medical therapy. It is not timed to a fixed date after dual antiplatelet therapy or to an LDL value.",
         keyFeature: { topic: "cva", n: 4 },
         source: "s86-sammpris",
       },
       {
         id: "q4",
         kind: "single",
-        update: "His LDL cholesterol is 2.9 mmol/L on atorvastatin 10 mg daily.",
-        prompt: "Using the Canadian Stroke Best Practice Recommendations, which of the following is his LDL cholesterol target?",
+        update: "Her LDL cholesterol is 2.9 mmol/L on atorvastatin 10 mg daily.",
+        prompt: "Using the Canadian Stroke Best Practice Recommendations, which of the following is her LDL cholesterol target?",
         options: ["Below 1.4 mmol/L", "Below 1.8 mmol/L", "Below 2.0 mmol/L", "Below 2.6 mmol/L", "Below 3.5 mmol/L"],
         correct: 1,
         explanation:
-          "Canadian stroke guidance recommends a statin after a non-cardioembolic TIA or ischemic stroke with a target LDL cholesterol below 1.8 mmol/L, and ezetimibe can be added if that is not reached on the highest tolerated statin. His LDL of 2.9 mmol/L on atorvastatin 10 mg is well above target, so his statin should be raised to a high-intensity dose. Below 1.4 mmol/L is a European target, not the Canadian stroke one. Targets of 2.0, 2.6 or 3.5 mmol/L are too loose for a patient with symptomatic intracranial stenosis.",
+          "Canadian stroke guidance recommends a statin after a non-cardioembolic TIA or ischemic stroke with a target LDL cholesterol below 1.8 mmol/L, and ezetimibe can be added if that is not reached on the highest tolerated statin. Her LDL of 2.9 mmol/L on atorvastatin 10 mg is well above target, so her statin should be raised to a high-intensity dose. Below 1.4 mmol/L is a European target, not the Canadian stroke one. Targets of 2.0, 2.6 or 3.5 mmol/L are too loose for a patient with symptomatic intracranial stenosis.",
         keyFeature: { topic: "cva", n: 4 },
         source: "s86-csbpr-sp",
       },
@@ -203,7 +202,7 @@ export const CVA_S86: Samp[] = [
     topic: "cva",
     title: "An episode she nearly did not mention",
     stem:
-      "A 63-year-old woman presents to the emergency department at 10:00 because her daughter urged her to report an episode from 9 days ago. While cooking, her right arm became weak and she could not find her words for about 25 minutes, and then she returned to normal. She has had no further episodes. She has hypertension treated with hydrochlorothiazide and smokes 15 cigarettes a day. She takes no antiplatelet. Capillary glucose is 5.9 mmol/L. Her neurologic examination is normal. ECG shows sinus rhythm at 76/minute.",
+      "You are working in a regional hospital emergency department with CT and CT angiography. A 63-year-old woman presents at 10:00 because her daughter urged her to report an episode from 9 days ago. While cooking, her right arm became weak and she could not find her words for about 25 minutes, and then she returned to normal. She has had no further episodes. She has hypertension treated with hydrochlorothiazide and smokes 15 cigarettes a day. She takes no antiplatelet. Capillary glucose is 5.9 mmol/L. Her neurologic examination is normal. ECG shows sinus rhythm at 76/minute.",
     vitals: { temperature: "36.5°C oral", pulse: "76/minute", resp: "14/minute", bp: "152/88 mmHg", o2sat: "98% on room air", weight: "70 kg" },
     questions: [
       {
@@ -221,7 +220,7 @@ export const CVA_S86: Samp[] = [
         id: "q2",
         kind: "single",
         update: "CT head is normal. CT angiography shows no stenosis of more than 30% in any artery. Platelets are 251 x 10^9/L.",
-        prompt: "Which of the following is the most appropriate antiplatelet treatment to start before she leaves today?",
+        prompt: "Which of the following is the most appropriate antiplatelet treatment to start now?",
         options: ["Apixaban 5 mg twice daily", "ASA and clopidogrel for 21 days", "ASA 160 mg once, then 81 mg daily", "Ticagrelor 90 mg twice daily alone", "No antiplatelet until clinic review"],
         correct: 2,
         explanation:

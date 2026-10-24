@@ -1,0 +1,518 @@
+// DRAFT. Clinical content written for simulation only. Requires physician review before release. Verify every dose and threshold against current guidelines.
+
+import type { OralCase } from "@/engine/types";
+
+export const forearmLacerationHemophiliaEmicizumab: OralCase = {
+  id: "forearm-laceration-hemophilia-emicizumab",
+  title: "A cut at the hardware store",
+  blueprint: "procedures",
+  alsoCovers: ["trauma"],
+  priorityTopic: "lacerations",
+  keyFeatures: [
+    { topic: "lacerations", n: 1 },
+    { topic: "lacerations", n: 2 },
+    { topic: "lacerations", n: 3 },
+    { topic: "lacerations", n: 4 },
+  ],
+  summary: "A teenager cut his forearm at his part time job, and the wound keeps oozing.",
+  durationMinutes: 12,
+  stem:
+    "You are working in the emergency department of a community hospital when the following patient arrives. " +
+    "A 17 year old boy walks in with his mother 70 minutes after he cut his left forearm on a metal shelf at work. The dressing is soaked through.",
+  card: {
+    vitals: {
+      temperature: "36.6°C oral",
+      pulse: "104/minute",
+      resp: "16/minute",
+      bp: "128/72 mmHg",
+      o2sat: "99% on room air",
+      weight: "64 kg (141 lb)",
+    },
+    medications: "Emicizumab subcutaneously once a week.",
+    allergies: "None known",
+  },
+  findings: [
+    {
+      id: "hpi",
+      label: "History of the presenting illness",
+      result:
+        "At 16:50 he was stocking shelves at a hardware store when he caught the back of his left forearm on the sharp edge of a sheet metal shelf. It bled heavily. A coworker wrapped it with a towel and tape. It has kept oozing through two dressings. He is left handed.",
+    },
+    {
+      id: "pmh",
+      label: "Past history",
+      result:
+        "Severe hemophilia A, with a factor VIII level under 1%. No inhibitor on his last test 6 months ago. Two left elbow bleeds as a child. No head injuries. He is followed by the hemophilia treatment centre at the children's hospital 90 minutes away, which has a hematologist on call 24 hours a day.",
+    },
+    {
+      id: "meds",
+      label: "Medication details",
+      result:
+        "Emicizumab 96 mg subcutaneously every week for prophylaxis, last dose 3 days ago. He keeps recombinant factor VIII at home for breakthrough bleeds and has a treatment letter on his phone from the treatment centre. He took ibuprofen 400 mg at work an hour ago. No allergies.",
+    },
+    {
+      id: "immunization",
+      label: "Immunizations",
+      result: "All routine vaccines. A Tdap booster at age 14, 3 years ago.",
+    },
+    {
+      id: "social",
+      label: "Social history",
+      result: "In grade 12. Plays guitar and wants to study carpentry. Lives with his mother. No alcohol or drugs.",
+    },
+    {
+      id: "wound",
+      label: "Wound examination",
+      result:
+        "A 5 cm oblique laceration on the dorsal radial side of the mid forearm. It gapes 1 cm. Fat and the fascia are visible, and muscle bulges through a 1 cm split in the fascia. Slow, steady venous oozing that restarts whenever pressure is released. No visible foreign material. The edges are clean.",
+    },
+    {
+      id: "neurovascular",
+      label: "Hand and forearm examination",
+      result:
+        "Radial pulse strong. Capillary refill 2 seconds. Full wrist, finger and thumb extension against resistance, including lifting the thumb off a flat surface. Reduced light touch and two point discrimination over the back of the first web space. " +
+        "The forearm is mildly swollen around the wound and soft. Passive finger flexion and extension are not painful.",
+    },
+    {
+      id: "xray",
+      label: "Forearm radiograph",
+      result: "No fracture. No radiopaque foreign body. Soft tissue swelling around the wound.",
+    },
+    {
+      id: "labs",
+      label: "Blood work",
+      result:
+        "Hemoglobin 131 g/L. Platelets 246 x 10^9/L. INR 1.0. aPTT 27 seconds (normal 25 to 36). The laboratory notes that emicizumab shortens the aPTT, so it does not reflect his bleeding risk.",
+    },
+    {
+      id: "reassess",
+      label: "Forearm at 20:30",
+      result:
+        "The forearm is now tense and much larger around the dorsal compartment. He has severe pain out of proportion to the wound, and pain when you passively flex his fingers and wrist. Radial pulse still strong. Sensation unchanged. Hemoglobin on repeat 118 g/L.",
+    },
+    {
+      id: "resources",
+      label: "Hospital resources",
+      result:
+        "A community hospital with general and orthopaedic surgery on call. The pharmacy stocks recombinant factor VIII. A plastic surgeon is at the regional centre. The hemophilia treatment centre is reachable by phone at any hour.",
+    },
+  ],
+  start: "s-open",
+  nodes: [
+    {
+      kind: "say",
+      id: "s-open",
+      phase: "18:00",
+      text: "He holds his arm up with the soaked towel. His mother says, 'He has hemophilia, but he's on the new weekly shot, so it should be fine.' The triage nurse has sent blood work and asks if she can give him more ibuprofen.",
+      next: "q-history",
+    },
+    {
+      kind: "question",
+      id: "q-history",
+      phase: "History",
+      prompt: "What do you want to know from him and his mother?",
+      seconds: 90,
+      modelAnswer: [
+        "Mechanism and time. A sheet metal edge 70 minutes ago, clean surface, no glass or fragments.",
+        "His hemophilia. Type and severity, factor level, any inhibitor, his treatment centre and treatment plan.",
+        "His prophylaxis. Emicizumab, the dose and the last dose. Whether he has factor VIII for breakthrough bleeds.",
+        "Bleeding so far. How much, how long, and whether it stops with pressure.",
+        "Drugs that worsen bleeding. He took ibuprofen today.",
+        "Tetanus status, hand dominance, work and hobbies.",
+      ],
+      rubric: ["hf-h1", "hf-h2", "hf-h3"],
+      next: "q-exam",
+    },
+    {
+      kind: "question",
+      id: "q-exam",
+      phase: "Examination",
+      prompt: "How do you examine this forearm, and what are you looking for?",
+      seconds: 90,
+      modelAnswer: [
+        "Look at the wound depth. Fat, fascia and muscle, any tendon or foreign material.",
+        "Test each structure nearby. Wrist, finger and thumb extensors against resistance. Radial pulse and capillary refill.",
+        "Sensation of the superficial radial nerve over the back of the first web space, with two point discrimination.",
+        "Look for a muscle bleed. Forearm swelling, tension, and pain on passive stretch of the fingers.",
+        "Measure his heart rate and look for signs of blood loss.",
+        "Plain film for fracture or a metal fragment.",
+      ],
+      rubric: ["hf-p1", "hf-p2", "hf-m1"],
+      choices: [
+        {
+          id: "c-full",
+          label: "I tested each extensor against resistance, his radial pulse and refill, and sensation over the first web space, which was reduced. I felt the forearm compartments, checked passive stretch and ordered a forearm X-ray.",
+          next: "q-hemostasis",
+          quality: "strong",
+          feedback:
+            "Good. The reduced sensation over the first web space points to an injured superficial radial nerve. In a patient with hemophilia, the forearm must also be watched for a muscle bleed. Documenting the compartments now gives you a baseline.",
+        },
+        {
+          id: "c-wound-only",
+          label: "I looked at the wound, checked that he could make a fist and open his hand, and felt his radial pulse.",
+          next: "s-wound-only",
+          quality: "partial",
+          feedback:
+            "Making a fist does not test each tendon or the sensory nerves. You missed the numb patch over the first web space. With hemophilia you also need a baseline of the forearm compartments, because a muscle bleed can follow.",
+        },
+      ],
+    },
+    {
+      kind: "say",
+      id: "s-wound-only",
+      phase: "A few minutes later",
+      text: "He mentions that the back of his thumb feels like it is asleep. You go back and test sensation over the first web space and the forearm compartments.",
+      next: "q-hemostasis",
+    },
+    {
+      kind: "question",
+      id: "q-hemostasis",
+      phase: "Before the repair",
+      prompt: "His aPTT is 27 seconds. The nurse asks whether you can just sew it up. What do you do about his bleeding risk?",
+      seconds: 100,
+      modelAnswer: [
+        "The aPTT is falsely normal. Emicizumab shortens the aPTT whatever his real bleeding risk.",
+        "This is a deep laceration in severe hemophilia. Raise his factor level before you explore and close it.",
+        "Call the hemophilia treatment centre now and follow his treatment plan.",
+        "Without an inhibitor, the agent for a breakthrough bleed on emicizumab is factor VIII, in the dose the centre advises.",
+        "Do not give activated prothrombin complex concentrate. With emicizumab it has caused thrombotic microangiopathy and thrombosis.",
+        "Stop ibuprofen. Use acetaminophen and an opioid if needed, and give nothing intramuscularly.",
+      ],
+      rubric: ["hf-h2", "hf-m2", "hf-m3"],
+      choices: [
+        {
+          id: "c-fviii",
+          label: "I told the nurse the aPTT is falsely normal on emicizumab, called the hemophilia treatment centre, and gave the recombinant factor VIII dose they advised before I explored and closed the wound. I stopped the ibuprofen.",
+          next: "q-repair",
+          quality: "strong",
+          feedback:
+            "This is the key decision. Emicizumab brings the aPTT into the normal range, so the test cannot tell you he is safe. The hemophilia guideline says to raise the factor level for a deep laceration, then suture. In a patient without an inhibitor that means factor VIII.",
+        },
+        {
+          id: "c-close-now",
+          label: "I closed the wound without factor because his aPTT was normal and he is on prophylaxis.",
+          next: "s-close-now",
+          quality: "unsafe",
+          feedback:
+            "A normal aPTT on emicizumab means nothing about his clotting. Emicizumab gives only partial protection, and a deep wound into muscle can keep bleeding under the skin. Raise his factor level with factor VIII first, guided by his treatment centre.",
+        },
+        {
+          id: "c-apcc",
+          label: "I gave activated prothrombin complex concentrate, the bypassing agent the pharmacy had, and then closed the wound.",
+          next: "s-apcc",
+          quality: "unsafe",
+          feedback:
+            "Activated prothrombin complex concentrate given with emicizumab has caused thrombotic microangiopathy and thrombosis. He has no inhibitor, so factor VIII is the right agent. Call the treatment centre before giving any hemostatic product.",
+        },
+      ],
+    },
+    {
+      kind: "say",
+      id: "s-close-now",
+      phase: "19:30",
+      text: "After closure the dressing soaks through again and the forearm is swelling. The nurse pages you. You call the hemophilia treatment centre, and the hematologist advises a dose of factor VIII now.",
+      next: "q-repair",
+    },
+    {
+      kind: "say",
+      id: "s-apcc",
+      phase: "18:40",
+      text: "The pharmacist stops you before the vial is opened. She reads the warning about emicizumab and activated prothrombin complex concentrate aloud. You call the treatment centre and give factor VIII instead.",
+      next: "q-repair",
+    },
+    {
+      kind: "question",
+      id: "q-repair",
+      phase: "The repair",
+      prompt: "His factor VIII is in. How do you manage the wound, and does he need antibiotics or tetanus prophylaxis?",
+      seconds: 100,
+      modelAnswer: [
+        "Anesthetize with local infiltration through the wound edges. Avoid a deep nerve block unless the treatment centre agrees.",
+        "Irrigate with 50 to 100 mL of saline or tap water per cm of wound. Explore to the base in a bloodless field.",
+        "Look for and control any bleeding vessel. Close the fascia loosely if needed, then the skin.",
+        "Refer the superficial radial nerve injury to plastic surgery for review and possible repair within days.",
+        "No antibiotics. This is a clean, recent wound from a metal edge.",
+        "No tetanus vaccine. His last dose was 3 years ago. If a vaccine is needed in future, give it subcutaneously or after factor.",
+      ],
+      rubric: ["hf-m4", "hf-m5", "hf-m7", "hf-pr1"],
+      choices: [
+        {
+          id: "c-clean-close",
+          label: "I infiltrated the wound edges, irrigated well, explored to the base, closed it, referred the sensory nerve injury to plastic surgery, and gave no antibiotics and no tetanus vaccine because his last dose was 3 years ago.",
+          next: "s-reassess",
+          quality: "strong",
+          feedback:
+            "Good. Hemophilia does not make a clean wound infection prone, so antibiotics are not needed. His tetanus status is current. A sensory nerve injury is not an emergency, but it needs specialist follow-up to be repaired well.",
+        },
+        {
+          id: "c-antibiotic",
+          label: "I closed the wound and prescribed cephalexin for 7 days because a bleed under the wound could get infected.",
+          next: "s-antibiotic",
+          quality: "partial",
+          feedback:
+            "The repair was right, but antibiotics do not prevent infection in a clean, simple wound. A meta-analysis found no benefit for nonbite wounds. Save antibiotics for wounds that are contaminated, from a bite, or involve joints or tendons.",
+        },
+      ],
+    },
+    {
+      kind: "say",
+      id: "s-antibiotic",
+      phase: "At the nursing station",
+      text: "The pharmacist asks why he needs cephalexin for a clean wound. You agree it is not needed and cancel it.",
+      next: "s-reassess",
+    },
+    {
+      kind: "say",
+      id: "s-reassess",
+      phase: "20:30",
+      text: "You planned to discharge him with a wound check. When you go back, the forearm is tense and much larger. He says the pain is now 9 out of 10, worse when you stretch his fingers. His repeat hemoglobin is 118 g/L.",
+      next: "q-compartment",
+    },
+    {
+      kind: "question",
+      id: "q-compartment",
+      phase: "Deterioration",
+      prompt: "What is happening, and what do you do?",
+      seconds: 100,
+      modelAnswer: [
+        "A muscle bleed in the dorsal forearm with a developing compartment syndrome. A strong pulse does not exclude it.",
+        "Call the hemophilia treatment centre for more factor VIII now, aiming for a higher level and a longer course.",
+        "Call orthopaedic surgery urgently. Compartment pressure measurement and fasciotomy may be needed, and surgery is safe only with factor cover.",
+        "Remove tight dressings, keep the arm at heart level and give IV opioid analgesia.",
+        "Serial neurovascular checks and hemoglobin. Crossmatch blood.",
+        "Arrange admission or transfer to a centre that can manage hemophilia and surgery together.",
+      ],
+      rubric: ["hf-p3", "hf-m6", "hf-pr2"],
+      choices: [
+        {
+          id: "c-compartment",
+          label: "I recognized a compartment syndrome from a muscle bleed, called the treatment centre for more factor VIII, called orthopaedics urgently, loosened the dressing, kept the arm at heart level and gave IV morphine.",
+          next: "q-dispo",
+          quality: "strong",
+          feedback:
+            "Correct. Pain on passive stretch and a tense compartment are early signs, and the pulse stays until late. In hemophilia the bleed must be treated with factor, and any surgery needs factor cover planned with the hematologist.",
+        },
+        {
+          id: "c-elevate-wait",
+          label: "I elevated the arm high on pillows, gave more ibuprofen and planned to recheck in 2 hours since his pulse was strong.",
+          next: "s-elevate-wait",
+          quality: "unsafe",
+          feedback:
+            "A strong pulse does not rule out compartment syndrome, and waiting risks muscle and nerve death. Ibuprofen worsens bleeding in hemophilia. High elevation lowers perfusion pressure in a tight compartment. He needs factor VIII and an urgent surgical review now.",
+        },
+      ],
+    },
+    {
+      kind: "say",
+      id: "s-elevate-wait",
+      phase: "21:30",
+      text: "His fingers are now numb and he cannot bear any finger movement. The nurse calls you. You call the treatment centre for factor VIII and the orthopaedic surgeon, who takes him to the operating room.",
+      next: "q-dispo",
+    },
+    {
+      kind: "question",
+      id: "q-dispo",
+      phase: "Disposition",
+      prompt: "The orthopaedic surgeon will decompress the forearm tonight. His mother asks why this happened when he takes the weekly shot, and what happens next. What do you tell her, and what do you arrange?",
+      seconds: 80,
+      modelAnswer: [
+        "Explain that the weekly shot lowers his bleeding risk but does not make him normal. A deep cut can still bleed into the muscle.",
+        "Explain that the blood test looked normal because of the shot, not because his blood was clotting normally.",
+        "Surgery goes ahead with factor VIII cover planned with the hematologist. He will be admitted.",
+        "Factor cover may also be needed when the sutures come out.",
+        "The nerve injury will be reviewed by a plastic surgeon. Give her a plan for wound care and follow-up.",
+        "Document the factor doses and times, and send a summary to his treatment centre.",
+      ],
+      rubric: ["hf-pr3", "hf-pr4"],
+      next: "end",
+    },
+    {
+      kind: "end",
+      id: "end",
+      text: "He has a forearm fasciotomy under factor VIII cover that night and recovers full extensor strength. The superficial radial nerve is repaired a week later. His treatment centre adds a laceration plan to his emergency letter. That is the end of the case.",
+    },
+  ],
+  rubric: [
+    {
+      id: "hf-h1",
+      competency: "assessment",
+      criterion: "history",
+      text: "Clarifies the mechanism, time and surface. A clean sheet metal edge 70 minutes ago, with no glass, fragments or bite.",
+      points: 1,
+      teaching: "The mechanism predicts infection and foreign body risk. A clean cut from a metal edge is low risk for infection.",
+      source: "forsch",
+    },
+    {
+      id: "hf-h2",
+      competency: "assessment",
+      criterion: "history",
+      text: "Asks about his hemophilia. Severity, inhibitor status, treatment centre, emicizumab dose and timing, and whether he has factor VIII for breakthrough bleeds.",
+      points: 3,
+      critical: true,
+      teaching:
+        "Severity and inhibitor status decide which product stops a bleed. Patients on emicizumab without an inhibitor are treated with factor VIII for breakthrough bleeding.",
+      source: "wfh",
+    },
+    {
+      id: "hf-h3",
+      competency: "assessment",
+      criterion: "history",
+      text: "Asks about how much it has bled, drugs that worsen bleeding such as the ibuprofen he took, tetanus status and hand dominance.",
+      points: 2,
+      teaching:
+        "Apart from selective COX-2 inhibitors, NSAIDs should not be used in hemophilia. His Tdap at age 14 means no vaccine is needed now.",
+      source: "wfh",
+    },
+    {
+      id: "hf-p1",
+      competency: "assessment",
+      criterion: "physical",
+      text: "Tests each nearby structure. Extensors against resistance, radial pulse and refill, and sensation over the first web space, and finds the superficial radial nerve deficit.",
+      points: 2,
+      teaching: "Every laceration needs a structure by structure exam of nearby tendons, nerves and vessels. A sensory branch injury is easy to miss if you only ask the patient to make a fist.",
+      source: "forsch",
+    },
+    {
+      id: "hf-p2",
+      competency: "assessment",
+      criterion: "physical",
+      text: "Records a baseline of forearm swelling, compartment tension and pain on passive stretch.",
+      points: 1,
+      teaching: "A muscle bleed is a known complication of hemophilia. Continued evaluation helps avoid compartment syndrome.",
+      source: "wfh",
+    },
+    {
+      id: "hf-p3",
+      competency: "assessment",
+      criterion: "physical",
+      text: "Recognizes a compartment syndrome from a muscle bleed by the tense forearm, pain out of proportion and pain on passive stretch, despite a strong pulse.",
+      points: 2,
+      teaching: "In hemophilia a muscle bleed can progress to compartment syndrome, so the forearm needs continued evaluation. A tense compartment with pain out of proportion needs urgent surgical review even when the pulse is strong.",
+      source: "wfh",
+    },
+    {
+      id: "hf-m1",
+      competency: "management",
+      criterion: "management",
+      text: "Orders a forearm radiograph to look for a fracture or a metal fragment before closure.",
+      points: 1,
+      teaching: "About a third of foreign bodies are missed on first inspection. Image when a fragment is possible.",
+      source: "forsch",
+    },
+    {
+      id: "hf-m2",
+      competency: "management",
+      criterion: "management",
+      text: "Recognizes that emicizumab makes the aPTT falsely normal, and gives factor VIII as advised by the treatment centre before exploring and closing the wound.",
+      points: 3,
+      critical: true,
+      teaching:
+        "Emicizumab shortens the aPTT into or below the reference range whatever the reagent. For a deep laceration, raise the factor level, then suture.",
+      source: "wfh",
+    },
+    {
+      id: "hf-m3",
+      competency: "management",
+      criterion: "management",
+      text: "Does not give activated prothrombin complex concentrate with emicizumab, stops ibuprofen, and gives nothing intramuscularly.",
+      points: 2,
+      critical: true,
+      teaching:
+        "Patients on emicizumab have developed thrombotic microangiopathy or thrombosis after activated prothrombin complex concentrate. The intramuscular route is not advised in hemophilia.",
+      source: "wfh",
+    },
+    {
+      id: "hf-m4",
+      competency: "management",
+      criterion: "management",
+      text: "Irrigates with 50 to 100 mL per cm, explores to the base under factor cover, and closes the wound.",
+      points: 1,
+      teaching: "Irrigation with potable tap water or saline is equally effective. Exploration in a bloodless field finds deep injuries.",
+      source: "forsch",
+    },
+    {
+      id: "hf-m5",
+      competency: "management",
+      criterion: "management",
+      text: "Withholds antibiotics for this clean, recent wound.",
+      points: 1,
+      teaching: "A meta-analysis found no benefit from prophylactic antibiotics for simple nonbite wounds. Hemophilia alone does not make a clean wound infection prone.",
+      source: "forsch",
+    },
+    {
+      id: "hf-m7",
+      competency: "management",
+      criterion: "management",
+      text: "Withholds tetanus vaccine because his last dose was 3 years ago.",
+      points: 1,
+      teaching: "For any wound, no tetanus vaccine is needed after a complete series when the last dose was less than 5 years ago.",
+      source: "cig-tetanus",
+    },
+    {
+      id: "hf-m6",
+      competency: "resuscitation",
+      criterion: "management",
+      text: "For the compartment syndrome, gives more factor VIII with the treatment centre, calls orthopaedics urgently, removes tight dressings, keeps the arm at heart level and gives IV analgesia.",
+      points: 2,
+      teaching: "Surgery in hemophilia is safe only with factor cover planned with the hematologist. Treat the bleed and the compartment together.",
+      source: "wfh",
+    },
+    {
+      id: "hf-pr1",
+      competency: "disposition",
+      criterion: "process",
+      text: "Arranges plastic surgery follow-up for the sensory nerve injury and plans factor cover for suture removal.",
+      points: 1,
+      teaching: "Hemostatic cover should be considered for suture removal when the bleeding risk is high. Nerve repairs do better when planned early.",
+      source: "wfh",
+    },
+    {
+      id: "hf-pr2",
+      competency: "leadership",
+      criterion: "process",
+      text: "Reassesses the forearm before discharge instead of discharging on the plan, and escalates at once when it changes.",
+      points: 2,
+      teaching: "A plan made at 19:00 can be wrong by 20:30. Reassessment before discharge catches a delayed muscle bleed.",
+      source: "wfh",
+    },
+    {
+      id: "hf-pr3",
+      competency: "communication",
+      criterion: "process",
+      text: "Explains in plain words why the weekly shot did not prevent the bleed and why the blood test looked normal, and what happens next.",
+      points: 1,
+      teaching: "Emicizumab gives a level of protection, not normal hemostasis. Families need to know that injuries still need factor and a call to the treatment centre.",
+      source: "wfh",
+    },
+    {
+      id: "hf-pr4",
+      competency: "professionalism",
+      criterion: "process",
+      text: "Works with the hemophilia treatment centre throughout, documents factor doses and times, and sends a summary to the centre.",
+      points: 2,
+      teaching: "Treatment centres provide 24 hour advice. Clear records of every factor dose guide the next dose and the surgical plan.",
+      source: "wfh",
+    },
+  ],
+  sources: [
+    {
+      id: "wfh",
+      citation:
+        "Srivastava A, Santagostino E, Dougall A, and colleagues, World Federation of Hemophilia. WFH guidelines for the management of hemophilia, 3rd edition. Haemophilia. 2020.",
+      url: "https://www1.wfh.org/publications/files/pdf-1863.pdf",
+    },
+    {
+      id: "forsch",
+      citation: "Forsch RT, Little SH, Williams C. Laceration repair: a practical approach. Am Fam Physician. 2017.",
+      url: "https://www.aafp.org/pubs/afp/issues/2017/0515/p628.html",
+    },
+    {
+      id: "cig-tetanus",
+      citation: "Public Health Agency of Canada. Canadian Immunization Guide, Part 4. Tetanus toxoid. 2026.",
+      url: "https://www.canada.ca/en/public-health/services/publications/healthy-living/canadian-immunization-guide-part-4-active-vaccines/page-22-tetanus-toxoid.html",
+    },
+  ],
+  reviewed: false,
+  author: "Preceptor",
+  version: 1,
+};
