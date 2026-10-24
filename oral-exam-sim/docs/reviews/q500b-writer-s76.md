@@ -143,3 +143,17 @@ This revision answers `docs/reviews/q500b-verify2-s76.md`. Nothing else was chan
 Balance is unchanged. Single key positions, first to fifth: 4, 4, 4, 4, 2 of 18. The key is the single longest option in 3 of 18. Key feature counts are unchanged.
 
 Tests: `npx tsc --noEmit -p . 2>&1 | grep samps/s76` prints nothing. `SAMP_BATCH=s76 npx vitest run tests/samps.test.ts tests/samp-quality.test.ts tests/citations.test.ts --testTimeout=120000`: 128 of 128 pass.
+
+## Revision 4
+
+This revision answers `docs/reviews/q500b-verify3-s76.md`. Nothing else was changed.
+
+| Item | Change |
+|---|---|
+| eye-43 q4 | The update is now "She understands the plan. The corneas show only punctate staining. The intraocular pressure is 16 mmHg in the right eye." It no longer says "After irrigation", which was a cue. |
+| eye-39 q1 | The stem does not say "daily", so the distractor "Daily fluticasone nasal spray" is now "Use of a fluticasone nasal spray". It now sorts last. The key "Blisters on two teammates' faces" stays first and ties in length with the new option, so it is not the single longest. |
+| eye-40 stem | "She takes ASA 81 mg daily since a transient ischemic attack" is now "She has taken ASA 81 mg daily since a transient ischemic attack". |
+
+Balance is unchanged. Single key positions, first to fifth: 4, 4, 4, 4, 2 of 18. The key is the single longest option in 3 of 18.
+
+Tests: `npx tsc --noEmit -p . 2>&1 | grep samps/s76` prints nothing. `SAMP_BATCH=s76 npx vitest run tests/samps.test.ts tests/samp-quality.test.ts tests/citations.test.ts --testTimeout=120000`: 128 of 128 pass.

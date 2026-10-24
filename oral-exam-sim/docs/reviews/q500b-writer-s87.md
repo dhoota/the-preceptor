@@ -103,4 +103,4 @@ Response to `docs/reviews/q500b-verify2-s87.md`. Only these three wording change
 | loc-48 q2 explanation (optional suggestion) | Snoring sentence changed to: "Snoring at the 0400 check fits sleep, alcohol or a head injury, so it does not separate them." |
 | loc-51 q3 update (optional suggestion) | "brings his hand up past his chin toward the stimulus" changed to "brings his hand above his clavicle toward the stimulus". The meaning is kept: this is still localizing (M5), so the GCS 9 key and the explanation are unchanged. |
 
-No keys, options or other text changed. Tests: `SAMP_BATCH=s87 npx vitest run tests/samps.test.ts tests/samp-quality.test.ts tests/citations.test.ts --testTimeout=120000` (result below in the hand-back).
+No keys, options or other text changed. Tests: `SAMP_BATCH=s87 npx vitest run tests/samps.test.ts tests/samp-quality.test.ts tests/citations.test.ts --testTimeout=120000` gives 128 passed. Typecheck is clean.
