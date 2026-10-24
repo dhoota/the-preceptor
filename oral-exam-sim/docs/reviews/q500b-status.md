@@ -13,7 +13,7 @@ Branch `content/q500b`. Nothing in this round is signed off. Every item is `revi
 |---|---|---|---|---|
 | s72 suicide-risk | FAIL 13 | Rev 1 done | not run | fresh review |
 | s73 dvt-pe | FAIL 12 | Rev 1 in progress (tests fail) | | finish revision |
-| s74 lacerations | FAIL 8 | Rev 1, Rev 2 done | Rev 1 FAIL 2 (fixed in Rev 2) | fresh review |
+| s74 lacerations | FAIL 8 | Rev 1, Rev 2 done | Rev 1 FAIL 2, Rev 2 PASS | ready for sign-off |
 | s75 headache | FAIL 10 (after a replacement) | not started | | revise |
 | s76 eye | FAIL 15 | not started | | revise |
 | s77 delirium-agitation | FAIL 10 | not started | | revise |
@@ -51,7 +51,7 @@ When two new items shared a scenario, one kept it and the other was replaced:
 
 The tool (`zz-dedupe`, run from the coordinator scratchpad) compares every new stem, question and case against the whole bank, and stems across SAMPs and oral cases. 16 new questions score 0.5 or above. Most are already failed by their reviews. Not yet covered by a review:
 
-- lacerations-39 q3 vs infectious-diseases-39 q4 (0.83)
+- lacerations-39 q3 vs infectious-diseases-39 q4 (0.83): coordinator checked, shared tetanus option vocabulary only, different case and key
 - headache-49 q3 vs abdominal-pain-29 q3 (0.62)
 - airway-48 q2 vs multiple-trauma-36 q1 (0.52)
 - cva-48 q4 vs delirium-agitation-10 q2 (0.50)

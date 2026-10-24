@@ -7,7 +7,7 @@ const kf = (n: number) => ({ topic: "delirium-agitation", n });
 
 const S = {
   oregan: { id: "oregan-attention", citation: "O'Regan NA, Ryan DJ, Boland E, and colleagues. Attention! A good bedside test for delirium? Journal of Neurology, Neurosurgery and Psychiatry. 2014.", url: "https://pmc.ncbi.nlm.nih.gov/articles/PMC4173985/" },
-  aasheim: { id: "aasheim-bariatric-we", citation: "Aasheim ET. Wernicke encephalopathy after bariatric surgery: a systematic review. Annals of Surgery. 2008." },
+  aasheim: { id: "aasheim-bariatric-we", citation: "Aasheim ET. Wernicke encephalopathy after bariatric surgery: a systematic review. Annals of Surgery. 2008.", url: "https://doi.org/10.1097/SLA.0b013e3181884308" },
   arts: { id: "arts-korsakoff", citation: "Arts NJ, Walvoort SJ, Kessels RP. Korsakoff's syndrome: a critical review. Neuropsychiatric Disease and Treatment. 2017.", url: "https://pmc.ncbi.nlm.nih.gov/articles/PMC5708199/" },
   betaPeds: { id: "beta-peds-2019", citation: "Gerson R, Malas N, Feuer V, and colleagues. Best practices for evaluation and treatment of agitated children and adolescents (BETA) in the emergency department. Consensus statement of the American Association for Emergency Psychiatry. Western Journal of Emergency Medicine. 2019.", url: "https://pmc.ncbi.nlm.nih.gov/articles/PMC6404720/" },
   richmond: { id: "beta-deescalation-2012", citation: "Richmond JS, Berlin JS, Fishkind AB, and colleagues. Verbal de-escalation of the agitated patient. Consensus statement of the American Association for Emergency Psychiatry Project BETA De-escalation Workgroup. Western Journal of Emergency Medicine. 2012.", url: "https://pmc.ncbi.nlm.nih.gov/articles/PMC3298202/" },
@@ -65,12 +65,12 @@ export const DELIRIUM_AGITATION_S77: Samp[] = [
       {
         id: "q4",
         kind: "single",
-        update: "Five days after starting IV thiamine her nystagmus has gone. She is alert and gives the months backward without error, but recalls none of three words at 5 minutes and describes a shopping trip this morning that never happened.",
+        update: "Five days later her nystagmus has gone. She is alert and gives the months backward without error, but recalls none of three words at 5 minutes and describes a shopping trip this morning that never happened.",
         prompt: "Which of the following best describes her current cognitive state?",
         options: ["Dissociative amnesia", "Early-onset Alzheimer disease", "Korsakoff syndrome", "Persisting delirium", "Transient global amnesia"],
         correct: 2,
         explanation:
-          "She is now alert and attentive but cannot form new memories and fills the gap with invented events, which is Korsakoff syndrome, the amnestic state that can follow Wernicke encephalopathy. Delirium is unlikely because her attention, its core feature, is now intact on the months backward. Transient global amnesia clears within 24 hours and does not cause confabulation. Dissociative amnesia is a stress-linked loss of personal memories, not an inability to learn new ones. Alzheimer disease develops over years rather than right after a nutritional illness.",
+          "She is now alert and attentive but cannot form new memories and fills the gap with invented events, which is Korsakoff syndrome, the amnestic state that can follow Wernicke encephalopathy. The diagnosis is confirmed only if the amnesia persists, because memory deficits that clear quickly are part of recovery from Wernicke encephalopathy. Delirium is unlikely because her attention, its core feature, is now intact on the months backward. Transient global amnesia clears within 24 hours and does not cause confabulation. Dissociative amnesia is a stress-linked loss of personal memories, not an inability to learn new ones. Alzheimer disease develops over years rather than right after a nutritional illness.",
         keyFeature: kf(1),
         source: "arts-korsakoff",
       },
@@ -114,10 +114,10 @@ export const DELIRIUM_AGITATION_S77: Samp[] = [
       {
         id: "q3",
         kind: "single",
-        update: "With his father outside he sits down on the floor, but he is still shouting and kicking at the bed frame.",
+        update: "A few minutes later he sits down on the floor, but he is still shouting and kicking at the bed frame.",
         prompt: "Which of the following statements to him best fits recommended de-escalation for a child?",
-        options: ["Kicking is not okay. Thanks for sitting down", "Tell me again why you broke the wall", "The console comes back once you calm down", "The police will come if you keep kicking", "You are too old to act like this"],
-        correct: 0,
+        options: ["Tell me again why you broke the wall", "Thanks for sitting, but kicking is not okay", "The console comes back once you calm down", "The police will come if you keep kicking", "You are too old to act like this"],
+        correct: 1,
         explanation:
           "The BETA consensus advises clear, concrete language at the child's level, firm limits on unacceptable behaviour and specific praise for cooperation, and this statement does both while he is sitting on the floor. Promising the console rewards the outburst and makes a promise that belongs to his father. Threatening police turns a limit into a threat. Asking him to go back over why he broke the wall invites more anger before he is calm, and shaming him about his age is humiliating and tends to escalate.",
         keyFeature: kf(3),
@@ -131,7 +131,7 @@ export const DELIRIUM_AGITATION_S77: Samp[] = [
         options: ["diphenhydramine 50 mg IM", "haloperidol 2.5 mg IM", "ketamine 150 mg IM", "lorazepam 4 mg IM", "olanzapine 5 mg IM"],
         correct: 1,
         explanation:
-          "For severe agitation in a child without a known medical cause, the BETA consensus suggests lorazepam with haloperidol or chlorpromazine, or olanzapine alone, and warns that olanzapine should not be given within 1 hour of a benzodiazepine. He had lorazepam 40 minutes ago, so haloperidol 2.5 mg IM, inside the 0.5 to 5 mg range, is added to it. Lorazepam 4 mg would bring his total to 5 mg, above the 4 mg daily maximum BETA lists for a child. Diphenhydramine is listed for moderate, not severe, agitation. Ketamine at about 4 mg/kg is not among the BETA options for agitated youth.",
+          "For severe agitation in a child without a known medical cause, the BETA consensus suggests lorazepam with haloperidol or chlorpromazine, or olanzapine alone, and warns that olanzapine should not be given within 1 hour of a benzodiazepine. He had lorazepam 40 minutes ago, so haloperidol 2.5 mg IM is added to it. BETA gives the IM dose as half the oral dose of 0.5 to 5 mg, and 2.5 mg is well under the 6 mg daily maximum for a child of 15 to 40 kg. Lorazepam 4 mg would bring his total to 5 mg, above the 4 mg daily maximum BETA lists for a child. Diphenhydramine is listed for moderate, not severe, agitation. BETA states that ketamine is not recommended for agitation, and 150 mg is about 4 mg/kg.",
         keyFeature: kf(4),
         source: "beta-peds-2019",
       },
@@ -180,7 +180,7 @@ export const DELIRIUM_AGITATION_S77: Samp[] = [
         options: ["diphenhydramine 50 mg IM", "haloperidol 5 mg IM", "ketamine 300 mg IM", "lorazepam 2 mg IM", "olanzapine 10 mg IM"],
         correct: 3,
         explanation:
-          "The BETA psychopharmacology consensus states that when one dose of an antipsychotic is not enough, adding a benzodiazepine such as lorazepam is preferred to more of the same antipsychotic, and the combination also lowers the risk of extrapyramidal effects. A second haloperidol dose, or olanzapine on top of it, stacks dopamine blockade without that benefit. Diphenhydramine can prevent dystonia but is a weak calming agent here. Ketamine at about 4 mg/kg is not part of the consensus and brings airway risk to a patient who is already restrained and not in immediate danger. The goal is calm, not sleep.",
+          "The BETA psychopharmacology consensus states that when one dose of an antipsychotic is not enough, adding a benzodiazepine such as lorazepam is preferred to more of the same antipsychotic, and the combination also lowers the risk of extrapyramidal effects. A second haloperidol dose, or olanzapine on top of it, stacks dopamine blockade without that benefit. Diphenhydramine appears in the consensus only as an agent sometimes given with haloperidol, and the adjunct it prefers after a failed antipsychotic dose is a benzodiazepine. Ketamine at about 4 mg/kg is not part of the consensus and brings airway risk to a patient who is already restrained and not in immediate danger. The goal is calm, not sleep.",
         keyFeature: kf(4),
         source: "beta-psychopharm-2012",
       },
@@ -218,7 +218,7 @@ export const DELIRIUM_AGITATION_S77: Samp[] = [
         options: ["Ask the questions again more loudly", "Repeat the questions more slowly", "Score the CAM from his behaviour", "Try written questions on paper", "Wait until he settles to ask again"],
         correct: 3,
         explanation:
-          "The hallmark of delirium is an acute change in attention and cognition, and hearing impairment is both a risk factor for delirium and a reason a patient can look confused when he is not. He watches faces closely and gestures with purpose, which suggests someone trying to communicate rather than someone who cannot attend. Written questions test whether he can follow, orient and answer once the hearing barrier is removed. Louder or slower speech does not help a person who cannot hear it. Scoring a delirium tool from behaviour alone would mislabel a communication problem, and waiting leaves the question unanswered while his distress grows.",
+          "The hallmark of delirium is an acute change in attention and cognition, and hearing impairment is a risk factor for it, but a patient who cannot hear the questions cannot show his attention or orientation by answering them. He watches faces closely and moves his hands quickly, which may be an attempt to communicate rather than a failure to attend. Written questions test whether he can follow, orient and answer once the hearing barrier is removed. Louder or slower speech does not help a person who cannot hear it. Scoring a delirium tool from behaviour alone would mislabel a communication problem, and waiting leaves the question unanswered while his distress grows.",
         keyFeature: kf(1),
         source: "gower-ed-delirium",
       },
@@ -230,7 +230,7 @@ export const DELIRIUM_AGITATION_S77: Samp[] = [
         options: ["Ask a paramedic who knows some signs", "Give lorazepam 1 mg PO to settle him", "Have security wait at his bedside", "Request a qualified ASL interpreter", "Use written notes until discharge"],
         correct: 3,
         explanation:
-          "The BETA de-escalation consensus advises establishing real contact with the patient and asking what he wants, and his card says plainly that he needs an interpreter. A qualified interpreter, in person or by video, lets him take part in his care and removes the cause of his distress. A paramedic who knows a few signs risks errors on matters that need precision, such as consent. Written notes are slow and may be limited if English is his second language. Security at the bedside is a show of force that frightens an anxious patient, and he needs to be understood, not sedated.",
+          "The BETA de-escalation consensus advises establishing real contact with the patient and asking what he wants, and his card says plainly that he needs an interpreter. A qualified interpreter, in person or by video, lets him take part in his care and removes the cause of his distress. A paramedic who knows a few signs is not a qualified interpreter. Written notes are slow and are no substitute for his own language. Security at the bedside is a show of force that frightens an anxious patient, and he needs to be understood, not sedated.",
         keyFeature: kf(3),
         source: "beta-deescalation-2012",
       },
@@ -249,7 +249,7 @@ export const DELIRIUM_AGITATION_S77: Samp[] = [
       {
         id: "q4",
         kind: "single",
-        update: "While you wait, a security guard offers to hold his arms so that the IV can be started, and a nurse suggests haloperidol 5 mg IM to settle him.",
+        update: "Before the interpreter connects, a security guard offers to hold his arms so that the IV can be started, and a nurse suggests haloperidol 5 mg IM to settle him.",
         prompt: "Which of the following is the most appropriate response to these two suggestions?",
         options: ["Allow the hold without the drug", "Defer the IV for the interpreter", "Give the drug without the hold", "Hold him only while giving the drug", "Use both to finish care sooner"],
         correct: 1,
@@ -269,36 +269,36 @@ export const DELIRIUM_AGITATION_S77: Samp[] = [
     topic: "delirium-agitation",
     title: "Found in the barn at dawn",
     stem:
-      "You are working in a rural hospital emergency department in Ontario. A 79-year-old man is brought to the emergency department by his neighbour, who found him in his barn at 06:00 in pyjamas, saying he had to milk cows that he sold 10 years ago. He is a widower who lives alone and has type 2 diabetes treated with metformin. He has no attorney for personal care, and his only relative is a nephew in British Columbia. The neighbour has known him for 30 years and visits most weeks. He is restless, picks at his blanket and cannot say the days of the week backward. He is wearing thick wool socks. There is no neck stiffness, no focal neurological deficit and no sign of head injury. Capillary glucose is 13.8 mmol/L.",
+      "You are working in a rural hospital emergency department in Ontario. A 79-year-old man is brought to the emergency department by his neighbour, who found him in his barn at 06:00 in pyjamas, saying he had to milk cows that he sold 10 years ago. The neighbour, who has known him for 30 years, saw him 4 days ago doing his farm accounts. He is a widower who lives alone and has type 2 diabetes treated with metformin. He has no psychiatric history, no attorney for personal care, and his only relative is a nephew in British Columbia. He is restless and picks at his blanket. He gives the year as 2016. He is wearing thick wool socks. There is no neck stiffness, no focal neurological deficit and no sign of head injury. Capillary glucose is 13.8 mmol/L.",
     vitals: { temperature: "38.1°C oral", pulse: "102/minute", resp: "20/minute", bp: "136/78 mmHg", o2sat: "96% on room air" },
     questions: [
       {
         id: "q1",
         kind: "single",
-        prompt: "Which of the following questions to his neighbour best helps separate delirium from dementia?",
-        options: ["Does dementia run in his family?", "Does he drink alcohol at home?", "Has he lost weight this year?", "What medicines does he take?", "When did he last seem his usual self?"],
-        correct: 4,
+        prompt: "Which of the following findings most strongly favours delirium over a late-onset psychotic disorder?",
+        options: ["Being found in his barn at dawn", "Belief that his cows need milking", "Giving a year from a decade ago", "Living alone since his wife died", "Restless movement on the stretcher"],
+        correct: 2,
         explanation:
-          "Delirium is an acute change in attention and cognition over hours to days, while dementia develops over months to years, so the deciding fact is when he was last at his usual baseline. The neighbour, who visits most weeks, is the one person here who can date the change. A family history of dementia and weight loss over a year speak to slow processes, not to an acute change. Alcohol use and his medicines matter when searching for a cause, but they do not show whether this is new.",
+          "Giving the year as 2016 is disorientation in time, and delirium is a disturbance of consciousness with a change in cognition that develops over a short time, as his decline from doing his accounts 4 days ago shows. A primary psychotic disorder usually leaves orientation intact, and a first psychosis at 79 with fever should be treated as medical until proven otherwise. His wish to milk cows he sold a decade ago follows from that disorientation rather than standing alone as a fixed delusion. Restlessness occurs in agitation of any cause. Living alone and being found in the barn do not separate the two.",
         keyFeature: kf(1),
         source: "gower-ed-delirium",
       },
       {
         id: "q2",
         kind: "single",
-        update: "The neighbour saw him 4 days ago, chatting and doing his farm accounts. A urinalysis is normal and a chest radiograph is clear.",
+        update: "A urinalysis is normal and a chest radiograph is clear.",
         prompt: "Which of the following is the most important next step in finding the cause of his delirium?",
         options: ["A full skin exam including the feet", "CT of the head without contrast", "Lumbar puncture for CSF analysis", "Serum ammonia and liver enzymes", "Urine screen for drugs of abuse"],
         correct: 0,
         explanation:
-          "He has fever and delirium, and his urine and chest radiograph have not shown a source, so the search must continue with a thorough head-to-toe examination, which is essential when the cause is not obvious. With diabetes and thick socks still on, his feet have not been seen and are a common hidden site of infection. CT head adds little with no focal deficit, injury or anticoagulant. Lumbar puncture is considered if no source is found, and he has no neck stiffness. He has no liver disease to suggest a raised ammonia, and nothing points to drug use.",
+          "He has fever and delirium, and his urine and chest radiograph have not shown a source, so the search must continue with a thorough head-to-toe examination, which is essential when the cause is not obvious. Gower names the skin as a common site of infection in older adults, and with diabetes and thick socks still on, his feet have not been seen. CT head adds little with no focal deficit, injury or anticoagulant. Lumbar puncture is weighed if the examination finds no source, because meningeal signs are often absent in older adults, but a bedside examination takes minutes and comes first. He has no liver disease to suggest a raised ammonia, and nothing points to drug use.",
         keyFeature: kf(2),
         source: "gower-ed-delirium",
       },
       {
         id: "q3",
         kind: "single",
-        update: "His left foot is red, hot and swollen around an ulcer under the big toe. He refuses IV antibiotics so that he can go back to his cows, and he cannot say what might happen without them.",
+        update: "A soft tissue infection is found and IV antibiotics are advised. He refuses IV antibiotics so that he can go back to his cows, and he cannot say what might happen without them.",
         prompt: "Which of the following should be asked to consent to IV antibiotics on his behalf?",
         options: ["His family physician", "His neighbour of 30 years", "His nephew by telephone", "The Consent and Capacity Board", "The Public Guardian and Trustee"],
         correct: 2,

@@ -14,7 +14,6 @@ const S = {
   kleizen: { id: "kleizen-intussusception", citation: "Kleizen KJ, Hunck A, Wijnen MH, Draaisma JM. Neurological symptoms in children with intussusception. Acta Paediatr. 2009." },
   linMartore: { id: "lin-martore-pocus", citation: "Lin-Martore M, Kornblith AE, Kohn MA, Gottlieb M. Diagnostic accuracy of point-of-care ultrasound for intussusception in children presenting to the emergency department: a systematic review and meta-analysis. West J Emerg Med. 2020.", url: "https://pmc.ncbi.nlm.nih.gov/articles/PMC7390574/" },
   ichd3: { id: "ichd3", citation: "Headache Classification Committee of the International Headache Society. The International Classification of Headache Disorders, 3rd edition. 1.1 Migraine without aura. Cephalalgia. 2018.", url: "https://ichd-3.org/1-migraine/1-1-migraine-without-aura/" },
-  karliner: { id: "karliner-interpreters", citation: "Karliner LS, Jacobs EA, Chen AH, Mutha S. Do professional interpreters improve clinical care for patients with limited English proficiency? A systematic review of the literature. Health Serv Res. 2007." },
   plasmic: { id: "plasmic-2017", citation: "Bendapudi PK, Hurwitz S, Fry A, and colleagues. Derivation and external validation of the PLASMIC score for rapid assessment of adults with thrombotic microangiopathies: a cohort study. Lancet Haematol. 2017." },
   isthGps: { id: "isth-ttp-gps", citation: "Zheng XL, Vesely SK, Cataland SR, and colleagues. Good practice statements for the clinical care of patients with thrombotic thrombocytopenic purpura. International Society on Thrombosis and Haemostasis. J Thromb Haemost. 2020.", url: "https://pmc.ncbi.nlm.nih.gov/articles/PMC7880820/" },
 } satisfies Record<string, Source>;
@@ -262,7 +261,7 @@ export const LOC_S87: Samp[] = [
         options: ["Migraine with brainstem aura", "Posterior fossa stroke", "Sedation from metoclopramide", "Vestibular neuritis", "Wernicke encephalopathy"],
         correct: 1,
         explanation:
-          "A sudden severe headache during exertion, vomiting, nystagmus and inability to walk, followed by a falling level of consciousness with a heart rate of 54/minute and a blood pressure of 212/116 mmHg, point to a hemorrhage or swollen infarct in the posterior fossa pressing on the brainstem. Edlow and colleagues name structural brain lesions as one of the main mechanisms of coma and call for imaging whenever one is probable or possible. He has never had an aura, and a first brainstem aura would not explain a deepening coma with bradycardia. A single 10 mg dose of metoclopramide given 2 hours earlier does not account for progressive decline with these vital signs. Vestibular neuritis causes vertigo and imbalance without headache or reduced consciousness. He has no history of alcohol use or poor nutrition to suggest Wernicke encephalopathy, and his onset was sudden.",
+          "A sudden severe headache during exertion, vomiting, nystagmus and inability to walk, followed by a falling level of consciousness with a heart rate of 54/minute and a blood pressure of 212/116 mmHg, point to a hemorrhage or swollen infarct in the posterior fossa pressing on the brainstem. Edlow and colleagues name structural brain lesions as one of the main mechanisms of coma and call for imaging whenever one is probable or possible. He has never had an aura, and a first brainstem aura would not explain a deepening coma with bradycardia. A single 10 mg dose of metoclopramide given 2 hours earlier does not account for progressive decline with these vital signs. Vestibular neuritis causes vertigo and imbalance but not a falling level of consciousness. He has no history of alcohol use or poor nutrition to suggest Wernicke encephalopathy, and his onset was sudden.",
         keyFeature: { topic: "loc", n: 1 },
         source: "edlow-coma",
       },
@@ -270,43 +269,43 @@ export const LOC_S87: Samp[] = [
     sources: [S.ichd3, S.gcsAid, S.edlow],
     ...META,
   },
-  /* 52 Confusion with bruising, history through a language barrier ----------- */
+  /* 52 Confusion with bruising, labelled work stress ------------------------- */
   {
     id: "loc-52",
     topic: "loc",
     alsoTopics: ["headache"],
-    title: "Confused and bruised, four months in Canada",
+    title: "Confused at the start of a night shift",
     stem:
-      "A 41-year-old woman is brought to the emergency department by her husband because she has been confused and sleepy since last night. The family arrived in Canada from Afghanistan 4 months ago. She and her husband speak Dari and little English. Their 11-year-old son, who speaks English well, offers to interpret. Using gestures, the husband shows that she has had headaches and easy bruising for a week and has been sad since leaving family behind. She takes no medications. She opens her eyes to voice, is confused and obeys commands. There are petechiae on her legs and bruises on both arms. Her neck is supple, and there is no focal weakness. Capillary glucose is 5.8 mmol/L.",
+      "A 41-year-old woman is brought to the emergency department by a coworker who found her confused at the start of her night shift at a distribution warehouse. The coworker knows her only from work and last saw her 2 days ago. She lives with her sister. The coworker says she has been working double night shifts this month, has slept poorly and has complained of headaches and easy bruising for about a week. She takes no medications. She opens her eyes to voice, is confused and obeys commands. There are petechiae on her legs and bruises on both arms. Her neck is supple, and there is no focal weakness. Capillary glucose is 5.8 mmol/L.",
     vitals: { temperature: "37.6°C oral", pulse: "108/minute", resp: "18/minute", bp: "148/88 mmHg", o2sat: "98% on room air", weight: "62 kg" },
     questions: [
       {
         id: "q1",
         kind: "single",
-        prompt: "Which of the following is the most appropriate way to obtain a detailed history from her husband?",
-        options: ["Ask a bilingual cleaner to help", "Ask her son to interpret", "Machine translation app on a phone", "Professional interpreter by phone", "Simple English with gestures"],
+        prompt: "Which of the following sources can best establish when she was last her usual self?",
+        options: ["Coworker who brought her in", "Her family physician's office", "Manager who sets her shifts", "Sister who lives with her", "Walk-in clinic note from 3 days ago"],
         correct: 3,
         explanation:
-          "A professional Dari interpreter, here by phone, gives the most accurate account of how she differs from her usual self and protects both the patient and the child. Karliner and colleagues found that professional interpreters improve communication, including errors and comprehension, as well as use of services, clinical outcomes and satisfaction, compared with ad hoc interpreters such as relatives. An 11-year-old son lacks medical vocabulary, may leave out or soften what he hears and should not carry his mother's illness. A bilingual cleaner is untrained and breaches her privacy. Machine translation and simple English with gestures risk errors in the details that matter most: timing, bleeding, medicines and her usual state.",
+          "Her sister shares her home and is the one person likely to have seen her each day, so she can say when she was last clear and alert and whether the change came on suddenly or over days. Edlow and colleagues make the history the first tool for finding the cause of coma once the patient is stable, and the time she was last well frames that search. The coworker last saw her 2 days ago and knows her only at work. The manager knows her shift pattern, not her mental state. Her family physician's office and a walk-in note from 3 days ago describe single visits and say nothing about the last 3 days.",
         keyFeature: { topic: "loc", n: 3 },
-        source: "karliner-interpreters",
+        source: "edlow-coma",
       },
       {
         id: "q2",
         kind: "single",
-        update: "A walk-in clinic note from 3 days ago reads 'headache, likely stress after immigration'.",
+        update: "A walk-in clinic note from 3 days ago, found on the provincial health record, reads 'headache, likely work stress and poor sleep'.",
         prompt: "Which of the following findings is most important in deciding that stress cannot explain her presentation?",
-        options: ["Bruises and petechiae", "Headaches over the past week", "Low mood since leaving family", "Pulse of 108/minute", "Recent move to a new country"],
+        options: ["Bruises and petechiae", "Headaches over the past week", "Long night shifts this month", "Poor sleep for a week", "Pulse of 108/minute"],
         correct: 0,
         explanation:
-          "New bruising and petechiae mean a low platelet count or a bleeding disorder, and with confusion they point to a serious systemic cause such as a thrombotic microangiopathy or an intracranial bleed. Edlow and colleagues list psychiatric causes as a rare mechanism of coma, after structural lesions and diffuse neuronal dysfunction, so stress is a conclusion reached only once treatable causes are excluded. Headache, low mood and a recent move are common with stress and do not separate it from organic disease. A pulse of 108/minute can follow anxiety, fever or anemia and is not specific.",
+          "New bruising and petechiae mean a low platelet count or a bleeding disorder, and with confusion they point to a serious systemic cause such as a thrombotic microangiopathy or an intracranial bleed. Edlow and colleagues list psychiatric causes as a rare mechanism of coma, after structural lesions and diffuse neuronal dysfunction, so stress is a conclusion reached only once treatable causes are excluded. Headache, long night shifts and poor sleep are common with stress and do not separate it from organic disease. A pulse of 108/minute can follow anxiety, fever or anemia and is not specific.",
         keyFeature: { topic: "loc", n: 4 },
         source: "edlow-coma",
       },
       {
         id: "q3",
         kind: "single",
-        update: "Through an interpreter, her husband says she has never had cancer or a transplant. Hemoglobin is 74 g/L, platelets 12 x 10^9/L, MCV 86 fL, reticulocytes 6%, haptoglobin undetectable, INR 1.1 and creatinine 118 umol/L. The film shows schistocytes. CT head is normal.",
+        update: "Her provincial health record shows no cancer or transplant. Hemoglobin is 74 g/L, platelets 12 x 10^9/L, MCV 86 fL, reticulocytes 6%, haptoglobin undetectable, INR 1.1 and creatinine 118 umol/L. The film shows schistocytes. CT head is normal.",
         prompt: "Which of the following is the most likely cause of her decreased level of consciousness?",
         options: ["Bacterial meningitis", "Disseminated intravascular coagulation", "Hemolytic uremic syndrome", "Immune thrombocytopenia", "Thrombotic thrombocytopenic purpura"],
         correct: 4,
@@ -328,7 +327,7 @@ export const LOC_S87: Samp[] = [
         source: "isth-ttp-gps",
       },
     ],
-    sources: [S.karliner, S.edlow, S.plasmic, S.isthGps],
+    sources: [S.edlow, S.plasmic, S.isthGps],
     ...META,
   },
 ];
