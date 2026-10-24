@@ -56,7 +56,7 @@ export const LOC_S87: Samp[] = [
         kind: "single",
         update: "The log shows that at 0100 he asked for water and walked to the toilet. At 0400 and 0600 the guard wrote 'sleeping, snoring' without waking him.",
         prompt: "Which of the following features of his course most strongly indicates that alcohol is not the sole cause of his state?",
-        options: ["Arrest for public intoxication", "Decline in the cells after 0100", "Long history of heavy drinking", "Snoring at the 0400 check", "Unsteady gait at arrest"],
+        options: ["Arrest for public intoxication", "Decline in cells after 0100", "Long history of heavy drinking", "Snoring at the 0400 check", "Unsteady gait at arrest"],
         correct: 1,
         explanation:
           "He was talking and walking at 0100 and cannot be woken at 0730, so he became worse at a time when his blood ethanol should have been falling. Jones found that ethanol is cleared from blood at a steady 10 to 20 mg/100 mL per hour, and at 25 to 35 mg/100 mL per hour in heavy drinkers, so intoxication lightens over hours rather than deepens. His arrest for intoxication, his long history of heavy drinking and his unsteady gait fit alcohol but say nothing about a second cause. Snoring at the 0400 check reflects a depressed level of consciousness from any cause, so it does not separate alcohol from a head injury.",
@@ -297,7 +297,7 @@ export const LOC_S87: Samp[] = [
         kind: "single",
         update: "A walk-in clinic note from 3 days ago reads 'headache, likely stress after immigration'.",
         prompt: "Which of the following findings is most important in deciding that stress cannot explain her presentation?",
-        options: ["Bruises and petechiae on her limbs", "Headaches over the past week", "Low mood since leaving family", "Pulse of 108/minute", "Recent move to a new country"],
+        options: ["Bruises and petechiae", "Headaches over the past week", "Low mood since leaving family", "Pulse of 108/minute", "Recent move to a new country"],
         correct: 0,
         explanation:
           "New bruising and petechiae mean a low platelet count or a bleeding disorder, and with confusion they point to a serious systemic cause such as a thrombotic microangiopathy or an intracranial bleed. Edlow and colleagues list psychiatric causes as a rare mechanism of coma, after structural lesions and diffuse neuronal dysfunction, so stress is a conclusion reached only once treatable causes are excluded. Headache, low mood and a recent move are common with stress and do not separate it from organic disease. A pulse of 108/minute can follow anxiety, fever or anemia and is not specific.",

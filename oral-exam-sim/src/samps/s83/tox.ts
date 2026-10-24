@@ -239,7 +239,7 @@ export const TOX_S83: Samp[] = [
         id: "q1",
         kind: "single",
         update: "She becomes alert after dextrose 50% 50 mL IV. One hour later, on a dextrose 10% infusion, she is sweaty again with a glucose of 2.6 mmol/L.",
-        prompt: "Which of the following best explains her recurrent hypoglycemia?",
+        prompt: "Which of the following best explains her recurrent hypoglycemia in the emergency department?",
         options: ["Adrenal insufficiency", "Amlodipine toxicity", "Early liver failure", "Prolonged fasting", "Sulfonylurea co-ingestion"],
         correct: 4,
         explanation:

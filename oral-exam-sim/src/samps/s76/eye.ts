@@ -180,7 +180,7 @@ export const EYE_S76: Samp[] = [
           "ASA 81 mg taken daily",
           "Hay fever each spring",
           "Head cold 3 weeks ago",
-          "Neighbours abroad with red eyes",
+          "Neighbours with red eyes",
           "Work with young children",
         ],
         correct: 3,
@@ -384,7 +384,7 @@ export const EYE_S76: Samp[] = [
         options: [
           "Discharge with clinic review tomorrow",
           "MRI of the orbits within 24 hours",
-          "Ocular ultrasound to confirm rupture",
+          "Ocular ultrasound to confirm the rupture",
           "Ophthalmology for surgical exploration",
           "Repeat CT of the orbits in 24 hours",
         ],
@@ -449,7 +449,7 @@ export const EYE_S76: Samp[] = [
         id: "q2",
         kind: "single",
         update:
-          "After 2 litres of saline to each eye the pH is 7.4 in both. Acuity is 20/60 on the right and 20/25 on the left. Fluorescein shows fine punctate staining on both corneas. Pupils are equal and reactive with no relative afferent defect. A penlight shows no blood in the right anterior chamber.",
+          "After irrigation the pH is 7.4 in both eyes. Acuity is 20/60 right and 20/25 left. Both corneas show fine punctate fluorescein staining. Pupils are equal and reactive with no afferent defect. A penlight shows no blood in the right anterior chamber.",
         prompt: "Which of the following is the most important next step in the examination of her right eye?",
         options: [
           "Confrontation visual fields",
@@ -492,7 +492,7 @@ export const EYE_S76: Samp[] = [
           "Keep the head raised at night",
           "Light jogging is safe",
           "Pressure patch at night",
-          "Warm compresses to the eye",
+          "Warm compresses to the eyelids",
         ],
         correct: 1,
         explanation:

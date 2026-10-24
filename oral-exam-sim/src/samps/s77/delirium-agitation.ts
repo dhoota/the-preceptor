@@ -139,4 +139,188 @@ export const DELIRIUM_AGITATION_S77: Samp[] = [
     sources: [S.betaPeds],
     ...META,
   },
+
+  /* 41 Poison in the water ------------------------------------------------- */
+  {
+    id: "delirium-agitation-41",
+    topic: "delirium-agitation",
+    title: "Shouting at the walls of his apartment",
+    stem:
+      "You are working in a community hospital emergency department in northern Ontario. A 26-year-old man is brought to the emergency department by police after his landlord heard him shouting at the walls of his apartment for most of the night. He has schizophrenia and stopped taking risperidone 2 months ago. He uses no alcohol or drugs, and has never been violent. He is pacing the interview room and shouting that the nurses are putting poison in his water. He is alert, knows the date and place, and follows the conversation. There is no tremor, rigidity or clonus. Capillary glucose is 5.7 mmol/L.",
+    vitals: { temperature: "36.8°C oral", pulse: "104/minute", resp: "18/minute", bp: "132/80 mmHg", o2sat: "99% on room air", weight: "74 kg" },
+    questions: [
+      {
+        id: "q1",
+        kind: "single",
+        prompt: "Which of the following responses to his fear about the water best fits verbal de-escalation?",
+        options: ["I have not seen that, but I hear you are afraid", "Let us test the water to show you it is safe", "Nobody here is putting poison in your water", "Security will stay if you keep saying that", "You are right, we will change your nurse"],
+        correct: 0,
+        explanation:
+          "The BETA de-escalation consensus advises agreeing with what is true and, when honest agreement is not possible, agreeing to disagree, without feigning agreement with a delusion and while acknowledging the patient's experience. Saying that you have not seen it while naming his fear does exactly that. Changing his nurse feigns agreement and confirms the delusion. Flat contradiction and an offer to test the water turn his belief into an argument about facts that he will not lose. Warning him about security is a threat, which the consensus says provokes rather than calms.",
+        keyFeature: kf(3),
+        source: "beta-deescalation-2012",
+      },
+      {
+        id: "q2",
+        kind: "single",
+        update: "He stops pacing and says he has not slept for 3 nights. You think medication will help him.",
+        prompt: "Which of the following is the most appropriate way to offer him medication?",
+        options: ["Give it by injection while he is calm", "Hide it in a cup of juice", "Offer a choice of tablet or wafer", "Tell him it is a vitamin for sleep", "Wait until he asks for medication"],
+        correct: 2,
+        explanation:
+          "He is now cooperative, and the BETA consensus statements advise offering oral medication over an injection to a cooperative patient and involving him in the choice of agent and route. Offering a choice of tablet or orally disintegrating wafer gives him some control, which the de-escalation consensus names as a way to calm a patient who feels powerless. Hiding medication in juice or calling it a vitamin is deception, and it would confirm his fear that something is being put in his drinks. An injection is not needed for a calm patient, and waiting for him to ask delays help he needs.",
+        keyFeature: kf(3),
+        source: "beta-deescalation-2012",
+      },
+      {
+        id: "q3",
+        kind: "single",
+        update: "An hour later, before taking anything, he throws a chair at a nurse. Verbal de-escalation fails, he is placed in restraints and he is given haloperidol 5 mg IM. Thirty minutes later he is still straining and spitting at staff.",
+        prompt: "Which of the following is the most appropriate medication to give him now?",
+        options: ["diphenhydramine 50 mg IM", "haloperidol 5 mg IM", "ketamine 300 mg IM", "lorazepam 2 mg IM", "olanzapine 10 mg IM"],
+        correct: 3,
+        explanation:
+          "The BETA psychopharmacology consensus states that when one dose of an antipsychotic is not enough, adding a benzodiazepine such as lorazepam is preferred to more of the same antipsychotic, and the combination also lowers the risk of extrapyramidal effects. A second haloperidol dose, or olanzapine on top of it, stacks dopamine blockade without that benefit. Diphenhydramine can prevent dystonia but is a weak calming agent here. Ketamine at about 4 mg/kg is not part of the consensus and brings airway risk to a patient who is already restrained and not in immediate danger. The goal is calm, not sleep.",
+        keyFeature: kf(4),
+        source: "beta-psychopharm-2012",
+      },
+      {
+        id: "q4",
+        kind: "menu",
+        update: "By morning he has taken risperidone, is calm and has been out of restraints for 6 hours. He asks you why he was tied down.",
+        prompt: "Which of the following are the most appropriate parts of your debrief with him?",
+        options: ["Ask how he saw the events", "Avoid the topic to prevent upset", "Explain why restraint was needed", "Leave the debrief to the ward team", "Plan what to do if anger builds", "Promise he will not be restrained again", "Remind him of possible assault charges", "Tell him it was hospital policy"],
+        select: 3,
+        correct: [0, 2, 4],
+        explanation:
+          "The BETA de-escalation consensus asks the clinician who ordered an involuntary intervention to debrief the patient and rebuild the relationship. That means explaining why the intervention was needed, letting him describe the events from his point of view and exploring what he and staff can do next time anger builds. Avoiding the topic or passing it to the ward team leaves his question unanswered by the person who made the decision. Blaming policy does not explain the clinical reason. A promise never to restrain him again may not be kept, and raising charges is a threat that damages trust.",
+        keyFeature: kf(3),
+        source: "beta-deescalation-2012",
+      },
+    ],
+    sources: [S.richmond, S.wilson],
+    ...META,
+  },
+
+  /* 42 A fall at the bus shelter ------------------------------------------- */
+  {
+    id: "delirium-agitation-42",
+    topic: "delirium-agitation",
+    title: "A fall on the ice at a bus shelter",
+    stem:
+      "You are working in an emergency department in Ontario. A 63-year-old man is brought to the emergency department by ambulance after he slipped on ice at a bus shelter and cut his scalp. A bystander saw the fall and says he did not lose consciousness. Paramedics report that he did not answer any of their questions, made loud sounds and pushed their hands away. There is no odour of alcohol. In the department he is agitated, moves his hands quickly and pulls away when the nurse tries to start an IV. He watches each person's face closely. His pupils are equal and reactive and he moves all limbs normally. A 3 cm occipital scalp laceration has stopped bleeding. There is no other injury. Capillary glucose is 6.2 mmol/L.",
+    vitals: { temperature: "36.6°C oral", pulse: "96/minute", resp: "16/minute", bp: "148/86 mmHg", o2sat: "98% on room air" },
+    questions: [
+      {
+        id: "q1",
+        kind: "single",
+        prompt: "Which of the following is the most appropriate next step in assessing his mental status?",
+        options: ["Ask the questions again more loudly", "Repeat the questions more slowly", "Score the CAM from his behaviour", "Try written questions on paper", "Wait until he settles to ask again"],
+        correct: 3,
+        explanation:
+          "The hallmark of delirium is an acute change in attention and cognition, and hearing impairment is both a risk factor for delirium and a reason a patient can look confused when he is not. He watches faces closely and gestures with purpose, which suggests someone trying to communicate rather than someone who cannot attend. Written questions test whether he can follow, orient and answer once the hearing barrier is removed. Louder or slower speech does not help a person who cannot hear it. Scoring a delirium tool from behaviour alone would mislabel a communication problem, and waiting leaves the question unanswered while his distress grows.",
+        keyFeature: kf(1),
+        source: "gower-ed-delirium",
+      },
+      {
+        id: "q2",
+        kind: "single",
+        update: "A card in his wallet says that he is Deaf, uses American Sign Language (ASL) and needs an interpreter. It gives his wife's phone number.",
+        prompt: "Which of the following is the most appropriate step to reduce his agitation?",
+        options: ["Ask a paramedic who knows some signs", "Give lorazepam 1 mg PO to settle him", "Have security wait at his bedside", "Request a qualified ASL interpreter", "Use written notes until discharge"],
+        correct: 3,
+        explanation:
+          "The BETA de-escalation consensus advises establishing real contact with the patient and asking what he wants, and his card says plainly that he needs an interpreter. A qualified interpreter, in person or by video, lets him take part in his care and removes the cause of his distress. A paramedic who knows a few signs risks errors on matters that need precision, such as consent. Written notes are slow and may be limited if English is his second language. Security at the bedside is a show of force that frightens an anxious patient, and he needs to be understood, not sedated.",
+        keyFeature: kf(3),
+        source: "beta-deescalation-2012",
+      },
+      {
+        id: "q3",
+        kind: "single",
+        update: "A video interpreter will be available in 40 minutes. The resident wants to staple the laceration now and says that he cannot consent because he cannot hear.",
+        prompt: "Which of the following is the most appropriate approach to consent for the scalp repair?",
+        options: ["Ask his wife to consent by phone", "Repair it now as emergency treatment", "Seek a formal capacity assessment", "Use his nod as implied consent", "Wait to consent through the interpreter"],
+        correct: 4,
+        explanation:
+          "Under the Health Care Consent Act he is presumed capable, and deafness is a barrier to communication, not a loss of capacity. Treatment without consent of an apparently capable person who cannot communicate is allowed only in an emergency, after reasonable steps to find a way to communicate have failed, and when the delay would prolong suffering or risk serious harm. A laceration that has stopped bleeding can wait 40 minutes for the interpreter. His wife can decide only if he is incapable. Nothing suggests incapacity, and a nod to words he cannot hear is not informed consent.",
+        keyFeature: kf(5),
+        source: "hcca",
+      },
+      {
+        id: "q4",
+        kind: "single",
+        update: "While you wait, a security guard offers to hold his arms so that the IV can be started, and a nurse suggests haloperidol 5 mg IM to settle him.",
+        prompt: "Which of the following is the most appropriate response to these two suggestions?",
+        options: ["Agree to both to finish care sooner", "Allow the hold without the drug", "Defer the IV for the interpreter", "Give the drug without the hold", "Hold him only while giving the drug"],
+        correct: 2,
+        explanation:
+          "The BETA restraint consensus allows physical or chemical restraint only when less restrictive measures have failed and the patient is an immediate danger to himself or others. He is pulling away from a procedure he does not understand, not threatening anyone, and the IV is not urgent. A drug given to control behaviour rather than to treat his condition is itself a restraint. Holding him, sedating him or both would treat a communication barrier with force and would likely make him more distressed. The IV can wait 40 minutes until it can be explained.",
+        keyFeature: kf(4),
+        source: "beta-restraint-2012",
+      },
+    ],
+    sources: [S.gower, S.richmond, S.hcca, S.knox],
+    ...META,
+  },
+
+  /* 43 Cows he sold years ago ---------------------------------------------- */
+  {
+    id: "delirium-agitation-43",
+    topic: "delirium-agitation",
+    title: "Found in the barn at dawn",
+    stem:
+      "You are working in a rural hospital emergency department in Ontario. A 79-year-old man is brought to the emergency department by his neighbour, who found him in his barn at 06:00 in pyjamas, saying he had to milk cows that he sold 10 years ago. He is a widower who lives alone and has type 2 diabetes treated with metformin. He has no attorney for personal care, and his only relative is a nephew in British Columbia. The neighbour has known him for 30 years and visits most weeks. He is restless, picks at his blanket and cannot say the days of the week backward. He is wearing thick wool socks. There is no neck stiffness, no focal neurological deficit and no sign of head injury. Capillary glucose is 13.8 mmol/L.",
+    vitals: { temperature: "38.1°C oral", pulse: "102/minute", resp: "20/minute", bp: "136/78 mmHg", o2sat: "96% on room air" },
+    questions: [
+      {
+        id: "q1",
+        kind: "single",
+        prompt: "Which of the following questions to his neighbour best helps separate delirium from dementia?",
+        options: ["Does dementia run in his family?", "Does he drink alcohol at home?", "Has he lost weight this year?", "What medicines does he take?", "When did he last seem his usual self?"],
+        correct: 4,
+        explanation:
+          "Delirium is an acute change in attention and cognition over hours to days, while dementia develops over months to years, so the deciding fact is when he was last at his usual baseline. The neighbour, who visits most weeks, is the one person here who can date the change. A family history of dementia and weight loss over a year speak to slow processes, not to an acute change. Alcohol use and his medicines matter when searching for a cause, but they do not show whether this is new.",
+        keyFeature: kf(1),
+        source: "gower-ed-delirium",
+      },
+      {
+        id: "q2",
+        kind: "single",
+        update: "The neighbour saw him 4 days ago, chatting and doing his farm accounts. A urinalysis is normal and a chest radiograph is clear.",
+        prompt: "Which of the following is the most important next step in finding the cause of his delirium?",
+        options: ["A full skin exam including the feet", "CT of the head without contrast", "Lumbar puncture for CSF analysis", "Serum ammonia and liver enzymes", "Urine screen for drugs of abuse"],
+        correct: 0,
+        explanation:
+          "He has fever and delirium, and his urine and chest radiograph have not shown a source, so the search must continue with a thorough head-to-toe examination, which is essential when the cause is not obvious. With diabetes and thick socks still on, his feet have not been seen and are a common hidden site of infection. CT head adds little with no focal deficit, injury or anticoagulant. Lumbar puncture is considered if no source is found, and he has no neck stiffness. He has no liver disease to suggest a raised ammonia, and nothing points to drug use.",
+        keyFeature: kf(2),
+        source: "gower-ed-delirium",
+      },
+      {
+        id: "q3",
+        kind: "single",
+        update: "His left foot is red, hot and swollen around an ulcer under the big toe. He refuses IV antibiotics so that he can go back to his cows, and he cannot say what might happen without them.",
+        prompt: "Which of the following should be asked to consent to IV antibiotics on his behalf?",
+        options: ["His family physician", "His nephew by telephone", "His neighbour of 30 years", "The Consent and Capacity Board", "The Public Guardian and Trustee"],
+        correct: 1,
+        explanation:
+          "He cannot appreciate the consequences of refusing, so he is incapable for this decision. With no guardian, attorney, spouse, child, parent or sibling, the Health Care Consent Act turns to any other relative, and a nephew qualifies. A person counts as available if he can be reached within a reasonable time, and a phone call meets that test. The Public Guardian and Trustee decides only when no one on the list meets the requirements. A neighbour, however close, is not on the list, and neither is his family physician. The Board hears applications but does not give bedside consent.",
+        keyFeature: kf(5),
+        source: "hcca",
+      },
+      {
+        id: "q4",
+        kind: "single",
+        update: "His nephew says that he has not spoken to his uncle in 20 years and is not willing to make any decisions for him.",
+        prompt: "Which of the following is now the most appropriate source of consent for his antibiotics?",
+        options: ["His neighbour of 30 years", "His nephew, as the only relative", "Implied consent from his arrival", "The Consent and Capacity Board", "The Public Guardian and Trustee"],
+        correct: 4,
+        explanation:
+          "A substitute decision maker must be capable, available and willing to take on the responsibility, so a nephew who refuses the role does not meet the requirements. When no person on the list qualifies, the Act names the Public Guardian and Trustee as the decision maker. If the delay to reach that office would put him at risk of serious harm, emergency treatment without consent is allowed in the meantime. His neighbour still has no standing, the Board does not consent to treatment, and arriving at the hospital is not consent to a treatment he is refusing.",
+        keyFeature: kf(5),
+        source: "hcca",
+      },
+    ],
+    sources: [S.gower, S.hcca],
+    ...META,
+  },
 ];

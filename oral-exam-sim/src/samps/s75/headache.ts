@@ -293,7 +293,7 @@ export const HEADACHE_S75: Samp[] = [
     alsoTopics: ["ischemic-heart-disease"],
     title: "Headaches on the stairs",
     stem:
-      "A 66-year-old man presents to the emergency department with 3 weeks of attacks of severe headache across the front of his head. Each attack starts while he climbs the stairs to his apartment or carries his groceries, comes with nausea and fades within 5 to 10 minutes after he stops to rest. He has never had headaches before. Light and noise do not bother him during attacks. A walk-in clinic diagnosed migraine 5 days ago and prescribed sumatriptan 50 mg, which he has not yet taken. He has type 2 diabetes and hypertension, takes metformin and amlodipine, and has smoked a pack a day for 40 years. He is pain free now. The neurological examination and fundoscopy are normal.",
+      "A 66-year-old man presents to the emergency department with 3 weeks of attacks of severe headache across the front of his head. Each attack starts while he climbs the stairs to his apartment or carries his groceries, comes with nausea and fades within 5 to 10 minutes after he stops to rest. He has never had headaches before. Light and noise do not bother him during attacks. A walk-in clinic diagnosed migraine 5 days ago and prescribed sumatriptan 50 mg, which he has not yet taken. He has type 2 diabetes and hypertension, takes only metformin and amlodipine, and has smoked a pack a day for 40 years. He is pain free now. The neurological examination and fundoscopy are normal.",
     vitals: { temperature: "36.6°C oral", pulse: "82/minute", resp: "16/minute", bp: "154/90 mmHg", o2sat: "97% on room air", weight: "94 kg" },
     questions: [
       {
@@ -338,7 +338,7 @@ export const HEADACHE_S75: Samp[] = [
         options: ["Admission for early invasive coronary assessment", "Discharge with outpatient exercise testing", "Discharge with sumatriptan for future attacks", "Neurology clinic referral within 2 weeks", "Observation for 3 hours, then discharge"],
         correct: 0,
         explanation:
-          "Transient ST depression with symptoms is ischemia, and a normal first troponin does not exclude an acute coronary syndrome. The 2023 ESC guideline lists dynamic ST-segment changes among the high-risk features of a non-ST-elevation acute coronary syndrome that call for an early invasive strategy within 24 hours. Discharge for outpatient exercise testing or after brief observation sends home a man with active ischemia. Sumatriptan is unsafe with ischemic heart disease. A neurology referral addresses the headache but not its cause, and his headache will settle once the coronary disease is treated.",
+          "Transient ST depression with symptoms is ischemia, and a normal first troponin does not exclude an acute coronary syndrome. The 2023 ESC guideline lists dynamic ST-segment changes among the high-risk features of a non-ST-elevation acute coronary syndrome that call for an early invasive strategy within 24 hours. Discharge for outpatient exercise testing or after brief observation sends home a man with active ischemia. Sumatriptan is unsafe with ischemic heart disease. A neurology referral addresses the headache but not the ischemia that causes it.",
         keyFeature: { topic: "headache", n: 4 },
         source: "esc-acs-2023",
       },

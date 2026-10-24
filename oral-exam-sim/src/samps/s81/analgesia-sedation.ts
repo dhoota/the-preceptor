@@ -87,10 +87,10 @@ export const ANALGESIA_SEDATION_S81: Samp[] = [
         id: "q1",
         kind: "single",
         prompt: "Which of the following findings would most suggest that pain is contributing to his restlessness?",
-        options: ["Cool hands and feet", "Dry mouth and cracked lips", "Grimacing and moaning when turned", "Mottled skin over both knees", "Picking at the bedsheets"],
+        options: ["Cool hands and feet", "Dry mouth and cracked lips", "Grimacing when he is turned", "Mottled skin over both knees", "Picking at the bedsheets"],
         correct: 2,
         explanation:
-          "He cannot rate his pain, so his behaviour has to speak for him, and a grimace with moaning that comes on when he is moved is the pattern an observational tool such as PAINAD scores as pain, through its facial expression and negative vocalization items. It also points to his spine and pelvic metastases after 14 hours without his regular morphine. Cool hands and feet and mottled knees reflect the falling circulation of the last days of life, not pain. A dry mouth follows mouth breathing and poor intake. Picking at the bedsheets is a sign of delirium, which may coexist but does not by itself show that he hurts.",
+          "He cannot rate his pain, so his behaviour has to speak for him, and a grimace that comes on each time he is moved, with the moaning his wife describes, is the pattern an observational tool such as PAINAD scores as pain through its facial expression and negative vocalization items. It also points to his spine and pelvic metastases after 14 hours without his regular morphine. Cool hands and feet and mottled knees reflect the falling circulation of the last days of life, not pain. A dry mouth follows mouth breathing and poor intake. Picking at the bedsheets is a sign of delirium, which may coexist but does not by itself show that he hurts.",
         keyFeature: { topic: "analgesia-sedation", n: 1 },
         source: "warden-painad",
       },
@@ -111,7 +111,7 @@ export const ANALGESIA_SEDATION_S81: Samp[] = [
         kind: "single",
         update: "Twenty minutes after his first SC dose he still grimaces and moans when he is moved. His resp. is 20/minute and he opens his eyes to voice.",
         prompt: "Which of the following is the most appropriate next step to control his pain?",
-        options: ["Another SC dose of the same size", "Haloperidol 1 mg SC now", "Midazolam 2.5 mg SC now", "Transdermal fentanyl 25 mcg/hour", "Wait 4 hours for the next dose"],
+        options: ["Another SC dose of equal size", "Haloperidol 1 mg SC now", "Midazolam 2.5 mg SC now", "Transdermal fentanyl 25 mcg/hour", "Wait 4 hours for the next dose"],
         correct: 0,
         explanation:
           "Severe pain in a patient already on opioids is treated as a pain emergency. The guideline repeats the SC dose after 20 minutes until the pain breaks, so a second 10 mg SC dose is due now. His breathing at 20/minute and his response to voice show no sign of opioid excess. Waiting 4 hours leaves him in pain when the first dose has clearly not been enough. A fentanyl patch takes many hours to work and is not a first choice for acute or rapidly changing pain. Haloperidol and midazolam would sedate him while the pain continues.",
@@ -123,7 +123,7 @@ export const ANALGESIA_SEDATION_S81: Samp[] = [
         kind: "single",
         update: "After a second dose he settles. An hour later he is asleep with a relaxed face and rouses to voice. His pupils are 3 mm and his resp. is 12/minute and regular. His wife asks whether the morphine will stop his breathing.",
         prompt: "Which of the following is the most appropriate plan for his opioid from now on?",
-        options: ["Continue regular doses and observe", "Give naloxone 0.4 mg IV now", "Halve the regular SC dose", "Hold opioids until fully awake", "Switch to midazolam alone"],
+        options: ["Continue regular doses and observe", "Give naloxone 0.4 mg IV now", "Halve the regular SC dose", "Hold opioids until he is fully awake", "Switch to midazolam alone"],
         correct: 0,
         explanation:
           "He is comfortable, rousable and breathing 12 times a minute, which is the goal for a man receiving comfort care. Respiratory depression is rare in patients who take opioids regularly, because tolerance to it develops quickly, and the guideline warns against withholding opioids for fear of it. His regular dose is 10 mg SC every 4 hours, with about 6 mg SC hourly as needed for breakthrough pain, which is 10% of the 60 mg SC daily total, while the team watches his breathing and level of sedation. Naloxone at 0.4 mg would bring back his pain and could precipitate withdrawal. When it is truly needed, the guideline dilutes it and gives it slowly. Halving or holding the dose invites the pain to return, and midazolam alone would sedate him without analgesia.",
@@ -183,10 +183,10 @@ export const ANALGESIA_SEDATION_S81: Samp[] = [
         id: "q4",
         kind: "single",
         prompt: "Which of the following findings, had it been in her history, would most favour anesthesia consultation before her sedation?",
-        options: ["Allergy to amoxicillin", "Ear tubes placed at age 2", "Eczema on both elbows", "Uneventful sedation last year", "Wheeze needing prednisolone last week"],
+        options: ["Allergy to amoxicillin", "Ear tubes placed at age 2", "Eczema on both elbows", "Uneventful ketamine sedation last year", "Wheeze on prednisolone last week"],
         correct: 4,
         explanation:
-          "Sedation by a non-anesthesiologist suits children in ASA class I and II. The Canadian Paediatric Society advises considering anesthesia consultation when a child has an active chronic condition, such as a recent asthma exacerbation, or an acute illness, because these children have more bronchospasm, laryngospasm and desaturation. Wheeze treated with prednisolone a week ago is that kind of recent exacerbation. A penicillin allergy does not affect ketamine. Old ear tubes and mild eczema leave her healthy. A previous uneventful sedation is reassuring, not a reason for referral.",
+          "Sedation by a non-anesthesiologist suits children in ASA class I and II. The Canadian Paediatric Society advises considering anesthesia consultation when a child has an active chronic condition, such as a recent asthma exacerbation, or an acute illness, because these children have more bronchospasm, laryngospasm and desaturation. Wheeze treated with prednisolone a week ago is that kind of recent exacerbation. A penicillin allergy does not affect ketamine. Old ear tubes and mild eczema leave her healthy. A previous uneventful ketamine sedation is reassuring, not a reason for referral.",
         keyFeature: { topic: "analgesia-sedation", n: 5 },
         source: "cps-procedural-sedation-2021",
       },
@@ -219,7 +219,7 @@ export const ANALGESIA_SEDATION_S81: Samp[] = [
         id: "q2",
         kind: "single",
         prompt: "Which of the following is the most appropriate use of her mother's description of her pain behaviours?",
-        options: ["Ask her to point to a face", "Base the score on heart rate", "Include them as cues on the scale", "Score only the standard items", "Treat only when she cries out"],
+        options: ["Ask her to point to a face", "Base the score on heart rate", "Include them as scale cues", "Score only the standard items", "Treat only when she cries out"],
         correct: 2,
         explanation:
           "Children with cerebral palsy often show pain in their own ways, such as going still or grinding the teeth rather than crying. The revised FLACC was built to add descriptors and the behaviours that parents identify as their child's pain cues, and that change improved its reliability and validity in children with cognitive impairment. Scoring only the standard items would miss her stillness and underrate her pain. Waiting for her to cry out ignores what her mother has told you. Heart rate is a poor guide on its own. Pointing to a face is a self-report task she cannot perform.",
@@ -314,7 +314,7 @@ export const ANALGESIA_SEDATION_S81: Samp[] = [
         kind: "single",
         update: "The shoulder is reduced. Thirty minutes later she is alert and comfortable, with no contractions, abdominal pain or bleeding.",
         prompt: "Which of the following fetal assessments is most appropriate before she leaves the emergency department?",
-        options: ["A single Doppler fetal heart check", "Electronic fetal monitoring for 4 hours", "Kleihauer-Betke test only", "Obstetric ultrasound next week", "No further fetal assessment"],
+        options: ["A single Doppler fetal heart check", "Fetal monitoring for 4 hours", "Kleihauer-Betke test only", "Obstetric ultrasound next week", "No further fetal assessment"],
         correct: 1,
         explanation:
           "She is 30 weeks pregnant and has had a fall, which is trauma in pregnancy even without a blow to the abdomen. The SOGC advises electronic fetal monitoring for at least 4 hours in every pregnant trauma patient with a viable pregnancy of 23 weeks or more, and admission for 24 hours if adverse features such as uterine tenderness, bleeding or sustained contractions appear. The same window also covers her recovery from sedation. A single Doppler check or an obstetric ultrasound next week would miss contractions or a changing heart rate pattern in the hours after the fall. A Kleihauer-Betke test measures fetal bleeding into the mother and does not replace monitoring. Leaving with no assessment ignores her risk.",
@@ -339,7 +339,7 @@ export const ANALGESIA_SEDATION_S81: Samp[] = [
         id: "q1",
         kind: "single",
         prompt: "Which of the following features most increases her risk of aspiration during procedural sedation?",
-        options: ["Her age of 54 years", "Last meal 7 hours ago", "Mallampati class II airway view", "Ramipril for hypertension", "Recent semaglutide dose increase"],
+        options: ["Her age of 54 years", "Last meal 7 hours ago", "Mallampati class II airway view", "Ramipril for hypertension", "Semaglutide dose increase"],
         correct: 4,
         explanation:
           "Semaglutide slows gastric emptying, and the multi-society guidance names the dose escalation phase, a higher dose, a weekly formulation and gastrointestinal symptoms such as nausea as markers of higher risk of retained gastric contents. She has each of these: a weekly drug, a recent rise to a higher dose, and nausea with bloating since. So her stomach may hold food despite a 7-hour fast, which on its own would be reassuring. A Mallampati class II view predicts an easy airway, not aspiration. Ramipril and her age do not slow gastric emptying.",
@@ -362,7 +362,7 @@ export const ANALGESIA_SEDATION_S81: Samp[] = [
         kind: "single",
         update: "Ultrasound shows a distended gastric antrum filled with solid food. The skin over the medial malleolus is still blanched.",
         prompt: "Which of the following is the most appropriate approach to reducing her ankle now?",
-        options: ["Etomidate sedation and reduction", "Ketamine sedation and reduction", "Lidocaine block into the ankle joint", "Propofol sedation and reduction", "Wait 8 hours, then sedate"],
+        options: ["Etomidate sedation and reduction", "Ketamine sedation and reduction", "Lidocaine into the ankle joint", "Propofol sedation and reduction", "Wait 8 hours, then sedate"],
         correct: 2,
         explanation:
           "Solid food in the stomach makes sedation risky, and the tented, blanched skin needs reduction now to protect the soft tissues. In a randomized trial of ankle fracture-dislocations, an intra-articular lidocaine block relieved pain as well as conscious sedation, allowed acceptable reductions and took less time on average. The authors studied it as a lower-risk alternative to sedation, which is what she needs. Etomidate, propofol and ketamine all blunt protective reflexes to some degree and carry a real risk of vomiting or aspiration with a full stomach. Waiting 8 hours risks skin necrosis over the malleolus and may not empty a stomach slowed by semaglutide.",

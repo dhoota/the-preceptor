@@ -51,7 +51,7 @@ export const MULTIPLE_PATIENTS_S78: Samp[] = [
         id: "q2",
         kind: "menu",
         select: 3,
-        update: "The charge nurse opens the downtime cart. She asks which practices the team should follow while the systems are down.",
+        update: "The charge nurse asks which work practices the team should follow while the computer systems are down.",
         prompt: "Which of the following downtime practices are most appropriate in the emergency department?",
         options: [
           "Charting deferred until systems return",
@@ -264,7 +264,7 @@ export const MULTIPLE_PATIENTS_S78: Samp[] = [
       {
         id: "q3",
         kind: "single",
-        update: "The man leaves by air 70 minutes later. The woman is now 3 hours from her injury. Her foot sensation, ankle dorsiflexion and foot pulses remain normal.",
+        update: "Seventy minutes later your team is free again. The woman is now 3 hours from her injury. Her foot sensation, ankle dorsiflexion and foot pulses remain normal.",
         prompt: "Which of the following is the most appropriate next step for the woman?",
         options: [
           "CT of the pelvis before any reduction",
@@ -275,7 +275,7 @@ export const MULTIPLE_PATIENTS_S78: Samp[] = [
         ],
         correct: 2,
         explanation:
-          "A hip dislocation is a time sensitive emergency, and no more than 6 hours should pass before reduction. Avascular necrosis follows in about 2% to 10% of dislocations and rises when reduction is late. At 3 hours, with the man gone and the team free, closed reduction under sedation should happen now. CT of the pelvis is done after reduction to confirm a concentric joint and find fragments. Overnight traction or waiting until morning would push her past the 6 hour window, and a transfer adds hours and risk for a procedure the team can do now.",
+          "A hip dislocation is a time sensitive emergency, and no more than 6 hours should pass before reduction. Avascular necrosis follows in about 2% to 10% of dislocations and rises when reduction is late. At 3 hours, with the team free, closed reduction under sedation should happen now. CT of the pelvis is done after reduction to confirm a concentric joint and find fragments. Overnight traction or waiting until morning would push her past the 6 hour window, and a transfer adds hours and risk for a procedure the team can do now.",
         keyFeature: { topic: "multiple-patients", n: 2 },
         source: "dawson-amoah-hip",
       },
@@ -368,8 +368,8 @@ export const MULTIPLE_PATIENTS_S78: Samp[] = [
       {
         id: "q4",
         kind: "single",
-        update: "As she leaves for the operating room, the triage nurse asks which waiting patient should take the monitored bed she vacated.",
-        prompt: "Which of the following waiting patients should take the free monitored bed?",
+        update: "Later in the night, the triage nurse asks which waiting patient should take the next free monitored bed.",
+        prompt: "Which of the following waiting patients should take the next free monitored bed?",
         options: [
           "Man, 63, palpitations, pulse 172, BP 86/54",
           "Teen, 16, deformed wrist, pulses intact",

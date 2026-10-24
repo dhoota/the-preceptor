@@ -59,7 +59,7 @@ export const EMS_S88: Samp[] = [
         options: ["Black tarry stool in the toilet", "Glasses lying on the bedroom floor", "Rug bunched beside the bed", "Television left switched on", "Walker left in the hallway"],
         correct: 0,
         explanation:
-          "Black, tarry stool is melena, which points to upper gastrointestinal bleeding. In a woman taking apixaban who is pale, with a pulse of 112/minute and a pressure of 96/58 mmHg, the fall may have been a faint from blood loss rather than a trip. She now needs a hemoglobin, a crossmatch and a bleeding risk assessment along with the falls workup. The bunched rug, the glasses on the floor and the walker left in the hallway suggest a mechanical trip, and the television suggests an evening fall, but none of them changes the first tests the way melena does. Only the crew saw the toilet before it was flushed.",
+          "Black, tarry stool is melena, which points to upper gastrointestinal bleeding. In a woman taking apixaban who is pale, with a pulse of 112/minute and a pressure of 96/58 mmHg, the fall may have been a faint from blood loss rather than a trip. She now needs a hemoglobin, a crossmatch and a bleeding risk assessment along with the falls workup. The bunched rug, the glasses on the floor and the walker left in the hallway suggest a mechanical trip, and the television suggests an evening fall, but none of them changes the first tests the way melena does. The crew is the only source for what was in the toilet.",
         keyFeature: { topic: "ems", n: 2 },
         source: "barkun-nvugib",
       },
@@ -71,7 +71,7 @@ export const EMS_S88: Samp[] = [
         options: ["Blood alcohol level", "Creatine kinase", "Serum ammonia", "Serum cortisol", "Serum lipase"],
         correct: 1,
         explanation:
-          "An unslept bed and supper dishes on the table, with a neighbour's sighting at 1800 and discovery at 0830, mean she was probably on the floor for up to 14.5 hours. Lying that long on a hard floor compresses muscle and can cause rhabdomyolysis, and the reddened skin over her shoulder and hip shows that pressure. Low blood volume from bleeding adds to the risk of kidney injury, so a creatine kinase guides her fluids and monitoring. Nothing in her history points to liver disease for an ammonia, adrenal failure for a cortisol, alcohol use or pancreatitis.",
+          "An unslept bed and supper dishes on the table, with a neighbour's sighting at 1800 and discovery at 0830, mean she was probably on the floor for up to 14.5 hours. Lying that long on a hard floor compresses muscle and can cause rhabdomyolysis, and the reddened skin over her right shoulder shows that pressure. Low blood volume from bleeding adds to the risk of kidney injury, so a creatine kinase guides her fluids and monitoring. Nothing in her history points to liver disease for an ammonia, adrenal failure for a cortisol, alcohol use or pancreatitis.",
         keyFeature: { topic: "ems", n: 2 },
         source: "bosch-rhabdo",
       },

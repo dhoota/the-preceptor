@@ -267,4 +267,75 @@ export const ENVIRONMENTAL_S84: Samp[] = [
     sources: [S.lampropoulou, S.uhms],
     ...META,
   },
+  /* 43 Household 240 V shock with tetany ------------------------------------ */
+  {
+    id: "environmental-43",
+    topic: "environmental",
+    alsoTopics: ["msk"],
+    title: "A shock while replacing an outlet",
+    stem:
+      "A 38-year-old man is brought to the emergency department by ambulance after an electric shock at home. He was replacing a 240 volt dryer outlet in his basement after switching off what he thought was the right breaker. He gripped a live wire with his right hand while kneeling on the damp concrete floor. His arm locked and he could not let go for about 2 seconds, until his wife switched off the main power. He felt the current run through his chest to his knees. His wife says he did not lose consciousness and talked throughout. He has no medical history.\n\nHe holds his painful right arm against his body, internally rotated, and cannot rotate it outward. The back of the shoulder is prominent and the coracoid stands out in front. There is a 4 mm grey burn on the right palm and a 3 mm burn over the left knee. The forearm is soft and the hand is neurovascularly intact. His ECG shows normal sinus rhythm with normal intervals.",
+    vitals: { temperature: "36.8°C oral", pulse: "92/minute", resp: "18/minute", bp: "138/84 mmHg", o2sat: "99% on room air", weight: "88 kg" },
+    questions: [
+      {
+        id: "q1",
+        kind: "single",
+        prompt: "Which of the following is the most likely cause of his right shoulder findings?",
+        options: ["Acromioclavicular separation", "Anterior shoulder dislocation", "Posterior shoulder dislocation", "Proximal humerus fracture", "Rotator cuff tear"],
+        correct: 2,
+        explanation:
+          "An arm locked in internal rotation that cannot be turned outward, with fullness behind the shoulder and a prominent coracoid in front, is a posterior shoulder dislocation. Tetanic contraction during an electric shock can produce enough force to fracture or dislocate, and the posterior shoulder is the joint injury most often described. An anterior dislocation holds the arm slightly abducted and externally rotated. An acromioclavicular separation gives a step at the top of the shoulder with rotation preserved. A proximal humerus fracture can occur with the same mechanism and is sought on radiographs, but it does not block rotation in this way. A cuff tear leaves passive rotation intact.",
+        keyFeature: { topic: "environmental", n: 5 },
+        source: "smith-electrical",
+      },
+      {
+        id: "q2",
+        kind: "single",
+        prompt: "Which of the following best explains the mechanism of his shoulder injury?",
+        options: ["Direct blow on the concrete floor", "Fall onto his outstretched arm", "Muscle tetany from alternating current", "Seizure from current through the brain", "Thermal injury to the joint capsule"],
+        correct: 2,
+        explanation:
+          "Household current is alternating, and alternating current causes tetanic muscle contraction on contact. That is why he could not let go, and the contraction lengthened his exposure. Forceful contraction of the shoulder muscles can drive the humeral head out of the joint, the same way a convulsive seizure does. He was kneeling and did not fall or strike the floor. The current ran from his hand to his knees, not through his head, and he stayed awake and talking, so a seizure is unlikely. His burns are a few millimetres across and do not reach the joint.",
+        keyFeature: { topic: "environmental", n: 5 },
+        source: "smith-electrical",
+      },
+      {
+        id: "q3",
+        kind: "single",
+        prompt: "Which of the following is the most appropriate cardiac assessment for him after his normal initial ECG?",
+        options: ["Echocardiogram before discharge", "ED cardiac monitoring for 6 hours", "Serial troponin over 6 hours", "Telemetry admission for 24 hours", "No further cardiac testing"],
+        correct: 4,
+        explanation:
+          "In a prospective study in 21 emergency departments, patients monitored after a shock because of current across the chest, tetany, loss of consciousness or a source of 1000 V or more had no dangerous late arrhythmia. The authors concluded that asymptomatic patients with current across the chest or tetany, a normal first ECG, a source below 1000 V and no loss of consciousness do not need cardiac monitoring. He has every one of those features. Troponin has not been shown to help with cardiac risk after electrical injury. Nothing in his history or examination calls for an echocardiogram.",
+        keyFeature: { topic: "environmental", n: 5 },
+        source: "bailey-monitoring",
+      },
+      {
+        id: "q4",
+        kind: "menu",
+        prompt: "Which of the following laboratory investigations are most appropriate for him at this visit?",
+        options: ["Complete blood count", "Creatine kinase", "CT of the chest", "Electrolytes and creatinine", "INR and PTT", "Serum lipase", "Urine drug screen"],
+        select: 3,
+        correct: [0, 1, 3],
+        explanation:
+          "A blood count, electrolytes with kidney function and a creatine kinase are advised for patients with electrical injury. Current passing through muscle and tetanic contraction can injure muscle out of sight, and creatine kinase on arrival screens for rhabdomyolysis. Normal creatine kinase and creatinine are part of the evidence that a patient can safely go home. CT of the chest is not indicated without chest trauma or abnormal findings. Coagulation tests, lipase and a urine drug screen have no indication in his history or examination.",
+        keyFeature: { topic: "environmental", n: 5 },
+        source: "smith-electrical",
+      },
+      {
+        id: "q5",
+        kind: "single",
+        update: "His shoulder is reduced under procedural sedation and his laboratory results are normal.",
+        prompt: "Which of the following is the most appropriate plan for the small burns on his palm and knee?",
+        options: ["Burn centre consultation", "Debridement in the ED", "Family doctor wound check", "Plastic surgery clinic in 6 weeks", "Silver sulfadiazine only"],
+        correct: 0,
+        explanation:
+          "Early consultation with a burn centre or burn surgery team is recommended for all electrical burns, because small entry and exit wounds can sit over deeper injury along the current path. A phone consultation decides whether he needs review in person and how soon. Debridement of small dry burns in the ED is not needed and does not assess the deeper tissue. A wound check by his family doctor, or a plastic surgery visit in 6 weeks, skips the early specialist assessment. Topical cream alone treats only the skin surface.",
+        keyFeature: { topic: "environmental", n: 5 },
+        source: "smith-electrical",
+      },
+    ],
+    sources: [S.smith, S.bailey],
+    ...META,
+  },
 ];
