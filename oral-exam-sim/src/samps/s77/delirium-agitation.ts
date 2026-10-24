@@ -153,7 +153,7 @@ export const DELIRIUM_AGITATION_S77: Samp[] = [
         id: "q1",
         kind: "single",
         prompt: "Which of the following responses to his fear about the water best fits verbal de-escalation?",
-        options: ["I have not seen that, but you sound afraid", "Let us test the water to show you it is safe", "Nobody here is putting poison in your water", "Security will stay if you keep saying that", "You are right, we will change your nurse"],
+        options: ["I have not seen that, but you sound afraid", "Let us test the water to prove it is safe", "Nobody here is putting poison in your water", "Security will stay if you keep saying that", "You are right, we will change your nurse"],
         correct: 0,
         explanation:
           "The BETA de-escalation consensus advises agreeing with what is true and, when honest agreement is not possible, agreeing to disagree, without feigning agreement with a delusion and while acknowledging the patient's experience. Saying that you have not seen it while naming his fear does exactly that. Changing his nurse feigns agreement and confirms the delusion. Flat contradiction and an offer to test the water turn his belief into an argument about facts that he will not lose. Warning him about security is a threat, which the consensus says provokes rather than calms.",
@@ -251,8 +251,8 @@ export const DELIRIUM_AGITATION_S77: Samp[] = [
         kind: "single",
         update: "While you wait, a security guard offers to hold his arms so that the IV can be started, and a nurse suggests haloperidol 5 mg IM to settle him.",
         prompt: "Which of the following is the most appropriate response to these two suggestions?",
-        options: ["Agree to both to finish care sooner", "Allow the hold without the drug", "Defer the IV for the interpreter", "Give the drug without the hold", "Hold him only while giving the drug"],
-        correct: 2,
+        options: ["Allow the hold without the drug", "Defer the IV for the interpreter", "Give the drug without the hold", "Hold him only while giving the drug", "Use both to finish care sooner"],
+        correct: 1,
         explanation:
           "The BETA restraint consensus allows physical or chemical restraint only when less restrictive measures have failed and the patient is an immediate danger to himself or others. He is pulling away from a procedure he does not understand, not threatening anyone, and the IV is not urgent. A drug given to control behaviour rather than to treat his condition is itself a restraint. Holding him, sedating him or both would treat a communication barrier with force and would likely make him more distressed. The IV can wait 40 minutes until it can be explained.",
         keyFeature: kf(4),

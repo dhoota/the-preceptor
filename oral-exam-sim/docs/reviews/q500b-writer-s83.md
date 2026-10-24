@@ -57,3 +57,8 @@ I read every existing tox SAMP (tox-01 to tox-47) and the tox key feature questi
 4. tox-52 q2 keys outpatient gabapentin over an outpatient diazepam taper for PAWSS 3. This follows CRISM 2023. Some EDs still send low risk patients home on a benzodiazepine taper.
 5. tox-48 q3 keys lorazepam 2 mg IV. CMAJ gives no starting dose. Diazepam is not an option, which avoids two correct answers.
 6. tox-49 sits on kf8 even though the patient is a newborn. Key feature 8 names opioid withdrawal without an age limit.
+
+## Checks
+
+- `npx tsc --noEmit -p . 2>&1 | grep samps/s83` prints nothing.
+- `SAMP_BATCH=s83 npx vitest run tests/samps.test.ts tests/samp-quality.test.ts tests/citations.test.ts`: 136 of 136 pass with `--testTimeout=120000`. With the default 5 second timeout, only the bank-wide near-duplicate stem test fails, and it fails by timing out (10 to 22 seconds) on a machine shared with other writers. It does not report a duplicate.
