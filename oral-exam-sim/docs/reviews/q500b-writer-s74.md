@@ -61,3 +61,18 @@ Before writing I read all 38 lacerations SAMPs (s13 and s43), the lacerations or
 6. lacerations-39 q3 keys no tetanus prophylaxis for a road wound 2 years after a Tdap booster, as the CIG table gives.
 7. The full required test command passes except the bank-wide near duplicate test, which timed out at its 5 second default under machine load (8.1 s). With `--testTimeout=60000` all 128 tests pass and no near duplicates are reported.
 8. I hit the web search limit for this turn while writing. Every citation above was confirmed before that point.
+
+## Revision 1
+
+This revision answers `docs/reviews/q500b-qa-s74.md`. The coordinator ruled that lacerations-39 keeps its scenario, because its writer is replacing the overlapping batch16 oral case. For 39, only the mock cues and the typo are fixed.
+
+1. lacerations-39. The q2 update no longer says the lip is "too swollen to feel a fragment". It now reads "The lower lip is swollen." The q3 update no longer says the film shows a fragment in the lip. It now reads "The lip wound is explored, irrigated and prepared for repair." The "shows.Placing" typo in q4 is fixed.
+2. lacerations-40 q3. The update is now "He remains alert and well, with no further bleeding. The examination is otherwise unchanged. He drinks apple juice without coughing." The explanation now opens "He is well, his examination is unchanged and the wound is 1 cm with no flap."
+3. lacerations-40 q4. The prompt is now "Which of the following new findings over the next week would most suggest a complication of his palate wound?" The options and key are unchanged.
+4. lacerations-41 q2. The question is now a `menu` with `select: 1`. The prompt is "Which of the following examination findings, if present, would exclude penetration of the skull beneath these puncture wounds?" There are six options, with "Normal pupils and eye movements" added, and "None" last as the only key. The explanation now names pupils and eye movements.
+5. lacerations-41 q4. The update now opens "Imaging shows" in place of "CT shows".
+6. lacerations-42 q1. "The dorsalis pedis vessels and nerve" now reads "the anterior tibial vessels and the deep peroneal nerve".
+7. lacerations-42 q4. The update is now "Exploration shows a gap in the tibialis anterior tendon. Radiographs show no fracture or foreign body. The skin is irrigated and closed."
+8. lacerations-43 q3. The update is now "There are no signs of flexor sheath infection, and the swelling stops short of the palm." The option strength is now 160/800 mg. "And longer for deep wounds" now reads "and one deep wound needed 10 weeks". The cefazolin claim is removed. In its place, the explanation says "A Canadian case review reports failures on penicillin, dicloxacillin and cephalexin." That case review is White and Jewer, which is listed in the SAMP's sources.
+
+Counts after revision: 20 questions, 18 single and 2 menu (40 q2 and 41 q2). Single key positions 0 to 4 are 3, 4, 4, 4, 3. The key is the single longest option in 3 of 18. Key feature counts are unchanged: n1 5, n2 5, n3 5, n4 5. Tests: `SAMP_BATCH=s74 npx vitest run tests/samps.test.ts tests/samp-quality.test.ts tests/citations.test.ts --testTimeout=120000` passes, 128 of 128. The s74 type check is clean.

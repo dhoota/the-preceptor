@@ -35,12 +35,6 @@ const S = {
       "Krmpotic K, Rieder MJ, Rosen D, Canadian Paediatric Society Acute Care Committee and Drug Therapy Committee. Recommendations for procedural sedation in infants, children, and adolescents. Paediatr Child Health. 2021.",
     url: "https://cps.ca/en/documents/position/recommendations-for-procedural-sedation-in-infants-children-and-adolescents",
   },
-  malviya: {
-    id: "malviya-r-flacc",
-    citation:
-      "Malviya S, Voepel-Lewis T, Burke C, Merkel S, Tait AR. The revised FLACC observational pain tool. Improved reliability and validity for pain assessment in children with cognitive impairment. Paediatr Anaesth. 2006.",
-    url: "https://pubmed.ncbi.nlm.nih.gov/16490089/",
-  },
   sogc: {
     id: "sogc-pregnant-trauma-2015",
     citation:
