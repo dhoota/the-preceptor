@@ -22,31 +22,31 @@ export const SUICIDE_RISK_S72: Samp[] = [
   {
     id: "suicide-risk-39",
     topic: "suicide-risk",
-    title: "Third admission since the spring",
+    title: "A meter used on three days",
     stem:
-      "A 16-year-old girl is brought to the emergency department by her mother with 2 days of vomiting and abdominal pain. She has had type 1 diabetes since age 9 and uses insulin glargine and insulin aspart pens. This is her third admission for diabetic ketoacidosis in 5 months. Each time she said her pens ran out or she forgot doses. She has lost 7 kg since the spring. Her parents separated in April and her mother works night shifts. Venous pH is 7.12, bicarbonate 8 mmol/L, glucose 31 mmol/L and beta-hydroxybutyrate 6.8 mmol/L. She is alert, dry and breathing deeply. There is no fever and no source of infection on examination.",
-    vitals: { temperature: "36.9°C oral", pulse: "118/minute", resp: "28/minute", bp: "104/66 mmHg", o2sat: "99% on room air", weight: "48 kg" },
+      "A 16-year-old girl is brought to the emergency department by her father after she fainted at volleyball practice. She has had type 1 diabetes since age 9 and uses insulin glargine and insulin aspart pens. Her HbA1c has risen from 7.6% to 12.9% over 6 months, and she has lost 6 kg since the summer. The pharmacy confirms that every refill was collected on time. Her glucose meter shows readings on only 3 days in the past month. She says she takes every dose. She has lived with her father since her parents separated in the spring. Glucose is 24 mmol/L, venous pH 7.28, bicarbonate 15 mmol/L and beta-hydroxybutyrate 3.4 mmol/L. Her injection sites look normal, with no lipohypertrophy. She has no fever and no source of infection on examination.",
+    vitals: { temperature: "36.7°C oral", pulse: "106/minute", resp: "22/minute", bp: "112/70 mmHg", o2sat: "99% on room air", weight: "51 kg" },
     questions: [
       {
         id: "q1",
         kind: "single",
-        prompt: "Which of the following is the most likely cause of her repeated episodes of ketoacidosis?",
+        prompt: "Which of the following is the most likely explanation for her rising HbA1c and her ketosis today?",
         options: ["Faulty pen needle technique", "Insulin degraded by heat exposure", "Intentional insulin omission", "Lipohypertrophy at injection sites", "Occult urinary infection"],
         correct: 2,
         explanation:
-          "Three episodes in 5 months, the same account of missed or empty pens each time and a 7 kg weight loss point to insulin she is choosing not to take. Diabetes Canada states that ketoacidosis in established diabetes results from failing to take insulin or poor sick-day management, and advises considering an eating disorder in adolescent girls when insulin omission is suspected. Heat-damaged insulin, poor needle technique and lipohypertrophy give erratic glucose, but they do not fit a teenager who keeps reporting doses she did not take. She has no fever and no source on examination, and an infection would not explain the pattern.",
+          "Refills collected on time, a meter used on only 3 days in a month, a 6 kg weight loss and an HbA1c that rose from 7.6% to 12.9% while she reports taking every dose point to insulin she is choosing not to take. Diabetes Canada states that ketoacidosis in established diabetes results from failing to take insulin or poor sick-day management, and advises considering an eating disorder in adolescent girls when insulin omission is suspected. Heat-damaged insulin and poor needle technique give erratic glucose but would not explain an unused meter and weight loss, and her injection sites show no lipohypertrophy. She has no fever and no source on examination, and an infection would not explain 6 months of rising HbA1c.",
         keyFeature: { topic: "suicide-risk", n: 2 },
         source: "dc-t1d-peds",
       },
       {
         id: "q2",
         kind: "single",
-        update: "Her ketoacidosis resolves on an insulin infusion. Speaking with you alone, she says she skips insulin to lose weight and that nobody at home notices.",
+        update: "Her ketosis clears with IV fluids and insulin. Speaking with you alone, she says she skips insulin to lose weight and that nobody at home notices.",
         prompt: "Which of the following is the most important question to ask her next?",
         options: ["Her daily calorie intake", "Her last menstrual period", "Her target body weight", "Whether she makes herself vomit", "Whether she skips doses to die"],
         correct: 4,
         explanation:
-          "Deliberate insulin omission can be a hidden form of self-harm, and a teenager who uses it to lose weight may also use it, or an insulin overdose, to end her life. Whether any omission was meant to cause death decides her immediate safety and her disposition, so it comes first. Calorie intake, purging, menstrual history and target weight all belong in an eating disorder assessment, and the eating disorder team will need them, but none of them tells you whether she is at risk of dying by suicide tonight.",
+          "Skipping a drug she needs to stay alive is behaviour that harms her, and the Canadian Paediatric Society advises asking adolescents about the intent behind self-harming behaviour and asking directly whether they want to end their life. Whether any missed dose was meant to cause death decides her immediate safety and her disposition, so it comes first. Calorie intake, purging, menstrual history and target weight all belong in an eating disorder assessment, and the eating disorder team will need them, but none of them tells you whether she is at risk of dying by suicide tonight.",
         keyFeature: { topic: "suicide-risk", n: 2 },
         source: "cps-youth-2015",
       },
@@ -65,12 +65,12 @@ export const SUICIDE_RISK_S72: Samp[] = [
       {
         id: "q4",
         kind: "single",
-        update: "The next morning she has no intent, wants to go home and agrees to a plan. Her mother will be home at night for 2 weeks. The eating disorder program can see her in 3 days.",
-        prompt: "Which of the following is the most appropriate arrangement for her insulin at home, agreed with her and her mother?",
-        options: ["Daily pharmacy pickup of one pen", "Dose diary kept by her", "Doses supervised by her mother", "Pump started before discharge", "Weekly phone check by the clinic"],
+        update: "The next morning she has no intent, wants to go home and agrees to a plan. Her father is working from home for the next 2 weeks. The eating disorder program can see her in 3 days.",
+        prompt: "Which of the following is the most appropriate arrangement for her insulin at home, agreed with her and her father?",
+        options: ["Daily pharmacy pickup of one pen", "Dose diary kept by her", "Doses supervised by her father", "Pump started before discharge", "Weekly phone check by the clinic"],
         correct: 2,
         explanation:
-          "Her mother giving or watching each dose keeps a life-sustaining drug in use while closing the gap that allowed both omission and a possible overdose. It also brings a trusted adult into her daily care, which the Canadian Paediatric Society advises when a youth goes home, and Diabetes Canada notes that family support lowers the rate of ketoacidosis. A diary she keeps relies on the same self-report that failed three times. A pump started at discharge is a large change that she could still stop or misuse. A weekly phone check is too infrequent, and a daily pickup of one pen is impractical and still unsupervised.",
+          "Her father giving or watching each dose keeps a life-sustaining drug in use while closing the gap that allowed both omission and a possible overdose. It also brings a trusted adult into her daily care, which the Canadian Paediatric Society advises when a youth goes home, and Diabetes Canada notes that family support lowers the rate of ketoacidosis. A diary she keeps relies on the same self-report that hid her missed doses for months. A pump started at discharge is a large change that she could still stop or misuse. A weekly phone check is too infrequent, and a daily pickup of one pen is impractical and still unsupervised.",
         keyFeature: { topic: "suicide-risk", n: 4 },
         source: "cps-youth-2015",
       },
@@ -84,7 +84,7 @@ export const SUICIDE_RISK_S72: Samp[] = [
     topic: "suicide-risk",
     title: "A video call from the nursing station",
     stem:
-      "You are working in a regional hospital in northern Manitoba. A registered nurse calls you by video from a nursing station in a fly-in community 400 km away. RCMP officers have brought a 34-year-old man there. His sister saw a goodbye message he posted online, and officers found him walking out onto thin spring ice on the river. His partner left with their children last month. He drinks heavily on weekends and took an overdose of acetaminophen at age 20. He has now been sober for 6 hours. On camera he is calm, gives brief answers and makes little eye contact. The next visiting physician is due in 3 days.",
+      "You are working in a regional hospital in northern Manitoba. A registered nurse, who is not a nurse practitioner, calls you by video from a nursing station in a fly-in community 400 km away. RCMP officers have brought a 34-year-old man there. His sister saw a goodbye message he posted online, and officers found him walking out onto thin spring ice on the river. His partner left with their children last month. He drinks heavily on weekends and took an overdose of acetaminophen at age 20. He has now been sober for 6 hours. On camera he is calm, gives brief answers and makes little eye contact. The next visiting physician is due in 3 days.",
     vitals: { temperature: "36.6°C oral", pulse: "88/minute", resp: "16/minute", bp: "132/80 mmHg", o2sat: "98% on room air" },
     questions: [
       {
@@ -104,7 +104,7 @@ export const SUICIDE_RISK_S72: Samp[] = [
         kind: "single",
         update: "He says nothing will change and he has nothing left to live for. He refuses to fly out for assessment and says he will walk out of the nursing station.",
         prompt: "Under the Manitoba Mental Health Act, which of the following must you also find, beyond a mental disorder and likely serious harm?",
-        options: ["Imminent risk of harm within 24 hours", "Inability to consent to treatment", "Previous involuntary psychiatric admission", "Support from a second physician", "Unwilling to have a voluntary assessment"],
+        options: ["Imminent risk of harm within 24 hours", "Inability to consent to treatment", "Previous involuntary psychiatric admission", "Support from a second physician", "Unwillingness to undergo a voluntary assessment"],
         correct: 4,
         explanation:
           "Section 8 lets a qualified health professional who examines a person apply for an involuntary psychiatric assessment when the person has a mental disorder, is likely because of it to cause serious harm to self or others or to deteriorate substantially, and is unwilling to undergo or not mentally competent to consent to a voluntary assessment. He refuses to go, so the third criterion is met. The Act asks for likely harm, not harm within 24 hours. Incapacity to consent to treatment is a separate question decided later. No second physician and no past admission are required.",
@@ -119,15 +119,15 @@ export const SUICIDE_RISK_S72: Samp[] = [
         options: ["Ask police to hold him for 3 days", "Ask the nurse to sign the application", "Examine him by video and apply now", "Release him with his sister watching", "Wait for the physician visit in 3 days"],
         correct: 2,
         explanation:
-          "Since October 2026 the Act lets a qualified health professional examine a person without being present when an in-person examination is not reasonably practicable, and the application must be made within 2 days of that examination. It must state that you examined him personally, the date, and the facts you observed apart from those reported by others. A registered nurse is not a qualified health professional under the Act. Police may take a person to be examined but have no power to hold him for days. Releasing him or waiting 3 days leaves a hopeless man with a past attempt and a recent plan without protection.",
+          "Since October 2026 the Act lets a qualified health professional examine a person without being present when an in-person examination is not reasonably practicable, and the application must be made within 2 days of that examination. It must state that you examined him personally, the date, and the facts you observed apart from those reported by others. A registered nurse who is not a nurse practitioner is not a qualified health professional under the Act. Nurse practitioners are added by an amendment in force from November 1, 2026. Police may take a person to be examined but have no power to hold him for days. Releasing him or waiting 3 days leaves a hopeless man with a past attempt, a goodbye message and a walk onto thin ice without protection.",
         keyFeature: { topic: "suicide-risk", n: 3 },
         source: "mb-mha",
       },
       {
         id: "q4",
         kind: "single",
-        update: "You complete the application. A medevac flight will take him to a designated psychiatric facility tonight.",
-        prompt: "Which of the following does your application authorize once he arrives at the designated facility?",
+        update: "A medevac flight will take him to a designated psychiatric facility tonight.",
+        prompt: "Which of the following does an application under section 8 authorize once he arrives at the designated facility?",
         options: ["Admission until a review board hearing", "Detention and assessment for 72 hours", "Detention up to 24 hours", "Involuntary admission for 21 days", "Treatment without his consent"],
         correct: 1,
         explanation:
@@ -176,12 +176,12 @@ export const SUICIDE_RISK_S72: Samp[] = [
         kind: "menu",
         select: 3,
         prompt: "Which of the following are most appropriate to include in his discharge plan?",
-        options: ["Antidepressant started today", "Bereavement support adapted for him", "Family physician review within 72 hours", "Leave from his bakery job", "Lorazepam at bedtime for sleep", "One-to-one staff watch at all times", "Picture-based safety plan made with him"],
+        options: ["Antidepressant started today", "Bereavement support adapted for him", "Family physician review within 72 hours", "Leave from his bakery job", "Move to a quieter group home", "One-to-one staff watch at all times", "Picture-based safety plan made with him"],
         correct: [1, 2, 6],
         explanation:
-          "A safety plan written with him, using pictures or simple words, follows the advice to use his preferred communication tools and to adapt plans for people with a learning disability. The consensus guidelines advise a debrief with the patient and caregivers within about 72 hours of an emergency visit, and grief support suited to his level of understanding treats the cause of his distress. Three weeks of grief does not call for an antidepressant today. A sedative adds falls and confusion without treating grief. Constant one-to-one watching is out of proportion to his risk, and time off his job removes a protective routine.",
+          "A safety plan written with him, using pictures or simple words, follows guideline 2.3 of the Canadian consensus guidelines, which advises using his preferred communication tools. Guideline 30.2 advises a debrief with the patient and caregivers as soon as possible, for example within 72 hours, after an emergency visit. Grief support suited to his level of understanding treats the cause of his distress. Three weeks of grief does not call for an antidepressant today. Moving him away from housemates he likes, or taking him off his job, removes the people and routine that protect him. Constant one-to-one watching is out of proportion to his risk.",
         keyFeature: { topic: "suicide-risk", n: 4 },
-        source: "nice-ng225",
+        source: "sullivan-idd",
       },
       {
         id: "q4",
@@ -196,7 +196,7 @@ export const SUICIDE_RISK_S72: Samp[] = [
         source: "sullivan-idd",
       },
     ],
-    sources: [S.sullivan, S.nice],
+    sources: [S.sullivan],
     ...META,
   },
   /* 42 Six days after release from custody ---------------------------------- */
