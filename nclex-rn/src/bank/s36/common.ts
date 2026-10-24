@@ -226,3 +226,27 @@ export const ACR_CONTRAST: Source = {
   year: 2024,
   url: "https://geiselmed.dartmouth.edu/radiology/wp-content/uploads/sites/47/2024/08/ACR-contrast-2024.pdf",
 };
+export const HRS_MRI: Source = {
+  body: "Indik JH, Gimbel JR, Abe H, et al. Heart Rhythm Society",
+  work: "2017 HRS Expert Consensus Statement on Magnetic Resonance Imaging and Radiation Exposure in Patients With Cardiovascular Implantable Electronic Devices. Heart Rhythm 14(7):e97",
+  year: 2017,
+  url: "https://pubmed.ncbi.nlm.nih.gov/28502708/",
+};
+export const REFEED: Source = {
+  body: "da Silva JSV, Seres DS, Sabino K, et al. American Society for Parenteral and Enteral Nutrition",
+  work: "ASPEN Consensus Recommendations for Refeeding Syndrome. Nutrition in Clinical Practice 35(2):178",
+  year: 2020,
+  url: "https://pubmed.ncbi.nlm.nih.gov/32115791/",
+};
+export const HYPONATREMIA: Source = {
+  body: "Spasovski G, Vanholder R, Allolio B, et al. Hyponatraemia Guideline Development Group",
+  work: "Clinical Practice Guideline on Diagnosis and Treatment of Hyponatraemia. European Journal of Endocrinology 170(3):G1",
+  year: 2014,
+  url: "https://pubmed.ncbi.nlm.nih.gov/24569125/",
+};
+export const DI: Source = {
+  body: "Tomkins M, Lawless S, Martin-Grace J, Sherlock M, Thompson CJ",
+  work: "Diagnosis and Management of Central Diabetes Insipidus in Adults. Journal of Clinical Endocrinology and Metabolism 107(10):2701",
+  year: 2022,
+  url: "https://pubmed.ncbi.nlm.nih.gov/35771962/",
+};

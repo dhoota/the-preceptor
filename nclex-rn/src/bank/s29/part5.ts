@@ -52,7 +52,7 @@ export const PART5: Item[] = [
       difficulty: 5,
       stem: "A telehealth nurse takes a call from the parent of a 6-year-old who has a tracheostomy and receives care at home. The parent is trained in suctioning and emergency tube changes. The parent says the child is breathing hard, the pulse oximeter reads 85% and the tube is in place. Secretions have been thick all day. Complete the diagram by choosing the condition the child is most likely experiencing, 2 actions to take and 2 parameters to monitor.",
       rationale:
-        "Thick secretions, hard breathing and an oxygen saturation of 85% with the tube in place point to a tube blocked by mucus. The parent suctions the tube now. If the catheter will not pass or breathing does not improve, the parent changes the tube using emergency supplies. Oxygen saturation and work of breathing show whether the airway has cleared. Waiting or driving to a clinic delays airway care.",
+        "Thick secretions, hard breathing and an oxygen saturation of 85% with the tube in place point to a tube blocked by mucus. The parent suctions the tube now. If the catheter will not pass or breathing does not improve, the parent changes the tube using emergency supplies. If breathing still does not improve, the parent calls emergency services. Oxygen saturation and work of breathing show whether the airway has cleared. Waiting or driving to a clinic delays airway care.",
       sources: [HOCKENBERRY, BRIGGS],
     }),
     kind: "bowtie",

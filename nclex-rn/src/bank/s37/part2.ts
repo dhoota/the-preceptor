@@ -196,13 +196,13 @@ export const PART2: Item[] = [
       difficulty: 4,
       stem: "A 68-year-old client is on day 1 after an anterior myocardial infarction. BP is 82/58 mmHg, heart rate 112/minute and SpO2 89% on 4 L/minute by nasal cannula. Crackles are heard to the mid-lung fields and the neck veins are distended. Urine output was 15 mL in the past hour. Which two prescriptions should the nurse clarify with the provider? Select two.",
       rationale:
-        "Low BP with crackles to the mid-lung fields, distended neck veins and low urine output after a large infarction fit cardiogenic shock with congestion. A rapid 1000 mL bolus adds volume to lungs that are already wet. Lying flat with the legs raised also returns more blood to a failing ventricle and worsens breathing. A vasopressor, an inotrope, more oxygen, a urinary catheter and early revascularization all fit current care.",
+        "Low BP with crackles to the mid-lung fields, distended neck veins and low urine output after a large infarction fit cardiogenic shock with congestion. A rapid 1000 mL bolus adds volume to lungs that are already wet. Lying flat with the legs raised also returns more blood to a failing ventricle and worsens breathing. A vasopressor, a lactate level, more oxygen, a urinary catheter and early revascularization all fit current care.",
       sources: [CARDIOGENIC],
     }),
     kind: "msn",
     select: 2,
     options: [
-      { text: "Start a dobutamine infusion", why: "An inotrope supports a failing ventricle once BP is supported." },
+      { text: "Draw a serum lactate level", why: "Lactate tracks tissue perfusion in shock and guides treatment." },
       { text: "Infuse 0.9% sodium chloride 1000 mL over 30 minutes", why: "A large bolus worsens pulmonary congestion in a client with crackles and distended neck veins." },
       { text: "Place the client flat with the legs raised", why: "Lying flat with legs raised loads the failing heart and worsens breathing." },
       { text: "Titrate norepinephrine to a MAP of 65 mmHg", why: "Norepinephrine is the usual first vasopressor in cardiogenic shock." },

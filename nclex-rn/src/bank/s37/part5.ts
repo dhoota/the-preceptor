@@ -100,7 +100,7 @@ export const PART5: Item[] = [
       difficulty: 4,
       stem: "An 84-year-old client with dysphagia after a stroke receives a high-protein formula at 60 mL each hour through a gastrostomy tube. Water flushes are 30 mL every 4 hours. Over 5 days the client has become drowsy and more confused. Mucous membranes are dry and urine is scant and dark. Sodium is 156 mEq/L (156 mmol/L), BUN 48 mg/dL (17.1 mmol/L) and creatinine 1.1 mg/dL (97 micromol/L). Which cause is most likely?",
       rationale:
-        "The client gets small water flushes but a large protein and solute load. Urea from the protein pulls water out in the urine, and the client cannot drink in response to thirst. Water is lost faster than sodium, so sodium rises to 156 mEq/L. A high BUN of 48 mg/dL with a normal creatinine fits dehydration and a high protein intake. Diabetes insipidus gives large volumes of dilute urine. Excess antidiuretic hormone lowers sodium.",
+        "A high-protein formula gives a large solute load that needs water for excretion. The flushes supply little free water, and the client cannot drink in response to thirst. Water is lost faster than sodium, so sodium rises to 156 mEq/L. A high BUN of 48 mg/dL with a normal creatinine fits dehydration and a high protein intake. Diabetes insipidus gives large volumes of dilute urine. Excess antidiuretic hormone lowers sodium.",
       sources: [HINKLE],
     }),
     kind: "mc",

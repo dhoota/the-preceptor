@@ -1,0 +1,226 @@
+import type { Item } from "@/engine/types";
+import { CDC_OPIOID, FDA_HOME, FDA_HOME_ENV, ISMP_HIGH, ISMP_PUMP, NFPA99, POTTER, TALL_MAN, meta } from "./common";
+
+export const PART4: Item[] = [
+  {
+    ...meta("rn-s31-31", {
+      need: "SIPC",
+      topic: "Hydroxyzine prescription with a hydralazine tablet",
+      cjmm: "action",
+      process: "nursing-process",
+      difficulty: 2,
+      stem: "A client with an itchy rash has a prescription for hydroxyzine 25 mg by mouth every 6 hours as needed. The tablet removed from the dispensing cabinet is labeled hydrALAZINE 25 mg. The client's BP is 112/70 mmHg. What should the nurse do?",
+      rationale:
+        "Hydroxyzine and hydralazine are look-alike names. Tall man letters, hydrOXYzine and hydrALAZINE, mark the difference. The tablet is an antihypertensive, not an antihistamine. A BP of 112/70 mmHg leaves little room for an unneeded BP drug. The nurse holds the tablet, returns it and contacts the pharmacy for the prescribed drug. A matching dose does not make the drug correct.",
+      sources: [TALL_MAN],
+    }),
+    kind: "mc",
+    options: [
+      { text: "Give the tablet, since the dose is the same", why: "A matching dose does not make a different drug safe. Hydralazine lowers BP." },
+      { text: "Give it and recheck the BP in 1 hour", why: "Monitoring after the fact does not fix giving the wrong drug." },
+      { text: "Hold the tablet and contact the pharmacy", why: "The label names a different drug, so the nurse obtains the one prescribed." },
+      { text: "Ask the client which pill usually comes", why: "The client's memory cannot confirm the drug in hand." },
+    ],
+    correct: 2,
+  },
+  {
+    ...meta("rn-s31-32", {
+      need: "SIPC",
+      topic: "System fixes after a traZODone and traMADol mix-up",
+      cjmm: "generate",
+      process: "nursing-process",
+      difficulty: 3,
+      stem: "A medication safety committee reviews a near miss in which traMADol was nearly given in place of traZODone. Which measures would reduce look-alike, sound-alike errors? Select all that apply.",
+      rationale:
+        "Tall man letters draw the eye to the part of each name that differs. Writing the indication on the prescription lets the nurse see that a sleep drug and an analgesic do not match. Barcode scanning checks the product against the prescription. Read-back with spelling catches sound-alike errors in phone orders. Storing look-alikes together invites a wrong pick. Tablet color varies by maker. Brand names can also be confused.",
+      sources: [TALL_MAN, POTTER],
+    }),
+    kind: "sata",
+    options: [
+      { text: "Store the two drugs side by side", why: "Shelving look-alikes together invites picking the wrong one." },
+      { text: "Use tall man letters on labels and screens", why: "Capital letters highlight the part of each name that differs." },
+      { text: "Include the indication on each prescription", why: "A stated purpose shows when the drug in hand does not fit the problem." },
+      { text: "Rely on tablet color to tell them apart", why: "Tablet appearance varies by manufacturer and is not a reliable check." },
+      { text: "Scan the barcode before each dose", why: "Scanning matches the product with the prescription before it is given." },
+      { text: "Read back and spell names in phone orders", why: "Spelling the name aloud catches sound-alike errors." },
+      { text: "List the drugs only by brand name", why: "Brand names can be confused too. Generic names with tall man letters are standard." },
+    ],
+    correct: [1, 2, 4, 5],
+  },
+  {
+    ...meta("rn-s31-33", {
+      need: "SIPC",
+      topic: "Hydromorphone vial for a morphine prescription",
+      cjmm: "recognize",
+      process: "clinical-judgment",
+      difficulty: 4,
+      stem: "A client 1 day after surgery has a prescription for morphine 2 mg IV every 2 hours as needed for pain. The nurse removes a 1 mL vial from the dispensing cabinet labeled HYDROmorphone 2 mg/mL. Which problem should the nurse recognize before preparing the dose?",
+      rationale:
+        "The vial holds hydromorphone, not morphine. The names look alike, so HYDROmorphone carries tall man letters. CDC conversion factors rate hydromorphone at about 5 times the morphine equivalent per milligram. Giving 2 mg of hydromorphone in place of 2 mg of morphine is an overdose that can cause respiratory depression. Opioids are high-alert drugs. The 1 mL vial holds exactly 2 mg, so the volume is not the issue.",
+      sources: [TALL_MAN, CDC_OPIOID, ISMP_HIGH],
+    }),
+    kind: "mc",
+    options: [
+      { text: "The vial volume is more than the dose needs", why: "The 1 mL vial holds 2 mg, the prescribed amount, so the volume is not the problem." },
+      { text: "The vial holds a more potent opioid than prescribed", why: "Hydromorphone is several times as potent as morphine per milligram." },
+      { text: "The dose is above the usual adult range", why: "Morphine 2 mg IV is within the usual adult range." },
+      { text: "The vial needs a filter needle to draw up", why: "A filter needle is used for glass ampules, not for vials." },
+    ],
+    correct: 1,
+  },
+  {
+    ...meta("rn-s31-34", {
+      need: "SIPC",
+      topic: "Drug library profile after a unit transfer",
+      cjmm: "action",
+      process: "nursing-process",
+      difficulty: 3,
+      stem: "A client receiving a heparin infusion is transferred from the intensive care unit to a medical unit. The smart pump is still set to the critical care profile of the drug library. What should the receiving nurse do?",
+      rationale:
+        "Drug library profiles carry dose limits set for each care area. Critical care limits can allow doses that are unsafe on a medical unit. When a client transfers, the profile is changed to match the receiving unit. Basic mode turns off dose checking. Waiting for the next bag leaves the wrong limits in place. Heparin is a high-alert drug, so the new programming is double checked.",
+      sources: [ISMP_PUMP, ISMP_HIGH],
+    }),
+    kind: "mc",
+    options: [
+      { text: "Leave the profile, since the rate is unchanged", why: "Critical care limits may allow doses that are unsafe on a medical unit." },
+      { text: "Switch the pump to basic mode for the transfer", why: "Basic mode removes the dose error checks of the drug library." },
+      { text: "Wait for the next bag to change the profile", why: "The mismatch exists now and leaves the wrong limits in place until then." },
+      { text: "Reprogram the pump in the medical unit profile", why: "The profile must match the receiving unit so its dose limits apply." },
+    ],
+    correct: 3,
+  },
+  {
+    ...meta("rn-s31-35", {
+      need: "SIPC",
+      topic: "Dose delivered after a wrong library concentration",
+      cjmm: "analyze",
+      process: "clinical-judgment",
+      difficulty: 5,
+      stem: "The primary health care provider prescribes norepinephrine 8 mcg/minute IV. The bag from pharmacy contains norepinephrine 8 mg in 250 mL. The nurse selected the drug library entry for 4 mg in 250 mL, and the pump calculated a rate of 30 mL/hour. What dose is the client receiving?",
+      rationale:
+        "The bag holds 8 mg in 250 mL, which is 32 mcg/mL. The pump assumed 16 mcg/mL, so it set 30 mL/hour for 8 mcg/minute. At 30 mL/hour the real bag delivers 960 mcg each hour, which is 16 mcg/minute. The client receives double the prescribed dose. Selecting the concentration that matches the bag label prevents this error.",
+      calc: { expr: "30 * (8 * 1000 / 250) / 60", answer: 16, unit: "mcg/minute", round: 0, steps: ["8 * 1000 / 250 = 32", "30 * 32 = 960", "960 / 60 = 16"] },
+      sources: [ISMP_PUMP, ISMP_HIGH],
+    }),
+    kind: "mc",
+    options: [
+      { text: "4 mcg/minute", why: "The bag is more concentrated than the pump assumes, so the dose is higher than prescribed, not lower." },
+      { text: "8 mcg/minute", why: "The pump shows 8 mcg/minute because it assumes 16 mcg/mL. The bag holds 32 mcg/mL." },
+      { text: "16 mcg/minute", why: "30 mL/hour of a 32 mcg/mL bag is 960 mcg/hour, which is 16 mcg/minute." },
+      { text: "32 mcg/minute", why: "Delivering 32 mcg/minute from this bag would need 60 mL/hour." },
+    ],
+    correct: 2,
+  },
+  {
+    ...meta("rn-s31-36", {
+      need: "SIPC",
+      topic: "Safe daily use of smart infusion pumps",
+      cjmm: "generate",
+      process: "nursing-process",
+      difficulty: 3,
+      stem: "The nurse cares for a client with several IV infusions on smart pumps. Which actions follow safe smart pump practice? Select all that apply.",
+      rationale:
+        "Dose checks work only when the drug, concentration and care area are selected correctly. Tracing each line by hand from bag to pump to client confirms the channel and route. Plain IV fluids are also programmed through the library. Discontinued continuous infusions are removed from the pole at once. Basic mode bypasses dose checks. A secondary bag must hang above the primary. A soft limit alert is checked against the prescription before any override.",
+      sources: [ISMP_PUMP],
+    }),
+    kind: "sata",
+    options: [
+      { text: "Use basic mode when the drug is hard to find", why: "Basic mode removes the dose error checks of the drug library." },
+      { text: "Select the concentration that matches the bag", why: "The pump calculates the dose from the concentration selected." },
+      { text: "Hang a secondary bag level with the primary", why: "The primary bag is lowered below the secondary. Equal heights let both run at unpredictable rates." },
+      { text: "Trace each line by hand from bag to client", why: "Tracing confirms the right pump channel and route for each infusion." },
+      { text: "Accept a soft limit alert without checking", why: "A soft limit warns that a value is outside the expected range and needs review." },
+      { text: "Program plain IV fluids through the library", why: "Library use for IV fluids adds rate limits that basic mode lacks." },
+      { text: "Remove a discontinued opioid infusion at once", why: "A stopped infusion left hanging can be restarted or connected by mistake." },
+    ],
+    correct: [1, 3, 5, 6],
+  },
+  {
+    ...meta("rn-s31-37", {
+      need: "SIPC",
+      topic: "Low oxygen cylinder before a trip to radiology",
+      cjmm: "action",
+      process: "nursing-process",
+      difficulty: 2,
+      stem: "A client receiving oxygen at 2 L/minute by nasal cannula will travel by stretcher to the radiology department for a CT scan. The gauge on the portable cylinder points to the red zone. What should the nurse do?",
+      rationale:
+        "A gauge in the red zone means the cylinder is close to empty. It could run out during transport or a wait in radiology. The nurse replaces it with a full cylinder before leaving. A higher flow empties the cylinder faster. Removing oxygen from a client who needs it risks hypoxemia. Leaving with a nearly empty cylinder risks a gap before radiology can supply another.",
+      sources: [POTTER, NFPA99],
+    }),
+    kind: "mc",
+    options: [
+      { text: "Replace it with a full cylinder before leaving", why: "A full cylinder covers the trip and any wait in radiology." },
+      { text: "Raise the flow to 4 L/minute for the trip", why: "A higher flow empties a nearly empty cylinder faster." },
+      { text: "Remove the oxygen for the short trip", why: "The client needs oxygen, and trips often take longer than planned." },
+      { text: "Leave and ask radiology to supply a cylinder", why: "The cylinder may run out before radiology can supply another." },
+    ],
+    correct: 0,
+  },
+  {
+    ...meta("rn-s31-38", {
+      need: "SIPC",
+      topic: "Handling a portable oxygen cylinder in transport",
+      cjmm: "action",
+      process: "nursing-process",
+      difficulty: 3,
+      stem: "The nurse prepares to move a client on oxygen by stretcher to another unit using a portable cylinder. Which actions are safe? Select all that apply.",
+      rationale:
+        "The gauge is checked before leaving so the supply lasts the trip. The cylinder rides in the stretcher holder, where it cannot fall and break its valve. Flow is confirmed at the cannula after the switch to the cylinder. On arrival the client goes back on wall oxygen and the cylinder valve is closed. Oil or grease near oxygen fittings can ignite. Lifting a cylinder by its valve can damage it.",
+      sources: [NFPA99, POTTER],
+    }),
+    kind: "sata",
+    options: [
+      { text: "Lubricate the regulator threads with oil", why: "Oil or grease on oxygen fittings is a fire hazard." },
+      { text: "Check the gauge before leaving the room", why: "The gauge shows whether the supply will last the trip." },
+      { text: "Lift the cylinder by its valve", why: "Lifting by the valve can damage it and release gas under high pressure." },
+      { text: "Secure the cylinder in the stretcher holder", why: "A secured cylinder cannot fall and break its valve." },
+      { text: "Confirm flow at the cannula after switching", why: "Checking flow confirms the client is receiving oxygen from the cylinder." },
+      { text: "Close the cylinder valve after returning to wall oxygen", why: "Closing the valve stops gas loss once the cylinder is not in use." },
+    ],
+    correct: [1, 3, 4, 5],
+  },
+  {
+    ...meta("rn-s31-39", {
+      need: "SIPC",
+      topic: "Electrical safety for home hemodialysis",
+      cjmm: "generate",
+      process: "teaching",
+      difficulty: 3,
+      stem: "A client will start home hemodialysis next month. The nurse reviews electrical safety for the home setup. Which instructions should the nurse include? Select all that apply.",
+      rationale:
+        "Older homes may lack the outlets and wiring a dialysis machine needs, so an electrician checks them first. Food and drinks are kept away from the machine. Pets can chew cords and children can change settings, so both are kept away. A plan for power failure is in place before treatment starts. A plug is removed by its head, not by pulling the cord. Vents stay uncovered so the machine does not overheat.",
+      sources: [FDA_HOME, FDA_HOME_ENV],
+    }),
+    kind: "sata",
+    options: [
+      { text: "Have an electrician check the outlet and wiring", why: "Home wiring must support the machine before treatment starts." },
+      { text: "Unplug the machine by pulling the cord", why: "Pulling the cord can damage it and expose wires." },
+      { text: "Keep drinks away from the machine", why: "Spilled liquid can damage the machine and create a shock hazard." },
+      { text: "Keep pets away from the power cord", why: "Pets can chew cords and expose live wires." },
+      { text: "Plan what to do if the power fails", why: "A backup plan lets the client end treatment safely during an outage." },
+      { text: "Cover the machine vents to keep out dust", why: "Blocked vents can make the machine overheat." },
+    ],
+    correct: [0, 2, 3, 4],
+  },
+  {
+    ...meta("rn-s31-40", {
+      need: "SIPC",
+      topic: "Home dialysis setup that needs follow-up",
+      cjmm: "evaluate",
+      process: "teaching",
+      difficulty: 3,
+      stem: "A client on home hemodialysis describes the home setup at a monthly clinic visit. Which statement by the client needs follow-up?",
+      rationale:
+        "Dialysis machine instructions call for a direct connection to a properly wired, grounded outlet. An extension cord can overheat and is a weak point in the circuit. The nurse reviews the setup and contacts the technical support line. An electrician's check, a separate table for drinks and emergency numbers at hand are all safe practices.",
+      sources: [FDA_HOME, FDA_HOME_ENV],
+    }),
+    kind: "mc",
+    options: [
+      { text: "\"My electrician checked the outlet before I started.\"", why: "A wiring check before the first treatment is a safe practice." },
+      { text: "\"I plug the machine into an extension cord.\"", why: "The machine connects straight to a checked outlet, and a cord adds a fire and shock risk." },
+      { text: "\"I keep my water glass on a separate table.\"", why: "Keeping liquids away from the machine lowers the risk of spills." },
+      { text: "\"I have emergency numbers taped to the machine.\"", why: "Emergency numbers at hand support a plan for device problems." },
+    ],
+    correct: 1,
+  },
+];

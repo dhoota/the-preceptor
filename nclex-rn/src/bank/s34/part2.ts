@@ -191,7 +191,7 @@ export const PART2: Item[] = [
       topic: "Positions that counter burn contractures",
       cjmm: "generate",
       process: "nursing-process",
-      difficulty: 3,
+      difficulty: 4,
       stem: "A 36-year-old client has deep partial-thickness burns to the front of the neck, both axillae and the front of both elbows. The client prefers two pillows under the head with the arms folded across the chest. Which measures should the nurse include in the plan to prevent contractures? Select all that apply.",
       rationale:
         "The position of comfort is the position of contracture. Burns on the front of the neck pull it into flexion, so the neck rests slightly extended with no pillow. Axillary burns pull the shoulders into adduction, so the arms rest away from the body. Burns on the front of the elbow pull it into flexion, so the elbows rest straight. Daily exercise keeps range of motion.",

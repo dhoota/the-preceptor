@@ -1,0 +1,298 @@
+import type { Item } from "@/engine/types";
+import {
+  CDC_EPI_RISK,
+  FDA_DISPOSAL,
+  FDA_FLUSH,
+  FDA_MQSA,
+  HOCKENBERRY,
+  OSHA_NOISE,
+  POTTER,
+  USPSTF_BREAST,
+  USPSTF_CERVIX,
+  YB_MALARIA,
+  meta,
+} from "./common";
+
+export const PART5: Item[] = [
+  {
+    ...meta("rn-s32-41", {
+      need: "HPM",
+      topic: "Taking malaria prevention tablets for a trip",
+      cjmm: "generate",
+      process: "teaching",
+      difficulty: 4,
+      stem: "A 30-year-old client will spend 2 weeks in an area where malaria is common. The travel clinic prescribes atovaquone-proguanil once daily. Which instructions should the nurse include? Select all that apply.",
+      rationale:
+        "Atovaquone-proguanil starts 1 to 2 days before entering the malaria area and continues daily for 7 days after leaving it. Doses are not skipped, because protection depends on steady drug levels. A repellent with DEET reduces mosquito bites, since no drug is fully protective. Fever during or after travel needs prompt care and a malaria test. Stopping on the day of return leaves late infection untreated.",
+      refs: ["Atovaquone-proguanil: start 1 to 2 days before travel and continue daily for 7 days after leaving the malaria area."],
+      sources: [YB_MALARIA],
+    }),
+    kind: "sata",
+    options: [
+      { text: "Start the tablets 1 to 2 days before arriving", why: "Starting early builds drug levels before the first possible exposure." },
+      { text: "Stop the tablets on the day you fly home", why: "The drug continues for 7 days after leaving to cover recent infection." },
+      { text: "Use an insect repellent that contains DEET", why: "Repellent cuts mosquito bites and adds to drug protection." },
+      { text: "Skip a dose on days with no mosquito bites", why: "Unnoticed bites can transmit malaria, so doses are taken every day." },
+      { text: "Take the tablets for 7 days after leaving the area", why: "The 7 days after leaving cover parasites picked up near the end of the trip." },
+      { text: "Start the tablets after arrival once you settle in", why: "Starting late leaves the first days of exposure unprotected." },
+      { text: "Seek care for any fever after returning home", why: "Fever after travel to a malaria area needs prompt testing for malaria." },
+    ],
+    correct: [0, 2, 4, 6],
+  },
+  {
+    ...meta("rn-s32-42", {
+      need: "HPM",
+      topic: "Reading incidence and prevalence over 4 years",
+      cjmm: "analyze",
+      process: "clinical-judgment",
+      difficulty: 4,
+      trend: true,
+      stem: "A public health nurse reviews county data for a chronic condition. The county population stays near 50 000. Based on the trend, which conclusion is supported?",
+      tabs: [
+        {
+          title: "County Surveillance Data",
+          table: {
+            head: ["Measure", "2022", "2023", "2024", "2025"],
+            rows: [
+              ["New diagnoses during the year", "120", "118", "122", "119"],
+              ["People living with the condition on December 31", "1500", "1590", "1680", "1770"],
+              ["County population", "50 000", "50 100", "49 900", "50 000"],
+            ],
+          },
+        },
+      ],
+      rationale:
+        "Incidence counts new cases in a period. New diagnoses stay between 118 and 122 a year, so incidence is steady. Prevalence counts all existing cases at a point in time. People living with the condition rise from 1500 to 1770 while the population stays near 50 000, so prevalence is rising. When incidence holds steady and prevalence climbs, people are living longer with the condition rather than more people developing it.",
+      sources: [CDC_EPI_RISK],
+    }),
+    kind: "mc",
+    options: [
+      { text: "Incidence is climbing each year", why: "New diagnoses stay between 118 and 122, so incidence is steady." },
+      { text: "Prevalence is falling as prevention works", why: "People living with the condition rose from 1500 to 1770, so prevalence is rising." },
+      { text: "Prevalence is rising while incidence holds steady", why: "Existing cases grow each year while new cases stay level." },
+      { text: "Incidence and prevalence are rising together", why: "Only existing cases rise. New diagnoses do not increase." },
+    ],
+    correct: 2,
+  },
+  {
+    ...meta("rn-s32-43", {
+      need: "HPM",
+      topic: "Hearing change in a worker who stopped wearing earplugs",
+      cjmm: "prioritize",
+      process: "clinical-judgment",
+      difficulty: 5,
+      stem: "A 46-year-old factory worker's 8-hour noise exposure averages 92 decibels. He stopped wearing earplugs a year ago because they itch. He reports ringing in both ears after shifts. Ear canals are clear and he has no vertigo. Left ear thresholds at 2000, 3000 and 4000 Hz were 10, 10 and 15 dB at baseline and are 20, 25 and 40 dB now. Complete the diagram by choosing the condition the client is most likely experiencing, 2 actions to take and 2 parameters to monitor.",
+      rationale:
+        "The left ear thresholds have worsened by 10, 15 and 25 dB, an average above 10 dB, which is a standard threshold shift. Noise above the 85 decibel action level, no hearing protection and ringing after shifts point to noise-induced hearing loss. The worker is refitted with protection, retrained and referred for audiological evaluation. Annual audiograms and daily protector use are tracked. Clear canals argue against wax, and no vertigo argues against Meniere disease.",
+      refs: ["A hearing conservation program applies at an 8-hour average of 85 decibels. A standard threshold shift is an average change of 10 dB or more from baseline at 2000, 3000 and 4000 Hz in either ear."],
+      sources: [OSHA_NOISE],
+    }),
+    kind: "bowtie",
+    conditions: [
+      { text: "Age-related hearing loss", why: "Age alone does not explain a shift this large with ringing after loud shifts at 46." },
+      { text: "Cerumen impaction", why: "Wax blocks the canal. The ear canals are clear." },
+      { text: "Noise-induced hearing loss", why: "Loud work noise without protection, ringing after shifts and a threshold shift fit this." },
+      { text: "Meniere disease", why: "Meniere disease causes episodes of vertigo. He has none." },
+    ],
+    actions: [
+      { text: "Irrigate both ear canals", why: "The canals are clear, so irrigation has no purpose." },
+      { text: "Refit hearing protection and retrain on its use", why: "A threshold shift calls for refitting and retraining, with better protection if needed." },
+      { text: "Advise hearing aids in place of protection", why: "Hearing aids do not stop further noise damage." },
+      { text: "Refer for a full audiological evaluation", why: "A persistent shift needs clinical testing to confirm the type and degree of loss." },
+      { text: "Allow earplugs only during the loudest tasks", why: "Exposure averages 92 decibels over the shift, so protection is needed throughout." },
+    ],
+    parameters: [
+      { text: "Annual audiogram compared with baseline", why: "Yearly audiograms show whether the hearing loss is progressing." },
+      { text: "Number of vertigo spells each week", why: "Vertigo tracks inner ear balance disorders, which he does not have." },
+      { text: "Daily use of hearing protection at work", why: "Consistent protector use is the main way to prevent further loss." },
+      { text: "Weekly blood pressure readings at home", why: "Blood pressure does not show noise damage to hearing." },
+      { text: "Color of the tympanic membranes", why: "Membrane color reflects middle ear infection, not noise injury." },
+    ],
+    correct: { condition: 2, actions: [1, 3], parameters: [0, 2] },
+  },
+  {
+    ...meta("rn-s32-44", {
+      need: "HPM",
+      topic: "Matching osteoporosis activities to prevention levels",
+      cjmm: "analyze",
+      process: "nursing-process",
+      difficulty: 2,
+      stem: "A community nurse plans a bone health program. Complete the sentence by placing the correct activity in each blank.",
+      rationale:
+        "Primary prevention stops disease before it starts, so weight-bearing exercise in youth builds peak bone mass. Secondary prevention finds disease early, so bone density testing at 65 detects osteoporosis before a fracture. Tertiary prevention limits disability after disease causes harm, so therapy after a vertebral fracture restores function. A colonoscopy and an influenza vaccine prevent other diseases, not osteoporosis.",
+      sources: [POTTER],
+    }),
+    kind: "dnd",
+    scoring: "zero-one",
+    template: "For osteoporosis, {0} is primary prevention, {1} is secondary prevention and {2} is tertiary prevention.",
+    targets: ["Primary prevention", "Secondary prevention", "Tertiary prevention"],
+    tokens: [
+      { text: "a colonoscopy at age 45", why: "A colonoscopy screens for colorectal cancer, not bone loss." },
+      { text: "bone density testing at 65", why: "Screening finds osteoporosis early, before a fracture, which is secondary prevention." },
+      { text: "weight-bearing exercise in youth", why: "Building bone mass before any disease is primary prevention." },
+      { text: "a yearly influenza vaccine", why: "This vaccine prevents influenza, not osteoporosis." },
+      { text: "physical therapy after a spine fracture", why: "Restoring function after a fracture limits disability, which is tertiary prevention." },
+    ],
+    correct: [2, 1, 4],
+  },
+  {
+    ...meta("rn-s32-45", {
+      need: "HPM",
+      topic: "Cervical screening intervals in three clients",
+      cjmm: "generate",
+      process: "teaching",
+      difficulty: 2,
+      stem: "A women's health nurse reviews screening plans. A 34-year-old had a negative primary HPV test today and has had no abnormal results. A 67-year-old has had regular normal results for the past 10 years. A 52-year-old had a total hysterectomy with removal of the cervix for fibroids. Complete the following sentence by choosing from the lists of options.",
+      rationale:
+        "From 30 to 65 years, a negative primary HPV test is repeated in 5 years. After 65, screening stops when prior results have been adequate and normal and risk is not high. A hysterectomy with removal of the cervix for a benign reason, such as fibroids, ends cervical screening. Shorter intervals add procedures without added benefit.",
+      refs: ["Cervical screening at 30 to 65 years: primary HPV testing every 5 years, cotesting every 5 years or cytology every 3 years. Stop after 65 with adequate normal prior screening. No screening after hysterectomy with cervix removal for benign disease."],
+      sources: [USPSTF_CERVIX],
+    }),
+    kind: "cloze",
+    scoring: "zero-one",
+    template: "The 34-year-old should next be screened in {0}. The 67-year-old should {1}. The 52-year-old should {2}.",
+    blanks: [
+      {
+        options: [
+          { text: "1 year", why: "A yearly test is not needed after a negative HPV result." },
+          { text: "3 years", why: "Three years is the interval for cytology alone, not for primary HPV testing." },
+          { text: "5 years", why: "A negative primary HPV test is repeated in 5 years from 30 to 65." },
+          { text: "10 years", why: "Ten years exceeds the advised interval for this age." },
+        ],
+        correct: 2,
+      },
+      {
+        options: [
+          { text: "continue tests every 3 years", why: "Screening stops after 65 when prior results have been adequate and normal." },
+          { text: "stop cervical screening", why: "She is over 65 with adequate normal results, so screening ends." },
+          { text: "switch to yearly cytology", why: "More frequent testing adds harm without benefit at this age." },
+          { text: "have a colposcopy", why: "Colposcopy follows abnormal results. Hers are normal." },
+        ],
+        correct: 1,
+      },
+      {
+        options: [
+          { text: "have cytology of the vaginal cuff yearly", why: "Screening is not needed after removal of the cervix for a benign condition." },
+          { text: "have HPV testing every 5 years", why: "Without a cervix and with a benign reason for surgery, HPV screening is not advised." },
+          { text: "need no cervical screening", why: "Hysterectomy with cervix removal for fibroids ends cervical screening." },
+          { text: "start screening again at 65", why: "No cervical screening restarts after removal of the cervix for benign disease." },
+        ],
+        correct: 2,
+      },
+    ],
+  },
+  {
+    ...meta("rn-s32-46", {
+      need: "HPM",
+      topic: "Noise level that triggers a hearing conservation program",
+      cjmm: "recognize",
+      process: "nursing-process",
+      difficulty: 2,
+      stem: "An occupational health nurse reviews noise dosimetry for four workers who have never had a hearing test. Each value is the 8-hour time-weighted average. Which worker must be enrolled in the hearing conservation program?",
+      rationale:
+        "The employer must run a hearing conservation program, with audiograms, training and hearing protectors, for any worker whose 8-hour average reaches 85 decibels. Only the grinder operator at 87 decibels meets that action level. Exposures of 78, 82 and 84 decibels fall below it. Hearing protection may still be offered to these workers.",
+      refs: ["A hearing conservation program applies at an 8-hour time-weighted average of 85 decibels or more."],
+      sources: [OSHA_NOISE],
+    }),
+    kind: "mc",
+    options: [
+      { text: "A forklift driver exposed to 78 decibels", why: "This is below the 85 decibel action level for the program." },
+      { text: "A packer exposed to 82 decibels", why: "This is below the 85 decibel action level for the program." },
+      { text: "A press helper exposed to 84 decibels", why: "This is close to but still below the 85 decibel action level." },
+      { text: "A grinder operator exposed to 87 decibels", why: "An 8-hour average at or above 85 decibels requires enrollment in the program." },
+    ],
+    correct: 3,
+  },
+  {
+    ...meta("rn-s32-47", {
+      need: "HPM",
+      topic: "Calculating incidence among people at risk",
+      cjmm: "analyze",
+      process: "nursing-process",
+      difficulty: 2,
+      calc: { expr: "48 / (12400 - 400) * 1000", answer: 4, unit: "per 1000", round: 1, steps: ["12400 - 400 = 12000", "48 / 12000 * 1000 = 4"] },
+      stem: "A town of 12 400 adults had 400 adults already living with type 2 diabetes on January 1. During the year, 48 more adults were newly diagnosed. Calculate the incidence of type 2 diabetes for the year per 1000 adults at risk.",
+      rationale:
+        "Incidence counts new cases among people who could develop the disease. The 400 adults who already had diabetes cannot become new cases, so the population at risk is 12 000 adults. Dividing 48 new cases by 12 000 and multiplying by 1000 gives 4.0 per 1000. Using all 12 400 adults lowers the result. Counting the 400 existing cases measures prevalence, not incidence.",
+      sources: [CDC_EPI_RISK],
+    }),
+    kind: "mc",
+    options: [
+      { text: "3.9 per 1000", why: "This divides 48 by all 12 400 adults, including the 400 who could not become new cases." },
+      { text: "4.0 per 1000", why: "Forty-eight new cases among 12 000 adults at risk is 4.0 per 1000." },
+      { text: "32.3 per 1000", why: "This is the 400 existing cases out of 12 400, which is prevalence on January 1." },
+      { text: "36.1 per 1000", why: "This adds the 400 old and 48 new cases out of 12 400, which is prevalence at year end." },
+    ],
+    correct: 1,
+  },
+  {
+    ...meta("rn-s32-48", {
+      need: "HPM",
+      topic: "Explaining a dense breast notice after mammography",
+      cjmm: "generate",
+      process: "teaching",
+      difficulty: 4,
+      stem: "A 47-year-old client receives a normal screening mammogram result with a notice that says her breast tissue is dense. She has no symptoms and no family history of breast cancer. Which points should the nurse include when she asks what this means? Select all that apply.",
+      rationale:
+        "Dense tissue looks white on a mammogram, as tumors do, so cancers can be harder to see. Dense tissue also raises the risk of breast cancer. Mammograms every 2 years continue from 40 to 74. Some people with dense tissue benefit from added imaging, so she discusses it with her provider. Density is seen only on imaging and cannot be felt. A dense notice does not mean cancer was found.",
+      refs: ["Screening mammography every 2 years for women aged 40 to 74."],
+      sources: [FDA_MQSA, USPSTF_BREAST],
+    }),
+    kind: "sata",
+    options: [
+      { text: "Dense tissue means a cancer was found", why: "Density describes tissue type. Her result was normal." },
+      { text: "Dense tissue can hide a cancer on a mammogram", why: "Dense tissue and tumors both appear white, which lowers mammogram sensitivity." },
+      { text: "Dense tissue can be felt during a self-exam", why: "Density is a mammogram finding and cannot be felt by touch." },
+      { text: "Dense tissue raises the risk of breast cancer", why: "Women with dense breasts have a higher risk of breast cancer." },
+      { text: "Stop mammograms and switch to a yearly MRI", why: "Mammography continues. Added imaging, if used, is in addition to it." },
+      { text: "Continue screening mammograms every 2 years", why: "Biennial screening from 40 to 74 is advised regardless of density." },
+      { text: "Ask her provider whether added imaging suits her", why: "Supplemental imaging may help some people and is an individual decision." },
+    ],
+    correct: [1, 3, 5, 6],
+  },
+  {
+    ...meta("rn-s32-49", {
+      need: "SIPC",
+      topic: "Preventing dog bites in a young child",
+      cjmm: "action",
+      process: "teaching",
+      difficulty: 2,
+      stem: "A family with a 5-year-old has just adopted an adult dog from a shelter. The nurse gives safety teaching at a well-child visit. Which three instructions should the nurse include? Select three.",
+      rationale:
+        "Most dog bites to young children come from a dog the child knows, often at home. An adult stays with the child whenever the dog is present. A dog that is eating or sleeping may bite when disturbed. A child who stands still is less likely to trigger a chase than one who runs. Hugging a dog around the neck brings the child's face close to the dog's mouth.",
+      sources: [HOCKENBERRY],
+    }),
+    kind: "msn",
+    select: 3,
+    options: [
+      { text: "Let the child hug the dog around its neck", why: "A neck hug puts the child's face near the mouth of a dog that may feel trapped." },
+      { text: "Have an adult present when the child and dog are together", why: "Supervision lets an adult step in before a dog's warning signs lead to a bite." },
+      { text: "Teach the child to run if a strange dog comes close", why: "Running can trigger a chase. Standing still is safer." },
+      { text: "Leave the dog alone while it eats or sleeps", why: "A startled or guarding dog is more likely to bite." },
+      { text: "Pet any dog on a walk without asking the owner", why: "The owner is asked first, and the dog is allowed to sniff before petting." },
+      { text: "Teach the child to stand still if a strange dog comes close", why: "Staying still makes the child less interesting to an approaching dog." },
+    ],
+    correct: [1, 3, 5],
+  },
+  {
+    ...meta("rn-s32-50", {
+      need: "SIPC",
+      topic: "Leftover oxycodone in a home with a teenager",
+      cjmm: "evaluate",
+      process: "teaching",
+      difficulty: 1,
+      stem: "A client who had knee surgery 3 weeks ago no longer needs pain medicine and has 12 oxycodone tablets left. A 16-year-old lives in the home. Which statement by the client shows understanding of safe disposal?",
+      rationale:
+        "A drug take-back site, such as a pharmacy drop box, is the first choice for leftover opioids. If none is available, oxycodone is on the FDA flush list. Opioids in use are kept locked, because teens often get misused pills from family supplies. Saving pills invites misuse. Sharing a prescription is unsafe and illegal. A whole bottle in the trash can be found and taken.",
+      sources: [FDA_DISPOSAL, FDA_FLUSH],
+    }),
+    kind: "mc",
+    options: [
+      { text: "\"I will take them to a pharmacy drop-off box.\"", why: "A take-back site removes the opioid from the home safely." },
+      { text: "\"I will keep them in a kitchen drawer for later pain.\"", why: "Leftover opioids in an open drawer can be found and misused by the teen." },
+      { text: "\"I will give the extra tablets to my brother for his back.\"", why: "Sharing a prescription opioid is unsafe and illegal." },
+      { text: "\"I will throw the full bottle in the trash as it is.\"", why: "An intact bottle in the trash can be found and taken by others." },
+    ],
+    correct: 0,
+  },
+];

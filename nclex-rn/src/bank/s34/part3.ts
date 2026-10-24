@@ -50,7 +50,7 @@ export const PART3: Item[] = [
       topic: "Reading the IDDSI flow test",
       cjmm: "analyze",
       process: "clinical-judgment",
-      difficulty: 3,
+      difficulty: 4,
       stem: "A 74-year-old client with dysphagia after a stroke has a prescription for IDDSI Level 2 mildly thick drinks. The nurse tests a thickened juice from the kitchen with the IDDSI flow test. After 10 seconds, 2 mL of the 10 mL remains in the slip tip syringe. Complete the following sentence by choosing from the lists of options.",
       rationale:
         "In the flow test, a Level 2 mildly thick drink leaves 4 to 8 mL in the syringe after 10 seconds. A drink that leaves 1 to 4 mL is Level 1 slightly thick. This juice left 2 mL, so it is thinner than prescribed and flows too fast for the client. It goes back to be thickened further. A straw or added water would make the flow faster still.",
@@ -110,7 +110,7 @@ export const PART3: Item[] = [
       topic: "Using a vaginal cream applicator",
       cjmm: "action",
       process: "teaching",
-      difficulty: 3,
+      difficulty: 2,
       stem: "A 63-year-old client has a new prescription for estradiol vaginal cream with a reusable applicator. The nurse teaches the client how to use it. Which instruction should the nurse include?",
       rationale:
         "The client lies on the back with the knees bent, which opens the vagina and keeps the cream in place. The applicator is inserted deeply before the plunger is pushed. The applicator measures the dose, so the cream is not applied with a finger. It is washed with mild soap and warm water after each use. Boiling or hot water damages it.",

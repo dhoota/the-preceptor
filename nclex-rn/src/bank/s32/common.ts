@@ -113,7 +113,7 @@ export const PIROZZO: Source = {
 };
 export const FDA_OTC_HA: Source = {
   body: "US Food and Drug Administration",
-  work: "Medical Devices. Ear, Nose, and Throat Devices. Establishing Over-the-Counter Hearing Aids. Final Rule. Federal Register 87(158):50698",
+  work: "Medical Devices. Ear, Nose, and Throat Devices. Establishing Over-the-Counter Hearing Aids. Final Rule. Federal Register 87:50698",
   year: 2022,
   url: "https://www.federalregister.gov/documents/2022/08/17/2022-17230/medical-devices-ear-nose-and-throat-devices-establishing-over-the-counter-hearing-aids",
 };
@@ -275,7 +275,7 @@ export const USPSTF_BREAST: Source = {
 };
 export const FDA_MQSA: Source = {
   body: "US Food and Drug Administration",
-  work: "Mammography Quality Standards Act. Final Rule. Federal Register 88(47):15126, codified at 21 CFR 900.12",
+  work: "Mammography Quality Standards Act. Final Rule. Federal Register 88:15126, codified at 21 CFR 900.12",
   year: 2023,
   url: "https://www.federalregister.gov/documents/2023/03/10/2023-04550/mammography-quality-standards-act",
 };

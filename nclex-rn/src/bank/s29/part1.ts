@@ -1,5 +1,5 @@
 import type { Item } from "@/engine/types";
-import { ADA_SCHOOL, ASAM_AWM, HOCKENBERRY, KUO, NASN_IHP, NCCHC_JAILS, NCCHC_SEG, NGND, SIEGEL, meta } from "./common";
+import { ADA_SCHOOL, HALTER, HOCKENBERRY, KUO, NASN_IHP, NCCHC_JAILS, NCCHC_SEG, NGND, SIEGEL, meta } from "./common";
 
 export const PART1: Item[] = [
   {
@@ -139,15 +139,14 @@ export const PART1: Item[] = [
       difficulty: 3,
       stem: "A nurse in a county jail reviews the receiving screening forms that health-trained officers completed in the past hour. Which detainee should the nurse see first?",
       rationale:
-        "Alcohol withdrawal can be fatal. Tremor 12 hours after the last drink in a person who drinks heavily every day means withdrawal has begun. Seizures can follow within 48 hours, so this detainee is assessed first and placed on withdrawal monitoring. Opioid withdrawal is distressing but seldom fatal in a healthy adult. Clear breathing and a glucose of 168 mg/dL are stable for now.",
-      refs: ["Alcohol withdrawal seizures can occur 6 to 48 hours after the last drink."],
-      sources: [ASAM_AWM, NCCHC_JAILS],
+        "A statement that he has nothing left to live for, made at his first arrest, signals suicide risk. Receiving screening exists to find urgent needs like this one. The nurse sees him first, assesses suicide risk and puts safety measures in place before he is housed. Early opioid withdrawal is distressing but seldom fatal in a healthy adult. Clear breathing and a glucose of 168 mg/dL are stable for now.",
+      sources: [NCCHC_JAILS, HALTER],
     }),
     kind: "mc",
     options: [
       { text: "A man who uses heroin daily, last used 6 hours ago and has a runny nose", why: "Early opioid withdrawal needs care today but is rarely life threatening in an adult." },
       { text: "A woman with asthma who left her inhaler at home and has clear breath sounds", why: "Breathing is clear now. The inhaler can be arranged after the more urgent detainee is seen." },
-      { text: "A man who drinks a pint of vodka daily, last drank 12 hours ago and has tremors", why: "Tremor 12 hours after heavy daily drinking signals withdrawal that can progress to seizures." },
+      { text: "A man arrested for the first time who says he has nothing left to live for", why: "Hopelessness at intake signals suicide risk and needs assessment and safety measures now." },
       { text: "A man with type 2 diabetes on metformin with a glucose of 168 mg/dL (9.3 mmol/L)", why: "A glucose of 168 mg/dL is above target but not urgent. Home medication can be continued after review." },
     ],
     correct: 2,

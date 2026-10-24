@@ -56,8 +56,7 @@ export const PART4: Item[] = [
       difficulty: 3,
       stem: "A 66-year-old client with obesity and diabetes is on day 6 after an open bowel resection. While turning in bed the client says, \"Something just popped.\" The abdominal dressing is suddenly soaked with pink, watery fluid. The skin staples are intact and no bowel is visible. Vital signs are unchanged. What is the most likely explanation?",
       rationale:
-        "A sudden gush of pink serosanguineous fluid around days 5 to 8 often heralds separation of the deeper fascial layers. A popping feeling with effort supports it. The skin can stay closed while the fascia beneath has opened. Obesity and diabetes raise the risk. Normal drainage lessens by day 6 rather than gushing. Infection gives redness and cloudy or purulent drainage. A seroma collects clear fluid without a popping sensation.",
-      refs: ["Fascial dehiscence most often occurs 5 to 8 days after surgery."],
+        "A sudden gush of pink serosanguineous fluid about a week after surgery often heralds separation of the deeper fascial layers. A popping feeling with effort supports it. The skin can stay closed while the fascia beneath has opened. Obesity and diabetes raise the risk. Normal drainage lessens by day 6 rather than gushing. Infection gives redness and cloudy or purulent drainage. A seroma collects clear fluid without a popping sensation.",
       sources: [HINKLE],
     }),
     kind: "mc",
