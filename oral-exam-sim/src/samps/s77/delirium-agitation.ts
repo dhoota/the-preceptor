@@ -153,7 +153,7 @@ export const DELIRIUM_AGITATION_S77: Samp[] = [
         id: "q1",
         kind: "single",
         prompt: "Which of the following responses to his fear about the water best fits verbal de-escalation?",
-        options: ["I have not seen that, but I hear you are afraid", "Let us test the water to show you it is safe", "Nobody here is putting poison in your water", "Security will stay if you keep saying that", "You are right, we will change your nurse"],
+        options: ["I have not seen that, but you sound afraid", "Let us test the water to show you it is safe", "Nobody here is putting poison in your water", "Security will stay if you keep saying that", "You are right, we will change your nurse"],
         correct: 0,
         explanation:
           "The BETA de-escalation consensus advises agreeing with what is true and, when honest agreement is not possible, agreeing to disagree, without feigning agreement with a delusion and while acknowledging the patient's experience. Saying that you have not seen it while naming his fear does exactly that. Changing his nurse feigns agreement and confirms the delusion. Flat contradiction and an offer to test the water turn his belief into an argument about facts that he will not lose. Warning him about security is a threat, which the consensus says provokes rather than calms.",
@@ -300,8 +300,8 @@ export const DELIRIUM_AGITATION_S77: Samp[] = [
         kind: "single",
         update: "His left foot is red, hot and swollen around an ulcer under the big toe. He refuses IV antibiotics so that he can go back to his cows, and he cannot say what might happen without them.",
         prompt: "Which of the following should be asked to consent to IV antibiotics on his behalf?",
-        options: ["His family physician", "His nephew by telephone", "His neighbour of 30 years", "The Consent and Capacity Board", "The Public Guardian and Trustee"],
-        correct: 1,
+        options: ["His family physician", "His neighbour of 30 years", "His nephew by telephone", "The Consent and Capacity Board", "The Public Guardian and Trustee"],
+        correct: 2,
         explanation:
           "He cannot appreciate the consequences of refusing, so he is incapable for this decision. With no guardian, attorney, spouse, child, parent or sibling, the Health Care Consent Act turns to any other relative, and a nephew qualifies. A person counts as available if he can be reached within a reasonable time, and a phone call meets that test. The Public Guardian and Trustee decides only when no one on the list meets the requirements. A neighbour, however close, is not on the list, and neither is his family physician. The Board hears applications but does not give bedside consent.",
         keyFeature: kf(5),
