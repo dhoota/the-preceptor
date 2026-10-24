@@ -411,7 +411,7 @@ export const EYE_S76: Samp[] = [
         ],
         correct: 2,
         explanation:
-          "Inflating an airbag leaves a fine powder that contains sodium hydroxide, an alkali. Burning in both eyes with powder on the lashes is a chemical exposure until proved otherwise, and it calls for immediate irrigation, for at least 15 minutes and with at least 1 litre, until the pH is normal. In one reported case the first irrigation came 6 to 7 hours after the crash because other injuries came first, and the eyes went on to limbal ischemia and lasting scarring. An abrasion from the fabric or a glass fragment would usually affect one eye. A thermal burn marks the skin of the face. Ultraviolet keratitis follows hours of sun or welding exposure.",
+          "Inflating an airbag leaves a fine powder that contains sodium hydroxide, an alkali. Burning in both eyes with powder on the lashes is a chemical exposure until proved otherwise, and it calls for immediate irrigation, for at least 15 minutes and with at least 1 litre, until the pH is normal. In one reported case the first irrigation came 6 to 7 hours after the crash because other injuries came first, and the eyes went on to limbal ischemia and lasting scarring. An abrasion from the fabric or a glass fragment would usually affect one eye. A thermal burn marks the skin of the face. Ultraviolet keratitis starts 6 to 12 hours after sun or welding exposure, and she has had neither.",
         keyFeature: { topic: "eye", n: 1 },
         source: "barnes-airbag-alkali",
       },
@@ -435,20 +435,20 @@ export const EYE_S76: Samp[] = [
         options: [
           "Known von Willebrand disease",
           "Lives with her adult daughter",
-          "Myopia requiring glasses",
           "Punctate staining of both corneas",
-          "Treated hypothyroidism",
+          "Seasonal allergies on cetirizine",
+          "Up to date tetanus immunization",
         ],
         correct: 0,
         explanation:
-          "Most hyphemas are managed as outpatients with close review of vision, the blood and the pressure. Admission is considered for a bleeding disorder, poor adherence, a severe eye or orbital injury, or sickle cell disease with a raised pressure. Von Willebrand disease is a bleeding disorder that raises the risk of a rebleed, which usually comes within the first 5 days. Living with an adult daughter supports adherence and safe follow-up at home. Treated hypothyroidism and myopia do not change the plan. Punctate staining from the powder heals with lubrication and does not need a bed.",
+          "Most hyphemas are managed as outpatients with close review of vision, the blood and the pressure. Admission is considered for a bleeding disorder, poor adherence, a severe eye or orbital injury, or sickle cell disease with a raised pressure. Von Willebrand disease is a bleeding disorder that raises the risk of a rebleed, which usually comes within the first 5 days. Living with an adult daughter supports adherence and safe follow-up at home. Seasonal allergies and an up to date tetanus status do not change the plan. Punctate staining from the powder heals with lubrication and does not need a bed.",
         keyFeature: { topic: "eye", n: 2 },
         source: "eyewiki-hyphema",
       },
       {
         id: "q4",
         kind: "single",
-        update: "She understands the plan. The intraocular pressure is 16 mmHg in the right eye.",
+        update: "She understands the plan. After irrigation the corneas show only punctate staining. The intraocular pressure is 16 mmHg in the right eye.",
         prompt: "Which of the following is the most appropriate disposition for the injury to her right eye?",
         options: [
           "Admission for strict bed rest",

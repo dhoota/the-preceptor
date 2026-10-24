@@ -61,7 +61,7 @@ export const AIRWAY_S80: Samp[] = [
       {
         id: "q4",
         kind: "single",
-        update: "The glottis comes into view and the tube is passed through the cords. The cuff is inflated, and brown fluid is seen inside the tube.",
+        update: "The tube is passed through the cords on the next attempt. The cuff is inflated, and brown fluid is seen inside the tube.",
         prompt: "Which of the following is the most appropriate step before the first breath through the tube?",
         options: ["Instill saline down the tube", "Suction down the tube first", "Ventilate at once with 100% oxygen", "Withdraw the tube into the pharynx", "X-ray before the first breath"],
         correct: 1,
@@ -192,7 +192,7 @@ export const AIRWAY_S80: Samp[] = [
         options: ["Esophageal placement of the tube", "Hyperventilation by the bag", "Partial obstruction of the tube", "Right mainstem intubation", "Shock reducing lung blood flow"],
         correct: 4,
         explanation:
-          "A small waveform of normal shape on every breath means the tube is in the trachea, while the gap between an end-tidal CO2 of 14 mmHg and a PaCO2 of 48 mmHg shows that little CO2 is reaching the alveoli to be exhaled. Severe shock lowers pulmonary blood flow, and the Canadian Airway Focus Group notes that capnography stays present but attenuated in low flow states. The fix is better circulation, with ventilation guided by blood gases rather than the end-tidal value. An esophageal tube gives no sustained waveform. Hyperventilation would lower the PaCO2, which is high. Partial obstruction changes the waveform shape, and a mainstem tube would cause unequal breath sounds and falling oxygen saturation.",
+          "A small waveform of normal shape on every breath means the tube is in the trachea, while the gap between an end-tidal CO2 of 14 mmHg and a PaCO2 of 48 mmHg shows that little CO2 is reaching the alveoli to be exhaled. Severe shock lowers pulmonary blood flow, and the Canadian Airway Focus Group notes that the waveform persists but is attenuated in the low flow state after cardiac arrest, and lists low cardiac output and severe hypotension among causes of a falsely low colorimetric reading. The fix is better circulation, with ventilation guided by blood gases rather than the end-tidal value. An esophageal tube gives no sustained waveform. Hyperventilation would lower the PaCO2, which is high. Partial obstruction changes the waveform shape, and a mainstem tube would cause unequal breath sounds and falling oxygen saturation.",
         keyFeature: { topic: "airway", n: 6 },
         source: "cafg-2021-part1",
       },
@@ -300,11 +300,11 @@ export const AIRWAY_S80: Samp[] = [
         id: "q3",
         kind: "menu",
         prompt: "Which of the following can give a false positive colour change on a colorimetric CO2 detector?",
-        options: ["BMI over 35 kg/m2", "Epinephrine down the tube", "Gastric acid on the detector", "Low cardiac output", "Neonatal patient", "Quetiapine in her blood", "Recent alcohol intake", "Severe bronchospasm"],
+        options: ["Epinephrine down the tube", "Gastric acid on the detector", "Low cardiac output", "Neonatal patient", "Quetiapine in her blood", "Right mainstem intubation", "Severe bronchospasm", "Sinus tachycardia"],
         select: 2,
-        correct: [1, 2],
+        correct: [0, 1],
         explanation:
-          "A colorimetric detector changes colour when acid reaches its indicator, so anything acidic can mimic CO2. The Canadian Airway Focus Group lists contamination of the detector with acidic gastric contents, and recent instillation of drugs such as epinephrine through the tube, as causes of false positive results. A vomiting patient is at real risk of the first. Low cardiac output and neonates are causes of false negative results, because too little CO2 reaches the detector. Obesity misleads the esophageal detector bulb, not the colorimetric detector. Quetiapine, alcohol and bronchospasm do not create a false colour change.",
+          "A colorimetric detector changes colour when acid reaches its indicator, so anything acidic can mimic CO2. The Canadian Airway Focus Group lists contamination of the detector with acidic gastric contents, and recent instillation of drugs such as epinephrine through the tube, as causes of false positive results. A vomiting patient is at real risk of the first. Low cardiac output and neonates are causes of false negative results, because too little CO2 reaches the detector. Severe bronchospasm can also cause a false negative result, by limiting the CO2 that reaches the detector. A right mainstem tube still delivers CO2 to the detector, so the colour change is true. Quetiapine and a fast heart rate do not change the colour of the indicator.",
         keyFeature: { topic: "airway", n: 6 },
         source: "cafg-2021-part1",
       },
