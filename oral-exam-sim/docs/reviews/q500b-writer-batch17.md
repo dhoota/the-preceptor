@@ -87,3 +87,53 @@ Stems are 44 to 56 words.
 6. Burns. The teaching that a clean looking wound does not exclude toxic shock is widely taught, but the Gutzler abstract does not state it directly.
 7. Burns. Antibiotic choice (cefazolin or cloxacillin plus clindamycin, plus vancomycin if MRSA is possible) follows the IDSA rationale for toxin suppression. No doses are keyed.
 8. Chest pain. Beta blockade with moderate aortic regurgitation is keyed as standard anti-impulse therapy. A physician may want a caution added if the regurgitation were severe.
+
+## Revision 1
+
+This revision answers docs/reviews/q500b-qa-batch17.md. Item 1 (overlap between hoist-transfer-thigh-fracture and analgesia-sedation-50) was closed by the coordinator: the SAMP was replaced, so the case keeps its scenario. Items 2 to 12 are applied as listed below. The point totals and critical flags are unchanged in every case.
+
+### hoist-transfer-thigh-fracture
+
+- Item 2.
+  - s-event and the `event` finding now say that at 21:00 the nurse gave a breakthrough dose of hydromorphone 0.2 mg IV when she moaned during a splint check. The q-event model answer names that dose.
+  - The c-sleeping feedback now says "strongly linked with deaths from opioid toxicity".
+  - Flumazenil is removed from the at-m5 text and teaching. It stays in the q-event model answer only. The at-m5 teaching now gives Boyer's titration (0.04 mg, increased every 2 minutes if there is no response).
+  - The at-p4 teaching now gives Boyer's point that stupor with a respiratory rate of 12 or less calls for bag mask ventilation. The capnography claim is removed.
+- Item 3.
+  - The q-reassess line is replaced with the wording the reviewer gave (naloxone lasts 20 to 90 minutes).
+  - The at-pr2 teaching no longer says that pain drives breathing. It now says that high risk patients need electronic monitoring and reassessment, and that reversal with naloxone is often brief. at-pr2 now cites `jungquist`.
+- Item 4. I added `jungquist`: Jungquist CR, Quinlan-Colwell A, Vallerand A, and colleagues. ASPMN guidelines on monitoring for opioid-induced advancing sedation and respiratory depression. Revisions. Pain Manag Nurs. 2020.
+  - I confirmed it on its Europe PMC record (PMID 31377031, doi 10.1016/j.pmn.2019.06.007).
+  - The publisher full text returned 403, so I checked it against the abstract. The abstract says that all patients given opioids must be assessed for risk, that monitoring and the plan of care should follow the level of risk, and that high risk patients need extra vigilance with electronic monitoring.
+  - at-h3 and at-pr2 are worded to those points only. I did not cite it for the claim that capnography detects hypoventilation earlier, or for any named risk factor, because I could not read the full text.
+  - No URL is given. The case now has 6 sources.
+- Item 5. at-m4 is narrowed to "splints the leg and limits opioid to small doses for breakthrough pain once the block works". Its teaching now speaks only of the block as the core of a multimodal, opioid sparing plan, as the ACEP policy describes. Scheduled acetaminophen stays in the model answer and the c-block label but is no longer keyed.
+- Advisory. The c-hydromorphone feedback now reads "a standard adult dose and is too much for a 36 kg woman".
+
+### sleepover-smoothie-vomiting
+
+- Advisory. The q-history cofactor line now reads "Exercise around the meal, NSAIDs, illness."
+- I did not apply the optional advisory to tie the "two autoinjectors" point to another source. That point is in the model answer and in an-m5. The 0.3 mg band, which is what an-m5 cites CSACI for, was confirmed by the reviewer.
+
+### noodle-soup-scald-return
+
+- Item 6. The return-history finding now says the video review is booked for "this evening". The c-ceftriaxone label now says the dressing was "due to be reviewed this evening".
+- Items 7 and 8. Every claim that a clean looking wound does not exclude toxic shock is removed or softened. That covers the bn-p4 text and teaching, the bn-pr4 teaching, the q-shock and q-father model answers, the c-reassure label, and the c-fp and c-dressing feedback.
+  - bn-p4 and bn-pr4 now use the reviewer's wording.
+  - c-fp now says toxic shock often starts with fever, rash, vomiting and diarrhea.
+  - c-dressing now says toxic shock can follow small burns without any lapse in care.
+  - The return-exam finding still describes this wound as clean. That is a finding, not a teaching claim.
+- Item 9. I kept `gutzler` and dropped "treated as outpatients" from the bn-pr2 teaching. Sirajee 2025 was not added: the publisher page returned 403 to fetch, so I could not open it as the brief requires.
+
+### bench-press-chest-pain
+
+- Items 10 and 11. The heart rate target is now 60 to 80 in the q-treat model answer, the c-impulse label and the cp-m2 text, which matches the 2022 ACC/AHA guideline. The systolic target now reads "under 120 mmHg, or the lowest that keeps organs perfused". I added "Watch for worsening regurgitation as the rate falls." The double "first" is fixed: the model answer and cp-m2 now say "then an IV beta blocker before any vasodilator". s-refuse keeps a pulse of 62.
+- Item 12. The q-call line now reads "Tell the surgeon about the ibuprofen at 16:00 and any ASA or anticoagulant given."
+
+### Checks after revision
+
+```
+npx tsc --noEmit -p . 2>&1 | grep cases/batch17      (no output)
+CASE_BATCH=batch17 npx vitest run tests/cases.test.ts tests/citations.test.ts --testTimeout=120000      41 passed
+REALIGN=batch17 CASE_BATCH=batch17 npx vitest run tests/cases.test.ts --testTimeout=120000      39 passed
+```

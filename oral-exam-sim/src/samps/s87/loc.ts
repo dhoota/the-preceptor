@@ -27,7 +27,7 @@ export const LOC_S87: Samp[] = [
     alsoTopics: ["multiple-trauma"],
     title: "Could not be woken for breakfast",
     stem:
-      "You are working in a small hospital in a fly-in community in northern Ontario. There is no CT scanner. At 0730, police bring in a 38-year-old man whom they could not wake for breakfast in the detachment cells. He was arrested at 2300 for public intoxication after a fight outside the community hall. Officers say he was swearing and unsteady on his feet when arrested. He has alcohol use disorder and no other known history. He smells of alcohol. He opens his eyes only to pressure, moans without words and pulls his arm away from pressure. There is a boggy swelling over the right parietal scalp. His pupils are 3 mm, equal and reactive. Capillary glucose is 6.2 mmol/L.",
+      "You are working in a small hospital in a fly-in community in northern Ontario. There is no CT scanner. A regional hospital with CT but no neurosurgery is 1 hour away by air. A neurosurgical centre is 2 hours away. The air ambulance can fly to either. At 0730, police bring in a 38-year-old man whom they could not wake for breakfast in the detachment cells. He was arrested at 2300 for public intoxication after a fight outside the community hall. Officers say he was swearing and unsteady on his feet when arrested. He has alcohol use disorder and no other known history. He smells of alcohol. He opens his eyes only to pressure, moans without words and pulls his arm away from pressure. There is a boggy swelling over the right parietal scalp. His pupils are 3 mm, equal and reactive. Capillary glucose is 6.2 mmol/L.",
     vitals: { temperature: "36.2°C tympanic", pulse: "56/minute", resp: "12/minute", bp: "174/98 mmHg", o2sat: "94% on room air", weight: "84 kg" },
     questions: [
       {
@@ -54,7 +54,7 @@ export const LOC_S87: Samp[] = [
       {
         id: "q2",
         kind: "single",
-        update: "The log shows that at 0100 he asked for water and walked to the toilet. At 0400 and 0600 the guard wrote 'sleeping, snoring' without waking him.",
+        update: "He asked for water and walked to the toilet at 0100. At 0400 and 0600 he was asleep and snoring and was not woken.",
         prompt: "Which of the following features of his course most strongly indicates that alcohol is not the sole cause of his state?",
         options: ["Arrest for public intoxication", "Decline in cells after 0100", "Long history of heavy drinking", "Snoring at the 0400 check", "Unsteady gait at arrest"],
         correct: 1,
@@ -78,11 +78,11 @@ export const LOC_S87: Samp[] = [
       {
         id: "q4",
         kind: "single",
-        prompt: "Which of the following is the most appropriate plan for imaging his head?",
-        options: ["CT in the morning once sober", "MRI brain within 24 hours", "Skull X-ray series here first", "Urgent CT at a neurosurgical centre", "No imaging unless his GCS falls"],
+        prompt: "Which of the following is the most appropriate destination for him once he is intubated?",
+        options: ["Admit here for hourly GCS checks", "CT at the regional hospital, then decide", "Hold here until a scheduled flight", "Transfer to the neurosurgical centre", "Transfer to the regional hospital with CT"],
         correct: 3,
         explanation:
-          "A GCS of 8 after a fight with a scalp swelling is a moderate to severe head injury until CT shows otherwise, and his heart rate of 56/minute with a blood pressure of 174/98 mmHg raises concern for a mass lesion. The Brain Trauma Foundation recommends transport straight to a centre with immediate CT and prompt neurosurgical care for suspected moderate to severe brain injury. Waiting until morning attributes his coma to alcohol, which his course has already disproved. MRI is slower and harder to do in an unstable patient. A skull X-ray cannot show a hematoma. Holding imaging until his GCS falls further wastes the time a surgeon needs.",
+          "A GCS of 8 after a fight with a scalp swelling is a moderate to severe head injury until CT shows otherwise, and his heart rate of 56/minute with a blood pressure of 174/98 mmHg raises concern for a mass lesion that may need surgery. The Brain Trauma Foundation strongly recommends taking a patient with suspected moderate to severe brain injury directly to a facility with immediately available CT, prompt neurosurgical care and the ability to monitor and treat intracranial pressure. It accepts a stop at a centre without these only when direct transport is not possible, and here the air ambulance can fly him straight there. A CT at the regional hospital would show a hematoma that no one there can evacuate, and a second flight adds hours. Admitting him for hourly checks or holding him for a scheduled flight leaves a possible hematoma unimaged.",
         keyFeature: { topic: "loc", n: 1 },
         source: "btf-prehospital-2023",
       },
