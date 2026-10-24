@@ -14,19 +14,19 @@ export interface NeedInfo {
   group: string;
   min: number;
   max: number;
-  /** Items in the 2,000 item bank. Test plan midpoint share of 2,000. */
+  /** Items in the 2,500 item bank. Test plan midpoint share of 2,500. */
   bank: number;
 }
 
 export const NEEDS: NeedInfo[] = [
-  { id: "MOC", name: "Management of Care", group: "Safe and Effective Care Environment", min: 15, max: 21, bank: 360 },
-  { id: "SIPC", name: "Safety and Infection Prevention and Control", group: "Safe and Effective Care Environment", min: 10, max: 16, bank: 260 },
-  { id: "HPM", name: "Health Promotion and Maintenance", group: "Health Promotion and Maintenance", min: 6, max: 12, bank: 180 },
-  { id: "PSY", name: "Psychosocial Integrity", group: "Psychosocial Integrity", min: 6, max: 12, bank: 180 },
-  { id: "BCC", name: "Basic Care and Comfort", group: "Physiological Integrity", min: 6, max: 12, bank: 180 },
-  { id: "PPT", name: "Pharmacological and Parenteral Therapies", group: "Physiological Integrity", min: 13, max: 19, bank: 320 },
-  { id: "RRP", name: "Reduction of Risk Potential", group: "Physiological Integrity", min: 9, max: 15, bank: 240 },
-  { id: "PA", name: "Physiological Adaptation", group: "Physiological Integrity", min: 11, max: 17, bank: 280 },
+  { id: "MOC", name: "Management of Care", group: "Safe and Effective Care Environment", min: 15, max: 21, bank: 450 },
+  { id: "SIPC", name: "Safety and Infection Prevention and Control", group: "Safe and Effective Care Environment", min: 10, max: 16, bank: 325 },
+  { id: "HPM", name: "Health Promotion and Maintenance", group: "Health Promotion and Maintenance", min: 6, max: 12, bank: 225 },
+  { id: "PSY", name: "Psychosocial Integrity", group: "Psychosocial Integrity", min: 6, max: 12, bank: 225 },
+  { id: "BCC", name: "Basic Care and Comfort", group: "Physiological Integrity", min: 6, max: 12, bank: 225 },
+  { id: "PPT", name: "Pharmacological and Parenteral Therapies", group: "Physiological Integrity", min: 13, max: 19, bank: 400 },
+  { id: "RRP", name: "Reduction of Risk Potential", group: "Physiological Integrity", min: 9, max: 15, bank: 300 },
+  { id: "PA", name: "Physiological Adaptation", group: "Physiological Integrity", min: 11, max: 17, bank: 350 },
 ];
 
 export const NEED_IDS = NEEDS.map((n) => n.id);
@@ -76,5 +76,5 @@ export const EXAM = {
   passingStandard: 0,
 } as const;
 
-/** Bank plan. 1,400 stand-alone items and 100 case studies of 6 items. */
-export const BANK_PLAN = { total: 2000, caseStudies: 100, standalone: 1400 } as const;
+/** Bank plan. 1,900 stand-alone items and 100 case studies of 6 items. */
+export const BANK_PLAN = { total: 2500, caseStudies: 100, standalone: 1900 } as const;

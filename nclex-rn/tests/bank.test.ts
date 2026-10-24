@@ -9,7 +9,7 @@ import signoff from "../docs/signoff.json";
 /**
  * Bank gates. BATCH=s01 limits the run to one batch. A batch is checked once
  * it holds any content. Empty batches are skipped until LAUNCH_GATE=1, which
- * requires the full 2,000 item bank.
+ * requires the full 2,500 item bank.
  */
 
 type Plan = { type: "standalone" | "cases"; needs: Partial<Record<ClientNeed, number>>; cases?: number };
@@ -22,7 +22,7 @@ const count = <T,>(xs: T[], f: (x: T) => string) => xs.reduce<Record<string, num
 const kindOf = (i: Item) => (i.trend ? "trend" : i.kind);
 
 describe("bank plan", () => {
-  it("allocates 2,000 items by the test plan midpoints", () => {
+  it("allocates 2,500 items by the test plan midpoints", () => {
     const tot: Record<string, number> = {};
     for (const b of Object.values(PLAN)) for (const [n, c] of Object.entries(b.needs)) tot[n] = (tot[n] ?? 0) + c!;
     expect(tot).toEqual(Object.fromEntries(NEEDS.map((n) => [n.id, n.bank])));

@@ -27,6 +27,16 @@ import { ITEMS as S25 } from "./s25";
 import { ITEMS as S26 } from "./s26";
 import { ITEMS as S27 } from "./s27";
 import { ITEMS as S28 } from "./s28";
+import { ITEMS as S29 } from "./s29";
+import { ITEMS as S30 } from "./s30";
+import { ITEMS as S31 } from "./s31";
+import { ITEMS as S32 } from "./s32";
+import { ITEMS as S33 } from "./s33";
+import { ITEMS as S34 } from "./s34";
+import { ITEMS as S35 } from "./s35";
+import { ITEMS as S36 } from "./s36";
+import { ITEMS as S37 } from "./s37";
+import { ITEMS as S38 } from "./s38";
 import { CASES as C01 } from "./c01";
 import { CASES as C02 } from "./c02";
 import { CASES as C03 } from "./c03";
@@ -49,7 +59,7 @@ import { CASES as C19 } from "./c19";
 import { CASES as C20 } from "./c20";
 
 /** Stand-alone items by batch. */
-export const ITEM_BATCHES: Record<string, Item[]> = { s01: S01, s02: S02, s03: S03, s04: S04, s05: S05, s06: S06, s07: S07, s08: S08, s09: S09, s10: S10, s11: S11, s12: S12, s13: S13, s14: S14, s15: S15, s16: S16, s17: S17, s18: S18, s19: S19, s20: S20, s21: S21, s22: S22, s23: S23, s24: S24, s25: S25, s26: S26, s27: S27, s28: S28 };
+export const ITEM_BATCHES: Record<string, Item[]> = { s01: S01, s02: S02, s03: S03, s04: S04, s05: S05, s06: S06, s07: S07, s08: S08, s09: S09, s10: S10, s11: S11, s12: S12, s13: S13, s14: S14, s15: S15, s16: S16, s17: S17, s18: S18, s19: S19, s20: S20, s21: S21, s22: S22, s23: S23, s24: S24, s25: S25, s26: S26, s27: S27, s28: S28, s29: S29, s30: S30, s31: S31, s32: S32, s33: S33, s34: S34, s35: S35, s36: S36, s37: S37, s38: S38 };
 
 /** Case studies by batch. */
 export const CASE_BATCHES: Record<string, CaseStudy[]> = { c01: C01, c02: C02, c03: C03, c04: C04, c05: C05, c06: C06, c07: C07, c08: C08, c09: C09, c10: C10, c11: C11, c12: C12, c13: C13, c14: C14, c15: C15, c16: C16, c17: C17, c18: C18, c19: C19, c20: C20 };

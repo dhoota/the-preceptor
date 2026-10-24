@@ -2,7 +2,7 @@ import { readFileSync } from "node:fs";
 import { join } from "node:path";
 import { describe, expect, it } from "vitest";
 import { ALL_ITEMS } from "@/bank/index";
-import { NEED_IDS } from "@/engine/blueprint";
+import { BANK_PLAN, NEED_IDS } from "@/engine/blueprint";
 import { AREA_REFS, REFERENCES, guidelineCitations, itemCitations } from "@/lib/references";
 
 // App Review guideline 1.4.1: medical information must cite its sources, easy to find, with links.
@@ -16,7 +16,7 @@ describe("citations", () => {
       const links = [...own, ...guidelineCitations(item)].filter((c) => c.url?.startsWith("https://"));
       if (!own.length || !links.length) missing.push(item.id);
     }
-    expect(ALL_ITEMS.length).toBe(2000);
+    expect(ALL_ITEMS.length).toBe(BANK_PLAN.total);
     expect(missing).toEqual([]);
   });
 

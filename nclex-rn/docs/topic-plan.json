@@ -1,42 +1,172 @@
 {
-  "note": "Scenario and focus plan. Parallel writers cannot see each other's batches, and in the first wave three case batches wrote the same five classic scenarios. Every case batch now writes exactly its five assigned scenarios. Every stand-alone batch covers its focus list first. Wording is our own, not test plan text.",
-  "cases": {
-    "c01": ["heart failure with fluid overload, medical unit", "bleeding after vaginal birth", "rotavirus dehydration in a toddler", "alcohol withdrawal after bowel surgery", "delirium with Alzheimer disease in long-term care"],
-    "c02": ["low calcium after thyroidectomy", "preeclampsia on magnesium sulfate", "lithium toxicity, mental health unit", "severe asthma in a child, emergency department", "dysphagia after stroke, home health"],
-    "c03": ["urosepsis in an older adult, emergency department", "diabetic ketoacidosis in an adolescent", "acute pancreatitis, medical unit", "COPD exacerbation with hypercapnia", "pulmonary embolism after hip surgery"],
-    "c04": ["bronchiolitis in an infant, pediatric unit", "acute kidney injury with hyperkalemia", "atrial fibrillation with rapid ventricular response", "upper gastrointestinal bleeding from a peptic ulcer", "home oxygen safety and smoking after COPD discharge"],
-    "c05": ["neuroleptic malignant syndrome, psychiatric unit", "pyloric stenosis in an infant", "hypoglycemia in a newborn of a mother with diabetes", "care after a below-knee amputation", "MRSA leg wound, home visit"],
-    "c06": ["ischemic stroke within the thrombolysis window, emergency department", "acute coronary syndrome, cardiac step-down unit", "cirrhosis with hepatic encephalopathy", "SIADH with hyponatremia after brain surgery", "adrenal crisis in a client on long-term steroids"],
-    "c07": ["thyroid storm", "missed hemodialysis session with fluid overload", "major burn injury in the first 24 hours", "rising intracranial pressure after head injury", "autonomic dysreflexia after spinal cord injury"],
-    "c08": ["fat embolism after femur fracture", "compartment syndrome after tibial fracture", "sickle cell crisis in a young adult", "fever and neutropenia during chemotherapy", "tumor lysis syndrome after chemotherapy for leukemia"],
-    "c09": ["acute hemolytic transfusion reaction", "heparin-induced thrombocytopenia after cardiac surgery", "gestational diabetes at 32 weeks, prenatal clinic", "placental abruption, labor and birth unit", "preterm labor at 31 weeks"],
-    "c10": ["jaundice in a newborn on day 3", "postpartum depression, home visit", "Kawasaki disease in a toddler", "croup at night, pediatric emergency department", "new type 1 diabetes in a school-age child"],
-    "c11": ["febrile seizure in a toddler", "suspected child maltreatment, emergency department", "major depression with suicide risk, inpatient unit", "acute mania in bipolar disorder", "schizophrenia with command hallucinations"],
-    "c12": ["anorexia nervosa with refeeding risk", "opioid overdose, emergency department", "small bowel obstruction with a nasogastric tube", "perforated appendicitis in a child", "day 1 after total knee replacement"],
-    "c13": ["discharge teaching after laparoscopic cholecystectomy", "new colostomy teaching", "community-acquired pneumonia with hypoxemia in an older adult", "Clostridioides difficile infection, medical unit", "influenza outbreak in long-term care"],
-    "c14": ["hypertensive emergency", "care after peripheral arterial bypass", "deep vein thrombosis, starting anticoagulation", "abdominal aortic aneurysm before repair", "cardiac tamponade after cardiac surgery"],
-    "c15": ["Guillain-Barre syndrome with rising weakness", "myasthenic crisis", "Parkinson disease with falls and missed doses", "multiple sclerosis relapse on high-dose steroids", "status epilepticus in an adult"],
-    "c16": ["end of life care at home with hospice", "dementia with wandering and caregiver strain", "hip fracture repair in an older adult, mobility and skin", "stage 3 pressure injury and nutrition, long-term care", "fall on an anticoagulant with a head injury"],
-    "c17": ["anaphylaxis to an antibiotic, outpatient clinic", "new HIV diagnosis and treatment start", "systemic lupus erythematosus flare", "rheumatoid arthritis starting methotrexate", "kidney transplant rejection"],
-    "c18": ["hypertension and type 2 diabetes, community clinic", "first prenatal visit", "adolescent sexual health visit", "catch-up immunizations for a child new to the country", "polypharmacy review for an older adult at home"],
-    "c19": ["intimate partner violence disclosed in the emergency department", "mass casualty triage after a bus crash", "acute respiratory distress syndrome on a ventilator", "chest tube for a spontaneous pneumothorax", "chronic kidney disease starting peritoneal dialysis"],
-    "c20": ["hyperosmolar hyperglycemic state in an older adult", "Cushing syndrome before adrenal surgery", "liver failure from acetaminophen overdose", "infective endocarditis in a client who injects drugs", "shingles and pain management in an older adult"]
-  },
-  "standalone": {
-    "s03": "Management of Care: advance directives and end of life decisions, informed consent edge cases, case management and discharge planning, referrals and community resources, continuity of care and handoff, resource allocation.",
-    "s04": "Management of Care: delegation and assignment to LPN or RPN and assistive personnel, supervision, conflict and chain of command, ethical practice and advocacy, legal rights and responsibilities, incident reporting.",
-    "s05": "Management of Care: prioritizing a group of clients, establishing priorities after report, quality improvement, performance improvement data, information technology and documentation, collaboration with the interprofessional team, confidentiality.",
-    "s08": "Safety and Infection Prevention and Control: accident and injury prevention across the lifespan, home safety, safe use of equipment, restraint alternatives, emergency response plans, reporting of incidents, ergonomics and safe client handling.",
-    "s10": "Health Promotion and Maintenance: growth and development milestones from infancy to older adulthood, aging process, prenatal and postpartum care, newborn care, screening and immunizations across the lifespan, health promotion teaching, lifestyle choices.",
-    "s12": "Psychosocial Integrity: therapeutic communication, crisis intervention, grief and loss, abuse and neglect, substance use and withdrawal, coping, cultural and spiritual influences, stress management, sensory and perceptual alterations, behavioural interventions.",
-    "s14": "Basic Care and Comfort: assistive devices, elimination, mobility and immobility, non-pharmacological comfort, nutrition and oral hydration, personal hygiene, rest and sleep, tube feeding, bowel and bladder programs.",
-    "s17": "Pharmacological and Parenteral Therapies: adverse effects and interactions for cardiovascular, endocrine and anticoagulant drugs, blood products, central lines and parenteral nutrition, dosage calculation.",
-    "s18": "Pharmacological and Parenteral Therapies: psychiatric, neurologic, respiratory, anti-infective and oncology drugs, pain management and opioids, medication administration rights and routes, expected actions and outcomes, dosage calculation.",
-    "s20": "Reduction of Risk Potential: diagnostic tests and their preparation and aftercare, lab value interpretation, potential for complications of procedures and surgery, system specific assessments.",
-    "s21": "Reduction of Risk Potential: vital sign changes, therapeutic procedures, potential for alterations in body systems, monitoring conscious sedation, preventing complications of immobility and treatments.",
-    "s23": "Physiological Adaptation: fluid and electrolyte imbalances, acid-base interpretation, hemodynamics, medical emergencies, pathophysiology of cardiac and respiratory illness.",
-    "s24": "Physiological Adaptation: illness management for neurologic, renal, gastrointestinal, endocrine and hematologic disorders, unexpected responses to therapies, alterations in body systems.",
-    "s26": "Mixed batch: Safety and Infection Prevention and Control items on standard precautions, surgical asepsis and handling hazardous materials. Reduction of Risk Potential items on lab values. Pharmacology items on dosage calculation.",
-    "s27": "Mixed batch: Health Promotion and Maintenance items on high-risk behaviours, self-care and family planning. Pharmacology items on pediatric and older adult dosing. Psychosocial items on mental health concepts."
-  }
+ "note": "Scenario and focus plan. Parallel writers cannot see each other's batches, and in the first wave three case batches wrote the same five classic scenarios. Every case batch now writes exactly its five assigned scenarios. Every stand-alone batch covers its focus list first. Wording is our own, not test plan text.",
+ "cases": {
+  "c01": [
+   "heart failure with fluid overload, medical unit",
+   "bleeding after vaginal birth",
+   "rotavirus dehydration in a toddler",
+   "alcohol withdrawal after bowel surgery",
+   "delirium with Alzheimer disease in long-term care"
+  ],
+  "c02": [
+   "low calcium after thyroidectomy",
+   "preeclampsia on magnesium sulfate",
+   "lithium toxicity, mental health unit",
+   "severe asthma in a child, emergency department",
+   "dysphagia after stroke, home health"
+  ],
+  "c03": [
+   "urosepsis in an older adult, emergency department",
+   "diabetic ketoacidosis in an adolescent",
+   "acute pancreatitis, medical unit",
+   "COPD exacerbation with hypercapnia",
+   "pulmonary embolism after hip surgery"
+  ],
+  "c04": [
+   "bronchiolitis in an infant, pediatric unit",
+   "acute kidney injury with hyperkalemia",
+   "atrial fibrillation with rapid ventricular response",
+   "upper gastrointestinal bleeding from a peptic ulcer",
+   "home oxygen safety and smoking after COPD discharge"
+  ],
+  "c05": [
+   "neuroleptic malignant syndrome, psychiatric unit",
+   "pyloric stenosis in an infant",
+   "hypoglycemia in a newborn of a mother with diabetes",
+   "care after a below-knee amputation",
+   "MRSA leg wound, home visit"
+  ],
+  "c06": [
+   "ischemic stroke within the thrombolysis window, emergency department",
+   "acute coronary syndrome, cardiac step-down unit",
+   "cirrhosis with hepatic encephalopathy",
+   "SIADH with hyponatremia after brain surgery",
+   "adrenal crisis in a client on long-term steroids"
+  ],
+  "c07": [
+   "thyroid storm",
+   "missed hemodialysis session with fluid overload",
+   "major burn injury in the first 24 hours",
+   "rising intracranial pressure after head injury",
+   "autonomic dysreflexia after spinal cord injury"
+  ],
+  "c08": [
+   "fat embolism after femur fracture",
+   "compartment syndrome after tibial fracture",
+   "sickle cell crisis in a young adult",
+   "fever and neutropenia during chemotherapy",
+   "tumor lysis syndrome after chemotherapy for leukemia"
+  ],
+  "c09": [
+   "acute hemolytic transfusion reaction",
+   "heparin-induced thrombocytopenia after cardiac surgery",
+   "gestational diabetes at 32 weeks, prenatal clinic",
+   "placental abruption, labor and birth unit",
+   "preterm labor at 31 weeks"
+  ],
+  "c10": [
+   "jaundice in a newborn on day 3",
+   "postpartum depression, home visit",
+   "Kawasaki disease in a toddler",
+   "croup at night, pediatric emergency department",
+   "new type 1 diabetes in a school-age child"
+  ],
+  "c11": [
+   "febrile seizure in a toddler",
+   "suspected child maltreatment, emergency department",
+   "major depression with suicide risk, inpatient unit",
+   "acute mania in bipolar disorder",
+   "schizophrenia with command hallucinations"
+  ],
+  "c12": [
+   "anorexia nervosa with refeeding risk",
+   "opioid overdose, emergency department",
+   "small bowel obstruction with a nasogastric tube",
+   "perforated appendicitis in a child",
+   "day 1 after total knee replacement"
+  ],
+  "c13": [
+   "discharge teaching after laparoscopic cholecystectomy",
+   "new colostomy teaching",
+   "community-acquired pneumonia with hypoxemia in an older adult",
+   "Clostridioides difficile infection, medical unit",
+   "influenza outbreak in long-term care"
+  ],
+  "c14": [
+   "hypertensive emergency",
+   "care after peripheral arterial bypass",
+   "deep vein thrombosis, starting anticoagulation",
+   "abdominal aortic aneurysm before repair",
+   "cardiac tamponade after cardiac surgery"
+  ],
+  "c15": [
+   "Guillain-Barre syndrome with rising weakness",
+   "myasthenic crisis",
+   "Parkinson disease with falls and missed doses",
+   "multiple sclerosis relapse on high-dose steroids",
+   "status epilepticus in an adult"
+  ],
+  "c16": [
+   "end of life care at home with hospice",
+   "dementia with wandering and caregiver strain",
+   "hip fracture repair in an older adult, mobility and skin",
+   "stage 3 pressure injury and nutrition, long-term care",
+   "fall on an anticoagulant with a head injury"
+  ],
+  "c17": [
+   "anaphylaxis to an antibiotic, outpatient clinic",
+   "new HIV diagnosis and treatment start",
+   "systemic lupus erythematosus flare",
+   "rheumatoid arthritis starting methotrexate",
+   "kidney transplant rejection"
+  ],
+  "c18": [
+   "hypertension and type 2 diabetes, community clinic",
+   "first prenatal visit",
+   "adolescent sexual health visit",
+   "catch-up immunizations for a child new to the country",
+   "polypharmacy review for an older adult at home"
+  ],
+  "c19": [
+   "intimate partner violence disclosed in the emergency department",
+   "mass casualty triage after a bus crash",
+   "acute respiratory distress syndrome on a ventilator",
+   "chest tube for a spontaneous pneumothorax",
+   "chronic kidney disease starting peritoneal dialysis"
+  ],
+  "c20": [
+   "hyperosmolar hyperglycemic state in an older adult",
+   "Cushing syndrome before adrenal surgery",
+   "liver failure from acetaminophen overdose",
+   "infective endocarditis in a client who injects drugs",
+   "shingles and pain management in an older adult"
+  ]
+ },
+ "standalone": {
+  "s03": "Management of Care: advance directives and end of life decisions, informed consent edge cases, case management and discharge planning, referrals and community resources, continuity of care and handoff, resource allocation.",
+  "s04": "Management of Care: delegation and assignment to LPN or RPN and assistive personnel, supervision, conflict and chain of command, ethical practice and advocacy, legal rights and responsibilities, incident reporting.",
+  "s05": "Management of Care: prioritizing a group of clients, establishing priorities after report, quality improvement, performance improvement data, information technology and documentation, collaboration with the interprofessional team, confidentiality.",
+  "s08": "Safety and Infection Prevention and Control: accident and injury prevention across the lifespan, home safety, safe use of equipment, restraint alternatives, emergency response plans, reporting of incidents, ergonomics and safe client handling.",
+  "s10": "Health Promotion and Maintenance: growth and development milestones from infancy to older adulthood, aging process, prenatal and postpartum care, newborn care, screening and immunizations across the lifespan, health promotion teaching, lifestyle choices.",
+  "s12": "Psychosocial Integrity: therapeutic communication, crisis intervention, grief and loss, abuse and neglect, substance use and withdrawal, coping, cultural and spiritual influences, stress management, sensory and perceptual alterations, behavioural interventions.",
+  "s14": "Basic Care and Comfort: assistive devices, elimination, mobility and immobility, non-pharmacological comfort, nutrition and oral hydration, personal hygiene, rest and sleep, tube feeding, bowel and bladder programs.",
+  "s17": "Pharmacological and Parenteral Therapies: adverse effects and interactions for cardiovascular, endocrine and anticoagulant drugs, blood products, central lines and parenteral nutrition, dosage calculation.",
+  "s18": "Pharmacological and Parenteral Therapies: psychiatric, neurologic, respiratory, anti-infective and oncology drugs, pain management and opioids, medication administration rights and routes, expected actions and outcomes, dosage calculation.",
+  "s20": "Reduction of Risk Potential: diagnostic tests and their preparation and aftercare, lab value interpretation, potential for complications of procedures and surgery, system specific assessments.",
+  "s21": "Reduction of Risk Potential: vital sign changes, therapeutic procedures, potential for alterations in body systems, monitoring conscious sedation, preventing complications of immobility and treatments.",
+  "s23": "Physiological Adaptation: fluid and electrolyte imbalances, acid-base interpretation, hemodynamics, medical emergencies, pathophysiology of cardiac and respiratory illness.",
+  "s24": "Physiological Adaptation: illness management for neurologic, renal, gastrointestinal, endocrine and hematologic disorders, unexpected responses to therapies, alterations in body systems.",
+  "s26": "Mixed batch: Safety and Infection Prevention and Control items on standard precautions, surgical asepsis and handling hazardous materials. Reduction of Risk Potential items on lab values. Pharmacology items on dosage calculation.",
+  "s27": "Mixed batch: Health Promotion and Maintenance items on high-risk behaviours, self-care and family planning. Pharmacology items on pediatric and older adult dosing. Psychosocial items on mental health concepts.",
+  "s29": "Management of Care in settings the bank has not used yet: school nursing, a correctional facility, an outpatient dialysis unit, an ambulatory surgery center, an inpatient hospice unit, a behavioral health crisis unit, a rural critical access hospital, telehealth triage. Within those settings: assignment and delegation, first client to see, incident command and surge roles in a disaster, transfers between facilities, case management for a medically complex child, staff competency validation, and timely referral to the organ procurement organization after a death.",
+  "s30": "Management of Care, legal and professional: scope of practice when licensed in another jurisdiction, nurse practice act questions, reportable communicable disease duties, confidentiality of genetic test results, gifts and conflicts of interest, whistleblowing, cultural advocacy with family decision makers, supply shortages and fair allocation, collaboration with pharmacy, dietitian, physiotherapy and respiratory therapy. Safety and Infection Prevention and Control (10 items): infant abduction response, MRI zone safety for staff, laser safety in procedures, safe handling of a client with class III obesity, a latex-safe room setup, and site marking for bedside procedures.",
+  "s31": "Safety and Infection Prevention and Control: PPE for a suspected viral hemorrhagic fever, pertussis and measles post-exposure steps, tuberculosis screening of staff (skin test and blood test reading), hepatitis A in a food handler, Legionella, endoscope and instrument reprocessing, sterilization indicators, peritoneal dialysis exit site care, outbreak investigation steps, high-alert drug independent double checks, look-alike sound-alike drugs, smart pump drug libraries, oxygen cylinder transport, home dialysis electrical safety, pediatric fall and crib safety, evacuating a ventilated client, recognizing a smallpox-like rash in a bioterrorism event, heat emergencies at a mass gathering.",
+  "s32": "Health Promotion and Maintenance: family history and genetic counseling referral, cell-free DNA and other prenatal genetic screens, preconception care in chronic disease, menopause symptom counseling, testicular self-examination, shared decision making for prostate screening, osteoporosis in men, older adult driving safety, hearing screening in adults, vision screening and amblyopia in children, fluoride varnish and early dental care, lead screening in toddlers, HPV vaccine counseling for adolescents, concussion return to learn and play, childhood obesity counseling, postpartum contraception timing, mastitis prevention and breast milk storage, newborn hearing and hip screening, catch-up immunization, travel health, occupational hearing protection, cervical screening intervals, breast density, epidemiology measures (incidence and prevalence), levels of prevention. Safety and Infection Prevention and Control (5 items): carbon monoxide alarms, lawn mower and trampoline injuries, dog bite prevention, locked storage and disposal of leftover opioids.",
+  "s33": "Psychosocial Integrity: gender-affirming support, cyberbullying, avoidant restrictive food intake in a child, gambling disorder, hoarding, dissociation, dialectical behavior therapy skills, body dysmorphic concerns, methamphetamine-induced psychosis, benzodiazepine taper, cannabis withdrawal, kratom use, vaping cessation in teens, moral injury in staff, debriefing after a mass casualty event, blended family stress, caregiver of a child with autism, infertility, HIV status disclosure, separation anxiety and school refusal, oppositional and conduct problems, tic disorders, selective mutism, Hindu and Sikh care practices. Basic Care and Comfort (5 items): aromatherapy, music therapy, acupressure for nausea, paced breathing for pain, hygiene support in severe depression.",
+  "s34": "Basic Care and Comfort: prosthesis and orthotic care, eyeglasses and hearing devices in hospital, suprapubic catheter and nephrostomy care, bladder scanner use, intermittent catheterization in women, stool specimen collection, colostomy irrigation, heel offloading, transfer boards, contracture prevention after burns, continuous passive motion, splints, IDDSI dysphagia diet levels, thickened liquids, renal phosphorus limits, carbohydrate counting, jejunostomy feeding, vitamin K consistency with warfarin, lactose intolerance, halal and vegetarian meals, restless legs, sucrose and skin-to-skin care for newborn pain, hiccups, pruritus, xerostomia after radiation, constipation in palliative care, cooling blankets, perineal care for an uncircumcised male. Pharmacological and Parenteral Therapies (10 items), administration technique only: ear drops in a child and an adult, eye ointment, nasal spray, rectal suppository, vaginal cream, transdermal patch handling, inhaler with spacer, nebulizer, insulin pen priming, enoxaparin injection technique.",
+  "s35": "Pharmacological and Parenteral Therapies, drug classes and safety: biologics and TB screening, JAK inhibitors, GLP-1 receptor agonists, SGLT2 inhibitors and euglycemic ketoacidosis, anticoagulant reversal agents, sacubitril-valsartan, ivabradine, lamotrigine rash, long-acting injectable antipsychotics, varenicline, naltrexone and acamprosate, methadone and QT prolongation, esketamine, ADHD stimulants and atomoxetine, checkpoint inhibitor adverse effects, cytokine release syndrome, vancomycin monitoring, amphotericin B, oseltamivir, acyclovir and hydration, antiretroviral adherence, rifampin and isoniazid, pediatric mg/kg/day dose checks, heparin nomogram, insulin infusion, reconstitution, mcg/kg/minute rates. At least 6 items carry a calc block.",
+  "s36": "Pharmacological and Parenteral Therapies (20 items), parenteral therapy: infiltration versus extravasation, vesicant extravasation, plasma, platelets, albumin and cryoprecipitate, massive transfusion, lipid emulsion, choosing a venous access device, IV push rates, compatibility, PCA settings, epidural infusion, intraosseous access, subcutaneous infusion. At least 3 PPT items carry a calc block. Reduction of Risk Potential (30 items), laboratory and diagnostic work: mixed acid-base disorders, anti-Xa levels, troponin trends, BNP, lactate, procalcitonin, therapeutic drug levels, thoracentesis, paracentesis, bronchoscopy, cardiac catheterization by radial and femoral route, transesophageal echo, bowel preparation, ERCP, liver biopsy, bone marrow biopsy, contrast and kidney protection, MRI with an implanted device, refeeding labs, SIADH versus diabetes insipidus labs.",
+  "s37": "Reduction of Risk Potential (30 items), monitoring and complications: blood culture technique, 24-hour urine collection, ECG lead placement and artifact, Holter and stress test preparation, continuous glucose monitors, pulse oximetry limits, capnography, Glasgow Coma Scale trends, compartment pressure, fetal heart rate patterns, amniocentesis, procedural sedation monitoring in children, postoperative ileus, atelectasis, wound dehiscence, malignant hyperthermia, VTE prophylaxis. Physiological Adaptation (20 items): fluid, electrolyte and acid-base imbalances, types of shock, sepsis bundle steps, and burn care.",
+  "s38": "Physiological Adaptation, illness management (no shock, sepsis, burns or electrolytes, which s37 covers): Guillain-Barre syndrome, myasthenic versus cholinergic crisis, ALS breathing, SIADH and diabetes insipidus, pheochromocytoma, hepatic encephalopathy, variceal bleeding, hyperosmolar hyperglycemic state, intussusception, Hirschsprung disease, croup versus epiglottitis, cystic fibrosis, hemophilia, immune thrombocytopenia, DIC, aortic dissection, pericarditis, ARDS, pneumothorax, flail chest, spinal shock, raised intracranial pressure, heat stroke, hypothermia, drowning, snake bite, crush injury and rhabdomyolysis, fat embolism, nephrotic syndrome in a child, HELLP syndrome, amniotic fluid embolism, cord prolapse, shoulder dystocia, newborn respiratory distress, necrotizing enterocolitis."
+ }
 }

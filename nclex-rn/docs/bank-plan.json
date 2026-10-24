@@ -1,5 +1,5 @@
 {
- "note": "Bank plan. 28 stand-alone batches of 50 items and 20 case batches of 5 case studies. Client Needs counts per batch are exact. Totals follow the 2026 test plan midpoints of 2,000 items.",
+ "note": "Bank plan. 38 stand-alone batches of 50 items and 20 case batches of 5 case studies. Client Needs counts per batch are exact. Totals follow the 2026 test plan midpoints of 2,500 items. Batches s29 to s38 add 500 items.",
  "standaloneMix": {
   "mc": 26,
   "sata": 10,
@@ -464,6 +464,72 @@
     "PPT": 5,
     "RRP": 3,
     "PA": 4
+   }
+  },
+  "s29": {
+   "type": "standalone",
+   "needs": {
+    "MOC": 50
+   }
+  },
+  "s30": {
+   "type": "standalone",
+   "needs": {
+    "MOC": 40,
+    "SIPC": 10
+   }
+  },
+  "s31": {
+   "type": "standalone",
+   "needs": {
+    "SIPC": 50
+   }
+  },
+  "s32": {
+   "type": "standalone",
+   "needs": {
+    "SIPC": 5,
+    "HPM": 45
+   }
+  },
+  "s33": {
+   "type": "standalone",
+   "needs": {
+    "PSY": 45,
+    "BCC": 5
+   }
+  },
+  "s34": {
+   "type": "standalone",
+   "needs": {
+    "BCC": 40,
+    "PPT": 10
+   }
+  },
+  "s35": {
+   "type": "standalone",
+   "needs": {
+    "PPT": 50
+   }
+  },
+  "s36": {
+   "type": "standalone",
+   "needs": {
+    "PPT": 20,
+    "RRP": 30
+   }
+  },
+  "s37": {
+   "type": "standalone",
+   "needs": {
+    "RRP": 30,
+    "PA": 20
+   }
+  },
+  "s38": {
+   "type": "standalone",
+   "needs": {
+    "PA": 50
    }
   }
  }
