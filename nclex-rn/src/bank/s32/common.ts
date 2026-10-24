@@ -261,12 +261,6 @@ export const USPSTF_CERVIX: Source = {
   year: 2018,
   url: "https://doi.org/10.1001/jama.2018.10897",
 };
-export const NHGRI_GINA: Source = {
-  body: "National Human Genome Research Institute",
-  work: "Genetic Discrimination",
-  year: 2022,
-  url: "https://www.genome.gov/about-genomics/policy-issues/Genetic-Discrimination",
-};
 export const USPSTF_BREAST: Source = {
   body: "US Preventive Services Task Force. Nicholson WK, Silverstein M, Wong JB, et al.",
   work: "Screening for Breast Cancer: Recommendation Statement. JAMA 331(22):1918",

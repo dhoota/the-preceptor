@@ -84,7 +84,7 @@ export const PART4: Item[] = [
     targets: ["Pancreatitis", "Delayed bleeding", "Perforation", "Cholangitis"],
     tokens: [
       { text: "Fever, chills and yellow skin", why: "Fever with jaundice after ERCP points to infection of the bile duct." },
-      { text: "Mild sore throat", why: "A sore throat from the endoscope is expected and does not signal a complication." },
+      { text: "Mild sore throat from the scope", why: "A sore throat from the endoscope is expected and does not signal a complication." },
       { text: "Upper abdominal pain into the back", why: "Severe epigastric pain into the back is the classic sign of pancreatitis." },
       { text: "Free air on an abdominal x-ray", why: "Free air means the bowel wall has been breached." },
       { text: "Bloating that eases with walking", why: "Gas from insufflation causes bloating that settles and is expected." },
@@ -220,11 +220,11 @@ export const PART4: Item[] = [
     }),
     kind: "sata",
     options: [
-      { text: "Oral N-acetylcysteine as prophylaxis", why: "N-acetylcysteine was no better than placebo and is not recommended." },
+      { text: "Oral N-acetylcysteine the night before the scan", why: "N-acetylcysteine was no better than placebo and is not recommended." },
       { text: "IV 0.9% sodium chloride before the scan", why: "Isotonic volume expansion before contrast is the main preventive measure." },
       { text: "Restrict fluids for 12 hours before", why: "Dehydration raises the risk of kidney injury from contrast." },
       { text: "IV fluid continued for hours after the scan", why: "Volume expansion continues after the scan to protect the kidneys." },
-      { text: "IV furosemide after the scan", why: "Furosemide worsened kidney function in a trial and is not recommended." },
+      { text: "IV furosemide to flush the contrast after", why: "Furosemide worsened kidney function in a trial and is not recommended." },
       { text: "Share the eGFR with the radiology team", why: "The team uses the eGFR to plan prophylaxis and the contrast dose." },
     ],
     correct: [1, 3, 5],

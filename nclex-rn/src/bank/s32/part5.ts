@@ -283,7 +283,7 @@ export const PART5: Item[] = [
       difficulty: 1,
       stem: "A client who had knee surgery 3 weeks ago no longer needs pain medicine and has 12 oxycodone tablets left. A 16-year-old lives in the home. Which statement by the client shows understanding of safe disposal?",
       rationale:
-        "A drug take-back site, such as a pharmacy drop box, is the first choice for leftover opioids. If none is available, oxycodone is on the FDA flush list. Opioids in use are kept locked, because teens often get misused pills from family supplies. Saving pills invites misuse. Sharing a prescription is unsafe and illegal. A whole bottle in the trash can be found and taken.",
+        "A drug take-back site, such as a pharmacy drop box, is the first choice for leftover opioids. If none is available, oxycodone is on the FDA flush list. Opioids still in use are kept in locked storage, because a teen in the home could take them. Saving pills invites misuse. Sharing a prescription is unsafe and illegal. A whole bottle in the trash can be found and taken.",
       sources: [FDA_DISPOSAL, FDA_FLUSH],
     }),
     kind: "mc",

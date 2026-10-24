@@ -126,7 +126,7 @@ export const PART4: Item[] = [
       difficulty: 3,
       stem: "A client had inflammatory mastitis with her first baby after pumping after every feeding to empty her breasts. She now has a healthy 4-day-old who latches well. She asks how to prevent mastitis this time. Which advice should the nurse include? Select all that apply.",
       rationale:
-        "Mastitis is now seen as a spectrum driven by inflammation and swelling, often fed by oversupply. Feeding the baby on cue matches supply to demand. Extra pumping to empty the breast stimulates more milk and swelling. Deep massage injures tissue, while light strokes toward the armpit move fluid. A tight or underwire bra can compress ducts. Nipple pain or a poor latch needs early lactation help.",
+        "Mastitis is now seen as a spectrum driven by inflammation and swelling, often fed by oversupply. Feeding the baby on cue matches supply to demand. Extra pumping to empty the breast stimulates more milk and swelling. Deep massage injures tissue, while light strokes toward the armpit move fluid. A tight bra can press on the breast and block flow. Nipple pain or a poor latch needs early lactation help.",
       sources: [ABM_MASTITIS],
     }),
     kind: "sata",

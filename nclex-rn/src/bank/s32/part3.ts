@@ -72,7 +72,7 @@ export const PART3: Item[] = [
       rationale:
         "Children under 3 years brush twice a day with a smear of fluoride toothpaste the size of a grain of rice. A dental home is set up by the first birthday, so this child is due now. Milk pooling on the teeth overnight feeds the bacteria that cause decay. Primary care applies varnish again at later visits. A pea-sized amount is for ages 3 to 6. Fluoride-free toothpaste gives no protection.",
       refs: ["Fluoride toothpaste: a rice-grain smear under 3 years and a pea-sized amount from 3 to 6 years."],
-      sources: [AAP_FLUORIDE, USPSTF_CARIES],
+      sources: [AAP_FLUORIDE, USPSTF_CARIES, HOCKENBERRY],
     }),
     kind: "sata",
     options: [

@@ -32,14 +32,14 @@ export const PART5: Item[] = [
       difficulty: 4,
       stem: "A 58-year-old client has hemodialysis every Monday, Wednesday and Friday morning. The client needs an elective brain MRI with a group II gadolinium-based contrast agent. The radiology team asks the nurse to help plan the timing. Which plan should the nurse support?",
       rationale:
-        "Gadolinium agents are cleared by the kidneys, so they stay in the body longer in a client on dialysis. Contrast guidance recommends doing an elective gadolinium MRI as close as possible before a regularly scheduled hemodialysis session. The next session then removes much of the agent soon after the scan. Group II agents carry a very small risk of nephrogenic systemic fibrosis, and the timing lowers exposure further. Extra or held sessions are not part of the plan.",
+        "Gadolinium agents are cleared by the kidneys, so they stay in the body longer in a client on dialysis. Contrast guidance recommends doing an elective gadolinium MRI as close as possible before a regularly scheduled hemodialysis session. The next session then removes much of the agent soon after the scan. Group II agents carry a low risk of nephrogenic systemic fibrosis, and the timing lowers exposure further. Extra or held sessions are not part of the plan.",
       sources: [ACR_CONTRAST],
     }),
     kind: "mc",
     options: [
       { text: "Schedule the MRI shortly before a regular session", why: "A session soon after the scan removes the agent with the least delay." },
       { text: "Schedule the MRI right after a session ends", why: "This leaves the longest gap before the agent is removed." },
-      { text: "Add an extra session on the day before the MRI", why: "Dialysis before the scan cannot remove an agent not yet given." },
+      { text: "Add an extra dialysis session on the day before the MRI", why: "Dialysis before the scan cannot remove an agent not yet given." },
       { text: "Hold dialysis for 48 hours after the MRI", why: "Delaying dialysis keeps the agent in the body longer." },
     ],
     correct: 0,
@@ -76,7 +76,7 @@ export const PART5: Item[] = [
       cjmm: "generate",
       process: "nursing-process",
       difficulty: 4,
-      stem: "A 76-year-old client with a small bowel obstruction has eaten almost nothing for 10 days and weighs 44 kg. The client is to take nothing by mouth. The primary health care provider prescribes IV dextrose 5% in 0.45% sodium chloride at 100 mL/hour and plans parenteral nutrition in 2 days. Which actions should the nurse anticipate now? Select all that apply.",
+      stem: "A 76-year-old client with a small bowel obstruction has eaten almost nothing for 10 days and weighs 44 kg. The client is to take nothing by mouth. The primary health care provider prescribes IV dextrose 5% in 0.45% sodium chloride at 100 mL per hour and plans parenteral nutrition in 2 days. Which actions should the nurse anticipate now? Select all that apply.",
       rationale:
         "Dextrose in IV fluid triggers insulin release just as feeding does. In a client with 10 days of almost no intake, it can drive phosphorus, potassium and magnesium into cells before parenteral nutrition begins. Baseline levels are checked and low levels are replaced. Thiamine is given before dextrose starts because glucose use depletes thiamine. Weakness and new arrhythmias are watched for. Waiting for parenteral nutrition to begin these steps misses the risk.",
       sources: [REFEED],
@@ -101,14 +101,14 @@ export const PART5: Item[] = [
       difficulty: 4,
       stem: "A client is 6 days after transsphenoidal removal of a pituitary tumor. Today the serum sodium is 127 mEq/L (127 mmol/L), down from 139 mEq/L (139 mmol/L) on day 2. The client has no edema and takes no diuretics. Which three findings fit the syndrome of inappropriate antidiuretic hormone rather than diabetes insipidus? Select three.",
       rationale:
-        "Antidiuretic hormone can leak from the injured pituitary about a week after surgery and cause water retention. A urine osmolality of 520 mOsm/kg is inappropriately concentrated for a low serum sodium. A low urine output and weight gain without edema show retained water. Diabetes insipidus instead causes large volumes of dilute urine, a specific gravity near 1.002, intense thirst and a rising sodium.",
+        "Antidiuretic hormone can leak from the injured pituitary about a week after surgery and cause water retention. A urine osmolality of 520 mOsm/kg shows urine far too concentrated for a low serum sodium. A low urine output and weight gain without edema show retained water. Diabetes insipidus instead causes large volumes of dilute urine, a specific gravity near 1.002, intense thirst and a rising sodium.",
       refs: ["In hypotonic hyponatremia, a urine osmolality above 100 mOsm/kg shows antidiuretic hormone activity."],
       sources: [HYPONATREMIA, DI],
     }),
     kind: "msn",
     select: 3,
     options: [
-      { text: "Urine specific gravity of 1.002", why: "Very dilute urine fits diabetes insipidus, not water retention." },
+      { text: "Urine specific gravity of 1.002", why: "Highly dilute urine fits diabetes insipidus, not water retention." },
       { text: "Urine osmolality of 520 mOsm/kg", why: "Concentrated urine with a low serum sodium shows antidiuretic hormone is acting." },
       { text: "Urine output of 350 mL/hour", why: "Large urine volumes fit diabetes insipidus." },
       { text: "Urine output of 900 mL in 24 hours", why: "A low output fits water retention from excess antidiuretic hormone." },
@@ -126,7 +126,7 @@ export const PART5: Item[] = [
       difficulty: 5,
       stem: "A 29-year-old client is 18 hours after transsphenoidal removal of a pituitary tumor. Urine output over the last 3 hours was 350, 420 and 380 mL. Urine specific gravity is 1.002. Serum sodium is 149 mEq/L (149 mmol/L), up from 140 mEq/L (140 mmol/L) before surgery. Glucose is 108 mg/dL (6.0 mmol/L). The client reports intense thirst. Complete the diagram by choosing the condition the client is most likely experiencing, 2 actions to take and 2 parameters to monitor.",
       rationale:
-        "Urine output above 300 mL each hour with a specific gravity of 1.002 and a sodium that has risen to 149 mEq/L fit central diabetes insipidus after pituitary surgery. A glucose of 108 mg/dL rules out an osmotic diuresis. The nurse gives desmopressin as prescribed and replaces fluid losses, letting the client drink to thirst. Serum sodium and hourly urine output with specific gravity show the response and catch overcorrection.",
+        "Urine output of 350 to 420 mL each hour with a specific gravity of 1.002 and a sodium that has risen to 149 mEq/L fit central diabetes insipidus after pituitary surgery. A glucose of 108 mg/dL rules out an osmotic diuresis. The nurse gives desmopressin as prescribed and replaces fluid losses, letting the client drink to thirst. Serum sodium and hourly urine output with specific gravity show the response and catch overcorrection.",
       sources: [DI, HINKLE],
     }),
     kind: "bowtie",
@@ -137,11 +137,11 @@ export const PART5: Item[] = [
       { text: "Cerebral salt wasting", why: "Salt wasting causes a low sodium. The sodium here is high." },
     ],
     actions: [
-      { text: "Restrict fluids to 1 L daily", why: "Fluid restriction would worsen dehydration and raise the sodium further." },
+      { text: "Restrict oral and IV fluids to 1 L daily", why: "Fluid restriction would worsen dehydration and raise the sodium further." },
       { text: "Give desmopressin as prescribed", why: "Desmopressin replaces the missing antidiuretic hormone." },
-      { text: "Give 3% sodium chloride", why: "Hypertonic saline would raise an already high sodium." },
+      { text: "Give 3% sodium chloride by IV infusion", why: "Hypertonic saline would raise an already high sodium." },
       { text: "Replace fluid losses as prescribed", why: "Fluid replacement keeps pace with the urine losses." },
-      { text: "Give IV furosemide", why: "A diuretic would worsen the water loss." },
+      { text: "Give furosemide 20 mg IV now", why: "A diuretic would worsen the water loss." },
     ],
     parameters: [
       { text: "Serum sodium level", why: "Sodium shows whether water balance is being corrected and guards against overcorrection." },
@@ -219,17 +219,17 @@ export const PART5: Item[] = [
       process: "nursing-process",
       difficulty: 2,
       stem: "An 81-year-old client who takes hydrochlorothiazide is doing a split-dose polyethylene glycol preparation at home for a colonoscopy tomorrow. The home health nurse visits after the first dose and records the note below. Click to highlight the findings that need follow-up.",
-      passage:
-        "[[Has had 9 watery stools since 1800]]. [[Reports dizziness when standing]]. [[BP 132/78 mmHg lying and 104/62 mmHg standing]]. [[Drinking clear fluids as instructed]]. [[New confusion about the date]]. [[Stool now light yellow liquid]]. [[Mild cramping that comes and goes]].",
       rationale:
         "Large stool losses in an older adult who takes a thiazide can cause volume depletion and electrolyte shifts such as low sodium. Dizziness on standing and a fall in systolic BP from 132 to 104 mmHg show orthostatic hypotension. New confusion may signal low sodium or dehydration. The nurse reports these findings and arranges electrolyte checks as directed. Frequent watery stools, light yellow liquid output, clear fluids and mild cramping are expected.",
       sources: [BOWEL_PREP, HINKLE],
     }),
     kind: "highlight",
+    passage:
+      "[[Has had 9 watery stools since 1800]]. [[Reports dizziness when standing]]. [[BP 132/78 mmHg lying and 104/62 mmHg standing]]. [[Drinking clear fluids as instructed]]. [[New confusion about the date]]. [[Stool now light yellow liquid]]. [[Mild cramping that comes and goes]].",
     spans: [
       { text: "Has had 9 watery stools since 1800", why: "Frequent watery stools are the intended effect of the preparation." },
       { text: "Reports dizziness when standing", why: "Dizziness on standing suggests volume depletion." },
-      { text: "BP 132/78 mmHg lying and 104/62 mmHg standing", why: "A fall of 28 mmHg systolic on standing shows orthostatic hypotension." },
+      { text: "BP 132/78 mmHg lying and 104/62 mmHg standing", why: "A fall in systolic BP from 132 to 104 mmHg on standing shows orthostatic hypotension." },
       { text: "Drinking clear fluids as instructed", why: "Clear fluid intake is part of the preparation." },
       { text: "New confusion about the date", why: "New confusion can signal low sodium or dehydration in an older adult." },
       { text: "Stool now light yellow liquid", why: "Light yellow liquid output shows the preparation is working." },
