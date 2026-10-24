@@ -65,7 +65,7 @@ export const CHEST_PAIN_S85: Samp[] = [
         options: ["Blood cultures and CT of the chest wall", "Bone scan as an outpatient", "Oral cephalexin and clinic review", "Repeat X-ray in 2 weeks", "Sling and NSAID for 1 week"],
         correct: 0,
         explanation:
-          "Blood cultures come first because bacteremia is common, and CT or MRI should be obtained routinely to look for a chest wall phlegmon, a retrosternal abscess or mediastinitis, which complicated 25% and 13% of cases. An abscess or mediastinitis changes the plan to surgical resection of the joint. A normal chest X-ray does not show this soft tissue spread. Empiric IV antibiotics should follow the cultures and may need to cover MRSA, because Staphylococcus aureus caused about half of cases. Oral cephalexin, a sling with an NSAID, a bone scan as an outpatient and a repeat X-ray in 2 weeks all leave a deep infection untreated.",
+          "Blood cultures come first because bacteremia is common, and CT or MRI should be obtained routinely to look for a chest wall abscess or phlegmon (25%), a retrosternal abscess or mediastinitis (13%). An abscess or mediastinitis changes the plan to surgical resection of the joint. A normal chest X-ray does not show this soft tissue spread. Empiric IV antibiotics should follow the cultures and may need to cover MRSA, because Staphylococcus aureus caused about half of cases. Oral cephalexin, a sling with an NSAID, a bone scan as an outpatient and a repeat X-ray in 2 weeks all leave a deep infection untreated.",
         keyFeature: { topic: "chest-pain", n: 2 },
         source: "ross-sc-septic-s85",
       },
@@ -270,7 +270,7 @@ export const CHEST_PAIN_S85: Samp[] = [
         options: ["Age of 63 years", "Desk job for 30 years", "Hypertension on ramipril", "45 pack-years of smoking", "Type 2 diabetes on metformin"],
         correct: 3,
         explanation:
-          "A 45 pack-year smoking history is the strongest risk factor here for a lung cancer at the apex, and the scoping review advises apical lung imaging when shoulder pain comes with a smoking history, weight loss or Horner syndrome. He has all three. His age adds some risk, but far less than his smoking. Hypertension, diabetes and years of desk work do not raise the risk of lung cancer.",
+          "A 45 pack-year smoking history is the strongest risk factor here for a lung cancer at the apex, and the scoping review advises apical lung imaging when shoulder pain comes with Horner syndrome and a smoking history or weight loss. He has all three. His age adds some risk, but far less than his smoking. Hypertension, diabetes and years of desk work do not raise the risk of lung cancer.",
         keyFeature: { topic: "chest-pain", n: 4 },
         source: "sst-misdiagnosis-s85",
       },
@@ -281,7 +281,7 @@ export const CHEST_PAIN_S85: Samp[] = [
         options: ["Full passive shoulder movement", "Negative Spurling test", "Tenderness over the trapezius", "Unequal pupils with ptosis", "Weak finger abduction"],
         correct: 3,
         explanation:
-          "A drooping right eyelid with a smaller right pupil is Horner syndrome, which a tumour at the lung apex causes by invading the sympathetic chain, and with shoulder pain it should prompt apical imaging. Weak finger abduction shows a T1 nerve root problem, the commonest neuropathy with these tumours, but cervical radiculopathy causes it too. Full painless passive movement without crepitus and a negative Spurling test make a shoulder or neck cause less likely without pointing to the apex. Trapezius tenderness is common and nonspecific.",
+          "A drooping right eyelid with a smaller right pupil is Horner syndrome, which a tumour at the lung apex causes by invading the sympathetic chain, and with shoulder pain and his smoking history it should prompt apical imaging. Weak finger abduction shows a T1 nerve root problem, the commonest neuropathy with these tumours, but cervical radiculopathy causes it too. Full painless passive movement without crepitus and a negative Spurling test make a shoulder or neck cause less likely without pointing to the apex. Trapezius tenderness is common and nonspecific.",
         keyFeature: { topic: "chest-pain", n: 4 },
         source: "sst-misdiagnosis-s85",
       },

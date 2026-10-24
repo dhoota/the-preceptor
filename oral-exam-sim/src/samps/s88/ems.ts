@@ -15,7 +15,6 @@ const S = {
   umpierrez: { id: "umpierrez-pumps", citation: "Umpierrez GE, Klonoff DC. Diabetes technology update: use of insulin pumps and continuous glucose monitoring in the hospital. Diabetes Care. 2018.", url: "https://pmc.ncbi.nlm.nih.gov/articles/PMC6054505/" },
   dcHypo: { id: "dc-hypoglycemia", citation: "Yale JF, Paty B, Senior PA. Diabetes Canada Clinical Practice Guidelines Expert Committee. Hypoglycemia. Can J Diabetes. 2018.", url: "https://www.diabetes.ca/for-professionals/full-guidelines/chapter-14" },
   bcehsDialysis: { id: "bcehs-e04", citation: "BC Emergency Health Services. Clinical practice guideline E04: dialysis emergencies. BCEHS Handbook. Accessed 24 October 2026.", url: "https://handbook.bcehs.ca/clinical-practice-guidelines/e-medical-emergencies/e04-dialysis-emergencies/" },
-  bcehsBleeding: { id: "bcehs-d02", citation: "BC Emergency Health Services. Clinical practice guideline D02: bleeding. BCEHS Handbook. Accessed 24 October 2026.", url: "https://handbook.bcehs.ca/clinical-practice-guidelines/d-circulatory/d02-bleeding/" },
 } satisfies Record<string, Source>;
 
 export const EMS_S88: Samp[] = [
@@ -187,7 +186,7 @@ export const EMS_S88: Samp[] = [
         id: "q3",
         kind: "single",
         update: "It is now about 80 minutes since her father found her with the remote.",
-        prompt: "Which of the following should she receive now?",
+        prompt: "Which of the following treatments should she receive now for the battery?",
         options: ["glucagon 0.5 mg IV", "metoclopramide 1.5 mg IV", "sucralfate 1 g PO every 10 minutes", "Water to wash the battery down", "No oral intake until removal"],
         correct: 2,
         explanation:
@@ -291,7 +290,7 @@ export const EMS_S88: Samp[] = [
         options: ["Circumferential pressure bandage", "Direct pressure on the bleeding site", "Elevation of the arm alone", "Pressure over the brachial artery", "Tourniquet above the fistula first"],
         correct: 1,
         explanation:
-          "BCEHS directs crews to control bleeding from a dialysis fistula or graft with direct pressure on the site, and its bleeding guideline uses direct pressure first for any compressible bleeding. A needle site is small and compressible, so firm pressure placed exactly over it stops the flow while keeping the fistula working. A circumferential bandage can occlude the fistula and cause it to clot, which the guideline warns against. A tourniquet is kept for bleeding that pressure cannot control. Elevation alone or pressure placed away from the site does not press on the bleeding point.",
+          "BCEHS directs crews to control bleeding from a dialysis fistula or graft with direct pressure on the site. A needle site is small and compressible, so firm pressure placed exactly over it stops the flow while keeping the fistula working. A circumferential bandage can occlude the fistula and cause it to clot, which the guideline warns against. Starting with a tourniquet skips the simple step the guideline directs and encircles the limb. Elevation alone or pressure placed away from the site does not press on the bleeding point.",
         keyFeature: { topic: "ems", n: 1 },
         source: "bcehs-e04",
       },
@@ -332,7 +331,7 @@ export const EMS_S88: Samp[] = [
         source: "bcehs-e04",
       },
     ],
-    sources: [S.bcehsDialysis, S.bcehsBleeding],
+    sources: [S.bcehsDialysis],
     ...META,
   },
 ];
