@@ -177,3 +177,12 @@ This revision answers `docs/reviews/q500b-verify-s85.md`. It replaces the earlie
 1. chest-pain-52 is a subacute presentation to the ED. The key decision is to image the apex now, but some EDs would arrange urgent outpatient CT instead. The options do not set CT now against urgent outpatient CT.
 2. The scoping review is the only source for chest-pain-52. It is recent and was read in full, but it is a review, not a guideline.
 3. The Horner syndrome mechanism in 52 q2 (invasion of the sympathetic chain) is standard teaching and is not quoted from the review.
+
+## Revision 3
+
+This revision answers `docs/reviews/q500b-verify2-s85.md`. Only wording changed. No option, key, stem or source changed.
+
+- chest-pain-52 q1: the opening sentence now reads "A 45 pack-year smoking history is the strongest risk factor here for a lung cancer at the apex, and the scoping review advises apical lung imaging when shoulder pain comes with Horner syndrome and a smoking history or weight loss." "He has all three." is kept.
+- chest-pain-52 q2: "and with shoulder pain it should prompt apical imaging" now reads "and with shoulder pain and his smoking history it should prompt apical imaging".
+- chest-pain-48 q4 (optional): the figures now map to Ross 2004 exactly: "a chest wall abscess or phlegmon (25%), a retrosternal abscess or mediastinitis (13%)".
+- Tests: `SAMP_BATCH=s85 npx vitest run tests/samps.test.ts tests/samp-quality.test.ts tests/citations.test.ts --testTimeout=120000` passed 128 of 128. tsc reports no errors for samps/s85. Key positions and option lengths are unchanged from Revision 2.
