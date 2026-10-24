@@ -521,7 +521,7 @@ export const benchPressChestPain: OralCase = {
       text: "Measures the blood pressure in both arms, checks pulses in all four limbs and listens for aortic regurgitation.",
       points: 2,
       critical: true,
-      teaching: "A pulse deficit, a pressure difference between the arms and a new aortic regurgitation murmur are high risk exam findings. They were present in only a minority of registry patients, so look for them on purpose.",
+      teaching: "A pulse deficit, a pressure difference between the arms and a new aortic regurgitation murmur are high risk exam findings. They are part of the aortic dissection detection risk score, so look for them on purpose.",
       source: "advised",
     },
     {
@@ -595,7 +595,7 @@ export const benchPressChestPain: OralCase = {
       criterion: "process",
       text: "Sees the patient personally instead of accepting the working diagnosis, and teaches the resident why tenderness and normal first tests do not exclude danger.",
       points: 2,
-      teaching: "The ECG was normal in about 31% and the chest X ray in about 12% of registry patients with dissection. Anchoring on a benign label is a classic cause of a missed dissection.",
+      teaching: "The ECG was normal in about 31% and the chest X ray in about 12% of registry patients with dissection. The presentation is diverse, so a benign working label must be checked at the bedside.",
       source: "irad",
     },
     {

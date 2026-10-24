@@ -14,6 +14,7 @@ const S = {
   wilson: { id: "beta-psychopharm-2012", citation: "Wilson MP, Pepper D, Currier GW, and colleagues. The psychopharmacology of agitation. Consensus statement of the American Association for Emergency Psychiatry Project BETA Psychopharmacology Workgroup. Western Journal of Emergency Medicine. 2012.", url: "https://pmc.ncbi.nlm.nih.gov/articles/PMC3298219/" },
   knox: { id: "beta-restraint-2012", citation: "Knox DK, Holloman GH Jr. Use and avoidance of seclusion and restraint. Consensus statement of the American Association for Emergency Psychiatry Project BETA Seclusion and Restraint Workgroup. Western Journal of Emergency Medicine. 2012.", url: "https://pmc.ncbi.nlm.nih.gov/articles/PMC3298214/" },
   gower: { id: "gower-ed-delirium", citation: "Gower LEJ, O'Keefe Gatewood M, Kang CS. Emergency department management of delirium in the elderly. Western Journal of Emergency Medicine. 2012.", url: "https://westjem.com/articles/emergency-department-management-of-delirium-in-the-elderly.html" },
+  nice: { id: "nice-delirium", citation: "National Institute for Health and Care Excellence. Delirium: prevention, diagnosis and management in hospital and long-term care. Clinical guideline CG103. 2010, updated 2023.", url: "https://www.nice.org.uk/guidance/cg103/chapter/Recommendations" },
   hcca: { id: "hcca", citation: "Health Care Consent Act, 1996, S.O. 1996, c. 2, Sched. A (Ontario). 1996, as amended.", url: "https://www.ontario.ca/laws/statute/96h02" },
 } satisfies Record<string, Source>;
 
@@ -275,13 +276,14 @@ export const DELIRIUM_AGITATION_S77: Samp[] = [
       {
         id: "q1",
         kind: "single",
-        prompt: "Which of the following findings most strongly favours delirium over a late-onset psychotic disorder?",
-        options: ["Being found in his barn at dawn", "Belief that his cows need milking", "Living alone since his wife died", "Restless movement on the stretcher", "Stating the year as 2016"],
+        update: "His neighbour asks whether this confusion means that he has dementia.",
+        prompt: "Which of the following is the most appropriate response to the neighbour's question about dementia?",
+        options: ["Diagnose dementia from today's confusion", "Do a MoCA today to stage his memory", "Promise his memory will fully recover", "Start donepezil for his memory", "Test his cognition once delirium clears"],
         correct: 4,
         explanation:
-          "Giving the year as 2016 is disorientation in time, and delirium is a disturbance of consciousness with a change in cognition that develops over a short time, as his decline from doing his accounts 4 days ago shows. A primary psychotic disorder usually leaves orientation intact, and a first psychosis at 79 with fever should be treated as medical until proven otherwise. His wish to milk cows he sold a decade ago follows from that disorientation rather than standing alone as a fixed delusion. Restlessness occurs in agitation of any cause. Living alone and being found in the barn do not separate the two.",
+          "His confusion began within the last 4 days in a febrile man who was doing his own farm accounts, so this is delirium, and a memory test today would reflect the delirium rather than his usual ability. NICE advises that when delirium and dementia are hard to separate, the delirium is managed first, and that a person whose delirium does not resolve is followed up and assessed for possible dementia. Diagnosing dementia or staging it with a MoCA now would label an acute illness as a chronic one, and donepezil would treat a diagnosis that has not been made. Promising full recovery is not honest, because NICE notes that delirium raises the later risk of dementia.",
         keyFeature: kf(1),
-        source: "gower-ed-delirium",
+        source: "nice-delirium",
       },
       {
         id: "q2",
@@ -320,7 +322,7 @@ export const DELIRIUM_AGITATION_S77: Samp[] = [
         source: "hcca",
       },
     ],
-    sources: [S.gower, S.hcca],
+    sources: [S.nice, S.gower, S.hcca],
     ...META,
   },
 ];

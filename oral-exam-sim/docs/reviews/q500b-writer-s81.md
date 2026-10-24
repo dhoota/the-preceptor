@@ -7,14 +7,14 @@ Batch `s81`, topic `analgesia-sedation`. File `src/samps/s81/analgesia-sedation.
 | Id | Title | Setting | Questions | Key features |
 |---|---|---|---|---|
 | analgesia-sedation-48 | Restless evening under palliative care | Rural hospital, 79-year-old man, comfort care | 4 single | 1, 4, 3, 6 |
-| analgesia-sedation-49 | Girl who fell from a pony | Community hospital at night, 6-year-old girl | 4 single | 4, 4, 6, 5 |
+| analgesia-sedation-49 | Boy thrown from a dirt bike | Community hospital at night, 11-year-old boy | 4 single | 4, 4, 6, 5 |
 | analgesia-sedation-50 | Tripped on the rug at home | Tertiary, 72-year-old woman with expressive aphasia after a stroke | 4 single | 1, 1, 2, 4 |
 | analgesia-sedation-51 | Fall on an icy step in pregnancy | Tertiary, 33-year-old woman at 30 weeks | 3 single, 1 menu | 2, 5, 4, 6 |
-| analgesia-sedation-52 | Missed step on the way to the car | Tertiary, 54-year-old woman on semaglutide | 4 single | 5, 5, 5, 3 |
+| analgesia-sedation-52 | Fall while carrying groceries | Tertiary, 54-year-old woman on semaglutide | 4 single | 5, 5, 5, 3 |
 
 20 questions: 19 single, 1 menu (analgesia-sedation-51 q2, select two of eight).
 
-Single key positions (first to fifth): 4, 4, 4, 4, 3. The key is the longest option in 4 of 19 single questions (50 q3, 50 q4, 51 q3, 52 q2).
+Single key positions (first to fifth): 4, 3, 4, 4, 4. The key is the longest option in 3 of 19 single questions (50 q4, 51 q3, 52 q2).
 
 ## Key feature coverage
 
@@ -67,3 +67,23 @@ Bank counts before this batch (all SAMPs, all topics): KF1 24, KF2 54, KF3 29, K
 
 - `npx tsc --noEmit -p . 2>&1 | grep samps/s81` prints nothing.
 - After revision 1: `SAMP_BATCH=s81 npx vitest run tests/samps.test.ts tests/samp-quality.test.ts tests/citations.test.ts --testTimeout=120000` passes 128 of 128. Without the longer timeout, the bank-wide near-duplicate test can exceed 5 seconds when the machine is busy.
+
+## Revision 2
+
+Response to `docs/reviews/q500b-qa-s81.md` (8 fails). Every rebuilt decision was grepped across all of `src/samps` and `src/cases` before writing. Only sources already opened and read in this batch are cited. Key features stay 1, 4, 3, 6 / 4, 4, 6, 5 / 1, 1, 2, 4 / 2, 5, 4, 6 / 5, 5, 5, 3, so the coverage table above is unchanged. 51 q2 is still the menu.
+
+1. 48 q4. The update now opens "Later he settles." Nothing else changed.
+2. 49 q1. The patient is new: an 11-year-old boy, 38 kg, thrown from a dirt bike, with an angulated tibial and fibular shaft fracture and new vitals. The forearm, the 6-year-old girl at 20 kg and the old vitals are gone. q1 no longer keys a fentanyl dose. It asks for the response to the resident's midazolam order, and the key is the strategy "Treat his pain first, then reassess". The other options are midazolam as ordered, midazolam with analgesia after the CT, restraint, and IV ketamine sedation. The source is CPS 2019 (sedation only as an adjunct for persisting distress). The CPS 2022 pain statement is no longer used in the batch and is removed. q2 and q3 keep their keys, reworded for the new patient. q2 swaps "CT under general anesthesia" for "Delay CT for general anesthesia" so that the key moves to third place.
+3. 49 q4. The key is now "Difficult intubation at past surgery", a CPS 2021 anesthesia-consultation trigger (features of a potentially difficult airway, including a history of difficult intubation). No SAMP keys this trigger (grep for "difficult intubation" with sedation). Asthma, URTI, Down syndrome, OSA and cardiac disease are not used.
+4. 50 q3. This is a new KF2 decision: the orthopedic resident offers an interscalene block to a woman who took apixaban this morning. The key is "Deferred until 72 hours off apixaban". The ACS trauma pain guideline applies the ASRA deep plexus rules to brachial plexus blocks, and its Table 8 gives a 72-hour apixaban hold. Its Table 9 notes that interscalene blocks invariably cause ipsilateral phrenic weakness. The distractors are an INR threshold (a warfarin rule), ultrasound guidance, a 24-hour hold, and "better than opioids and safe for breathing". Tramadol and the NSAID decision are gone. The only interscalene item elsewhere in the bank is sob-22 (phrenic palsy after day surgery), a different decision. 50 q2's last sentence now reads "In a patient who can rate her own pain, reading the PAINAD of 2 as mild pain ...", as the reviewer suggested.
+5. 51 q1. The four sedation distractors are replaced with non-sedation analgesic strategies of the same form: acetaminophen 1 g IV, fentanyl 50 mcg IV, hydromorphone 1 mg IV and morphine 5 mg IV, each "then retry". The key is "lidocaine 1% into the joint". The explanation keeps the Cochrane comparison: IV opioid before a retry is the IV analgesia arm, with more adverse effects and no better success. Ketorolac was considered and dropped, because its pregnancy reason sits in the ACS guideline rather than the cited Cochrane review.
+6. 51 q4. This is a new KF6 discharge-advice question specific to pregnancy after sedation. The update states that 4 hours of fetal and contraction monitoring were completed and normal, so the SOGC 4-hour point is not keyed. The key is "Regular abdominal tightening", supported by the SOGC list of adverse features after trauma in pregnancy (sustained contractions, tenderness, bleeding, ruptured membranes). The distractors are expected after-effects of sedation or the reduction: nausea, sleepiness, shoulder ache and an IV-site bruise. This does not repeat s22-41 q4 (responsible adult, baseline mental status) or 51 q2.
+7. 52 q3 and q4. The injury is now a posterior elbow dislocation with a cool hand and no radial pulse. No block alternative is keyed, so 51 q1 keeps the only intra-articular block angle. q3 is "Which of the following is the most appropriate plan for reducing her elbow?" The key is "General anesthesia with RSI", following the Kindel recommendation to weigh RSI with general anesthesia against cancelling when retained contents are confirmed. Cancelling or a 24-hour liquid diet is not possible with a threatened limb, and ED ketamine, propofol, or midazolam with fentanyl leave the airway unprotected. The q3 update reads "Bedside assessment confirms a large volume of solid food in her stomach" and no longer names ultrasound. q4 is now the analgesic while she waits for the reduction, and its update reveals no earlier key. Its key is still fentanyl 50 mcg IV, now with diazepam in place of lorazepam as a distractor. The White 2008 source is no longer used and is removed.
+8. 52 stem. The tented-skin ankle wording is gone. The new examination (bent elbow she will not let anyone move, olecranon jutting out behind the joint, cool pale hand, no radial pulse) shares no sentence with s06 msk, s22-27, s29 msk (child gymnast) or s22-32 (OSA elbow). The GLP-1 aspiration decision is new to the bank.
+
+Batch checks after Revision 2:
+- Single key positions are 4, 3, 4, 4, 4, and the key is the longest option in 3 of 19 singles.
+- `SAMP_BATCH=s81 npx vitest run tests/samps.test.ts tests/samp-quality.test.ts tests/citations.test.ts --testTimeout=120000` passes 128 of 128.
+- The `tsc` grep for samps/s81 prints nothing.
+
+Sources now cited: Fraser Health, PAINAD, CPS 2019, CPS 2021, SOGC 2015, Wakai 2011, ACS TQIP 2020 and Kindel 2025. The CPS 2022 and White 2008 rows above apply only to the earlier version.
