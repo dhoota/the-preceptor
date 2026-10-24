@@ -65,3 +65,29 @@ Bank counts before this batch: KF1 15, KF2 35, KF3 50, KF4 24, KF5 16. The extra
 7. sob-52 q5 statements about cefazolin and vancomycin coverage are standard microbiology and are not in the MSD page.
 8. sob-51 vitals give O2 sat 93% on room air at triage, while the stem gives 95% lying and 87% standing. This is intended.
 9. The bank-wide near-duplicate test passes but timed out at 5 seconds under heavy machine load (load average about 14 on 4 cores). It passes with a longer timeout.
+
+## Revision 1
+
+This revision answers docs/reviews/q500b-qa-s79.md (6 fails) and the coordinator's TF-IDF flags (sob-50 q1 against dvt-pe-39 q2, and sob-50 q2 against sob-24 q1). Before writing, I grepped the whole bank (src/samps and src/cases) for: tamoxifen, S1Q3T3, Westermark, Hampton, distal DVT, calf vein, peroneal, two-point, contrast allergy, high-probability V/Q, colitis, breastfeeding with contrast and postpartum PE. Tamoxifen, the ECG strain pattern and a normal A-a gradient in suspected PE had no hits. Several ideas I tried were dropped because the bank already had them: contrast anaphylaxis leading to V/Q (dvt-pe-07), breastfeeding after CT (dvt-pe-49), and a non-diagnostic V/Q leading to serial ultrasound (sob-23).
+
+1. **sob-48 q3:** The propranolol option is replaced by "budesonide 2 mg nebulized". The last sentence of the explanation now says budesonide reduces swelling over hours, not minutes. The key (epinephrine) is unchanged and now sits in position 2.
+2. **sob-49 (whole SAMP rebuilt):** It is now "Breathless during breast cancer treatment". A 61-year-old woman on tamoxifen, in a tertiary centre, has PE as the leading diagnosis. There is no orthopedic surgery, no rural setting without CT, no anticoagulation while waiting and no thrombolysis threshold. The theme is tests that falsely reassure.
+   - q1: tamoxifen as the item that adds most to her pretest probability. The source is Parikh 2017 (opened at https://pmc.ncbi.nlm.nih.gov/articles/PMC5554619). It calls tamoxifen an independent risk factor with a 1.5 to 7.1 times higher risk, highest early and lasting at least 2 years.
+   - q2: a right ventricular strain pattern on ECG. Per ESC 2019, it is usually found in more severe PE and does not confirm PE. In milder PE, sinus tachycardia (about 40%) may be the only change.
+   - q3: a normal A-a gradient does not lower her probability. Per ESC 2019, up to 40% of patients with PE have a normal saturation and about 20% have a normal gradient.
+   - q4: a negative bedside two-point ultrasound. Per ESC 2019, proximal DVT is found in 30 to 50% of PE, sensitivity is 41%, specificity is 96%, and a positive proximal scan is enough to treat. The key is a fact ("Most patients with PE have no proximal DVT"), so it is not the plain negation of a distractor, and no later update names an earlier key.
+   - There is no dalteparin dose in the rebuilt SAMP.
+3. **sob-50 q1:** The Wells question is gone. The Wells score (1.5) and the raised D-dimer are now facts in the stem. The new q1 asks what to obtain before reading the new CT, and the key is her end-of-treatment CT (Le Gal 2009, comparison with baseline imaging).
+4. **sob-50 q2:** The "D-dimer first" question is gone. The old q3 (the chronic web) is now q2, and its update no longer says that the earlier scan was compared, so it does not give away the new q1 key. The old q4 (pneumonia) is now q3, and its explanation adds that infection explains the raised D-dimer. A new q4 asks about the anticoagulation plan, keyed "No anticoagulation". It rests on Le Gal 2009: with no change from baseline, recurrence was excluded, and untreated patients had a 3-month risk of 2.8%. Mos 2014 is no longer cited by any question, so it was removed from the sources of sob-50.
+5. **sob-51 q4 update:** It now reads "Testing confirms the diagnosis."
+6. **sob-51 q4 explanation:** It now reads "Methylene blue, pentoxifylline and garlic have been tried in small studies with mixed or preliminary results, and none is an established treatment."
+
+**Counts after revision:** 21 questions (20 single, 1 menu). Key features: KF1 5, KF2 4, KF3 3, KF4 2, KF5 7. Every key feature is still covered. The single keys sit in positions first to fifth 3, 5, 3, 4 and 5 times. The key is the longest option in 1 of 20 single questions (sob-52 q4).
+
+**Tests:** `SAMP_BATCH=s79 npx vitest run tests/samps.test.ts tests/samp-quality.test.ts tests/citations.test.ts --testTimeout=120000` passed 132 of 132. tsc shows no errors in samps/s79.
+
+**Still uncertain:**
+- I did not find or verify ESC 2019 text on a distal-only DVT in suspected PE, so that angle was not used.
+- The statement in sob-49 q4 that adding the calf veins does not make the scan exclude PE is my inference from the 30 to 50% proximal DVT figure. It is not a quoted line.
+- The tamoxifen source is a meta-analysis on breast reconstruction. Its introduction states the general VTE risk of tamoxifen, which is what the item uses.
+- The sob-50 q4 statement on extended low-dose apixaban or ASA is general practice and is not in Le Gal 2009.

@@ -64,3 +64,41 @@ Each was opened with WebFetch, and each point was checked against the text.
 6. 50 q1: "Neck flexion on a pillow" is wrong for the reason given. Please check the wording about the large occiput.
 7. Metoclopramide being contraindicated in mechanical bowel obstruction (48 q1) comes from standard product labelling, not from the cited DAS source.
 8. The bank-wide near-duplicate test once timed out at 5 s under heavy machine load. It passed on the final run of the exact command.
+
+## Revision 1
+
+This revision answers docs/reviews/q500b-qa-s80.md (15 fails). Where this section differs from the tables above, this section is correct. No new web sources were used. Every citation is one already opened in this batch: CAFG 2021 Part 1 Table 10 was reopened in this revision to check the detector rows. Before writing each replacement, I grepped the whole bank (`src/samps` and `src/cases`) by keyword: neck circumference, supraglottic predictors, teeth or edentulous, esophageal detector, detector bulb, colorimetric, CO2 detector, suction down the tube, before ventilating. None of the new key decisions appears.
+
+### Fixes item by item
+
+- **48 q2 (repeat of multiple-trauma-36 q1 and the dialysis-hyperkalemia-arrest case):** removed. The hyperkalemia, dialysis and calcium details are gone from the stem, and Hovgaard has been dropped from the sources. KF5 is still covered by 51 q4. The old q3 and q4 are now q2 and q3. The q2 update no longer mentions the nasogastric tube.
+- **48, new q4 (KF4):** after a regurgitation intubation, suction down the tube before the first breath (SALAD, Root 2020, step "suction its lumen with a soft catheter before ventilating"). This is new to the bank.
+- **48 q3, was q4 (cue):** the update now reads "Moments later, brown fluid wells up ...", as the review asked.
+- **49 q1 (repeat of airway-06 q1):** replaced with a menu on predictors of difficult supraglottic airway use: missing upper front teeth and a neck circumference of 49 cm (CAFG Part 2). The stem now gives these findings in place of the snoring and dentition details. No bank item asks about predictors for a supraglottic airway.
+- **49 q3 and q4 (cues):** the updates now read as the review gave them.
+- **50 q1 (accuracy):** the occiput sentence is replaced with the review's wording. The option now reads "Neck flexed forward on a pillow".
+- **50 q2, q3 and q4 (cues):** the updates now read as the review gave them.
+- **51 q1 and q4 (length cues):** the keys are now "Secure the airway today" and "No sedative". The reasoning stays in the explanations.
+- **52 (rebuilt):** the old q1 (apneic oxygenation, a repeat of airway-06 q2), q2 (fading signal, a repeat of airway-13 q2) and q4 (an implausible desaturation and a repeated FRC point) are removed. The stem is unchanged. All four new items are KF6, each from CAFG Part 1 Table 10:
+  - q1: slow bulb refill from a tube seen passing the cords is a false result from obesity, BMI over 35. This is the old q3 with the review's fixes: the update no longer says the first tube was removed, and the FRC wording is gone.
+  - q2: recent forceful mask ventilation can make the bulb refill from an esophageal tube.
+  - q3 (menu): false positive colour change from gastric acid on the detector, or epinephrine given down the tube. Low cardiac output and neonates are the false-negative distractors.
+  - q4: colorimetric CO2 over six breaths is the most reliable method available when waveform capnography has failed (sensitivity 97 to 100%, specificity 91 to 100% outside cardiac arrest). Auscultation is only 50 to 95% specific.
+
+### Coverage and balance after revision
+
+- 20 questions: 17 single and 3 menu (49 q1, 51 q2, 52 q3).
+- Questions per key feature: n1 6, n2 1, n3 2, n4 4, n5 1, n6 6. Every key feature is tested.
+- Single key positions, first to fifth: 2, 3, 4, 4, 4. No position is above 25 percent.
+- The length gates pass.
+
+### Still uncertain
+
+1. KF2 and KF5 have one question each. I could not find a new angle in the bank for either with a source I could open this session.
+2. 52 q2: CAFG Table 10 lists "significant recent FMV or SGA ventilation" as a cause of a misleading esophageal detector result. The text extracted from the table did not show which column it sits in. The key states the standard mechanism, a false tracheal result from insufflated gas.
+3. 52 q3: the menu's subject (the colorimetric detector) foreshadows the q4 key. This is a mild forward cue, so please check it.
+4. 51: the review's flag stands. The q2 update, q3 prompt and q4 update all imply the airway will be secured.
+
+### Test result
+
+`SAMP_BATCH=s80 npx vitest run tests/samps.test.ts tests/samp-quality.test.ts tests/citations.test.ts --testTimeout=120000`: 128 passed. The typecheck shows no errors for s80.

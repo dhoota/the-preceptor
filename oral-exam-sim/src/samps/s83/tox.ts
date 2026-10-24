@@ -34,7 +34,7 @@ export const TOX_S83: Samp[] = [
         options: ["Alcohol withdrawal", "GHB withdrawal", "Serotonin toxicity", "Sympathomimetic toxicity", "Thyrotoxic crisis"],
         correct: 1,
         explanation:
-          "Gamma-butyrolactone is sold as an industrial solvent and is converted to GHB in the body within minutes. Dosing every 2 to 3 hours around the clock is the pattern of a dependent user, and tremor, sweating, anxiety and a fast pulse starting within hours of the last dose fit withdrawal from a drug with a half-life of 20 to 30 minutes. He does not drink, so alcohol withdrawal does not fit. Serotonin toxicity brings clonus and hyperreflexia, which he does not have. A sympathomimetic would not explain why symptoms began when his supply ran out. Nothing in his history suggests thyroid disease, and his symptoms began when his supply ran out.",
+          "Gamma-butyrolactone is sold as an industrial solvent and is converted to GHB in the body within minutes. Dosing every 2 to 3 hours around the clock is the pattern of a dependent user, and tremor, sweating, anxiety and a fast pulse starting within hours of the last dose fit withdrawal from a drug with a half-life of 20 to 30 minutes. He does not drink, so alcohol withdrawal does not fit. Serotonin toxicity brings clonus and hyperreflexia, which he does not have. A sympathomimetic would not explain why symptoms began when his supply ran out. Nothing in his history suggests thyroid disease.",
         keyFeature: { topic: "tox", n: 2 },
         source: "weaver-ghb",
       },
@@ -97,7 +97,7 @@ export const TOX_S83: Samp[] = [
     alsoTopics: ["pediatric-fever"],
     title: "Crying newborn on day five",
     stem:
-      "You are working in a community hospital emergency department. A 5-day-old boy is brought in by his parents with 1 day of high-pitched crying, poor feeding and loose stools. He was born at 39 weeks by vaginal delivery after an uncomplicated labour and went home at 96 hours of age after a period of observation. His mother has taken methadone 60 mg daily for opioid use disorder throughout the pregnancy, and her HIV test was negative. She is breastfeeding. He has had no fever and no vomiting. He sneezes often, and he has a tremor and increased tone when handled. His anterior fontanelle is flat, his abdomen is soft and not distended, and his capillary refill is 2 seconds. His birth weight was 3.4 kg.",
+      "You are working in a community hospital emergency department. A 5-day-old boy is brought in by his parents with 1 day of high-pitched crying, poor feeding and loose stools. He was born at 39 weeks by vaginal delivery after an uncomplicated labour and went home at 96 hours of age after a period of observation. His mother has taken methadone 60 mg daily for opioid use disorder throughout the pregnancy, and her HIV test was negative. She is breastfeeding. He has had no fever and no vomiting. He sneezes often, and he has a tremor and increased tone when handled. His anterior fontanelle is flat, his abdomen is soft and not distended, and his capillary refill is 2 seconds. There are no focal neurological signs. His birth weight was 3.4 kg.",
     vitals: { temperature: "37.2°C rectal", pulse: "168/minute", resp: "54/minute", o2sat: "98% on room air", weight: "3.1 kg" },
     questions: [
       {
@@ -125,12 +125,12 @@ export const TOX_S83: Samp[] = [
       {
         id: "q3",
         kind: "single",
-        update: "He takes 5 to 10 mL per feed, sleeps less than 30 minutes at a time and cannot be settled within 10 minutes when held by his mother.",
+        update: "Over the next 2 hours he feeds poorly and cries most of the time, even when his mother holds him.",
         prompt: "Which of the following is the most appropriate next step in his care?",
         options: ["Discharge with formula feeds", "Morphine 0.05 mg/kg PO now", "Phenobarbital 20 mg/kg IV load", "Transfer to a regional NICU", "Ward admission with mother rooming in"],
         correct: 4,
         explanation:
-          "He cannot feed, sleep or be consoled, and he has lost 0.3 kg, about 9% of his birth weight of 3.4 kg, so he needs admission. The Canadian Paediatric Society puts non-drug care first, with the mother rooming in, skin-to-skin contact, feeding support and a quiet, dim room, and adds medication only when these measures are not enough. Oral morphine is a first-line drug but comes after non-drug care has been tried. Phenobarbital is not first line for opioid withdrawal. He is a stable term infant, so transfer to a NICU would separate him from his mother without need. Discharge is unsafe.",
+          "He is feeding poorly and cannot be settled, and he has lost 0.3 kg, about 9% of his birth weight of 3.4 kg, so he needs admission. The Canadian Paediatric Society puts non-drug care first, with the mother rooming in, skin-to-skin contact, feeding support and a quiet, dim room, and adds medication only when these measures are not enough. Oral morphine is a first-line drug but comes after non-drug care has been tried. Phenobarbital is not first line for opioid withdrawal. He is a stable term infant, so transfer to a NICU would separate him from his mother without need. Discharge is unsafe.",
         keyFeature: { topic: "tox", n: 8 },
         source: "cps-nows-2025",
       },
@@ -230,7 +230,7 @@ export const TOX_S83: Samp[] = [
         options: ["Adrenal insufficiency", "Amlodipine toxicity", "Early liver failure", "Prolonged fasting", "Sulfonylurea co-ingestion"],
         correct: 4,
         explanation:
-          "A glucose of 2.2 mmol/L that falls again to 2.6 mmol/L on a dextrose 10% infusion points to ongoing insulin release, and sulfonylurea poisoning causes sustained hypoglycemia that is refractory to IV dextrose. Calcium channel blocker poisoning reduces insulin release and tends to raise glucose, so recurrent hypoglycemia after amlodipine points to a second drug. She ate 3 hours ago, so fasting does not explain it. A normal ALT and INR argue against liver failure. Nothing in her history suggests adrenal insufficiency, and it would not explain a glucose that falls again within an hour on an infusion.",
+          "A glucose of 2.2 mmol/L that falls again to 2.6 mmol/L on a dextrose 10% infusion points to ongoing insulin release, and sulfonylurea poisoning causes sustained hypoglycemia that is refractory to IV dextrose. Hypoglycemia that keeps returning on a dextrose infusion is the pattern of a sulfonylurea, so this unexpected result points to a second drug taken with her amlodipine. She ate 3 hours ago, so fasting does not explain it. A normal ALT and INR argue against liver failure. Nothing in her history suggests adrenal insufficiency, and it would not explain a glucose that falls again within an hour on an infusion.",
         keyFeature: { topic: "tox", n: 3 },
         source: "glatstein-octreotide",
       },
@@ -261,7 +261,7 @@ export const TOX_S83: Samp[] = [
       {
         id: "q4",
         kind: "single",
-        update: "She is moved to the intensive care unit on a norepinephrine infusion. The intensive care team asks when high dose insulin should be added.",
+        update: "She is moved to the intensive care unit on a vasopressor infusion. The intensive care team asks when high dose insulin should be added.",
         prompt: "Which of the following findings would most support adding high dose insulin to her treatment?",
         options: ["Glucose of 14.0 mmol/L", "Lactate of 2.1 mmol/L", "Poor contraction on repeat echo", "Potassium of 3.6 mmol/L", "Pulse of 118/minute"],
         correct: 2,
