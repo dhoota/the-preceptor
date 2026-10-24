@@ -383,13 +383,13 @@ export const EYE_S76: Samp[] = [
         kind: "single",
         prompt: "Which of the following factors would most predict a poor final vision in her left eye?",
         options: [
+          "Lid bruising and swelling",
           "Normal CT of the orbits",
           "Relative afferent pupillary defect",
           "Repair within 12 hours of injury",
           "Rupture close to the limbus",
-          "Swollen, bruised eyelids",
         ],
-        correct: 1,
+        correct: 2,
         explanation:
           "Her pupils have not yet been tested, and the swinging flashlight test is safe because it puts no pressure on the globe. In open globe injury, preoperative acuity, an afferent pupillary defect and the site of the wound are the strongest predictors of the final vision, and the Ocular Trauma Score is the most used model. An afferent defect means damage to the retina or optic nerve behind the wound. Repair within 12 to 24 hours and a wound close to the front of the eye predict a better result. A normal CT does not exclude the rupture or change the outlook, and lid bruising says nothing about the globe.",
         keyFeature: { topic: "eye", n: 3 },
@@ -413,13 +413,13 @@ export const EYE_S76: Samp[] = [
         kind: "single",
         prompt: "Which of the following is the most likely cause of the burning pain in both of her eyes?",
         options: [
-          "Alkali from airbag by-products",
           "Corneal abrasion from the fabric",
           "Glass fragments from her lenses",
+          "Sodium hydroxide from the airbag",
           "Thermal burn from inflation gas",
           "Ultraviolet keratitis",
         ],
-        correct: 0,
+        correct: 2,
         explanation:
           "Inflating an airbag leaves a fine powder that contains sodium hydroxide, an alkali. Burning in both eyes with powder on the lashes is a chemical exposure until proved otherwise, and it calls for immediate irrigation, for at least 15 minutes and with at least 1 litre, until the pH is normal. In one reported case the first irrigation came 6 to 7 hours after the crash because other injuries came first, and the eyes went on to limbal ischemia and lasting scarring. An abrasion from the fabric or a glass fragment would usually affect one eye. A thermal burn marks the skin of the face. Ultraviolet keratitis follows hours of sun or welding exposure.",
         keyFeature: { topic: "eye", n: 1 },

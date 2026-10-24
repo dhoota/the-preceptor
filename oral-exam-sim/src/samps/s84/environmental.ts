@@ -5,14 +5,14 @@ import type { Source } from "@/engine/types";
 const META = { reviewed: false, author: "Preceptor", version: 1 } as const;
 
 const S = {
-  bouchama: { id: "bouchama-heatstroke", citation: "Bouchama A, Abuyassin B, Lehe C, and colleagues. Classic and exertional heatstroke. Nat Rev Dis Primers. 2022." },
+  hc: { id: "hc-extreme-heat", citation: "Health Canada. Extreme heat events guidelines: technical guide for health care workers. 2011.", url: "https://www.canada.ca/en/health-canada/services/environmental-workplace-health/reports-publications/climate-change-health/extreme-heat-events-guidelines-technical-guide-health-care-workers.html" },
   extrip: { id: "extrip-lithium", citation: "Decker BS, Goldfarb DS, Dargan PI, and colleagues. Extracorporeal treatment for lithium poisoning: systematic review and recommendations from the EXTRIP Workgroup. Clin J Am Soc Nephrol. 2015.", url: "https://pmc.ncbi.nlm.nih.gov/articles/PMC4422246/" },
   nata: { id: "nata-sudden-death", citation: "Casa DJ, Guskiewicz KM, Anderson SA, and colleagues. National Athletic Trainers' Association position statement: preventing sudden death in sports. J Athl Train. 2012.", url: "https://pmc.ncbi.nlm.nih.gov/articles/PMC3418121/" },
   paal: { id: "paal-hypothermia", citation: "Paal P, Pasquier M, Darocha T, and colleagues. Accidental hypothermia: 2021 update. Int J Environ Res Public Health. 2022.", url: "https://pmc.ncbi.nlm.nih.gov/articles/PMC8744717/" },
   lampropoulou: { id: "lampropoulou-diving", citation: "Lampropoulou DI, Papageorgiou D, Pliakou E. Diving medicine: an exciting journey through time and future prospects. Cureus. 2024.", url: "https://pmc.ncbi.nlm.nih.gov/articles/PMC11044526/" },
   uhms: { id: "uhms-dcs-age", citation: "Undersea and Hyperbaric Medical Society. UHMS best practice guidelines: prevention and treatment of decompression sickness and arterial gas embolism. 2011.", url: "https://www.uhms.org/images/DCS-AGE-Committee/dcsandage_prevandmgt_uhms-fi.pdf" },
   smith: { id: "smith-electrical", citation: "Smith I, Kidd S, Kim S, Tennill RM. Assessment and management of electrical injuries in adults in the emergency department. Cureus. 2026.", url: "https://pmc.ncbi.nlm.nih.gov/articles/PMC13179728/" },
-  bailey: { id: "bailey-monitoring", citation: "Bailey B, Gaudreault P, Thivierge RL. Cardiac monitoring of high-risk patients after an electrical injury: a prospective multicentre study. Emerg Med J. 2007." },
+  bailey: { id: "bailey-monitoring", citation: "Bailey B, Gaudreault P, Thivierge RL. Cardiac monitoring of high-risk patients after an electrical injury: a prospective multicentre study. Emerg Med J. 2007.", url: "https://pmc.ncbi.nlm.nih.gov/articles/PMC2658483/" },
 } satisfies Record<string, Source>;
 
 export const ENVIRONMENTAL_S84: Samp[] = [
@@ -29,17 +29,6 @@ export const ENVIRONMENTAL_S84: Samp[] = [
       {
         id: "q1",
         kind: "single",
-        prompt: "Which of the following is the most appropriate immediate step in her management?",
-        options: ["Acetaminophen 975 mg PR", "Await the lithium level", "CT head before cooling", "Dantrolene 2.5 mg/kg IV", "Start active cooling now"],
-        correct: 4,
-        explanation:
-          "A rectal temperature of 41.1°C with confusion after 4 days in a hot apartment is classic heat stroke until proven otherwise. Her tremor and myoclonus also raise lithium toxicity, but rapid cooling is the only specific therapy for heat stroke and harm grows with each minute she stays hot. The lithium level and other tests are drawn while cooling runs. Acetaminophen acts on a raised hypothalamic set point, which heat stroke does not have. Dantrolene has no proven role in heat stroke. She has no head injury or focal sign, so a CT before cooling only delays treatment.",
-        keyFeature: { topic: "environmental", n: 1 },
-        source: "bouchama-heatstroke",
-      },
-      {
-        id: "q2",
-        kind: "single",
         update: "Ice packs, cold water spray and fans are started with a rectal probe in place.",
         prompt: "Which of the following investigations is most likely to identify a second cause of her presentation?",
         options: ["Noncontrast CT head", "Serum lithium level", "TSH and free T4 level", "Two sets of blood cultures", "Urine drug screen"],
@@ -50,7 +39,7 @@ export const ENVIRONMENTAL_S84: Samp[] = [
         source: "extrip-lithium",
       },
       {
-        id: "q3",
+        id: "q2",
         kind: "single",
         update: "After 35 minutes her rectal temperature is 38.9°C and active cooling is stopped. An hour later she is still disoriented with myoclonic jerks. Lithium is 3.6 mmol/L. Creatinine is 162 umol/L, up from 71 umol/L last year. Sodium is 141 mmol/L.",
         prompt: "Which of the following is the most likely cause of her ongoing confusion now that her temperature is controlled?",
@@ -62,19 +51,31 @@ export const ENVIRONMENTAL_S84: Samp[] = [
         source: "extrip-lithium",
       },
       {
+        id: "q3",
+        kind: "single",
+        update: "She is admitted and treated for lithium toxicity, and she recovers over 4 days. Her psychiatrist restarts lithium at a lower dose. The heat warning has been extended for 3 more days.",
+        prompt: "Which of the following is the most appropriate hydration advice for her while she takes lithium in hot weather?",
+        options: ["Drink a sports drink with each meal", "Drink water throughout the day", "Oral rehydration salts each morning", "Restrict fluids to 1.5 L daily", "Salt tablets with extra fluids"],
+        correct: 1,
+        explanation:
+          "Lithium levels run higher in summer, and dehydration in hot weather is a recognized cause of lithium poisoning that needs hospital care. Health Canada advises people who take lithium to stay hydrated through the day with water. It advises against electrolyte solutions, because of the risk of hypernatremia. Sports drinks and oral rehydration salts are electrolyte solutions. Salt tablets add sodium in the same way. Restricting fluids to 1.5 L a day in a heat wave invites the dehydration that raised her level this time.",
+        keyFeature: { topic: "environmental", n: 2 },
+        source: "hc-extreme-heat",
+      },
+      {
         id: "q4",
         kind: "single",
-        update: "She is receiving isotonic saline. She took her last lithium dose yesterday morning.",
-        prompt: "Which of the following is the most appropriate next step in the management of her lithium toxicity?",
-        options: ["Activated charcoal 50 g PO", "Furosemide 40 mg IV", "Repeat lithium level in 6 hours", "Urgent hemodialysis", "Whole bowel irrigation"],
-        correct: 3,
+        update: "Her son plans to take her home and buy an electric fan. Her apartment was 33°C this afternoon.",
+        prompt: "Which of the following is the most protective plan for her once she leaves hospital, while the heat warning continues?",
+        options: ["Cool shower each evening", "Electric fan beside her bed", "Extra fluids and a fan at home", "Fan with windows open at night", "Stay in an air-conditioned place"],
+        correct: 4,
         explanation:
-          "The EXTRIP workgroup recommends extracorporeal treatment when lithium poisoning causes a decreased level of consciousness, whatever the level, and when kidney function is impaired with a level above 4.0. It suggests it when significant confusion is present. Her confusion persists after cooling and her kidney function is impaired, so hemodialysis, the preferred method, should start now. Waiting 6 hours for another level prolongs brain exposure. Charcoal does not adsorb lithium. Whole bowel irrigation is for a recent large ingestion of sustained-release tablets, not chronic toxicity. Furosemide deepens volume depletion, which raises lithium reabsorption.",
+          "Air conditioning is one of the most protective factors against heat illness and death, and a public air-conditioned place is the alternative when a home has none. Studies of electric fans and heat stroke are mixed. Once the air is hotter than the skin, about 36°C, a fan warms the body by convection, and fans work less well in humid air. A fan in an apartment that reaches 33°C, with or without open windows and extra fluids, does not protect an older woman who has just had heat stroke. An evening shower cools her for a short time only. Health Canada also advises a daily check-in plan for people like her during extreme heat.",
         keyFeature: { topic: "environmental", n: 2 },
-        source: "extrip-lithium",
+        source: "hc-extreme-heat",
       },
     ],
-    sources: [S.bouchama, S.extrip],
+    sources: [S.extrip, S.hc],
     ...META,
   },
   /* 40 Track meet medical tent --------------------------------------------- */
@@ -93,7 +94,7 @@ export const ENVIRONMENTAL_S84: Samp[] = [
         options: ["Exercise-associated collapse", "Exertional heat stroke", "Heat exhaustion", "Hyponatremic encephalopathy", "Postural hypotension"],
         correct: 1,
         explanation:
-          "A rectal temperature above 40°C soon after collapse, together with central nervous system dysfunction such as disorientation, defines exertional heat stroke. She can talk, but she does not know where she is or what race she ran, and that counts as altered mental status. Heavy sweating does not exclude the diagnosis. Collapse from blood pooling after the finish occurs past the line, with a clear mind once the athlete lies flat. Heat exhaustion has no central nervous system dysfunction. Hyponatremia follows hours of exercise with excess drinking, not a 3000 m race. Her lying BP of 104/60 mmHg does not explain her confusion.",
+          "A rectal temperature above 40°C soon after collapse, together with central nervous system dysfunction such as disorientation, defines exertional heat stroke. She can talk, but she does not know where she is or what race she ran, and that counts as altered mental status. Heavy sweating does not exclude the diagnosis. Collapse from blood pooling after the finish occurs past the line, with a clear mind once the athlete lies flat. Heat exhaustion has no central nervous system dysfunction. Hyponatremia follows hours of exercise with excess drinking, not a 3000 m race. Her BP of 104/60 mmHg does not explain her confusion.",
         keyFeature: { topic: "environmental", n: 1 },
         source: "nata-sudden-death",
       },
@@ -112,7 +113,7 @@ export const ENVIRONMENTAL_S84: Samp[] = [
       {
         id: "q3",
         kind: "single",
-        update: "At 14 minutes her rectal temperature is 38.9°C and she is lifted out. She is oriented and says she feels fine. Her coach suggests she rest and go home with her parents.",
+        update: "Cooling is completed and she is lifted out of the tank. She is oriented and says she feels fine. Her coach suggests she rest and go home with her parents.",
         prompt: "Which of the following is the most appropriate plan for her now that cooling is complete?",
         options: ["Discharge to her coach and parents", "Family doctor review tomorrow", "Observe in the tent for 1 hour", "Rest, then run in the relay", "Transport to hospital by ambulance"],
         correct: 4,
@@ -140,7 +141,7 @@ export const ENVIRONMENTAL_S84: Samp[] = [
         options: ["High-flow oxygen and ambulance transfer", "Ice water immersion in the tent", "Oral fluids and rest in the shade", "Return to warm-up after a short rest", "Stretching and massage of both calves"],
         correct: 0,
         explanation:
-          "Signs of exertional sickling call for immediate withdrawal from activity, high-flow oxygen at 15 L/minute by non-rebreather mask, close watch on vital signs, an AED at hand and rapid transport to hospital. Exertional sickling is a leading cause of sudden death in athletes, so it is treated as an emergency even when he looks well. Ice water immersion treats a high core temperature that he does not have and would delay transfer. Rest with oral fluids and a return to warm-up underestimate the danger. Stretching and massage treat cramps, which he does not have.",
+          "Sickling collapse is treated as a medical emergency. NATA advises checking vital signs, giving high-flow oxygen at 15 L/minute by non-rebreather mask, and calling for transport with an AED attached if the athlete becomes obtunded or his vital signs decline. He is tachycardic and tachypneic in a tent with no laboratory, and the treating physicians must be ready for explosive rhabdomyolysis, so he goes to hospital by ambulance. Ice water immersion treats a high core temperature that he does not have and would delay transfer. Rest with oral fluids and a return to warm-up underestimate the danger. Stretching and massage treat cramps, which he does not have.",
         keyFeature: { topic: "environmental", n: 1 },
         source: "nata-sudden-death",
       },
@@ -171,7 +172,7 @@ export const ENVIRONMENTAL_S84: Samp[] = [
       {
         id: "q2",
         kind: "single",
-        update: "A 1 minute check with POCUS shows slow coordinated ventricular contractions, and a weak femoral pulse is felt. He is intubated by rapid sequence intubation and an esophageal probe is placed at 40 cm. His end-tidal CO2 is 21 mmHg.",
+        update: "Ultrasound shows slow coordinated ventricular contractions, and a weak femoral pulse is felt. He is intubated by rapid sequence intubation and an esophageal probe is placed at 40 cm. His end-tidal CO2 is 21 mmHg.",
         prompt: "Which of the following should guide his initial ventilator settings after intubation?",
         options: ["End-tidal CO2 of 35 to 45 mmHg", "Half the usual rate for his temperature", "Oxygen saturation of 94 to 98%", "Tidal volume titrated to chest rise", "Weight-based standard settings"],
         correct: 4,
@@ -259,7 +260,7 @@ export const ENVIRONMENTAL_S84: Samp[] = [
         options: ["12 hours", "24 hours", "48 hours", "72 hours", "96 hours"],
         correct: 3,
         explanation:
-          "After recompression treatment for decompression sickness, the UHMS guideline advises waiting 72 hours before flying when no residual signs or symptoms remain. A diver with residual findings flies only when cleared by a diving medicine physician. He is now at 48 hours, so he should wait one more day. Shorter intervals of 12 to 24 hours are used only after uneventful dives, not after treated decompression sickness. Flying sooner exposes him to lower cabin pressure while he may still carry inert gas.",
+          "After recompression treatment for decompression sickness, the UHMS guideline advises waiting 72 hours before flying when no residual signs or symptoms remain. A diver with residual findings flies only when cleared by a diving medicine physician. He is now at 48 hours, so he should wait one more day.",
         keyFeature: { topic: "environmental", n: 4 },
         source: "uhms-dcs-age",
       },
@@ -291,11 +292,11 @@ export const ENVIRONMENTAL_S84: Samp[] = [
       {
         id: "q2",
         kind: "single",
-        prompt: "Which of the following best explains the mechanism of his shoulder injury?",
-        options: ["Direct blow on the concrete floor", "Fall onto his outstretched arm", "Muscle tetany from alternating current", "Seizure from current through the brain", "Thermal injury to the joint capsule"],
+        prompt: "Which of the following is the most appropriate extent of his examination for other injuries?",
+        options: ["Examination along the current path only", "Focused examination of the right arm", "Full musculoskeletal examination", "Neurovascular check of the right hand", "Skin survey for entry and exit burns"],
         correct: 2,
         explanation:
-          "Household current is alternating, and alternating current causes tetanic muscle contraction on contact. That is why he could not let go, and the contraction lengthened his exposure. Forceful contraction of the shoulder muscles can drive the humeral head out of the joint, the same way a convulsive seizure does. He was kneeling and did not fall or strike the floor. The current ran from his hand to his knees, not through his head, and he stayed awake and talking, so a seizure is unlikely. His burns are a few millimetres across and do not reach the joint.",
+          "Every patient with an electrical injury should have a thorough musculoskeletal examination, because significant injury can be present without visible entry or exit wounds. Tetanic contraction strong enough to dislocate one shoulder can also fracture or dislocate other bones and joints, so the examination covers the whole skeleton, including the other shoulder and the spine. Examining only the current path, the right arm or the right hand misses injury from contraction elsewhere. A skin survey finds burns but not deep or skeletal injury.",
         keyFeature: { topic: "environmental", n: 5 },
         source: "smith-electrical",
       },
