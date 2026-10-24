@@ -223,8 +223,8 @@ export const LOC_S87: Samp[] = [
         id: "q1",
         kind: "single",
         prompt: "Which of the following findings most strongly indicates that this is not one of his usual migraines?",
-        options: ["Asking for the lights dimmed", "Inability to walk without help", "Nausea with repeated vomiting", "Severe throbbing headache", "Sleepiness after the headache"],
-        correct: 1,
+        options: ["Asking for the lights dimmed", "Nausea with repeated vomiting", "Severe throbbing headache", "Sleepiness after the headache", "Unable to walk without help"],
+        correct: 4,
         explanation:
           "The International Classification of Headache Disorders lists a pulsating quality, moderate or severe intensity, nausea or vomiting and photophobia as features of migraine, and notes that patients may fall asleep during an attack, so none of those separates today from his usual pattern. It lists aggravation by routine activity such as walking, which means the pain worsens, not that he cannot walk. Inability to walk with nystagmus is a new neurological deficit that migraine without aura does not explain, and the classification requires that an attack not be better accounted for by another diagnosis. Combined with a sudden onset and a falling level of consciousness, it means his drowsiness must not be put down to the sleep that follows his migraines.",
         keyFeature: { topic: "loc", n: 4 },

@@ -62,3 +62,23 @@ I read every existing tox SAMP (tox-01 to tox-47) and the tox key feature questi
 
 - `npx tsc --noEmit -p . 2>&1 | grep samps/s83` prints nothing.
 - `SAMP_BATCH=s83 npx vitest run tests/samps.test.ts tests/samp-quality.test.ts tests/citations.test.ts`: 136 of 136 pass with `--testTimeout=120000`. With the default 5 second timeout, only the bank-wide near-duplicate stem test fails, and it fails by timing out (10 to 22 seconds) on a machine shared with other writers. It does not report a duplicate.
+
+## Revision 1
+
+Changes made in reply to docs/reviews/q500b-qa-s83.md.
+
+- Count correction. The first submission had 22 questions (21 single, 1 menu), not 23, and kf8 had 8 questions, not 9. The tables above give the first submission's counts and need these corrections.
+- tox-48 q1 (optional). The thyroid reason now reads "Nothing in his history suggests thyroid disease, and his symptoms began when his supply ran out."
+- tox-48 q2. The update now opens "Thirty minutes later, while his IV is being placed", so he is no longer left untreated for 4 hours. The distractor "Systolic BP of 150 mmHg" became "BP of 158/94 mmHg", the value in the stem. That moved the key to position 2. The unclear sentence became "On their own, pulse and blood pressure do not mark severe withdrawal."
+- tox-49 stem (physician note). "went home at 36 hours of age" became "went home at 96 hours of age after a period of observation". This fits the CPS 72 to 120 hour window for exposure to a longer-acting opioid and the day 5 presentation.
+- tox-49 q2. Deleted the update that revealed the q1 key (the glucose result). The Finnegan sentence now reads: "Finnegan scoring is still widely used but counts many nonspecific signs, and the CPS recommends ESC as the evidence-based alternative."
+- tox-50 q5. Deleted, because its update revealed the q4 key. Its teaching moved to the end of the q4 explanation (690 umol/L, about 104 mg/L, above the 8 hour line of about 500 umol/L or 75 mg/L, means a full course of acetylcysteine). tox-50 now has 4 questions.
+- tox-51 q1 (optional rewording applied). "Calcium channel blocker poisoning reduces insulin release and tends to raise glucose, so recurrent hypoglycemia after amlodipine points to a second drug."
+- tox-51 q3 (octreotide). Removed. I grepped the whole bank, and octreotide as a key decision already appears in tox-14, s07 loc, s16 seizures and tox-32. No update now names the sulfonylurea or the result of the home search. The vasopressor question moved to q3. A new q4 asks which finding would support adding high dose insulin. The key is "Poor contraction on repeat echo", since St-Onge 2017 makes high dose insulin first line when there is evidence of myocardial dysfunction. The distractors are glucose 14.0, lactate 2.1, potassium 3.6 and pulse 118, and each has its reason. The source is ccb-consensus, the verified PMC full text. In the bank, high dose insulin appears only as a dosing question (tox-04) and in beta blocker shock (s50). None asks for its indication in dihydropyridine poisoning.
+- tox-52 q4 (optional). "now" was removed from the prompt, which reads "Which of the following is the most appropriate withdrawal management plan for him at this point?"
+
+After revision: 21 questions, 20 single and 1 menu. Key feature counts: kf1 3, kf2 1, kf3 2, kf4 3, kf5 1, kf6 1, kf7 2, kf8 8. Every key feature is still covered. Single key positions 0 to 4: 5, 3, 5, 5, 2. No position is above 25 percent.
+
+Tests: `SAMP_BATCH=s83 npx vitest run tests/samps.test.ts tests/samp-quality.test.ts tests/citations.test.ts --testTimeout=120000` passes 132 of 132. The tsc grep for samps/s83 prints nothing.
+
+Still open for the physician: the Dart 2023 full text, to confirm the 4 hour charcoal window and the 4 to 6 hour repeat level (tox-50 q3 and q4), and the overlap of tox-51 q3 with the batch07 CCB oral case.

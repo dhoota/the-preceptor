@@ -434,14 +434,14 @@ export const EYE_S76: Samp[] = [
         options: ["Grade 0", "Grade 1", "Grade 2", "Grade 3", "Grade 4"],
         correct: 0,
         explanation:
-          "Red cells suspended in the aqueous without a layer of blood is a microhyphema, graded 0. Grade 1 is layered blood filling less than a third of the chamber, grade 2 one third to one half, grade 3 more than half, and grade 4 a total hyphema. The grade guides care because the risk of a pressure rise climbs with the amount of blood, from about 13.5% in grades 1 and 2 to 52% in grade 4 in one series. Airbag injuries often include a hyphema, found in 43% of 97 injured occupants in one review, so a red eye after a deployment needs this look.",
+          "Red cells suspended in the aqueous without a layer of blood is a microhyphema, graded 0. Grade 1 is layered blood filling less than a third of the chamber, grade 2 one third to one half, grade 3 more than half, and grade 4 a total hyphema. The grade guides care because the risk of a pressure rise climbs with the amount of blood, from about 13.5% in grades 1 and 2 to 52% in grade 4 in one series. A microhyphema also has to be followed closely, because a rebleed can turn it into a layered hyphema.",
         keyFeature: { topic: "eye", n: 5 },
         source: "eyewiki-hyphema",
       },
       {
         id: "q3",
         kind: "single",
-        prompt: "Which of the following additional history findings would most support admission for her eye injury?",
+        prompt: "Which of the following additional findings would most support admission for her eye injury?",
         options: [
           "Hypothyroidism on levothyroxine",
           "Known von Willebrand disease",
