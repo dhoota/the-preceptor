@@ -28,8 +28,8 @@ Bank counts before this batch: KF1 16, KF2 30, KF3 18, KF4 54. KF1 and KF3 were 
 |---|---|---|
 | 1 Consider pre-eclampsia with headache, abdominal pain or confusion | 5 | 39 q1, 40 q1, 41 q1, 42 q1, 43 q1 |
 | 2 Systematic evaluation, risk factors, labs | 3 | 41 q2, 42 q2, 43 q2 |
-| 3 Exclude HELLP before other diagnoses | 6 | 39 q2, 40 q2, 40 q3, 42 q4, 43 q3, 43 q4 |
-| 4 BP control, seizure prophylaxis, delivery planning | 6 | 39 q3, 39 q4, 40 q4, 41 q3, 41 q4, 42 q3 |
+| 3 Exclude HELLP before other diagnoses | 5 | 39 q2, 40 q2, 40 q3, 42 q4, 43 q3 |
+| 4 BP control, seizure prophylaxis, delivery planning | 7 | 39 q3, 39 q4, 40 q4, 41 q3, 41 q4, 42 q3, 43 q4 |
 
 ## How this batch avoids repeats
 
@@ -73,3 +73,21 @@ The session's web search budget ran out partway through. After that I worked onl
 6. 42 q3 says epinephrine raises BP through its alpha effect. This is basic pharmacology. WAO 2020 does not state it.
 7. 43 q4: the enoxaparin dose is about 1 mg/kg at 98 kg, rounded to 100 mg. The SOAP 24 hour neuraxial interval was not reopened this session.
 8. 42 q4 calls the 2 hour change "progressive pre-eclampsia". It rests on NICE's wording on progressive deterioration. It is not a named diagnostic category.
+
+## Revision 1
+
+All fixes from `docs/reviews/q500b-qa-s82.md` were applied as the reviewer wrote them.
+
+- 39 q4: The update now reads "she will be at the station for at least the next 3 hours". The prompt now ends "over the next few hours". This removes the cue to the q3 medevac key. Options, key and explanation are unchanged.
+- 41 q2: Rebuilt as a findings question so it no longer repeats the q1 key. The update is kept. The new options are "Ankle clonus with confusion" (the key, first position), "Family history of bipolar disorder", "Heart rate of 104/minute", "Normal platelets and liver enzymes" and "Vaginal birth 6 days ago". The explanation is the reviewer's text. It stays on KF2 with source nice-ng133.
+- 41 q3: The first sentence now says that confusion is a new cerebral disturbance, which ACOG counts as a severe feature, so magnesium is given even though her BP is below 160/110 mmHg. The last sentence now reads "Her BP still needs treatment."
+- 41 q4: "and psychiatry finds no psychotic disorder" was removed from the update.
+- 42 q3: The protein-creatinine ratio was removed from the update. The explanation now reads "she most likely has pre-eclampsia, with a BP of 158/104 mmHg".
+- 42 q4: The key option now reads "Evolving organ involvement" and stays in first position. The last sentence of the explanation now reads "Gastroenteritis and hepatitis do not explain her new hypertension, headache and brisk reflexes."
+- 43 q4: Moved from KF3 to KF4, the reviewer's optional change. Coverage still holds: KF1 5, KF2 3, KF3 5, KF4 7, with every key feature tested.
+
+Key positions for singles are still 4, 4, 4, 3, 4. None of the new key options is the longest option in its question.
+
+Test: `SAMP_BATCH=s82 npx vitest run tests/samps.test.ts tests/samp-quality.test.ts tests/citations.test.ts --testTimeout=120000` gives 3 files and 128 tests, all passed. `tsc` reports no errors in samps/s82.
+
+The physician questions from the review still stand: SOGC 426 support for 39 q4 and 41 q3, methyldopa in 41 q4, and the 43 q2 prompt cue.

@@ -8,7 +8,8 @@ const S = {
   csbprSp: { id: "s86-csbpr-sp", citation: "Gladstone DJ and colleagues. Canadian Stroke Best Practice Recommendations: secondary prevention of stroke update 2020. Heart and Stroke Foundation of Canada. Can J Neurol Sci. 2022.", url: "https://www.strokebestpractices.ca/recommendations/secondary-prevention-of-stroke" },
   csbprAcute: { id: "s86-csbpr-acute", citation: "Heart and Stroke Foundation of Canada. Canadian Stroke Best Practice Recommendations: acute stroke management, 7th edition 2022, with the endovascular thrombectomy interim update 2025.", url: "https://www.strokebestpractices.ca/recommendations/acute-stroke-management" },
   russell: { id: "s86-russell-csdh", citation: "Russell NA, Goumnerova L, Atack EA, Atack DM, Benoit BG. Chronic subdural hematoma mimicking transient ischemic attacks. J Trauma. 1985.", url: "https://pubmed.ncbi.nlm.nih.gov/4057306/" },
-  dexCsdh: { id: "s86-dex-csdh", citation: "Hutchinson PJ and colleagues, Dex-CSDH Trial Collaborators. Trial of dexamethasone for chronic subdural hematoma. N Engl J Med. 2020.", url: "https://pubmed.ncbi.nlm.nih.gov/33326713/" },
+  tcBleed: { id: "s86-tc-bleed", citation: "Thrombosis Canada. Anticoagulant-related bleeding management order set. June 2024.", url: "https://thrombosiscanada.ca/uploads/publications/Bleed%20Management%20Order%20Set%20June%202024.pdf" },
+  wasid: { id: "s86-wasid", citation: "Chimowitz MI and colleagues, WASID Trial Investigators. Comparison of warfarin and aspirin for symptomatic intracranial arterial stenosis. N Engl J Med. 2005.", url: "https://pubmed.ncbi.nlm.nih.gov/15800226/" },
   forsberg: { id: "s86-forsberg-aca", citation: "Forsberg J, Blaabjerg M, Diaz A, Gaist TA, Christensen A, Gaist D. Bilateral anterior cerebral artery infarction presenting with acute paraparesis and parkinsonism. Neurol Clin Pract. 2019.", url: "https://pmc.ncbi.nlm.nih.gov/articles/PMC6927436/" },
   sammpris: { id: "s86-sammpris", citation: "Chimowitz MI and colleagues, SAMMPRIS Trial Investigators. Stenting versus aggressive medical therapy for intracranial arterial stenosis. N Engl J Med. 2011.", url: "https://pubmed.ncbi.nlm.nih.gov/21899409/" },
   lis: { id: "s86-locked-in", citation: "Smith E, Delargy M. Locked-in syndrome. BMJ. 2005.", url: "https://pmc.ncbi.nlm.nih.gov/articles/PMC549115/" },
@@ -42,7 +43,7 @@ export const CVA_S86: Samp[] = [
         options: ["Carotid Doppler ultrasound", "EEG within 24 hours", "MRI brain within 1 week", "Non-contrast CT head now", "Transthoracic echocardiogram"],
         correct: 3,
         explanation:
-          "Canadian stroke guidance calls for brain imaging as soon as possible after a suspected transient ischemic attack, and her headache, head strike and anticoagulant make bleeding the first thing to exclude. A non-contrast CT can be done now and shows a subdural collection, so it comes before any change to her antithrombotic therapy. Vascular imaging with CT angiography can be added at the same sitting. Carotid Doppler and echocardiography look for an embolic source and cannot show a hematoma. An MRI a week from now delays a diagnosis that may need surgery. An EEG does not exclude a structural cause.",
+          "Canadian stroke guidance calls for brain imaging as soon as possible after a suspected transient ischemic attack, and her headache, head strike and anticoagulant make bleeding the first thing to exclude. A non-contrast CT can be done now and can show a subdural collection, so it comes before any change to her antithrombotic therapy. Vascular imaging with CT angiography can be added at the same sitting. Carotid Doppler and echocardiography look for an embolic source and cannot show a hematoma. An MRI a week from now delays a diagnosis that may need surgery. An EEG does not exclude a structural cause.",
         keyFeature: { topic: "cva", n: 1 },
         source: "s86-csbpr-sp",
       },
@@ -62,16 +63,17 @@ export const CVA_S86: Samp[] = [
         id: "q4",
         kind: "menu",
         select: 2,
-        prompt: "Which of the following are the most appropriate next steps in her management?",
-        options: ["Add ASA to apixaban", "Carotid Doppler ultrasound", "Dexamethasone tapering course", "Hold apixaban", "Lumbar puncture", "Neurosurgery consultation", "Repeat CT head in 6 weeks"],
-        correct: [3, 5],
+        update: "It is 11:40. Her creatinine is 82 umol/L. An anti-Xa level is not available. Neurosurgery plans to drain the hematoma today.",
+        prompt: "Which of the following are the most appropriate steps for her anticoagulation now?",
+        options: ["Add ASA to apixaban", "Andexanet alfa, low-dose regimen", "Apixaban 2.5 mg twice daily", "Hold apixaban", "Idarucizumab 5 g IV", "Protamine sulfate IV", "Vitamin K 10 mg IV"],
+        correct: [1, 3],
         explanation:
-          "A symptomatic chronic subdural hematoma with 7 mm of shift is a bleed, so her apixaban is held, and neurosurgery decides on drainage and on any reversal before an operation. Surgical evacuation is the usual treatment for a symptomatic collection with mass effect, so waiting 6 weeks for a repeat scan is not appropriate. In the Dex-CSDH trial a 2-week tapering course of dexamethasone gave fewer favourable outcomes at 6 months and more adverse events than placebo. Adding ASA would treat a transient ischemic attack she did not have and raise the bleeding risk. Carotid imaging and lumbar puncture do not change the plan.",
+          "An intracranial hemorrhage is a major bleed in the Thrombosis Canada order set, so the anticoagulant is held and urgent reversal is normally indicated, all the more before surgery. Her last apixaban dose of 5 mg was under 8 hours ago, so the targeted agent andexanet alfa is given as the low-dose regimen. PCC 25 to 50 units/kg is the alternative where andexanet is not available. Idarucizumab reverses dabigatran only, protamine reverses heparin and vitamin K reverses warfarin. A lower apixaban dose still anticoagulates her. Adding ASA would treat a transient ischemic attack she did not have and add to the bleeding.",
         keyFeature: { topic: "cva", n: 1 },
-        source: "s86-dex-csdh",
+        source: "s86-tc-bleed",
       },
     ],
-    sources: [S.russell, S.csbprSp, S.dexCsdh],
+    sources: [S.russell, S.csbprSp, S.tcBleed],
     ...META,
   },
 
@@ -79,10 +81,10 @@ export const CVA_S86: Samp[] = [
   {
     id: "cva-49",
     topic: "cva",
-    title: "Found on the bathroom floor",
+    title: "Slid from her chair",
     stem:
-      "A 76-year-old man is brought to the emergency department by ambulance at 09:35. At 08:15 he was talking normally with his wife at breakfast. At 08:30 she heard a thud and found him on the bathroom floor unable to stand. The paramedics suspected a spinal cord problem. He has no back or neck pain. He has hypertension and dyslipidemia and smokes. Medications: amlodipine and rosuvastatin. He lived independently before today. Capillary glucose is 7.0 mmol/L. He is drowsy but opens his eyes to voice. He answers in short, correct sentences after long pauses and shows little interest in what is happening. He has been incontinent of urine. Right leg power is 1/5 and left leg power is 2/5. Arm strength and the face are normal. Both plantar responses are extensor. Pinprick sensation is normal on the trunk and legs, with no sensory level.",
-    vitals: { temperature: "36.6°C oral", pulse: "84/minute", resp: "16/minute", bp: "168/92 mmHg", o2sat: "96% on room air", weight: "88 kg" },
+      "An 81-year-old woman is brought to the emergency department by ambulance at 15:05 from her quilting group in a church hall. Friends say she was chatting normally at 14:20, then slid from her chair to the floor and could not get up. The paramedics suspected a spinal cord problem. She has no back or neck pain. She has hypertension and type 2 diabetes. Medications: perindopril and metformin. She lives alone and was independent. Capillary glucose is 9.2 mmol/L. She is drowsy but opens her eyes to voice. She speaks only single words when pressed and seems unconcerned by what has happened. Her clothes are wet with urine. Left leg power is 1/5 and right leg power is 3/5. Arm strength and the face are normal. Both plantar responses are extensor. Pinprick sensation is normal on the trunk and legs, with no sensory level. She has no bruising, spinal tenderness or step. Radial and femoral pulses are equal and strong.",
+    vitals: { temperature: "36.8°C oral", pulse: "88/minute", resp: "16/minute", bp: "174/90 mmHg", o2sat: "96% on room air", weight: "62 kg" },
     questions: [
       {
         id: "q1",
@@ -91,7 +93,7 @@ export const CVA_S86: Samp[] = [
         options: ["Apathy with slow, sparse speech", "Bilateral extensor plantar responses", "Leg weakness with normal arms", "Sudden onset while at rest", "Urinary incontinence"],
         correct: 0,
         explanation:
-          "Apathy, drowsiness and slow, sparse speech are frontal signs that a spinal cord lesion cannot cause, and with weakness of both legs they point to infarction of both anterior cerebral artery territories, which supply the leg area and the medial frontal lobes. Extensor plantar responses and urinary incontinence occur with both cord and bilateral medial frontal lesions. Leg weakness with normal arms and a sudden onset fit a spinal cord infarct as well, so they do not separate the two. Missing the frontal signs sends the patient to spinal MRI and loses the thrombolysis window.",
+          "Drowsiness, unconcern and speech reduced to single words are frontal signs that a spinal cord lesion cannot cause, and with weakness of both legs they point to infarction of both anterior cerebral artery territories, which supply the leg area and the medial frontal lobes. Extensor plantar responses and urinary incontinence occur with both cord and bilateral medial frontal lesions. Leg weakness with normal arms and a sudden onset fit a spinal cord infarct as well, so they do not separate the two. Missing the frontal signs sends the patient to spinal MRI and loses the thrombolysis window.",
         keyFeature: { topic: "cva", n: 2 },
         source: "s86-forsberg-aca",
       },
@@ -102,7 +104,7 @@ export const CVA_S86: Samp[] = [
         options: ["CT angiography of the aorta", "CT of the lumbar spine", "MRI of the whole spine", "Non-contrast CT head and CTA", "Plain films of the spine"],
         correct: 3,
         explanation:
-          "He was last known well at 08:15, so he is about 80 minutes into a possible stroke with disabling weakness of both legs. Canadian guidance calls for immediate non-contrast CT of the head with CT angiography from the aortic arch to the vertex for a suspected acute stroke, to exclude hemorrhage and look for an occlusion. Spinal MRI is the test if the brain imaging is normal and a cord lesion remains likely, but done first it would take him out of the treatment window. He has no back pain, injury or pulse deficit to justify aortic or spinal plain imaging first.",
+          "She was last known well at 14:20, so she is about 45 minutes into a possible stroke with disabling weakness of both legs. Canadian guidance calls for immediate non-contrast CT of the head with CT angiography from the aortic arch to the vertex for a suspected acute stroke, to exclude hemorrhage and look for an occlusion. Spinal MRI is the test if brain imaging is normal and a cord lesion remains likely, but done first it would take her out of the treatment window. She has no back pain, no spinal tenderness, step or bruising after the fall, and equal radial and femoral pulses, so nothing points to a fracture or an aortic cause that would justify spinal plain films, lumbar CT or aortic imaging first.",
         keyFeature: { topic: "cva", n: 3 },
         source: "s86-csbpr-acute",
       },
@@ -114,19 +116,19 @@ export const CVA_S86: Samp[] = [
         options: ["Artery of Percheron", "Fetal posterior cerebral artery", "Hypoplastic right vertebral artery", "Persistent trigeminal artery", "Single A1 feeding both A2 segments"],
         correct: 4,
         explanation:
-          "When one A1 segment is absent or tiny, the other A1 fills both A2 segments through the anterior communicating artery, so a single clot there can cut off both anterior cerebral artery territories, as in a reported man with sudden paraparesis and apathy. The artery of Percheron is a single trunk that supplies both medial thalami, not the frontal lobes. A fetal posterior cerebral artery comes off the internal carotid and supplies the occipital lobe. A hypoplastic vertebral artery and a persistent trigeminal artery affect the posterior circulation.",
+          "When one A1 segment is absent or tiny, the other A1 fills both A2 segments through the anterior communicating artery, so a single clot there can cut off both anterior cerebral artery territories. This mechanism is described in a reported patient with sudden paraparesis and apathy from occlusion of a single A1. In this patient the left A1 is absent and the right A1 feeds both A2 segments. The artery of Percheron is a single trunk that supplies both medial thalami, not the frontal lobes. A fetal posterior cerebral artery comes off the internal carotid and supplies the occipital lobe. A hypoplastic vertebral artery and a persistent trigeminal artery affect the posterior circulation.",
         keyFeature: { topic: "cva", n: 2 },
         source: "s86-forsberg-aca",
       },
       {
         id: "q4",
         kind: "single",
-        update: "CT angiography shows occlusion of the distal left A1 segment, which supplies both A2 segments. The right A1 is absent. It is now 09:55.",
+        update: "CT angiography shows occlusion of the distal right A1 segment. It is now 15:30.",
         prompt: "Which of the following is the most appropriate reperfusion decision for this patient now?",
         options: ["Await MRI of the brain first", "MRI of the spine before deciding", "Tenecteplase and urgent EVT review", "Thrombectomy alone, no thrombolysis", "No reperfusion treatment"],
         correct: 2,
         explanation:
-          "He is 1 hour 40 minutes from last known well, was independent, has disabling bilateral leg weakness and no hemorrhage, so he should receive IV thrombolysis now. Tenecteplase at 0.25 mg/kg is 22 mg for his 88 kg. Canadian guidance says thrombolysis should not be withheld or delayed because thrombectomy is being considered. An A1 occlusion is not one of the standard large vessel targets, so thrombectomy is decided promptly with the neurointerventionalist. Waiting for a brain or spinal MRI delays treatment that works best early. Declining reperfusion ignores a disabling deficit inside the window.",
+          "She is 1 hour 10 minutes from last known well, was independent, has disabling bilateral leg weakness and no hemorrhage, so she should receive IV thrombolysis now. Tenecteplase at 0.25 mg/kg is 15.5 mg for her 62 kg. Canadian guidance says thrombolysis should not be withheld or delayed because thrombectomy is being considered. An A1 occlusion is not one of the standard large vessel targets, so thrombectomy is decided promptly with the neurointerventionalist. Waiting for a brain or spinal MRI delays treatment that works best early. Declining reperfusion ignores a disabling deficit inside the window.",
         keyFeature: { topic: "cva", n: 3 },
         source: "s86-csbpr-acute",
       },

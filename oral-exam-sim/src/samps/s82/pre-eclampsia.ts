@@ -114,8 +114,8 @@ export const PRE_ECLAMPSIA_S82: Samp[] = [
         id: "q4",
         kind: "single",
         update:
-          "You give magnesium sulfate 4 g IV over 20 minutes by syringe. The station has no infusion pump, and the plane will arrive in about 3 hours.",
-        prompt: "Which of the following is the most appropriate way to continue magnesium sulfate until the plane arrives?",
+          "You give magnesium sulfate 4 g IV over 20 minutes by syringe. The station has no infusion pump, and she will be at the station for at least the next 3 hours.",
+        prompt: "Which of the following is the most appropriate way to continue magnesium sulfate over the next few hours?",
         options: [
           "magnesium sulfate 5 g IM every 12 hours",
           "magnesium sulfate 5 g IM into each buttock",
@@ -240,17 +240,17 @@ export const PRE_ECLAMPSIA_S82: Samp[] = [
         kind: "single",
         update:
           "Urine protein to creatinine ratio is 18 mg/mmol. Platelets, creatinine, AST and ALT are normal. Her BP is 156/102 mmHg on repeat.",
-        prompt: "Which of the following best classifies her condition, given these results?",
+        prompt: "Which of the following findings establishes the diagnosis despite her protein-creatinine ratio of 18 mg/mmol?",
         options: [
-          "Postpartum pre-eclampsia",
-          "Postpartum psychosis alone",
-          "Severe gestational hypertension",
-          "Uncontrolled chronic hypertension",
-          "White coat hypertension",
+          "Ankle clonus with confusion",
+          "Family history of bipolar disorder",
+          "Heart rate of 104/minute",
+          "Normal platelets and liver enzymes",
+          "Vaginal birth 6 days ago",
         ],
         correct: 0,
         explanation:
-          "Proteinuria is not required for pre-eclampsia. NICE defines it as new hypertension with proteinuria or another maternal organ problem, and neurological complications such as altered mental status and clonus qualify on their own. Her ratio of 18 mg/mmol is below 30 mg/mmol, but her confusion and clonus with a new BP above 140/90 mmHg still meet the definition. Gestational hypertension means new hypertension without organ involvement, so it does not fit her neurological findings. She was normotensive in pregnancy, so this is not chronic hypertension. Two raised readings with confusion are not white coat hypertension, and psychosis alone would not explain the clonus or BP.",
+          "Proteinuria is not required for pre-eclampsia. NICE defines it as new hypertension after 20 weeks with proteinuria or another maternal organ problem, and neurological complications such as altered mental status and clonus qualify on their own. Her ratio of 18 mg/mmol is below the 30 mg/mmol threshold, but confusion and clonus with a new BP of 156/102 mmHg still meet the definition. A family history of bipolar disorder raises the risk of postpartum psychosis but does not establish any diagnosis. A heart rate of 104/minute is nonspecific. Normal platelets and liver enzymes exclude HELLP but do not confirm pre-eclampsia. Pre-eclampsia can first appear up to 6 weeks after birth, so the timing of her birth neither establishes nor excludes it.",
         keyFeature: { topic: "pre-eclampsia", n: 2 },
         source: "nice-ng133",
       },
@@ -267,7 +267,7 @@ export const PRE_ECLAMPSIA_S82: Samp[] = [
         ],
         correct: 3,
         explanation:
-          "Postpartum pre-eclampsia with neurological features carries a risk of eclampsia, and ACOG recommends magnesium sulfate after birth as before it, as a 4 to 6 g IV load over about 20 minutes and then 1 to 2 g/hour. A 4 g load is the usual first dose. Sedation is not needed unless her agitation threatens her safety. Droperidol, haloperidol and olanzapine would sedate her and cloud the neurological examination that tracks her response, and they do not prevent eclamptic seizures. Benzodiazepines such as lorazepam are less effective than magnesium sulfate against eclamptic seizures. Her BP is below the severe range of 160/110 mmHg, but it still needs treatment.",
+          "Her confusion is a new cerebral disturbance, which ACOG counts as a severe feature of pre-eclampsia, so she needs magnesium sulfate to prevent eclampsia although her BP is below 160/110 mmHg. ACOG gives it after birth as before it, as a 4 to 6 g IV load over about 20 minutes and then 1 to 2 g/hour. A 4 g load is the usual first dose. Sedation is not needed unless her agitation threatens her safety. Droperidol, haloperidol and olanzapine would sedate her and cloud the neurological examination that tracks her response, and they do not prevent eclamptic seizures. Benzodiazepines such as lorazepam are less effective than magnesium sulfate against eclamptic seizures. Her BP still needs treatment.",
         keyFeature: { topic: "pre-eclampsia", n: 4 },
         source: "acog-222",
       },
@@ -275,7 +275,7 @@ export const PRE_ECLAMPSIA_S82: Samp[] = [
         id: "q4",
         kind: "single",
         update:
-          "Her confusion clears over 12 hours, and psychiatry finds no psychotic disorder. Her BP stays near 150/100 mmHg. She wishes to keep breastfeeding.",
+          "Her confusion clears over 12 hours. Her BP stays near 150/100 mmHg. She wishes to keep breastfeeding.",
         prompt: "Which of the following is the most appropriate oral antihypertensive for her while she is breastfeeding?",
         options: [
           "hydrochlorothiazide 25 mg PO daily",
@@ -343,7 +343,7 @@ export const PRE_ECLAMPSIA_S82: Samp[] = [
         id: "q3",
         kind: "single",
         update:
-          "Urine protein-creatinine ratio is 74 mg/mmol. Platelets 168 x 10^9/L, AST 30 U/L and creatinine 66 umol/L. Her BP is 158/104 mmHg on repeat.",
+          "Platelets 168 x 10^9/L, AST 30 U/L and creatinine 66 umol/L. Her BP is 158/104 mmHg on repeat.",
         prompt: "Which of the following medications carries the greatest risk for her now?",
         options: [
           "cetirizine 10 mg PO",
@@ -354,7 +354,7 @@ export const PRE_ECLAMPSIA_S82: Samp[] = [
         ],
         correct: 1,
         explanation:
-          "Epinephrine raises BP through its alpha effect, and she already has pre-eclampsia with a BP of 158/104 mmHg, so a surge would raise her risk of stroke and could reduce placental blood flow. She does not meet the World Allergy Organization criteria for anaphylaxis, which need acute skin or mucosal signs with breathing, circulatory or severe gut involvement, or sudden hypotension or airway involvement after an allergen. Her swelling built over 2 days and she has none of these. Cetirizine and famotidine are unnecessary but low risk. Oral labetalol is an appropriate treatment for her BP. A single dose of prednisone is not indicated but carries little acute risk.",
+          "Epinephrine raises BP through its alpha effect, and she most likely has pre-eclampsia, with a BP of 158/104 mmHg, so a surge would raise her risk of stroke and could reduce placental blood flow. She does not meet the World Allergy Organization criteria for anaphylaxis, which need acute skin or mucosal signs with breathing, circulatory or severe gut involvement, or sudden hypotension or airway involvement after an allergen. Her swelling built over 2 days and she has none of these. Cetirizine and famotidine are unnecessary but low risk. Oral labetalol is an appropriate treatment for her BP. A single dose of prednisone is not indicated but carries little acute risk.",
         keyFeature: { topic: "pre-eclampsia", n: 4 },
         source: "wao-2020",
       },
@@ -365,7 +365,7 @@ export const PRE_ECLAMPSIA_S82: Samp[] = [
           "Two hours later she has nausea and has vomited once. Repeat platelets are 131 x 10^9/L, AST is 88 U/L and LDH is 390 U/L.",
         prompt: "Which of the following best interprets the change in her blood results?",
         options: [
-          "Progressive pre-eclampsia",
+          "Evolving organ involvement",
           "Sampling or laboratory error",
           "Thrombocytopenia of pregnancy",
           "Viral gastroenteritis",
@@ -373,7 +373,7 @@ export const PRE_ECLAMPSIA_S82: Samp[] = [
         ],
         correct: 0,
         explanation:
-          "In 2 hours her platelets fell from 168 to 131 x 10^9/L and her AST rose from 30 to 88 U/L, while she developed nausea and vomiting. NICE counts platelets below 150 x 10^9/L and transaminases above 40 U/L as organ involvement, and lists progressive deterioration in liver function or platelet count among reasons for planned birth. She does not yet have HELLP, since her platelets are above 100 x 10^9/L and LDH is below 600 U/L, but the trend shows it may be developing. Gestational thrombocytopenia is a slow, mild fall without liver injury. Two values moving together with new symptoms are unlikely to be error. Gastroenteritis and hepatitis do not explain her hypertension and proteinuria.",
+          "In 2 hours her platelets fell from 168 to 131 x 10^9/L and her AST rose from 30 to 88 U/L, while she developed nausea and vomiting. NICE counts platelets below 150 x 10^9/L and transaminases above 40 U/L as organ involvement, and lists progressive deterioration in liver function or platelet count among reasons for planned birth. She does not yet have HELLP, since her platelets are above 100 x 10^9/L and LDH is below 600 U/L, but the trend shows it may be developing. Gestational thrombocytopenia is a slow, mild fall without liver injury. Two values moving together with new symptoms are unlikely to be error. Gastroenteritis and hepatitis do not explain her new hypertension, headache and brisk reflexes.",
         keyFeature: { topic: "pre-eclampsia", n: 3 },
         source: "nice-ng133",
       },
@@ -463,7 +463,7 @@ export const PRE_ECLAMPSIA_S82: Samp[] = [
         correct: 1,
         explanation:
           "Enoxaparin 100 mg SC is a therapeutic dose of about 1 mg/kg for her 98 kg, ordered for an acute coronary syndrome she does not have. With HELLP and platelets of 84 x 10^9/L it adds bleeding risk at the liver and at surgery. The SOAP consensus advises waiting at least 24 hours after a therapeutic dose before neuraxial anesthesia, so it could force general anesthesia for a caesarean today. Nitroglycerin is not needed without ischemia, but it is a short-acting drug that would not block neuraxial anesthesia. Morphine, ondansetron and acetaminophen are reasonable for her pain and nausea.",
-        keyFeature: { topic: "pre-eclampsia", n: 3 },
+        keyFeature: { topic: "pre-eclampsia", n: 4 },
         source: "soap-anticoagulants",
       },
     ],

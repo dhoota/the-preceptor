@@ -205,29 +205,29 @@ export const SUICIDE_RISK_S72: Samp[] = [
     topic: "suicide-risk",
     title: "Six days out",
     stem:
-      "A 31-year-old man presents to the emergency department at 19:30 asking to talk to someone. He was released from a provincial correctional centre 6 days ago after 8 months in custody. He is staying at a men's shelter with a 22:00 curfew. He used fentanyl daily before his sentence and has not used since. He has no contact with his family. Twice this week he has thought everyone would be better off without him. He tried to hang himself at age 19 after his brother died. He has no phone. He is tired and tearful but makes good eye contact, and his speech and thinking are normal. Pupils are 4 mm. Examination is normal.",
+      "A 31-year-old man presents to the emergency department at 19:30 asking to talk to someone. He was released from a provincial correctional centre 6 days ago after 8 months in custody. He is staying at a men's shelter with a 22:00 curfew. He used fentanyl daily before his sentence and has not used since. He has no contact with his family. Twice this week he has thought everyone would be better off without him. He tried to hang himself at age 19 after his brother died. He has no phone of his own, but the shelter has one that residents may use. He is tired and tearful but makes good eye contact, and his speech and thinking are normal. Pupils are 4 mm. Examination is normal.",
     vitals: { temperature: "36.8°C oral", pulse: "82/minute", resp: "16/minute", bp: "126/78 mmHg", o2sat: "99% on room air" },
     questions: [
       {
         id: "q1",
         kind: "single",
         prompt: "Which of the following best describes how suicide risk changes after release from custody?",
-        options: ["Highest in the first month out", "Highest once probation ends", "Lower than during custody", "Peaks 1 year after release", "Same as the general population"],
+        options: ["Highest in the first month out", "Highest once probation ends", "Lowest in the first month out", "Peaks 1 year after release", "Same as the general population"],
         correct: 0,
         explanation:
-          "In people released from Ontario provincial custody, the suicide rate was 2.3 per 1000 person-years in the first 4 weeks against 0.4 per 1000 after 52 weeks, and the standardized mortality ratio for suicide was 14.0 in the first 2 weeks. He is 6 days out, in the period of highest risk. The rate of suicide is also higher after release than during custody, and it stays well above that of the general population. The Ontario data show the highest rate early, not a later peak at 1 year or at the end of probation.",
+          "In people released from Ontario provincial custody, the suicide rate was 2.3 per 1000 person-years in the first 4 weeks against 0.4 per 1000 after 52 weeks, and the standardized mortality ratio for suicide was 14.0 in the first 2 weeks. The first month is the period of highest risk, not the lowest, and he is 6 days out. The overall suicide standardized mortality ratio in the cohort was 4.3, well above the general population. The Ontario data show the highest rate early, not a later peak at 1 year or at the end of probation.",
         keyFeature: { topic: "suicide-risk", n: 1 },
         source: "kouyoumdjian-custody",
       },
       {
         id: "q2",
         kind: "single",
-        update: "After a full assessment he has passive thoughts only, with no plan or intent. He wants help and agrees to a safety plan. The psychiatry team can see him at a clinic in 2 days. It is now 21:00.",
+        update: "After a full assessment he has passive thoughts only, with no plan or intent. He wants help and agrees to a safety plan. The community mental health clinic can see him in 2 days. It is now 21:00.",
         prompt: "Which of the following is the most appropriate disposition for him tonight?",
         options: ["Admit for psychiatric assessment tomorrow", "Hold until his probation officer is reached", "Keep him in the department overnight", "Return to the shelter before curfew", "Transfer to a withdrawal management centre"],
         correct: 3,
         explanation:
-          "He has passive thoughts, no plan or intent, a safety plan he helped make and a clinic visit in 2 days, so outpatient care is appropriate. Getting him back before 22:00 protects his shelter bed, and losing housing in the first week after release would add another stressor. NICE advises against using risk tools or low, medium and high labels to decide who is discharged, so the decision rests on his assessment, needs and plan. An overnight stay or an admission adds nothing for a man with low acute risk. His probation officer has no role in his medical discharge, and he is not using drugs, so withdrawal management does not fit.",
+          "He has passive thoughts, no plan or intent, a safety plan he helped make and a clinic visit in 2 days, so outpatient care is appropriate. Getting him back before 22:00 protects his shelter bed, and losing housing in the first week after release would add another stressor. NICE advises against using risk tools or low, medium and high labels to decide who is discharged, so the decision rests on his assessment, needs and plan. An overnight stay or an admission adds nothing for a man with passive thoughts and no plan or intent. His probation officer has no role in his medical discharge, and he is not using drugs, so withdrawal management does not fit.",
         keyFeature: { topic: "suicide-risk", n: 4 },
         source: "nice-ng225",
       },
@@ -246,12 +246,12 @@ export const SUICIDE_RISK_S72: Samp[] = [
       {
         id: "q4",
         kind: "single",
-        update: "The community mental health clinic can see him in 2 days. He has no phone and no fixed daytime place.",
+        update: "The clinic usually phones patients to set a visit time. He has no fixed place to be during the day.",
         prompt: "Which of the following is the most appropriate way to arrange his follow-up visit?",
         options: ["Ask him to call the clinic tomorrow", "Fax a referral and await a call", "Leave a message on a friend's phone", "Set a dated visit before he leaves", "Tell him to walk in when he is ready"],
         correct: 3,
         explanation:
-          "Without a phone he cannot take a call-back, and a man in the first weeks after release is at the highest risk of suicide and of dropping out of care. A visit with a set date, time and place, written down and handed to him before he leaves, removes those steps. NICE advises that people leave with clear contact details for the team providing aftercare. Asking him to call, waiting for the clinic to reach him or relying on a friend's phone each adds a step that can fail. An open walk-in offer has no fixed time and is the easiest to postpone.",
+          "Without a phone of his own he cannot reliably take a call-back, and a man in the first weeks after release is at the highest risk of suicide and of dropping out of care. A visit with a set date, time and place, written down and handed to him before he leaves, removes those steps. NICE advises that people leave with clear contact details for the team providing aftercare. Asking him to call, waiting for the clinic to reach him or relying on a friend's phone each adds a step that can fail. An open walk-in offer has no fixed time and is the easiest to postpone.",
         keyFeature: { topic: "suicide-risk", n: 5 },
         source: "nice-ng225",
       },
