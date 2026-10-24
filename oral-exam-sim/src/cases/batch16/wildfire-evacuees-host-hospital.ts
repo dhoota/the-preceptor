@@ -19,18 +19,18 @@ export const wildfireEvacueesHostHospital: OralCase = {
   durationMinutes: 12,
   stem:
     "You are working in the emergency department of a community hospital when the following patient arrives. " +
-    "A wildfire has forced a fly-in First Nation to evacuate, and the first plane of evacuees landed an hour ago. A 63 year old man who has missed two dialysis sessions says his legs feel weak.",
+    "A wildfire has forced a fly-in First Nation to evacuate, and the first plane of evacuees landed an hour ago. A 24 year old woman who is 37 weeks pregnant says her waters broke as she walked over from the arena.",
   card: {
     vitals: {
-      temperature: "36.4°C oral",
-      pulse: "48/minute",
-      resp: "22/minute",
-      bp: "172/96 mmHg",
-      o2sat: "93% on room air",
-      weight: "91 kg (201 lb)",
+      temperature: "36.8°C oral",
+      pulse: "104/minute",
+      resp: "20/minute",
+      bp: "118/72 mmHg",
+      o2sat: "99% on room air",
+      weight: "72 kg (159 lb)",
     },
-    medications: "Not recorded. His medication list was left behind.",
-    allergies: "Not recorded",
+    medications: "Prenatal vitamin. Her prenatal record was left behind.",
+    allergies: "None known",
   },
   findings: [
     {
@@ -51,37 +51,31 @@ export const wildfireEvacueesHostHospital: OralCase = {
       label: "Staff and hospital resources",
       result:
         "You are the only emergency physician until a colleague on call from home can arrive, about 25 minutes after a call. A charge nurse and 6 nurses. A pharmacist until 22:00. " +
-        "The hospital has a 6 station dialysis unit that is closed overnight and fully booked tomorrow. Nephrology is at the regional centre 2 hours away by road and answers by phone. Transfers go through CritiCall Ontario.",
+        "The hospital has a birthing unit and an operating room. The obstetrician and the anesthetist are on call from home, about 15 minutes away, and a pediatrician is on call. A 6 station dialysis unit is closed overnight and fully booked tomorrow. Transfers go through CritiCall Ontario.",
     },
     {
-      id: "dialysis-hpi",
-      label: "The man on dialysis: history (through the community health representative)",
+      id: "ob-hpi",
+      label: "The pregnant woman: history (through the community health representative)",
       result:
-        "He dialyzes three times a week at a unit in a city 300 km from home and flies out for it. His last session was 4 days ago. Smoke closed the airstrip, so he missed two. For a day his legs have felt heavy and weak, and he has been short of breath lying flat. " +
-        "He makes little urine. He has type 2 diabetes and hypertension. His daughter is with him and has a photo of his pill bottles on her phone.",
+        "This is her fourth pregnancy. Her three babies were born at term after labours of 2 to 4 hours. At 19:50, as she walked from the arena, a gush of clear fluid ran down her legs. Since then she has felt something between her legs and mild tightening every 6 to 8 minutes. The baby has been moving. " +
+        "Her nurse in charge told her at 34 weeks that the baby was lying across her belly, and an ultrasound was booked in the city for next week. No bleeding. No problems in this pregnancy.",
     },
     {
-      id: "dialysis-meds",
-      label: "The man on dialysis: medications (from the photo)",
-      result: "Insulin glargine, amlodipine, metoprolol, sevelamer and calcitriol. No potassium binder. His daughter says he has no allergies.",
-    },
-    {
-      id: "dialysis-exam",
-      label: "The man on dialysis: examination",
+      id: "ob-exam",
+      label: "The pregnant woman: examination at 20:08",
       result:
-        "Alert. Speaks in full sentences. Crackles at both bases. Jugular venous pressure raised. Pitting edema to the knees. A left arm fistula with a good thrill. Leg strength 4 out of 5 symmetrically.",
+        "A loop of pulsating umbilical cord lies at the introitus. On gentle examination the cervix is 5 cm dilated, and a fetal shoulder is high in the pelvis. The fetal heart by handheld Doppler is 80/minute and does not recover between tightenings.",
     },
     {
-      id: "dialysis-ecg",
-      label: "The man on dialysis: ECG and gas",
-      result:
-        "ECG: sinus bradycardia at 48/minute, PR 240 ms, tall peaked T waves and a QRS of 136 ms. Venous gas: pH 7.26, potassium 7.6 mmol/L, bicarbonate 15 mmol/L, glucose 9.4 mmol/L.",
+      id: "ob-after",
+      label: "The pregnant woman: after elevation",
+      result: "With the presenting part held up and her in the knee-chest position, the fetal heart rises to 130/minute. The birthing unit has the operating room ready by 20:24.",
     },
     {
       id: "waiting",
       label: "Evacuees in the waiting room at 20:05",
       result:
-        "A. A 29 year old woman, 34 weeks pregnant, with irregular tightening every 15 minutes. B. A 7 year old boy with type 1 diabetes whose insulin pens were left behind. Glucose 19.2 mmol/L, blood ketones 0.4 mmol/L, alert and well. " +
+        "A. A 2 month old girl with a runny nose and cough who is feeding less. B. A 7 year old boy with type 1 diabetes whose insulin pens were left behind. Glucose 19.2 mmol/L, blood ketones 0.4 mmol/L, alert and well. " +
         "C. A 41 year old man on buprenorphine-naloxone who has missed 2 days of doses. He is sweating, yawning and has stomach cramps. D. An 84 year old woman with dementia who came on the plane without family. E. Seven adults asking for refills of regular medications.",
     },
     {
@@ -97,12 +91,6 @@ export const wildfireEvacueesHostHospital: OralCase = {
       result:
         "The second plane carries 3 more people on hemodialysis, a man on home oxygen and two infants under 3 months. The liaison asks whether your hospital can take all of them tonight.",
     },
-    {
-      id: "nephro",
-      label: "Nephrology advice by phone",
-      result:
-        "The nephrologist agrees he needs dialysis tonight. She can call in your dialysis nurse and run him locally with phone support, or accept him in transfer. The regional renal program can open extra shifts tomorrow if the province routes dialysis patients to them.",
-    },
   ],
   start: "s-open",
   nodes: [
@@ -110,7 +98,7 @@ export const wildfireEvacueesHostHospital: OralCase = {
       kind: "say",
       id: "s-open",
       phase: "20:00",
-      text: "The triage nurse brings him in a wheelchair with his daughter and the community health representative. Behind them the waiting room is filling with families carrying bags and blankets. The charge nurse says, 'More are coming from the arena.'",
+      text: "She sits in the waiting room with her sister and the community health representative, behind eight people who arrived before her. The triage nurse tells you she feels something between her legs and that her baby was lying sideways at her last check. The waiting room is filling with families carrying bags and blankets.",
       next: "q-first",
     },
     {
@@ -120,8 +108,8 @@ export const wildfireEvacueesHostHospital: OralCase = {
       prompt: "What do you do first, and how do you organize the department?",
       seconds: 110,
       modelAnswer: [
-        "Triage by complaint, vital signs and airway, breathing and circulation. A man who missed dialysis with a pulse of 48 and weak legs goes to resuscitation first.",
-        "Monitor, IV access and an ECG now. A venous gas gives a potassium in minutes.",
+        "Triage by complaint, vital signs and risk, not by arrival order. Ruptured membranes with a baby lying across and something felt at the vulva is a possible cord prolapse. She is seen first.",
+        "Take her to a private bay now and examine her, including a look at the perineum and the fetal heart.",
         "Call in the colleague on call. Ask the charge nurse to triage every evacuee with the CTAS tool and to bring the sickest forward.",
         "Use the community health representative to interpret, not a child.",
         "Tell the administrator on call that the hospital needs its surge plan and incident management, with a link to the provincial liaison.",
@@ -130,28 +118,28 @@ export const wildfireEvacueesHostHospital: OralCase = {
       rubric: ["wf-h1", "wf-p1", "wf-p2", "wf-pr1"],
       choices: [
         {
-          id: "c-resus-first",
-          label: "I took him straight to resuscitation for a monitor, IV and ECG, called in my colleague, asked the charge nurse to triage every evacuee with CTAS, and asked the administrator to activate the surge plan and incident management.",
-          next: "q-hyperk",
+          id: "c-see-now",
+          label: "I took her straight to a private bay and examined her, called in my colleague, asked the charge nurse to triage every evacuee with CTAS, and asked the administrator to activate the surge plan and incident management.",
+          next: "q-cord",
           quality: "strong",
           feedback:
-            "Good. Missed dialysis, a slow pulse and weak legs mean hyperkalemia until the ECG says otherwise. Sorting a crowd by acuity, not arrival order, finds the patient who can die first. A planned evacuation is a surge that needs the hospital's emergency structure.",
+            "Good. A gush of fluid, a baby lying across and something felt at the vulva mean cord prolapse until you have looked. Sorting a crowd by acuity, not arrival order, finds the patient who can be harmed first. A planned evacuation is a surge that needs the hospital's emergency structure.",
         },
         {
           id: "c-in-order",
-          label: "I asked the nurses to keep seeing evacuees in the order they arrived, and planned to see him after the pregnant woman, who came in first.",
+          label: "I asked the nurses to keep seeing evacuees in the order they arrived, since she was walking and had normal vital signs.",
           next: "s-in-order",
           quality: "unsafe",
           feedback:
-            "Arrival order is not triage. He has a pulse of 48 after missing two sessions and may be close to a hyperkalemic arrest. CTAS sorts by complaint and vital signs so the sickest are seen first.",
+            "Arrival order is not triage. Normal maternal vital signs say nothing about the baby. With ruptured membranes and an abnormal lie, a cord prolapse can kill the baby within minutes. She needs to be examined now.",
         },
         {
-          id: "c-dialysis-am",
-          label: "I booked him into the dialysis unit for the first slot tomorrow and sent him back to the arena to rest.",
-          next: "s-dialysis-am",
+          id: "c-wheelchair",
+          label: "I sent her up to the birthing unit in a wheelchair for the obstetrician to see when he arrived.",
+          next: "s-wheelchair",
           quality: "unsafe",
           feedback:
-            "He needs an ECG and a potassium before anyone decides he can wait. Weakness and bradycardia after missed dialysis are warning signs of life threatening hyperkalemia. Never send this patient away untested.",
+            "Sending her away unexamined leaves a possible cord prolapse untreated, and sitting upright compresses the cord. Look first. If the cord is out, someone must hold the presenting part up during any move.",
         },
       ],
     },
@@ -159,38 +147,38 @@ export const wildfireEvacueesHostHospital: OralCase = {
       kind: "say",
       id: "s-in-order",
       phase: "20:20",
-      text: "His daughter runs to the desk. He is grey and his pulse is 38. The nurse moves him to resuscitation and attaches the monitor. The ECG shows very wide complexes. You go straight to him.",
-      next: "q-hyperk",
+      text: "Her sister runs to the desk. She can see the cord. The triage nurse takes her to a bay, and the Doppler finds a fetal heart of 70/minute. You go straight to her.",
+      next: "q-cord",
     },
     {
       kind: "say",
-      id: "s-dialysis-am",
-      phase: "20:10",
-      text: "The triage nurse refuses to send him away without an ECG. She runs one at the desk and brings it to you. It shows peaked T waves and a wide QRS. You take him to resuscitation.",
-      next: "q-hyperk",
+      id: "s-wheelchair",
+      phase: "20:12",
+      text: "The porter stops at the elevator because she is crying that something is coming out. The nurse looks and sees the cord. They bring her back to a bay, and you go straight to her.",
+      next: "q-cord",
     },
     {
       kind: "question",
-      id: "q-hyperk",
-      phase: "The man on dialysis",
-      prompt: "His potassium is 7.6 mmol/L and the QRS is 136 ms. What do you do now?",
+      id: "q-cord",
+      phase: "The pregnant woman",
+      prompt: "A loop of pulsating cord lies at the introitus, a shoulder is high in the pelvis and the fetal heart is 80/minute. What do you do now?",
       seconds: 90,
       modelAnswer: [
-        "IV calcium now to protect the heart, repeated if the ECG does not improve.",
-        "Insulin with glucose to shift potassium into cells, with glucose checks for hours afterward.",
-        "Nebulized salbutamol as an added shift.",
-        "Dialysis is the only definitive treatment for him. Call nephrology now.",
-        "Treat the fluid overload with oxygen and sitting upright. He makes little urine, so diuretics will not help much.",
-        "Continuous cardiac monitoring with pads on until he is dialyzed.",
+        "Call the obstetrician, the anesthetist, the pediatrician and the operating room team now for a category 1 caesarean section.",
+        "Push the presenting part up with a gloved hand in the vagina and keep it there until the baby is born. Do not try to push the cord back.",
+        "Handle the cord as little as possible to avoid spasm of its vessels.",
+        "Put her in the knee-chest position, or left lateral with her head down and a pillow under her left hip.",
+        "If there is a delay, fill her bladder with 500 to 750 mL of saline through a Foley catheter, and consider terbutaline 0.25 mg subcutaneously. Empty the bladder before birth.",
+        "Keep listening to the fetal heart. Prepare for neonatal resuscitation.",
       ],
       rubric: ["wf-m1", "wf-m2"],
-      next: "s-nephro",
+      next: "s-delivered",
     },
     {
       kind: "say",
-      id: "s-nephro",
+      id: "s-delivered",
       phase: "20:40",
-      text: "After calcium his QRS narrows to 104 ms. The nephrologist offers to call in your dialysis nurse and support a local run, or to accept him at the regional centre. Your colleague has arrived. The waiting room now holds 19 evacuees.",
+      text: "With the presenting part held up the fetal heart rose to 130/minute. A baby boy was born by caesarean section at 20:32, 24 minutes after the cord was seen, and is pink and crying. Your colleague has arrived. The waiting room now holds 19 evacuees.",
       next: "q-others",
     },
     {
@@ -200,8 +188,8 @@ export const wildfireEvacueesHostHospital: OralCase = {
       prompt: "Your colleague has arrived. How do you manage the other evacuees while he is treated?",
       seconds: 100,
       modelAnswer: [
-        "Divide the work. Your colleague takes the waiting room and you stay with the man in resuscitation.",
-        "The pregnant woman needs fetal monitoring and assessment in the birthing unit now.",
+        "Divide the work. Your colleague takes the waiting room while you finish the handover from the operating room.",
+        "The 2 month old needs a full set of vital signs, a look at her work of breathing and a feeding history.",
         "The boy needs insulin from the pharmacy at his usual dose, with ketone checks and a plan for supplies.",
         "Continue the man's buprenorphine after confirming his dose with his dispensing pharmacy or the community's nurse in charge.",
         "Get medication histories from patients, families, photos, pharmacies and the nurse in charge, since records were left behind.",
@@ -211,7 +199,7 @@ export const wildfireEvacueesHostHospital: OralCase = {
       choices: [
         {
           id: "c-parallel",
-          label: "My colleague took the waiting room. The pregnant woman went to the birthing unit for monitoring, the boy got insulin and a supply plan, the man's buprenorphine was confirmed with his pharmacy and continued, and the pharmacist set up a refill station for the others.",
+          label: "My colleague took the waiting room. The 2 month old was assessed first, the boy got insulin and a supply plan, the man's buprenorphine was confirmed with his pharmacy and continued, and the pharmacist set up a refill station for the others.",
           next: "s-second-plane",
           quality: "strong",
           feedback:
@@ -223,7 +211,7 @@ export const wildfireEvacueesHostHospital: OralCase = {
           next: "s-send-back",
           quality: "partial",
           feedback:
-            "Freeing the department is reasonable, but not without assessment. The pregnant woman has contractions, the boy has no insulin and the man is in withdrawal. Each needs a plan tonight. Stream them, do not send them away.",
+            "Freeing the department is reasonable, but not without assessment. A 2 month old feeding less needs an exam, the boy has no insulin and the man is in withdrawal. Each needs a plan tonight. Stream them, do not send them away.",
         },
       ],
     },
@@ -231,7 +219,7 @@ export const wildfireEvacueesHostHospital: OralCase = {
       kind: "say",
       id: "s-send-back",
       phase: "21:15",
-      text: "The community health representative comes back from the arena. The boy's glucose is now 24 mmol/L, and the pregnant woman's tightening is every 7 minutes. Your colleague brings them back, and the pharmacist opens a refill station.",
+      text: "The community health representative comes back from the arena. The boy's glucose is now 24 mmol/L, and the 2 month old is breathing fast. Your colleague brings them back, and the pharmacist opens a refill station.",
       next: "s-second-plane",
     },
     {
@@ -252,14 +240,13 @@ export const wildfireEvacueesHostHospital: OralCase = {
         "Through the hospital incident command, ask the province to route the dialysis patients to a host centre with dialysis capacity, with the regional renal program.",
         "Ask for the man on oxygen to bring or be met with oxygen at the airport, and for the infants to be checked at the reception centre or here.",
         "Ask EMS to meet the plane for anyone who is unwell, and to tell you who is coming.",
-        "Arrange dialysis for your patient tonight, locally with phone support or by transfer with a monitored escort.",
         "Agree on a time for the next update with the liaison and the community's leadership.",
       ],
-      rubric: ["wf-m2", "wf-pr2"],
+      rubric: ["wf-pr2"],
       choices: [
         {
           id: "c-coordinate",
-          label: "I told her we could not dialyze three more people safely, asked incident command to have the province route them to a centre with dialysis capacity through the renal program, asked EMS to meet the plane, and arranged local dialysis tonight for our patient with nephrology on the phone.",
+          label: "I told her we could not dialyze three more people safely, asked incident command to have the province route them to a centre with dialysis capacity through the renal program, and asked EMS to meet the plane.",
           next: "s-elder",
           quality: "strong",
           feedback:
@@ -338,7 +325,7 @@ export const wildfireEvacueesHostHospital: OralCase = {
       seconds: 70,
       modelAnswer: [
         "A list of every evacuee seen, with plans, pending results and where each person is now.",
-        "A handover of the man on dialysis, his potassium, the dialysis plan and the monitoring.",
+        "A handover of the mother and baby to the birthing unit, with what happened and when.",
         "A daily clinic at the reception centre with a physician, nurse and pharmacist, linked to the community's own nurses.",
         "Interpretation through the community health representative and other trained interpreters, and respect for the community's own leaders.",
         "A short debrief for the team, and feedback to incident command on what to change for the next evacuation.",
@@ -349,7 +336,7 @@ export const wildfireEvacueesHostHospital: OralCase = {
     {
       kind: "end",
       id: "end",
-      text: "He is dialyzed in your unit at 23:30 with nephrology on the phone, and his potassium falls to 4.8 mmol/L. The three dialysis patients on the second plane go to the regional centre. The elder stays with her granddaughter at the arena. That is the end of the case.",
+      text: "Mother and baby do well and go home to the reception centre on day 3. The three dialysis patients on the second plane go to the regional centre. The elder stays with her granddaughter at the arena. That is the end of the case.",
     },
   ],
   rubric: [
@@ -357,10 +344,10 @@ export const wildfireEvacueesHostHospital: OralCase = {
       id: "wf-h1",
       competency: "assessment",
       criterion: "history",
-      text: "Takes a history from the man on dialysis through a trained interpreter. Last session, missed sessions, weakness, breathlessness lying flat, urine output and medications.",
+      text: "Takes a focused obstetric history through the interpreter. Gestation, parity and length of past labours, time of rupture, what she feels at the vulva, fetal movements and the baby's lie at her last check.",
       points: 2,
-      teaching: "Missed dialysis is a common cause of severe hyperkalemia. Weakness and bradycardia are warning signs that need an ECG and a potassium at once.",
-      source: "ukka-k",
+      teaching: "Multiparity and an abnormal lie are associated with cord prolapse. Ruptured membranes with an abnormal lie may call for urgent caesarean birth.",
+      source: "rcog-cord",
     },
     {
       id: "wf-h2",
@@ -384,44 +371,47 @@ export const wildfireEvacueesHostHospital: OralCase = {
       id: "wf-p1",
       competency: "assessment",
       criterion: "physical",
-      text: "Triages the arriving evacuees by complaint and vital signs with CTAS, not by arrival order, and puts the man on dialysis first.",
+      text: "Triages the arriving evacuees by complaint, vital signs and risk with CTAS, not by arrival order, and sees the pregnant woman first.",
       points: 2,
-      teaching: "CTAS assigns acuity by presenting complaint and modifiers such as vital signs. A pulse of 48 with weakness after missed dialysis is a resuscitation level problem.",
+      teaching:
+        "CTAS assigns acuity by presenting complaint and modifiers such as vital signs. Ruptured membranes with an abnormal lie and something felt at the vulva need an examination at once, ahead of earlier arrivals.",
       source: "ctas",
     },
     {
       id: "wf-p2",
       competency: "assessment",
       criterion: "physical",
-      text: "Gets an ECG and venous potassium at once, and recognizes peaked T waves, a long PR, a wide QRS and bradycardia as hyperkalemia.",
+      text: "Inspects the perineum, finds the cord prolapse with a shoulder presenting, and checks the fetal heart, recognizing a persistent bradycardia.",
       points: 2,
-      teaching: "Peaked T waves, flattened P waves and a widening QRS show the heart is at risk. A blood gas potassium gives the number in minutes.",
-      source: "ukka-k",
+      teaching: "Cord prolapse should be suspected when the fetal heart rate is abnormal, especially soon after membranes rupture. Look at the perineum and examine before moving her.",
+      source: "rcog-cord",
     },
     {
       id: "wf-m1",
       competency: "resuscitation",
       criterion: "management",
-      text: "Gives IV calcium at once for the ECG changes, then insulin with glucose and salbutamol, with glucose checks and continuous monitoring.",
+      text: "Elevates the presenting part by hand and keeps it there, handles the cord as little as possible, does not push it back, and places her knee-chest or left lateral head down.",
       points: 3,
       critical: true,
-      teaching: "IV calcium protects the heart within minutes but does not lower potassium. Insulin with glucose and salbutamol shift potassium into cells while dialysis is arranged.",
-      source: "ukka-k",
+      teaching:
+        "Elevating the presenting part, manually or by filling the bladder, prevents cord compression. Minimal handling of loops outside the vagina prevents vasospasm. Manual replacement of the cord is not recommended.",
+      source: "rcog-cord",
     },
     {
       id: "wf-m2",
-      competency: "disposition",
+      competency: "management",
       criterion: "management",
-      text: "Arranges dialysis tonight, locally with nephrology support or by transfer with a monitored escort.",
+      text: "Calls the obstetric, anesthesia, pediatric and operating room teams for a category 1 caesarean, and uses bladder filling of 500 to 750 mL and terbutaline 0.25 mg subcutaneously if there is a delay.",
       points: 2,
-      teaching: "Dialysis is the definitive treatment in a patient with little urine. If he must travel, the escort and monitoring must match his risk of arrhythmia.",
-      source: "warren",
+      teaching:
+        "With a pathological fetal heart rate, aim for birth by category 1 caesarean within 30 minutes. Tocolysis can be considered while preparing if the heart rate stays abnormal. Empty the bladder before birth.",
+      source: "rcog-cord",
     },
     {
       id: "wf-m3",
       competency: "management",
       criterion: "management",
-      text: "Manages the other evacuees in parallel. Obstetric assessment for the pregnant woman, insulin for the boy, buprenorphine continued after confirming the dose, and a refill station for the rest.",
+      text: "Manages the other evacuees in parallel. Assessment of the 2 month old, insulin for the boy, buprenorphine continued after confirming the dose, and a refill station for the rest.",
       points: 2,
       teaching: "Planning must include children, older adults and people with special needs. Most evacuees need continuity of usual care, which can be streamed away from emergency beds.",
       source: "caep-disaster",
@@ -472,9 +462,9 @@ export const wildfireEvacueesHostHospital: OralCase = {
         "Bullard MJ, Musgrave E, Warren D, Unger B, and colleagues. Revisions to the Canadian Emergency Department Triage and Acuity Scale (CTAS) guidelines 2016. CJEM. 2017.",
     },
     {
-      id: "ukka-k",
-      citation: "UK Kidney Association. Clinical practice guideline: treatment of acute hyperkalaemia in adults. 2026.",
-      url: "https://guidelines.ukkidney.org/hyperkalaemia/",
+      id: "rcog-cord",
+      citation: "Royal College of Obstetricians and Gynaecologists. Umbilical cord prolapse. Green-top Guideline No. 50. 2014, reviewed 2024.",
+      url: "https://www.rcog.org.uk/media/3wykswng/gtg-50-umbilicalcordprolapse-2014.pdf",
     },
     {
       id: "ims",
@@ -490,11 +480,6 @@ export const wildfireEvacueesHostHospital: OralCase = {
       id: "who-id",
       citation: "WHO Collaborating Centre for Patient Safety Solutions. Patient identification. Patient Safety Solutions, volume 1, solution 2. 2007.",
       url: "https://cdn.who.int/media/docs/default-source/patient-safety/patient-safety-solutions/ps-solution2-patient-identification.pdf",
-    },
-    {
-      id: "warren",
-      citation:
-        "Warren J, Fromm RE Jr, Orr RA, Rotello LC, Horst HM. Guidelines for the inter- and intrahospital transport of critically ill patients. American College of Critical Care Medicine. Crit Care Med. 2004.",
     },
   ],
   reviewed: false,
