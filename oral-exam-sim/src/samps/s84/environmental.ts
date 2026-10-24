@@ -46,14 +46,14 @@ export const ENVIRONMENTAL_S84: Samp[] = [
         options: ["Lithium neurotoxicity", "Nonconvulsive status epilepticus", "Ongoing heat stroke injury", "Serotonin toxicity", "Wernicke encephalopathy"],
         correct: 0,
         explanation:
-          "Her confusion persists at a normal temperature, alongside the tremor and myoclonus she had on arrival, a lithium of 3.6 mmol/L and a creatinine that has more than doubled. This is chronic lithium toxicity with neurotoxicity, and severe cases show myoclonus, seizures and coma. Heat stroke can leave lasting brain injury, but it does not explain the tremor and myoclonus or the toxic level. Nonconvulsive status needs an EEG if she fails to improve, but the lithium explains every finding. She takes no serotonergic drug, and nothing in her history suggests the malnutrition or alcohol use behind Wernicke encephalopathy.",
+          "Her confusion persists at a normal temperature, alongside the tremor and myoclonus she had on arrival, a lithium of 3.6 mmol/L and a creatinine that has more than doubled. This is chronic lithium toxicity with neurotoxicity, and severe cases show myoclonus, seizures and coma. Heat stroke can leave lasting brain injury, but it does not explain the tremor and myoclonus or the toxic level. Nonconvulsive status needs an EEG if she fails to improve, but the lithium explains every finding. Lithium can add to serotonin toxicity, but she takes no other serotonergic drug, and her toxic lithium level explains her findings. Nothing in her history suggests the malnutrition or alcohol use behind Wernicke encephalopathy.",
         keyFeature: { topic: "environmental", n: 2 },
         source: "extrip-lithium",
       },
       {
         id: "q3",
         kind: "single",
-        update: "She is admitted and treated for lithium toxicity, and she recovers over 4 days. Her psychiatrist restarts lithium at a lower dose. The heat warning has been extended for 3 more days.",
+        update: "She is admitted and recovers over 4 days. Her psychiatrist plans to continue lithium. The heat warning has been extended for 3 more days.",
         prompt: "Which of the following is the most appropriate hydration advice for her while she takes lithium in hot weather?",
         options: ["Drink a sports drink with each meal", "Drink water throughout the day", "Oral rehydration salts each morning", "Restrict fluids to 1.5 L daily", "Salt tablets with extra fluids"],
         correct: 1,
@@ -65,12 +65,12 @@ export const ENVIRONMENTAL_S84: Samp[] = [
       {
         id: "q4",
         kind: "single",
-        update: "Her son plans to take her home and buy an electric fan. Her apartment was 33°C this afternoon.",
+        update: "Her son plans to take her home and buy an electric fan. Her apartment reached 37°C this afternoon.",
         prompt: "Which of the following is the most protective plan for her once she leaves hospital, while the heat warning continues?",
-        options: ["Cool shower each evening", "Electric fan beside her bed", "Extra fluids and a fan at home", "Fan with windows open at night", "Stay in an air-conditioned place"],
+        options: ["Cool shower each evening", "Electric fan beside her bed", "Extra fluids and a fan at home", "Fan with windows open at night", "Stay somewhere air-conditioned"],
         correct: 4,
         explanation:
-          "Air conditioning is one of the most protective factors against heat illness and death, and a public air-conditioned place is the alternative when a home has none. Studies of electric fans and heat stroke are mixed. Once the air is hotter than the skin, about 36°C, a fan warms the body by convection, and fans work less well in humid air. A fan in an apartment that reaches 33°C, with or without open windows and extra fluids, does not protect an older woman who has just had heat stroke. An evening shower cools her for a short time only. Health Canada also advises a daily check-in plan for people like her during extreme heat.",
+          "Air conditioning is one of the most protective factors against heat illness and death, and a public air-conditioned place is the alternative when a home has none. Studies of electric fans and heat stroke are mixed. Once the air is hotter than the skin, about 36°C, a fan warms the body by convection, and fans work less well in humid air. A fan in an apartment that reaches 37°C, with or without open windows and extra fluids, does not protect an older woman who has just had heat stroke. An evening shower cools her for a short time only. Health Canada also advises a daily check-in plan for people like her during extreme heat.",
         keyFeature: { topic: "environmental", n: 2 },
         source: "hc-extreme-heat",
       },

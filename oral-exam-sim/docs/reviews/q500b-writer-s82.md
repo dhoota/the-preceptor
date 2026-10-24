@@ -113,3 +113,17 @@ Coverage is unchanged: KF1 5, KF2 3, KF3 5, KF4 7. Key positions for singles are
 Test: `SAMP_BATCH=s82 npx vitest run tests/samps.test.ts tests/samp-quality.test.ts tests/citations.test.ts --testTimeout=120000` gives 3 files and 128 tests, all passed. `tsc` reports no errors in samps/s82.
 
 For the physician: 40 q4 follows NICE, which says "consider" the 500 mL preload. Please confirm that this matches Canadian practice with IV hydralazine.
+
+## Revision 3
+
+The three fixes to 40 q4 from `docs/reviews/q500b-verify2-s82.md` were applied exactly as written. Nothing else was changed.
+
+- Update: "After labetalol 20 mg, 40 mg and then 80 mg IV, her BP is 166/112 mmHg".
+- Explanation: after the NICE preload sentence, this sentence was inserted: "This small preload is the only exception NICE makes to its advice against volume expansion in severe pre-eclampsia."
+- Explanation: the last sentence now reads "Stopping all fluids removes the small preload NICE suggests, and NICE limits maintenance fluids to 80 mL/hour rather than stopping them."
+
+Options, key, key position, keyFeature and source are unchanged.
+
+Test: `SAMP_BATCH=s82 npx vitest run tests/samps.test.ts tests/samp-quality.test.ts tests/citations.test.ts --testTimeout=120000`. The result is recorded in the reply to the coordinator.
+
+The physician still needs to confirm that a crystalloid preload of up to 500 mL with IV hydralazine is acceptable Canadian practice.

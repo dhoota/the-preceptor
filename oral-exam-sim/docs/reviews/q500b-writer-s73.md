@@ -113,3 +113,41 @@ Fixes for every failed item in `docs/reviews/q500b-qa-s73.md`. Before rebuilding
 - 52 q2 tests anticoagulant level testing, tagged KF6. It is borderline for "choose anticoagulation that fits the patient". The explanation stays within the Thrombosis Canada apixaban guide.
 - 48 q2 says the antibiotics should cover Staphylococcus aureus and that blood cultures are needed. Jackman's table lists vancomycin or flucloxacillin for endovascular infection. Blood cultures are standard practice, not quoted from the source.
 - 49 q4 relies on the Thrombosis Canada wording "at least 6 weeks postpartum (with a minimum total duration of 3 months)".
+
+## Revision 2
+
+Fixes for the three dvt-pe-52 fails in `docs/reviews/q500b-verify-s73.md`. dvt-pe-48 to dvt-pe-51 are unchanged.
+
+Before rebuilding, I searched the whole bank by keyword (`src/samps` and `src/cases`, cva, sob and chest-pain included) for St John's wort, inducers, dose reduction, "with food", "empty stomach", levothyroxine with rivaroxaban, night shift and Hestia. Rivaroxaban taken without food appears only once: as one accept line in a legacy write-in list of DOAC failure causes in a stroke SAMP (s05 cva, "Rivaroxaban 15 or 20 mg not taken with food"). It is not keyed as an MCQ decision anywhere and is never applied to VTE.
+
+| Item | Fix |
+|---|---|
+| dvt-pe-52 stem | Rebuilt so it no longer retells signed cva-45. All of the following are gone: atrial fibrillation, apixaban, the blister pack, "missed no doses", low mood and St John's wort. The patient is now a 61-year-old woman, a night shift hospital cleaner in a rural ED. She has taken rivaroxaban 20 mg once daily since an unprovoked femoral DVT 14 months ago. She takes all her tablets at 06:00 with water (levothyroxine on an empty stomach is the reason she gives) and does not eat until 15:00. No inducer and no dose reduction. The new cause is backed by the Thrombosis Canada rivaroxaban guide, which I opened: "Rivaroxaban 15mg tablets, 20mg tablets ... must be taken with food ... to maximize absorption". |
+| dvt-pe-52 q1 | Wells rechecked for the new stem: PE most likely 3, heart rate 108 1.5, previous DVT 1.5, hemoptysis 1, for 7.0 points. PE likely (above 4) and high on the three level score (above 6). The options are 4.0, 5.5, 6.0, 7.0 and 8.5, in ascending order. |
+| dvt-pe-52 q2 | The assay question is gone. q2 is now the KF1 cause question (rebuilt from the old q3): rivaroxaban taken without food. Calcium, levothyroxine, rosuvastatin and vitamin D do not lower rivaroxaban exposure. Source: tc-rivaroxaban. Its update gives the imaging result and a matching pharmacy refill record. |
+| dvt-pe-52 q3 | New KF6 decision: the anticoagulant plan after this breakthrough PE. The key is to restart the acute phase, rivaroxaban 15 mg twice daily (with meals) for 3 weeks, then 20 mg daily. Distractors: continue 20 mg daily, the extended 10 mg dose, and dabigatran or edoxaban, which need 5 to 10 days of LMWH first. Source: Thrombosis Canada DVT treatment guide (opened): 15 mg twice daily for 21 days then 20 mg, 10 mg daily only beyond 6 months, and LMWH lead-in for dabigatran and edoxaban. q3 comes after q2, and no later prompt, update or option names the q2 key. |
+| dvt-pe-52 q4 | Kept, because the PE still occurs on an anticoagulant. The key is now "Embolus while on rivaroxaban". The distractors are her O2 sat of 94%, previous DVT, shift work and thyroid replacement, none of which is a Hestia item. |
+| Sources | tc-apixaban removed. Added tc-rivaroxaban ("Thrombosis Canada. Clinical guide: rivaroxaban (Xarelto). Version dated 2 November 2025.", https://thrombosiscanada.ca/clinical_guides/pdfs/RIVAROXABAN_54.pdf, downloaded and read) and tc-dvt-tx (https://thrombosiscanada.ca/clinical_guides/pdfs/DEEPVEINTHROMBOSISTREATMENT_80.pdf, downloaded and read). |
+
+### After revision 2
+
+- Single key positions 0 to 4: 4, 3, 4, 3, 4 (max 22 percent).
+- The key is the single longest option in 4 of 18 singles (22 percent).
+- Key features:
+
+| Key feature | Count | Items |
+|---|---|---|
+| KF1 | 5 | 48 q1, 49 q1, 50 q1, 51 q1, 52 q2 |
+| KF2 | 4 | 48 q2, 49 q2, 50 q2, 51 q3 |
+| KF3 | 4 | 48 q3, 50 q3, 51 q2, 52 q1 |
+| KF4 | 1 | 48 q4 |
+| KF5 | 2 | 49 q3, 50 q4 |
+| KF6 | 3 | 49 q4, 51 q4, 52 q3 |
+| KF7 | 1 | 52 q4 |
+
+- Tests: `SAMP_BATCH=s73 npx vitest run tests/samps.test.ts tests/samp-quality.test.ts tests/citations.test.ts --testTimeout=120000` passes 128 of 128. tsc shows nothing for samps/s73.
+
+### For the re-review
+
+- 52 q3 keys the standard rivaroxaban treatment phase dose, which dvt-pe-20 and dvt-pe-33 (s33) also key as a first regimen. The decision tested here is different: restart the acute phase after a breakthrough PE, rather than continue the 20 mg maintenance dose. Neither guide states a breakthrough plan in so many words. The key rests on treating the new PE as an acute VTE, using the guide's treatment dosing. If that is judged too close to the s33 items, the fallback is to move KF6 out of 52.
+- Missing meals is related to the general cause "absorption or dosing problems" listed in the legacy s05 cva write-in item. It is not keyed as an MCQ there.

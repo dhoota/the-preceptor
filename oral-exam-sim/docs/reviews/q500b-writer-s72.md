@@ -92,3 +92,22 @@ This revision answers `docs/reviews/q500b-qa-s72.md` (13 failed items, no key wr
 3. The 39 q1 to q2 mock-mode flag remains, as the review allows.
 
 Test run: `SAMP_BATCH=s72 npx vitest run tests/samps.test.ts tests/samp-quality.test.ts tests/citations.test.ts --testTimeout=120000`: 3 files, 128 tests passed. Typecheck shows no s72 errors.
+
+## Revision 2
+
+This revision answers `docs/reviews/q500b-verify-s72.md` (6 items failed, SAMPs 40 and 41 passed). Before writing I grepped s17, s52 and s72 for the new 43 q2 and q4 angles ("confided", "told relatives", "wax and wane", "fluctuat", "refused meals", "stopped eating", "before she is discharged"). The only near match was s52 "Hanging laundry" q3, which keys a psychiatric assessment on the orthopaedic ward before discharge. The new 43 q4 tests something else, so it does not repeat that item. I opened no new source. Both new 43 questions cite CCSMH 2006, which I have already opened and read: lines on three quarters telling relatives or friends against 38% telling a health professional, older adults avoiding volunteering symptoms, somatic presentation, most without severe or terminal illness, perhaps over 10% without a diagnosable mental illness, self-neglect in Table 2.1, and "repeatedly assess ... might wax and wane".
+
+| Item | Change |
+|---|---|
+| 39 q1 | The distractor sentence now reads, as the review asked, "Heat-damaged insulin and poor needle technique give erratic glucose but would not explain a meter left unused on all but 3 days of the month." The lipohypertrophy point is now a separate sentence. |
+| 39 q4 | The update is now word for word as the review gave it. She is assessed by the adolescent mental health team before discharge, and the mental health team and the eating disorder program can see her in 3 days. Key, options and explanation are unchanged. |
+| 42 q1 | "Lowest in the first month out" is replaced by "Rises steadily over the first year", in the review's option order, with `correct: 0`. The explanation sentence now reads "The rate falls over the first year rather than rising, and he is 6 days out." |
+| 42 q2 | The explanation now says "A probation officer, if he has one, has no role in his medical discharge". The distractor "Hold until his probation officer is reached" and the q1 distractor "Highest once probation ends" still mention probation. I left them because the stem does not rule probation out. The verifier may want the stem to say he is on probation. |
+| 43 q2 | Rebuilt as the CCSMH disclosure-pattern question. The prompt is "Which of the following best describes what older adults who die by suicide have usually done in the year before?" The key is "Confided the wish to family or friends". The distractors are "Had a severe or terminal physical illness", "Had no diagnosable mental illness", "Shown obvious sadness more than physical complaints" and "Told a health professional of the wish", each refuted by CCSMH text. The son sentence moved from the q2 update to the q3 update. The explanation says older adults tell family rather than clinicians and often do not volunteer symptoms to clinicians, which agrees with s17-02 q2. KF2, `ccsmh-suicide`. |
+| 43 q4 | Replaced (KF2). On the morning planned for discharge, nurses report that for 2 days he has refused most meals and his enoxaparin. The key is "Check again today for intent to die". It rests on CCSMH: self-neglect is an equivocal suicidal behaviour, and suicidal thoughts should be assessed repeatedly because they wax and wane. The distractors are a dietitian review, discharge as planned, recording the refusal and proceeding, and switching to an oral anticoagulant. The question uses no crisis line, opioid quantity, naloxone, family-held medicines, firearms, safety contract or asking myth. The PHAC 9-8-8 source is no longer cited in SAMP 43, so it was removed from that SAMP. It remains on 42. |
+
+### Counts after revision 2
+
+- 20 questions: 17 single and 3 menu. Single key positions: 4, 3, 3, 3, 4. The key is the longest option in 2 of 17.
+- Key features: KF1 4, KF2 5, KF3 3, KF4 4, KF5 4. The thinnest bank features, KF2 and KF4, get 5 and 4.
+- Tests: `SAMP_BATCH=s72 npx vitest run tests/samps.test.ts tests/samp-quality.test.ts tests/citations.test.ts --testTimeout=120000`: 3 files, 128 tests passed. Typecheck shows no s72 errors.

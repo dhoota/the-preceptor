@@ -140,7 +140,7 @@ export const EYE_S76: Samp[] = [
     topic: "eye",
     title: "Red eyes after a trip abroad",
     stem:
-      "A 41-year-old woman presents to the emergency department with red, watery eyes. The right eye became red and gritty yesterday morning and the left by evening. Her lids are puffy and she has noticed bright red patches on the whites of both eyes. She returned 2 days ago from 4 weeks in a village in Cambodia, where many neighbours had red eyes. She is a grade 2 teacher and has been on leave for the trip. She had a head cold 3 weeks ago. She takes ASA 81 mg daily since a transient ischemic attack 2 years ago and has hay fever each spring. She recalls no injury. Visual acuity is 20/25 in each eye. Both conjunctivae show follicles and patchy subconjunctival hemorrhages. A small tender preauricular node is felt on each side.",
+      "A 41-year-old woman presents to the emergency department with red, watery eyes. The right eye became red and gritty yesterday morning and the left by evening. Her lids are puffy and she has noticed bright red patches on the whites of both eyes. She returned 2 days ago from 4 weeks in a village in Cambodia, where many neighbours had red eyes. She is a grade 2 teacher and has been on leave for the trip. She had a head cold 3 weeks ago. She takes ASA 81 mg daily since a transient ischemic attack 2 years ago and has hay fever each spring. She recalls no injury. She has had no nosebleeds, bleeding gums or easy bruising. Visual acuity is 20/25 in each eye. Both conjunctivae show follicles and patchy subconjunctival hemorrhages. A small tender preauricular node is felt on each side.",
     vitals: { temperature: "36.9°C oral", pulse: "78/minute", resp: "14/minute", bp: "128/78 mmHg", o2sat: "99% on room air" },
     questions: [
       {
@@ -200,7 +200,7 @@ export const EYE_S76: Samp[] = [
       {
         id: "q4",
         kind: "single",
-        prompt: "Which of the following tests would best confirm the virus behind the cluster of red eyes she was exposed to?",
+        prompt: "Which of the following tests would best identify the cause of her eye findings?",
         options: [
           "Adenovirus rapid antigen test",
           "Conjunctival bacterial culture",
@@ -376,12 +376,12 @@ export const EYE_S76: Samp[] = [
           "Lid bruising and swelling",
           "Normal CT of the orbits",
           "Relative afferent pupillary defect",
-          "Repair within 12 hours of injury",
           "Rupture close to the limbus",
+          "Systolic blood pressure of 168 mmHg",
         ],
         correct: 2,
         explanation:
-          "Her pupils have not yet been tested, and the swinging flashlight test is safe because it puts no pressure on the globe. In open globe injury, preoperative acuity, an afferent pupillary defect and the site of the wound are the strongest predictors of the final vision, and the Ocular Trauma Score is the most used model. An afferent defect means damage to the retina or optic nerve behind the wound. Repair within 12 to 24 hours and a wound close to the front of the eye predict a better result. A normal CT does not exclude the rupture or change the outlook, and lid bruising says nothing about the globe.",
+          "Her pupils have not yet been tested, and the swinging flashlight test is safe because it puts no pressure on the globe. In open globe injury, preoperative acuity, an afferent pupillary defect and the site of the wound are the strongest predictors of the final vision, and the Ocular Trauma Score is the most used model. An afferent defect means damage to the retina or optic nerve behind the wound. A wound close to the front of the eye predicts a better result. Her blood pressure does not change the visual outlook. A normal CT does not exclude the rupture or change the outlook, and lid bruising says nothing about the globe.",
         keyFeature: { topic: "eye", n: 3 },
         source: "open-globe",
       },
@@ -419,12 +419,12 @@ export const EYE_S76: Samp[] = [
         id: "q2",
         kind: "single",
         update:
-          "Both eyes are irrigated until the pH is 7.4. Acuity is 20/60 right and 20/25 left. The globe is intact. Further examination shows red cells circulating in the right anterior chamber with no layered blood.",
+          "Acuity is 20/60 right and 20/25 left. The globe is intact. Further examination shows a layer of blood filling about a quarter of the right anterior chamber.",
         prompt: "Which of the following grades best describes the blood in the anterior chamber of her right eye?",
         options: ["Grade 0", "Grade 1", "Grade 2", "Grade 3", "Grade 4"],
-        correct: 0,
+        correct: 1,
         explanation:
-          "Red cells suspended in the aqueous without a layer of blood is a microhyphema, graded 0. Grade 1 is layered blood filling less than a third of the chamber, grade 2 one third to one half, grade 3 more than half, and grade 4 a total hyphema. The grade guides care because the risk of a pressure rise climbs with the amount of blood, from about 13.5% in grades 1 and 2 to 52% in grade 4 in one series. A microhyphema also has to be followed closely, because a rebleed can turn it into a layered hyphema.",
+          "A layer of blood filling about a quarter of the anterior chamber is less than a third, which is grade 1. Grade 0 is a microhyphema, with red cells suspended in the aqueous and no layer. Grade 2 fills one third to one half, grade 3 more than half, and grade 4 the whole chamber. The grade guides care because the risk of a pressure rise climbs with the amount of blood, from about 13.5% in grades 1 and 2 to 27% in grade 3 and 52% in grade 4 in one series. A small hyphema still needs close follow-up, because a rebleed can enlarge it.",
         keyFeature: { topic: "eye", n: 5 },
         source: "eyewiki-hyphema",
       },
@@ -433,13 +433,13 @@ export const EYE_S76: Samp[] = [
         kind: "single",
         prompt: "Which of the following additional findings would most support admission for her eye injury?",
         options: [
-          "Hypothyroidism on levothyroxine",
           "Known von Willebrand disease",
           "Lives with her adult daughter",
           "Myopia requiring glasses",
           "Punctate staining of both corneas",
+          "Treated hypothyroidism",
         ],
-        correct: 1,
+        correct: 0,
         explanation:
           "Most hyphemas are managed as outpatients with close review of vision, the blood and the pressure. Admission is considered for a bleeding disorder, poor adherence, a severe eye or orbital injury, or sickle cell disease with a raised pressure. Von Willebrand disease is a bleeding disorder that raises the risk of a rebleed, which usually comes within the first 5 days. Living with an adult daughter supports adherence and safe follow-up at home. Treated hypothyroidism and myopia do not change the plan. Punctate staining from the powder heals with lubrication and does not need a bed.",
         keyFeature: { topic: "eye", n: 2 },
@@ -448,7 +448,7 @@ export const EYE_S76: Samp[] = [
       {
         id: "q4",
         kind: "single",
-        update: "She has no bleeding disorder and understands the plan. The intraocular pressure is 16 mmHg in the right eye.",
+        update: "She understands the plan. The intraocular pressure is 16 mmHg in the right eye.",
         prompt: "Which of the following is the most appropriate disposition for the injury to her right eye?",
         options: [
           "Admission for strict bed rest",
@@ -459,7 +459,7 @@ export const EYE_S76: Samp[] = [
         ],
         correct: 2,
         explanation:
-          "A microhyphema with a normal pressure of 16 mmHg, an intact globe, good understanding and no bleeding disorder can be managed as an outpatient with close follow-up, so a next day review by ophthalmology is the right plan. Rebleeding is most likely in the first 5 days, so review in 1 week misses that window, whether by her family physician or with a repeat slit lamp examination. She meets none of the criteria for admission. An air transfer tonight adds risk and cost without changing her care, since the review can happen 2 hours away by road tomorrow.",
+          "A small grade 1 hyphema with a normal pressure of 16 mmHg, an intact globe, good understanding and no bleeding disorder can be managed as an outpatient with close follow-up, so a next day review by ophthalmology is the right plan. Rebleeding is most likely in the first 5 days, so review in 1 week misses that window, whether by her family physician or with a repeat slit lamp examination. She meets none of the criteria for admission. An air transfer tonight adds risk and cost without changing her care, since the review can happen 2 hours away by road tomorrow.",
         keyFeature: { topic: "eye", n: 5 },
         source: "eyewiki-hyphema",
       },

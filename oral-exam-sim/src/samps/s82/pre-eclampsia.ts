@@ -191,7 +191,7 @@ export const PRE_ECLAMPSIA_S82: Samp[] = [
         id: "q4",
         kind: "single",
         update:
-          "Obstetrics plans birth within 24 hours, once she is stable. Magnesium sulfate is running. After labetalol 20 mg and then 40 mg IV, her BP is 166/112 mmHg, and the obstetrician asks for hydralazine 5 mg IV.",
+          "Obstetrics plans birth within 24 hours, once she is stable. Magnesium sulfate is running. After labetalol 20 mg, 40 mg and then 80 mg IV, her BP is 166/112 mmHg, and the obstetrician asks for hydralazine 5 mg IV.",
         prompt: "Which of the following is the most appropriate IV fluid plan as she receives her first dose of hydralazine?",
         options: [
           "Crystalloid up to 500 mL IV with the dose",
@@ -202,7 +202,7 @@ export const PRE_ECLAMPSIA_S82: Samp[] = [
         ],
         correct: 0,
         explanation:
-          "Hydralazine dilates arterioles directly and can drop the BP of a volume-contracted woman with pre-eclampsia abruptly, which lowers placental blood flow. NICE suggests considering up to 500 mL of crystalloid before or with the first IV dose of hydralazine in pregnancy, while otherwise avoiding volume expansion and limiting maintenance fluids to 80 mL/hour. Normal saline 2 L over 1 hour is a large load in a woman whose leaky capillaries put her at risk of pulmonary edema. Dextrose 5% 1 L adds free water and volume without benefit. Furosemide would deplete her circulating volume further and make hypotension more likely. Stopping all fluids removes the small preload NICE suggests and is not needed when maintenance is already capped.",
+          "Hydralazine dilates arterioles directly and can drop the BP of a volume-contracted woman with pre-eclampsia abruptly, which lowers placental blood flow. NICE suggests considering up to 500 mL of crystalloid before or with the first IV dose of hydralazine in pregnancy, while otherwise avoiding volume expansion and limiting maintenance fluids to 80 mL/hour. This small preload is the only exception NICE makes to its advice against volume expansion in severe pre-eclampsia. Normal saline 2 L over 1 hour is a large load in a woman whose leaky capillaries put her at risk of pulmonary edema. Dextrose 5% 1 L adds free water and volume without benefit. Furosemide would deplete her circulating volume further and make hypotension more likely. Stopping all fluids removes the small preload NICE suggests, and NICE limits maintenance fluids to 80 mL/hour rather than stopping them.",
         keyFeature: { topic: "pre-eclampsia", n: 4 },
         source: "nice-ng133",
       },

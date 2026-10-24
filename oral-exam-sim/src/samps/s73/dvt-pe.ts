@@ -302,7 +302,7 @@ export const DVT_PE_S73: Samp[] = [
         options: ["dabigatran 150 mg PO twice daily", "edoxaban 60 mg PO daily", "rivaroxaban 10 mg PO daily", "rivaroxaban 20 mg PO daily", "rivaroxaban 15 mg PO twice daily"],
         correct: 4,
         explanation:
-          "A new PE is treated as an acute event, so she restarts the treatment phase of rivaroxaban, 15 mg twice daily for 3 weeks and then 20 mg once daily, and each dose is now taken with a meal, as the rivaroxaban guide requires. Simply continuing 20 mg once daily gives no acute phase dosing. The 10 mg once daily dose is an option only for extended prevention after 6 months, not for an acute clot. Dabigatran and edoxaban both need 5 to 10 days of a parenteral anticoagulant such as LMWH before they are started, so neither can be started alone as an oral regimen today.",
+          "A new PE is treated as an acute event, so she restarts the treatment phase of rivaroxaban, 15 mg twice daily for 3 weeks and then 20 mg once daily, and each dose is now taken with a meal. Simply continuing 20 mg once daily gives no acute phase dosing. The 10 mg once daily dose is an option only for extended prevention after 6 months, not for an acute clot. Dabigatran and edoxaban both need 5 to 10 days of a parenteral anticoagulant such as LMWH before they are started, so neither can be started alone as an oral regimen today.",
         keyFeature: { topic: "dvt-pe", n: 6 },
         source: "tc-dvt-tx",
       },
