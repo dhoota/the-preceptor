@@ -98,3 +98,22 @@ npx tsc --noEmit -p . 2>&1 | grep cases/batch18      (no output)
 CASE_BATCH=batch18 npx vitest run tests/cases.test.ts tests/citations.test.ts --testTimeout=120000      41 passed
 REALIGN=batch18 CASE_BATCH=batch18 npx vitest run tests/cases.test.ts tests/citations.test.ts --testTimeout=120000      45 passed
 ```
+
+## Revision 2
+
+This revision answers docs/reviews/q500b-verify-batch18.md. I changed nothing beyond the items below.
+
+1. Cannabis case, q-first model answer. "A new fall in drowsiness in an older adult is an emergency until proven otherwise." now reads "New drowsiness after a fall in an older adult is an emergency until proven otherwise."
+2. Advisory, airgun eye case, c-mri feedback. "A steel pellet can move in the magnet" now reads "A pellet may contain steel, which can move in the magnet". This matches the lead pellets in the collateral history.
+3. Advisory, STEMI case, s-lysis. The ambulance now arrives "in about an hour", which fits it arriving after the CT and the reversal.
+4. Health Canada claims in the cannabis case. I kept both claims and give the supporting passages here. All are from Health Canada, Information for health care professionals: cannabis (marihuana, marijuana) and the cannabinoids, Spring 2018, read with WebFetch on the canada.ca page. The page is about 800,000 characters long. The passages lie past the first 400,000 characters, or in the pharmacokinetics section, which may be why the reviewer did not find them.
+   - Impairment beyond 24 hours (l-p4 teaching). Section 6.0, Warnings, occupational hazards: "impairment can last for over 24 h after last use". In the same section: "the effects following oral administration only begin to be felt 30 min to 1 h or more after ingestion, and peak at 3 - 4 h". The page text near character offset 700,000 holds both.
+   - Blood pressure after oral THC (l-m4 teaching). In the oral pharmacokinetics and pharmacodynamics part: "Systolic blood pressure dropped at the lower dose (i.e. 30 mg)" and "diastolic blood pressure decreased between 4 and 8 h after dosing" after oral THC. The page text near character offset 100,000 holds both.
+   - If a physician prefers the claims removed, the sentence on 24 hour impairment in l-p4 and the clause on blood pressure in l-m4 can be dropped without changing the scoring.
+
+### Checks after revision 2
+
+```
+CASE_BATCH=batch18 npx vitest run tests/cases.test.ts tests/citations.test.ts --testTimeout=120000
+REALIGN=batch18 CASE_BATCH=batch18 npx vitest run tests/cases.test.ts tests/citations.test.ts --testTimeout=120000
+```

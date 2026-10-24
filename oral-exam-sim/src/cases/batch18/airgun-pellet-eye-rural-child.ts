@@ -322,7 +322,7 @@ export const airgunPelletEyeRuralChild: OralCase = {
           next: "s-mri",
           quality: "unsafe",
           feedback:
-            "MRI is contraindicated with a suspected metallic intraocular foreign body. A steel pellet can move in the magnet and cause more damage. CT is the test.",
+            "MRI is contraindicated with a suspected metallic intraocular foreign body. A pellet may contain steel, which can move in the magnet and cause more damage. CT is the test.",
         },
       ],
     },

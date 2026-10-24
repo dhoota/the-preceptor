@@ -249,7 +249,7 @@ export const postLysisBleedRuralAnteriorStemi: OralCase = {
       kind: "say",
       id: "s-lysis",
       phase: "Waiting for the ambulance",
-      text: "The fibrinolytic is in. The land ambulance will arrive in 40 minutes. Her pain falls to 3 out of 10.",
+      text: "The fibrinolytic is in. The land ambulance will arrive in about an hour. Her pain falls to 3 out of 10.",
       next: "q-monitor",
     },
     {

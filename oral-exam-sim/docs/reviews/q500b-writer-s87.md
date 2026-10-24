@@ -80,3 +80,15 @@ Uncertain in this revision:
 1. loc-49 q4: multiple-dose charcoal through a gastrostomy in a patient with a weak cough. The explanation says his airway must be watched and protected before further doses. Reviewers may want the stem to state an intact gag reflex.
 2. loc-49 q3: the point that phenobarbital toxicity causes hypothermia and slow breathing is standard, but none of the cited abstracts states it. It is used only as supporting reasoning.
 3. loc-51 q4 keys "Posterior fossa stroke" to cover both hemorrhage and swollen infarct, because the two cannot be told apart without imaging.
+
+## Revision 2
+
+Response to `docs/reviews/q500b-verify-s87.md` (3 failed items). Each fix is applied as written.
+
+| Item | Fix |
+|---|---|
+| loc-49 q3 | Update reworded as given: "It holds his old phenobarbital 30 mg tablets and the new 60 mg tablets his neurologist ordered twice daily 10 days ago to replace them, and both are signed as given twice daily since then." This supports the 180 mg against 120 mg a day in the explanation. |
+| loc-49 q4 | Kept the key "Multiple-dose activated charcoal" and "Urinary alkalinization". The other three are replaced with one treatment for each q3 distractor: "Empiric IV ceftriaxone" (urinary sepsis), "Lactulose by gastrostomy" (hyperammonemia) and "Phenytoin IV loading dose" (nonconvulsive status epilepticus), so the option set no longer gives away the q3 key. In alphabetical order the key is index 2. The update now reads "His cough and gag are now strong, and he is nursed with the head of the bed at 30 degrees." The explanation clause now reads "his airway must be reassessed before each dose". The distractor sentences were rewritten: no infection source, no liver disease or valproate, status epilepticus unlikely on extra anticonvulsant, and alkalinization inferior to MDAC (Proudfoot 2004). |
+| loc-51 q1 | Rebuilt to test a finding about his drowsiness, not his headache, using the reviewer's prompt and options. Prompt: "Which of the following findings at 1530 most strongly indicates that his drowsiness is not the sleep that follows his migraines?" Key "Confused when roused to voice". Distractors: "Asleep 2 hours after an antiemetic", "Eyes closed in a darkened room", "Hours of sleep after past attacks", "No vomiting since 1300". Key index 1. To support every option, the stem now says he has not vomited since 1300, fell asleep at about 1330 in a darkened room, and lies with his eyes closed. The explanation cites the ICHD-3 1.1 note that a patient may fall asleep during a migraine and wake up without it (read on ichd-3.org, the page cited). No migraine criterion is quoted, and the old "photophobia" wording is gone. Grepped the bank: no item uses this drowsiness-versus-sleep decision. |
+
+After Revision 2: 20 questions (18 single, 2 menu). Key features: KF1 5, KF2 2, KF3 4, KF4 4, KF5 5. Single key positions 3, 4, 4, 4, 3. The key is the longest option in 4 of 18 singles (22%). Every source cited was opened. `SAMP_BATCH=s87 npx vitest run tests/samps.test.ts tests/samp-quality.test.ts tests/citations.test.ts --testTimeout=120000` gives 128 passed. Typecheck is clean.

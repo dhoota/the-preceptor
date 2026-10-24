@@ -119,7 +119,7 @@ export const cannabisGummiesOlderWomanDrowsy: OralCase = {
       prompt: "What do you tell the nurse, and what do you do first?",
       seconds: 75,
       modelAnswer: [
-        "She is not just tired. A new fall in drowsiness in an older adult is an emergency until proven otherwise.",
+        "She is not just tired. New drowsiness after a fall in an older adult is an emergency until proven otherwise.",
         "Airway, breathing and circulation. Oxygen to her saturation target. Monitor and IV access.",
         "Glucose is 6.0 mmol/L. Naloxone is not needed now because her breathing and pupils are normal.",
         "Spine precautions after an unwitnessed fall with a head injury.",

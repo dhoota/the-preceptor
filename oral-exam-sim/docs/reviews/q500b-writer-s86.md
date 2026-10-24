@@ -117,3 +117,13 @@ I searched `src/samps` and `src/cases` for "hatchback", "stepladder", "cupboard"
 - Key features: 1: 4, 2: 6, 3: 3, 4: 7.
 - Sources in the batch: s86-csbpr-sp, s86-csbpr-acute, s86-russell-csdh, s86-forsberg-aca, s86-sammpris and s86-locked-in.
 - `npx tsc --noEmit -p . 2>&1 | grep samps/s86` prints nothing. `SAMP_BATCH=s86 npx vitest run tests/samps.test.ts tests/samp-quality.test.ts tests/citations.test.ts --testTimeout=120000` passes 128 of 128.
+
+## Revision 3
+
+This revision answers `docs/reviews/q500b-verify2-s86.md`, which failed only cva-48 q4. The key was the only treatment among the options. Nothing else changed.
+
+- In cva-48 q4, "Holter monitor for 24 hours" and "Lipid profile and HbA1c" were replaced with "Atorvastatin 80 mg daily" and "Perindopril 4 mg daily". A high-risk TIA pathway would also start these treatments, and neither worsens a subdural.
+- No other antithrombotic was added. The question still has 6 options in alphabetical order, select 1, and the key stays "ASA and clopidogrel loading".
+- The explanation now gives true reasons for both new distractors. A higher statin dose and an ACE inhibitor are standard secondary prevention after a high-risk TIA. A statin does not impair clotting. Lowering his BP of 148/82 mmHg with perindopril does not make a subdural bleed.
+- Option lengths run 23 to 32 characters. Key positions and the longest-option count for singles are unchanged, and so is key feature coverage.
+- `SAMP_BATCH=s86 npx vitest run tests/samps.test.ts tests/samp-quality.test.ts tests/citations.test.ts --testTimeout=120000` passes 128 of 128. tsc reports nothing for s86.
