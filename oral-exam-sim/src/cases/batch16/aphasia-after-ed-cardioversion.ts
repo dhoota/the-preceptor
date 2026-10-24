@@ -87,18 +87,18 @@ export const aphasiaAfterEdCardioversion: OralCase = {
     },
     {
       id: "labs",
-      label: "Blood work (resulted at 11:40)",
+      label: "Blood work",
       result:
         "Hemoglobin 138 g/L. Platelets 221 x 10^9/L. INR 1.0. aPTT 28 seconds. Sodium 139 mmol/L. Potassium 4.2 mmol/L. Creatinine 82 µmol/L. Troponin within normal limits.",
     },
     {
       id: "ct",
-      label: "Non contrast CT head (11:24)",
+      label: "Non contrast CT head",
       result: "No hemorrhage. Hyperdense left middle cerebral artery. Subtle loss of grey white differentiation in the left insula. ASPECTS 9.",
     },
     {
       id: "cta",
-      label: "CT angiography (11:27)",
+      label: "CT angiography",
       result: "Occlusion of the proximal left M1 segment of the middle cerebral artery with good collaterals. No carotid stenosis. No dissection.",
     },
     {
@@ -213,7 +213,7 @@ export const aphasiaAfterEdCardioversion: OralCase = {
     {
       kind: "say",
       id: "s-imaging",
-      phase: "11:30",
+      phase: "After the scan",
       text: "The CT shows no hemorrhage and an ASPECTS of 9. CT angiography shows a proximal left M1 occlusion with good collaterals. Her blood pressure is 176/94 mmHg. The neurointerventional team is ready.",
       next: "q-reperfusion",
     },
@@ -262,14 +262,14 @@ export const aphasiaAfterEdCardioversion: OralCase = {
     {
       kind: "say",
       id: "s-evt-only",
-      phase: "11:33",
+      phase: "Moments later",
       text: "The stroke neurologist asks why she has not had thrombolysis, since she has no contraindication. She gives tenecteplase 18.5 mg as the patient is wheeled to angiography.",
       next: "s-evt",
     },
     {
       kind: "say",
       id: "s-heparin",
-      phase: "11:34",
+      phase: "Moments later",
       text: "The pharmacist questions the heparin order. The stroke neurologist stops it before it starts and gives tenecteplase 18.5 mg as a bolus. The patient goes to angiography.",
       next: "s-evt",
     },
@@ -372,7 +372,7 @@ export const aphasiaAfterEdCardioversion: OralCase = {
         "Ask for a review that looks at contributing factors. The onset recorded from one source, CHADS-65 not documented, and no anticoagulation plan.",
         "Suggest a fix, such as a cardioversion checklist that records the onset from collateral and CHADS-65 before sedation.",
         "Make sure she leaves hospital on an anticoagulant, since she is CHADS-65 positive.",
-        "Document the facts, the disclosure and your hand over to the stroke team.",
+        "Document the facts, the disclosure and your handover to the stroke team.",
       ],
       rubric: ["cv-pr3", "cv-pr4"],
       next: "end",

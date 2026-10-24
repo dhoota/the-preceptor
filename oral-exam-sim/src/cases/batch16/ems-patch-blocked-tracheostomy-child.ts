@@ -183,7 +183,7 @@ export const emsPatchBlockedTracheostomyChild: OralCase = {
       kind: "say",
       id: "s-bag-mouth",
       phase: "18:15",
-      text: "The paramedic says there is no chest rise with the mask and his saturation is 70%. His mother says his throat is closed and that the card says to use the stoma. You agree and ask her to put in a new tube.",
+      text: "The paramedic says there is no chest rise with the mask and his saturation is 71%. His mother says his throat is closed and that the card says to use the stoma. You agree and ask her to put in a new tube.",
       next: "s-change",
     },
     {

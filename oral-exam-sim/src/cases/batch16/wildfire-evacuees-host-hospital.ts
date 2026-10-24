@@ -62,14 +62,14 @@ export const wildfireEvacueesHostHospital: OralCase = {
     },
     {
       id: "ob-exam",
-      label: "The pregnant woman: examination at 20:08",
+      label: "The pregnant woman: examination",
       result:
         "A loop of pulsating umbilical cord lies at the introitus. On gentle examination the cervix is 5 cm dilated, and a fetal shoulder is high in the pelvis. The fetal heart by handheld Doppler is 80/minute and does not recover between tightenings.",
     },
     {
       id: "ob-after",
       label: "The pregnant woman: after elevation",
-      result: "With the presenting part held up and her in the knee-chest position, the fetal heart rises to 130/minute. The birthing unit has the operating room ready by 20:24.",
+      result: "With the presenting part held up and her in the knee-chest position, the fetal heart rises to 130/minute. The birthing unit has the operating room ready about 15 minutes after the call.",
     },
     {
       id: "waiting",
@@ -147,7 +147,7 @@ export const wildfireEvacueesHostHospital: OralCase = {
       kind: "say",
       id: "s-in-order",
       phase: "20:20",
-      text: "Her sister runs to the desk. She can see the cord. The triage nurse takes her to a bay, and the Doppler finds a fetal heart of 70/minute. You go straight to her.",
+      text: "Her sister runs to the desk. She can see the cord. The triage nurse takes her to a bay, and the Doppler finds a fetal heart of 80/minute. You go straight to her.",
       next: "q-cord",
     },
     {
@@ -177,8 +177,8 @@ export const wildfireEvacueesHostHospital: OralCase = {
     {
       kind: "say",
       id: "s-delivered",
-      phase: "20:40",
-      text: "You kept a gloved hand in the vagina holding the presenting part up, from the bay to the operating room, until the obstetrician delivered the baby. The fetal heart rose to 130/minute. A baby boy was born by caesarean section at 20:32 and is pink and crying. Your colleague has arrived. The waiting room now holds 19 evacuees.",
+      phase: "20:50",
+      text: "You kept a gloved hand in the vagina holding the presenting part up, from the bay to the operating room, until the obstetrician delivered the baby. The fetal heart rose to 130/minute. A baby boy was born by caesarean section and is pink and crying. Your colleague on call, called in by the charge nurse, has arrived. The waiting room now holds 19 evacuees.",
       next: "q-others",
     },
     {
@@ -288,7 +288,7 @@ export const wildfireEvacueesHostHospital: OralCase = {
         "Confirm who she is and who cares for her with the community health representative, the evacuation registry and her granddaughter on the second plane.",
         "Speak with her in her language through the community health representative.",
         "Do not release a confused elder to someone she does not recognize until he is verified.",
-        "Plan a safe hand over to her granddaughter when she arrives.",
+        "Plan a safe handover to her granddaughter when she arrives.",
       ],
       rubric: ["wf-h3", "wf-pr3"],
       choices: [
@@ -314,7 +314,7 @@ export const wildfireEvacueesHostHospital: OralCase = {
       kind: "say",
       id: "s-release",
       phase: "23:40",
-      text: "Her granddaughter arrives on the second plane and cannot find her. The liaison learns the man is not related and left the arena. Police find her an hour later walking near the highway, cold but unhurt. You report the event.",
+      text: "Her granddaughter arrives on the second plane and cannot find her. The liaison learns the man is not related and left the arena. Police find her 15 minutes later walking near the highway, cold but unhurt. You report the event.",
       next: "q-close",
     },
     {
