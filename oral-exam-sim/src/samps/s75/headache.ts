@@ -100,7 +100,7 @@ export const HEADACHE_S75: Samp[] = [
       {
         id: "q1",
         kind: "single",
-        prompt: "Which of the following examination findings would most suggest a secondary cause that needs investigation?",
+        prompt: "Which of the following findings would most suggest a secondary cause that needs investigation?",
         options: ["Left arm weakness, brisk reflexes", "Pain spreading toward the left eye", "Patchy numbness over the left occiput", "Shooting pain on brushing his hair", "Tenderness at the left skull base"],
         correct: 0,
         explanation:
@@ -111,12 +111,12 @@ export const HEADACHE_S75: Samp[] = [
       {
         id: "q2",
         kind: "single",
-        update: "Arm strength and reflexes are normal. Pressing just left of the midline at the base of the skull sets off his shooting pain. Light touch over the left occiput feels unpleasant. The scalp skin is normal.",
+        update: "The rest of his neurological examination is normal. Pressing just left of the midline at the base of the skull sets off his shooting pain. Light touch over the left occiput feels unpleasant. The scalp skin is normal.",
         prompt: "Which of the following is the most likely diagnosis for his headache?",
         options: ["Cervicogenic headache", "Occipital neuralgia", "Primary stabbing headache", "Tension-type headache", "Trigeminal neuralgia"],
         correct: 1,
         explanation:
-          "Paroxysms of severe, shooting pain lasting seconds in the territory of the greater occipital nerve, with allodynia of the scalp and a trigger point where the nerve emerges, meet the ICHD-3 criteria for occipital neuralgia. Primary stabbing headache has no nerve tenderness or allodynia, and ICHD-3 advises that stabs fixed to one area need a search for a structural cause at that site. Cervicogenic headache comes from a disorder of the neck, with reduced range of motion. Tension-type headache is a pressing ache, and trigeminal neuralgia affects the face, not the back of the scalp.",
+          "Paroxysms of severe, shooting pain lasting seconds in the territory of the greater occipital nerve, with allodynia of the scalp and a trigger point where the nerve emerges, meet the ICHD-3 clinical criteria for occipital neuralgia, which are completed when a local anesthetic block of the nerve eases the pain. Primary stabbing headache has no nerve tenderness or allodynia, and ICHD-3 advises that stabs fixed to one area need a search for a structural cause at that site. Cervicogenic headache comes from a disorder of the neck, with reduced range of motion. Tension-type headache is a pressing ache, and trigeminal neuralgia affects the face, not the back of the scalp.",
         keyFeature: { topic: "headache", n: 4 },
         source: "ichd3-occipital",
       },
@@ -124,7 +124,7 @@ export const HEADACHE_S75: Samp[] = [
         id: "q3",
         kind: "single",
         prompt: "Which of the following is the most appropriate treatment for his pain in the emergency department?",
-        options: ["Greater occipital nerve block", "High-flow oxygen by face mask", "hydromorphone 1 mg IV", "metoclopramide 10 mg IV", "sumatriptan 6 mg SC"],
+        options: ["Anesthetic nerve block", "High-flow oxygen by face mask", "hydromorphone 1 mg IV", "metoclopramide 10 mg IV", "sumatriptan 6 mg SC"],
         correct: 0,
         explanation:
           "A local anesthetic block of the greater occipital nerve treats the pain and supports the diagnosis, because ICHD-3 includes temporary relief by a block of the affected nerve among the criteria for occipital neuralgia. The American Headache Society consensus lists cranial neuralgias among the indications for peripheral nerve blocks and describes the greater occipital block, with skin numbness as the sign of technical success. He takes no anticoagulant, one of its listed precautions. High-flow oxygen treats cluster headache, whose attacks last much longer than seconds. Sumatriptan and metoclopramide treat migraine, and an opioid is not a treatment for a neuralgia.",
@@ -134,7 +134,7 @@ export const HEADACHE_S75: Samp[] = [
       {
         id: "q4",
         kind: "single",
-        update: "Within 10 minutes the attacks stop and the skin over the left occiput is numb. He asks whether a problem in his neck could be the cause.",
+        update: "His attacks stop within 10 minutes of treatment. He asks whether a problem in his neck could be the cause.",
         prompt: "Which of the following findings would most suggest that his headache arises from the cervical spine?",
         options: ["Allodynia on the occipital scalp", "Attacks lasting a few seconds", "Dysesthesia over the occiput", "Neck turning limited and painful", "Trigger point at the nerve exit"],
         correct: 3,
@@ -199,7 +199,7 @@ export const HEADACHE_S75: Samp[] = [
         options: ["acetaminophen with codeine 30 mg PO", "dihydroergotamine 2 mg nasal spray", "ketorolac 10 mg PO", "sumatriptan 50 mg PO", "tramadol 50 mg PO"],
         correct: 3,
         explanation:
-          "LactMed describes sumatriptan as a preferred triptan during breastfeeding, because milk levels are low and it is poorly absorbed by the infant by mouth, and adverse effects are not expected in most breastfed infants. Its manufacturer advises withholding breastfeeding for 12 hours after a dose, but LactMed notes that the amounts the infant takes in are small and recommends it as a triptan of choice. Taken early in an attack it may also keep her out of the emergency department. LactMed notes that regulators and professional groups prefer other agents to codeine in nursing mothers. Ketorolac carries a manufacturer contraindication in breastfeeding, and the nasal dihydroergotamine has already failed her and requires 3 days without breastfeeding after each dose. Tramadol is not recommended for routine migraine treatment.",
+          "LactMed notes that sumatriptan has been recommended as a triptan of choice during breastfeeding, because milk levels are low, it is poorly absorbed by the infant by mouth and adverse effects are not expected in most breastfed infants. Its manufacturer advises withholding breastfeeding for 12 hours after a dose, but LactMed suggests this only in extreme cases, such as the mother of a preterm infant. Taken early in an attack it may also keep her out of the emergency department. LactMed notes that regulators and professional groups prefer other agents to codeine in nursing mothers. Ketorolac carries a manufacturer contraindication in breastfeeding, and the nasal dihydroergotamine has already failed her and requires 3 days without breastfeeding after each dose. Tramadol is not recommended for routine migraine treatment.",
         keyFeature: { topic: "headache", n: 5 },
         source: "lactmed",
       },

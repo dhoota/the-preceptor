@@ -67,11 +67,21 @@ I read every SAMP on the topic (s11 headache-01 to 15, s40 headache-16 to 47) an
 - Key feature 3 now has 4 questions in the batch instead of 5, because 50 q2 was dropped. Every key feature is still tested. The bank count for key feature 3 goes from 16 to 20.
 - The Cohen 2013 and Canadian Immunization Guide sources left with the zoster SAMP.
 
+## Revision 3 (verification review, docs/reviews/q500b-verify-s75.md)
+
+These are the five fixes, applied exactly as the review wrote them. Nothing else changed.
+
+- headache-49 q1: the prompt now reads "Which of the following findings would most suggest a secondary cause that needs investigation?"
+- headache-49 q2: the update now opens "The rest of his neurological examination is normal." The explanation now says the findings "meet the ICHD-3 clinical criteria for occipital neuralgia, which are completed when a local anesthetic block of the nerve eases the pain."
+- headache-49 q3: the keyed option is now "Anesthetic nerve block". It stays first, with `correct` 0, and the explanation is unchanged.
+- headache-49 q4: the update now reads "His attacks stop within 10 minutes of treatment. He asks whether a problem in his neck could be the cause."
+- headache-50 q4: the first two explanation sentences were replaced with the review's wording on LactMed and the sumatriptan manufacturer's 12 hour advice.
+
 ## Tests
 
 `npx tsc --noEmit -p . 2>&1 | grep samps/s75` prints nothing.
 
-`SAMP_BATCH=s75 npx vitest run tests/samps.test.ts tests/samp-quality.test.ts tests/citations.test.ts --testTimeout=120000`: all 128 pass after revision 2. Without the longer timeout, the bank-wide near-duplicate test timed out at 5 seconds on the first run, while other agents were running.
+`SAMP_BATCH=s75 npx vitest run tests/samps.test.ts tests/samp-quality.test.ts tests/citations.test.ts --testTimeout=120000`: all 128 pass after revision 3. Without the longer timeout, the bank-wide near-duplicate test timed out at 5 seconds on the first run, while other agents were running.
 
 ## Uncertain, for reviewers
 

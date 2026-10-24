@@ -62,10 +62,10 @@ export const CVA_S86: Samp[] = [
         kind: "menu",
         select: 1,
         prompt: "Had these spells been treated as a high-risk transient ischemic attack without brain imaging, which of the following would have caused the most harm?",
-        options: ["ASA and clopidogrel loading", "Carotid Doppler ultrasound", "Holter monitor for 24 hours", "Lipid profile and HbA1c", "Outpatient echocardiogram", "Stroke prevention clinic referral"],
+        options: ["ASA and clopidogrel loading", "Atorvastatin 80 mg daily", "Carotid Doppler ultrasound", "Outpatient echocardiogram", "Perindopril 4 mg daily", "Stroke prevention clinic referral"],
         correct: [0],
         explanation:
-          "Canadian guidance gives an antiplatelet loading dose only after brain imaging has excluded intracranial hemorrhage. Loading ASA and clopidogrel on top of his daily ASA, with a subdural hematoma already shifting the midline, would raise the risk that it bleeds and expands. That is the one choice that does active harm. Carotid Doppler, a 24-hour Holter, an echocardiogram, blood tests and a clinic referral would all miss the hematoma and delay the diagnosis, but none of them makes the bleed worse. The lesson is that brain imaging comes before any antithrombotic decision in a suspected transient ischemic attack.",
+          "Canadian guidance gives an antiplatelet loading dose only after brain imaging has excluded intracranial hemorrhage. Loading ASA and clopidogrel on top of his daily ASA, with a subdural hematoma already shifting the midline, would raise the risk that it bleeds and expands. That is the one choice that does active harm. Raising his atorvastatin to 80 mg and adding perindopril 4 mg are standard secondary prevention after a high-risk TIA. A statin does not impair clotting, and lowering his BP of 148/82 mmHg with an ACE inhibitor does not make a subdural bleed. Carotid Doppler, an echocardiogram and a clinic referral would miss the hematoma and delay the diagnosis, but none of them makes the bleed worse. The lesson is that brain imaging comes before any antithrombotic decision in a suspected transient ischemic attack.",
         keyFeature: { topic: "cva", n: 1 },
         source: "s86-csbpr-sp",
       },
