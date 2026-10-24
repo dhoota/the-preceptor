@@ -82,3 +82,17 @@ After revision: 21 questions, 20 single and 1 menu. Key feature counts: kf1 3, k
 Tests: `SAMP_BATCH=s83 npx vitest run tests/samps.test.ts tests/samp-quality.test.ts tests/citations.test.ts --testTimeout=120000` passes 132 of 132. The tsc grep for samps/s83 prints nothing.
 
 Still open for the physician: the Dart 2023 full text, to confirm the 4 hour charcoal window and the 4 to 6 hour repeat level (tox-50 q3 and q4), and the overlap of tox-51 q3 with the batch07 CCB oral case.
+
+## Revision 2
+
+Changes made in reply to docs/reviews/q500b-verify-s83.md. Nothing else changed.
+
+- tox-49 q3 (fail, mock-mode cue). The update now reads "Over the next 2 hours he feeds poorly and cries most of the time, even when his mother holds him." It no longer repeats the Eat, Sleep, Console criteria and thresholds. In the explanation, "He cannot feed, sleep or be consoled" became "He is feeding poorly and cannot be settled". The weight loss reasoning and the key are unchanged.
+- tox-51 q4 (fail, mock-mode cue). The update now says "on a vasopressor infusion" instead of "on a norepinephrine infusion". The explanation is unchanged.
+- tox-48 q1 (optional). The last sentence was shortened to "Nothing in his history suggests thyroid disease."
+- tox-49 stem (optional). Added "There are no focal neurological signs." This supports the q1 explanation.
+- tox-51 q1 (optional). Neither Glatstein 2012 nor St-Onge 2017 supports the sentence about calcium channel blockers and insulin, so I removed it. It is replaced by "Hypoglycemia that keeps returning on a dextrose infusion is the pattern of a sulfonylurea, so this unexpected result points to a second drug taken with her amlodipine." Glatstein 2012, the cited source, supports this: sulfonylurea hypoglycemia is refractory to IV dextrose.
+
+Counts are unchanged: 21 questions (20 single, 1 menu). Key features kf1 3, kf2 1, kf3 2, kf4 3, kf5 1, kf6 1, kf7 2, kf8 8. Single key positions 5, 3, 5, 5, 2.
+
+Tests: `SAMP_BATCH=s83 npx vitest run tests/samps.test.ts tests/samp-quality.test.ts tests/citations.test.ts --testTimeout=120000` passes 132 of 132. The tsc grep for samps/s83 prints nothing.
