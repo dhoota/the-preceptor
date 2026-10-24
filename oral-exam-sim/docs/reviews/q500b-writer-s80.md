@@ -102,3 +102,18 @@ This revision answers docs/reviews/q500b-qa-s80.md (15 fails). Where this sectio
 ### Test result
 
 `SAMP_BATCH=s80 npx vitest run tests/samps.test.ts tests/samp-quality.test.ts tests/citations.test.ts --testTimeout=120000`: 128 passed. The typecheck shows no errors for s80.
+
+## Revision 2
+
+This revision answers docs/reviews/q500b-verify-s80.md, which passed 18 of 20 questions. I applied the review's text exactly and changed nothing else.
+
+- **48 q4 (B6 cue):** the update now reads "The tube is passed through the cords on the next attempt. The cuff is inflated, and brown fluid is seen inside the tube."
+- **52 q3:**
+  - The options are now Epinephrine down the tube, Gastric acid on the detector, Low cardiac output, Neonatal patient, Quetiapine in her blood, Right mainstem intubation, Severe bronchospasm and Sinus tachycardia, with `select: 2` and `correct: [0, 1]`.
+  - "Recent alcohol intake", which was defensible because of carbonated drinks, and "BMI over 35 kg/m2", a cue to the q1 key, are removed.
+  - The explanation now carries the review's replacement sentences on bronchospasm as a false negative cause, the right mainstem tube, quetiapine and heart rate.
+- **50 q4 (optional wording, applied):** the explanation now says that CAFG describes the waveform as persisting but attenuated in the low flow state after cardiac arrest. It also says that CAFG lists low cardiac output and severe hypotension among the causes of a falsely low colorimetric reading.
+
+The key-position and length gates were rechecked by the test run. The single keys are unchanged, so the positions are still 2, 3, 4, 4, 4. The menu option lengths are within the 2.6 ratio.
+
+Test result: `SAMP_BATCH=s80 npx vitest run tests/samps.test.ts tests/samp-quality.test.ts tests/citations.test.ts --testTimeout=120000`: 128 passed. The typecheck shows no errors for s80.

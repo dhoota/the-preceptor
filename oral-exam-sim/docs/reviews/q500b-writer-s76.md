@@ -129,3 +129,17 @@ This revision answers the 5 fails in `docs/reviews/q500b-verify-s76.md`. Nothing
 Key feature counts are unchanged: 1: 5, 2: 5, 3: 4, 4: 2, 5: 4. That is 20 questions, 18 single and 2 menu. Single key positions, first to fifth: 4, 4, 4, 4, 2 of 18. The key is the single longest option in 3 of 18.
 
 Tests: `npx tsc --noEmit -p . 2>&1 | grep samps/s76` prints nothing. `SAMP_BATCH=s76 npx vitest run tests/samps.test.ts tests/samp-quality.test.ts tests/citations.test.ts --testTimeout=120000`: 128 of 128 pass.
+
+## Revision 3
+
+This revision answers `docs/reviews/q500b-verify2-s76.md`. Nothing else was changed.
+
+| Item | Change |
+|---|---|
+| eye-43 q1 | The ultraviolet sentence in the explanation is now "Ultraviolet keratitis starts 6 to 12 hours after sun or welding exposure, and she has had neither." |
+| eye-43 q3 | The two distractors already in the stem, "Treated hypothyroidism" and "Myopia requiring glasses", are now "Seasonal allergies on cetirizine" and "Up to date tetanus immunization". These are not in the stem and do not support admission. In the explanation, the matching sentence is now "Seasonal allergies and an up to date tetanus status do not change the plan." Both new options sort after the key, so "Known von Willebrand disease" stays first and is not the longest option. |
+| eye-43 q4 | The update is now "She understands the plan. After irrigation the corneas show only punctate staining. The intraocular pressure is 16 mmHg in the right eye." |
+
+Balance is unchanged. Single key positions, first to fifth: 4, 4, 4, 4, 2 of 18. The key is the single longest option in 3 of 18. Key feature counts are unchanged.
+
+Tests: `npx tsc --noEmit -p . 2>&1 | grep samps/s76` prints nothing. `SAMP_BATCH=s76 npx vitest run tests/samps.test.ts tests/samp-quality.test.ts tests/citations.test.ts --testTimeout=120000`: 128 of 128 pass.
