@@ -87,3 +87,26 @@ Batch checks after Revision 2:
 - The `tsc` grep for samps/s81 prints nothing.
 
 Sources now cited: Fraser Health, PAINAD, CPS 2019, CPS 2021, SOGC 2015, Wakai 2011, ACS TQIP 2020 and Kindel 2025. The CPS 2022 and White 2008 rows above apply only to the earlier version.
+
+## Revision 3
+
+This revision answers `docs/reviews/q500b-verify-s81.md`, which passes 48 and 52 and fails three items. All three fixes are applied as written. Nothing else changed.
+
+1. 49 q1. "Restrain him gently for the scan" is replaced with "Give intranasal fentanyl with midazolam". "Give midazolam, analgesia after the CT" is replaced with "Give oral ibuprofen, then scan now". The key is still "Treat his pain first, then reassess". The explanation gives a true reason for each new option:
+   - Fentanyl with midazolam up front adds a sedative before anyone knows whether analgesia alone will settle him. It deepens sedation and clouds his neurologic checks, and the CPS keeps sedation as an adjunct for persisting distress.
+   - Oral ibuprofen alone does not cover moderate to severe fracture pain, for which the CPS adds IN fentanyl, and after four vomits it may not stay down.
+
+   q2 is unchanged.
+2. 50 q3.
+   - The lead-in now names the guidance: "Using the American College of Surgeons trauma pain guideline, which of the following statements about an interscalene block for her today is most accurate?"
+   - All five options are in the parallel form: "Acceptable 24 hours after her last apixaban dose", "Acceptable 72 hours after her last apixaban dose" (key), "Acceptable now, as it spares her breathing", "Acceptable now if her INR is 1.5 or less" and "Acceptable now under ultrasound guidance".
+   - The explanation is rewritten to match each option, with the same ACS reasons: Table 8 gives a 72-hour apixaban hold, the Table 9 footnote applies the ASRA rules to brachial plexus blocks, an interscalene block causes ipsilateral phrenic weakness, and the INR threshold is a warfarin rule.
+   - ASRA 2025 (fifth edition, Kopp and colleagues, PMID 39880411): I could not confirm its apixaban interval. The Europe PMC record has the abstract only and no open full text, and the abstract gives no block categories or DOAC timing. It says only that the edition uses "low dose" and "high dose" in place of prophylactic and therapeutic.
+   - The key therefore stays ACS-based, and the lead-in now names that guideline.
+3. 51 q1. ", then retry" is dropped from the four distractors ("acetaminophen 1 g IV", "fentanyl 50 mcg IV", "hydromorphone 1 mg IV", "morphine 5 mg IV"). The key now reads "lidocaine 1% intra-articular". The explanation is unchanged and still fits.
+
+Batch checks after Revision 3:
+- Single key positions (first to fifth) are 4, 4, 4, 4, 3. 50 q3 moved from fifth to second, which evens the spread.
+- The key is the longest option in 5 of 19 singles, which is 26% and under the 35% limit. 50 q3's key ties for longest with the 24-hour option.
+- `SAMP_BATCH=s81 npx vitest run tests/samps.test.ts tests/samp-quality.test.ts tests/citations.test.ts --testTimeout=120000` passes 128 of 128.
+- The `tsc` grep for samps/s81 prints nothing.
