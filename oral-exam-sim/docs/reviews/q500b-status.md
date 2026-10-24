@@ -18,7 +18,7 @@ Branch `content/q500b`. Nothing in this round is signed off. Every item is `revi
 | s76 eye | FAIL 15 | not started | | revise |
 | s77 delirium-agitation | FAIL 10 | Rev 1, Rev 2 done | Rev 1 FAIL 1, Rev 2 PASS | ready for sign-off |
 | s78 multiple-patients | FAIL 5 | not started | | revise |
-| s79 sob | FAIL 6 | not started | | revise |
+| s79 sob | FAIL 6 | Rev 1, Rev 2 done | Rev 1 FAIL 4, Rev 2 PASS | ready for sign-off |
 | s80 airway | cut off | | | first review |
 | s81 analgesia-sedation | cut off | | | first review |
 | s82 pre-eclampsia | FAIL 6 | Rev 1 to 3 done | FAIL 6, FAIL 1, Rev 3 PASS | ready for sign-off |

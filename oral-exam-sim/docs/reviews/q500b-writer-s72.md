@@ -111,3 +111,19 @@ This revision answers `docs/reviews/q500b-verify-s72.md` (6 items failed, SAMPs 
 - 20 questions: 17 single and 3 menu. Single key positions: 4, 3, 3, 3, 4. The key is the longest option in 2 of 17.
 - Key features: KF1 4, KF2 5, KF3 3, KF4 4, KF5 4. The thinnest bank features, KF2 and KF4, get 5 and 4.
 - Tests: `SAMP_BATCH=s72 npx vitest run tests/samps.test.ts tests/samp-quality.test.ts tests/citations.test.ts --testTimeout=120000`: 3 files, 128 tests passed. Typecheck shows no s72 errors.
+
+## Revision 3
+
+This revision answers `docs/reviews/q500b-verify2-s72.md`. SAMPs 39 to 42 passed. The only fail was 43 q4.
+
+Before writing I grepped s17, s52 and s72 for the new decision ("social support", "interpersonal", "lonel", "living alone", "medical alert", "day program", "church", "curling"). Neither s17 nor s52 keys a plan for social contact once a support person leaves. s17-01 q1 lists lack of supports as a risk factor to ask about, and s52 lists church attendance as a protective finding. Those are different decisions. "Curling" appears only in unrelated topics.
+
+| Item | Change |
+|---|---|
+| 43 q4 | Replaced with the KF4 decision the review suggested. His son goes back to the city in 1 week. He wants to stay on the farm, declines to move in with his son, and has a neighbour and curling club friends nearby. The prompt asks for the most appropriate addition to his plan for when his son returns to the city. The key is "Planned regular visits with friends". It rests on CCSMH 2006, which recommends working with the person to enhance social support and interpersonal activities, and which links living far from relatives, seeing friends infrequently and loneliness to higher risk. I opened and read both lines in the PDF. The distractors are "Contact only if he calls for help", "Medical alert pendant as the only support", "Move into long-term care near his wife" and "Stay with his son in the city", the last being a plan he has declined. The new item does not use self-neglect, treatment refusal, ward reassessment, a crisis line, opioid quantity, naloxone, family-held medicines, firearms, a safety contract, collateral sources or the asking myths. The old sentence "His denial of intent days ago" is gone. KF4, `ccsmh-suicide`. |
+
+### Counts after revision 3
+
+- 20 questions: 17 single and 3 menu. Single key positions: 4, 2, 3, 4, 4. No position is above 25 percent, and every position is used. The key is the longest option in 2 of 17.
+- Key features: KF1 4, KF2 4, KF3 3, KF4 5, KF5 4.
+- Tests: `SAMP_BATCH=s72 npx vitest run tests/samps.test.ts tests/samp-quality.test.ts tests/citations.test.ts --testTimeout=120000`: 3 files, 128 tests passed. Typecheck shows no s72 errors.
