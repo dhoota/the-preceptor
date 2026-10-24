@@ -67,10 +67,10 @@ export const EYE_S76: Samp[] = [
         prompt: "Which of the following details of his history is most relevant to the cause of his red eye?",
         options: [
           "Blisters on two teammates' faces",
-          "Daily fluticasone nasal spray",
           "Normal vision since onset",
           "Seasonal allergies on cetirizine",
           "Sister with pink eye last month",
+          "Use of a fluticasone nasal spray",
         ],
         correct: 0,
         explanation:
@@ -140,7 +140,7 @@ export const EYE_S76: Samp[] = [
     topic: "eye",
     title: "Red eyes after a trip abroad",
     stem:
-      "A 41-year-old woman presents to the emergency department with red, watery eyes. The right eye became red and gritty yesterday morning and the left by evening. Her lids are puffy and she has noticed bright red patches on the whites of both eyes. She returned 2 days ago from 4 weeks in a village in Cambodia, where many neighbours had red eyes. She is a grade 2 teacher and has been on leave for the trip. She had a head cold 3 weeks ago. She takes ASA 81 mg daily since a transient ischemic attack 2 years ago and has hay fever each spring. She recalls no injury. She has had no nosebleeds, bleeding gums or easy bruising. Visual acuity is 20/25 in each eye. Both conjunctivae show follicles and patchy subconjunctival hemorrhages. A small tender preauricular node is felt on each side.",
+      "A 41-year-old woman presents to the emergency department with red, watery eyes. The right eye became red and gritty yesterday morning and the left by evening. Her lids are puffy and she has noticed bright red patches on the whites of both eyes. She returned 2 days ago from 4 weeks in a village in Cambodia, where many neighbours had red eyes. She is a grade 2 teacher and has been on leave for the trip. She had a head cold 3 weeks ago. She has taken ASA 81 mg daily since a transient ischemic attack 2 years ago and has hay fever each spring. She recalls no injury. She has had no nosebleeds, bleeding gums or easy bruising. Visual acuity is 20/25 in each eye. Both conjunctivae show follicles and patchy subconjunctival hemorrhages. A small tender preauricular node is felt on each side.",
     vitals: { temperature: "36.9°C oral", pulse: "78/minute", resp: "14/minute", bp: "128/78 mmHg", o2sat: "99% on room air" },
     questions: [
       {
@@ -448,7 +448,7 @@ export const EYE_S76: Samp[] = [
       {
         id: "q4",
         kind: "single",
-        update: "She understands the plan. After irrigation the corneas show only punctate staining. The intraocular pressure is 16 mmHg in the right eye.",
+        update: "She understands the plan. The corneas show only punctate staining. The intraocular pressure is 16 mmHg in the right eye.",
         prompt: "Which of the following is the most appropriate disposition for the injury to her right eye?",
         options: [
           "Admission for strict bed rest",
