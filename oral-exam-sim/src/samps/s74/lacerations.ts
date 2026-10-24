@@ -46,7 +46,7 @@ export const LACERATIONS_S74: Samp[] = [
       {
         id: "q2",
         kind: "single",
-        update: "He has had no coughing or choking since the fall, and his chest is clear. The lower lip is too swollen to feel a fragment.",
+        update: "He has had no coughing or choking since the fall, and his chest is clear. The lower lip is swollen.",
         prompt: "Which of the following is the most appropriate investigation before this lip wound is closed?",
         options: ["Chest radiograph, two views", "CT of the facial bones", "Facial bone radiograph series", "Panoramic dental radiograph", "Soft tissue film of the lip"],
         correct: 4,
@@ -58,7 +58,7 @@ export const LACERATIONS_S74: Samp[] = [
       {
         id: "q3",
         kind: "single",
-        update: "The film shows a 3 mm fragment in the lower lip. You remove it through the wound and irrigate.",
+        update: "The lip wound is explored, irrigated and prepared for repair.",
         prompt: "Which of the following is the most appropriate tetanus prophylaxis for him at this visit?",
         options: ["Td vaccine IM now", "Tdap and immune globulin", "Tdap vaccine IM now", "Tetanus immune globulin", "No tetanus prophylaxis"],
         correct: 4,
@@ -75,7 +75,7 @@ export const LACERATIONS_S74: Samp[] = [
         options: ["At the lower end of the wound", "At the midpoint of the skin wound", "At the vermilion border", "At the wet and dry mucosa line", "In the deepest part of the wound"],
         correct: 2,
         explanation:
-          "The cosmetic result of a lip repair depends on lining up the vermilion border, so the first skin suture goes exactly at that border, and the rest of the skin is then closed with fine nylon. Even a small step in this line shows.Placing the first suture at the lower end or the midpoint of the wound leaves the border to fall where it may, and a mismatch is then hard to correct. The wet and dry line inside the red lip also needs to match, but it is aligned after the border. The deepest part of the wound has already been closed with absorbable sutures, and the question is about the skin.",
+          "The cosmetic result of a lip repair depends on lining up the vermilion border, so the first skin suture goes exactly at that border, and the rest of the skin is then closed with fine nylon. Even a small step in this line shows. Placing the first suture at the lower end or the midpoint of the wound leaves the border to fall where it may, and a mismatch is then hard to correct. The wet and dry line inside the red lip also needs to match, but it is aligned after the border. The deepest part of the wound has already been closed with absorbable sutures, and the question is about the skin.",
         keyFeature: { topic: TOPIC, n: 3 },
         source: "forsch-laceration-repair",
       },
@@ -120,19 +120,19 @@ export const LACERATIONS_S74: Samp[] = [
       {
         id: "q3",
         kind: "single",
-        update: "His neurological examination is normal. There is no neck crepitus or swelling. He drinks apple juice without coughing.",
+        update: "He remains alert and well, with no further bleeding. The examination is otherwise unchanged. He drinks apple juice without coughing.",
         prompt: "Which of the following is the most appropriate management of this child and his palate wound?",
         options: ["Admission for 48 hours of observation", "CT angiography of the neck today", "Discharge home with return advice", "Repair under procedural sedation", "Suture repair under local anaesthetic"],
         correct: 2,
         explanation:
-          "He is well, his neurological examination is normal and the wound is 1 cm with no flap. In a cohort of well-appearing children with palate lacerations and normal neurological examinations, none of the 122 followed for at least a week had a stroke, and 1 of 116 had an infection. CT angiography was positive in 10% of those scanned, yet none needed surgery or anticoagulation, so routine CT angiography adds radiation without changing care. A small palatal wound without a flap heals without sutures, so repair under local anaesthetic or sedation is not needed. Admission for 48 hours of observation is not supported for a child this low risk.",
+          "He is well, his examination is unchanged and the wound is 1 cm with no flap. In a cohort of well-appearing children with palate lacerations and normal neurological examinations, none of the 122 followed for at least a week had a stroke, and 1 of 116 had an infection. CT angiography was positive in 10% of those scanned, yet none needed surgery or anticoagulation, so routine CT angiography adds radiation without changing care. A small palatal wound without a flap heals without sutures, so repair under local anaesthetic or sedation is not needed. Admission for 48 hours of observation is not supported for a child this low risk.",
         keyFeature: { topic: TOPIC, n: 3 },
         source: "hennelly-palate",
       },
       {
         id: "q4",
         kind: "single",
-        prompt: "Which of the following symptoms should most prompt his parents to bring him back to the emergency department at once?",
+        prompt: "Which of the following new findings over the next week would most suggest a complication of his palate wound?",
         options: ["Fussiness at bedtime", "Mild pain when he swallows", "Pink-tinged saliva on day one", "Preference for soft foods", "Swelling of the neck with fever"],
         correct: 4,
         explanation:
@@ -168,12 +168,13 @@ export const LACERATIONS_S74: Samp[] = [
       },
       {
         id: "q2",
-        kind: "single",
-        prompt: "Which of the following examination findings best excludes penetration of the skull beneath these puncture wounds?",
-        options: ["Absence of a palpable bony step", "Equal movement of all four limbs", "Normal alertness and interaction", "Soft and flat anterior fontanelle", "No examination finding excludes it"],
-        correct: 4,
+        kind: "menu",
+        select: 1,
+        prompt: "Which of the following examination findings, if present, would exclude penetration of the skull beneath these puncture wounds?",
+        options: ["Absence of a palpable bony step", "Equal movement of all four limbs", "Normal alertness and interaction", "Normal pupils and eye movements", "Soft and flat anterior fontanelle", "None"],
+        correct: [5],
         explanation:
-          "No bedside finding excludes skull penetration in a child this age. The infant skull is thin, a greenstick or depressed fracture may not be felt through a swollen scalp, and a reported 6-month-old with small scalp wounds after a dog bite had a depressed frontal fracture with brain contusions beneath them. Normal alertness, equal limb movement and a soft fontanelle show that she has no large mass lesion or raised pressure now, but a penetrating fracture with a small contusion can coexist with all of them. So the absence of a palpable step cannot be relied on.",
+          "No bedside finding excludes skull penetration in a child this age. The infant skull is thin, a greenstick or depressed fracture may not be felt through a swollen scalp, and a reported 6-month-old with small scalp wounds after a dog bite had a depressed frontal fracture with brain contusions beneath them. Normal alertness, equal limb movement, normal pupils and eye movements and a soft fontanelle show that she has no large mass lesion or raised pressure now, but a penetrating fracture with a small contusion can coexist with all of them. So the absence of a palpable step cannot be relied on.",
         keyFeature: { topic: TOPIC, n: 2 },
         source: "tahir-cranial-dog-bite",
       },
@@ -191,7 +192,7 @@ export const LACERATIONS_S74: Samp[] = [
       {
         id: "q4",
         kind: "single",
-        update: "CT shows a depressed right parietal skull fracture beneath one puncture, with a small bubble of air inside the skull. She remains alert.",
+        update: "Imaging shows a depressed right parietal skull fracture beneath one puncture, with a small bubble of air inside the skull. She remains alert.",
         prompt: "Which of the following is the most appropriate next step in her care?",
         options: ["Close the punctures and admit locally", "IV antibiotics and neurosurgery transfer", "Oral amoxicillin-clavulanate and recheck", "Repeat CT of the head in 24 hours", "Scalp closure and neurosurgery clinic"],
         correct: 1,
@@ -222,7 +223,7 @@ export const LACERATIONS_S74: Samp[] = [
         options: ["Fall onto the ice surface", "One hour since the injury", "Pressure held by a trainer", "Sharp skate blade at speed", "Wound length of 1.5 cm"],
         correct: 3,
         explanation:
-          "A moving skate blade is a heavy, very sharp edge, and cuts just above the boot top can divide the tibialis anterior, extensor hallucis longus and extensor digitorum longus tendons and the dorsalis pedis vessels and nerve. A case series of these boot-top injuries in hockey found that the skin wound is often small and that the deeper injury is easily missed. So a 1.5 cm length is no reassurance. The fall onto the ice explains bruising, not a cut tendon. One hour since injury and the pressure held by the trainer bear on bleeding and infection, not on depth.",
+          "A moving skate blade is a heavy, very sharp edge, and cuts just above the boot top can divide the tibialis anterior, extensor hallucis longus and extensor digitorum longus tendons and the anterior tibial vessels and the deep peroneal nerve. A case series of these boot-top injuries in hockey found that the skin wound is often small and that the deeper injury is easily missed. So a 1.5 cm length is no reassurance. The fall onto the ice explains bruising, not a cut tendon. One hour since injury and the pressure held by the trainer bear on bleeding and infection, not on depth.",
         keyFeature: { topic: TOPIC, n: 1 },
         source: "simonet-boot-top",
       },
@@ -251,7 +252,7 @@ export const LACERATIONS_S74: Samp[] = [
       {
         id: "q4",
         kind: "single",
-        update: "Resisted dorsiflexion is weak and a gap in the tendon can be felt in the wound. Radiographs show no fracture or foreign body. The skin is irrigated and closed.",
+        update: "Exploration shows a gap in the tibialis anterior tendon. Radiographs show no fracture or foreign body. The skin is irrigated and closed.",
         prompt: "Which of the following is the most appropriate plan for the tibialis anterior tendon injury?",
         options: ["Ankle brace without repair", "Early surgical repair", "Physiotherapy then review", "Repair after 6 weeks in a cast", "Review if foot drop appears"],
         correct: 1,
@@ -300,12 +301,12 @@ export const LACERATIONS_S74: Samp[] = [
       {
         id: "q3",
         kind: "single",
-        update: "Passive extension does not cause pain along the flexor sheath, and the swelling stops short of the palm. A radiograph of the finger is normal. Her pregnancy test is negative.",
+        update: "There are no signs of flexor sheath infection, and the swelling stops short of the palm. A radiograph of the finger is normal. Her pregnancy test is negative.",
         prompt: "Which of the following antibiotics is most appropriate for her now?",
-        options: ["amoxicillin-clavulanate 875 mg PO twice daily", "cefazolin 2 g IV every 8 hours", "doxycycline 100 mg PO twice daily", "penicillin V 300 mg PO four times daily", "trimethoprim-sulfamethoxazole 800/160 mg PO twice daily"],
+        options: ["amoxicillin-clavulanate 875 mg PO twice daily", "cefazolin 2 g IV every 8 hours", "doxycycline 100 mg PO twice daily", "penicillin V 300 mg PO four times daily", "trimethoprim-sulfamethoxazole 160/800 mg PO twice daily"],
         correct: 2,
         explanation:
-          "Seal finger fails beta-lactam antibiotics because the organism lacks a cell wall, and her finger has worsened on cephalexin. Tetracyclines are the drugs that work, and doxycycline 200 mg a day, given here as 100 mg twice daily, has been used with good results. Courses reported run from 2 to 6 weeks, and longer for deep wounds. Amoxicillin-clavulanate, cefazolin and penicillin V are all beta-lactams and would fail as cephalexin did, and IV cefazolin also failed in a reported case. Trimethoprim-sulfamethoxazole is not among the drugs reported to treat this infection. Her negative pregnancy test allows a tetracycline.",
+          "Seal finger fails beta-lactam antibiotics because the organism lacks a cell wall, and her finger has worsened on cephalexin. Tetracyclines are the drugs that work, and doxycycline 200 mg a day, given here as 100 mg twice daily, has been used with good results. Courses reported run from 2 to 6 weeks, and one deep wound needed 10 weeks. Amoxicillin-clavulanate, cefazolin and penicillin V are all beta-lactams and would fail as cephalexin did. A Canadian case review reports failures on penicillin, dicloxacillin and cephalexin. Trimethoprim-sulfamethoxazole is not among the drugs reported to treat this infection. Her negative pregnancy test allows a tetracycline.",
         keyFeature: { topic: TOPIC, n: 4 },
         source: "sips-seal-finger",
       },
