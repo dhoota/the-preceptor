@@ -91,3 +91,25 @@ Key positions for singles are still 4, 4, 4, 3, 4. None of the new key options i
 Test: `SAMP_BATCH=s82 npx vitest run tests/samps.test.ts tests/samp-quality.test.ts tests/citations.test.ts --testTimeout=120000` gives 3 files and 128 tests, all passed. `tsc` reports no errors in samps/s82.
 
 The physician questions from the review still stand: SOGC 426 support for 39 q4 and 41 q3, methyldopa in 41 q4, and the 43 q2 prompt cue.
+
+## Revision 2
+
+These are the fixes from `docs/reviews/q500b-verify-s82.md`.
+
+- 39 stem: Added "She has no dysuria or urinary frequency." The q2 explanation now rests on a fact in the stem.
+- 39 q3: The update now reads "No blood results will be available for about 24 hours. The obstetrician on call ...". This removes the platelet cue to the q2 key.
+- 42 q1: The distractor reason now reads "Normal pregnancy edema is mostly in the legs, builds slowly and does not come with new hypertension or a headache."
+- 42 q2: The thyroid sentence was replaced with the reviewer's text (hypothyroid swelling is non-pitting with slow reflexes, and hyperthyroidism does not cause pitting edema of the face and hands).
+- 43 q3: "with a falling platelet count" now reads "with a low platelet count".
+- 40 q4: Rebuilt, with an equivalent change in place of the suggested rebuild. The suggested fetal assessment question almost repeats signed pre-eclampsia-18 q4. That item asks "the most appropriate fetal monitoring while magnesium sulfate is infusing" and keys continuous cardiotocography against Doppler every 4 hours, kick counts, a biophysical profile in 24 hours and no monitoring. Its option set matches the suggested one almost item for item. So 40 q4 now tests a KF4 decision the bank does not have: fluid with the first IV hydralazine dose.
+  - Update: magnesium sulfate is running, her BP is 166/112 mmHg after labetalol 20 mg and then 40 mg IV, and the obstetrician asks for hydralazine 5 mg IV.
+  - Key: "Crystalloid up to 500 mL IV with the dose", first position as before. The distractors are dextrose 5% 1 L over 2 hours, furosemide 20 mg IV, normal saline 2 L over 1 hour, and stopping all IV fluids for 24 hours.
+  - Source: NICE NG133, read in full this session. Recommendation 1.8.8 reads "Consider using up to 500 ml crystalloid fluid before or at the same time as the first dose of intravenous hydralazine in the antenatal period". Recommendation 1.8.11 says no volume expansion in severe pre-eclampsia unless hydralazine is the antihypertensive, and 1.8.12 limits maintenance fluids to 80 mL/hour.
+  - I also checked the NICE fetal monitoring text. Recommendation 1.6.5 calls for CTG at diagnosis, and 1.6.8 calls for a repeat CTG with abdominal pain or maternal deterioration. So NICE would have supported the suggested key, but the item would have repeated pre-eclampsia-18 q4.
+- sogc-364 is no longer cited and was removed from the sources. SAMP 40 now cites nice-ng133, simerville-urinalysis and tamir-hydronephrosis.
+
+Coverage is unchanged: KF1 5, KF2 3, KF3 5, KF4 7. Key positions for singles are still 4, 4, 4, 3, 4. The 40 q4 key is the longest option, as the betamethasone key it replaced was, so the batch's count of longest keys is unchanged and passes the gate.
+
+Test: `SAMP_BATCH=s82 npx vitest run tests/samps.test.ts tests/samp-quality.test.ts tests/citations.test.ts --testTimeout=120000` gives 3 files and 128 tests, all passed. `tsc` reports no errors in samps/s82.
+
+For the physician: 40 q4 follows NICE, which says "consider" the 500 mL preload. Please confirm that this matches Canadian practice with IV hydralazine.

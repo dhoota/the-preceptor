@@ -256,11 +256,11 @@ export const ANALGESIA_SEDATION_S81: Samp[] = [
       {
         id: "q1",
         kind: "single",
-        prompt: "Which of the following is the most appropriate next approach to pain control for her reduction?",
-        options: ["Etomidate sedation", "Ketamine sedation", "Lidocaine into the joint", "Midazolam and fentanyl sedation", "Propofol sedation"],
-        correct: 2,
+        prompt: "Which of the following is the most appropriate next step to allow her shoulder reduction?",
+        options: ["acetaminophen 1 g IV, then retry", "fentanyl 50 mcg IV, then retry", "ketorolac 15 mg IV, then retry", "lidocaine 1% into the joint", "morphine 5 mg IV, then retry"],
+        correct: 3,
         explanation:
-          "Intra-articular lidocaine gives analgesia for the reduction without systemic sedation, which spares her and her fetus the airway and blood pressure risks of sedating a woman in the third trimester. A Cochrane review of five trials found no difference in immediate reduction success between intra-articular lidocaine and IV analgesia with or without sedation, with fewer adverse effects and a much shorter emergency department stay for the injection. Etomidate, ketamine, propofol and midazolam with fentanyl remain options if the injection fails, but each adds the risks of sedation that the injection avoids.",
+          "Intra-articular lidocaine numbs the joint for the reduction without a systemic drug reaching the fetus in any meaningful amount. A Cochrane review of five trials found no difference in immediate reduction success between intra-articular lidocaine and IV analgesia with or without sedation, with fewer adverse effects and a shorter emergency department stay after the injection. Fentanyl or morphine IV before another attempt is the IV analgesia approach in that comparison, with more adverse effects and no better success. Ketorolac is an NSAID, and the trauma guideline advises avoiding NSAIDs in pregnancy, as they constrict the uterine arteries in the third trimester. Acetaminophen is safe in pregnancy but on its own is too weak to relax a dislocated shoulder for an immediate retry.",
         keyFeature: { topic: "analgesia-sedation", n: 2 },
         source: "wakai-intra-articular-lidocaine",
       },
@@ -301,12 +301,12 @@ export const ANALGESIA_SEDATION_S81: Samp[] = [
       {
         id: "q4",
         kind: "single",
-        update: "The shoulder is reduced. Thirty minutes later she is alert and comfortable, with no contractions, abdominal pain or bleeding.",
-        prompt: "Which of the following fetal assessments is most appropriate before she leaves the emergency department?",
-        options: ["A single Doppler fetal heart check", "Fetal monitoring for 4 hours", "Kleihauer-Betke test only", "Obstetric ultrasound next week", "No further fetal assessment"],
-        correct: 1,
+        update: "The shoulder is reduced. She is back to her baseline. She has completed 4 hours of fetal heart and contraction monitoring, which was normal, and is ready to go home with her partner.",
+        prompt: "Which of the following symptoms should most prompt her to return to hospital after discharge?",
+        options: ["Bruising at the IV site", "Mild nausea this evening", "Regular abdominal tightening", "Shoulder ache when she moves her arm", "Sleepiness for a few hours"],
+        correct: 2,
         explanation:
-          "She is 30 weeks pregnant and has had a fall, which is trauma in pregnancy even without a blow to the abdomen. The SOGC advises electronic fetal monitoring for at least 4 hours in every pregnant trauma patient with a viable pregnancy of 23 weeks or more, and admission for 24 hours if adverse features such as uterine tenderness, bleeding or sustained contractions appear. The same window also covers her recovery from sedation. A single Doppler check or an obstetric ultrasound next week would miss contractions or a changing heart rate pattern in the hours after the fall. A Kleihauer-Betke test measures fetal bleeding into the mother and does not replace monitoring. Leaving with no assessment ignores her risk.",
+          "She has had a fall at 30 weeks and a sedation, and her discharge advice must cover the pregnancy as well as the procedure. The SOGC names sustained contractions, uterine tenderness, vaginal bleeding and rupture of the membranes as adverse features that call for 24 hours of observation after trauma in pregnancy, so regular tightening of her abdomen should bring her straight back, as should bleeding or fluid loss. Mild nausea and some sleepiness for a few hours are expected after sedation and settle on their own. An ache in the reduced shoulder with movement is expected, and a small bruise at the IV site is minor.",
         keyFeature: { topic: "analgesia-sedation", n: 6 },
         source: "sogc-pregnant-trauma-2015",
       },
