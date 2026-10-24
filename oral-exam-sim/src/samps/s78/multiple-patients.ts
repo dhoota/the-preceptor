@@ -14,7 +14,6 @@ const S = {
   stoller: { id: "stoller-o2", citation: "Stoller JK, Stefanak M, Orens D, Burkhart J. The hospital oxygen supply. An O2K problem. Respir Care. 2000.", url: "https://pubmed.ncbi.nlm.nih.gov/10771798/" },
   paedctas: { id: "paedctas", citation: "Warren DW, Jarvis A, LeBlanc L, Gravel J. Revisions to the Canadian Triage and Acuity Scale paediatric guidelines (PaedCTAS). CJEM. 2008.", url: "https://doi.org/10.1017/S1481803500010149" },
   westbrook: { id: "westbrook-interruptions", citation: "Westbrook JI, Coiera E, Dunsmuir WT, et al. The impact of interruptions on clinical task completion. Qual Saf Health Care. 2010.", url: "https://pubmed.ncbi.nlm.nih.gov/20463369/" },
-  ctas2016: { id: "ctas-2016", citation: "Bullard MJ, Musgrave E, Warren D, et al. Revisions to the Canadian Emergency Department Triage and Acuity Scale (CTAS) Guidelines 2016. CJEM. 2017.", url: "https://doi.org/10.1017/cem.2017.365" },
   trekk: { id: "trekk-gastro", citation: "TREKK (Translating Emergency Knowledge for Kids). Bottom line recommendations: gastroenteritis. Version 5.0. 2025.", url: "https://trekk.ca/resources/bottom-line-recommendations-gastroenteritis/" },
   rtvs: { id: "rtvs", citation: "Rural Coordination Centre of BC. Real-Time Virtual Support (RTVS) pathways for rural, remote and First Nations health care providers. Web page, accessed 2026.", url: "https://rccbc.ca/initiatives/rtvs/" },
 } satisfies Record<string, Source>;
@@ -159,12 +158,12 @@ export const MULTIPLE_PATIENTS_S78: Samp[] = [
         prompt: "Which of the following is the most appropriate plan for the woman's reperfusion?",
         options: [
           "Await the end of the first case",
+          "Call the second team in from home now",
           "Give tenecteplase in the department",
-          "Second team called in from home now",
           "Transfer to another PCI centre",
           "Wait for the morning catheterization list",
         ],
-        correct: 2,
+        correct: 1,
         explanation:
           "The CCS guideline prefers primary PCI when first medical contact to device time can stay within 120 minutes. Her first contact was at 22:45. If the second team is called now and is ready by about 23:45, PCI can start well inside that limit. Waiting for the first case to finish adds an unknown delay that may push her past 120 minutes. Fibrinolysis is for patients who cannot get timely PCI, which she can. Transfer adds travel time when a team can be here in 30 minutes, and waiting until morning leaves her infarct untreated.",
         keyFeature: { topic: "multiple-patients", n: 3 },
@@ -266,11 +265,11 @@ export const MULTIPLE_PATIENTS_S78: Samp[] = [
         options: [
           "Answer each call yourself as it comes",
           "Ask every caller to phone back in an hour",
+          "Have a nurse screen calls and list tasks",
           "Leave the phones and questions unanswered",
           "Pause his care briefly for each question",
-          "Screened calls with a written task list",
         ],
-        correct: 4,
+        correct: 2,
         explanation:
           "Emergency physicians in one observation study were interrupted 6.6 times an hour and failed to return to 18.5% of interrupted tasks. During a resuscitation, one nurse should screen calls and questions so that only urgent matters reach you, and write the rest on a task list so nothing is lost when you are free. Answering each call yourself or pausing his care splits your attention from a man in shock. Telling every caller to phone back in an hour may delay something urgent, and leaving calls unanswered means no one hears it at all.",
         keyFeature: { topic: "multiple-patients", n: 3 },
