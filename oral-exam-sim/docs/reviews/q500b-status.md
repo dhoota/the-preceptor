@@ -17,7 +17,7 @@ Branch `content/q500b`. Nothing in this round is signed off. Every item is `revi
 | s75 headache | FAIL 10 (after a replacement) | Rev 2, Rev 3 done | Rev 2 FAIL 5, Rev 3 PASS | ready for sign-off |
 | s76 eye | FAIL 15 | Rev 1 to 5 done | FAIL 5, 1, 1, 1, Rev 5 PASS | ready for sign-off |
 | s77 delirium-agitation | FAIL 10 | Rev 1, Rev 2 done | Rev 1 FAIL 1, Rev 2 PASS | ready for sign-off |
-| s78 multiple-patients | FAIL 5 | Rev 1 to 5 done | FAIL on each of Rev 1 to 4, Rev 5 under review | fresh review (verify5) |
+| s78 multiple-patients | FAIL 5 | Rev 1 to 5 done | FAIL on each of Rev 1 to 4, Rev 5 PASS | ready for sign-off |
 | s79 sob | FAIL 6 | Rev 1, Rev 2 done | Rev 1 FAIL 4, Rev 2 PASS | ready for sign-off |
 | s80 airway | FAIL 15 | Rev 1 to 4 done | FAIL 2, 1, 1, Rev 4 PASS | ready for sign-off |
 | s81 analgesia-sedation | cut off, then FAIL 8 | Rev 2 to 4 done | FAIL 3, FAIL 1, Rev 4 PASS | ready for sign-off |
@@ -35,6 +35,10 @@ Branch `content/q500b`. Nothing in this round is signed off. Every item is `revi
 | batch20 | not reviewed | 1 draft, unfinished | | parked in docs/drafts/q500b-parked |
 
 No keyed answer has been found clinically wrong in any review so far, apart from one doxycycline course length (s76, eye-41 q4). The fails are repeats of existing bank content (often tagged under another topic), mock-mode cues (ruling B6), and explanation sentences the stem or source does not support.
+
+## Waiver (coordinator)
+
+- multiple-patients-38 has 3 questions after revision 5 removed a repeat of analgesia-sedation-49 q3. SAMP_SPEC and the tests allow 3 to 5. The brief's "4 or 5 per SAMP" is waived for this SAMP rather than adding a new question that would need another review round. All four key features stay covered.
 
 ## Overlap rulings (coordinator)
 
