@@ -227,9 +227,9 @@ export const AIRWAY_S80: Samp[] = [
         kind: "menu",
         update: "The otolaryngologist and anesthesiologist come to the emergency department to plan his airway with you.",
         prompt: "Which of the following assessments best define his obstruction before the airway plan is made?",
-        options: ["Arterial blood gas", "Chest X-ray", "Flexible nasendoscopy", "Mallampati assessment", "Neck CT review", "Peak expiratory flow", "Spirometry with flow-volume loop", "Thyromental distance"],
+        options: ["Arterial blood gas", "Flexible nasendoscopy", "Flow-volume loop spirometry", "Mallampati assessment", "Neck CT review", "Peak expiratory flow", "Portable chest X-ray", "Thyromental distance"],
         select: 2,
-        correct: [2, 4],
+        correct: [1, 4],
         explanation:
           "The Canadian Airway Focus Group advises nasal endoscopic examination of the pharynx and larynx to clarify the nature and extent of a glottic obstruction, and review of any available CT or MRI, which shows the level, length and size of the narrowing and the anatomy below it. Together they show whether a tube can pass and where a tracheostomy can be placed. Mallampati class and thyromental distance predict the view of the mouth and larynx at laryngoscopy but say nothing about a lesion at the cords. A blood gas and a chest X-ray describe gas exchange and the lungs. Peak flow and forced spirometry add effort and risk in a man with stridor at rest and do not show the anatomy.",
         keyFeature: { topic: "airway", n: 3 },
