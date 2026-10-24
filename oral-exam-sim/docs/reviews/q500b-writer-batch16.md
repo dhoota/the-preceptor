@@ -140,4 +140,4 @@ Own walk of every path in all four cases. A finding can be opened from any path,
 
 Not changed (physician notes, not fails): terbutaline in the q-cord model answer, who holds the presenting part, reopening the wound on the c-close-now path, and loose fascial closure.
 
-Tests after revision 4: `CASE_BATCH=batch16 npx vitest run tests/cases.test.ts tests/citations.test.ts --testTimeout=120000` and `REALIGN=batch16 CASE_BATCH=batch16 npx vitest run tests/cases.test.ts --testTimeout=120000`. Results are in the reply.
+Tests after revision 4: `CASE_BATCH=batch16 npx vitest run tests/cases.test.ts tests/citations.test.ts --testTimeout=120000` and `REALIGN=batch16 CASE_BATCH=batch16 npx vitest run tests/cases.test.ts --testTimeout=120000`. Both passed: 41 of 41 and 39 of 39. tsc printed nothing for cases/batch16.

@@ -126,3 +126,18 @@ This revision answers docs/reviews/q500b-verify2-s80.md, which passed 19 of 20 q
 - **48 stem:** the sentence "No nasogastric tube is in place." is deleted because it pointed at the q1 key. The q1 key still works without it. The stem does not mention a tube, and the explanation rests on the bowel obstruction and the feculent vomiting.
 
 Test result: `SAMP_BATCH=s80 npx vitest run tests/samps.test.ts tests/samp-quality.test.ts tests/citations.test.ts --testTimeout=120000`: 128 passed. The typecheck shows no errors for s80.
+
+## Revision 4
+
+This revision answers docs/reviews/q500b-verify3-s80.md, which failed airway-49 q2 because the direction of the tube was reversed. Nothing else was changed.
+
+- **49 q2 update:** "The tube, on a stylet with a gentle bend at the tip, keeps passing below the glottis toward the arytenoids and will not enter it. Her O2 saturation is 94%."
+- **49 q2 options:** Change to a larger blade, Change to a smaller tube, Insert the blade further, Rebend the stylet to match the blade, Remove the stylet from the tube. External laryngeal pressure is removed. `correct: 3` is unchanged.
+- **49 q2 explanation:**
+  - The first sentence now says that a gently bent tube travels below and behind the glottis, toward the arytenoids, instead of curving up through the cords.
+  - The external pressure sentence is replaced with: "Her view is already full, so a larger blade fixes something that is not the problem, and a smaller tube keeps the same gentle curve."
+- **Not added:** the optional CAFG sentence on partly withdrawing the blade. I have not read that point in the CAFG text myself, so I did not cite it.
+
+The key position is unchanged. The length and position gates pass. The key is still the longest option, and its qualifier "to match the blade" is essential.
+
+Test result: `SAMP_BATCH=s80 npx vitest run tests/samps.test.ts tests/samp-quality.test.ts tests/citations.test.ts --testTimeout=120000`: 128 passed. The typecheck shows no errors for s80.
