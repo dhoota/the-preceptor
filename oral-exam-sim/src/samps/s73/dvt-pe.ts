@@ -178,8 +178,8 @@ export const DVT_PE_S73: Samp[] = [
         kind: "single",
         update: "His chest examination is otherwise unremarkable. The left leg is swollen around the healing wounds. You think PE is the most likely diagnosis.",
         prompt: "Which of the following best describes the use of the Wells score for PE in a patient of his age?",
-        options: ["Excludes PE when below 2 points", "Not studied in patients his age", "Reliable once heart rate is age adjusted", "Valid when used with a D-dimer", "Weakly separates children with PE"],
-        correct: 4,
+        options: ["Excludes PE when below 2 points", "Not studied in patients his age", "Poor at separating children with PE", "Reliable once heart rate is age adjusted", "Valid when used with a D-dimer"],
+        correct: 2,
         explanation:
           "In a Toronto cohort of children tested for PE, the median Wells score was 4.5 with PE and 4 without it, a small difference, and the authors concluded that the score may lack utility in children. The score has therefore been studied in children, but no pediatric cutoff is validated. Using pediatric heart rate norms improved the difference only slightly. A low score does not exclude PE in a child, and pairing it with a D-dimer has not been validated, because a normal D-dimer was as common in children with PE as in those without. His imaging decision rests on his strong clinical picture.",
         keyFeature: { topic: "dvt-pe", n: 3 },
@@ -319,7 +319,7 @@ export const DVT_PE_S73: Samp[] = [
         source: "bellou-outpatient-pe",
       },
     ],
-    sources: [S.wellsPe, S.tcPeDx, S.tcApix, S.bellou],
+    sources: [S.wellsPe, S.tcApix, S.bellou],
     ...META,
   },
 ];
