@@ -103,7 +103,7 @@ export const aphasiaAfterEdCardioversion: OralCase = {
     },
     {
       id: "post-evt",
-      label: "After thrombectomy (12:55)",
+      label: "After thrombectomy",
       result: "Near complete reperfusion after one pass. NIHSS now 4 with mild word finding difficulty and mild right hand weakness. Right femoral access site is soft. BP 192/100 mmHg.",
     },
     {

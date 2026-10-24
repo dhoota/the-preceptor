@@ -120,3 +120,24 @@ Physician notes applied:
 - s-delivered now states who held the presenting part up: "You kept a gloved hand in the vagina holding the presenting part up, from the bay to the operating room, until the obstetrician delivered the baby."
 
 Nothing else changed. Tests after revision 3: `CASE_BATCH=batch16 npx vitest run tests/cases.test.ts tests/citations.test.ts --testTimeout=120000` passed 41 of 41, and `REALIGN=batch16 CASE_BATCH=batch16 npx vitest run tests/cases.test.ts --testTimeout=120000` passed 39 of 39.
+
+## Revision 4 (review docs/reviews/q500b-verify2-batch16.md, 5 path consistency fails)
+
+1. ems-patch-blocked-tracheostomy-child, s-bag-mouth: "his saturation is 70%" became "71%", to match the crew-handover finding.
+2. aphasia-after-ed-cardioversion: the ct and cta finding labels lost their times ("Non contrast CT head", "CT angiography"). The s-imaging phase is now "After the scan". The s-evt-only and s-heparin phases are now "Moments later".
+3. wildfire-evacuees-host-hospital: the ob-exam label is now "The pregnant woman: examination". In s-in-order, the fetal heart is now 80/minute.
+4. wildfire: ob-after now says the operating room is ready "about 15 minutes after the call". The s-delivered phase is now 20:50, and the birth sentence has no time.
+5. wildfire, s-release: "an hour later" became "15 minutes later".
+
+Also changed:
+- "hand over" used as a noun became "handover" in the stroke q-safety model answer and the wildfire q-elder model answer. The verb in the wildfire q-close prompt stays.
+
+Own walk of every path in all four cases. A finding can be opened from any path, so I removed or checked each time and value that might not hold:
+- Stroke: the labs label "(resulted at 11:40)" and the post-thrombectomy label "(12:55)" lost their times, because on the c-sedation path the bloods and scan run about 25 minutes later. The s-evt phase 12:55 still holds on every path.
+- Wildfire: s-delivered now says "Your colleague on call, called in by the charge nurse, has arrived". The c-in-order path does not have the candidate call the colleague.
+- EMS: all times (18:10, 18:14 to 18:20, 18:32, 18:55, 19:05, 19:15) and saturations agree on all three q-patch paths, both q-handover paths and all three q-displace paths.
+- Hemophilia: already passed and not changed.
+
+Not changed (physician notes, not fails): terbutaline in the q-cord model answer, who holds the presenting part, reopening the wound on the c-close-now path, and loose fascial closure.
+
+Tests after revision 4: `CASE_BATCH=batch16 npx vitest run tests/cases.test.ts tests/citations.test.ts --testTimeout=120000` and `REALIGN=batch16 CASE_BATCH=batch16 npx vitest run tests/cases.test.ts --testTimeout=120000`. Results are in the reply.
