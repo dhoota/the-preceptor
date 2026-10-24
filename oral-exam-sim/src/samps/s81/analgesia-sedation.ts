@@ -257,10 +257,10 @@ export const ANALGESIA_SEDATION_S81: Samp[] = [
         id: "q1",
         kind: "single",
         prompt: "Which of the following is the most appropriate next step to allow her shoulder reduction?",
-        options: ["acetaminophen 1 g IV, then retry", "fentanyl 50 mcg IV, then retry", "ketorolac 15 mg IV, then retry", "lidocaine 1% into the joint", "morphine 5 mg IV, then retry"],
+        options: ["acetaminophen 1 g IV, then retry", "fentanyl 50 mcg IV, then retry", "hydromorphone 1 mg IV, then retry", "lidocaine 1% into the joint", "morphine 5 mg IV, then retry"],
         correct: 3,
         explanation:
-          "Intra-articular lidocaine numbs the joint for the reduction without a systemic drug reaching the fetus in any meaningful amount. A Cochrane review of five trials found no difference in immediate reduction success between intra-articular lidocaine and IV analgesia with or without sedation, with fewer adverse effects and a shorter emergency department stay after the injection. Fentanyl or morphine IV before another attempt is the IV analgesia approach in that comparison, with more adverse effects and no better success. Ketorolac is an NSAID, and the trauma guideline advises avoiding NSAIDs in pregnancy, as they constrict the uterine arteries in the third trimester. Acetaminophen is safe in pregnancy but on its own is too weak to relax a dislocated shoulder for an immediate retry.",
+          "Intra-articular lidocaine numbs the joint for the reduction without systemic analgesia or sedation. A Cochrane review of five trials found no difference in immediate reduction success between intra-articular lidocaine and IV analgesia with or without sedation, with fewer adverse effects and a shorter emergency department stay after the injection. Fentanyl, hydromorphone or morphine IV before another attempt is the IV analgesia approach in that comparison, with more adverse effects and no better success. Acetaminophen on its own is too weak to relax a dislocated shoulder for an immediate retry.",
         keyFeature: { topic: "analgesia-sedation", n: 2 },
         source: "wakai-intra-articular-lidocaine",
       },

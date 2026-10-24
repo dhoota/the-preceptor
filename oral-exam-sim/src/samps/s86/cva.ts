@@ -8,71 +8,69 @@ const S = {
   csbprSp: { id: "s86-csbpr-sp", citation: "Gladstone DJ and colleagues. Canadian Stroke Best Practice Recommendations: secondary prevention of stroke update 2020. Heart and Stroke Foundation of Canada. Can J Neurol Sci. 2022.", url: "https://www.strokebestpractices.ca/recommendations/secondary-prevention-of-stroke" },
   csbprAcute: { id: "s86-csbpr-acute", citation: "Heart and Stroke Foundation of Canada. Canadian Stroke Best Practice Recommendations: acute stroke management, 7th edition 2022, with the endovascular thrombectomy interim update 2025.", url: "https://www.strokebestpractices.ca/recommendations/acute-stroke-management" },
   russell: { id: "s86-russell-csdh", citation: "Russell NA, Goumnerova L, Atack EA, Atack DM, Benoit BG. Chronic subdural hematoma mimicking transient ischemic attacks. J Trauma. 1985.", url: "https://pubmed.ncbi.nlm.nih.gov/4057306/" },
-  tcBleed: { id: "s86-tc-bleed", citation: "Thrombosis Canada. Anticoagulant-related bleeding management order set. June 2024.", url: "https://thrombosiscanada.ca/uploads/publications/Bleed%20Management%20Order%20Set%20June%202024.pdf" },
   forsberg: { id: "s86-forsberg-aca", citation: "Forsberg J, Blaabjerg M, Diaz A, Gaist TA, Christensen A, Gaist D. Bilateral anterior cerebral artery infarction presenting with acute paraparesis and parkinsonism. Neurol Clin Pract. 2019.", url: "https://pmc.ncbi.nlm.nih.gov/articles/PMC6927436/" },
   sammpris: { id: "s86-sammpris", citation: "Chimowitz MI and colleagues, SAMMPRIS Trial Investigators. Stenting versus aggressive medical therapy for intracranial arterial stenosis. N Engl J Med. 2011.", url: "https://pubmed.ncbi.nlm.nih.gov/21899409/" },
   lis: { id: "s86-locked-in", citation: "Smith E, Delargy M. Locked-in syndrome. BMJ. 2005.", url: "https://pmc.ncbi.nlm.nih.gov/articles/PMC549115/" },
 } satisfies Record<string, Source>;
 
 export const CVA_S86: Samp[] = [
-  /* 48 Recurrent word-finding spells on apixaban ---------------------------- */
+  /* 48 Recurrent word-finding spells after a head strike -------------------- */
   {
     id: "cva-48",
     topic: "cva",
-    title: "Spells of losing her words",
+    title: "Spells of losing his words",
     stem:
-      "An 82-year-old woman is brought to the emergency department by her son at 11:00 after her third spell in 2 weeks of trouble finding words with numbness of the right hand. Each spell lasted 10 to 15 minutes and resolved fully. The latest began at 09:30 today. Six weeks ago she slipped on ice and struck her head without losing consciousness, and she did not seek care. Since then she has had a dull headache most days, and her son finds her slower. She has atrial fibrillation and hypertension. Medications: apixaban 5 mg twice daily, last taken at 08:00, and amlodipine. Capillary glucose is 6.2 mmol/L. She is alert and oriented. Speech, language, strength, sensation, coordination and gait are now normal.",
-    vitals: { temperature: "36.8°C oral", pulse: "78/minute irregular", resp: "16/minute", bp: "148/82 mmHg", o2sat: "97% on room air", weight: "64 kg" },
+      "A 74-year-old man is brought to the emergency department by his wife at 11:00 after his third spell in 2 weeks of trouble finding words with numbness of the right hand. Each spell lasted 10 to 15 minutes and resolved fully. The latest began at 09:30 today. Five weeks ago he stood up under the raised hatchback of his car and struck his head hard, without losing consciousness, and he did not seek care. Since then he has had a dull headache most days, and his wife finds him slower. He has stable coronary artery disease and hypertension. Medications: ASA 81 mg daily, bisoprolol and atorvastatin. Capillary glucose is 6.2 mmol/L. ECG shows sinus rhythm. He is alert and oriented. Speech, language, strength, sensation, coordination and gait are now normal.",
+    vitals: { temperature: "36.8°C oral", pulse: "62/minute", resp: "16/minute", bp: "148/82 mmHg", o2sat: "97% on room air", weight: "82 kg" },
     questions: [
       {
         id: "q1",
         kind: "single",
-        prompt: "Which of the following features of her history most suggests a cause other than transient ischemic attack?",
-        options: ["Age older than 80 years", "Daily headache since a head strike", "Numbness of the right hand", "Spells lasting 10 to 15 minutes", "Word-finding difficulty in each spell"],
+        prompt: "Which of the following features of his history most suggests a cause other than transient ischemic attack?",
+        options: ["Age older than 70 years", "Daily headache since a head strike", "Numbness of the right hand", "Spells lasting 10 to 15 minutes", "Word-finding difficulty in each spell"],
         correct: 1,
         explanation:
-          "A head strike 6 weeks ago followed by daily headache and slowing, in a woman taking apixaban, points to a chronic subdural hematoma. Chronic subdural hematoma can cause repeated brief spells of focal dysfunction that look exactly like transient ischemic attacks, so brain imaging must separate the two. Her age is a risk factor for both conditions. Spells of 10 to 15 minutes, hand numbness and word-finding trouble fit a left hemisphere event of either cause and do not separate them.",
+          "A hard head strike 5 weeks ago followed by daily headache and slowing, in a man taking ASA, points to a chronic subdural hematoma. Chronic subdural hematoma can cause repeated brief spells of focal dysfunction that look exactly like transient ischemic attacks, so brain imaging must separate the two. His age is a risk factor for both conditions. Spells of 10 to 15 minutes, hand numbness and word-finding trouble fit a left hemisphere event of either cause and do not separate them.",
         keyFeature: { topic: "cva", n: 1 },
         source: "s86-russell-csdh",
       },
       {
         id: "q2",
         kind: "single",
-        prompt: "Which of the following is the most appropriate first investigation for her in the emergency department?",
+        prompt: "Which of the following is the most appropriate first investigation for him in the emergency department?",
         options: ["Carotid Doppler ultrasound", "EEG within 24 hours", "MRI brain within 1 week", "Non-contrast CT head now", "Transthoracic echocardiogram"],
         correct: 3,
         explanation:
-          "Canadian stroke guidance calls for brain imaging as soon as possible after a suspected transient ischemic attack, and her headache, head strike and anticoagulant make bleeding the first thing to exclude. A non-contrast CT can be done now and can show a subdural collection, so it comes before any change to her antithrombotic therapy. Vascular imaging with CT angiography can be added at the same sitting. Carotid Doppler and echocardiography look for an embolic source and cannot show a hematoma. An MRI a week from now delays a diagnosis that may need surgery. An EEG does not exclude a structural cause.",
+          "Canadian stroke guidance calls for brain imaging as soon as possible after a suspected transient ischemic attack, and his headache, head strike and daily ASA make bleeding the first thing to exclude. A non-contrast CT can be done now and can show a subdural collection, so it comes before any change to his antithrombotic therapy. Vascular imaging with CT angiography can be added at the same sitting. Carotid Doppler and echocardiography look for an embolic source and cannot show a hematoma. An MRI a week from now delays a diagnosis that may need surgery. An EEG does not exclude a structural cause.",
         keyFeature: { topic: "cva", n: 1 },
         source: "s86-csbpr-sp",
       },
       {
         id: "q3",
         kind: "single",
-        update: "Imaging shows a 16 mm mixed-density chronic subdural hematoma over the left hemisphere with 7 mm of midline shift. There is no infarct.",
-        prompt: "Which of the following best explains her three brief spells of speech and hand symptoms?",
+        update: "Imaging shows a 19 mm mixed-density chronic subdural hematoma over the left hemisphere with 4 mm of midline shift. There is no infarct.",
+        prompt: "Which of the following best explains his three brief spells of speech and hand symptoms?",
         options: ["Cortical dysfunction from the hematoma", "Embolism from the left atrium", "Hypoperfusion from carotid disease", "Migraine aura without headache", "Small vessel lacunar ischemia"],
         correct: 0,
         explanation:
-          "The spells come from the left hemisphere, under a left subdural hematoma large enough to shift the midline by 7 mm. Transient deficits from chronic subdural hematoma are thought to arise from the cortex beneath it, through focal seizure activity, spreading cortical depression or local ischemia from pressure. Embolism from her atrium is possible in atrial fibrillation, but she is anticoagulated and the imaging now shows a lesion in the territory of every spell. No carotid disease has been shown. Migraine aura is unlikely as a new pattern at 82, and a lacunar event would not explain word-finding trouble, which is cortical.",
+          "The spells come from the left hemisphere, under a left subdural hematoma thick enough to shift the midline by 4 mm. Transient deficits from chronic subdural hematoma are thought to arise from the cortex beneath it, through focal seizure activity, spreading cortical depression or local ischemia from pressure. His ECG shows sinus rhythm and nothing points to an atrial source, while the imaging now shows a lesion in the territory of every spell. No carotid disease has been shown. Migraine aura is unlikely as a new pattern at 74, and a lacunar event would not explain word-finding trouble, which is cortical.",
         keyFeature: { topic: "cva", n: 1 },
         source: "s86-russell-csdh",
       },
       {
         id: "q4",
         kind: "menu",
-        select: 2,
-        update: "It is 11:40. Her creatinine is 82 umol/L. An anti-Xa level is not available. Neurosurgery plans to drain the hematoma today.",
-        prompt: "Which of the following are the most appropriate steps for her anticoagulation now?",
-        options: ["Add ASA to apixaban", "Andexanet alfa, low-dose regimen", "Apixaban 2.5 mg twice daily", "Hold apixaban", "Idarucizumab 5 g IV", "Protamine sulfate IV", "Vitamin K 10 mg IV"],
-        correct: [1, 3],
+        select: 1,
+        prompt: "Had these spells been treated as a high-risk transient ischemic attack without brain imaging, which of the following would have caused the most harm?",
+        options: ["ASA and clopidogrel loading", "Carotid Doppler ultrasound", "Holter monitor for 24 hours", "Lipid profile and HbA1c", "Outpatient echocardiogram", "Stroke prevention clinic referral"],
+        correct: [0],
         explanation:
-          "An intracranial hemorrhage is a major bleed in the Thrombosis Canada order set, so the anticoagulant is held and urgent reversal is normally indicated, all the more before surgery. Her last apixaban dose of 5 mg was under 8 hours ago, so the targeted agent andexanet alfa is given as the low-dose regimen. PCC 25 to 50 units/kg is the alternative where andexanet is not available. Idarucizumab reverses dabigatran only, protamine reverses heparin and vitamin K reverses warfarin. A lower apixaban dose still anticoagulates her. Adding ASA would treat a transient ischemic attack she did not have and add to the bleeding.",
+          "Canadian guidance gives an antiplatelet loading dose only after brain imaging has excluded intracranial hemorrhage. Loading ASA and clopidogrel on top of his daily ASA, with a subdural hematoma already shifting the midline, would raise the risk that it bleeds and expands. That is the one choice that does active harm. Carotid Doppler, a 24-hour Holter, an echocardiogram, blood tests and a clinic referral would all miss the hematoma and delay the diagnosis, but none of them makes the bleed worse. The lesson is that brain imaging comes before any antithrombotic decision in a suspected transient ischemic attack.",
         keyFeature: { topic: "cva", n: 1 },
-        source: "s86-tc-bleed",
+        source: "s86-csbpr-sp",
       },
     ],
-    sources: [S.russell, S.csbprSp, S.tcBleed],
+    sources: [S.russell, S.csbprSp],
     ...META,
   },
 
