@@ -170,3 +170,13 @@ This revision responds to `docs/reviews/q500b-verify2-s78.md`. Only multiple-pat
 ### Uncertain point
 
 Westbrook 2010 is an observational study from one Australian teaching hospital. It supports the risk that interrupted tasks are dropped. The screening nurse and task list are the practical response, not a tested intervention.
+
+## Revision 4
+
+This revision responds to `docs/reviews/q500b-verify3-s78.md`. It fixes the two grammar cues and nothing else.
+
+- 37 q2: the key now reads "Call the second team in from home now", a verb phrase like the other options. After alphabetical sorting it sits in position 2 (`correct: 1`).
+- 38 q3: the key now reads "Have a nurse screen calls and list tasks", a verb phrase like the other options. After alphabetical sorting it sits in position 3 (`correct: 2`). The optional "or the unit clerk" wording was not used.
+- The unused `S.ctas2016` entry was removed from the source object, because no question cites it any longer.
+- Single key positions, first to fifth: 4, 4, 4, 3, 2 (no position above 25%).
+- `SAMP_BATCH=s78 npx vitest run tests/samps.test.ts tests/samp-quality.test.ts tests/citations.test.ts --testTimeout=120000`: 132 of 132 pass.
