@@ -250,7 +250,7 @@ export const SOB_S79: Samp[] = [
         options: ["Garlic extract", "Liver transplantation", "Long-term oxygen at home", "Methylene blue", "Pentoxifylline"],
         correct: 1,
         explanation:
-          "Liver transplantation is the only established treatment that changes the course of hepatopulmonary syndrome, and his diagnosis should prompt referral to a transplant centre. Oxygen is recommended for severe hypoxemia and eases symptoms, but it does not reverse the dilated vessels. Methylene blue, pentoxifylline and garlic have been tried, and none has been shown to work. Finding this condition in a patient with cirrhosis matters because it changes his prognosis and his priority for transplant assessment.",
+          "Liver transplantation is the only established treatment that changes the course of hepatopulmonary syndrome, and his diagnosis should prompt referral to a transplant centre. Oxygen is recommended for severe hypoxemia and eases symptoms, but it does not reverse the dilated vessels. Methylene blue, pentoxifylline and garlic have been tried in small studies with mixed or preliminary results, and none is an established treatment. Finding this condition in a patient with cirrhosis matters because it changes his prognosis and his priority for transplant assessment.",
         keyFeature: { topic: "sob", n: 2 },
         source: "soulaidopoulos-hps",
       },
