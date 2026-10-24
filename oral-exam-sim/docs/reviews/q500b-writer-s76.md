@@ -157,3 +157,17 @@ This revision answers `docs/reviews/q500b-verify3-s76.md`. Nothing else was chan
 Balance is unchanged. Single key positions, first to fifth: 4, 4, 4, 4, 2 of 18. The key is the single longest option in 3 of 18.
 
 Tests: `npx tsc --noEmit -p . 2>&1 | grep samps/s76` prints nothing. `SAMP_BATCH=s76 npx vitest run tests/samps.test.ts tests/samp-quality.test.ts tests/citations.test.ts --testTimeout=120000`: 128 of 128 pass.
+
+## Revision 5
+
+This revision answers `docs/reviews/q500b-verify4-s76.md`.
+
+| Item | Change |
+|---|---|
+| eye-39 q4 | The prompt is now "Which of the following later findings would make a topical corticosteroid appropriate under ophthalmology care?" The phrase "with antiviral cover" is gone. It pointed to the q3 key. |
+| eye-43 stem | "and has no other conditions" is gone. It conflicted with the hypothetical "additional findings" in q3, such as a known von Willebrand disease. The stem now reads "She has hypothyroidism treated with levothyroxine." |
+| eye-43 q4 explanation | Two consequential edits follow from the stem change. "good understanding and no bleeding disorder" is now "good understanding", because the stem no longer states the absence of a bleeding disorder. "She meets none of the criteria for admission." is now "Nothing in her history meets the criteria for admission." As asked, I added "The next day review also rechecks both corneas after the alkali exposure." |
+
+Balance is unchanged. Options and keys are unchanged. Single key positions, first to fifth: 4, 4, 4, 4, 2 of 18. The key is the single longest option in 3 of 18.
+
+Tests: `npx tsc --noEmit -p . 2>&1 | grep samps/s76` prints nothing. `SAMP_BATCH=s76 npx vitest run tests/samps.test.ts tests/samp-quality.test.ts tests/citations.test.ts --testTimeout=120000`: 128 of 128 pass.

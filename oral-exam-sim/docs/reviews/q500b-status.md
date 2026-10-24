@@ -12,7 +12,7 @@ Branch `content/q500b`. Nothing in this round is signed off. Every item is `revi
 | Batch | First review | Revision | Fresh review | Next step |
 |---|---|---|---|---|
 | s72 suicide-risk | FAIL 13 | Rev 1 to 3 done | FAIL 6, FAIL 1, Rev 3 PASS | ready for sign-off |
-| s73 dvt-pe | FAIL 12 | Rev 1 in progress (tests fail) | | finish revision |
+| s73 dvt-pe | FAIL 12 | Rev 1 to 3 done | FAIL 3, FAIL 2, Rev 3 PASS | ready for sign-off |
 | s74 lacerations | FAIL 8 | Rev 1, Rev 2 done | Rev 1 FAIL 2, Rev 2 PASS | ready for sign-off |
 | s75 headache | FAIL 10 (after a replacement) | Rev 2, Rev 3 done | Rev 2 FAIL 5, Rev 3 PASS | ready for sign-off |
 | s76 eye | FAIL 15 | not started | | revise |
