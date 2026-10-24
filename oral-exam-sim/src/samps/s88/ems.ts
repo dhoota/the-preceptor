@@ -56,7 +56,7 @@ export const EMS_S88: Samp[] = [
         kind: "single",
         update: "The crew says a neighbour last saw her at 1800 yesterday. They found a rug bunched beside the bed, her glasses on the floor, the television on, her walker in the hallway and black, tarry stool in the toilet.",
         prompt: "Which of the following scene details most changes your initial workup for this patient?",
-        options: ["Black tarry stool in the toilet", "Glasses on the bedroom floor", "Rug bunched beside the bed", "Television left switched on", "Walker left in the hallway"],
+        options: ["Black tarry stool in the toilet", "Glasses lying on the bedroom floor", "Rug bunched beside the bed", "Television left switched on", "Walker left in the hallway"],
         correct: 0,
         explanation:
           "Black, tarry stool is melena, which points to upper gastrointestinal bleeding. In a woman taking apixaban who is pale, with a pulse of 112/minute and a pressure of 96/58 mmHg, the fall may have been a faint from blood loss rather than a trip. She now needs a hemoglobin, a crossmatch and a bleeding risk assessment along with the falls workup. The bunched rug, the glasses on the floor and the walker left in the hallway suggest a mechanical trip, and the television suggests an evening fall, but none of them changes the first tests the way melena does. Only the crew saw the toilet before it was flushed.",
@@ -166,7 +166,7 @@ export const EMS_S88: Samp[] = [
         id: "q1",
         kind: "single",
         prompt: "Which of the following is the most appropriate imaging for her before you arrange her transfer?",
-        options: ["Abdominal radiograph alone", "CT of the chest and abdomen", "Radiographs from neck to abdomen", "Ultrasound of the abdomen", "No imaging before transfer"],
+        options: ["Abdominal radiograph alone", "CT of the neck, chest and abdomen", "Radiographs from neck to abdomen", "Ultrasound of the abdomen", "No imaging before transfer"],
         correct: 2,
         explanation:
           "A child of 12 or younger with a possible battery ingestion needs radiographs at once, without waiting for symptoms. The films must cover the neck, esophagus and abdomen, with frontal and lateral views when the battery is in the esophagus, because its position sets the urgency and the plan the receiving team will follow. Her gagging, drooling and refusal to drink raise concern for a battery in the esophagus, which an abdominal film alone would miss. Ultrasound cannot show the esophagus behind the sternum, and CT adds radiation without adding to plain films at this stage. Sending her without imaging leaves both teams guessing about the urgency.",
@@ -252,7 +252,7 @@ export const EMS_S88: Samp[] = [
         kind: "single",
         update: "He arrives at 0724 in ventricular fibrillation with mechanical compressions running. The paramedic begins the handover while your team prepares to cannulate.",
         prompt: "Which of the following handover details most supports proceeding with ECPR for this patient?",
-        options: ["amiodarone 300 mg IV at 0705", "End-tidal CO2 of 24 mmHg en route", "epinephrine 1 mg IV at 0703", "Pupils 4 mm at the scene", "Supraglottic airway at 0702"],
+        options: ["amiodarone 300 mg IV given at 0705", "End-tidal CO2 of 24 mmHg en route", "epinephrine 1 mg IV at 0703", "Pupils 4 mm at the scene", "Supraglottic airway at 0702"],
         correct: 1,
         explanation:
           "The ELSO guideline lists an end-tidal CO2 above 10 mmHg during conventional CPR as a favourable sign for ECPR, because it shows that compressions are moving blood and his tissues are still producing carbon dioxide. A reading of 24 mmHg during the drive is a change en route that only the crew saw. The times of his amiodarone and epinephrine doses and of airway insertion record his care but do not predict whether ECPR will help. Pupil size during CPR is affected by drugs and by the arrest itself and is not one of the selection criteria.",
@@ -326,7 +326,7 @@ export const EMS_S88: Samp[] = [
         kind: "single",
         update: "The teacher who was trampled, a 58-year-old man, arrives by ambulance with left chest pain and a pulse of 110/minute. The crew begins the handover.",
         prompt: "Which of the following handover details is most important to obtain from the crew for this teacher?",
-        options: ["Areas of his body that were stepped on", "Brand of the bear spray used", "Length of time he spent outdoors", "Number of people exposed to spray", "Time the ambulance left the school"],
+        options: ["Body areas stepped on in the crowd", "Brand of the bear spray used", "Length of time he spent outdoors", "Number of people exposed to spray", "Time the ambulance left the school"],
         correct: 0,
         explanation:
           "A crowd running over a fallen man is a crush mechanism, and only the crew and witnesses know where he was stepped on, whether on the chest, abdomen, head or limbs. IMIST-AMBO handover starts with the mechanism and the injuries found, and here those details direct the search for rib fractures, pneumothorax and abdominal injury behind his chest pain and pulse of 110/minute. The brand of spray does not change his care, since all bear sprays are capsaicin based. The time spent outdoors, the number exposed and the ambulance departure time matter to the incident record but not to his injuries.",

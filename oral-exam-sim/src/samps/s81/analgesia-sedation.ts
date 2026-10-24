@@ -314,10 +314,10 @@ export const ANALGESIA_SEDATION_S81: Samp[] = [
         kind: "single",
         update: "The shoulder is reduced. Thirty minutes later she is alert and comfortable, with no contractions, abdominal pain or bleeding.",
         prompt: "Which of the following fetal assessments is most appropriate before she leaves the emergency department?",
-        options: ["A single Doppler fetal heart check", "An obstetric ultrasound next week", "Electronic fetal monitoring for 4 hours", "Kleihauer-Betke test only", "No further fetal assessment"],
-        correct: 2,
+        options: ["A single Doppler fetal heart check", "Electronic fetal monitoring for 4 hours", "Kleihauer-Betke test only", "Obstetric ultrasound next week", "No further fetal assessment"],
+        correct: 1,
         explanation:
-          "She is 30 weeks pregnant and has had a fall, which is trauma in pregnancy even without a blow to the abdomen. The SOGC advises electronic fetal monitoring for at least 4 hours in every pregnant trauma patient with a viable pregnancy of 23 weeks or more, and admission for 24 hours if adverse features such as uterine tenderness, bleeding or sustained contractions appear. The same window also covers her recovery from sedation. A single Doppler check or an ultrasound next week would miss contractions or a changing heart rate pattern in the hours after the fall. A Kleihauer-Betke test measures fetal bleeding into the mother and does not replace monitoring. Leaving with no assessment ignores her risk.",
+          "She is 30 weeks pregnant and has had a fall, which is trauma in pregnancy even without a blow to the abdomen. The SOGC advises electronic fetal monitoring for at least 4 hours in every pregnant trauma patient with a viable pregnancy of 23 weeks or more, and admission for 24 hours if adverse features such as uterine tenderness, bleeding or sustained contractions appear. The same window also covers her recovery from sedation. A single Doppler check or an obstetric ultrasound next week would miss contractions or a changing heart rate pattern in the hours after the fall. A Kleihauer-Betke test measures fetal bleeding into the mother and does not replace monitoring. Leaving with no assessment ignores her risk.",
         keyFeature: { topic: "analgesia-sedation", n: 6 },
         source: "sogc-pregnant-trauma-2015",
       },

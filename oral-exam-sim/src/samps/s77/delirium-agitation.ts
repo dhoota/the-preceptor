@@ -78,4 +78,65 @@ export const DELIRIUM_AGITATION_S77: Samp[] = [
     sources: [S.oregan, S.aasheim, S.arts],
     ...META,
   },
+
+  /* 40 Outburst over a game console ---------------------------------------- */
+  {
+    id: "delirium-agitation-40",
+    topic: "delirium-agitation",
+    title: "A boy who would not settle at home",
+    stem:
+      "You are working in a community hospital emergency department. An 11-year-old boy is brought to the emergency department by his father at 21:00 after an outburst at home. When his father took away his game console, he punched holes in the wall, threw a chair and threatened his younger sister. He has attention deficit hyperactivity disorder and oppositional defiant disorder and takes long-acting methylphenidate 36 mg each morning. He has had similar outbursts before, but none this severe. He has no other illness and takes no other medication. In triage he is shouting and kicking the waiting room chairs while other children and parents sit nearby. He knows where he is and says he came because he broke the wall.",
+    vitals: { temperature: "36.9°C oral", pulse: "112/minute", resp: "22/minute", bp: "118/70 mmHg", o2sat: "99% on room air", weight: "38 kg" },
+    questions: [
+      {
+        id: "q1",
+        kind: "single",
+        prompt: "Which of the following findings, if present, would most suggest delirium rather than a behavioural crisis?",
+        options: ["Breaking objects in anger", "Running away from home", "Seeing bugs on the walls", "Swearing at his father", "Threats to hurt his sister"],
+        correct: 2,
+        explanation:
+          "Psychosis is rare before adolescence, so the BETA consensus advises that hallucinations in a child first prompt a search for delirium, catatonia or a problem with communication, and seeing insects that are not there is the kind of visual misperception typical of delirium. Breaking objects, running away, swearing at a parent and threats toward a sibling are common in a behavioural crisis and say nothing about his attention or level of consciousness. He knows where he is and why he came, which already argues against delirium.",
+        keyFeature: kf(1),
+        source: "beta-peds-2019",
+      },
+      {
+        id: "q2",
+        kind: "single",
+        update: "He is moved to a quiet room with nothing loose in it. His father stands in the doorway shouting that he will sell the console. Each time he does, the boy screams and kicks the wall.",
+        prompt: "Which of the following is the most appropriate next step to reduce his agitation?",
+        options: ["Ask his father to wait nearby outside", "Call police to stand in the room", "Give lorazepam 1 mg IM now", "Let his father keep setting limits", "Place him in four point restraints"],
+        correct: 0,
+        explanation:
+          "Each outburst follows his father's shouting, and the BETA consensus lists separation from family, as well as reunification, among the first measures to weigh, depending on which calms the child. Asking his father to wait nearby keeps him involved while removing the trigger. Shouting about selling the console is provocation rather than a calm, firm limit, so letting it continue will keep the cycle going. An IM injection and restraint skip verbal and environmental measures that have not yet been tried in the quiet room. Police standing in the room adds a show of force for a frightened child.",
+        keyFeature: kf(3),
+        source: "beta-peds-2019",
+      },
+      {
+        id: "q3",
+        kind: "single",
+        update: "With his father outside he sits down on the floor, but he is still shouting and kicking at the bed frame.",
+        prompt: "Which of the following statements to him best fits recommended de-escalation for a child?",
+        options: ["Kicking is not okay. Thanks for sitting down", "Tell me again why you broke the wall", "The console comes back once you calm down", "The police will come if you keep kicking", "You are too old to act like this"],
+        correct: 0,
+        explanation:
+          "The BETA consensus advises clear, concrete language at the child's level, firm limits on unacceptable behaviour and specific praise for cooperation, and this statement does both while he is sitting on the floor. Promising the console rewards the outburst and makes a promise that belongs to his father. Threatening police turns a limit into a threat. Asking him to go back over why he broke the wall invites more anger before he is calm, and shaming him about his age is humiliating and tends to escalate.",
+        keyFeature: kf(3),
+        source: "beta-peds-2019",
+      },
+      {
+        id: "q4",
+        kind: "single",
+        update: "He accepts lorazepam 1 mg PO. Forty minutes later he punches a nurse and tries to bite a security guard. He refuses more medication by mouth, and staff will need to hold him briefly for an injection.",
+        prompt: "Which of the following is the most appropriate medication to give him now?",
+        options: ["diphenhydramine 50 mg IM", "haloperidol 2.5 mg IM", "ketamine 150 mg IM", "lorazepam 4 mg IM", "olanzapine 5 mg IM"],
+        correct: 1,
+        explanation:
+          "For severe agitation in a child without a known medical cause, the BETA consensus suggests lorazepam with haloperidol, or olanzapine alone, and warns that olanzapine should not be given within 1 hour of a benzodiazepine. He had lorazepam 40 minutes ago, so haloperidol 2.5 mg IM, inside the 0.5 to 5 mg range, is added to it. Lorazepam 4 mg would bring his total to 5 mg, above the 4 mg daily maximum BETA lists for a child. Diphenhydramine is listed for moderate, not severe, agitation. Ketamine at about 4 mg/kg is not among the BETA options for agitated youth.",
+        keyFeature: kf(4),
+        source: "beta-peds-2019",
+      },
+    ],
+    sources: [S.betaPeds],
+    ...META,
+  },
 ];

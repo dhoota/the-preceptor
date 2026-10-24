@@ -12,6 +12,8 @@ const S = {
   apap: { id: "apap-consensus", citation: "Dart RC, Mullins ME, Matoushek T, et al. Management of acetaminophen poisoning in the US and Canada: a consensus statement. JAMA Netw Open. 2023.", url: "https://pubmed.ncbi.nlm.nih.gov/37552484/" },
   ccb: { id: "ccb-consensus", citation: "St-Onge M, Anseeuw K, Cantrell FL, et al. Experts consensus recommendations for the management of calcium channel blocker poisoning in adults. Crit Care Med. 2017.", url: "https://pmc.ncbi.nlm.nih.gov/articles/PMC5312725/" },
   glatstein: { id: "glatstein-octreotide", citation: "Glatstein M, Scolnik D, Bentur Y. Octreotide for the treatment of sulfonylurea poisoning. Clin Toxicol. 2012.", url: "https://pubmed.ncbi.nlm.nih.gov/23046209/" },
+  crism: { id: "crism-aud-2023", citation: "Wood E, Bright J, Hsu K, and colleagues. Canadian Research Initiative in Substance Misuse. Canadian guideline for the clinical management of high-risk drinking and alcohol use disorder. CMAJ. 2023.", url: "https://pmc.ncbi.nlm.nih.gov/articles/PMC10581718/" },
+  pawss: { id: "pawss-2014", citation: "Maldonado JR, Sher Y, Ashouri JF, and colleagues. The Prediction of Alcohol Withdrawal Severity Scale (PAWSS): systematic literature review and pilot study of a new scale for the prediction of complicated alcohol withdrawal syndrome. Alcohol. 2014." },
 } satisfies Record<string, Source>;
 
 export const TOX_S83: Samp[] = [
@@ -283,6 +285,67 @@ export const TOX_S83: Samp[] = [
       },
     ],
     sources: [S.glatstein, S.ccb],
+    ...META,
+  },
+
+  /* 52 Asking for help to stop drinking, rural ------------------------------ */
+  {
+    id: "tox-52",
+    topic: "tox",
+    title: "Man who wants to stop drinking",
+    stem:
+      "You are working in a rural hospital emergency department with inpatient beds. A 48-year-old man presents asking for help to stop drinking. He has drunk 12 to 15 beers a day for 6 years, and his last drink was 10 hours ago. He was drunk two nights ago. When he goes without alcohol he gets morning shakes and sweats that settle with a drink. He reports no seizures, delirium, blackouts or past alcohol treatment. He says he uses no other substances and takes no medication. His wife can stay with him, and they live 10 minutes from the hospital. He has a fine tremor of his outstretched hands and is mildly sweaty. He is oriented and has no hallucinations. His serum ethanol is undetectable.",
+    vitals: { temperature: "37.1°C oral", pulse: "102/minute", resp: "18/minute", bp: "146/88 mmHg", o2sat: "98% on room air", weight: "88 kg" },
+    questions: [
+      {
+        id: "q1",
+        kind: "single",
+        prompt: "Which of the following is his Prediction of Alcohol Withdrawal Severity Scale score?",
+        options: ["1", "2", "3", "4", "5"],
+        correct: 2,
+        explanation:
+          "He meets the threshold because he has drunk in the last 30 days. He then scores 1 point for being drunk within the last 30 days, 1 for past withdrawal shown by his morning shakes and sweats, and 1 for signs of increased autonomic activity, his tremor and sweating, which makes 3. He has had no treatment, blackouts, seizures or delirium, he uses no sedatives or other substances, and his ethanol is not 200 mg/dL or more. A pulse of 102/minute is below 120/minute but the tremor and sweating already earn that point. A score of 4 or more marks high risk, so 3 is below it.",
+        keyFeature: { topic: "tox", n: 8 },
+        source: "pawss-2014",
+      },
+      {
+        id: "q2",
+        kind: "single",
+        prompt: "Which of the following is the most appropriate withdrawal management plan for him?",
+        options: ["Admission for diazepam loading", "Discharge with no medication", "Outpatient diazepam taper", "Outpatient gabapentin with daily review", "Phenobarbital load, then discharge"],
+        correct: 3,
+        explanation:
+          "With a score below 4, no past seizures or delirium, a support person at home and the hospital close by, the Canadian guideline suggests outpatient withdrawal management with a medication other than a benzodiazepine, such as gabapentin, with regular review. Benzodiazepines are offered to patients at high risk, ideally in hospital, so a home diazepam taper is not the first choice for him. Admission for diazepam loading is for high risk withdrawal, which he does not have. A phenobarbital load is not a plan for an outpatient. Discharge with nothing leaves his tremor and sweating untreated.",
+        keyFeature: { topic: "tox", n: 8 },
+        source: "crism-aud-2023",
+      },
+      {
+        id: "q3",
+        kind: "menu",
+        select: 3,
+        update: "His wife arrives. She says there are things he did not mention.",
+        prompt: "Which of the following details, if his wife confirms them, would add points to his withdrawal severity score?",
+        options: ["Blackouts after heavy drinking", "Clonazepam taken most nights", "Father with alcohol use disorder", "Fatty liver on ultrasound", "Seizure during a past attempt to quit", "Six years of daily drinking", "Started drinking at age 15"],
+        correct: [0, 1, 4],
+        explanation:
+          "Collateral from his wife can change his risk category, and the scale counts past blackouts, past withdrawal seizures and combining alcohol with a benzodiazepine or barbiturate in the last 90 days, each as 1 point. Any two of these would lift his score from 3 to at least 5, into the high risk range. A family history of alcohol use disorder, fatty liver, the years he has been drinking and the age he started are not items on the scale, however much they matter to his long term care.",
+        keyFeature: { topic: "tox", n: 1 },
+        source: "pawss-2014",
+      },
+      {
+        id: "q4",
+        kind: "single",
+        update: "His wife's account raises his score to 5.",
+        prompt: "Which of the following is now the most appropriate withdrawal management plan for him?",
+        options: ["Admission for benzodiazepine treatment", "Discharge with phenobarbital taper", "Observation for 4 hours, then discharge", "Outpatient diazepam with daily review", "Outpatient gabapentin with daily review"],
+        correct: 0,
+        explanation:
+          "A score of 5 puts him at high risk of complicated withdrawal, and the Canadian guideline then recommends a short course of a benzodiazepine, ideally as an inpatient, which his hospital can offer. Outpatient benzodiazepines are kept for high risk patients who cannot be admitted and can be closely monitored. Gabapentin is suggested for low risk patients, which he no longer is. A few hours of observation will not cover the days in which seizures and delirium appear. A phenobarbital taper at home is not a recommended plan for high risk withdrawal.",
+        keyFeature: { topic: "tox", n: 8 },
+        source: "crism-aud-2023",
+      },
+    ],
+    sources: [S.pawss, S.crism],
     ...META,
   },
 ];

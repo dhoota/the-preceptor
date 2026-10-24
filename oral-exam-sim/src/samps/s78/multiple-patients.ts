@@ -13,7 +13,7 @@ const S = {
   dawson: { id: "dawson-amoah-hip", citation: "Dawson-Amoah K, Raszewski J, Duplantier N, Waddell BS. Dislocation of the hip. A review of types, causes, and treatment. Ochsner J. 2018.", url: "https://pmc.ncbi.nlm.nih.gov/articles/PMC6162140/" },
   atls: { id: "atls", citation: "American College of Surgeons Committee on Trauma. Advanced Trauma Life Support (ATLS) Student Course Manual. 11th edition. 2025.", url: "https://www.facs.org/quality-programs/trauma/education/advanced-trauma-life-support/atls-11/" },
   moore: { id: "moore-morison", citation: "Moore C, Todd WM, O'Brien E, Lin H. Free fluid in Morison's pouch on bedside ultrasound predicts need for operative intervention in suspected ectopic pregnancy. Acad Emerg Med. 2007.", url: "https://pubmed.ncbi.nlm.nih.gov/17554008/" },
-  acog: { id: "acog-193", citation: "American College of Obstetricians and Gynecologists. Practice Bulletin No. 193. Tubal ectopic pregnancy. Obstet Gynecol. 2018." },
+  acog: { id: "acog-193", citation: "American College of Obstetricians and Gynecologists. Practice Bulletin No. 193. Tubal ectopic pregnancy. Obstet Gynecol. 2018.", url: "https://pubmed.ncbi.nlm.nih.gov/29470343/" },
   ctas2016: { id: "ctas-2016", citation: "Bullard MJ, Musgrave E, Warren D, et al. Revisions to the Canadian Emergency Department Triage and Acuity Scale (CTAS) Guidelines 2016. CJEM. 2017.", url: "https://doi.org/10.1017/cem.2017.365" },
   rose: { id: "rose-co", citation: "Rose JJ, Wang L, Xu Q, et al. Carbon monoxide poisoning. Pathogenesis, management, and future directions of therapy. Am J Respir Crit Care Med. 2017.", url: "https://pmc.ncbi.nlm.nih.gov/articles/PMC5363978/" },
   creswell: { id: "mmwr-ice-arena", citation: "Creswell PD, Meiman JG, Nehls-Lowe H, et al. Exposure to elevated carbon monoxide levels at an indoor ice arena. Wisconsin, 2014. MMWR Morb Mortal Wkly Rep. 2015.", url: "https://www.cdc.gov/mmwr/preview/mmwrhtml/mm6445a3.htm" },
@@ -166,7 +166,7 @@ export const MULTIPLE_PATIENTS_S78: Samp[] = [
         ],
         correct: 1,
         explanation:
-          "People exposed only to chlorine gas pose little risk of secondary contamination, so those without skin or eye irritation can go straight to treatment. Those with irritation have clothing removed, skin flushed with water and eyes irrigated for at least 15 minutes, which this girl needs for her red, stinging eyes. Full showers for everyone delay care and risk chilling wet children. Holding arrivals outside for a hazmat team delays treatment of airway injury. Exposure came from gas over the deck, so being in the pool does not decide who needs rinsing. Skipping decontamination entirely leaves irritated eyes untreated.",
+          "People exposed only to chlorine gas pose little risk of secondary contamination, so those without skin or eye irritation can go straight to treatment. Those with irritation have clothing removed, skin flushed with water and eyes irrigated for at least 15 minutes, which this girl needs for her red, stinging eyes. Full showers for everyone delay care and risk chilling the children. Holding arrivals outside for a hazmat team delays treatment of airway injury. Exposure came from gas over the deck, so being in the pool does not decide who needs rinsing. Skipping decontamination entirely leaves irritated eyes untreated.",
         keyFeature: { topic: "multiple-patients", n: 4 },
         source: "atsdr-chlorine",
       },
@@ -236,7 +236,7 @@ export const MULTIPLE_PATIENTS_S78: Samp[] = [
         ],
         correct: 1,
         explanation:
-          "The man is in shock with an absent left breath sound, and as the only physician you must lead his resuscitation now. Procedural sedation needs the physician doing the procedure plus a second qualified person monitoring, and it should be coordinated with the department's workload. Starting propofol and then leaving her means no one can manage apnea or hypotension. Her limb is neurovascularly intact and her pain is controlled, so a short delay is safe. Handing the sedation to the respiratory therapist takes the person you need for the man's breathing. Reduction without sedation is painful and often fails. Transfer adds hours for a procedure you can do here.",
+          "The man is in shock with an absent left breath sound, and as the only physician you must lead his resuscitation now. Procedural sedation needs the physician doing the procedure plus a second qualified person monitoring, and emergency physicians should coordinate procedures with the department staff. Starting propofol and then leaving her means no one can manage apnea or hypotension. Her limb is neurovascularly intact and her pain is controlled, so a short delay is safe. Handing the sedation to the respiratory therapist takes the person you need for the man's breathing. Reduction without sedation is painful and often fails. Transfer adds hours for a procedure you can do here.",
         keyFeature: { topic: "multiple-patients", n: 2 },
         source: "acep-psa-2014",
       },
@@ -275,7 +275,7 @@ export const MULTIPLE_PATIENTS_S78: Samp[] = [
         ],
         correct: 2,
         explanation:
-          "A hip dislocation is a time sensitive emergency, and no more than 6 hours should pass before reduction. Avascular necrosis follows in about 2% to 10% of dislocations and rises when reduction is late. At 3 hours, with the man gone and the team free, closed reduction under sedation should happen now. CT of the pelvis is done after reduction to confirm a concentric joint and find fragments. Overnight traction, waiting until morning or a transfer would each push her past the 6 hour window.",
+          "A hip dislocation is a time sensitive emergency, and no more than 6 hours should pass before reduction. Avascular necrosis follows in about 2% to 10% of dislocations and rises when reduction is late. At 3 hours, with the man gone and the team free, closed reduction under sedation should happen now. CT of the pelvis is done after reduction to confirm a concentric joint and find fragments. Overnight traction or waiting until morning would push her past the 6 hour window, and a transfer adds hours and risk for a procedure the team can do now.",
         keyFeature: { topic: "multiple-patients", n: 2 },
         source: "dawson-amoah-hip",
       },
