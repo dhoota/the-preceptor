@@ -125,7 +125,7 @@ export const LOC_S87: Samp[] = [
       {
         id: "q3",
         kind: "single",
-        update: "The support worker brings his medication bin. It holds his old phenobarbital 30 mg tablets and the new 60 mg tablets his neurologist ordered 10 days ago, and both are signed as given twice daily since then. His urinalysis is normal.",
+        update: "The support worker brings his medication bin. It holds his old phenobarbital 30 mg tablets and the new 60 mg tablets his neurologist ordered twice daily 10 days ago to replace them, and both are signed as given twice daily since then. His urinalysis is normal.",
         prompt: "Which of the following is the most likely cause of his decreased level of consciousness?",
         options: ["Hyperammonemic encephalopathy", "Nonconvulsive status epilepticus", "Phenobarbital toxicity", "Subdural hematoma after a fall", "Urinary tract sepsis"],
         correct: 2,
@@ -137,12 +137,12 @@ export const LOC_S87: Samp[] = [
       {
         id: "q4",
         kind: "single",
-        update: "He breathes 10/minute with a saturation of 95% on 2 L/minute by nasal prongs and coughs when suctioned. His blood pressure is stable.",
+        update: "He breathes 10/minute with a saturation of 95% on 2 L/minute by nasal prongs. His cough and gag are now strong, and he is nursed with the head of the bed at 30 degrees. His blood pressure is stable.",
         prompt: "Which of the following treatments is most likely to speed his recovery?",
-        options: ["flumazenil 0.2 mg IV", "Forced diuresis with furosemide", "Multiple-dose activated charcoal", "Single-dose activated charcoal", "Urinary alkalinization"],
+        options: ["Empiric IV ceftriaxone", "Lactulose by gastrostomy", "Multiple-dose activated charcoal", "Phenytoin IV loading dose", "Urinary alkalinization"],
         correct: 2,
         explanation:
-          "Proudfoot and colleagues, writing for the American and European clinical toxicology societies, state that urine alkalinization cannot be recommended as first-line treatment for phenobarbital poisoning because multiple-dose activated charcoal is superior. Repeated charcoal through his gastrostomy increases phenobarbital elimination, and his airway must be watched and protected before further doses if his cough weakens. The same paper says it is the urine pH, not a diuresis, that increases elimination, so forced diuresis with furosemide adds fluid and risk without benefit. A single dose of charcoal binds little when the excess built up over 10 days of dosing. Flumazenil reverses benzodiazepines, not barbiturates.",
+          "Proudfoot and colleagues, writing for the American and European clinical toxicology societies, state that urine alkalinization cannot be recommended as first-line treatment for phenobarbital poisoning because multiple-dose activated charcoal is superior. Repeated charcoal through his gastrostomy increases phenobarbital elimination, and his airway must be reassessed before each dose. Nothing in his case points to infection, since his urinalysis is normal and he has no other source, so empiric ceftriaxone treats a cause he does not have. Lactulose treats hepatic encephalopathy, and he has no liver disease or valproate exposure to cause hyperammonemia. A phenytoin load treats status epilepticus, which is unlikely while he is receiving extra anticonvulsant, and it would add a second sedating drug.",
         keyFeature: { topic: "loc", n: 2 },
         source: "proudfoot-urine-alkalinization",
       },
@@ -216,17 +216,17 @@ export const LOC_S87: Samp[] = [
     alsoTopics: ["headache", "cva"],
     title: "Sleeping it off, says his wife",
     stem:
-      "A 66-year-old man is brought to the emergency department by his wife at 1230 with a severe throbbing headache that began suddenly at 1000 while he was splitting wood. He has vomited four times and asked for the lights to be dimmed. He has had migraines for 30 years, has never had an aura, and his wife says he usually sleeps for hours after one. He has hypertension and stopped taking amlodipine 2 months ago. At triage he was alert and oriented, had nystagmus on looking to the left and could not walk without help. At 1300 he was given metoclopramide 10 mg IV, and a CT head was booked for later in the afternoon. At 1530 he is hard to rouse, and his wife asks that he be left to sleep it off. He opens his eyes to voice and is confused. The vital signs below are from 1530.",
+      "A 66-year-old man is brought to the emergency department by his wife at 1230 with a severe throbbing headache that began suddenly at 1000 while he was splitting wood. He has vomited four times and asked for the lights to be dimmed. He has had migraines for 30 years, has never had an aura, and his wife says he usually sleeps for hours after one. He has hypertension and stopped taking amlodipine 2 months ago. At triage he was alert and oriented, had nystagmus on looking to the left and could not walk without help. At 1300 he was given metoclopramide 10 mg IV, and a CT head was booked for later in the afternoon. He has not vomited since. He fell asleep at about 1330 in a darkened room. At 1530 he is hard to rouse, and his wife asks that he be left to sleep it off. He lies with his eyes closed, opens them to voice and is confused. The vital signs below are from 1530.",
     vitals: { temperature: "36.8°C oral", pulse: "54/minute", resp: "14/minute", bp: "212/116 mmHg", o2sat: "95% on room air" },
     questions: [
       {
         id: "q1",
         kind: "single",
-        prompt: "Which of the following findings most strongly indicates that this is not one of his usual migraines?",
-        options: ["Asking for the lights dimmed", "Nausea with repeated vomiting", "Severe throbbing headache", "Sleepiness after the headache", "Unable to walk without help"],
-        correct: 4,
+        prompt: "Which of the following findings at 1530 most strongly indicates that his drowsiness is not the sleep that follows his migraines?",
+        options: ["Asleep 2 hours after an antiemetic", "Confused when roused to voice", "Eyes closed in a darkened room", "Hours of sleep after past attacks", "No vomiting since 1300"],
+        correct: 1,
         explanation:
-          "The International Classification of Headache Disorders lists a pulsating quality, moderate or severe intensity, nausea or vomiting and photophobia as features of migraine, and notes that patients may fall asleep during an attack, so none of those separates today from his usual pattern. It lists aggravation by routine activity such as walking, which means the pain worsens, not that he cannot walk. Inability to walk with nystagmus is a new neurological deficit that migraine without aura does not explain, and the classification requires that an attack not be better accounted for by another diagnosis. Combined with a sudden onset and a falling level of consciousness, it means his drowsiness must not be put down to the sleep that follows his migraines.",
+          "The International Classification of Headache Disorders notes that a patient may fall asleep during a migraine and wake up without it, so the sleep that follows his attacks is ordinary sleep from which he wakes clear. Being confused when roused to voice is a depressed level of consciousness, not sleep, and it must not be put down to his migraine pattern. Sleep after an antiemetic, eyes closed in a darkened room and hours of sleep after past attacks all fit a migraine followed by rest, so they do not separate the two. Having no vomiting since 1300 suggests his nausea has settled and says nothing about his level of consciousness.",
         keyFeature: { topic: "loc", n: 4 },
         source: "ichd3",
       },
