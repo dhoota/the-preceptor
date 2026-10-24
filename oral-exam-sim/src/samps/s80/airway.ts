@@ -100,12 +100,12 @@ export const AIRWAY_S80: Samp[] = [
       {
         id: "q2",
         kind: "single",
-        update: "After induction and paralysis, a hyperangulated videolaryngoscope gives a full view of the cords. The tube, on a stylet with a gentle bend at the tip, keeps striking the front of the larynx and will not enter the glottis. Her O2 saturation is 94%.",
+        update: "After induction and paralysis, a hyperangulated videolaryngoscope gives a full view of the cords. The tube, on a stylet with a gentle bend at the tip, keeps passing below the glottis toward the arytenoids and will not enter it. Her O2 saturation is 94%.",
         prompt: "Which of the following changes is most likely to let the tube pass?",
-        options: ["Apply external laryngeal pressure", "Change to a larger blade", "Insert the blade further", "Rebend the stylet to match the blade", "Remove the stylet from the tube"],
+        options: ["Change to a larger blade", "Change to a smaller tube", "Insert the blade further", "Rebend the stylet to match the blade", "Remove the stylet from the tube"],
         correct: 3,
         explanation:
-          "A hyperangulated blade shows the glottis around a corner, so a tube with a gentle bend aims at the anterior larynx instead of through the cords. The Canadian Airway Focus Group advises shaping the stylet to match the angle or curve of the blade, typically between 60 and 90 degrees. Her view is already full, so external laryngeal pressure and a larger blade fix something that is not the problem. Advancing the blade further lifts the larynx even more and makes the angle of approach harder. Removing the stylet leaves a soft tube that cannot be steered around the curve.",
+          "A hyperangulated blade shows the glottis around a corner, so a tube with a gentle bend travels below and behind the glottis, toward the arytenoids, instead of curving up through the cords. The Canadian Airway Focus Group advises shaping the stylet to match the angle or curve of the blade, typically between 60 and 90 degrees. Her view is already full, so a larger blade fixes something that is not the problem, and a smaller tube keeps the same gentle curve. Advancing the blade further lifts the larynx even more and makes the angle of approach harder. Removing the stylet leaves a soft tube that cannot be steered around the curve.",
         keyFeature: { topic: "airway", n: 1 },
         source: "cafg-2021-part1",
       },
