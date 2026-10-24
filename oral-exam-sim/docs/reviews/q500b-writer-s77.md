@@ -93,3 +93,33 @@ Unavoidable mock-mode cues, left in place and flagged under ruling B6:
 Key feature counts are unchanged: n1 5, n2 3, n3 6, n4 3, n5 3. There are still 20 questions (19 single, 1 menu). Single key positions are 4, 4, 4, 4 and 3.
 
 Test result: `SAMP_BATCH=s77 npx vitest run tests/samps.test.ts tests/samp-quality.test.ts tests/citations.test.ts --testTimeout=120000` gave 3 files and 128 tests passed. tsc reports nothing for samps/s77.
+
+## Revision 2
+
+This revision answers docs/reviews/q500b-verify-s77.md, which failed only 43 q1. I did not use D1 slot 20.
+
+**Bank search.** Before writing, I searched the whole bank (src/samps and src/cases, generated files excluded). Search terms: "once the delirium", "delirium clears", "dementia diagnosis", "retest", "cognitive testing", "MoCA", "MMSE", "manage the delirium first", "usually temporary", "assess for possible dementia", "donepezil" and NICE CG103. No question keys deferring a dementia diagnosis until delirium clears. Donepezil appears only as a home medication or as the cause of bradycardia (s24). MoCA appears only as baseline history in oral cases batch04 and batch05.
+
+**New 43 q1.**
+- Update: "His neighbour asks whether this confusion means that he has dementia."
+- Prompt: "Which of the following is the most appropriate response to the neighbour's question about dementia?"
+- Key: "Test his cognition once delirium clears". It is in the fifth position, as before.
+- Distractors: diagnosing dementia from today's confusion, a MoCA today, starting donepezil, and promising full recovery.
+- The stem keeps the 4-day time course and "He gives the year as 2016". The unsourced sentence about orientation in psychosis is gone.
+
+**Source.** The CCSMH 2014 update, which I opened and read in full, covers only drug prevention and treatment. It says nothing about when to assess for dementia, so it could not support the key. The new source is: National Institute for Health and Care Excellence. Delirium: prevention, diagnosis and management in hospital and long-term care. CG103, 2010, updated 2023. https://www.nice.org.uk/guidance/cg103/chapter/Recommendations
+
+I opened the page directly and quoted from it:
+- 1.6.3: "If there is difficulty distinguishing between the diagnoses of delirium, dementia or delirium superimposed on dementia, manage the delirium first."
+- 1.7.5: "For people in whom delirium does not resolve: re-evaluate for underlying causes, follow up and assess for possible dementia."
+- 1.1.1: delirium can have serious consequences, "such as increased risk of dementia and/or death".
+
+WebFetch was blocked with a 403 for this page, so I read it with a direct curl request. It is a UK guideline, used because I found no Canadian guidance on this point.
+
+**Balance.**
+- Key feature counts are unchanged: n1 5, n2 3, n3 6, n4 3, n5 3.
+- Still 20 questions: 19 single and 1 menu.
+- Single key positions are still 4, 4, 4, 4 and 3.
+- The new key ties the longest distractor at 39 characters. The test that the key is not the longest option too often still passes.
+
+**Test result.** `SAMP_BATCH=s77 npx vitest run tests/samps.test.ts tests/samp-quality.test.ts tests/citations.test.ts --testTimeout=120000` gave 3 files and 128 tests passed. tsc reports nothing for samps/s77.
