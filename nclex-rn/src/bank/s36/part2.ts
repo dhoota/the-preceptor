@@ -178,7 +178,7 @@ export const PART2: Item[] = [
       cjmm: "analyze",
       process: "clinical-judgment",
       difficulty: 4,
-      stem: "A 78-year-old client with a seizure disorder takes phenytoin by mouth. The client is malnourished, with a serum albumin of 2.1 g/dL (21 g/L). Creatinine is normal. The client has new nystagmus and an unsteady gait. The total phenytoin level is 9 mcg/mL, and the laboratory therapeutic range is 10 to 20 mcg/mL. Which action should the nurse take?",
+      stem: "A 78-year-old client with a seizure disorder takes phenytoin by mouth. The client is malnourished, with a serum albumin of 2.1 g/dL (21 g/L). Creatinine is normal. The client has new nystagmus and an unsteady gait. The total phenytoin level is 9 mcg/mL (36 micromol/L), and the laboratory therapeutic range is 10 to 20 mcg/mL (40 to 79 micromol/L). Which action should the nurse take?",
       rationale:
         "Phenytoin is highly bound to albumin. With an albumin of 2.1 g/dL, more of the drug circulates unbound and active, even when the total level of 9 mcg/mL looks low. New nystagmus and an unsteady gait are signs of toxicity. The label advises measuring unbound phenytoin in hypoalbuminemia. The nurse reports the signs and requests an unbound level before any dose increase.",
       sources: [PHENYTOIN],

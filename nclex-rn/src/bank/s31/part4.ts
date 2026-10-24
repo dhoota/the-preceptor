@@ -208,7 +208,7 @@ export const PART4: Item[] = [
       topic: "Home dialysis setup that needs follow-up",
       cjmm: "evaluate",
       process: "teaching",
-      difficulty: 3,
+      difficulty: 2,
       stem: "A client on home hemodialysis describes the home setup at a monthly clinic visit. Which statement by the client needs follow-up?",
       rationale:
         "Dialysis machine instructions call for a direct connection to a properly wired, grounded outlet. An extension cord can overheat and is a weak point in the circuit. The nurse reviews the setup and contacts the technical support line. An electrician's check, a separate table for drinks and emergency numbers at hand are all safe practices.",

@@ -7,7 +7,7 @@ export const PART4: Item[] = [
       topic: "Matching drugs to their screening tests",
       cjmm: "analyze",
       process: "nursing-process",
-      difficulty: 3,
+      difficulty: 2,
       stem: "The nurse at an outpatient clinic reviews three clients who will start new medications next week. Match each medication with the screening test the nurse should confirm before the first dose. Each test may be used once or not at all.",
       rationale:
         "Abacavir can cause a severe hypersensitivity reaction, and carriers of the HLA-B*5701 allele are at higher risk, so the label calls for screening first. Adalimumab can reactivate latent tuberculosis, so an interferon gamma release assay or skin test comes first. Ethambutol can damage the optic nerve, so visual acuity and color vision are tested at baseline. Lithium levels, audiometry and TSH do not screen for these risks.",
@@ -100,7 +100,7 @@ export const PART4: Item[] = [
       topic: "Shortest safe vancomycin infusion time",
       cjmm: "action",
       process: "nursing-process",
-      difficulty: 3,
+      difficulty: 2,
       stem: "The prescription is vancomycin 1750 mg IV every 12 hours for a client with osteomyelitis. The bag holds 1750 mg in 500 mL. The label states that each dose is given at no more than 10 mg/minute or over at least 60 minutes, whichever is longer. What is the shortest time over which the nurse may infuse this dose?",
       rationale:
         "At no more than 10 mg each minute, 1750 mg takes at least 175 minutes. This is longer than the 60-minute floor, so 175 minutes is the shortest safe time. Faster infusion raises the risk of a vancomycin infusion reaction with flushing, itching and low BP. A 2-hour infusion would run faster than 10 mg/minute.",

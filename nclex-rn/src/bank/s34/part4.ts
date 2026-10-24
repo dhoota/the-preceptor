@@ -183,7 +183,7 @@ export const PART4: Item[] = [
     options: [
       { text: "Report the hiccups to the primary health care provider", why: "Hiccups lasting more than 48 hours need evaluation for a cause and treatment." },
       { text: "Teach the client to hold the breath for longer", why: "Breath holding has failed and has little evidence for persistent hiccups." },
-      { text: "Have the client rebreathe into a paper bag", why: "Rebreathing raises carbon dioxide and is not a treatment for persistent hiccups." },
+      { text: "Have the client rebreathe into a paper bag", why: "Rebreathing has no proven benefit for persistent hiccups and delays evaluation." },
       { text: "Reassure the client that hiccups stop on their own", why: "Hiccups lasting days are persistent and need evaluation." },
     ],
     correct: 0,

@@ -104,7 +104,7 @@ export const PART3: Item[] = [
       topic: "Exit site habits that need correction",
       cjmm: "evaluate",
       process: "teaching",
-      difficulty: 3,
+      difficulty: 2,
       stem: "The nurse reviews exit site care with a client who has done peritoneal dialysis at home for 3 months. Which statement by the client needs further teaching?",
       rationale:
         "Powders and lotions are kept off the exit site unless the dialysis team prescribes them. They can irritate the skin and hold moisture and bacteria at the site. Daily checks for redness catch infection early. Hand hygiene comes before touching the site. Loose clothing avoids rubbing and pulling at the catheter.",
