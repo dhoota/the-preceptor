@@ -92,3 +92,15 @@ Response to `docs/reviews/q500b-verify-s87.md` (3 failed items). Each fix is app
 | loc-51 q1 | Rebuilt to test a finding about his drowsiness, not his headache, using the reviewer's prompt and options. Prompt: "Which of the following findings at 1530 most strongly indicates that his drowsiness is not the sleep that follows his migraines?" Key "Confused when roused to voice". Distractors: "Asleep 2 hours after an antiemetic", "Eyes closed in a darkened room", "Hours of sleep after past attacks", "No vomiting since 1300". Key index 1. To support every option, the stem now says he has not vomited since 1300, fell asleep at about 1330 in a darkened room, and lies with his eyes closed. The explanation cites the ICHD-3 1.1 note that a patient may fall asleep during a migraine and wake up without it (read on ichd-3.org, the page cited). No migraine criterion is quoted, and the old "photophobia" wording is gone. Grepped the bank: no item uses this drowsiness-versus-sleep decision. |
 
 After Revision 2: 20 questions (18 single, 2 menu). Key features: KF1 5, KF2 2, KF3 4, KF4 4, KF5 5. Single key positions 3, 4, 4, 4, 3. The key is the longest option in 4 of 18 singles (22%). Every source cited was opened. `SAMP_BATCH=s87 npx vitest run tests/samps.test.ts tests/samp-quality.test.ts tests/citations.test.ts --testTimeout=120000` gives 128 passed. Typecheck is clean.
+
+## Revision 3
+
+Response to `docs/reviews/q500b-verify2-s87.md`. Only these three wording changes were made.
+
+| Item | Change |
+|---|---|
+| loc-51 q4 explanation (the one failed item) | "given 2 hours earlier" changed to "given at 1300", to match the stem timeline. |
+| loc-48 q2 explanation (optional suggestion) | Snoring sentence changed to: "Snoring at the 0400 check fits sleep, alcohol or a head injury, so it does not separate them." |
+| loc-51 q3 update (optional suggestion) | "brings his hand up past his chin toward the stimulus" changed to "brings his hand above his clavicle toward the stimulus". The meaning is kept: this is still localizing (M5), so the GCS 9 key and the explanation are unchanged. |
+
+No keys, options or other text changed. Tests: `SAMP_BATCH=s87 npx vitest run tests/samps.test.ts tests/samp-quality.test.ts tests/citations.test.ts --testTimeout=120000` (result below in the hand-back).

@@ -58,7 +58,7 @@ export const LOC_S87: Samp[] = [
         options: ["Arrest for public intoxication", "Decline in cells after 0100", "Long history of heavy drinking", "Snoring at the 0400 check", "Unsteady gait at arrest"],
         correct: 1,
         explanation:
-          "He was talking and walking at 0100 and cannot be woken at 0730, so he became worse at a time when his blood ethanol should have been falling. Jones found that ethanol is cleared from blood at a steady 10 to 20 mg/100 mL per hour, and at 25 to 35 mg/100 mL per hour in heavy drinkers, so intoxication lightens over hours rather than deepens. His arrest for intoxication, his long history of heavy drinking and his unsteady gait fit alcohol but say nothing about a second cause. Snoring at the 0400 check reflects a depressed level of consciousness from any cause, so it does not separate alcohol from a head injury.",
+          "He was talking and walking at 0100 and cannot be woken at 0730, so he became worse at a time when his blood ethanol should have been falling. Jones found that ethanol is cleared from blood at a steady 10 to 20 mg/100 mL per hour, and at 25 to 35 mg/100 mL per hour in heavy drinkers, so intoxication lightens over hours rather than deepens. His arrest for intoxication, his long history of heavy drinking and his unsteady gait fit alcohol but say nothing about a second cause. Snoring at the 0400 check fits sleep, alcohol or a head injury, so it does not separate them.",
         keyFeature: { topic: "loc", n: 4 },
         source: "jones-ethanol",
       },
@@ -245,7 +245,7 @@ export const LOC_S87: Samp[] = [
       {
         id: "q3",
         kind: "single",
-        update: "Ten minutes later he opens his eyes only to pressure and moans without words. When stimulated again, he brings his hand up past his chin toward the stimulus.",
+        update: "Ten minutes later he opens his eyes only to pressure and moans without words. When stimulated again, he brings his hand above his clavicle toward the stimulus.",
         prompt: "Which of the following is his Glasgow Coma Scale score now, with its components?",
         options: ["GCS 7 (E1 V2 M4)", "GCS 8 (E2 V2 M4)", "GCS 9 (E2 V2 M5)", "GCS 10 (E2 V3 M5)", "GCS 10 (E3 V2 M5)"],
         correct: 2,
@@ -261,7 +261,7 @@ export const LOC_S87: Samp[] = [
         options: ["Migraine with brainstem aura", "Posterior fossa stroke", "Sedation from metoclopramide", "Vestibular neuritis", "Wernicke encephalopathy"],
         correct: 1,
         explanation:
-          "A sudden severe headache during exertion, vomiting, nystagmus and inability to walk, followed by a falling level of consciousness with a heart rate of 54/minute and a blood pressure of 212/116 mmHg, point to a hemorrhage or swollen infarct in the posterior fossa pressing on the brainstem. Edlow and colleagues name structural brain lesions as one of the main mechanisms of coma and call for imaging whenever one is probable or possible. He has never had an aura, and a first brainstem aura would not explain a deepening coma with bradycardia. A single 10 mg dose of metoclopramide given 2 hours earlier does not account for progressive decline with these vital signs. Vestibular neuritis causes vertigo and imbalance but not a falling level of consciousness. He has no history of alcohol use or poor nutrition to suggest Wernicke encephalopathy, and his onset was sudden.",
+          "A sudden severe headache during exertion, vomiting, nystagmus and inability to walk, followed by a falling level of consciousness with a heart rate of 54/minute and a blood pressure of 212/116 mmHg, point to a hemorrhage or swollen infarct in the posterior fossa pressing on the brainstem. Edlow and colleagues name structural brain lesions as one of the main mechanisms of coma and call for imaging whenever one is probable or possible. He has never had an aura, and a first brainstem aura would not explain a deepening coma with bradycardia. A single 10 mg dose of metoclopramide given at 1300 does not account for progressive decline with these vital signs. Vestibular neuritis causes vertigo and imbalance but not a falling level of consciousness. He has no history of alcohol use or poor nutrition to suggest Wernicke encephalopathy, and his onset was sudden.",
         keyFeature: { topic: "loc", n: 1 },
         source: "edlow-coma",
       },

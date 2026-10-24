@@ -14,7 +14,7 @@ Branch `content/q500b`. Nothing in this round is signed off. Every item is `revi
 | s72 suicide-risk | FAIL 13 | Rev 1 done | not run | fresh review |
 | s73 dvt-pe | FAIL 12 | Rev 1 in progress (tests fail) | | finish revision |
 | s74 lacerations | FAIL 8 | Rev 1, Rev 2 done | Rev 1 FAIL 2, Rev 2 PASS | ready for sign-off |
-| s75 headache | FAIL 10 (after a replacement) | not started | | revise |
+| s75 headache | FAIL 10 (after a replacement) | Rev 2, Rev 3 done | Rev 2 FAIL 5, Rev 3 PASS | ready for sign-off |
 | s76 eye | FAIL 15 | not started | | revise |
 | s77 delirium-agitation | FAIL 10 | Rev 1, Rev 2 done | Rev 1 FAIL 1, Rev 2 PASS | ready for sign-off |
 | s78 multiple-patients | FAIL 5 | not started | | revise |

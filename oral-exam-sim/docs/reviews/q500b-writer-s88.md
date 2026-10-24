@@ -114,3 +114,42 @@ The reviewer's exact wording is applied:
 2. **ems-37 q2 key:** "Basal insulin restarted now" covers both reconnecting the pump and starting long-acting insulin. The source supports replacing pump basal insulin with long-acting insulin and treats impaired consciousness as the contraindication to pump use. It gives no time limit for an interruption.
 3. **ems-37 q4:** this is a hypothetical patch question. The 10 mL and 150 mL distractors sit outside the 20 to 50 mL range.
 4. **Mock-mode cue (B6), for the physician:** in ems-37, the q2 update states the disconnection time, which is a q1 key. I left it, as the reviewer advised for the earlier version.
+
+## Revision 2
+
+This revision applies the fixes in `docs/reviews/q500b-verify-s88.md`. That review passed ems-38 and ems-40, so neither changed. Before writing each new item I searched all of `src/samps` and `src/cases` by keyword (fistula, thrill, dialysis bleeding, ketone with pump, the new q3 distractor set, driving with hypoglycemia). I dropped driving advice because seizures s49 and s16 cover it, and fistula hemorrhage first aid had no hits.
+
+### ems-37
+- **Stem:** reframed away from seizures-43. She is a 48-year-old woman found confused and combative at her office desk by a coworker, and she is not described as sweating. The pump, its removal by the crew, the IM glucagon and the crew about to leave are all kept. The q1 option is now "What the coworker saw and heard".
+- **q2:** both fixes applied. The update now reads "The pump has not been reconnected since the crew removed it." The explanation says "She has had no insulin since the crew removed the pump" and "one of the listed reasons not to use a pump in hospital".
+- **q3:** the distractors are now basal rate set too low, diabetic ketoacidosis, hyperglycemic hyperosmolar state and infusion set occlusion. All four come from too little insulin and raise glucose, so none explains repeated lows. The key is still hypoglycemia unawareness. Physician flag (B6): the update says the crew relayed the husband's account, which hints at a q1 key.
+- **q4:** replaced. The dextrose versus glucagon point is gone. The new question has the crew relay that the coworker saw her vomit twice and skip lunch, with no insulin since the pump came off. The key is a blood ketone level (Umpierrez and Klonoff 2018: interruption causes hyperglycemia, and pump failure can lead to DKA). It is tagged key feature 2. No bank item pairs ketone testing with a pump.
+
+### ems-39
+- **q1:** the option is now "No imaging needed now", and the explanation says "Skipping imaging leaves the urgency unknown."
+- **q3:** the update now reads "It is now about 80 minutes since her father found her with the remote." The prompt is now "Which of the following treatments should she receive now for the battery?" I used this instead of the suggested "...receive now?" because that is 8 words, and the test requires prompts of 10 to 30 words.
+- **q4:** the update opens "Her mother calls." The option is now "Defer endoscopy until the next day", still first in alphabetical order.
+
+### ems-41 replaced
+- **New scenario:** a BCEHS clinical support line consult from a primary care paramedic crew. A 71-year-old man's left forearm hemodialysis fistula is bleeding at home. It is not measles or a chemical release, there is no supervisor frame, and there is no decontamination or release question.
+- **q1 (key feature 1):** direct pressure on the needle site. A circumferential bandage, a tourniquet first, elevation alone and pressure on the brachial artery are wrong.
+- **q2 (key feature 1):** tape over the gauze without lifting it, covering no more than about half the circumference of the limb. Lifting, replacing the gauze, a tensor bandage and a precautionary tourniquet are wrong.
+- **q3 (key feature 1):** destination. A stable dialysis patient goes preferentially to the regional hospital with dialysis rather than the nearest one without it.
+- **q4 (key feature 2):** the crew-only detail that his wife taped the arm all the way round makes palpation for a thrill over the fistula the key examination.
+- **Source:** BC Emergency Health Services clinical practice guideline E04, dialysis emergencies, opened at https://handbook.bcehs.ca/clinical-practice-guidelines/e-medical-emergencies/e04-dialysis-emergencies/ . It supports direct pressure, taping without lifting the gauze, no circumferential dressings, about 180 degrees of tape at most, preferential transport to a dialysis-capable facility and the nearest facility when critically ill.
+- **Sources removed:** the PHAC and CIG measles sources. BCEHS D02 was opened and then removed because no question needed it.
+
+### Coverage and balance
+
+| | KF1 | KF2 | KF3 | KF4 |
+|---|---|---|---|---|
+| Questions | 5 | 7 | 4 | 4 |
+
+- **Questions:** 20 in total, 18 single and 2 menu (ems-37 q1, ems-40 q2).
+- **Single-question key positions:** 3, 4, 4, 4, 3 for positions 0 to 4. No position is above 25 percent.
+- **Tests:** the longest-option check passes, and all 128 s88 batch tests pass with `--testTimeout=120000`.
+
+### Uncertain points for reviewers
+1. **ems-41 q1:** the reason for rejecting a tourniquet first rests on E04's direct-pressure instruction and its warning about encircling dressings. E04 does not discuss tourniquets for fistulas.
+2. **ems-41 q4:** that a lost thrill needs urgent attention from the dialysis team follows from E04's clotting warning, but the guideline does not state it in those words.
+3. **ems-37 q4:** "vomiting raises concern that ketosis was starting" is clinical reasoning built on Umpierrez's statements about DKA risk. The source does not list vomiting itself.
