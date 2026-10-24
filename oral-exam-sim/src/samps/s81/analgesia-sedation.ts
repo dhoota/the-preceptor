@@ -91,7 +91,7 @@ export const ANALGESIA_SEDATION_S81: Samp[] = [
       {
         id: "q3",
         kind: "single",
-        update: "Twenty minutes after his first SC dose he still grimaces and moans when he is moved. His resp. is 20/minute and he opens his eyes to voice.",
+        update: "Twenty minutes after his first SC dose he still moans and pulls away when he is moved. His resp. is 20/minute and he opens his eyes to voice.",
         prompt: "Which of the following is the most appropriate next step to control his pain?",
         options: ["Another SC dose of equal size", "Haloperidol 1 mg SC now", "Midazolam 2.5 mg SC now", "Transdermal fentanyl 25 mcg/hour", "Wait 4 hours for the next dose"],
         correct: 0,
@@ -103,7 +103,7 @@ export const ANALGESIA_SEDATION_S81: Samp[] = [
       {
         id: "q4",
         kind: "single",
-        update: "Later he settles. An hour later he is asleep with a relaxed face and rouses to voice. His pupils are 3 mm and his resp. is 12/minute and regular. His wife asks whether the morphine will stop his breathing.",
+        update: "He settles. An hour later he is asleep and settled and rouses to voice. His pupils are 3 mm and his resp. is 12/minute and regular. His wife asks whether the morphine will stop his breathing.",
         prompt: "Which of the following is the most appropriate plan for his opioid from now on?",
         options: ["Continue regular doses and observe", "Give naloxone 0.4 mg IV now", "Halve the regular SC dose", "Hold opioids until he is fully awake", "Switch to midazolam alone"],
         correct: 0,
@@ -234,7 +234,7 @@ export const ANALGESIA_SEDATION_S81: Samp[] = [
         source: "acs-tqip-acute-pain-2020",
       },
     ],
-    sources: [S.tqip],
+    sources: [S.tqip, S.painad],
     ...META,
   },
 

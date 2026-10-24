@@ -30,7 +30,7 @@ Every source was opened this session. None was left unverified. WebFetch was not
 
 I grepped all of `src/samps` (including the Q500B batches s70 to s88) and `src/cases` for: esophageal detector, detector bulb, colorimetric, SALAD, suction assisted, anticlockwise, counterclockwise, tracheal rings, ring clicks, neck circumference, glottic tumour, awake tracheostomy, cricoid pressure, stylet, hyperangulated, rebend, two-handed, gastric distension, orogastric, nasogastric to suction, two attempts, end-tidal gap.
 - New hits since the first verify review: s81 analgesia-sedation lists "Cricoid pressure throughout" as a distractor in sedation in pregnancy, and s22 analgesia-sedation uses a neck circumference of 46 cm to predict obstruction under procedural sedation. Both are different decisions from 48 q2 and 49 q1.
-- airway-?? in s21 (q2 at line 2364) keys removing the blade to reoxygenate after a failed hyperangulated attempt. 49 q2 keys stylet shape with a full view. Different decision.
+- airway-45 q2 (s21) keys removing the blade to reoxygenate after a failed hyperangulated attempt. 49 q2 keys stylet shape with a full view. Different decision.
 - No other overlap. The repeats found by the first review stay gone.
 
 ## Earlier fails: resolution
