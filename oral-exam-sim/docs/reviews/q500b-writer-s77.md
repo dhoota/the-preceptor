@@ -1,0 +1,67 @@
+# Q500B writer report: s77, Delirium/agitation
+
+Writer: Preceptor. File: `src/samps/s77/delirium-agitation.ts` (DELIRIUM_AGITATION_S77). All items `reviewed: false`, `version: 1`, `author: "Preceptor"`.
+
+## Ids written
+
+| Id | Title | Setting and patient | Questions |
+|---|---|---|---|
+| delirium-agitation-39 | Restless weeks after her operation | Community hospital, woman of 31, Wernicke encephalopathy 7 weeks after sleeve gastrectomy | 4 single |
+| delirium-agitation-40 | A boy who would not settle at home | Community hospital, boy of 11, behavioural crisis with ADHD and ODD | 4 single |
+| delirium-agitation-41 | Shouting at the walls of his apartment | Community hospital in northern Ontario, man of 26, schizophrenia off risperidone | 3 single, 1 menu |
+| delirium-agitation-42 | A fall on the ice at a bus shelter | Ontario emergency department, man of 63, Deaf ASL user taken for confused | 4 single |
+| delirium-agitation-43 | Found in the barn at dawn | Rural Ontario hospital, man of 79, delirium from a hidden diabetic foot infection, no substitute decision maker nearby | 4 single |
+
+20 questions: 19 single and 1 menu (41 q4, select 3 of 8).
+
+Single key positions (first to fifth): 4, 4, 4, 4, 3. No position is above 25 percent.
+
+## Key feature coverage
+
+Bank count before this batch (s08, s34 and cross-topic items): n1 about 20, n2 about 50, n3 about 22, n4 about 27, n5 about 28. The extra questions went to n1 and n3, the thinnest.
+
+| Key feature | Questions in s77 | Items |
+|---|---|---|
+| 1 Delirium versus dementia and psychosis | 5 | 39 q1 (months backward as the attention test), 39 q4 (Korsakoff versus persisting delirium), 40 q1 (hallucinations in a preadolescent), 42 q1 (deafness mimicking confusion), 43 q1 (dating the change from baseline) |
+| 2 Wide differential, treat reversible causes | 3 | 39 q2 (thiamine deficiency after bariatric surgery), 39 q3 (thiamine without waiting for MRI), 43 q2 (full skin and foot exam for a hidden source) |
+| 3 Safety of everyone | 6 | 40 q2 (separating a parent who escalates the child), 40 q3 (firm limits with praise), 41 q1 (agree to disagree with a delusion), 41 q2 (choice of oral form), 41 q4 menu (debriefing the patient after restraint), 42 q2 (qualified ASL interpreter) |
+| 4 Sedation and restraint | 3 | 40 q4 (no IM olanzapine within 1 hour of lorazepam in a child), 41 q3 (add a benzodiazepine rather than repeat the antipsychotic), 42 q4 (no physical or chemical restraint without danger) |
+| 5 Capacity and substitute decisions | 3 | 42 q3 (communication barrier is not incapacity, HCCA s. 25(3)), 43 q3 (distant nephew by phone outranks the PGT), 43 q4 (unwilling relative, so the PGT decides) |
+
+## How the batch avoids repeats
+
+Before writing I read all 38 existing SAMPs on this topic (s08 and s34), the cross-topic SAMPs that test it and the oral case titles and stems. New for the bank: non-alcoholic Wernicke after bariatric surgery, Korsakoff as a delirium mimic, a Deaf patient labelled confused, the olanzapine and benzodiazepine interval in a child, adding a benzodiazepine after a failed antipsychotic dose, agree-to-disagree wording, debriefing the patient after restraint, separating an escalating parent, and the HCCA "available" and "willing" tests for a distant relative and the PGT. I did not reuse the thiamine 200 mg three times daily point (s32 loc), octreotide (tox and loc), myxedema (loc and environmental), catatonia (s32 loc), fluent aphasia (s05 cva) or asymptomatic bacteriuria (s12 and oral case batch04). These all came up while planning and were dropped.
+
+## Sources and verification
+
+| Id | Source | Verified at |
+|---|---|---|
+| oregan-attention | O'Regan NA et al. Attention! A good bedside test for delirium? J Neurol Neurosurg Psychiatry 2014 | PubMed abstract (PMID 24569688), https://pmc.ncbi.nlm.nih.gov/articles/PMC4173985/ |
+| aasheim-bariatric-we | Aasheim ET. Wernicke encephalopathy after bariatric surgery: a systematic review. Ann Surg 2008 | PubMed abstract (PMID 18948797): 94% within 6 months, vomiting in 90%, glucose without thiamine in 18%, MRI lesions in 14 of 30, incomplete recovery in 49%. No URL given because the article page was not opened. |
+| arts-korsakoff | Arts NJ et al. Korsakoff's syndrome: a critical review. Neuropsychiatr Dis Treat 2017 | PubMed abstract (PMID 29225466), https://pmc.ncbi.nlm.nih.gov/articles/PMC5708199/ |
+| beta-peds-2019 | Gerson R et al. BETA consensus for agitated children and adolescents. West J Emerg Med 2019 | https://pmc.ncbi.nlm.nih.gov/articles/PMC6404720/ (full text read: hallucinations in preadolescents, family separation or reunification, limits and praise, severe agitation options, olanzapine not within 1 hour of a benzodiazepine, haloperidol 0.5 to 5 mg, lorazepam child maximum 4 mg a day) |
+| beta-deescalation-2012 | Richmond JS et al. Verbal de-escalation, Project BETA. West J Emerg Med 2012 | https://pmc.ncbi.nlm.nih.gov/articles/PMC3298202/ (domains VII, IX and X and show of force read) |
+| beta-psychopharm-2012 | Wilson MP et al. Psychopharmacology of agitation, Project BETA. West J Emerg Med 2012 | https://pmc.ncbi.nlm.nih.gov/articles/PMC3298219/ (adding a benzodiazepine is preferred to more of the same antipsychotic, oral offered first, calm not asleep) |
+| beta-restraint-2012 | Knox DK, Holloman GH. Seclusion and restraint, Project BETA. West J Emerg Med 2012 | https://pmc.ncbi.nlm.nih.gov/articles/PMC3298214/ |
+| gower-ed-delirium | Gower LEJ et al. ED management of delirium in the elderly. West J Emerg Med 2012 | https://westjem.com/articles/emergency-department-management-of-delirium-in-the-elderly.html (baseline, many informants, hearing impairment, thorough exam) |
+| hcca | Health Care Consent Act, 1996 (Ontario) | https://www.ontario.ca/laws/statute/96h02 (s. 4(2), s. 20(1), (2), (5), (11), s. 25(2) and (3) read in full) |
+
+## Test result
+
+```
+npx tsc --noEmit -p . 2>&1 | grep samps/s77     (no output)
+SAMP_BATCH=s77 npx vitest run tests/samps.test.ts tests/samp-quality.test.ts tests/citations.test.ts
+Test Files 3 passed (3), Tests 128 passed (128)
+```
+
+The bank-wide near-duplicate stem test has a 5 second limit. It timed out twice while the machine was under heavy load from other agents (load average 12 to 17 on 4 cores). It passed when load was lower and when run with a longer timeout. The batch content did not change between those runs.
+
+## For the reviewers
+
+1. 42 q1 and q2 (mock mode, ruling B6). The q2 update says he is Deaf, which hints at the q1 key (written questions). The question cannot work without that fact, so it is flagged rather than reworded further.
+2. 40 is a behavioural crisis, not delirium. Its key feature 1 question is hypothetical ("if present"). BETA is a US consensus. I found no Canadian Paediatric Society statement on ED agitation.
+3. 40 q4 keys haloperidol 2.5 mg IM for a 38 kg child 40 minutes after lorazepam 1 mg PO. BETA's IM haloperidol range is 0.5 to 5 mg, and its per kg figure is garbled in the online text. Please check the dose against the original table.
+4. 41 q3 calls diphenhydramine "a weak calming agent here". Wilson does not discuss it directly. The other distractor reasons come from Wilson.
+5. 43 q2 calls the feet a common hidden source of infection in diabetes. Gower supports a thorough exam and occult infection but does not name the feet.
+6. 39 is set in a community hospital that has MRI the next day. Only Aasheim is cited for treating without waiting for MRI. The EFNS guideline (Galvin 2010) is not cited because its full text could not be opened.
+7. The web search limit for this session ran out while I was planning. Every source above was opened directly (PMC, PubMed E-utilities abstract, e-Laws or the publisher page). No citation rests on memory. A terminal delirium SAMP (ESMO 2018) and a driving question were dropped because their sources could not be opened.

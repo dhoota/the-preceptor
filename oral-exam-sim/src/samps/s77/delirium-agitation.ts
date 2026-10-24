@@ -24,7 +24,7 @@ export const DELIRIUM_AGITATION_S77: Samp[] = [
     topic: "delirium-agitation",
     title: "Restless weeks after her operation",
     stem:
-      "You are working in a community hospital emergency department. A 31-year-old woman is brought to the emergency department by her partner with 3 days of confusion and restlessness. Seven weeks ago she had a sleeve gastrectomy. Since then she has vomited after most meals and has eaten little for a month. Yesterday a walk-in clinic gave her 2 L of IV dextrose 5% in saline for dehydration. Tonight she asked her partner who he was and tried to walk out of the house in her socks. She has generalized anxiety disorder, treated with the same dose of sertraline for 2 years, and her partner wonders whether this is a panic attack. She is restless, answers some questions and then drifts off the topic. There is no neck stiffness. Capillary glucose is 4.9 mmol/L.",
+      "You are working in a community hospital emergency department. A 31-year-old woman is brought to the emergency department by her partner with 3 days of confusion and restlessness. Seven weeks ago she had a sleeve gastrectomy. Since then she has vomited after most meals and has eaten little for a month. Yesterday a walk-in clinic gave her 2 L of IV dextrose 5% in saline for dehydration. Tonight she asked her partner who he was and tried to walk out of the house in her socks. She has generalized anxiety disorder, treated with the same dose of sertraline for 2 years, and her partner wonders whether this is a panic attack. She is restless, answers some questions and then drifts off the topic. There is no neck stiffness or clonus. Capillary glucose is 4.9 mmol/L.",
     vitals: { temperature: "36.8°C oral", pulse: "108/minute", resp: "18/minute", bp: "104/66 mmHg", o2sat: "98% on room air", weight: "96 kg" },
     questions: [
       {
@@ -46,7 +46,7 @@ export const DELIRIUM_AGITATION_S77: Samp[] = [
         options: ["Late dumping with hypoglycemia", "Panic attack with derealization", "Serotonin toxicity from sertraline", "Thiamine deficiency", "Vitamin B12 deficiency"],
         correct: 3,
         explanation:
-          "Confusion, nystagmus and gait ataxia after weeks of vomiting on a poor diet are Wernicke encephalopathy from thiamine deficiency, and she shows all four signs used to define it: diet, eye signs, cerebellar signs and altered mental state. In the bariatric review, 94% of cases arose within 6 months of surgery, 90% followed frequent vomiting, and IV glucose given without thiamine, as she had yesterday, was a risk factor. Vitamin B12 stores last years, and deficiency does not cause sudden nystagmus. Her sertraline dose is unchanged and she has no clonus described. Late dumping causes hypoglycemia after meals, and her glucose is 4.9 mmol/L. A panic attack does not cause nystagmus or ataxia.",
+          "Confusion, nystagmus and gait ataxia after weeks of vomiting on a poor diet are Wernicke encephalopathy from thiamine deficiency, and she shows all four signs used to define it: diet, eye signs, cerebellar signs and altered mental state. In the bariatric review, 94% of cases arose within 6 months of surgery, 90% followed frequent vomiting, and IV glucose given without thiamine, as she had yesterday, was a risk factor. Vitamin B12 stores last years, and deficiency does not cause sudden nystagmus. Her sertraline dose is unchanged and she has no clonus. Late dumping causes hypoglycemia after meals, and her glucose is 4.9 mmol/L. A panic attack does not cause nystagmus or ataxia.",
         keyFeature: kf(2),
         source: "aasheim-bariatric-we",
       },
@@ -131,7 +131,7 @@ export const DELIRIUM_AGITATION_S77: Samp[] = [
         options: ["diphenhydramine 50 mg IM", "haloperidol 2.5 mg IM", "ketamine 150 mg IM", "lorazepam 4 mg IM", "olanzapine 5 mg IM"],
         correct: 1,
         explanation:
-          "For severe agitation in a child without a known medical cause, the BETA consensus suggests lorazepam with haloperidol, or olanzapine alone, and warns that olanzapine should not be given within 1 hour of a benzodiazepine. He had lorazepam 40 minutes ago, so haloperidol 2.5 mg IM, inside the 0.5 to 5 mg range, is added to it. Lorazepam 4 mg would bring his total to 5 mg, above the 4 mg daily maximum BETA lists for a child. Diphenhydramine is listed for moderate, not severe, agitation. Ketamine at about 4 mg/kg is not among the BETA options for agitated youth.",
+          "For severe agitation in a child without a known medical cause, the BETA consensus suggests lorazepam with haloperidol or chlorpromazine, or olanzapine alone, and warns that olanzapine should not be given within 1 hour of a benzodiazepine. He had lorazepam 40 minutes ago, so haloperidol 2.5 mg IM, inside the 0.5 to 5 mg range, is added to it. Lorazepam 4 mg would bring his total to 5 mg, above the 4 mg daily maximum BETA lists for a child. Diphenhydramine is listed for moderate, not severe, agitation. Ketamine at about 4 mg/kg is not among the BETA options for agitated youth.",
         keyFeature: kf(4),
         source: "beta-peds-2019",
       },
