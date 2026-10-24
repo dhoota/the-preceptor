@@ -1,6 +1,6 @@
 # Sign-off queue for Arjan
 
-Status: the first 2,000 items were signed off by Arjan Dhoot on 26 September 2026, including the three key changes below. They carry `reviewed: true`. Batches s29 to s38 (500 items, October 2026) are drafts. See the last section.
+Status: the first 2,000 items were signed off by Arjan Dhoot on 26 September 2026, including the three key changes below. They carry `reviewed: true`. Batches s29 to s38 (500 items) were approved by the owner on 24 October 2026 and also carry `reviewed: true`. See the last section.
 
 This file gathers what the 48 adversarial reviews left for Arjan. The full reports are in `docs/reviews/`.
 
@@ -410,9 +410,9 @@ Arjan approves both.
 - rn-s28-11 cites PADIS, an ICU guideline, for a medical unit client. It supports clustering care and noise and light reduction, but a ward-level source may be preferable.
 - rn-s28-10: the why for the denial option says the recall expectation has "no basis". The stem says only that the client lost the job. Left as is because it reads as a reasonable inference, but Arjan may prefer "laid off permanently" in the stem.
 
-## Batches s29 to s38: 500 new items, not yet signed off
+## Batches s29 to s38: 500 new items
 
-Added in October 2026 on branch `content/nclex-bank-500`, then merged into `claude/nclex` for the next release. Every item carries `reviewed: false`, so the app shows each one with the Draft tag until it is signed off.
+Added in October 2026 on branch `content/nclex-bank-500`, then merged into `claude/nclex` for the next release. The owner reviewed and approved all 500 on 24 October 2026. They now carry `reviewed: true` and are listed in `docs/signoff.json`, so the app shows no Draft tag on them.
 
 ### What was done
 
@@ -429,11 +429,11 @@ Added in October 2026 on branch `content/nclex-bank-500`, then merged into `clau
 - No Canada note pass has run. Every `canada` field is empty except rn-s34-48 (salbutamol).
 - The shared web search allowance ran out partway through writing. Later sources were checked by fetching publisher, label, PubMed, Crossref and agency pages directly. Each writer report lists which sources were read in full and which were not.
 
-Before these items lose the Draft tag, run the adversarial review in `docs/REVIEW_BRIEF.md` on each batch, then the Canada note pass, then sign off.
+The approval was given on the writer pass and the automated gates. The adversarial review in `docs/REVIEW_BRIEF.md` and the Canada note pass can still run later. Any item they change must leave `docs/signoff.json` and go back to `reviewed: false` until it is approved again.
 
 ### Writer flags by batch
 
-These are the points each writer asked the reviewer to check. They are not yet resolved.
+These are the points each writer asked the reviewer to check. They were approved as written. They remain the first things to check if the batches are reviewed again.
 
 #### s29 (Management of Care, new settings)
 

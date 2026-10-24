@@ -48,7 +48,7 @@ Preceptor: NCLEX is an offline study tool. It gives original practice items in e
 
 ## Evidence on Hand
 
-- 2,500 original items and 100 case studies in `src/bank/`. The first 2,000 are reviewed and signed off. The 500 in batches s29 to s38 are drafts awaiting review.
+- 2,500 original items and 100 case studies in `src/bank/`. All are signed off. The first 2,000 on 26 September 2026 and the 500 in batches s29 to s38 on 24 October 2026.
 - Store screenshots in `store/screenshots/` and the paywall review screenshot in `store/screenshots/review/`.
 - No testimonials, pass rates or outcome data exist. Never invent them.
 
