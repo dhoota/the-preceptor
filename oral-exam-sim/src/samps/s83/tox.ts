@@ -42,7 +42,7 @@ export const TOX_S83: Samp[] = [
         id: "q2",
         kind: "single",
         update: "Thirty minutes later, while his IV is being placed, his pulse is 112/minute. He says he has not slept and wants the liquid. He now believes he is in a hotel and is talking to people who are not in the room.",
-        prompt: "Which of the following findings best shows that his withdrawal has become severe?",
+        prompt: "Which of the following findings best shows that his condition has become severe?",
         options: ["BP of 158/94 mmHg", "Craving for the liquid", "Delirium with hallucinations", "Lack of sleep overnight", "Pulse of 112/minute"],
         correct: 2,
         explanation:
@@ -53,7 +53,7 @@ export const TOX_S83: Samp[] = [
       {
         id: "q3",
         kind: "single",
-        prompt: "Which of the following is the most appropriate initial treatment for his withdrawal?",
+        prompt: "Which of the following is the most appropriate initial treatment for him?",
         options: ["Clonidine 0.1 mg PO", "Haloperidol 5 mg IM", "Lorazepam 2 mg IV", "Olanzapine 10 mg IM", "Quetiapine 50 mg PO"],
         correct: 2,
         explanation:
@@ -77,7 +77,7 @@ export const TOX_S83: Samp[] = [
         id: "q5",
         kind: "single",
         update: "He settles, is breathing on his own and is moved to the intensive care unit.",
-        prompt: "Which of the following investigations is most important to look for a complication of his withdrawal?",
+        prompt: "Which of the following investigations is most important to look for a complication of his condition?",
         options: ["Creatine kinase", "Serum ammonia", "Serum lipase", "Thyroid function tests", "Urine drug screen"],
         correct: 0,
         explanation:
@@ -230,7 +230,7 @@ export const TOX_S83: Samp[] = [
         options: ["Adrenal insufficiency", "Amlodipine toxicity", "Early liver failure", "Prolonged fasting", "Sulfonylurea co-ingestion"],
         correct: 4,
         explanation:
-          "A glucose of 2.2 mmol/L that falls again to 2.6 mmol/L on a dextrose 10% infusion points to ongoing insulin release, and sulfonylurea poisoning causes sustained hypoglycemia that is refractory to IV dextrose. Hypoglycemia that keeps returning on a dextrose infusion is the pattern of a sulfonylurea, so this unexpected result points to a second drug taken with her amlodipine. She ate 3 hours ago, so fasting does not explain it. A normal ALT and INR argue against liver failure. Nothing in her history suggests adrenal insufficiency, and it would not explain a glucose that falls again within an hour on an infusion.",
+          "A glucose of 2.2 mmol/L that falls again to 2.6 mmol/L on a dextrose 10% infusion points to ongoing insulin release, and sulfonylurea poisoning causes sustained hypoglycemia that is refractory to IV dextrose. Amlodipine toxicity explains her low blood pressure, but it would not explain a glucose that keeps falling on a dextrose infusion, so this unexpected result points to a second drug. She ate 3 hours ago, so fasting does not explain it. A normal ALT and INR argue against liver failure. Nothing in her history suggests adrenal insufficiency, and it would not explain a glucose that falls again within an hour on an infusion.",
         keyFeature: { topic: "tox", n: 3 },
         source: "glatstein-octreotide",
       },
