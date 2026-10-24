@@ -147,3 +147,12 @@ This revision answers docs/reviews/q500b-verify-batch17.md. All edits are in hoi
 - at-p4 text (advisory). "The loss of pain stimulus after the block" is removed, because no cited source states it. The item now reads "worsened by clobazam and baclofen".
 
 Checks: `CASE_BATCH=batch17 npx vitest run tests/cases.test.ts tests/citations.test.ts --testTimeout=120000` 41 passed. `REALIGN=batch17 CASE_BATCH=batch17 npx vitest run tests/cases.test.ts --testTimeout=120000` 39 passed. tsc shows no batch17 errors.
+
+## Revision 3
+
+This revision answers docs/reviews/q500b-verify2-batch17.md. Two teaching sentences changed in bench-press-chest-pain. Nothing else changed.
+
+- cp-p1 teaching. "They were present in only a minority of registry patients, so look for them on purpose." is replaced with "They are part of the aortic dissection detection risk score, so look for them on purpose." The source stays `advised`.
+- cp-pr1 teaching. "Anchoring on a benign label is a classic cause of a missed dissection." is replaced with "The presentation is diverse, so a benign working label must be checked at the bedside." The source stays `irad`.
+
+Checks: `CASE_BATCH=batch17 npx vitest run tests/cases.test.ts tests/citations.test.ts --testTimeout=120000` 41 passed. `REALIGN=batch17 CASE_BATCH=batch17 npx vitest run tests/cases.test.ts --testTimeout=120000` 39 passed. tsc shows no batch17 errors.
