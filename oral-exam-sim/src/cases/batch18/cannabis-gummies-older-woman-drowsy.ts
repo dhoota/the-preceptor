@@ -4,7 +4,7 @@ import type { OralCase } from "@/engine/types";
 
 export const cannabisGummiesOlderWomanDrowsy: OralCase = {
   id: "cannabis-gummies-older-woman-drowsy",
-  title: "Sleepy after the grandchildren's visit",
+  title: "Sleepy after a family visit",
   blueprint: "tox",
   alsoCovers: ["geri", "neuro"],
   priorityTopic: "loc",
@@ -100,7 +100,7 @@ export const cannabisGummiesOlderWomanDrowsy: OralCase = {
     {
       id: "reassess-0600",
       label: "Reassessment at 06:00",
-      result: "Opens her eyes to voice. Oriented to person and place but not date. Obeys commands. GCS 14 (E3 V4 M6). Cannot yet stand without help.",
+      result: "Opens her eyes spontaneously. Oriented to person and place but not date. Obeys commands. GCS 14 (E4 V4 M6). Cannot yet stand without help.",
     },
   ],
   start: "s-open",
@@ -223,7 +223,7 @@ export const cannabisGummiesOlderWomanDrowsy: OralCase = {
       seconds: 80,
       modelAnswer: [
         "Edible cannabis toxicity is likely. Older adults are more sensitive, and 150 mg is a very large dose.",
-        "But she also fell and struck her head. Intracranial hemorrhage must be excluded. She is over 65 and her GCS is below 15.",
+        "But she also fell and struck her head. Intracranial hemorrhage must be excluded. She is over 65 and her GCS is 12, below the range of the Canadian CT Head Rule, so she needs CT.",
         "Also consider stroke, seizure, infection, hyponatremia from her thiazide and sertraline, hypoglycemia, and other drugs or alcohol.",
         "CT head and cervical spine. Electrolytes, CK, ethanol, acetaminophen and salicylate, ECG and troponin.",
         "A positive cannabinoid screen shows exposure, not that cannabis explains everything.",
@@ -236,7 +236,7 @@ export const cannabisGummiesOlderWomanDrowsy: OralCase = {
           next: "s-results",
           quality: "strong",
           feedback:
-            "Correct. Do not attribute reduced consciousness to an intoxicant until head injury and other serious causes are excluded. Age over 65 and failure to reach GCS 15 are high risk features for a head injury that needs intervention.",
+            "Correct. Do not attribute reduced consciousness to an intoxicant until head injury and other serious causes are excluded. A GCS of 12 after a head strike is a moderate head injury and needs CT outright. Even in minor head injury, age over 65 and a GCS below 15 at 2 hours are high risk features.",
         },
         {
           id: "c-cancel-ct",
@@ -279,7 +279,7 @@ export const cannabisGummiesOlderWomanDrowsy: OralCase = {
         "Suction the airway, turn her on her side, and give oxygen. Watch closely for aspiration.",
         "Record the new GCS by component: E2 V2 M5, GCS 9. Compare it with 12 on arrival.",
         "Re-examine pupils and limbs for a new focal sign. Recheck glucose and sodium.",
-        "Oral THC peaks 2 to 4 hours after ingestion and absorption is slow and erratic, so later worsening fits. It does not excuse a missed new cause.",
+        "Oral THC peaks 2 to 4 hours after ingestion, absorption is slow and erratic, and effects of an edible can last 12 hours or more, so later worsening fits. It does not excuse a missed new cause.",
         "Fluid bolus for her low BP. Move her to a higher level of care. Intubate if she cannot keep her airway clear.",
       ],
       rubric: ["l-p4", "l-m3", "l-pr2"],
@@ -373,7 +373,7 @@ export const cannabisGummiesOlderWomanDrowsy: OralCase = {
       seconds: 55,
       modelAnswer: [
         "Record each GCS component with the time, not just the total.",
-        "Arrival 21:40: E3 V4 M5, GCS 12. 23:30: E2 V2 M5, GCS 9. 06:00: E3 V4 M6, GCS 14.",
+        "Arrival 21:40: E3 V4 M5, GCS 12. 23:30: E2 V2 M5, GCS 9. 06:00: E4 V4 M6, GCS 14.",
         "Add plain words: opens eyes to voice, confused speech, localizes pain.",
         "Record pupils and any focal signs each time.",
         "Note her baseline from the family for comparison.",
@@ -449,7 +449,7 @@ export const cannabisGummiesOlderWomanDrowsy: OralCase = {
       criterion: "physical",
       text: "Gives a broad differential that includes intracranial hemorrhage, stroke, seizure, infection, hyponatremia and other toxins, not cannabis alone.",
       points: 2,
-      teaching: "The Canadian CT Head Rule high risk factors, including age over 65 and failure to reach GCS 15 within 2 hours, were fully sensitive for injuries needing neurosurgical intervention.",
+      teaching: "A GCS of 12 after a head strike is outside the Canadian CT Head Rule and needs CT. In minor head injury the rule's high risk factors, including age over 65 and failure to reach GCS 15 within 2 hours, were fully sensitive for injuries needing neurosurgical intervention.",
       source: "stiell-cchr",
     },
     {
@@ -458,7 +458,7 @@ export const cannabisGummiesOlderWomanDrowsy: OralCase = {
       criterion: "physical",
       text: "Interprets the later fall in GCS as consistent with delayed peak absorption of oral THC, while re-examining for a new focal sign or metabolic cause.",
       points: 2,
-      teaching: "THC levels peak about 2 to 4 hours after oral dosing, and absorption from an edible is slow and unreliable. A patient can worsen after arrival.",
+      teaching: "THC levels peak about 2 to 4 hours after oral dosing, and absorption from an edible is slow and unreliable. Effects can last 12 hours or more, and Health Canada notes impairment can last over 24 hours, so a patient can worsen after arrival.",
       source: "hc-cannabis",
     },
     {

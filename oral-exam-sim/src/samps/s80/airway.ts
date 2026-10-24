@@ -83,18 +83,18 @@ export const AIRWAY_S80: Samp[] = [
     alsoTopics: ["seizures"],
     title: "Seizing on arrival at a community hospital",
     stem:
-      "You are working in a community hospital emergency department. A 44-year-old woman is brought to the emergency department by ambulance with a generalized seizure that began 30 minutes ago. She has epilepsy and ran out of lamotrigine last week. Paramedics gave midazolam 10 mg IM. In the department she has received lorazepam 4 mg IV and levetiracetam 4500 mg IV, and she is still seizing. Her partner says she snores loudly every night and has never been tested for sleep apnea. Her BMI is 47 kg/m2. She has a full set of natural teeth and no facial hair. Her neck is short and thick. There is blood in her mouth from a bitten tongue. You decide to intubate her.",
+      "You are working in a community hospital emergency department. A 44-year-old woman is brought to the emergency department by ambulance with a generalized seizure that began 30 minutes ago. She has epilepsy and ran out of lamotrigine last week. Paramedics gave midazolam 10 mg IM. In the department she has received lorazepam 4 mg IV and levetiracetam 4500 mg IV, and she is still seizing. Her BMI is 47 kg/m2 and her neck circumference is 49 cm. Several upper front teeth are missing. There is blood in her mouth from a bitten tongue. You decide to intubate her.",
     vitals: { temperature: "37.8°C oral", pulse: "128/minute", resp: "24/minute", bp: "156/92 mmHg", o2sat: "91% on a nonrebreather mask", weight: "128 kg" },
     questions: [
       {
         id: "q1",
         kind: "menu",
-        prompt: "Which of the following findings in her predict difficult face-mask ventilation?",
-        options: ["Age of 44 years", "Bitten tongue", "BMI of 47 kg/m2", "Full set of natural teeth", "Loud nightly snoring", "Pulse of 128/minute", "Seizure lasting 30 minutes", "Short, thick neck"],
-        select: 3,
-        correct: [2, 4, 7],
+        prompt: "Which of the following findings in her predict difficult ventilation through a supraglottic airway?",
+        options: ["Age of 44 years", "Bitten tongue", "Female sex", "Missing upper front teeth", "Neck circumference of 49 cm", "Pulse of 128/minute", "Seizure lasting 30 minutes", "Temperature of 37.8°C"],
+        select: 2,
+        correct: [3, 4],
         explanation:
-          "The Canadian Airway Focus Group lists a higher BMI, snoring or sleep apnea, and a thick or short neck among the predictors of difficult face-mask ventilation, and she has all three. Excess soft tissue narrows the pharynx once muscle tone is lost, and a short, thick neck makes a seal and jaw lift harder. Edentulism and facial hair also predict difficulty, so her full set of teeth and lack of a beard work in her favour. Older age is a predictor, but 44 years is not old. Her tachycardia and the length of her seizure show how urgent the intubation is, not how hard the mask will be. A bitten tongue may bleed but is not a recognized predictor.",
+          "A supraglottic airway is her planned backup if laryngoscopy fails, so predictors of trouble with it shape the plan. The Canadian Airway Focus Group lists poor or absent teeth and a neck circumference over 44 cm among the predictors of difficult supraglottic airway use, along with a higher BMI, which she also has. Missing teeth leave the device poorly supported and the seal unstable, and a large neck raises the pressure needed to ventilate past soft tissue. Female sex appears in the same guidance as a predictor of a difficult front of neck airway, not of a difficult supraglottic airway. Her age, pulse, temperature and the length of her seizure describe her illness, and a bitten tongue may bleed but is not a listed predictor.",
         keyFeature: { topic: "airway", n: 3 },
         source: "cafg-2021-part2",
       },
@@ -113,7 +113,7 @@ export const AIRWAY_S80: Samp[] = [
       {
         id: "q3",
         kind: "single",
-        update: "The reshaped tube still cannot be directed, and she is reoxygenated with bag-mask ventilation. A colleague uses a Macintosh videolaryngoscope, sees only the epiglottis and the arytenoids, and passes a bougie.",
+        update: "The tube still cannot be passed, and she is reoxygenated with bag-mask ventilation. A colleague uses a Macintosh videolaryngoscope, sees only the epiglottis and the arytenoids, and passes a bougie.",
         prompt: "Which of the following findings best confirms that the bougie has entered the trachea?",
         options: ["Bougie advances 50 cm without resistance", "Clicks over the tracheal rings", "O2 saturation holds steady at 94%", "Silent epigastrium on listening", "Tip seen passing behind the arytenoids"],
         correct: 1,
@@ -125,7 +125,7 @@ export const AIRWAY_S80: Samp[] = [
       {
         id: "q4",
         kind: "single",
-        update: "Clicks are felt, and the laryngoscope is held in place. As the tube is railroaded over the bougie, it stops at the glottis and will not advance.",
+        update: "The bougie is judged to be in the trachea, and the laryngoscope is held in place. As the tube is railroaded over the bougie, it stops at the glottis and will not advance.",
         prompt: "Which of the following is the most appropriate next step?",
         options: ["Advance the tube with firmer pressure", "Remove the laryngoscope blade", "Rotate the tube counterclockwise", "Use a tube one size larger", "Withdraw the bougie 10 cm"],
         correct: 2,
