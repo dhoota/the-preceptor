@@ -117,3 +117,5 @@ This revision answers docs/reviews/q500b-verify-batch18.md. I changed nothing be
 CASE_BATCH=batch18 npx vitest run tests/cases.test.ts tests/citations.test.ts --testTimeout=120000
 REALIGN=batch18 CASE_BATCH=batch18 npx vitest run tests/cases.test.ts tests/citations.test.ts --testTimeout=120000
 ```
+
+Results: 41 passed and 45 passed. tsc shows no batch18 errors.
