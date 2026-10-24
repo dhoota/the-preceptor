@@ -51,13 +51,13 @@ export const PART5: Item[] = [
       difficulty: 3,
       stem: "A 33-year-old client with HIV receives monthly injections of cabotegravir and rilpivirine and has an undetectable viral load. The client will travel abroad for 6 weeks and will miss the next injection visit. The prescriber orders daily oral cabotegravir and rilpivirine for the trip. Which instructions should the nurse include? Select all that apply.",
       rationale:
-        "Missing a monthly injection by more than 7 days risks viral rebound and resistance, because drug levels fall below what suppresses the virus. Daily oral cabotegravir and rilpivirine can replace missed visits for up to 2 months. The first tablet is taken about 1 month after the last injection. Doses are taken with a meal at about the same time each day. The tablets continue until the day injections restart.",
+        "Missing a monthly injection by more than 7 days without oral cover risks viral rebound and resistance. Daily oral cabotegravir and rilpivirine can replace missed visits for up to 2 months. The first tablet is taken about 1 month after the last injection. Doses are taken with a meal at about the same time each day. The tablets continue until the day injections restart.",
       refs: ["When a monthly injection visit will be missed by more than 7 days, daily oral cabotegravir and rilpivirine may replace it for up to 2 months."],
       sources: [CABENUVA],
     }),
     kind: "sata",
     options: [
-      { text: "Rely on the last injection to last through the trip", why: "Levels fall below suppressive levels before 6 weeks pass, which risks resistance." },
+      { text: "Rely on the last injection to last through the trip", why: "A visit missed by more than 7 days without oral cover risks viral rebound and resistance." },
       { text: "Take the first tablets about 1 month after the last shot", why: "Oral therapy starts when the next injection would have been due." },
       { text: "Take both tablets with a meal at the same time each day", why: "Rilpivirine is absorbed best with food, and a fixed time keeps levels steady." },
       { text: "Get a double injection when you return", why: "Injection doses after a gap follow the label schedule, not a doubled dose." },

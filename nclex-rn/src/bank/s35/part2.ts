@@ -30,7 +30,8 @@ export const PART2: Item[] = [
       difficulty: 5,
       stem: "A 79-year-old client taking dabigatran was admitted with gastrointestinal bleeding and received idarucizumab 5 g IV at 0900. The aPTT was 31 seconds at 1000. The nurse reviews the findings at 2100. Which finding should the nurse report to the primary health care provider now?",
       rationale:
-        "Idarucizumab binds dabigatran, but some clients show a second rise in clotting times as drug moves back from the tissues into the blood. A new black stool with the aPTT climbing from 31 to 58 seconds means bleeding has returned with renewed anticoagulant effect. The label states a second 5 g dose may be considered in this case. A stable hemoglobin, stable vital signs and an unchanged bruise do not need urgent action.",
+        "Idarucizumab binds dabigatran, but in some clients clotting times rise again 12 to 24 hours after the dose. A new black stool with the aPTT climbing from 31 to 58 seconds means bleeding has returned with renewed anticoagulant effect. The label states a second 5 g dose may be considered in this case. A stable hemoglobin, stable vital signs and an unchanged bruise do not need urgent action.",
+      refs: ["Clotting times can rise again 12 to 24 hours after a 5 g dose of idarucizumab."],
       sources: [PRAXBIND],
     }),
     kind: "mc",
@@ -100,7 +101,7 @@ export const PART2: Item[] = [
     kind: "mc",
     options: [
       { text: "BP down to 108/66 mmHg", why: "A lower BP is an expected effect, and the client has no dizziness." },
-      { text: "Creatinine up to 1.3 mg/dL (115 micromol/L)", why: "A rise from 1.1 to 1.3 mg/dL is small and expected with this class." },
+      { text: "Creatinine up to 1.3 mg/dL (115 micromol/L)", why: "A rise from 1.1 to 1.3 mg/dL is small and can occur as this class starts." },
       { text: "Potassium up to 5.9 mEq/L (5.9 mmol/L)", why: "A level above 5.0 mEq/L that keeps rising calls for review before a higher dose." },
       { text: "Weight down to 81.2 kg", why: "A small weight loss fits less fluid retention and is a good sign." },
     ],

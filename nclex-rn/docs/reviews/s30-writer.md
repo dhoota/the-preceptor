@@ -30,7 +30,7 @@ Calculation items with a `calc` block: rn-s30-24 (dextrose 10% volume, 125 mL) a
 - Whistleblowing: 15 highlight of a draft report, 16 escalation order, 18 retaliation after a report.
 - Cultural advocacy with family decision makers: 32 capable client delegates to her son, 33 legal surrogate versus family custom, 47 family dishes and a potassium limit, 48 large family vigil.
 - Shortages and fair allocation: 21 saline supply trend, 22 scarce chemotherapy allocation, 23 conserving IV fluid, 24 substitute dextrose product, 36 substitute feeding formula.
-- Collaboration: pharmacy 27, 28, 29; dietitian 29, 34, 35, 36, 47; physiotherapy 38, 40; respiratory therapy 37, 39, 40.
+- Collaboration: pharmacy 27, 28 and 29. Dietitian 29, 34, 35, 36 and 47. Physiotherapy 38 and 40. Respiratory therapy 37, 39 and 40.
 - SIPC: infant abduction 02 and 31, MRI zones 06 and 19, laser 25 and 26, class III obesity 30 and 49, latex-safe room 17, bedside site marking 50.
 
 Uniqueness: before each chunk I grepped the inventory for the key terms of each topic. The nearest existing items and how s30 differs:
