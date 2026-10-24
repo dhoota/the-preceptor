@@ -112,3 +112,18 @@ Other changes:
 ### Tests
 
 `SAMP_BATCH=s84 npx vitest run tests/samps.test.ts tests/samp-quality.test.ts tests/citations.test.ts --testTimeout=120000`: 3 files, 136 of 136 tests passed. tsc shows no errors in `samps/s84`.
+
+## Revision 2
+
+This revision answers `docs/reviews/q500b-verify-s84.md`, which failed 3 questions, all in environmental-39. Nothing outside environmental-39 changed.
+
+| Item | Finding | Change |
+|---|---|---|
+| 39 q2 | "She takes no serotonergic drug" is not true, because lithium is serotonergic | The clause now reads "Lithium can add to serotonin toxicity, but she takes no other serotonergic drug, and her toxic lithium level explains her findings." The Wernicke sentence keeps its wording and now stands as its own sentence. |
+| 39 q3 | Mock-mode cue: the update named treatment for lithium toxicity | Update now reads "She is admitted and recovers over 4 days. Her psychiatrist plans to continue lithium. The heat warning has been extended for 3 more days." |
+| 39 q4 | At 33°C the air is cooler than the skin, which contradicted the explanation's own fan reasoning | The update now says "Her apartment reached 37°C this afternoon." The explanation now reads 37°C. |
+| 39 q4, optional | The key was the single longest option | Key reworded from "Stay in an air-conditioned place" (32 characters) to "Stay somewhere air-conditioned" (30). The meaning is the same, it is no longer the single longest option, and it stays in the last position. |
+
+Coverage, key positions (5, 3, 4, 4, 5) and the menu question are unchanged.
+
+Tests: `SAMP_BATCH=s84 npx vitest run tests/samps.test.ts tests/samp-quality.test.ts tests/citations.test.ts --testTimeout=120000` passed 136 of 136. tsc shows no errors in `samps/s84`.

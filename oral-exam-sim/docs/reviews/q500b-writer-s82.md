@@ -124,6 +124,6 @@ The three fixes to 40 q4 from `docs/reviews/q500b-verify2-s82.md` were applied e
 
 Options, key, key position, keyFeature and source are unchanged.
 
-Test: `SAMP_BATCH=s82 npx vitest run tests/samps.test.ts tests/samp-quality.test.ts tests/citations.test.ts --testTimeout=120000`. The result is recorded in the reply to the coordinator.
+Test: `SAMP_BATCH=s82 npx vitest run tests/samps.test.ts tests/samp-quality.test.ts tests/citations.test.ts --testTimeout=120000`. 3 files and 128 tests, all passed. `tsc` reports no errors in samps/s82.
 
 The physician still needs to confirm that a crystalloid preload of up to 500 mL with IV hydralazine is acceptable Canadian practice.

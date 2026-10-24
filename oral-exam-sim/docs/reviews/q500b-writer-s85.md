@@ -120,3 +120,60 @@ This revision answers `docs/reviews/q500b-qa-s85.md`. It replaces the earlier ta
 1. Ross 2004 is a 2004 review with no current guideline behind it. It is the largest case series of this infection.
 2. chest-pain-52 q4 shows that she will be drained, and in mock mode that is visible while q3 (size against symptoms) is answered. The earlier q4 (drain plus admission) carried the same cue and q3 passed review.
 3. In chest-pain-52 q2, "significant hypoxia" has no numeric cut-off in the source. The saturation of 86% against her usual 92% is offered as significant.
+
+## Revision 2
+
+This revision answers `docs/reviews/q500b-verify-s85.md`. It replaces the earlier tables wherever they disagree.
+
+### chest-pain-48 q3
+
+- The distractor "It makes blood cultures unneeded" is now "It suggests gout in the joint", so q3 no longer gives away part of the q4 key. The key is still index 0.
+- The explanation sentence on bacteremia is replaced with the reviewer's sentence on gout.
+- The temperature wording is now consistent: "a temperature below 38°C" and "This temperature".
+
+### chest-pain-51
+
+- Stem: added "She has had no palpitations." The q2 explanation relies on this.
+- q3 prompt now reads "Which of the following features in a child with chest pain are red flags that call for echocardiography?" The options, key and explanation are unchanged.
+
+### chest-pain-52 replaced (same id)
+
+- The pneumothorax SAMP is gone. Its q3 repeated signed chest-pain-19, and its q4 repeated the signed batch03 secondary pneumothorax case. BTS 2023 and Cheng 2024 were removed with it, so the UK spelling in the old q2 is gone too.
+- Before writing, I searched all of `src` (every batch, the Q500B ones included) for Pancoast, superior sulcus, slipping rib, Mondor and xiphodynia. There were no hits.
+- New SAMP: "Shoulder pain that physiotherapy did not help". A 63-year-old man who has smoked for 45 pack-years has 3 months of constant shoulder and upper chest pain that is worse at night and does not change with movement. The pain now runs to the little finger, and he has lost 5 kg. He has Horner syndrome and weak finger abduction, and a walk-in chest X-ray 6 weeks ago was reported as normal. The diagnosis is a superior sulcus (Pancoast) tumour. The stem is 150 words.
+- Key feature map as asked:
+  - q1 KF4: 45 pack-years is the strongest risk factor.
+  - q2 KF4: unequal pupils with ptosis (Horner syndrome) most raises the probability of an apical cause.
+  - q3 KF5: the earlier chest X-ray is unreliable at the lung apex.
+  - q4 KF2: CT of the chest with contrast.
+- No MRI option is offered, because the source names MRI as its preferred modality. The q4 explanation says so.
+- Source, read in full on PMC: Wilkinson M, Obst S, Palmer T, Whish-Wilson G. Misdiagnosis of superior sulcus tumours: a scoping review. J Thorac Dis. 2026. https://pmc.ncbi.nlm.nih.gov/articles/PMC12972777/
+- Facts used from that review:
+  - Shoulder pain 60%, arm pain 26%, weight loss 20%, Horner syndrome 18%. T1 neuropathy was the commonest neuropathy.
+  - Radiographic error was the commonest cause of delay. One study had 78 lesions missed and 20 misdiagnosed on 166 radiographs from 50 patients.
+  - Shoulder pain with Horner syndrome, a smoking history or weight loss should prompt apical imaging.
+  - The pain of these tumours is not mechanical.
+  - Passive range and crepitus help identify glenohumeral arthritis. Spurling and traction tests help identify cervical radiculopathy.
+  - MRI is preferred, with a sensitivity of about 90%, and CT is preferred over X-ray for staging.
+
+### Batch after revision 2
+
+- 5 SAMPs, 20 questions: 18 single, 2 menu (49 q2, 51 q3).
+- Single key positions 1 to 5: 3, 4, 4, 4, 3, so no position holds more than 25%. The key is the single longest option in 5 of 18 (28%).
+
+| Key feature | Questions |
+|---|---|
+| KF1 | 2 (49 q4, 50 q2) |
+| KF2 | 4 (48 q4, 49 q3, 50 q4, 52 q4) |
+| KF3 | 6 (48 q1, 49 q1, 50 q1, 51 q1, 51 q2, 51 q3) |
+| KF4 | 5 (48 q2, 49 q2, 51 q4, 52 q1, 52 q2) |
+| KF5 | 3 (48 q3, 50 q3, 52 q3) |
+
+- Highest stem trigram Jaccard against the bank: 0.10.
+- Tests: `SAMP_BATCH=s85 npx vitest run tests/samps.test.ts tests/samp-quality.test.ts tests/citations.test.ts --testTimeout=120000` passed 128 of 128. tsc reports no errors for samps/s85.
+
+### Uncertain
+
+1. chest-pain-52 is a subacute presentation to the ED. The key decision is to image the apex now, but some EDs would arrange urgent outpatient CT instead. The options do not set CT now against urgent outpatient CT.
+2. The scoping review is the only source for chest-pain-52. It is recent and was read in full, but it is a review, not a guideline.
+3. The Horner syndrome mechanism in 52 q2 (invasion of the sympathetic chain) is standard teaching and is not quoted from the review.
