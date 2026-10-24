@@ -1,6 +1,6 @@
 # Sign-off queue for Arjan
 
-Status: signed off by Arjan Dhoot on 26 September 2026, including the three key changes below. Every item now carries `reviewed: true`.
+Status: the first 2,000 items were signed off by Arjan Dhoot on 26 September 2026, including the three key changes below. They carry `reviewed: true`. Batches s29 to s38 (500 items, October 2026) are drafts. See the last section.
 
 This file gathers what the 48 adversarial reviews left for Arjan. The full reports are in `docs/reviews/`.
 
@@ -409,3 +409,103 @@ Arjan approves both.
 
 - rn-s28-11 cites PADIS, an ICU guideline, for a medical unit client. It supports clustering care and noise and light reduction, but a ward-level source may be preferable.
 - rn-s28-10: the why for the denial option says the recall expectation has "no basis". The stem says only that the client lost the job. Left as is because it reads as a reasonable inference, but Arjan may prefer "laid off permanently" in the stem.
+
+## Batches s29 to s38: 500 new items, not yet signed off
+
+Added in October 2026 on branch `content/nclex-bank-500`, then merged into `claude/nclex` for the next release. Every item carries `reviewed: false`, so the app shows each one with the Draft tag until it is signed off.
+
+### What was done
+
+- Ten writers each wrote one batch of 50 to `docs/WRITER_BRIEF.md` and `docs/ITEM_SPEC.md`. Each batch has its own focus list in `docs/topic-plan.json`, chosen to avoid the existing bank.
+- Every writer grepped an inventory of the 2,000 existing items before each chunk. Where a topic was already taught, the new item tests a different point.
+- All automated gates pass for every batch: format, type mix, Client Needs split, key position, length bias, absolutes, contradictions, citation shape, units and calculations.
+- The whole bank passes the near duplicate gate (word trigram Jaccard 0.5) across all 2,500 stems. No new topic label repeats any label in the bank.
+- The launch gate passes with the full 2,500 item bank.
+
+### What was not done
+
+- The adversarial reviews started for all ten batches. All ten stopped early when the account reached its weekly usage limit. Only the s33 review saved partial fixes, to its citations and to two items (the DBT interpersonal skill item and the methamphetamine psychosis lighting option).
+- No review report exists for s29 to s38. The writer reports are in `docs/reviews/s29-writer.md` to `docs/reviews/s38-writer.md`.
+- No Canada note pass has run. Every `canada` field is empty except rn-s34-48 (salbutamol).
+- The shared web search allowance ran out partway through writing. Later sources were checked by fetching publisher, label, PubMed, Crossref and agency pages directly. Each writer report lists which sources were read in full and which were not.
+
+Before these items lose the Draft tag, run the adversarial review in `docs/REVIEW_BRIEF.md` on each batch, then the Canada note pass, then sign off.
+
+### Writer flags by batch
+
+These are the points each writer asked the reviewer to check. They are not yet resolved.
+
+#### s29 (Management of Care, new settings)
+
+- rn-s29-12: the CIWA-Ar severity cutoff in refs matches other bank items but was not rechecked against ASAM.
+- rn-s29-10: the RN is keyed for jail health request triage. Some jails let an LPN triage under protocol.
+- rn-s29-05 and rn-s29-14 depend on local rules. The stems state the policy each key relies on.
+- rn-s29-25, 27, 28 and 29: organ procurement referral rules for a hospital hospice unit, a freestanding hospice and a critical access hospital. Check against the CMS rules each cites.
+- Three sources in `common.ts` are declared but unused.
+
+#### s30 (Management of Care, legal and professional, and 10 SIPC)
+
+- rn-s30-04: the order of questions in the NCSBN scope of practice framework is from memory.
+- rn-s30-25 and 26: laser eyewear matched to wavelength. The ANSI Z136.3 eyewear section was not read.
+- rn-s30-11, 22 and 23: the AAP 2013 and ASHP 2018 shortage guidance was seen only as PubMed records.
+- rn-s30-50 overlaps rn-s08-14 on who marks the site. The new points are the bedside setting and the time-out timing.
+- rn-s30-49 keys a correctly sized BP cuff as a safety preparation. It may read as an accuracy point.
+- Licensure, genetic privacy and reportable disease items (01, 03, 07, 09, 20, 43, 45) will likely need Canada notes.
+
+#### s31 (Safety and Infection Prevention and Control)
+
+- Cited from knowledge, not read: Lewinsohn 2017, ISPD 2023 exit site definitions, AAMI ST79, the CDC hydromorphone conversion factor, NATA 2015, ACSM 2021, WMS 2020, the Humpty Dumpty scale, NFPA 99 and 101.
+- Weakest keys: rn-s31-40 (extension cord with home hemodialysis), rn-s31-42 (crib checks), rn-s31-24 (2 cm exit site redness), rn-s31-37 and 38 (oxygen cylinder handling).
+- rn-s31-46 sits near rn-s38-33, and rn-s31-48 near rn-s25-42 (heat stroke cooling).
+
+#### s32 (Health Promotion and Maintenance, and 5 SIPC)
+
+- rn-s32-25 and 26 avoid HPV dose counts on purpose, because the CDC schedule change of January 2026 is contested.
+- rn-s32-12, 13 and 45 use USPSTF 2018 for prostate and cervical screening. Check for newer final recommendations.
+- rn-s32-16 and 17 (older drivers): the AGS guide could not be opened.
+- rn-s32-29 rests on a 2001 AAP lawn mower statement. rn-s32-49 (dog bites) cites only a textbook.
+- rn-s32-24 writes lead values in words because the unit gate has no lead factor.
+
+#### s33 (Psychosocial Integrity, and 5 BCC)
+
+- rn-s33-23 (kratom bowtie) shares withdrawal cues with rn-s11-31.
+- rn-s33-45 (Sikh care after death) shares the articles of faith point with rn-s12-38.
+- rn-s33-44 (Hindu death rites) rests on the Queensland Health handbook, read through a reprint.
+- rn-s33-31, 17, 18, 03 and 04: sources whose exact passage was not seen.
+- rn-s33-20: the last taper step is exactly the 25 percent ceiling.
+
+#### s34 (Basic Care and Comfort, and 10 PPT technique)
+
+- Textbook only: rn-s34-18, 02, 03, 20, 33 and 46.
+- rn-s34-34: the AASM 2025 restless legs guideline volume and pages are from memory.
+- rn-s34-44 keys a wrapped cold pack for paraphimosis. Local practice may want the provider to direct this.
+- rn-s34-09 and 14 carry the writer's own reasoning (scanner setting after hysterectomy, a 45 cm bag height).
+- Several sources are hospital patient leaflets rather than guidelines.
+
+#### s35 (Pharmacological and Parenteral Therapies, drug classes)
+
+- rn-s35-37: amphotericin B. The conventional form must not exceed 1.5 mg/kg. Check the key is unambiguous.
+- rn-s35-39 follows CDC guidance for oseltamivir after 48 hours in a hospitalized client, beyond the label.
+- rn-s35-44 uses the current Yescarta label (2 weeks near the treatment center, 2 weeks without driving).
+- rn-s35-25: QTc 500 ms with methadone comes from an expert panel, not the label.
+- rn-s35-24, 28 and 49 rest partly on general knowledge.
+
+#### s36 (Parenteral therapy and Reduction of Risk Potential)
+
+- Citation real but passage not read: rn-s36-01, 05, 13, 19, 22, 23, 24, 28, 31, 36 and 44.
+- rn-s36-47 (lactate trend) is close in theme to the s37 repeat lactate item.
+- Several DailyMed labels are relabeler versions.
+
+#### s37 (Reduction of Risk Potential, and 20 PA)
+
+- rn-s37-02 (repeat lactate in 2 to 4 hours), 07 (peripheral vasopressors), 16 (passive leg raise) and 33 (dehiscence timing) need a source check.
+- rn-s37-15: the capnography shark fin source (Kodali 2013) is paywalled.
+- rn-s37-35: exertional heat stroke is linked to the malignant hyperthermia gene, not proven to raise risk.
+- Not rechecked: ACCP 2012 (Gould), van Diepen 2017, the ABLS manual.
+
+#### s38 (Physiological Adaptation)
+
+- rn-s38-02 (pyridostigmine held on the ventilator) may sit too close to rn-s16-34.
+- rn-s38-26 and 27 cite the 2015 ESC pericardial guideline. A 2025 update exists.
+- rn-s38-03, 08, 16 and 19 rest on standard teaching rather than the cited guideline.
+- rn-s38-36, 39 and 42: check wording and keys against Lavonas, Kwiatt and the HELLP sources.
