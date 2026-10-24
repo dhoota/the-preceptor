@@ -213,7 +213,7 @@ export const ANALGESIA_SEDATION_S81: Samp[] = [
         id: "q3",
         kind: "single",
         update: "She is receiving scheduled acetaminophen and small doses of an IV opioid. The orthopedic resident offers an interscalene brachial plexus block for her shoulder pain.",
-        prompt: "Using the American College of Surgeons trauma pain guideline, which of the following statements about an interscalene block for her is most accurate?",
+        prompt: "Using the American College of Surgeons trauma pain guideline, which of the following statements about an interscalene block for her today is most accurate?",
         options: ["Acceptable 24 hours after her last apixaban dose", "Acceptable 72 hours after her last apixaban dose", "Acceptable now, as it spares her breathing", "Acceptable now if her INR is 1.5 or less", "Acceptable now under ultrasound guidance"],
         correct: 1,
         explanation:
