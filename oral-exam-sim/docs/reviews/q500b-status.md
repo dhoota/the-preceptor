@@ -4,8 +4,8 @@ Branch `content/q500b`. Nothing in this round is signed off. Every item is `revi
 
 ## Written so far
 
-- 17 SAMP batches, `s72` to `s88`, 5 SAMPs each: 85 SAMPs, 348 questions. All pass their batch tests except `s73` (mid-revision).
-- Oral cases: `batch16` (4), `batch17` (4), `batch18` (4), `batch19` (1 of 4). `batch20` has one unregistered draft and fails its batch test.
+- 17 SAMP batches, `s72` to `s88`, 5 SAMPs each: 85 SAMPs. All pass their batch tests.
+- Oral cases: `batch16`, `batch17` and `batch18`, 4 cases each: 12 cases. The unfinished `batch19` and `batch20` drafts are parked in `docs/drafts/q500b-parked/`, outside the live bank.
 
 ## Review state by batch
 
@@ -17,7 +17,7 @@ Branch `content/q500b`. Nothing in this round is signed off. Every item is `revi
 | s75 headache | FAIL 10 (after a replacement) | Rev 2, Rev 3 done | Rev 2 FAIL 5, Rev 3 PASS | ready for sign-off |
 | s76 eye | FAIL 15 | Rev 1 to 5 done | FAIL 5, 1, 1, 1, Rev 5 PASS | ready for sign-off |
 | s77 delirium-agitation | FAIL 10 | Rev 1, Rev 2 done | Rev 1 FAIL 1, Rev 2 PASS | ready for sign-off |
-| s78 multiple-patients | FAIL 5 | not started | | revise |
+| s78 multiple-patients | FAIL 5 | Rev 1 to 5 done | FAIL on each of Rev 1 to 4, Rev 5 under review | fresh review (verify5) |
 | s79 sob | FAIL 6 | Rev 1, Rev 2 done | Rev 1 FAIL 4, Rev 2 PASS | ready for sign-off |
 | s80 airway | FAIL 15 | Rev 1 to 4 done | FAIL 2, 1, 1, Rev 4 PASS | ready for sign-off |
 | s81 analgesia-sedation | cut off, then FAIL 8 | Rev 2 to 4 done | FAIL 3, FAIL 1, Rev 4 PASS | ready for sign-off |
@@ -49,15 +49,17 @@ When two new items shared a scenario, one kept it and the other was replaced:
 
 ## Bank-wide near-duplicate check (TF-IDF)
 
-The tool (`zz-dedupe`, run from the coordinator scratchpad) compares every new stem, question and case against the whole bank, and stems across SAMPs and oral cases. 16 new questions score 0.5 or above. Most are already failed by their reviews. Not yet covered by a review:
+The tool (`zz-dedupe`, run from the coordinator scratchpad) compares every new stem, question and case against the whole bank, and stems across SAMPs and oral cases. Rerun on the final content (after s78 revision 5): no new stem or case scores 0.5 or above, and 7 new questions do:
 
-- lacerations-39 q3 vs infectious-diseases-39 q4 (0.83): coordinator checked, shared tetanus option vocabulary only, different case and key
-- headache-49 q3 vs abdominal-pain-29 q3 (0.62)
-- airway-48 q2 vs multiple-trauma-36 q1 (0.52)
-- cva-48 q4 vs delirium-agitation-10 q2 (0.50)
-- eye-40 q3 vs eye-39 q3, both new (0.53)
+- lacerations-39 q3 vs infectious-diseases-39 q4 (0.83)
+- dvt-pe-52 q1 vs dvt-pe-31 q1 (0.74)
+- dvt-pe-48 q3 vs dvt-pe-28 q1 (0.72)
+- dvt-pe-49 q4 vs dvt-pe-40 q3 (0.62)
+- loc-51 q3 vs loc-45 q3 (0.57)
+- eye-39 q3 vs eye-22 q2 (0.55)
+- pre-eclampsia-39 q2 vs pre-eclampsia-02 q1 (0.52)
 
-The check must be rerun after all revisions, before sign-off.
+Coordinator ruling: none is a duplicate. Each pair shares the vocabulary of a standard score or option set (tetanus, Wells, GCS, visual acuity, BP thresholds) but has a different patient, decision and key, and the fresh reviews accepted them.
 
 ## Open physician questions
 
