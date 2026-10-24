@@ -398,7 +398,7 @@
    "name": "Headache",
    "count": 5,
    "tier": "Q500B",
-   "firstId": 47
+   "firstId": 48
   },
   "s76": {
    "topic": "eye",
@@ -475,7 +475,7 @@
    "name": "Cerebrovascular accident (CVA)",
    "count": 5,
    "tier": "Q500B",
-   "firstId": 16
+   "firstId": 48
   },
   "s87": {
    "topic": "loc",

@@ -1,4 +1,4 @@
-// Expansion batch s75: Headache. 5 new SAMPs, ids headache-47 onward.
+// Expansion batch s75: Headache. 5 new SAMPs, ids headache-48 onward.
 import type { Samp } from "@/engine/samp";
 import { HEADACHE_S75 } from "./headache";
 

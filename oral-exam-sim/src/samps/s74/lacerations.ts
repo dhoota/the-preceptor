@@ -36,7 +36,7 @@ export const LACERATIONS_S74: Samp[] = [
         id: "q1",
         kind: "single",
         prompt: "Which of the following details of this injury is most important to clarify before the lip is repaired?",
-        options: ["Location of the missing tooth piece", "Speed of the skateboard at impact", "Time of his last meal", "Type of helmet he wore", "Whether friends saw the fall"],
+        options: ["Location of the missing tooth", "Speed of the skateboard at impact", "Time of his last meal", "Type of helmet he wore", "Whether friends saw the fall"],
         correct: 0,
         explanation:
           "A piece of tooth is missing beside a lip wound that goes right through, so the piece may be buried in the lip. Dental trauma guidance says a missing fragment must be accounted for, and a fragment closed inside the lip can lead to infection and poor healing. The speed of the fall and the type of helmet do not change how this lip is explored or closed. The time of his last meal matters only if procedural sedation is planned, which a calm 16-year-old with a 2 cm lip wound does not need. Witnesses add little, because he did not lose consciousness.",
@@ -60,7 +60,7 @@ export const LACERATIONS_S74: Samp[] = [
         kind: "single",
         update: "The film shows a 3 mm fragment in the lower lip. You remove it through the wound and irrigate.",
         prompt: "Which of the following is the most appropriate tetanus prophylaxis for him at this visit?",
-        options: ["Td vaccine IM now", "Tdap and immune globulin", "Tdap vaccine IM now", "Tetanus immune globulin", "No tetanus vaccine needed"],
+        options: ["Td vaccine IM now", "Tdap and immune globulin", "Tdap vaccine IM now", "Tetanus immune globulin", "No tetanus prophylaxis"],
         correct: 4,
         explanation:
           "He has had at least 3 doses of tetanus vaccine, and his last booster was the Tdap at age 14, 2 years ago. The Canadian Immunization Guide gives no vaccine and no immune globulin when the last booster was less than 5 years ago, even for a wound that is not clean and minor, such as one made on a road. A Td or Tdap booster would be due only if 5 years or more had passed since his last dose for a wound of this kind. Tetanus immune globulin, alone or with vaccine, is for people with fewer than 3 doses or an unknown history, and he has a complete record.",
@@ -181,10 +181,10 @@ export const LACERATIONS_S74: Samp[] = [
         id: "q3",
         kind: "single",
         prompt: "Which of the following is the most appropriate investigation before her scalp wounds are closed?",
-        options: ["CT head with bone windows", "MRI of the brain", "Observation for 6 hours", "Skull radiograph series", "Ultrasound of the scalp"],
+        options: ["CT of the head", "MRI of the brain", "Observation for 6 hours", "Skull radiograph series", "Ultrasound of the scalp"],
         correct: 0,
         explanation:
-          "A series of children with intracranial injuries from dog bites recommends head CT for every child bitten on the head, because the wounds understate the injury. CT with bone windows shows a depressed or penetrating fracture, air or bone fragments inside the skull and any bleeding in the brain. A skull radiograph series can show some fractures but cannot show the brain. Ultrasound of the scalp may show a break in the bone but not the brain beneath it. MRI is slow, usually needs sedation at this age and shows bone poorly. Observation alone delays the diagnosis of an open skull fracture.",
+          "A series of children with intracranial injuries from dog bites recommends head CT for every child bitten on the head, because the wounds understate the injury. CT, read on bone and brain windows, shows a depressed or penetrating fracture, air or bone fragments inside the skull and any bleeding in the brain. A skull radiograph series can show some fractures but cannot show the brain. Ultrasound of the scalp may show a break in the bone but not the brain beneath it. MRI is slow, usually needs sedation at this age and shows bone poorly. Observation alone delays the diagnosis of an open skull fracture.",
         keyFeature: { topic: TOPIC, n: 3 },
         source: "steen-dog-bite-cranial",
       },

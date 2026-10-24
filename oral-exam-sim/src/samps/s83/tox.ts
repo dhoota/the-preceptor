@@ -10,6 +10,8 @@ const S = {
   wojtowicz: { id: "wojtowicz-ghb", citation: "Wojtowicz JM, Yarema MC, Wax PM. Withdrawal from gamma-hydroxybutyrate, 1,4-butanediol and gamma-butyrolactone: a case report and systematic review. CJEM. 2008.", url: "https://www.cambridge.org/core/journals/canadian-journal-of-emergency-medicine/article/withdrawal-from-gammahydroxybutyrate-14butanediol-and-gammabutyrolactone-a-case-report-and-systematic-review/482581883919EDECE5E2C8207CD1776C" },
   cpsNows: { id: "cps-nows-2025", citation: "Narvey M, Hamilton D, Paquette V. Canadian Paediatric Society, Fetus and Newborn Committee. Managing newborns at risk for neonatal abstinence syndrome and neonatal opioid withdrawal syndrome: updates and emerging best practices. Paediatr Child Health. 2025.", url: "https://cps.ca/en/documents/position/nas-nows" },
   apap: { id: "apap-consensus", citation: "Dart RC, Mullins ME, Matoushek T, et al. Management of acetaminophen poisoning in the US and Canada: a consensus statement. JAMA Netw Open. 2023.", url: "https://pubmed.ncbi.nlm.nih.gov/37552484/" },
+  ccb: { id: "ccb-consensus", citation: "St-Onge M, Anseeuw K, Cantrell FL, et al. Experts consensus recommendations for the management of calcium channel blocker poisoning in adults. Crit Care Med. 2017.", url: "https://pmc.ncbi.nlm.nih.gov/articles/PMC5312725/" },
+  glatstein: { id: "glatstein-octreotide", citation: "Glatstein M, Scolnik D, Bentur Y. Octreotide for the treatment of sulfonylurea poisoning. Clin Toxicol. 2012.", url: "https://pubmed.ncbi.nlm.nih.gov/23046209/" },
 } satisfies Record<string, Source>;
 
 export const TOX_S83: Samp[] = [
@@ -218,6 +220,69 @@ export const TOX_S83: Samp[] = [
       },
     ],
     sources: [S.apap],
+    ...META,
+  },
+
+  /* 51 Blood pressure pills and a falling glucose -------------------------- */
+  {
+    id: "tox-51",
+    topic: "tox",
+    alsoTopics: ["shock"],
+    title: "Older woman sweating after an argument",
+    stem:
+      "A 67-year-old woman is brought to the emergency department by her husband 90 minutes after she told him she had swallowed her blood pressure pills during an argument. He brings an empty bottle of amlodipine 10 mg that was dispensed 10 days ago with 30 tablets. She has hypertension and knee osteoarthritis and takes amlodipine and acetaminophen. She ate breakfast 3 hours ago. She is drowsy, sweaty and slow to answer but follows commands. Her capillary glucose is 2.2 mmol/L. ALT is 22 U/L and INR is 1.0. Her chest is clear and her abdomen is soft.",
+    vitals: { temperature: "36.6°C oral", pulse: "108/minute", resp: "18/minute", bp: "102/58 mmHg", o2sat: "97% on room air", weight: "70 kg" },
+    questions: [
+      {
+        id: "q1",
+        kind: "single",
+        update: "She becomes alert after dextrose 50% 50 mL IV. One hour later, on a dextrose 10% infusion, she is sweaty again with a glucose of 2.6 mmol/L.",
+        prompt: "Which of the following best explains her recurrent hypoglycemia?",
+        options: ["Adrenal insufficiency", "Amlodipine toxicity", "Early liver failure", "Prolonged fasting", "Sulfonylurea co-ingestion"],
+        correct: 4,
+        explanation:
+          "A glucose of 2.2 mmol/L that falls again to 2.6 mmol/L on a dextrose 10% infusion points to ongoing insulin release, and sulfonylurea poisoning causes sustained hypoglycemia that is refractory to IV dextrose. Amlodipine lowers her blood pressure but does not drive insulin release, so this unexpected result means a second drug until proven otherwise. She ate 3 hours ago, so fasting does not explain it. A normal ALT and INR argue against liver failure. Nothing in her history suggests adrenal insufficiency, and it would not explain a glucose that falls again within an hour on an infusion.",
+        keyFeature: { topic: "tox", n: 3 },
+        source: "glatstein-octreotide",
+      },
+      {
+        id: "q2",
+        kind: "single",
+        update: "She says she took only her own tablets.",
+        prompt: "Which of the following is most likely to identify the cause of her low glucose?",
+        options: ["Check all medicines in the home", "Her pharmacy dispensing profile", "Repeat history from her", "Serum C peptide level", "Urine drug screen"],
+        correct: 0,
+        explanation:
+          "A drug that lowers glucose may belong to someone else in the home, so asking her husband to check every bottle and blister pack, including his own, is the quickest way to find it. Her own pharmacy profile lists only her prescriptions. She has already given her account, and a patient who has just overdosed in distress may not give a full one. A C peptide level shows that her own insulin is being released but does not name the drug, and it takes days to report. A standard urine drug screen does not detect the drugs that cause this.",
+        keyFeature: { topic: "tox", n: 1 },
+        source: "glatstein-octreotide",
+      },
+      {
+        id: "q3",
+        kind: "single",
+        update: "Her husband finds that 20 of his gliclazide MR 30 mg tablets are missing. Her glucose has fallen below 3 mmol/L three times despite the dextrose infusion.",
+        prompt: "Which of the following is the most appropriate treatment to prevent further hypoglycemia?",
+        options: ["Dextrose 50% 50 mL IV hourly", "Diazoxide 300 mg PO", "Glucagon 1 mg IM", "Hydrocortisone 100 mg IV", "Octreotide 50 mcg SC"],
+        correct: 4,
+        explanation:
+          "Octreotide blocks insulin release from the pancreas, and in sulfonylurea poisoning it raises glucose, reduces the dextrose needed and prevents recurrent hypoglycemia better than dextrose alone or diazoxide. The suggested adult regimen is 50 mcg SC or IV, then 50 mcg every 6 hours, while the dextrose infusion is tapered. Hourly dextrose boluses treat each low but do not stop the insulin release, so the lows keep coming. Glucagon raises glucose only briefly. Hydrocortisone treats adrenal insufficiency, which she does not have.",
+        keyFeature: { topic: "tox", n: 2 },
+        source: "glatstein-octreotide",
+      },
+      {
+        id: "q4",
+        kind: "single",
+        update: "Four hours after arrival her BP is 78/40 mmHg and her pulse 112/minute despite 2 L of crystalloid and calcium gluconate 3 g IV. Bedside echocardiography shows a small, vigorously contracting left ventricle.",
+        prompt: "Which of the following is the most appropriate next treatment for her hypotension?",
+        options: ["Dopamine infusion", "Glucagon infusion", "Methylene blue infusion", "Norepinephrine infusion", "Vasopressin infusion"],
+        correct: 3,
+        explanation:
+          "Amlodipine relaxes the arterioles, and her fast pulse with a small, vigorous ventricle shows vasodilatory shock rather than a failing heart. The calcium channel blocker consensus lists IV calcium, high dose insulin when the heart is failing and norepinephrine or epinephrine as first line, and prefers norepinephrine for vasodilatory shock. It suggests against dopamine in shock because its effect was inconsistent. It does not recommend glucagon or methylene blue. No recommendation could be made for vasopressin as an added drug, and it is not a first-line choice.",
+        keyFeature: { topic: "tox", n: 4 },
+        source: "ccb-consensus",
+      },
+    ],
+    sources: [S.glatstein, S.ccb],
     ...META,
   },
 ];

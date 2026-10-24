@@ -325,4 +325,64 @@ export const ANALGESIA_SEDATION_S81: Samp[] = [
     sources: [S.wakai, S.sogc, S.tqip],
     ...META,
   },
+
+  /* 52 Ankle fracture-dislocation in a patient on a weekly injection ------- */
+  {
+    id: "analgesia-sedation-52",
+    topic: "analgesia-sedation",
+    title: "Missed step on the way to the car",
+    stem:
+      "A 54-year-old woman presents to the emergency department 1 hour after she missed a step and twisted her left ankle. The ankle is grossly deformed, and the skin over the medial malleolus is tented and blanched. The foot is warm with a palpable dorsalis pedis pulse. X-ray shows a bimalleolar fracture with lateral dislocation of the talus. She has type 2 diabetes and obesity treated with metformin and weekly subcutaneous semaglutide, which was increased from 0.5 mg to 1 mg 10 days ago. She has had nausea and bloating since the increase. She also takes ramipril for hypertension. She last ate 7 hours ago. Her airway examination shows a Mallampati class II view and full neck movement. She rates her pain 9 out of 10.",
+    vitals: { temperature: "36.7°C oral", pulse: "98/minute", resp: "18/minute", bp: "148/88 mmHg", o2sat: "97% on room air", weight: "100 kg" },
+    questions: [
+      {
+        id: "q1",
+        kind: "single",
+        prompt: "Which of the following features most increases her risk of aspiration during procedural sedation?",
+        options: ["Her age of 54 years", "Last meal 7 hours ago", "Mallampati class II airway view", "Ramipril for hypertension", "Recent semaglutide dose increase"],
+        correct: 4,
+        explanation:
+          "Semaglutide slows gastric emptying, and the multi-society guidance names the dose escalation phase, a higher dose, a weekly formulation and gastrointestinal symptoms such as nausea as markers of higher risk of retained gastric contents. She has each of these: a weekly drug, a recent rise to a higher dose, and nausea with bloating since. So her stomach may hold food despite a 7-hour fast, which on its own would be reassuring. A Mallampati class II view predicts an easy airway, not aspiration. Ramipril and her age do not slow gastric emptying.",
+        keyFeature: { topic: "analgesia-sedation", n: 5 },
+        source: "kindel-glp1-perioperative",
+      },
+      {
+        id: "q2",
+        kind: "single",
+        prompt: "Which of the following is the most useful bedside test of her aspiration risk before any sedation?",
+        options: ["Abdominal radiograph", "Capillary blood glucose", "Nasogastric tube aspirate", "Point-of-care gastric ultrasound", "Upright chest radiograph"],
+        correct: 3,
+        explanation:
+          "The multi-society guidance says point-of-care gastric ultrasound could be used to assess aspiration risk when there is concern about retained gastric contents on the day of a procedure. It shows whether the antrum holds fluid or solid food and roughly how much. It can be done at the bedside in minutes by a trained operator. An abdominal or chest radiograph cannot reliably show gastric contents. Passing a nasogastric tube is uncomfortable, may provoke the vomiting it is meant to prevent and cannot retrieve solid food. A glucose level is worth checking in a patient with diabetes but says nothing about what is in her stomach.",
+        keyFeature: { topic: "analgesia-sedation", n: 5 },
+        source: "kindel-glp1-perioperative",
+      },
+      {
+        id: "q3",
+        kind: "single",
+        update: "Ultrasound shows a distended gastric antrum filled with solid food. The skin over the medial malleolus is still blanched.",
+        prompt: "Which of the following is the most appropriate approach to reducing her ankle now?",
+        options: ["Etomidate sedation and reduction", "Ketamine sedation and reduction", "Lidocaine block into the ankle joint", "Propofol sedation and reduction", "Wait 8 hours, then sedate"],
+        correct: 2,
+        explanation:
+          "Solid food in the stomach makes sedation risky, and the tented, blanched skin needs reduction now to protect the soft tissues. In a randomized trial of ankle fracture-dislocations, an intra-articular lidocaine block relieved pain as well as conscious sedation, allowed acceptable reductions and took less time on average. The authors studied it as a lower-risk alternative to sedation, which is what she needs. Etomidate, propofol and ketamine all blunt protective reflexes to some degree and carry a real risk of vomiting or aspiration with a full stomach. Waiting 8 hours risks skin necrosis over the malleolus and may not empty a stomach slowed by semaglutide.",
+        keyFeature: { topic: "analgesia-sedation", n: 5 },
+        source: "white-ankle-intra-articular",
+      },
+      {
+        id: "q4",
+        kind: "single",
+        update: "During the first manipulation she rates her pain 6 out of 10 and asks for more medication. She is alert and her O2 sat is 97%.",
+        prompt: "Which of the following is the most appropriate addition for her pain during the reduction?",
+        options: ["fentanyl 50 mcg IV", "fentanyl 250 mcg IV", "ketamine 100 mg IV", "lorazepam 2 mg IV", "midazolam 2 mg IV"],
+        correct: 0,
+        explanation:
+          "She is alert with residual pain, so a small dose of a short-acting opioid tops up the block without deep sedation. The American College of Surgeons trauma pain guideline lists IV fentanyl at 25 to 50 mcg every 30 to 60 minutes. A 250 mcg bolus risks apnea and loss of airway reflexes in a patient with food in her stomach. Ketamine 100 mg is 1 mg/kg at her actual weight, a dissociative dose rather than the guideline's analgesic bolus of 0.3 mg/kg, which should be based on ideal body weight in obesity. Midazolam and lorazepam add sedation and aspiration risk but no analgesia.",
+        keyFeature: { topic: "analgesia-sedation", n: 3 },
+        source: "acs-tqip-acute-pain-2020",
+      },
+    ],
+    sources: [S.kindel, S.white, S.tqip],
+    ...META,
+  },
 ];

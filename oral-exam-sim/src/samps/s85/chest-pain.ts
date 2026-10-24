@@ -116,7 +116,7 @@ export const CHEST_PAIN_S85: Samp[] = [
         kind: "single",
         update: "She is admitted for investigation of the cause. Her creatinine is 64 umol/L and she has no history of peptic ulcer or bleeding.",
         prompt: "Which of the following is the most appropriate first-line anti-inflammatory treatment for her pericarditis while the cause is sought?",
-        options: ["Colchicine alone", "Ibuprofen alone", "Ibuprofen and colchicine", "Prednisone and colchicine", "Prednisone alone"],
+        options: ["Colchicine alone", "Ibuprofen alone", "Ibuprofen and colchicine", "Prednisone alone", "Prednisone and colchicine"],
         correct: 2,
         explanation:
           "The 2025 ESC guideline treats acute pericarditis first with aspirin or an NSAID at full anti-inflammatory doses, usually every 8 hours, plus colchicine to reduce recurrence. Her kidney function is normal and she has no ulcer history, so ibuprofen is safe to use. An NSAID alone leaves her at higher risk of recurrence, and colchicine alone is not enough to control the inflammation. Corticosteroids are for patients who cannot take aspirin or NSAIDs, at low to moderate doses with colchicine. Used early, they favour recurrence and a chronic course, and they are a poor choice before tuberculosis has been excluded.",

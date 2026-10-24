@@ -337,7 +337,7 @@ export const EYE_S76: Samp[] = [
     topic: "eye",
     title: "Older woman who fell against the counter",
     stem:
-      "An 81-year-old woman is brought to the emergency department by ambulance 1 hour after she tripped at home and struck her left eye on the corner of a kitchen counter. She did not lose consciousness. The left eye is painful and she says she cannot see well with it. She had cataract surgery through a large incision in both eyes 25 years ago. She has hypertension treated with amlodipine and takes no anticoagulant or antiplatelet drug. The left lids are swollen and bruised. A bulging, bright red hemorrhage covers the whole white of the left eye in a full ring around the cornea. The right eye is normal. The triage note reads subconjunctival hemorrhage after a fall.",
+      "An 81-year-old woman is brought to the emergency department by ambulance 1 hour after she tripped at home and struck her left eye on the corner of a kitchen counter. She did not lose consciousness. The left eye is painful and she says she cannot see well with it. She had cataract surgery through a large incision in both eyes 25 years ago. She has hypertension treated with amlodipine and takes no anticoagulant or antiplatelet drug. The left lids are swollen and bruised. A bulging, bright red hemorrhage covers the whole white of the left eye in a full ring around the cornea. There is no proptosis. The right eye is normal. The triage note reads subconjunctival hemorrhage after a fall.",
     vitals: { temperature: "36.6°C oral", pulse: "88/minute", resp: "16/minute", bp: "168/90 mmHg", o2sat: "97% on room air" },
     questions: [
       {
@@ -417,6 +417,91 @@ export const EYE_S76: Samp[] = [
       },
     ],
     sources: [S.zhou],
+    ...META,
+  },
+  /* 43 White powder after a collision --------------------------------------------- */
+  {
+    id: "eye-43",
+    topic: "eye",
+    title: "Burning eyes after a collision",
+    stem:
+      "You are working in a rural hospital emergency department. The nearest ophthalmologist is 2 hours away by road. A 63-year-old woman is brought in by ambulance 30 minutes after a frontal collision in which her airbag deployed. She was wearing a seatbelt. Her primary survey is normal, and she has a seatbelt bruise across the chest. She now reports burning pain in both eyes and blurred vision in the right eye. Her face and eyelashes are coated with a fine white powder. She has hypothyroidism treated with levothyroxine and has no other conditions. There is mild swelling of the right lids and a subconjunctival hemorrhage on the temporal side of the right eye. Both conjunctivae are red and watering.",
+    vitals: { temperature: "36.7°C oral", pulse: "92/minute", resp: "18/minute", bp: "138/84 mmHg", o2sat: "98% on room air" },
+    questions: [
+      {
+        id: "q1",
+        kind: "single",
+        prompt: "Which of the following is the most appropriate first step in the care of her eyes?",
+        options: [
+          "Acuity in each eye",
+          "CT of the face and orbits",
+          "Erythromycin ointment to both eyes",
+          "Fluorescein staining of both eyes",
+          "Irrigation of both eyes with saline",
+        ],
+        correct: 4,
+        explanation:
+          "Inflating an airbag leaves a fine powder that contains sodium hydroxide, an alkali that can cause a severe chemical burn of the eye. Burning pain and powder on the lashes mean immediate irrigation, for at least 15 minutes and with at least 1 litre, until the pH is normal. In one reported case a 6 to 7 hour delay while other injuries were managed led to limbal ischemia and lasting scarring. A chemical exposure is the exception to measuring acuity first, which follows once irrigation is under way. Fluorescein, ointment and CT all come after irrigation.",
+        keyFeature: { topic: "eye", n: 3 },
+        source: "barnes-airbag-alkali",
+      },
+      {
+        id: "q2",
+        kind: "single",
+        update:
+          "After 2 litres of saline to each eye the pH is 7.4 in both. Acuity is 20/60 on the right and 20/25 on the left. Fluorescein shows fine punctate staining on both corneas. Pupils are equal and reactive with no relative afferent defect. A penlight shows no blood in the right anterior chamber.",
+        prompt: "Which of the following is the most important next step in the examination of her right eye?",
+        options: [
+          "Confrontation visual fields",
+          "Dilated fundus examination",
+          "Slit lamp examination",
+          "Tonometry of the right eye",
+          "Ultrasound of the right globe",
+        ],
+        correct: 2,
+        explanation:
+          "A blow strong enough to cause a subconjunctival hemorrhage, with acuity of 20/60 on that side against 20/25 with the same punctate staining on the other, needs a slit lamp search for a hyphema. A microhyphema is red cells suspended in the aqueous that only a close examination shows, so a clear penlight view does not exclude it. In a review of airbag eye injuries, 43% of occupants had a hyphema. Pressure is measured once the chamber has been examined and an open globe excluded. The fundus is examined after the front of the eye, and ultrasound is kept for a posterior view that cannot be seen directly. Fields add little with normal pupils.",
+        keyFeature: { topic: "eye", n: 5 },
+        source: "stein-airbag",
+      },
+      {
+        id: "q3",
+        kind: "single",
+        update:
+          "Slit lamp examination shows red cells circulating in the right anterior chamber without a layered clot. The globe is intact, the Seidel test is negative and the intraocular pressure is 22 mmHg in the right eye.",
+        prompt: "Which of the following is the most appropriate disposition for the injury to her right eye?",
+        options: [
+          "Admission for strict bed rest",
+          "Air transfer to a trauma centre tonight",
+          "Discharge with next day ophthalmology review",
+          "Family physician review in 1 week",
+          "Repeat slit lamp exam in 1 week",
+        ],
+        correct: 2,
+        explanation:
+          "A microhyphema with normal pressure, an intact globe and no bleeding disorder can be managed as an outpatient with close follow-up of vision, the blood and the pressure, so a next day review by ophthalmology is the right plan. Rebleeding is most likely in the first 5 days, so review in 1 week misses that window, whether by her family physician or with a repeat slit lamp examination. Admission is considered for poor adherence, a bleeding disorder, a severe eye or orbital injury, or sickle cell disease with raised pressure, and she has none of these. An air transfer tonight adds risk without changing care.",
+        keyFeature: { topic: "eye", n: 5 },
+        source: "eyewiki-hyphema",
+      },
+      {
+        id: "q4",
+        kind: "single",
+        prompt: "Which of the following instructions is most appropriate for her right eye before she leaves the department?",
+        options: [
+          "Ibuprofen 400 mg for pain",
+          "Keep the head raised at night",
+          "Light jogging is safe",
+          "Pressure patch at night",
+          "Warm compresses to the eye",
+        ],
+        correct: 1,
+        explanation:
+          "Raising the head by at least 45 degrees lets red cells settle low in the chamber, away from the visual axis, the cornea and the drainage angle. Care also includes a protective shield and limited activity, so jogging is not advised. Ibuprofen and other NSAIDs, like ASA, are avoided because they can increase bleeding and the risk of a rebleed. The eye is protected with a rigid shield rather than a patch. Warm compresses have no role in clearing blood from inside the eye.",
+        keyFeature: { topic: "eye", n: 5 },
+        source: "eyewiki-hyphema",
+      },
+    ],
+    sources: [S.barnes, S.stein, S.eyewikiHyphema],
     ...META,
   },
 ];
