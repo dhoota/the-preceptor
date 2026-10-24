@@ -20,7 +20,7 @@ export const AIRWAY_S80: Samp[] = [
     topic: "airway",
     title: "Swollen abdomen and dark vomit",
     stem:
-      "A 69-year-old woman is brought to the emergency department by ambulance with 3 days of crampy abdominal pain and swelling. She has not passed stool or gas for 2 days and has vomited brown, foul-smelling fluid many times today. She has had a hysterectomy and a bowel resection, and she takes ramipril for hypertension. She is drowsy and confused and opens her eyes to voice. Her abdomen is distended and tympanic, and there are crackles at the right lung base. Her lactate is 3.4 mmol/L. No nasogastric tube is in place. You decide to intubate her.",
+      "A 69-year-old woman is brought to the emergency department by ambulance with 3 days of crampy abdominal pain and swelling. She has not passed stool or gas for 2 days and has vomited brown, foul-smelling fluid many times today. She has had a hysterectomy and a bowel resection, and she takes ramipril for hypertension. She is drowsy and confused and opens her eyes to voice. Her abdomen is distended and tympanic, and there are crackles at the right lung base. Her lactate is 3.4 mmol/L. You decide to intubate her.",
     vitals: { temperature: "37.9°C oral", pulse: "112/minute", resp: "28/minute", bp: "104/62 mmHg", o2sat: "90% on 6 L/minute by nasal prongs", weight: "60 kg" },
     questions: [
       {
@@ -237,7 +237,7 @@ export const AIRWAY_S80: Samp[] = [
       {
         id: "q3",
         kind: "single",
-        update: "Nasendoscopy shows a bulky tumour of the left cord that leaves a slit-like opening of about 4 mm and bleeds on contact. The CT shows a normal trachea below the cords.",
+        update: "Assessment by the team shows a bulky tumour of the left cord that leaves a slit-like opening of about 4 mm and bleeds on contact. The trachea below the cords is normal.",
         prompt: "Which of the following is the most appropriate way to secure his airway?",
         options: ["Awake flexible bronchoscopic intubation", "Awake tracheostomy under local anesthetic", "Inhalational induction in the operating room", "Rapid sequence intubation with a videolaryngoscope", "Supraglottic airway after induction"],
         correct: 1,

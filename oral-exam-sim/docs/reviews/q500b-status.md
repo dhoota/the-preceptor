@@ -24,7 +24,7 @@ Branch `content/q500b`. Nothing in this round is signed off. Every item is `revi
 | s82 pre-eclampsia | FAIL 6 | Rev 1 to 3 done | FAIL 6, FAIL 1, Rev 3 PASS | ready for sign-off |
 | s83 tox | FAIL 4 | Rev 1 to 3 done | FAIL 2, FAIL 2, Rev 3 PASS | ready for sign-off |
 | s84 environmental | FAIL 8 | Rev 1, Rev 2 done | Rev 1 FAIL 3, Rev 2 PASS | ready for sign-off |
-| s85 chest-pain | FAIL 3 | Rev 1 done | not run | fresh review |
+| s85 chest-pain | FAIL 3 | Rev 1 to 3 done | FAIL 3, FAIL 1, Rev 3 PASS | ready for sign-off |
 | s86 cva | FAIL 10 | Rev 1 to 3 done | FAIL 2, FAIL 1, Rev 3 PASS | ready for sign-off |
 | s87 loc | FAIL 10 | Rev 1 in progress | | finish revision |
 | s88 ems | FAIL 5 | not started | | revise |
