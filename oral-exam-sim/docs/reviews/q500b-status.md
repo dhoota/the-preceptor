@@ -28,7 +28,7 @@ Branch `content/q500b`. Nothing in this round is signed off. Every item is `revi
 | s86 cva | FAIL 10 | Rev 1 to 3 done | FAIL 2, FAIL 1, Rev 3 PASS | ready for sign-off |
 | s87 loc | FAIL 10 | Rev 1 to 4 done | FAIL 3, 1, 4, Rev 4 PASS | ready for sign-off |
 | s88 ems | FAIL 5 | Rev 1 to 3 done | FAIL 3, FAIL 2, Rev 3 PASS | ready for sign-off |
-| batch16 | not run | two cases replaced for overlap | | first review |
+| batch16 | FAIL 9 | Rev 2 to 5 done | FAIL 3, 5, 1, Rev 5 PASS | ready for sign-off |
 | batch17 | FAIL 12 | Rev 1 to 3 done | Rev 1 FAIL 2, Rev 2 FAIL 2, Rev 3 PASS | ready for sign-off |
 | batch18 | FAIL 8 | Rev 1, Rev 2 done | Rev 1 FAIL 1, Rev 2 PASS | ready for sign-off |
 | batch19 | 1 case only | | | finish or drop |
