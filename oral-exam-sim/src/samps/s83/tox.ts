@@ -230,7 +230,7 @@ export const TOX_S83: Samp[] = [
         options: ["Adrenal insufficiency", "Amlodipine toxicity", "Early liver failure", "Prolonged fasting", "Sulfonylurea co-ingestion"],
         correct: 4,
         explanation:
-          "A glucose of 2.2 mmol/L that falls again to 2.6 mmol/L on a dextrose 10% infusion points to ongoing insulin release, and sulfonylurea poisoning causes sustained hypoglycemia that is refractory to IV dextrose. Amlodipine lowers her blood pressure but does not drive insulin release, so this unexpected result means a second drug until proven otherwise. She ate 3 hours ago, so fasting does not explain it. A normal ALT and INR argue against liver failure. Nothing in her history suggests adrenal insufficiency, and it would not explain a glucose that falls again within an hour on an infusion.",
+          "A glucose of 2.2 mmol/L that falls again to 2.6 mmol/L on a dextrose 10% infusion points to ongoing insulin release, and sulfonylurea poisoning causes sustained hypoglycemia that is refractory to IV dextrose. Calcium channel blocker poisoning reduces insulin release and tends to raise glucose, so recurrent hypoglycemia after amlodipine points to a second drug. She ate 3 hours ago, so fasting does not explain it. A normal ALT and INR argue against liver failure. Nothing in her history suggests adrenal insufficiency, and it would not explain a glucose that falls again within an hour on an infusion.",
         keyFeature: { topic: "tox", n: 3 },
         source: "glatstein-octreotide",
       },
@@ -249,24 +249,24 @@ export const TOX_S83: Samp[] = [
       {
         id: "q3",
         kind: "single",
-        update: "Her husband finds that 20 of his gliclazide MR 30 mg tablets are missing. Her glucose has fallen below 3 mmol/L three times despite the dextrose infusion.",
-        prompt: "Which of the following is the most appropriate treatment to prevent further hypoglycemia?",
-        options: ["Dextrose 50% 50 mL IV hourly", "Diazoxide 300 mg PO", "Glucagon 1 mg IM", "Hydrocortisone 100 mg IV", "Octreotide 50 mcg SC"],
-        correct: 4,
-        explanation:
-          "Octreotide blocks insulin release from the pancreas, and in sulfonylurea poisoning it raises glucose, reduces the dextrose needed and prevents recurrent hypoglycemia better than dextrose alone or diazoxide. The suggested adult regimen is 50 mcg SC or IV, then 50 mcg every 6 hours, while the dextrose infusion is tapered. Hourly dextrose boluses treat each low but do not stop the insulin release, so the lows keep coming. Glucagon raises glucose only briefly. Hydrocortisone treats adrenal insufficiency, which she does not have.",
-        keyFeature: { topic: "tox", n: 2 },
-        source: "glatstein-octreotide",
-      },
-      {
-        id: "q4",
-        kind: "single",
         update: "Four hours after arrival her BP is 78/40 mmHg and her pulse 112/minute despite 2 L of crystalloid and calcium gluconate 3 g IV. Bedside echocardiography shows a small, vigorously contracting left ventricle.",
         prompt: "Which of the following is the most appropriate next treatment for her hypotension?",
         options: ["Dopamine infusion", "Glucagon infusion", "Methylene blue infusion", "Norepinephrine infusion", "Vasopressin infusion"],
         correct: 3,
         explanation:
           "Amlodipine relaxes the arterioles, and her fast pulse with a small, vigorous ventricle shows vasodilatory shock rather than a failing heart. The calcium channel blocker consensus lists IV calcium, high dose insulin when the heart is failing and norepinephrine or epinephrine as first line, and prefers norepinephrine for vasodilatory shock. It suggests against dopamine in shock because its effect was inconsistent. It does not recommend glucagon or methylene blue. No recommendation could be made for vasopressin as an added drug, and it is not a first-line choice.",
+        keyFeature: { topic: "tox", n: 4 },
+        source: "ccb-consensus",
+      },
+      {
+        id: "q4",
+        kind: "single",
+        update: "She is moved to the intensive care unit on a norepinephrine infusion. The intensive care team asks when high dose insulin should be added.",
+        prompt: "Which of the following findings would most support adding high dose insulin to her treatment?",
+        options: ["Glucose of 14.0 mmol/L", "Lactate of 2.1 mmol/L", "Poor contraction on repeat echo", "Potassium of 3.6 mmol/L", "Pulse of 118/minute"],
+        correct: 2,
+        explanation:
+          "The calcium channel blocker consensus gives high dose insulin as a first-line treatment, alongside the others, when there is evidence of myocardial dysfunction. A repeat echocardiogram that shows poor contraction, unlike her first small and vigorous ventricle, would therefore support adding it. Her shock so far is vasodilatory, which norepinephrine treats. A glucose of 14.0 mmol/L does not by itself call for insulin as a treatment of the poisoning. Insulin drives potassium into cells, so a potassium of 3.6 mmol/L is a value to watch and replace during treatment, not a reason to start it. A fast pulse is the expected reflex response to vasodilation, and a lactate of 2.1 mmol/L is only mildly raised.",
         keyFeature: { topic: "tox", n: 4 },
         source: "ccb-consensus",
       },
@@ -323,7 +323,7 @@ export const TOX_S83: Samp[] = [
         id: "q4",
         kind: "single",
         update: "His wife's account raises his score to 5.",
-        prompt: "Which of the following is now the most appropriate withdrawal management plan for him?",
+        prompt: "Which of the following is the most appropriate withdrawal management plan for him at this point?",
         options: ["Admission for benzodiazepine treatment", "Discharge with phenobarbital taper", "Observation for 4 hours, then discharge", "Outpatient diazepam with daily review", "Outpatient gabapentin with daily review"],
         correct: 0,
         explanation:

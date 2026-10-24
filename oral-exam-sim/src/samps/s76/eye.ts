@@ -101,14 +101,14 @@ export const EYE_S76: Samp[] = [
         ],
         correct: 1,
         explanation:
-          "Herpes simplex can spread from the lid and conjunctiva to the corneal epithelium. Fluorescein shows a dendritic ulcer with branching and terminal bulbs, and epithelial keratitis changes both treatment and the urgency of ophthalmology review. Corneal sensation is tested before any anesthetic drop. His vision is 20/20 with no floaters, so a dilated fundus view and a swinging flashlight test for an optic nerve problem are less urgent. Pressure matters when the anterior chamber is inflamed, but the cornea is the first question. Lid eversion looks for a foreign body, and none is suspected.",
+          "Herpes simplex can spread from the lid and conjunctiva to the corneal epithelium. Fluorescein shows a dendritic ulcer with branching and terminal bulbs, and epithelial keratitis changes both treatment and the urgency of ophthalmology review. Corneal sensation is tested before any anesthetic drop. His vision is 20/20, so a dilated fundus view and a swinging flashlight test for an optic nerve problem are less urgent. Pressure matters when the anterior chamber is inflamed, but the cornea is the first question. Lid eversion looks for a foreign body, and none is suspected.",
         keyFeature: { topic: "eye", n: 3 },
         source: "rveeh-hsv",
       },
       {
         id: "q3",
         kind: "single",
-        update: "Fluorescein shows no corneal staining. Corneal sensation is normal and the anterior chamber is quiet. He has no drug allergies.",
+        update: "The cornea is clear. Corneal sensation is normal and the anterior chamber is quiet. He has no drug allergies.",
         prompt: "Which of the following is the most appropriate treatment for the condition affecting his left eye?",
         options: [
           "Hydrocortisone 1% cream to the eyelid",
@@ -140,25 +140,6 @@ export const EYE_S76: Samp[] = [
         keyFeature: { topic: "eye", n: 4 },
         source: "rveeh-hsv",
       },
-      {
-        id: "q5",
-        kind: "single",
-        update:
-          "Five days later he returns. He stopped the valacyclovir after 2 days when the blisters crusted. The eye is now painful and light sensitive, and fluorescein shows a branching corneal ulcer with terminal bulbs.",
-        prompt: "Which of the following is the most appropriate next step in the care of his left eye?",
-        options: [
-          "Erythromycin ointment and recheck",
-          "Pressure patch for 2 days",
-          "Start moxifloxacin 0.5% drops",
-          "Start prednisolone acetate 1% drops",
-          "Valacyclovir with ophthalmology referral",
-        ],
-        correct: 4,
-        explanation:
-          "A branching ulcer with terminal bulbs is herpes simplex epithelial keratitis, and an antiviral alone is the treatment of choice. He stopped his course early, so he restarts it and needs ophthalmology follow-up for corneal disease. The American Academy of Ophthalmology advises avoiding topical corticosteroids in the initial management of epithelial keratitis, so prednisolone would let the ulcer spread. Moxifloxacin and erythromycin treat bacteria, not the virus. A pressure patch does nothing for viral replication and delays recognizing a worsening ulcer.",
-        keyFeature: { topic: "eye", n: 4 },
-        source: "aao-hsv",
-      },
     ],
     sources: [S.belongia, S.rveeh, S.azari, S.aaoHsv],
     ...META,
@@ -185,7 +166,7 @@ export const EYE_S76: Samp[] = [
         ],
         correct: 3,
         explanation:
-          "Many neighbours with red eyes in a village she left 2 days ago points to an outbreak of acute hemorrhagic conjunctivitis, which spreads by contact and starts 12 to 48 hours after exposure. Her onset fits that timing. ASA can enlarge a subconjunctival hemorrhage but does not cause follicles, nodes and a red discharge in both eyes. Hay fever causes itch in season. A cold 3 weeks ago is too long before onset to explain it. She has been away from her class for 4 weeks, so school exposure does not fit.",
+          "Many neighbours with red eyes in a village she left 2 days ago points to an outbreak of acute hemorrhagic conjunctivitis, which spreads by contact and starts 12 to 48 hours after exposure. Her onset fits that timing. ASA can enlarge a subconjunctival hemorrhage but does not cause follicles, nodes and a watery discharge in both eyes. Hay fever causes itch in season. A cold 3 weeks ago is too long before onset to explain it. She has been away from her class for 4 weeks, so school exposure does not fit.",
         keyFeature: { topic: "eye", n: 2 },
         source: "lay-ahc",
       },
@@ -266,7 +247,7 @@ export const EYE_S76: Samp[] = [
         ],
         correct: 1,
         explanation:
-          "Rough red spots on the palms and soles are the rash of secondary syphilis, and the Canadian guide lists uveitis and retinitis, with blurred vision, red eyes and floaters, among its signs. New partners add to the risk. Back pain that began after lifting is mechanical, not the inflammatory back pain linked to anterior uveitis. Welding causes a painful surface burn of the cornea, not floaters, and he wears a mask. A cold causes a surface conjunctivitis without floaters. Light sensitivity occurs with any uveitis and does not point to a cause.",
+          "A rash on the palms and soles is the rash of secondary syphilis, and the Canadian guide lists uveitis and retinitis among its eye signs. New partners add to the risk. Back pain that began with a move is mechanical, not the inflammatory back pain linked to anterior uveitis. Welding causes a painful surface burn of the cornea, not floaters, and he wears a mask. A cold causes a surface conjunctivitis without floaters. Light sensitivity occurs with any uveitis and does not point to a cause.",
         keyFeature: { topic: "eye", n: 2 },
         source: "phac-syphilis-clinical",
       },
@@ -291,7 +272,7 @@ export const EYE_S76: Samp[] = [
         id: "q3",
         kind: "single",
         update:
-          "Dilated examination shows vitreous cells in both eyes and a pale yellow patch at the left macula. Rapid plasma reagin is reactive at 1:128 and a treponemal test is reactive. His neurologic examination is normal.",
+          "Further examination shows vitreous cells in both eyes and a pale yellow patch at the left macula. Rapid plasma reagin is reactive at 1:128 and a treponemal test is reactive. His neurologic examination is normal.",
         prompt: "Which of the following is the most likely cause of the loss of vision in this patient?",
         options: [
           "Acute retinal necrosis",
@@ -302,7 +283,7 @@ export const EYE_S76: Samp[] = [
         ],
         correct: 3,
         explanation:
-          "Inflammation of both eyes with vitreous cells and a macular lesion, a recent rash on the palms and soles and reactive nontreponemal and treponemal tests make this syphilitic uveitis. Floaters and reduced vision did not fit the walk in label of conjunctivitis. Acute retinal necrosis causes spreading white patches of dead retina, usually in one eye. HLA-B27 uveitis is an anterior uveitis, usually in one eye at a time, without a macular lesion. Toxoplasma usually causes one focal scar and lesion in one eye. None of these explains the rash or the serology.",
+          "Inflammation of both eyes with vitreous cells and a macular lesion, a recent rash on the palms and soles and reactive nontreponemal and treponemal tests make this syphilitic uveitis. Floaters and reduced vision did not fit the walk in label of conjunctivitis. Acute retinal necrosis causes spreading white patches of dead retina, usually in one eye. HLA-B27 uveitis is an anterior uveitis, usually in one eye at a time, without a macular lesion. Toxoplasma usually causes one focal scar and lesion in one eye. Sarcoid can cause a panuveitis, but it does not explain a reactive treponemal test. None of the others explains the rash or the serology.",
         keyFeature: { topic: "eye", n: 1 },
         source: "phac-syphilis-clinical",
       },
@@ -323,7 +304,7 @@ export const EYE_S76: Samp[] = [
         ],
         correct: [1, 2, 7],
         explanation:
-          "Ocular syphilis is treated like neurosyphilis, with aqueous crystalline penicillin G 3 to 4 million units IV every 4 hours for 10 to 14 days, and needs prompt ophthalmology involvement. Everyone with ocular syphilis should be tested for HIV. With isolated eye findings, reactive serology and a normal neurologic examination, CSF testing is not needed before treatment, and an MRI adds delay without changing it. A single IM dose of benzathine penicillin or oral doxycycline treats early syphilis, not eye disease. Steroid drops alone leave the infection untreated.",
+          "Ocular syphilis is treated like neurosyphilis, with aqueous crystalline penicillin G 3 to 4 million units IV every 4 hours for 10 to 14 days, and needs prompt ophthalmology involvement. Everyone with ocular syphilis should be tested for HIV. With isolated eye findings, reactive serology and a normal neurologic examination, CSF testing is not needed before treatment, and an MRI adds delay without changing it. A single IM dose of benzathine penicillin treats early syphilis, and oral doxycycline for 28 days treats late latent syphilis. Neither treats eye disease. Steroid drops alone leave the infection untreated.",
         keyFeature: { topic: "eye", n: 2 },
         source: "cdc-sti-2021",
       },

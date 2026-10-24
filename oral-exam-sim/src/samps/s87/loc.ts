@@ -13,7 +13,7 @@ const S = {
   proudfoot: { id: "proudfoot-urine-alkalinization", citation: "Proudfoot AT, Krenzelok EP, Vale JA. Position paper on urine alkalinization. American Academy of Clinical Toxicology and European Association of Poisons Centres and Clinical Toxicologists. J Toxicol Clin Toxicol. 2004." },
   kleizen: { id: "kleizen-intussusception", citation: "Kleizen KJ, Hunck A, Wijnen MH, Draaisma JM. Neurological symptoms in children with intussusception. Acta Paediatr. 2009." },
   linMartore: { id: "lin-martore-pocus", citation: "Lin-Martore M, Kornblith AE, Kohn MA, Gottlieb M. Diagnostic accuracy of point-of-care ultrasound for intussusception in children presenting to the emergency department: a systematic review and meta-analysis. West J Emerg Med. 2020.", url: "https://pmc.ncbi.nlm.nih.gov/articles/PMC7390574/" },
-  dawson: { id: "dawson-anticholinergic", citation: "Dawson AH, Buckley NA. Pharmacological management of anticholinergic delirium: theory, evidence and practice. Br J Clin Pharmacol. 2016." },
+  ichd3: { id: "ichd3", citation: "Headache Classification Committee of the International Headache Society. The International Classification of Headache Disorders, 3rd edition. 1.1 Migraine without aura. Cephalalgia. 2018.", url: "https://ichd-3.org/1-migraine/1-1-migraine-without-aura/" },
   karliner: { id: "karliner-interpreters", citation: "Karliner LS, Jacobs EA, Chen AH, Mutha S. Do professional interpreters improve clinical care for patients with limited English proficiency? A systematic review of the literature. Health Serv Res. 2007." },
   plasmic: { id: "plasmic-2017", citation: "Bendapudi PK, Hurwitz S, Fry A, and colleagues. Derivation and external validation of the PLASMIC score for rapid assessment of adults with thrombotic microangiopathies: a cohort study. Lancet Haematol. 2017." },
   isthGps: { id: "isth-ttp-gps", citation: "Zheng XL, Vesely SK, Cataland SR, and colleagues. Good practice statements for the clinical care of patients with thrombotic thrombocytopenic purpura. International Society on Thrombosis and Haemostasis. J Thromb Haemost. 2020.", url: "https://pmc.ncbi.nlm.nih.gov/articles/PMC7880820/" },
@@ -210,41 +210,29 @@ export const LOC_S87: Samp[] = [
     sources: [S.kleizen, S.edlow, S.linMartore],
     ...META,
   },
-  /* 51 Drowsy after the headache medications --------------------------------- */
+  /* 51 Asleep after "one of his migraines" ----------------------------------- */
   {
     id: "loc-51",
     topic: "loc",
     alsoTopics: ["headache", "cva"],
-    title: "Sleeping after his headache treatment",
+    title: "Sleeping it off, says his wife",
     stem:
-      "A 66-year-old man presents to the emergency department at 1230 with a severe headache that began at 1000 while he was splitting wood, followed by vomiting and vertigo. He has hypertension and stopped taking amlodipine 2 months ago. At triage he was alert and oriented. He had nystagmus on looking to the left and could not walk without help. At 1300 he was given metoclopramide 10 mg IV and diphenhydramine 25 mg IV, and a CT head was booked for later in the afternoon. At 1530 the nurse finds him hard to rouse and says he is sleeping off the diphenhydramine. He opens his eyes to voice and is confused. The vital signs below are from 1530.",
+      "A 66-year-old man is brought to the emergency department by his wife at 1230 with a severe throbbing headache that began suddenly at 1000 while he was splitting wood. He has vomited four times and asked for the lights to be dimmed. He has had migraines for 30 years, has never had an aura, and his wife says he usually sleeps for hours after one. He has hypertension and stopped taking amlodipine 2 months ago. At triage he was alert and oriented, had nystagmus on looking to the left and could not walk without help. At 1300 he was given metoclopramide 10 mg IV, and a CT head was booked for later in the afternoon. At 1530 he is hard to rouse, and his wife asks that he be left to sleep it off. He opens his eyes to voice and is confused. The vital signs below are from 1530.",
     vitals: { temperature: "36.8°C oral", pulse: "54/minute", resp: "14/minute", bp: "212/116 mmHg", o2sat: "95% on room air" },
     questions: [
       {
         id: "q1",
         kind: "single",
-        prompt: "Which of the following is the most appropriate next step in his care?",
-        options: ["Hourly neurological checks", "Noncontrast CT head now", "physostigmine 1 mg IV", "Recheck when the drug wears off", "Wake him and test his gait"],
+        prompt: "Which of the following findings most strongly indicates that this is not one of his usual migraines?",
+        options: ["Asking for the lights dimmed", "Inability to walk without help", "Nausea with repeated vomiting", "Severe throbbing headache", "Sleepiness after the headache"],
         correct: 1,
         explanation:
-          "A new fall in consciousness after a sudden headache with vomiting, vertigo, nystagmus and inability to walk must be treated as a posterior fossa lesion until imaging shows otherwise. Edlow and colleagues advise brain imaging whenever a structural lesion is a probable or possible cause of a depressed level of consciousness. His heart rate of 54/minute with a blood pressure of 212/116 mmHg fits raised intracranial pressure. Hourly checks and waiting for the drug to wear off attribute his decline to diphenhydramine and lose time. Physostigmine treats anticholinergic delirium, which does not explain his headache, ataxia or slow pulse. Getting a drowsy man up to test his gait is unsafe and adds nothing.",
+          "The International Classification of Headache Disorders lists a pulsating quality, moderate or severe intensity, nausea or vomiting and photophobia as features of migraine, and notes that patients may fall asleep during an attack, so none of those separates today from his usual pattern. It lists aggravation by routine activity such as walking, which means the pain worsens, not that he cannot walk. Inability to walk with nystagmus is a new neurological deficit that migraine without aura does not explain, and the classification requires that an attack not be better accounted for by another diagnosis. Combined with a sudden onset and a falling level of consciousness, it means his drowsiness must not be put down to the sleep that follows his migraines.",
         keyFeature: { topic: "loc", n: 4 },
-        source: "edlow-coma",
+        source: "ichd3",
       },
       {
         id: "q2",
-        kind: "single",
-        update: "At 1535 his skin is warm and dry, his speech is slow and slurred, and a bladder scan shows 640 mL of urine.",
-        prompt: "Which of the following findings argues most strongly against diphenhydramine as the cause of his drowsiness?",
-        options: ["Bradycardia of 54/minute", "Drowsiness soon after the dose", "Slow, slurred speech", "Urinary retention on bladder scan", "Warm, dry skin on his trunk"],
-        correct: 0,
-        explanation:
-          "Diphenhydramine is an antihistamine with strong antimuscarinic effects, and the anticholinergic toxicity that Dawson and Buckley review speeds the heart. A heart rate of 54/minute with a blood pressure of 212/116 mmHg is the opposite, and with a falling level of consciousness it suggests raised intracranial pressure. Warm dry skin, urinary retention and slurred speech can all follow an anticholinergic drug, so they do not argue against it, even though they do not prove it either. Drowsiness soon after a sedating dose is expected and is the very finding that invites the wrong attribution.",
-        keyFeature: { topic: "loc", n: 4 },
-        source: "dawson-anticholinergic",
-      },
-      {
-        id: "q3",
         kind: "single",
         update: "He now opens his eyes only to pressure, says inappropriate words and does not obey commands. Pressing on a fingernail of his right hand makes him bend that arm.",
         prompt: "Which of the following stimuli is most appropriate to use next to test whether he localizes?",
@@ -256,9 +244,9 @@ export const LOC_S87: Samp[] = [
         source: "gcs-aid",
       },
       {
-        id: "q4",
+        id: "q3",
         kind: "single",
-        update: "Ten minutes later he opens his eyes only to pressure and moans without words. With the central stimulus he brings his hand up past his chin toward it.",
+        update: "Ten minutes later he opens his eyes only to pressure and moans without words. When stimulated again, he brings his hand up past his chin toward the stimulus.",
         prompt: "Which of the following is his Glasgow Coma Scale score now, with its components?",
         options: ["GCS 7 (E1 V2 M4)", "GCS 8 (E2 V2 M4)", "GCS 9 (E2 V2 M5)", "GCS 10 (E2 V3 M5)", "GCS 10 (E3 V2 M5)"],
         correct: 2,
@@ -267,8 +255,19 @@ export const LOC_S87: Samp[] = [
         keyFeature: { topic: "loc", n: 5 },
         source: "gcs-aid",
       },
+      {
+        id: "q4",
+        kind: "single",
+        prompt: "Which of the following is the most likely cause of his decline?",
+        options: ["Migraine with brainstem aura", "Posterior fossa stroke", "Sedation from metoclopramide", "Vestibular neuritis", "Wernicke encephalopathy"],
+        correct: 1,
+        explanation:
+          "A sudden severe headache during exertion, vomiting, nystagmus and inability to walk, followed by a falling level of consciousness with a heart rate of 54/minute and a blood pressure of 212/116 mmHg, point to a hemorrhage or swollen infarct in the posterior fossa pressing on the brainstem. Edlow and colleagues name structural brain lesions as one of the main mechanisms of coma and call for imaging whenever one is probable or possible. He has never had an aura, and a first brainstem aura would not explain a deepening coma with bradycardia. A single 10 mg dose of metoclopramide given 2 hours earlier does not account for progressive decline with these vital signs. Vestibular neuritis causes vertigo and imbalance without headache or reduced consciousness. He has no history of alcohol use or poor nutrition to suggest Wernicke encephalopathy, and his onset was sudden.",
+        keyFeature: { topic: "loc", n: 1 },
+        source: "edlow-coma",
+      },
     ],
-    sources: [S.edlow, S.dawson, S.gcsAid],
+    sources: [S.ichd3, S.gcsAid, S.edlow],
     ...META,
   },
   /* 52 Confusion with bruising, history through a language barrier ----------- */
