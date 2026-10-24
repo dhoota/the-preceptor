@@ -132,7 +132,7 @@ export const MULTIPLE_PATIENTS_S78: Samp[] = [
     alsoTopics: ["ischemic-heart-disease", "shock"],
     title: "Two activations eight minutes apart",
     stem:
-      "A 54-year-old man is brought to the emergency department of your PCI centre by ambulance at 23:10 with 1 hour of chest pain. His ECG shows ST elevation in V1 to V5. He is pale, cool and confused, with crackles to both mid lung fields. Eight minutes earlier, EMS brought a 68-year-old woman with 2 hours of chest pain and ST elevation in II, III and aVF. Paramedics first reached her at 22:45. Her BP is 138/80 mmHg and she is comfortable after ASA. One catheterization laboratory team is in the hospital. A second team takes call from home and can be ready in 30 minutes. The vital signs listed are his.",
+      "A 54-year-old man is brought to the emergency department of your PCI centre by ambulance at 23:10 with 1 hour of chest pain. His ECG shows ST elevation in V1 to V5. He is pale, cool and confused, with crackles to both mid lung fields. Eight minutes earlier, EMS brought a 68-year-old woman with 2 hours of chest pain and ST elevation in II, III and aVF. Paramedics first reached her at 22:45. Her blood pressure is normal and she is comfortable after ASA. One catheterization laboratory team is in the hospital. A second team takes call from home and can be ready in 30 minutes. The vital signs listed are his.",
     vitals: { pulse: "118/minute", resp: "28/minute", bp: "78/46 mmHg", o2sat: "89% on room air" },
     questions: [
       {
@@ -383,7 +383,7 @@ export const MULTIPLE_PATIENTS_S78: Samp[] = [
     alsoTopics: ["pediatric-fever", "shock"],
     title: "Two arrivals at 02:00 in the north",
     stem:
-      "You are working overnight as the only physician in a rural hospital emergency department in northern British Columbia, with two nurses. No other physician is on call in the community, and the referral hospital is 3 hours away by road. At 02:00 an 8-month-old girl is carried in with 2 days of vomiting and diarrhea. She is limp and mottled, with a weak cry and a capillary refill of 5 seconds. Two minutes later EMS brings a 66-year-old man who cut his thigh with a chainsaw. A tourniquet placed 40 minutes ago has stopped the bleeding. He is alert, with a pulse of 104/minute and BP 118/72 mmHg. The vital signs listed are hers.",
+      "You are working overnight as the only physician in a rural hospital emergency department in northern British Columbia, with two nurses. No other physician is on call in the community, and the referral hospital is 3 hours away by road. At 02:00 an 8-month-old girl is carried in with 2 days of vomiting and diarrhea. She is limp and mottled, with a weak cry and a capillary refill of 5 seconds. Two minutes later EMS brings a 66-year-old man who cut his thigh with a chainsaw. A tourniquet placed 40 minutes ago has stopped the bleeding. He is alert, with a pulse of 104/minute and a normal blood pressure. The vital signs listed are hers.",
     vitals: { temperature: "38.2°C rectal", pulse: "188/minute", resp: "44/minute", o2sat: "97% on room air", weight: "8 kg" },
     questions: [
       {

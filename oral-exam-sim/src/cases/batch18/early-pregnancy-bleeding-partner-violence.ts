@@ -177,7 +177,7 @@ export const earlyPregnancyBleedingPartnerViolence: OralCase = {
           next: "s-in-front",
           quality: "partial",
           feedback:
-            "The clinical history is complete, but asking about safety in front of a possible abuser is unsafe for her and will not get a true answer. Find a reason to see her alone, such as the pelvic exam, and then ask.",
+            "The clinical history is complete, but asking about safety in front of a possible abuser can put her at risk and will not get a true answer. Find a reason to see her alone, such as the pelvic exam, and then ask.",
         },
         {
           id: "c-confront",
@@ -285,9 +285,9 @@ export const earlyPregnancyBleedingPartnerViolence: OralCase = {
           id: "c-mtx",
           label: "I treated it as an ectopic pregnancy and asked for methotrexate tonight.",
           next: "s-mtx",
-          quality: "partial",
+          quality: "unsafe",
           feedback:
-            "Ectopic pregnancy has not been diagnosed. Methotrexate for a pregnancy of unknown location risks ending a wanted intrauterine pregnancy. The next steps are a formal scan and a repeat hCG.",
+            "Ectopic pregnancy has not been diagnosed. Methotrexate for a pregnancy of unknown location can end or harm a viable intrauterine pregnancy. The next steps are a formal scan and a repeat hCG.",
         },
       ],
     },
@@ -402,7 +402,8 @@ export const earlyPregnancyBleedingPartnerViolence: OralCase = {
       modelAnswer: [
         "She is 6 weeks and 2 days pregnant.",
         "SOGC guidance does not recommend Rh immune globulin before 8 weeks for threatened or early pregnancy loss or ectopic pregnancy.",
-        "Explain and document the decision.",
+        "She also had abdominal trauma, which is often treated as a separate indication. Before 12 weeks, 120 mcg is enough if it is given.",
+        "Either withholding it for her gestation or giving it for the trauma is reasonable. Explain and document the decision.",
         "Revisit it if bleeding recurs later in the pregnancy, or if surgery or methotrexate is needed.",
       ],
       rubric: ["f-m3"],
@@ -413,15 +414,15 @@ export const earlyPregnancyBleedingPartnerViolence: OralCase = {
           next: "q-dispo",
           quality: "strong",
           feedback:
-            "Correct. SOGC guidance does not recommend Rh immune globulin before 8 weeks of gestation. Checking her Rh status was still essential, because the answer changes later in pregnancy.",
+            "Reasonable. SOGC guidance does not recommend Rh immune globulin before 8 weeks for bleeding or loss. Some clinicians give it after abdominal trauma at any gestation. Checking her Rh status and documenting the decision was the key step.",
         },
         {
           id: "c-rhig",
-          label: "I gave Rh immune globulin 300 mcg IM because she is bleeding and was injured.",
+          label: "I gave Rh immune globulin, 120 mcg or 300 mcg IM, because she had abdominal trauma, and documented why.",
           next: "s-rhig",
-          quality: "partial",
+          quality: "strong",
           feedback:
-            "It does little harm, but it is not recommended before 8 weeks. Current SOGC guidance has moved away from routine Rh immune globulin in very early pregnancy. Checking her Rh status and making a documented decision was the key step.",
+            "Reasonable. The SOGC advice not to give it before 8 weeks is written for bleeding and pregnancy loss. Abdominal trauma is often treated as a separate indication, and before 12 weeks 120 mcg is enough. Checking her Rh status and documenting the decision was the key step.",
         },
       ],
     },
@@ -429,7 +430,7 @@ export const earlyPregnancyBleedingPartnerViolence: OralCase = {
       kind: "say",
       id: "s-rhig",
       phase: "The pharmacist calls",
-      text: "The pharmacist asks you to confirm the indication, since she is under 8 weeks. You note the dose given and ask gynecology to review Rh status at follow-up.",
+      text: "The pharmacist records the dose and the indication of abdominal trauma in her chart. You ask gynecology to review her Rh status at follow-up.",
       next: "q-dispo",
     },
     {
@@ -590,9 +591,9 @@ export const earlyPregnancyBleedingPartnerViolence: OralCase = {
       id: "f-m3",
       competency: "management",
       criterion: "management",
-      text: "Checks Rh status and does not routinely give Rh immune globulin before 8 weeks, with the decision documented.",
+      text: "Checks Rh status and makes a documented decision about Rh immune globulin, recognizing that the under 8 week guidance covers bleeding and loss and that abdominal trauma may be a separate indication.",
       points: 1,
-      teaching: "SOGC Guideline No. 448 does not recommend Rh immune globulin before 8 weeks for early pregnancy bleeding or loss. From 12 weeks, 300 mcg is suggested.",
+      teaching: "SOGC Guideline No. 448 does not recommend Rh immune globulin before 8 weeks for early pregnancy bleeding or loss. Abdominal trauma is often managed as a separate indication, with 120 mcg enough before 12 weeks.",
       source: "sogc-448",
     },
     {
