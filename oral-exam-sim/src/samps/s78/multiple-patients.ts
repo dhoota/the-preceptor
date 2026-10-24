@@ -348,10 +348,10 @@ export const MULTIPLE_PATIENTS_S78: Samp[] = [
         kind: "single",
         update: "EMS brings a 77-year-old man with heart failure and an O2 sat of 86%. He is placed on a non-rebreather mask at 15 L/minute from a full portable cylinder that holds 680 L.",
         prompt: "Which of the following is the closest estimate of how long his full cylinder will last at this flow?",
-        options: ["About 15 minutes", "About 30 minutes", "About 45 minutes", "About 60 minutes", "About 90 minutes"],
-        correct: 2,
+        options: ["About 30 minutes", "About 45 minutes", "About 60 minutes", "About 75 minutes", "About 90 minutes"],
+        correct: 1,
         explanation:
-          "Cylinder time is the volume divided by the flow: 680 L divided by 15 L/minute is about 45 minutes. With the pipeline down, cylinders are the only supply, so a nurse should be named to watch his gauge and have a full cylinder at the bedside well before then, and his flow should be reviewed as his saturation changes. An estimate of 90 minutes fits a flow of about 7.5 L/minute, and 60 minutes fits about 11 L/minute. Estimates of 15 or 30 minutes would waste cylinders that are still partly full.",
+          "Cylinder time is the volume divided by the flow: 680 L divided by 15 L/minute is about 45 minutes. With the pipeline down, cylinders are the only supply, so a nurse should be named to watch his gauge and have a full cylinder at the bedside well before then, and his flow should be reviewed as his saturation changes. An estimate of 90 minutes fits a flow of about 7.5 L/minute, 75 minutes fits about 9 L/minute and 60 minutes fits about 11 L/minute, so each would let his cylinder run dry. An estimate of 30 minutes would waste cylinders that are still a third full.",
         keyFeature: { topic: "multiple-patients", n: 2 },
         source: "stoller-o2",
       },
