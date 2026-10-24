@@ -143,7 +143,7 @@ export const postLysisBleedRuralAnteriorStemi: OralCase = {
       modelAnswer: [
         "Exact onset time, character, radiation and associated symptoms.",
         "Features of aortic dissection: tearing pain, back pain, neurological symptoms.",
-        "Contraindications to fibrinolysis: any brain bleed, ischemic stroke in the past 3 months, brain tumour or vascular malformation, head or facial trauma or surgery in the past 3 months, active bleeding, bleeding disorders and anticoagulants.",
+        "Contraindications to fibrinolysis: any brain bleed, recent ischemic stroke, brain tumour or vascular malformation, recent head or facial trauma or surgery, active bleeding, bleeding disorders and anticoagulants.",
         "Uncontrolled hypertension, recent surgery and other relative contraindications.",
         "Baseline function and her wishes about treatment.",
       ],
@@ -207,7 +207,7 @@ export const postLysisBleedRuralAnteriorStemi: OralCase = {
       choices: [
         {
           id: "c-half-dose",
-          label: "I gave half dose tenecteplase, 15 mg IV, at 14:20 with ASA 160 mg chewed, clopidogrel 75 mg and enoxaparin 44 mg SC with no IV bolus, and called the provincial transfer service to move her to the PCI centre right away.",
+          label: "I gave half dose tenecteplase, 15 mg IV, at 14:12 with ASA 160 mg chewed, clopidogrel 75 mg and enoxaparin 44 mg SC with no IV bolus, and called the provincial transfer service to move her to the PCI centre right away.",
           next: "s-lysis",
           quality: "strong",
           feedback:
@@ -215,7 +215,7 @@ export const postLysisBleedRuralAnteriorStemi: OralCase = {
         },
         {
           id: "c-full-dose",
-          label: "I gave full dose tenecteplase, 30 mg IV, with enoxaparin 30 mg IV and 1 mg/kg SC, clopidogrel 300 mg and ASA, then arranged transfer.",
+          label: "I gave full dose tenecteplase, 30 mg IV, with clopidogrel 300 mg and ASA, ordered enoxaparin 30 mg IV then 1 mg/kg SC, and arranged transfer.",
           next: "s-full-dose",
           quality: "partial",
           feedback:
@@ -223,7 +223,7 @@ export const postLysisBleedRuralAnteriorStemi: OralCase = {
         },
         {
           id: "c-wait-pci",
-          label: "I gave ASA and heparin and sent her by ambulance for primary PCI, since fibrinolysis is risky at her age.",
+          label: "I gave ASA 160 mg and sent her by ambulance for primary PCI, since fibrinolysis is risky at her age.",
           next: "s-wait-pci",
           quality: "unsafe",
           feedback:
@@ -235,7 +235,7 @@ export const postLysisBleedRuralAnteriorStemi: OralCase = {
       kind: "say",
       id: "s-full-dose",
       phase: "The pharmacist calls",
-      text: "The pharmacist notes her age and asks whether the enoxaparin dose should be reduced. You hold the IV bolus that has not yet been given and reduce the SC dose to 0.75 mg/kg.",
+      text: "The pharmacist notes her age before the enoxaparin is drawn up. You cancel the IV bolus and give 0.75 mg/kg SC, 44 mg, instead. The full dose tenecteplase is already in.",
       next: "s-lysis",
     },
     {
@@ -320,7 +320,7 @@ export const postLysisBleedRuralAnteriorStemi: OralCase = {
       kind: "say",
       id: "s-ct",
       phase: "The CT",
-      text: "CT shows a 3.5 cm right frontoparietal hemorrhage with 3 mm of midline shift. Fibrinogen is 0.9 g/L. Platelets are 198 x 10^9/L. Enoxaparin 44 mg was given 50 minutes ago. She is protecting her airway, GCS 12.",
+      text: "CT shows a 3.5 cm right frontoparietal hemorrhage with 3 mm of midline shift. Fibrinogen is 0.9 g/L. Platelets are 198 x 10^9/L. Enoxaparin 44 mg was given less than an hour ago. She is protecting her airway, GCS 12.",
       next: "q-reverse",
     },
     {

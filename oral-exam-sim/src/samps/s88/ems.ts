@@ -120,7 +120,7 @@ export const EMS_S88: Samp[] = [
         options: ["Cervical collars for neck wounds", "Crystalloid IV to a normal BP", "Intubation of unresponsive casualties", "Splinting of long bone fractures", "Tourniquets for limb bleeding"],
         correct: 4,
         explanation:
-          "The Hartford Consensus holds that no one should die from uncontrolled bleeding after a mass shooting, and it builds its response on hemorrhage control with tourniquets and hemostatic dressings, followed by rapid extrication and transport. A tourniquet takes seconds and stops limb bleeding at once. Crystalloid to a normal blood pressure dilutes clotting factors and can restart bleeding. Intubation in the building delays extrication when a basic airway manoeuvre will do. Collars and splints take time and do not stop anyone from bleeding to death.",
+          "The Hartford Consensus holds that no one should die from uncontrolled bleeding after a mass shooting, and it builds its response on hemorrhage control with tourniquets and hemostatic dressings, followed by rapid extrication and transport. A tourniquet takes seconds and stops limb bleeding at once. The consensus puts hemorrhage control before fluid resuscitation. Intubation, collars and splints are not part of the hemorrhage control and rapid extrication that the consensus puts first.",
         keyFeature: { topic: "ems", n: 4 },
         source: "hartford-compendium",
       },
@@ -132,7 +132,7 @@ export const EMS_S88: Samp[] = [
         options: ["Tag as dead", "Tag as delayed", "Tag as expectant", "Tag as immediate", "Tag as minimal"],
         correct: 0,
         explanation:
-          "In SALT triage, an adult who does not breathe once the airway has been opened is tagged dead. Children receive two rescue breaths first, which does not apply to this adult. Expectant is for patients who are still alive but unlikely to survive given their injuries and the care available. Immediate is for those with life-threatening injuries and a good chance of survival, such as the wounded who are still breathing and bleeding. Starting CPR on a pulseless shooting victim in this setting takes a whole team away from casualties who can still be saved.",
+          "In SALT triage, an adult who does not breathe once the airway has been opened is tagged dead. Children receive two rescue breaths first, which does not apply to this adult. Expectant is for patients who are still alive but unlikely to survive given their injuries and the care available. Immediate is for those with life-threatening injuries and a good chance of survival, such as the wounded who are still breathing and bleeding. CPR is not one of the SALT lifesaving interventions, which are opening the airway, controlling bleeding, chest decompression and antidotes.",
         keyFeature: { topic: "ems", n: 4 },
         source: "chemm-salt",
       },
@@ -144,7 +144,7 @@ export const EMS_S88: Samp[] = [
         options: ["Shot in the arm, tourniquet on, alert", "Shot in the hand, walking, not bleeding", "Shot in the head, GCS 3, no pupil reflex", "Shot in the thigh, tourniquet on, pulse 104", "Shot in the upper abdomen, pulse 136"],
         correct: 4,
         explanation:
-          "A gunshot wound to the upper abdomen with a pulse of 136/minute and a pressure of 84/50 mmHg means bleeding inside the torso, where no tourniquet or pressure can reach, so this student needs surgery and is the first priority as an immediate patient. The two students whose limb bleeding is controlled by tourniquets are stable for now and can follow on the next ambulances. The student walking with a hand wound has minimal injuries. A head wound with a GCS of 3 and no pupil reflexes is unlikely to survive and fits the expectant category while resources are stretched.",
+          "A gunshot wound to the upper abdomen with a pulse of 136/minute and a pressure of 84/50 mmHg means bleeding inside the torso, where no tourniquet or pressure can reach, so this student needs rapid transport to surgery and is the first priority as an immediate patient. The two students whose limb bleeding is controlled by tourniquets are stable for now and can follow on the next ambulances. The student walking with a hand wound has minimal injuries. A head wound with a GCS of 3 and no pupil reflexes is unlikely to survive and fits the expectant category while resources are stretched.",
         keyFeature: { topic: "ems", n: 4 },
         source: "chemm-salt",
       },
@@ -165,11 +165,11 @@ export const EMS_S88: Samp[] = [
       {
         id: "q1",
         kind: "single",
-        prompt: "Which of the following is the most appropriate imaging for her before you arrange her transfer?",
+        prompt: "Which of the following is the most appropriate imaging for her now?",
         options: ["Abdominal radiograph alone", "CT of the neck, chest and abdomen", "Radiographs from neck to abdomen", "Ultrasound of the abdomen", "No imaging before transfer"],
         correct: 2,
         explanation:
-          "A child of 12 or younger with a possible battery ingestion needs radiographs at once, without waiting for symptoms. The films must cover the neck, esophagus and abdomen, with frontal and lateral views when the battery is in the esophagus, because its position sets the urgency and the plan the receiving team will follow. Her gagging, drooling and refusal to drink raise concern for a battery in the esophagus, which an abdominal film alone would miss. Ultrasound cannot show the esophagus behind the sternum, and CT adds radiation without adding to plain films at this stage. Sending her without imaging leaves both teams guessing about the urgency.",
+          "A child of 12 or younger with a possible battery ingestion needs radiographs at once, without waiting for symptoms. The films must cover the neck, esophagus and abdomen, with frontal and lateral views when the battery is in the esophagus, because its position sets the urgency and the plan the receiving team will follow. Her gagging, drooling and refusal to drink raise concern for a battery in the esophagus, which an abdominal film alone would miss. The guideline calls for plain radiographs, so ultrasound and CT are not the first step. Sending her without imaging leaves both teams guessing about the urgency.",
         keyFeature: { topic: "ems", n: 3 },
         source: "ncpc-battery",
       },
@@ -188,21 +188,21 @@ export const EMS_S88: Samp[] = [
       {
         id: "q3",
         kind: "single",
-        update: "The ambulance will arrive in 20 minutes. It is now about 80 minutes since her father found her with the remote.",
-        prompt: "Which of the following should she receive while she awaits the ambulance?",
+        update: "Her transfer is being arranged. It is now about 80 minutes since her father found her with the remote.",
+        prompt: "Which of the following should she receive while she remains in your department?",
         options: ["glucagon 0.5 mg IV", "metoclopramide 1.5 mg IV", "sucralfate 1 g PO every 10 minutes", "Water to wash the battery down", "No oral intake until removal"],
         correct: 2,
         explanation:
-          "Within 12 hours of ingestion, sucralfate given in hospital, 1 g every 10 minutes for up to 3 doses, led to fewer full-thickness esophageal injuries in animal studies. Honey plays the same role before a child reaches hospital. Neither may delay her transfer. Glucagon relaxes the lower esophageal sphincter for a food bolus and does nothing for a battery lodged in the upper esophagus. Metoclopramide moves the stomach, not the esophagus. Water does not move a lodged battery. Keeping her fully fasting gives up a simple measure that may limit the burn during a 2.5 hour drive.",
+          "Within 12 hours of ingestion, sucralfate given in hospital, 1 g every 10 minutes for up to 3 doses, led to fewer full-thickness esophageal injuries in animal studies. Honey plays the same role before a child reaches hospital. Neither may delay her transfer. Neither source lists glucagon, metoclopramide or water among the measures before removal, and removal must not wait for any drug. Keeping her fully fasting gives up a simple measure that may limit the burn during a 2.5 hour drive.",
         keyFeature: { topic: "ems", n: 3 },
         source: "cmaj-button-battery",
       },
       {
         id: "q4",
         kind: "single",
-        update: "Before the ambulance arrives, her mother calls. She now thinks the remote may have been missing its battery since yesterday afternoon, about 20 hours ago.",
-        prompt: "Which of the following changes in her care before departure because of this information?",
-        options: ["Cancel the urgent transfer", "Give honey instead of sucralfate", "Repeat radiographs before departure", "Start ceftriaxone before departure", "Stop further sucralfate doses"],
+        update: "While the transfer is being arranged, her mother calls. She now thinks the remote may have been missing its battery since yesterday afternoon, about 20 hours ago.",
+        prompt: "Which of the following changes in her care now because of this information?",
+        options: ["Defer transfer until the next day", "Give honey instead of sucralfate", "Repeat radiographs now", "Start ceftriaxone now", "Stop further sucralfate doses"],
         correct: 4,
         explanation:
           "Sucralfate and honey are given only when the battery has been in the esophagus for 12 hours or less, and the National Capital Poison Center advises against both when it may have been there longer. The new history puts the possible time at 20 hours, so further sucralfate doses stop, and honey is excluded for the same reason. Removal is still needed at once, so the transfer goes ahead, and the receiving team must be told of the possible 20 hour dwell. New films would not change the plan, and nothing yet suggests the perforation or infection that antibiotics would treat.",
@@ -228,10 +228,10 @@ export const EMS_S88: Samp[] = [
         id: "q1",
         kind: "single",
         prompt: "Which of the following is the most appropriate direction to the crew at this point in the patch?",
-        options: ["Continue on scene for 10 more minutes", "Divert to the closest community hospital", "Intubate before leaving the scene", "Load now for transport to your hospital", "Terminate resuscitation at the scene"],
+        options: ["Continue on scene for 10 more minutes", "Give amiodarone 150 mg before moving", "Intubate before leaving the scene", "Load now for transport to your hospital", "Stay on scene until circulation returns"],
         correct: 3,
         explanation:
-          "He is 49, his arrest was witnessed, CPR began at once and he remains in ventricular fibrillation after three shocks, which fits the usual criteria for ECPR. The ELSO guideline aims for ECMO flow within 60 minutes of collapse and advises moving suitable patients quickly to the nearest hospital that can provide it, with mechanical compressions to keep CPR going during transport. He is already 17 minutes from collapse. Ten more minutes on scene or an intubation that the supraglottic airway makes unnecessary uses up that time. The closer hospital cannot offer ECPR. A witnessed arrest with a shockable rhythm does not meet any rule for stopping in the field.",
+          "He is 49, his arrest was witnessed, CPR began at once and he remains in ventricular fibrillation after three shocks, which fits the usual criteria for ECPR. The ELSO guideline aims for ECMO flow within 60 minutes of collapse and advises moving suitable patients quickly to the nearest hospital that can provide it, with mechanical compressions to keep CPR going during transport. He is already 17 minutes from collapse. Ten more minutes on scene, a further drug dose before moving or an intubation that the supraglottic airway makes unnecessary each uses up that time. Staying until circulation returns abandons the 60 minute target for ECMO flow, which is the reason to move him now.",
         keyFeature: { topic: "ems", n: 1 },
         source: "elso-ecpr",
       },
@@ -250,12 +250,12 @@ export const EMS_S88: Samp[] = [
       {
         id: "q3",
         kind: "single",
-        update: "He arrives at 0724 in ventricular fibrillation with mechanical compressions running. The paramedic begins the handover while your team prepares to cannulate.",
+        update: "He arrives in ventricular fibrillation with mechanical compressions running. The paramedic begins the handover while your team prepares to cannulate.",
         prompt: "Which of the following handover details most supports proceeding with ECPR for this patient?",
         options: ["amiodarone 300 mg IV given at 0705", "End-tidal CO2 of 24 mmHg en route", "epinephrine 1 mg IV at 0703", "Pupils 4 mm at the scene", "Supraglottic airway at 0702"],
         correct: 1,
         explanation:
-          "The ELSO guideline lists an end-tidal CO2 above 10 mmHg during conventional CPR as a favourable sign for ECPR, because it shows that compressions are moving blood and his tissues are still producing carbon dioxide. A reading of 24 mmHg during the drive is a change en route that only the crew saw. The times of his amiodarone and epinephrine doses and of airway insertion record his care but do not predict whether ECPR will help. Pupil size during CPR is affected by drugs and by the arrest itself and is not one of the selection criteria.",
+          "The ELSO guideline lists an end-tidal CO2 above 10 mmHg during conventional CPR as a favourable sign for ECPR, because it shows that compressions are moving blood and his tissues are still producing carbon dioxide. A reading of 24 mmHg during the drive is a change en route that only the crew saw. The times of his amiodarone and epinephrine doses and of airway insertion record his care but do not predict whether ECPR will help. The ELSO criteria do not use pupil findings.",
         keyFeature: { topic: "ems", n: 2 },
         source: "elso-ecpr",
       },

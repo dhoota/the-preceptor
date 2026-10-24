@@ -15,13 +15,13 @@ const S = {
 } satisfies Record<string, Source>;
 
 export const AIRWAY_S80: Samp[] = [
-  /* 48 Bowel obstruction on dialysis --------------------------------------- */
+  /* 48 Bowel obstruction and regurgitation -------------------------------- */
   {
     id: "airway-48",
     topic: "airway",
     title: "Swollen abdomen and dark vomit",
     stem:
-      "A 69-year-old woman is brought to the emergency department by ambulance with 3 days of crampy abdominal pain and swelling. She has not passed stool or gas for 2 days and has vomited brown, foul-smelling fluid many times today. She has end-stage kidney disease treated with hemodialysis three times a week and missed her session yesterday. She has had a hysterectomy and a bowel resection. She is drowsy and confused and opens her eyes to voice. Her abdomen is distended and tympanic, and there are crackles at the right lung base. Potassium is 6.9 mmol/L, and the ECG shows peaked T waves. She has received calcium gluconate, insulin and dextrose IV. No nasogastric tube is in place. You decide to intubate her.",
+      "A 69-year-old woman is brought to the emergency department by ambulance with 3 days of crampy abdominal pain and swelling. She has not passed stool or gas for 2 days and has vomited brown, foul-smelling fluid many times today. She has had a hysterectomy and a bowel resection, and she takes ramipril for hypertension. She is drowsy and confused and opens her eyes to voice. Her abdomen is distended and tympanic, and there are crackles at the right lung base. Her lactate is 3.4 mmol/L. No nasogastric tube is in place. You decide to intubate her.",
     vitals: { temperature: "37.9°C oral", pulse: "112/minute", resp: "28/minute", bp: "104/62 mmHg", o2sat: "90% on 6 L/minute by nasal prongs", weight: "60 kg" },
     questions: [
       {
@@ -38,19 +38,7 @@ export const AIRWAY_S80: Samp[] = [
       {
         id: "q2",
         kind: "single",
-        update: "The nasogastric tube drains 1.4 L of brown fluid. You plan a rapid sequence intubation with ketamine as the induction agent.",
-        prompt: "Which of the following neuromuscular blockers is most appropriate for her intubation?",
-        options: ["rocuronium 36 mg IV", "rocuronium 72 mg IV", "succinylcholine 60 mg IV", "succinylcholine 90 mg IV", "vecuronium 6 mg IV"],
-        correct: 1,
-        explanation:
-          "Her potassium of 6.9 mmol/L with peaked T waves has risen over the day since her missed dialysis. Succinylcholine at 1 to 1.5 mg/kg raises serum potassium by 0.5 to 1 mmol/L even in healthy people, and a further rise on top of acute hyperkalemia probably carries a substantial risk of arrhythmia, so neither 60 mg nor 90 mg is safe for her. Rocuronium 1.2 mg/kg, which is 72 mg at 60 kg, gives rapid intubating conditions without raising potassium. Rocuronium 36 mg is 0.6 mg/kg, a dose with a slower onset that is too low for a rapid sequence intubation. Vecuronium 0.1 mg/kg acts slowly and lengthens apnea in a patient at high risk of aspiration.",
-        keyFeature: { topic: "airway", n: 5 },
-        source: "hovgaard-sux-k",
-      },
-      {
-        id: "q3",
-        kind: "single",
-        update: "She is positioned head up. A nurse applies cricoid pressure at induction. With a Macintosh videolaryngoscope you see only the tip of the epiglottis. Her O2 saturation is 95%.",
+        update: "She is positioned head up for a rapid sequence intubation. A nurse applies cricoid pressure at induction. With a Macintosh videolaryngoscope you see only the tip of the epiglottis. Her O2 saturation is 95%.",
         prompt: "Which of the following is the most appropriate next step to improve your view?",
         options: ["Apply firmer cricoid pressure", "Insert a supraglottic airway", "Release the cricoid pressure", "Switch to a straight blade", "Use a larger blade"],
         correct: 2,
@@ -60,9 +48,9 @@ export const AIRWAY_S80: Samp[] = [
         source: "das-2015",
       },
       {
-        id: "q4",
+        id: "q3",
         kind: "single",
-        update: "As the pressure is released the view improves, but brown fluid wells up from the esophagus and fills the pharynx, hiding the glottis. Her O2 saturation is 93%.",
+        update: "Moments later, brown fluid wells up from the esophagus and fills the pharynx, hiding the glottis. Her O2 saturation is 93%.",
         prompt: "Which of the following is the most appropriate immediate action?",
         options: ["Bag-mask ventilation with an oral airway", "Blind passage of a bougie", "Insert a supraglottic airway", "Rigid suction ahead of the blade", "Switch to a hyperangulated blade"],
         correct: 3,
@@ -71,8 +59,20 @@ export const AIRWAY_S80: Samp[] = [
         keyFeature: { topic: "airway", n: 1 },
         source: "root-salad",
       },
+      {
+        id: "q4",
+        kind: "single",
+        update: "The glottis comes into view and the tube is passed through the cords. The cuff is inflated, and brown fluid is seen inside the tube.",
+        prompt: "Which of the following is the most appropriate step before the first breath through the tube?",
+        options: ["Chest X-ray before ventilating", "Instill saline down the tube", "Suction down the tube first", "Ventilate at once with 100% oxygen", "Withdraw the tube into the pharynx"],
+        correct: 2,
+        explanation:
+          "Brown fluid inside the tube is gastric material that has entered the trachea or the tube during the regurgitation. The suction assisted laryngoscopy technique ends by passing a soft suction catheter down the tube to clear its lumen before the first breath, so that the material is removed rather than blown into the small airways. Ventilating at once drives it deeper into both lungs. Saline instilled down the tube pushes it further in. A chest X-ray takes minutes, does not clear the tube and leaves her apneic. Withdrawing a tube that has been seen passing the cords gives up a secured airway in a patient who has just regurgitated.",
+        keyFeature: { topic: "airway", n: 4 },
+        source: "root-salad",
+      },
     ],
-    sources: [S.das, S.hovgaard, S.salad],
+    sources: [S.das, S.salad],
     ...META,
   },
 

@@ -137,3 +137,13 @@ npx tsc --noEmit -p . 2>&1 | grep cases/batch17      (no output)
 CASE_BATCH=batch17 npx vitest run tests/cases.test.ts tests/citations.test.ts --testTimeout=120000      41 passed
 REALIGN=batch17 CASE_BATCH=batch17 npx vitest run tests/cases.test.ts --testTimeout=120000      39 passed
 ```
+
+## Revision 2
+
+This revision answers docs/reviews/q500b-verify-batch17.md. All edits are in hoist-transfer-thigh-fracture. Points, rows and critical items are unchanged, and the total is still 30.
+
+- c-titrate feedback. The capnography sentence is replaced with "Keep capnography running. An end tidal CO2 of 68 mmHg shows how far she is hypoventilating."
+- at-pr2 teaching. The sentence on brief naloxone reversal is deleted. The teaching now holds only the point that the Jungquist abstract supports: high risk patients need extra vigilance, electronic monitoring and repeated reassessment. Naloxone duration stays in the q-reassess model answer.
+- at-p4 text (advisory). "The loss of pain stimulus after the block" is removed, because no cited source states it. The item now reads "worsened by clobazam and baclofen".
+
+Checks: `CASE_BATCH=batch17 npx vitest run tests/cases.test.ts tests/citations.test.ts --testTimeout=120000` 41 passed. `REALIGN=batch17 CASE_BATCH=batch17 npx vitest run tests/cases.test.ts --testTimeout=120000` 39 passed. tsc shows no batch17 errors.

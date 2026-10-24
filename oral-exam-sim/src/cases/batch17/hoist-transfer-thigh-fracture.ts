@@ -314,7 +314,7 @@ export const hoistTransferThighFracture: OralCase = {
           next: "q-reassess",
           quality: "strong",
           feedback:
-            "Correct. Support ventilation first, then reverse in small doses. The block still covers her fracture, so you lose little analgesia. Capnography found this event before her heart rate changed.",
+            "Correct. Support ventilation first, then reverse in small doses. The block still covers her fracture, so you lose little analgesia. Keep capnography running. An end tidal CO2 of 68 mmHg shows how far she is hypoventilating.",
         },
         {
           id: "c-full-dose",
@@ -505,7 +505,7 @@ export const hoistTransferThighFracture: OralCase = {
       id: "at-p4",
       competency: "resuscitation",
       criterion: "physical",
-      text: "Recognizes opioid induced respiratory depression from the low rate, high end tidal CO2 and small pupils, worsened by clobazam, baclofen and the loss of pain stimulus after the block.",
+      text: "Recognizes opioid induced respiratory depression from the low rate, high end tidal CO2 and small pupils, worsened by clobazam and baclofen.",
       points: 2,
       critical: true,
       teaching: "Respiratory depression is the defining feature of opioid toxicity. Stupor with a respiratory rate of 12 or less calls for bag mask ventilation while naloxone is given.",
@@ -573,7 +573,7 @@ export const hoistTransferThighFracture: OralCase = {
       criterion: "process",
       text: "Keeps her on continuous SpO2 and capnography after opioids and after naloxone, and lowers opioid doses once the block works.",
       points: 2,
-      teaching: "High risk patients on opioids need extra vigilance, with electronic monitoring and repeated reassessment. Reversal with naloxone is often brief, so keep monitoring after she responds.",
+      teaching: "High risk patients on opioids need extra vigilance, with electronic monitoring and repeated reassessment.",
       source: "jungquist",
     },
     {
