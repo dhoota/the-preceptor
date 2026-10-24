@@ -31,8 +31,8 @@ Branch `content/q500b`. Nothing in this round is signed off. Every item is `revi
 | batch16 | FAIL 9 | Rev 2 to 5 done | FAIL 3, 5, 1, Rev 5 PASS | ready for sign-off |
 | batch17 | FAIL 12 | Rev 1 to 3 done | Rev 1 FAIL 2, Rev 2 FAIL 2, Rev 3 PASS | ready for sign-off |
 | batch18 | FAIL 8 | Rev 1, Rev 2 done | Rev 1 FAIL 1, Rev 2 PASS | ready for sign-off |
-| batch19 | 1 case only | | | finish or drop |
-| batch20 | 1 draft, unregistered | | | finish or drop |
+| batch19 | not reviewed | 1 of 4 cases written | | parked in docs/drafts/q500b-parked |
+| batch20 | not reviewed | 1 draft, unfinished | | parked in docs/drafts/q500b-parked |
 
 No keyed answer has been found clinically wrong in any review so far, apart from one doxycycline course length (s76, eye-41 q4). The fails are repeats of existing bank content (often tagged under another topic), mock-mode cues (ruling B6), and explanation sentences the stem or source does not support.
 
