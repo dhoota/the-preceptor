@@ -96,3 +96,18 @@ Changes made in reply to docs/reviews/q500b-verify-s83.md. Nothing else changed.
 Counts are unchanged: 21 questions (20 single, 1 menu). Key features kf1 3, kf2 1, kf3 2, kf4 3, kf5 1, kf6 1, kf7 2, kf8 8. Single key positions 5, 3, 5, 5, 2.
 
 Tests: `SAMP_BATCH=s83 npx vitest run tests/samps.test.ts tests/samp-quality.test.ts tests/citations.test.ts --testTimeout=120000` passes 132 of 132. The tsc grep for samps/s83 prints nothing.
+
+## Revision 3
+
+Changes made in reply to docs/reviews/q500b-verify2-s83.md. Nothing else changed.
+
+- tox-48 (mock-mode cue on q1). Three later prompts no longer say "his withdrawal":
+  - q2 now reads "Which of the following findings best shows that his condition has become severe?"
+  - q3 now reads "Which of the following is the most appropriate initial treatment for him?"
+  - q5 now reads "Which of the following investigations is most important to look for a complication of his condition?"
+  The explanations are unchanged.
+- tox-51 q1. The sentence added in Revision 2 is replaced by "Amlodipine toxicity explains her low blood pressure, but it would not explain a glucose that keeps falling on a dextrose infusion, so this unexpected result points to a second drug." This restores the reason for rejecting "Amlodipine toxicity".
+
+Counts, key features and key positions are unchanged.
+
+Tests: `SAMP_BATCH=s83 npx vitest run tests/samps.test.ts tests/samp-quality.test.ts tests/citations.test.ts --testTimeout=120000` passes 132 of 132. The tsc grep for samps/s83 prints nothing.

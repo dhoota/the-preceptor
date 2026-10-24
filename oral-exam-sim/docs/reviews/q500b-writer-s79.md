@@ -91,3 +91,15 @@ This revision answers docs/reviews/q500b-qa-s79.md (6 fails) and the coordinator
 - The statement in sob-49 q4 that adding the calf veins does not make the scan exclude PE is my inference from the 30 to 50% proximal DVT figure. It is not a quoted line.
 - The tamoxifen source is a meta-analysis on breast reconstruction. Its introduction states the general VTE risk of tamoxifen, which is what the item uses.
 - The sob-50 q4 statement on extended low-dose apixaban or ASA is general practice and is not in Le Gal 2009.
+
+## Revision 2
+
+This revision answers docs/reviews/q500b-verify-s79.md (4 fails). Each fix uses the reviewer's wording. Nothing else was changed.
+
+1. **sob-49 q1:** The explanation now reads "The risk is highest in the first months after starting it and may stay raised through the first 2 years, and she is still taking it." This follows Parikh's wording.
+2. **sob-49 q2:** The key is now "It is usually seen in more severe PE" (still position 4, and not the longest option). The explanation now opens "The ESC guideline notes that these signs of right ventricular strain are usually found in more severe PE, so if PE is confirmed her right ventricle and risk need assessment." The rest is unchanged. This removes the repeat of arrhythmia-23 q4.
+3. **sob-49 q3:** The update now says the gradient is "about 18 mmHg", with PaO2 kept at 90 mmHg. The arithmetic is 149.7 minus 33/0.8 (41.25), which gives 108.5, minus 90, which gives 18.5. The key is now "A normal gradient can occur in PE" (still position 1, and not the longest option). The explanation now opens "A normal PaO2 and alveolar to arterial gradient do not lower her probability of PE."
+4. **sob-50 q4:** The sentence now reads "In the REVERSE cohort, untreated patients in whom recurrence had been excluded had a 3-month VTE risk of 2.8%."
+5. **Housekeeping:** The unused `S.mos` source entry is deleted.
+
+Key positions and balance are unchanged. The single keys sit in positions first to fifth 3, 5, 3, 4 and 5 times, and the key is the longest option in 1 of 20 single questions. `SAMP_BATCH=s79 npx vitest run tests/samps.test.ts tests/samp-quality.test.ts tests/citations.test.ts --testTimeout=120000` passed 132 of 132. tsc shows no errors in samps/s79.
