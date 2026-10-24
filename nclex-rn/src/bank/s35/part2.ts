@@ -27,7 +27,7 @@ export const PART2: Item[] = [
       topic: "Follow-up after dabigatran reversal",
       cjmm: "evaluate",
       process: "clinical-judgment",
-      difficulty: 4,
+      difficulty: 5,
       stem: "A 79-year-old client taking dabigatran was admitted with gastrointestinal bleeding and received idarucizumab 5 g IV at 0900. The aPTT was 31 seconds at 1000. The nurse reviews the findings at 2100. Which finding should the nurse report to the primary health care provider now?",
       rationale:
         "Idarucizumab binds dabigatran, but some clients show a second rise in clotting times as drug moves back from the tissues into the blood. A new black stool with the aPTT climbing from 31 to 58 seconds means bleeding has returned with renewed anticoagulant effect. The label states a second 5 g dose may be considered in this case. A stable hemoglobin, stable vital signs and an unchanged bruise do not need urgent action.",
@@ -134,7 +134,7 @@ export const PART2: Item[] = [
       topic: "Home drug that conflicts with ivabradine",
       cjmm: "analyze",
       process: "clinical-judgment",
-      difficulty: 3,
+      difficulty: 2,
       stem: "A 66-year-old client with heart failure with reduced ejection fraction has a resting heart rate of 78/minute on the highest tolerated dose of metoprolol. The primary health care provider prescribes ivabradine 5 mg by mouth twice daily. The home list also includes diltiazem, furosemide and atorvastatin. Which home drug should the nurse question?",
       rationale:
         "Diltiazem inhibits the enzyme that clears ivabradine, which raises ivabradine levels. Diltiazem also slows the heart. The label advises avoiding the combination because of bradycardia risk. Ivabradine is meant to be added to a beta blocker at the highest tolerated dose, so metoprolol is expected. Furosemide and atorvastatin do not interact in this way.",

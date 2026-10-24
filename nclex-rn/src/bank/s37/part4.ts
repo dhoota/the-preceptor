@@ -1,0 +1,279 @@
+import type { Item } from "@/engine/types";
+import { ABLS, EAH, ERAS_CR, HINKLE, ISBI, MH_REVIEW, meta } from "./common";
+
+export const PART4: Item[] = [
+  {
+    ...meta("rn-s37-31", {
+      need: "RRP",
+      topic: "Shortening ileus after bowel surgery",
+      cjmm: "generate",
+      process: "nursing-process",
+      difficulty: 2,
+      stem: "A 63-year-old client is on day 1 after a laparoscopic colon resection on an enhanced recovery pathway. Which measures should the nurse include to lower the risk of a prolonged postoperative ileus? Select all that apply.",
+      rationale:
+        "Enhanced recovery care limits ileus by sparing opioids, avoiding fluid overload and starting oral intake early. Scheduled acetaminophen lowers the opioid dose that slows the gut. Early food and fluids stimulate gut motility. Chewing gum is a low-risk measure that may speed return of bowel function. Routine nasogastric tubes, bed rest, fasting until bowel sounds return and large IV volumes delay recovery.",
+      sources: [ERAS_CR],
+    }),
+    kind: "sata",
+    options: [
+      { text: "Keep the client on bed rest until flatus", why: "Bed rest does not speed bowel recovery and adds clot and lung risks." },
+      { text: "Offer sugar-free chewing gum", why: "Gum chewing is a low-risk measure that may shorten ileus." },
+      { text: "Insert a nasogastric tube for routine drainage", why: "Routine nasogastric drainage is avoided because it delays oral intake." },
+      { text: "Give scheduled acetaminophen", why: "Non-opioid analgesia lowers the opioid dose that slows the gut." },
+      { text: "Run IV fluids at a high rate", why: "Excess IV fluid causes bowel wall edema and prolongs ileus." },
+      { text: "Offer early food and fluids", why: "Early oral intake stimulates gut motility." },
+      { text: "Hold oral intake until bowel sounds return", why: "Waiting for bowel sounds delays feeding without benefit." },
+    ],
+    correct: [1, 3, 5],
+  },
+  {
+    ...meta("rn-s37-32", {
+      need: "RRP",
+      topic: "Tracheal shift with lobar collapse",
+      cjmm: "analyze",
+      process: "clinical-judgment",
+      difficulty: 4,
+      stem: "A 71-year-old client is on day 2 after an open upper abdominal operation and has a weak cough. Over 6 hours the SpO2 has fallen from 95% to 89% on 2 L/minute of oxygen. Temperature is 37.6°C (99.7°F). Over the right lower chest the nurse finds dull percussion and absent breath sounds. Which additional finding supports collapse of the right lower lobe from a mucus plug?",
+      rationale:
+        "A mucus plug blocks the bronchus, and the air beyond it is absorbed. The lobe loses volume and pulls the trachea toward the collapsed side, here the right. Dull percussion and absent breath sounds fit airless lung behind a blocked airway. A blocked airway also carries less vibration, so fremitus falls. A shift away from the affected side suggests a large effusion or tension pneumothorax. Hyperresonance suggests air in the pleural space.",
+      sources: [HINKLE],
+    }),
+    kind: "mc",
+    options: [
+      { text: "Trachea shifted toward the right", why: "Volume loss in the right lower lobe pulls the trachea toward the right." },
+      { text: "Trachea shifted toward the left", why: "A shift away from the dull side suggests a large effusion or tension pneumothorax." },
+      { text: "Hyperresonance over the right base", why: "Hyperresonance points to air in the pleural space, not airless lung." },
+      { text: "Increased fremitus over the right base", why: "A plugged bronchus carries less vibration, so fremitus is reduced." },
+    ],
+    correct: 0,
+  },
+  {
+    ...meta("rn-s37-33", {
+      need: "RRP",
+      topic: "Pink fluid gush before wound separation",
+      cjmm: "recognize",
+      process: "clinical-judgment",
+      difficulty: 3,
+      stem: "A 66-year-old client with obesity and diabetes is on day 6 after an open bowel resection. While turning in bed the client says, \"Something just popped.\" The abdominal dressing is suddenly soaked with pink, watery fluid. The skin staples are intact and no bowel is visible. Vital signs are unchanged. What is the most likely explanation?",
+      rationale:
+        "A sudden gush of pink serosanguineous fluid around days 5 to 8 often heralds separation of the deeper fascial layers. A popping feeling with effort supports it. The skin can stay closed while the fascia beneath has opened. Obesity and diabetes raise the risk. Normal drainage lessens by day 6 rather than gushing. Infection gives redness and cloudy or purulent drainage. A seroma collects clear fluid without a popping sensation.",
+      refs: ["Fascial dehiscence most often occurs 5 to 8 days after surgery."],
+      sources: [HINKLE],
+    }),
+    kind: "mc",
+    options: [
+      { text: "Expected drainage from a healing incision", why: "Drainage lessens by day 6. A sudden gush is not expected." },
+      { text: "Superficial infection of the incision", why: "Infection brings redness and cloudy or purulent drainage, not a pink gush." },
+      { text: "A seroma under the skin edges", why: "A seroma is clear fluid that collects slowly. It does not follow a popping feeling." },
+      { text: "Separation of the deeper fascial layers", why: "A pink gush with a popping feeling on day 6 suggests fascial dehiscence." },
+    ],
+    correct: 3,
+  },
+  {
+    ...meta("rn-s37-34", {
+      need: "RRP",
+      topic: "Risk factors for abdominal wound separation",
+      cjmm: "analyze",
+      process: "nursing-process",
+      difficulty: 2,
+      stem: "A 70-year-old client is scheduled for an open colectomy. The history shows a BMI of 38, prednisone 20 mg daily for 6 months and a serum albumin of 2.6 g/dL (26 g/L). The client quit smoking 15 years ago and takes lisinopril for well-controlled hypertension. An appendectomy was done at 20 years of age. Which three factors raise the risk of wound dehiscence? Select three.",
+      rationale:
+        "Obesity strains the wound and slows healing in fatty tissue. Long-term corticosteroids slow collagen formation. A low albumin reflects poor protein stores for repair. All three raise the risk of the wound separating. Smoking harms healing when it is current, not 15 years in the past. Controlled hypertension and an old appendectomy do not raise the risk.",
+      sources: [HINKLE],
+    }),
+    kind: "msn",
+    select: 3,
+    options: [
+      { text: "BMI of 38", why: "Obesity adds tension on the wound and slows healing of fatty tissue." },
+      { text: "Prednisone for 6 months", why: "Corticosteroids slow collagen formation and wound strength." },
+      { text: "Smoking that stopped 15 years ago", why: "Past smoking that stopped long ago does not impair current healing." },
+      { text: "Albumin of 2.6 g/dL", why: "Low protein stores slow tissue repair." },
+      { text: "Controlled hypertension on lisinopril", why: "Well-controlled hypertension does not weaken the wound." },
+      { text: "Appendectomy at 20 years of age", why: "An old, healed incision does not raise this risk." },
+    ],
+    correct: [0, 1, 3],
+  },
+  {
+    ...meta("rn-s37-35", {
+      need: "RRP",
+      topic: "History that raises malignant hyperthermia risk",
+      cjmm: "recognize",
+      process: "nursing-process",
+      difficulty: 3,
+      stem: "During the preoperative interview before a laparoscopic gallbladder removal under general anesthesia, a 26-year-old client gives the history below. Which findings should the nurse report to the anesthesia team as raising the risk of malignant hyperthermia? Select all that apply.",
+      rationale:
+        "Malignant hyperthermia is inherited, most often through changes in the ryanodine receptor gene. A relative who died of fever during surgery suggests a family trait. Jaw muscle spasm after succinylcholine can be an early sign of susceptibility. Central core disease is linked to the same gene. Exertional heat stroke with muscle breakdown has also been linked to it. Nausea after anesthesia, egg allergy and uneventful local anesthesia do not raise the risk.",
+      sources: [MH_REVIEW],
+    }),
+    kind: "sata",
+    options: [
+      { text: "A cousin died of a high fever during surgery", why: "A family history of a fatal fever under anesthesia suggests an inherited risk." },
+      { text: "Nausea and vomiting after a past anesthetic", why: "Postoperative nausea is common and not linked to this disorder." },
+      { text: "Jaw spasm after succinylcholine in the past", why: "Masseter spasm after succinylcholine can signal susceptibility." },
+      { text: "Allergy to eggs and soy", why: "Egg and soy allergy is not linked to malignant hyperthermia." },
+      { text: "Diagnosis of central core disease", why: "Central core disease shares the gene linked to malignant hyperthermia." },
+      { text: "Dental work with local anesthetic", why: "Local anesthetics do not trigger malignant hyperthermia." },
+      { text: "Exertional heat stroke with muscle breakdown", why: "Exertional heat illness with rhabdomyolysis has been linked to the same gene." },
+    ],
+    correct: [0, 2, 4, 6],
+  },
+  {
+    ...meta("rn-s37-36", {
+      need: "RRP",
+      topic: "First day after a malignant hyperthermia crisis",
+      cjmm: "generate",
+      process: "nursing-process",
+      difficulty: 5,
+      stem: "A 31-year-old client had a malignant hyperthermia crisis during surgery that was treated with dantrolene. The temperature is now 37.8°C (100.0°F) and the end-tidal CO2 is normal. The client is moved to the intensive care unit. Which actions should the nurse include in the plan for the next 24 hours? Select all that apply.",
+      rationale:
+        "The reaction can recur, so the client stays in intensive care for at least 24 hours. Dantrolene doses continue as prescribed. A new rise in end-tidal CO2, rigidity or temperature signals recurrence. Muscle breakdown releases myoglobin, potassium and creatine kinase, so urine color and output and these levels are tracked. Temperature monitoring goes on after it normalizes. Warming blankets would add heat.",
+      refs: ["After a crisis, monitoring in intensive care continues for at least 24 hours because the reaction can recur."],
+      sources: [MH_REVIEW],
+    }),
+    kind: "sata",
+    options: [
+      { text: "Transfer to a general ward once afebrile", why: "Recurrence can happen in the first day, so intensive care monitoring continues." },
+      { text: "Continue dantrolene doses as prescribed", why: "Ongoing dantrolene lowers the risk of recurrence." },
+      { text: "Cover the client with a warming blanket", why: "Added heat could worsen a recurrence. Temperature is still being watched." },
+      { text: "Watch for rising end-tidal CO2 or rigidity", why: "These are early signs that the reaction has returned." },
+      { text: "Check urine color and hourly output", why: "Dark urine signals myoglobin, which can injure the kidneys." },
+      { text: "Stop temperature checks once it is normal", why: "Temperature is monitored through the period of recurrence risk." },
+      { text: "Monitor potassium and creatine kinase", why: "Muscle breakdown raises both and can cause arrhythmias." },
+    ],
+    correct: [1, 3, 4, 6],
+  },
+  {
+    ...meta("rn-s37-37", {
+      need: "PA",
+      topic: "Urine output trend during burn resuscitation",
+      cjmm: "evaluate",
+      process: "clinical-judgment",
+      difficulty: 4,
+      trend: true,
+      stem: "A client who weighs 80 kg has deep burns over 45% of the body surface. Lactated Ringer's runs by the burn protocol. The protocol target for this client is 40 mL of urine each hour. The urine is clear yellow. The nurse reviews the flow sheet. Based on the trend, which action should the nurse anticipate?",
+      tabs: [
+        {
+          title: "Flow Sheet",
+          table: {
+            head: ["Time", "0400", "0500", "0600", "0700"],
+            rows: [
+              ["Lactated Ringer's (mL per hour)", "900", "900", "900", "900"],
+              ["Urine output (mL in the hour)", "35", "26", "20", "16"],
+              ["Heart rate (/minute)", "118", "124", "128", "132"],
+              ["BP (mmHg)", "108/66", "104/64", "100/60", "96/58"],
+            ],
+          },
+        },
+      ],
+      rationale:
+        "Urine output is the main guide to burn resuscitation. It has fallen from 35 to 16 mL in the hour, below the target of 40 mL. The heart rate rose from 118 to 132/minute and the BP drifted down. The client is under-resuscitated. Protocols raise the fluid rate step by step until the target is met. A diuretic raises urine output without restoring volume. Cutting the fluid would deepen the shock.",
+      refs: ["The adult urine output target during burn resuscitation is about 0.5 mL/kg each hour."],
+      sources: [ABLS, ISBI],
+    }),
+    kind: "mc",
+    options: [
+      { text: "Lower the fluid rate to limit edema", why: "Less fluid would deepen the hypovolemia shown by falling urine output." },
+      { text: "Give IV furosemide to raise urine output", why: "A diuretic raises urine output falsely and worsens the volume deficit." },
+      { text: "Keep the rate and recheck in 4 hours", why: "Waiting 4 hours lets the deficit worsen." },
+      { text: "Raise the lactated Ringer's rate per protocol", why: "Urine output below 40 mL with rising heart rate shows the need for more fluid." },
+    ],
+    correct: 3,
+  },
+  {
+    ...meta("rn-s37-38", {
+      need: "PA",
+      topic: "Dry chemical on the skin",
+      cjmm: "action",
+      process: "nursing-process",
+      difficulty: 2,
+      stem: "A construction worker arrives with dry lime powder on both forearms. The shirt sleeves are coated with the powder. The skin beneath is red and painful. Place the nurse's first four actions in order.",
+      rationale:
+        "The nurse puts on protective equipment first so the chemical does not injure staff. Contaminated clothing comes off next, because it keeps the chemical against the skin. Dry powder is brushed off before water is applied. Large volumes of running water then dilute and remove what is left. Neutralizing agents can cause a heat reaction. Ointment traps the chemical on the skin.",
+      sources: [ABLS, ISBI],
+    }),
+    kind: "dnd",
+    scoring: "zero-one",
+    targets: ["First", "Second", "Third", "Fourth"],
+    tokens: [
+      { text: "Brush off the dry powder", why: "Brushing removes the dry chemical before water is added." },
+      { text: "Apply a neutralizing agent", why: "Neutralizers can create heat and deepen the burn." },
+      { text: "Flush with running water", why: "Running water dilutes and removes the remaining chemical." },
+      { text: "Put on protective gear", why: "Gloves and protective gear keep the chemical off staff." },
+      { text: "Remove the coated clothing", why: "Coated clothing holds the chemical against the skin." },
+      { text: "Cover the skin with ointment", why: "Ointment traps the chemical on the skin." },
+    ],
+    correct: [3, 4, 0, 2],
+  },
+  {
+    ...meta("rn-s37-39", {
+      need: "PA",
+      topic: "Hematocrit and potassium early after a burn",
+      cjmm: "analyze",
+      process: "clinical-judgment",
+      difficulty: 3,
+      stem: "A 42-year-old client with deep partial-thickness burns over 35% of the body surface is 6 hours after injury. Hematocrit is 54% and serum potassium is 5.6 mEq/L (5.6 mmol/L). Complete the following sentence by choosing from the lists of options.",
+      rationale:
+        "In the first hours after a major burn, capillaries leak plasma into the tissues. Red cells stay in the vessels, so the hematocrit rises to 54%. Burned cells break down and release potassium, so the level rises to 5.6 mEq/L. Blood loss and fluid overload would lower the hematocrit. Lactated Ringer's holds too little potassium to explain the rise.",
+      sources: [HINKLE, ABLS],
+    }),
+    kind: "cloze",
+    scoring: "zero-one",
+    template: "The hematocrit of 54% reflects {0}. The potassium of 5.6 mEq/L reflects {1}.",
+    blanks: [
+      {
+        options: [
+          { text: "blood loss from the burn wounds", why: "Blood loss lowers the hematocrit over time. It does not raise it." },
+          { text: "fluid overload from resuscitation", why: "Extra fluid dilutes red cells and lowers the hematocrit." },
+          { text: "plasma loss through leaky capillaries", why: "Plasma leaves the vessels while red cells stay, so the hematocrit rises." },
+          { text: "a clotted laboratory sample", why: "Nothing in the stem suggests a sampling problem." },
+        ],
+        correct: 2,
+      },
+      {
+        options: [
+          { text: "potassium in the lactated Ringer's", why: "Lactated Ringer's holds too little potassium to raise the level this much." },
+          { text: "release from damaged cells", why: "Injured cells release their potassium into the blood." },
+          { text: "high urine output", why: "High urine output would lower potassium, and it is not described." },
+          { text: "a low dietary intake", why: "Low intake would lower potassium, not raise it." },
+        ],
+        correct: 1,
+      },
+    ],
+  },
+  {
+    ...meta("rn-s37-40", {
+      need: "PA",
+      topic: "Low sodium after an endurance race",
+      cjmm: "generate",
+      process: "clinical-judgment",
+      difficulty: 5,
+      stem: "A 38-year-old runner collapses after a marathon that took 5 hours and 40 minutes. She drank water at every aid station and weighs 2 kg more than before the race. She is confused, has a headache and has vomited twice. Temperature is 37.4°C (99.3°F), BP 118/74 mmHg and heart rate 88/minute. Glucose is 96 mg/dL (5.3 mmol/L). Sodium is 124 mEq/L (124 mmol/L). Complete the diagram by choosing the condition the client is most likely experiencing, 2 actions to take and 2 parameters to monitor.",
+      rationale:
+        "Drinking more water than she lost, with a weight gain of 2 kg, has diluted her sodium to 124 mEq/L. Confusion, headache and vomiting show brain swelling. Severe exercise-associated hyponatremia is treated with an IV bolus of 3% sodium chloride. Fluids are restricted until she passes urine. Isotonic or plain water adds free water while antidiuretic hormone is high. Serum sodium and level of consciousness show the response.",
+      refs: ["Severe exercise-associated hyponatremia with encephalopathy is treated with IV 100 mL boluses of 3% sodium chloride."],
+      sources: [EAH],
+    }),
+    kind: "bowtie",
+    conditions: [
+      { text: "Exertional heat stroke", why: "The temperature is 37.4°C, so heat stroke is unlikely." },
+      { text: "Dehydration from sweat loss", why: "She weighs 2 kg more than before the race, so she has gained fluid." },
+      { text: "Exercise-associated hyponatremia", why: "Overdrinking, weight gain, a sodium of 124 mEq/L and confusion fit this condition." },
+      { text: "Hypoglycemia after exercise", why: "Glucose is 96 mg/dL, which is normal." },
+    ],
+    actions: [
+      { text: "Give the 3% sodium chloride bolus", why: "Hypertonic saline raises sodium and reduces brain swelling." },
+      { text: "Encourage sips of plain water", why: "More water dilutes the sodium further." },
+      { text: "Infuse 0.9% sodium chloride rapidly", why: "Isotonic fluid can worsen hyponatremia while antidiuretic hormone is high." },
+      { text: "Begin cold water immersion", why: "Immersion treats heat stroke. Her temperature is normal." },
+      { text: "Restrict fluids until she urinates", why: "Fluid restriction stops further dilution until free water is cleared." },
+    ],
+    parameters: [
+      { text: "Serum sodium level", why: "Repeat sodium checks show the response and guide further boluses." },
+      { text: "Hemoglobin A1C", why: "A1C reflects long-term glucose control and does not guide this care." },
+      { text: "Core temperature", why: "Her temperature is normal and is not the main concern." },
+      { text: "Level of consciousness", why: "Improving alertness shows brain swelling is easing." },
+      { text: "Serum lipase level", why: "Lipase relates to pancreatitis, which is not suggested." },
+    ],
+    correct: { condition: 2, actions: [0, 4], parameters: [0, 3] },
+  },
+];

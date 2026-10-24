@@ -189,3 +189,51 @@ export const AAP_TRAMPOLINE: Source = {
   year: 2012,
   url: "https://doi.org/10.1542/peds.2012-2082",
 };
+export const AAP_OBESITY: Source = {
+  body: "Hampl SE, Hassink SG, Skinner AC, et al. American Academy of Pediatrics",
+  work: "Clinical Practice Guideline for the Evaluation and Treatment of Children and Adolescents With Obesity. Pediatrics 151(2):e2022060640",
+  year: 2023,
+  url: "https://doi.org/10.1542/peds.2022-060640",
+};
+export const US_MEC: Source = {
+  body: "Nguyen AT, Curtis KM, Tepper NK, et al. Centers for Disease Control and Prevention",
+  work: "US Medical Eligibility Criteria for Contraceptive Use, 2024. MMWR Recommendations and Reports 73(4):1",
+  year: 2024,
+  url: "https://www.cdc.gov/mmwr/volumes/73/rr/rr7304a1.htm",
+};
+export const ABM_MASTITIS: Source = {
+  body: "Mitchell KB, Johnson HM, Rodriguez JM, Eglash A, et al. Academy of Breastfeeding Medicine",
+  work: "ABM Clinical Protocol 36: The Mastitis Spectrum, Revised 2022. Breastfeeding Medicine 17(5):360",
+  year: 2022,
+  url: "https://doi.org/10.1089/bfm.2022.29207.kbm",
+};
+export const CDC_MILK: Source = {
+  body: "Centers for Disease Control and Prevention",
+  work: "Breast Milk Preparation and Storage: Handling Breast Milk",
+  year: 2026,
+  url: "https://www.cdc.gov/breastfeeding/breast-milk-preparation-and-storage/handling-breastmilk.html",
+};
+export const JCIH: Source = {
+  body: "Joint Committee on Infant Hearing",
+  work: "Year 2019 Position Statement: Principles and Guidelines for Early Hearing Detection and Intervention Programs. Journal of Early Hearing Detection and Intervention 4(2):1",
+  year: 2019,
+  url: "https://doi.org/10.15142/fptk-b748",
+};
+export const AAP_DDH: Source = {
+  body: "Shaw BA, Segal LS. American Academy of Pediatrics Section on Orthopaedics",
+  work: "Evaluation and Referral for Developmental Dysplasia of the Hip in Infants. Pediatrics 138(6):e20163107",
+  year: 2016,
+  url: "https://doi.org/10.1542/peds.2016-3107",
+};
+export const ACIP_MMR: Source = {
+  body: "McLean HQ, Fiebelkorn AP, Temte JL, Wallace GS. Advisory Committee on Immunization Practices",
+  work: "Prevention of Measles, Rubella, Congenital Rubella Syndrome, and Mumps, 2013. MMWR Recommendations and Reports 62(RR-04):1",
+  year: 2013,
+  url: "https://pubmed.ncbi.nlm.nih.gov/23760231/",
+};
+export const CDC_MEASLES_TRAVEL: Source = {
+  body: "Centers for Disease Control and Prevention",
+  work: "Measles (Rubeola): Plan for Travel",
+  year: 2026,
+  url: "https://www.cdc.gov/measles/travel/index.html",
+};

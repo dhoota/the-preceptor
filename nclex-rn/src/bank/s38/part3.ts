@@ -79,7 +79,7 @@ export const PART3: Item[] = [
       topic: "Clotting factor consumption after heat stroke",
       cjmm: "analyze",
       process: "clinical-judgment",
-      difficulty: 4,
+      difficulty: 5,
       trend: true,
       stem: "A 24-year-old client was admitted yesterday with exertional heat stroke. Cooling brought the core temperature back to normal. The nurse reviews the laboratory results. Based on the trend, which condition is most likely developing?",
       tabs: [

@@ -165,7 +165,7 @@ export const PART1: Item[] = [
     parameters: [
       { text: "Joint swelling in the fingers", why: "Joint pain and swelling are features of rubella, not measles." },
       { text: "Crusting of skin vesicles", why: "Vesicle crusting tracks varicella. Measles does not form vesicles." },
-      { text: "Respiratory rate and oxygen saturation", why: "Pneumonia is a common and serious complication of measles." },
+      { text: "Respiratory rate and SpO2", why: "Pneumonia is a common and serious complication of measles." },
       { text: "Fluid intake and urine output", why: "High fever, poor intake and diarrhea can dehydrate a young child." },
       { text: "Serum glucose level", why: "Measles does not change glucose in a way that guides care." },
     ],
@@ -231,7 +231,7 @@ export const PART1: Item[] = [
     kind: "mc",
     options: [
       { text: "\"Because it affects you, I can tell you the result.\"", why: "A relative's interest does not override the client's right to privacy." },
-      { text: "\"I cannot share any client information. Please talk with your sister.\"", why: "This protects the client's privacy and points the sister to the person who can share it." },
+      { text: "\"I cannot share that. Please talk with your sister.\"", why: "This protects the client's privacy and points the sister to the person who can share it." },
       { text: "\"Yes, so you should arrange your own testing soon.\"", why: "This confirms the result without the client's authorization." },
       { text: "\"I will mail you a copy once I note this call.\"", why: "Noting a call does not create authorization to release the result." },
     ],

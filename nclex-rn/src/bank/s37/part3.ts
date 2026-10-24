@@ -51,7 +51,7 @@ export const PART3: Item[] = [
       topic: "Features of a normal intrapartum tracing",
       cjmm: "recognize",
       process: "clinical-judgment",
-      difficulty: 3,
+      difficulty: 2,
       stem: "The nurse reviews a 30-minute fetal heart rate tracing for a client in labor at 40 weeks of gestation. Which findings are consistent with a category I tracing? Select all that apply.",
       rationale:
         "A category I tracing has a baseline of 110 to 160/minute, moderate variability and no late or variable decelerations. Early decelerations may be present. Accelerations may be present or absent, so their absence alone does not change the category. A baseline of 170/minute, minimal variability, recurrent late decelerations and a prolonged deceleration each place a tracing outside category I.",
@@ -66,7 +66,7 @@ export const PART3: Item[] = [
       { text: "Moderate baseline variability", why: "Moderate variability is required for category I." },
       { text: "Recurrent late decelerations after contractions", why: "Late decelerations are absent in category I." },
       { text: "Early decelerations with contractions", why: "Early decelerations may be present in category I." },
-      { text: "Prolonged deceleration of 3 minutes", why: "A deceleration lasting 2 minutes or more is a prolonged deceleration and is category II." },
+      { text: "Prolonged deceleration of 3 minutes", why: "A deceleration of 3 minutes is a prolonged deceleration and is category II." },
       { text: "No accelerations in the past 30 minutes", why: "Accelerations may be present or absent in category I." },
     ],
     correct: [1, 3, 5, 7],
@@ -77,7 +77,7 @@ export const PART3: Item[] = [
       topic: "Fetal slowing after an epidural dose",
       cjmm: "generate",
       process: "clinical-judgment",
-      difficulty: 4,
+      difficulty: 5,
       stem: "A client at 39 weeks of gestation is 5 cm dilated and received an epidural bolus 15 minutes ago. BP was 124/76 mmHg before the epidural and is now 86/48 mmHg. She reports nausea and lightheadedness and lies flat on her back. The fetal heart rate baseline was 140/minute and has been 95/minute for the past 3 minutes. Contractions occur every 3 minutes. Complete the diagram by choosing the condition the client is most likely experiencing, 2 actions to take and 2 parameters to monitor.",
       rationale:
         "The BP fell from 124/76 to 86/48 mmHg within 15 minutes of the epidural, with nausea and lightheadedness. Regional anesthesia dilates vessels, and lying supine compresses the vena cava. Less blood reaches the placenta, so the fetal rate has dropped for 3 minutes. Lateral positioning and an IV fluid bolus restore venous return and placental flow. The nurse follows the maternal BP and the fetal heart rate closely.",
@@ -135,7 +135,7 @@ export const PART3: Item[] = [
       topic: "Timing of amniocentesis versus villus sampling",
       cjmm: "generate",
       process: "teaching",
-      difficulty: 3,
+      difficulty: 4,
       stem: "A 38-year-old client at 12 weeks of gestation has a screening result that shows a high chance of trisomy 21. She asks to have an amniocentesis this week. Which response by the nurse is accurate?",
       rationale:
         "Amniocentesis is done at 15 weeks or later. Before 15 weeks it carries more pregnancy loss, clubfoot and fluid leakage. At 12 weeks chorionic villus sampling is the diagnostic option, since it is done from 10 to 13 weeks. Both tests can diagnose trisomy 21. Testing need not wait until 20 weeks.",

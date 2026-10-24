@@ -159,7 +159,7 @@ export const PART1: Item[] = [
       topic: "Holding an SGLT2 inhibitor before surgery",
       cjmm: "action",
       process: "teaching",
-      difficulty: 3,
+      difficulty: 2,
       stem: "A 64-year-old client with type 2 diabetes takes dapagliflozin 10 mg by mouth daily. The client is in the preoperative clinic 6 days before an elective knee replacement. Which instruction about dapagliflozin should the nurse give?",
       rationale:
         "SGLT2 inhibitors can cause ketoacidosis with near normal glucose, and surgery with fasting raises the risk. The label advises withholding dapagliflozin for at least 3 days before surgery when possible. The drug restarts when the client is stable and eating again. Stopping on the morning of surgery leaves the drug active. A 2-week hold is longer than needed and leaves glucose uncontrolled.",

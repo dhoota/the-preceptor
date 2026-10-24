@@ -100,7 +100,7 @@ export const PART1: Item[] = [
     options: [
       { text: "Dust the skin around the tube with talc", why: "Powder at the site can irritate the skin and clump around the tube." },
       { text: "Rub lotion into the skin around the tube", why: "Lotion keeps the skin moist and can irritate the site." },
-      { text: "Wash the site with soap and water, then dry it", why: "Soap and water with careful drying is the routine care for a healed site." },
+      { text: "Wash with soap and water, then pat dry", why: "Soap and water with careful drying is the routine care for a healed site." },
       { text: "Keep the site out of the shower water", why: "The client can shower with the catheter and bag in place." },
     ],
     correct: 2,

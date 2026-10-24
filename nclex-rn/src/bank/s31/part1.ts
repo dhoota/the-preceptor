@@ -1,0 +1,250 @@
+import type { Item } from "@/engine/types";
+import { CDC_TST, HCP_MEASLES, HCP_PERTUSSIS, LEWINSOHN, MMR, SIEGEL, SOSA, VHF_III, VHF_PPE, meta } from "./common";
+
+export const PART1: Item[] = [
+  {
+    ...meta("rn-s31-01", {
+      need: "SIPC",
+      topic: "Febrile traveler from an Ebola outbreak area",
+      cjmm: "action",
+      process: "nursing-process",
+      difficulty: 2,
+      stem: "A 34-year-old client comes to the emergency department triage desk. The client returned 9 days ago from a country with an active Ebola outbreak, where the client cared for a relative who died. Temperature is 38.6°C (101.5°F) with headache and muscle aches. There is no vomiting, diarrhea or bleeding. Which action should the nurse take first?",
+      rationale:
+        "The client cared for a relative who died during an Ebola outbreak 9 days ago and now has fever. Exposure within the screening window plus fever makes the client a person under investigation. The first step is isolation in a private room with its own bathroom or a covered commode. The nurse then informs infection prevention and the health department. Blood draws and IV lines wait for trained staff in full protective equipment.",
+      refs: ["Ebola screening asks about exposure in the 21 days before symptoms began."],
+      sources: [VHF_III, SIEGEL],
+    }),
+    kind: "mc",
+    options: [
+      { text: "Draw blood for a malaria smear", why: "Malaria testing may follow, but isolation comes first so no one else is exposed while tests are arranged." },
+      { text: "Move the client to a private room", why: "Isolation in a room with its own bathroom or a covered commode stops exposure of other clients and staff before anything else is done." },
+      { text: "Give the client a mask and keep them in triage", why: "A mask does not contain blood or body fluids. The client must leave the shared area." },
+      { text: "Start an IV line to give fluids", why: "Placing a line adds blood exposure. It waits until isolation and full protective equipment are in place." },
+    ],
+    correct: 1,
+  },
+  {
+    ...meta("rn-s31-02", {
+      need: "SIPC",
+      topic: "Protective ensemble for an unstable Ebola client",
+      cjmm: "generate",
+      process: "nursing-process",
+      difficulty: 4,
+      stem: "A client with suspected Ebola virus disease now has vomiting and diarrhea. The hospital uses the N95 respirator option for personal protective equipment. Which items should the nurse wear to enter the room? Select all that apply.",
+      rationale:
+        "Vomiting and diarrhea make this client clinically unstable, so the full ensemble applies. The N95 option combines a fit-tested N95 respirator, a single-use surgical hood to the shoulders and a full face shield. An impermeable gown, two pairs of extended-cuff gloves and boot covers to mid-calf complete it. An apron is added when the client vomits or has diarrhea. A trained observer watches every donning and doffing step.",
+      sources: [VHF_PPE],
+    }),
+    kind: "sata",
+    options: [
+      { text: "Fit-tested N95 respirator", why: "The N95 option uses a fit-tested respirator under the hood and face shield." },
+      { text: "Surgical mask", why: "A surgical mask does not meet the respirator standard set for an unstable client." },
+      { text: "Single-use surgical hood", why: "The hood covers hair, ears and neck to the shoulders so no skin is exposed." },
+      { text: "One pair of exam gloves", why: "Two pairs of extended-cuff gloves are worn so the outer pair can come off during doffing." },
+      { text: "Apron over the gown", why: "An apron over the torso to mid-calf is required when the client vomits or has diarrhea." },
+      { text: "Ankle-high shoe covers alone", why: "Boot covers must reach at least mid-calf. Ankle covers may only be added over them." },
+      { text: "Boot covers to mid-calf", why: "Boot covers to mid-calf protect the legs and footwear from splashes of body fluid." },
+      { text: "Full face shield", why: "A single-use full face shield protects the eyes, nose and mouth with the N95 option." },
+    ],
+    correct: [0, 2, 4, 6, 7],
+  },
+  {
+    ...meta("rn-s31-03", {
+      need: "SIPC",
+      topic: "Doffing order for the Ebola N95 ensemble",
+      cjmm: "action",
+      process: "nursing-process",
+      difficulty: 4,
+      stem: "The nurse finishes care for a client with confirmed Ebola virus disease. The nurse wears the N95 respirator option with an apron. A trained observer reads each step aloud. Place the removal steps in order.",
+      rationale:
+        "The most soiled items come off first. The apron goes first, then the outer gloves. The face shield follows, then the surgical hood, then the gown. Boot covers come off next and the inner gloves are changed. The respirator comes off near the end so the airway stays protected. Gloved hands are disinfected between steps. The observer coaches but never touches the equipment.",
+      sources: [VHF_PPE],
+    }),
+    kind: "dnd",
+    scoring: "zero-one",
+    targets: ["First", "Second", "Third", "Fourth", "Fifth", "Sixth"],
+    tokens: [
+      { text: "Remove the face shield", why: "The face shield comes off third, after the outer gloves, by the rear strap." },
+      { text: "Remove the apron", why: "The apron carries the heaviest soiling, so it is rolled away from the body first." },
+      { text: "Remove the N95 respirator", why: "The respirator comes off after the gown and boot covers so the airway stays protected longest." },
+      { text: "Remove the outer gloves", why: "The outer gloves are disinfected and removed second, leaving clean inner gloves." },
+      { text: "Remove the gown", why: "The gown comes off fifth, rolled inside out, after the hood." },
+      { text: "Remove the surgical hood", why: "The hood comes off fourth, after the face shield and before the gown." },
+      { text: "Remove the inner gloves", why: "Inner gloves stay on, with a change, until after the respirator is removed." },
+      { text: "Have the observer untie the gown", why: "The observer reads and confirms each step but does not touch contaminated equipment." },
+    ],
+    correct: [1, 3, 0, 5, 4, 2],
+  },
+  {
+    ...meta("rn-s31-04", {
+      need: "SIPC",
+      topic: "Pertussis exposure in a newborn unit nurse",
+      cjmm: "action",
+      process: "nursing-process",
+      difficulty: 3,
+      stem: "A nurse who works in a neonatal intensive care unit examined an adult client's throat without a mask. The next day the client tested positive for pertussis. The nurse has no cough and received Tdap vaccine 3 years ago. What should the occupational health nurse advise?",
+      rationale:
+        "Unmasked, face-to-face contact with an infectious client is an exposure. The nurse cares for newborns, who are at high risk for severe pertussis. Postexposure antibiotic prophylaxis is given whatever the vaccine history. An exposed nurse with no symptoms who takes prophylaxis needs no work restriction. Restriction from high-risk clients applies only when prophylaxis is not taken. Any new cough is reported at once.",
+      sources: [HCP_PERTUSSIS],
+    }),
+    kind: "mc",
+    options: [
+      { text: "Stay off work for 21 days after the exposure", why: "Work restriction is not needed for an exposed nurse with no symptoms who takes prophylaxis." },
+      { text: "No treatment is needed after the Tdap dose", why: "Vaccination does not rule out infection. Exposed personnel get prophylaxis whatever their vaccine history." },
+      { text: "Get a Tdap booster in place of antibiotics", why: "A booster does not prevent disease from this exposure. Antibiotic prophylaxis does." },
+      { text: "Take prophylactic antibiotics and keep working", why: "Prophylaxis protects the newborns the nurse cares for, and no work restriction is needed." },
+    ],
+    correct: 3,
+  },
+  {
+    ...meta("rn-s31-05", {
+      need: "SIPC",
+      topic: "Cough in a nurse after pertussis exposure",
+      cjmm: "generate",
+      process: "nursing-process",
+      difficulty: 3,
+      stem: "A pediatric nurse cared for an infant with pertussis without a mask 10 days ago. The nurse did not take prophylaxis. The nurse now has a runny nose and a cough that began 2 days ago. Which actions should the occupational health nurse advise? Select two.",
+      rationale:
+        "A new cough 10 days after an unprotected exposure is suspected pertussis. The nurse needs testing and antibiotic treatment. A symptomatic nurse is excluded from work until 5 days of effective antibiotics are complete. A mask does not make work safe. The cough can last for weeks, so its end does not mark the return date. Pertussis often causes little or no fever.",
+      refs: ["Symptomatic personnel are excluded for 21 days from cough onset, or until 5 days after starting effective antibiotics."],
+      sources: [HCP_PERTUSSIS, SIEGEL],
+    }),
+    kind: "msn",
+    select: 2,
+    options: [
+      { text: "Get tested and treated for pertussis", why: "A cough after an exposure needs evaluation and antibiotic treatment." },
+      { text: "Keep working while wearing a surgical mask", why: "Personnel with suspected pertussis are excluded from work, not masked." },
+      { text: "Stay off work until 5 days of antibiotics", why: "Exclusion ends after 5 days of effective therapy, or 21 days after cough onset without it." },
+      { text: "Return once the cough has stopped", why: "The cough can last weeks. The return date depends on days of treatment." },
+      { text: "Move to a unit that cares only for adults", why: "Adults also catch pertussis, so exclusion covers all client care." },
+      { text: "Start antibiotics only if a fever develops", why: "Pertussis often causes little or no fever. Waiting for one delays treatment." },
+    ],
+    correct: [0, 2],
+  },
+  {
+    ...meta("rn-s31-06", {
+      need: "SIPC",
+      topic: "Measles vaccine after a waiting room exposure",
+      cjmm: "action",
+      process: "nursing-process",
+      difficulty: 3,
+      stem: "A healthy 26-year-old client who is not pregnant sat beside a child with measles in a clinic waiting room 48 hours ago. The client has no record of measles vaccination or past measles. What should the nurse anticipate?",
+      rationale:
+        "The client has no evidence of immunity and was exposed 48 hours ago. MMR vaccine given within 72 hours of exposure can prevent measles or make it milder. The client is healthy and not pregnant, so vaccine is the right product. Immune globulin is kept for people who cannot receive vaccine or who are past 72 hours but within 6 days. Waiting for a rash or a test result loses the window.",
+      refs: ["MMR vaccine within 72 hours or immune globulin within 6 days of exposure can prevent or modify measles."],
+      sources: [MMR],
+    }),
+    kind: "mc",
+    options: [
+      { text: "A dose of MMR vaccine today", why: "MMR given within 72 hours of exposure can prevent measles or soften its course." },
+      { text: "Immune globulin, since 72 hours have passed", why: "Only 48 hours have passed. A healthy adult in the window receives vaccine." },
+      { text: "A measles antibody test before any treatment", why: "Waiting for a result can close the 72 hour window. Without records the client is treated as susceptible." },
+      { text: "Observation only, unless a rash develops", why: "Measles spreads before the rash, and waiting misses the window for prevention." },
+    ],
+    correct: 0,
+  },
+  {
+    ...meta("rn-s31-07", {
+      need: "SIPC",
+      topic: "Work exclusion after a measles exposure",
+      cjmm: "generate",
+      process: "clinical-judgment",
+      difficulty: 4,
+      stem: "A nurse cared for an adult client for 8 hours on Monday. On Tuesday the client was diagnosed with measles. The nurse has no record of measles vaccination and a negative measles IgG. The nurse received MMR vaccine on Tuesday. Complete the following sentence by choosing from the lists of options.",
+      rationale:
+        "The nurse has no evidence of immunity. Exposed personnel without immunity are excluded from day 5 after the first exposure through day 21 after the last exposure. Day 5 is the earliest point at which an infected person could spread measles. Day 21 covers the longest incubation period. The vaccine dose given after exposure does not shorten the exclusion.",
+      sources: [HCP_MEASLES, MMR],
+    }),
+    kind: "cloze",
+    scoring: "dyad",
+    template: "The nurse should be excluded from work from day {0} after the first exposure through day {1} after the last exposure.",
+    blanks: [
+      {
+        options: [
+          { text: "1", why: "An infected person cannot spread measles this early, so exclusion does not need to start on day 1." },
+          { text: "5", why: "Day 5 is the earliest point at which an infected person could become contagious." },
+          { text: "7", why: "Starting on day 7 leaves days 5 and 6 uncovered, when spread is already possible." },
+          { text: "10", why: "Starting on day 10 leaves days 5 to 9 uncovered, when spread is already possible." },
+        ],
+        correct: 1,
+      },
+      {
+        options: [
+          { text: "7", why: "Measles can appear well after day 7, so ending here is too early." },
+          { text: "14", why: "Measles can still appear after day 14, so ending here is too early." },
+          { text: "21", why: "Day 21 covers the longest incubation period after the last exposure." },
+          { text: "28", why: "The incubation window has ended by day 21, so 28 days is longer than needed." },
+        ],
+        correct: 2,
+      },
+    ],
+  },
+  {
+    ...meta("rn-s31-08", {
+      need: "SIPC",
+      topic: "Baseline tuberculosis test after BCG vaccine",
+      cjmm: "analyze",
+      process: "clinical-judgment",
+      difficulty: 3,
+      stem: "A newly hired 31-year-old nurse needs baseline tuberculosis screening. The nurse grew up in a country where BCG vaccine is given at birth and received it as an infant. The nurse has no symptoms and no known exposure. Which test should the occupational health nurse arrange?",
+      rationale:
+        "BCG vaccine can cause a false-positive tuberculin skin test. An interferon-gamma release assay uses antigens that BCG strains lack, so past vaccination does not cause a positive result. A blood test is preferred for people who received BCG. A two-step skin test addresses boosting, not the BCG effect. A chest radiograph looks for disease and cannot detect latent infection.",
+      sources: [LEWINSOHN, SOSA, CDC_TST],
+    }),
+    kind: "mc",
+    options: [
+      { text: "A single tuberculin skin test", why: "BCG can cause a false-positive skin test, so a blood test is preferred." },
+      { text: "A two-step tuberculin skin test", why: "Two-step testing reduces boosting errors but does not remove the BCG effect." },
+      { text: "An interferon-gamma release assay", why: "The blood test uses antigens absent from BCG, so past vaccination does not cause a positive result." },
+      { text: "A chest radiograph without other tests", why: "A radiograph looks for disease. It cannot detect latent infection." },
+    ],
+    correct: 2,
+  },
+  {
+    ...meta("rn-s31-09", {
+      need: "SIPC",
+      topic: "Booster effect on two-step skin testing",
+      cjmm: "analyze",
+      process: "clinical-judgment",
+      difficulty: 4,
+      stem: "A newly hired 52-year-old nurse has baseline two-step tuberculin skin testing. The first test shows 4 mm of induration at 48 hours. The second test, placed 2 weeks later, shows 17 mm of induration at 72 hours. The nurse has no symptoms and no known recent exposure. How should the result be interpreted?",
+      rationale:
+        "A skin test can recall a waning response to an old infection. The second test then shows the true reaction. In two-step testing a positive second test is a boosted reaction, not a new infection. It counts as a positive baseline. Boosting is more common in older adults. Induration of 17 mm is positive at any cutoff. The nurse needs a symptom review and a chest radiograph and is offered treatment for latent infection.",
+      refs: ["Induration cutoffs for a positive tuberculin skin test are 5, 10 or 15 mm depending on risk."],
+      sources: [CDC_TST, SOSA],
+    }),
+    kind: "mc",
+    options: [
+      { text: "A new infection acquired in the past 2 weeks", why: "A positive second test in two-step testing reflects boosting of an older response, not a conversion." },
+      { text: "A boosted reaction that counts as a positive baseline", why: "The second test shows the true baseline, and 17 mm is positive." },
+      { text: "A false reaction that needs a third skin test", why: "A third test adds nothing. The second result stands as the baseline." },
+      { text: "A negative baseline, because the first test was negative", why: "The first test only primes a waning response. The second result is the baseline." },
+    ],
+    correct: 1,
+  },
+  {
+    ...meta("rn-s31-10", {
+      need: "SIPC",
+      topic: "Positive blood test for tuberculosis at hire",
+      cjmm: "action",
+      process: "nursing-process",
+      difficulty: 3,
+      stem: "A newly hired nurse has a positive interferon-gamma release assay. The nurse has never been treated for tuberculosis and reports feeling well. Which actions should the occupational health nurse take? Select all that apply.",
+      rationale:
+        "A positive test needs a symptom review and a chest radiograph to rule out disease. Treatment for latent infection is offered and strongly encouraged. The nurse learns which symptoms to report between yearly symptom checks. Latent infection is not contagious, so no work restriction or mask is needed. The blood test stays positive, so repeating it each year adds nothing.",
+      sources: [SOSA],
+    }),
+    kind: "sata",
+    options: [
+      { text: "Repeat the blood test every year", why: "A positive test stays positive. Untreated personnel get a yearly symptom check instead." },
+      { text: "Ask about cough, night sweats and weight loss", why: "A symptom review looks for active disease." },
+      { text: "Keep the nurse off work until treated", why: "Latent infection is not contagious. Work continues once disease is ruled out." },
+      { text: "Arrange a chest radiograph", why: "A radiograph looks for signs of active pulmonary disease." },
+      { text: "Have the nurse wear a mask at work", why: "A person with latent infection does not spread tuberculosis." },
+      { text: "Offer treatment for latent infection", why: "Treatment lowers the risk that latent infection becomes active disease." },
+      { text: "Teach which symptoms to report", why: "Symptoms between yearly checks need prompt evaluation." },
+    ],
+    correct: [1, 3, 5, 6],
+  },
+];

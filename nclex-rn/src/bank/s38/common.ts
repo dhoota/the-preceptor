@@ -165,3 +165,33 @@ export const KWIATT_FES: Source = {
   year: 2013,
   url: "https://doi.org/10.4103/2229-5151.109426",
 };
+export const ACOG_PREECLAMPSIA: Source = {
+  body: "American College of Obstetricians and Gynecologists",
+  work: "Gestational Hypertension and Preeclampsia. ACOG Practice Bulletin No. 222. Obstetrics and Gynecology 135(6):e237",
+  year: 2020,
+  url: "https://doi.org/10.1097/AOG.0000000000003891",
+};
+export const ACOG_DYSTOCIA: Source = {
+  body: "American College of Obstetricians and Gynecologists",
+  work: "Shoulder Dystocia. ACOG Practice Bulletin No. 178. Obstetrics and Gynecology 129(5):e123",
+  year: 2017,
+  url: "https://doi.org/10.1097/AOG.0000000000002043",
+};
+export const PACHECO_AFE: Source = {
+  body: "Pacheco LD, Saade G, Hankins GDV, Clark SL. Society for Maternal-Fetal Medicine",
+  work: "Amniotic Fluid Embolism: Diagnosis and Management. American Journal of Obstetrics and Gynecology 215(2):B16",
+  year: 2016,
+  url: "https://doi.org/10.1016/j.ajog.2016.03.012",
+};
+export const SAYED_CORD: Source = {
+  body: "Sayed Ahmed WA, Hamdy MA",
+  work: "Optimal Management of Umbilical Cord Prolapse. International Journal of Women's Health 10:459",
+  year: 2018,
+  url: "https://www.dovepress.com/optimal-management-of-umbilical-cord-prolapse-peer-reviewed-article-IJWH",
+};
+export const SWEET_RDS: Source = {
+  body: "Sweet DG, Carnielli VP, Greisen G, et al.",
+  work: "European Consensus Guidelines on the Management of Respiratory Distress Syndrome: 2022 Update. Neonatology 120(1):3",
+  year: 2023,
+  url: "https://doi.org/10.1159/000528914",
+};

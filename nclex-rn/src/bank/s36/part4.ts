@@ -1,0 +1,232 @@
+import type { Item } from "@/engine/types";
+import { AABB, ACR_CONTRAST, ASCITES, BOWEL_PREP, ERCP, HINKLE, HIZENTRA, HYLENEX, INS, LIVER_BIOPSY, PAGANA, meta } from "./common";
+
+export const PART4: Item[] = [
+  {
+    ...meta("rn-s36-31", {
+      need: "PPT",
+      topic: "Preventing epidural and IV line mix-ups",
+      cjmm: "generate",
+      process: "nursing-process",
+      difficulty: 2,
+      stem: "A client returns from surgery with a continuous lumbar epidural infusion of bupivacaine and fentanyl on a dedicated pump. The client also has a peripheral IV with lactated Ringer's solution. Which measures should the nurse include in the plan to prevent a wrong-route connection? Select all that apply.",
+      rationale:
+        "Epidural and IV lines often run side by side. An IV drug that enters the epidural space, or an epidural drug that enters a vein, can cause paralysis, seizures or death. Tubing without injection ports removes the chance of adding IV drugs to the epidural line. Clear labels and tracing each line from the client to its source before any connection catch mistakes. The epidural is not used to give other drugs or to keep a vein open.",
+      sources: [INS],
+    }),
+    kind: "sata",
+    options: [
+      { text: "Use epidural tubing without injection ports", why: "Tubing without ports leaves no place to add an IV drug by mistake." },
+      { text: "Label the epidural tubing at the pump and near the client", why: "Labels at both ends show which line is epidural at every connection point." },
+      { text: "Give IV antibiotics through a port on the epidural line", why: "Drugs meant for a vein must not enter the epidural space." },
+      { text: "Trace the line from the client to the pump before connecting", why: "Tracing the full length of the line confirms the route before any change." },
+      { text: "Connect the epidural to the IV line to keep it open", why: "Joining the two lines sends IV fluid into the epidural space." },
+      { text: "Hang the epidural bag beside the IV bag on one pole", why: "Similar bags hung side by side are easily confused. Separating and labeling them lowers that risk." },
+    ],
+    correct: [0, 1, 3],
+  },
+  {
+    ...meta("rn-s36-32", {
+      need: "RRP",
+      topic: "Judging the end point of a bowel preparation",
+      cjmm: "evaluate",
+      process: "teaching",
+      difficulty: 2,
+      stem: "A client takes a split-dose polyethylene glycol preparation for a colonoscopy at 1000. At 0700 the client calls the clinic to describe the stool after finishing the second dose. Which description shows the preparation is working as intended?",
+      rationale:
+        "A clean colon lets the endoscopist see small polyps and flat lesions. Output that is clear or yellow liquid without solid pieces shows the colon is clean. Brown liquid with flecks, cloudy liquid with sediment or formed stool means stool remains. The client then calls back for instructions, because a poor preparation can hide lesions and may mean the test must be repeated.",
+      sources: [BOWEL_PREP, HINKLE],
+    }),
+    kind: "mc",
+    options: [
+      { text: "Clear yellow liquid with no solid pieces", why: "Clear or yellow liquid without solids shows the colon is clean." },
+      { text: "Light brown liquid with small flecks of stool", why: "Brown liquid with flecks shows stool is still present." },
+      { text: "Soft formed stool passed 3 times", why: "Formed stool shows the colon is not yet clean." },
+      { text: "Dark cloudy liquid with sediment", why: "Cloudy output with sediment shows residue that can hide lesions." },
+    ],
+    correct: 0,
+  },
+  {
+    ...meta("rn-s36-33", {
+      need: "PPT",
+      topic: "Calf swelling during an intraosseous bolus",
+      cjmm: "prioritize",
+      process: "clinical-judgment",
+      difficulty: 3,
+      stem: "A 6-year-old child in septic shock had an intraosseous needle placed in the right proximal tibia 20 minutes ago. A fluid bolus of 0.9% sodium chloride is running by pressure bag. The nurse finds the right calf swollen, firm and cool compared with the left, and the flow has slowed. What should the nurse do first?",
+      rationale:
+        "A swollen, firm calf below an intraosseous needle means fluid is leaking into the soft tissue rather than the marrow. Continued infusion can cause compartment syndrome and tissue injury. The nurse stops the infusion first, then notifies the provider and prepares for new access at another site. More pressure or a flush pushes more fluid into the tissue. Elevation does not stop the leak.",
+      sources: [INS],
+    }),
+    kind: "mc",
+    options: [
+      { text: "Increase the pressure on the bag", why: "More pressure forces more fluid into the swollen calf." },
+      { text: "Stop the infusion through the needle", why: "Stopping prevents further fluid entering the tissue and raising compartment pressure." },
+      { text: "Flush the needle with 10 mL of saline", why: "A flush adds fluid to the tissue when the needle is out of the marrow." },
+      { text: "Elevate the leg and continue the bolus", why: "Elevation does not stop fluid leaking from a displaced needle." },
+    ],
+    correct: 1,
+  },
+  {
+    ...meta("rn-s36-34", {
+      need: "RRP",
+      topic: "Matching warning signs after ERCP",
+      cjmm: "analyze",
+      process: "teaching",
+      difficulty: 4,
+      stem: "The nurse prepares discharge teaching for a client who had endoscopic retrograde cholangiopancreatography (ERCP) with sphincterotomy this morning. Drag the finding that best points to each complication.",
+      rationale:
+        "Severe upper abdominal pain that bores into the back points to pancreatitis, the most common serious adverse event. Black, tarry stool days later points to delayed bleeding from the sphincterotomy site. Free air on an abdominal x-ray means a perforation. Fever, chills and yellow skin point to cholangitis from a blocked bile duct. A mild sore throat and bloating that eases with walking are expected after the procedure.",
+      sources: [ERCP],
+    }),
+    kind: "dnd",
+    scoring: "zero-one",
+    targets: ["Pancreatitis", "Delayed bleeding", "Perforation", "Cholangitis"],
+    tokens: [
+      { text: "Fever, chills and yellow skin", why: "Fever with jaundice after ERCP points to infection of the bile duct." },
+      { text: "Mild sore throat", why: "A sore throat from the endoscope is expected and does not signal a complication." },
+      { text: "Upper abdominal pain into the back", why: "Severe epigastric pain into the back is the classic sign of pancreatitis." },
+      { text: "Free air on an abdominal x-ray", why: "Free air means the bowel wall has been breached." },
+      { text: "Bloating that eases with walking", why: "Gas from insufflation causes bloating that settles and is expected." },
+      { text: "Black, tarry stool on day 3", why: "Tarry stool days later points to bleeding from the sphincterotomy." },
+    ],
+    correct: [2, 5, 3, 0],
+  },
+  {
+    ...meta("rn-s36-35", {
+      need: "PPT",
+      topic: "Fluid choice for hypodermoclysis",
+      cjmm: "generate",
+      process: "nursing-process",
+      difficulty: 3,
+      stem: "An 88-year-old resident of a long-term care facility has mild dehydration from poor oral intake. The veins are fragile, and 3 IV attempts have failed. The primary health care provider prescribes subcutaneous fluid by hypodermoclysis with hyaluronidase. Which fluid should the nurse expect to infuse?",
+      rationale:
+        "Fluid given under the skin should be close to isotonic and contain electrolytes. 0.9% sodium chloride meets both needs. The hyaluronidase label warns that subcutaneous solutions without electrolytes can cause hypovolemia, as fluid shifts into the tissue. Dextrose 5% in water has no electrolytes. Hypertonic solutions draw fluid into the site and irritate the tissue.",
+      sources: [HYLENEX],
+    }),
+    kind: "mc",
+    options: [
+      { text: "Dextrose 5% in water", why: "A solution without electrolytes given under the skin can draw fluid from the circulation." },
+      { text: "0.9% sodium chloride", why: "An isotonic electrolyte solution is suited to subcutaneous hydration." },
+      { text: "Dextrose 10% in water", why: "This is hypertonic, has no electrolytes and irritates the tissue." },
+      { text: "3% sodium chloride", why: "Hypertonic saline draws fluid into the site and is not used under the skin." },
+    ],
+    correct: 1,
+  },
+  {
+    ...meta("rn-s36-36", {
+      need: "RRP",
+      topic: "First hours after a percutaneous liver biopsy",
+      cjmm: "action",
+      process: "nursing-process",
+      difficulty: 2,
+      stem: "A client returns to the unit after a percutaneous liver biopsy through the right lower chest wall. Which actions should the nurse take in the first hours after the procedure? Select all that apply.",
+      rationale:
+        "The liver is highly vascular, so bleeding is the main early risk. Lying on the right side presses the liver capsule against the chest wall at the puncture. Frequent vital signs detect bleeding early. A rising heart rate or a falling BP is reported at once. Early walking, aspirin and heat at the site all raise the risk of bleeding.",
+      sources: [LIVER_BIOPSY, HINKLE],
+    }),
+    kind: "sata",
+    options: [
+      { text: "Help the client walk in the hallway right away", why: "Early walking raises the risk of bleeding from the puncture site." },
+      { text: "Position the client on the right side", why: "Lying on the right side applies pressure to the puncture site." },
+      { text: "Give aspirin for discomfort at the site", why: "Aspirin impairs platelet function and raises bleeding risk." },
+      { text: "Check vital signs often for bleeding", why: "Frequent checks detect early signs of blood loss." },
+      { text: "Apply a heating pad over the site", why: "Heat dilates vessels and can increase bleeding." },
+      { text: "Report a rising pulse or a falling BP", why: "These changes can be the first signs of internal bleeding." },
+    ],
+    correct: [1, 3, 5],
+  },
+  {
+    ...meta("rn-s36-37", {
+      need: "PPT",
+      topic: "Site swelling after subcutaneous immune globulin",
+      cjmm: "evaluate",
+      process: "teaching",
+      difficulty: 2,
+      stem: "A client with primary immunodeficiency gives weekly subcutaneous immune globulin at home into 4 abdominal sites. Three hours after an infusion the client calls to report soft swelling and mild redness at the sites. The client has no fever, rash, breathing difficulty, leg pain or chest pain. Which response by the nurse is appropriate?",
+      rationale:
+        "Swelling, redness, warmth and itching at the sites are the most common reactions to subcutaneous immune globulin. With no fever, rash, breathing difficulty, leg pain or chest pain, there is no sign of a systemic reaction or thrombosis. The nurse explains that these site reactions are expected and reviews site rotation. The client is taught to report signs of thrombosis or allergy at once.",
+      sources: [HIZENTRA],
+    }),
+    kind: "mc",
+    options: [
+      { text: "Explain that site reactions are common and expected", why: "Local swelling and redness are the most common reactions and are expected." },
+      { text: "Advise the client to go to the emergency department now", why: "The client has no systemic signs, so emergency care is not needed." },
+      { text: "Tell the client to stop the infusions until seen", why: "Expected site reactions are not a reason to stop needed immune globulin." },
+      { text: "Advise firm massage of the sites for 10 minutes", why: "Firm massage can bruise the sites and does not treat local swelling." },
+    ],
+    correct: 0,
+  },
+  {
+    ...meta("rn-s36-38", {
+      need: "RRP",
+      topic: "Teaching before a bone marrow aspiration",
+      cjmm: "evaluate",
+      process: "teaching",
+      difficulty: 2,
+      stem: "The nurse teaches a client who is scheduled for a bone marrow aspiration and biopsy from the posterior iliac crest under local anesthesia. Which two statements by the client show understanding? Select two.",
+      rationale:
+        "Local anesthetic numbs the skin and bone surface but not the marrow itself, so a brief deep pulling pain is felt as marrow is drawn. The site is kept clean and dry, and bleeding, swelling or fever are reported. The posterior crest is reached with the client prone or on the side, not on the back. Local anesthesia means the client is awake, often with light sedation. Bed rest for days is not needed.",
+      sources: [HINKLE, PAGANA],
+    }),
+    kind: "msn",
+    select: 2,
+    options: [
+      { text: "\"I will lie on my back with my knees bent.\"", why: "The posterior iliac crest is reached with the client prone or on the side." },
+      { text: "\"I may feel a brief, deep pulling pain.\"", why: "Aspiration of marrow causes a short deep pain that local anesthetic does not block." },
+      { text: "\"I will be fully asleep during the test.\"", why: "The test uses local anesthesia, sometimes with light sedation, so the client is awake." },
+      { text: "\"I will report bleeding or a fever.\"", why: "Bleeding and fever can signal hemorrhage or infection at the site." },
+      { text: "\"I will stay in bed for 2 days after.\"", why: "Prolonged bed rest is not needed after the procedure." },
+    ],
+    correct: [1, 3],
+  },
+  {
+    ...meta("rn-s36-39", {
+      need: "PPT",
+      topic: "Matching blood products to their uses",
+      cjmm: "analyze",
+      process: "teaching",
+      difficulty: 3,
+      stem: "The nurse prepares a teaching aid on blood components and plasma derivatives for new graduates. Drag the product that best matches each use.",
+      rationale:
+        "Cryoprecipitate is the concentrated source of fibrinogen. Plasma replaces many clotting factors at once, as in liver disease or massive bleeding. Albumin 25% expands plasma volume after a large-volume paracentesis. Platelets treat bleeding caused by severe thrombocytopenia. Packed red cells restore oxygen-carrying capacity and do not replace clotting factors. Crystalloids such as lactated Ringer's solution replace water and salt only.",
+      sources: [AABB, ASCITES],
+    }),
+    kind: "dnd",
+    scoring: "zero-one",
+    targets: ["Replacing fibrinogen", "Replacing many clotting factors", "Expanding volume after large-volume paracentesis", "Bleeding with severe thrombocytopenia"],
+    tokens: [
+      { text: "Plasma", why: "Plasma contains near-normal levels of most clotting factors." },
+      { text: "Packed red blood cells", why: "Red cells raise oxygen-carrying capacity and do not supply clotting factors or platelets." },
+      { text: "Cryoprecipitate", why: "Cryoprecipitate is a concentrated source of fibrinogen." },
+      { text: "Albumin 25%", why: "Albumin 25% pulls fluid into the vessels after large-volume paracentesis." },
+      { text: "Lactated Ringer's solution", why: "Crystalloid replaces water and salt but no proteins or platelets." },
+      { text: "Apheresis platelets", why: "Platelets treat bleeding caused by thrombocytopenia." },
+    ],
+    correct: [2, 0, 3, 5],
+  },
+  {
+    ...meta("rn-s36-40", {
+      need: "RRP",
+      topic: "Kidney protection before a contrast CT",
+      cjmm: "generate",
+      process: "nursing-process",
+      difficulty: 3,
+      stem: "A 74-year-old client with an eGFR of 26 mL/minute/1.73 m2 who is not on dialysis needs an urgent CT scan with IV iodinated contrast for a suspected abdominal abscess. Which measures should the nurse anticipate to lower the risk of contrast-associated kidney injury? Select all that apply.",
+      rationale:
+        "An eGFR below 30 in a client not on dialysis is the main risk factor for kidney injury from contrast. IV volume expansion with an isotonic fluid such as 0.9% sodium chloride is the main preventive step. It usually starts before the scan and continues for several hours after. N-acetylcysteine and furosemide are not recommended. Restricting fluids adds dehydration, a risk factor.",
+      refs: ["IV volume expansion is recommended for clients with an eGFR below 30 mL/minute/1.73 m2 who are not on dialysis."],
+      sources: [ACR_CONTRAST],
+    }),
+    kind: "sata",
+    options: [
+      { text: "Oral N-acetylcysteine as prophylaxis", why: "N-acetylcysteine was no better than placebo and is not recommended." },
+      { text: "IV 0.9% sodium chloride before the scan", why: "Isotonic volume expansion before contrast is the main preventive measure." },
+      { text: "Restrict fluids for 12 hours before", why: "Dehydration raises the risk of kidney injury from contrast." },
+      { text: "IV fluid continued for hours after the scan", why: "Volume expansion continues after the scan to protect the kidneys." },
+      { text: "IV furosemide after the scan", why: "Furosemide worsened kidney function in a trial and is not recommended." },
+      { text: "Share the eGFR with the radiology team", why: "The team uses the eGFR to plan prophylaxis and the contrast dose." },
+    ],
+    correct: [1, 3, 5],
+  },
+];

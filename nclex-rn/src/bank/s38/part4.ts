@@ -1,0 +1,257 @@
+import type { Item } from "@/engine/types";
+import {
+  BOSCH_RHABDO,
+  CARNEY_TBI,
+  DITUNNO_SHOCK,
+  DOW_HYPOTHERMIA,
+  EPSTEIN_HEAT,
+  HINKLE,
+  HOCKENBERRY,
+  KWIATT_FES,
+  LAVONAS_SNAKE,
+  SZPILMAN_DROWNING,
+  meta,
+} from "./common";
+
+export const PART4: Item[] = [
+  {
+    ...meta("rn-s38-31", {
+      need: "PA",
+      topic: "Sign that cord reflex suppression is ending",
+      cjmm: "evaluate",
+      process: "clinical-judgment",
+      difficulty: 4,
+      stem: "A 25-year-old client sustained a complete T8 spinal cord injury 3 weeks ago. Since the injury the legs have been flaccid with absent reflexes, and the bladder has needed catheterization. Which new finding shows that spinal shock is resolving?",
+      rationale:
+        "Spinal shock is a temporary loss of all reflex activity below the injury. It ends as reflexes return below the level of injury, often followed by spasticity. A stable BP without vasopressors shows recovery from neurogenic shock, which is a separate circulatory problem. Flaccid legs with no reflexes describe spinal shock itself. Voluntary toe movement would point to an incomplete injury rather than the end of spinal shock.",
+      sources: [DITUNNO_SHOCK, HINKLE],
+    }),
+    kind: "mc",
+    options: [
+      { text: "A stable BP without vasopressor support", why: "This shows recovery from neurogenic shock, a separate problem of vascular tone." },
+      { text: "Voluntary movement of both great toes", why: "Voluntary movement would suggest an incomplete injury, not the end of reflex suppression." },
+      { text: "Return of reflexes below the level of injury", why: "Returning reflex activity below the injury marks the end of spinal shock." },
+      { text: "Flaccid legs that still have no reflexes", why: "Flaccid legs without reflexes describe ongoing spinal shock." },
+    ],
+    correct: 2,
+  },
+  {
+    ...meta("rn-s38-32", {
+      need: "PA",
+      topic: "Cerebral perfusion pressure from bedside values",
+      cjmm: "analyze",
+      process: "nursing-process",
+      difficulty: 3,
+      stem: "A client with a severe traumatic brain injury has an intracranial pressure (ICP) of 22 mmHg. BP is 112/58 mmHg. The nurse finds the mean arterial pressure as the systolic plus 2 times the diastolic, divided by 3. The nurse then subtracts the ICP. What is the cerebral perfusion pressure, and how does it compare with the target?",
+      rationale:
+        "Twice the diastolic of 58 is 116. Adding the systolic of 112 gives 228, and 228 divided by 3 gives a mean arterial pressure of 76 mmHg. Subtracting the ICP of 22 mmHg leaves a cerebral perfusion pressure of 54 mmHg. This is below the target of 60 to 70 mmHg, so the brain is at risk of ischemia. The nurse reports it promptly.",
+      calc: { expr: "(112 + 2 * 58) / 3 - 22", answer: 54, unit: "mmHg", round: 0, steps: ["2 * 58 = 116", "112 + 116 = 228", "228 / 3 = 76", "76 - 22 = 54"] },
+      refs: ["Target cerebral perfusion pressure in severe traumatic brain injury is 60 to 70 mmHg."],
+      sources: [CARNEY_TBI],
+    }),
+    kind: "mc",
+    options: [
+      { text: "36 mmHg, below the target range", why: "This subtracts the ICP from the diastolic pressure instead of the mean arterial pressure." },
+      { text: "54 mmHg, below the target range", why: "A mean arterial pressure of 76 minus an ICP of 22 gives 54 mmHg, below 60 mmHg." },
+      { text: "76 mmHg, within the target range", why: "76 mmHg is the mean arterial pressure before the ICP is subtracted." },
+      { text: "90 mmHg, above the target range", why: "This subtracts the ICP from the systolic pressure instead of the mean arterial pressure." },
+    ],
+    correct: 1,
+  },
+  {
+    ...meta("rn-s38-33", {
+      need: "PA",
+      topic: "Sweating skin with confusion after exertion in heat",
+      cjmm: "analyze",
+      process: "clinical-judgment",
+      difficulty: 2,
+      stem: "A 19-year-old soccer player collapses during practice on a hot afternoon. Core temperature is 40.6°C (105.1°F). The skin is flushed and wet with sweat. The player is confused and cannot state the date. Which condition is most likely?",
+      rationale:
+        "A core temperature above 40°C with confusion defines heat stroke. In exertional heat stroke the skin is often still sweating, so wet skin does not rule it out. Heat exhaustion causes weakness and nausea with a normal mental state. Heat cramps cause painful spasms only. Low sodium from overdrinking can cause confusion, but it does not raise the core temperature to 40.6°C.",
+      refs: ["Heat stroke is a core temperature above 40°C (104°F) with central nervous system dysfunction."],
+      sources: [EPSTEIN_HEAT],
+    }),
+    kind: "mc",
+    options: [
+      { text: "Exertional heat stroke", why: "A core temperature of 40.6°C with confusion fits heat stroke even when the skin is sweating." },
+      { text: "Heat exhaustion", why: "Heat exhaustion leaves mental status normal. Confusion points to heat stroke." },
+      { text: "Heat cramps", why: "Heat cramps cause painful muscle spasms without confusion or a high core temperature." },
+      { text: "Low sodium from overdrinking", why: "Low sodium can confuse a client, but it does not explain a core temperature of 40.6°C." },
+    ],
+    correct: 0,
+  },
+  {
+    ...meta("rn-s38-34", {
+      need: "PA",
+      topic: "Unresponsive client pulled from a snowbank",
+      cjmm: "action",
+      process: "nursing-process",
+      difficulty: 3,
+      stem: "A 45-year-old client is brought to the emergency department after several hours in a snowbank. Core temperature is 26.8°C (80.2°F). The client is unresponsive with fixed, dilated pupils and no obvious breathing. Which actions should the nurse take? Select all that apply.",
+      rationale:
+        "Deep hypothermia slows the pulse and breathing so much that they are hard to detect. The pulse and breathing are checked for up to 60 seconds. CPR starts if no pulse is found. The cold heart is prone to ventricular fibrillation, so the client is kept flat and moved gently. Extracorporeal rewarming is the treatment of choice in hypothermic arrest. Fixed pupils do not confirm death in deep hypothermia.",
+      sources: [DOW_HYPOTHERMIA],
+    }),
+    kind: "sata",
+    options: [
+      { text: "Check the pulse and breathing for up to 60 seconds", why: "Slow, faint signs of life need a longer check in deep hypothermia." },
+      { text: "Wait to start CPR until the core is warmer", why: "CPR starts as soon as no pulse is found. Delay worsens outcome." },
+      { text: "Keep the client flat and move them gently", why: "Rough movement can trigger ventricular fibrillation in a cold heart." },
+      { text: "Begin CPR if no pulse is found", why: "Hypothermic arrest is treated with CPR while rewarming is arranged." },
+      { text: "Stop care because the pupils are fixed", why: "Fixed, dilated pupils occur in deep hypothermia and do not confirm death." },
+      { text: "Prepare for extracorporeal rewarming", why: "Bypass or other extracorporeal circuits rewarm the core fastest in hypothermic arrest." },
+    ],
+    correct: [0, 2, 3, 5],
+  },
+  {
+    ...meta("rn-s38-35", {
+      need: "PA",
+      topic: "First breaths for a child pulled from a lake",
+      cjmm: "action",
+      process: "nursing-process",
+      difficulty: 3,
+      stem: "An off-duty nurse at a lake helps a lifeguard who has just pulled a 9-year-old child from the water. The child is unresponsive and is not breathing. There was no diving and no sign of injury. Which action should the nurse take first?",
+      rationale:
+        "Cardiac arrest after drowning is caused by a lack of oxygen. Ventilation is the first need, so resuscitation starts with rescue breaths and then chest compressions. Abdominal thrusts to drain water delay ventilation and can cause vomiting and aspiration. Routine spine immobilization is not needed without diving or signs of injury. Compressions alone do not correct the lack of oxygen.",
+      sources: [SZPILMAN_DROWNING],
+    }),
+    kind: "mc",
+    options: [
+      { text: "Give abdominal thrusts to drain the water", why: "Thrusts delay ventilation and raise the risk of vomiting and aspiration." },
+      { text: "Immobilize the neck before any care", why: "Spine care is needed only with diving or signs of injury, and it delays breathing." },
+      { text: "Begin compression-only CPR", why: "Compressions alone do not correct the lack of oxygen that caused the arrest." },
+      { text: "Give rescue breaths before compressions", why: "The arrest stems from a lack of oxygen, so ventilation comes first." },
+    ],
+    correct: 3,
+  },
+  {
+    ...meta("rn-s38-36", {
+      need: "PA",
+      topic: "Pit viper bite to the hand",
+      cjmm: "action",
+      process: "nursing-process",
+      difficulty: 2,
+      stem: "A 36-year-old hiker is brought to the emergency department 40 minutes after a rattlesnake bite to the left hand. The hand is swollen and painful and the client wears two rings. Which actions should the nurse take? Select all that apply.",
+      rationale:
+        "Swelling spreads up the limb after a pit viper bite. Rings are removed before they cut off circulation. The leading edge of swelling is marked and remeasured so progression is seen. The limb is kept still in a neutral position. Platelets, fibrinogen and the prothrombin time show venom effects on clotting. Tourniquets, ice and incision with suction cause harm and are not used.",
+      sources: [LAVONAS_SNAKE],
+    }),
+    kind: "sata",
+    options: [
+      { text: "Apply a tourniquet above the bite", why: "A tourniquet traps venom in the limb and can worsen tissue damage." },
+      { text: "Remove the rings from the hand", why: "Rings act like a tourniquet as the hand swells." },
+      { text: "Pack the hand in ice", why: "Ice causes cold injury to tissue already damaged by venom." },
+      { text: "Mark the leading edge of swelling", why: "Serial marks show whether the swelling is spreading." },
+      { text: "Incise the bite and apply suction", why: "Incision and suction remove little venom and add tissue injury." },
+      { text: "Keep the arm still in a neutral position", why: "Immobilizing the limb limits pain and venom spread." },
+      { text: "Draw platelets, fibrinogen and PT", why: "Venom can cause a clotting disorder, so these tests guide treatment." },
+    ],
+    correct: [1, 3, 5, 6],
+  },
+  {
+    ...meta("rn-s38-37", {
+      need: "PA",
+      topic: "Positive dipstick blood without red cells after a crush",
+      cjmm: "analyze",
+      process: "clinical-judgment",
+      difficulty: 4,
+      stem: "A 23-year-old construction worker had both legs pinned under a collapsed wall for 5 hours. The urine is dark brown. The urine dipstick is strongly positive for blood, but microscopy shows 0 to 2 red cells per high-power field. Serum looks clear. Creatine kinase is 48 000 units/L. Which explanation fits these findings?",
+      rationale:
+        "Crushed muscle releases myoglobin and creatine kinase. Myoglobin turns the urine brown and reacts with the dipstick test for blood. Microscopy shows almost no red cells, so the reaction is not from bleeding. Hemolysis also gives a positive dipstick, but it turns the serum pink and does not raise the creatine kinase to 48 000 units/L. Bilirubin does not react with the blood test.",
+      sources: [BOSCH_RHABDO],
+    }),
+    kind: "mc",
+    options: [
+      { text: "Bleeding from a kidney injury", why: "Bleeding would show many red cells on microscopy. This client has 0 to 2." },
+      { text: "Hemoglobin from red cell breakdown", why: "Hemolysis turns the serum pink and does not raise the creatine kinase this high." },
+      { text: "Myoglobin from muscle breakdown", why: "Myoglobin reacts with the blood test without red cells, and the creatine kinase is high." },
+      { text: "Bilirubin from liver injury", why: "Bilirubin darkens urine but does not make the dipstick positive for blood." },
+    ],
+    correct: 2,
+  },
+  {
+    ...meta("rn-s38-38", {
+      need: "PA",
+      topic: "Response to treatment of muscle breakdown",
+      cjmm: "evaluate",
+      process: "clinical-judgment",
+      difficulty: 3,
+      trend: true,
+      stem: "A 30-year-old client developed rhabdomyolysis after running a marathon. The client receives IV 0.9% sodium chloride. The nurse reviews the flow sheet. Based on the trend, how should the nurse evaluate the client's response?",
+      tabs: [
+        {
+          title: "Flow Sheet",
+          table: {
+            head: ["Finding", "Day 1 0800", "Day 1 2000", "Day 2 0800", "Day 2 2000"],
+            rows: [
+              ["Creatine kinase (units/L)", "62 000", "48 000", "31 000", "18 000"],
+              ["Urine output (mL/hour)", "40", "150", "220", "240"],
+              ["Urine color", "Dark brown", "Red-brown", "Amber", "Pale yellow"],
+              ["Creatinine, mg/dL (micromol/L)", "1.6 (141)", "1.5 (133)", "1.3 (115)", "1.1 (97)"],
+            ],
+          },
+        },
+      ],
+      rationale:
+        "The creatine kinase falls from 62 000 to 18 000 units/L, so muscle breakdown is settling. Urine output rises from 40 to 240 mL/hour and the urine clears from dark brown to pale yellow as less myoglobin is passed. The creatinine falls from 1.6 mg/dL (141 micromol/L) to 1.1 mg/dL (97 micromol/L), so kidney function is improving. The fluid treatment is working.",
+      sources: [BOSCH_RHABDO],
+    }),
+    kind: "mc",
+    options: [
+      { text: "Muscle breakdown is settling and kidney function is improving", why: "Falling creatine kinase and creatinine with clearing urine show a good response." },
+      { text: "Kidney function is worsening despite the IV fluid", why: "The creatinine falls from 1.6 to 1.1 mg/dL and output rises, so kidney function is better." },
+      { text: "Fluid overload is developing from the infusion", why: "Rising urine output with falling creatinine shows the kidneys are handling the fluid." },
+      { text: "Muscle injury is spreading to new muscle groups", why: "The creatine kinase falls steadily, which shows less muscle breakdown." },
+    ],
+    correct: 0,
+  },
+  {
+    ...meta("rn-s38-39", {
+      need: "PA",
+      topic: "Lowering fat embolism risk before femur repair",
+      cjmm: "generate",
+      process: "clinical-judgment",
+      difficulty: 3,
+      stem: "A 22-year-old client has a closed fracture of the left femoral shaft from a motorcycle crash. The client is in skeletal traction and is otherwise stable. Which prescription should the nurse expect to lower the client's risk of fat embolism syndrome?",
+      rationale:
+        "Fat from the marrow of a long bone fracture can enter the bloodstream, mostly while the fracture is unstable. Early immobilization and surgical fixation within 24 hours lower the risk of fat embolism syndrome. Delaying fixation for weeks of traction keeps the fracture unstable. Moving the fractured limb through its range releases more fat. Heparin has not been shown to prevent the syndrome.",
+      sources: [KWIATT_FES],
+    }),
+    kind: "mc",
+    options: [
+      { text: "Traction for 2 weeks before surgery", why: "Delaying fixation keeps the fracture unstable and raises the risk." },
+      { text: "A continuous IV heparin infusion", why: "Heparin has not been shown to prevent fat embolism syndrome." },
+      { text: "Range-of-motion exercises of the left leg", why: "Moving an unstable fracture can release more marrow fat." },
+      { text: "Surgical fixation within 24 hours", why: "Early stabilization of the fracture lowers the release of marrow fat." },
+    ],
+    correct: 3,
+  },
+  {
+    ...meta("rn-s38-40", {
+      need: "PA",
+      topic: "Puffy eyes and foamy urine in a preschooler",
+      cjmm: "recognize",
+      process: "nursing-process",
+      difficulty: 2,
+      stem: "A 3-year-old child is brought to the clinic because the eyes have been puffy every morning for 5 days. The nurse writes the note below. Click to highlight the findings that are consistent with nephrotic syndrome.",
+      rationale:
+        "Nephrotic syndrome lets large amounts of protein leak into the urine. Protein on the dipstick at 3+ and foamy urine show the loss. Low serum protein lets fluid shift into the tissues, causing puffy eyes in the morning, a swollen abdomen and a weight gain of 1.4 kg. The temperature, BP, clear lungs and normal play are not part of the picture.",
+      sources: [HOCKENBERRY],
+    }),
+    kind: "highlight",
+    passage:
+      "[[Swelling around both eyes, worse on waking]]. [[Temperature 36.9°C (98.4°F)]]. [[Weight up 1.4 kg since the last visit 3 weeks ago]]. [[BP 96/60 mmHg]]. [[Urine looks foamy]]. [[Urine dipstick protein 3+]]. [[Lungs clear]]. [[Abdomen swollen with a fluid wave]]. [[Playing with toys in the waiting room]].",
+    spans: [
+      { text: "Swelling around both eyes, worse on waking", why: "Periorbital edema after lying flat overnight is often the first sign." },
+      { text: "Temperature 36.9°C (98.4°F)", why: "The temperature is normal and is not part of the syndrome." },
+      { text: "Weight up 1.4 kg since the last visit 3 weeks ago", why: "Fluid retention causes rapid weight gain." },
+      { text: "BP 96/60 mmHg", why: "This BP is normal for a 3-year-old." },
+      { text: "Urine looks foamy", why: "Large amounts of protein make the urine foamy." },
+      { text: "Urine dipstick protein 3+", why: "Heavy protein loss in the urine defines the syndrome." },
+      { text: "Lungs clear", why: "Clear lungs are a normal finding." },
+      { text: "Abdomen swollen with a fluid wave", why: "Low serum protein lets fluid collect in the abdomen as ascites." },
+      { text: "Playing with toys in the waiting room", why: "Normal play is an expected finding." },
+    ],
+    correct: [0, 2, 4, 5, 7],
+  },
+];

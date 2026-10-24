@@ -31,7 +31,7 @@ export const PART2: Item[] = [
       topic: "Estimating osmolality in a hyperglycemic crisis",
       cjmm: "analyze",
       process: "nursing-process",
-      difficulty: 3,
+      difficulty: 2,
       stem: "A 74-year-old client with type 2 diabetes has been increasingly drowsy for 3 days. Blood glucose is 900 mg/dL (50.0 mmol/L) and serum sodium is 148 mEq/L (148 mmol/L). Urine ketones are negative. The nurse estimates effective serum osmolality as 2 times the sodium plus the glucose divided by 18. What is the client's effective osmolality?",
       rationale:
         "Doubling the sodium of 148 mEq/L gives 296. A glucose of 900 mg/dL divided by 18 gives 50. The sum is 346 mOsm/kg. An effective osmolality above 300 mOsm/kg with a glucose of 600 mg/dL or more and no ketones fits hyperosmolar hyperglycemic state. The high osmolality draws water out of brain cells and explains the drowsiness.",
@@ -119,7 +119,7 @@ export const PART2: Item[] = [
       topic: "Fluid for home rectal washouts in an infant",
       cjmm: "action",
       process: "teaching",
-      difficulty: 3,
+      difficulty: 2,
       stem: "A 2-month-old infant with Hirschsprung disease will have rectal irrigations at home until the pull-through operation. The parent asks which fluid to use for the irrigations. Which fluid should the nurse teach the parent to use?",
       rationale:
         "Rectal irrigations wash retained stool out of the colon. Isotonic sodium chloride is used because it does not shift water across the bowel wall. Plain tap water is hypotonic. Repeated use can be absorbed and cause water intoxication in an infant. Phosphate enemas can cause dangerous electrolyte shifts in infants. Soapsuds irritate the bowel lining.",

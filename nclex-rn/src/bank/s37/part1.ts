@@ -75,7 +75,7 @@ export const PART1: Item[] = [
       topic: "Skin flora in one blood culture set",
       cjmm: "analyze",
       process: "clinical-judgment",
-      difficulty: 3,
+      difficulty: 4,
       stem: "A 72-year-old client with pneumonia had two sets of blood cultures drawn on admission. One set came from a venipuncture. The other was drawn through a peripheral IV catheter as it was placed. On day 2 one bottle from the catheter set grows coagulase-negative staphylococci. The venipuncture set shows no growth. Temperature is 37.1°C (98.8°F). Which interpretation is most likely?",
       rationale:
         "Coagulase-negative staphylococci live on skin and are among the most common blood culture contaminants. Growth in one bottle of one set, with the other set negative, points to contamination. The positive set was drawn through a catheter, which carries a higher contamination rate than venipuncture. The client is afebrile. Endocarditis causes continuous bacteremia that grows in several sets. The nurse reports the result so the provider can decide on repeat cultures.",
@@ -118,7 +118,7 @@ export const PART1: Item[] = [
       topic: "Five-electrode monitor placement",
       cjmm: "action",
       process: "nursing-process",
-      difficulty: 2,
+      difficulty: 1,
       stem: "The nurse attaches a 5-electrode bedside cardiac monitor that uses the American Heart Association color code. The chest electrode will record lead V1. Drag the electrode that belongs at each position.",
       rationale:
         "In the American Heart Association code, white goes on the right arm position and black on the left arm position, both just below the clavicles. Red goes on the left leg position and green on the right leg position, on the lower torso. The brown chest electrode records V1 at the fourth intercostal space at the right sternal border. Yellow belongs to a different international color code.",

@@ -135,7 +135,7 @@ export const PART2: Item[] = [
       topic: "Positioning a client in hypovolemic shock",
       cjmm: "action",
       process: "nursing-process",
-      difficulty: 2,
+      difficulty: 1,
       stem: "A 55-year-old client has hypovolemic shock from lower gastrointestinal bleeding. BP is 84/50 mmHg and heart rate 124/minute. The client is alert and has no spinal or head injury. Blood products are infusing through two large-bore IVs. How should the nurse position the client while the transfusion continues?",
       rationale:
         "Lying flat with the legs raised returns blood from the legs to the central circulation and does not tilt the head down. Head-down tilt raises venous pressure but does not improve BP, and it hampers breathing. Raising the head or letting the legs hang lowers venous return when volume is already low.",

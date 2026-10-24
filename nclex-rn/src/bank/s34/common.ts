@@ -258,3 +258,14 @@ export const EXELON: Source = {
   year: 2016,
   url: "https://www.accessdata.fda.gov/drugsatfda_docs/label/2016/022083s023lbl.pdf",
 };
+export const CDIFF: Source = {
+  body: "McDonald LC, Gerding DN, Johnson S, et al. Infectious Diseases Society of America and Society for Healthcare Epidemiology of America",
+  work: "Clinical Practice Guidelines for Clostridium difficile Infection in Adults and Children: 2017 Update. Clinical Infectious Diseases 66(7):e1",
+  year: 2018,
+  url: "https://academic.oup.com/cid/article/66/7/e1/4855916",
+};
+export const NASAL: Source = {
+  body: "Benninger MS, Hadley JA, Osguthorpe JD, et al.",
+  work: "Techniques of Intranasal Steroid Use. Otolaryngology Head and Neck Surgery 130(1):5",
+  year: 2004,
+};
