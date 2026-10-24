@@ -5,10 +5,8 @@ import type { Source } from "@/engine/types";
 const META = { reviewed: false, author: "Preceptor", version: 1 } as const;
 
 const S = {
-  dziho: { id: "dziho-csdh", citation: "Dziho A, Al Awadhi A, Mollica C, and colleagues. Global prevalence and incidence of chronic subdural hematoma: a systematic review. Brain Spine. 2025.", url: "https://pmc.ncbi.nlm.nih.gov/articles/PMC12720100/" },
-  teitelbaum: { id: "teitelbaum-motor", citation: "Teitelbaum JS, Eliasziw M, Garner M. Tests of motor function in patients suspected of having mild unilateral cerebral lesions. Can J Neurol Sci. 2002.", url: "https://www.cambridge.org/core/journals/canadian-journal-of-neurological-sciences/article/tests-of-motor-function-in-patients-suspected-of-having-mild-unilateral-cerebral-lesions/78026E91403731ADAE0B6C57B62282FB" },
-  schulman: { id: "schulman-pcc", citation: "Schulman S, Gross PL, Ritchie B, and colleagues. Prothrombin complex concentrate for major bleeding on factor Xa inhibitors: a prospective cohort study. Thromb Haemost. 2018." },
-  dexCsdh: { id: "dex-csdh", citation: "Hutchinson PJ, Edlmann E, Bulters D, and colleagues. Trial of dexamethasone for chronic subdural hematoma. N Engl J Med. 2020." },
+  eanoLm: { id: "eano-lm", citation: "Le Rhun E, Weller M, van den Bent M, and colleagues, EANO and ESMO Guidelines Committees. Leptomeningeal metastasis from solid tumours: EANO-ESMO Clinical Practice Guideline for diagnosis, treatment and follow-up. ESMO Open. 2023.", url: "https://pmc.ncbi.nlm.nih.gov/articles/PMC10619142/" },
+  cpsAom: { id: "cps-aom", citation: "Le Saux N, Robinson JL, Canadian Paediatric Society Infectious Diseases and Immunization Committee. Management of acute otitis media in children six months of age and older. Paediatr Child Health. 2016. Reaffirmed 2024.", url: "https://cps.ca/en/documents/position/acute-otitis-media" },
   cohen: { id: "cohen-zoster", citation: "Cohen JI. Clinical practice: herpes zoster. N Engl J Med. 2013.", url: "https://pmc.ncbi.nlm.nih.gov/articles/PMC4789101/" },
   cigHz: { id: "cig-hz", citation: "Public Health Agency of Canada. Canadian Immunization Guide, Part 4. Herpes zoster (shingles) vaccine. Updated 2025.", url: "https://www.canada.ca/en/public-health/services/publications/healthy-living/canadian-immunization-guide-part-4-active-vaccines/page-8-herpes-zoster-(shingles)-vaccine.html" },
   snnoop: { id: "snnoop10", citation: "Do TP, Remmers A, Schytz HW, and colleagues. Red and orange flags for secondary headaches in clinical practice: SNNOOP10 list. Neurology. 2019." },
@@ -236,13 +234,13 @@ export const HEADACHE_S75: Samp[] = [
       {
         id: "q1",
         kind: "single",
-        prompt: "Which of the following parts of the examination is most likely to show the source of his illness?",
-        options: ["Dental inspection for an abscess", "Fundoscopy for disc swelling", "Otoscopy of the left ear", "Palpation of neck nodes", "Palpation over the sinuses"],
-        correct: 2,
+        prompt: "Which of the following examination findings would most suggest that his ear infection has spread to the mastoid?",
+        options: ["Pain and swelling behind the ear", "Pain at the jaw joint with chewing", "Pain on pulling the earlobe", "Redness of the eardrum", "Tender node in front of the ear"],
+        correct: 0,
         explanation:
-          "A left sixth nerve palsy with pain behind the left eye and fever, weeks after a left ear infection, raises concern that the infection has spread from the middle ear to the petrous apex of the temporal bone. In a review of 65 children with this syndrome, 45% had received antibiotics before they presented and only 38% had ear discharge at first, so the ear must be examined even when the earache has settled. Fundoscopy matters for raised pressure but does not show where an infection began. Teeth, sinuses and neck nodes do not fit a palsy on the side of the treated ear.",
+          "The Canadian Paediatric Society names acute mastoiditis as the most common complication of acute otitis media and states that pain or swelling over the mastoid bone behind the ear suggests it. The same statement lists a sixth nerve palsy from petrous bone infection, facial palsy, venous sinus thrombosis and meningitis among the other complications, so a child with a palsy after an ear infection needs the mastoid, face and neck examined as well. Pain on pulling the earlobe points to otitis externa. A red eardrum is seen in otitis media itself. Jaw joint pain and a node in front of the ear do not show spread to the mastoid.",
         keyFeature: { topic: "headache", n: 3 },
-        source: "schmit-gradenigo",
+        source: "cps-aom",
       },
       {
         id: "q2",
@@ -280,7 +278,7 @@ export const HEADACHE_S75: Samp[] = [
         source: "schmit-gradenigo",
       },
     ],
-    sources: [S.schmit],
+    sources: [S.cpsAom, S.schmit],
     ...META,
   },
 
