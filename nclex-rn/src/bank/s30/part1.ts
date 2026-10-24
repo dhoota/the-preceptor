@@ -1,0 +1,240 @@
+import type { Item } from "@/engine/types";
+import { ANA_CODE, CDC_MEASLES, GUIDO, HIPAA, MR_ZONES, ACR_MR_2013, NCMEC, NLC, NNDSS, SCOPE_FRAMEWORK, GINA, meta } from "./common";
+
+export const PART1: Item[] = [
+  {
+    ...meta("rn-s30-01", {
+      need: "MOC",
+      topic: "Weekend shifts across a state border",
+      cjmm: "action",
+      process: "nursing-process",
+      difficulty: 2,
+      stem: "A registered nurse holds a single-state license from a state that has not joined the Nurse Licensure Compact. A hospital 20 minutes away, across the border in a neighboring state, asks the nurse to work weekend shifts. What must the nurse do before working the first shift?",
+      rationale:
+        "A single-state license allows practice only in the state that issued it. Care given in the neighboring state needs a license from that state. A nurse whose home state is outside the compact cannot hold a multistate license, so a separate single-state license is the route. Supervision or notice to the home board does not authorize practice across the border.",
+      sources: [NLC, GUIDO],
+    }),
+    kind: "mc",
+    options: [
+      { text: "Work the shifts under the current home state license", why: "A single-state license authorizes practice only in the state that issued it." },
+      { text: "Obtain a license from the neighboring state", why: "Practice in another state needs that state's license when no compact privilege applies." },
+      { text: "Have the hospital's nurse manager supervise each shift", why: "Supervision by another nurse does not replace a license in the state where care is given." },
+      { text: "Notify the home state board of the work in advance", why: "The home board has no authority to permit practice in a different state." },
+    ],
+    correct: 1,
+  },
+  {
+    ...meta("rn-s30-02", {
+      need: "SIPC",
+      topic: "Empty bassinet on a postpartum unit",
+      cjmm: "action",
+      process: "clinical-judgment",
+      difficulty: 3,
+      stem: "On a postpartum unit, a mother returns from the shower and finds her 1-day-old infant's bassinet empty. She says a woman in scrubs told her earlier that the baby needed a hearing test. No hearing test is scheduled and the infant is not in the nursery. Which action should the nurse take first?",
+      rationale:
+        "An infant missing from the room with a story that does not match the schedule is treated as a possible abduction. Time is critical. The nurse calls security at once so the facility code is announced and staff move to the exits and stairwells. The unit search and head count run at the same time, not before the alert. Interviews and record checks come after the alert.",
+      sources: [NCMEC],
+    }),
+    kind: "mc",
+    options: [
+      { text: "Search every room on the unit before raising an alert", why: "The search runs at the same time as the alert. Searching first gives an abductor time to leave the building." },
+      { text: "Ask the mother for a full description to add to the chart", why: "A description helps security, but gathering it first delays the facility-wide response." },
+      { text: "Phone the hearing screening office to ask about the infant", why: "The stem already shows no test is scheduled. A phone check wastes time that the exits need." },
+      { text: "Call security to activate the infant abduction code", why: "An immediate code sends staff to the exits and stairwells while the unit is searched." },
+    ],
+    correct: 3,
+  },
+  {
+    ...meta("rn-s30-03", {
+      need: "MOC",
+      topic: "Rules that follow a multistate license",
+      cjmm: "evaluate",
+      process: "teaching",
+      difficulty: 3,
+      stem: "A nurse educator reviews the Nurse Licensure Compact with a group of nurses who hold multistate licenses. Which two statements by the nurses show correct understanding? Select two.",
+      rationale:
+        "A multistate license depends on legal residence in a compact state. A nurse who moves to another compact state applies for a license in the new home state within 60 days. Unresolved discipline in another state is one of the conditions that bars a multistate license. A nurse whose primary residence is a noncompact state can hold only single-state licenses. The home state is the primary state of residence, not a holiday address.",
+      sources: [NLC],
+    }),
+    kind: "msn",
+    select: 2,
+    options: [
+      { text: "\"If I move to another compact state, I apply there within 60 days.\"", why: "A move to another compact state needs a new home state license, applied for within 60 days." },
+      { text: "\"My multistate license stays valid if I move to a noncompact state.\"", why: "A multistate license needs residence in a compact state. A move out of the compact ends eligibility." },
+      { text: "\"I can name my vacation home state as my license state.\"", why: "The home state is the declared primary state of residence, not a second property." },
+      { text: "\"Unresolved discipline in another state can bar a multistate license.\"", why: "Unresolved discipline in another state is listed as a bar to holding a multistate license." },
+      { text: "\"I need a separate license for each compact state I work in.\"", why: "The multistate license gives a privilege to practice in every compact state." },
+      { text: "\"Nurses who live in a noncompact state can get a multistate license.\"", why: "Only residents of compact states can hold a multistate license." },
+    ],
+    correct: [0, 3],
+  },
+  {
+    ...meta("rn-s30-04", {
+      need: "MOC",
+      topic: "Second step of the scope decision tool",
+      cjmm: "generate",
+      process: "clinical-judgment",
+      difficulty: 3,
+      stem: "A nurse at an outpatient infusion center is asked to begin removing peripherally inserted central catheters, a task new to the role. Using the national scope of practice decision-making framework, the nurse has already described the task clearly. Which question should the nurse answer next?",
+      rationale:
+        "The framework first defines the activity. It then asks whether the nurse practice act, its rules or other laws prohibit it. A task the law prohibits stops there, whatever the nurse's training or the employer's wishes. Questions about evidence, facility policy, documented competence and accepting accountability follow once the task is legally allowed.",
+      sources: [SCOPE_FRAMEWORK],
+    }),
+    kind: "mc",
+    options: [
+      { text: "Does the nurse practice act or its rules prohibit the task?", why: "Legal permission under the practice act comes right after the task is defined." },
+      { text: "Is there documented evidence of the nurse's current competence?", why: "Competence is checked later. It is irrelevant if the law prohibits the task." },
+      { text: "Does a facility policy and procedure support the task?", why: "Facility policy is checked after the law. A policy cannot permit what the law forbids." },
+      { text: "Is the nurse prepared to accept accountability for the outcome?", why: "Accepting accountability is the final question in the framework, not the second." },
+    ],
+    correct: 0,
+  },
+  {
+    ...meta("rn-s30-05", {
+      need: "MOC",
+      topic: "Conduct that puts a license at risk",
+      cjmm: "recognize",
+      process: "nursing-process",
+      difficulty: 3,
+      stem: "A nurse manager reviews licensure law with newly appointed charge nurses. Which situations could lead the state board of nursing to take disciplinary action against a nurse's license? Select all that apply.",
+      rationale:
+        "Boards of nursing act on conduct that endangers the public. Charting care that was not given is falsification of a legal record. Working after a license lapses is practice without a license. Taking a client's opioid for personal use is drug diversion. Filing a safety report and raising a competence gap through the charge nurse are expected professional conduct. A complaint about wait times is a service matter for the employer.",
+      sources: [GUIDO, ANA_CODE],
+    }),
+    kind: "sata",
+    options: [
+      { text: "Filing a safety report about a coworker's error", why: "Good-faith reporting of an error supports safety and is a professional duty." },
+      { text: "Charting a dressing change that was not done", why: "Documenting care that was not given falsifies the record." },
+      { text: "Declining an unfamiliar task and telling the charge nurse", why: "Raising a gap in competence through the proper channel protects clients." },
+      { text: "Working a shift 2 weeks after the license expired", why: "Practice on an expired license is practice without a license." },
+      { text: "Being named in a client's complaint about wait times", why: "A service complaint is handled by the employer. It does not show unsafe practice." },
+      { text: "Taking hydromorphone from a client's supply for personal use", why: "Diversion of a controlled drug endangers clients and is grounds for discipline." },
+    ],
+    correct: [1, 3, 5],
+  },
+  {
+    ...meta("rn-s30-06", {
+      need: "SIPC",
+      topic: "Four access zones of an MRI suite",
+      cjmm: "analyze",
+      process: "nursing-process",
+      difficulty: 2,
+      stem: "A nurse completes MRI safety training before accompanying inpatients to the MRI suite. Drag one description to each zone of the suite.",
+      rationale:
+        "Access to an MRI suite tightens zone by zone. Zone I is open to the general public. Zone II is where clients and families first meet MR staff and are screened. Zone III is restricted to screened persons, and non-MR staff stay under the direct supervision of trained MR staff there. Zone IV is the scanner room itself. A superconducting magnet stays on between scans, so no zone is safe because the scanner is idle.",
+      sources: [MR_ZONES, ACR_MR_2013],
+    }),
+    kind: "dnd",
+    scoring: "zero-one",
+    targets: ["Zone I", "Zone II", "Zone III", "Zone IV"],
+    tokens: [
+      { text: "Area open to the general public", why: "Zone I lies outside the MR environment and is open to everyone." },
+      { text: "Room that houses the MR scanner", why: "Zone IV is the scanner room, where the field is strongest." },
+      { text: "Where clients and families first meet MR staff", why: "Zone II is the first contact point, where screening takes place." },
+      { text: "Restricted area entered only after screening", why: "Zone III is limited to screened persons under MR staff control." },
+      { text: "Space where the magnet is off between scans", why: "The magnetic field stays on between scans. No zone is defined by the magnet being off." },
+    ],
+    correct: [0, 2, 3, 1],
+  },
+  {
+    ...meta("rn-s30-07", {
+      need: "MOC",
+      topic: "Rash after travel in an unvaccinated child",
+      cjmm: "generate",
+      process: "clinical-judgment",
+      difficulty: 4,
+      stem: "A 3-year-old who has received no vaccines comes to an urgent care clinic. The family returned from overseas travel 11 days ago. The child has had fever, cough, runny nose and red eyes for 3 days. Today a blotchy red rash began at the hairline and is spreading to the trunk. Small white spots line the inner cheeks. Temperature is 39.4°C (102.9°F). Complete the diagram by choosing the condition the child is most likely experiencing, 2 actions to take and 2 parameters to monitor.",
+      rationale:
+        "Fever with cough, coryza and conjunctivitis, then a rash that starts at the head and spreads down, fits measles. White spots on the inner cheeks are Koplik spots. The child is unvaccinated and returned from travel. Measles spreads by the airborne route, so the child goes into an airborne isolation room. Providers must report suspected cases to the local health department, without waiting for laboratory confirmation. Pneumonia and dehydration are common complications to watch.",
+      sources: [CDC_MEASLES, NNDSS],
+    }),
+    kind: "bowtie",
+    conditions: [
+      { text: "Rubella", why: "Rubella gives a milder illness with low fever and no white spots on the inner cheeks." },
+      { text: "Measles", why: "The three C's, Koplik spots and a head-to-trunk rash after travel fit measles." },
+      { text: "Varicella", why: "Varicella causes itchy vesicles in crops, not a blotchy rash with Koplik spots." },
+      { text: "Roseola", why: "In roseola the rash appears after the fever ends. This child is still febrile." },
+    ],
+    actions: [
+      { text: "Wait for the lab result before reporting", why: "Suspected measles is reported at once. Waiting delays the public health response to contacts." },
+      { text: "Report the suspected case to public health now", why: "Providers must report suspected measles to the local health department." },
+      { text: "Seat the child in the waiting area with a mask", why: "A mask in a shared waiting area does not contain airborne spread." },
+      { text: "Place the child in an airborne isolation room", why: "Measles spreads by the airborne route and needs an airborne infection isolation room." },
+      { text: "Give the child a dose of MMR vaccine today", why: "Vaccine after the rash appears does not treat the current illness." },
+    ],
+    parameters: [
+      { text: "Joint swelling in the fingers", why: "Joint pain and swelling are features of rubella, not measles." },
+      { text: "Crusting of skin vesicles", why: "Vesicle crusting tracks varicella. Measles does not form vesicles." },
+      { text: "Respiratory rate and oxygen saturation", why: "Pneumonia is a common and serious complication of measles." },
+      { text: "Fluid intake and urine output", why: "High fever, poor intake and diarrhea can dehydrate a young child." },
+      { text: "Serum glucose level", why: "Measles does not change glucose in a way that guides care." },
+    ],
+    correct: { condition: 1, actions: [1, 3], parameters: [2, 3] },
+  },
+  {
+    ...meta("rn-s30-08", {
+      need: "MOC",
+      topic: "Finding a lapsed license before report",
+      cjmm: "action",
+      process: "nursing-process",
+      difficulty: 2,
+      stem: "At 0650, before taking report, a nurse checks the board of nursing website and finds that the nurse's own license expired 2 days ago. The renewal was never submitted. What should the nurse do?",
+      rationale:
+        "Practicing nursing on an expired license is practicing without a license, whatever the nurse's skill. The nurse tells the manager so the shift can be covered and does not give care until the license is renewed. Renewing later in the shift does not cover the hours already worked. A cosignature or a lighter assignment is still nursing practice.",
+      sources: [GUIDO],
+    }),
+    kind: "mc",
+    options: [
+      { text: "Work the shift and renew online during a break", why: "Any care given before renewal is practice without a license." },
+      { text: "Work the shift with another nurse cosigning each entry", why: "A cosignature does not make unlicensed practice legal." },
+      { text: "Tell the manager and give no care until it is renewed", why: "Stopping practice until renewal keeps the nurse within the law and lets the shift be covered." },
+      { text: "Work only tasks that involve no medications today", why: "Assessment and other nursing tasks are still nursing practice and need a license." },
+    ],
+    correct: 2,
+  },
+  {
+    ...meta("rn-s30-09", {
+      need: "MOC",
+      topic: "Conditions on the national notifiable list",
+      cjmm: "recognize",
+      process: "nursing-process",
+      difficulty: 2,
+      stem: "A nurse at a community clinic reviews the week's new diagnoses for the clinic's public health reports. Which conditions are on the CDC list of nationally notifiable conditions? Select all that apply.",
+      rationale:
+        "Pertussis, Lyme disease, hepatitis A and Salmonella infection are all nationally notifiable. Streptococcal pharyngitis is not on the list, although streptococcal toxic shock syndrome is. Staphylococcus aureus is notifiable only when it is vancomycin intermediate or resistant. For influenza, only novel influenza A and deaths in children are notifiable. States set their own reporting rules, so the nurse also follows state law.",
+      sources: [NNDSS],
+    }),
+    kind: "sata",
+    options: [
+      { text: "Pertussis in an 8-week-old infant", why: "Pertussis is a nationally notifiable condition." },
+      { text: "Strep throat in a 9-year-old child", why: "Streptococcal pharyngitis is not notifiable. Streptococcal toxic shock syndrome is." },
+      { text: "Lyme disease in a hiker", why: "Lyme disease is a nationally notifiable condition." },
+      { text: "MRSA skin abscess in a wrestler", why: "Only vancomycin intermediate or resistant Staphylococcus aureus is nationally notifiable." },
+      { text: "Hepatitis A in a food worker", why: "Hepatitis A is a nationally notifiable condition." },
+      { text: "Influenza A in a 40-year-old adult", why: "Only novel influenza A and influenza deaths in children are notifiable." },
+      { text: "Salmonella infection after a picnic", why: "Salmonella infection is a nationally notifiable condition." },
+    ],
+    correct: [0, 2, 4, 6],
+  },
+  {
+    ...meta("rn-s30-10", {
+      need: "MOC",
+      topic: "Sibling call about a BRCA2 result",
+      cjmm: "action",
+      process: "communication",
+      difficulty: 3,
+      stem: "A 41-year-old client learned yesterday that she carries a BRCA2 variant linked to breast and ovarian cancer. She has not decided whether to tell her family. Her sister calls the clinic and says, \"I need to know if her test was positive for my own health.\" Which response should the nurse give?",
+      rationale:
+        "Genetic test results are protected health information. Shared family genes do not give a relative the right to another adult's result. Without the client's authorization the nurse cannot confirm the test or the result. The nurse can direct the sister to talk with the client and can tell the client that relatives may benefit from knowing. Genetic counseling can help the client decide how to share it.",
+      sources: [HIPAA, GINA, ANA_CODE],
+    }),
+    kind: "mc",
+    options: [
+      { text: "\"Because it affects you, I can tell you the result.\"", why: "A relative's interest does not override the client's right to privacy." },
+      { text: "\"I cannot share any client information. Please talk with your sister.\"", why: "This protects the client's privacy and points the sister to the person who can share it." },
+      { text: "\"Yes, so you should arrange your own testing soon.\"", why: "This confirms the result without the client's authorization." },
+      { text: "\"I will mail you a copy once I note this call.\"", why: "Noting a call does not create authorization to release the result." },
+    ],
+    correct: 1,
+  },
+];

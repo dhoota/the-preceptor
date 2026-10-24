@@ -123,3 +123,45 @@ export const SIMON_FLAIL: Source = {
   year: 2012,
   url: "https://doi.org/10.1097/TA.0b013e31827019fd",
 };
+export const DITUNNO_SHOCK: Source = {
+  body: "Ditunno JF, Little JW, Tessler A, Burns AS",
+  work: "Spinal Shock Revisited: A Four-Phase Model. Spinal Cord 42(7):383",
+  year: 2004,
+  url: "https://doi.org/10.1038/sj.sc.3101603",
+};
+export const CARNEY_TBI: Source = {
+  body: "Carney N, Totten AM, O'Reilly C, et al. Brain Trauma Foundation",
+  work: "Guidelines for the Management of Severe Traumatic Brain Injury, Fourth Edition. Neurosurgery 80(1):6",
+  year: 2017,
+  url: "https://doi.org/10.1227/NEU.0000000000001432",
+};
+export const DOW_HYPOTHERMIA: Source = {
+  body: "Dow J, Giesbrecht GG, Danzl DF, et al. Wilderness Medical Society",
+  work: "Wilderness Medical Society Clinical Practice Guidelines for the Out-of-Hospital Evaluation and Treatment of Accidental Hypothermia: 2019 Update. Wilderness and Environmental Medicine 30(4 Suppl):S47",
+  year: 2019,
+  url: "https://doi.org/10.1016/j.wem.2019.10.002",
+};
+export const SZPILMAN_DROWNING: Source = {
+  body: "Szpilman D, Bierens JJLM, Handley AJ, Orlowski JP",
+  work: "Drowning. New England Journal of Medicine 366(22):2102",
+  year: 2012,
+  url: "https://doi.org/10.1056/NEJMra1013317",
+};
+export const LAVONAS_SNAKE: Source = {
+  body: "Lavonas EJ, Ruha AM, Banner W, et al.",
+  work: "Unified Treatment Algorithm for the Management of Crotaline Snakebite in the United States. BMC Emergency Medicine 11:2",
+  year: 2011,
+  url: "https://doi.org/10.1186/1471-227X-11-2",
+};
+export const BOSCH_RHABDO: Source = {
+  body: "Bosch X, Poch E, Grau JM",
+  work: "Rhabdomyolysis and Acute Kidney Injury. New England Journal of Medicine 361(1):62",
+  year: 2009,
+  url: "https://doi.org/10.1056/NEJMra0801327",
+};
+export const KWIATT_FES: Source = {
+  body: "Kwiatt ME, Seamon MJ",
+  work: "Fat Embolism Syndrome. International Journal of Critical Illness and Injury Science 3(1):64",
+  year: 2013,
+  url: "https://doi.org/10.4103/2229-5151.109426",
+};

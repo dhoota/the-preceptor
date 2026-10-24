@@ -50,3 +50,29 @@ export const CORLANOR: Source = { body: "Amgen Inc.", work: "CORLANOR (ivabradin
 export const VITAMIN_K: Source = { body: "Hospira, Inc.", work: "Vitamin K1 (phytonadione) injectable emulsion, US prescribing information", year: 2025, url: dm("e8808230-2c44-44c6-8cab-8f29b6b34051") };
 export const LAMICTAL: Source = { body: "GlaxoSmithKline", work: "LAMICTAL (lamotrigine) tablets, US prescribing information", year: 2025, url: "https://gskpro.com/content/dam/global/hcpportal/en_US/Prescribing_Information/Lamictal/pdf/LAMICTAL-PI-MG.PDF" };
 export const RELPREVV: Source = { body: "H2-Pharma, LLC", work: "ZYPREXA RELPREVV (olanzapine pamoate) extended-release injectable suspension, US prescribing information", year: 2026, url: dm("11544cba-64a9-49cb-8d74-da228053b252") };
+export const ABILIFY_MAINTENA: Source = {
+  body: "Otsuka America Pharmaceutical, Inc.",
+  work: "ABILIFY MAINTENA (aripiprazole) extended-release injectable suspension, US prescribing information",
+  year: 2026,
+  url: "https://www.otsuka-us.com/sites/g/files/qhldwo11721/files/media/static/Abilify-M-PI.pdf",
+};
+export const CHANTIX: Source = { body: "Pfizer Laboratories", work: "CHANTIX (varenicline) tablets, US prescribing information", year: 2025, url: dm("f0ff4f27-5185-4881-a749-c6b7a0ca5696") };
+export const VIVITROL: Source = { body: "Alkermes, Inc.", work: "VIVITROL (naltrexone for extended-release injectable suspension), US prescribing information", year: 2026, url: "https://www.vivitrolhcp.com/content/pdfs/prescribing-information.pdf" };
+export const ACAMPROSATE: Source = { body: "American Health Packaging", work: "Acamprosate calcium delayed-release tablets, US prescribing information", year: 2020, url: dm("94ef2a5c-cc2f-4e7f-b159-b2d38188d5b8") };
+export const METHADONE: Source = { body: "VistaPharm, LLC", work: "Methadone hydrochloride tablets for oral suspension, US prescribing information", year: 2026, url: dm("c54baaee-8ea4-45f5-a5c8-bb84cf86832f") };
+export const KRANTZ_2009: Source = {
+  body: "Krantz MJ, Martin J, Stimmel B, Mehta D, Haigney MC",
+  work: "QTc Interval Screening in Methadone Treatment. Annals of Internal Medicine 150(6):387",
+  year: 2009,
+  url: "https://pubmed.ncbi.nlm.nih.gov/19153406/",
+};
+export const RIFAMPIN: Source = { body: "American Health Packaging", work: "Rifampin capsules, US prescribing information", year: 2026, url: dm("50f706f9-5003-4e15-bece-85b6213b1f5c") };
+export const SPRAVATO: Source = {
+  body: "Janssen Pharmaceuticals, Inc.",
+  work: "SPRAVATO (esketamine) nasal spray, US prescribing information",
+  year: 2026,
+  url: "https://www.janssenlabels.com/package-insert/product-monograph/prescribing-information/SPRAVATO-pi.pdf",
+};
+export const STRATTERA: Source = { body: "Eli Lilly and Company", work: "STRATTERA (atomoxetine) capsules, US prescribing information", year: 2026, url: "https://pi.lilly.com/us/strattera-pi.pdf" };
+export const VYVANSE: Source = { body: "Takeda Pharmaceuticals America, Inc.", work: "VYVANSE (lisdexamfetamine dimesylate) capsules and chewable tablets, US prescribing information", year: 2026, url: dm("704e4378-ca83-445c-8b45-3cfa51c1ecad") };
+export const KEYTRUDA: Source = { body: "Merck Sharp and Dohme LLC", work: "KEYTRUDA (pembrolizumab) injection, US prescribing information", year: 2026, url: dm("9333c79b-d487-4538-a9f0-71b91a02b287") };

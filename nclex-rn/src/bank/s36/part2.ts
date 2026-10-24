@@ -42,7 +42,7 @@ export const PART2: Item[] = [
     options: [
       { text: "Obesity lowers BNP, so heart failure is still possible", why: "Natriuretic peptides run lower in obesity, and the findings point toward heart failure." },
       { text: "The result rules out heart failure as the cause", why: "A value below the usual cutoff does not exclude heart failure in severe obesity." },
-      { text: "The BNP shows that the symptoms come from the lungs", why: "BNP does not identify a lung cause. Orthopnea and edema point to the heart." },
+      { text: "The BNP shows that the symptoms come from a lung problem", why: "BNP does not identify a lung cause. Orthopnea and edema point to the heart." },
       { text: "The BNP should be repeated after a diuretic dose", why: "A diuretic would lower the BNP further and does not clarify the diagnosis." },
     ],
     correct: 0,
@@ -63,7 +63,7 @@ export const PART2: Item[] = [
     options: [
       { text: "A peripherally inserted central catheter", why: "A PICC can scar and narrow the arm veins needed for a future fistula." },
       { text: "A midline catheter in the upper arm", why: "A midline also uses the arm veins that must be saved for dialysis access." },
-      { text: "Short peripheral catheters rotated as needed", why: "Repeated peripheral catheters over 6 weeks damage the veins needed for a fistula." },
+      { text: "Short peripheral catheters replaced every few days", why: "Repeated peripheral catheters over 6 weeks damage the veins needed for a fistula." },
       { text: "A tunneled central catheter in the jugular vein", why: "A small-bore tunneled jugular catheter avoids the arm veins and suits weeks of therapy." },
     ],
     correct: 3,
@@ -143,7 +143,7 @@ export const PART2: Item[] = [
     kind: "mc",
     options: [
       { text: "The low level shows the pneumonia was viral", why: "The admission level of 6.2 ng/mL points to a bacterial infection. The fall shows response to treatment." },
-      { text: "The infection is responding, and stopping antibiotics can be considered", why: "A steep fall in procalcitonin with clinical recovery supports a shorter course." },
+      { text: "Treatment is working, and a shorter course is supported", why: "A steep fall in procalcitonin with clinical recovery supports a shorter course." },
       { text: "The antibiotics should be broadened to cover resistant bacteria", why: "The client is improving, so there is no sign of resistant infection." },
       { text: "Blood cultures should be repeated before any change", why: "Repeat cultures are not needed in a client who is recovering without fever." },
     ],

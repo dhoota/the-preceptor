@@ -198,3 +198,15 @@ export const HOCKENBERRY: Source = {
   url: "https://www.us.elsevierhealth.com/wongs-nursing-care-of-infants-and-children-9780323776707.html",
 };
 export const YODER: Source = { body: "Yoder-Wise PS, Sportsman S", work: "Leading and Managing in Nursing, 8th edition", year: 2023 };
+export const SOM_W: Source = {
+  body: "Centers for Medicare and Medicaid Services",
+  work: "State Operations Manual, Appendix W: Survey Protocol, Regulations and Interpretive Guidelines for Critical Access Hospitals and Swing-Beds in CAHs, Rev. 247",
+  year: 2026,
+  url: "https://www.cms.gov/Regulations-and-Guidance/Guidance/Manuals/downloads/som107ap_w_cah.pdf",
+};
+export const NCP: Source = {
+  body: "National Consensus Project for Quality Palliative Care",
+  work: "Clinical Practice Guidelines for Quality Palliative Care, 4th edition",
+  year: 2018,
+  url: "https://www.nationalcoalitionhpc.org/ncp/",
+};
