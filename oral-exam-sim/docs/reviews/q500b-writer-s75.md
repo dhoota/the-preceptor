@@ -33,7 +33,7 @@ Before this batch the bank had: n1 21, n2 27, n3 16, n4 18, n5 20, n6 35. The ex
 
 ## Uniqueness checks
 
-I read every SAMP on the topic (s11 headache-01 to 15, s40 headache-16 to 47) and the headache items in cva, loc, eye and pre-eclampsia, plus the headache oral cases. I also checked these angles against the whole bank before choosing them: leptomeningeal metastasis, cervical zoster, lactation and migraine drugs, Gradenigo or petrous apicitis, and cardiac cephalalgia. None of them were already in the bank. I dropped angle closure, giant cell arteritis, pheochromocytoma, cerebellar hemorrhage, contraception with aura, TTP and hemophilia because the bank already covers them.
+I read every SAMP on the topic (s11 headache-01 to 15, s40 headache-16 to 47) and the headache items in cva, loc, eye and pre-eclampsia, plus the headache oral cases. I also checked these angles against the whole bank before choosing them: leptomeningeal metastasis, occipital neuralgia (revision 2), lactation and migraine drugs, Gradenigo or petrous apicitis, and cardiac cephalalgia. None of them were already in the bank. Cervical zoster was in the first draft, but the bank already had the same zoster arc in other topics, so revision 2 replaced it. I dropped angle closure, giant cell arteritis, pheochromocytoma, cerebellar hemorrhage, contraception with aura, TTP and hemophilia because the bank already covers them.
 
 ## Sources and verification
 
@@ -77,7 +77,8 @@ I read every SAMP on the topic (s11 headache-01 to 15, s40 headache-16 to 47) an
 
 - headache-48 q3: the reasons given against Guillain-Barre syndrome, myasthenia and giant cell arteritis are standard clinical knowledge, not taken from the EANO-ESMO guideline.
 - headache-48 q1 tests asking about a symptom (back pain into a leg), and headache-50 q1 tests a symptom that would be a red flag if reported. Both are history questions, but they test different skills.
-- headache-49 q3: the European S2k zoster guideline suggests IV acyclovir for head and neck zoster, particularly in older patients. IV acyclovir is not an option, and oral valacyclovir is keyed from Cohen 2013.
+- headache-49: the evidence for occipital nerve block is mostly expert consensus. ICHD-3 makes relief by a block a diagnostic criterion, and the AHS review notes that apart from cluster headache the evidence is sparse. The reasons given against oxygen, triptans and opioids are standard clinical knowledge.
+- headache-49 q2 options name cervicogenic headache, and q4 asks about it. q2 can be answered without q4, and q4 does not reveal the q2 key.
 - headache-50 q4: the key (pump and discard for 3 days) rests on the nasal spray manufacturer's advice as reported by LactMed. The LactMed codeine entry is now more permissive than older regulatory advice. Codeine is used only as a distractor in q5, and the explanation says only that regulators prefer other agents.
 - headache-50 q3 and q5 combine Canadian Headache Society efficacy points with LactMed safety points. Each question can cite only one source.
 - headache-52 q4: the claim that the ESC guideline calls for an invasive strategy within 24 hours for dynamic ST changes comes from my own knowledge of the guideline. The full text was not opened.

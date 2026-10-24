@@ -7,7 +7,7 @@ Four new oral cases in `src/cases/batch18/`, registered in `BATCH_18` in this or
 | airgun-pellet-eye-rural-child | A boy holding his eye after backyard play | eye | rural | 8 | 595 | 17 (5/7/9/5) | 3 |
 | early-pregnancy-bleeding-partner-violence | Spotting after a fall on the stairs | first-trimester-bleeding | tertiary | 9 | 665 | 16 (8/6/6/7) | 3 |
 | post-lysis-bleed-rural-anterior-stemi | Chest pressure at the curling club | ischemic-heart-disease | rural | 9 | 645 | 17 (6/6/11/6) | 3 |
-| cannabis-gummies-older-woman-drowsy | Sleepy after the grandchildren's visit | loc | community | 8 | 590 | 16 (6/7/7/6) | 3 |
+| cannabis-gummies-older-woman-drowsy | Sleepy after a family visit | loc | community | 8 | 590 | 16 (6/7/7/6) | 3 |
 
 ## Uniqueness checks
 
@@ -63,3 +63,38 @@ REALIGN=batch18 CASE_BATCH=batch18 npx vitest run tests/cases.test.ts tests/cita
 ```
 
 To collect the stats in the table, I briefly copied a stats test into `tests/` and deleted it right after the run.
+
+## Revision 1
+
+This revision answers docs/reviews/q500b-qa-batch18.md, which failed 8 items. I applied every exact fix. Where I used an equivalent fix, I say so below. The airgun eye case is unchanged.
+
+### early-pregnancy-bleeding-partner-violence
+
+1. q-rh and f-m3. I could not read the SOGC 448 trauma wording, so I took the reviewer's first option and did not keep the original keying. `c-rhig` is now strong, with the label and feedback the reviewer gave (120 mcg or 300 mcg after abdominal trauma). `c-no-rhig` keeps strong with the new feedback. `s-rhig` now only records the dose and the indication. I rewrote the f-m3 text as the reviewer specified, and its teaching now notes that trauma is a separate indication and that 120 mcg is enough before 12 weeks. The q-rh model answer now gives both acceptable options. The case no longer contradicts signed batch05 restrained-driver-abdominal-pain.
+2. `c-mtx` is now unsafe. The feedback reads "can end or harm a viable intrauterine pregnancy".
+3. In the `c-in-front` feedback, "is unsafe for her" is now "can put her at risk". The choice stays partial.
+
+### post-lysis-bleed-rural-anterior-stemi
+
+4. I changed the `c-full-dose` label and `s-full-dose` text exactly as specified. The enoxaparin is now ordered and cancelled before it is drawn up.
+5. I removed heparin from the `c-wait-pci` label, so it now reads ASA 160 mg only. I left `s-wait-pci` as it was.
+6. The `c-half-dose` time is now 14:12, 9 minutes after the 14:03 ECG. This is an equivalent fix for the CT interval. Instead of moving the CT time, `s-ct` now says the enoxaparin was given "less than an hour ago". That holds on all three reperfusion paths (14:12, 14:28, or a full dose path with the same timing), and a fixed "50 minutes" would not.
+7. Advisory on i-h2. I have not read the CCS 2019 contraindication table, so I did not repoint i-h2 to it. To keep the item consistent with `esc-acs` (ESC uses 6 months for stroke and 1 month for trauma), I removed the 3 month intervals from the q-history model answer. It now says "recent ischemic stroke" and "recent head or facial trauma or surgery". The patient's finding still states, as a fact, that she had no head injury in the past 3 months.
+
+### cannabis-gummies-older-woman-drowsy
+
+8. The `reassess-0600` finding now starts "Opens her eyes spontaneously" and reads E4 V4 M6, GCS 14. The q-document model answer matches it.
+9. I fixed the Canadian CT Head Rule wording in the `c-ct` feedback, the l-p3 teaching and the q-investigate model answer as specified. GCS 12 is outside the rule and needs CT outright. I kept "age over 65" because the Stiell 2001 abstract says "age >65 years", not 65 or older.
+10. Advisories. I retitled the case "Sleepy after a family visit". The q-worse model answer and the l-p4 teaching now say that edible effects can last 12 hours or more. To back this up I read the Health Canada 2018 document further. It says oral effects begin 30 minutes to 1 hour or more after ingestion, peak at 3 to 4 hours, and that "impairment can last for over 24 h after last use". l-p4 cites that point.
+
+### Needs physician decision
+
+- SOGC 448 trauma wording before 8 weeks. This revision accepts both withholding RhIG and giving it after abdominal trauma at 6 weeks. If SOGC 448 says RhIG is not needed before 8 weeks even after trauma, the original keying could be restored, but that would need to be squared with the signed batch05 case.
+
+### Checks after revision
+
+```
+npx tsc --noEmit -p . 2>&1 | grep cases/batch18      (no output)
+CASE_BATCH=batch18 npx vitest run tests/cases.test.ts tests/citations.test.ts --testTimeout=120000      41 passed
+REALIGN=batch18 CASE_BATCH=batch18 npx vitest run tests/cases.test.ts tests/citations.test.ts --testTimeout=120000      45 passed
+```
