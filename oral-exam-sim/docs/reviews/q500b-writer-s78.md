@@ -141,3 +141,32 @@ This revision responds to `docs/reviews/q500b-verify-s78.md`. multiple-patients-
 1. 40 q2 tests features of one provincial service. The stem sets British Columbia, as ruling A17 asks.
 2. 40 q3: admission "here or at the referral centre" is keyed together. The distractors are all discharge options.
 3. 39 q3: the cylinder volume is given in the update rather than taken from a manufacturer's sheet, which I could not open.
+
+## Revision 3
+
+This revision responds to `docs/reviews/q500b-verify2-s78.md`. Only multiple-patients-38 q3 changed.
+
+### What changed
+
+- 38 q3 was replaced. It repeated the delegated monitoring with call triggers decision in signed multiple-patients-30 q3 and two s13 items.
+- New q3 (KF3, lead clearly): while you lead the man's resuscitation, staff keep interrupting you with phone calls and questions about other patients. The key is to have one nurse screen calls and questions, so only urgent matters reach you, and keep a written task list. Distractors: answer each call yourself, ask every caller to phone back in an hour, leave calls unanswered, pause his care for each question.
+- The update and prompt do not mention the woman, so they do not reveal the q1 key.
+- The key stays in position 5 and is not the longest option (39 characters against 37 to 41).
+- Source: Westbrook JI et al. The impact of interruptions on clinical task completion. Qual Saf Health Care. 2010. The abstract was read through PubMed E-utilities (https://pubmed.ncbi.nlm.nih.gov/20463369/): emergency doctors were interrupted 6.6 times an hour and failed to return to 18.5% of interrupted tasks.
+- Dawson-Amoah 2018 is no longer cited in 38 and was removed from the source object. 38's sources are now ACEP 2014, ATLS and Westbrook 2010.
+
+### Uniqueness check (whole bank)
+
+- "interrupt" outside suture and drug-interruption wording: only s13 handover items ("protected time with few interruptions", and workload or interruptions as an incident factor). Neither keys how to handle interruptions during a resuscitation.
+- "task list", "screen calls", "phone calls": only s06 cqi (an action list at handover), s52 suicide-risk follow-up calls and a batch10 privacy point. None matches the new decision.
+- The new decision is not delegated monitoring, not the 6 hour reduction or sciatic examination, not tourniquet tasks and not role assignment before arrival.
+
+### Counts after Revision 3
+
+- 21 questions: 17 single, 4 menu. Single key positions, first to fifth: 4, 3, 4, 3, 3.
+- Key features: KF1 3, KF2 6, KF3 6, KF4 6. 38 still has 4 questions.
+- `SAMP_BATCH=s78 npx vitest run tests/samps.test.ts tests/samp-quality.test.ts tests/citations.test.ts --testTimeout=120000`: 132 of 132 pass.
+
+### Uncertain point
+
+Westbrook 2010 is an observational study from one Australian teaching hospital. It supports the risk that interrupted tasks are dropped. The screening nurse and task list are the practical response, not a tested intervention.
