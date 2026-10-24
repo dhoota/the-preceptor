@@ -79,22 +79,22 @@ export const PART3: Item[] = [
       process: "nursing-process",
       difficulty: 3,
       stem: "The home dialysis nurse records findings at a monthly visit with a client on peritoneal dialysis. Click to highlight the findings that need follow-up.",
-      passage:
-        "[[Yellow drainage on the old dressing.]] [[Skin red for 2 cm around the exit site.]] [[Tender when the tunnel above the exit site is pressed.]] [[Small dry crust at the exit site.]] [[Catheter taped to the abdomen.]] [[Drained dialysate is clear.]] [[Temperature 37.0°C (98.6°F).]] [[Caught the catheter on a belt buckle 3 days ago.]]",
       rationale:
         "Purulent drainage at the exit site defines an exit site infection. Redness around the site supports it. Tenderness over the tunnel suggests the infection may extend along the catheter. Pulling the catheter on a belt buckle is trauma that raises infection risk and needs review of how it is secured. A small dry crust is part of normal healing. Clear dialysate and a normal temperature do not point to peritonitis.",
       sources: [ISPD, PD_CARD],
     }),
     kind: "highlight",
+    passage:
+      "[[Yellow drainage on the old dressing]]. [[Skin red for 2 cm around the exit site]]. [[Tender when the tunnel above the exit site is pressed]]. [[Small dry crust at the exit site]]. [[Catheter taped to the abdomen]]. [[Drained dialysate is clear]]. [[Temperature 37.0°C (98.6°F)]]. [[Caught the catheter on a belt buckle 3 days ago]].",
     spans: [
-      { text: "Yellow drainage on the old dressing.", why: "Purulent drainage at the exit site defines an exit site infection." },
-      { text: "Skin red for 2 cm around the exit site.", why: "Redness around the exit site supports an infection and needs follow-up." },
-      { text: "Tender when the tunnel above the exit site is pressed.", why: "Tenderness along the tunnel suggests the infection reaches beyond the exit site." },
-      { text: "Small dry crust at the exit site.", why: "A small dry crust is part of normal healing and is left in place." },
-      { text: "Catheter taped to the abdomen.", why: "A secured catheter is expected and limits pulling." },
-      { text: "Drained dialysate is clear.", why: "Clear dialysate does not suggest peritonitis." },
-      { text: "Temperature 37.0°C (98.6°F).", why: "The temperature is normal." },
-      { text: "Caught the catheter on a belt buckle 3 days ago.", why: "Trauma to the catheter raises infection risk and calls for review of how it is secured." },
+      { text: "Yellow drainage on the old dressing", why: "Purulent drainage at the exit site defines an exit site infection." },
+      { text: "Skin red for 2 cm around the exit site", why: "Redness around the exit site supports an infection and needs follow-up." },
+      { text: "Tender when the tunnel above the exit site is pressed", why: "Tenderness along the tunnel suggests the infection reaches beyond the exit site." },
+      { text: "Small dry crust at the exit site", why: "A small dry crust is part of normal healing and is left in place." },
+      { text: "Catheter taped to the abdomen", why: "A secured catheter is expected and limits pulling." },
+      { text: "Drained dialysate is clear", why: "Clear dialysate does not suggest peritonitis." },
+      { text: "Temperature 37.0°C (98.6°F)", why: "The temperature is normal." },
+      { text: "Caught the catheter on a belt buckle 3 days ago", why: "Trauma to the catheter raises infection risk and calls for review of how it is secured." },
     ],
     correct: [0, 1, 2, 7],
   },
@@ -127,7 +127,7 @@ export const PART3: Item[] = [
       process: "clinical-judgment",
       difficulty: 4,
       trend: true,
-      stem: "Forty staff members ate a catered lunch in a hospital conference room at noon on Monday. Over the next 3 days, 30 of them develop diarrhea and fever. The infection preventionist plots the onset times. Which pattern does the curve show?",
+      stem: "A group of 40 staff members ate a catered lunch in a hospital conference room at noon on Monday. Over the next 3 days, 30 of them develop diarrhea and fever. The infection preventionist plots the onset times. Which pattern does the curve show?",
       tabs: [
         {
           title: "Onset of Illness",

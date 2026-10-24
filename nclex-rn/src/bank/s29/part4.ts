@@ -48,7 +48,7 @@ export const PART4: Item[] = [
       cjmm: "prioritize",
       process: "clinical-judgment",
       difficulty: 3,
-      stem: "The nurse on a behavioral health crisis stabilization unit receives report on four adults at 0700. Which client should the nurse see first?",
+      stem: "Four adults stayed overnight on a behavioral health crisis stabilization unit. After the 0700 handoff, which client should the nurse assess first?",
       rationale:
         "A newly disclosed ingestion of aspirin with ringing in the ears suggests salicylate toxicity, a medical emergency. This client is assessed first, and the unit arranges emergency transfer. Little sleep with rapid speech needs monitoring but is not immediately dangerous. A tearful client asking to call family needs support. A missed antipsychotic dose is reported and rescheduled.",
       sources: [HINKLE, SAMHSA_CRISIS],

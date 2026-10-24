@@ -74,7 +74,7 @@ export const PART3: Item[] = [
       cjmm: "prioritize",
       process: "caring",
       difficulty: 2,
-      stem: "The nurse on an inpatient hospice unit receives report on four clients at 0700. Which client should the nurse see first?",
+      stem: "At the start of the day shift, a hospice nurse takes handoff for four clients getting general inpatient care for symptom control. Which client needs the nurse's attention first?",
       rationale:
         "Pain rated 9 is a symptom crisis, and symptom control is the main reason for inpatient hospice care. This client is seen first. Noisy breathing in a comfortable client near death is expected and is managed with positioning. Mottling and falling urine output are expected signs of approaching death. A family request about funeral planning matters and can be met after the pain is treated.",
       sources: [NCP, HINKLE],

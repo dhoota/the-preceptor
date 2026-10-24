@@ -237,3 +237,57 @@ export const CDC_MEASLES_TRAVEL: Source = {
   year: 2026,
   url: "https://www.cdc.gov/measles/travel/index.html",
 };
+export const YB_MALARIA: Source = {
+  body: "Centers for Disease Control and Prevention",
+  work: "CDC Yellow Book 2026: Health Information for International Travel, Malaria",
+  year: 2025,
+  url: "https://www.cdc.gov/yellow-book/hcp/travel-associated-infections-diseases/malaria.html",
+};
+export const CDC_EPI_RISK: Source = {
+  body: "Centers for Disease Control and Prevention",
+  work: "Principles of Epidemiology in Public Health Practice, 3rd edition, Lesson 3: Measures of Risk",
+  year: 2012,
+  url: "https://archive.cdc.gov/www_cdc_gov/csels/dsepd/ss1978/lesson3/section2.html",
+};
+export const OSHA_NOISE: Source = {
+  body: "Occupational Safety and Health Administration",
+  work: "Occupational Noise Exposure. 29 CFR 1910.95",
+  year: 2026,
+  url: "https://www.ecfr.gov/current/title-29/subtitle-B/chapter-XVII/part-1910/subpart-G/section-1910.95",
+};
+export const USPSTF_CERVIX: Source = {
+  body: "US Preventive Services Task Force. Curry SJ, Krist AH, Owens DK, et al.",
+  work: "Screening for Cervical Cancer: Recommendation Statement. JAMA 320(7):674",
+  year: 2018,
+  url: "https://doi.org/10.1001/jama.2018.10897",
+};
+export const NHGRI_GINA: Source = {
+  body: "National Human Genome Research Institute",
+  work: "Genetic Discrimination",
+  year: 2022,
+  url: "https://www.genome.gov/about-genomics/policy-issues/Genetic-Discrimination",
+};
+export const USPSTF_BREAST: Source = {
+  body: "US Preventive Services Task Force. Nicholson WK, Silverstein M, Wong JB, et al.",
+  work: "Screening for Breast Cancer: Recommendation Statement. JAMA 331(22):1918",
+  year: 2024,
+  url: "https://doi.org/10.1001/jama.2024.5534",
+};
+export const FDA_MQSA: Source = {
+  body: "US Food and Drug Administration",
+  work: "Mammography Quality Standards Act. Final Rule. Federal Register 88(47):15126, codified at 21 CFR 900.12",
+  year: 2023,
+  url: "https://www.federalregister.gov/documents/2023/03/10/2023-04550/mammography-quality-standards-act",
+};
+export const FDA_DISPOSAL: Source = {
+  body: "US Food and Drug Administration",
+  work: "Where and How to Dispose of Unused Medicines",
+  year: 2025,
+  url: "https://www.fda.gov/consumers/consumer-updates/where-and-how-dispose-unused-medicines",
+};
+export const FDA_FLUSH: Source = {
+  body: "US Food and Drug Administration",
+  work: "Drug Disposal: FDA's Flush List for Certain Medicines",
+  year: 2024,
+  url: "https://www.fda.gov/drugs/disposal-unused-medicines-what-you-should-know/drug-disposal-flush-potentially-dangerous-medicine",
+};
