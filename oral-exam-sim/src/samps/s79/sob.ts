@@ -90,7 +90,7 @@ export const SOB_S79: Samp[] = [
       {
         id: "q1",
         kind: "single",
-        prompt: "Which of the following features of her history most increases her current risk of venous thromboembolism?",
+        prompt: "Which of the following items in her history adds most to her pretest probability of PE?",
         options: ["Age of 61 years", "Breast radiation 10 months ago", "Daily tamoxifen 20 mg PO", "Former smoker of 15 pack-years", "Lumpectomy 10 months ago"],
         correct: 2,
         explanation:
