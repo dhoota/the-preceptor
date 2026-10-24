@@ -96,7 +96,7 @@ PLASMIC recomputed 7 of 7 (platelets 12, hemolysis, no cancer, no transplant, MC
 
 ## House style and format
 
-No em or en dashes. Semicolons only in TypeScript code, none in strings. Canadian spelling ("behaviour", "centre", "localizes", "neighbour" usage elsewhere). No mnemonics, no personal names. Author "Preceptor", `reviewed: false`, `version: 1`. Options alphabetical. All MCQ, so the A rules do not apply. B1, B4, B5, B6, B7, B8 and B10 checked. No contradiction of SCORING-RULINGS or of signed items found.
+No em or en dashes. Semicolons only in TypeScript code, none in strings. Canadian spelling ("behaviour", "centre", "localizes"). No mnemonics, no personal names. Author "Preceptor", `reviewed: false`, `version: 1`. Options alphabetical. All MCQ, so the A rules do not apply. B1, B4, B5, B6, B7, B8 and B10 checked. No contradiction of SCORING-RULINGS or of signed items found.
 
 ## Notes for the physician (judgement points, not fails)
 
@@ -111,6 +111,6 @@ No em or en dashes. Semicolons only in TypeScript code, none in strings. Canadia
 
 ## Summary
 
-5 SAMPs, 20 questions. Every earlier fail (10, 3 and 1 across the three reviews) is resolved, and the Revision 3 wording changes are accepted. 16 questions and the loc-52 stem... see counts: loc-49 q2 and q3 fail (mock-mode cue naming the q1 key source, one fix), loc-52 stem and q1 fail (coworker "last saw her 2 days ago" contradicts her finding her tonight, one fix). No clinical, dose, score or citation errors. No repeats in the bank.
+5 SAMPs, 20 questions. Every earlier fail (10, 3 and 1 across the three reviews) is resolved, and the Revision 3 wording changes are accepted. 17 questions pass. Failing: loc-49 q2 and q3 fail (mock-mode cue naming the q1 key source, one fix), and loc-52 stem and q1 fail (coworker "last saw her 2 days ago" contradicts her finding her tonight, one fix, the stem plus q1 counted as 2 items). No clinical, dose, score or citation errors. No repeats in the bank.
 
 Overall: FAIL (4 items)
