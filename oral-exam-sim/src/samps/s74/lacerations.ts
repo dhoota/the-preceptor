@@ -36,7 +36,7 @@ export const LACERATIONS_S74: Samp[] = [
         id: "q1",
         kind: "single",
         prompt: "Which of the following details of this injury is most important to clarify before the lip is repaired?",
-        options: ["Location of the missing tooth", "Speed of the skateboard at impact", "Time of his last meal", "Type of helmet he wore", "Whether friends saw the fall"],
+        options: ["Location of the tooth fragment", "Speed of the skateboard at impact", "Time of his last meal", "Type of helmet he wore", "Whether friends saw the fall"],
         correct: 0,
         explanation:
           "A piece of tooth is missing beside a lip wound that goes right through, so the piece may be buried in the lip. Dental trauma guidance says a missing fragment must be accounted for, and a fragment closed inside the lip can lead to infection and poor healing. The speed of the fall and the type of helmet do not change how this lip is explored or closed. The time of his last meal matters only if procedural sedation is planned, which a calm 16-year-old with a 2 cm lip wound does not need. Witnesses add little, because he did not lose consciousness.",
@@ -257,7 +257,7 @@ export const LACERATIONS_S74: Samp[] = [
         options: ["Ankle brace without repair", "Early surgical repair", "Physiotherapy then review", "Repair after 6 weeks in a cast", "Review if foot drop appears"],
         correct: 1,
         explanation:
-          "A divided tibialis anterior tendon in an active teenager needs early surgical repair, so he should be referred to orthopaedic surgery to be seen within days. The tendon ends retract, and a review of tibialis anterior ruptures notes that delay can make primary repair impossible and force a tendon graft. Left unrepaired, the injury leads to foot drop with a steppage gait, flatfoot and an Achilles contracture. A brace, physiotherapy or a cast without repair accepts that loss of function. Waiting for foot drop to appear wastes the window for direct repair.",
+          "A divided tibialis anterior tendon in an active teenager needs early surgical repair, so he should be referred to orthopaedic surgery to be seen within days. The tendon ends retract, and a review of tibialis anterior ruptures notes that delay can make primary repair impossible and force a tendon graft. Left unrepaired, the injury leads to foot drop with a steppage gait, flatfoot and an Achilles contracture. A brace or physiotherapy without repair accepts that loss of function. A repair delayed 6 weeks in a cast lets the tendon ends retract, so a graft may then be needed. Waiting for foot drop to appear wastes the window for direct repair.",
         keyFeature: { topic: TOPIC, n: 3 },
         source: "christman-tibialis-anterior",
       },

@@ -21,58 +21,58 @@ const S = {
 } satisfies Record<string, Source>;
 
 export const DVT_PE_S73: Samp[] = [
-  /* 48 Whole leg swelling in a woman who injects into the groin ------------ */
+  /* 48 Whole leg swelling in a man who injects into the groin -------------- */
   {
     id: "dvt-pe-48",
     topic: "dvt-pe",
     title: "Swollen leg after months of groin injecting",
     stem:
-      "A 31-year-old woman presents to the emergency department with three days of pain and swelling in her right leg. She takes methadone daily but still injects hydromorphone several times a week. Her arm veins are no longer usable, so for the past year she has injected into her right groin. She has untreated hepatitis C and has had several skin abscesses on her arms. She smokes one pack of cigarettes a day. She has had no previous blood clot, surgery, leg injury or cancer. The whole right leg is swollen from the groin to the ankle, with pitting edema. The right calf is 4 cm larger than the left, and there is tenderness along the femoral vein. There are no dilated superficial veins.",
-    vitals: { temperature: "37.3°C oral", pulse: "102/minute", resp: "18/minute", bp: "124/76 mmHg", o2sat: "98% on room air", weight: "54 kg" },
+      "A 46-year-old man presents to the emergency department with four days of aching and swelling in his left leg. He injects fentanyl daily and has done so for eight years. For the past six months he has injected into his left groin because he can no longer find veins in his arms or feet. He is on a waiting list for opioid agonist treatment. He has had cellulitis of both forearms in the past and drinks two beers most days. He has had no previous blood clot, surgery, leg injury or cancer. He sleeps at a shelter, has no phone and missed his last two clinic appointments. The whole left leg is swollen from the groin to the ankle, with pitting edema. The left calf is 4 cm larger than the right, and there is tenderness along the femoral vein. There are no dilated superficial veins. The right leg is normal.",
+    vitals: { temperature: "37.1°C oral", pulse: "98/minute", resp: "16/minute", bp: "132/84 mmHg", o2sat: "97% on room air", weight: "71 kg" },
     questions: [
       {
         id: "q1",
         kind: "single",
-        prompt: "Which of the following features of her history most increases her risk of deep vein thrombosis?",
-        options: ["Daily cigarette smoking", "Femoral vein injection", "Hepatitis C infection", "Oral methadone treatment", "Previous skin abscesses"],
+        prompt: "Which of the following features of his history most increases his risk of deep vein thrombosis?",
+        options: ["Daily alcohol use", "Femoral vein injection", "Fentanyl as the drug used", "Past forearm cellulitis", "Sleeping at a shelter"],
         correct: 1,
         explanation:
-          "She has injected into her right groin for a year, and it is the right leg that is swollen. Repeated puncture of the femoral vein, with injection of irritant material, damages the vein and is a recognized cause of femoral DVT in people who inject drugs, who made up 48% of patients under 40 with DVT in one series. Hepatitis C, oral methadone and old arm abscesses do not explain a clot in the right femoral vein. Smoking is at most a weak risk factor for venous thrombosis and does not explain a one-sided clot at her injecting site.",
+          "He has injected into his left groin for six months, and it is the left leg that is swollen. Repeated puncture of the femoral vein, with injection of irritant material, damages the vein and is a recognized cause of femoral DVT in people who inject drugs, who made up 48% of patients under 40 with DVT in one series. The route and site of injection matter more than the drug itself, so fentanyl is not the reason. Old forearm cellulitis does not explain a clot in the left femoral vein. Moderate alcohol use and sleeping at a shelter are not recognized risk factors for DVT.",
         keyFeature: { topic: "dvt-pe", n: 1 },
         source: "jackman-groin-pwid",
       },
       {
         id: "q2",
         kind: "single",
-        update: "You examine her right groin, where there are many puncture marks.",
-        prompt: "Which of the following groin findings would most change your immediate management of her?",
-        options: ["Dry scaling skin over the thigh", "Healed puncture scars", "Small mobile inguinal nodes", "Tender pulsatile groin mass", "Yellow bruising around the sites"],
-        correct: 3,
+        update: "You examine his left groin, where there are many puncture marks.",
+        prompt: "Which of the following additional findings would most suggest that the thrombosed femoral vein is infected?",
+        options: ["Fever with rigors and a groin sinus", "Healed puncture scars at the groin", "Mild warmth of the swollen leg", "Pitting edema to the knee", "Tenderness along the femoral vein"],
+        correct: 0,
         explanation:
-          "A tender, pulsatile mass at an injecting site suggests a femoral artery pseudoaneurysm, often infected, from accidental arterial puncture. It can be mistaken for an abscess, and attempts to drain an assumed abscess have caused major hemorrhage, so it needs urgent imaging and vascular surgery review before anyone incises it. Not every pseudoaneurysm pulsates, which is why groin imaging matters in this group. Healed puncture scars, old yellow bruising and small mobile nodes are common in people who inject into the groin and do not change the plan. Dry skin over the thigh is not a sign of a vascular complication.",
+          "Septic thrombophlebitis most often affects the large proximal veins of people who have injected frequently for a long time, and severe cases bring fever, chills, rigors and a draining sinus. Finding these changes the plan, because he would need blood cultures, CT or duplex imaging of the infected segment and IV antibiotics that cover Staphylococcus aureus as well as anticoagulation. Tenderness along the vein, pitting edema and mild warmth of the leg are expected with an uninfected DVT. Healed puncture scars only confirm where he injects.",
         keyFeature: { topic: "dvt-pe", n: 2 },
         source: "jackman-groin-pwid",
       },
       {
         id: "q3",
         kind: "single",
-        update: "The groin shows healed puncture scars only, with no mass, warmth or pus. You judge DVT to be more likely than any other diagnosis.",
-        prompt: "Which of the following is her two level Wells score for deep vein thrombosis?",
+        update: "The rest of his examination is unremarkable. You judge DVT to be more likely than any other diagnosis.",
+        prompt: "Which of the following is his two level Wells score for deep vein thrombosis?",
         options: ["1 point", "2 points", "3 points", "4 points", "5 points"],
         correct: 3,
         explanation:
-          "She scores one point each for localized tenderness along the deep veins, swelling of the entire leg, calf swelling of 3 cm or more and pitting edema confined to the symptomatic leg, for 4 points. She has no active cancer, paralysis or cast, recent bed rest or surgery, collateral superficial veins or previous DVT, and no alternative diagnosis is as likely, so nothing is subtracted. Injecting drug use is not a Wells item, so the score can understate risk in this group. A score of 2 or more places her in the DVT likely category.",
+          "He scores one point each for localized tenderness along the deep veins, swelling of the entire leg, calf swelling of 3 cm or more and pitting edema confined to the symptomatic leg, for 4 points. He has no active cancer, paralysis or cast, recent bed rest or surgery, collateral superficial veins or previous DVT, and no alternative diagnosis is as likely, so nothing is subtracted. Injecting drug use is not a Wells item, so the score can understate risk in this group. A score of 2 or more places him in the DVT likely category.",
         keyFeature: { topic: "dvt-pe", n: 3 },
         source: "wells-dvt-2003",
       },
       {
         id: "q4",
         kind: "single",
-        prompt: "Which of the following is the most appropriate next investigation for suspected DVT in her?",
-        options: ["CT venogram of the pelvis", "D-dimer before any imaging", "Duplex ultrasound of the leg", "Plain X-ray of the groin", "Venography through a foot vein"],
-        correct: 2,
+        prompt: "Which of the following ultrasound strategies is most appropriate for him, given his likelihood of returning for follow-up?",
+        options: ["Bedside two point ultrasound only", "Proximal ultrasound, repeat in 5 to 7 days", "Proximal ultrasound, repeat in 2 weeks", "Proximal ultrasound, then D-dimer", "Whole leg compression ultrasound"],
+        correct: 4,
         explanation:
-          "Her Wells score of 4 makes DVT likely, and Thrombosis Canada recommends compression ultrasound as the first test in that group. Duplex scanning of the leg also shows the femoral artery and soft tissue at her injecting site. A D-dimer cannot exclude DVT when the pretest probability is likely, so ordering it first only adds delay. CT venography is kept for cases where ultrasound cannot answer the question, such as suspected iliac thrombosis. Contrast venography is invasive and needs a usable foot vein. A plain X-ray of the groin can show a retained needle fragment but cannot diagnose DVT.",
+          "With a likely pretest probability, Thrombosis Canada accepts either proximal or whole leg compression ultrasound as the first test. A negative proximal study must be followed by a D-dimer and a repeat scan in 5 to 7 days, to catch a calf clot that has extended. A negative whole leg study needs no D-dimer or repeat scan, which matters for a man with no phone who has missed appointments. A two point bedside scan is a proximal study with the same need for follow-up. A repeat at 2 weeks is later than the guide advises.",
         keyFeature: { topic: "dvt-pe", n: 4 },
         source: "tc-dvt-dx",
       },

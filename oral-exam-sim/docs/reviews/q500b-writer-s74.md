@@ -76,3 +76,12 @@ This revision answers `docs/reviews/q500b-qa-s74.md`. The coordinator ruled that
 8. lacerations-43 q3. The update is now "There are no signs of flexor sheath infection, and the swelling stops short of the palm." The option strength is now 160/800 mg. "And longer for deep wounds" now reads "and one deep wound needed 10 weeks". The cefazolin claim is removed. In its place, the explanation says "A Canadian case review reports failures on penicillin, dicloxacillin and cephalexin." That case review is White and Jewer, which is listed in the SAMP's sources.
 
 Counts after revision: 20 questions, 18 single and 2 menu (40 q2 and 41 q2). Single key positions 0 to 4 are 3, 4, 4, 4, 3. The key is the single longest option in 3 of 18. Key feature counts are unchanged: n1 5, n2 5, n3 5, n4 5. Tests: `SAMP_BATCH=s74 npx vitest run tests/samps.test.ts tests/samp-quality.test.ts tests/citations.test.ts --testTimeout=120000` passes, 128 of 128. The s74 type check is clean.
+
+## Revision 2
+
+This revision answers `docs/reviews/q500b-verify-s74.md`.
+
+1. lacerations-39 q1. The option "Location of the missing tooth" is now "Location of the tooth fragment". It still sorts first, so the key index stays 0. At 30 characters it is shorter than "Speed of the skateboard at impact", so it is not the longest option.
+2. lacerations-42 q4. The sentence "A brace, physiotherapy or a cast without repair accepts that loss of function." now reads "A brace or physiotherapy without repair accepts that loss of function. A repair delayed 6 weeks in a cast lets the tendon ends retract, so a graft may then be needed."
+
+Key positions and length balance are unchanged: 3, 4, 4, 4, 3, with the key longest in 3 of 18 single questions. Tests pass with `--testTimeout=120000`.

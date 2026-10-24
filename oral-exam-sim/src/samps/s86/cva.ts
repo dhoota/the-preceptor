@@ -82,7 +82,7 @@ export const CVA_S86: Samp[] = [
     topic: "cva",
     title: "Slid from her chair",
     stem:
-      "An 81-year-old woman is brought to the emergency department by ambulance at 15:05 from her quilting group in a church hall. Friends say she was chatting normally at 14:20, then slid from her chair to the floor and could not get up. The paramedics suspected a spinal cord problem. She has no back or neck pain. She has hypertension and type 2 diabetes. Medications: perindopril and metformin. She lives alone and was independent. Capillary glucose is 9.2 mmol/L. She is drowsy but opens her eyes to voice. She speaks only single words when pressed and seems unconcerned by what has happened. Her clothes are wet with urine. Left leg power is 1/5 and right leg power is 3/5. Arm strength and the face are normal. Both plantar responses are extensor. Pinprick sensation is normal on the trunk and legs, with no sensory level. She has no bruising, spinal tenderness or step. Radial and femoral pulses are equal and strong.",
+      "An 81-year-old woman is brought to the emergency department by ambulance at 15:05 from a quilting group in a church hall. She was chatting normally at 14:20, then slid from her chair to the floor and could not get up. The paramedics suspected a spinal cord problem. She has hypertension and type 2 diabetes. Medications: perindopril and metformin. She was independent. Capillary glucose is 9.2 mmol/L. She is drowsy but opens her eyes to voice. She speaks only single words when pressed and seems unconcerned by what has happened. Her clothes are wet with urine. Left leg power is 1/5 and right leg power is 3/5. Arm strength and the face are normal. Both plantar responses are extensor. Pinprick sensation is normal on the trunk and legs, with no sensory level. She has no back pain, bruising, spinal tenderness or step. Radial and femoral pulses are equal and strong.",
     vitals: { temperature: "36.8°C oral", pulse: "88/minute", resp: "16/minute", bp: "174/90 mmHg", o2sat: "96% on room air", weight: "62 kg" },
     questions: [
       {
@@ -262,8 +262,8 @@ export const CVA_S86: Samp[] = [
     topic: "cva",
     title: "Eyes open but not moving",
     stem:
-      "A 58-year-old man is brought to the emergency department by ambulance at 06:50. At 06:15 his wife found him in bed unable to speak or move. He was well when he went to bed at 22:30. Yesterday afternoon, while gardening, he had 15 minutes of double vision, slurred speech and dizziness, and he told no one until the evening. He has hypertension and smokes. Medication: perindopril. He lived independently. Capillary glucose is 6.6 mmol/L. The paramedics recorded a GCS of 6 (E4 V1 M1). His eyes are open. He makes no sounds and does not move his face or limbs to command or to pain. Neither eye moves to the side with head turning. Pupils are 3 mm and reactive. Both plantar responses are extensor. His breathing is regular.",
-    vitals: { temperature: "37.0°C oral", pulse: "64/minute", resp: "16/minute", bp: "186/98 mmHg", o2sat: "95% on room air", weight: "84 kg" },
+      "A 58-year-old man is brought to the emergency department by ambulance at 06:50. At 06:15 his wife found him in bed unable to speak or move. He was well when he went to bed at 22:30. He has hypertension and smokes. Medication: perindopril. He lived independently. Capillary glucose is 6.6 mmol/L. The paramedics recorded a GCS of 6 (E4 V1 M1). His eyes are open. He makes no sounds and does not move his face or limbs to command or to pain. Neither eye moves to the side with head turning. Pupils are 3 mm and reactive. Both plantar responses are extensor. His breathing is regular.",
+    vitals: { temperature: "37.0°C oral", pulse: "64/minute", resp: "16/minute", bp: "172/94 mmHg", o2sat: "95% on room air", weight: "84 kg" },
     questions: [
       {
         id: "q1",
@@ -272,7 +272,7 @@ export const CVA_S86: Samp[] = [
         options: ["Absent horizontal eye movements", "Bilateral extensor plantar responses", "Eyes open spontaneously", "Pupils reactive to light", "Vertical gaze on command"],
         correct: 4,
         explanation:
-          "Locked-in syndrome leaves the patient fully conscious but unable to move or speak, with vertical eye movements and lid control usually spared, so looking up or down when asked proves awareness. The diagnosis is missed when voluntary vertical gaze is not tested in a patient who seems unresponsive, and his GCS of 6 hides it. Open eyes also occur in a vegetative state. Absent horizontal gaze, reactive pupils and extensor plantar responses are found in both locked-in syndrome and coma from a brainstem lesion, so none of them shows that he is aware.",
+          "Locked-in syndrome leaves the patient fully conscious but unable to move or speak, with vertical eye movements and lid control usually spared, so looking up or down when asked proves awareness. The diagnosis is missed when voluntary vertical gaze is not tested in a patient who seems unresponsive. Open eyes also occur in a vegetative state. Absent horizontal gaze, reactive pupils and extensor plantar responses are found in both locked-in syndrome and coma from a brainstem lesion, so none of them shows that he is aware.",
         keyFeature: { topic: "cva", n: 2 },
         source: "s86-locked-in",
       },
@@ -283,35 +283,35 @@ export const CVA_S86: Samp[] = [
         options: ["Base of the pons", "Bilateral medial thalami", "Cerebellar vermis", "Lateral medulla", "Midbrain tectum"],
         correct: 0,
         explanation:
-          "Paralysis of all four limbs and the face, mutism and loss of horizontal gaze with extensor plantar responses localize to the base of the pons, where the corticospinal and corticobulbar tracts and the horizontal gaze centres sit. Vertical gaze and lid control arise in the midbrain and are spared. Bilateral medial thalamic infarcts cause drowsiness and vertical gaze palsy without quadriplegia. A cerebellar vermis lesion causes truncal ataxia, and a lateral medullary infarct causes crossed sensory loss with ataxia, not quadriplegia. A midbrain tectal lesion affects upgaze and pupils.",
+          "Paralysis of all four limbs and the face, mutism and loss of horizontal gaze with extensor plantar responses localize to the base of the pons, where the corticospinal and corticobulbar tracts and the horizontal gaze centres sit. Vertical gaze and lid control arise in the midbrain and are usually spared. Bilateral medial thalamic infarcts cause drowsiness and vertical gaze palsy without quadriplegia. A cerebellar vermis lesion causes truncal ataxia, and a lateral medullary infarct causes crossed sensory loss with ataxia, not quadriplegia. A midbrain tectal lesion affects upgaze and pupils.",
         keyFeature: { topic: "cva", n: 2 },
         source: "s86-locked-in",
       },
       {
         id: "q3",
         kind: "single",
-        prompt: "Which of the following best describes the episode he had yesterday afternoon while gardening?",
-        options: ["Benign positional vertigo", "Hypoglycemic episode", "Orthostatic presyncope", "Posterior circulation TIA", "Vestibular migraine attack"],
-        correct: 3,
+        prompt: "Which of the following best explains a GCS of 6 if this patient has locked-in syndrome?",
+        options: ["Brainstem arousal system injury", "Loss of motor and verbal output", "Postictal suppression of arousal", "Raised intracranial pressure", "Sedation from his medication"],
+        correct: 1,
         explanation:
-          "Sudden double vision, slurred speech and dizziness together are brainstem symptoms, and in a smoker with hypertension they mark vertebrobasilar ischemia that Canadian guidance says needs urgent assessment and vascular imaging. Had he come in yesterday, CT angiography could have shown the threatened basilar artery. Positional vertigo is brief, triggered by head position and does not cause double vision or dysarthria. He does not take diabetes drugs, so hypoglycemia is unlikely. Presyncope causes light-headedness and dim vision on standing. A first vestibular migraine at 58 with dysarthria is far less likely than ischemia.",
+          "The GCS scores eye opening, speech and limb movement, so it measures output as well as arousal. A lesion in the base of the pons cuts the motor and speech pathways but spares the arousal systems higher in the brainstem, so a fully conscious patient can score E4 V1 M1. That is why the diagnosis is missed when vertical gaze is not tested. Injury to the brainstem arousal system causes coma, usually with the eyes closed, but his eyes are open. No seizure was seen. Raised intracranial pressure lowers arousal rather than leaving the eyes open with regular breathing. Perindopril is not sedating.",
         keyFeature: { topic: "cva", n: 2 },
-        source: "s86-csbpr-sp",
+        source: "s86-locked-in",
       },
       {
         id: "q4",
         kind: "single",
         update: "CT shows no hemorrhage. CT angiography shows occlusion of the mid basilar artery. The posterior circulation ASPECTS is 8. It is now 07:15.",
         prompt: "Which of the following is the most appropriate treatment for this patient now?",
-        options: ["Comfort-focused care only", "Endovascular thrombectomy", "Heparin infusion", "MRI brain before deciding", "Tenecteplase IV alone"],
-        correct: 1,
+        options: ["Comfort-focused care only", "Heparin infusion", "MRI brain before deciding", "Tenecteplase IV alone", "Thrombectomy now"],
+        correct: 4,
         explanation:
-          "He is 8 hours 45 minutes from last known well, with a disabling deficit, independent function before today and a basilar occlusion, which meets the Canadian criteria for endovascular thrombectomy up to 24 hours from last known well. A posterior circulation ASPECTS of 8 shows limited established infarction. He is outside the standard 4.5-hour window for thrombolysis, and tenecteplase alone would not open a basilar occlusion as well as thrombectomy. Comfort care would deny an aware patient effective treatment. Heparin is not a reperfusion treatment, and waiting for MRI loses time.",
+          "He is 8 hours 45 minutes from last known well, with a disabling deficit, independent function before today and a basilar occlusion, which meets the Canadian criteria for endovascular thrombectomy up to 24 hours from last known well. A posterior circulation ASPECTS of 8 shows limited established infarction. He is outside the standard 4.5-hour window for thrombolysis, and tenecteplase alone would not open a basilar occlusion as well as thrombectomy. Comfort care would withhold an effective treatment from a man who may be fully conscious. Heparin is not a reperfusion treatment, and waiting for MRI loses time.",
         keyFeature: { topic: "cva", n: 3 },
         source: "s86-csbpr-acute",
       },
     ],
-    sources: [S.lis, S.csbprSp, S.csbprAcute],
+    sources: [S.lis, S.csbprAcute],
     ...META,
   },
 ];

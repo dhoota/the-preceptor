@@ -56,3 +56,39 @@ I read every suicide-risk SAMP in s17 and s52, the cross-tagged items (abuse-dom
 4. 43 q3 tags KF2. The Oliva data are about risk, so KF1 could also fit. The 43 q3 update reveals intent after q1 asked which features raise concern. This does not name q1's keyed features, but check it under the mock-mode cue rule (B6).
 5. KF5 items 41 q4 and 43 q4 test prescribing choices (no new sedative, a short supply with review) as part of medication counselling.
 6. The bank-wide near duplicate test takes 8 to 10 seconds here under load. The default 5 second timeout made it fail on some runs. It passes with `--testTimeout=120000`, and no duplicate was reported.
+
+## Revision 1
+
+This revision answers `docs/reviews/q500b-qa-s72.md` (13 failed items, no key wrong). Where this section disagrees with the tables above, this section is current. Before rebuilding anything I grepped all of `src/samps` and `src/cases` for the new angles (unused glucose meter, volleyball, unopened pens, HbA1c, "told relatives", 38%, discharge letter, discharge summary, warning signs). I opened no new sources. The new content uses the sources already verified, all re-read by WebFetch or curl: the CPS 2015 text on intent behind self-harm, the CCSMH 2006 lines on relatives and the 38%, and NICE NG225 1.7.8.
+
+### Changes by item
+
+| Item | Finding | Change |
+|---|---|---|
+| 39 stem | Near duplicate of abuse-domestic-41 | Rebuilt and retitled "A meter used on three days". It no longer uses the third-DKA, ran-out-of-insulin frame. She faints at volleyball practice and has mild ketoacidosis (pH 7.28, bicarbonate 15). Her HbA1c rose from 7.6% to 12.9%, refills were collected on time, her meter shows only 3 days of readings, she lost 6 kg, she says she takes every dose, and her injection sites are normal. Vitals changed to 106, 22, 112/70, 51 kg. Her father replaces her mother throughout. The q1 prompt and explanation were rewritten to these clues. The key is unchanged. |
+| 39 q2 | Insulin self-harm claim had no source | Removed the claim about insulin omission or overdose as suicide. The explanation now rests on what CPS 2015 says: ask adolescents about the intent behind self-harming behaviour and ask directly whether they want to end their life. The key is unchanged. |
+| 40 q2 | Grammar cue | Key is now "Unwillingness to undergo a voluntary assessment". It stays last. |
+| 40 q3 | Out-of-date legal statement, and a "recent plan" not in the case | Stem: "A registered nurse, who is not a nurse practitioner". Explanation adds that nurse practitioners join under an amendment in force from November 1, 2026. "Recent plan" is replaced by "a goodbye message and a walk onto thin ice". |
+| 40 q4 | Mock-mode cue | Removed "You complete the application." The prompt now reads "an application under section 8". |
+| 41 q3 | Cue to q4 and wrong source field | The lorazepam distractor is replaced by "Move to a quieter group home", and the sedative sentence is removed. Source is now `sullivan-idd`, and the explanation cites guidelines 2.3 and 30.2. NICE is no longer cited in SAMP 41, so it was removed from that SAMP's sources. Key [1, 2, 6] is unchanged. |
+| 42 q1 | Distractor reason without support | "Lower than during custody" is now "Lowest in the first month out". The unsupported sentence is replaced by the verified overall suicide SMR of 4.3. |
+| 42 q2 | Optional wording | "Low acute risk" is now "passive thoughts and no plan or intent". The service is named "the community mental health clinic" to match q4. |
+| 42 q3 | Shelter phone not in the case | Stem: "He has no phone of his own, but the shelter has one that residents may use." |
+| 42 q4 | Inconsistent services | The update now says the clinic usually phones patients to set a time, without repeating "no phone". The explanation says "without a phone of his own". |
+| 43 q1 | "Abrupt" not in the stem | Stem: "stopped it abruptly 5 weeks ago". The source field is now `oliva-opioid-stop`, so that source stays cited. |
+| 43 q2 | Repeat of s17-02, and a defensible distractor | Replaced. New KF2 question: "Which of the following people is most likely to know whether he has spoken of wanting to die?" The key is his adult son. CCSMH 2006: three quarters of older adults who died by suicide had told relatives or friends, and only 38% had told a health professional. Not found elsewhere in the bank. |
+| 43 q3 | Overlap with s17-10, and a B6 cue | Replaced. The disclosure is now "Asked directly again the next morning, he says he meant to end his life", which names no q1 feature. New KF5 question on the discharge letter to his family physician. The key is that the letter names the collision as a suicide attempt (NICE 1.7.8: regular review of the self-harm and a medicines review in primary care). |
+| 43 q4 | Overlap with s17-10 | Replaced with the reviewer's suggested angle: advice to his son, keyed "Call 9-8-8 if he talks of dying" (PHAC 9-8-8 page, now listed on SAMP 43). Opioid quantity, naloxone and firearms are not used. |
+
+### Counts after revision
+
+- 20 questions: 17 single and 3 menu. Single key positions: 4, 3, 3, 3, 4. The key is the longest option in 2 of 17.
+- Key features: KF1 4, KF2 4, KF3 3, KF4 4, KF5 5. Replacing 43 q3 moved one question from KF2 to KF5. The thinnest bank features, KF2 and KF4, still get 4 each.
+
+### Still open for the verifier
+
+1. 43 q4 keys 9-8-8 as advice to a family member. s52 already keys the 9-8-8 number in a patient's own plan. The decision here is different (what a relative does when he hears talk of dying), but please check it under D1.
+2. 43 q3 overlaps loosely with s17 "Going home to the farm" (a component about communication with his family physician) and with the s52 "Discharge summary sent to her doctor" option. The decision tested here, naming the injury as an attempt in the letter, is not keyed elsewhere.
+3. The 39 q1 to q2 mock-mode flag remains, as the review allows.
+
+Test run: `SAMP_BATCH=s72 npx vitest run tests/samps.test.ts tests/samp-quality.test.ts tests/citations.test.ts --testTimeout=120000`: 3 files, 128 tests passed. Typecheck shows no s72 errors.

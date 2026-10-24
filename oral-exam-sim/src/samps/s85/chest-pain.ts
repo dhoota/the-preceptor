@@ -5,8 +5,7 @@ import type { Source } from "@/engine/types";
 const META = { reviewed: false, author: "Preceptor", version: 1 } as const;
 
 const S = {
-  aorta: { id: "acc-aha-aorta-2022-s85", citation: "Isselbacher EM, Preventza O, Hamilton Black J, and colleagues. 2022 ACC/AHA guideline for the diagnosis and management of aortic disease. Circulation. 2022.", url: "https://pmc.ncbi.nlm.nih.gov/articles/PMC9876736/" },
-  advised: { id: "advised-2018-s85", citation: "Nazerian P, Mueller C, Soeiro AM, and colleagues. Diagnostic accuracy of the aortic dissection detection risk score plus D-dimer for acute aortic syndromes: the ADvISED prospective multicenter study. Circulation. 2018." },
+  ross: { id: "ross-sc-septic-s85", citation: "Ross JJ, Shamsuddin H. Sternoclavicular septic arthritis: review of 180 cases. Medicine (Baltimore). 2004." },
   escPeri2025: { id: "esc-myo-peri-2025-s85", citation: "Schulz-Menger J, Collini V, Groschel J, and colleagues. 2025 ESC guidelines for the management of myocarditis and pericarditis. Eur Heart J. 2025.", url: "https://academic.oup.com/eurheartj/advance-article/doi/10.1093/eurheartj/ehaf192/8234510" },
   escPeri2015: { id: "esc-pericardial-2015-s85", citation: "Adler Y, Charron P, Imazio M, and colleagues. 2015 ESC guidelines for the diagnosis and management of pericardial diseases. Eur Heart J. 2015.", url: "https://academic.oup.com/eurheartj/article/36/42/2921/2293375" },
   eacts: { id: "eacts-mediastinitis-s85", citation: "Abu-Omar Y, Kocher GJ, Bosco P, and colleagues. European Association for Cardio-Thoracic Surgery expert consensus statement on the prevention and management of mediastinitis. Eur J Cardiothorac Surg. 2017.", url: "https://academic.oup.com/ejcts/article/51/1/10/2736969" },
@@ -18,63 +17,61 @@ const S = {
 } satisfies Record<string, Source>;
 
 export const CHEST_PAIN_S85: Samp[] = [
-  /* 48 Interscapular pain while carrying a heavy load ---------------------- */
+  /* 48 Slowly worsening pain at the top of the chest ---------------------- */
   {
     id: "chest-pain-48",
     topic: "chest-pain",
-    title: "Pain while carrying a water heater",
+    title: "Pain near the collarbone after yard work",
     stem:
-      "You are working in a community hospital emergency department with CT. A 47-year-old man presents 70 minutes after pain struck between his shoulder blades while he and a friend carried an old water heater up the basement stairs. He says the pain was at its worst the instant it began. It now also sits in the centre of his chest, and he has felt nauseated since it started. It eases a little when he sits up, and turning his trunk causes a twinge. His father died suddenly at 51 of a ruptured thoracic aorta. He has hypertension treated with amlodipine and smokes 20 cigarettes a day. He is sweaty and restless. Radial and femoral pulses are equal, and the BP is the same in both arms. There is no murmur. The neurological examination is normal. His ECG shows sinus tachycardia with left ventricular hypertrophy and no ST elevation.",
-    vitals: { temperature: "36.8°C oral", pulse: "108/minute", resp: "20/minute", bp: "172/98 mmHg", o2sat: "97% on room air", weight: "92 kg" },
+      "A 61-year-old man presents to the emergency department with 12 days of pain at the top of his right chest, beside the collarbone, that has slowly worsened. It began the day after an afternoon of yard work. Ibuprofen helped for the first few days but no longer does. The pain is worse when he lifts his right arm or lies on his right side. For 4 nights he has woken with chills. He has type 2 diabetes treated with insulin and an infected ulcer on his left foot that the wound clinic has treated for 3 weeks. He has hypertension treated with ramipril and takes atorvastatin. He stopped smoking 10 years ago. The skin over the right sternoclavicular joint is warm and swollen, and the joint is very tender. Heart sounds are normal and the lungs are clear. His ECG and chest X-ray are normal.",
+    vitals: { temperature: "37.6°C oral", pulse: "98/minute", resp: "18/minute", bp: "138/82 mmHg", o2sat: "98% on room air", weight: "96 kg" },
     questions: [
       {
         id: "q1",
         kind: "single",
-        prompt: "Which of the following features of his pain history most raises concern for an acute aortic syndrome?",
-        options: ["Easing a little when he sits up", "Instant onset at peak intensity", "Nausea since the pain began", "Sweating with the pain", "Twinge when he turns his trunk"],
+        prompt: "Which of the following features of his history most points to an infected joint rather than a strain?",
+        options: ["Pain when he lifts his right arm", "Pain with chills as it worsened", "Pain worse lying on his right side", "Relief from ibuprofen at first", "Worse after a day of yard work"],
         correct: 1,
         explanation:
-          "Pain that is at its worst the moment it starts is the high-risk pain feature of the aortic dissection detection risk score, along with severe intensity and a ripping or tearing quality,. Nausea and sweating come with many serious causes, including ACS, and do not point to the aorta. Slight relief on sitting up and a twinge with trunk movement suggest pericardial or chest wall pain, and both can mislead when the onset was this abrupt.",
+          "Pain that keeps building over 12 days and now comes with chills at night is the course of an infection, not a strain, which should ease over that time. In the largest review of sternoclavicular septic arthritis, patients presented with chest pain in 78% and shoulder pain in 24%, after a median of 14 days of symptoms. Pain on lifting the arm or lying on the joint happens with both causes, because both load the joint. Early relief from ibuprofen is common with any inflamed joint, and onset after yard work does not separate an infection from an injury.",
         keyFeature: { topic: "chest-pain", n: 3 },
-        source: "acc-aha-aorta-2022-s85",
+        source: "ross-sc-septic-s85",
       },
       {
         id: "q2",
         kind: "single",
-        prompt: "Which of the following in his history counts as a high-risk condition in the aortic dissection detection risk score?",
-        options: ["Father's death from aortic rupture", "Hypertension on amlodipine", "Left ventricular hypertrophy on ECG", "Smoking 20 cigarettes a day", "Systolic BP above 170 mmHg"],
-        correct: 0,
+        prompt: "Which of the following in his history most raises his risk of an infected sternoclavicular joint?",
+        options: ["Age of 61 years", "Atorvastatin therapy", "Former smoking history", "Hypertension on ramipril", "Infected diabetic foot ulcer"],
+        correct: 4,
         explanation:
-          "The high-risk conditions in the score are Marfan syndrome or another connective tissue disease, a family history of aortic disease, known aortic valve disease, recent aortic manipulation and a known thoracic aneurysm. His father's sudden death from a ruptured thoracic aorta is a family history of aortic disease, and up to one in five people with a thoracic aneurysm or dissection have one. Hypertension is the commonest risk factor for dissection, and smoking and left ventricular hypertrophy go with it, but none of them is a score item. A high systolic pressure is not a score item either. Among the blood pressure findings, only a difference between the arms or hypotension counts.",
+          "A distant site of infection and diabetes were two of the commonest risk factors in the review of 180 cases, found in 15% and 13% of patients, and his infected foot ulcer gives him both. Bacteria from the ulcer can seed the joint through the blood, and bacteremia was present in 62% of cases. Injection drug use, trauma and an infected central line were the other common risk factors. His age, his statin, his past smoking and his hypertension do not raise the risk of a joint infection.",
         keyFeature: { topic: "chest-pain", n: 4 },
-        source: "acc-aha-aorta-2022-s85",
+        source: "ross-sc-septic-s85",
       },
       {
         id: "q3",
         kind: "single",
-        update: "A D-dimer sent at triage is 380 mcg/L FEU. The laboratory cutoff is 500 mcg/L FEU.",
-        prompt: "Which of the following is the most appropriate next step for him?",
-        options: ["Discharge with BP clinic follow-up", "Repeat D-dimer in 6 hours", "Serial troponins over 3 hours", "Transthoracic echo, then decide", "Urgent CT angiography of the aorta"],
-        correct: 4,
+        prompt: "Which of the following statements about his temperature of 37.6°C is most accurate?",
+        options: ["It does not exclude a septic joint", "It excludes a deep chest wall abscess", "It favours a viral illness", "It makes blood cultures unneeded", "It points to a muscle strain"],
+        correct: 0,
         explanation:
-          "His score is 2, one point for the family history of aortic disease and one for abrupt severe pain, which places him at high risk. In the ADvISED study the D-dimer strategy was tested only with a score of 0 or 1. Eight patients with an acute aortic syndrome had a negative D-dimer, so a low value cannot set aside a high-risk presentation, and he needs CT angiography. Repeating the D-dimer adds nothing. Serial troponins address ACS, not the aorta. Transthoracic echo often misses a dissection beyond the aortic root, so a normal study would not settle the question. Discharge would send home a man who may have a dissection.",
+          "Only 65% of patients with sternoclavicular septic arthritis were febrile at presentation, so a temperature of 37.6°C cannot be used to set the diagnosis aside in a man with a warm, swollen, very tender joint and chills. A normal temperature also says nothing about a chest wall abscess, which was found in a quarter of cases. Bacteremia was present in 62%, so blood cultures are needed whatever the temperature. A low-grade temperature does not point to a viral illness or a strain when the joint itself is hot and swollen.",
         keyFeature: { topic: "chest-pain", n: 5 },
-        source: "advised-2018-s85",
+        source: "ross-sc-septic-s85",
       },
       {
         id: "q4",
         kind: "single",
-        update: "The CT technologist is 45 minutes away. He has had fentanyl 50 mcg IV. His pulse is 106/minute and his BP is 170/96 mmHg in both arms.",
-        prompt: "Which of the following is the most appropriate treatment of his heart rate and blood pressure while he waits for CT?",
-        options: ["Esmolol IV infusion now", "Hydralazine IV bolus now", "Labetalol once CT confirms", "Nicardipine IV infusion now", "No antihypertensive until CT"],
+        prompt: "Which of the following is the most appropriate next step in his care?",
+        options: ["Blood cultures and CT of the chest wall", "Bone scan as an outpatient", "Oral cephalexin and clinic review", "Repeat X-ray in 2 weeks", "Sling and NSAID for 1 week"],
         correct: 0,
         explanation:
-          "With a dissection likely and CT 45 minutes away, treatment should start now rather than wait for proof. The 2022 ACC/AHA guideline starts with an IV beta blocker, which lowers the force of each contraction on the aortic wall, and aims for a heart rate of 60 to 80 and a systolic BP below 120 mmHg. Esmolol is short acting and easy to stop if CT shows another cause. Hydralazine and nicardipine are vasodilators, which should not be used first because the reflex tachycardia they cause raises shear stress on the aorta. Waiting for CT, with or without a later labetalol dose, leaves his pressure at 170/96 mmHg for the riskiest part of his stay.",
+          "Blood cultures come first because bacteremia is common, and CT or MRI should be obtained routinely to look for a chest wall phlegmon, a retrosternal abscess or mediastinitis, which complicated 25% and 13% of cases. An abscess or mediastinitis changes the plan to surgical resection of the joint. A normal chest X-ray does not show this soft tissue spread. Empiric IV antibiotics should follow the cultures and may need to cover MRSA, because Staphylococcus aureus caused about half of cases. Oral cephalexin, a sling with an NSAID, a bone scan as an outpatient and a repeat X-ray in 2 weeks all leave a deep infection untreated.",
         keyFeature: { topic: "chest-pain", n: 2 },
-        source: "acc-aha-aorta-2022-s85",
+        source: "ross-sc-septic-s85",
       },
     ],
-    sources: [S.aorta, S.advised],
+    sources: [S.ross],
     ...META,
   },
 
@@ -175,7 +172,7 @@ export const CHEST_PAIN_S85: Samp[] = [
         id: "q3",
         kind: "single",
         prompt: "Which of the following statements about her normal chest X-ray is most accurate?",
-        options: ["It excludes an esophageal perforation", "It makes transfer for CT unnecessary", "It may miss early mediastinal spread", "It points to an esophageal pill injury", "It supports continuing oral amoxicillin"],
+        options: ["It excludes an esophageal perforation", "It makes transfer for CT unnecessary", "It may be normal early in this illness", "It points to an esophageal pill injury", "It supports continuing oral amoxicillin"],
         correct: 2,
         explanation:
           "A plain chest film cannot rule out mediastinal infection, which may show only as fat stranding or a small fluid collection. The EACTS consensus calls for liberal use of contrast-enhanced CT of the neck and chest because it is essential for early detection, and delay in diagnosis drives the high death rate. A normal film does not exclude perforation either, and it gives no support to pill injury or to oral antibiotics in a woman with a temperature of 39.1°C and a pulse of 122/minute. She still needs transfer for CT and surgical care.",
@@ -185,7 +182,7 @@ export const CHEST_PAIN_S85: Samp[] = [
       {
         id: "q4",
         kind: "single",
-        update: "The regional hospital, which has CT and on-call thoracic surgery, accepts her. The aircraft will arrive in 3 hours. Her airway remains clear.",
+        update: "The regional hospital, which has CT and on-call surgical services, accepts her. The aircraft will arrive in 3 hours. Her airway remains clear.",
         prompt: "Which of the following is the most appropriate treatment to start before the aircraft arrives?",
         options: ["Change to amoxicillin-clavulanate PO", "Continue amoxicillin, add analgesia", "Needle aspiration of the neck swelling", "Start IV broad-spectrum antibiotics", "No antibiotic change until CT"],
         correct: 3,
@@ -215,7 +212,7 @@ export const CHEST_PAIN_S85: Samp[] = [
         options: ["Acute pericarditis", "Anxiety-related chest pain", "Costochondritis", "Exercise-induced asthma", "Precordial catch syndrome"],
         correct: 4,
         explanation:
-          "Sudden, sharp pain under the left breast that lasts a few minutes, starts at rest, catches on inspiration, eases when she straightens up and takes a deep breath, and can be pointed to with one finger is precordial catch syndrome. It is diagnosed from the history and examination, not by exclusion. Costochondritis causes tenderness over the costal cartilages, which she does not have. Pericarditis causes longer pain with a rub or ECG changes. Asthma brought on by exercise does not cause brief pain at rest, and nothing in her history points to anxiety.",
+          "Sudden, sharp pain under the left breast that lasts a few minutes, starts at rest, catches on inspiration, eases when she straightens up and takes a deep breath, and can be pointed to with one finger is precordial catch syndrome. It is a clinical diagnosis made from the history and examination. Costochondritis causes tenderness over the costal cartilages, which she does not have. Pericarditis causes longer pain with a rub or ECG changes. Asthma brought on by exercise does not cause brief pain at rest, and nothing in her history points to anxiety.",
         keyFeature: { topic: "chest-pain", n: 3 },
         source: "cps-precordial-catch-s85",
       },
@@ -274,20 +271,21 @@ export const CHEST_PAIN_S85: Samp[] = [
         options: ["Age of 71 years", "Bending to lift a heavy bag", "Hypertension on amlodipine", "Severe emphysematous COPD", "Use of tiotropium-olodaterol"],
         correct: 3,
         explanation:
-          "COPD with emphysema is the commonest lung disease behind a secondary spontaneous pneumothorax, because thin-walled diseased lung ruptures into the pleural space, and her disease is severe enough to need home oxygen. Underlying lung disease is also one of the high-risk characteristics that shape treatment. Age raises the risk only through the lung disease that comes with it. Bending and lifting are not recognized triggers. Her inhaler treats the COPD and does not cause a pneumothorax, and hypertension has no link to it.",
+          "COPD with emphysema is a common cause of a secondary spontaneous pneumothorax, because thin-walled diseased lung can rupture into the pleural space, and her disease is severe enough to need home oxygen. Age raises the risk mainly through the lung disease that comes with it. Bending and lifting are not recognized triggers. Her inhaler treats the COPD and does not cause a pneumothorax, and hypertension has no link to it.",
         keyFeature: { topic: "chest-pain", n: 4 },
-        source: "ptx-review-2024-s85",
+        source: "bts-pleural-2023-s85",
       },
       {
         id: "q2",
-        kind: "single",
-        prompt: "Which of the following features of her presentation most favours a pneumothorax over an exacerbation of her COPD?",
-        options: ["Breathlessness worse than usual", "Fifty years of past smoking", "Onset while bending to lift", "Speaking in short sentences", "Sudden one-sided sharp pain"],
-        correct: 4,
+        kind: "menu",
+        select: 2,
+        prompt: "Which of the following features of her presentation are high-risk characteristics in the 2023 BTS pneumothorax pathway?",
+        options: ["Age over 50 with heavy smoking", "Blood pressure of 142/84 mmHg", "Hypertension on amlodipine", "Onset while bending to lift", "Pulse of 108/minute", "Right-sided chest pain", "Saturation of 86% on room air"],
+        correct: [0, 6],
         explanation:
-          "Sudden sharp pain on one side with breathlessness is the typical start of a pneumothorax, while an exacerbation of COPD builds over days with more cough, more sputum or a change in its colour, and she has none of those. Her own sense that this is unlike her usual flare-ups supports the difference. Worse breathlessness and speaking in short sentences happen with both conditions and only show how unwell she is. Her smoking history explains her COPD but does not separate the two causes, and bending to lift is not a known trigger.",
-        keyFeature: { topic: "chest-pain", n: 3 },
-        source: "bts-pleural-2023-s85",
+          "The 2023 BTS pathway lists haemodynamic compromise, significant hypoxia, bilateral pneumothorax, underlying lung disease, age over 50 with a significant smoking history, and haemopneumothorax as high-risk characteristics. With symptoms, they drive the first treatment decision. She is over 50 with 50 years of smoking, and her saturation of 86% is well below her usual 92%. Her BP of 142/84 mmHg shows no haemodynamic compromise, and a pulse of 108/minute alone does not count. The side of the pain, her hypertension and the way the pain began are not on the list.",
+        keyFeature: { topic: "chest-pain", n: 4 },
+        source: "ptx-review-2024-s85",
       },
       {
         id: "q3",
@@ -304,11 +302,12 @@ export const CHEST_PAIN_S85: Samp[] = [
       {
         id: "q4",
         kind: "single",
-        prompt: "Which of the following is the most appropriate management for her pneumothorax?",
-        options: ["Ambulatory valve and discharge", "Chest drain and admission", "Needle aspiration then discharge", "Needle decompression at 2nd space", "Transfer for CT before any drain"],
+        update: "There is no surgical emphysema, and she is not ventilated. She asks how big the tube will be.",
+        prompt: "Which of the following drainage devices is most appropriate for her pneumothorax?",
+        options: ["8 Fr ambulatory pleural vent", "12 Fr small-bore chest drain", "24 Fr blunt dissection drain", "28 Fr large-bore surgical drain", "32 Fr surgical chest drain"],
         correct: 1,
         explanation:
-          "A symptomatic secondary pneumothorax with hypoxia in a patient with severe emphysema usually needs a chest drain, which removes the air at once and relieves her symptoms, and she should be admitted. An ambulatory valve failed in 46% of patients with secondary pneumothorax in a randomized trial, against 15% with standard care, and discharge after aspiration is unsafe at a saturation of 86%. Needle decompression is for tension physiology, which she does not have. The X-ray shows a clear pleural line with no bullae nearby, so CT is not needed before the drain, and a long transfer would delay it.",
+          "A small-bore drain of 12 to 14 Fr has success rates similar to a large-bore drain, with less pain, a shorter drainage time and fewer complications. A large-bore drain is kept for a large air leak, surgical emphysema or mechanical ventilation, and she has none of these. Drains larger than 28 Fr give no extra flow. An ambulatory vent failed in 46% of patients with a secondary pneumothorax in a randomized trial, against 15% with standard care, so it is a poor choice in severe emphysema with a saturation of 86%.",
         keyFeature: { topic: "chest-pain", n: 2 },
         source: "ptx-review-2024-s85",
       },
