@@ -15,6 +15,7 @@ const S = {
   tcPeDx: { id: "tc-pe-dx", citation: "Thrombosis Canada. Clinical guide: pulmonary embolism (PE) diagnosis. 2025.", url: "https://thrombosiscanada.ca/clinical_guides/pdfs/PULMONARYEMBOLISMDIAGNOSISANDM_83.pdf" },
   biss: { id: "biss-peds-pe-2009", citation: "Biss TT, Brandão LR, Kahr WH, Chan AK, Williams S. Clinical probability score and D-dimer estimation lack utility in the diagnosis of childhood pulmonary embolism. J Thromb Haemost. 2009.", url: "https://pubmed.ncbi.nlm.nih.gov/19682234/" },
   wellsPe: { id: "wells-pe-2001", citation: "Wells PS, Anderson DR, Rodger M, and colleagues. Excluding pulmonary embolism at the bedside without diagnostic imaging. Ann Intern Med. 2001." },
+  tcDvtTx: { id: "tc-dvt-tx", citation: "Thrombosis Canada. Clinical guide: deep vein thrombosis (DVT) treatment. 2025.", url: "https://thrombosiscanada.ca/clinical_guides/pdfs/DEEPVEINTHROMBOSISTREATMENT_80.pdf" },
   tcRiva: { id: "tc-rivaroxaban", citation: "Thrombosis Canada. Clinical guide: rivaroxaban (Xarelto). Version dated 2 November 2025.", url: "https://thrombosiscanada.ca/clinical_guides/pdfs/RIVAROXABAN_54.pdf" },
   bellou: { id: "bellou-outpatient-pe", citation: "Bellou E, Keramida E, Karampinis I, and colleagues. Outpatient treatment of pulmonary embolism. Breathe (Sheff). 2020.", url: "https://pmc.ncbi.nlm.nih.gov/articles/PMC7792861/" },
 } satisfies Record<string, Source>;
@@ -301,9 +302,9 @@ export const DVT_PE_S73: Samp[] = [
         options: ["dabigatran 150 mg PO twice daily", "edoxaban 60 mg PO daily", "rivaroxaban 10 mg PO daily", "rivaroxaban 20 mg PO daily", "rivaroxaban 15 mg PO twice daily"],
         correct: 4,
         explanation:
-          "A new PE is treated as an acute event, so she restarts the treatment phase of rivaroxaban, 15 mg twice daily for 3 weeks and then 20 mg once daily, and each 15 mg or 20 mg dose is taken with a meal. Simply continuing 20 mg once daily gives no acute phase dosing. The 10 mg once daily dose is an option only for extended prevention after 6 months, not for an acute clot. Dabigatran and edoxaban both need 5 to 10 days of a parenteral anticoagulant such as LMWH before they are started, so neither can be started alone as an oral regimen today.",
+          "A new PE is treated as an acute event, so she restarts the treatment phase of rivaroxaban, 15 mg twice daily for 3 weeks and then 20 mg once daily, and each dose is now taken with a meal, as the rivaroxaban guide requires. Simply continuing 20 mg once daily gives no acute phase dosing. The 10 mg once daily dose is an option only for extended prevention after 6 months, not for an acute clot. Dabigatran and edoxaban both need 5 to 10 days of a parenteral anticoagulant such as LMWH before they are started, so neither can be started alone as an oral regimen today.",
         keyFeature: { topic: "dvt-pe", n: 6 },
-        source: "tc-rivaroxaban",
+        source: "tc-dvt-tx",
       },
       {
         id: "q4",
@@ -318,7 +319,7 @@ export const DVT_PE_S73: Samp[] = [
         source: "bellou-outpatient-pe",
       },
     ],
-    sources: [S.wellsPe, S.tcRiva, S.bellou],
+    sources: [S.wellsPe, S.tcRiva, S.tcDvtTx, S.bellou],
     ...META,
   },
 ];

@@ -12,8 +12,7 @@ const S = {
   chaulk: { id: "dnm-review-2025-s85", citation: "Chaulk RC, Sahai D, Raj L, Nayak R. Etiology, diagnosis, and management of descending necrotizing mediastinitis: a narrative review. Mediastinum. 2025.", url: "https://pmc.ncbi.nlm.nih.gov/articles/PMC11982982/" },
   kofman: { id: "cps-precordial-catch-s85", citation: "Kofman K, D'Alessandro LCA, Yilmaz Furtun B. Practical tips for paediatricians: precordial catch syndrome. Paediatr Child Health. 2024.", url: "https://pmc.ncbi.nlm.nih.gov/articles/PMC11261817/" },
   scamp: { id: "chest-pain-scamp-s85", citation: "Verghese GR, Friedman KG, Rathod RH, and colleagues. Resource utilization reduction for evaluation of chest pain in pediatrics using a novel standardized clinical assessment and management plan (SCAMP). J Am Heart Assoc. 2012.", url: "https://pmc.ncbi.nlm.nih.gov/articles/PMC3487367/" },
-  bts: { id: "bts-pleural-2023-s85", citation: "Roberts ME, Rahman NM, Maskell NA, and colleagues. British Thoracic Society guideline for pleural disease. Thorax. 2023." },
-  cheng: { id: "ptx-review-2024-s85", citation: "Cheng HS, Wong C, Chiu PH, Tong CW, Miu PLF. Management of spontaneous pneumothorax: a mini-review on its latest evidence. J Thorac Dis. 2024.", url: "https://jtd.amegroups.org/article/view/88287/html" },
+  sst: { id: "sst-misdiagnosis-s85", citation: "Wilkinson M, Obst S, Palmer T, Whish-Wilson G. Misdiagnosis of superior sulcus tumours: a scoping review. J Thorac Dis. 2026.", url: "https://pmc.ncbi.nlm.nih.gov/articles/PMC12972777/" },
 } satisfies Record<string, Source>;
 
 export const CHEST_PAIN_S85: Samp[] = [
@@ -52,10 +51,10 @@ export const CHEST_PAIN_S85: Samp[] = [
         id: "q3",
         kind: "single",
         prompt: "Which of the following statements about his temperature of 37.6°C is most accurate?",
-        options: ["It does not exclude a septic joint", "It excludes a deep chest wall abscess", "It favours a viral illness", "It makes blood cultures unneeded", "It points to a muscle strain"],
+        options: ["It does not exclude a septic joint", "It excludes a deep chest wall abscess", "It favours a viral illness", "It points to a muscle strain", "It suggests gout in the joint"],
         correct: 0,
         explanation:
-          "Only 65% of patients with sternoclavicular septic arthritis were febrile at presentation, so a temperature of 37.6°C cannot be used to set the diagnosis aside in a man with a warm, swollen, very tender joint and chills. A normal temperature also says nothing about a chest wall abscess, which was found in a quarter of cases. Bacteremia was present in 62%, so blood cultures are needed whatever the temperature. A low-grade temperature does not point to a viral illness or a strain when the joint itself is hot and swollen.",
+          "Only 65% of patients with sternoclavicular septic arthritis were febrile at presentation, so a temperature of 37.6°C cannot be used to set the diagnosis aside in a man with a warm, swollen, very tender joint and chills. A temperature below 38°C also says nothing about a chest wall abscess, which was found in a quarter of cases. Gout of the sternoclavicular joint is rare, and a temperature below 38°C does not separate a crystal arthritis from a septic one. This temperature does not point to a viral illness or a strain when the joint itself is hot and swollen.",
         keyFeature: { topic: "chest-pain", n: 5 },
         source: "ross-sc-septic-s85",
       },
@@ -202,7 +201,7 @@ export const CHEST_PAIN_S85: Samp[] = [
     topic: "chest-pain",
     title: "Girl sent from a school assembly",
     stem:
-      "A 12-year-old girl is brought to the emergency department by her mother after a sudden sharp pain under her left breast during a school assembly. She was standing still and slouching. The pain lasted about 2 minutes, caught her when she tried to breathe in, and stopped after she straightened up and took one deep breath. She has had three similar brief episodes over 2 months, all at rest, and feels well between them. She plays soccer twice a week without symptoms. She has no medical history and takes no medications. She points to the spot with one finger. She is comfortable and pain free. Heart sounds are normal with no murmur, rub or gallop, and there is no chest wall tenderness. The lungs are clear and femoral pulses are normal. Her ECG is normal.",
+      "A 12-year-old girl is brought to the emergency department by her mother after a sudden sharp pain under her left breast during a school assembly. She was standing still and slouching. The pain lasted about 2 minutes, caught her when she tried to breathe in, and stopped after she straightened up and took one deep breath. She has had three similar brief episodes over 2 months, all at rest, and feels well between them. She has had no palpitations. She plays soccer twice a week without symptoms. She has no medical history and takes no medications. She points to the spot with one finger. She is comfortable and pain free. Heart sounds are normal with no murmur, rub or gallop, and there is no chest wall tenderness. The lungs are clear and femoral pulses are normal. Her ECG is normal.",
     vitals: { temperature: "36.8°C oral", pulse: "84/minute", resp: "16/minute", bp: "104/64 mmHg", o2sat: "99% on room air", weight: "41 kg" },
     questions: [
       {
@@ -231,7 +230,7 @@ export const CHEST_PAIN_S85: Samp[] = [
         id: "q3",
         kind: "menu",
         select: 3,
-        prompt: "Which of the following features, if they were present in her history, would call for further cardiac testing such as echocardiography?",
+        prompt: "Which of the following features in a child with chest pain are red flags that call for echocardiography?",
         options: ["Brief pain when slouching", "Chest pain during soccer", "Fainting while running", "Fever with the pain", "Pain eased by a deep breath", "Pain under the left breast", "Pain worse breathing in", "Pointing to one spot"],
         correct: [1, 2, 3],
         explanation:
@@ -255,64 +254,61 @@ export const CHEST_PAIN_S85: Samp[] = [
     ...META,
   },
 
-  /* 52 Sudden one-sided pain in severe emphysema, rural -------------------- */
+  /* 52 Months of shoulder and upper chest pain in a smoker ---------------- */
   {
     id: "chest-pain-52",
     topic: "chest-pain",
-    title: "Gardener with emphysema and new pain",
+    title: "Shoulder pain that physiotherapy did not help",
     stem:
-      "You are working in a rural hospital emergency department with X-ray but no CT. A 71-year-old woman presents with 4 hours of sharp right-sided chest pain and worsening breathlessness. The pain came on suddenly as she bent to lift a bag of potting soil. She has severe COPD with emphysema and uses tiotropium-olodaterol, with home oxygen at night. Her usual daytime oxygen saturation is 92% on room air. She also has hypertension treated with amlodipine. She has had no change in cough or sputum and no fever. She smoked for 50 years and quit 3 years ago. She says this does not feel like her usual flare-ups. She is speaking in short sentences. Her chest is barrel-shaped and hyperresonant on both sides. Breath sounds are quiet throughout and perhaps slightly quieter on the right. The trachea is midline.",
-    vitals: { temperature: "36.9°C oral", pulse: "108/minute", resp: "28/minute", bp: "142/84 mmHg", o2sat: "86% on room air" },
+      "A 63-year-old man presents to the emergency department with 3 months of deep, constant pain in his right shoulder and upper chest. It is worse at night and does not change when he moves his arm. Over the past month it has spread down the inner side of his arm to his little finger. His family physician diagnosed a rotator cuff problem and sent him for physiotherapy, which has not helped. A chest X-ray at a walk-in clinic 6 weeks ago was reported as normal. He has lost 5 kg without trying. He has smoked for 45 pack-years. He has hypertension treated with ramipril and type 2 diabetes treated with metformin, and has worked at a desk for 30 years. Passive shoulder movement is full and painless, with no crepitus. The Spurling test is negative. The right upper eyelid droops and the right pupil is smaller than the left. Finger abduction is weak on the right. The right trapezius is mildly tender. His ECG is normal.",
+    vitals: { temperature: "36.7°C oral", pulse: "84/minute", resp: "16/minute", bp: "146/84 mmHg", o2sat: "96% on room air", weight: "71 kg" },
     questions: [
       {
         id: "q1",
         kind: "single",
-        prompt: "Which of the following in her history most raises her pretest probability of a pneumothorax?",
-        options: ["Age of 71 years", "Bending to lift a heavy bag", "Hypertension on amlodipine", "Severe emphysematous COPD", "Use of tiotropium-olodaterol"],
+        prompt: "Which of the following in his history most raises his pretest probability of lung cancer as the cause of his pain?",
+        options: ["Age of 63 years", "Desk job for 30 years", "Hypertension on ramipril", "45 pack-years of smoking", "Type 2 diabetes on metformin"],
         correct: 3,
         explanation:
-          "COPD with emphysema is a common cause of a secondary spontaneous pneumothorax, because thin-walled diseased lung can rupture into the pleural space, and her disease is severe enough to need home oxygen. Age raises the risk mainly through the lung disease that comes with it. Bending and lifting are not recognized triggers. Her inhaler treats the COPD and does not cause a pneumothorax, and hypertension has no link to it.",
+          "A 45 pack-year smoking history is the strongest risk factor here for a lung cancer at the apex, and the scoping review advises apical lung imaging when shoulder pain comes with a smoking history, weight loss or Horner syndrome. He has all three. His age adds some risk, but far less than his smoking. Hypertension, diabetes and years of desk work do not raise the risk of lung cancer.",
         keyFeature: { topic: "chest-pain", n: 4 },
-        source: "bts-pleural-2023-s85",
+        source: "sst-misdiagnosis-s85",
       },
       {
         id: "q2",
-        kind: "menu",
-        select: 2,
-        prompt: "Which of the following features of her presentation are high-risk characteristics in the 2023 BTS pneumothorax pathway?",
-        options: ["Age over 50 with heavy smoking", "Blood pressure of 142/84 mmHg", "Hypertension on amlodipine", "Onset while bending to lift", "Pulse of 108/minute", "Right-sided chest pain", "Saturation of 86% on room air"],
-        correct: [0, 6],
+        kind: "single",
+        prompt: "Which of the following examination findings most raises the probability that his pain arises from the lung apex?",
+        options: ["Full passive shoulder movement", "Negative Spurling test", "Tenderness over the trapezius", "Unequal pupils with ptosis", "Weak finger abduction"],
+        correct: 3,
         explanation:
-          "The 2023 BTS pathway lists haemodynamic compromise, significant hypoxia, bilateral pneumothorax, underlying lung disease, age over 50 with a significant smoking history, and haemopneumothorax as high-risk characteristics. With symptoms, they drive the first treatment decision. She is over 50 with 50 years of smoking, and her saturation of 86% is well below her usual 92%. Her BP of 142/84 mmHg shows no haemodynamic compromise, and a pulse of 108/minute alone does not count. The side of the pain, her hypertension and the way the pain began are not on the list.",
+          "A drooping right eyelid with a smaller right pupil is Horner syndrome, which a tumour at the lung apex causes by invading the sympathetic chain, and with shoulder pain it should prompt apical imaging. Weak finger abduction shows a T1 nerve root problem, the commonest neuropathy with these tumours, but cervical radiculopathy causes it too. Full painless passive movement without crepitus and a negative Spurling test make a shoulder or neck cause less likely without pointing to the apex. Trapezius tenderness is common and nonspecific.",
         keyFeature: { topic: "chest-pain", n: 4 },
-        source: "ptx-review-2024-s85",
+        source: "sst-misdiagnosis-s85",
       },
       {
         id: "q3",
         kind: "single",
-        update: "Chest X-ray shows a right apical pneumothorax with a visible pleural line, a 1.5 cm rim at the apex and no mediastinal shift. No bullae are seen near the pleural line.",
-        prompt: "Which of the following statements about the size of her pneumothorax is most accurate?",
-        options: ["It allows discharge with clinic review", "It calls for needle decompression", "It excludes a tension pneumothorax", "It is less important than her symptoms", "It makes oxygen alone sufficient"],
-        correct: 3,
+        prompt: "Which of the following statements about his chest X-ray reported as normal 6 weeks ago is most accurate?",
+        options: ["It excludes a lung cancer", "It is unreliable at the lung apex", "It points to a rotator cuff cause", "It rules out bone destruction", "It shows the pain is mechanical"],
+        correct: 1,
         explanation:
-          "Under the 2023 BTS approach, the decision to intervene rests on symptoms and on high-risk characteristics such as underlying lung disease and significant hypoxia, not on the size of the rim. She has both, with a saturation of 86% against her usual 92%, so a small rim does not make her safe. Oxygen alone and discharge are options only for a patient with minimal symptoms. Her trachea is midline and her BP is 142/84 mmHg, so there is no tension physiology to decompress, but a small pneumothorax can still enlarge and become a tension pneumothorax in damaged lungs.",
+          "Radiographic error was the most common cause of delayed diagnosis of superior sulcus tumours in the scoping review. In one study, 78 lesions were missed and 20 misread across 166 radiographs from 50 patients. The apex is crowded by the ribs, clavicle and soft tissue, so early apical pleural thickening or rib destruction is easy to miss. A normal report therefore does not exclude a lung cancer or bone destruction. A chest film says nothing about the rotator cuff, and his pain is not mechanical, because shoulder movement does not change it.",
         keyFeature: { topic: "chest-pain", n: 5 },
-        source: "ptx-review-2024-s85",
+        source: "sst-misdiagnosis-s85",
       },
       {
         id: "q4",
         kind: "single",
-        update: "There is no surgical emphysema, and she is not ventilated. She asks how big the tube will be.",
-        prompt: "Which of the following drainage devices is most appropriate for her pneumothorax?",
-        options: ["8 Fr ambulatory pleural vent", "12 Fr small-bore chest drain", "24 Fr blunt dissection drain", "28 Fr large-bore surgical drain", "32 Fr surgical chest drain"],
+        prompt: "Which of the following is the most appropriate next investigation for him in the emergency department?",
+        options: ["Cervical spine X-ray series", "CT of the chest with contrast", "Nerve conduction studies", "Repeat shoulder X-ray", "Shoulder ultrasound"],
         correct: 1,
         explanation:
-          "A small-bore drain of 12 to 14 Fr has success rates similar to a large-bore drain, with less pain, a shorter drainage time and fewer complications. A large-bore drain is kept for a large air leak, surgical emphysema or mechanical ventilation, and she has none of these. Drains larger than 28 Fr give no extra flow. An ambulatory vent failed in 46% of patients with a secondary pneumothorax in a randomized trial, against 15% with standard care, so it is a poor choice in severe emphysema with a saturation of 86%.",
+          "Shoulder pain with Horner syndrome, a heavy smoking history and weight loss calls for imaging of the lung apex now. CT of the chest shows the apical mass, rib and vertebral destruction and the rest of the chest, and it is preferred over plain films for staging. MRI, the preferred modality in the review with a sensitivity of about 90%, usually follows to define spread into the brachial plexus. Cervical spine and shoulder films, shoulder ultrasound and nerve conduction studies look for the shoulder and neck causes that his examination has already made less likely, and they would add to a delay that has lasted 3 months.",
         keyFeature: { topic: "chest-pain", n: 2 },
-        source: "ptx-review-2024-s85",
+        source: "sst-misdiagnosis-s85",
       },
     ],
-    sources: [S.bts, S.cheng],
+    sources: [S.sst],
     ...META,
   },
 ];
