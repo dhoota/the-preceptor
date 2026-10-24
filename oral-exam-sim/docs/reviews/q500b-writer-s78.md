@@ -180,3 +180,14 @@ This revision responds to `docs/reviews/q500b-verify3-s78.md`. It fixes the two 
 - The unused `S.ctas2016` entry was removed from the source object, because no question cites it any longer.
 - Single key positions, first to fifth: 4, 4, 4, 3, 2 (no position above 25%).
 - `SAMP_BATCH=s78 npx vitest run tests/samps.test.ts tests/samp-quality.test.ts tests/citations.test.ts --testTimeout=120000`: 132 of 132 pass.
+
+## Revision 5
+
+This revision responds to `docs/reviews/q500b-verify4-s78.md`.
+
+- 38 q4 (two-person sedation staffing) was deleted. It repeated s81 analgesia-sedation-49 q3. 38 now has 3 questions (q1 KF2, q2 KF3, q3 KF3).
+- `S.godwin` (ACEP 2014) stays, because 38 q1 still cites it. Nothing else changed.
+- Counts: 20 questions, 16 single and 4 menu. Single key positions, first to fifth: 3, 4, 4, 3, 2. The highest is 4 of 16, which is 25%, at the limit and not above it.
+- Key features: KF1 3, KF2 6, KF3 5, KF4 6. All four are still covered.
+- `SAMP_BATCH=s78 npx vitest run tests/samps.test.ts tests/samp-quality.test.ts tests/citations.test.ts --testTimeout=120000`: 128 of 128 pass.
+- Note: 38 now has 3 questions. SAMP_SPEC allows 3 to 5, but the Q500B brief asks for 4 or 5.

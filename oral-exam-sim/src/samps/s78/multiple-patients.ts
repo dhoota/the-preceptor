@@ -275,23 +275,6 @@ export const MULTIPLE_PATIENTS_S78: Samp[] = [
         keyFeature: { topic: "multiple-patients", n: 3 },
         source: "westbrook-interruptions",
       },
-      {
-        id: "q4",
-        kind: "single",
-        prompt: "Which of the following staffing plans is most appropriate for her sedation?",
-        options: [
-          "A nurse monitors her while you sedate and reduce",
-          "Nurse-administered propofol while you reduce",
-          "The respiratory therapist sedates and monitors her",
-          "Wait for an anaesthetist to manage the sedation",
-          "You sedate, reduce and monitor her yourself",
-        ],
-        correct: 0,
-        explanation:
-          "A nurse or other qualified person should be present to monitor the patient continuously, in addition to the physician doing the procedure. You give the propofol and reduce the hip while the nurse watches her airway, breathing and monitor. Doing all three yourself leaves no one watching while both hands pull on the leg. Having the respiratory therapist both sedate and monitor leaves one person giving the drug and watching the airway, and nurse or respiratory therapist administration of propofol depends on provincial scope and local policy. Propofol is safe in the emergency department in trained hands, so waiting for an anaesthetist only adds delay.",
-        keyFeature: { topic: "multiple-patients", n: 3 },
-        source: "acep-psa-2014",
-      },
     ],
     sources: [S.godwin, S.atls, S.westbrook],
     ...META,
