@@ -110,3 +110,13 @@ Batch checks after Revision 3:
 - The key is the longest option in 5 of 19 singles, which is 26% and under the 35% limit. 50 q3's key ties for longest with the 24-hour option.
 - `SAMP_BATCH=s81 npx vitest run tests/samps.test.ts tests/samp-quality.test.ts tests/citations.test.ts --testTimeout=120000` passes 128 of 128.
 - The `tsc` grep for samps/s81 prints nothing.
+
+## Revision 4
+
+This revision answers `docs/reviews/q500b-verify2-s81.md`, which passes 49 to 52 and fails one mock cue in 48.
+
+1. 48 q3 update: "he still grimaces and moans when he is moved" now reads "he still moans and pulls away when he is moved".
+2. 48 q4 update now opens "He settles.", and "he is asleep with a relaxed face and rouses to voice" now reads "he is asleep and settled and rouses to voice".
+3. SAMP 50 sources: I tried adding `S.painad`. The structural test failed, because every listed source must be cited by a question, and no SAMP 50 question cites Warden 2003. Making it cite PAINAD would mean changing a question's source, which is outside "change nothing else". So I reverted that one change, and SAMP 50 still lists only the ACS guideline. The q1 explanation's PAINAD point (a tool for advanced dementia when self-report is not possible) is also in the ACS guideline, which recommends PAINAD for severe dementia. If the coordinator wants Warden cited, the clean change is to set 50 q1's `source` to `warden-painad` and list both sources.
+
+Nothing else changed. Key positions and the longest-option count are as in Revision 3. `SAMP_BATCH=s81 npx vitest run tests/samps.test.ts tests/samp-quality.test.ts tests/citations.test.ts --testTimeout=120000` passes 128 of 128, and the `tsc` grep for samps/s81 prints nothing.

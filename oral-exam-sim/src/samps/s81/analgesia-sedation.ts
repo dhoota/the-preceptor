@@ -234,7 +234,7 @@ export const ANALGESIA_SEDATION_S81: Samp[] = [
         source: "acs-tqip-acute-pain-2020",
       },
     ],
-    sources: [S.tqip, S.painad],
+    sources: [S.tqip],
     ...META,
   },
 

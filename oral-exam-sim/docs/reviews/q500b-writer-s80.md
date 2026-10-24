@@ -117,3 +117,12 @@ This revision answers docs/reviews/q500b-verify-s80.md, which passed 18 of 20 qu
 The key-position and length gates were rechecked by the test run. The single keys are unchanged, so the positions are still 2, 3, 4, 4, 4. The menu option lengths are within the 2.6 ratio.
 
 Test result: `SAMP_BATCH=s80 npx vitest run tests/samps.test.ts tests/samp-quality.test.ts tests/citations.test.ts --testTimeout=120000`: 128 passed. The typecheck shows no errors for s80.
+
+## Revision 3
+
+This revision answers docs/reviews/q500b-verify2-s80.md, which passed 19 of 20 questions. Nothing else was changed.
+
+- **51 q3 (B6 cue):** the update now reads "Assessment by the team shows a bulky tumour of the left cord that leaves a slit-like opening of about 4 mm and bleeds on contact. The trachea below the cords is normal." It no longer names the nasendoscopy and CT keyed in q2.
+- **48 stem:** the sentence "No nasogastric tube is in place." is deleted because it pointed at the q1 key. The q1 key still works without it. The stem does not mention a tube, and the explanation rests on the bowel obstruction and the feculent vomiting.
+
+Test result: `SAMP_BATCH=s80 npx vitest run tests/samps.test.ts tests/samp-quality.test.ts tests/citations.test.ts --testTimeout=120000`: 128 passed. The typecheck shows no errors for s80.
