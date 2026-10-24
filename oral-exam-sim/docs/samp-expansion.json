@@ -1,5 +1,5 @@
 {
- "note": "Expansion to 1,500 SAMPs. One batch per priority topic. New ids continue the topic numbering from 16. Batches s54 to s70 (tier Q500, October 2026) add 5 SAMPs each to the 17 topics with the thinnest key feature coverage. Batch s71 (tier Q500) adds 3 critical appraisal SAMPs, the least covered topic, to keep the round at 500 questions after review removed repeats.",
+ "note": "Expansion to 1,500 SAMPs. One batch per priority topic. New ids continue the topic numbering from 16. Batches s54 to s70 (tier Q500, October 2026) add 5 SAMPs each to the 17 topics with the thinnest key feature coverage. Batch s71 (tier Q500) adds 3 critical appraisal SAMPs, the least covered topic, to keep the round at 500 questions after review removed repeats. Batches s72 to s88 (tier Q500B, October 2026) add 5 SAMPs each to the 17 topics the Q500 round did not cover.",
  "batches": {
   "s19": {
    "topic": "abdominal-pain",
@@ -370,6 +370,125 @@
    "name": "Critical appraisal",
    "count": 3,
    "tier": "Q500",
+   "firstId": 37
+  },
+  "s72": {
+   "topic": "suicide-risk",
+   "name": "Suicide risk",
+   "count": 5,
+   "tier": "Q500B",
+   "firstId": 39
+  },
+  "s73": {
+   "topic": "dvt-pe",
+   "name": "Deep venous thrombosis (DVT) and pulmonary embolus (PE)",
+   "count": 5,
+   "tier": "Q500B",
+   "firstId": 48
+  },
+  "s74": {
+   "topic": "lacerations",
+   "name": "Lacerations",
+   "count": 5,
+   "tier": "Q500B",
+   "firstId": 39
+  },
+  "s75": {
+   "topic": "headache",
+   "name": "Headache",
+   "count": 5,
+   "tier": "Q500B",
+   "firstId": 47
+  },
+  "s76": {
+   "topic": "eye",
+   "name": "Eye: red eye and loss of vision",
+   "count": 5,
+   "tier": "Q500B",
+   "firstId": 39
+  },
+  "s77": {
+   "topic": "delirium-agitation",
+   "name": "Delirium/agitation",
+   "count": 5,
+   "tier": "Q500B",
+   "firstId": 39
+  },
+  "s78": {
+   "topic": "multiple-patients",
+   "name": "Multiple patients",
+   "count": 5,
+   "tier": "Q500B",
+   "firstId": 36
+  },
+  "s79": {
+   "topic": "sob",
+   "name": "Shortness of breath",
+   "count": 5,
+   "tier": "Q500B",
+   "firstId": 48
+  },
+  "s80": {
+   "topic": "airway",
+   "name": "Airway management",
+   "count": 5,
+   "tier": "Q500B",
+   "firstId": 48
+  },
+  "s81": {
+   "topic": "analgesia-sedation",
+   "name": "Analgesia/sedation",
+   "count": 5,
+   "tier": "Q500B",
+   "firstId": 48
+  },
+  "s82": {
+   "topic": "pre-eclampsia",
+   "name": "Pre-eclampsia",
+   "count": 5,
+   "tier": "Q500B",
+   "firstId": 39
+  },
+  "s83": {
+   "topic": "tox",
+   "name": "Toxicology",
+   "count": 5,
+   "tier": "Q500B",
+   "firstId": 48
+  },
+  "s84": {
+   "topic": "environmental",
+   "name": "Environmental",
+   "count": 5,
+   "tier": "Q500B",
+   "firstId": 39
+  },
+  "s85": {
+   "topic": "chest-pain",
+   "name": "Chest pain",
+   "count": 5,
+   "tier": "Q500B",
+   "firstId": 48
+  },
+  "s86": {
+   "topic": "cva",
+   "name": "Cerebrovascular accident (CVA)",
+   "count": 5,
+   "tier": "Q500B",
+   "firstId": 16
+  },
+  "s87": {
+   "topic": "loc",
+   "name": "Decreased level of consciousness",
+   "count": 5,
+   "tier": "Q500B",
+   "firstId": 48
+  },
+  "s88": {
+   "topic": "ems",
+   "name": "Emergency medical services (EMS)",
+   "count": 5,
+   "tier": "Q500B",
    "firstId": 37
   }
  }
