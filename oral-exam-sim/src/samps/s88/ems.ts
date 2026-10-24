@@ -77,10 +77,10 @@ export const EMS_S88: Samp[] = [
         kind: "single",
         update: "The crew adds that the coworker told them she had vomited twice in the office washroom this morning and had skipped lunch.",
         prompt: "Which of the following does this detail from the crew make most important to check now?",
-        options: ["Blood ketone level", "Serum cortisol level", "Serum lipase level", "Thyroid stimulating hormone", "Urine drug screen"],
+        options: ["Blood ketone level", "Hemoglobin A1c", "Serum lipase level", "Thyroid stimulating hormone", "Urine drug screen"],
         correct: 0,
         explanation:
-          "A pump gives only rapid-acting insulin with a small depot, so any break in delivery can cause hyperglycemia, and pump failure can lead to diabetic ketoacidosis. She has had no insulin since the crew removed the pump, and the coworker's report that she vomited this morning, which only the crew heard, raises concern that ketosis was already starting. Her glucose of 7.4 mmol/L reflects the glucagon and food she has had, so a blood ketone level is needed before her insulin plan is settled. Nothing in the history points to adrenal, pancreatic or thyroid disease or to drug use.",
+          "A pump gives only rapid-acting insulin with a small depot, so any break in delivery can cause hyperglycemia, and pump failure can lead to diabetic ketoacidosis. She has had no insulin since the crew removed the pump, and she has vomited and not eaten, which only the crew heard. Her glucose of 7.4 mmol/L reflects the glucagon and food she has had, so a blood ketone level is needed to find ketosis that her glucose would hide. A hemoglobin A1c, lipase, thyroid test or drug screen does not change her insulin plan now, whereas a raised ketone level does.",
         keyFeature: { topic: "ems", n: 2 },
         source: "umpierrez-pumps",
       },
@@ -280,7 +280,7 @@ export const EMS_S88: Samp[] = [
     alsoTopics: ["shock"],
     title: "A consult about a bleeding arm",
     stem:
-      "You are working in a British Columbia emergency department and take a consult through the BC Emergency Health Services clinical support line at 2040. A primary care paramedic crew is at the home of a 71-year-old man who has hemodialysis three times a week through a left forearm arteriovenous fistula. His session ended at 1600. Twenty minutes ago a needle site on the fistula began to spurt blood. His wife pressed a towel on it, and there is blood on the bathroom floor. The crew is holding gauze over the site, which is still oozing. He is pale but alert. The nearest community hospital, 10 minutes away, has no dialysis. A regional hospital with a dialysis unit is 30 minutes away.",
+      "You are working in a British Columbia emergency department and take a CliniCall consult from BC Emergency Health Services at 2040. A primary care paramedic crew is at the home of a 71-year-old man who has hemodialysis three times a week through a left forearm arteriovenous fistula. His session ended at 1600. Twenty minutes ago a needle site on the fistula began to spurt blood. His wife pressed a towel on it, and there is blood on the bathroom floor. The crew is holding gauze over the site, which is still oozing. He is pale but alert. The nearest community hospital, 10 minutes away, has no dialysis. A regional hospital with a dialysis unit is 30 minutes away.",
     vitals: { pulse: "104/minute", resp: "18/minute", bp: "112/70 mmHg", o2sat: "97% on room air", weight: "78 kg" },
     questions: [
       {
@@ -297,7 +297,7 @@ export const EMS_S88: Samp[] = [
       {
         id: "q2",
         kind: "single",
-        update: "After 10 minutes of firm pressure the bleeding stops. The crew asks how to dress the site for transport.",
+        update: "After 10 minutes the bleeding stops. The crew asks how to dress the site for transport.",
         prompt: "Which of the following is the most appropriate direction about the dressing for this patient?",
         options: ["Apply a tourniquet as a precaution", "Lift the gauze to check the site", "Replace soaked gauze with fresh gauze", "Tape over the gauze without lifting it", "Wrap a tensor bandage around the arm"],
         correct: 3,
@@ -321,7 +321,7 @@ export const EMS_S88: Samp[] = [
       {
         id: "q4",
         kind: "single",
-        update: "He arrives at the regional hospital. At handover the crew reports that before they arrived his wife had wrapped tape tightly all the way around his forearm over the towel for 15 minutes.",
+        update: "At handover, the crew reports that before they arrived his wife had wrapped tape tightly all the way around his forearm over the towel for 15 minutes.",
         prompt: "Which of the following examinations does this handover detail make most important on his arrival?",
         options: ["Capillary refill of the other hand", "Movement of the left shoulder", "Palpation for a thrill over the fistula", "Radial pulse on the other arm", "Sensation over the right forearm"],
         correct: 2,

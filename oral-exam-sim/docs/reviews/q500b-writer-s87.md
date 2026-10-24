@@ -104,3 +104,16 @@ Response to `docs/reviews/q500b-verify2-s87.md`. Only these three wording change
 | loc-51 q3 update (optional suggestion) | "brings his hand up past his chin toward the stimulus" changed to "brings his hand above his clavicle toward the stimulus". The meaning is kept: this is still localizing (M5), so the GCS 9 key and the explanation are unchanged. |
 
 No keys, options or other text changed. Tests: `SAMP_BATCH=s87 npx vitest run tests/samps.test.ts tests/samp-quality.test.ts tests/citations.test.ts --testTimeout=120000` gives 128 passed. Typecheck is clean.
+
+## Revision 4
+
+Response to `docs/reviews/q500b-verify3-s87.md`. All four fixes were applied exactly as written, and nothing else changed.
+
+| Item | Change |
+|---|---|
+| loc-49 q2 update | Now reads "At his usual best he watches people, smiles and makes cooing sounds when spoken to, and reaches for a familiar hand." It no longer names the q1 key source. |
+| loc-49 q3 update and explanation | The update opens "His medication bin arrives from the group home." The rest of the update is unchanged. The explanation now says "Both tablets signed as given means". |
+| loc-52 stem | "The coworker knows her only from work and last saw her 2 days ago." changed to "The coworker knows her only from work and had not seen her for 2 days before tonight." |
+| loc-52 q1 explanation | "The coworker last saw her 2 days ago and knows her only at work." changed to "The coworker had not seen her for 2 days before tonight and knows her only at work." |
+
+No keys or options changed. `SAMP_BATCH=s87 npx vitest run tests/samps.test.ts tests/samp-quality.test.ts tests/citations.test.ts --testTimeout=120000` gives 128 passed. Typecheck is clean.

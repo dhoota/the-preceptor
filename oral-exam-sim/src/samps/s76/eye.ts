@@ -116,7 +116,7 @@ export const EYE_S76: Samp[] = [
       {
         id: "q4",
         kind: "single",
-        prompt: "Which of the following later findings would make a topical corticosteroid appropriate, with antiviral cover, under ophthalmology care?",
+        prompt: "Which of the following later findings would make a topical corticosteroid appropriate under ophthalmology care?",
         options: [
           "Branching ulcer with terminal bulbs",
           "Geographic ulcer with scalloped edges",
@@ -395,7 +395,7 @@ export const EYE_S76: Samp[] = [
     topic: "eye",
     title: "Burning eyes after a collision",
     stem:
-      "You are working in a rural hospital emergency department. The nearest ophthalmologist is 2 hours away by road. A 63-year-old woman is brought in by ambulance 30 minutes after a frontal collision in which her airbag deployed. She was wearing a seatbelt and her glasses. Her primary survey is normal, and she has a seatbelt bruise across the chest. She now reports burning pain in both eyes and blurred vision in the right eye. Her face and eyelashes are coated with a fine white powder. She has hypothyroidism treated with levothyroxine and has no other conditions. There is mild swelling of the right lids and a subconjunctival hemorrhage on the temporal side of the right eye. Both conjunctivae are red and watering.",
+      "You are working in a rural hospital emergency department. The nearest ophthalmologist is 2 hours away by road. A 63-year-old woman is brought in by ambulance 30 minutes after a frontal collision in which her airbag deployed. She was wearing a seatbelt and her glasses. Her primary survey is normal, and she has a seatbelt bruise across the chest. She now reports burning pain in both eyes and blurred vision in the right eye. Her face and eyelashes are coated with a fine white powder. She has hypothyroidism treated with levothyroxine. There is mild swelling of the right lids and a subconjunctival hemorrhage on the temporal side of the right eye. Both conjunctivae are red and watering.",
     vitals: { temperature: "36.7°C oral", pulse: "92/minute", resp: "18/minute", bp: "138/84 mmHg", o2sat: "98% on room air" },
     questions: [
       {
@@ -459,7 +459,7 @@ export const EYE_S76: Samp[] = [
         ],
         correct: 2,
         explanation:
-          "A small grade 1 hyphema with a normal pressure of 16 mmHg, an intact globe, good understanding and no bleeding disorder can be managed as an outpatient with close follow-up, so a next day review by ophthalmology is the right plan. Rebleeding is most likely in the first 5 days, so review in 1 week misses that window, whether by her family physician or with a repeat slit lamp examination. She meets none of the criteria for admission. An air transfer tonight adds risk and cost without changing her care, since the review can happen 2 hours away by road tomorrow.",
+          "A small grade 1 hyphema with a normal pressure of 16 mmHg, an intact globe and good understanding can be managed as an outpatient with close follow-up, so a next day review by ophthalmology is the right plan. Rebleeding is most likely in the first 5 days, so review in 1 week misses that window, whether by her family physician or with a repeat slit lamp examination. Nothing in her history meets the criteria for admission. The next day review also rechecks both corneas after the alkali exposure. An air transfer tonight adds risk and cost without changing her care, since the review can happen 2 hours away by road tomorrow.",
         keyFeature: { topic: "eye", n: 5 },
         source: "eyewiki-hyphema",
       },

@@ -153,3 +153,20 @@ This revision applies the fixes in `docs/reviews/q500b-verify-s88.md`. That revi
 1. **ems-41 q1:** the reason for rejecting a tourniquet first rests on E04's direct-pressure instruction and its warning about encircling dressings. E04 does not discuss tourniquets for fistulas.
 2. **ems-41 q4:** that a lost thrill needs urgent attention from the dialysis team follows from E04's clotting warning, but the guideline does not state it in those words.
 3. **ems-37 q4:** "vomiting raises concern that ketosis was starting" is clinical reasoning built on Umpierrez's statements about DKA risk. The source does not list vomiting itself.
+
+## Revision 3
+
+Applied exactly as written in `docs/reviews/q500b-verify2-s88.md`. Nothing else changed.
+
+- **ems-37 q4, options:** "Hemoglobin A1c" replaces "Serum cortisol level". The options stay in alphabetical order, and `correct: 0` (blood ketone level) is unchanged.
+- **ems-37 q4, explanation:** three sentences replaced with the reviewer's wording.
+  - "she has vomited and not eaten, which only the crew heard."
+  - "a blood ketone level is needed to find ketosis that her glucose would hide."
+  - "A hemoglobin A1c, lipase, thyroid test or drug screen does not change her insulin plan now, whereas a raised ketone level does."
+- **ems-41 q2, update:** now "After 10 minutes the bleeding stops. The crew asks how to dress the site for transport."
+- **ems-41 q4, update:** now "At handover, the crew reports that before they arrived his wife had wrapped tape tightly all the way around his forearm over the towel for 15 minutes."
+- **ems-41 stem (optional fix taken):** now uses the service name, "take a CliniCall consult from BC Emergency Health Services".
+
+The s88 batch tests were rerun with `--testTimeout=120000`.
+
+For the physician (reviewer note 3): whether recurrent severe lows with vomiting should prompt a later cortisol check is left to clinical judgment.

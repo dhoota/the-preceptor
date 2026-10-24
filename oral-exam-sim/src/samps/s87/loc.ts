@@ -113,7 +113,7 @@ export const LOC_S87: Samp[] = [
       {
         id: "q2",
         kind: "single",
-        update: "A support worker who has known him for 6 years arrives. She says he usually watches people, smiles and makes cooing sounds when spoken to, and reaches for her hand.",
+        update: "At his usual best he watches people, smiles and makes cooing sounds when spoken to, and reaches for a familiar hand.",
         prompt: "Which of the following is the most appropriate way to record his verbal response on the Glasgow Coma Scale?",
         options: ["Not testable, with the reason noted", "Score V1 as he makes no sounds now", "Score V2 as sounds are his best", "Total GCS 8 with V1 included", "Verbal left out without comment"],
         correct: 0,
@@ -125,12 +125,12 @@ export const LOC_S87: Samp[] = [
       {
         id: "q3",
         kind: "single",
-        update: "The support worker brings his medication bin. It holds his old phenobarbital 30 mg tablets and the new 60 mg tablets his neurologist ordered twice daily 10 days ago to replace them, and both are signed as given twice daily since then. His urinalysis is normal.",
+        update: "His medication bin arrives from the group home. It holds his old phenobarbital 30 mg tablets and the new 60 mg tablets his neurologist ordered twice daily 10 days ago to replace them, and both are signed as given twice daily since then. His urinalysis is normal.",
         prompt: "Which of the following is the most likely cause of his decreased level of consciousness?",
         options: ["Hyperammonemic encephalopathy", "Nonconvulsive status epilepticus", "Phenobarbital toxicity", "Subdural hematoma after a fall", "Urinary tract sepsis"],
         correct: 2,
         explanation:
-          "Both bottles signed as given means he has received 180 mg of phenobarbital a day instead of the 120 mg ordered, for 10 days, and this long-acting barbiturate builds up over days. His slow breathing at 10/minute, temperature of 35.9°C and gradual decline over 2 days fit sedative toxicity, and Edlow and colleagues list a treatable poisoning among the causes to look for once the history points to it. Hyperammonemic encephalopathy follows valproate or liver disease, and he has neither. Nonconvulsive status epilepticus is less likely while he is receiving extra anticonvulsant, although an EEG is needed if he fails to improve. He has no bruising or scalp swelling to suggest a subdural hematoma after a fall, and his urinalysis is normal.",
+          "Both tablets signed as given means he has received 180 mg of phenobarbital a day instead of the 120 mg ordered, for 10 days, and this long-acting barbiturate builds up over days. His slow breathing at 10/minute, temperature of 35.9°C and gradual decline over 2 days fit sedative toxicity, and Edlow and colleagues list a treatable poisoning among the causes to look for once the history points to it. Hyperammonemic encephalopathy follows valproate or liver disease, and he has neither. Nonconvulsive status epilepticus is less likely while he is receiving extra anticonvulsant, although an EEG is needed if he fails to improve. He has no bruising or scalp swelling to suggest a subdural hematoma after a fall, and his urinalysis is normal.",
         keyFeature: { topic: "loc", n: 1 },
         source: "edlow-coma",
       },
@@ -276,7 +276,7 @@ export const LOC_S87: Samp[] = [
     alsoTopics: ["headache"],
     title: "Confused at the start of a night shift",
     stem:
-      "A 41-year-old woman is brought to the emergency department by a coworker who found her confused at the start of her night shift at a distribution warehouse. The coworker knows her only from work and last saw her 2 days ago. She lives with her sister. The coworker says she has been working double night shifts this month, has slept poorly and has complained of headaches and easy bruising for about a week. She takes no medications. She opens her eyes to voice, is confused and obeys commands. There are petechiae on her legs and bruises on both arms. Her neck is supple, and there is no focal weakness. Capillary glucose is 5.8 mmol/L.",
+      "A 41-year-old woman is brought to the emergency department by a coworker who found her confused at the start of her night shift at a distribution warehouse. The coworker knows her only from work and had not seen her for 2 days before tonight. She lives with her sister. The coworker says she has been working double night shifts this month, has slept poorly and has complained of headaches and easy bruising for about a week. She takes no medications. She opens her eyes to voice, is confused and obeys commands. There are petechiae on her legs and bruises on both arms. Her neck is supple, and there is no focal weakness. Capillary glucose is 5.8 mmol/L.",
     vitals: { temperature: "37.6°C oral", pulse: "108/minute", resp: "18/minute", bp: "148/88 mmHg", o2sat: "98% on room air", weight: "62 kg" },
     questions: [
       {
@@ -286,7 +286,7 @@ export const LOC_S87: Samp[] = [
         options: ["Coworker who brought her in", "Her family physician's office", "Manager who sets her shifts", "Sister who lives with her", "Walk-in clinic note from 3 days ago"],
         correct: 3,
         explanation:
-          "Her sister shares her home and is the one person likely to have seen her each day, so she can say when she was last clear and alert and whether the change came on suddenly or over days. Edlow and colleagues make the history the first tool for finding the cause of coma once the patient is stable, and the time she was last well frames that search. The coworker last saw her 2 days ago and knows her only at work. The manager knows her shift pattern, not her mental state. Her family physician's office and a walk-in note from 3 days ago describe single visits and say nothing about the last 3 days.",
+          "Her sister shares her home and is the one person likely to have seen her each day, so she can say when she was last clear and alert and whether the change came on suddenly or over days. Edlow and colleagues make the history the first tool for finding the cause of coma once the patient is stable, and the time she was last well frames that search. The coworker had not seen her for 2 days before tonight and knows her only at work. The manager knows her shift pattern, not her mental state. Her family physician's office and a walk-in note from 3 days ago describe single visits and say nothing about the last 3 days.",
         keyFeature: { topic: "loc", n: 3 },
         source: "edlow-coma",
       },
