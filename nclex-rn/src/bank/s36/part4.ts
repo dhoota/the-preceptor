@@ -1,5 +1,5 @@
 import type { Item } from "@/engine/types";
-import { AABB, ACR_CONTRAST, ASCITES, BOWEL_PREP, ERCP, HINKLE, HIZENTRA, HYLENEX, INS, LIVER_BIOPSY, PAGANA, meta } from "./common";
+import { AABB, ACR_CONTRAST, ASCITES, BOWEL_PREP, ERCP, HINKLE, HIZENTRA, HYLENEX, INS, ISMP_CA_EPIDURAL, ISMP_CA_EPIDURAL_IV, LIVER_BIOPSY, PAGANA, meta } from "./common";
 
 export const PART4: Item[] = [
   {
@@ -9,10 +9,11 @@ export const PART4: Item[] = [
       cjmm: "generate",
       process: "nursing-process",
       difficulty: 2,
+      version: 2,
       stem: "A client returns from surgery with a continuous lumbar epidural infusion of bupivacaine and fentanyl on a dedicated pump. The client also has a peripheral IV with lactated Ringer's solution. Which measures should the nurse include in the plan to prevent a wrong-route connection? Select all that apply.",
       rationale:
         "Epidural and IV lines often run side by side. An IV drug that enters the epidural space, or an epidural drug that enters a vein, can cause paralysis, seizures or death. Tubing without injection ports removes the chance of adding IV drugs to the epidural line. Clear labels and tracing each line from the client to its source before any connection catch mistakes. The epidural is not used to give other drugs or to keep a vein open.",
-      sources: [INS],
+      sources: [ISMP_CA_EPIDURAL, ISMP_CA_EPIDURAL_IV],
     }),
     kind: "sata",
     options: [
@@ -72,9 +73,10 @@ export const PART4: Item[] = [
       need: "RRP",
       topic: "Matching warning signs after ERCP",
       cjmm: "analyze",
-      process: "teaching",
+      process: "clinical-judgment",
       difficulty: 4,
-      stem: "The nurse prepares discharge teaching for a client who had endoscopic retrograde cholangiopancreatography (ERCP) with sphincterotomy this morning. Drag the finding that best points to each complication.",
+      version: 2,
+      stem: "The nurse reviews the complications to watch for in a client who had endoscopic retrograde cholangiopancreatography (ERCP) with sphincterotomy this morning. Drag the finding that best points to each complication.",
       rationale:
         "Severe upper abdominal pain that bores into the back points to pancreatitis, the most common serious adverse event. Black, tarry stool days later points to delayed bleeding from the sphincterotomy site. Free air on an abdominal x-ray means a perforation. Fever, chills and yellow skin point to cholangitis from a blocked bile duct. A mild sore throat and bloating that eases with walking are expected after the procedure.",
       sources: [ERCP],
@@ -143,6 +145,7 @@ export const PART4: Item[] = [
       cjmm: "evaluate",
       process: "teaching",
       difficulty: 2,
+      version: 2,
       stem: "A client with primary immunodeficiency gives weekly subcutaneous immune globulin at home into 4 abdominal sites. Three hours after an infusion the client calls to report soft swelling and mild redness at the sites. The client has no fever, rash, breathing difficulty, leg pain or chest pain. Which response by the nurse is appropriate?",
       rationale:
         "Swelling, redness, warmth and itching at the sites are the most common reactions to subcutaneous immune globulin. With no fever, rash, breathing difficulty, leg pain or chest pain, there is no sign of a systemic reaction or thrombosis. The nurse explains that these site reactions are expected and reviews site rotation. The client is taught to report signs of thrombosis or allergy at once.",
@@ -153,7 +156,7 @@ export const PART4: Item[] = [
       { text: "Explain that site reactions are common and expected", why: "Local swelling and redness are the most common reactions and are expected." },
       { text: "Advise the client to go to the emergency department now", why: "The client has no systemic signs, so emergency care is not needed." },
       { text: "Tell the client to stop the infusions until seen", why: "Expected site reactions are not a reason to stop needed immune globulin." },
-      { text: "Advise firm massage of the sites for 10 minutes", why: "Firm massage can bruise the sites and does not treat local swelling." },
+      { text: "Advise firm massage of the sites for 10 minutes", why: "Local swelling and redness are expected reactions that need no added site treatment." },
     ],
     correct: 0,
   },
