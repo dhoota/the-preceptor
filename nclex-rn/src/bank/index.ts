@@ -1,4 +1,5 @@
 import type { CaseStudy, Item } from "@/engine/types";
+import { PULLED_IDS } from "./pulled";
 import { ITEMS as S01 } from "./s01";
 import { ITEMS as S02 } from "./s02";
 import { ITEMS as S03 } from "./s03";
@@ -64,7 +65,11 @@ export const ITEM_BATCHES: Record<string, Item[]> = { s01: S01, s02: S02, s03: S
 /** Case studies by batch. */
 export const CASE_BATCHES: Record<string, CaseStudy[]> = { c01: C01, c02: C02, c03: C03, c04: C04, c05: C05, c06: C06, c07: C07, c08: C08, c09: C09, c10: C10, c11: C11, c12: C12, c13: C13, c14: C14, c15: C15, c16: C16, c17: C17, c18: C18, c19: C19, c20: C20 };
 
-export const ITEMS: Item[] = Object.values(ITEM_BATCHES).flat();
+/** Ids pulled after review. They stay in their batches but never ship. */
+export const PULLED = new Set(PULLED_IDS);
+
+/** Shipped stand-alone items: every batch item that was not pulled. */
+export const ITEMS: Item[] = Object.values(ITEM_BATCHES).flat().filter((i) => !PULLED.has(i.id));
 export const CASES: CaseStudy[] = Object.values(CASE_BATCHES).flat();
 
 /** Every item, stand-alone and inside case studies. */

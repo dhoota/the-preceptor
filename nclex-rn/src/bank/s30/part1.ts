@@ -1,5 +1,5 @@
 import type { Item } from "@/engine/types";
-import { ANA_CODE, CDC_MEASLES, GUIDO, HIPAA, MR_ZONES, ACR_MR_2013, NCMEC, NLC, NNDSS, SCOPE_FRAMEWORK, GINA, meta } from "./common";
+import { ANA_CODE, CDC_MEASLES, GUIDO, HIPAA, MR_ZONES, ACR_MR_2013, NCMEC, NLC, NNDSS, SCOPE_FRAMEWORK, GINA, CNO_INL, OPC_HEALTH, PHAC_NND, meta } from "./common";
 
 export const PART1: Item[] = [
   {
@@ -12,7 +12,8 @@ export const PART1: Item[] = [
       stem: "A registered nurse holds a single-state license from a state that has not joined the Nurse Licensure Compact. A hospital 20 minutes away, across the border in a neighboring state, asks the nurse to work weekend shifts. What must the nurse do before working the first shift?",
       rationale:
         "A single-state license allows practice only in the state that issued it. Care given in the neighboring state needs a license from that state. A nurse whose home state is outside the compact cannot hold a multistate license, so a separate single-state license is the route. Supervision or notice to the home board does not authorize practice across the border.",
-      sources: [NLC, GUIDO],
+      sources: [NLC, GUIDO, CNO_INL],
+      canada: "Canada has no nurse licensure compact. A nurse registers with the regulator of each province or territory where care is given, and interjurisdictional nurse licensure eases this where a regulator has adopted it.",
     }),
     kind: "mc",
     options: [
@@ -54,7 +55,8 @@ export const PART1: Item[] = [
       stem: "A nurse educator reviews the Nurse Licensure Compact with a group of nurses who hold multistate licenses. Which two statements by the nurses show correct understanding? Select two.",
       rationale:
         "A multistate license depends on legal residence in a compact state. A nurse who moves to another compact state applies for a license in the new home state within 60 days. Unresolved discipline in another state is one of the conditions that bars a multistate license. A nurse whose primary residence is a noncompact state can hold only single-state licenses. The home state is the primary state of residence, not a holiday address.",
-      sources: [NLC],
+      sources: [NLC, CNO_INL],
+      canada: "Canada has no licensure compact and no multistate license. A nurse registers in each province or territory of practice, and interjurisdictional nurse licensure eases this where a regulator has adopted it.",
     }),
     kind: "msn",
     select: 2,
@@ -78,7 +80,8 @@ export const PART1: Item[] = [
       stem: "A nurse at an outpatient infusion center is asked to begin removing peripherally inserted central catheters, a task new to the role. Using the national scope of practice decision-making framework, the nurse has already described the task clearly. Which question should the nurse answer next?",
       rationale:
         "The framework first defines the activity. It then asks whether the nurse practice act, its rules or other laws prohibit it. A task the law prohibits stops there, whatever the nurse's training or the employer's wishes. Questions about evidence, facility policy, documented competence and accepting accountability follow once the task is legally allowed.",
-      sources: [SCOPE_FRAMEWORK],
+      sources: [SCOPE_FRAMEWORK, CNO_INL],
+      canada: "In Canada the nurse checks the provincial or territorial nursing legislation and the regulator's standards, which vary by province. Registration and scope are set where the care is given.",
     }),
     kind: "mc",
     options: [
@@ -146,7 +149,8 @@ export const PART1: Item[] = [
       stem: "A 3-year-old who has received no vaccines comes to an urgent care clinic. The family returned from overseas travel 11 days ago. The child has had fever, cough, runny nose and red eyes for 3 days. Today a blotchy red rash began at the hairline and is spreading to the trunk. Small white spots line the inner cheeks. Temperature is 39.4°C (102.9°F). Complete the diagram by choosing the condition the child is most likely experiencing, 2 actions to take and 2 parameters to monitor.",
       rationale:
         "Fever with cough, coryza and conjunctivitis, then a rash that starts at the head and spreads down, fits measles. White spots on the inner cheeks are Koplik spots. The child is unvaccinated and returned from travel. Measles spreads by the airborne route, so the child goes into an airborne isolation room. Providers must report suspected cases to the local health department, without waiting for laboratory confirmation. Pneumonia and dehydration are common complications to watch.",
-      sources: [CDC_MEASLES, NNDSS],
+      sources: [CDC_MEASLES, NNDSS, PHAC_NND],
+      canada: "In Canada a suspected measles case is reported to the local medical officer of health under provincial or territorial public health law, which varies by province. Measles is also a nationally notifiable disease tracked by PHAC.",
     }),
     kind: "bowtie",
     conditions: [
@@ -202,7 +206,8 @@ export const PART1: Item[] = [
       stem: "A nurse at a community clinic reviews the week's new diagnoses for the clinic's public health reports. Which conditions are on the CDC list of nationally notifiable conditions? Select all that apply.",
       rationale:
         "Pertussis, Lyme disease, hepatitis A and Salmonella infection are all nationally notifiable. Streptococcal pharyngitis is not on the list, although streptococcal toxic shock syndrome is. Staphylococcus aureus is notifiable only when it is vancomycin intermediate or resistant. For influenza, only novel influenza A and deaths in children are notifiable. States set their own reporting rules, so the nurse also follows state law.",
-      sources: [NNDSS],
+      sources: [NNDSS, PHAC_NND],
+      canada: "The CDC list does not apply in Canada. Provincial and territorial public health laws set which diseases providers must report and vary by province. PHAC keeps a separate list of nationally notifiable diseases.",
     }),
     kind: "sata",
     options: [
@@ -226,7 +231,8 @@ export const PART1: Item[] = [
       stem: "A 41-year-old client learned yesterday that she carries a BRCA2 variant linked to breast and ovarian cancer. She has not decided whether to tell her family. Her sister calls the clinic and says, \"I need to know if her test was positive for my own health.\" Which response should the nurse give?",
       rationale:
         "Genetic test results are protected health information. Shared family genes do not give a relative the right to another adult's result. Without the client's authorization the nurse cannot confirm the test or the result. The nurse can direct the sister to talk with the client and can tell the client that relatives may benefit from knowing. Genetic counseling can help the client decide how to share it.",
-      sources: [HIPAA, GINA, ANA_CODE],
+      sources: [HIPAA, GINA, ANA_CODE, OPC_HEALTH],
+      canada: "HIPAA does not apply in Canada. Health information falls under provincial health information laws or PIPEDA, which vary by province, and sharing a result with a relative still needs the client's consent.",
     }),
     kind: "mc",
     options: [

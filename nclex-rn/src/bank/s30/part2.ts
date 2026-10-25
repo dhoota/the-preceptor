@@ -1,5 +1,5 @@
 import type { Item } from "@/engine/types";
-import { AAP_GENETIC, ACR_MR_2013, ANA_CODE, ASCIA_LATEX, GINA, HIPAA, MR_ZONES, TJC_NPG, meta } from "./common";
+import { AAP_GENETIC, ACR_MR_2013, ANA_CODE, ASCIA_LATEX, GINA, HIPAA, MR_ZONES, TJC_NPG, GNDA, meta } from "./common";
 
 export const PART2: Item[] = [
   {
@@ -189,12 +189,13 @@ export const PART2: Item[] = [
     ...meta("rn-s30-19", {
       need: "SIPC",
       topic: "Cardiac arrest inside the MRI scanner room",
+      version: 2,
       cjmm: "action",
       process: "clinical-judgment",
       difficulty: 4,
       stem: "A nurse accompanies an intubated client into the MRI scanner room for a brain scan. During the scan the client loses a pulse. The MRI technologist stops the scan and calls for help. Which action should the nurse take?",
       rationale:
-        "A resuscitation is never run inside the scanner room. Code teams carry defibrillators, oxygen tanks and other metal items that the magnet can pull in as projectiles. Staff stabilize the client and move the client out of Zone IV to a designated code area before full resuscitation. Quenching the magnet is not done when the client can be moved out quickly.",
+        "A resuscitation is never run inside the scanner room. Code teams carry defibrillators, oxygen tanks and other metal items that the magnet can pull in as projectiles. Trained MR staff start basic life support while the client is moved out of Zone IV to a designated code area. Quenching the magnet is not done when the client can be moved out quickly.",
       sources: [MR_ZONES, ACR_MR_2013],
     }),
     kind: "mc",
@@ -217,7 +218,8 @@ export const PART2: Item[] = [
       rationale:
         "The Act bars health insurers from using genetic information to set eligibility or premiums. It bars employers with 15 or more staff from using it in decisions such as promotion. It does not cover life, disability or long-term care insurance. Employers with fewer than 15 staff are outside the Act, although some states add protections.",
       refs: ["The Genetic Information Nondiscrimination Act does not apply to employers with fewer than 15 employees."],
-      sources: [GINA],
+      sources: [GINA, GNDA],
+      canada: "GINA does not apply in Canada. The federal Genetic Non-Discrimination Act bars anyone, including life and disability insurers, from requiring a genetic test or its results as a condition of a contract or service.",
     }),
     kind: "msn",
     select: 2,

@@ -2,7 +2,7 @@ import { describe, expect, it } from "vitest";
 import { BANK_PLAN, CJMM_IDS, NEEDS, NEED_IDS, type ClientNeed } from "@/engine/blueprint";
 import { batchCueingProblems, caseContext, caseProblems, itemProblems, nearDuplicates } from "@/engine/quality";
 import type { CaseStudy, Item } from "@/engine/types";
-import { ALL_ITEMS, CASES, CASE_BATCHES, ITEMS, ITEM_BATCHES } from "@/bank";
+import { ALL_ITEMS, CASES, CASE_BATCHES, ITEMS, ITEM_BATCHES, PULLED } from "@/bank";
 import plan from "../docs/bank-plan.json";
 import signoff from "../docs/signoff.json";
 
@@ -110,11 +110,21 @@ describe("whole bank", () => {
     const bad = [...ALL_ITEMS, ...CASES].filter((x: Item | CaseStudy) => x.reviewed !== SIGNED.has(x.id)).map((x) => x.id);
     expect(bad).toEqual([]);
   });
+  it("leaves pulled items out of the shipped bank and the sign-off list", () => {
+    const inBatches = new Set(Object.values(ITEM_BATCHES).flat().map((i) => i.id));
+    for (const id of PULLED) {
+      expect(inBatches.has(id), id).toBe(true);
+      expect(SIGNED.has(id), id).toBe(false);
+    }
+    expect(ALL_ITEMS.filter((i) => PULLED.has(i.id))).toEqual([]);
+  });
   if (process.env.LAUNCH_GATE)
-    it("launch gate: the full bank is present", () => {
-      expect(ITEMS.length).toBe(BANK_PLAN.standalone);
+    it("launch gate: the full bank is present, less the pulled items", () => {
+      const pulled = Object.values(ITEM_BATCHES).flat().filter((i) => PULLED.has(i.id));
+      const lost = count(pulled, (i) => i.need);
+      expect(ITEMS.length).toBe(BANK_PLAN.standalone - pulled.length);
       expect(CASES.length).toBe(BANK_PLAN.caseStudies);
-      expect(ALL_ITEMS.length).toBe(BANK_PLAN.total);
-      expect(count(ALL_ITEMS, (i) => i.need)).toEqual(Object.fromEntries(NEED_IDS.map((n) => [n, NEEDS.find((x) => x.id === n)!.bank])));
+      expect(ALL_ITEMS.length).toBe(BANK_PLAN.total - pulled.length);
+      expect(count(ALL_ITEMS, (i) => i.need)).toEqual(Object.fromEntries(NEED_IDS.map((n) => [n, NEEDS.find((x) => x.id === n)!.bank - (lost[n] ?? 0)])));
     });
 });

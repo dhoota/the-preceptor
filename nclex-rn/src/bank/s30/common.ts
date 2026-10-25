@@ -177,3 +177,39 @@ export const ASCIA_LATEX: Source = {
   year: 2010,
   url: "https://allergy.org.au/hp/papers/management-of-latex-allergic-patients/hospital-management",
 };
+export const CNO_INL: Source = {
+  body: "College of Nurses of Ontario",
+  work: "Interjurisdictional Nurse Licensure (INL): Registering in More than One Jurisdiction",
+  year: 2026,
+  url: "https://www.cno.org/maintain-your-membership/interjurisdictional-nurse-licensure",
+};
+export const PHAC_NND: Source = {
+  body: "Public Health Agency of Canada",
+  work: "Notifiable Diseases Online: Canadian Notifiable Disease Surveillance System",
+  year: 2026,
+  url: "https://diseases.canada.ca/notifiable/",
+};
+export const GNDA: Source = {
+  body: "Parliament of Canada",
+  work: "Genetic Non-Discrimination Act, S.C. 2017, c. 3",
+  year: 2017,
+  url: "https://laws-lois.justice.gc.ca/eng/acts/g-2.5/page-1.html",
+};
+export const OPC_HEALTH: Source = {
+  body: "Office of the Privacy Commissioner of Canada",
+  work: "Provincial Laws That May Apply Instead of PIPEDA",
+  year: 2020,
+  url: "https://www.priv.gc.ca/en/privacy-topics/privacy-laws-in-canada/the-personal-information-protection-and-electronic-documents-act-pipeda/r_o_p/prov-pipeda/",
+};
+export const ON_HCCA: Source = {
+  body: "Government of Ontario",
+  work: "Health Care Consent Act, 1996, S.O. 1996, c. 2, Sched. A, section 20",
+  year: 1996,
+  url: "https://www.ontario.ca/laws/statute/96h02",
+};
+export const CNA_CODE: Source = {
+  body: "Canadian Nurses Association",
+  work: "Code of Ethics for Nurses",
+  year: 2025,
+  url: "https://www.cna-aiic.ca/en/blogs/cn-content/2025/07/14/cna-releases-revamped-coe-for-nurses",
+};

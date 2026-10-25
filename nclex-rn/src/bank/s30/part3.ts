@@ -93,6 +93,7 @@ export const PART3: Item[] = [
         "Dextrose 10% holds 10 g in each 100 mL, which is 0.1 g/mL. Dividing 12.5 g by 0.1 g/mL gives 125 mL. A substitute product in a shortage changes the volume needed for the same dose. The nurse recalculates and has the volume checked rather than reusing the old syringe volume.",
       calc: { expr: "12.5 / (10 / 100)", answer: 125, unit: "mL", round: 0, steps: ["10 / 100 = 0.1", "12.5 / 0.1 = 125"] },
       sources: [ASHP_SHORTAGE],
+      canada: "Canadian labs report glucose in mmol/L only, so this value reads 2.9 mmol/L.",
     }),
     kind: "mc",
     options: [
@@ -128,6 +129,7 @@ export const PART3: Item[] = [
     ...meta("rn-s30-26", {
       need: "SIPC",
       topic: "Room setup for a carbon dioxide laser",
+      version: 2,
       cjmm: "action",
       process: "nursing-process",
       difficulty: 3,
@@ -141,7 +143,7 @@ export const PART3: Item[] = [
       { text: "Post the laser warning sign at each entrance", why: "A sign at every entrance warns people before they enter the hazard area." },
       { text: "Drape the site while the alcohol prep is still wet", why: "Wet alcohol prep is a fuel. It is allowed to dry before draping." },
       { text: "Hand out eyewear labeled for the laser's wavelength", why: "Eyewear must match the wavelength of the laser in use." },
-      { text: "Offer staff their own prescription glasses as protection", why: "Ordinary lenses do not block laser energy." },
+      { text: "Offer staff their own prescription glasses as protection", why: "Prescription glasses carry no optical density rating for the laser and have no side shields." },
       { text: "Keep sponges near the treatment site moist", why: "Moist sponges resist ignition by the beam." },
       { text: "Place a polished steel retractor beside the beam path", why: "A polished surface can reflect the beam onto staff or drapes." },
       { text: "Keep a basin of water within reach of the field", why: "Water must be on hand to put out a flame quickly." },

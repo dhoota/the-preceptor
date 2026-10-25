@@ -1,7 +1,7 @@
 import { readFileSync } from "node:fs";
 import { join } from "node:path";
 import { describe, expect, it } from "vitest";
-import { ALL_ITEMS } from "@/bank/index";
+import { ALL_ITEMS, PULLED } from "@/bank/index";
 import { BANK_PLAN, NEED_IDS } from "@/engine/blueprint";
 import { AREA_REFS, REFERENCES, guidelineCitations, itemCitations } from "@/lib/references";
 
@@ -16,7 +16,7 @@ describe("citations", () => {
       const links = [...own, ...guidelineCitations(item)].filter((c) => c.url?.startsWith("https://"));
       if (!own.length || !links.length) missing.push(item.id);
     }
-    expect(ALL_ITEMS.length).toBe(BANK_PLAN.total);
+    expect(ALL_ITEMS.length).toBe(BANK_PLAN.total - PULLED.size);
     expect(missing).toEqual([]);
   });
 

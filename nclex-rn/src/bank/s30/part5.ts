@@ -1,5 +1,5 @@
 import type { Item } from "@/engine/types";
-import { ANA_CODE, ANA_SPHM, CLAS, GUIDO, HINKLE, NNDSS, TJC_NPG, VA_LICENSE, WATERS, meta } from "./common";
+import { ANA_CODE, ANA_SPHM, CLAS, GUIDO, HINKLE, NNDSS, TJC_NPG, VA_LICENSE, WATERS, CNA_CODE, CNO_INL, PHAC_NND, meta } from "./common";
 
 export const PART5: Item[] = [
   {
@@ -56,7 +56,8 @@ export const PART5: Item[] = [
       stem: "On one morning, an urgent care nurse sees 3 adults from different households with vomiting and diarrhea that began 6 to 8 hours after the same wedding dinner. Two have a fever. One vomited 4 times overnight. No stool results are back yet. Which finding is the reason to notify public health now?",
       rationale:
         "A foodborne disease outbreak is itself a nationally notifiable event. Illness in several people from different households after one shared meal points to a common source, so public health is told without waiting for stool results. Early notice lets the health department trace the food and other guests. Fever, the number of vomiting episodes and pending tests describe single clients and do not by themselves call for a report.",
-      sources: [NNDSS],
+      sources: [NNDSS, PHAC_NND],
+      canada: "In Canada outbreak reporting duties come from provincial and territorial public health laws and vary by province. Reports go to the local public health unit or medical officer of health.",
     }),
     kind: "mc",
     options: [
@@ -77,7 +78,8 @@ export const PART5: Item[] = [
       stem: "A nurse educated and licensed in another country works as an unlicensed care technician while waiting to pass the NCLEX-RN and receive a state license. On a busy shift she offers to give IV push medications and says, \"I did this every day back home.\" How should the charge nurse respond?",
       rationale:
         "Practice is defined by the license held in the state where care is given and by the role the person is hired into. A license from another country does not authorize nursing practice here. Until she holds a state license, she works only within the technician role. Supervision or client consent cannot turn unlicensed practice into licensed practice. Her skills will be valued once she is licensed.",
-      sources: [GUIDO],
+      sources: [GUIDO, CNO_INL],
+      canada: "In Canada an internationally educated nurse must register with the provincial or territorial regulator before practising as an RN. Assessment routes vary by province.",
     }),
     kind: "mc",
     options: [
@@ -98,7 +100,8 @@ export const PART5: Item[] = [
       stem: "A registered nurse licensed only in State A accepts a job at a Veterans Affairs medical center in State B. She also plans to work weekend shifts at a private hospital in State B. Neither state belongs to the Nurse Licensure Compact. Which statement about her licensure is accurate?",
       rationale:
         "Veterans Affairs facilities are federal. A nurse there can practice with one active, unrestricted license from any US state. The private hospital is governed by State B law, so weekend work there needs a State B license. Without the compact, her State A license gives no privilege to practice in State B outside federal employment.",
-      sources: [VA_LICENSE, GUIDO],
+      sources: [VA_LICENSE, GUIDO, CNO_INL],
+      canada: "Canada has no nurse licensure compact. A nurse must be registered in the province or territory where care is given.",
     }),
     kind: "mc",
     options: [
@@ -119,7 +122,8 @@ export const PART5: Item[] = [
       stem: "A nursing student asks the nurse who is responsible for each part of nursing regulation and standards. Drag the body that carries out each function to its target.",
       rationale:
         "The state legislature passes the nurse practice act. The state board of nursing applies the act by issuing licenses and disciplining nurses. The Joint Commission accredits hospitals against its performance standards. The American Nurses Association publishes the code of ethics for nurses. The National Council of State Boards of Nursing supports boards and develops the licensure exam, but it does not license nurses.",
-      sources: [GUIDO, ANA_CODE, TJC_NPG],
+      sources: [GUIDO, ANA_CODE, TJC_NPG, CNA_CODE],
+      canada: "In Canada provincial and territorial legislatures pass the nursing acts, and provincial or territorial regulators register and discipline nurses. The Canadian Nurses Association publishes the Code of Ethics for Nurses.",
     }),
     kind: "dnd",
     scoring: "zero-one",
@@ -145,6 +149,7 @@ export const PART5: Item[] = [
         "The potassium of 5.6 mEq/L shows the current intake is not safe. The client also rejects foods that are not his own. The dietitian can work with the family to adapt familiar dishes to the restriction. Adherence improves when the plan fits the client's culture. Banning family food ignores his preferences. Unchanged dishes keep raising his potassium.",
       refs: ["Normal serum potassium is 3.5 to 5.0 mEq/L (3.5 to 5.0 mmol/L)."],
       sources: [CLAS, ANA_CODE, HINKLE],
+      canada: "Canadian labs report potassium in mmol/L, which equals mEq/L for potassium, so this value reads 5.6 mmol/L.",
     }),
     kind: "mc",
     options: [

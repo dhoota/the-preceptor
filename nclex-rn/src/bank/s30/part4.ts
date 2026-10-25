@@ -1,5 +1,5 @@
 import type { Item } from "@/engine/types";
-import { ABC_TRIAL, ABCDEF, ANA_CODE, GUIDO, HINKLE, HIPAA, MALNUTRITION, NCMEC, NPIAP, SCCM_ASPEN, ASHP_SHORTAGE, meta } from "./common";
+import { ABC_TRIAL, ABCDEF, ANA_CODE, GUIDO, HINKLE, HIPAA, MALNUTRITION, NCMEC, NPIAP, SCCM_ASPEN, ASHP_SHORTAGE, ON_HCCA, meta } from "./common";
 
 export const PART4: Item[] = [
   {
@@ -60,7 +60,8 @@ export const PART4: Item[] = [
       stem: "A 66-year-old client is sedated on a ventilator after a stroke and cannot make decisions. He has no advance directive and no named agent. State law ranks the spouse first among surrogates, then adult children. His eldest son says that in their culture the eldest son decides. The client's wife agrees she wants the son involved. Who should the team treat as the decision maker?",
       rationale:
         "When a client has no named agent, the surrogate is chosen by state law, which here ranks the spouse first. The wife remains the decision maker, and she can bring the son into every discussion as she wishes. Honoring the family's custom this way respects culture within the law. The son ranks below the spouse. A vote or a court appointment is not needed when a legal surrogate is present and willing.",
-      sources: [GUIDO, ANA_CODE],
+      sources: [GUIDO, ANA_CODE, ON_HCCA],
+      canada: "In Canada provincial law sets the order of substitute decision makers, and it varies by province. Ontario's Health Care Consent Act, 1996, for example, ranks a spouse or partner ahead of children.",
     }),
     kind: "mc",
     options: [
