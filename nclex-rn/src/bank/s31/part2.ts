@@ -43,7 +43,7 @@ export const PART2: Item[] = [
     ...meta("rn-s31-12", {
       need: "SIPC",
       topic: "Public health response to a food handler with hepatitis A",
-      canada: "The Canadian Immunization Guide also recommends offering prophylaxis to susceptible coworkers of an infected food handler. Patron prophylaxis is decided by the local public health unit.",
+      canada: "The Canadian Immunization Guide recommends offering prophylaxis to susceptible coworkers and clients of an infected food handler. Vaccine is given preferably within 14 days of the last exposure.",
       cjmm: "generate",
       process: "nursing-process",
       difficulty: 4,
