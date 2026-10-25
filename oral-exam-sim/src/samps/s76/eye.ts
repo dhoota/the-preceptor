@@ -156,7 +156,7 @@ export const EYE_S76: Samp[] = [
         ],
         correct: 3,
         explanation:
-          "Many neighbours with red eyes in a village she left 2 days ago points to an outbreak of acute hemorrhagic conjunctivitis, which spreads by contact and starts 12 to 48 hours after exposure. Her onset fits that timing. ASA can enlarge a subconjunctival hemorrhage but does not cause follicles, nodes and a watery discharge in both eyes. Hay fever causes itch in season. A cold 3 weeks ago is too long before onset to explain it. She has been away from her class for 4 weeks, so school exposure does not fit.",
+          "Many neighbours with red eyes in a village she left only days ago points to an outbreak of acute hemorrhagic conjunctivitis, which spreads by contact and starts 12 to 48 hours after exposure. Her onset soon after she left fits that short incubation. ASA can enlarge a subconjunctival hemorrhage but does not cause follicles, nodes and a watery discharge in both eyes. Hay fever causes itch in season. A cold 3 weeks ago is too long before onset to explain it. She has been away from her class for 4 weeks, so school exposure does not fit.",
         keyFeature: { topic: "eye", n: 2 },
         source: "lay-ahc",
       },

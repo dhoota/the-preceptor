@@ -11,7 +11,7 @@ const S = {
   parikh: { id: "parikh-tamoxifen", citation: "Parikh RP, Odom EB, Yu L, Colditz GA, Myckatyn TM. Complications and thromboembolic events associated with tamoxifen therapy in patients with breast cancer undergoing microvascular breast reconstruction: a systematic review and meta-analysis. Breast Cancer Res Treat. 2017.", url: "https://pmc.ncbi.nlm.nih.gov/articles/PMC5554619" },
   wittram: { id: "wittram-ctpa", citation: "Wittram C, Maher MM, Yoo AJ, Kalra MK, Shepard JA, McLoud TC. CT angiography of pulmonary embolism: diagnostic criteria and causes of misdiagnosis. RadioGraphics. 2004." },
   legal: { id: "legal-recurrent-vte", citation: "Le Gal G, Kovacs MJ, Carrier M, and colleagues. Validation of a diagnostic approach to exclude recurrent venous thromboembolism. J Thromb Haemost. 2009." },
-  hps: { id: "soulaidopoulos-hps", citation: "Soulaidopoulos S, Cholongitas E, Giannakoulas G, Vlachou M, Goulis I. Review article: update on current and emergent data on hepatopulmonary syndrome. World J Gastroenterol. 2018.", url: "https://pmc.ncbi.nlm.nih.gov/articles/5871824/" },
+  hps: { id: "soulaidopoulos-hps", citation: "Soulaidopoulos S, Cholongitas E, Giannakoulas G, Vlachou M, Goulis I. Review article: update on current and emergent data on hepatopulmonary syndrome. World J Gastroenterol. 2018.", url: "https://pmc.ncbi.nlm.nih.gov/articles/PMC5871824/" },
   msd: { id: "msd-epiglottitis", citation: "Cheng AG. Epiglottitis. MSD Manual Professional Version. Merck and Co. Reviewed 2026.", url: "https://www.msdmanuals.com/professional/ear-nose-and-throat-disorders/oral-and-pharyngeal-disorders/epiglottitis" },
 } satisfies Record<string, Source>;
 

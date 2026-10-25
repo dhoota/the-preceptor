@@ -5,7 +5,7 @@ import type { Source } from "@/engine/types";
 const META = { reviewed: false, author: "Preceptor", version: 1 } as const;
 
 const S = {
-  ross: { id: "ross-sc-septic-s85", citation: "Ross JJ, Shamsuddin H. Sternoclavicular septic arthritis: review of 180 cases. Medicine (Baltimore). 2004." },
+  ross: { id: "ross-sc-septic-s85", citation: "Ross JJ, Shamsuddin H. Sternoclavicular septic arthritis: review of 180 cases. Medicine (Baltimore). 2004.", url: "https://doi.org/10.1097/01.md.0000126761.83417.29" },
   escPeri2025: { id: "esc-myo-peri-2025-s85", citation: "Schulz-Menger J, Collini V, Groschel J, and colleagues. 2025 ESC guidelines for the management of myocarditis and pericarditis. Eur Heart J. 2025.", url: "https://academic.oup.com/eurheartj/advance-article/doi/10.1093/eurheartj/ehaf192/8234510" },
   escPeri2015: { id: "esc-pericardial-2015-s85", citation: "Adler Y, Charron P, Imazio M, and colleagues. 2015 ESC guidelines for the diagnosis and management of pericardial diseases. Eur Heart J. 2015.", url: "https://academic.oup.com/eurheartj/article/36/42/2921/2293375" },
   eacts: { id: "eacts-mediastinitis-s85", citation: "Abu-Omar Y, Kocher GJ, Bosco P, and colleagues. European Association for Cardio-Thoracic Surgery expert consensus statement on the prevention and management of mediastinitis. Eur J Cardiothorac Surg. 2017.", url: "https://academic.oup.com/ejcts/article/51/1/10/2736969" },
@@ -65,7 +65,7 @@ export const CHEST_PAIN_S85: Samp[] = [
         options: ["Blood cultures and CT of the chest wall", "Bone scan as an outpatient", "Oral cephalexin and clinic review", "Repeat X-ray in 2 weeks", "Sling and NSAID for 1 week"],
         correct: 0,
         explanation:
-          "Blood cultures come first because bacteremia is common, and CT or MRI should be obtained routinely to look for a chest wall abscess or phlegmon (25%), a retrosternal abscess or mediastinitis (13%). An abscess or mediastinitis changes the plan to surgical resection of the joint. A normal chest X-ray does not show this soft tissue spread. Empiric IV antibiotics should follow the cultures and may need to cover MRSA, because Staphylococcus aureus caused about half of cases. Oral cephalexin, a sling with an NSAID, a bone scan as an outpatient and a repeat X-ray in 2 weeks all leave a deep infection untreated.",
+          "Blood cultures come first because bacteremia is common, and CT or MRI should be obtained routinely to look for a chest wall abscess or phlegmon (25%), a retrosternal abscess, or mediastinitis (13%). An abscess or mediastinitis changes the plan to surgical resection of the joint. A normal chest X-ray does not show this soft tissue spread. Empiric IV antibiotics should follow the cultures and may need to cover MRSA, because Staphylococcus aureus caused about half of cases. Oral cephalexin, a sling with an NSAID, a bone scan as an outpatient and a repeat X-ray in 2 weeks all leave a deep infection untreated.",
         keyFeature: { topic: "chest-pain", n: 2 },
         source: "ross-sc-septic-s85",
       },

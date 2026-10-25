@@ -303,7 +303,7 @@ export const DVT_PE_S73: Samp[] = [
         options: ["apixaban 10 mg PO now", "dalteparin 200 units/kg SC now", "rivaroxaban 15 mg PO now", "tinzaparin 175 units/kg SC now", "No anticoagulant before the CT"],
         correct: 4,
         explanation:
-          "Thrombosis Canada advises a rapid-acting anticoagulant while awaiting imaging when the pretest probability of PE is high, but allows treatment to be withheld when it is intermediate and imaging will be done within 4 hours, or low and imaging will be done within 24 hours. His probability is low and his CT is 16 hours away, so he can wait without a dose. Giving apixaban, rivaroxaban, dalteparin or tinzaparin now would expose him to bleeding risk for a diagnosis that is still unlikely. For her, with a high probability, the same guide would have called for an anticoagulant before imaging.",
+          "Thrombosis Canada advises a rapid-acting anticoagulant while awaiting imaging when the pretest probability of PE is high, but allows treatment to be withheld when it is intermediate and imaging will be done within 4 hours, or low and imaging will be done within 24 hours. His probability is low and his CT is 16 hours away, so he can wait without a dose. Giving apixaban, rivaroxaban, dalteparin or tinzaparin now would expose him to bleeding risk for a diagnosis that is still unlikely. A high pretest probability would have called for an anticoagulant before imaging.",
         keyFeature: { topic: "dvt-pe", n: 4 },
         source: "tc-pe-tx",
       },
