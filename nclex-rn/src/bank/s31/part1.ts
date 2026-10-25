@@ -1,5 +1,5 @@
 import type { Item } from "@/engine/types";
-import { CDC_TST, HCP_MEASLES, HCP_PERTUSSIS, LEWINSOHN, MMR, SIEGEL, SOSA, VHF_III, VHF_PPE, meta } from "./common";
+import { CDC_TST, CTS_LTBI, HCP_MEASLES, HCP_PERTUSSIS, LEWINSOHN, MMR, SIEGEL, SOSA, VHF_III, VHF_PPE, meta } from "./common";
 
 export const PART1: Item[] = [
   {
@@ -28,12 +28,13 @@ export const PART1: Item[] = [
     ...meta("rn-s31-02", {
       need: "SIPC",
       topic: "Protective ensemble for an unstable Ebola client",
+      version: 2,
       cjmm: "generate",
       process: "nursing-process",
       difficulty: 4,
       stem: "A client with suspected Ebola virus disease now has vomiting and diarrhea. The hospital uses the N95 respirator option for personal protective equipment. Which items should the nurse wear to enter the room? Select all that apply.",
       rationale:
-        "Vomiting and diarrhea make this client clinically unstable, so the full ensemble applies. The N95 option combines a fit-tested N95 respirator, a single-use surgical hood to the shoulders and a full face shield. An impermeable gown, two pairs of extended-cuff gloves and boot covers to mid-calf complete it. An apron is added when the client vomits or has diarrhea. A trained observer watches every donning and doffing step.",
+        "Vomiting and diarrhea make this client clinically unstable, so the full ensemble applies. The N95 option combines a fit-tested N95 respirator, a single-use surgical hood to the shoulders and a full face shield. An impermeable gown, two pairs of gloves with extended cuffs on at least the outer pair and boot covers to mid-calf complete it. An apron is added when the client vomits or has diarrhea. A trained observer watches every donning and doffing step.",
       sources: [VHF_PPE],
     }),
     kind: "sata",
@@ -41,7 +42,7 @@ export const PART1: Item[] = [
       { text: "Fit-tested N95 respirator", why: "The N95 option uses a fit-tested respirator under the hood and face shield." },
       { text: "Surgical mask", why: "A surgical mask does not meet the respirator standard set for an unstable client." },
       { text: "Single-use surgical hood", why: "The hood covers hair, ears and neck to the shoulders so no skin is exposed." },
-      { text: "One pair of exam gloves", why: "Two pairs of extended-cuff gloves are worn so the outer pair can come off during doffing." },
+      { text: "One pair of exam gloves", why: "Two pairs of gloves are worn so a soiled outer pair can come off during care and doffing." },
       { text: "Apron over the gown", why: "An apron over the torso to mid-calf is required when the client vomits or has diarrhea." },
       { text: "Ankle-high shoe covers alone", why: "Boot covers must reach at least mid-calf. Ankle covers may only be added over them." },
       { text: "Boot covers to mid-calf", why: "Boot covers to mid-calf protect the legs and footwear from splashes of body fluid." },
@@ -184,13 +185,14 @@ export const PART1: Item[] = [
     ...meta("rn-s31-08", {
       need: "SIPC",
       topic: "Baseline tuberculosis test after BCG vaccine",
+      canada: "The Canadian Tuberculosis Standards (2022) prefer an IGRA mainly when BCG was given after infancy or its timing is unknown. They state that BCG received in infancy can be ignored when an adult has a skin test of 10 mm or more.",
       cjmm: "analyze",
       process: "clinical-judgment",
       difficulty: 3,
       stem: "A newly hired 31-year-old nurse needs baseline tuberculosis screening. The nurse grew up in a country where BCG vaccine is given at birth and received it as an infant. The nurse has no symptoms and no known exposure. Which test should the occupational health nurse arrange?",
       rationale:
         "BCG vaccine can cause a false-positive tuberculin skin test. An interferon-gamma release assay uses antigens that BCG strains lack, so past vaccination does not cause a positive result. A blood test is preferred for people who received BCG. A two-step skin test addresses boosting, not the BCG effect. A chest radiograph looks for disease and cannot detect latent infection.",
-      sources: [LEWINSOHN, SOSA, CDC_TST],
+      sources: [LEWINSOHN, SOSA, CDC_TST, CTS_LTBI],
     }),
     kind: "mc",
     options: [
@@ -227,17 +229,18 @@ export const PART1: Item[] = [
     ...meta("rn-s31-10", {
       need: "SIPC",
       topic: "Positive blood test for tuberculosis at hire",
+      version: 2,
       cjmm: "action",
       process: "nursing-process",
       difficulty: 3,
       stem: "A newly hired nurse has a positive interferon-gamma release assay. The nurse has never been treated for tuberculosis and reports feeling well. Which actions should the occupational health nurse take? Select all that apply.",
       rationale:
-        "A positive test needs a symptom review and a chest radiograph to rule out disease. Treatment for latent infection is offered and strongly encouraged. The nurse learns which symptoms to report between yearly symptom checks. Latent infection is not contagious, so no work restriction or mask is needed. The blood test stays positive, so repeating it each year adds nothing.",
+        "A positive test needs a symptom review and a chest radiograph to rule out disease. Treatment for latent infection is offered and strongly encouraged. The nurse learns which symptoms to report between yearly symptom checks. Latent infection is not contagious, so no work restriction or mask is needed. Personnel with a documented positive result are not retested, so a yearly blood test adds nothing.",
       sources: [SOSA],
     }),
     kind: "sata",
     options: [
-      { text: "Repeat the blood test every year", why: "A positive test stays positive. Untreated personnel get a yearly symptom check instead." },
+      { text: "Repeat the blood test every year", why: "Personnel with a documented positive test are not retested. Untreated personnel get a yearly symptom check instead." },
       { text: "Ask about cough, night sweats and weight loss", why: "A symptom review looks for active disease." },
       { text: "Keep the nurse off work until treated", why: "Latent infection is not contagious. Work continues once disease is ruled out." },
       { text: "Arrange a chest radiograph", why: "A radiograph looks for signs of active pulmonary disease." },

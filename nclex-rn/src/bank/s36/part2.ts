@@ -28,6 +28,7 @@ export const PART2: Item[] = [
   },
   {
     ...meta("rn-s36-12", {
+      canada: "Canadian labs often report BNP in ng/L, which carries the same number as pg/mL.",
       need: "RRP",
       topic: "Natriuretic peptide in severe obesity",
       cjmm: "analyze",
@@ -71,6 +72,7 @@ export const PART2: Item[] = [
   },
   {
     ...meta("rn-s36-14", {
+      canada: "Canadian labs report bicarbonate only in mmol/L, with the same number as mEq/L.",
       need: "RRP",
       topic: "Expected PaCO2 in ketoacidosis with pneumonia",
       cjmm: "analyze",
@@ -131,6 +133,7 @@ export const PART2: Item[] = [
   },
   {
     ...meta("rn-s36-16", {
+      canada: "Canadian labs often report procalcitonin in mcg/L, which carries the same number as ng/mL.",
       need: "RRP",
       topic: "Procalcitonin fall during pneumonia treatment",
       cjmm: "evaluate",
@@ -175,6 +178,7 @@ export const PART2: Item[] = [
   },
   {
     ...meta("rn-s36-18", {
+      canada: "Canadian labs report phenytoin only in micromol/L. The total level reads 36 micromol/L against a laboratory range of 40 to 79 micromol/L.",
       need: "RRP",
       topic: "Phenytoin level with low albumin",
       cjmm: "analyze",

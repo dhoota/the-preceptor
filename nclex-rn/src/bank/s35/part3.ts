@@ -197,6 +197,7 @@ export const PART3: Item[] = [
       stem: "The parent of a 9-year-old child with ADHD receives teaching about a new prescription for atomoxetine by mouth once daily. Which statement by the parent indicates a need for further teaching?",
       rationale:
         "Atomoxetine is a nonstimulant taken every day. The dose is built up over at least 3 days to a daily target, so it is not saved for school days. The boxed warning describes a rise in suicidal thinking in children, so the parent watches closely, mostly in the first month. Yellow skin or dark urine can signal liver injury. The capsules are swallowed whole because the contents irritate the eyes.",
+      refs: ["Atomoxetine dose increases are made no sooner than every 3 days."],
       sources: [STRATTERA],
       version: 2,
     }),

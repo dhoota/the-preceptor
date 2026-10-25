@@ -1,11 +1,12 @@
 import type { Item } from "@/engine/types";
-import { DISINFECTION, ENDO_POLICY, FOOD_CODE, HEPA_ACIP, LEG_CLIN, LEG_WATER, SIEGEL, ST79, TABLAN, meta } from "./common";
+import { AORN_CLEAN, CIG_HEPA, DISINFECTION, ENDO_POLICY, FOOD_CODE, HEPA_ACIP, LEG_CLIN, LEG_WATER, NS_HEPA, SIEGEL, TABLAN, meta } from "./common";
 
 export const PART2: Item[] = [
   {
     ...meta("rn-s31-11", {
       need: "SIPC",
       topic: "Hepatitis A prophylaxis for a roommate",
+      canada: "The Canadian Immunization Guide gives hepatitis A vaccine for prophylaxis from 6 months of age, preferably within 14 days. Immune globulin is used for infants under 6 months and is added to vaccine for immunocompromised contacts.",
       cjmm: "generate",
       process: "clinical-judgment",
       difficulty: 3,
@@ -13,7 +14,7 @@ export const PART2: Item[] = [
       rationale:
         "The roommate is a close household contact of a person who was most infectious in the 2 weeks before jaundice began. A healthy unvaccinated adult of 33 receives one dose of hepatitis A vaccine as prophylaxis. It works when given as soon as possible within 2 weeks of the last exposure. Benefit after 2 weeks has not been shown. Immune globulin alone is kept for infants and people who cannot receive vaccine.",
       refs: ["Healthy persons aged 12 months to 40 years receive one dose of hepatitis A vaccine within 2 weeks of exposure. Infants under 12 months receive immune globulin."],
-      sources: [HEPA_ACIP],
+      sources: [HEPA_ACIP, CIG_HEPA],
     }),
     kind: "cloze",
     scoring: "dyad",
@@ -42,6 +43,7 @@ export const PART2: Item[] = [
     ...meta("rn-s31-12", {
       need: "SIPC",
       topic: "Public health response to a food handler with hepatitis A",
+      canada: "The Canadian Immunization Guide also recommends offering prophylaxis to susceptible coworkers of an infected food handler. Patron prophylaxis is decided by the local public health unit.",
       cjmm: "generate",
       process: "nursing-process",
       difficulty: 4,
@@ -49,7 +51,7 @@ export const PART2: Item[] = [
       rationale:
         "The worker prepares food that is not cooked again, so exclusion from food handling is required. Unvaccinated household contacts are offered vaccine within 2 weeks of exposure. Illness dates and duties show how long the worker was infectious and who was exposed. Hand washing after toilet use breaks fecal-oral spread among staff. Patron spread is rare, and prophylaxis after 2 weeks has no shown benefit. Immune globulin does not treat an established infection.",
       refs: ["Hepatitis A prophylaxis has shown benefit only when given within 2 weeks of exposure. Peak spread is in the 2 weeks before jaundice."],
-      sources: [HEPA_ACIP, FOOD_CODE],
+      sources: [HEPA_ACIP, FOOD_CODE, CIG_HEPA],
     }),
     kind: "sata",
     options: [
@@ -67,6 +69,7 @@ export const PART2: Item[] = [
     ...meta("rn-s31-13", {
       need: "SIPC",
       topic: "Food worker return after hepatitis A",
+      canada: "The FDA Food Code is a US model code. In Canada, food handler exclusion follows provincial public health rules and varies by province. Nova Scotia, for example, excludes a jaundiced food handler until one week after jaundice began.",
       cjmm: "evaluate",
       process: "teaching",
       difficulty: 3,
@@ -74,7 +77,7 @@ export const PART2: Item[] = [
       rationale:
         "The Food Code reinstates a worker excluded for hepatitis A only with approval of the regulatory authority. The worker must also have been jaundiced for more than 7 days, or have had other symptoms for more than 14 days, or have medical proof of being free of infection. Most people stop being infectious about a week after jaundice begins. Feeling better, a return of appetite and gloves do not meet the rule.",
       refs: ["Reinstatement needs regulatory approval plus jaundice for more than 7 days, other symptoms for more than 14 days, or medical documentation."],
-      sources: [FOOD_CODE, HEPA_ACIP],
+      sources: [FOOD_CODE, HEPA_ACIP, NS_HEPA],
     }),
     kind: "mc",
     options: [
@@ -230,17 +233,18 @@ export const PART2: Item[] = [
     ...meta("rn-s31-19", {
       need: "SIPC",
       topic: "Holding used instruments before transport",
+      version: 2,
       cjmm: "action",
       process: "nursing-process",
       difficulty: 2,
       stem: "A minor surgical procedure in a clinic has ended. The used instruments will not reach the sterile processing department for 3 hours. What should the nurse do with the instruments?",
       rationale:
-        "Blood and tissue that dry on instruments are hard to remove and let biofilm form. Cleaning must succeed before sterilization can work. An enzymatic foam or gel keeps soil moist until cleaning. The instruments then travel in a closed, labeled container. Saline corrodes and pits stainless steel. Open basins of liquid spill during transport.",
-      sources: [ST79, DISINFECTION],
+        "Blood and tissue that dry on instruments are hard to remove and let biofilm form. Cleaning must succeed before sterilization can work. Instruments are kept moist so soil does not dry before cleaning. An enzymatic foam or gel does this without a pool of liquid. Saline is corrosive and can pit and rust instruments. Open basins of liquid spill during transport.",
+      sources: [DISINFECTION, AORN_CLEAN],
     }),
     kind: "mc",
     options: [
-      { text: "Rinse them in 0.9% sodium chloride", why: "Saline corrodes and pits stainless steel instruments." },
+      { text: "Rinse them in 0.9% sodium chloride", why: "Saline is corrosive and can rust and pit instrument surfaces." },
       { text: "Let them air dry on the tray", why: "Dried blood and tissue are harder to remove and allow biofilm to form." },
       { text: "Soak them in an open basin of water", why: "Open containers of liquid spill and splash during transport." },
       { text: "Spray them with an enzymatic foam", why: "An enzymatic product keeps soil moist and starts breaking it down until cleaning." },

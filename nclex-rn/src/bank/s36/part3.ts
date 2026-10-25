@@ -1,5 +1,5 @@
 import type { Item } from "@/engine/types";
-import { AABB, ASCITES, BTS_BRONCH, BTS_PROCEDURES, CEFTRIAXONE, HINKLE, LAST, PAGANA, POSTOP_PAIN, PROPPR, TACO, VANCO_PORT, meta } from "./common";
+import { AABB, ASCITES, BTS_BRONCH, BTS_PROCEDURES, CEFTRIAXONE, HINKLE, LAST, PAGANA, POSTOP_PAIN, PROPPR, TACO, VANCO_PORT, CBS_COMPONENTS, meta } from "./common";
 
 export const PART3: Item[] = [
   {
@@ -25,6 +25,7 @@ export const PART3: Item[] = [
   },
   {
     ...meta("rn-s36-22", {
+      canada: "Canadian labs report vancomycin in mg/L, the same number as mcg/mL. Creatinine is reported only in micromol/L, so it reads 80 micromol/L.",
       need: "RRP",
       topic: "Vancomycin level drawn from the infusion lumen",
       cjmm: "analyze",
@@ -184,6 +185,7 @@ export const PART3: Item[] = [
   },
   {
     ...meta("rn-s36-28", {
+      canada: "Canadian labs report glucose only in mmol/L, so the result reads 5.8 mmol/L.",
       need: "RRP",
       topic: "Topical lidocaine excess after bronchoscopy",
       cjmm: "recognize",
@@ -206,6 +208,7 @@ export const PART3: Item[] = [
   },
   {
     ...meta("rn-s36-29", {
+      canada: "In Canada, plasma is supplied as frozen plasma by Canadian Blood Services. Its Clinical Guide to Transfusion gives a usual dose of 10 to 15 mL/kg.",
       need: "PPT",
       topic: "Weight-based plasma volume and overload risk",
       cjmm: "generate",
@@ -215,7 +218,7 @@ export const PART3: Item[] = [
       rationale:
         "15 mL/kg for a client who weighs 70 kg is 1050 mL. That is a large volume to give over a short time. Plasma can cause transfusion-associated circulatory overload, so the nurse checks breath sounds, BP and SpO2 during and after the transfusion. Plasma must be ABO compatible with the client's red cells. Rh matching is not required.",
       calc: { expr: "15 * 70", answer: 1050, unit: "mL", round: 0, steps: ["15 * 70 = 1050"] },
-      sources: [AABB, TACO],
+      sources: [AABB, TACO, CBS_COMPONENTS],
     }),
     kind: "mc",
     options: [

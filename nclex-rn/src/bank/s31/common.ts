@@ -61,6 +61,7 @@ export const LEWINSOHN: Source = {
   body: "Lewinsohn DM, Leonard MK, LoBue PA, et al. American Thoracic Society, Infectious Diseases Society of America and CDC",
   work: "Official ATS/IDSA/CDC Clinical Practice Guidelines: Diagnosis of Tuberculosis in Adults and Children. Clinical Infectious Diseases 64(2):111",
   year: 2017,
+  url: "https://pmc.ncbi.nlm.nih.gov/articles/PMC5504475/",
 };
 export const HEPA_ACIP: Source = {
   body: "Nelson NP, Weng MK, Hofmeister MG, et al. Advisory Committee on Immunization Practices",
@@ -104,15 +105,11 @@ export const DISINFECTION: Source = {
   year: 2008,
   url: "https://www.cdc.gov/infection-control/hcp/disinfection-sterilization/sterilizing-practices.html",
 };
-export const ST79: Source = {
-  body: "Association for the Advancement of Medical Instrumentation",
-  work: "ANSI/AAMI ST79: Comprehensive Guide to Steam Sterilization and Sterility Assurance in Health Care Facilities",
-  year: 2017,
-};
 export const ISPD: Source = {
   body: "Chow KM, Li PKT, Cho Y, et al. International Society for Peritoneal Dialysis",
   work: "ISPD Catheter-related Infection Recommendations: 2023 Update. Peritoneal Dialysis International 43(3):201",
   year: 2023,
+  url: "https://doi.org/10.1177/08968608231172740",
 };
 export const PD_CARD: Source = {
   body: "Fresenius Medical Care",
@@ -132,7 +129,12 @@ export const IDC: Source = {
   year: 2005,
   url: "https://ismpcanada.ca/wp-content/uploads/ISMPCSB2005-01.pdf",
 };
-export const ISMP_HIGH: Source = { body: "Institute for Safe Medication Practices", work: "ISMP List of High-Alert Medications in Acute Care Settings", year: 2024 };
+export const ISMP_HIGH: Source = {
+  body: "Institute for Safe Medication Practices",
+  work: "ISMP List of High-Alert Medications in Acute Care Settings",
+  year: 2024,
+  url: "https://home.ecri.org/blogs/ismp-resources/high-alert-medications-in-acute-care-settings",
+};
 export const ISMP_PUMP: Source = {
   body: "Institute for Safe Medication Practices",
   work: "Guidelines for Optimizing Safe Implementation and Use of Smart Infusion Pumps",
@@ -145,26 +147,12 @@ export const TALL_MAN: Source = {
   year: 2026,
   url: "https://www.fda.gov/drugs/medication-errors-related-cder-regulated-drug-products/fda-name-differentiation-project",
 };
-export const CDC_OPIOID: Source = {
-  body: "Dowell D, Ragan KR, Jones CM, Baldwin GT, Chou R. Centers for Disease Control and Prevention",
-  work: "CDC Clinical Practice Guideline for Prescribing Opioids for Pain, United States. MMWR Recommendations and Reports 71(3)",
-  year: 2022,
-};
-export const POTTER: Source = {
-  body: "Potter PA, Perry AG, Stockert PA, Hall AM",
-  work: "Fundamentals of Nursing, 11th edition",
-  year: 2023,
-  url: "https://shop.elsevier.com/books/fundamentals-of-nursing/potter/978-0-323-81034-0",
-};
-export const HINKLE: Source = { body: "Hinkle JL, Cheever KH, Overbaugh KJ", work: "Brunner and Suddarth's Textbook of Medical-Surgical Nursing, 15th edition", year: 2022 };
 export const HOCKENBERRY: Source = {
   body: "Hockenberry MJ, Duffy EA, Gibbs KD",
   work: "Wong's Nursing Care of Infants and Children, 12th edition",
   year: 2024,
   url: "https://www.us.elsevierhealth.com/wongs-nursing-care-of-infants-and-children-9780323776707.html",
 };
-export const NFPA99: Source = { body: "National Fire Protection Association", work: "NFPA 99: Health Care Facilities Code", year: 2021 };
-export const NFPA101: Source = { body: "National Fire Protection Association", work: "NFPA 101: Life Safety Code", year: 2021 };
 export const FDA_HOME: Source = {
   body: "US Food and Drug Administration, Center for Devices and Radiological Health",
   work: "Home Healthcare Medical Devices: A Checklist",
@@ -179,7 +167,7 @@ export const FDA_HOME_ENV: Source = {
 };
 export const CPSC_CRIB: Source = {
   body: "US Consumer Product Safety Commission",
-  work: "Safety Standard for Full-Size Baby Cribs, 16 CFR Part 1219 (75 FR 81786)",
+  work: "Safety Standard for Full-Size Baby Cribs, 16 CFR Part 1219 (75 FR 81766)",
   year: 2010,
   url: "https://www.ecfr.gov/current/title-16/chapter-II/subchapter-B/part-1219",
 };
@@ -187,25 +175,107 @@ export const HUMPTY: Source = {
   body: "Hill-Rodriguez D, Messmer PR, Williams PD, et al.",
   work: "The Humpty Dumpty Falls Scale: A Case-Control Study. Journal for Specialists in Pediatric Nursing 14(1):22",
   year: 2009,
+  url: "https://doi.org/10.1111/j.1744-6155.2008.00166.x",
 };
 export const NATA_HEAT: Source = {
   body: "Casa DJ, DeMartini JK, Bergeron MF, et al. National Athletic Trainers' Association",
   work: "National Athletic Trainers' Association Position Statement: Exertional Heat Illnesses. Journal of Athletic Training 50(9):986",
   year: 2015,
-};
-export const ACSM_HEAT: Source = {
-  body: "Roberts WO, Armstrong LE, Sawka MN, Yeargin SW, Heled Y, O'Connor FG. American College of Sports Medicine",
-  work: "ACSM Expert Consensus Statement on Exertional Heat Illness: Recognition, Management, and Return to Activity. Current Sports Medicine Reports 20(9):470",
-  year: 2021,
+  url: "https://pmc.ncbi.nlm.nih.gov/articles/PMC4639891/",
 };
 export const WMS_EAH: Source = {
   body: "Bennett BL, Hew-Butler T, Rosner MH, Myers T, Lipman GS. Wilderness Medical Society",
   work: "Wilderness Medical Society Clinical Practice Guidelines for the Management of Exercise-Associated Hyponatremia: 2019 Update. Wilderness and Environmental Medicine 31(1):50",
   year: 2020,
+  url: "https://pubmed.ncbi.nlm.nih.gov/32044213/",
 };
 export const SMALLPOX: Source = {
   body: "Centers for Disease Control and Prevention",
   work: "Clinical Signs and Symptoms of Smallpox",
   year: 2024,
   url: "https://www.cdc.gov/smallpox/hcp/clinical-signs/index.html",
+};
+export const SMALLPOX_EVAL: Source = {
+  body: "Centers for Disease Control and Prevention",
+  work: "Evaluating Patients for Smallpox: Acute, Generalized Vesicular or Pustular Rash Illness Protocol",
+  year: 2024,
+  url: "https://www.cdc.gov/smallpox/hcp/diagnosis-testing/evaluating-patients-rash-illness-protocol.html",
+};
+export const AORN_CLEAN: Source = {
+  body: "Association of periOperative Registered Nurses",
+  work: "Clinical FAQs: Instrument Cleaning",
+  year: 2014,
+  url: "https://qsep.cms.gov/data/2501/InstrumentCleaning_AssociationofperiOperativeRegisteredNurses.pdf",
+};
+export const PA_OPIOID: Source = {
+  body: "Grissinger M. Pennsylvania Patient Safety Authority",
+  work: "Decline in Serious Events and Wrong-Drug Reports Involving Opioids in Pennsylvania Facilities. Pennsylvania Patient Safety Advisory 13(1):29",
+  year: 2016,
+  url: "https://patientsafety.pa.gov/ADVISORIES/Pages/201603_29.aspx",
+};
+export const WHO_LASA: Source = {
+  body: "WHO Collaborating Centre for Patient Safety Solutions",
+  work: "Look-Alike, Sound-Alike Medication Names. Patient Safety Solutions, Volume 1, Solution 1",
+  year: 2007,
+  url: "https://cdn.who.int/media/docs/default-source/patient-safety/patient-safety-solutions/ps-solution1-look-alike-sound-alike-medication-names.pdf",
+};
+export const BOC_GAS: Source = {
+  body: "BOC Limited (Linde)",
+  work: "Handle Medical Gases Safely: Gases Safety Pocket Guide (HCD186)",
+  year: 2017,
+  url: "https://static.prd.echannel.linde.com/wcsstore/AU_BOC_Industrial_Store/pdf/en_AU/HCD186_Gases%20safety%20pocket%20guide_V3_FA_web_tcm350-131320.pdf",
+};
+export const AIRLIQUIDE: Source = {
+  body: "Air Liquide Healthcare Canada",
+  work: "Cylinder Safety Basics",
+  year: 2026,
+  url: "https://ca.healthcare.airliquide.com/academy/cylinder-safety-basics",
+};
+export const TABLO: Source = {
+  body: "Outset Medical",
+  work: "Tablo Hemodialysis System: Indications for Use and Important Safety Information",
+  year: 2026,
+  url: "https://www.outsetmedical.com/indications/",
+};
+export const CPSC_TIPS: Source = {
+  body: "US Consumer Product Safety Commission",
+  work: "Crib Safety Tips",
+  year: 2026,
+  url: "https://www.cpsc.gov/safety-education/safety-guides/cribs/crib-safety-tips",
+};
+export const ICU_EVAC: Source = {
+  body: "King MA, Niven AS, Beninati W, et al. Task Force for Mass Critical Care",
+  work: "Evacuation of the ICU: Care of the Critically Ill and Injured During Pandemics and Disasters: CHEST Consensus Statement. Chest 146(4 Suppl):e44S",
+  year: 2014,
+  url: "https://pmc.ncbi.nlm.nih.gov/articles/PMC4504249/",
+};
+export const MDH_FIRE: Source = {
+  body: "Minnesota Department of Health, Engineering Services",
+  work: "Fire Safety and Evacuation Plan: Template for Health Care Facilities",
+  year: 2017,
+  url: "https://www.health.state.mn.us/facilities/regulation/engineering/docs/lscsafetyplan.docx",
+};
+export const CTS_LTBI: Source = {
+  body: "Campbell JR, Pease C, Daley P, Pai M, Menzies D. Canadian Thoracic Society and Public Health Agency of Canada",
+  work: "Canadian Tuberculosis Standards, 8th edition, Chapter 4: Diagnosis of Tuberculosis Infection",
+  year: 2022,
+  url: "https://www.canada.ca/en/public-health/services/diseases/tuberculosis/health-professionals/canadian-tuberculosis-standards/diagnosis-tuberculosis-infection.html",
+};
+export const CIG_HEPA: Source = {
+  body: "Public Health Agency of Canada. National Advisory Committee on Immunization",
+  work: "Canadian Immunization Guide, Part 4: Hepatitis A Vaccine",
+  year: 2021,
+  url: "https://www.canada.ca/en/public-health/services/publications/healthy-living/canadian-immunization-guide-part-4-active-vaccines/page-6-hepatitis-a-vaccine.html",
+};
+export const NS_HEPA: Source = {
+  body: "Nova Scotia Department of Health and Wellness",
+  work: "Communicable Disease Manual: Hepatitis A",
+  year: 2016,
+  url: "https://novascotia.ca/dhw/cdpc/cdc/documents/Hepatitis-A.pdf",
+};
+export const HC_CRIB: Source = {
+  body: "Government of Canada",
+  work: "Cribs, Cradles and Bassinets Regulations, SOR/2016-152",
+  year: 2016,
+  url: "https://laws-lois.justice.gc.ca/eng/regulations/SOR-2016-152/FullText.html",
 };

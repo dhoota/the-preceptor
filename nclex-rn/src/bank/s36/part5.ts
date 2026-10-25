@@ -1,5 +1,5 @@
 import type { Item } from "@/engine/types";
-import { ACR_CONTRAST, ANTICOAG, BOWEL_PREP, BTS_PLEURAL, DI, HINKLE, HRS_MRI, HYPONATREMIA, PAGANA, REFEED, SEPSIS_2021, meta } from "./common";
+import { ACR_CONTRAST, ANTICOAG, BOWEL_PREP, BTS_PLEURAL, DI, HINKLE, HRS_MRI, HYPONATREMIA, PAGANA, REFEED, SSC_2026, meta } from "./common";
 
 export const PART5: Item[] = [
   {
@@ -92,6 +92,7 @@ export const PART5: Item[] = [
     ],
     correct: [1, 3, 5],
   },
+  // PULL (s36 review): duplicates rn-c06-4-2 (urine osmolality with low sodium on day 6 after transsphenoidal surgery) and rn-s22-33 (SIADH findings).
   {
     ...meta("rn-s36-45", {
       need: "RRP",
@@ -119,6 +120,7 @@ export const PART5: Item[] = [
   },
   {
     ...meta("rn-s36-46", {
+      canada: "Canadian labs report sodium and glucose only in mmol/L, so the results read 149 mmol/L and 6.0 mmol/L.",
       need: "RRP",
       topic: "Rising sodium and dilute urine after pituitary surgery",
       cjmm: "generate",
@@ -155,42 +157,44 @@ export const PART5: Item[] = [
   {
     ...meta("rn-s36-47", {
       need: "RRP",
-      topic: "Lactate trend during septic shock resuscitation",
+      topic: "Perfusion markers in an older adult with septic shock",
       cjmm: "evaluate",
       process: "clinical-judgment",
       difficulty: 4,
+      version: 2,
       trend: true,
-      stem: "A 72-year-old client with septic shock from a urinary source received IV fluids and antibiotics starting at 1000. The nurse reviews the flow sheet. Based on the trend, which conclusion about the response to treatment is most accurate?",
+      stem: "A 72-year-old client with septic shock from a urinary source received IV fluids and antibiotics starting at 1000. Norepinephrine is titrated to the prescribed mean arterial pressure range of 60 to 65 mmHg. The nurse reviews the flow sheet. Based on the trend, which conclusion is most accurate?",
       tabs: [
         {
           title: "Flow Sheet",
           table: {
             head: ["Time", "1000", "1200", "1400"],
             rows: [
-              ["Serum lactate (mmol/L)", "4.6", "3.1", "1.8"],
-              ["Mean arterial pressure (mmHg)", "58", "64", "70"],
-              ["Heart rate (/minute)", "124", "108", "96"],
+              ["Serum lactate (mmol/L)", "4.6", "3.4", "2.4"],
+              ["Mean arterial pressure (mmHg)", "54", "60", "63"],
+              ["Capillary refill time (seconds)", "5", "3", "2"],
               ["Urine output (mL/hour)", "10", "25", "40"],
             ],
           },
         },
       ],
       rationale:
-        "Lactate falls from 4.6 to 1.8 mmol/L between 1000 and 1400. Over the same time the mean arterial pressure rises from 58 to 70 mmHg, the heart rate slows from 124 to 96/minute and urine output rises from 10 to 40 mL/hour. Together these show better tissue perfusion. Sepsis guidance supports using a falling lactate and a mean arterial pressure of 65 mmHg or more to guide resuscitation.",
-      refs: ["Resuscitation in septic shock targets a mean arterial pressure of 65 mmHg or more."],
-      sources: [SEPSIS_2021],
+        "Lactate falls from 4.6 to 2.4 mmol/L between 1000 and 1400. Capillary refill shortens from 5 to 2 seconds, and urine output rises from 10 to 40 mL/hour. Together these show better tissue perfusion. A mean arterial pressure of 63 mmHg sits within the prescribed range of 60 to 65 mmHg. Sepsis guidance suggests that range for clients 65 or older. It also advises tailoring fluids after the first bolus rather than giving fluid until lactate is normal.",
+      refs: ["Sepsis guidance suggests a mean arterial pressure range of 60 to 65 mmHg for adults 65 or older with septic shock."],
+      sources: [SSC_2026],
     }),
     kind: "mc",
     options: [
-      { text: "Septic shock is worsening", why: "Every value is moving toward normal, which does not fit worsening shock." },
-      { text: "Fluid overload is developing", why: "Overload would bring breathlessness and falling oxygenation, not rising urine output with clearing lactate." },
-      { text: "Hypoperfusion persists despite treatment", why: "A lactate of 1.8 mmol/L and a mean arterial pressure of 70 mmHg show perfusion has improved." },
-      { text: "Tissue perfusion is improving", why: "Falling lactate and heart rate with rising pressure and urine output show better perfusion." },
+      { text: "Septic shock is worsening", why: "Lactate, capillary refill and urine output are all moving toward normal, which does not fit worsening shock." },
+      { text: "Fluids must continue until the lactate is normal", why: "Guidance advises tailoring fluids after the first bolus rather than giving fluid until lactate normalizes." },
+      { text: "Hypoperfusion persists despite treatment", why: "A mean arterial pressure of 63 mmHg is within the prescribed range of 60 to 65 mmHg, and the other markers show better perfusion." },
+      { text: "Tissue perfusion is improving", why: "Falling lactate, faster capillary refill and rising urine output show better perfusion." },
     ],
     correct: 3,
   },
   {
     ...meta("rn-s36-48", {
+      canada: "Canadian labs report protein only in g/L, so the results read 42 g/L and 60 g/L. The ratio is the same.",
       need: "RRP",
       topic: "Pleural fluid protein ratio",
       cjmm: "analyze",

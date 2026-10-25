@@ -125,7 +125,7 @@ export const PART5: Item[] = [
         },
       ],
       rationale:
-        "Adding 8.2 mL gives about 500 000 units in each mL. Dividing 2 000 000 units by 500 000 units/mL gives 4 mL. Each diluent volume in the table makes a different strength, so the nurse reads the row that matches the volume actually added. The vial is labeled with the strength, date and time once mixed.",
+        "Adding 8.2 mL gives about 500 000 units in each mL. Dividing 2 000 000 units by 500 000 units/mL gives 4 mL. Each diluent volume in the table makes a different strength, so the nurse reads the row that matches the volume added. The vial is labeled with the strength, date and time once mixed.",
       calc: { expr: "2000000 / 500000", answer: 4, unit: "mL", round: 0, steps: ["2000000 / 500000 = 4"] },
       sources: [PFIZERPEN],
       version: 2,

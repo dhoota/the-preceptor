@@ -1,5 +1,5 @@
 import type { Item } from "@/engine/types";
-import { AABB, ANTICOAG, ASCITES, DOPAMINE, HINKLE, INS, LAST, RADIAL, SALICYLATE, TEE, UDMI, VESICANT, VINCRISTINE, meta } from "./common";
+import { AABB, ANTICOAG, ASCITES, DOPAMINE, HINKLE, INS, LAST, RADIAL, SALICYLATE, TEE, UDMI, VESICANT, VINCRISTINE, CBS_ALBUMIN, meta } from "./common";
 
 export const PART1: Item[] = [
   {
@@ -28,6 +28,7 @@ export const PART1: Item[] = [
   },
   {
     ...meta("rn-s36-02", {
+      canada: "Canadian labs report bicarbonate and the anion gap only in mmol/L, with the same numbers as mEq/L.",
       need: "RRP",
       topic: "Blood gas after an aspirin overdose",
       cjmm: "analyze",
@@ -93,6 +94,7 @@ export const PART1: Item[] = [
   },
   {
     ...meta("rn-s36-05", {
+      canada: "In Canada, albumin is available through Canadian Blood Services. Its Clinical Guide to Transfusion gives the same 25% albumin dose of 6 to 8 g per litre removed after paracentesis of more than 5 L.",
       need: "PPT",
       topic: "Albumin volume after ascites drainage",
       cjmm: "action",
@@ -102,7 +104,7 @@ export const PART1: Item[] = [
       rationale:
         "The dose is 8 g for each of the 6 L removed, which is 48 g. Albumin 25% holds 25 g in each 100 mL, so 48 g needs 192 mL. Albumin after a large-volume paracentesis helps prevent circulatory dysfunction and kidney injury as fluid shifts back into the abdomen. Mixing up grams and millilitres is the common error.",
       calc: { expr: "6 * 8 / 25 * 100", answer: 192, unit: "mL", round: 0, steps: ["6 * 8 = 48", "48 / 25 * 100 = 192"] },
-      sources: [ASCITES],
+      sources: [ASCITES, CBS_ALBUMIN],
     }),
     kind: "mc",
     options: [

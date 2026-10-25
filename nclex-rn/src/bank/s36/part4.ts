@@ -1,5 +1,5 @@
 import type { Item } from "@/engine/types";
-import { AABB, ACR_CONTRAST, ASCITES, BOWEL_PREP, ERCP, HINKLE, HIZENTRA, HYLENEX, INS, ISMP_CA_EPIDURAL, ISMP_CA_EPIDURAL_IV, LIVER_BIOPSY, PAGANA, meta } from "./common";
+import { AABB, ACR_CONTRAST, ASCITES, BOWEL_PREP, ERCP, HINKLE, HIZENTRA, HYLENEX, INS, ISMP_CA_EPIDURAL, ISMP_CA_EPIDURAL_IV, LIVER_BIOPSY, PAGANA, CBS_COMPONENTS, meta } from "./common";
 
 export const PART4: Item[] = [
   {
@@ -185,6 +185,7 @@ export const PART4: Item[] = [
   },
   {
     ...meta("rn-s36-39", {
+      canada: "The Canadian Blood Services Clinical Guide to Transfusion notes that fibrinogen concentrate is increasingly used in place of cryoprecipitate to replace fibrinogen.",
       need: "PPT",
       topic: "Matching blood products to their uses",
       cjmm: "analyze",
@@ -193,7 +194,7 @@ export const PART4: Item[] = [
       stem: "The nurse prepares a teaching aid on blood components and plasma derivatives for new graduates. Drag the product that best matches each use.",
       rationale:
         "Cryoprecipitate is the concentrated source of fibrinogen. Plasma replaces many clotting factors at once, as in liver disease or massive bleeding. Albumin 25% expands plasma volume after a large-volume paracentesis. Platelets treat bleeding caused by severe thrombocytopenia. Packed red cells restore oxygen-carrying capacity and do not replace clotting factors. Crystalloids such as lactated Ringer's solution replace water and salt only.",
-      sources: [AABB, ASCITES],
+      sources: [AABB, ASCITES, CBS_COMPONENTS],
     }),
     kind: "dnd",
     scoring: "zero-one",
