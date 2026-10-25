@@ -24,6 +24,8 @@ House style: no em or en dashes, no semicolons, short sentences, no filler. Char
 
 ## App Store
 
+Every App Store localization carries the full description below, including the Terms of Use (EULA) and Privacy Policy lines. App Review guideline 3.1.2(c) requires the Terms of Use link in the metadata of an app that sells subscriptions.
+
 ### Name (30)
 Preceptor: NCLEX
 
@@ -64,6 +66,9 @@ Every item is original. None is taken from NCSBN material or any real exam. Cont
 Preceptor: NCLEX is an independent study tool. It is not affiliated with, sponsored or endorsed by NCSBN. NCLEX, NCLEX-RN and NCLEX-PN are registered trademarks of NCSBN. The app is for education only and is not nursing or medical advice. Scores do not predict exam results.
 
 Subscriptions: one plan renews every 6 months and one every 3 months. The store shows the price in your currency before you buy. Payment is charged to your store account. A subscription renews each period unless cancelled at least 24 hours before the period ends. Manage or cancel it in your store account settings.
+
+Terms of Use (EULA): https://thepreceptor.ca/terms
+Privacy Policy: https://thepreceptor.ca/privacy
 
 Support: nclex@thepreceptor.ca
 

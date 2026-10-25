@@ -219,6 +219,7 @@ workflows:
         bundle_identifier: com.preceptor.nclex
       vars:
         BUNDLE_ID: "com.preceptor.nclex"
+        APP_STORE_APPLE_ID: "6816532704"
     scripts:
       - *install
       - *test
@@ -228,8 +229,12 @@ workflows:
         script: npx cap sync ios
       - name: Install CocoaPods
         script: cd ios/App && pod install
-      - name: Set unique iOS build number
-        script: cd ios/App && agvtool new-version -all "$BUILD_NUMBER"
+      - name: Set the build number one above App Store Connect
+        script: |
+          LATEST=$(app-store-connect get-latest-build-number "$APP_STORE_APPLE_ID" 2>/dev/null || true)
+          if [ -n "$LATEST" ] && [ "$LATEST" -eq "$LATEST" ] 2>/dev/null && [ "$LATEST" -ge "$BUILD_NUMBER" ]; then BN=$((LATEST + 1)); else BN="$BUILD_NUMBER"; fi
+          echo "build number $BN"
+          cd ios/App && agvtool new-version -all "$BN"
       - name: Apply the App Store profile to the Xcode project
         script: xcode-project use-profiles
       - name: Build signed IPA

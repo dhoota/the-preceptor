@@ -44,4 +44,9 @@ describe("store listing", () => {
     expect(md).not.toMatch(/(US|CA)?\$\s?\d|\d+\.\d\d\b|\d+ ?(%|percent)\s*(off|less|cheaper|saving)|per month/i);
     expect(md).not.toMatch(/lifetime purchase|one time purchase|monthly subscription/i);
   });
+  it("links the Terms of Use (EULA) and the privacy policy in the description (App Review 3.1.2(c))", () => {
+    const desc = sections().find((s) => s.title === "Description")!.body;
+    expect(desc).toContain("Terms of Use (EULA): https://thepreceptor.ca/terms");
+    expect(desc).toContain("Privacy Policy: https://thepreceptor.ca/privacy");
+  });
 });
