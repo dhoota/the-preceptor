@@ -56,7 +56,7 @@ export const UMPIERREZ_HHS: Source = {
   body: "Umpierrez GE, Davis GM, ElSayed NA, et al. American Diabetes Association, European Association for the Study of Diabetes, Joint British Diabetes Societies, American Association of Clinical Endocrinology, Diabetes Technology Society",
   work: "Hyperglycemic Crises in Adults With Diabetes: A Consensus Report. Diabetes Care 47(8):1257",
   year: 2024,
-  url: "https://consultqd.clevelandclinic.org/hyperglycemic-crises-in-adults-the-2024-consensus-report",
+  url: "https://doi.org/10.2337/dci24-0032",
 };
 export const GOSAIN_HAEC: Source = {
   body: "Gosain A, Frykman PK, Cowles RA, et al. American Pediatric Surgical Association Hirschsprung Disease Interest Group",
@@ -194,4 +194,70 @@ export const SWEET_RDS: Source = {
   work: "European Consensus Guidelines on the Management of Respiratory Distress Syndrome: 2022 Update. Neonatology 120(1):3",
   year: 2023,
   url: "https://doi.org/10.1159/000528914",
+};
+export const SCHULZ_MENGER_2025: Source = {
+  body: "Schulz-Menger J, Collini V, et al. European Society of Cardiology",
+  work: "2025 ESC Guidelines for the Management of Myocarditis and Pericarditis. European Heart Journal 46(40):3952",
+  year: 2025,
+  url: "https://doi.org/10.1093/eurheartj/ehaf192",
+};
+export const NICE_MND: Source = {
+  body: "National Institute for Health and Care Excellence",
+  work: "Motor Neurone Disease: Assessment and Management. NICE Guideline NG42, updated July 2019",
+  year: 2019,
+  url: "https://www.nice.org.uk/guidance/ng42",
+};
+export const MASAC_257: Source = {
+  body: "National Hemophilia Foundation Medical and Scientific Advisory Council",
+  work: "MASAC Document 257: Guidelines for Emergency Department Management of Individuals With Hemophilia and Other Bleeding Disorders",
+  year: 2019,
+  url: "https://bleeding.org/healthcare-professionals/guidelines-on-care/masac-documents/masac-document-257-guidelines-for-emergency-department-management-of-individuals-with-hemophilia-and-other-bleeding-disorders",
+};
+export const CREON_LABEL: Source = {
+  body: "AbbVie Inc. US National Library of Medicine DailyMed",
+  work: "CREON (pancrelipase) Delayed-Release Capsules, Prescribing Information",
+  year: 2026,
+  url: "https://dailymed.nlm.nih.gov/dailymed/drugInfo.cfm?setid=073201aa-556d-4a70-918e-84e9616fd88d",
+};
+export const RCH_WASHOUT: Source = {
+  body: "The Royal Children's Hospital Melbourne",
+  work: "Nursing Guidelines: Bowel Washout Rectal",
+  year: 2023,
+  url: "https://www.rch.org.au/rchcpg/hospital_clinical_guideline_index/Bowel_Washout_Rectal/",
+};
+export const CHW_IRRIGATION: Source = {
+  body: "Children's Wisconsin",
+  work: "Rectal Irrigation at Home. Family Teaching Sheet",
+  year: 2023,
+  url: "https://childrenswi.org/teaching-sheet/surgery/rectal-irrigation-at-home",
+};
+export const MATTHAY_ARDS: Source = {
+  body: "Matthay MA, Arabi Y, Arroliga AC, et al.",
+  work: "A New Global Definition of Acute Respiratory Distress Syndrome. American Journal of Respiratory and Critical Care Medicine 209(1):37",
+  year: 2024,
+  url: "https://doi.org/10.1164/rccm.202303-0558WS",
+};
+export const AHA_DROWNING: Source = {
+  body: "Dezfulian C, McCallin TE, Bierens J, et al. American Heart Association and American Academy of Pediatrics",
+  work: "2024 Focused Update on Special Circumstances: Resuscitation Following Drowning. Circulation 150(23)",
+  year: 2024,
+  url: "https://doi.org/10.1161/CIR.0000000000001274",
+};
+export const MCC_LABS: Source = {
+  body: "Medical Council of Canada",
+  work: "Normal Lab Values",
+  year: 2020,
+  url: "https://mcc.ca/examinations-assessments/resources-to-help-with-exam-prep/normal-lab-values/",
+};
+export const CURRAN_SNAKE: Source = {
+  body: "Curran-Sills G, Kroeker J",
+  work: "Venomous Snakebites in Canada: A National Review of Patient Epidemiology and Antivenom Usage. Wilderness and Environmental Medicine 29(4):437",
+  year: 2018,
+  url: "https://doi.org/10.1016/j.wem.2018.06.005",
+};
+export const SOGC_HDP: Source = {
+  body: "Magee LA, Smith GN, Bloch C, et al. Society of Obstetricians and Gynaecologists of Canada",
+  work: "Guideline No. 426: Hypertensive Disorders of Pregnancy: Diagnosis, Prediction, Prevention, and Management. Journal of Obstetrics and Gynaecology Canada 44(5):547",
+  year: 2022,
+  url: "https://doi.org/10.1016/j.jogc.2022.03.002",
 };
