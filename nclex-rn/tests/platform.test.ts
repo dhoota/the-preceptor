@@ -344,6 +344,20 @@ describe("Codemagic", () => {
     expect(pbx).toMatch(/IPHONEOS_DEPLOYMENT_TARGET = 15\.0;/);
     expect(read("../android/app/build.gradle")).toContain("System.getenv('CM_KEYSTORE_PATH')");
   });
+
+  // GHSA-rvm3-566m-v7fv: the navigation guard let a frame load /_capacitor_http_interceptor_
+  // at the app origin. Fixed in 7.6.9 on 7.x and 8.5.1 on 8.5.x. The native code ships
+  // from the lockfile version, so that is what this checks.
+  it("ships a Capacitor native runtime with the interceptor fix, and no remote server", () => {
+    const lock = JSON.parse(read("../package-lock.json"));
+    for (const p of ["android", "ios", "core"]) {
+      const [maj, min, pat] = lock.packages[`node_modules/@capacitor/${p}`].version.split(".").map(Number);
+      const n = min * 1000 + pat;
+      const patched = maj === 7 ? n >= 6009 : maj === 8 ? n >= 5001 : maj > 8;
+      expect(patched, `@capacitor/${p} ${maj}.${min}.${pat}`).toBe(true);
+    }
+    expect(JSON.parse(read("../capacitor.config.json")).server).toBeUndefined();
+  });
 });
 
 
