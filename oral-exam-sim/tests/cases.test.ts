@@ -57,6 +57,9 @@ describe("case bank", () => {
       const thin = BLUEPRINT.filter((b) => CASES.filter((c) => c.blueprint === b.id).length < 5).map((b) => b.id);
       expect(thin).toEqual([]);
     });
+    it("releases only physician signed-off cases", () => {
+      expect(CASES.filter((c) => !c.reviewed).map((c) => c.id)).toEqual([]);
+    });
   }
 });
 

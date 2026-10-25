@@ -58,8 +58,8 @@ The App Store has no such wait. It needs only the `appl_` key pasted in (A4), a 
 **A1. Content sign-off.**
 - Open `docs/PHYSICIAN_REVIEW.md` and `docs/SAMP-TRIAGE.md`.
 - Decide the items in Part 1, and sign off or hold the new SAMPs.
-- The app can ship with new SAMPs still at `reviewed: false`. They show a Draft tag in the app.
-- **UNKNOWN:** whether you want Draft content visible at launch. If not, the unsigned SAMPs must be hidden first. That is a code change, so ask for it.
+- The app cannot ship with unsigned content. The launch gate (`LAUNCH_GATE=1`, run by every signed Codemagic workflow) fails on any SAMP or oral case at `reviewed: false`.
+- Content that is not signed off must be held back or left off the release branch before a build.
 
 **A2. Terms page.**
 - On thepreceptor.ca, update https://thepreceptor.ca/terms to cover:
