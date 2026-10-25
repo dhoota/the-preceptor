@@ -32,7 +32,7 @@ None.
 
 Each topic and teaching point was searched in `inventory.txt`, `cases.txt` and `new500.txt`. No item duplicates an existing teaching point. Closest neighbours:
 
-- rn-s32-40 and rn-c18-4-2. Both note that a measles dose before 12 months does not count. Item 40 tests the early travel dose from 6 months, which c18-4-2 does not teach.
+- rn-s32-40 and rn-c18-4-2. Both teach that a measles dose before 12 months does not count. Item 40 tests the early travel dose from 6 months, which c18-4-2 does not teach.
 - rn-s32-45 and rn-s09-34. The s09 item covers mammography, colorectal, bone density and lung screening at 66. It has no cervical content.
 - rn-s32-50 and rn-s27-44. The s27 item teaches storage around grandchildren. Item 50 teaches disposal.
 - rn-s32-01 and rn-s30-10 and 11. The s30 items test BRCA disclosure ethics. Item 01 tests family history referral criteria.

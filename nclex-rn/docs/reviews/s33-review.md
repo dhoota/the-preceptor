@@ -41,7 +41,7 @@ None.
 - Benzodiazepine guidance: the 2025 joint guideline says initial cuts of 5 to 10% every 2 to 4 weeks, typically not more than 25% every 2 weeks, and slow or pause if symptoms emerge. Items 19 and 20 match.
 - Cannabis withdrawal: onset 24 to 48 hours and peak at days 2 to 6 match Connor 2022. Item 21 is correct.
 - Kratom: the review abstract names mitragynine and 7-hydroxymitragynine as partial mu opioid agonists. It lists yawning, runny nose, tearing, aches and diarrhea as withdrawal signs. Items 23 and 24 match.
-- Slow breathing: Joseph 2022 found very low certainty evidence, with the larger effect in burn pain. Item 49 matches.
+- Slow breathing: Joseph 2022 rated the evidence as of the lowest certainty, with the larger effect in burn pain. Item 49 matches.
 - Music: Lee 2016 pooled 97 studies and found lower pain, distress and opioid intake. Item 47 matches.
 - Aromatherapy: NCI PDQ (updated 31 October 2024) notes allergic reactions after topical use, citrus phototoxicity and advice against large ingested amounts. Item 46 matches.
 - Numbers: taper percentages, the 6 week and 4 week separation anxiety threshold, the 18 month vocal tic span and 38.9°C to 102.0°F were recomputed by script.
