@@ -8,7 +8,11 @@ import {
   HOCKENBERRY,
   ISSELBACHER_AORTA,
   LEVI_DIC,
+  MASAC_257,
+  MATTHAY_ARDS,
+  MCC_LABS,
   NEUNERT_ITP,
+  SCHULZ_MENGER_2025,
   SIMON_FLAIL,
   WFH_HEMOPHILIA,
   meta,
@@ -18,6 +22,7 @@ export const PART3: Item[] = [
   {
     ...meta("rn-s38-21", {
       need: "PA",
+      version: 2,
       topic: "A bump on the head with a factor deficiency",
       cjmm: "action",
       process: "nursing-process",
@@ -25,7 +30,7 @@ export const PART3: Item[] = [
       stem: "A 6-year-old child with severe hemophilia A falls off a bike and bumps the forehead. The child has a small bruise, is alert and playing, and has no headache or vomiting. The family keeps factor VIII concentrate at home. The parent calls the clinic. Which instruction should the nurse give?",
       rationale:
         "A head injury in severe hemophilia can cause bleeding inside the skull. Signs may not appear for hours. Factor VIII is given at once, before symptoms and before any imaging, and the child is then assessed. Waiting for a headache loses time. Ibuprofen impairs platelet function. A scan should not delay factor replacement.",
-      sources: [WFH_HEMOPHILIA, HOCKENBERRY],
+      sources: [WFH_HEMOPHILIA, MASAC_257, HOCKENBERRY],
     }),
     kind: "mc",
     options: [
@@ -47,7 +52,8 @@ export const PART3: Item[] = [
       rationale:
         "A well child with petechiae and bruising 2 weeks after a viral illness fits immune thrombocytopenia. The platelet count of 14 000/mm3 is low, while the hemoglobin of 12.1 g/dL and white cell count of 7 800/mm3 are normal. Leukemia usually lowers more than one cell line and causes bone pain or swollen nodes. Hemophilia causes joint bleeds with a normal platelet count.",
       refs: ["Normal platelet count is 150 000 to 400 000/mm3."],
-      sources: [NEUNERT_ITP, HOCKENBERRY],
+      sources: [NEUNERT_ITP, HOCKENBERRY, MCC_LABS],
+      canada: "Canadian labs report cell counts as x 10^9/L only, so the platelets read 14 x 10^9/L and the white cells 7.8 x 10^9/L. The Medical Council of Canada lists platelets of 130 to 380 x 10^9/L as normal.",
     }),
     kind: "cloze",
     scoring: "dyad",
@@ -76,6 +82,7 @@ export const PART3: Item[] = [
   {
     ...meta("rn-s38-23", {
       need: "PA",
+      version: 2,
       topic: "Clotting factor consumption after heat stroke",
       cjmm: "analyze",
       process: "clinical-judgment",
@@ -98,17 +105,19 @@ export const PART3: Item[] = [
       ],
       rationale:
         "Heat stroke damages blood vessel linings and can trigger widespread clotting. From day 1 to day 2 the platelets fall from 210 000 to 46 000/mm3 and the fibrinogen from 310 to 95. The prothrombin time lengthens from 12.8 to 22.4 seconds. The D-dimer rises from 0.4 to 9.6, showing clot breakdown. Falling platelets and clotting factors with rising D-dimer fit disseminated intravascular coagulation.",
-      sources: [LEVI_DIC, EPSTEIN_HEAT],
+      sources: [LEVI_DIC, EPSTEIN_HEAT, MCC_LABS],
+      canada: "Canadian labs report platelets as x 10^9/L and fibrinogen in g/L only, so the day 2 values read 46 x 10^9/L and 0.95 g/L. Many labs report the prothrombin time with an INR.",
     }),
     kind: "mc",
     options: [
       { text: "Immune thrombocytopenia", why: "Immune thrombocytopenia lowers platelets alone. It does not lower fibrinogen or prolong the prothrombin time." },
       { text: "Vitamin K deficiency", why: "Vitamin K deficiency prolongs the prothrombin time but does not lower platelets or fibrinogen." },
-      { text: "Heparin-induced thrombocytopenia", why: "The client has received no heparin, and this disorder does not consume fibrinogen." },
+      { text: "Heparin-induced thrombocytopenia", why: "This disorder follows several days of heparin exposure and does not consume fibrinogen." },
       { text: "Disseminated intravascular coagulation", why: "Platelets and fibrinogen are being used up while clot breakdown products rise." },
     ],
     correct: 3,
   },
+  // PULL (s38 review): tests the same point as rn-s24-32, a bleeding precautions select all with the same rectal temperature, IM injection, soft mouth care and puncture pressure choices. A new setting is not a new point.
   {
     ...meta("rn-s38-24", {
       need: "PA",
@@ -154,6 +163,7 @@ export const PART3: Item[] = [
     ],
     correct: 1,
   },
+  // PULL (s38 review): near copy of rn-s23-13. Both have a 34-year-old with sharp chest pain after a viral illness that eases on leaning forward, with a friction rub at the left sternal border. A unique point needs a full rewrite.
   {
     ...meta("rn-s38-26", {
       need: "PA",
@@ -181,6 +191,7 @@ export const PART3: Item[] = [
   {
     ...meta("rn-s38-27", {
       need: "PA",
+      version: 2,
       topic: "Measuring the inspiratory fall in systolic pressure",
       cjmm: "analyze",
       process: "nursing-process",
@@ -190,11 +201,11 @@ export const PART3: Item[] = [
         "Pulsus paradoxus is the gap between the pressure where sounds are first heard in expiration only and where they are heard throughout the cycle. Here 124 - 104 = 20 mmHg. A fall of more than 10 mmHg is abnormal. With a known effusion, a fast heart rate and breathlessness, it points to cardiac tamponade. The primary health care provider is notified at once.",
       calc: { expr: "124 - 104", answer: 20, unit: "mmHg", round: 0, steps: ["124 - 104 = 20"] },
       refs: ["Pulsus paradoxus is an inspiratory fall in systolic pressure of more than 10 mmHg."],
-      sources: [ADLER_PERICARDIUM],
+      sources: [SCHULZ_MENGER_2025],
     }),
     kind: "mc",
     options: [
-      { text: "10 mmHg, a normal variation", why: "The gap is 20 mmHg, not 10 mmHg. A fall of 10 mmHg or less would be normal." },
+      { text: "10 mmHg, a normal variation", why: "The gap is 124 - 104 = 20 mmHg, not 10 mmHg." },
       { text: "20 mmHg, a sign of tamponade", why: "A gap of 20 mmHg is above 10 mmHg and fits tamponade with this effusion." },
       { text: "20 mmHg, a normal variation", why: "Any inspiratory fall above 10 mmHg is abnormal." },
       { text: "104 mmHg, a sign of hypotension", why: "104 mmHg is a systolic reading, not the pulsus paradoxus." },
@@ -204,6 +215,7 @@ export const PART3: Item[] = [
   {
     ...meta("rn-s38-28", {
       need: "PA",
+      version: 2,
       topic: "New bilateral infiltrates with a normal heart",
       cjmm: "analyze",
       process: "clinical-judgment",
@@ -211,7 +223,7 @@ export const PART3: Item[] = [
       stem: "A 48-year-old client is on day 2 of acute pancreatitis. Over 6 hours the respiratory rate rises to 34/minute and the SpO2 falls to 86% despite a nonrebreather mask. A chest x-ray shows new infiltrates in both lungs. An echocardiogram shows normal left ventricular function. Which condition is most likely?",
       rationale:
         "Acute respiratory distress syndrome develops soon after a known insult such as pancreatitis. It causes hypoxemia that oxygen does not correct and new infiltrates in both lungs. Normal left ventricular function shows the fluid is not from heart failure. A pneumothorax affects one side. An embolism seldom causes bilateral infiltrates.",
-      sources: [BERLIN_ARDS],
+      sources: [BERLIN_ARDS, MATTHAY_ARDS],
     }),
     kind: "mc",
     options: [

@@ -1,5 +1,5 @@
 import type { Item } from "@/engine/types";
-import { AABB, ASCITES, BTS_BRONCH, BTS_PLEURAL, CEFTRIAXONE, HINKLE, INS, LAST, PAGANA, POSTOP_PAIN, PROPPR, TACO, meta } from "./common";
+import { AABB, ASCITES, BTS_BRONCH, BTS_PROCEDURES, CEFTRIAXONE, HINKLE, LAST, PAGANA, POSTOP_PAIN, PROPPR, TACO, VANCO_PORT, meta } from "./common";
 
 export const PART3: Item[] = [
   {
@@ -30,10 +30,11 @@ export const PART3: Item[] = [
       cjmm: "analyze",
       process: "clinical-judgment",
       difficulty: 3,
+      version: 2,
       stem: "A client receives vancomycin 1250 mg IV every 12 hours through the red lumen of a double-lumen PICC. A trough level was drawn from the red lumen at 1945, before the 2000 dose. The result is 38 mcg/mL, up from 14 mcg/mL 2 days ago. Creatinine is unchanged at 0.9 mg/dL (80 micromol/L), and urine output is normal. Which explanation should the nurse consider first?",
       rationale:
-        "Vancomycin runs through the same lumen used for the sample. Drug left in the catheter can mix with the blood drawn and give a falsely high level. Creatinine is unchanged at 0.9 mg/dL and urine output is normal, so a jump from 14 to 38 mcg/mL is unlikely to be true accumulation. Infusion standards advise against drawing a drug level from the lumen that infuses that drug. The nurse requests a repeat sample by venipuncture before the dosing is changed.",
-      sources: [INS, PAGANA],
+        "Vancomycin runs through the same lumen used for the sample. Drug left in the catheter can mix with the blood drawn and give a falsely high level. Creatinine is unchanged at 0.9 mg/dL and urine output is normal, so a jump from 14 to 38 mcg/mL is unlikely to be true accumulation. Published cases show vancomycin levels drawn through the catheter used to give it can read several times higher than a peripheral sample. The nurse requests a repeat sample by venipuncture before the dosing is changed.",
+      sources: [VANCO_PORT, PAGANA],
     }),
     kind: "mc",
     options: [
@@ -72,10 +73,11 @@ export const PART3: Item[] = [
       cjmm: "action",
       process: "nursing-process",
       difficulty: 3,
+      version: 2,
       stem: "The nurse assists the primary health care provider with a bedside thoracentesis on the right side for a client with a large pleural effusion causing breathlessness. Which actions should the nurse take during the procedure? Select all that apply.",
       rationale:
         "Sitting upright and leaning forward over a table opens the spaces between the ribs and lets fluid settle at the base. Holding still without coughing as the needle enters lowers the risk of puncturing the lung. Chest tightness or a persistent cough during drainage can signal re-expansion pulmonary edema or a pneumothorax, so drainage stops and the provider is told. Large drainage volumes are limited for the same reason. A flat position moves fluid away from the site.",
-      sources: [BTS_PLEURAL, HINKLE],
+      sources: [BTS_PROCEDURES, HINKLE],
     }),
     kind: "sata",
     options: [
@@ -110,6 +112,7 @@ export const PART3: Item[] = [
     ],
     correct: 1,
   },
+  // PULL (s36 review): duplicates rn-s24-26, which already tests SBP signs with an ascitic neutrophil count above 250 cells/mm3, fever and tenderness.
   {
     ...meta("rn-s36-26", {
       need: "RRP",
@@ -186,7 +189,8 @@ export const PART3: Item[] = [
       cjmm: "recognize",
       process: "clinical-judgment",
       difficulty: 4,
-      stem: "A 64-year-old client who weighs 50 kg is 30 minutes after a flexible bronchoscopy. Topical lidocaine was sprayed into the airway in repeated doses during the 50-minute procedure. The client now reports numbness around the mouth and ringing in the ears and has twitching of the fingers. SpO2 is 95% on 2 L/minute of oxygen. Blood glucose is 104 mg/dL (5.8 mmol/L). Which complication should the nurse suspect?",
+      version: 2,
+      stem: "A 64-year-old client who weighs 50 kg is 30 minutes after a flexible bronchoscopy. Topical lidocaine was sprayed into the airway in repeated doses during the 50-minute procedure. The client now reports numbness around the mouth and ringing in the ears and has twitching of the fingers. The client denies chest pain. SpO2 is 95% on 2 L/minute of oxygen. Blood glucose is 104 mg/dL (5.8 mmol/L). Which complication should the nurse suspect?",
       rationale:
         "Topical lidocaine is absorbed through the airway lining. Repeated doses in a small adult can reach toxic blood levels. Numbness around the mouth, ringing in the ears and muscle twitching are early central nervous system signs. Seizures and heart rhythm problems can follow. Bronchoscopy guidance limits the total topical dose by body weight. The nurse gives no more lidocaine, stays with the client and notifies the provider.",
       sources: [BTS_BRONCH, LAST],

@@ -1,5 +1,5 @@
 import type { Item } from "@/engine/types";
-import { ACID_BASE, CACL, FUROSEMIDE, INS, INTRALIPID, KDOQI_VA, LANOXIN, MAGIC, NATRIURETIC, ONDANSETRON, PHENYTOIN, SEPSIS_2021, meta } from "./common";
+import { ACID_BASE, BC_RENAL_VEIN, CACL, FUROSEMIDE, INS, INTRALIPID, LANOXIN, MAGIC, NATRIURETIC, ONDANSETRON, PHENYTOIN, SSC_2026, meta } from "./common";
 
 export const PART2: Item[] = [
   {
@@ -54,10 +54,11 @@ export const PART2: Item[] = [
       cjmm: "generate",
       process: "clinical-judgment",
       difficulty: 4,
+      version: 2,
       stem: "A 71-year-old client with chronic kidney disease has an eGFR of 22 mL/minute/1.73 m2 and is expected to start hemodialysis within the year. The client needs 6 weeks of IV cefazolin at home for osteomyelitis. The team asks the nurse which venous access device to request. Which device should the nurse recommend?",
       rationale:
         "An eGFR of 22 places the client in stage 4 kidney disease with dialysis expected. The arm veins must be saved for a future fistula. Peripherally inserted central catheters and midlines can cause thrombosis and narrowing of the arm veins. For 6 weeks of therapy in advanced kidney disease, guidance favors a small-bore tunneled central catheter placed through the jugular vein. Repeated short peripheral catheters also damage arm veins.",
-      sources: [KDOQI_VA, MAGIC],
+      sources: [BC_RENAL_VEIN, MAGIC],
     }),
     kind: "mc",
     options: [
@@ -135,10 +136,11 @@ export const PART2: Item[] = [
       cjmm: "evaluate",
       process: "clinical-judgment",
       difficulty: 3,
+      version: 2,
       stem: "A 66-year-old client with community-acquired pneumonia and sepsis is on day 5 of IV ceftriaxone and azithromycin. The client has had no fever for 48 hours, eats well and is on room air. Procalcitonin was 6.2 ng/mL on admission and is 0.4 ng/mL today. The unit uses procalcitonin with clinical assessment to guide antibiotic length. Which conclusion is supported?",
       rationale:
         "Procalcitonin rises in bacterial infection and falls as the infection is controlled. A drop from 6.2 to 0.4 ng/mL, together with no fever for 48 hours, normal eating and room air, shows the infection is responding. Sepsis guidance supports using procalcitonin with clinical assessment to decide when to stop antibiotics. Stopping is a provider decision that the nurse can prompt with these data.",
-      sources: [SEPSIS_2021],
+      sources: [SSC_2026],
     }),
     kind: "mc",
     options: [

@@ -1,5 +1,5 @@
 import type { Item } from "@/engine/types";
-import { ABILIFY_MAINTENA, ACAMPROSATE, CHANTIX, KEYTRUDA, KRANTZ_2009, METHADONE, RIFAMPIN, SPRAVATO, STRATTERA, VIVITROL, VYVANSE, meta } from "./common";
+import { ABILIFY_MAINTENA, ACAMPROSATE, CHANTIX, HINKLE, KEYTRUDA, KRANTZ_2009, MCC_LABS, METHADONE, RIFAMPIN, SPRAVATO, STRATTERA, VIVITROL, VYVANSE, meta } from "./common";
 
 export const PART3: Item[] = [
   {
@@ -84,7 +84,8 @@ export const PART3: Item[] = [
       rationale:
         "Acamprosate is not metabolized and leaves the body through the kidneys. It is contraindicated when creatinine clearance is 30 mL/min or less. A clearance of 26 mL/min falls in that range. The label sets no dose change for mild to moderate liver impairment. A raised GGT and a large MCV are common with heavy drinking. A sodium of 138 mEq/L is normal.",
       refs: ["Acamprosate is contraindicated when creatinine clearance is 30 mL/min or less and needs a lower dose at 30 to 50 mL/min.", "Normal serum sodium is 135 to 145 mEq/L (135 to 145 mmol/L)."],
-      sources: [ACAMPROSATE],
+      sources: [ACAMPROSATE, HINKLE],
+      version: 2,
     }),
     kind: "mc",
     options: [
@@ -105,7 +106,8 @@ export const PART3: Item[] = [
       rationale:
         "Methadone blocks cardiac potassium channels and lengthens the QT interval. A QTc of 528 ms is above 500 ms, the level at which expert guidance advises reducing or stopping methadone. Furosemide has lowered the potassium to 3.1 mEq/L, which adds to the risk. Palpitations with lightheadedness may be brief runs of torsades de pointes. Pupils of 4 mm and respirations of 16/minute do not suggest opioid toxicity.",
       refs: ["A QTc above 500 ms on methadone calls for dose reduction or a change of treatment and correction of risk factors.", "Normal serum potassium is 3.5 to 5.0 mEq/L (3.5 to 5.0 mmol/L)."],
-      sources: [METHADONE, KRANTZ_2009],
+      sources: [METHADONE, KRANTZ_2009, MCC_LABS],
+      canada: "Canadian labs report potassium in mmol/L only, so it reads 3.1 mmol/L. The Medical Council of Canada range is 3.5 to 5.1 mmol/L, so the level is low on either range.",
     }),
     kind: "cloze",
     scoring: "triad",
@@ -194,12 +196,13 @@ export const PART3: Item[] = [
       difficulty: 2,
       stem: "The parent of a 9-year-old child with ADHD receives teaching about a new prescription for atomoxetine by mouth once daily. Which statement by the parent indicates a need for further teaching?",
       rationale:
-        "Atomoxetine is a nonstimulant taken every day. Its benefit builds over weeks, so it is not used only on school days. The boxed warning describes a rise in suicidal thinking in children, so the parent watches closely, mostly in the first month. Yellow skin or dark urine can signal liver injury. The capsules are swallowed whole because the contents irritate the eyes.",
+        "Atomoxetine is a nonstimulant taken every day. The dose is built up over at least 3 days to a daily target, so it is not saved for school days. The boxed warning describes a rise in suicidal thinking in children, so the parent watches closely, mostly in the first month. Yellow skin or dark urine can signal liver injury. The capsules are swallowed whole because the contents irritate the eyes.",
       sources: [STRATTERA],
+      version: 2,
     }),
     kind: "mc",
     options: [
-      { text: "\"It acts within an hour, so I will give it on school days only.\"", why: "The drug is given daily, and its effect builds over weeks. This statement needs correction." },
+      { text: "\"I will give it on school days only and skip weekends.\"", why: "The drug is taken every day at a dose built up over days. This statement needs correction." },
       { text: "\"I will watch for any talk of self-harm, mostly in the first month.\"", why: "Suicidal thinking rose in children taking atomoxetine, mostly early in treatment." },
       { text: "\"I will call if his skin or eyes turn yellow or his urine is dark.\"", why: "These are signs of liver injury, which is a labeled warning." },
       { text: "\"He will swallow the capsule whole without opening it.\"", why: "Capsule contents irritate the eyes, so capsules are not opened." },

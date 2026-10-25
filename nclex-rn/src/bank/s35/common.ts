@@ -93,4 +93,12 @@ export const PFIZERPEN: Source = { body: "Pfizer Laboratories", work: "PFIZERPEN
 export const DOBUTAMINE: Source = { body: "Hospira, Inc.", work: "Dobutamine in 5% dextrose injection, US prescribing information", year: 2026, url: dm("9943a961-3b50-4847-8a84-d8414ce38daa") };
 export const MILRINONE: Source = { body: "Hikma Pharmaceuticals USA Inc.", work: "Milrinone lactate in 5% dextrose injection, US prescribing information", year: 2025, url: dm("4c2f052b-7ba2-4122-a50b-37ef2a834d61") };
 export const MYXREDLIN: Source = { body: "Baxter Healthcare Corporation", work: "MYXREDLIN (insulin human in 0.9% sodium chloride) injection, US prescribing information", year: 2025, url: dm("afca6e80-a802-49fb-a978-5fe28a173001") };
+export const MCC_LABS: Source = { body: "Medical Council of Canada", work: "Normal lab values reference list", year: 2020, url: "https://mcc.ca/examinations-assessments/resources-to-help-with-exam-prep/normal-lab-values/" };
+export const DC_HYPER_2018: Source = {
+  body: "Goguen J, Gilbert J. Diabetes Canada Clinical Practice Guidelines Expert Committee",
+  work: "Hyperglycemic Emergencies in Adults. Canadian Journal of Diabetes 42(Suppl 1):S109",
+  year: 2018,
+  url: "https://www.diabetes.ca/for-professionals/full-guidelines/chapter-15",
+};
+export const YESCARTA_CA: Source = { body: "Gilead Sciences Canada, Inc.", work: "YESCARTA (axicabtagene ciloleucel) Product Monograph, Health Canada", year: 2024, url: "https://pdf.hres.ca/dpd_pm/00074215.PDF" };
 export const ISMP_HIGH: Source = { body: "Institute for Safe Medication Practices", work: "ISMP List of High-Alert Medications in Acute Care Settings", year: 2024, url: "https://home.ecri.org/blogs/ismp-resources/high-alert-medications-in-acute-care-settings" };

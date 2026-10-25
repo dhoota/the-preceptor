@@ -9,6 +9,7 @@ export const PART1: Item[] = [
       cjmm: "recognize",
       process: "nursing-process",
       difficulty: 3,
+      version: 2,
       stem: "During IV rounds on a medical unit, the nurse finds six peripheral sites where infusate has leaked into the surrounding tissue. Which leaks should the nurse document and manage as extravasation? Select all that apply.",
       rationale:
         "Extravasation is the leak of a vesicant into tissue. Infiltration is the leak of a nonvesicant solution. Calcium chloride, vincristine and dopamine can each cause blistering, sloughing or necrosis when they escape the vein. Each has its own label warning about tissue injury. Sodium chloride 0.9%, lactated Ringer's and cefazolin are not vesicants, so their leaks are infiltrations.",
@@ -19,7 +20,7 @@ export const PART1: Item[] = [
       { text: "Lactated Ringer's at 100 mL/hour", why: "An isotonic crystalloid is not a vesicant. Its leak is an infiltration." },
       { text: "Calcium chloride 10% IV", why: "Calcium chloride in tissue can cause necrosis and sloughing, so it is a vesicant." },
       { text: "Cefazolin 1 g in 100 mL", why: "Cefazolin is not classed as a vesicant. Its leak is an infiltration." },
-      { text: "Vincristine IV push", why: "Vincristine is a vesicant. Its leak causes marked tissue irritation and injury." },
+      { text: "Vincristine in a 50 mL minibag", why: "Vincristine is a vesicant. Its leak causes marked tissue irritation and injury." },
       { text: "Dopamine at 5 mcg/kg/minute", why: "Dopamine causes local ischemia and necrosis when it leaks, so it is a vesicant." },
       { text: "0.9% sodium chloride at 75 mL/hour", why: "Normal saline is not a vesicant. Its leak is an infiltration." },
     ],
@@ -54,7 +55,8 @@ export const PART1: Item[] = [
       cjmm: "action",
       process: "nursing-process",
       difficulty: 4,
-      stem: "A client with lymphoma receives vincristine by slow IV push through a peripheral catheter in the right forearm. Midway through the dose the client reports burning at the site, and the nurse sees swelling above the catheter tip. The nurse stops the injection and aspirates from the catheter. Which measure should the nurse prepare to apply next?",
+      version: 2,
+      stem: "A client with lymphoma receives vincristine diluted in a minibag through a peripheral catheter in the right forearm. Midway through the infusion the client reports burning at the site, and the nurse sees swelling above the catheter tip. The nurse stops the infusion and aspirates from the catheter. Which measure should the nurse prepare to apply next?",
       rationale:
         "Vincristine is a vinca alkaloid and a vesicant. Its label advises local hyaluronidase and moderate heat at the site of leakage. Both help disperse the drug and are thought to limit discomfort and cellulitis. Any remaining dose is given into another vein. Cold and dexrazoxane are used for anthracycline leaks such as doxorubicin. Phentolamine is the antidote for vasopressor leaks.",
       sources: [VINCRISTINE, INS],

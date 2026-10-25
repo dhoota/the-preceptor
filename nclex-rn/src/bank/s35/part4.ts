@@ -1,5 +1,5 @@
 import type { Item } from "@/engine/types";
-import { AMBISOME, AMPHO_B, CDC_FLU_AV, ETHAMBUTOL, HINKLE, HUMIRA, ISONIAZID, TAMIFLU, VALTREX, VANCOMYCIN, YESCARTA, ZIAGEN, meta } from "./common";
+import { AMBISOME, AMPHO_B, CDC_FLU_AV, ETHAMBUTOL, HINKLE, HUMIRA, ISONIAZID, MCC_LABS, TAMIFLU, VALTREX, VANCOMYCIN, YESCARTA, ZIAGEN, meta } from "./common";
 
 export const PART4: Item[] = [
   {
@@ -34,8 +34,9 @@ export const PART4: Item[] = [
       difficulty: 4,
       stem: "A 61-year-old client with large B-cell lymphoma received axicabtagene ciloleucel 3 days ago. Temperature is 39.4°C (102.9°F), heart rate 124/minute, BP 86/50 mmHg and SpO2 92% on room air. The client is alert, oriented and writes a normal sentence. Potassium is 4.2 mEq/L (4.2 mmol/L) and creatinine is unchanged. Complete the diagram by choosing the condition the client is most likely experiencing, 2 actions to take and 2 parameters to monitor.",
       rationale:
-        "High fever, a fast heart rate, low BP and falling oxygen saturation 3 days after CAR T-cell therapy fit cytokine release syndrome. Normal orientation and handwriting argue against neurologic toxicity. Normal potassium and creatinine argue against tumor lysis. Low BP is treated with IV fluids, and tocilizumab is given for CRS with low BP or oxygen need. BP and SpO2 show whether the syndrome is responding or worsening.",
+        "High fever, a fast heart rate, low BP and low oxygen saturation 3 days after CAR T-cell therapy fit cytokine release syndrome. Normal orientation and handwriting argue against neurologic toxicity. Normal potassium and creatinine argue against tumor lysis. Low BP is treated with IV fluids, and tocilizumab is given for CRS with low BP or oxygen need. BP and SpO2 show whether the syndrome is responding or worsening.",
       sources: [YESCARTA],
+      version: 2,
     }),
     kind: "bowtie",
     conditions: [
@@ -116,6 +117,7 @@ export const PART4: Item[] = [
     ],
     correct: 2,
   },
+  // PULL (s35 review): same teaching point as rn-s17-29. New ringing in both ears during two ototoxic drugs (there gentamicin with furosemide) is ototoxicity and is acted on first.
   {
     ...meta("rn-s35-35", {
       topic: "Hearing change during vancomycin therapy",
@@ -160,8 +162,10 @@ export const PART4: Item[] = [
       ],
       rationale:
         "Over 7 days the creatinine rises from 0.9 mg/dL (80 micromol/L) to 2.0 mg/dL (177 micromol/L). Potassium falls from 4.1 to 2.8 mEq/L. Magnesium falls from 2.0 mg/dL (0.82 mmol/L) to 1.3 mg/dL (0.53 mmol/L). Conventional amphotericin B injures the kidney tubules, which lowers kidney function and wastes potassium and magnesium. Urine output stays near 1800 mL/day, so this is not a fluid overload or a fall in output. The label calls for close monitoring of these values.",
-      refs: ["Normal serum potassium is 3.5 to 5.0 mEq/L (3.5 to 5.0 mmol/L).", "Normal serum magnesium is 1.5 mg/dL (0.62 mmol/L) to 2.5 mg/dL (1.03 mmol/L)."],
-      sources: [AMPHO_B, HINKLE],
+      refs: ["Normal serum potassium is 3.5 to 5.0 mEq/L (3.5 to 5.0 mmol/L)."],
+      sources: [AMPHO_B, HINKLE, MCC_LABS],
+      canada: "Canadian labs report SI units only. Creatinine rises from 80 to 177 micromol/L, and magnesium falls from 0.82 to 0.53 mmol/L, below the Medical Council of Canada range of 0.74 to 1.03 mmol/L.",
+      version: 2,
     }),
     kind: "mc",
     options: [
@@ -225,8 +229,9 @@ export const PART4: Item[] = [
       difficulty: 4,
       stem: "A 67-year-old client is admitted with influenza A and pneumonia on day 4 of symptoms. SpO2 is 90% on room air. The primary health care provider prescribes oseltamivir 75 mg by mouth twice daily. A colleague says the drug is pointless because symptoms began more than 48 hours ago. What should the nurse do?",
       rationale:
-        "The 48-hour window comes from studies of outpatients with uncomplicated influenza. CDC guidance states that antiviral treatment can reduce illness and death in hospitalized clients even when started more than 48 hours after onset. This client is hospitalized with pneumonia and low oxygen saturation, so the nurse gives the dose as prescribed. Holding the drug or waiting for a culture delays treatment that can help.",
+        "The 48-hour window comes from studies of outpatients with uncomplicated influenza. CDC guidance states that antiviral treatment might reduce illness and death in hospitalized clients even when started more than 48 hours after onset. This client is hospitalized with pneumonia and low oxygen saturation, so the nurse gives the dose as prescribed. Holding the drug or waiting for a culture delays treatment that can help.",
       sources: [CDC_FLU_AV, TAMIFLU],
+      version: 2,
     }),
     kind: "mc",
     options: [
@@ -246,7 +251,8 @@ export const PART4: Item[] = [
       stem: "An 82-year-old client started valacyclovir 1 g by mouth 3 times daily for herpes zoster 3 days ago. The client has been drinking little because of pain. The family reports new confusion and seeing people who are not there. Creatinine is 2.0 mg/dL (177 micromol/L), up from 1.1 mg/dL (97 micromol/L) last month. The client takes no opioids or sedatives. Temperature is 36.9°C (98.4°F). Complete the sentence by dragging the correct options into the blanks.",
       rationale:
         "Valacyclovir is cleared by the kidneys. Poor fluid intake has raised the creatinine from 1.1 to 2.0 mg/dL, so drug levels climb. Older adults and clients with reduced kidney function are more likely to have confusion and hallucinations on this drug. The label calls for adequate hydration and a lower dose in kidney impairment. A one-sided rash is expected with zoster. A normal temperature points to no fever.",
-      sources: [VALTREX],
+      sources: [VALTREX, MCC_LABS],
+      canada: "Canadian labs report creatinine in micromol/L only, so it rose from 97 to 177 micromol/L over the month.",
     }),
     kind: "dnd",
     scoring: "triad",

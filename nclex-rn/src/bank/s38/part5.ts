@@ -1,5 +1,5 @@
 import type { Item } from "@/engine/types";
-import { ACOG_DYSTOCIA, ACOG_PREECLAMPSIA, HOCKENBERRY, PACHECO_AFE, SAYED_CORD, SWEET_RDS, meta } from "./common";
+import { ACOG_DYSTOCIA, ACOG_PREECLAMPSIA, HOCKENBERRY, PACHECO_AFE, SAYED_CORD, SOGC_HDP, SWEET_RDS, meta } from "./common";
 
 export const PART5: Item[] = [
   {
@@ -40,7 +40,8 @@ export const PART5: Item[] = [
         "HELLP syndrome: LDH 600 units/L or more, AST more than twice the upper limit of normal and platelets below 100 000/mm3.",
         "Severe-range BP in pregnancy is systolic 160 mmHg or more or diastolic 110 mmHg or more.",
       ],
-      sources: [ACOG_PREECLAMPSIA],
+      sources: [ACOG_PREECLAMPSIA, SOGC_HDP],
+      canada: "SOGC Guideline 426 also defines severe hypertension as a systolic BP of 160 mmHg or more or a diastolic BP of 110 mmHg or more, and advises magnesium sulphate. Canadian labs report platelets as 72 x 10^9/L and glucose as 5.1 mmol/L only.",
     }),
     kind: "bowtie",
     conditions: [
@@ -131,6 +132,7 @@ export const PART5: Item[] = [
     ],
     correct: 1,
   },
+  // PULL (s38 review): tests the same point as rn-s09-18, which keys a newborn respiratory rate of 74/minute and nasal flaring as follow-up findings and acrocyanosis as expected. A unique point needs a full rewrite.
   {
     ...meta("rn-s38-46", {
       need: "PA",

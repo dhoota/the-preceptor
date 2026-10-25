@@ -1,7 +1,8 @@
 import type { Item } from "@/engine/types";
-import { HINKLE, KAPLAN_VARICES, LENDERS_PHEO, LEONHARD_GBS, MILLER_ALS, VILSTRUP_HE, WENDELL_MG, meta } from "./common";
+import { HINKLE, KAPLAN_VARICES, LENDERS_PHEO, LEONHARD_GBS, MILLER_ALS, NICE_MND, VILSTRUP_HE, WENDELL_MG, meta } from "./common";
 
 export const PART1: Item[] = [
+  // PULL (s38 review): tests the same point as rn-c15-1-2, where heart rate swings of 52 to 128/minute and BP swings in Guillain-Barre syndrome are sorted as autonomic dysfunction. A unique point needs a full rewrite.
   {
     ...meta("rn-s38-01", {
       need: "PA",
@@ -47,6 +48,7 @@ export const PART1: Item[] = [
   {
     ...meta("rn-s38-03", {
       need: "PA",
+      version: 2,
       topic: "Morning headaches in motor neuron disease",
       cjmm: "generate",
       process: "clinical-judgment",
@@ -54,14 +56,14 @@ export const PART1: Item[] = [
       stem: "A 58-year-old client with amyotrophic lateral sclerosis reports waking several times each night. The client has headaches on waking that ease by noon and falls asleep while reading in the afternoon. Speech and swallowing are unchanged from last month. Which prescription should the nurse anticipate?",
       rationale:
         "Frequent waking, morning headaches and daytime sleepiness point to hypoventilation during sleep. Weak breathing muscles let carbon dioxide build up overnight. Noninvasive ventilation at night supports breathing, eases these symptoms and can lengthen survival. A sedative would depress breathing further. An analgesic treats the headache but not its cause.",
-      sources: [MILLER_ALS],
+      sources: [MILLER_ALS, NICE_MND],
     }),
     kind: "mc",
     options: [
       { text: "A sedative-hypnotic at bedtime", why: "A sedative depresses breathing and would worsen night-time hypoventilation." },
       { text: "Noninvasive ventilation at night", why: "Night ventilation supports weak breathing muscles and relieves the signs of carbon dioxide build-up." },
       { text: "A daily analgesic for the headaches", why: "The headaches come from carbon dioxide retained overnight. An analgesic misses the cause." },
-      { text: "Oxygen at 2 L/minute alone overnight", why: "Oxygen alone does not support weak breathing muscles and can hide rising carbon dioxide." },
+      { text: "Oxygen at 2 L/minute alone overnight", why: "Oxygen alone does not support weak breathing muscles or clear the retained carbon dioxide." },
     ],
     correct: 1,
   },
@@ -86,6 +88,7 @@ export const PART1: Item[] = [
     ],
     correct: 3,
   },
+  // PULL (s38 review): tests the same point as rn-s25-12, which asks for the findings of diabetes insipidus after pituitary surgery with almost the same values (output 420 mL/hour, specific gravity 1.002, sodium 149, thirst). A new setting is not a new point.
   {
     ...meta("rn-s38-05", {
       need: "PA",
@@ -114,6 +117,7 @@ export const PART1: Item[] = [
     ],
     correct: [0, 2, 3, 4],
   },
+  // PULL (s38 review): the opposite patterns are already taught by rn-s25-12 (diabetes insipidus findings) and rn-s22-33 (SIADH findings), and new item rn-s36-45 contrasts the two directly. A unique point needs a full rewrite.
   {
     ...meta("rn-s38-06", {
       need: "PA",

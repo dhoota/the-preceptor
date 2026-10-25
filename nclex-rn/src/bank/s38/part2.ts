@@ -1,5 +1,5 @@
 import type { Item } from "@/engine/types";
-import { GOSAIN_HAEC, HOCKENBERRY, KAPLAN_VARICES, NEMOURS_CF, UMPIERREZ_HHS, meta } from "./common";
+import { CHW_IRRIGATION, CREON_LABEL, GOSAIN_HAEC, HOCKENBERRY, KAPLAN_VARICES, NEMOURS_CF, RCH_WASHOUT, UMPIERREZ_HHS, meta } from "./common";
 
 export const PART2: Item[] = [
   {
@@ -13,6 +13,7 @@ export const PART2: Item[] = [
       rationale:
         "Bleeding varices in cirrhosis are treated with a vasoactive drug such as octreotide, started before endoscopy. Octreotide lowers portal blood flow. A short course of IV ceftriaxone is also given. It lowers the rates of infection, rebleeding and death. Transfusion uses a restrictive threshold because a high hemoglobin target raises portal pressure. A beta blocker is held while the BP is low. Ibuprofen worsens bleeding.",
       sources: [KAPLAN_VARICES],
+      canada: "Canadian labs report hemoglobin in g/L only, so this result reads 81 g/L.",
     }),
     kind: "msn",
     select: 2,
@@ -28,6 +29,7 @@ export const PART2: Item[] = [
   {
     ...meta("rn-s38-12", {
       need: "PA",
+      version: 2,
       topic: "Estimating osmolality in a hyperglycemic crisis",
       cjmm: "analyze",
       process: "nursing-process",
@@ -38,6 +40,7 @@ export const PART2: Item[] = [
       calc: { expr: "2 * 148 + 900 / 18", answer: 346, unit: "mOsm/kg", round: 0, steps: ["2 * 148 = 296", "900 / 18 = 50", "296 + 50 = 346"] },
       refs: ["Hyperosmolar hyperglycemic state: glucose 600 mg/dL (33.3 mmol/L) or more and effective osmolality above 300 mOsm/kg."],
       sources: [UMPIERREZ_HHS],
+      canada: "Canadian labs report glucose in mmol/L only. The estimate then adds the glucose in mmol/L directly, so 2 times 148 plus 50.0 gives 346 mmol/kg.",
     }),
     kind: "mc",
     options: [
@@ -74,11 +77,12 @@ export const PART2: Item[] = [
   {
     ...meta("rn-s38-14", {
       need: "PA",
+      version: 2,
       topic: "A normal stool while waiting for enema reduction",
       cjmm: "evaluate",
       process: "clinical-judgment",
       difficulty: 4,
-      stem: "A 10-month-old infant with intussusception confirmed by ultrasound is waiting for an air enema reduction. Earlier the infant passed stool with blood and mucus. While waiting, the infant passes a large, soft brown stool and begins to play. Which action should the nurse take?",
+      stem: "A 10-month-old infant with intussusception confirmed by ultrasound is taking nothing by mouth while waiting for an air enema reduction. Earlier the infant passed stool with blood and mucus. While waiting, the infant passes a large, soft brown stool and begins to play. Which action should the nurse take?",
       rationale:
         "A normal brown stool after a bloody stool can mean the intussusception has reduced on its own. The primary health care provider needs to know at once. The provider may confirm the reduction and change the plan. Going ahead without reporting it risks an unneeded procedure. The infant stays without food until the provider decides. The stool is not an expected finding before reduction.",
       sources: [HOCKENBERRY],
@@ -116,6 +120,7 @@ export const PART2: Item[] = [
   {
     ...meta("rn-s38-16", {
       need: "PA",
+      version: 2,
       topic: "Fluid for home rectal washouts in an infant",
       cjmm: "action",
       process: "teaching",
@@ -123,7 +128,7 @@ export const PART2: Item[] = [
       stem: "A 2-month-old infant with Hirschsprung disease will have rectal irrigations at home until the pull-through operation. The parent asks which fluid to use for the irrigations. Which fluid should the nurse teach the parent to use?",
       rationale:
         "Rectal irrigations wash retained stool out of the colon. Isotonic sodium chloride is used because it does not shift water across the bowel wall. Plain tap water is hypotonic. Repeated use can be absorbed and cause water intoxication in an infant. Phosphate enemas can cause dangerous electrolyte shifts in infants. Soapsuds irritate the bowel lining.",
-      sources: [HOCKENBERRY, GOSAIN_HAEC],
+      sources: [HOCKENBERRY, RCH_WASHOUT, CHW_IRRIGATION],
     }),
     kind: "mc",
     options: [
@@ -179,14 +184,15 @@ export const PART2: Item[] = [
   {
     ...meta("rn-s38-19", {
       need: "PA",
+      version: 2,
       topic: "Giving enzyme capsules to a preschooler",
       cjmm: "evaluate",
       process: "teaching",
       difficulty: 3,
       stem: "The nurse teaches the parent of a 3-year-old child with cystic fibrosis about pancrelipase capsules. Which two statements by the parent show understanding? Select two.",
       rationale:
-        "Pancrelipase works on the food eaten with it, so it is given at the start of every meal and snack. A young child can take the opened capsule's beads on a spoon of acidic soft food such as applesauce. The beads are swallowed whole. Crushing or mixing them into milk breaks the coating, and stomach acid then destroys the enzyme. One morning dose does not cover later meals.",
-      sources: [HOCKENBERRY],
+        "Pancrelipase works on the food eaten with it, so it is given at the start of every meal and snack. A young child can take the opened capsule's beads on a spoon of acidic soft food such as applesauce. The beads are swallowed whole. Crushing breaks the coating. Milk is not acidic, so the coating can dissolve early. Stomach acid then destroys the enzyme. One morning dose does not cover later meals.",
+      sources: [HOCKENBERRY, CREON_LABEL],
     }),
     kind: "msn",
     select: 2,
@@ -195,7 +201,7 @@ export const PART2: Item[] = [
       { text: "\"I will crush the beads so they work faster.\"", why: "Crushing breaks the coating and lets stomach acid destroy the enzyme." },
       { text: "\"I will sprinkle the beads on some applesauce.\"", why: "An acidic soft food keeps the coating intact until the beads are swallowed." },
       { text: "\"I will skip the dose when she has a snack.\"", why: "Snacks with fat and protein also need enzymes for absorption." },
-      { text: "\"I will stir the beads into her cup of milk.\"", why: "Milk can dissolve the coating early, and the enzyme is then lost to stomach acid." },
+      { text: "\"I will stir the beads into her cup of milk.\"", why: "The label calls for an acidic soft food. Milk is not acidic and can dissolve the coating early." },
       { text: "\"I will give one large dose of it every morning.\"", why: "One morning dose does not act on meals eaten later in the day." },
     ],
     correct: [0, 2],
@@ -211,6 +217,7 @@ export const PART2: Item[] = [
       rationale:
         "Albuterol opens the airways first so the next treatments reach deeper. Hypertonic saline then draws water into the mucus to loosen it. Chest wall oscillation moves the loosened mucus up and out. Tobramycin is given after airway clearance so it reaches clearer airways and the remaining bacteria. The enzyme capsule goes with meals and the glucose check is not part of this sequence.",
       sources: [NEMOURS_CF, HOCKENBERRY],
+      canada: "Albuterol is sold in Canada as salbutamol.",
     }),
     kind: "dnd",
     scoring: "zero-one",

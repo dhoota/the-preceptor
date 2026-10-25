@@ -1,5 +1,5 @@
 import type { Item } from "@/engine/types";
-import { CORLANOR, ENTRESTO, GARCIA_2012, HINKLE, LAMICTAL, PRAXBIND, PROTAMINE, RELPREVV, VITAMIN_K, meta } from "./common";
+import { CORLANOR, ENTRESTO, GARCIA_2012, HINKLE, LAMICTAL, MCC_LABS, PRAXBIND, PROTAMINE, RELPREVV, VITAMIN_K, meta } from "./common";
 
 export const PART2: Item[] = [
   {
@@ -96,7 +96,8 @@ export const PART2: Item[] = [
       rationale:
         "Potassium has climbed from 4.6 to 5.9 mEq/L over 4 weeks and is now above the normal range. Sacubitril-valsartan blocks the renin angiotensin system and can raise potassium. The label calls for dose reduction or interruption when hyperkalemia occurs, so the nurse reports it before any increase. A BP of 108/66 mmHg without dizziness is acceptable. The creatinine change is small. The slight weight loss fits less fluid.",
       refs: ["Normal serum potassium is 3.5 to 5.0 mEq/L (3.5 to 5.0 mmol/L)."],
-      sources: [ENTRESTO, HINKLE],
+      sources: [ENTRESTO, HINKLE, MCC_LABS],
+      canada: "Canadian labs report potassium in mmol/L only, so it rose from 4.6 to 5.9 mmol/L. The Medical Council of Canada upper limit is 5.1 mmol/L, so the level is high on either range.",
     }),
     kind: "mc",
     options: [
@@ -200,8 +201,9 @@ export const PART2: Item[] = [
       stem: "A 40-year-old client with bipolar disorder has been stable on lamotrigine 200 mg daily and takes no other drugs. The client ran out of tablets and took none for 10 days. The client has picked up a refill and plans to take 200 mg tonight. Which response by the nurse is best?",
       rationale:
         "After a gap longer than 5 half-lives, the label advises restarting lamotrigine with the initial slow titration. A gap of 10 days is longer than that for a client on no interacting drugs. Restarting at the full dose raises the risk of a serious rash, because exceeding the starting dose is a known rash risk factor. The prescriber sets a new schedule. Doubling up or a fast climb carries the same risk.",
-      refs: ["In adults taking no interacting drugs, the mean lamotrigine half-life is about 33 hours, so 5 half-lives is about 7 days."],
+      refs: ["In adults taking no interacting drugs, the mean lamotrigine half-life is about 25 to 33 hours, so 5 half-lives is about 5 to 7 days."],
       sources: [LAMICTAL],
+      version: 2,
     }),
     kind: "mc",
     options: [

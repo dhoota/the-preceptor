@@ -1,5 +1,5 @@
 import type { Item } from "@/engine/types";
-import { ACYCLOVIR_SUSP, CABENUVA, DOBUTAMINE, EDURANT, HYPERGLYCEMIC_2024, ISMP_HIGH, LTBI_2020, MILRINONE, MYXREDLIN, PFIZERPEN, YESCARTA, meta } from "./common";
+import { ACYCLOVIR_SUSP, CABENUVA, DC_HYPER_2018, DOBUTAMINE, EDURANT, HYPERGLYCEMIC_2024, ISMP_HIGH, LTBI_2020, MILRINONE, MYXREDLIN, PFIZERPEN, YESCARTA, YESCARTA_CA, meta } from "./common";
 
 export const PART5: Item[] = [
   {
@@ -76,7 +76,8 @@ export const PART5: Item[] = [
       rationale:
         "Cytokine release syndrome and neurologic toxicity can still develop after discharge. The label advises staying near a health care facility for at least 2 weeks after infusion and not driving for at least 2 weeks. A temperature of 38.0°C (100.4°F) or higher, confusion, shaking chills or a fast heartbeat needs a call or emergency care right away. Home treatment of fever delays care.",
       refs: ["After axicabtagene ciloleucel, clients stay near a health care facility for at least 2 weeks and avoid driving for at least 2 weeks."],
-      sources: [YESCARTA],
+      sources: [YESCARTA, YESCARTA_CA],
+      canada: "The Health Canada product monograph for Yescarta (revised 2024) still advises staying near a specialized facility for at least 4 weeks and not driving for 8 weeks. Canadian centres may teach these longer periods.",
     }),
     kind: "sata",
     options: [
@@ -112,7 +113,7 @@ export const PART5: Item[] = [
   },
   {
     ...meta("rn-s35-46", {
-      topic: "Reconstituting penicillin G to a chosen strength",
+      topic: "Reading a multi-strength reconstitution table",
       cjmm: "action",
       process: "nursing-process",
       difficulty: 3,
@@ -124,18 +125,19 @@ export const PART5: Item[] = [
         },
       ],
       rationale:
-        "Adding 8.2 mL gives about 500 000 units in each mL. Dividing 2 000 000 units by 500 000 units/mL gives 4 mL. The dissolved powder adds volume, so the final strength comes from the label table, not from the diluent volume alone. The vial is labeled with the strength, date and time once mixed.",
+        "Adding 8.2 mL gives about 500 000 units in each mL. Dividing 2 000 000 units by 500 000 units/mL gives 4 mL. Each diluent volume in the table makes a different strength, so the nurse reads the row that matches the volume actually added. The vial is labeled with the strength, date and time once mixed.",
       calc: { expr: "2000000 / 500000", answer: 4, unit: "mL", round: 0, steps: ["2000000 / 500000 = 4"] },
       sources: [PFIZERPEN],
+      version: 2,
     }),
     kind: "mc",
     options: [
       { text: "0.4 mL", why: "This divides the dose by the units in the whole vial and reads the result as mL." },
       { text: "2 mL", why: "This uses the 1 000 000 units/mL strength made with 3.2 mL of diluent." },
-      { text: "3.3 mL", why: "This treats 8.2 mL as the final volume and ignores the volume the powder adds." },
       { text: "4 mL", why: "2 000 000 units divided by 500 000 units/mL is 4 mL." },
+      { text: "8 mL", why: "This uses the 250 000 units/mL strength made with 18.2 mL of diluent." },
     ],
-    correct: 3,
+    correct: 2,
   },
   {
     ...meta("rn-s35-47", {
@@ -193,7 +195,8 @@ export const PART5: Item[] = [
         "Potassium is checked 2 hours after insulin starts and every 4 hours after that.",
         "Dextrose is added when glucose falls below 250 mg/dL (13.9 mmol/L).",
       ],
-      sources: [HYPERGLYCEMIC_2024, MYXREDLIN, ISMP_HIGH],
+      sources: [HYPERGLYCEMIC_2024, MYXREDLIN, ISMP_HIGH, DC_HYPER_2018],
+      canada: "Diabetes Canada (2018) withholds insulin only while potassium is below 3.3 mmol/L, not 3.5 mmol/L. It starts IV dextrose when glucose falls to 14.0 mmol/L, close to the 13.9 mmol/L used here.",
     }),
     kind: "sata",
     options: [
@@ -207,6 +210,7 @@ export const PART5: Item[] = [
     ],
     correct: [1, 2, 4, 5],
   },
+  // PULL (s35 review): same calculation point as rn-s15-21 (dopamine 5 mcg/kg/minute), rn-c09-2-5 (argatroban) and rn-c19-3-5 (propofol). Converting a premixed mcg/kg/minute prescription to mL/hour is already tested three times.
   {
     ...meta("rn-s35-50", {
       topic: "Milrinone maintenance infusion rate",

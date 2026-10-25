@@ -250,3 +250,51 @@ export const DI: Source = {
   year: 2022,
   url: "https://pubmed.ncbi.nlm.nih.gov/35771962/",
 };
+export const SSC_2026: Source = {
+  body: "Prescott HC, Antonelli M, Alhazzani W, et al. Surviving Sepsis Campaign",
+  work: "Surviving Sepsis Campaign: International Guidelines for Management of Sepsis and Septic Shock 2026. Critical Care Medicine (doi:10.1097/CCM.0000000000007075)",
+  year: 2026,
+  url: "https://www.sccm.org/clinical-resources/guidelines/guidelines/surviving-sepsis-campaign-international-guidelines-for-management-of-sepsis-and-septic-shock-2026",
+};
+export const BC_RENAL_VEIN: Source = {
+  body: "BC Renal, Hemodialysis Committee",
+  work: "Chronic Kidney Disease: Vein Preservation (guideline updated December 2020)",
+  year: 2020,
+  url: "https://www.bcrenal.ca/resource-gallery/Documents/VA-Chronic_Kidney_Disease-Vein_Preservation.pdf",
+};
+export const VANCO_PORT: Source = {
+  body: "Wright DF, Al-Sallami HS, Jackson PM, Reith DM",
+  work: "Falsely Elevated Vancomycin Plasma Concentrations Sampled From Central Venous Implantable Catheters (Portacaths). British Journal of Clinical Pharmacology 70(5):769",
+  year: 2010,
+  url: "https://pmc.ncbi.nlm.nih.gov/articles/PMC2997319/",
+};
+export const BTS_PROCEDURES: Source = {
+  body: "Asciak R, Bedawi EO, Bhatnagar R, et al. British Thoracic Society",
+  work: "British Thoracic Society Clinical Statement on Pleural Procedures. Thorax 78(Suppl 3):s43",
+  year: 2023,
+  url: "https://doi.org/10.1136/thorax-2022-219371",
+};
+export const ISMP_CA_EPIDURAL: Source = {
+  body: "Koczmara C. Institute for Safe Medication Practices Canada",
+  work: "Reports of Epidural Infusion Errors. Dynamics, Canadian Association of Critical Care Nurses 15(4):8",
+  year: 2004,
+  url: "https://www.ismp-canada.org/download/CACCN-Winter04.pdf",
+};
+export const ISMP_CA_EPIDURAL_IV: Source = {
+  body: "Koczmara C, Hyland S, Cheng R. Institute for Safe Medication Practices Canada",
+  work: "Epidural Medications Given Intravenously May Result in Death. Dynamics, Canadian Association of Critical Care Nurses, Fall 2007",
+  year: 2007,
+  url: "https://www.ismp-canada.org/download/caccn/CACCN-Fall07.pdf",
+};
+export const CBS_COMPONENTS: Source = {
+  body: "Rotin L, Mack J. Canadian Blood Services",
+  work: "Clinical Guide to Transfusion, Chapter: Blood Components",
+  year: 2025,
+  url: "https://professionaleducation.blood.ca/en/transfusion/clinical-guide/blood-components",
+};
+export const CBS_ALBUMIN: Source = {
+  body: "Relke N, Callum J. Canadian Blood Services",
+  work: "Clinical Guide to Transfusion, Chapter: Albumin",
+  year: 2025,
+  url: "https://professionaleducation.blood.ca/en/transfusion/clinical-guide/albumin",
+};

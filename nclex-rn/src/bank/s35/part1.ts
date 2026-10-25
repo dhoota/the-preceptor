@@ -1,5 +1,5 @@
 import type { Item } from "@/engine/types";
-import { FARXIGA, HUMIRA, HYPERGLYCEMIC_2024, LTBI_2020, MOUNJARO, OZEMPIC, REMICADE, VICTOZA, XELJANZ, meta } from "./common";
+import { DC_HYPER_2018, FARXIGA, HUMIRA, HYPERGLYCEMIC_2024, LTBI_2020, MCC_LABS, MOUNJARO, OZEMPIC, REMICADE, VICTOZA, XELJANZ, meta } from "./common";
 
 export const PART1: Item[] = [
   {
@@ -80,7 +80,8 @@ export const PART1: Item[] = [
       rationale:
         "The label advises against starting tofacitinib when the lymphocyte count is below 500 cells/mm3. This client's count is 450 cells/mm3. Low lymphocytes raise the risk of serious infection on a JAK inhibitor. The neutrophil count of 1400 cells/mm3 is above the 1000 cells/mm3 limit. The hemoglobin of 9.6 g/dL is above the 9 g/dL limit. The label sets no platelet limit for starting.",
       refs: ["Tofacitinib is not started with a lymphocyte count below 500 cells/mm3, a neutrophil count below 1000 cells/mm3 or a hemoglobin below 9 g/dL (90 g/L)."],
-      sources: [XELJANZ],
+      sources: [XELJANZ, MCC_LABS],
+      canada: "Canadian labs report blood counts in SI units only. The lymphocyte count reads 0.45 x 10^9/L against a limit of 0.5 x 10^9/L, and hemoglobin reads 96 g/L against 90 g/L.",
     }),
     kind: "mc",
     options: [
@@ -142,8 +143,10 @@ export const PART1: Item[] = [
       difficulty: 3,
       stem: "A 61-year-old client's semaglutide dose rose from 0.5 mg to 1 mg weekly 9 days ago. The client has had vomiting and diarrhea for 4 days and feels dizzy on standing. The abdomen is soft and nontender, and the neck has no mass. Glucose is 132 mg/dL (7.3 mmol/L). Creatinine is 2.3 mg/dL (203 micromol/L), up from 1.0 mg/dL (88 micromol/L) 3 months ago. Which complication is most likely?",
       rationale:
-        "Creatinine has more than doubled from 1.0 to 2.3 mg/dL. Vomiting and diarrhea for 4 days with dizziness on standing point to volume loss. Semaglutide carries a warning for kidney injury from volume depletion, mostly during dose increases. A soft, nontender abdomen argues against pancreatitis. A glucose of 132 mg/dL is not hypoglycemia. No neck mass is found.",
-      sources: [OZEMPIC],
+        "Creatinine has more than doubled from 1.0 to 2.3 mg/dL. Vomiting and diarrhea for 4 days with dizziness on standing point to volume loss. Semaglutide carries a warning for kidney injury from volume depletion, with kidney checks advised during dose increases. A soft, nontender abdomen argues against pancreatitis. A glucose of 132 mg/dL is not hypoglycemia. No neck mass is found.",
+      sources: [OZEMPIC, MCC_LABS],
+      canada: "Canadian labs report creatinine in micromol/L only, so it reads 203 micromol/L, up from 88 micromol/L. Glucose reads 7.3 mmol/L.",
+      version: 2,
     }),
     kind: "mc",
     options: [
@@ -184,7 +187,8 @@ export const PART1: Item[] = [
       rationale:
         "A low pH and bicarbonate with high beta-hydroxybutyrate mean ketoacidosis, even with a glucose of 186 mg/dL. An SGLT2 inhibitor and fasting after surgery set it off. The SGLT2 inhibitor is stopped. Insulin is needed to clear the ketones, and dextrose is given with it so glucose does not fall too low. The potassium of 4.6 mEq/L is above 3.5 mEq/L, so insulin can start. Potassium and ketones guide the treatment.",
       refs: ["Insulin is delayed when serum potassium is below 3.5 mEq/L (3.5 mmol/L).", "In ketoacidosis with near normal glucose, 5% to 10% dextrose is added to IV fluids with the insulin."],
-      sources: [HYPERGLYCEMIC_2024, FARXIGA],
+      sources: [HYPERGLYCEMIC_2024, FARXIGA, DC_HYPER_2018],
+      canada: "Diabetes Canada (2018) withholds insulin only while potassium is below 3.3 mmol/L, a little lower than the 3.5 mmol/L used here. The potassium of 4.6 mmol/L is above both, so the key stands.",
     }),
     kind: "bowtie",
     conditions: [
