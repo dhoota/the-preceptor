@@ -19,7 +19,7 @@ Every number in the batch was recomputed with a script. That covered doses, rate
 
 ## Key changes
 
-- rn-s17-92 (extra.ts, not in the bank). Before: keyed option "Protamine sulfate". After: keyed option "Calcium gluconate", same position. Reason: calcium gluconate is the accepted antidote for magnesium sulfate toxicity. Protamine has no effect on magnesium. Needs Arjan's approval.
+- rn-s17-92 (extra.ts, not in the bank). Before: keyed option "Protamine sulfate". After: keyed option "Calcium gluconate", same position. Reason: calcium gluconate is the accepted antidote for magnesium sulfate toxicity. Protamine has no effect on magnesium. Needs the Preceptor team's approval.
 
 ## Sources verified
 
@@ -33,7 +33,7 @@ Every number in the batch was recomputed with a script. That covered doses, rate
 - Calcium gluconate as the antidote for magnesium toxicity. https://health.usf.edu/media/zdrpe3ja/magnesium_sulfate.pdf
 - The other citations (Lehne 11th edition 2022, Brunner and Suddarth 15th edition 2022, INS 2024, ASPEN PN safety 2014, CDC 2011, AHA/ACC/HFSA 2022, ASRA 2018, ACC 2020, Endocrine Society 2016, AGS Beers 2023, FDA 2010 clopidogrel notice, ATA 2014) were checked for author, work and year. None was found to be wrong.
 
-## Needs Arjan's decision
+## Needs the Preceptor team's decision
 
 - rn-s17-92 key change above. The item is in extra.ts and is not yet in the bank.
 - rn-s17-91 and rn-s17-92 in extra.ts had defects severe enough to show the drafts were unchecked. Decide whether they join the bank after this review.

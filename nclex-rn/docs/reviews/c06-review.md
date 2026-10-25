@@ -13,7 +13,7 @@ Checks after fixing: `npx tsc --noEmit -p .` prints nothing for `bank/c06`. `BAT
 | rn-c06-3-2 | stem | The rationale says the withdrawal tremor and hallucinations "ended weeks ago". The case never said when they stopped. Added "Both settled within a few days." to the stem. | B | medium |
 | rn-c06-3-6 | stem | The item and its rationale grade the response to lactulose, but the case never showed lactulose restarted. He had stopped it at home. Added "Lactulose was restarted on admission." | B | high |
 | rn-c06-5-3 (case tab, rn-c06-5) | Standing Orders tab | The standing order said to call emergency services after giving hydrocortisone. rn-c06-5-3 has the nurse call emergency services at 0615, before the dose is drawn up at 0618, and rn-c06-5-4 has the ambulance already on its way. The order now reads "Also call emergency services and the primary health care provider." | B | high |
-| rn-c06-4-4 | rationale | "Fluid restriction is the first treatment for this syndrome" is not true for this client under the cited Spasovski 2014 guideline. See Needs Arjan's decision. The sentence now says fluid restriction limits the free water that dilutes her sodium. | A | medium |
+| rn-c06-4-4 | rationale | "Fluid restriction is the first treatment for this syndrome" is not true for this client under the cited Spasovski 2014 guideline. See Needs the Preceptor team's decision. The sentence now says fluid restriction limits the free water that dilutes her sodium. | A | medium |
 | rn-c06-1-6 | option 0 why | Claimed her hearing is intact. The case never assessed hearing. The why now rests on the stated fact that she understands speech. | B | low |
 | rn-c06-9 (extra) | rationale | Said "this client has asthma". The stem gives hypertension only. A nonselective beta blocker in asthma would also be a prescription to question, not teach. The sentence now says propranolol is nonselective, so it can cause bronchospasm. | B | high |
 | rn-c06-8 (extra) | option 2 | "Elevate the bed head 30 degrees" was the same action as the key "Raise the head of the bed". Two defensible keys, and its own why admitted it. Replaced with "Slow the feeding rate by half", why: a slower rate does not remove the aspiration risk of lying flat. | A | high |
@@ -53,11 +53,11 @@ Journal citations were checked against PubMed E-utilities esummary. Author, jour
 
 The WebSearch budget for this session was spent before this review began, and the AHA, EJE and CDC guideline pages returned 403, 404 or 525 to WebFetch. The brief allows PubMed, publisher and agency pages in that case. So the following points rest on the citations above and on earlier c-batch and s-batch reviews, not on a full-text read made during this review: BP below 185/110 mmHg before thrombolysis and at or below 180/105 mmHg for 24 hours after, neuro checks every 15 minutes for 2 hours, no antiplatelet or anticoagulant for 24 hours after thrombolysis, oxygen below SpO2 90% and no non-aspirin NSAIDs in ACS, the 24 hour sildenafil and nitrate interval, protein 1.2 to 1.5 g/kg and a late evening snack, fluid restriction kept for sodium below 125 mEq/L in cirrhosis, and fluid restriction below 800 mL a day in SIADH. None of them looked wrong on review.
 
-## Needs Arjan's decision
+## Needs the Preceptor team's decision
 
 - rn-c06-4 (case design, items 3 and 4). Spasovski 2014 counts vomiting as a severe symptom, and confusion and headache as moderately severe symptoms. It gives hypertonic saline for both, and also for an acute fall of more than 10 mmol/L without severe symptoms. At 0745 she has vomited, is slowed and has headache, and her sodium fell 16 mEq/L in about 48 hours. By the case's own source she qualified for 3% saline before the 1015 seizure, not fluid restriction alone. I removed the false "first treatment" claim from rn-c06-4-4 but kept the case flow. Options: accept the case as a teaching simplification, drop the 0630 vomiting and slow the fall, or have the team give the bolus at 0745.
 - rn-c06-3-5. When a durable power of attorney for health care takes effect varies by state and usually needs a documented finding of incapacity. The writer flagged this too. The key is defensible as written.
-- rn-c06-8 and rn-c06-9 sit in `extra.ts` and are not imported. They are now free of the defects above. Whether they join the bank is Arjan's call.
+- rn-c06-8 and rn-c06-9 sit in `extra.ts` and are not imported. They are now free of the defects above. Whether they join the bank is the Preceptor team's call.
 
 ## Summary
 

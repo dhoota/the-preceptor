@@ -15,7 +15,7 @@ Scope: every .ts file in src/bank/s15. That covers the 50 items in part1.ts to p
 
 ## Key changes
 
-- rn-s15-92 (extra.ts, not in the bank). Before: option 1 "Protamine sulfate", keyed. After: option 1 "Calcium gluconate", keyed. The index stays 1. Reason: calcium gluconate 1 g IV is the antidote for magnesium toxicity (ACOG Practice Bulletin 222, SOGC Guideline No. 426). Protamine reverses heparin and has no effect on magnesium. Arjan needs to approve this change.
+- rn-s15-92 (extra.ts, not in the bank). Before: option 1 "Protamine sulfate", keyed. After: option 1 "Calcium gluconate", keyed. The index stays 1. Reason: calcium gluconate 1 g IV is the antidote for magnesium toxicity (ACOG Practice Bulletin 222, SOGC Guideline No. 426). Protamine reverses heparin and has no effect on magnesium. The Preceptor team needs to approve this change.
 
 No key changed in the 50 items in the bank.
 
@@ -49,7 +49,7 @@ The other 45 items in the bank passed both lenses. I checked these points closel
 - Onset of sodium polystyrene sulfonate, for item 91. https://pmc.ncbi.nlm.nih.gov/articles/PMC4552230/
 - Lehne 11th edition (2022), Hinkle 15th edition (2022), the ISMP high-alert list (2024) and the ISMP IV push guidelines (2015): the writer's links in s15-writer.md resolve to these editions.
 
-## Needs Arjan's decision
+## Needs the Preceptor team's decision
 
 - rn-s15-92: approve the key change above. The item also repeats the teaching point of rn-s15-08 on magnesium toxicity. Decide whether it joins the bank at all.
 - rn-s15-91: this item overlaps rn-s15-34 on drug-induced hyperkalemia but asks a different question. It can join the bank now that the why is fixed.

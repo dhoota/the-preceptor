@@ -56,7 +56,7 @@ A script checked every value in the batch.
 - NICHD. Symptoms of preterm labor, including contractions every 10 minutes or more often. Supports the rn-c09-5-1 ref. https://www.nichd.nih.gov/health/topics/preterm/conditioninfo/symptoms
 - Textbooks (Brunner and Suddarth 15th edition, Lowdermilk 13th edition, Davis's Drug Guide 18th edition) and the WHO SSI 2016, NCSBN and ANA 2019, ISMP 2024 and ASPEN 2017 citations are real works with correct years. Textbook page content was not open to check.
 
-## Needs Arjan's decision
+## Needs the Preceptor team's decision
 
 - rn-c09-5-4 Orders tab gives nifedipine and magnesium sulfate together. Combined use carries a reported risk of hypotension and neuromuscular blockade. It is common practice and the item does not test it, so it was left. Consider a monitoring note or a different tocolytic.
 - rn-c09-1-5 keys calling the blood bank and the other client's nurse as the next action. The client is hypotensive at 96/58 mmHg. No option names the primary health care provider, so the key holds, but a reader may argue for the provider first.

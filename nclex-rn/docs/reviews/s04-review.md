@@ -23,7 +23,7 @@ Twelve fixes across 10 items. No automated gate changed state.
 
 ## Key changes
 
-- rn-s04-92. Before: option 2 "Protamine sulfate" (index 1) keyed as the antidote for magnesium toxicity. After: option 2 "Calcium gluconate" (index 1) keyed. Reason: calcium gluconate IV is the antidote for magnesium sulfate toxicity. Protamine reverses heparin. The key index is unchanged but the keyed answer is new, so Arjan must approve it.
+- rn-s04-92. Before: option 2 "Protamine sulfate" (index 1) keyed as the antidote for magnesium toxicity. After: option 2 "Calcium gluconate" (index 1) keyed. Reason: calcium gluconate IV is the antidote for magnesium sulfate toxicity. Protamine reverses heparin. The key index is unchanged but the keyed answer is new, so the Preceptor team must approve it.
 
 ## Sources verified
 
@@ -53,7 +53,7 @@ Twelve fixes across 10 items. No automated gate changed state.
 
 The textbook citations (Potter, Yoder-Wise, Hinkle, Halter, Guido) are real editions. Their page content was not checked.
 
-## Needs Arjan's decision
+## Needs the Preceptor team's decision
 
 - Approve the rn-s04-92 key change.
 - rn-s04-91 and rn-s04-92 are not Management of Care items. After the fixes they are PA and PPT. They do not belong in this batch as written. Decide whether to move them to a pharmacology or physiology batch or drop them. rn-s04-92 cites a Canadian guideline for a US exam item. An ACOG source or an obstetric nursing text may suit it better.

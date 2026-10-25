@@ -39,7 +39,7 @@ In the other Preceptor banks about 2,400 reviewed questions needed 84 fixes, and
 ## Fixing
 
 - Fix defects with the smallest edit that preserves the key. Keep every automated gate passing. If you lengthen a key, level the distractors too.
-- You may change a key only when the evidence requires it. Record the before, the after and the reason under "Key changes". Arjan approves every key change.
+- You may change a key only when the evidence requires it. Record the before, the after and the reason under "Key changes". The Preceptor team approves every key change.
 - Never set `reviewed: true`.
 
 ## Checks before you report
@@ -57,7 +57,7 @@ BATCH=<batch> npx vitest run tests/bank.test.ts
 - A table of every fix: item id, field, the flaw in one line, the lens, and your confidence (high, medium or low).
 - Key changes, if any.
 - Sources verified, with URLs.
-- Needs Arjan's decision.
+- Needs the Preceptor team's decision.
 - A short summary with counts.
 
 Your structured result lists every item id where you found a defect, including items in files `index.ts` does not import.

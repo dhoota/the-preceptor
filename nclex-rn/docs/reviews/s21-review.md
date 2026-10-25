@@ -21,8 +21,8 @@ Scope: every .ts file in src/bank/s21. That covers the 50 items in part1.ts to p
 
 ## Key changes
 
-- rn-s21-92 (extra.ts, not in the bank). Before: option 1 "Protamine sulfate", keyed. After: option 1 "Calcium gluconate", keyed. The index stays 1. Reason: calcium gluconate is the antidote for magnesium toxicity. Protamine reverses heparin. Arjan needs to approve this change.
-- rn-s21-18. Before: correct order [1, 4, 0, 5, 2] with token 4 "Confirm sedation has taken effect". After: correct order [1, 0, 5, 2, 4] with token 4 "Press and hold the shock buttons". Reason: the old order had a second defensible sequence. Arjan needs to approve this change.
+- rn-s21-92 (extra.ts, not in the bank). Before: option 1 "Protamine sulfate", keyed. After: option 1 "Calcium gluconate", keyed. The index stays 1. Reason: calcium gluconate is the antidote for magnesium toxicity. Protamine reverses heparin. The Preceptor team needs to approve this change.
+- rn-s21-18. Before: correct order [1, 4, 0, 5, 2] with token 4 "Confirm sedation has taken effect". After: correct order [1, 0, 5, 2, 4] with token 4 "Press and hold the shock buttons". Reason: the old order had a second defensible sequence. The Preceptor team needs to approve this change.
 
 ## Items checked with no defect
 
@@ -59,7 +59,7 @@ The other 39 items in the bank passed both lenses. Points checked closely:
 - SOGC Guideline No. 426 (Magee 2022), JOGC 44(5):547: https://pubmed.ncbi.nlm.nih.gov/35577426/
 - Textbook editions checked on publisher pages: Hinkle 15th edition 2022 (a 16th edition dated 2026 now exists), Potter 11th, Wong 12th, Halter 9th and Lehne 11th.
 
-## Needs Arjan's decision
+## Needs the Preceptor team's decision
 
 - Approve the two key changes above.
 - HINKLE cites the 15th edition of Brunner and Suddarth (2022). The 16th edition (2026) is out. The content used here is unchanged fundamentals, so I did not replace it. Decide whether the bank moves to the 16th edition.

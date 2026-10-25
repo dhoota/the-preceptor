@@ -20,7 +20,7 @@ Scope: all 50 items in `index.ts` (rn-s26-01 to rn-s26-50) and the 2 items in `e
 
 ## Key changes
 
-- rn-s26-92 (extra.ts, not in the bank). Before: option 2 "Protamine sulfate" keyed. After: option 2 reads "Calcium gluconate" and stays keyed at index 1. Reason: calcium gluconate is the antidote for magnesium sulfate toxicity. Protamine reverses heparin and has no action on magnesium. The item was keyed to a false answer. Arjan to approve.
+- rn-s26-92 (extra.ts, not in the bank). Before: option 2 "Protamine sulfate" keyed. After: option 2 reads "Calcium gluconate" and stays keyed at index 1. Reason: calcium gluconate is the antidote for magnesium sulfate toxicity. Protamine reverses heparin and has no action on magnesium. The item was keyed to a false answer. The Preceptor team to approve.
 
 ## Items checked and left unchanged
 
@@ -56,7 +56,7 @@ Scope: all 50 items in `index.ts` (rn-s26-01 to rn-s26-50) and the 2 items in `e
 - Cuker et al., ASH 2018 HIT guideline, Blood Advances 2(22):3360. https://pubmed.ncbi.nlm.nih.gov/30482768/
 - Magee et al., SOGC Guideline No. 426, JOGC 44(5):547, 2022. https://pubmed.ncbi.nlm.nih.gov/35577426/
 
-## Needs Arjan's decision
+## Needs the Preceptor team's decision
 
 - rn-s26-92 key change above.
 - rn-s26-91 and rn-s26-92 sit in `extra.ts` and are not in the bank. Both had a false teaching point before this review. They now pass every item gate. Decide whether to add them.

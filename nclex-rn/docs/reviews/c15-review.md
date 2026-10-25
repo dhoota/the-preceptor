@@ -50,7 +50,7 @@ None.
 - Davis's Drug Guide for Nurses, 18th edition, 2023. https://www.fadavis.com/product/nursing-pharmacology-davis-drug-guide-deglin-vallerand-sanoski-18
 - Boullata JI et al. ASPEN Safe Practices for Enteral Nutrition Therapy. JPEN 41(1):15, 2017. https://aspenjournals.onlinelibrary.wiley.com/doi/10.1177/0148607116673053
 
-## Needs Arjan's decision
+## Needs the Preceptor team's decision
 
 - NICE NG220 search results show an update dated 26 August 2026. The recommendations page returned 403, so I could not check whether the cited 2022 wording or the citation year needs updating.
 - rn-c15-1-5 gives the scheduled enoxaparin to the LPN while the client is deteriorating. This fits delegation of a stable task, but state scope and facility policy vary.

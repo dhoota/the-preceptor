@@ -56,7 +56,7 @@ export const FDA_BENZO: Source = {
   body: "US Food and Drug Administration",
   work: "FDA Drug Safety Communication: Risk of Serious and Potentially Fatal Blood Disorder Prompts FDA Action on Oral Over-the-Counter Benzocaine Products and Prescription Local Anesthetics",
   year: 2018,
-  url: "https://www.fda.gov/drugs/drug-safety-and-availability/risk-serious-and-potentially-fatal-blood-disorder-prompts-fda-action-oral-over-counter-benzocaine",
+  url: "https://web.archive.org/web/20260307113619/https://www.fda.gov/drugs/drug-safety-and-availability/risk-serious-and-potentially-fatal-blood-disorder-prompts-fda-action-oral-over-counter-benzocaine",
 };
 export const AHA_ALS: Source = {
   body: "Panchal AR, Bartos JA, Cabanas JG, et al. American Heart Association",

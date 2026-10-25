@@ -18,7 +18,7 @@ Scope: all 50 items in part1.ts to part5.ts, plus the two items in extra.ts that
 
 ## Key changes
 
-- rn-s22-91 (extra.ts, not in the bank). Before: option 1 "Protamine sulfate". After: option 1 "Calcium gluconate". The key index stays 1. Reason: calcium gluconate is the antidote for magnesium sulfate toxicity. Protamine reverses heparin and has no effect on magnesium. Arjan approves.
+- rn-s22-91 (extra.ts, not in the bank). Before: option 1 "Protamine sulfate". After: option 1 "Calcium gluconate". The key index stays 1. Reason: calcium gluconate is the antidote for magnesium sulfate toxicity. Protamine reverses heparin and has no effect on magnesium. The Preceptor team approves.
 
 ## Sources verified
 
@@ -41,7 +41,7 @@ Scope: all 50 items in part1.ts to part5.ts, plus the two items in extra.ts that
 - Hockenberry MJ, Duffy EA, Gibbs K. Wong's Nursing Care of Infants and Children, 12th edition. https://www.us.elsevierhealth.com/wongs-nursing-care-of-infants-and-children-9780323776707.html
 - Hinkle 15th edition (2022) and Davis's Drug Guide 18th edition (2023) match the editions confirmed in earlier reviews. The F. A. Davis page did not render for me, so the Davis's year rests on the s06 review.
 
-## Needs Arjan's decision
+## Needs the Preceptor team's decision
 
 - rn-s22-91 key change above.
 - rn-s22-91 is tagged need PA. An antidote item fits Pharmacological and Parenteral Therapies (PPT) better. It is also an obstetric item in a PA batch.

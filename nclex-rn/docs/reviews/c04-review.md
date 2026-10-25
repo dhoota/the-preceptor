@@ -23,7 +23,7 @@ Scope: all five case studies (rn-c04-1 to rn-c04-5, 30 items) and `extra.ts` (rn
 ## Key changes
 
 - rn-c04-8 (extra.ts, not in the bank). Before: option 2 "Protamine sulfate". After: option 2 "Calcium gluconate". Reason: protamine does not reverse magnesium, and the item had no correct option. The key index stays 1.
-- rn-c04-2-2 is not a key flip. The furosemide row was replaced by a new row, so no existing row changed its key. Logged here so Arjan sees it.
+- rn-c04-2-2 is not a key flip. The furosemide row was replaced by a new row, so no existing row changed its key. Logged here so the Preceptor team sees it.
 
 ## Checks on items that passed
 
@@ -49,7 +49,7 @@ Scope: all five case studies (rn-c04-1 to rn-c04-5, 30 items) and `extra.ts` (rn
 - Orthostatic heart rate rise of 20/minute or more. Merck Manual Professional. https://www.merckmanuals.com/professional/cardiovascular-disorders/symptoms-of-cardiovascular-disorders/orthostatic-hypotension
 - Carried from the earlier review and unchanged: CDC 2007 Isolation Appendix A, GOLD 2026, Prochaska 1992, USPSTF 2021, nicotine patch Drug Facts, 42 CFR 489.102, PHAC Part C, CNPS InfoLAW. Textbooks (Wong, Brunner, Potter, Varcarolis, Miller and Rollnick) were checked for edition only.
 
-## Needs Arjan's decision
+## Needs the Preceptor team's decision
 
 - AHA PALS 2025 materials are out. A secondary summary of the 2025 card gives infant heart rate 100 to 180/minute, not the 2020 awake range of 100 to 190/minute used in rn-c04-1-2 refs. The primary card could not be opened (503). The item value of 172/minute falls inside both, so the key holds. The citation and ref may need updating to 2025.
 - The Canada pass ran before cases 2, 3 and 4 were rewritten. Those 18 items have empty `canada` fields that were never assessed (for example hematocrit as L/L and the ACG 7 g/dL threshold as 70 g/L).

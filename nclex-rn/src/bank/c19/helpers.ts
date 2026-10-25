@@ -64,7 +64,7 @@ export const SRC: Record<string, Source> = {
     body: "ARDS Definition Task Force, Ranieri VM, Rubenfeld GD, et al.",
     work: "Acute Respiratory Distress Syndrome: The Berlin Definition. JAMA 307(23):2526",
     year: 2012,
-    url: "https://www.unboundmedicine.com/medline/citation/22797452/full_citation",
+    url: "https://pubmed.ncbi.nlm.nih.gov/22797452/",
   },
   ardsnet: {
     body: "Acute Respiratory Distress Syndrome Network",

@@ -65,7 +65,7 @@ Every other item in cases 1 to 5 was checked against its source. Points confirme
 - AGS Beers 2023, JAGS 71(7):2052. STOPP/START v3, Eur Geriatr Med 14(4):625, 2023. Freeman 2011, Clin Auton Res 21(2):69. Montero-Odasso 2022, Age Ageing 51(9). ASPEN 2017, JPEN 41(1):15. All confirmed on PubMed.
 - Not reopened because the pages returned 403: AHRQ Health Literacy Universal Precautions Toolkit (2024) and HEEADSSS 3.0 (Contemporary Pediatrics 2014). Both are real works already confirmed in other batch reviews. Wong's 12th edition (2023) and Davis's Drug Guide 18th edition (2023) are textbooks with no open text.
 
-## Needs Arjan's decision
+## Needs the Preceptor team's decision
 
 - rn-c18-9 and rn-c18-8 sit in `extra.ts`, which `index.ts` does not import. Their ids use the case id pattern but they are stand-alone mc items. Decide whether they join a stand-alone batch or are removed.
 - rn-c18-9 cites Davis's Drug Guide 18th edition. The c17 review moved the same item to the 19th edition. I could not open a publisher page to confirm the 19th edition year, so the citation is unchanged.

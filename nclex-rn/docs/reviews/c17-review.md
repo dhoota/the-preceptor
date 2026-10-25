@@ -43,7 +43,7 @@ Items checked with no defect found: every other item in cases 1 to 5. All number
 - ACOG Practice Bulletin 222, Gestational Hypertension and Preeclampsia. Obstet Gynecol 2020 135(6):e237. PubMed record 32443079. https://pubmed.ncbi.nlm.nih.gov/32443079/
 - Davis's Drug Guide for Nurses, 19th edition, Vallerand and Sanoski, F.A. Davis, 2025. https://www.vitalsource.com/products/davis-39-s-drug-guide-for-nurses-april-hazard-vallerand-v9781719652926
 
-## Needs Arjan's decision
+## Needs the Preceptor team's decision
 
 - extra.ts holds two stand-alone MC items with ids rn-c17-8 and rn-c17-9 in a case batch. The ids do not follow the case id scheme. Decide whether they move to a stand-alone batch or are dropped.
 - rn-c17-2 ARV guideline year 2025 and OI guideline year 2026 could not be read directly because clinicalinfo.hiv.gov returns 403. The content matches, but the year stamps are unconfirmed.

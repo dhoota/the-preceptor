@@ -17,7 +17,7 @@ Scope: every .ts file in src/bank/s25. That covers the 50 items in part1.ts to p
 
 ## Key changes
 
-- rn-s25-92 (extra.ts, not in the bank). Before: option 1 "Protamine sulfate", keyed. After: option 1 "Calcium gluconate", keyed. The index stays 1. Reason: calcium gluconate IV is the antidote for magnesium toxicity (ACOG Practice Bulletin 222, SOGC Guideline No. 426). Protamine reverses heparin and has no effect on magnesium. Arjan needs to approve this change.
+- rn-s25-92 (extra.ts, not in the bank). Before: option 1 "Protamine sulfate", keyed. After: option 1 "Calcium gluconate", keyed. The index stays 1. Reason: calcium gluconate IV is the antidote for magnesium toxicity (ACOG Practice Bulletin 222, SOGC Guideline No. 426). Protamine reverses heparin and has no effect on magnesium. The Preceptor team needs to approve this change.
 
 No key changed in the 50 items in the bank.
 
@@ -64,7 +64,7 @@ The other 43 bank items passed both lenses. Points checked closely:
 - Magee LA et al., SOGC Guideline No. 426, J Obstet Gynaecol Can 44(5):547, 2022, used by rn-s25-92. https://pubmed.ncbi.nlm.nih.gov/35577426/
 - Hinkle 15th edition (2022): the LWW page confirms it and shows a 16th edition published October 2025. https://shop.lww.com/Brunner---Suddarth-s-Textbook-of-Medical-Surgical-Nursing/p/9781975161033
 
-## Needs Arjan's decision
+## Needs the Preceptor team's decision
 
 - rn-s25-92: approve the key change above. The item repeats a teaching point common in other batches. Decide whether it joins the bank.
 - rn-s25-91: the key and rationale are sound now that the why is fixed. It can join the bank. It overlaps rn-s25-16 on hyperkalemia but asks a different question.

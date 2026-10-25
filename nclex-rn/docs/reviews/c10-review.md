@@ -13,7 +13,7 @@ Scope: case1.ts to case5.ts (30 case items) and extra.ts (rn-c10-9 and rn-c10-8,
 
 ## Key changes
 
-- rn-c10-8. Before: "Protamine sulfate" keyed at position 2. After: "Calcium gluconate" keyed at position 2. Reason: calcium gluconate 1 g IV is the antidote for magnesium sulfate toxicity. Protamine has no action against magnesium. Needs Arjan's approval.
+- rn-c10-8. Before: "Protamine sulfate" keyed at position 2. After: "Calcium gluconate" keyed at position 2. Reason: calcium gluconate 1 g IV is the antidote for magnesium sulfate toxicity. Protamine has no action against magnesium. Needs the Preceptor team's approval.
 
 ## Checks with no defect found
 
@@ -43,7 +43,7 @@ Scope: case1.ts to case5.ts (30 case items) and extra.ts (rn-c10-9 and rn-c10-8,
 - Sodium polystyrene sulfonate label, delayed onset: https://dailymed.nlm.nih.gov/dailymed/fda/fdaDrugXsl.cfm?setid=c73b9661-2378-4336-8be0-098e7c1ae522&type=display
 - Brunner and Suddarth 15th edition, 2022: https://shop.lww.com/Brunner---Suddarth-s-Textbook-of-Medical-Surgical-Nursing--2-vol-/p/9781975168285
 
-## Needs Arjan's decision
+## Needs the Preceptor team's decision
 
 - Approve the rn-c10-8 key change.
 - rn-c10-8 and rn-c10-9 in extra.ts use ids in the case id pattern (rn-c10-K). A case batch holds only rn-c10-1 to rn-c10-5. These items need standalone ids before they go into any bank. Their stems and rationales are also short and have no Canada notes. They now pass every item gate.

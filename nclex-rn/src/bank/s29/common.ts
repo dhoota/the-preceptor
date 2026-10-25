@@ -216,7 +216,7 @@ export const CNO_SCOPE: Source = {
   body: "College of Nurses of Ontario",
   work: "Practice Standard: Scope of Practice",
   year: 2023,
-  url: "https://cno.org/en/news/2023/july-2023/cnos-scope-of-practice-standard-takes-effect",
+  url: "https://web.archive.org/web/20240814104252/https://cno.org/en/news/2023/july-2023/cnos-scope-of-practice-standard-takes-effect/",
 };
 export const DC_HYPO: Source = {
   body: "Yale JF, Paty B, Senior PA. Diabetes Canada Clinical Practice Guidelines Expert Committee",

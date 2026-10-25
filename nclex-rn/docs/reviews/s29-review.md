@@ -59,7 +59,7 @@ Each item was grepped by topic and teaching point against the full text of all 2
 - Wright, 4th edition 2021, https://www.aacn.org/store/books/120564/the-ultimate-guide-to-competency-assessment-in-health-care-4th-ed
 - PubMed records 26404925, 27940731, 32511109, 2597811, 8534468 and 31662037 checked through NCBI E-utilities.
 
-## Needs Arjan's decision
+## Needs the Preceptor team's decision
 
 - The five pulls above, and adding their ids to `src/bank/pulled.ts`.
 - rn-s29-35 (water intoxication) and rn-s29-43 (blocked tracheostomy) are bow-ties whose content is Physiological Adaptation. They carry MOC because the plan fixes the batch at MOC 50. The keys are sound.

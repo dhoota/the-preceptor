@@ -20,7 +20,7 @@ Scope: all five cases in `index.ts` (rn-c16-1 to rn-c16-5, 30 items) and the two
 
 ## Key changes
 
-- rn-c16-8. Before: "Protamine sulfate" (index 1). After: "Calcium gluconate" (index 1). The keyed option text was replaced. Reason: calcium gluconate 1 g IV is the antidote for magnesium sulfate toxicity per SOGC Guideline No. 426. Protamine reverses heparin. Arjan must approve.
+- rn-c16-8. Before: "Protamine sulfate" (index 1). After: "Calcium gluconate" (index 1). The keyed option text was replaced. Reason: calcium gluconate 1 g IV is the antidote for magnesium sulfate toxicity per SOGC Guideline No. 426. Protamine reverses heparin. The Preceptor team must approve.
 
 No key changed in the 30 case items.
 
@@ -57,7 +57,7 @@ No key changed in the 30 case items.
 - Magee and colleagues, SOGC Guideline No. 426. JOGC 2022 44(5):547 to 571. Stop the infusion and give calcium gluconate 1 g IV. https://pubmed.ncbi.nlm.nih.gov/35577426/
 - Hinkle, Cheever, Overbaugh. Brunner and Suddarth, 15th edition, 2022. Textbook. Not checkable online at page level.
 
-## Needs Arjan's decision
+## Needs the Preceptor team's decision
 
 - Approve the rn-c16-8 key change. Decide whether rn-c16-8 and rn-c16-9 join the bank. Both now pass every item gate. Neither has a Canada note.
 - rn-c16-2-6. The night aide comes twice a week, but the keyed finding is about 7 hours of sleep on most nights. The day program may explain the rest. Left as written.

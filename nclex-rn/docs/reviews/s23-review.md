@@ -17,7 +17,7 @@ Adversarial review of batch s23 (Physiological Adaptation, stand-alone items rn-
 
 ## Key changes
 
-- rn-s23-91. Before: option 2 "Protamine sulfate" keyed. After: option 2 "Calcium gluconate" keyed (same position). Reason: SOGC Guideline No. 426 names calcium gluconate 10% IV as the treatment for magnesium toxicity. Protamine has no role. Arjan to approve.
+- rn-s23-91. Before: option 2 "Protamine sulfate" keyed. After: option 2 "Calcium gluconate" keyed (same position). Reason: SOGC Guideline No. 426 names calcium gluconate 10% IV as the treatment for magnesium toxicity. Protamine has no role. The Preceptor team to approve.
 
 ## Items checked with no defect
 
@@ -35,7 +35,7 @@ rn-s23-01 to 03, 06 to 08, 10 to 12, 14, 15, 17 to 36, 38 to 48 and 50. Keys, di
 - 2022 AHA/ACC/HFSA Heart Failure Guideline, still current. https://pubmed.ncbi.nlm.nih.gov/35378257/
 - Davis's Drug Guide for Nurses 18th edition, published 2023. https://www.fadavis.com/product/nursing-pharmacology-davis-drug-guide-deglin-vallerand-sanoski-18
 
-## Needs Arjan's decision
+## Needs the Preceptor team's decision
 
 - Approve the rn-s23-91 key change.
 - rn-s23-41 cites Adrogue and Madias (2000) for a limit of 10 mEq/L in 24 hours. It is still the usual teaching limit, but newer cohort data question it. Keep, or add a newer source.

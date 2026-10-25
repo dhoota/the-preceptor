@@ -17,7 +17,7 @@ Scope: all 30 case items in case1.ts to case5.ts, the shared sources in helpers.
 
 ## Key changes
 
-- rn-c03-8 (extra.ts, not yet in the bank). Before: option 1 "Protamine sulfate". After: option 1 "Calcium gluconate". The key index stays 1. Reason: calcium gluconate is the antidote for magnesium sulfate toxicity (ACOG Practice Bulletin 222, 2020). Protamine reverses heparin. Arjan must approve.
+- rn-c03-8 (extra.ts, not yet in the bank). Before: option 1 "Protamine sulfate". After: option 1 "Calcium gluconate". The key index stays 1. Reason: calcium gluconate is the antidote for magnesium sulfate toxicity (ACOG Practice Bulletin 222, 2020). Protamine reverses heparin. The Preceptor team must approve.
 
 ## Checks with no defect found
 
@@ -54,7 +54,7 @@ Scope: all 30 case items in case1.ts to case5.ts, the shared sources in helpers.
 - Miller WR, Rollnick S. Motivational Interviewing, 4th edition, 2023. Publisher page https://www.guilford.com/books/Motivational-Interviewing/Miller-Rollnick/9781462552795
 - Hinkle JL, et al. Brunner and Suddarth's Textbook of Medical-Surgical Nursing, 15th edition, 2022. Textbook, not checked line by line.
 
-## Needs Arjan's decision
+## Needs the Preceptor team's decision
 
 - Key change in rn-c03-8 above.
 - extra.ts uses the ids rn-c03-8 and rn-c03-9. That is the case id pattern (rn-cNN-K), not an item id. Both are stand-alone MC items in a case batch. They need new ids and a home batch before they join the bank. They are not scored by the batch tests.

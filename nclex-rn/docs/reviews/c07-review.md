@@ -50,7 +50,7 @@ None.
 - Davis's Drug Guide for Nurses, 18th edition, 2023, confirmed. https://www.fadavis.com/product/nursing-pharmacology-davis-drug-guide-deglin-vallerand-sanoski-18
 - USPSTF 2023 JAMA 329(23):2057, NCSBN and ANA delegation 2019, Davidson 2017 Crit Care Med 45(1):103, ISBI 2016 Burns 42(5):953, ASPEN 2017 JPEN 41(1):15, PVA 2001 acute AD guideline, Brunner 15th edition 2022 and Wong's 12th edition 2023 match their published details.
 
-## Needs Arjan's decision
+## Needs the Preceptor team's decision
 
 - rn-c07-1-5. The propranolol 60 mg every 4 hours prescription stands while 1-3 showed BP 98/58 mmHg with new crackles. ATA Table 7 advises caution and invasive monitoring in heart failure. The item tests iodide timing, so the key is safe. A nurse would question this dose, though, and the item never says so. Consider adding a BP at 0800 or changing the beta blocker to esmolol.
 - rn-c07-3-4. The why for the ointment says topical agents are held until the burn team assesses the wound. A clean dry dressing before transfer is well supported. I could not open the ABLS manual to confirm the explicit hold on topical agents. The key does not change either way.
@@ -62,7 +62,7 @@ None.
 
 ## Summary
 
-32 items reviewed, 30 in the cases and 2 in `extra.ts`. 9 fixes across 8 items. 0 key changes. 7 points flagged for Arjan. `BATCH=c07 npx vitest run tests/bank.test.ts` passes 44 of 44, and tsc reports no c07 errors.
+32 items reviewed, 30 in the cases and 2 in `extra.ts`. 9 fixes across 8 items. 0 key changes. 7 points flagged for the Preceptor team. `BATCH=c07 npx vitest run tests/bank.test.ts` passes 44 of 44, and tsc reports no c07 errors.
 
 ## Calibration
 

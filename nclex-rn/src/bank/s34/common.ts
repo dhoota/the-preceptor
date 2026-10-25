@@ -219,7 +219,7 @@ export const FDA_PENS: Source = {
   body: "US Food and Drug Administration",
   work: "FDA Drug Safety Communication: FDA Requires Label Warnings to Prohibit Sharing of Multi-Dose Diabetes Pen Devices Among Patients",
   year: 2015,
-  url: "https://www.fda.gov/drugs/drug-safety-and-availability/fda-drug-safety-communication-fda-requires-label-warnings-prohibit-sharing-multi-dose-diabetes-pen",
+  url: "https://web.archive.org/web/20260312012224/https://www.fda.gov/drugs/drug-safety-and-availability/fda-drug-safety-communication-fda-requires-label-warnings-prohibit-sharing-multi-dose-diabetes-pen",
 };
 export const LOVENOX: Source = {
   body: "sanofi-aventis U.S. LLC",
@@ -304,5 +304,4 @@ export const DC_CARB: Source = {
   body: "Diabetes Canada",
   work: "Basic Carbohydrate Counting",
   year: 2018,
-  url: "https://diabetes.ca/managing-my-diabetes/tools---resources/basic-carbohydrate-counting",
 };

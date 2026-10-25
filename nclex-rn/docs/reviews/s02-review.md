@@ -22,7 +22,7 @@ Scope: every .ts file in src/bank/s02. That covers the 50 items in part1.ts to p
 
 ## Key changes
 
-- rn-s02-92 (extra.ts, not in the bank). Before: option 1 "Protamine sulfate", keyed. After: option 1 "Calcium gluconate", keyed. The index stays 1. Reason: calcium gluconate is the antidote for magnesium toxicity (SOGC Guideline No. 426, ACOG Practice Bulletin 222). Protamine reverses heparin and has no effect on magnesium. Arjan needs to approve this change.
+- rn-s02-92 (extra.ts, not in the bank). Before: option 1 "Protamine sulfate", keyed. After: option 1 "Calcium gluconate", keyed. The index stays 1. Reason: calcium gluconate is the antidote for magnesium toxicity (SOGC Guideline No. 426, ACOG Practice Bulletin 222). Protamine reverses heparin and has no effect on magnesium. The Preceptor team needs to approve this change.
 
 No key changed in the 50 items in the bank.
 
@@ -63,7 +63,7 @@ No key changed in the 50 items in the bank.
 - Marx D, Just Culture primer, 2001. https://psnet.ahrq.gov/issue/patient-safety-and-just-culture-primer-health-care-executives
 - IHI SBAR tool, CMSA Standards of Practice 2022, ANA Code of Ethics 2025, ANA documentation principles 2010, Guido 7th edition, Lowdermilk 13th edition: pages reachable (200).
 
-## Needs Arjan's decision
+## Needs the Preceptor team's decision
 
 - rn-s02-92 key change above.
 - rn-s02-13: the TJC sentinel event page returns 403 and I could not open the policy itself. The item's rule (a fall with any fracture is a sentinel event) matches the published policy as I know it, but I did not confirm it from the page this session.

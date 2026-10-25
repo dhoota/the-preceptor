@@ -24,7 +24,7 @@ Scope: five case studies in `case1.ts` to `case5.ts` (30 items) and the two stan
 
 ## Key changes
 
-- rn-c19-8. Before: key "Protamine sulfate" (position 2). After: key "Calcium gluconate" (position 2). Reason: calcium gluconate is the antidote for magnesium sulfate toxicity per ACOG Practice Bulletin 222. Protamine reverses heparin and has no role here. Needs Arjan's approval.
+- rn-c19-8. Before: key "Protamine sulfate" (position 2). After: key "Calcium gluconate" (position 2). Reason: calcium gluconate is the antidote for magnesium sulfate toxicity per ACOG Practice Bulletin 222. Protamine reverses heparin and has no role here. Needs the Preceptor team's approval.
 
 ## Checks that found no defect
 
@@ -64,7 +64,7 @@ Scope: five case studies in `case1.ts` to `case5.ts` (30 items) and the two stan
 - Varcarolis 9th edition: https://openlibrary.org/isbn/9780323697071
 - Lewis's Medical-Surgical Nursing 12th edition: https://openlibrary.org/isbn/9780323789615
 
-## Needs Arjan's decision
+## Needs the Preceptor team's decision
 
 - rn-c19-8 key change above.
 - rn-c19-8 and rn-c19-9 sit in a case batch with stand-alone ids and are not imported. Decide whether they join a stand-alone batch or are dropped.

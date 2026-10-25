@@ -22,7 +22,7 @@ Scope: every .ts file in src/bank/s20. That covers the 50 items in part1.ts to p
 
 ## Key changes
 
-- rn-s20-91 (extra.ts, not in the bank). Before: option 1 "Protamine sulfate", keyed. After: option 1 "Calcium gluconate", keyed. The index stays 1. Reason: calcium gluconate is the antidote for magnesium toxicity. Protamine reverses heparin and has no effect on magnesium. Arjan needs to approve this change.
+- rn-s20-91 (extra.ts, not in the bank). Before: option 1 "Protamine sulfate", keyed. After: option 1 "Calcium gluconate", keyed. The index stays 1. Reason: calcium gluconate is the antidote for magnesium toxicity. Protamine reverses heparin and has no effect on magnesium. The Preceptor team needs to approve this change.
 
 No key changed in the 50 items in the bank.
 
@@ -61,7 +61,7 @@ The other 41 items in the bank passed both lenses. Points checked closely:
 
 The textbook sources (Hinkle, Potter, Pagana, Jarvis, Wong) were checked for edition and year only. Their content claims match standard teaching.
 
-## Needs Arjan's decision
+## Needs the Preceptor team's decision
 
 - The rn-s20-91 key change in extra.ts.
 - rn-s20-10: after a baseline result under 10 mm, the 2005 guideline calls for a second step test in 1 to 3 weeks. The item is right to call 8 mm negative, but it could mention the second step. I left it as written.

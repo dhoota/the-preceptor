@@ -1,12 +1,12 @@
-# Sign-off queue for Arjan
+# Sign-off queue for the Preceptor team
 
-Status: the first 2,000 items were signed off by Arjan Dhoot on 26 September 2026, including the three key changes below. They carry `reviewed: true`. Batches s29 to s38 (500 items) were approved by the owner on 24 October 2026 and also carry `reviewed: true`. See the last section.
+Status: the first 2,000 items were signed off by the Preceptor team on 26 September 2026, including the three key changes below. They carry `reviewed: true`. Batches s29 to s38 (500 items) were approved by the owner on 24 October 2026, then independently reviewed on 25 October 2026. 470 ship and 30 were pulled. See the last section.
 
-This file gathers what the 48 adversarial reviews left for Arjan. The full reports are in `docs/reviews/`.
+This file gathers what the 48 adversarial reviews left for the Preceptor team. The full reports are in `docs/reviews/`.
 
 ## Answer key changes on bank items
 
-Three bank items changed their key during review. Each needs Arjan's approval before sign-off.
+Three bank items changed their key during review. Each needs the Preceptor team's approval before sign-off.
 
 - rn-s21-18. The cardioversion order had two defensible sequences. The reviewer made one sequence correct.
 - rn-s27-26. The implant duration moved from up to 3 years to up to 5 years, to match the Nexplanon label the FDA approved on 16 January 2026.
@@ -16,11 +16,11 @@ Every review also changed the key of one planted calibration item (the magnesium
 
 ## Items the reviewers flagged, by batch
 
-The notes below are copied from each review under "Key changes" and "Needs Arjan's decision". Planted calibration items are left out.
+The notes below are copied from each review under "Key changes" and "Needs the Preceptor team's decision". Planted calibration items are left out.
 
 ### c01
 
-#### Needs Arjan's decision
+#### Needs the Preceptor team's decision
 
 - rn-c01-4 timeline: the last drink moved from about 36 to about 24 hours. If you would rather keep 36 hours, the onset reference and the 4-2 rationale then need rewording for a delayed onset.
 - rn-c01-5-5: the vitals (RR 22, new altered mentation, HR 104, BP down to 108/62) meet two qSOFA criteria. A recommendation of "see her today" may be less urgent than some reviewers expect. The key is still the best of the tokens.
@@ -30,7 +30,7 @@ The notes below are copied from each review under "Key changes" and "Needs Arjan
 
 ### c02
 
-#### Needs Arjan's decision
+#### Needs the Preceptor team's decision
 
 - rn-c02-1-3 says a heart rate of 104/minute does not fit thyroid storm. Thyroid storm usually brings a much faster rate. Left as written, but a reader might want "only mildly fast" added.
 - rn-c02-5 rests on Winstein 2016 for dysphagia content that I could see only in the abstract. Brunner carries the swallowing teaching as the second source.
@@ -38,7 +38,7 @@ The notes below are copied from each review under "Key changes" and "Needs Arjan
 
 ### c03
 
-#### Needs Arjan's decision
+#### Needs the Preceptor team's decision
 
 - rn-c03-3-2 keys a heart rate of 112/minute and a temperature of 38.1°C to both pancreatitis and withdrawal. This is defensible in a multi mode matrix and I left it.
 - rn-c03-2-4 is tagged MOC. It could be read as PPT. I left the tag.
@@ -49,9 +49,9 @@ The notes below are copied from each review under "Key changes" and "Needs Arjan
 
 #### Key changes
 
-- rn-c04-2-2 is not a key flip. The furosemide row was replaced by a new row, so no existing row changed its key. Logged here so Arjan sees it.
+- rn-c04-2-2 is not a key flip. The furosemide row was replaced by a new row, so no existing row changed its key. Logged here so the Preceptor team sees it.
 
-#### Needs Arjan's decision
+#### Needs the Preceptor team's decision
 
 - AHA PALS 2025 materials are out. A secondary summary of the 2025 card gives infant heart rate 100 to 180/minute, not the 2020 awake range of 100 to 190/minute used in rn-c04-1-2 refs. The primary card could not be opened (503). The item value of 172/minute falls inside both, so the key holds. The citation and ref may need updating to 2025.
 - UKKA 2023 advises a 10% glucose infusion after insulin when pre-treatment glucose is below 7.0 mmol/L. The client in case 2 had 5.3 mmol/L. rn-c04-2-6 teaches the hypoglycemia correctly, but a later edit could add this step.
@@ -59,22 +59,22 @@ The notes below are copied from each review under "Key changes" and "Needs Arjan
 
 ### c05
 
-#### Needs Arjan's decision
+#### Needs the Preceptor team's decision
 
 - rn-c05-4-4 keys "prone for 30 minutes 3 times a day" and "sitting limited to 1 hour at a time". Both match common amputation teaching but I could not open Brunner to confirm the exact figures.
-- rn-c05-5-6 keeps the option "the warmest setting on the label". CDC now says to follow the label and dry fully. The option is not false, but Arjan may prefer the CDC wording in the option too.
+- rn-c05-5-6 keeps the option "the warmest setting on the label". CDC now says to follow the label and dry fully. The option is not false, but the Preceptor team may prefer the CDC wording in the option too.
 - rn-c05-4-2 carries need PSY while four of six rows test contracture and falls. BCC or RRP may fit better.
 
 ### c06
 
-#### Needs Arjan's decision
+#### Needs the Preceptor team's decision
 
 - rn-c06-4 (case design, items 3 and 4). Spasovski 2014 counts vomiting as a severe symptom, and confusion and headache as moderately severe symptoms. It gives hypertonic saline for both, and also for an acute fall of more than 10 mmol/L without severe symptoms. At 0745 she has vomited, is slowed and has headache, and her sodium fell 16 mEq/L in about 48 hours. By the case's own source she qualified for 3% saline before the 1015 seizure, not fluid restriction alone. I removed the false "first treatment" claim from rn-c06-4-4 but kept the case flow. Options: accept the case as a teaching simplification, drop the 0630 vomiting and slow the fall, or have the team give the bolus at 0745.
 - rn-c06-3-5. When a durable power of attorney for health care takes effect varies by state and usually needs a documented finding of incapacity. The writer flagged this too. The key is defensible as written.
 
 ### c07
 
-#### Needs Arjan's decision
+#### Needs the Preceptor team's decision
 
 - rn-c07-1-5. The propranolol 60 mg every 4 hours prescription stands while 1-3 showed BP 98/58 mmHg with new crackles. ATA Table 7 advises caution and invasive monitoring in heart failure. The item tests iodide timing, so the key is safe. A nurse would question this dose, though, and the item never says so. Consider adding a BP at 0800 or changing the beta blocker to esmolol.
 - rn-c07-3-4. The why for the ointment says topical agents are held until the burn team assesses the wound. A clean dry dressing before transfer is well supported. I could not open the ABLS manual to confirm the explicit hold on topical agents. The key does not change either way.
@@ -85,13 +85,13 @@ The notes below are copied from each review under "Key changes" and "Needs Arjan
 
 ### c08
 
-#### Needs Arjan's decision
+#### Needs the Preceptor team's decision
 
 - rn-c08-5-5 teaches double chemotherapy gloves and an impermeable gown for body fluids. ONS also advises face protection when splashing is likely. The item does not raise splashing, so no change was made.
 
 ### c09
 
-#### Needs Arjan's decision
+#### Needs the Preceptor team's decision
 
 - rn-c09-5-4 Orders tab gives nifedipine and magnesium sulfate together. Combined use carries a reported risk of hypotension and neuromuscular blockade. It is common practice and the item does not test it, so it was left. Consider a monitoring note or a different tocolytic.
 - rn-c09-1-5 keys calling the blood bank and the other client's nurse as the next action. The client is hypotensive at 96/58 mmHg. No option names the primary health care provider, so the key holds, but a reader may argue for the provider first.
@@ -100,14 +100,14 @@ The notes below are copied from each review under "Key changes" and "Needs Arjan
 
 ### c11
 
-#### Needs Arjan's decision
+#### Needs the Preceptor team's decision
 
 - The NCSL duty to warn page could not be fetched. Confirm the URL is still live, or replace it with the state statute summary the team prefers.
 - rn-c11-1-5 gives ibuprofen to a toddler who had no wet diaper for 10 hours. The stem shows she is now drinking. Confirm whether a hydration note in the rationale is wanted.
 
 ### c12
 
-#### Needs Arjan's decision
+#### Needs the Preceptor team's decision
 
 - The AAOS OrthoInfo page shows no review date, so the year 2023 in `aaosTkr` could not be confirmed. The page does show Neil P. Sheth as contributor.
 - Textbook statements rest on Halter (rn-c12-1-5 observation after meals, rn-c12-5-4), Wong (rn-c12-4-2 loose tooth, rn-c12-4-6 bath soak) and Brunner (rn-c12-5-6 pillow under the knee). These are standard teaching but no page was checked.
@@ -116,7 +116,7 @@ The notes below are copied from each review under "Key changes" and "Needs Arjan
 
 ### c13
 
-#### Needs Arjan's decision
+#### Needs the Preceptor team's decision
 
 - rn-c13-4-4 and rn-c13-4-1. IDSA 2017 prefers soap and water over alcohol rub and sporicidal cleaning mainly in outbreak or hyperendemic settings. CDC advises soap and water and spore-killing products without that limit. The keys follow CDC and are defensible. No edit made.
 - rn-c13-3-4. The oxygen target row uses the BTS range of 94% to 98%, declared in `refs`. Many US units use 92% to 96%. The 2025 ATS pneumonia guideline confirms no corticosteroids in nonsevere pneumonia, so the key stands. Consider adding the 2025 ATS guideline as a second source once its full citation is confirmed.
@@ -124,7 +124,7 @@ The notes below are copied from each review under "Key changes" and "Needs Arjan
 
 ### c14
 
-#### Needs Arjan's decision
+#### Needs the Preceptor team's decision
 
 - rn-c14-5-6 teaches traditional sternal precautions. Some centers now use "keep your move in the tube". The item still fits current NCLEX teaching.
 - rn-c14-5-4 leaves volume loading out of the options. That avoids a second defensible key and was kept.
@@ -132,7 +132,7 @@ The notes below are copied from each review under "Key changes" and "Needs Arjan
 
 ### c15
 
-#### Needs Arjan's decision
+#### Needs the Preceptor team's decision
 
 - NICE NG220 search results show an update dated 26 August 2026. The recommendations page returned 403, so I could not check whether the cited 2022 wording or the citation year needs updating.
 - rn-c15-1-5 gives the scheduled enoxaparin to the LPN while the client is deteriorating. This fits delegation of a stable task, but state scope and facility policy vary.
@@ -141,14 +141,14 @@ The notes below are copied from each review under "Key changes" and "Needs Arjan
 
 ### c16
 
-#### Needs Arjan's decision
+#### Needs the Preceptor team's decision
 
 - rn-c16-2-6. The night aide comes twice a week, but the keyed finding is about 7 hours of sleep on most nights. The day program may explain the rest. Left as written.
 - rn-c16-4-5. LPN insulin scope varies by state and province.
 
 ### c17
 
-#### Needs Arjan's decision
+#### Needs the Preceptor team's decision
 
 - rn-c17-2 ARV guideline year 2025 and OI guideline year 2026 could not be read directly because clinicalinfo.hiv.gov returns 403. The content matches, but the year stamps are unconfirmed.
 - rn-c17-2-4: the why for stopping prophylaxis gives the main criterion (CD4 200 or more for 3 months). The OI guideline also allows stopping at CD4 100 to 200 with an undetectable viral load (BII). Left as is for entry level.
@@ -158,14 +158,14 @@ The notes below are copied from each review under "Key changes" and "Needs Arjan
 
 ### c18
 
-#### Needs Arjan's decision
+#### Needs the Preceptor team's decision
 
 - rn-c18-2-4 teaches Rho(D) immune globulin at 28 weeks only. It is also given after birth if the newborn is Rh positive. The key is still the only full arrangement, but the rationale could name the postpartum dose.
 - The ADA 2026 foot care section full text is not open. Its support for items 1-1 and 1-5 is now carried by the IWGDF 2023 guideline.
 
 ### c19
 
-#### Needs Arjan's decision
+#### Needs the Preceptor team's decision
 
 - rn-c19-4-4: "Walk with him in the hallway" is keyed. A client on wet suction can walk only on water seal if the prescription allows. Consider adding that to the stem.
 - rn-c19-3-2: the 2024 global ARDS definition keeps the same PaO2/FiO2 grades for intubated clients, so the Berlin key stands. A newer citation could be added.
@@ -174,14 +174,14 @@ The notes below are copied from each review under "Key changes" and "Needs Arjan
 
 ### c20
 
-#### Needs Arjan's decision
+#### Needs the Preceptor team's decision
 
 - rn-c20-2-5 still relies on an Irish source for the US peripheral potassium limits. A US nursing or pharmacy text would be a better fit.
 - rn-c20-5-6 has the client speak about his wife's blood test. It is true that no screening is needed, but it tests a different person than the learner. Consider rewording to his own test.
 
 ### s01
 
-#### Needs Arjan's decision
+#### Needs the Preceptor team's decision
 
 - rn-s01-34: approve the stem change. The old cue could be read to support pain as the first problem.
 - rn-s01-20 is tagged recognize cues but asks what to do first. I left it because its key is a bedside assessment. After my changes recognize has 5 items and analyze has 3, and all six steps are still used.
@@ -190,7 +190,7 @@ The notes below are copied from each review under "Key changes" and "Needs Arjan
 
 ### s02
 
-#### Needs Arjan's decision
+#### Needs the Preceptor team's decision
 
 - rn-s02-13: the TJC sentinel event page returns 403 and I could not open the policy itself. The item's rule (a fall with any fracture is a sentinel event) matches the published policy as I know it, but I did not confirm it from the page this session.
 - HHS HIPAA and AHRQ pages (HIPAA_ACCESS, HIPAA, BEDSIDE, TEACHBACK) return 403 to this session. The citations are real and the regulation text was confirmed from the CFR where one applies.
@@ -203,7 +203,7 @@ The notes below are copied from each review under "Key changes" and "Needs Arjan
 
 No key in rn-s03-01 to rn-s03-50 was changed.
 
-#### Needs Arjan's decision
+#### Needs the Preceptor team's decision
 
 - rn-s03-30. The item is a video visit. The cited HHS guidance is for audio-only telehealth. It supports private settings and avoiding speakerphone. The statement that public-facing apps are not allowed came from the 2020 enforcement discretion notice, which has expired. The teaching is still right under HIPAA, but a video-specific HHS source would fit better.
 - rn-s03-17. The NLC citation points to the FAQ page, which does not state the practice-law rule. Consider pointing the URL to the "Nurses and the NLC" page.
@@ -212,7 +212,7 @@ No key in rn-s03-01 to rn-s03-50 was changed.
 
 ### s04
 
-#### Needs Arjan's decision
+#### Needs the Preceptor team's decision
 
 - rn-s04-30 keys two supervision actions. At a respiratory rate of 9/minute and hard to rouse, stimulation and naloxone by protocol would also come first clinically. No distractor offers them, so the key stands. Confirm the framing.
 - rn-s04-05 keys the chain of command. The TeamSTEPPS two-challenge rule would also support restating the concern to the surgeon. That is not an option, so the key stands.
@@ -220,14 +220,14 @@ No key in rn-s03-01 to rn-s03-50 was changed.
 
 ### s05
 
-#### Needs Arjan's decision
+#### Needs the Preceptor team's decision
 
 - rn-s05-13: the keyed CUS statement uses concerned and safety issue but omits uncomfortable, while the rationale lists all three. It is still the best choice. Left as written.
 - rn-s05-41: the why calls a heart rate of 104/minute in new atrial fibrillation "controlled enough". That is defensible against the lenient rate target of under 110/minute. Left as written.
 
 ### s06
 
-#### Needs Arjan's decision
+#### Needs the Preceptor team's decision
 
 - rn-s06-03: the refs line gives the HIV PEP window, but the source client has hepatitis C. It is harmless but unused. Consider removing it and PEP2025.
 - rn-s06-37: the chlorhexidine why says it "may raise mortality". Klompas 2022 calls the signal uncertain. The hedge is fair and I left it.
@@ -235,14 +235,14 @@ No key in rn-s03-01 to rn-s03-50 was changed.
 
 ### s07
 
-#### Needs Arjan's decision
+#### Needs the Preceptor team's decision
 
 - rn-s07-50: the why "Sharps containers are not reused" is sound practice, but the FDA page does not state it. Consider a local disposal program source if a direct citation is wanted.
 - rn-s07-35: the 3 feet spacing comes from the 2007 isolation guideline. Some current CDC respiratory hygiene material uses 6 feet. The key is unaffected.
 
 ### s08
 
-#### Needs Arjan's decision
+#### Needs the Preceptor team's decision
 
 - USDA_TX: a 2011 revision of the transplant booklet exists. The 2006 edition is real and supports the item. Consider citing the current FDA page.
 - rn-s08-32: a nursing text now backs the contrasting step edge advice. Confirm Potter covers it, or reword the key to an item STEADI names, such as a handrail on both sides.
@@ -250,13 +250,13 @@ No key in rn-s03-01 to rn-s03-50 was changed.
 
 ### s09
 
-#### Needs Arjan's decision
+#### Needs the Preceptor team's decision
 
 - The Perry 7th edition shows a publication date of April 2022 on the Elsevier page. The citation gives 2023, which is likely the copyright year. It was left as is.
 
 ### s10
 
-#### Needs Arjan's decision
+#### Needs the Preceptor team's decision
 
 - The BENZOCAINE source names the FDA as its body but links to an AAFP news page. The FDA page that link describes moved and I could not find a working fda.gov URL for it.
 - rn-s10-47 calls a total cholesterol of 215 mg/dL borderline high, but no cited source supports that. Decide whether to add a lipid source or drop the word.
@@ -264,7 +264,7 @@ No key in rn-s03-01 to rn-s03-50 was changed.
 
 ### s11
 
-#### Needs Arjan's decision
+#### Needs the Preceptor team's decision
 
 - rn-s11-07 tests restraint time limits. The NCLEX test plan places use of restraints under Safety and Infection Control. The batch plan fixes all 50 items as PSY, so the tag was not changed. Consider moving the item to a SIPC batch or reframing it around behavioral crisis care.
 - rn-s11-06: the order (move others away, calm verbal contact, offer a choice, then oral medication) is defensible under least restrictive care. Some texts put calm verbal contact first. Left as keyed.
@@ -272,14 +272,14 @@ No key in rn-s03-01 to rn-s03-50 was changed.
 
 ### s12
 
-#### Needs Arjan's decision
+#### Needs the Preceptor team's decision
 
 - rn-s12-44: the "visit for a headache" distractor. Headaches can go with partner violence, but the keyed bruises and phone checks are clearly stronger. I left it as written.
 - rn-s12-44: the CDC page covers physical violence and psychological control but does not name phone checking. Halter is also cited and covers controlling behavior.
 
 ### s13
 
-#### Needs Arjan's decision
+#### Needs the Preceptor team's decision
 
 - rn-s13-37: the ref says PAINAD totals of 4 to 6 mean moderate pain. Warden 2003 did not publish bands. The tool instructions call the bands a possible reading that the literature has not confirmed. Also, moaning, a frown and guarding alone score about 3 or 4. The stated total of 6 implies findings the stem does not give. Consider giving the other findings or a lower total.
 - rn-s13-03, 10 and 38: the earlier review's difficulty and distractor concerns still stand.
@@ -287,14 +287,14 @@ No key in rn-s03-01 to rn-s03-50 was changed.
 
 ### s14
 
-#### Needs Arjan's decision
+#### Needs the Preceptor team's decision
 
 - rn-s14-12 (listed as a defect, not edited). The stem places Buck's traction on an 82-year-old with a hip fracture before surgery. The AAOS 2021 guideline advises against routine preoperative traction for hip fracture. The nursing care taught is correct, but the scenario models a practice current guidance discourages. Options: keep it and state that traction is prescribed, or move the scenario to another traction indication.
 - rn-s14-35 is rated difficulty 4 for a two-step addition. A lower rating would be more honest, but level 3 already holds 20 of 50, so a change needs rebalancing across the batch.
 
 ### s15
 
-#### Needs Arjan's decision
+#### Needs the Preceptor team's decision
 
 - rn-s15-48: the AWHONN monograph now has a 6th edition (2025). Consider moving the citation to it.
 - rn-s15-33: CHEST 2012 is still the usual citation for managing a high INR without bleeding. A newer source may be preferred.
@@ -302,21 +302,21 @@ No key in rn-s03-01 to rn-s03-50 was changed.
 
 ### s16
 
-#### Needs Arjan's decision
+#### Needs the Preceptor team's decision
 
 - rn-s16-12 Canada note: the 2026 AHA/ASA guideline also endorses tenecteplase in the 4.5 hour window. The note no longer marks a Canadian difference. Consider setting it to an empty string.
 - rn-s16-11: ketorolac 15 mg IM is half the usual adult IM dose. It is not unsafe. Carried over from the earlier review.
 
 ### s17
 
-#### Needs Arjan's decision
+#### Needs the Preceptor team's decision
 
 - rn-s17-13 still teaches the alteplase bolus. The 2026 guideline gives tenecteplase as an equal choice. The item stays valid, but a tenecteplase item may be worth adding.
 - rn-s17-15 names the subdural hematoma in the stem, so the bow-tie condition is easy. Left as is.
 
 ### s18
 
-#### Needs Arjan's decision
+#### Needs the Preceptor team's decision
 
 - rn-s18-38 was reworked to secondary prophylaxis. Please confirm the new scenario.
 - rn-s18-12 says haloperidol does not treat withdrawal. ASAM allows antipsychotics as an adjunct for agitation or hallucinations that benzodiazepines do not control. The key is safe. The why could be softened to "does not treat the withdrawal itself" if preferred.
@@ -324,19 +324,19 @@ No key in rn-s03-01 to rn-s03-50 was changed.
 
 ### s19
 
-#### Needs Arjan's decision
+#### Needs the Preceptor team's decision
 
 - rn-s19-49: the item no longer states a 1 hour antibiotic target. I could not read the 2026 Surviving Sepsis timing recommendations. If the 2026 edition keeps 1 hour for probable sepsis, the 1 hour teaching can return with a ref that names the condition it applies to.
 - rn-s19-29: the 2026 stroke guideline replaced the 2019 update. Its abstract confirms dysphagia recommendations, but I could not read their wording to confirm "before food, fluid or oral medicines".
 - rn-s19-43: AWHONN published a 6th edition of Cervical Ripening and Labor Induction and Augmentation in 2025. The item cites the 5th edition of 2020. The teaching point is unchanged, but the citation may need updating, as flagged in s15.
 - rn-s19-24: the 0 to 60 degree head of bed range is cited to Hinkle alone. I could not confirm the wording. The AACN Procedure Manual would be a stronger source.
 - rn-s19-47: a bariatric source would strengthen the item. Kim J et al., ASMBS position statement on gastrointestinal leak, Surg Obes Relat Dis 11(4):739, 2015 (PMID 26071849), exists, but I could not read the full text to confirm the heart rate wording, so I did not add it.
-- rn-s19-48: the cjmm is evaluate. The item asks for the best response to a new symptom, which reads as take action. I left it for Arjan.
+- rn-s19-48: the cjmm is evaluate. The item asks for the best response to a new symptom, which reads as take action. I left it for the Preceptor team.
 - rn-s19-40: process is teaching, but the item asks the nurse to interpret a result, not to teach.
 
 ### s20
 
-#### Needs Arjan's decision
+#### Needs the Preceptor team's decision
 
 - rn-s20-10: after a baseline result under 10 mm, the 2005 guideline calls for a second step test in 1 to 3 weeks. The item is right to call 8 mm negative, but it could mention the second step. I left it as written.
 - rn-s20-09: the INS left side head-down position for air embolism is still taught but has weaker evidence in newer reviews. I could not read the INS full text to confirm the 2024 wording.
@@ -345,9 +345,9 @@ No key in rn-s03-01 to rn-s03-50 was changed.
 
 #### Key changes
 
-- rn-s21-18. Before: correct order [1, 4, 0, 5, 2] with token 4 "Confirm sedation has taken effect". After: correct order [1, 0, 5, 2, 4] with token 4 "Press and hold the shock buttons". Reason: the old order had a second defensible sequence. Arjan needs to approve this change.
+- rn-s21-18. Before: correct order [1, 4, 0, 5, 2] with token 4 "Confirm sedation has taken effect". After: correct order [1, 0, 5, 2, 4] with token 4 "Press and hold the shock buttons". Reason: the old order had a second defensible sequence. The Preceptor team needs to approve this change.
 
-#### Needs Arjan's decision
+#### Needs the Preceptor team's decision
 
 - Approve the two key changes above.
 - HINKLE cites the 15th edition of Brunner and Suddarth (2022). The 16th edition (2026) is out. The content used here is unchanged fundamentals, so I did not replace it. Decide whether the bank moves to the 16th edition.
@@ -355,7 +355,7 @@ No key in rn-s03-01 to rn-s03-50 was changed.
 
 ### s22
 
-#### Needs Arjan's decision
+#### Needs the Preceptor team's decision
 
 - rn-s22-34 applies a 25 percent first-hour limit to mean arterial pressure. The 2025 guideline states the limit for systolic BP. The stem gives the limit as the prescription, so the key stands, but the cited source does not phrase it this way.
 - rn-s22-12 refs pair 30 mL/kg with a lactate of 4 mmol/L or more. The 2021 guideline says "sepsis-induced hypoperfusion". The lactate threshold comes from the earlier hour-1 bundle. Left as is.
@@ -363,28 +363,28 @@ No key in rn-s03-01 to rn-s03-50 was changed.
 
 ### s23
 
-#### Needs Arjan's decision
+#### Needs the Preceptor team's decision
 
 - rn-s23-41 cites Adrogue and Madias (2000) for a limit of 10 mEq/L in 24 hours. It is still the usual teaching limit, but newer cohort data question it. Keep, or add a newer source.
 - The whole bank test fails on two near duplicate pairs outside this batch (rn-s25-47 with rn-s26-07, and rn-c02-1-1 with rn-c14-3-1). No s23 stem is involved. This reviewer may not edit those files.
 
 ### s24
 
-#### Needs Arjan's decision
+#### Needs the Preceptor team's decision
 
 - Client Needs tags. The whole batch is tagged PA. Some items arguably test other areas: seizure precautions (rn-s24-25) and bleeding precautions (rn-s24-32) fit Safety or Reduction of Risk Potential. The kidney and celiac diet items (rn-s24-19, rn-s24-30) fit Basic Care and Comfort. Left unchanged because the batch was commissioned as Physiological Adaptation.
 - rn-s24-10 teaches the Somogyi effect. Continuous glucose monitoring studies question how often it occurs. It remains standard nursing text teaching, so the item is left as written.
 
 ### s25
 
-#### Needs Arjan's decision
+#### Needs the Preceptor team's decision
 
 - rn-s25-20: NHLBI 2014 is still the usual sickle cell citation. ASH has newer topic guidelines if a more recent source is preferred.
 - rn-s25-17: the BP parameter why mentions fluids, which the item never lists as an action. It is true teaching and I left it.
 
 ### s26
 
-#### Needs Arjan's decision
+#### Needs the Preceptor team's decision
 
 - rn-s26-27: ASHP 2018 says spiking an IV set into an HD solution in an uncontrolled setting must be avoided unless a CSTD gives a dry connection. The passage includes a closed-system device, so the key holds. A reader may still wonder why bedside spiking is shown at all.
 - rn-s26-35: the NIOSH 2016 list has been superseded by the NIOSH 2024 list, which dropped the PPE table. The single-glove teaching is still supported by ASHP 2018, which is also cited. Consider replacing the NIOSH 2016 citation with a current NIOSH document.
@@ -395,9 +395,9 @@ No key in rn-s03-01 to rn-s03-50 was changed.
 #### Key changes
 
 - rn-s27-26. Before: implant matched to "Up to 3 years". After: implant matched to "Up to 5 years". Reason: FDA approval of the Nexplanon supplemental application on January 16, 2026 extends labeled use to up to 5 years. The correct index array is unchanged.
-Arjan approves both.
+The Preceptor team approves both.
 
-#### Needs Arjan's decision
+#### Needs the Preceptor team's decision
 
 - Both key changes above.
 - rn-s27-39 cites the 2020 ISMP do-not-crush list with no URL. The four keyed drugs are on that list. A current product label could replace it.
@@ -405,107 +405,77 @@ Arjan approves both.
 
 ### s28
 
-#### Needs Arjan's decision
+#### Needs the Preceptor team's decision
 
 - rn-s28-11 cites PADIS, an ICU guideline, for a medical unit client. It supports clustering care and noise and light reduction, but a ward-level source may be preferable.
-- rn-s28-10: the why for the denial option says the recall expectation has "no basis". The stem says only that the client lost the job. Left as is because it reads as a reasonable inference, but Arjan may prefer "laid off permanently" in the stem.
+- rn-s28-10: the why for the denial option says the recall expectation has "no basis". The stem says only that the client lost the job. Left as is because it reads as a reasonable inference, but the Preceptor team may prefer "laid off permanently" in the stem.
 
 ## Batches s29 to s38: 500 new items
 
-Added in October 2026 on branch `content/nclex-bank-500`, then merged into `claude/nclex` for the next release. The owner reviewed and approved all 500 on 24 October 2026. They now carry `reviewed: true` and are listed in `docs/signoff.json`, so the app shows no Draft tag on them.
+Added in October 2026. The owner approved all 500 on 24 October 2026 on the writer pass and the automated gates. On 25 October 2026 ten fresh reviewers, none of them a writer, ran the adversarial review in `docs/REVIEW_BRIEF.md` and the Canada pass in `docs/CANADA_BRIEF.md` on every batch. Reports are in `docs/reviews/s29-review.md` to `s38-review.md` and `s29-canada.md` to `s38-canada.md`.
 
-### What was done
+### Results
 
-- Ten writers each wrote one batch of 50 to `docs/WRITER_BRIEF.md` and `docs/ITEM_SPEC.md`. Each batch has its own focus list in `docs/topic-plan.json`, chosen to avoid the existing bank.
-- Every writer grepped an inventory of the 2,000 existing items before each chunk. Where a topic was already taught, the new item tests a different point.
-- All automated gates pass for every batch: format, type mix, Client Needs split, key position, length bias, absolutes, contradictions, citation shape, units and calculations.
-- The whole bank passes the near duplicate gate (word trigram Jaccard 0.5) across all 2,500 stems. No new topic label repeats any label in the bank.
-- The launch gate passes with the full 2,500 item bank.
+| Batch | Passed unchanged | Fixed, key unchanged | Pulled |
+|---|---|---|---|
+| s29 | 37 | 8 | 5 |
+| s30 | 46 | 2 | 2 |
+| s31 | 33 | 16 | 1 |
+| s32 | 41 | 8 | 1 |
+| s33 | 40 | 8 | 2 |
+| s34 | 39 | 9 | 2 |
+| s35 | 40 | 7 | 3 |
+| s36 | 36 | 10 | 4 |
+| s37 | 32 | 15 | 3 |
+| s38 | 33 | 10 | 7 |
+| Total | 377 | 93 | 30 |
 
-### What was not done
+- 470 items ship. The 30 pulled items stay in their batch files for the record but are listed in `src/bank/pulled.ts`, left out of the shipped bank and removed from `docs/signoff.json`.
+- No key changed on a shipped item. Where a review changed the wording of a keyed option, the item was pulled instead, because a key change needs the Preceptor team's approval.
+- 104 Canada notes ship on the new items.
 
-- The adversarial reviews started for all ten batches. All ten stopped early when the account reached its weekly usage limit. Only the s33 review saved partial fixes, to its citations and to two items (the DBT interpersonal skill item and the methamphetamine psychosis lighting option).
-- No review report exists for s29 to s38. The writer reports are in `docs/reviews/s29-writer.md` to `docs/reviews/s38-writer.md`.
-- No Canada note pass has run. Every `canada` field is empty except rn-s34-48 (salbutamol).
-- The shared web search allowance ran out partway through writing. Later sources were checked by fetching publisher, label, PubMed, Crossref and agency pages directly. Each writer report lists which sources were read in full and which were not.
+### Pulled items
 
-The approval was given on the writer pass and the automated gates. The adversarial review in `docs/REVIEW_BRIEF.md` and the Canada note pass can still run later. Any item they change must leave `docs/signoff.json` and go back to `reviewed: false` until it is approved again.
+The reasons are in `src/bank/pulled.ts`. 25 of the 30 repeat a teaching point the bank already had. Two near copies (rn-s31-47 and rn-s37-40) were both pulled. rn-s32-49 was pulled because its key conflicts with current AAP advice. rn-s33-44, rn-s35-28 and rn-s38-36 were pulled because review reworded the keyed option, and rn-s36-47 because review rewrote it in full.
 
-### Writer flags by batch
+### Fixed after approval, for re-approval
 
-These are the points each writer asked the reviewer to check. They were approved as written. They remain the first things to check if the batches are reviewed again.
+These 93 items were edited in review after the owner's approval of 24 October. Each carries `version: 2`. No key changed. Most fixes correct a false or unsupported reason, add a missing stem fact or replace a source that could not be verified. Each review report lists every fix.
 
-#### s29 (Management of Care, new settings)
+- s29: rn-s29-05, rn-s29-06, rn-s29-07, rn-s29-09, rn-s29-11, rn-s29-22, rn-s29-25, rn-s29-36.
+- s30: rn-s30-19, rn-s30-26.
+- s31: rn-s31-02, rn-s31-10, rn-s31-19, rn-s31-32, rn-s31-33, rn-s31-37, rn-s31-38, rn-s31-40, rn-s31-41, rn-s31-42, rn-s31-44, rn-s31-45, rn-s31-46, rn-s31-48, rn-s31-49, rn-s31-50.
+- s32: rn-s32-01, rn-s32-09, rn-s32-18, rn-s32-22, rn-s32-26, rn-s32-29, rn-s32-38, rn-s32-48.
+- s33: rn-s33-14, rn-s33-17, rn-s33-22, rn-s33-23, rn-s33-29, rn-s33-30, rn-s33-31, rn-s33-45.
+- s34: rn-s34-03, rn-s34-08, rn-s34-13, rn-s34-27, rn-s34-29, rn-s34-33, rn-s34-36, rn-s34-41, rn-s34-46.
+- s35: rn-s35-07, rn-s35-19, rn-s35-24, rn-s35-32, rn-s35-36, rn-s35-39, rn-s35-46.
+- s36: rn-s36-01, rn-s36-03, rn-s36-13, rn-s36-16, rn-s36-22, rn-s36-24, rn-s36-28, rn-s36-31, rn-s36-34, rn-s36-37.
+- s37: rn-s37-05, rn-s37-07, rn-s37-13, rn-s37-15, rn-s37-17, rn-s37-18, rn-s37-21, rn-s37-29, rn-s37-30, rn-s37-35, rn-s37-37, rn-s37-38, rn-s37-39, rn-s37-48, rn-s37-49.
+- s38: rn-s38-03, rn-s38-12, rn-s38-14, rn-s38-16, rn-s38-19, rn-s38-21, rn-s38-23, rn-s38-27, rn-s38-28, rn-s38-35.
 
-- rn-s29-12: the CIWA-Ar severity cutoff in refs matches other bank items but was not rechecked against ASAM.
-- rn-s29-10: the RN is keyed for jail health request triage. Some jails let an LPN triage under protocol.
-- rn-s29-05 and rn-s29-14 depend on local rules. The stems state the policy each key relies on.
-- rn-s29-25, 27, 28 and 29: organ procurement referral rules for a hospital hospice unit, a freestanding hospice and a critical access hospital. Check against the CMS rules each cites.
-- Three sources in `common.ts` are declared but unused.
+### Needs the Preceptor team's decision
 
-#### s30 (Management of Care, legal and professional, and 10 SIPC)
+- rn-s29-35 and rn-s29-43 are tagged Management of Care, but their content is Physiological Adaptation. rn-s31-46 and rn-s31-48 are tagged SIPC but could be Physiological Adaptation. The batch plan fixes the counts, so the tags were left.
+- rn-s29-40: one incident command detail (Planning collects job action sheets) is medium confidence.
+- rn-s32-10 orders care of the child before waiting for the fire department. Both happen outside, so the order is defensible but weak.
+- rn-s32-16 and rn-s32-17 rest on the AGS and NHTSA older driver guide, which no reviewer could open. The teaching is standard and rn-s32-17 has a second source.
+- rn-s31-37 and rn-s31-38 now rest on cylinder suppliers' safety guides, not a regulator.
+- rn-s37-13 cites AHA 2020. The AHA 2025 update could not be read. rn-s37-27 uses chloral hydrate, still in the AAP sedation guideline but rarely used.
+- rn-s38-38 sits close to an rn-s24 trend item that shows the same markers worsening.
+- Older signed-off items cite the 2021 Surviving Sepsis guideline (batches c03, s05, s22, s26). The 2026 guideline suggests a MAP range of 60 to 65 mmHg for adults 65 or older. The keys checked still hold, but the wording in rn-c03-1 should be brought up to date. rn-s37-07 was updated in this review.
+- Canada notes were not written where the reviewer could not verify current Canadian status: rn-s31-01 to 07 (PHAC Ebola, pertussis and measles guidance), rn-s34-25 (estradiol cream), rn-s35-20 (olanzapine pamoate) and rn-s35-23 (injectable naltrexone).
 
-- rn-s30-04: the order of questions in the NCSBN scope of practice framework is from memory.
-- rn-s30-25 and 26: laser eyewear matched to wavelength. The ANSI Z136.3 eyewear section was not read.
-- rn-s30-11, 22 and 23: the AAP 2013 and ASHP 2018 shortage guidance was seen only as PubMed records.
-- rn-s30-50 overlaps rn-s08-14 on who marks the site. The new points are the bedside setting and the time-out timing.
-- rn-s30-49 keys a correctly sized BP cuff as a safety preparation. It may read as an accuracy point.
-- Licensure, genetic privacy and reportable disease items (01, 03, 07, 09, 20, 43, 45) will likely need Canada notes.
+### Writer flags
 
-#### s31 (Safety and Infection Prevention and Control)
+The writer flags for these batches were each resolved in the reviews above. The writer reports remain in `docs/reviews/s29-writer.md` to `s38-writer.md`.
 
-- Cited from knowledge, not read: Lewinsohn 2017, ISPD 2023 exit site definitions, AAMI ST79, the CDC hydromorphone conversion factor, NATA 2015, ACSM 2021, WMS 2020, the Humpty Dumpty scale, NFPA 99 and 101.
-- Weakest keys: rn-s31-40 (extension cord with home hemodialysis), rn-s31-42 (crib checks), rn-s31-24 (2 cm exit site redness), rn-s31-37 and 38 (oxygen cylinder handling).
-- rn-s31-46 sits near rn-s38-33, and rn-s31-48 near rn-s25-42 (heat stroke cooling).
+### Source link repairs
 
-#### s32 (Health Promotion and Maintenance, and 5 SIPC)
+A URL check of every source on 25 October 2026 found six dead links. They were replaced without changing any item text, so the affected items keep their sign-off.
 
-- rn-s32-25 and 26 avoid HPV dose counts on purpose, because the CDC schedule change of January 2026 is contested.
-- rn-s32-12, 13 and 45 use USPSTF 2018 for prostate and cervical screening. Check for newer final recommendations.
-- rn-s32-16 and 17 (older drivers): the AGS guide could not be opened.
-- rn-s32-29 rests on a 2001 AAP lawn mower statement. rn-s32-49 (dog bites) cites only a textbook.
-- rn-s32-24 writes lead values in words because the unit gate has no lead factor.
+- The Halter psychiatric nursing textbook page (42 items) now links to its ISBN record.
+- Two FDA safety notices (rn-s34-30, rn-s37-12) and a College of Nurses of Ontario news page (rn-s29-10, 18 and 27) now link to their archived copies.
+- A MEDLINE citation page for two c19 items now links to PubMed.
+- A Diabetes Canada page used by rn-s34-27 no longer exists. Its link was removed. The citation and the item's other sources remain.
 
-#### s33 (Psychosocial Integrity, and 5 BCC)
-
-- rn-s33-23 (kratom bowtie) shares withdrawal cues with rn-s11-31.
-- rn-s33-45 (Sikh care after death) shares the articles of faith point with rn-s12-38.
-- rn-s33-44 (Hindu death rites) rests on the Queensland Health handbook, read through a reprint.
-- rn-s33-31, 17, 18, 03 and 04: sources whose exact passage was not seen.
-- rn-s33-20: the last taper step is exactly the 25 percent ceiling.
-
-#### s34 (Basic Care and Comfort, and 10 PPT technique)
-
-- Textbook only: rn-s34-18, 02, 03, 20, 33 and 46.
-- rn-s34-34: the AASM 2025 restless legs guideline volume and pages are from memory.
-- rn-s34-44 keys a wrapped cold pack for paraphimosis. Local practice may want the provider to direct this.
-- rn-s34-09 and 14 carry the writer's own reasoning (scanner setting after hysterectomy, a 45 cm bag height).
-- Several sources are hospital patient leaflets rather than guidelines.
-
-#### s35 (Pharmacological and Parenteral Therapies, drug classes)
-
-- rn-s35-37: amphotericin B. The conventional form must not exceed 1.5 mg/kg. Check the key is unambiguous.
-- rn-s35-39 follows CDC guidance for oseltamivir after 48 hours in a hospitalized client, beyond the label.
-- rn-s35-44 uses the current Yescarta label (2 weeks near the treatment center, 2 weeks without driving).
-- rn-s35-25: QTc 500 ms with methadone comes from an expert panel, not the label.
-- rn-s35-24, 28 and 49 rest partly on general knowledge.
-
-#### s36 (Parenteral therapy and Reduction of Risk Potential)
-
-- Citation real but passage not read: rn-s36-01, 05, 13, 19, 22, 23, 24, 28, 31, 36 and 44.
-- rn-s36-47 (lactate trend) is close in theme to the s37 repeat lactate item.
-- Several DailyMed labels are relabeler versions.
-
-#### s37 (Reduction of Risk Potential, and 20 PA)
-
-- rn-s37-02 (repeat lactate in 2 to 4 hours), 07 (peripheral vasopressors), 16 (passive leg raise) and 33 (dehiscence timing) need a source check.
-- rn-s37-15: the capnography shark fin source (Kodali 2013) is paywalled.
-- rn-s37-35: exertional heat stroke is linked to the malignant hyperthermia gene, not proven to raise risk.
-- Not rechecked: ACCP 2012 (Gould), van Diepen 2017, the ABLS manual.
-
-#### s38 (Physiological Adaptation)
-
-- rn-s38-02 (pyridostigmine held on the ventilator) may sit too close to rn-s16-34.
-- rn-s38-26 and 27 cite the 2015 ESC pericardial guideline. A 2025 update exists.
-- rn-s38-03, 08, 16 and 19 rest on standard teaching rather than the cited guideline.
-- rn-s38-36, 39 and 42: check wording and keys against Lavonas, Kwiatt and the HELLP sources.
+Many other links answered 403 or 429 or timed out. These came from CDC, PubMed, journal sites and canada.ca blocking automated checks from the build machine, not from dead pages.

@@ -24,7 +24,7 @@ Batch s27. Stand-alone. 50 items in index.ts (rn-s27-01 to rn-s27-50) plus 2 ite
 - rn-s27-91 (extra.ts). Before: option 1 "Protamine sulfate" keyed. After: option 1 "Calcium gluconate" keyed. Reason: calcium gluconate is the antidote for magnesium sulfate toxicity. Protamine reverses heparin. The key index is unchanged but the keyed content changed.
 - rn-s27-26. Before: implant matched to "Up to 3 years". After: implant matched to "Up to 5 years". Reason: FDA approval of the Nexplanon supplemental application on January 16, 2026 extends labeled use to up to 5 years. The correct index array is unchanged.
 
-Arjan approves both.
+The Preceptor team approves both.
 
 ## Items checked with no defect
 
@@ -80,10 +80,10 @@ A script recomputed every value. All match the items.
 - GINA 2026 report, https://ginasthma.org/wp-content/uploads/2026/05/GINA-2026-Strategy-Report-WMS.pdf
 - Other source URLs (Mirena and Tamiflu labels, NIAAA, NCI, Bright Futures, FDA acetaminophen, ACOG EC, HealthyChildren Reye, Elsevier texts) returned HTTP 200. Several CDC, AAP and SAMHSA pages block scripted requests and were confirmed by search instead.
 
-## Needs Arjan's decision
+## Needs the Preceptor team's decision
 
 - Both key changes above.
-- rn-s27-91 and rn-s27-92 remain outside index.ts. They now pass every item gate. Arjan decides whether to add them.
+- rn-s27-91 and rn-s27-92 remain outside index.ts. They now pass every item gate. The Preceptor team decides whether to add them.
 - rn-s27-39 cites the 2020 ISMP do-not-crush list with no URL. The four keyed drugs are on that list. A current product label could replace it.
 - rn-s27-26 now teaches the 5-year implant label. The SFP extended-use source still supports longer off-label use of other devices.
 

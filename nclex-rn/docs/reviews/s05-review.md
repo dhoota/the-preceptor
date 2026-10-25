@@ -21,7 +21,7 @@ Reviewer: adversarial review under docs/REVIEW_BRIEF.md, Lens A and Lens B. Scop
 
 ## Key changes
 
-- rn-s05-92 (extra.ts, not in the bank). Before: option 1 "Protamine sulfate" keyed, with a why saying it reverses magnesium. After: option 1 "Calcium gluconate" keyed at the same position. Reason: calcium gluconate 1 g IV is the standard antidote for magnesium sulfate toxicity. Protamine reverses heparin. The item as written taught a false and dangerous antidote. Arjan must approve.
+- rn-s05-92 (extra.ts, not in the bank). Before: option 1 "Protamine sulfate" keyed, with a why saying it reverses magnesium. After: option 1 "Calcium gluconate" keyed at the same position. Reason: calcium gluconate 1 g IV is the standard antidote for magnesium sulfate toxicity. Protamine reverses heparin. The item as written taught a false and dangerous antidote. The Preceptor team must approve.
 
 No key in the 50 bank items changed.
 
@@ -54,10 +54,10 @@ rn-s05-01, 02, 04, 05, 08 to 18, 20, 21, 23 to 36, 38, 40 to 49. Priority keys f
 - SOGC Guideline No. 426, 2022. PubMed 35577426. https://pubmed.ncbi.nlm.nih.gov/35577426/
 - URLs that returned 200: ISMP smart pumps, IHI measures, IHI toolkit, IHI SBAR, ANA documentation principles, ANA code, both ONC SAFER guides, PSNet alert fatigue, Lowdermilk at Elsevier, TeamSTEPPS pocket guide. CDC and NHSN PDFs and several hhs.gov pages block automated fetches (403). Their titles and years were matched by search.
 
-## Needs Arjan's decision
+## Needs the Preceptor team's decision
 
 - The rn-s05-92 key change above.
-- rn-s05-92 cites SOGC Guideline No. 426. I could not open the full text to confirm that it names calcium gluconate, so Lowdermilk was added as the source for the antidote. Arjan may want to drop the SOGC citation or confirm it.
+- rn-s05-92 cites SOGC Guideline No. 426. I could not open the full text to confirm that it names calcium gluconate, so Lowdermilk was added as the source for the antidote. The Preceptor team may want to drop the SOGC citation or confirm it.
 - rn-s05-13: the keyed CUS statement uses concerned and safety issue but omits uncomfortable, while the rationale lists all three. It is still the best choice. Left as written.
 - rn-s05-41: the why calls a heart rate of 104/minute in new atrial fibrillation "controlled enough". That is defensible against the lenient rate target of under 110/minute. Left as written.
 

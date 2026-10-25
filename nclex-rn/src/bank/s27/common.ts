@@ -157,7 +157,7 @@ export const HALTER: Source = {
   body: "Halter MJ",
   work: "Varcarolis' Foundations of Psychiatric-Mental Health Nursing: A Clinical Approach, 9th edition",
   year: 2022,
-  url: "https://shop.elsevier.com/books/varcarolis-foundations-of-psychiatric-mental-health-nursing/halter/978-0-323-69707-1",
+  url: "https://books.google.com/books?vid=ISBN9780323697071",
 };
 export const AOM: Source = {
   body: "Lieberthal AS, Carroll AE, Chonmaitree T, et al. American Academy of Pediatrics",

@@ -100,7 +100,7 @@ None.
 
 Not reread: CDC LTBI 2020 (cited for the rifampin pediatric range, which matches the known 4R regimen), ISMP high-alert list and Hinkle.
 
-## Needs Arjan's decision
+## Needs the Preceptor team's decision
 
 - The two pulls (35 and 50).
 - rn-s35-46. Confirm the reworked distractor set is acceptable, or pull it as a near repeat of rn-s26-20.

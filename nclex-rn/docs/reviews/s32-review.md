@@ -54,7 +54,7 @@ Each topic and teaching point was searched in `inventory.txt`, `cases.txt` and `
 - rn-s32-43: shifts of 10, 15 and 25 dB average 16.7 dB, which is 10 or more.
 - rn-s32-47: 48 of 12 000 is 4.0 per 1000. The distractors 3.9, 32.3 and 36.1 match 48, 400 and 448 over 12 400.
 
-## Needs Arjan's decision
+## Needs the Preceptor team's decision
 
 - rn-s32-16 and 17 rest on the AGS and NHTSA guide, which no reviewer could open. Keep or add a second source.
 - rn-s32-10 orders "get medical care for the child" before "stay out until the fire department clears the home". Both happen while the family is outside. The order is defensible but is the weakest step in the item.

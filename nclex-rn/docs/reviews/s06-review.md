@@ -21,7 +21,7 @@ Scope: every .ts file in src/bank/s06. That covers the 50 items in part1.ts to p
 
 ## Key changes
 
-- rn-s06-91 (extra.ts, not in the bank). Before: option 1 "Protamine sulfate", keyed. After: option 1 "Calcium gluconate", keyed. The index stays 1. Reason: calcium gluconate 1 g IV is the antidote for magnesium toxicity (ACOG Practice Bulletin 222). Protamine reverses heparin and has no effect on magnesium. Arjan needs to approve this change.
+- rn-s06-91 (extra.ts, not in the bank). Before: option 1 "Protamine sulfate", keyed. After: option 1 "Calcium gluconate", keyed. The index stays 1. Reason: calcium gluconate 1 g IV is the antidote for magnesium toxicity (ACOG Practice Bulletin 222). Protamine reverses heparin and has no effect on magnesium. The Preceptor team needs to approve this change.
 
 No key changed in the 50 items in the bank.
 
@@ -50,7 +50,7 @@ The other 41 items in the bank passed both lenses. Points checked closely:
 - Davis's Drug Guide for Nurses, 18th edition, copyright 2023. https://www.fadavis.com/product/nursing-pharmacology-davis-drug-guide-deglin-vallerand-sanoski-18
 - The other citations in common.ts match the links in s06-writer.md.
 
-## Needs Arjan's decision
+## Needs the Preceptor team's decision
 
 - rn-s06-91: approve the key change above. The item repeats rn-s15-92 almost word for word in teaching point. Decide whether it joins any bank.
 - rn-s06-91 and rn-s06-92 are PPT items in an SIPC batch. If they join the bank they belong in a PPT batch.

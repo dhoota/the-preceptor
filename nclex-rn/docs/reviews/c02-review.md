@@ -18,7 +18,7 @@ Counts: 7 fixes in 7 items. All five main cases keep their keys.
 
 ## Key changes
 
-- rn-c02-8 (extra.ts, not in the bank). Before: option 1 "Protamine sulfate", keyed. After: option 1 "Calcium gluconate", keyed. The key index stays 1 but the keyed answer changed. Reason: ACOG Practice Bulletin 222 gives calcium gluconate 10% solution, 10 mL IV over 3 minutes, for magnesium toxicity. Protamine reverses heparin. Arjan to approve.
+- rn-c02-8 (extra.ts, not in the bank). Before: option 1 "Protamine sulfate", keyed. After: option 1 "Calcium gluconate", keyed. The key index stays 1 but the keyed answer changed. Reason: ACOG Practice Bulletin 222 gives calcium gluconate 10% solution, 10 mL IV over 3 minutes, for magnesium toxicity. Protamine reverses heparin. The Preceptor team to approve.
 
 ## Checked and left as written
 
@@ -47,7 +47,7 @@ Counts: 7 fixes in 7 items. All five main cases keep their keys.
 - Halter MJ, Varcarolis' Foundations of Psychiatric-Mental Health Nursing. Open Library gives 2021 for ISBN 9780323697071. https://openlibrary.org/isbn/9780323697071.json
 - Brunner and Suddarth 15th edition, Lowdermilk 13th edition and Wong's 12th edition were not re-fetched. The c01 review and the fixture already use them.
 
-## Needs Arjan's decision
+## Needs the Preceptor team's decision
 
 - The key change in rn-c02-8 above.
 - rn-c02-1-3 says a heart rate of 104/minute does not fit thyroid storm. Thyroid storm usually brings a much faster rate. Left as written, but a reader might want "only mildly fast" added.

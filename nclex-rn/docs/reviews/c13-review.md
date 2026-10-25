@@ -16,7 +16,7 @@ Both lenses were applied to every item. Every stated number was recomputed with 
 
 ## Key changes
 
-- rn-c13-8 (extra.ts, not in the bank). Before: keyed option "Protamine sulfate". After: keyed option "Calcium gluconate" in the same position. Reason: calcium gluconate is the antidote for magnesium sulfate toxicity (ACOG Practice Bulletin No. 222). Protamine reverses heparin and is not a defensible answer. Arjan to approve.
+- rn-c13-8 (extra.ts, not in the bank). Before: keyed option "Protamine sulfate". After: keyed option "Calcium gluconate" in the same position. Reason: calcium gluconate is the antidote for magnesium sulfate toxicity (ACOG Practice Bulletin No. 222). Protamine reverses heparin and is not a defensible answer. The Preceptor team to approve.
 
 No case item key was changed.
 
@@ -39,7 +39,7 @@ No case item key was changed.
 - ACOG. Gestational Hypertension and Preeclampsia, Practice Bulletin No. 222, 2020. Calcium gluconate 1 g IV for magnesium toxicity. https://pubmed.ncbi.nlm.nih.gov/32443079/
 - Sodium polystyrene sulfonate onset of 2 to 24 hours and not for emergency use. StatPearls. https://www.ncbi.nlm.nih.gov/books/NBK559206/
 
-## Needs Arjan's decision
+## Needs the Preceptor team's decision
 
 - rn-c13-8 key change above.
 - rn-c13-4-4 and rn-c13-4-1. IDSA 2017 prefers soap and water over alcohol rub and sporicidal cleaning mainly in outbreak or hyperendemic settings. CDC advises soap and water and spore-killing products without that limit. The keys follow CDC and are defensible. No edit made.

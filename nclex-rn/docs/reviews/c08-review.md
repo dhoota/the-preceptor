@@ -39,7 +39,7 @@ None. Every key stands.
 - Freifeld AG et al. IDSA 2010 update, Clinical Infectious Diseases 52(4):e56, 2011. Fever definition and no plants or flowers in neutropenic rooms. https://academic.oup.com/cid/article/52/4/e56/382256
 - Citation details for Taplitz 2018, Rubin 2014, Coiffier 2008, Katz 2016, Brandow 2020, Jungquist 2020, Wuhrman 2007, Joint Commission Sentinel Event Alert 58, O'Grady 2011, Boullata 2017 and the textbooks match the published works.
 
-## Needs Arjan's decision
+## Needs the Preceptor team's decision
 
 - extra.ts holds rn-c08-8 and rn-c08-9. They are stand-alone items with ids that do not fit the case id pattern and are not imported. Decide whether to renumber and add them or delete the file.
 - rn-c08-5-5 teaches double chemotherapy gloves and an impermeable gown for body fluids. ONS also advises face protection when splashing is likely. The item does not raise splashing, so no change was made.

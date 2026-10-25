@@ -52,7 +52,7 @@ Batch s10 holds 50 stand-alone Health Promotion and Maintenance items in `part1.
 - Davis's Drug Guide for Nurses 18th edition, F.A. Davis. https://www.fadavis.com/product/nursing-pharmacology-davis-drug-guide-deglin-vallerand-sanoski-18
 - Textbook editions checked on the Elsevier shop: Jarvis 9th, Lowdermilk 13th, Touhy and Jett 6th.
 
-## Needs Arjan's decision
+## Needs the Preceptor team's decision
 
 - Approve the rn-s10-91 key change. Also decide whether rn-s10-91 and rn-s10-92 belong in this batch at all. Both are drug items, not Health Promotion and Maintenance.
 - The BENZOCAINE source names the FDA as its body but links to an AAFP news page. The FDA page that link describes moved and I could not find a working fda.gov URL for it.

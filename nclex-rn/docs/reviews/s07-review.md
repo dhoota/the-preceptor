@@ -29,7 +29,7 @@ Note on extra.ts: the file was read in full at the start of the review. It was d
 
 None applied to the bank.
 
-Proposed for Arjan, if rn-s07-91 is restored: before, "Protamine sulfate" keyed at index 1. After, "Calcium gluconate" keyed at index 1. Reason: protamine reverses heparin and has no action on magnesium. Calcium gluconate is the accepted antidote for magnesium sulfate toxicity (Xia et al. 2026, and standard drug references).
+Proposed for the Preceptor team, if rn-s07-91 is restored: before, "Protamine sulfate" keyed at index 1. After, "Calcium gluconate" keyed at index 1. Reason: protamine reverses heparin and has no action on magnesium. Calcium gluconate is the accepted antidote for magnesium sulfate toxicity (Xia et al. 2026, and standard drug references).
 
 ## Items checked and found sound
 
@@ -65,7 +65,7 @@ The keys and whys of the other 43 items hold against their sources. Points confi
 
 Not read at page level (403 or unavailable): TJC Sentinel Event Alerts 53 and 68, AAP full texts, CMS 42 CFR 482.13(e) guidance, FDA bed entrapment guidance, the CDC LTC influenza page (the current URL returns 404, the writer's archive link was not re-read), and the textbook claims from Potter and Hinkle. The claims resting on them are standard and I found no error in them.
 
-## Needs Arjan's decision
+## Needs the Preceptor team's decision
 
 - extra.ts is gone from the batch folder. Decide whether rn-s07-91 and rn-s07-92 return. If they do, apply the fixes above, including the key change on rn-s07-91, and file them in a PPT batch rather than this SIPC batch.
 - rn-s07-50: the why "Sharps containers are not reused" is sound practice, but the FDA page does not state it. Consider a local disposal program source if a direct citation is wanted.

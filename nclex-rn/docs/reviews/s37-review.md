@@ -63,7 +63,7 @@ Every edited item carries `version: 2`. No key changed.
 - AHA 2020 cardiac arrest algorithm text: https://cpr.heart.org/-/media/CPR-Files/CPR-Guidelines-Files/Algorithms/Text-Descriptions/AlgorithmACLS_CA_LngDscrp_200921_Ed.pdf
 - Crossref metadata confirmed for van Diepen 2017, Fletcher 2013, Sandau 2017, Feld 2018, Koch 2019, ISBI 2016, ACOG PB 162, ERAS 2018, Hew-Butler 2015 and Kodali 2013.
 
-## Needs Arjan's decision
+## Needs the Preceptor team's decision
 
 - rn-s37-13 cites AHA 2020. Part 9 of the 2025 AHA guidelines (Wigginton, Circulation 152(16 Suppl 2):S538) now exists. Its full text was not reachable. Summaries report no change to the algorithm. Consider updating the citation once the ETCO2 wording is confirmed.
 - rn-s37-27 uses chloral hydrate. The AAP guideline still names it, but it is rarely used now.

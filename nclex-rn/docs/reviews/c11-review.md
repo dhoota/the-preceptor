@@ -50,7 +50,7 @@ None. Every key was confirmed.
 - Halter, Varcarolis 9th edition 2022. The ISBN 9780323697071 page resolves at Elsevier. Hockenberry, Wong's 12th edition 2023, Potter, Fundamentals 11th edition 2023, and Vallerand, Davis's Drug Guide 18th edition 2023 are current textbook editions. They have no URL.
 - NCSL, Mental Health Professionals' Duty to Warn. The page returned 403 to automated fetches and could not be read. The claim that it supports is general and is also covered by Halter.
 
-## Needs Arjan's decision
+## Needs the Preceptor team's decision
 
 - rn-c11-8 and rn-c11-9 in extra.ts are stand-alone items in a case batch, and index.ts does not import them. They were fixed but still need a decision on whether they belong in c11.
 - rn-c11-8 has a one-line rationale built on a single source. The ASPEN 2017 guidance also advises against routine residual checks in some settings. Confirm that the residual volume distractor fits current practice.

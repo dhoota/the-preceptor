@@ -26,7 +26,7 @@ Checked and left as written: every calculation (rn-s18-01, 09, 15, 24, 25, 32, 4
 
 ## Key changes
 
-- rn-s18-91 (extra.ts, not yet in the bank). Before: option 1 "Protamine sulfate" keyed. After: option 1 "Calcium gluconate" keyed. The key index stays 1. Reason: calcium gluconate is the antidote for magnesium sulfate toxicity. Protamine reverses heparin. Arjan must approve.
+- rn-s18-91 (extra.ts, not yet in the bank). Before: option 1 "Protamine sulfate" keyed. After: option 1 "Calcium gluconate" keyed. The key index stays 1. Reason: calcium gluconate is the antidote for magnesium sulfate toxicity. Protamine reverses heparin. The Preceptor team must approve.
 
 ## Sources verified
 
@@ -54,7 +54,7 @@ Checked and left as written: every calculation (rn-s18-01, 09, 15, 24, 25, 32, 4
 
 Textbooks (Lehne 11th edition 2022, Hinkle 15th edition 2022, Potter 11th edition) were accepted as current fundamentals references. ISMP High-Alert 2024, ADA and APA 2004 and Fiore 2008 were accepted as the current documents of their kind.
 
-## Needs Arjan's decision
+## Needs the Preceptor team's decision
 
 - The key change on rn-s18-91 above.
 - rn-s18-38 was reworked to secondary prophylaxis. Please confirm the new scenario.

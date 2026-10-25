@@ -27,7 +27,7 @@ I also changed the TJC_NPG entry in common.ts (used by rn-s01-50) to name NPG.01
 
 ## Key changes
 
-- rn-s01-92 (extra.ts, not in the bank). Before: option 1 "Protamine sulfate", keyed. After: option 1 "Calcium gluconate", keyed. The index stays 1. Reason: calcium gluconate is the antidote for magnesium toxicity (ACOG Practice Bulletin 222, SOGC Guideline No. 426). Protamine reverses heparin and has no effect on magnesium. Arjan needs to approve this change.
+- rn-s01-92 (extra.ts, not in the bank). Before: option 1 "Protamine sulfate", keyed. After: option 1 "Calcium gluconate", keyed. The index stays 1. Reason: calcium gluconate is the antidote for magnesium toxicity (ACOG Practice Bulletin 222, SOGC Guideline No. 426). Protamine reverses heparin and has no effect on magnesium. The Preceptor team needs to approve this change.
 
 No key changed in the 50 items in the bank.
 
@@ -65,7 +65,7 @@ No key changed in the 50 items in the bank.
 - PubMed records confirmed: Appelbaum NEJM 357(18):1834, 2007 (PMID 17978292). Jones, DeVita, Bellomo NEJM 365:139, 2011 (PMID 21751906). Naylor et al. JAGS 52(5):675, 2004 (PMID 15086645). Alfandre Mayo Clin Proc 84(3):255, 2009 (PMID 19252113). Magee et al. SOGC No. 426, JOGC 44:547, 2022 (PMID 35577426). ACOG PB 222, Obstet Gynecol 135:e237, 2020 (PMID 32443079). Batterink et al. Can J Hosp Pharm 68(4):296, 2015, which gives SPS onset as 2 to 24 hours (PMID 26327703, https://pmc.ncbi.nlm.nih.gov/articles/PMC4552230/).
 - I could not open these pages because they returned 403, so I did not reverify them: the AHRQ CANDOR toolkit (2016), the AHRQ falls toolkit (2013), CMSA Standards (2022) and the HHS HIPAA Privacy Rule summary (2003). The NCSBN substance use page resolves but no longer lists the 2011 manual. Potter 11th, Yoder-Wise 8th, Hinkle 15th, Wong 12th, Beauchamp and Childress 8th and Langley 2nd are standard editions with the stated years.
 
-## Needs Arjan's decision
+## Needs the Preceptor team's decision
 
 - rn-s01-92: approve the key change above. Decide whether 91 and 92 join the bank. They are PPT items in a Management of Care batch.
 - rn-s01-34: approve the stem change. The old cue could be read to support pain as the first problem.

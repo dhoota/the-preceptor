@@ -21,7 +21,7 @@ Batch s14. Basic Care and Comfort. 50 stand-alone items in `part1.ts` to `part5.
 
 ## Key changes
 
-- rn-s14-91. Before: "Protamine sulfate" keyed at position 1. After: "Calcium gluconate" keyed at position 1. Reason: calcium gluconate is the antidote for magnesium sulfate toxicity (SOGC Guideline No. 426, 2022). Protamine reverses heparin. The keyed answer taught a false and dangerous antidote. The key index is unchanged but the keyed content changed. Arjan must approve.
+- rn-s14-91. Before: "Protamine sulfate" keyed at position 1. After: "Calcium gluconate" keyed at position 1. Reason: calcium gluconate is the antidote for magnesium sulfate toxicity (SOGC Guideline No. 426, 2022). Protamine reverses heparin. The keyed answer taught a false and dangerous antidote. The key index is unchanged but the keyed content changed. The Preceptor team must approve.
 
 ## Sources verified
 
@@ -37,7 +37,7 @@ Batch s14. Basic Care and Comfort. 50 stand-alone items in `part1.ts` to `part5.
 - Potter and Perry sleep deprivation signs (ptosis, slowed response, pain sensitivity, irritability) confirmed in summaries of chapter 43, 11th edition.
 - The remaining journal citations in `common.ts` (Chung 2008, Edinger 2021, WOCN 2018, Gould 2009, Qaseem 2014, ANA 2021, Ikizler 2020, Heidenreich 2022, Rubio-Tapia 2023, Elad 2020, Schwartz 2017) match their stated journal, volume and year.
 
-## Needs Arjan's decision
+## Needs the Preceptor team's decision
 
 - rn-s14-12 (listed as a defect, not edited). The stem places Buck's traction on an 82-year-old with a hip fracture before surgery. The AAOS 2021 guideline advises against routine preoperative traction for hip fracture. The nursing care taught is correct, but the scenario models a practice current guidance discourages. Options: keep it and state that traction is prescribed, or move the scenario to another traction indication.
 - rn-s14-91 key change above.
@@ -46,7 +46,7 @@ Batch s14. Basic Care and Comfort. 50 stand-alone items in `part1.ts` to `part5.
 
 ## Summary
 
-52 items reviewed (50 in the bank and 2 in `extra.ts`). 9 items had defects: rn-s14-04, rn-s14-05, rn-s14-12, rn-s14-20, rn-s14-40, rn-s14-42, rn-s14-50, rn-s14-91 and rn-s14-92. 12 fixes were made across 8 items. 1 key change (rn-s14-91). rn-s14-12 is left for Arjan. Every number recomputed correctly. `npx tsc` shows no s14 errors and `BATCH=s14 npx vitest run tests/bank.test.ts` passes 61 of 61.
+52 items reviewed (50 in the bank and 2 in `extra.ts`). 9 items had defects: rn-s14-04, rn-s14-05, rn-s14-12, rn-s14-20, rn-s14-40, rn-s14-42, rn-s14-50, rn-s14-91 and rn-s14-92. 12 fixes were made across 8 items. 1 key change (rn-s14-91). rn-s14-12 is left for the Preceptor team. Every number recomputed correctly. `npx tsc` shows no s14 errors and `BATCH=s14 npx vitest run tests/bank.test.ts` passes 61 of 61.
 
 ## Calibration
 

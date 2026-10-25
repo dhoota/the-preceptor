@@ -65,7 +65,7 @@ None.
 - Joseph AE et al. 2022, PMC read. https://pmc.ncbi.nlm.nih.gov/articles/PMC8891889/
 - Crossref metadata confirmed for Peitzmeier 2017, Graham 2024, Williamson 2025, Litz 2009, Potenza 2019, Gameiro 2015, Pringsheim 2019, Lee 2015 (PC6) and Guan 2017.
 
-## Needs Arjan's decision
+## Needs the Preceptor team's decision
 
 - rn-s33-33 is marked for pull.
 - rn-s33-14 and rn-s33-17 were edited by the earlier reviewer after sign off. Their version is now 2, so they need approval again.

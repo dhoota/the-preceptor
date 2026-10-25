@@ -24,7 +24,7 @@ Batch s12. Stand-alone. Psychosocial Integrity. I reviewed the 50 items in part1
 
 ## Key changes
 
-- rn-s12-92 (extra.ts). Before: "Protamine sulfate" keyed at index 1. After: the keyed option at index 1 now reads "Calcium gluconate". Reason: calcium gluconate is the standard antidote for magnesium sulfate toxicity. Protamine reverses heparin and has no role here. The index is unchanged but the keyed answer is different, so Arjan must approve it.
+- rn-s12-92 (extra.ts). Before: "Protamine sulfate" keyed at index 1. After: the keyed option at index 1 now reads "Calcium gluconate". Reason: calcium gluconate is the standard antidote for magnesium sulfate toxicity. Protamine reverses heparin and has no role here. The index is unchanged but the keyed answer is different, so the Preceptor team must approve it.
 
 ## Sources verified
 
@@ -44,7 +44,7 @@ Batch s12. Stand-alone. Psychosocial Integrity. I reviewed the 50 items in part1
 
 A script checked every unit pair. 36.8°C is 98.2°F. 37.6°C is 99.7°F. Glucose 74, 92 and 118 mg/dL are 4.1, 5.1 and 6.5 mmol/L, all within 3 percent. Hemoglobin 14.2 g/dL is 142 g/L. Alprazolam 2 mg three times daily is 6 mg a day. The rn-s12-08 flow sheet runs 6 hours from 0600 to 1200. I found no arithmetic errors.
 
-## Needs Arjan's decision
+## Needs the Preceptor team's decision
 
 - Approve the rn-s12-92 key change.
 - rn-s12-91 and rn-s12-92 in extra.ts test hyperkalemia and magnesium toxicity. They do not belong in a Psychosocial Integrity batch. I recommend moving them to a physiological batch or dropping them rather than adding them to s12.

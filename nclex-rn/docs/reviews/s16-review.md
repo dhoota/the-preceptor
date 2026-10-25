@@ -32,7 +32,7 @@ None. The key of every item, including both extra items, is unchanged.
 - 2025 AHA/ACC High Blood Pressure Guideline. Elevated BP is 120 to 129 mmHg systolic and under 80 mmHg diastolic. https://www.ahajournals.org/doi/10.1161/CIR.0000000000001356
 - The remaining sources in common.ts were confirmed with PubMed or publisher pages in the earlier s16 review and are unchanged: ADA Standards of Care 2026 (https://pubmed.ncbi.nlm.nih.gov/41358900/), hyperglycemic crises consensus 2024 (https://pubmed.ncbi.nlm.nih.gov/39052901/), SVT guideline (https://pubmed.ncbi.nlm.nih.gov/26399663/), AF guideline (https://pubmed.ncbi.nlm.nih.gov/38033089/), hyponatraemia guideline (https://pubmed.ncbi.nlm.nih.gov/24569125/), C. difficile update (https://pubmed.ncbi.nlm.nih.gov/34164674/), ATA 2016 (https://pubmed.ncbi.nlm.nih.gov/27521067/), APA AUD (https://pubmed.ncbi.nlm.nih.gov/29301420/), ACR gout (https://pubmed.ncbi.nlm.nih.gov/32391934/), MG guidance (https://pubmed.ncbi.nlm.nih.gov/33144515/), AAP ADHD (https://pubmed.ncbi.nlm.nih.gov/31570648/), ASPEN enteral (https://pubmed.ncbi.nlm.nih.gov/27815525/), INS 2024 (https://pubmed.ncbi.nlm.nih.gov/38211609/), ACOG CO 767 (https://pubmed.ncbi.nlm.nih.gov/30575639/), ACOG PB 181 (https://pubmed.ncbi.nlm.nih.gov/28742673/).
 
-## Needs Arjan's decision
+## Needs the Preceptor team's decision
 
 - rn-s16-91 and rn-s16-92 (extra.ts): both now pass every item gate and have no near duplicate. Decide whether either joins the bank. rn-s16-91 is thin at difficulty 2 and its rationale is near the 150 character floor.
 - rn-s16-12 Canada note: the 2026 AHA/ASA guideline also endorses tenecteplase in the 4.5 hour window. The note no longer marks a Canadian difference. Consider setting it to an empty string.

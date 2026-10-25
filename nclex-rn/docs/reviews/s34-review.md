@@ -92,7 +92,7 @@ None.
 - Dartford and Gravesham Aerochamber guide. https://wheeze.dgt.nhs.uk/guides/aerochamber
 - Crossref checks: Chen 2021 cooling blankets, Kalantar-Zadeh 2010, Moretto hiccups and Johnston skin-to-skin.
 
-## Needs Arjan's decision
+## Needs the Preceptor team's decision
 
 - PULL rn-s34-02 and rn-s34-42 for uniqueness. If PPT coverage matters, item 02 could be rewritten later around ear drop warming and positioning. That rewrite would need new keys.
 - The shared `meta()` default in `src/bank/s34/common.ts` sets `reviewed: true`. All 50 ids are in `docs/signoff.json`. ITEM_SPEC says new items ship as false. I did not touch either, as instructed.

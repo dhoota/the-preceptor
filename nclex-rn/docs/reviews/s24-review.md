@@ -17,7 +17,7 @@ Scope: all 50 items in part1.ts to part5.ts, the shared sources in common.ts, an
 
 ## Key changes
 
-- rn-s24-92 (extra.ts, not in the bank). Before: option 1 "Protamine sulfate". After: option 1 "Calcium gluconate". The key index stays 1. Reason: calcium gluconate is the antidote for magnesium sulfate toxicity. Protamine reverses heparin and has no effect on magnesium. Arjan approves.
+- rn-s24-92 (extra.ts, not in the bank). Before: option 1 "Protamine sulfate". After: option 1 "Calcium gluconate". The key index stays 1. Reason: calcium gluconate is the antidote for magnesium sulfate toxicity. Protamine reverses heparin and has no effect on magnesium. The Preceptor team approves.
 
 ## Sources verified
 
@@ -54,7 +54,7 @@ PubMed records were checked through the NCBI E-utilities API for author, title, 
 - The slow onset of sodium polystyrene sulfonate, 2 to 24 hours, was confirmed in StatPearls. https://www.ncbi.nlm.nih.gov/sites/books/NBK559206/
 - Hinkle, Harding (Lewis) and Hockenberry (Wong) are current editions from the publishers. The URLs are stored in common.ts.
 
-## Needs Arjan's decision
+## Needs the Preceptor team's decision
 
 - The rn-s24-92 key change above.
 - Client Needs tags. The whole batch is tagged PA. Some items arguably test other areas: seizure precautions (rn-s24-25) and bleeding precautions (rn-s24-32) fit Safety or Reduction of Risk Potential. The kidney and celiac diet items (rn-s24-19, rn-s24-30) fit Basic Care and Comfort. Left unchanged because the batch was commissioned as Physiological Adaptation.

@@ -18,7 +18,7 @@ No defects were found in rn-s09-01 to rn-s09-50. Checks that came back clean inc
 
 ## Key changes
 
-- rn-s09-92. Before: option 1 "Protamine sulfate" keyed. After: option 1 "Calcium gluconate" keyed. The key index stays 1 but the keyed content changes. Reason: calcium gluconate is the antidote for magnesium sulfate toxicity. Protamine sulfate reverses heparin and has no effect on magnesium. Arjan approves.
+- rn-s09-92. Before: option 1 "Protamine sulfate" keyed. After: option 1 "Calcium gluconate" keyed. The key index stays 1 but the keyed content changes. Reason: calcium gluconate is the antidote for magnesium sulfate toxicity. Protamine sulfate reverses heparin and has no effect on magnesium. The Preceptor team approves.
 
 ## Sources verified
 
@@ -41,7 +41,7 @@ No defects were found in rn-s09-01 to rn-s09-50. Checks that came back clean inc
 
 The remaining journal citations in common.ts (USPSTF, ACOG, AAP, AASM, Freeman 2011, Fiore 2008) match their volume, issue and page on the linked pages.
 
-## Needs Arjan's decision
+## Needs the Preceptor team's decision
 
 - rn-s09-91 and rn-s09-92 are not Health Promotion and Maintenance items. They test drug therapy and fit a PPT batch. I recommend they stay out of s09. If they are added to any bank, the rn-s09-92 key change needs sign-off first.
 - The Perry 7th edition shows a publication date of April 2022 on the Elsevier page. The citation gives 2023, which is likely the copyright year. It was left as is.

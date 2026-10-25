@@ -48,7 +48,7 @@ Each item's topic and teaching point were grepped against the 2,000-item invento
 - NHGRI, Genetic Discrimination: health insurers and employers of 15 or more covered, life, disability and long-term care insurance not covered. https://www.genome.gov/about-genomics/policy-issues/Genetic-Discrimination
 - ACR MR safe practice guidance on arrests in Zone IV, through secondary sources (APSF newsletter). The ACR full text was not reachable. https://www.apsf.org/article/mri-compatible-handle-and-blades/
 
-## Needs Arjan's decision
+## Needs the Preceptor team's decision
 
 - Pull rn-s30-29 and rn-s30-36 for duplication with rn-s14-44 and rn-s14-34.
 - rn-s30-30: overlap with rn-s08-09 is judged acceptable. A stricter reading could pull it.

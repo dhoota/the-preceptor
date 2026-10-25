@@ -22,7 +22,7 @@ Scope: all 50 items in `part1.ts` to `part5.ts` plus the 2 items in `extra.ts` (
 
 ## Key changes
 
-- rn-s11-91. Before: keyed option "Protamine sulfate". After: keyed option "Calcium gluconate" (same position, index 1). Reason: calcium gluconate is the antidote for magnesium sulfate toxicity. Protamine reverses heparin. The item as written taught a dangerous error. Needs Arjan's approval.
+- rn-s11-91. Before: keyed option "Protamine sulfate". After: keyed option "Calcium gluconate" (same position, index 1). Reason: calcium gluconate is the antidote for magnesium sulfate toxicity. Protamine reverses heparin. The item as written taught a dangerous error. Needs the Preceptor team's approval.
 
 No key in the 50 imported items changed.
 
@@ -53,7 +53,7 @@ The remaining citations in `common.ts` (Halter 2022, Potter 2023, Hinkle 2022, S
 - Item 07: 1410 plus 1 hour is 1510.
 - Item 19: antidepressant day 10 before admission plus 4 unit days is about 2 weeks, consistent with energy returning.
 
-## Needs Arjan's decision
+## Needs the Preceptor team's decision
 
 - rn-s11-07 tests restraint time limits. The NCLEX test plan places use of restraints under Safety and Infection Control. The batch plan fixes all 50 items as PSY, so the tag was not changed. Consider moving the item to a SIPC batch or reframing it around behavioral crisis care.
 - rn-s11-91 and rn-s11-92 are pharmacology items, not Psychosocial Integrity. Both are now tagged PPT. They do not belong in this PSY batch and should move to a PPT batch if kept.
@@ -63,7 +63,7 @@ The remaining citations in `common.ts` (Halter 2022, Potter 2023, Hinkle 2022, S
 
 ## Summary
 
-52 items reviewed. 13 fixes across 11 items. 1 key change, in the unimported item rn-s11-91. 1 metadata flag left for Arjan on rn-s11-07. `npx tsc` prints nothing for s11 and `BATCH=s11 npx vitest run tests/bank.test.ts` passes 61 of 61.
+52 items reviewed. 13 fixes across 11 items. 1 key change, in the unimported item rn-s11-91. 1 metadata flag left for the Preceptor team on rn-s11-07. `npx tsc` prints nothing for s11 and `BATCH=s11 npx vitest run tests/bank.test.ts` passes 61 of 61.
 
 ## Calibration
 

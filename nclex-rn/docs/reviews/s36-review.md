@@ -68,7 +68,7 @@ Overlaps found and kept, because each item tests a different decision:
 - rn-s36-31 shares tracing lines with rn-s07-12. Its other keys are epidural specific.
 - rn-s36-34 shares pancreatitis with rn-s20-37 and adds three other complications.
 
-## Needs Arjan's decision
+## Needs the Preceptor team's decision
 
 - rn-s36-46 (DI bowtie after pituitary surgery) uses data close to rn-s25-12, which tests recognizing DI. The bowtie adds desmopressin, fluid replacement and monitoring. rn-s17-23 already covers desmopressin excess. Kept, but a pull would be defensible.
 - rn-s36-15 keys norepinephrine as unsuitable for a midline. The 2024 INS vesicant review cites studies of short-term vasopressors through midlines. MAGIC still rates continuous vesicants through a midline as inappropriate. The key stands.

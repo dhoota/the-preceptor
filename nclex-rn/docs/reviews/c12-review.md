@@ -21,7 +21,7 @@ Every number was recomputed with a script: all Celsius and Fahrenheit pairs, BMI
 
 ## Key changes
 
-- rn-c12-9. Before: option 2 "Protamine sulfate" keyed. After: option 2 "Calcium gluconate" keyed. The key index is unchanged but the keyed content changed. Reason: protamine is the heparin antagonist and has no effect on magnesium. The magnesium sulfate label names IV calcium as the antagonist for magnesium intoxication. Arjan to approve.
+- rn-c12-9. Before: option 2 "Protamine sulfate" keyed. After: option 2 "Calcium gluconate" keyed. The key index is unchanged but the keyed content changed. Reason: protamine is the heparin antagonist and has no effect on magnesium. The magnesium sulfate label names IV calcium as the antagonist for magnesium intoxication. The Preceptor team to approve.
 
 ## Checked and found sound
 
@@ -56,7 +56,7 @@ Every number was recomputed with a script: all Celsius and Fahrenheit pairs, BMI
 - SOGC Guideline No. 426, J Obstet Gynaecol Can 44(5):547, 2022. https://pubmed.ncbi.nlm.nih.gov/35577426/
 - Davis's Drug Guide for Nurses, 18th edition, F.A. Davis, 2023. https://www.fadavis.com/product/nursing-pharmacology-davis-drug-guide-deglin-vallerand-sanoski-18
 
-## Needs Arjan's decision
+## Needs the Preceptor team's decision
 
 - Approve the rn-c12-9 key change above.
 - rn-c12-9 and rn-c12-8 sit in `extra.ts`, which `index.ts` does not import. Both now pass every item gate. Decide whether they join the bank or are removed. Their ids do not follow the case id pattern.

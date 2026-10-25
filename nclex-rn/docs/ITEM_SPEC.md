@@ -1,13 +1,13 @@
 # Item spec
 
-For anyone writing items for Preceptor: NCLEX, human or AI assisted. Items are static data. The app runs no AI. Every item ships with `reviewed: false` until Arjan signs it off.
+For anyone writing items for Preceptor: NCLEX, human or AI assisted. Items are static data. The app runs no AI. Every item ships with `reviewed: false` until the Preceptor team signs it off.
 
 The contract is `src/engine/types.ts`. The gates are `src/engine/quality.ts`. The worked examples are `tests/fixture.ts`. They pass every gate. Copy their shape.
 
 Every rule carries a tag so you know where it came from.
 
 - [NCSBN] the published NCLEX-RN format: the 2026 test plan, the candidate tutorial, the exam preview and the sample pack. Used for format only.
-- [MC] a defect found in Arjan's multiple choice banks (CCFP, MCCQE, NCA, NDEB). The rule still applies to the NGN formats named with it.
+- [MC] a defect found in the Preceptor team's multiple choice banks (CCFP, MCCQE, NCA, NDEB). The rule still applies to the NGN formats named with it.
 - [NGN] a rule adapted from an MC lesson to fit an NGN format.
 - [App] a rule of this app.
 - [Test] the rule is enforced by an automated gate. The gate name follows in brackets.
@@ -145,8 +145,8 @@ Every string: no em or en dashes, no semicolons, no smart quotes, no filler word
 
 ## 14. Answer key changes
 
-- In a draft batch, a reviewer may change a key only when the evidence requires it, and must log the before, the after and the reason under "Key changes" in the review. Arjan approves every key change before sign-off. [MC]
-- If a fix would change the key of a reviewed item, flag it for Arjan. Never patch around it. [MC]
+- In a draft batch, a reviewer may change a key only when the evidence requires it, and must log the before, the after and the reason under "Key changes" in the review. The Preceptor team approves every key change before sign-off. [MC]
+- If a fix would change the key of a reviewed item, flag it for the Preceptor team. Never patch around it. [MC]
 
 ## 15. What the gates cannot see
 

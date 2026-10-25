@@ -23,7 +23,7 @@ Fix count: 12, one per row above.
 
 ## Key changes
 
-- rn-s08-91 (extra.ts, not in the bank). Before: the key was "Protamine sulfate". After: the key is "Calcium gluconate", still at index 1. Reason: calcium gluconate IV is the antidote for magnesium sulfate toxicity. Protamine reverses heparin and has no effect on magnesium. Arjan must approve.
+- rn-s08-91 (extra.ts, not in the bank). Before: the key was "Protamine sulfate". After: the key is "Calcium gluconate", still at index 1. Reason: calcium gluconate IV is the antidote for magnesium sulfate toxicity. Protamine reverses heparin and has no effect on magnesium. The Preceptor team must approve.
 
 No key changed in rn-s08-01 to rn-s08-50.
 
@@ -57,10 +57,10 @@ A script checked every number. All matched.
 - Magee LA et al., SOGC Guideline No. 426, 2022. https://pubmed.ncbi.nlm.nih.gov/35577426/
 - Vallerand AH, Sanoski CA, Davis's Drug Guide for Nurses, 18th edition, 2023. https://www.fadavis.com/product/nursing-pharmacology-davis-drug-guide-deglin-vallerand-sanoski-18
 
-## Needs Arjan's decision
+## Needs the Preceptor team's decision
 
 - rn-s08-91 key change from protamine sulfate to calcium gluconate. The item is in extra.ts and is not in the bank.
-- rn-s08-91 and rn-s08-92 are pharmacology items placed in a Safety and Infection Control batch. I set need to PPT. Arjan may prefer to move them to a pharmacology batch or drop them.
+- rn-s08-91 and rn-s08-92 are pharmacology items placed in a Safety and Infection Control batch. I set need to PPT. The Preceptor team may prefer to move them to a pharmacology batch or drop them.
 - USDA_TX: a 2011 revision of the transplant booklet exists. The 2006 edition is real and supports the item. Consider citing the current FDA page.
 - rn-s08-32: a nursing text now backs the contrasting step edge advice. Confirm Potter covers it, or reword the key to an item STEADI names, such as a handrail on both sides.
 - rn-s08-21: the distractor about holding hands below the elbows borrows a surgical scrub rule. WHO does not set hand position for a surgical rub. Left as is.

@@ -17,7 +17,7 @@ Scope: case1.ts to case5.ts (30 case items), helpers.ts, index.ts and extra.ts. 
 
 ## Key changes
 
-- rn-c14-9. Before: "Protamine sulfate" (option index 1). After: "Calcium gluconate" (option index 1). Reason: calcium gluconate is the antidote for magnesium sulfate toxicity per ACOG Practice Bulletin No. 222. Protamine reverses heparin and has no role here. The keyed position is unchanged but the keyed content changed. Arjan must approve.
+- rn-c14-9. Before: "Protamine sulfate" (option index 1). After: "Calcium gluconate" (option index 1). Reason: calcium gluconate is the antidote for magnesium sulfate toxicity per ACOG Practice Bulletin No. 222. Protamine reverses heparin and has no role here. The keyed position is unchanged but the keyed content changed. The Preceptor team must approve.
 
 ## Sources verified
 
@@ -50,7 +50,7 @@ Scope: case1.ts to case5.ts (30 case items), helpers.ts, index.ts and extra.ts. 
 - rn-c14-1-3, rn-c14-4-3 and rn-c14-5-3 are decided by airway, breathing and circulation plus acute over chronic. Brain injury, hemorrhage and low cardiac output each threaten life first.
 - rn-c14-2-3 is decided by unstable over stable. A pulseless graft limb threatens tissue within hours.
 
-## Needs Arjan's decision
+## Needs the Preceptor team's decision
 
 - The rn-c14-9 key change above.
 - rn-c14-8 and rn-c14-9 sit in extra.ts and are not imported. Their ids do not follow the case id pattern and they are stand-alone mc items in a case batch. Decide whether they move to a stand-alone batch.

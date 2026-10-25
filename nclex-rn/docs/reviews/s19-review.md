@@ -23,7 +23,7 @@ The session web search budget ran out before this review began. Citations were c
 
 ## Key changes
 
-- rn-s19-92 (extra.ts, not in the bank). Before: option 1 "Protamine sulfate", keyed. After: option 1 "Calcium gluconate", keyed. The index stays 1. Reason: calcium gluconate is the antidote for magnesium toxicity (SOGC Guideline No. 426, the item's own source). Protamine reverses heparin and has no effect on magnesium. Arjan needs to approve this change.
+- rn-s19-92 (extra.ts, not in the bank). Before: option 1 "Protamine sulfate", keyed. After: option 1 "Calcium gluconate", keyed. The index stays 1. Reason: calcium gluconate is the antidote for magnesium toxicity (SOGC Guideline No. 426, the item's own source). Protamine reverses heparin and has no effect on magnesium. The Preceptor team needs to approve this change.
 
 No key changed in the 50 items in the bank.
 
@@ -50,7 +50,7 @@ The other 40 items in the bank passed both lenses. These points were checked clo
 - PubMed records confirmed for author, journal, volume and pages: Restrepo 2011 (22008401), AARC suctioning 2010 (20507660), McDonald 2018 (29462280), ACOG PB 229 (34011889), Mitchell 2019 tonsillectomy (30798778), Li 2022 ISPD (35264029), Anderson 2019 ASH (31794602), Fisher 2011 ASGE (21951473), ADA 2026 section 2 (41358893), Simpson 2020 AWHONN (32778395), Rosenberg 2015 (26238698), ASA fasting 2017 (28045707), Kligfield 2007 (17322457), Konstantinides 2020 (31504429), Freeman 2011 (21431947), Lok 2020 KDOQI (32778223), Greenberg 2020 (31355502), Magee 2022 SOGC 426 (35577426).
 - Not checked this session: the textbook sources (Hinkle 15th edition, Potter 11th edition, Hockenberry 12th edition), KDIGO 2012 and ADA 2026 section 6. They are reused from batches whose reviewers verified them.
 
-## Needs Arjan's decision
+## Needs the Preceptor team's decision
 
 - The key change to rn-s19-92 above.
 - rn-s19-49: the item no longer states a 1 hour antibiotic target. I could not read the 2026 Surviving Sepsis timing recommendations. If the 2026 edition keeps 1 hour for probable sepsis, the 1 hour teaching can return with a ref that names the condition it applies to.
@@ -58,12 +58,12 @@ The other 40 items in the bank passed both lenses. These points were checked clo
 - rn-s19-43: AWHONN published a 6th edition of Cervical Ripening and Labor Induction and Augmentation in 2025. The item cites the 5th edition of 2020. The teaching point is unchanged, but the citation may need updating, as flagged in s15.
 - rn-s19-24: the 0 to 60 degree head of bed range is cited to Hinkle alone. I could not confirm the wording. The AACN Procedure Manual would be a stronger source.
 - rn-s19-47: a bariatric source would strengthen the item. Kim J et al., ASMBS position statement on gastrointestinal leak, Surg Obes Relat Dis 11(4):739, 2015 (PMID 26071849), exists, but I could not read the full text to confirm the heart rate wording, so I did not add it.
-- rn-s19-48: the cjmm is evaluate. The item asks for the best response to a new symptom, which reads as take action. I left it for Arjan.
+- rn-s19-48: the cjmm is evaluate. The item asks for the best response to a new symptom, which reads as take action. I left it for the Preceptor team.
 - rn-s19-40: process is teaching, but the item asks the nurse to interpret a result, not to teach.
 
 ## Summary
 
-52 items reviewed, 50 in the bank and 2 in extra.ts. 12 fixes in 10 items: 8 items in the bank and both extra items. 1 key change, in extra item rn-s19-92. 8 points go to Arjan. The tsc check prints nothing for bank/s19. BATCH=s19 npx vitest run tests/bank.test.ts passes 61 of 61.
+52 items reviewed, 50 in the bank and 2 in extra.ts. 12 fixes in 10 items: 8 items in the bank and both extra items. 1 key change, in extra item rn-s19-92. 8 points go to the Preceptor team. The tsc check prints nothing for bank/s19. BATCH=s19 npx vitest run tests/bank.test.ts passes 61 of 61.
 
 ## Calibration
 

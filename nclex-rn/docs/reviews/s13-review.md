@@ -49,7 +49,7 @@ None. The key of rn-s13-92 stays option 1, "Raise the head of the bed". Only the
 - Propranolol prescribing information: contraindicated in bronchial asthma, and abrupt stopping can worsen angina. https://www.drugs.com/pro/propranolol.html
 - PAINAD tool instructions give 1 to 3 mild, 4 to 6 moderate and 7 to 10 severe as a possible reading, not validated. https://aci.health.nsw.gov.au/__data/assets/pdf_file/0017/212921/Pain-assessment-advanced-dementia-scale.pdf
 
-## Needs Arjan's decision
+## Needs the Preceptor team's decision
 
 - rn-s13-91 and rn-s13-92: decide whether either joins the bank. Item 91 now tests PPT, not this batch's area. Item 92 overlaps with bank items 11 and 39, which test the same head of bed point.
 - rn-s13-37: the ref says PAINAD totals of 4 to 6 mean moderate pain. Warden 2003 did not publish bands. The tool instructions call the bands a possible reading that the literature has not confirmed. Also, moaning, a frown and guarding alone score about 3 or 4. The stated total of 6 implies findings the stem does not give. Consider giving the other findings or a lower total.

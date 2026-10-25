@@ -23,7 +23,7 @@ Scope: case1.ts to case5.ts (30 case items) and extra.ts (rn-c01-9 and rn-c01-8,
 
 ## Key changes
 
-- rn-c01-9. Before: key "Protamine sulfate". After: key "Calcium gluconate" (same position). Reason: calcium gluconate is the antidote for magnesium sulfate toxicity (SOGC Guideline No. 426, 2022). Protamine reverses heparin and has no effect on magnesium. Needs Arjan's approval.
+- rn-c01-9. Before: key "Protamine sulfate". After: key "Calcium gluconate" (same position). Reason: calcium gluconate is the antidote for magnesium sulfate toxicity (SOGC Guideline No. 426, 2022). Protamine reverses heparin and has no effect on magnesium. Needs the Preceptor team's approval.
 
 No case item key changed.
 
@@ -46,7 +46,7 @@ No case item key changed.
 - Vallerand AH, Sanoski CA. Davis's Drug Guide for Nurses, 18th edition, 2023. https://www.fadavis.com/product/nursing-pharmacology-davis-drug-guide-deglin-vallerand-sanoski-18
 - Brunner and Suddarth 15th edition, Lowdermilk 13th edition and Wong's 12th edition are textbook citations, and their editions and years are correct.
 
-## Needs Arjan's decision
+## Needs the Preceptor team's decision
 
 - rn-c01-9 key change above.
 - extra.ts ids rn-c01-9 and rn-c01-8 follow the case id pattern rn-cNN-K. They would collide with future case ids 8 and 9. Rename them before they join the bank.

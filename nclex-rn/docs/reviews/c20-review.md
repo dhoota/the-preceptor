@@ -15,7 +15,7 @@ Scope: all 8 files in `src/bank/c20/`. That covers the 30 case items in case1.ts
 
 ## Key changes
 
-- rn-c20-9. Before: option 2 "Protamine sulfate". After: option 2 "Calcium gluconate". The key index stays 1. Reason: calcium gluconate is the antidote for magnesium sulfate toxicity (SOGC Guideline No. 426, 2022). Protamine reverses heparin. Arjan must approve.
+- rn-c20-9. Before: option 2 "Protamine sulfate". After: option 2 "Calcium gluconate". The key index stays 1. Reason: calcium gluconate is the antidote for magnesium sulfate toxicity (SOGC Guideline No. 426, 2022). Protamine reverses heparin. The Preceptor team must approve.
 
 ## Checked and found sound
 
@@ -55,7 +55,7 @@ Scope: all 8 files in `src/bank/c20/`. That covers the 30 case items in case1.ts
 - Davis's Drug Guide for Nurses, 18th edition (rn-c20-8). Open Library shows Vallerand and Sanoski editions in 2022 and 2024. Page content could not be checked online.
 - Brunner and Suddarth, 15th edition, 2022. A textbook. Page content could not be checked online.
 
-## Needs Arjan's decision
+## Needs the Preceptor team's decision
 
 - Approve the rn-c20-9 key change from protamine sulfate to calcium gluconate.
 - rn-c20-8 and rn-c20-9 in extra.ts carry no Canada note and cite a Canadian guideline (rn-c20-9) and a drug guide with no URL. Decide whether they join the bank. They were not run through the batch gates because index.ts does not import them.

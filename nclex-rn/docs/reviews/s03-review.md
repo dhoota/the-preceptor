@@ -23,7 +23,7 @@ Arithmetic recomputed with no error found: rn-s03-10 (16 staff x 12 hours = 192,
 
 | Item | Before | After | Reason |
 |---|---|---|---|
-| rn-s03-92 (extra) | "Protamine sulfate" keyed at position 1 | "Calcium gluconate" keyed at position 1 | Protamine reverses heparin and has no effect on magnesium. SOGC Guideline No. 426 (2022) gives calcium gluconate 10% IV when magnesium toxicity is clear. The key index is unchanged but the keyed answer changed. Arjan approves. |
+| rn-s03-92 (extra) | "Protamine sulfate" keyed at position 1 | "Calcium gluconate" keyed at position 1 | Protamine reverses heparin and has no effect on magnesium. SOGC Guideline No. 426 (2022) gives calcium gluconate 10% IV when magnesium toxicity is clear. The key index is unchanged but the keyed answer changed. The Preceptor team approves. |
 
 No key in rn-s03-01 to rn-s03-50 was changed.
 
@@ -52,7 +52,7 @@ No key in rn-s03-01 to rn-s03-50 was changed.
 
 Textbook citations (Potter 11th 2023, Hinkle 15th 2022, Halter 9th 2022, Yoder-Wise 8th 2023, Melnyk 5th 2023, Beauchamp and Childress 8th 2019, Guido 7th 2020) match the published editions and support the fundamentals they are cited for.
 
-## Needs Arjan's decision
+## Needs the Preceptor team's decision
 
 - rn-s03-92 key change above.
 - rn-s03-30. The item is a video visit. The cited HHS guidance is for audio-only telehealth. It supports private settings and avoiding speakerphone. The statement that public-facing apps are not allowed came from the 2020 enforcement discretion notice, which has expired. The teaching is still right under HIPAA, but a video-specific HHS source would fit better.

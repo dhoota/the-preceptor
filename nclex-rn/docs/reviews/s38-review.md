@@ -69,10 +69,10 @@ Each pulled item carries a `// PULL (s38 review)` comment in its file. No item w
 - Dow 2019 WMS hypothermia, checked through the AAFP summary: https://www.aafp.org/pubs/afp/issues/2020/1101/p571.html
 - Crossref confirmed the remaining DOIs in common.ts: WFH 2020, ASH 2019, Levi 2018, Epstein 2019, ACC/AHA 2022, Berlin 2012, EAST 2012, Ditunno 2004, BTF 2017, Szpilman 2012, Bosch 2009, ACOG 222 and 178, SMFM 2016 and Sweet 2023.
 
-## Needs Arjan's decision
+## Needs the Preceptor team's decision
 
 - Six pulls for uniqueness. rn-s38-01 and 46 overlap only in part with their originals. A contained rewrite could not give either a new point, so both are marked.
-- rn-s38-38 (rhabdomyolysis improving) and rn-s24's trend of worsening use the same markers in opposite directions. Kept as a distinct evaluate step. Arjan may prefer to pull it.
+- rn-s38-38 (rhabdomyolysis improving) and rn-s24's trend of worsening use the same markers in opposite directions. Kept as a distinct evaluate step. The Preceptor team may prefer to pull it.
 - `ADLER_PERICARDIUM` and `GOSAIN_HAEC` remain in common.ts. Items 26 (pulled) and 15 still use them.
 
 ## Summary

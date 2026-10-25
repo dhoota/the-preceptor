@@ -21,7 +21,7 @@ Total fixes: 10 across 9 items.
 
 ## Key changes
 
-- rn-c05-9 (extra.ts, not in the bank). Before: "Protamine sulfate" (index 1). After: "Calcium gluconate" (index 1). Reason: IV calcium gluconate is the antidote for magnesium sulfate toxicity. Protamine reverses heparin and has no effect on magnesium. The keyed position is unchanged but the keyed answer is new, so this is logged as a key change for Arjan.
+- rn-c05-9 (extra.ts, not in the bank). Before: "Protamine sulfate" (index 1). After: "Calcium gluconate" (index 1). Reason: IV calcium gluconate is the antidote for magnesium sulfate toxicity. Protamine reverses heparin and has no effect on magnesium. The keyed position is unchanged but the keyed answer is new, so this is logged as a key change for the Preceptor team.
 
 ## Checked and left as written
 
@@ -52,17 +52,17 @@ Total fixes: 10 across 9 items.
 
 The web search budget for this session was exhausted, so verification used PubMed E-utilities, Europe PMC full text, Open Library and WebFetch of CDC pages.
 
-## Needs Arjan's decision
+## Needs the Preceptor team's decision
 
 - rn-c05-9 key change from protamine sulfate to calcium gluconate.
 - rn-c05-8 cites Davis's Drug Guide 18th edition. A 19th edition (2024) exists. Update the citation if the bank prefers the newest edition.
 - rn-c05-4-4 keys "prone for 30 minutes 3 times a day" and "sitting limited to 1 hour at a time". Both match common amputation teaching but I could not open Brunner to confirm the exact figures.
-- rn-c05-5-6 keeps the option "the warmest setting on the label". CDC now says to follow the label and dry fully. The option is not false, but Arjan may prefer the CDC wording in the option too.
+- rn-c05-5-6 keeps the option "the warmest setting on the label". CDC now says to follow the label and dry fully. The option is not false, but the Preceptor team may prefer the CDC wording in the option too.
 - rn-c05-4-2 carries need PSY while four of six rows test contracture and falls. BCC or RRP may fit better.
 
 ## Summary
 
-9 items had defects and all 9 are fixed with 10 edits. rn-c05-4-2 carries a metadata query for Arjan. Two of the fixed items are in `extra.ts`, which `index.ts` does not import. One key changed (rn-c05-9). `BATCH=c05 npx vitest run tests/bank.test.ts` passes 44 of 44, `tsc` prints nothing for bank/c05, and both extra items pass `itemProblems` with no findings.
+9 items had defects and all 9 are fixed with 10 edits. rn-c05-4-2 carries a metadata query for the Preceptor team. Two of the fixed items are in `extra.ts`, which `index.ts` does not import. One key changed (rn-c05-9). `BATCH=c05 npx vitest run tests/bank.test.ts` passes 44 of 44, `tsc` prints nothing for bank/c05, and both extra items pass `itemProblems` with no findings.
 
 One run in the middle of this review failed the whole-bank near duplicate gate on rn-s02-33 and rn-s03-29. Both are outside c05 and were being edited by another batch. The next run passed 44 of 44 with no change to c05.
 

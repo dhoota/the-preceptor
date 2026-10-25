@@ -66,11 +66,11 @@ Not fully confirmed: the SAMHSA TIP 57 URL returned 403 to automated fetch. TIP 
 - Unit pairs: 37.0°C = 98.6°F, 38.2°C = 100.8°F, glucose 112 mg/dL = 6.2 mmol/L. All convert.
 - rn-s28-35: a mark falling from 55 to 48 cm at the nostril means about 7 cm has come out. The direction in the rationale is correct.
 
-## Needs Arjan's decision
+## Needs the Preceptor team's decision
 
 - rn-s28-91 key change (extra item, not yet in the bank). Confirm calcium gluconate. The source is Canadian (SOGC). An ACOG source may suit the NCLEX better if the item is admitted.
 - rn-s28-11 cites PADIS, an ICU guideline, for a medical unit client. It supports clustering care and noise and light reduction, but a ward-level source may be preferable.
-- rn-s28-10: the why for the denial option says the recall expectation has "no basis". The stem says only that the client lost the job. Left as is because it reads as a reasonable inference, but Arjan may prefer "laid off permanently" in the stem.
+- rn-s28-10: the why for the denial option says the recall expectation has "no basis". The stem says only that the client lost the job. Left as is because it reads as a reasonable inference, but the Preceptor team may prefer "laid off permanently" in the stem.
 
 ## Summary
 
