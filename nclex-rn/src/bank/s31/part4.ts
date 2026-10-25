@@ -1,5 +1,5 @@
 import type { Item } from "@/engine/types";
-import { CDC_OPIOID, FDA_HOME, FDA_HOME_ENV, ISMP_HIGH, ISMP_PUMP, NFPA99, POTTER, TALL_MAN, meta } from "./common";
+import { AIRLIQUIDE, BOC_GAS, FDA_HOME, FDA_HOME_ENV, ISMP_HIGH, ISMP_PUMP, PA_OPIOID, TABLO, TALL_MAN, WHO_LASA, meta } from "./common";
 
 export const PART4: Item[] = [
   {
@@ -27,13 +27,14 @@ export const PART4: Item[] = [
     ...meta("rn-s31-32", {
       need: "SIPC",
       topic: "System fixes after a traZODone and traMADol mix-up",
+      version: 2,
       cjmm: "generate",
       process: "nursing-process",
       difficulty: 3,
       stem: "A medication safety committee reviews a near miss in which traMADol was nearly given in place of traZODone. Which measures would reduce look-alike, sound-alike errors? Select all that apply.",
       rationale:
-        "Tall man letters draw the eye to the part of each name that differs. Writing the indication on the prescription lets the nurse see that a sleep drug and an analgesic do not match. Barcode scanning checks the product against the prescription. Read-back with spelling catches sound-alike errors in phone orders. Storing look-alikes together invites a wrong pick. Tablet color varies by maker. Brand names can also be confused.",
-      sources: [TALL_MAN, POTTER],
+        "Tall man letters draw the eye to the part of each name that differs. Writing the indication on the prescription lets the nurse see that a sleep drug and an analgesic do not match. Barcode scanning checks the product against the prescription. Read-back with spelling catches sound-alike errors in phone orders. Storing look-alikes together invites a wrong pick. Tablet color varies by maker, and visual recognition is not a reliable check. Brand names can also be confused.",
+      sources: [TALL_MAN, WHO_LASA],
     }),
     kind: "sata",
     options: [
@@ -43,7 +44,7 @@ export const PART4: Item[] = [
       { text: "Rely on tablet color to tell them apart", why: "Tablet appearance varies by manufacturer and is not a reliable check." },
       { text: "Scan the barcode before each dose", why: "Scanning matches the product with the prescription before it is given." },
       { text: "Read back and spell names in phone orders", why: "Spelling the name aloud catches sound-alike errors." },
-      { text: "List the drugs only by brand name", why: "Brand names can be confused too. Generic names with tall man letters are standard." },
+      { text: "List the drugs only by brand name", why: "Brand names can be confused too. Orders carry both the generic and the brand name." },
     ],
     correct: [1, 2, 4, 5],
   },
@@ -51,13 +52,15 @@ export const PART4: Item[] = [
     ...meta("rn-s31-33", {
       need: "SIPC",
       topic: "Hydromorphone vial for a morphine prescription",
+      version: 2,
       cjmm: "recognize",
       process: "clinical-judgment",
       difficulty: 4,
       stem: "A client 1 day after surgery has a prescription for morphine 2 mg IV every 2 hours as needed for pain. The nurse removes a 1 mL vial from the dispensing cabinet labeled HYDROmorphone 2 mg/mL. Which problem should the nurse recognize before preparing the dose?",
       rationale:
-        "The vial holds hydromorphone, not morphine. The names look alike, so HYDROmorphone carries tall man letters. CDC conversion factors rate hydromorphone at about 5 times the morphine equivalent per milligram. Giving 2 mg of hydromorphone in place of 2 mg of morphine is an overdose that can cause respiratory depression. Opioids are high-alert drugs. The 1 mL vial holds exactly 2 mg, so the volume is not the issue.",
-      sources: [TALL_MAN, CDC_OPIOID, ISMP_HIGH],
+        "The vial holds hydromorphone, not morphine. The names look alike, so HYDROmorphone carries tall man letters. One milligram of parenteral hydromorphone is roughly equal to 7 mg of morphine. Giving 2 mg of hydromorphone in place of 2 mg of morphine is an overdose that can cause respiratory depression. Opioids are high-alert drugs. The 1 mL vial holds exactly 2 mg, so the volume is not the issue.",
+      refs: ["One milligram of parenteral hydromorphone is roughly equal to 7 mg of parenteral morphine."],
+      sources: [TALL_MAN, PA_OPIOID, ISMP_HIGH],
     }),
     kind: "mc",
     options: [
@@ -139,13 +142,14 @@ export const PART4: Item[] = [
     ...meta("rn-s31-37", {
       need: "SIPC",
       topic: "Low oxygen cylinder before a trip to radiology",
+      version: 2,
       cjmm: "action",
       process: "nursing-process",
       difficulty: 2,
-      stem: "A client receiving oxygen at 2 L/minute by nasal cannula will travel by stretcher to the radiology department for a CT scan. The gauge on the portable cylinder points to the red zone. What should the nurse do?",
+      stem: "A client receiving oxygen at 2 L/minute by nasal cannula will travel by stretcher to the radiology department for a CT scan. The needle on the portable cylinder gauge points to the red zone marked Refill. What should the nurse do?",
       rationale:
-        "A gauge in the red zone means the cylinder is close to empty. It could run out during transport or a wait in radiology. The nurse replaces it with a full cylinder before leaving. A higher flow empties the cylinder faster. Removing oxygen from a client who needs it risks hypoxemia. Leaving with a nearly empty cylinder risks a gap before radiology can supply another.",
-      sources: [POTTER, NFPA99],
+        "The gauge shows the cylinder is close to empty. Contents are checked on the gauge before use to make sure the supply is enough. It could run out during transport or a wait in radiology. The nurse replaces it with a full cylinder before leaving. A higher flow empties the cylinder faster. Removing oxygen from a client who needs it risks hypoxemia. Leaving with a nearly empty cylinder risks a gap before radiology can supply another.",
+      sources: [BOC_GAS],
     }),
     kind: "mc",
     options: [
@@ -160,19 +164,20 @@ export const PART4: Item[] = [
     ...meta("rn-s31-38", {
       need: "SIPC",
       topic: "Handling a portable oxygen cylinder in transport",
+      version: 2,
       cjmm: "action",
       process: "nursing-process",
       difficulty: 3,
       stem: "The nurse prepares to move a client on oxygen by stretcher to another unit using a portable cylinder. Which actions are safe? Select all that apply.",
       rationale:
-        "The gauge is checked before leaving so the supply lasts the trip. The cylinder rides in the stretcher holder, where it cannot fall and break its valve. Flow is confirmed at the cannula after the switch to the cylinder. On arrival the client goes back on wall oxygen and the cylinder valve is closed. Oil or grease near oxygen fittings can ignite. Lifting a cylinder by its valve can damage it.",
-      sources: [NFPA99, POTTER],
+        "The gauge is checked before leaving so the supply lasts the trip. The cylinder is restrained in the stretcher holder, where it cannot fall and shear its valve. Flow is confirmed at the cannula after the switch to the cylinder. On arrival the client goes back on wall oxygen and the cylinder valve is closed. Oil or grease near oxygen fittings can ignite. The valve is opened slowly, never with force or speed.",
+      sources: [BOC_GAS, AIRLIQUIDE],
     }),
     kind: "sata",
     options: [
       { text: "Lubricate the regulator threads with oil", why: "Oil or grease on oxygen fittings is a fire hazard." },
       { text: "Check the gauge before leaving the room", why: "The gauge shows whether the supply will last the trip." },
-      { text: "Lift the cylinder by its valve", why: "Lifting by the valve can damage it and release gas under high pressure." },
+      { text: "Open the cylinder valve quickly", why: "Cylinder valves are opened slowly. A fast or forced opening can damage the valve." },
       { text: "Secure the cylinder in the stretcher holder", why: "A secured cylinder cannot fall and break its valve." },
       { text: "Confirm flow at the cannula after switching", why: "Checking flow confirms the client is receiving oxygen from the cylinder." },
       { text: "Close the cylinder valve after returning to wall oxygen", why: "Closing the valve stops gas loss once the cylinder is not in use." },
@@ -206,13 +211,14 @@ export const PART4: Item[] = [
     ...meta("rn-s31-40", {
       need: "SIPC",
       topic: "Home dialysis setup that needs follow-up",
+      version: 2,
       cjmm: "evaluate",
       process: "teaching",
       difficulty: 2,
       stem: "A client on home hemodialysis describes the home setup at a monthly clinic visit. Which statement by the client needs follow-up?",
       rationale:
-        "Dialysis machine instructions call for a direct connection to a properly wired, grounded outlet. An extension cord can overheat and is a weak point in the circuit. The nurse reviews the setup and contacts the technical support line. An electrician's check, a separate table for drinks and emergency numbers at hand are all safe practices.",
-      sources: [FDA_HOME, FDA_HOME_ENV],
+        "Home hemodialysis machine makers require the machine to plug directly into a wall outlet. Extension cords and power strips are prohibited because they add a fire and shock risk. The nurse reviews the setup and contacts the technical support line. An electrician's check, a separate table for drinks and emergency numbers at hand are all safe practices.",
+      sources: [TABLO, FDA_HOME, FDA_HOME_ENV],
     }),
     kind: "mc",
     options: [

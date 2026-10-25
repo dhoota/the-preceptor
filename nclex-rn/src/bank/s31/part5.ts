@@ -1,5 +1,5 @@
 import type { Item } from "@/engine/types";
-import { CPSC_CRIB, HINKLE, HOCKENBERRY, HUMPTY, NATA_HEAT, ACSM_HEAT, NFPA101, POTTER, SIEGEL, SMALLPOX, WMS_EAH, meta } from "./common";
+import { CPSC_CRIB, CPSC_TIPS, HC_CRIB, HOCKENBERRY, HUMPTY, ICU_EVAC, MDH_FIRE, NATA_HEAT, SIEGEL, SMALLPOX, SMALLPOX_EVAL, WMS_EAH, meta } from "./common";
 
 export const PART5: Item[] = [
   {
@@ -27,19 +27,21 @@ export const PART5: Item[] = [
     ...meta("rn-s31-42", {
       need: "SIPC",
       topic: "Checking a secondhand crib for a newborn",
+      version: 2,
+      canada: "Health Canada's Cribs, Cradles and Bassinets Regulations (SOR/2016-152) allow only stationary sides. They limit the gap between a pushed mattress and the crib side to 3 cm and crib mattress thickness to 15 cm.",
       cjmm: "generate",
       process: "teaching",
       difficulty: 2,
       stem: "Parents plan to use a secondhand crib made in 2019 for their newborn. The nurse teaches them what to check before use. Which teaching points should the nurse include? Select all that apply.",
       rationale:
-        "Drop-side cribs no longer meet the federal standard because a moving side can detach and trap an infant. Slats more than 6 cm (2 3/8 inches) apart can let an infant's body slip through. A mattress that fits snugly leaves no gap where an infant can become wedged. Bolts and screws are checked and tightened, and missing parts are replaced only with parts from the maker. A soft mattress raises the risk of suffocation.",
-      sources: [CPSC_CRIB, HOCKENBERRY],
+        "Drop-side cribs no longer meet the federal standard because a moving side can detach and trap an infant. Slats more than 6 cm (2 3/8 inches) apart can let an infant's body slip through. A mattress that fits snugly leaves no gap where an infant can become wedged. Bolts and screws are checked and tightened. A cracked or missing slat leaves a gap that can trap an infant. A soft mattress raises the risk of suffocation.",
+      sources: [CPSC_CRIB, CPSC_TIPS, HC_CRIB],
     }),
     kind: "sata",
     options: [
       { text: "Do not use a crib with a drop side", why: "A drop side can detach and create a gap that traps an infant." },
       { text: "Check that slats are no more than 6 cm (2 3/8 inches) apart", why: "Wider slat spacing can let an infant's body slip through." },
-      { text: "Replace lost screws with hardware store parts", why: "Missing or broken parts are replaced only with parts from the manufacturer." },
+      { text: "Use the crib if only one slat is cracked", why: "A cracked or missing slat can leave a gap that traps an infant." },
       { text: "Make sure the mattress fits with no gap at the sides", why: "A gap between mattress and frame can wedge and suffocate an infant." },
       { text: "Choose a soft mattress for comfort", why: "A firm mattress lowers suffocation risk. A soft one raises it." },
       { text: "Tighten loose bolts before each use", why: "Loose hardware can let the crib come apart and trap an infant." },
@@ -72,13 +74,14 @@ export const PART5: Item[] = [
     ...meta("rn-s31-44", {
       need: "SIPC",
       topic: "Breathing support while evacuating a ventilated client",
+      version: 2,
       cjmm: "action",
       process: "nursing-process",
       difficulty: 4,
       stem: "A fire alarm sounds and the charge nurse orders evacuation of the intensive care unit. A client on a ventilator through an endotracheal tube must be moved. The ventilator runs only on wall power and wall oxygen. How should the nurse support the client's breathing during the move?",
       rationale:
         "The ventilator cannot travel without wall power and gas. A manual resuscitation bag attached to the endotracheal tube and a portable oxygen cylinder keeps ventilation going during the move. Moving without support leaves an intubated client without breaths. Waiting for another ventilator delays the evacuation. A nasal cannula cannot ventilate a client whose airway is an endotracheal tube.",
-      sources: [HINKLE, NFPA101],
+      sources: [ICU_EVAC],
     }),
     kind: "mc",
     options: [
@@ -93,19 +96,20 @@ export const PART5: Item[] = [
     ...meta("rn-s31-45", {
       need: "SIPC",
       topic: "First move in a hospital fire evacuation",
+      version: 2,
       cjmm: "action",
       process: "nursing-process",
       difficulty: 3,
       stem: "Smoke is reported in a utility room at the far end of a medical unit. The fire doors have closed and divided the unit into smoke compartments. The charge nurse directs staff to move clients out of the rooms near the fire. Where should the nurse move these clients first?",
       rationale:
-        "Hospitals are built to defend in place. Fire doors divide each floor into smoke compartments. Moving clients horizontally through the fire doors to the next compartment on the same floor is the fastest route to safety. Moving down stairs is harder and is used only if the floor must be emptied. Elevators are not used during a fire. Rooms near the fire are the ones being emptied.",
-      sources: [NFPA101, POTTER],
+        "Hospitals are built to defend in place. Fire doors divide each floor into smoke compartments. Moving clients horizontally through the fire doors to the next compartment on the same floor is the fastest route to safety. Moving down stairs is harder and is used only if horizontal evacuation is not possible. Elevators are not used during a fire because power may fail. Rooms near the fire are the ones being emptied.",
+      sources: [MDH_FIRE],
     }),
     kind: "mc",
     options: [
-      { text: "Down the stairs to the ground floor exit", why: "Vertical evacuation is slower and harder and is used only if the floor must be emptied." },
+      { text: "Down the stairs to the ground floor exit", why: "Vertical evacuation is slower and harder and is used only if horizontal evacuation is not possible." },
       { text: "Past the fire doors on this floor", why: "The next smoke compartment on the same floor protects clients and is quickest to reach." },
-      { text: "Into an elevator to the main floor lobby", why: "Elevators can stop or open onto a fire floor and are not used in a fire." },
+      { text: "Into an elevator to the main floor lobby", why: "Elevators can lose power and are not used to evacuate clients in a fire." },
       { text: "Into rooms near the fire with doors shut", why: "Rooms near the fire are the ones being emptied because they are at greatest risk." },
     ],
     correct: 1,
@@ -114,21 +118,22 @@ export const PART5: Item[] = [
     ...meta("rn-s31-46", {
       need: "SIPC",
       topic: "Triage of heat illness at a music festival",
+      version: 2,
       cjmm: "prioritize",
       process: "clinical-judgment",
       difficulty: 4,
       stem: "The nurse staffs a first aid tent at an outdoor music festival. The air temperature is 35°C (95°F). Four attendees arrive at the same time. Which attendee should the nurse treat first?",
       rationale:
         "Confusion with a rectal temperature of 40.6°C points to exertional heat stroke. It can cause organ damage and death within minutes to hours, so cooling starts at once, before transport. Heat cramps and heat syncope that has resolved with lying down are minor. Headache and nausea with a temperature of 38.4°C and a clear mind fit heat exhaustion, which is treated next.",
-      refs: ["Exertional heat stroke is central nervous system dysfunction with a rectal temperature above 40°C (104°F)."],
-      sources: [NATA_HEAT, ACSM_HEAT],
+      refs: ["Exertional heat stroke is central nervous system dysfunction with a core temperature typically above 40.5°C (104.9°F). Heat exhaustion usually stays below 40.5°C."],
+      sources: [NATA_HEAT],
     }),
     kind: "mc",
     options: [
       { text: "Painful calf spasms after dancing, alert and sweating", why: "Heat cramps are painful but not life threatening." },
       { text: "Fainted while standing in line, now alert lying down", why: "Heat syncope that has resolved with lying flat is not the priority." },
       { text: "Headache and nausea, alert, rectal temperature 38.4°C (101.1°F)", why: "A clear mind with a temperature of 38.4°C fits heat exhaustion, which can wait briefly." },
-      { text: "Confused and stumbling, rectal temperature 40.6°C (105.1°F)", why: "Confusion with a temperature above 40°C is heat stroke and needs cooling at once." },
+      { text: "Confused and stumbling, rectal temperature 40.6°C (105.1°F)", why: "Confusion with a temperature above 40.5°C is heat stroke and needs cooling at once." },
     ],
     correct: 3,
   },
@@ -172,6 +177,7 @@ export const PART5: Item[] = [
     ...meta("rn-s31-48", {
       need: "SIPC",
       topic: "When to stop ice water immersion",
+      version: 2,
       cjmm: "evaluate",
       process: "clinical-judgment",
       difficulty: 4,
@@ -179,7 +185,7 @@ export const PART5: Item[] = [
       rationale:
         "Cold water immersion continues until the rectal temperature reaches 38.9°C (102.0°F). The client is then removed from the water. Stopping at that point prevents overshoot into hypothermia as heat keeps leaving the body. Readings of 39.4°C, 39.8°C and 40.2°C are still above the target, so cooling continues at each of them.",
       refs: ["Cold water immersion stops when rectal temperature reaches 38.9°C (102.0°F)."],
-      sources: [NATA_HEAT, ACSM_HEAT],
+      sources: [NATA_HEAT],
     }),
     kind: "mc",
     options: [
@@ -194,13 +200,14 @@ export const PART5: Item[] = [
     ...meta("rn-s31-49", {
       need: "SIPC",
       topic: "Rash features that suggest smallpox",
+      version: 2,
       cjmm: "recognize",
       process: "clinical-judgment",
       difficulty: 4,
       stem: "During a public health alert about a possible bioterrorism event, an emergency department nurse records findings on a 24-year-old client with a new rash. Click to highlight the findings that point to smallpox rather than chickenpox.",
       rationale:
         "Smallpox begins with a high fever and symptoms such as backache for days before the rash. Its lesions are deep, firm and round, and in any one area they are at the same stage. They are densest on the face and limbs and reach the palms and soles. Chickenpox has a mild prodrome, superficial lesions in different stages and a trunk-centered rash. Itching, no past chickenpox and a toddler in day care do not separate the two.",
-      sources: [SMALLPOX],
+      sources: [SMALLPOX, SMALLPOX_EVAL],
     }),
     kind: "highlight",
     passage:
@@ -221,13 +228,14 @@ export const PART5: Item[] = [
     ...meta("rn-s31-50", {
       need: "SIPC",
       topic: "First step for a suspected smallpox case",
+      version: 2,
       cjmm: "action",
       process: "nursing-process",
       difficulty: 3,
       stem: "An emergency department nurse suspects smallpox in a client who had 3 days of high fever, then deep, firm pustules at one stage on the face, arms, palms and soles. The client is in a shared triage area. What should the nurse do first?",
       rationale:
         "Smallpox spreads by respiratory droplets, airborne particles and contact with lesions. The first step is to move the client to an airborne infection isolation room with contact precautions. Infection prevention and the health department are notified at once, because one case is a public health emergency. Lesion testing is arranged through the health department after isolation. Contact tracing follows. Acyclovir treats chickenpox, not smallpox.",
-      sources: [SIEGEL, SMALLPOX],
+      sources: [SIEGEL, SMALLPOX, SMALLPOX_EVAL],
     }),
     kind: "mc",
     options: [
