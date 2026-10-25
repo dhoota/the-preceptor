@@ -279,3 +279,9 @@ export const HC_CRIB: Source = {
   year: 2016,
   url: "https://laws-lois.justice.gc.ca/eng/regulations/SOR-2016-152/FullText.html",
 };
+export const CHOA_FALLS: Source = {
+  body: "Children's Healthcare of Atlanta",
+  work: "Fall Prevention Program: Patient and Family Education (PFEW 004)",
+  year: 2025,
+  url: "https://www.choa.org/-/media/Files/Childrens/teaching-sheets/fall-prevention-program.pdf",
+};

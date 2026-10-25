@@ -1,18 +1,19 @@
 import type { Item } from "@/engine/types";
-import { CPSC_CRIB, CPSC_TIPS, HC_CRIB, HOCKENBERRY, HUMPTY, ICU_EVAC, MDH_FIRE, NATA_HEAT, SIEGEL, SMALLPOX, SMALLPOX_EVAL, WMS_EAH, meta } from "./common";
+import { CHOA_FALLS, CPSC_CRIB, CPSC_TIPS, HC_CRIB, HOCKENBERRY, HUMPTY, ICU_EVAC, MDH_FIRE, NATA_HEAT, SIEGEL, SMALLPOX, SMALLPOX_EVAL, WMS_EAH, meta } from "./common";
 
 export const PART5: Item[] = [
   {
     ...meta("rn-s31-41", {
       need: "SIPC",
       topic: "Stepping away from an open hospital crib",
+      version: 2,
       cjmm: "action",
       process: "nursing-process",
       difficulty: 1,
       stem: "A 10-month-old infant lies in a hospital crib. The nurse lowers the side rail to change a diaper and finds the diaper supply empty. The diapers are on a shelf across the room. What should the nurse do before stepping away?",
       rationale:
         "An infant of 10 months can roll and crawl to an open edge in seconds. The side rail is raised and locked whenever the nurse's hand is not on the infant. Moving the infant to the far side does not stop a crawl toward the opening. Lowering the crib still leaves the side open. A pillow adds a suffocation hazard and does not stop a fall.",
-      sources: [HOCKENBERRY],
+      sources: [HOCKENBERRY, CHOA_FALLS, CPSC_TIPS],
     }),
     kind: "mc",
     options: [

@@ -16,6 +16,12 @@ export const SSC2021: Source = {
   year: 2021,
   url: "https://pmc.ncbi.nlm.nih.gov/articles/PMC8486643/",
 };
+export const SSC2026: Source = {
+  body: "Prescott HC, Antonelli M, Alhazzani W, et al. Surviving Sepsis Campaign",
+  work: "Surviving Sepsis Campaign: International Guidelines for Management of Sepsis and Septic Shock 2026. Critical Care Medicine (doi:10.1097/CCM.0000000000007075)",
+  year: 2026,
+  url: "https://www.sccm.org/clinical-resources/guidelines/guidelines/surviving-sepsis-campaign-international-guidelines-for-management-of-sepsis-and-septic-shock-2026",
+};
 export const SSC_BUNDLE: Source = {
   body: "Levy MM, Evans LE, Rhodes A. Surviving Sepsis Campaign",
   work: "The Surviving Sepsis Campaign Bundle: 2018 Update. Intensive Care Medicine 44(6):925",

@@ -1,5 +1,5 @@
 import type { Item } from "@/engine/types";
-import { ADA_TECH, AHA_ECG, AHA_EXERCISE, CDC_BCX, HINKLE, ISBI, SSC2021, SSC_BUNDLE, meta } from "./common";
+import { SSC2026, ADA_TECH, AHA_ECG, AHA_EXERCISE, CDC_BCX, HINKLE, ISBI, SSC2021, SSC_BUNDLE, meta } from "./common";
 
 export const PART1: Item[] = [
   {
@@ -146,6 +146,7 @@ export const PART1: Item[] = [
   },
   {
     ...meta("rn-s37-07", {
+      version: 2,
       need: "PA",
       topic: "Starting a vasopressor before central access",
       cjmm: "action",
@@ -153,16 +154,16 @@ export const PART1: Item[] = [
       difficulty: 3,
       stem: "A 70-year-old client with septic shock from an infected bile duct has received 30 mL/kg of lactated Ringer's. The MAP is 58 mmHg. The client has an 18-gauge IV in each antecubital vein and a 22-gauge IV in the back of the left hand. The provider prescribes norepinephrine. Central line placement is 2 hours away. Which action should the nurse take?",
       rationale:
-        "The MAP of 58 mmHg is below the initial target of 65 mmHg after the fluid bolus. Guidelines suggest starting a vasopressor through a peripheral vein rather than delaying until central access. The vein should be at or above the antecubital fossa, and the site is watched closely. A small hand vein raises the risk of tissue injury from extravasation. More fluid without reassessment delays the vasopressor the client needs.",
+        "The MAP of 58 mmHg is below the initial target range of 60 to 65 mmHg for a client aged 65 or older. Guidelines suggest starting a vasopressor through a peripheral vein rather than delaying until central access. The vein should be at or above the antecubital fossa, and the site is watched closely. A small hand vein raises the risk of tissue injury from extravasation. More fluid without reassessment delays the vasopressor the client needs.",
       refs: [
-        "The initial MAP target in septic shock is 65 mmHg.",
+        "For a client aged 65 or older with septic shock, the suggested initial MAP range is 60 to 65 mmHg.",
         "A vasopressor may start through a peripheral vein in or above the antecubital fossa rather than waiting for central access.",
       ],
-      sources: [SSC2021],
+      sources: [SSC2026],
     }),
     kind: "mc",
     options: [
-      { text: "Hold the norepinephrine until the central line is placed", why: "Waiting 2 hours leaves the MAP below 65 mmHg. Peripheral start is preferred over delay." },
+      { text: "Hold the norepinephrine until the central line is placed", why: "Waiting 2 hours leaves the MAP below its target range. Peripheral start is preferred over delay." },
       { text: "Start the norepinephrine through an antecubital IV", why: "A large proximal vein is suitable for a short peripheral start while central access is arranged." },
       { text: "Start the norepinephrine through the IV in the hand", why: "A small distal vein raises the risk of tissue injury if the drug leaks." },
       { text: "Give a second 30 mL/kg bolus while waiting", why: "The prescription is for a vasopressor. Repeat bolus without reassessment risks overload and delays the MAP target." },
