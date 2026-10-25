@@ -1,5 +1,5 @@
 import type { Item } from "@/engine/types";
-import { EMTALA, HALTER, HICS, HINKLE, SAMHSA_CRISIS, meta } from "./common";
+import { EMTALA, HALTER, HICS, HINKLE, ON_IMS, SAMHSA_CRISIS, meta } from "./common";
 
 export const PART4: Item[] = [
   {
@@ -7,6 +7,7 @@ export const PART4: Item[] = [
       topic: "Police drop-off at a crisis receiving unit",
       cjmm: "action",
       process: "nursing-process",
+      canada: "In Canada, police may bring a person for assessment under the provincial mental health act, which names the facilities that may receive them. The rules vary by province.",
       difficulty: 2,
       stem: "At 0200 a police officer brings a 29-year-old man to a behavioral health crisis receiving unit. He is pacing and says voices tell him he is being watched. He has no weapons and is not intoxicated. Eleven of the unit's 12 recliners are in use. What should the nurse do?",
       rationale:
@@ -47,6 +48,7 @@ export const PART4: Item[] = [
       topic: "First client to see on a crisis stabilization unit",
       cjmm: "prioritize",
       process: "clinical-judgment",
+      canada: "Aspirin is sold in Canada under the generic name acetylsalicylic acid, often written ASA.",
       difficulty: 3,
       stem: "Four adults stayed overnight on a behavioral health crisis stabilization unit. After the 0700 handoff, which client should the nurse assess first?",
       rationale:
@@ -67,6 +69,7 @@ export const PART4: Item[] = [
       topic: "Role of a peer support specialist in crisis care",
       cjmm: "generate",
       process: "caring",
+      canada: "In Canada, involuntary holds are made under each province's mental health act, so who may decide on one varies by province.",
       difficulty: 3,
       stem: "The nurse on a behavioral health crisis unit plans how the team will share the work for a newly admitted adult in crisis. Which tasks fit the role of the peer support specialist? Select all that apply.",
       rationale:
@@ -123,8 +126,10 @@ export const PART4: Item[] = [
       topic: "Transfer before the receiving hospital accepts",
       cjmm: "action",
       process: "nursing-process",
+      canada: "EMTALA is US federal law and does not apply in Canada. Transfers between hospitals in Canada follow provincial systems and policies, so the rules vary by province.",
       difficulty: 4,
-      stem: "A 64-year-old client in the emergency department of a rural critical access hospital has an upper GI bleed. The client needs endoscopy, which the hospital cannot provide. The provider has signed a certification that the benefits of transfer outweigh the risks. The ambulance crew has arrived. The regional hospital's transfer center says it is still looking for a bed and has not accepted the client. What should the nurse do?",
+      version: 2,
+      stem: "A 64-year-old client in the emergency department of a rural critical access hospital has an upper GI bleed that is not yet stable. The client needs endoscopy, which the hospital cannot provide. The provider has signed a certification that the benefits of transfer outweigh the risks. The ambulance crew has arrived. The regional hospital's transfer center says it is still looking for a bed and has not accepted the client. What should the nurse do?",
       rationale:
         "An appropriate transfer of an unstable client needs a receiving hospital that has space and staff and has agreed to accept the client. A signed certification alone does not meet this. The nurse keeps the client, continues treatment within the hospital's capacity and tells the provider so another hospital can be sought. Arrival at a hospital that has not accepted, or a family car with no monitoring, does not meet the rules.",
       sources: [EMTALA],
@@ -143,11 +148,12 @@ export const PART4: Item[] = [
       topic: "Working within incident command during a tornado surge",
       cjmm: "action",
       process: "nursing-process",
+      canada: "Canadian hospitals use incident management systems set by their province, such as Ontario's Incident Management System. These share the core functions of command, operations, planning, logistics and finance.",
       difficulty: 4,
       stem: "A tornado strikes a rural town and the critical access hospital activates its hospital incident command system. A staff nurse is assigned as leader of the casualty treatment area. Which actions by the nurse follow incident command principles? Select all that apply.",
       rationale:
         "Each person in incident command reports to one supervisor and does not keep doing usual duties at the same time. The job action sheet sets the mission, the reporting line and the first tasks. Actions and times are logged on the activity log. Supply requests go to the logistics section. Information for the media comes from the public information officer.",
-      sources: [HICS],
+      sources: [HICS, ON_IMS],
     }),
     kind: "sata",
     options: [
@@ -165,6 +171,7 @@ export const PART4: Item[] = [
       topic: "Transfer requested by a client before stabilization",
       cjmm: "analyze",
       process: "communication",
+      canada: "EMTALA is US federal law and does not apply in Canada. A client's request for transfer follows provincial consent law and hospital policy, which vary by province.",
       difficulty: 4,
       stem: "A 70-year-old client with a new atrial fibrillation and a heart rate of 146/minute is in the emergency department of a critical access hospital. The condition is not yet stable. The client says, \"Send me to the city hospital where my cardiologist works.\" The provider has not certified that transfer benefits outweigh the risks. Which requirement must be met for this transfer to proceed?",
       rationale:
@@ -185,6 +192,7 @@ export const PART4: Item[] = [
       topic: "Off-duty nurse who arrives to help in a disaster",
       cjmm: "action",
       process: "nursing-process",
+      canada: "In Canada, a nurse must be registered with the regulator in the province where care is given. Some regulators offer emergency registration during a disaster, so this varies by province.",
       difficulty: 2,
       stem: "During a mass casualty response at a critical access hospital, a woman arrives at the emergency entrance. She says she is a registered nurse from another state who is visiting family and wants to help. The emergency department is crowded. What should the charge nurse do?",
       rationale:

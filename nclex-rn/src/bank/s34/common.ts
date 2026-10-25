@@ -115,9 +115,9 @@ export const PHOS_SOURCES: Source = {
 };
 export const ADA_NUTRITION: Source = {
   body: "American Diabetes Association Professional Practice Committee",
-  work: "Facilitating Positive Health Behaviors and Well-being to Improve Health Outcomes: Standards of Care in Diabetes 2026. Diabetes Care 49(Suppl 1)",
+  work: "5. Facilitating Positive Health Behaviors and Well-being to Improve Health Outcomes: Standards of Care in Diabetes 2026. Diabetes Care 49(Suppl 1):S89",
   year: 2026,
-  url: "https://diabetesjournals.org/care/issue/49/Supplement_1",
+  url: "https://doi.org/10.2337/dc26-s005",
 };
 export const RCH_JEJUNAL: Source = {
   body: "The Royal Children's Hospital Melbourne",
@@ -268,4 +268,41 @@ export const NASAL: Source = {
   body: "Benninger MS, Hadley JA, Osguthorpe JD, et al.",
   work: "Techniques of Intranasal Steroid Use. Otolaryngology Head and Neck Surgery 130(1):5",
   year: 2004,
+  url: "https://doi.org/10.1016/j.otohns.2003.10.007",
+};
+export const SUCROSE_DOSE: Source = {
+  body: "Stevens B, Yamada J, Campbell-Yeo M, et al.",
+  work: "The Minimally Effective Dose of Sucrose for Procedural Pain Relief in Neonates: A Randomized Controlled Trial. BMC Pediatrics 18:85",
+  year: 2018,
+  url: "https://doi.org/10.1186/s12887-018-1026-x",
+};
+export const NICE_DELIRIUM: Source = {
+  body: "National Institute for Health and Care Excellence",
+  work: "Delirium: Prevention, Diagnosis and Management in Hospital and Long-Term Care (CG103)",
+  year: 2023,
+  url: "https://www.nice.org.uk/guidance/cg103",
+};
+export const OSSUR_LINER: Source = {
+  body: "Ossur",
+  work: "Caring for Your Limb, Liner and Prosthesis",
+  year: 2026,
+  url: "https://www.ossur.com/en-za/prosthetics/information/limb-liner-prosthesis-care",
+};
+export const AND_VEG: Source = {
+  body: "Melina V, Craig W, Levin S. Academy of Nutrition and Dietetics",
+  work: "Position of the Academy of Nutrition and Dietetics: Vegetarian Diets. Journal of the Academy of Nutrition and Dietetics 116(12):1970",
+  year: 2016,
+  url: "https://doi.org/10.1016/j.jand.2016.09.025",
+};
+export const HLBC_VITK: Source = {
+  body: "HealthLinkBC, Dietitian Services",
+  work: "Food Sources of Vitamin K",
+  year: 2018,
+  url: "https://www.healthlinkbc.ca/sites/default/files/healthyeating/pdf/food_sources_of_vitamin_k.pdf",
+};
+export const DC_CARB: Source = {
+  body: "Diabetes Canada",
+  work: "Basic Carbohydrate Counting",
+  year: 2018,
+  url: "https://diabetes.ca/managing-my-diabetes/tools---resources/basic-carbohydrate-counting",
 };

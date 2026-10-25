@@ -1,6 +1,11 @@
 import type { Item } from "@/engine/types";
 import {
   CDC_EPI_RISK,
+  AAP_DOGBITE,
+  CCOHS_NOISE,
+  CPAC_DENSITY,
+  HC_DISPOSAL,
+  ON_CERVICAL,
   FDA_DISPOSAL,
   FDA_FLUSH,
   FDA_MQSA,
@@ -76,6 +81,7 @@ export const PART5: Item[] = [
   },
   {
     ...meta("rn-s32-43", {
+      canada: "Canadian noise limits are set by each jurisdiction. Every province and territory uses an 8-hour limit of 85 dBA, while federally regulated workplaces use 87 dBA.",
       need: "HPM",
       topic: "Hearing change in a worker who stopped wearing earplugs",
       cjmm: "prioritize",
@@ -85,7 +91,7 @@ export const PART5: Item[] = [
       rationale:
         "The left ear thresholds have worsened by 10, 15 and 25 dB, an average above 10 dB, which is a standard threshold shift. Noise above the 85 decibel action level, no hearing protection and ringing after shifts point to noise-induced hearing loss. The worker is refitted with protection, retrained and referred for audiological evaluation. Annual audiograms and daily protector use are tracked. Clear canals argue against wax, and no vertigo argues against Meniere disease.",
       refs: ["A hearing conservation program applies at an 8-hour average of 85 decibels. A standard threshold shift is an average change of 10 dB or more from baseline at 2000, 3000 and 4000 Hz in either ear."],
-      sources: [OSHA_NOISE],
+      sources: [OSHA_NOISE, CCOHS_NOISE],
     }),
     kind: "bowtie",
     conditions: [
@@ -137,6 +143,7 @@ export const PART5: Item[] = [
   },
   {
     ...meta("rn-s32-45", {
+      canada: "Cervical screening in Canada is run by provincial programs and varies by province. Ontario, for example, moved to HPV testing every 5 years from age 25 in 2025, with most people stopping at 65 to 69.",
       need: "HPM",
       topic: "Cervical screening intervals in three clients",
       cjmm: "generate",
@@ -146,7 +153,7 @@ export const PART5: Item[] = [
       rationale:
         "From 30 to 65 years, a negative primary HPV test is repeated in 5 years. After 65, screening stops when prior results have been adequate and normal and risk is not high. A hysterectomy with removal of the cervix for a benign reason, such as fibroids, ends cervical screening. Shorter intervals add procedures without added benefit.",
       refs: ["Cervical screening at 30 to 65 years: primary HPV testing every 5 years, cotesting every 5 years or cytology every 3 years. Stop after 65 with adequate normal prior screening. No screening after hysterectomy with cervix removal for benign disease."],
-      sources: [USPSTF_CERVIX],
+      sources: [USPSTF_CERVIX, ON_CERVICAL],
     }),
     kind: "cloze",
     scoring: "zero-one",
@@ -183,6 +190,7 @@ export const PART5: Item[] = [
   },
   {
     ...meta("rn-s32-46", {
+      canada: "In Canada, occupational noise rules come from each province and territory, and all use 85 dBA over 8 hours. Federally regulated workplaces use 87 dBA, so the triggering level depends on the jurisdiction.",
       need: "HPM",
       topic: "Noise level that triggers a hearing conservation program",
       cjmm: "recognize",
@@ -192,7 +200,7 @@ export const PART5: Item[] = [
       rationale:
         "The employer must run a hearing conservation program, with audiograms, training and hearing protectors, for any worker whose 8-hour average reaches 85 decibels. Only the grinder operator at 87 decibels meets that action level. Exposures of 78, 82 and 84 decibels fall below it. Hearing protection may still be offered to these workers.",
       refs: ["A hearing conservation program applies at an 8-hour time-weighted average of 85 decibels or more."],
-      sources: [OSHA_NOISE],
+      sources: [OSHA_NOISE, CCOHS_NOISE],
     }),
     kind: "mc",
     options: [
@@ -227,6 +235,8 @@ export const PART5: Item[] = [
   },
   {
     ...meta("rn-s32-48", {
+      version: 2,
+      canada: "Canadian breast screening programs are provincial. Nine jurisdictions tell participants their density directly with the results, and the rest report it to the primary care provider.",
       need: "HPM",
       topic: "Explaining a dense breast notice after mammography",
       cjmm: "generate",
@@ -234,9 +244,9 @@ export const PART5: Item[] = [
       difficulty: 4,
       stem: "A 47-year-old client receives a normal screening mammogram result with a notice that says her breast tissue is dense. She has no symptoms and no family history of breast cancer. Which points should the nurse include when she asks what this means? Select all that apply.",
       rationale:
-        "Dense tissue looks white on a mammogram, as tumors do, so cancers can be harder to see. Dense tissue also raises the risk of breast cancer. Mammograms every 2 years continue from 40 to 74. Some people with dense tissue benefit from added imaging, so she discusses it with her provider. Density is seen only on imaging and cannot be felt. A dense notice does not mean cancer was found.",
+        "Dense tissue looks white on a mammogram, as tumors do, so cancers can be harder to see. Dense tissue also raises the risk of breast cancer. Mammograms every 2 years continue from 40 to 74. Added imaging may help some people with dense tissue, so she discusses it with her provider. Density is seen only on imaging and cannot be felt. A dense notice does not mean cancer was found.",
       refs: ["Screening mammography every 2 years for women aged 40 to 74."],
-      sources: [FDA_MQSA, USPSTF_BREAST],
+      sources: [FDA_MQSA, USPSTF_BREAST, CPAC_DENSITY],
     }),
     kind: "sata",
     options: [
@@ -252,6 +262,7 @@ export const PART5: Item[] = [
   },
   {
     ...meta("rn-s32-49", {
+      version: 2,
       need: "SIPC",
       topic: "Preventing dog bites in a young child",
       cjmm: "action",
@@ -260,7 +271,7 @@ export const PART5: Item[] = [
       stem: "A family with a 5-year-old has just adopted an adult dog from a shelter. The nurse gives safety teaching at a well-child visit. Which three instructions should the nurse include? Select three.",
       rationale:
         "Most dog bites to young children come from a dog the child knows, often at home. An adult stays with the child whenever the dog is present. A dog that is eating or sleeping may bite when disturbed. A child who stands still is less likely to trigger a chase than one who runs. Hugging a dog around the neck brings the child's face close to the dog's mouth.",
-      sources: [HOCKENBERRY],
+      sources: [HOCKENBERRY, AAP_DOGBITE],
     }),
     kind: "msn",
     select: 3,
@@ -276,6 +287,7 @@ export const PART5: Item[] = [
   },
   {
     ...meta("rn-s32-50", {
+      canada: "Health Canada advises returning unused medicines, including opioids, to any pharmacy. It says not to flush medicines down the toilet or sink.",
       need: "SIPC",
       topic: "Leftover oxycodone in a home with a teenager",
       cjmm: "evaluate",
@@ -284,7 +296,7 @@ export const PART5: Item[] = [
       stem: "A client who had knee surgery 3 weeks ago no longer needs pain medicine and has 12 oxycodone tablets left. A 16-year-old lives in the home. Which statement by the client shows understanding of safe disposal?",
       rationale:
         "A drug take-back site, such as a pharmacy drop box, is the first choice for leftover opioids. If none is available, oxycodone is on the FDA flush list. Opioids still in use are kept in locked storage, because a teen in the home could take them. Saving pills invites misuse. Sharing a prescription is unsafe and illegal. A whole bottle in the trash can be found and taken.",
-      sources: [FDA_DISPOSAL, FDA_FLUSH],
+      sources: [FDA_DISPOSAL, FDA_FLUSH, HC_DISPOSAL],
     }),
     kind: "mc",
     options: [

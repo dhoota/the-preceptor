@@ -1,5 +1,5 @@
 import type { Item } from "@/engine/types";
-import { ASAM_AWM, ASC_ASSESS, CDC_DIALYSIS, ESRD_EP, ESRD_STAFF, HINKLE, NCCHC_JAILS, NCCHC_REFUSE, NGND, meta } from "./common";
+import { ASAM_AWM, ASC_ASSESS, CDC_DIALYSIS, CNO_SCOPE, ESRD_EP, ESRD_STAFF, HINKLE, NCCHC_JAILS, NCCHC_REFUSE, NGND, meta } from "./common";
 
 export const PART2: Item[] = [
   {
@@ -7,6 +7,8 @@ export const PART2: Item[] = [
       topic: "Insulin refusal by a detainee with capacity",
       cjmm: "analyze",
       process: "clinical-judgment",
+      canada: "In Canada, consent and capacity rules come from provincial law, so the details vary by province. An adult with capacity in custody may still refuse treatment.",
+      version: 2,
       difficulty: 4,
       stem: "A 44-year-old detainee with type 1 diabetes refuses the morning insulin dose. The detainee is alert and oriented and says, \"I don't trust the jail's insulin.\" Glucose is 212 mg/dL (11.8 mmol/L). A sergeant tells the nurse, \"Inmates don't get to refuse. Hold him down if you have to.\" How should the nurse interpret the situation?",
       rationale:
@@ -84,6 +86,7 @@ export const PART2: Item[] = [
       topic: "Assigning work to dialysis technicians",
       cjmm: "action",
       process: "nursing-process",
+      canada: "The CMS dialysis rules cited are US federal law. In Canada, dialysis technician duties, including cannulation, are set by provincial rules and each renal program, so they vary by province.",
       difficulty: 3,
       stem: "The registered nurse in charge of an outpatient dialysis unit works with certified dialysis technicians. Unit policy and state rules allow technicians to cannulate established access. Which tasks may the nurse assign to a technician? Select all that apply.",
       rationale:
@@ -161,6 +164,7 @@ export const PART2: Item[] = [
       topic: "Emergency orientation for a new dialysis client",
       cjmm: "generate",
       process: "teaching",
+      canada: "The emergency orientation rule cited is US federal law. Canadian dialysis units set emergency teaching under provincial and renal program policy.",
       difficulty: 2,
       stem: "The nurse orients a new client to an outpatient dialysis unit. Which topics should the nurse include to meet the unit's emergency preparedness duties? Select all that apply.",
       rationale:
@@ -182,11 +186,12 @@ export const PART2: Item[] = [
       topic: "No registered nurse on site at a dialysis unit",
       cjmm: "analyze",
       process: "clinical-judgment",
+      canada: "The rule that a registered nurse be on site during in-center dialysis is US federal law. In Canada, dialysis staffing is set by provincial programs and regulators, and the LPN role is the RPN in Ontario.",
       difficulty: 4,
       stem: "At 0545 the only registered nurse scheduled at an outpatient dialysis unit calls in sick. A licensed practical nurse with 2 years of dialysis experience and four certified technicians are present. The unit administrator, a registered nurse, can be reached by phone 40 minutes away. Twelve clients are booked for 0600. Which statement best describes the situation?",
       rationale:
         "Federal rules require a registered nurse on site whenever in-center clients are being treated. A practical nurse may serve as charge nurse only under registered nurse supervision. Phone contact with an administrator 40 minutes away is not presence on site. Technicians cannot act as the charge nurse. Treatments wait until a registered nurse arrives, and the administrator is called now to arrange one.",
-      sources: [ESRD_STAFF],
+      sources: [ESRD_STAFF, CNO_SCOPE],
     }),
     kind: "mc",
     options: [
@@ -197,6 +202,7 @@ export const PART2: Item[] = [
     ],
     correct: 3,
   },
+  // PULL (s29 review): duplicates rn-s21-03 and rn-c13-1-2. A responsible adult escort is required after anesthesia or sedation.
   {
     ...meta("rn-s29-19", {
       topic: "Ride home after surgery at an ambulatory surgery center",

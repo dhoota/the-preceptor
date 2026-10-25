@@ -1,5 +1,5 @@
 import type { Item } from "@/engine/types";
-import { ASC_ASSESS, ASC_TRANSFER, CAH_OPO, HINKLE, HOSPICE_AIDE, HOSPICE_IPU, NCP, NGND, OPO_CFR, SOM_A, SOM_W, meta } from "./common";
+import { ASC_ASSESS, ASC_TRANSFER, CAH_OPO, CNO_SCOPE, HINKLE, HOSPICE_AIDE, HOSPICE_IPU, NCP, NGND, ON_GIFT, OPO_CFR, SOM_A, SOM_W, meta } from "./common";
 
 export const PART3: Item[] = [
   {
@@ -30,21 +30,24 @@ export const PART3: Item[] = [
       topic: "Missing surgeon assessment before an outpatient procedure",
       cjmm: "action",
       process: "nursing-process",
+      canada: "The pre-surgical assessment rule cited is a US Medicare condition for surgery centers. In Canada, out-of-hospital surgical facilities are regulated provincially, often by the college of physicians, so requirements vary by province.",
       difficulty: 3,
-      stem: "A 61-year-old client is in the preoperative area of an ambulatory surgery center for cataract extraction. The surgeon asks the nurse to bring the client to the operating room now. The nurse finds that the record has no pre-surgical assessment by the surgeon, and the client's drug allergies have not been reviewed by the surgeon. What should the nurse do?",
+      version: 2,
+      stem: "A 61-year-old client is in the preoperative area of an ambulatory surgery center for cataract extraction. The surgeon asks the nurse to bring the client to the operating room now. The nurse finds that the record has no pre-surgical assessment by the surgeon or any other qualified practitioner, and no one has documented the client's drug allergies. What should the nurse do?",
       rationale:
-        "Federal rules require that the surgeon who will perform the procedure complete a pre-surgical assessment, including drug allergies, before surgery. The history and physical must be in the record before the client goes to the operating room. The nurse tells the surgeon the assessment is needed first. The nurse cannot complete it for the surgeon. Canceling is not needed when the gap can be closed now.",
+        "Federal rules require a pre-surgical assessment on admission, done by the operating surgeon or another qualified practitioner. It must document drug allergies. Any history and physical the center's policy requires must be in the record before surgery. The nurse tells the surgeon the assessment is needed first. A registered nurse is not the practitioner who completes it. Canceling is not needed when the gap can be closed now.",
       sources: [ASC_ASSESS],
     }),
     kind: "mc",
     options: [
       { text: "Take the client to the operating room and note the gap in the record", why: "Charting the gap does not meet the rule that the assessment be done before surgery." },
-      { text: "Tell the surgeon the pre-surgical assessment is needed before surgery", why: "The operating surgeon completes the assessment, including allergies, before the procedure." },
-      { text: "Complete the pre-surgical assessment and ask the surgeon to cosign", why: "The rule requires the surgeon who will operate to complete this assessment." },
+      { text: "Tell the surgeon the pre-surgical assessment is needed before surgery", why: "The assessment, including allergies, is completed by a qualified practitioner before the procedure." },
+      { text: "Complete the pre-surgical assessment and ask the surgeon to cosign", why: "The rule assigns this assessment to the surgeon or another qualified practitioner, not the nurse." },
       { text: "Cancel the procedure and arrange for the client to go home", why: "The gap can be closed now, so canceling the procedure is not needed." },
     ],
     correct: 1,
   },
+  // PULL (s29 review): duplicates rn-s04-31 and rn-s04-46. Practical nurse reinforces teaching and gives scheduled oral drugs to stable clients.
   {
     ...meta("rn-s29-23", {
       topic: "Assigning a practical nurse at a surgery center",
@@ -73,6 +76,7 @@ export const PART3: Item[] = [
       topic: "First client to see on an inpatient hospice unit",
       cjmm: "prioritize",
       process: "caring",
+      canada: "In Canada, inpatient hospice and palliative care are funded through provincial health plans rather than a Medicare hospice benefit.",
       difficulty: 2,
       stem: "At the start of the day shift, a hospice nurse takes handoff for four clients getting general inpatient care for symptom control. Which client needs the nurse's attention first?",
       rationale:
@@ -93,12 +97,14 @@ export const PART3: Item[] = [
       topic: "Referral to the organ procurement organization after a cancer death",
       cjmm: "action",
       process: "nursing-process",
+      canada: "In Canada, donation referral duties come from provincial law and vary by province. In Ontario, the Trillium Gift of Life Network Act requires designated hospitals to report deaths and imminent deaths to Ontario Health.",
       difficulty: 4,
-      stem: "An 88-year-old client with metastatic pancreatic cancer dies at 0310 on an inpatient hospice unit inside an acute care hospital. The client was not on a ventilator. A coworker says, \"No one will take anything from someone with cancer. Just add the death to the weekly list we send.\" What should the nurse do?",
+      version: 2,
+      stem: "An 88-year-old client with metastatic pancreatic cancer dies at 0310 on the palliative care unit of an acute care hospital. The client was not on a ventilator. A coworker says, \"No one will take anything from someone with cancer. Just add the death to the weekly list we send.\" What should the nurse do?",
       rationale:
         "Hospitals must notify the organ procurement organization of every death, including clients who are not on a ventilator. The call is made by phone as soon as possible, ideally within 1 hour. Periodic lists of deaths are not allowed. The organization, not hospital staff, decides whether organs, tissue or eyes are suitable. Only a trained requester or organization staff approach the family about donation.",
       refs: ["Referral is made by phone as soon as possible after a death, ideally within 1 hour."],
-      sources: [SOM_A, OPO_CFR],
+      sources: [SOM_A, OPO_CFR, ON_GIFT],
     }),
     kind: "mc",
     options: [
@@ -114,6 +120,7 @@ export const PART3: Item[] = [
       topic: "Hospice aide who failed one competency area",
       cjmm: "action",
       process: "nursing-process",
+      canada: "The hospice aide competency rule cited is US federal law. In Canada, training and supervision of personal support workers are set by provincial rules and employers.",
       difficulty: 3,
       stem: "On an inpatient hospice unit, a hospice aide completes a competency evaluation. The aide passes every area except safe transfer from bed to chair, which is rated unsatisfactory. Today the aide is assigned to a client who needs help moving to a chair. What should the nurse do?",
       rationale:
@@ -134,11 +141,12 @@ export const PART3: Item[] = [
       topic: "Night staffing for general inpatient hospice care",
       cjmm: "analyze",
       process: "clinical-judgment",
+      canada: "The hospice staffing rule cited is US federal law. Canadian hospice staffing is set by provincial funding and licensing rules, and the LPN role is the RPN in Ontario.",
       difficulty: 4,
       stem: "A freestanding hospice inpatient unit has 8 clients receiving general inpatient care for symptom control. The night schedule lists one licensed practical nurse and two hospice aides. A registered nurse will be on call by phone from home. How should the nurse manager interpret this schedule?",
       rationale:
         "Hospices that provide inpatient care must give nursing care around the clock that meets every client's needs. When any client receives general inpatient care, each shift must include a registered nurse who gives direct care. An on-call nurse at home does not meet this rule. Practical nurse experience does not replace the registered nurse. No rule sets a count of practical nurses.",
-      sources: [HOSPICE_IPU],
+      sources: [HOSPICE_IPU, CNO_SCOPE],
     }),
     kind: "mc",
     options: [
@@ -149,6 +157,7 @@ export const PART3: Item[] = [
     ],
     correct: 1,
   },
+  // PULL (s29 review): its two keys repeat rn-s29-25 (call within 1 hour) and rn-s01-36 (only a trained requester approaches the family).
   {
     ...meta("rn-s29-28", {
       topic: "Auditing a note written after a death on a hospice unit",
@@ -180,11 +189,12 @@ export const PART3: Item[] = [
       topic: "Timing a donation referral before ventilator withdrawal",
       cjmm: "analyze",
       process: "clinical-judgment",
+      canada: "The CMS rules cited apply to US hospitals. In Canada, referral duties vary by province, and Ontario's Trillium Gift of Life Network Act requires designated hospitals to report imminent deaths to Ontario Health.",
       difficulty: 4,
       stem: "A 46-year-old client is in the emergency department of a rural critical access hospital after a cardiac arrest at home. After return of circulation the client is on a ventilator with a Glasgow Coma Scale score of 3. The family decides to withdraw the ventilator at 1600. The hospital's agreed trigger for imminent death includes a ventilated client with a score of 5 or less. Complete the following sentence by choosing from the lists of options.",
       rationale:
         "A ventilated client with a Glasgow Coma Scale score of 3 meets the agreed trigger of 5 or less. Referral is timely when it is made as soon as the trigger is met and before life-sustaining therapy is withdrawn. A call after the ventilator is removed or after death can lose the chance for organ donation. Referral does not wait for the family to raise donation.",
-      sources: [CAH_OPO, SOM_W],
+      sources: [CAH_OPO, SOM_W, ON_GIFT],
     }),
     kind: "cloze",
     scoring: "zero-one",
@@ -210,6 +220,7 @@ export const PART3: Item[] = [
       },
     ],
   },
+  // PULL (s29 review): duplicates rn-s01-21 and rn-c16-4-5. Practical nurse gives scheduled oral drugs, aide gives routine personal care.
   {
     ...meta("rn-s29-30", {
       topic: "Splitting care on a hospice unit among nurse and aide",

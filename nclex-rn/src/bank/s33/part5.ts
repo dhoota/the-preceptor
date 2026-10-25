@@ -1,5 +1,5 @@
 import type { Item } from "@/engine/types";
-import { DSM, HALTER, HINDU_QLD, HOCKENBERRY, MUSIC_PAIN, NCI_AROMA, PC6, POTTER, SIKH_BRADFORD, SLOW_BREATH, TICS, meta } from "./common";
+import { DSM, HALTER, HINDU_HT, HINDU_QLD, HOCKENBERRY, MUSIC_PAIN, NCI_AROMA, PC6, POTTER, SIKH_BRADFORD, SIKH_SALDEF, SLOW_BREATH, TICS, meta } from "./common";
 
 export const PART5: Item[] = [
   {
@@ -85,13 +85,14 @@ export const PART5: Item[] = [
     ...meta("rn-s33-44", {
       need: "PSY",
       topic: "Rites for a dying Hindu client",
+      version: 2,
       cjmm: "action",
       process: "culture",
       difficulty: 3,
       stem: "An 82-year-old Hindu client is close to death on a medical unit. A sacred thread is tied around the client's wrist. The family asks for a priest and wants to stay at the bedside. Which actions by the nurse support the family's practices? Select all that apply.",
       rationale:
-        "Many Hindu families wish for a priest to place drops of Ganges water or a tulsi leaf in the dying person's mouth. Prayers and chanting may be recited or played. Sacred threads and religious items stay in place. Close family members often wash the body after death, so the nurse asks before starting care. Removing the thread, limiting family or washing the body first override these practices.",
-      sources: [HINDU_QLD],
+        "Many Hindu families wish for a priest to perform rites near death, such as placing drops of Ganges water or a tulsi leaf in the mouth. Prayers and chanting may be recited or played. Sacred threads and religious items stay in place where possible. Close family members usually wash the body, often led by the eldest son, so the nurse asks before starting care. Removing the thread, limiting family or washing the body first override these practices.",
+      sources: [HINDU_QLD, HINDU_HT],
     }),
     kind: "sata",
     options: [
@@ -100,7 +101,7 @@ export const PART5: Item[] = [
       { text: "Limit the family to two visitors at a time", why: "Family presence at the bedside is central near death." },
       { text: "Let the family play recorded prayers", why: "Hearing chants and prayers can bring comfort at the end of life." },
       { text: "Wash the body before the family can be asked", why: "Close family members often wash the body themselves." },
-      { text: "Ask the family who will wash the body", why: "Asking first respects the family's role in care after death." },
+      { text: "Ask whether the eldest son will help wash the body", why: "Close family, often led by the eldest son, usually wash the body." },
       { text: "Leave the sacred thread on the wrist", why: "Religious items are kept on the body where possible." },
     ],
     correct: [1, 3, 5, 6],
@@ -109,13 +110,14 @@ export const PART5: Item[] = [
     ...meta("rn-s33-45", {
       need: "PSY",
       topic: "Care after death for a Sikh client",
+      version: 2,
       cjmm: "action",
       process: "culture",
       difficulty: 4,
       stem: "A 70-year-old Sikh man has died on a surgical unit. He wears a turban and a steel bracelet, and he has a full beard. His family is on the way to the hospital. Which action should the nurse take when preparing the body?",
       rationale:
-        "For many Sikhs the articles of faith stay with the body after death, and the hair and beard are not trimmed or cut. The body stays covered on the unit until the family arrives. Handling by staff of the same gender is preferred. Trimming the beard for a tidy look, removing the bracelet or sending the body to the morgue before the family arrives goes against these practices.",
-      sources: [SIKH_BRADFORD],
+        "For many Sikhs the articles of faith stay with the body after death, and the hair and beard are not trimmed or cut. The body stays covered on the unit until the family arrives. Staff of the same gender as the deceased may handle the body. Trimming the beard for a tidy look, removing the bracelet or sending the body to the morgue before the family arrives goes against these practices.",
+      sources: [SIKH_BRADFORD, SIKH_SALDEF],
     }),
     kind: "mc",
     options: [

@@ -1,5 +1,5 @@
 import type { Item } from "@/engine/types";
-import { ADA_TECH, AHA_ALS, CARDIOGENIC, FDA_BENZO, GCS40, HINKLE, KODALI, MCQUEEN, SSC2021, TRENDELENBURG, meta } from "./common";
+import { ADA_TECH, AHA_ALS, CAPNO_ED, CARDIOGENIC, FDA_BENZO, GCS40, HINKLE, KODALI, MCQUEEN, SSC2021, TRENDELENBURG, meta } from "./common";
 
 export const PART2: Item[] = [
   {
@@ -50,6 +50,7 @@ export const PART2: Item[] = [
   },
   {
     ...meta("rn-s37-13", {
+      version: 2,
       need: "RRP",
       topic: "Sudden capnography rise during CPR",
       cjmm: "evaluate",
@@ -57,8 +58,8 @@ export const PART2: Item[] = [
       difficulty: 3,
       stem: "An intubated client in cardiac arrest has waveform capnography during CPR. For 6 minutes the end-tidal CO2 has read 12 to 16 mmHg with compressions. During the current cycle, with compressions continuing, the reading rises abruptly to 41 mmHg. What does this change most likely indicate?",
       rationale:
-        "During CPR, end-tidal CO2 reflects the blood flow that compressions produce. An abrupt rise to 35 to 40 mmHg or more can signal return of spontaneous circulation, because the heart again pumps CO2 to the lungs. The team checks for a pulse at the next rhythm check. Shallower compressions and hyperventilation lower the reading. A tube in the esophagus gives almost no CO2.",
-      refs: ["During CPR an end-tidal CO2 below 10 mmHg suggests poor compressions. An abrupt rise to 35 to 40 mmHg may indicate return of spontaneous circulation."],
+        "During CPR, end-tidal CO2 reflects the blood flow that compressions produce. An abrupt, sustained rise, typically to 40 mmHg or more, can signal return of spontaneous circulation, because the heart again pumps CO2 to the lungs. The team checks for a pulse at the next rhythm check. Shallower compressions and hyperventilation lower the reading. A tube in the esophagus gives almost no CO2.",
+      refs: ["During CPR an end-tidal CO2 below 10 mmHg suggests poor compressions. An abrupt, sustained rise, typically to 40 mmHg or more, may indicate return of spontaneous circulation."],
       sources: [AHA_ALS],
     }),
     kind: "mc",
@@ -82,6 +83,7 @@ export const PART2: Item[] = [
         "A pH of 7.29 with a bicarbonate of 16 mEq/L is a metabolic acidosis. The PaCO2 of 33 mmHg is respiratory compensation. The anion gap is sodium minus chloride and bicarbonate, which is 10 and within the normal range. The chloride is high after 6 L of saline. A normal gap with a high chloride fits saline-induced acidosis. The normal lactate argues against lactic acidosis. Guidelines suggest balanced crystalloids partly for this reason.",
       refs: ["A normal anion gap, without potassium, is about 8 to 12 mEq/L."],
       calc: { expr: "140 - (114 + 16)", answer: 10, unit: "mEq/L", round: 0, steps: ["114 + 16 = 130", "140 - 130 = 10"] },
+      canada: "Canadian laboratories report electrolytes and bicarbonate in mmol/L only. The values and the anion gap are numerically the same as in mEq/L.",
       sources: [SSC2021, HINKLE],
     }),
     kind: "mc",
@@ -95,15 +97,16 @@ export const PART2: Item[] = [
   },
   {
     ...meta("rn-s37-15", {
+      version: 2,
       need: "RRP",
       topic: "Shark-fin capnography waveform",
       cjmm: "analyze",
       process: "clinical-judgment",
       difficulty: 4,
-      stem: "A 67-year-old client with asthma is monitored with nasal capnography in the postanesthesia care unit after a hernia repair. Over 10 minutes the waveform changes from a square shape with a flat plateau to a slow sloping upstroke with no plateau. End-tidal CO2 reads 46 mmHg. SpO2 is 93%, respirations are 24/minute and expiratory wheezes are heard. Complete the following sentence by choosing from the lists of options.",
+      stem: "A 67-year-old client with asthma is monitored with nasal capnography in the postanesthesia care unit after a hernia repair. Over 10 minutes the waveform changes from a square shape with a flat plateau to a slow sloping upstroke with no plateau. End-tidal CO2 reads 46 mmHg. SpO2 is 93% on oxygen at 2 L/minute through the sampling cannula, respirations are 24/minute and expiratory wheezes are heard. An inhaled bronchodilator is prescribed as needed. Complete the following sentence by choosing from the lists of options.",
       rationale:
         "A sloped upstroke with no plateau, a shark-fin shape, shows slow emptying of narrowed lower airways. Wheezes in a client with asthma support bronchospasm. The prescribed inhaled bronchodilator treats the cause. A disconnected sampling line gives a flat line. Rebreathing raises the baseline. A nasal cannula is not a tube in the esophagus. More sedation would depress breathing further.",
-      sources: [KODALI, HINKLE],
+      sources: [KODALI, CAPNO_ED, HINKLE],
     }),
     kind: "cloze",
     scoring: "dyad",
@@ -152,6 +155,7 @@ export const PART2: Item[] = [
   },
   {
     ...meta("rn-s37-17", {
+      version: 2,
       need: "RRP",
       topic: "Hidden decline in Glasgow Coma Scale parts",
       cjmm: "analyze",
@@ -165,30 +169,31 @@ export const PART2: Item[] = [
           table: {
             head: ["Time", "2000", "2200", "0000"],
             rows: [
-              ["Eye opening", "3 (to sound)", "4 (spontaneous)", "4 (spontaneous)"],
-              ["Verbal response", "4 (confused)", "4 (confused)", "5 (oriented)"],
+              ["Eye opening", "2 (to pressure)", "3 (to sound)", "4 (spontaneous)"],
+              ["Verbal response", "4 (confused)", "4 (confused)", "4 (confused)"],
               ["Best motor response", "6 (obeys commands)", "5 (localizes pain)", "4 (normal flexion)"],
-              ["Total score", "13", "13", "13"],
+              ["Total score", "12", "12", "12"],
               ["Pupils", "3 mm, brisk, equal", "3 mm, brisk, equal", "3 mm, brisk, equal"],
             ],
           },
         },
       ],
       rationale:
-        "The total stays at 13 because eye and verbal scores rose while the motor score fell. The best motor response dropped from 6 to 5 to 4, so the client no longer obeys commands and now only flexes to pain. A falling motor score is a sign of worsening brain function. The components are tracked separately for this reason, because the total can hide a decline. The nurse reports the change now.",
+        "The total stays at 12 because the eye score rose while the motor score fell. The best motor response dropped from 6 to 5 to 4, so the client no longer obeys commands and now only flexes to pain. A falling motor score is a sign of worsening brain function. The components are tracked separately for this reason, because the total can hide a decline. The nurse reports the change now.",
       sources: [GCS40, HINKLE],
     }),
     kind: "mc",
     options: [
       { text: "The falling motor score needs an urgent report", why: "Motor response fell from obeying to flexion, which signals neurologic decline." },
-      { text: "The client is stable because the total is unchanged", why: "An unchanged total of 13 hides a falling motor score." },
-      { text: "The client is improving because eye and verbal scores rose", why: "Better eye and verbal scores do not offset a falling motor response." },
+      { text: "The client is stable because the total is unchanged", why: "An unchanged total of 12 hides a falling motor score." },
+      { text: "The client is improving because eye opening is better", why: "Better eye opening does not offset a falling motor response." },
       { text: "The changes reflect normal sleep during the night", why: "The best motor response to a stimulus does not fall to flexion in normal sleep." },
     ],
     correct: 0,
   },
   {
     ...meta("rn-s37-18", {
+      version: 2,
       need: "PA",
       topic: "Prescriptions to question in pump failure shock",
       cjmm: "action",
@@ -197,7 +202,7 @@ export const PART2: Item[] = [
       stem: "A 68-year-old client is on day 1 after an anterior myocardial infarction. BP is 82/58 mmHg, heart rate 112/minute and SpO2 89% on 4 L/minute by nasal cannula. Crackles are heard to the mid-lung fields and the neck veins are distended. Urine output was 15 mL in the past hour. Which two prescriptions should the nurse clarify with the provider? Select two.",
       rationale:
         "Low BP with crackles to the mid-lung fields, distended neck veins and low urine output after a large infarction fit cardiogenic shock with congestion. A rapid 1000 mL bolus adds volume to lungs that are already wet. Lying flat with the legs raised also returns more blood to a failing ventricle and worsens breathing. A vasopressor, a lactate level, more oxygen, a urinary catheter and early revascularization all fit current care.",
-      sources: [CARDIOGENIC],
+      sources: [CARDIOGENIC, HINKLE],
     }),
     kind: "msn",
     select: 2,
@@ -205,7 +210,7 @@ export const PART2: Item[] = [
       { text: "Draw a serum lactate level", why: "Lactate tracks tissue perfusion in shock and guides treatment." },
       { text: "Infuse 0.9% sodium chloride 1000 mL over 30 minutes", why: "A large bolus worsens pulmonary congestion in a client with crackles and distended neck veins." },
       { text: "Place the client flat with the legs raised", why: "Lying flat with legs raised loads the failing heart and worsens breathing." },
-      { text: "Titrate norepinephrine to a MAP of 65 mmHg", why: "Norepinephrine is the usual first vasopressor in cardiogenic shock." },
+      { text: "Titrate norepinephrine to a MAP of 65 mmHg", why: "Norepinephrine is a suitable first vasopressor in cardiogenic shock." },
       { text: "Insert an indwelling urinary catheter", why: "Hourly urine output tracks kidney perfusion in shock." },
       { text: "Raise the oxygen to correct the SpO2", why: "An SpO2 of 89% needs more oxygen." },
       { text: "Prepare for transfer to the catheterization laboratory", why: "Early revascularization is the main treatment for shock after infarction." },

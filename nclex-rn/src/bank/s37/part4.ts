@@ -1,5 +1,5 @@
 import type { Item } from "@/engine/types";
-import { ABLS, EAH, ERAS_CR, HINKLE, ISBI, MH_REVIEW, meta } from "./common";
+import { ABA_SHOCK, EAH, ERAS_CR, HINKLE, ISBI, MH_REVIEW, meta } from "./common";
 
 export const PART4: Item[] = [
   {
@@ -78,6 +78,7 @@ export const PART4: Item[] = [
       stem: "A 70-year-old client is scheduled for an open colectomy. The history shows a BMI of 38, prednisone 20 mg daily for 6 months and a serum albumin of 2.6 g/dL (26 g/L). The client quit smoking 15 years ago and takes lisinopril for well-controlled hypertension. An appendectomy was done at 20 years of age. Which three factors raise the risk of wound dehiscence? Select three.",
       rationale:
         "Obesity strains the wound and slows healing in fatty tissue. Long-term corticosteroids slow collagen formation. A low albumin reflects poor protein stores for repair. All three raise the risk of the wound separating. Smoking harms healing when it is current, not 15 years in the past. Controlled hypertension and an old appendectomy do not raise the risk.",
+      canada: "Canadian laboratories report albumin in g/L only, so this value appears as 26 g/L.",
       sources: [HINKLE],
     }),
     kind: "msn",
@@ -94,14 +95,15 @@ export const PART4: Item[] = [
   },
   {
     ...meta("rn-s37-35", {
+      version: 2,
       need: "RRP",
       topic: "History that raises malignant hyperthermia risk",
       cjmm: "recognize",
       process: "nursing-process",
       difficulty: 3,
-      stem: "During the preoperative interview before a laparoscopic gallbladder removal under general anesthesia, a 26-year-old client gives the history below. Which findings should the nurse report to the anesthesia team as raising the risk of malignant hyperthermia? Select all that apply.",
+      stem: "During the preoperative interview before a laparoscopic gallbladder removal under general anesthesia, a 26-year-old client gives the history below. Which findings should the nurse report to the anesthesia team as possible signs of malignant hyperthermia susceptibility? Select all that apply.",
       rationale:
-        "Malignant hyperthermia is inherited, most often through changes in the ryanodine receptor gene. A relative who died of fever during surgery suggests a family trait. Jaw muscle spasm after succinylcholine can be an early sign of susceptibility. Central core disease is linked to the same gene. Exertional heat stroke with muscle breakdown has also been linked to it. Nausea after anesthesia, egg allergy and uneventful local anesthesia do not raise the risk.",
+        "Malignant hyperthermia is inherited, most often through changes in the ryanodine receptor gene. A relative who died of fever during surgery suggests a family trait. Jaw muscle spasm after succinylcholine can be an early sign of susceptibility. Central core disease is linked to the same gene. Exertional heat stroke has also been linked to it, and susceptibility should be excluded after such an episode. Nausea after anesthesia, egg allergy and uneventful local anesthesia do not raise the risk.",
       sources: [MH_REVIEW],
     }),
     kind: "sata",
@@ -143,6 +145,7 @@ export const PART4: Item[] = [
   },
   {
     ...meta("rn-s37-37", {
+      version: 2,
       need: "PA",
       topic: "Urine output trend during burn resuscitation",
       cjmm: "evaluate",
@@ -156,7 +159,7 @@ export const PART4: Item[] = [
           table: {
             head: ["Time", "0400", "0500", "0600", "0700"],
             rows: [
-              ["Lactated Ringer's (mL per hour)", "900", "900", "900", "900"],
+              ["Lactated Ringer's (mL per hour)", "450", "450", "450", "450"],
               ["Urine output (mL in the hour)", "35", "26", "20", "16"],
               ["Heart rate (/minute)", "118", "124", "128", "132"],
               ["BP (mmHg)", "108/66", "104/64", "100/60", "96/58"],
@@ -167,7 +170,7 @@ export const PART4: Item[] = [
       rationale:
         "Urine output is the main guide to burn resuscitation. It has fallen from 35 to 16 mL in the hour, below the target of 40 mL. The heart rate rose from 118 to 132/minute and the BP drifted down. The client is under-resuscitated. Protocols raise the fluid rate step by step until the target is met. A diuretic raises urine output without restoring volume. Cutting the fluid would deepen the shock.",
       refs: ["The adult urine output target during burn resuscitation is about 0.5 mL/kg each hour."],
-      sources: [ABLS, ISBI],
+      sources: [ABA_SHOCK, ISBI],
     }),
     kind: "mc",
     options: [
@@ -180,6 +183,7 @@ export const PART4: Item[] = [
   },
   {
     ...meta("rn-s37-38", {
+      version: 2,
       need: "PA",
       topic: "Dry chemical on the skin",
       cjmm: "action",
@@ -188,7 +192,7 @@ export const PART4: Item[] = [
       stem: "A construction worker arrives with dry lime powder on both forearms. The shirt sleeves are coated with the powder. The skin beneath is red and painful. Place the nurse's first four actions in order.",
       rationale:
         "The nurse puts on protective equipment first so the chemical does not injure staff. Contaminated clothing comes off next, because it keeps the chemical against the skin. Dry powder is brushed off before water is applied. Large volumes of running water then dilute and remove what is left. Neutralizing agents can cause a heat reaction. Ointment traps the chemical on the skin.",
-      sources: [ABLS, ISBI],
+      sources: [ISBI, HINKLE],
     }),
     kind: "dnd",
     scoring: "zero-one",
@@ -205,6 +209,7 @@ export const PART4: Item[] = [
   },
   {
     ...meta("rn-s37-39", {
+      version: 2,
       need: "PA",
       topic: "Hematocrit and potassium early after a burn",
       cjmm: "analyze",
@@ -213,7 +218,8 @@ export const PART4: Item[] = [
       stem: "A 42-year-old client with deep partial-thickness burns over 35% of the body surface is 6 hours after injury. Hematocrit is 54% and serum potassium is 5.6 mEq/L (5.6 mmol/L). Complete the following sentence by choosing from the lists of options.",
       rationale:
         "In the first hours after a major burn, capillaries leak plasma into the tissues. Red cells stay in the vessels, so the hematocrit rises to 54%. Burned cells break down and release potassium, so the level rises to 5.6 mEq/L. Blood loss and fluid overload would lower the hematocrit. Lactated Ringer's holds too little potassium to explain the rise.",
-      sources: [HINKLE, ABLS],
+      canada: "Canadian laboratories report potassium in mmol/L and usually report hematocrit as a fraction, so a hematocrit of 54% appears as 0.54 L/L.",
+      sources: [HINKLE],
     }),
     kind: "cloze",
     scoring: "zero-one",

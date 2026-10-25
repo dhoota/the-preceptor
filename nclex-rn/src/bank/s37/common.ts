@@ -128,6 +128,25 @@ export const TRENDELENBURG: Source = {
   body: "Johnson S, Henderson SO",
   work: "Myth: The Trendelenburg Position Improves Circulation in Cases of Shock. Canadian Journal of Emergency Medicine 6(1):48",
   year: 2004,
+  url: "https://doi.org/10.1017/s1481803500008915",
+};
+export const ABA_SHOCK: Source = {
+  body: "Cartotto R, Johnson LS, Savetamal A, et al. American Burn Association",
+  work: "American Burn Association Clinical Practice Guidelines on Burn Shock Resuscitation. Journal of Burn Care and Research 45(3):565",
+  year: 2024,
+  url: "https://doi.org/10.1093/jbcr/irad125",
+};
+export const CAPNO_ED: Source = {
+  body: "Long B, Koyfman A, Vivirito MA",
+  work: "Capnography in the Emergency Department: A Review of Uses, Waveforms, and Limitations. Journal of Emergency Medicine 53(6):829",
+  year: 2017,
+  url: "https://doi.org/10.1016/j.jemermed.2017.08.026",
+};
+export const SOGC_FHS: Source = {
+  body: "Dore S, Ehman W. Society of Obstetricians and Gynaecologists of Canada",
+  work: "No. 396: Fetal Health Surveillance: Intrapartum Consensus Guideline. Journal of Obstetrics and Gynaecology Canada 42(3):316",
+  year: 2020,
+  url: "https://doi.org/10.1016/j.jogc.2019.05.007",
 };
 export const CARDIOGENIC: Source = {
   body: "van Diepen S, Katz JN, Albert NM, et al. American Heart Association",

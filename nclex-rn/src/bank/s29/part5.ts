@@ -126,6 +126,7 @@ export const PART5: Item[] = [
       topic: "Hospital-to-home plan for a child on a home ventilator",
       cjmm: "generate",
       process: "nursing-process",
+      canada: "In Canada, home nursing and equipment for a child on a home ventilator are funded through provincial home care and respiratory programs, so access varies by province.",
       difficulty: 4,
       stem: "A nurse case manager plans the discharge of a 2-year-old with a tracheostomy who will go home on a ventilator. Two parents will share care, and private duty nursing has been approved. Which actions should the case manager include in the plan? Select all that apply.",
       rationale:
@@ -210,6 +211,7 @@ export const PART5: Item[] = [
     ],
     correct: [2, 0, 5, 3],
   },
+  // PULL (s29 review): duplicates rn-s02-29 (competence shown by performance, not attendance) and overlaps rn-s29-49.
   {
     ...meta("rn-s29-50", {
       topic: "Evidence that a new nurse is competent in sedation monitoring",

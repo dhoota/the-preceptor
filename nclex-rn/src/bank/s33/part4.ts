@@ -1,18 +1,19 @@
 import type { Item } from "@/engine/types";
-import { CDC_PARTNER, DSM, ESHRE, HALTER, HOCKENBERRY, NICE_CONDUCT, meta } from "./common";
+import { CA_PARTNER, CDC_PARTNER, DSM, ESHRE, HALTER, HOCKENBERRY, NICE_CONDUCT, PAPERNOW, meta } from "./common";
 
 export const PART4: Item[] = [
   {
     ...meta("rn-s33-31", {
       need: "PSY",
       topic: "Discipline in a new stepfamily",
+      version: 2,
       cjmm: "action",
       process: "teaching",
       difficulty: 3,
       stem: "A 10-year-old's mother remarried 4 months ago. At a clinic visit, the stepfather says the child ignores his rules and tells him, \"You're not my dad.\" He asks the nurse how to make the child obey him. Which advice should the nurse give?",
       rationale:
         "The stepfamily formed only 4 months ago. A stepparent who starts as the main source of discipline often meets resistance before trust exists. The birth parent leads on discipline at first while the stepparent builds a warm bond through time together. Stricter rules from the stepparent tend to raise conflict. Asking to be called Dad pushes a bond the child is not ready for. Pulling away leaves the child without a relationship to build on.",
-      sources: [HOCKENBERRY],
+      sources: [PAPERNOW, HOCKENBERRY],
     }),
     kind: "mc",
     options: [
@@ -44,6 +45,7 @@ export const PART4: Item[] = [
     ],
     correct: 2,
   },
+  // PULL (s33 review): tests the same point as rn-s11-47, caregiver supports such as a parent group and family help that protect against strain.
   {
     ...meta("rn-s33-33", {
       need: "PSY",
@@ -99,7 +101,8 @@ export const PART4: Item[] = [
       stem: "A 41-year-old client learns he has HIV infection. He tells the nurse, \"Please promise you will not tell my wife. I am not ready to tell her myself.\" Which response by the nurse is best?",
       rationale:
         "The nurse keeps the diagnosis confidential and cannot promise to ignore a partner's risk. Health department partner services can notify partners and offer testing without naming the client. Offering this option protects the wife and the client's privacy. The nurse does not call the wife directly. A spouse has no right to the client's record. A blanket promise of silence ignores the partner's ongoing risk.",
-      sources: [CDC_PARTNER],
+      canada: "In Canada, HIV is reportable in every province and territory, and public health partner notification is mandated. Who carries it out and how varies by province.",
+      sources: [CDC_PARTNER, CA_PARTNER],
     }),
     kind: "mc",
     options: [

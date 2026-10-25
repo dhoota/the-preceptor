@@ -6,6 +6,9 @@ import {
   ACIP_GBP,
   AMSTERDAM,
   AMSTERDAM_PEDS,
+  AAP_MOWER_HC,
+  CDA_FLUORIDE,
+  NACI_HPV,
   CDC_BLRV,
   CDC_LEAD_CLIN,
   HOCKENBERRY,
@@ -42,12 +45,13 @@ export const PART3: Item[] = [
   },
   {
     ...meta("rn-s32-22", {
+      version: 2,
       need: "HPM",
       topic: "Patching for amblyopia",
       cjmm: "evaluate",
       process: "teaching",
       difficulty: 3,
-      stem: "A 5-year-old has amblyopia of the right eye. The eye specialist prescribes an adhesive patch for 2 hours each day. Which statement by the parent shows understanding of the treatment?",
+      stem: "A 5-year-old girl has amblyopia of the right eye. The eye specialist prescribes an adhesive patch for 2 hours each day. Which statement by the parent shows understanding of the treatment?",
       rationale:
         "In amblyopia the brain favors the stronger eye. Patching the stronger left eye forces the brain to use the weaker right eye, so its vision develops. Treatment works best in early childhood, so it is not delayed. Patching the weak eye would deepen the problem. A straight-looking eye does not mean vision has recovered, so patching continues until the specialist stops it.",
       sources: [USPSTF_VISION, HOCKENBERRY],
@@ -63,6 +67,7 @@ export const PART3: Item[] = [
   },
   {
     ...meta("rn-s32-23", {
+      canada: "The Canadian Dental Association advises fluoride toothpaste before age 3 only for a child at risk of decay, in a rice-grain amount. A bedtime bottle of milk is one of its risk factors, so the teaching matches.",
       need: "HPM",
       topic: "Oral health teaching after a fluoride varnish visit",
       cjmm: "action",
@@ -72,7 +77,7 @@ export const PART3: Item[] = [
       rationale:
         "Children under 3 years brush twice a day with a smear of fluoride toothpaste the size of a grain of rice. A dental home is set up by the first birthday, so this child is due now. Milk pooling on the teeth overnight feeds the bacteria that cause decay. Primary care applies varnish again at later visits. A pea-sized amount is for ages 3 to 6. Fluoride-free toothpaste gives no protection.",
       refs: ["Fluoride toothpaste: a rice-grain smear under 3 years and a pea-sized amount from 3 to 6 years."],
-      sources: [AAP_FLUORIDE, USPSTF_CARIES, HOCKENBERRY],
+      sources: [AAP_FLUORIDE, USPSTF_CARIES, HOCKENBERRY, CDA_FLUORIDE],
     }),
     kind: "sata",
     options: [
@@ -88,6 +93,7 @@ export const PART3: Item[] = [
   },
   {
     ...meta("rn-s32-24", {
+      canada: "Canadian laboratories report blood lead in micromol/L. This result is 0.29 micromol/L, and the CDC reference value of 3.5 micrograms per deciliter is about 0.17 micromol/L.",
       need: "HPM",
       topic: "Capillary blood lead result above the reference value",
       cjmm: "action",
@@ -110,6 +116,7 @@ export const PART3: Item[] = [
   },
   {
     ...meta("rn-s32-25", {
+      canada: "Canadian provinces offer HPV vaccine through school programs, and the grade varies by province. NACI recommended in 2024 that healthy people aged 9 to 20 receive 1 dose.",
       need: "HPM",
       topic: "Parent who sees no need for HPV vaccine yet",
       cjmm: "action",
@@ -118,7 +125,7 @@ export const PART3: Item[] = [
       stem: "The parent of an 11-year-old says, \"She is not having sex, so she does not need the HPV vaccine now.\" Which response by the nurse is most appropriate?",
       rationale:
         "HPV vaccine prevents infection but does not treat it. It works best when given before any exposure to the virus, which is why it is offered in late childhood. Waiting until sexual activity starts risks exposure before protection. The vaccine is recommended for boys and girls. Delaying to adulthood loses the benefit of earlier vaccination.",
-      sources: [MEITES_HPV],
+      sources: [MEITES_HPV, NACI_HPV],
     }),
     kind: "mc",
     options: [
@@ -131,6 +138,7 @@ export const PART3: Item[] = [
   },
   {
     ...meta("rn-s32-26", {
+      version: 2,
       need: "HPM",
       topic: "Preventing injury from fainting after adolescent vaccines",
       cjmm: "action",
@@ -147,7 +155,7 @@ export const PART3: Item[] = [
       { text: "Let him leave now and eat breakfast on the walk", why: "Leaving unobserved puts him at risk of a fall injury if he faints." },
       { text: "Have him stay seated and observe him for 15 minutes", why: "Most fainting after vaccination happens within 15 minutes, so seated observation prevents injury." },
       { text: "Have him stand by the door so he can leave sooner", why: "Standing raises the chance of falling if he faints." },
-      { text: "Tell him to skip the next HPV dose if he feels faint", why: "Fainting is managed with positioning and observation. It is not a reason to stop vaccines." },
+      { text: "Tell him to skip future vaccines if he feels faint", why: "Fainting is managed with positioning and observation. It is not a reason to stop vaccines." },
     ],
     correct: 1,
   },
@@ -206,6 +214,7 @@ export const PART3: Item[] = [
   },
   {
     ...meta("rn-s32-29", {
+      version: 2,
       need: "SIPC",
       topic: "Children around lawn mowers",
       cjmm: "action",
@@ -215,7 +224,7 @@ export const PART3: Item[] = [
       rationale:
         "Children should not ride on a riding mower as passengers. A child can fall off and under the blades, or be hit when the mower reverses. Young children stay indoors while mowing happens. Children are 12 years or older before operating a walk-behind mower and 16 years or older for a riding mower. A 13-year-old may learn the push mower with supervision but is too young for the riding mower.",
       refs: ["Children at least 12 years to use a walk-behind mower and at least 16 years to use a riding mower."],
-      sources: [AAP_MOWER, HOCKENBERRY],
+      sources: [AAP_MOWER, AAP_MOWER_HC, HOCKENBERRY],
     }),
     kind: "mc",
     options: [

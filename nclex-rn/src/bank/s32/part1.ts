@@ -1,9 +1,10 @@
 import type { Item } from "@/engine/types";
-import { AAN_ASM, ACOG_PB226, ADA_PREG, CDC_CO, LYNCH, NAMS_GSM, NAMS_HT, NAMS_NONHORMONE, USPSTF_BRCA, meta } from "./common";
+import { AAN_ASM, ACOG_PB226, ADA_PREG, CDC_CO, DC_PREG, LYNCH, NAMS_GSM, NAMS_HT, NAMS_NONHORMONE, USPSTF_BRCA, meta } from "./common";
 
 export const PART1: Item[] = [
   {
     ...meta("rn-s32-01", {
+      version: 2,
       need: "HPM",
       topic: "Choosing who needs a hereditary cancer referral",
       cjmm: "prioritize",
@@ -11,7 +12,7 @@ export const PART1: Item[] = [
       difficulty: 3,
       stem: "A women's health clinic nurse reviews intake forms from four clients who have no personal history of cancer. Which client should the nurse flag for referral to genetic counseling?",
       rationale:
-        "Ovarian cancer in a mother plus breast cancer before age 50 in an aunt on the same side of the family is a pattern that screens positive on familial risk tools. Women who screen positive are offered genetic counseling and, if indicated, BRCA testing. One grandmother with breast cancer at 81 years is a common late-onset pattern. Lung cancer in a father who smoked and cervical cancer in a sister do not suggest a BRCA variant. Dense breast tissue is not a reason for genetic referral.",
+        "Ovarian cancer in a mother plus breast cancer before age 50 in an aunt is a pattern that screens positive on familial risk tools. Women who screen positive are offered genetic counseling and, if indicated, BRCA testing. One grandmother with breast cancer at 81 years is a common late-onset pattern. Lung cancer in a father who smoked and cervical cancer in a sister do not suggest a BRCA variant.",
       sources: [USPSTF_BRCA],
     }),
     kind: "mc",
@@ -114,6 +115,7 @@ export const PART1: Item[] = [
   },
   {
     ...meta("rn-s32-06", {
+      canada: "Diabetes Canada sets the preconception A1C target at 7.0% or less, ideally 6.5% or less if it can be reached safely. An A1C of 8.1% is above both targets.",
       need: "HPM",
       topic: "Glucose control before conception in type 1 diabetes",
       cjmm: "action",
@@ -123,7 +125,7 @@ export const PART1: Item[] = [
       rationale:
         "An A1C of 8.1% is well above the preconception goal. Guidance aims for an A1C under 6.5% before conception when this is safe without hypoglycemia. High glucose around conception raises the risk of congenital anomalies and miscarriage. Contraception continues until glucose is optimized. Insulin stays the treatment in type 1 diabetes. Waiting for the first trimester misses the period when organs form.",
       refs: ["Preconception goal: A1C under 6.5% if achievable without significant hypoglycemia."],
-      sources: [ADA_PREG],
+      sources: [ADA_PREG, DC_PREG],
     }),
     kind: "mc",
     options: [
@@ -182,6 +184,7 @@ export const PART1: Item[] = [
   },
   {
     ...meta("rn-s32-09", {
+      version: 2,
       need: "HPM",
       topic: "Checking menopause counseling on estrogen and dryness",
       cjmm: "evaluate",
@@ -189,7 +192,7 @@ export const PART1: Item[] = [
       difficulty: 4,
       stem: "A 54-year-old client with an intact uterus starts systemic estrogen with a progestin for hot flashes. She also reports vaginal dryness during sex. Which two statements by the client show understanding of the teaching? Select two.",
       rationale:
-        "Estrogen alone thickens the lining of an intact uterus and raises the risk of endometrial cancer. The progestin protects the lining, so both are taken. Vaginal moisturizers used regularly and lubricants during sex are first-line care for dryness. Estrogen alone is not safer with a uterus. Paced breathing and black cohosh lack evidence. Lubricants do not worsen dryness.",
+        "Estrogen alone thickens the lining of an intact uterus and raises the risk of endometrial cancer. The progestin protects the lining, so both are taken. Vaginal moisturizers used regularly and lubricants during sex are first-line care for dryness. Estrogen alone is not safer with a uterus. Paced breathing lacks evidence. Lubricants do not worsen dryness.",
       sources: [NAMS_HT, NAMS_GSM],
     }),
     kind: "msn",

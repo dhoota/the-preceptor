@@ -58,6 +58,7 @@ export const PART2: Item[] = [
       rationale:
         "Spray aimed at the nasal septum irritates its thin lining and is a common cause of nosebleeds with nasal steroids. Pointing the nozzle toward the outer side of the nostril, for example by using the opposite hand, spreads the drug over the nasal lining. The head tips slightly forward. A gentle sniff keeps the spray in the nose instead of the throat.",
       sources: [NASAL, LEHNE],
+      version: 2,
     }),
     kind: "mc",
     options: [

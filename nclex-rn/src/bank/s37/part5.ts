@@ -1,5 +1,5 @@
 import type { Item } from "@/engine/types";
-import { AAP_IVF, ABLS, ACCP_VTE, AHA_ECG, HINKLE, ISBI, NICE_VTE, meta } from "./common";
+import { AAP_IVF, ACCP_VTE, AHA_ECG, HINKLE, ISBI, NICE_VTE, meta } from "./common";
 
 export const PART5: Item[] = [
   {
@@ -101,6 +101,7 @@ export const PART5: Item[] = [
       stem: "An 84-year-old client with dysphagia after a stroke receives a high-protein formula at 60 mL each hour through a gastrostomy tube. Water flushes are 30 mL every 4 hours. Over 5 days the client has become drowsy and more confused. Mucous membranes are dry and urine is scant and dark. Sodium is 156 mEq/L (156 mmol/L), BUN 48 mg/dL (17.1 mmol/L) and creatinine 1.1 mg/dL (97 micromol/L). Which cause is most likely?",
       rationale:
         "A high-protein formula gives a large solute load that needs water for excretion. The flushes supply little free water, and the client cannot drink in response to thirst. Water is lost faster than sodium, so sodium rises to 156 mEq/L. A high BUN of 48 mg/dL with a normal creatinine fits dehydration and a high protein intake. Diabetes insipidus gives large volumes of dilute urine. Excess antidiuretic hormone lowers sodium.",
+      canada: "Canadian laboratories report urea in mmol/L rather than BUN in mg/dL, and creatinine in micromol/L. The urea here would read about 17.1 mmol/L.",
       sources: [HINKLE],
     }),
     kind: "mc",
@@ -157,6 +158,7 @@ export const PART5: Item[] = [
   },
   {
     ...meta("rn-s37-48", {
+      version: 2,
       need: "PA",
       topic: "Keeping a large burn client warm",
       cjmm: "generate",
@@ -164,13 +166,13 @@ export const PART5: Item[] = [
       difficulty: 2,
       stem: "A 30-year-old client with deep burns over 50% of the body surface arrives in the emergency department 40 minutes after injury. The burns were cooled with water at the scene. Core temperature is 36.0°C (96.8°F). Which measures should the nurse take to prevent hypothermia? Select all that apply.",
       rationale:
-        "Burned skin cannot hold heat, and a large burn loses heat fast. The burns have already been cooled, and the core temperature is 36.0°C. Clean dry sheets and blankets, warmed IV fluids and a warm room limit heat loss. Exposing only one area at a time during assessment helps. Ice, wet dressings over large areas and more cooling would drive the temperature down further.",
-      sources: [ISBI, ABLS],
+        "Burned skin cannot hold heat, and a large burn loses heat fast. The burns have already been cooled, and the core temperature is 36.0°C. Active warming, warmed IV fluids and a warm room limit heat loss. Exposing only one area at a time during assessment helps. Leaving burns uncovered, wet dressings over large areas and more cooling would drive the temperature down further.",
+      sources: [ISBI, HINKLE],
     }),
     kind: "sata",
     options: [
-      { text: "Apply ice packs to the burns", why: "Ice deepens tissue injury and causes hypothermia." },
-      { text: "Cover with clean, dry sheets and blankets", why: "Dry coverings limit heat loss from the burned skin." },
+      { text: "Leave the burns uncovered to air-dry", why: "Uncovered burns lose heat by evaporation and radiation." },
+      { text: "Use a forced-air warming blanket", why: "Active warming replaces heat lost through the burned skin." },
       { text: "Keep wet dressings on all burned areas", why: "Wet dressings over a large area pull heat from the body." },
       { text: "Warm the IV fluids", why: "Cold fluids at resuscitation volumes lower the core temperature." },
       { text: "Continue cooling the burns with water", why: "The burns were already cooled, and more cooling risks hypothermia." },
@@ -181,6 +183,7 @@ export const PART5: Item[] = [
   },
   {
     ...meta("rn-s37-49", {
+      version: 2,
       need: "PA",
       topic: "Matching burn depth to wound appearance",
       cjmm: "analyze",
@@ -189,7 +192,7 @@ export const PART5: Item[] = [
       stem: "The nurse assesses four burn areas on a client injured in a house fire. Drag the burn depth that matches each wound description.",
       rationale:
         "A superficial burn involves only the epidermis and is red, dry and painful without blisters. A superficial partial-thickness burn forms moist, pink blisters that blanch and hurt. A deep partial-thickness burn looks pale and mottled, blanches slowly and hurts less. A full-thickness burn is leathery, white or charred, does not blanch and is painless because nerve endings are destroyed. Fourth-degree burns reach muscle or bone, which none of the areas shows.",
-      sources: [ABLS, HINKLE],
+      sources: [HINKLE],
     }),
     kind: "dnd",
     scoring: "zero-one",

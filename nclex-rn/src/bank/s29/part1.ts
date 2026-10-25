@@ -1,5 +1,5 @@
 import type { Item } from "@/engine/types";
-import { ADA_SCHOOL, HALTER, HOCKENBERRY, KUO, NASN_IHP, NCCHC_JAILS, NCCHC_SEG, NGND, SIEGEL, meta } from "./common";
+import { ADA_SCHOOL, C83, CNO_SCOPE, DC_HYPO, HALTER, HOCKENBERRY, KUO, NASN_IHP, NCCHC_JAILS, NCCHC_SEG, NGND, SIEGEL, meta } from "./common";
 
 export const PART1: Item[] = [
   {
@@ -27,6 +27,7 @@ export const PART1: Item[] = [
       topic: "What a school nurse may hand to a health aide",
       cjmm: "generate",
       process: "nursing-process",
+      canada: "In Canada, who may give medications or check glucose in schools is set by provincial law and school board policy. It varies by province.",
       difficulty: 3,
       stem: "A school nurse covers three schools and works with a trained, unlicensed health aide at each school. State law allows the nurse to delegate to trained health aides. Which tasks may the nurse delegate to a health aide? Select all that apply.",
       rationale:
@@ -69,6 +70,7 @@ export const PART1: Item[] = [
       topic: "Planning school entry for a child with a tracheostomy",
       cjmm: "generate",
       process: "nursing-process",
+      canada: "In Canada, school health services for students with complex care needs are organized by provincial health and education ministries. The roles of school and home care nurses vary by province.",
       difficulty: 3,
       stem: "A 5-year-old with a tracheostomy and a gastrostomy tube will start kindergarten in 3 weeks. The child needs suctioning several times a day and has a home care nurse. The family has given the school the discharge papers from the children's hospital. What should the school nurse do first?",
       rationale:
@@ -89,17 +91,19 @@ export const PART1: Item[] = [
       topic: "Reviewing a substitute health aide's log",
       cjmm: "recognize",
       process: "nursing-process",
+      canada: "Canadian meters and labs report glucose in mmol/L. Diabetes Canada defines hypoglycemia in people using insulin as a glucose below 4.0 mmol/L, so 3.4 mmol/L needs a recheck after treatment.",
       difficulty: 3,
-      stem: "The school nurse reviews the log a substitute health aide kept yesterday at one school. Click to highlight the entries that need follow-up by the nurse.",
+      version: 2,
+      stem: "The school nurse reviews the log a substitute health aide kept yesterday at one school. District policy requires a signed medication authorization on file before any dose is given. Click to highlight the entries that need follow-up by the nurse.",
       rationale:
         "The aide gave a medication with no authorization on file. A student with a glucose of 62 mg/dL walked alone after treatment, with no recheck. The aide held a prescribed insulin dose without asking the nurse. Each entry needs follow-up. Ice for a minor injury, sending home a child with a temperature of 38.6°C and recording screening results are within the aide's role.",
-      sources: [ADA_SCHOOL, NGND],
+      sources: [ADA_SCHOOL, NGND, DC_HYPO],
     }),
     kind: "highlight",
     passage:
       "[[0915 Gave a 2nd grader acetaminophen from the office stock for a headache. No medication form on file.]]\n[[1000 Applied ice to a 4th grader's elbow after a fall. Child returned to class.]]\n[[1040 Student with type 1 diabetes had glucose 62 mg/dL (3.4 mmol/L). Gave juice and sent the student back to class alone.]]\n[[1130 Called a parent to pick up a child with a temperature of 38.6°C (101.5°F).]]\n[[1230 Held the lunch insulin dose because the student said they felt fine.]]\n[[1415 Filed hearing screening results in the health folder.]]",
     spans: [
-      { text: "0915 Gave a 2nd grader acetaminophen from the office stock for a headache. No medication form on file.", why: "School medications need a signed authorization on file. A dose given without one needs follow-up." },
+      { text: "0915 Gave a 2nd grader acetaminophen from the office stock for a headache. No medication form on file.", why: "District policy requires a signed authorization on file. A dose given without one needs follow-up." },
       { text: "1000 Applied ice to a 4th grader's elbow after a fall. Child returned to class.", why: "Ice for a minor bump with return to class is routine first aid." },
       { text: "1040 Student with type 1 diabetes had glucose 62 mg/dL (3.4 mmol/L). Gave juice and sent the student back to class alone.", why: "Low glucose needs a recheck after treatment, and a student with low glucose is not sent anywhere alone." },
       { text: "1130 Called a parent to pick up a child with a temperature of 38.6°C (101.5°F).", why: "Sending home a child with a temperature of 38.6°C follows usual school illness rules." },
@@ -114,19 +118,20 @@ export const PART1: Item[] = [
       cjmm: "evaluate",
       process: "teaching",
       difficulty: 3,
+      version: 2,
       stem: "A school nurse has trained a teacher to give glucagon to a student with type 1 diabetes. The nurse checks the teacher's understanding of the delegated task. Which two statements by the teacher show understanding? Select two.",
       rationale:
-        "Glucagon treats severe low glucose when the student cannot safely take sugar by mouth, such as when unconscious or seizing. After giving it, staff call emergency services and then the school nurse and parent. Mild symptoms are treated with fast sugar by mouth. The teacher cannot pass the task to another person. Nothing goes by mouth during a seizure. Waiting for a parent delays treatment.",
+        "A delegated task has set limits. The teacher gives glucagon only to the student named in the plan and only as the plan directs. The teacher reports each dose to the school nurse, who follows up with the student. The teacher may not change the dose or teach another person to give it. Another student's supply is not used. Waiting for a parent delays treatment of severe low glucose.",
       sources: [ADA_SCHOOL, NGND],
     }),
     kind: "msn",
     select: 2,
     options: [
-      { text: "\"I give it if the student is unconscious or cannot swallow safely.\"", why: "Glucagon is for severe low glucose when sugar cannot be taken by mouth." },
+      { text: "\"I give it only to this student, as the emergency plan states.\"", why: "The delegated task covers one student and the steps written in that student's plan." },
       { text: "\"I can give half a dose if the student only seems a little shaky.\"", why: "Mild symptoms are treated with fast sugar by mouth. Changing the dose is outside the delegated task." },
       { text: "\"I can show the substitute teacher how to give it next week.\"", why: "A delegatee cannot pass the task on. The nurse trains and checks every staff member." },
-      { text: "\"I will call emergency services after giving it.\"", why: "Severe low glucose treated with glucagon needs emergency services, and the nurse follows up." },
-      { text: "\"I will give juice by mouth first while the student is seizing.\"", why: "Nothing goes by mouth during a seizure because of the risk of aspiration." },
+      { text: "\"I will tell the school nurse each time I give it.\"", why: "The delegatee reports back to the delegating nurse, who follows up on the student." },
+      { text: "\"I can use another student's glucagon if this one is missing.\"", why: "A prescribed drug is given only to the student it was prescribed for." },
       { text: "\"I will wait for the student's parent to arrive before giving it.\"", why: "Waiting for a parent delays treatment of severe low glucose." },
     ],
     correct: [0, 3],
@@ -136,10 +141,12 @@ export const PART1: Item[] = [
       topic: "First detainee to see after jail intake screening",
       cjmm: "prioritize",
       process: "clinical-judgment",
+      canada: "In Canada, people on remand are held in provincial jails, and their health care falls under provincial ministries. Correctional Service Canada runs federal institutions for sentences of 2 years or more.",
       difficulty: 3,
+      version: 2,
       stem: "A nurse in a county jail reviews the receiving screening forms that health-trained officers completed in the past hour. Which detainee should the nurse see first?",
       rationale:
-        "A statement that he has nothing left to live for, made at his first arrest, signals suicide risk. Receiving screening exists to find urgent needs like this one. The nurse sees him first, assesses suicide risk and puts safety measures in place before he is housed. Early opioid withdrawal is distressing but seldom fatal in a healthy adult. Clear breathing and a glucose of 168 mg/dL are stable for now.",
+        "A statement that he has nothing left to live for, made at his first arrest, signals suicide risk. Receiving screening exists to find urgent needs like this one. The nurse sees him first, assesses suicide risk and puts safety measures in place before he is housed. Early opioid withdrawal needs care today but is seldom life threatening in an adult. Clear breathing and a glucose of 168 mg/dL are stable for now.",
       sources: [NCCHC_JAILS, HALTER],
     }),
     kind: "mc",
@@ -156,6 +163,7 @@ export const PART1: Item[] = [
       topic: "Officer asks for a detainee's diagnosis",
       cjmm: "action",
       process: "communication",
+      canada: "In Canada, sharing a detainee's health information with custody staff is governed by provincial health privacy laws, which vary by province.",
       difficulty: 2,
       stem: "A detainee in a jail has HIV infection and is stable on medication. A correctional officer tells the nurse, \"I need to know what he has so I can protect myself.\" What should the nurse do?",
       rationale:
@@ -176,11 +184,13 @@ export const PART1: Item[] = [
       topic: "Health request from a detainee in segregation",
       cjmm: "action",
       process: "nursing-process",
+      canada: "In federal Canadian prisons, Bill C-83 replaced segregation with structured intervention units in 2019. Rules on separate confinement in provincial jails vary by province.",
+      version: 2,
       difficulty: 4,
       stem: "A detainee in disciplinary segregation slips a written health request under the cell door. It reads, \"Bad pain when I pee and I feel hot.\" The officer on the unit tells the nurse that health requests are on hold until the discipline ends. What should the nurse do?",
       rationale:
         "A detainee in segregation keeps the same access to health care as anyone else in the jail. Discipline does not suspend it. The nurse triages the request today. Triage may start at the cell door, but an exam and private talk take place in a clinical area. Painful urination with a feeling of fever needs assessment for a urinary infection. Clinical decisions belong to health staff, not custody staff.",
-      sources: [NCCHC_JAILS, NCCHC_SEG],
+      sources: [NCCHC_JAILS, NCCHC_SEG, C83],
     }),
     kind: "mc",
     options: [
@@ -196,11 +206,12 @@ export const PART1: Item[] = [
       topic: "Matching jail health tasks to team members",
       cjmm: "generate",
       process: "nursing-process",
+      canada: "In Ontario the practical nurse is a registered practical nurse (RPN). Whether an RPN may triage health requests depends on the provincial regulator and the facility, so it varies by province.",
       difficulty: 4,
       stem: "The nurse manager in a county jail plans the morning work of the health and custody team. Drag the team member who should carry out each task. Each team member is used once at most.",
       rationale:
         "A practical nurse can give scheduled oral medications at the morning pass. Triage of written health requests needs registered nurse assessment and judgment. Prescribing treatment for a new rash is the role of the nurse practitioner. Moving a detainee to the clinic is a custody task for the correctional officer. A records clerk and a mental health counselor do not fit any of these tasks.",
-      sources: [NGND, NCCHC_JAILS],
+      sources: [NGND, NCCHC_JAILS, CNO_SCOPE],
     }),
     kind: "dnd",
     scoring: "zero-one",

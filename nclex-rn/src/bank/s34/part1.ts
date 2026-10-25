@@ -1,5 +1,5 @@
 import type { Item } from "@/engine/types";
-import { AHS_IC, BLADDER_SCAN, GILLETTE_SOCKS, HINKLE, HOCKENBERRY, LEHNE, NEPHROSTOMY, POTTER, SPC_UHS, meta } from "./common";
+import { AHS_IC, BLADDER_SCAN, GILLETTE_SOCKS, HINKLE, HOCKENBERRY, LEHNE, NEPHROSTOMY, NICE_DELIRIUM, POTTER, SPC_UHS, meta } from "./common";
 
 export const PART1: Item[] = [
   {
@@ -23,6 +23,7 @@ export const PART1: Item[] = [
     ],
     correct: 1,
   },
+  // PULL: tests the same point as rn-s09-47 (pinna down and back before age 3, up and back for adults). A unique rewrite would change both keys.
   {
     ...meta("rn-s34-02", {
       need: "PPT",
@@ -70,7 +71,8 @@ export const PART1: Item[] = [
       stem: "An 83-year-old client is admitted from home with pneumonia. The client wears reading glasses and two behind-the-ear hearing aids. The record notes delirium during a past hospital stay. Which actions should the nurse include in the plan of care? Select all that apply.",
       rationale:
         "Glasses and hearing aids keep the client oriented and lower the risk of delirium, which this client has had before. The devices stay within reach and the aids are worn while the client is awake. Both go on the property list and the handoff report so they are tracked between shifts. Opening the battery door at night saves the battery. Aids left on trays or in linen are often thrown away.",
-      sources: [POTTER, HINKLE],
+      sources: [POTTER, HINKLE, NICE_DELIRIUM],
+      version: 2,
     }),
     kind: "sata",
     options: [
@@ -189,25 +191,26 @@ export const PART1: Item[] = [
       cjmm: "action",
       process: "nursing-process",
       difficulty: 3,
-      stem: "A 74-year-old man has not voided since his hip surgery 7 hours ago. The nurse prepares to measure his bladder volume with a portable bladder scanner. Place the steps in order.",
+      stem: "A 74-year-old man has not voided since his hip surgery 7 hours ago. The nurse has turned on a portable bladder scanner and selected the male setting. Place the remaining steps in order.",
       rationale:
-        "The client lies supine so the bladder sits under the lower abdomen. The scanner is set to the client's sex. Gel goes on the skin to carry the ultrasound. The probe sits just above the pubic bone and aims down toward the bladder. It is held still until the reading appears. The gel is wiped off at the end. A catheter is not inserted before the scan, which is meant to avoid needless catheterization.",
+        "The client lies supine so the bladder sits under the lower abdomen. Gel goes on the skin to carry the ultrasound. The probe sits just above the pubic bone and aims down toward the bladder. It is held still until the reading appears. The gel is wiped off at the end. A catheter is not inserted before the scan, which is meant to avoid needless catheterization.",
       sources: [BLADDER_SCAN],
+      version: 2,
     }),
     kind: "dnd",
     scoring: "zero-one",
-    targets: ["First", "Second", "Third", "Fourth", "Fifth", "Sixth"],
+    targets: ["First", "Second", "Third", "Fourth", "Fifth"],
     tokens: [
-      { text: "Apply gel to the lower abdomen", why: "Gel goes on after the scanner is set and before the probe is placed." },
+      { text: "Apply gel to the lower abdomen", why: "Gel goes on after the client is positioned and before the probe is placed." },
       { text: "Wipe the gel from the skin", why: "The gel is removed once the reading is complete." },
       { text: "Place the client supine", why: "Lying flat comes first so the bladder lies under the probe site." },
       { text: "Hold the probe still for the reading", why: "Moving the probe during the scan distorts the reading." },
       { text: "Place the probe over the umbilicus", why: "The umbilicus is too high. The probe sits just above the pubic bone." },
-      { text: "Select the male setting", why: "The scanner is set to the client's sex before scanning." },
+      { text: "Raise the head of the bed to 60 degrees", why: "The scan is done with the client supine, not sitting up." },
       { text: "Aim the probe down from above the pubic bone", why: "The probe points down toward the bladder from just above the pubic bone." },
       { text: "Drain the bladder with a straight catheter", why: "The scan replaces a catheter check. A catheter is not needed first." },
     ],
-    correct: [2, 5, 0, 6, 3, 1],
+    correct: [2, 0, 6, 3, 1],
   },
   {
     ...meta("rn-s34-09", {

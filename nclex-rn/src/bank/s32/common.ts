@@ -285,3 +285,87 @@ export const FDA_FLUSH: Source = {
   year: 2024,
   url: "https://www.fda.gov/drugs/disposal-unused-medicines-what-you-should-know/drug-disposal-flush-potentially-dangerous-medicine",
 };
+export const DC_PREG: Source = {
+  body: "Feig DS, Berger H, Donovan L, et al. Diabetes Canada Clinical Practice Guidelines Expert Committee",
+  work: "Diabetes and Pregnancy. Canadian Journal of Diabetes 42(Suppl 1):S255",
+  year: 2018,
+  url: "https://doi.org/10.1016/j.jcjd.2017.10.038",
+};
+export const CTFPHC_PSA: Source = {
+  body: "Bell N, Connor Gorber S, Shane A, et al. Canadian Task Force on Preventive Health Care",
+  work: "Recommendations on Screening for Prostate Cancer With the Prostate-Specific Antigen Test. CMAJ 186(16):1225",
+  year: 2014,
+  url: "https://doi.org/10.1503/cmaj.140703",
+};
+export const CUA_PSA: Source = {
+  body: "Mason RJ, Marzouk K, Finelli A, et al. Canadian Urological Association",
+  work: "UPDATE 2022 Canadian Urological Association Recommendations on Prostate Cancer Screening and Early Diagnosis. Canadian Urological Association Journal 16(4):E184",
+  year: 2022,
+  url: "https://doi.org/10.5489/cuaj.7851",
+};
+export const CMPA_DRIVE: Source = {
+  body: "Canadian Medical Protective Association",
+  work: "Hit the Brakes: Do You Need to Report Your Patient's Fitness to Drive? (revised January 2026)",
+  year: 2026,
+  url: "https://www.cmpa-acpm.ca/en/advice-publications/browse-articles/2019/hit-the-brakes-do-you-need-to-report-your-patients-fitness-to-drive",
+};
+export const CAA_OTC: Source = {
+  body: "Canadian Academy of Audiology",
+  work: "Position Statement on Over-The-Counter Devices and Sound Amplifying Products",
+  year: 2025,
+  url: "https://canadianaudiology.ca/wp-content/uploads/2025/03/Canadian-Academy-of-Audiology-Position-Statement-on-Over-The-Counter-devices-and-Sound-Producing-Products-Mar-2025.pdf",
+};
+export const CDA_FLUORIDE: Source = {
+  body: "Canadian Dental Association",
+  work: "CDA Position on Use of Fluorides in Caries Prevention (revised March 2012)",
+  year: 2012,
+  url: "https://www.cda-adc.ca/_files/position_statements/fluoride.pdf",
+};
+export const NACI_HPV: Source = {
+  body: "Public Health Agency of Canada, National Advisory Committee on Immunization",
+  work: "Summary of NACI Statement of July 24, 2024: Updated Recommendations on Human Papillomavirus Vaccines",
+  year: 2024,
+  url: "https://www.canada.ca/en/public-health/services/publications/vaccines-immunization/national-advisory-committee-immunization-summary-updated-recommendations-hpv-vaccines.html",
+};
+export const WHO_CANADA_CHARTS: Source = {
+  body: "Dietitians of Canada, Canadian Paediatric Society, College of Family Physicians of Canada and Community Health Nurses of Canada",
+  work: "A Health Professional's Guide for Using the WHO Growth Charts for Canada (redesigned 2014)",
+  year: 2014,
+  url: "https://www.dietitians.ca/DietitiansOfCanada/media/Documents/WHO%20Growth%20Charts/2014-A-Health-Professionals-Guide-to-Using-the-Charts.pdf",
+};
+export const CCOHS_NOISE: Source = {
+  body: "Canadian Centre for Occupational Health and Safety",
+  work: "Noise: Occupational Exposure Limits in Canada (OSH Answers fact sheet)",
+  year: 2023,
+  url: "https://www.ccohs.ca/oshanswers/phys_agents/exposure_can.html",
+};
+export const ON_CERVICAL: Source = {
+  body: "Ontario Health",
+  work: "Ontario Introduces New Cervical Screening Test to Better Prevent Cervical Cancer",
+  year: 2025,
+  url: "https://www.ontariohealth.ca/news/ontario-introduces-new-cervical-screening-test-to-better-prevent-cervical-cancer",
+};
+export const CPAC_DENSITY: Source = {
+  body: "Canadian Partnership Against Cancer",
+  work: "Breast Screening in Canada, 2023-24: Management of Participants With High Breast Density",
+  year: 2024,
+  url: "https://www.partnershipagainstcancer.ca/topics/breast-screening-canada-2023-2024/elevated-and-high-risk/high-breast-density/",
+};
+export const HC_DISPOSAL: Source = {
+  body: "Health Canada",
+  work: "Safe Disposal of Prescription Drugs",
+  year: 2026,
+  url: "https://www.canada.ca/en/health-canada/services/safe-disposal-prescription-drugs.html",
+};
+export const AAP_MOWER_HC: Source = {
+  body: "American Academy of Pediatrics, HealthyChildren.org",
+  work: "Lawnmower Safety (last updated April 3, 2025)",
+  year: 2025,
+  url: "https://www.healthychildren.org/English/safety-prevention/at-home/Pages/Lawnmower-Safety.aspx",
+};
+export const AAP_DOGBITE: Source = {
+  body: "American Academy of Pediatrics, HealthyChildren.org",
+  work: "Dog Bite Prevention Tips",
+  year: 2018,
+  url: "https://www.healthychildren.org/English/safety-prevention/all-around/Pages/Dog-Bite-Prevention-Tips.aspx",
+};

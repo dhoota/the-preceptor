@@ -1,5 +1,5 @@
 import type { Item } from "@/engine/types";
-import { AASM_RLS, AAD_DRY, EXELON, HALAL_TPH, HICCUPS, HINKLE, HOCKENBERRY, NIDDK_LACTOSE, PDQ_ORAL, POTTER, SSC_PAIN, SUCROSE_HEEL, meta } from "./common";
+import { AASM_RLS, AAD_DRY, AND_VEG, EXELON, HALAL_TPH, HICCUPS, HINKLE, HOCKENBERRY, NIDDK_LACTOSE, PDQ_ORAL, POTTER, SSC_PAIN, SUCROSE_DOSE, SUCROSE_HEEL, meta } from "./common";
 
 export const PART4: Item[] = [
   {
@@ -58,7 +58,8 @@ export const PART4: Item[] = [
       stem: "A 22-year-old client who follows a lacto-ovo vegetarian diet is recovering from an appendectomy and needs extra protein for healing. Which two foods should the nurse suggest? Select two.",
       rationale:
         "A lacto-ovo vegetarian diet includes dairy foods and eggs but no meat, poultry or fish. Eggs and Greek yogurt are complete proteins that fit the diet. Chicken soup, tuna and beef broth contain animal flesh or its stock. Gelatin is made from animal tissue and adds little protein.",
-      sources: [POTTER],
+      sources: [AND_VEG, POTTER],
+      version: 2,
     }),
     kind: "msn",
     select: 2,
@@ -131,7 +132,8 @@ export const PART4: Item[] = [
       stem: "A term newborn, 2 days old, needs a heel stick for newborn screening. The unit protocol includes oral sucrose 24% for minor painful procedures. The parent cannot breastfeed or hold the newborn at this time. When should the nurse give the sucrose?",
       rationale:
         "Oral sucrose acts through sweet taste on the tongue and calms the newborn within about 2 minutes. Its effect is short, so it is given about 2 minutes before the heel stick. Given 15 minutes early, the effect has faded. Given at the puncture or after the sample, the painful part has already happened.",
-      sources: [SUCROSE_HEEL, HOCKENBERRY],
+      sources: [SUCROSE_HEEL, SUCROSE_DOSE, HOCKENBERRY],
+      version: 2,
     }),
     kind: "mc",
     options: [

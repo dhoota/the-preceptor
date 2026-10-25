@@ -1,5 +1,5 @@
 import type { Item } from "@/engine/types";
-import { BZD_TAPER, DSM, HALTER, LINEHAN, TIP33, meta } from "./common";
+import { BC_MHA, BZD_TAPER, CA_BZRA, DSM, HALTER, LINEHAN, TIP33, meta } from "./common";
 
 export const PART2: Item[] = [
   {
@@ -78,6 +78,7 @@ export const PART2: Item[] = [
     ...meta("rn-s33-14", {
       need: "PSY",
       topic: "Opening an assertive request",
+      version: 2,
       cjmm: "generate",
       process: "communication",
       difficulty: 4,
@@ -147,13 +148,15 @@ export const PART2: Item[] = [
     ...meta("rn-s33-17", {
       need: "PSY",
       topic: "Psychosis and fever after a stimulant binge",
+      version: 2,
       cjmm: "prioritize",
       process: "clinical-judgment",
       difficulty: 4,
       stem: "Police bring a 31-year-old client to the emergency department after the client shouted at neighbors. The client has used methamphetamine daily for a week and has not slept for 3 days. The client says people are hiding in the walls and picks at arm sores, saying bugs are under the skin. Temperature is 38.9°C (102.0°F), heart rate 128/minute and BP 168/98 mmHg. Complete the diagram by choosing the condition the client is most likely experiencing, 2 actions to take and 2 parameters to monitor.",
       rationale:
         "A week of daily methamphetamine, no sleep for 3 days, paranoia and the sense of bugs under the skin fit stimulant-induced psychosis. A temperature of 38.9°C, heart rate of 128/minute and BP of 168/98 mmHg show stimulant toxicity. A quiet room with moderate light lowers agitation without full sensory deprivation. Cooling treats the high temperature, which can lead to muscle breakdown and organ injury. Temperature, heart rate and BP show whether the toxicity is easing.",
-      sources: [TIP33, HALTER],
+      canada: "In Canada, police apprehension for a mental health examination comes under the provincial mental health act, such as section 28 of the British Columbia act. Criteria and forms vary by province.",
+      sources: [TIP33, HALTER, BC_MHA],
     }),
     kind: "bowtie",
     conditions: [
@@ -213,7 +216,8 @@ export const PART2: Item[] = [
       rationale:
         "Long-term daily lorazepam causes physical dependence. Current guidance starts with small cuts of about 5% to 10% of the dose and adjusts the pace to how the client feels. The pace typically does not exceed 25% every 2 weeks, and it slows or pauses if withdrawal appears. Halving the dose weekly or stopping at once risks severe withdrawal and seizures. A fixed end date ignores the client's response.",
       refs: ["Initial benzodiazepine taper reductions are generally 5% to 10% of the dose, and the pace typically does not exceed 25% every 2 weeks."],
-      sources: [BZD_TAPER],
+      canada: "Canada's 2018 deprescribing guideline for benzodiazepines used for insomnia gives an example taper of 25% every 2 weeks, then 12.5% steps near the end. It allows a slower pace when relapse risk is higher.",
+      sources: [BZD_TAPER, CA_BZRA],
     }),
     kind: "mc",
     options: [

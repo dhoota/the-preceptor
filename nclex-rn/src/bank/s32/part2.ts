@@ -1,5 +1,5 @@
 import type { Item } from "@/engine/types";
-import { AAO_SSNHL, AGS_DRIVE, BHOF, ENDO_MEN, FDA_OTC_HA, PIROZZO, POTTER, USPSTF_PSA, USPSTF_TESTIS, meta } from "./common";
+import { AAO_SSNHL, AGS_DRIVE, CAA_OTC, CMPA_DRIVE, CTFPHC_PSA, CUA_PSA, BHOF, ENDO_MEN, FDA_OTC_HA, PIROZZO, POTTER, USPSTF_PSA, USPSTF_TESTIS, meta } from "./common";
 
 export const PART2: Item[] = [
   {
@@ -25,6 +25,7 @@ export const PART2: Item[] = [
   },
   {
     ...meta("rn-s32-12", {
+      canada: "The Canadian Task Force on Preventive Health Care (2014) recommends against PSA screening at all ages. The Canadian Urological Association suggests shared decision making about PSA testing from age 50 in most men.",
       need: "HPM",
       topic: "Answering a question about PSA testing at 58",
       cjmm: "action",
@@ -34,7 +35,7 @@ export const PART2: Item[] = [
       rationale:
         "For men aged 55 to 69 the choice to have PSA screening is an individual one. The small chance of fewer prostate cancer deaths is weighed against false positives, biopsies, overdiagnosis and treatment harms. The nurse supports an informed decision with the provider. Screening is not advised for all men of 58. The recommendation against screening starts at 70. A rectal exam is not a recommended screening test.",
       refs: ["PSA screening for men 55 to 69 years is an individual decision. Screening is not recommended from 70 years."],
-      sources: [USPSTF_PSA],
+      sources: [USPSTF_PSA, CTFPHC_PSA, CUA_PSA],
     }),
     kind: "mc",
     options: [
@@ -47,6 +48,7 @@ export const PART2: Item[] = [
   },
   {
     ...meta("rn-s32-13", {
+      canada: "The Canadian Task Force on Preventive Health Care (2014) recommends against PSA screening, while the Canadian Urological Association supports shared decision making from age 50. The benefits and harms to discuss are the same.",
       need: "HPM",
       topic: "Content of a prostate screening decision talk",
       cjmm: "generate",
@@ -56,7 +58,7 @@ export const PART2: Item[] = [
       rationale:
         "Screening men aged 55 to 69 may slightly lower the chance of dying of prostate cancer. A raised PSA is often a false positive and can lead to biopsy with pain and infection risk. Some cancers found would never have caused harm in the man's lifetime. Surgery and radiation can cause erectile dysfunction and urinary incontinence. A normal PSA does not rule out cancer. Screening is not recommended from 70 years.",
       refs: ["PSA screening for men 55 to 69 years is an individual decision. Screening is not recommended from 70 years."],
-      sources: [USPSTF_PSA],
+      sources: [USPSTF_PSA, CTFPHC_PSA, CUA_PSA],
     }),
     kind: "sata",
     options: [
@@ -145,6 +147,7 @@ export const PART2: Item[] = [
   },
   {
     ...meta("rn-s32-17", {
+      canada: "Driver licensing in Canada is provincial. Most provinces require physicians to report a client whose condition may make driving dangerous, while Alberta, Quebec and Nova Scotia leave reporting to discretion. Nurse practitioner duties vary by province.",
       need: "HPM",
       topic: "Next step when an older driver's safety is uncertain",
       cjmm: "action",
@@ -153,7 +156,7 @@ export const PART2: Item[] = [
       stem: "A 79-year-old client has mild cognitive impairment. His wife reports that he missed a turn last week and braked late at a red light. He has had no crashes and says, \"Driving is how I stay independent.\" Which action should the nurse take?",
       rationale:
         "The client shows warning signs but his driving ability is uncertain. A comprehensive driving evaluation by a driver rehabilitation specialist tests skills on the road and can suggest adaptations or a plan to stop. It respects his independence while guarding safety. Saying a license proves safety ignores the warning signs. Reporting to the licensing agency before any evaluation is premature. Waiting for a crash accepts preventable harm.",
-      sources: [AGS_DRIVE],
+      sources: [AGS_DRIVE, CMPA_DRIVE],
     }),
     kind: "mc",
     options: [
@@ -166,6 +169,7 @@ export const PART2: Item[] = [
   },
   {
     ...meta("rn-s32-18", {
+      version: 2,
       need: "HPM",
       topic: "Hearing complaint needing same-day evaluation",
       cjmm: "prioritize",
@@ -178,7 +182,7 @@ export const PART2: Item[] = [
     }),
     kind: "mc",
     options: [
-      { text: "A 72-year-old who has found restaurants harder to hear in over 3 years", why: "A gradual change in both ears fits age-related hearing loss and can be scheduled." },
+      { text: "A 72-year-old who has found restaurants harder to hear over the past 3 years", why: "A gradual change over years fits age-related hearing loss and can be scheduled." },
       { text: "A 35-year-old with an itchy, full ear after swimming", why: "Itching after swimming suggests outer ear irritation that does not need same-day care." },
       { text: "A 60-year-old who needs a hearing screen for a new job", why: "A routine screen without symptoms can be booked at any time." },
       { text: "A 47-year-old who woke yesterday with muffled hearing in the right ear", why: "Sudden one-sided hearing loss may be sensorineural and needs prompt evaluation." },
@@ -208,6 +212,7 @@ export const PART2: Item[] = [
   },
   {
     ...meta("rn-s32-20", {
+      canada: "Canada has no federal over-the-counter hearing aid category like the US rule. Health Canada licenses hearing aids as Class II medical devices, and access without a prescription varies by province.",
       need: "HPM",
       topic: "Counseling about over-the-counter hearing aids",
       cjmm: "generate",
@@ -216,7 +221,7 @@ export const PART2: Item[] = [
       stem: "A 66-year-old client has noticed mild trouble following conversation in both ears for a year. He asks about buying hearing aids over the counter. Which points should the nurse include? Select all that apply.",
       rationale:
         "Over-the-counter hearing aids are for adults aged 18 years or older with perceived mild to moderate hearing loss. No prescription or hearing test is needed to buy them. Their labels list red flag conditions that need a clinician first, such as ear drainage in the past 6 months or hearing loss or ringing in only one ear. Severe loss needs a prescription device fitted by a professional.",
-      sources: [FDA_OTC_HA],
+      sources: [FDA_OTC_HA, CAA_OTC],
     }),
     kind: "sata",
     options: [

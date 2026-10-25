@@ -20,7 +20,7 @@ export const NASN_IHP: Source = {
   body: "National Association of School Nurses",
   work: "Individualized Healthcare Plans: Promoting Health and Learning for Students With Complex Needs, Position Statement",
   year: 2025,
-  url: "https://nasn.org/ps-ihps",
+  url: "https://doi.org/10.1177/10598405251332784",
 };
 export const NASN_SCOPE: Source = {
   body: "National Association of School Nurses",
@@ -48,14 +48,14 @@ export const NCCHC_JAILS: Source = {
 };
 export const NCCHC_SEG: Source = {
   body: "National Commission on Correctional Health Care",
-  work: "Spotlight on the Standards: Segregated Inmates",
-  year: 2022,
+  work: "Standards Q&A: Segregated Inmates. CorrectCare 19(4)",
+  year: 2005,
   url: "https://www.ncchc.org/spotlight-on-the-standards/segregated-inmates/",
 };
 export const NCCHC_REFUSE: Source = {
   body: "National Commission on Correctional Health Care",
-  work: "Spotlight on the Standards: Right to Refuse Treatment",
-  year: 2022,
+  work: "Standards Q&A: Right to Refuse Treatment. CorrectCare reprints",
+  year: 2010,
   url: "https://www.ncchc.org/right-to-refuse-treatment",
 };
 export const SIEGEL: Source = {
@@ -164,7 +164,7 @@ export const SAMHSA_CRISIS: Source = {
   body: "Substance Abuse and Mental Health Services Administration",
   work: "National Guidelines for Behavioral Health Crisis Care: Best Practice Toolkit",
   year: 2020,
-  url: "https://www.samhsa.gov/sites/default/files/national-guidelines-for-behavioral-health-crisis-care-02242020.pdf",
+  url: "https://bja.ojp.gov/sites/g/files/xyckuh186/files/media/document/samsha-national-guidelines.pdf",
 };
 export const BRIGGS: Source = {
   body: "Briggs JK",
@@ -176,7 +176,7 @@ export const WRIGHT: Source = {
   body: "Wright D",
   work: "The Ultimate Guide to Competency Assessment in Health Care, 4th edition",
   year: 2021,
-  url: "https://chcm.com/product/the-ultimate-guide-to-competency-assessment-in-health-care-4th-edition/",
+  url: "https://www.aacn.org/store/books/120564/the-ultimate-guide-to-competency-assessment-in-health-care-4th-ed",
 };
 export const POWERS: Source = {
   body: "Powers WJ, Rabinstein AA, Ackerson T, et al. American Heart Association and American Stroke Association",
@@ -189,7 +189,7 @@ export const HALTER: Source = {
   body: "Halter MJ",
   work: "Varcarolis' Foundations of Psychiatric-Mental Health Nursing: A Clinical Approach, 9th edition",
   year: 2022,
-  url: "https://shop.elsevier.com/books/varcarolis-foundations-of-psychiatric-mental-health-nursing/halter/978-0-323-69707-1",
+  url: "https://evolve.elsevier.com/cs/product/9780323697071",
 };
 export const HOCKENBERRY: Source = {
   body: "Hockenberry MJ, Duffy EA, Gibbs KD",
@@ -209,4 +209,36 @@ export const NCP: Source = {
   work: "Clinical Practice Guidelines for Quality Palliative Care, 4th edition",
   year: 2018,
   url: "https://www.nationalcoalitionhpc.org/ncp/",
+};
+
+/** Canada note sources, added in the Canada pass. */
+export const CNO_SCOPE: Source = {
+  body: "College of Nurses of Ontario",
+  work: "Practice Standard: Scope of Practice",
+  year: 2023,
+  url: "https://cno.org/en/news/2023/july-2023/cnos-scope-of-practice-standard-takes-effect",
+};
+export const DC_HYPO: Source = {
+  body: "Yale JF, Paty B, Senior PA. Diabetes Canada Clinical Practice Guidelines Expert Committee",
+  work: "Hypoglycemia. Canadian Journal of Diabetes 42(Suppl 1):S104",
+  year: 2018,
+  url: "https://doi.org/10.1016/j.jcjd.2017.10.010",
+};
+export const ON_GIFT: Source = {
+  body: "Government of Ontario",
+  work: "Trillium Gift of Life Network Act, R.S.O. 1990, c. H.20, section 8.1",
+  year: 1990,
+  url: "https://www.ontario.ca/laws/statute/90h20",
+};
+export const C83: Source = {
+  body: "Parliament of Canada",
+  work: "Bill C-83, An Act to amend the Corrections and Conditional Release Act and another Act",
+  year: 2019,
+  url: "https://www.parl.ca/documentviewer/en/42-1/bill/C-83/first-reading",
+};
+export const ON_IMS: Source = {
+  body: "Government of Ontario, Office of the Chief, Emergency Management",
+  work: "Incident Management System (IMS) Guidance, version 2.0",
+  year: 2021,
+  url: "https://www.ontario.ca/document/incident-management-system-ims-guidance-version-2",
 };

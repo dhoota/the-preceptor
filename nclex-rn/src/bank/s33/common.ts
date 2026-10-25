@@ -213,3 +213,45 @@ export const PAPERNOW: Source = {
   year: 2013,
   url: "https://doi.org/10.4324/9780203813645",
 };
+export const SIKH_SALDEF: Source = {
+  body: "Kular A. Sikh American Legal Defense and Education Fund (SALDEF)",
+  work: "Sikh Patient's Guide for Healthcare Providers",
+  year: 2023,
+  url: "https://saldef.org/wp-content/uploads/Sikh-Patients-Guide-for-Healthcare-Providers-1.pdf",
+};
+export const CA_GROWTH: Source = {
+  body: "Dietitians of Canada, Canadian Paediatric Society, College of Family Physicians of Canada, Community Health Nurses of Canada",
+  work: "A Health Professional's Guide for Using the WHO Growth Charts for Canada (Redesigned 2014)",
+  year: 2014,
+  url: "https://www.dietitians.ca/DietitiansOfCanada/media/Documents/WHO%20Growth%20Charts/2014-A-Health-Professionals-Guide-to-Using-the-Charts.pdf",
+};
+export const BC_MHA: Source = {
+  body: "Province of British Columbia",
+  work: "Mental Health Act, RSBC 1996, c. 288, section 28",
+  year: 1996,
+  url: "https://www.bclaws.gov.bc.ca/civix/document/id/complete/statreg/96288_01",
+};
+export const CA_BZRA: Source = {
+  body: "Pottie K, Thompson W, Davies S, et al.",
+  work: "Deprescribing Benzodiazepine Receptor Agonists: Evidence-Based Clinical Practice Guideline. Canadian Family Physician 64(5):339",
+  year: 2018,
+  url: "https://pmc.ncbi.nlm.nih.gov/articles/PMC5951648/",
+};
+export const CA_CANNABIS: Source = {
+  body: "Health Canada",
+  work: "Cannabis in the Provinces and Territories",
+  year: 2022,
+  url: "https://www.canada.ca/en/health-canada/services/drugs-medication/cannabis/laws-regulations/provinces-territories.html",
+};
+export const CA_KRATOM: Source = {
+  body: "Health Canada",
+  work: "Advisory: Unauthorized Saj Kratom Products Seized From Two Edmonton Stores May Pose Serious Health Risks",
+  year: 2018,
+  url: "https://recalls-rappels.canada.ca/en/alert-recall/unauthorized-saj-kratom-products-seized-two-edmonton-stores-may-pose-serious-health",
+};
+export const CA_PARTNER: Source = {
+  body: "CATIE",
+  work: "Partner Notification: Programming Connection Case Study, Edmonton",
+  year: 2016,
+  url: "https://www.catie.ca/partner-notification",
+};

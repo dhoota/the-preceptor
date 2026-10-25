@@ -1,9 +1,10 @@
 import type { Item } from "@/engine/types";
-import { AAP_DDH, AAP_OBESITY, ABM_MASTITIS, ACIP_GBP, ACIP_MMR, CDC_MEASLES_TRAVEL, CDC_MILK, HOCKENBERRY, JCIH, US_MEC, meta } from "./common";
+import { WHO_CANADA_CHARTS, AAP_DDH, AAP_OBESITY, ABM_MASTITIS, ACIP_GBP, ACIP_MMR, CDC_MEASLES_TRAVEL, CDC_MILK, HOCKENBERRY, JCIH, US_MEC, meta } from "./common";
 
 export const PART4: Item[] = [
   {
     ...meta("rn-s32-31", {
+      canada: "Canada uses the WHO Growth Charts for Canada, where obesity from 5 to 19 years is a BMI above the 97th percentile. The percentile cutoffs differ from the CDC charts, so the chart in use decides the category.",
       need: "HPM",
       topic: "Classifying a child's BMI against the 95th percentile",
       cjmm: "analyze",
@@ -13,7 +14,7 @@ export const PART4: Item[] = [
       rationale:
         "A BMI at or above the 95th percentile is obesity. Severe obesity starts at 120% of the 95th percentile value. His BMI of 23.4 is above 21.0 but below 25.2, so he has obesity but not severe obesity. The AAP advises starting intensive health behavior and lifestyle treatment at diagnosis. Watchful waiting is not advised. A severely restricted diet and surgery are not first steps for a 9-year-old.",
       refs: ["Child BMI: 85th to under 95th percentile is overweight, 95th percentile or more is obesity, and 120% of the 95th percentile value or more is severe obesity."],
-      sources: [AAP_OBESITY],
+      sources: [AAP_OBESITY, WHO_CANADA_CHARTS],
     }),
     kind: "cloze",
     scoring: "zero-one",
@@ -41,6 +42,7 @@ export const PART4: Item[] = [
   },
   {
     ...meta("rn-s32-32", {
+      canada: "Canada uses the WHO Growth Charts for Canada. From 5 to 19 years, overweight is the 85th to 97th percentile and obesity is above the 97th, so a 96th percentile BMI reads as overweight.",
       need: "HPM",
       topic: "Upward crossing of BMI percentiles over 4 years",
       cjmm: "analyze",
@@ -63,7 +65,7 @@ export const PART4: Item[] = [
       rationale:
         "Height has tracked the 50th percentile while the BMI percentile rose from the 60th to the 96th. Percentiles already allow for normal age changes, so a steady climb across lines is not expected. The BMI passed the 85th percentile at age 6 and is now at the 96th, which is obesity. A healthy child tracks near one percentile line. The rise shows excess weight gain, not growth in height.",
       refs: ["Child BMI: 85th to under 95th percentile is overweight and 95th percentile or more is obesity."],
-      sources: [AAP_OBESITY],
+      sources: [AAP_OBESITY, WHO_CANADA_CHARTS],
     }),
     kind: "mc",
     options: [
@@ -189,6 +191,7 @@ export const PART4: Item[] = [
   },
   {
     ...meta("rn-s32-38", {
+      version: 2,
       need: "HPM",
       topic: "Unstable hip found at a 2-week newborn visit",
       cjmm: "generate",
@@ -204,7 +207,7 @@ export const PART4: Item[] = [
       { text: "Benign hip click", why: "A soft click without a clunk is benign. A clunk with leg asymmetry is not." },
       { text: "Developmental dysplasia of the hip", why: "A positive Ortolani clunk, uneven folds and a lower knee fit an unstable hip." },
       { text: "Brachial plexus birth injury", why: "This affects arm movement. The infant moves both arms equally." },
-      { text: "Fractured femur from birth", why: "A fracture causes pain and swelling with movement. A cesarean birth and clunk do not fit." },
+      { text: "Fractured femur from birth", why: "A fracture causes pain, swelling and less movement of the leg. A clunk on the Ortolani maneuver points to the hip joint." },
     ],
     actions: [
       { text: "Swaddle with the legs straight and together", why: "Straight, tight swaddling forces the hips into extension and worsens dysplasia." },

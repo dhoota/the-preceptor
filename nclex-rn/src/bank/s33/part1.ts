@@ -1,5 +1,5 @@
 import type { Item } from "@/engine/types";
-import { BINDING, DSM, HALTER, HINDUJA, HOCKENBERRY, POTENZA, UCSF_TRANS, meta } from "./common";
+import { BINDING, CA_GROWTH, DSM, HALTER, HINDUJA, HOCKENBERRY, POTENZA, UCSF_TRANS, meta } from "./common";
 
 export const PART1: Item[] = [
   {
@@ -123,7 +123,8 @@ export const PART1: Item[] = [
       stem: "A 9-year-old with avoidant/restrictive food intake disorder accepts only a few foods and fears vomiting. The child's weight has fallen below the 5th percentile for age. Which measures should the nurse include in the plan of care? Select all that apply.",
       rationale:
         "The child is underweight and anxious about food. New foods are offered in small steps beside foods the child already accepts. Praise for each new taste rewards brave tries. A calm mealtime lowers the fear that drives avoidance. Weight is tracked at each visit because the child is below the 5th percentile. Pressure, bribes and removing safe foods raise anxiety and can deepen weight loss.",
-      sources: [DSM, HOCKENBERRY],
+      canada: "Canadian clinicians plot growth on the WHO Growth Charts for Canada. These charts use the 3rd percentile, not the 5th, as the low cut-off for weight.",
+      sources: [DSM, HOCKENBERRY, CA_GROWTH],
     }),
     kind: "sata",
     options: [

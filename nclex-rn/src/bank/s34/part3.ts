@@ -1,5 +1,5 @@
 import type { Item } from "@/engine/types";
-import { ADA_NUTRITION, CPM_SFH, ESTRADIOL_CREAM, FDA_PENS, HINKLE, IDDSI, KDOQI, LANTUS, ODS_VITK, PHOS_SOURCES, POTTER, RCH_JEJUNAL, SPLINT_UHS, meta, ASPEN_EN } from "./common";
+import { ADA_NUTRITION, CPM_SFH, DC_CARB, ESTRADIOL_CREAM, FDA_PENS, HINKLE, HLBC_VITK, IDDSI, KDOQI, LANTUS, ODS_VITK, PHOS_SOURCES, POTTER, RCH_JEJUNAL, SPLINT_UHS, meta, ASPEN_EN } from "./common";
 
 export const PART3: Item[] = [
   {
@@ -137,6 +137,7 @@ export const PART3: Item[] = [
         "The level of 6.8 mg/dL is well above normal. Phosphate additives in processed foods and dark colas are absorbed far more completely than the phosphorus in fresh foods. Their names often contain phos, such as sodium phosphate or phosphoric acid. Reading ingredient lists lets the client avoid them. Phosphorus in plant foods is bound as phytate and is absorbed least.",
       refs: ["Normal adult serum phosphorus ranges from 2.5 mg/dL (0.81 mmol/L) to 4.5 mg/dL (1.45 mmol/L)."],
       sources: [PHOS_SOURCES, KDOQI],
+      canada: "Canadian laboratories report serum phosphate in mmol/L only. This result would read 2.20 mmol/L against a usual adult range of about 0.81 to 1.45 mmol/L.",
     }),
     kind: "mc",
     options: [
@@ -158,7 +159,9 @@ export const PART3: Item[] = [
       rationale:
         "The label serving is 3/4 cup. The bowl holds 1.5 cups, which is 2 servings. Two servings at 24 g each give 48 g of carbohydrate. Counting uses total carbohydrate from the label, scaled to the amount eaten.",
       calc: { expr: "1.5 / (3 / 4) * 24", answer: 48, unit: "g", round: 0, steps: ["3 / 4 = 0.75", "1.5 / 0.75 = 2", "2 * 24 = 48"] },
-      sources: [ADA_NUTRITION],
+      sources: [ADA_NUTRITION, DC_CARB],
+      version: 2,
+      canada: "Diabetes Canada teaches that fibre does not raise blood glucose and is subtracted from total carbohydrate on the Nutrition Facts table. This label gives no fibre value, so the count stays 48 g.",
     }),
     kind: "mc",
     options: [
@@ -200,7 +203,8 @@ export const PART3: Item[] = [
       stem: "A 70-year-old client takes warfarin and plans meals with the nurse. The client wants to know which foods are high in vitamin K so the weekly amount can stay steady. Which foods should the nurse identify as high in vitamin K? Select all that apply.",
       rationale:
         "Green leafy vegetables are the main food sources of vitamin K. Collard greens, spinach, kale and broccoli are among the richest. Rice, bananas and potatoes contain little. The goal is not to avoid these vegetables but to eat about the same amount each week so the INR stays stable.",
-      sources: [ODS_VITK],
+      sources: [ODS_VITK, HLBC_VITK],
+      version: 2,
     }),
     kind: "sata",
     options: [

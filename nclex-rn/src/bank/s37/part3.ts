@@ -1,9 +1,10 @@
 import type { Item } from "@/engine/types";
-import { AAP_SEDATION, ABLS, ACOG_FHR, ACOG_PDX, HINKLE, ISBI, SHOCK_INDEX, meta } from "./common";
+import { AAP_SEDATION, ACOG_FHR, ACOG_PDX, HINKLE, ISBI, SHOCK_INDEX, SOGC_FHS, meta } from "./common";
 
 export const PART3: Item[] = [
   {
     ...meta("rn-s37-21", {
+      version: 2,
       need: "RRP",
       topic: "Recurrent variable decelerations in labor",
       cjmm: "action",
@@ -11,8 +12,9 @@ export const PART3: Item[] = [
       difficulty: 3,
       stem: "A client at 39 weeks of gestation is in active labor and is 6 cm dilated. Membranes ruptured 2 hours ago with clear fluid. No oxytocin is running. Over 30 minutes the baseline is 135/minute with moderate variability. Most contractions bring an abrupt drop to 95/minute that lasts 30 to 40 seconds and returns quickly. The client lies on her back. What should the nurse do first?",
       rationale:
-        "Abrupt drops with a quick return that vary with contractions are variable decelerations. They come from umbilical cord compression. With moderate variability the tracing is category II, so intrauterine resuscitation comes first. A change in maternal position often takes pressure off the cord. Routine maternal oxygen is not recommended without maternal hypoxia. Scalp stimulation tests fetal well-being and does not relieve the cord. Cesarean birth is not the first step with moderate variability.",
-      sources: [ACOG_FHR],
+        "Abrupt drops with a quick return that vary with contractions are variable decelerations. They come from umbilical cord compression. Recurrent variable decelerations make the tracing category II, so intrauterine resuscitation comes first. A change in maternal position often takes pressure off the cord. Routine maternal oxygen is not recommended without maternal hypoxia. Scalp stimulation tests fetal well-being and does not relieve the cord. Cesarean birth is not the first step with moderate variability.",
+      canada: "The SOGC intrapartum guideline classifies tracings as normal, atypical or abnormal rather than category I, II or III. Intrauterine resuscitation, starting with a position change, is the same first step.",
+      sources: [ACOG_FHR, SOGC_FHS],
     }),
     kind: "mc",
     options: [
@@ -34,7 +36,8 @@ export const PART3: Item[] = [
       rationale:
         "A smooth, regular sine wave of the baseline at 3 to 5 cycles per minute that lasts 20 minutes or more is a sinusoidal pattern. It is a category III tracing linked to severe fetal anemia. Blunt abdominal trauma can cause fetal blood to bleed into the maternal circulation. A sleep cycle reduces variability without a sine wave. Head compression causes early decelerations. Opioids can cause a similar pattern, but she has received no medications.",
       refs: ["A sinusoidal pattern is a smooth sine wave of the baseline at 3 to 5 cycles per minute lasting 20 minutes or more."],
-      sources: [ACOG_FHR],
+      canada: "The SOGC intrapartum guideline classes a sinusoidal pattern as abnormal rather than category III. It calls for urgent action in the same way.",
+      sources: [ACOG_FHR, SOGC_FHS],
     }),
     kind: "mc",
     options: [
@@ -56,7 +59,8 @@ export const PART3: Item[] = [
       rationale:
         "A category I tracing has a baseline of 110 to 160/minute, moderate variability and no late or variable decelerations. Early decelerations may be present. Accelerations may be present or absent, so their absence alone does not change the category. A baseline of 170/minute, minimal variability, recurrent late decelerations and a prolonged deceleration each place a tracing outside category I.",
       refs: ["A category I tracing has a baseline of 110 to 160/minute, moderate variability, no late or variable decelerations, and early decelerations and accelerations present or absent."],
-      sources: [ACOG_FHR],
+      canada: "The SOGC intrapartum guideline uses normal, atypical and abnormal classes instead of category I, II and III. Its normal class broadly matches the category I features in this item.",
+      sources: [ACOG_FHR, SOGC_FHS],
     }),
     kind: "sata",
     options: [
@@ -200,6 +204,7 @@ export const PART3: Item[] = [
   },
   {
     ...meta("rn-s37-29", {
+      version: 2,
       need: "PA",
       topic: "Fluid shift back after major burns",
       cjmm: "analyze",
@@ -209,7 +214,7 @@ export const PART3: Item[] = [
       rationale:
         "After about 48 to 72 hours, capillary leak closes and edema fluid returns to the vessels. The kidneys excrete the extra volume, so urine output rises and weight starts to fall. The returning fluid dilutes the blood, so the hematocrit falls. Potassium moves back into cells and is lost in the urine, so serum potassium falls. A rising hematocrit, rising potassium and spreading edema belong to the first phase.",
       refs: ["Fluid begins to return to the vascular space about 48 to 72 hours after a major burn."],
-      sources: [HINKLE, ABLS],
+      sources: [HINKLE],
     }),
     kind: "sata",
     options: [
@@ -225,6 +230,7 @@ export const PART3: Item[] = [
   },
   {
     ...meta("rn-s37-30", {
+      version: 2,
       need: "PA",
       topic: "Rising airway pressure with chest wall eschar",
       cjmm: "prioritize",
@@ -233,7 +239,7 @@ export const PART3: Item[] = [
       stem: "A 50-year-old client has full-thickness burns that encircle the chest and upper abdomen. The client is intubated. Over 2 hours the peak airway pressure on the ventilator has risen from 24 to 42 cmH2O and SpO2 has fallen to 88%. Breath sounds are equal on both sides. The tube is at the same depth as before and suctioning returns little secretion. Which intervention should the nurse anticipate?",
       rationale:
         "Full-thickness eschar is stiff and does not stretch. As edema builds beneath a circumferential chest burn, the eschar restricts chest expansion. Peak airway pressure rises from 24 to 42 cmH2O and oxygenation falls. Escharotomy releases the chest wall. Equal breath sounds argue against a pneumothorax. An unchanged tube depth and little secretion argue against a displaced or blocked tube.",
-      sources: [ABLS, ISBI],
+      sources: [ISBI, HINKLE],
     }),
     kind: "mc",
     options: [

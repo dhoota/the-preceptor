@@ -1,5 +1,5 @@
 import type { Item } from "@/engine/types";
-import { ABLS, ADA_TECH, AHA_ECG, AHA_EXERCISE, CDC_BCX, HINKLE, ISBI, SSC2021, SSC_BUNDLE, meta } from "./common";
+import { ADA_TECH, AHA_ECG, AHA_EXERCISE, CDC_BCX, HINKLE, ISBI, SSC2021, SSC_BUNDLE, meta } from "./common";
 
 export const PART1: Item[] = [
   {
@@ -92,22 +92,23 @@ export const PART1: Item[] = [
   },
   {
     ...meta("rn-s37-05", {
+      version: 2,
       need: "PA",
       topic: "Burn size with the rule of nines",
       cjmm: "analyze",
       process: "nursing-process",
       difficulty: 3,
-      stem: "A 40-year-old client was burned in a flash fire. Blistered deep partial-thickness burns cover the entire front of the trunk and the entire front of both legs. The face is red with no blisters. The unit chart lists the front of the trunk as 18%, the front of each leg as 9% and the face as part of the head. What percentage of body surface should the nurse record as burned?",
+      stem: "A 40-year-old client was burned in a flash fire. Blistered deep partial-thickness burns cover the entire front of the trunk and the entire front of both legs. The face is red with no blisters. The unit chart lists the front of the trunk as 18%, the front of each leg as 9% and the front of the head, including the face, as 4.5%. What percentage of body surface should the nurse record as burned?",
       rationale:
         "Only partial-thickness and full-thickness burns count toward the burned body surface. The red face without blisters is a superficial burn and is left out. The front of the trunk is 18% and the front of each leg is 9%. The total is 36%. Counting the whole of each leg doubles the leg area.",
       calc: { expr: "18 + 9 + 9", answer: 36, unit: "%", round: 0, steps: ["18 + 9 + 9 = 36"] },
-      sources: [ABLS, ISBI],
+      sources: [ISBI, HINKLE],
     }),
     kind: "mc",
     options: [
       { text: "27%", why: "This counts the trunk and only one leg. Both legs are burned on the front." },
       { text: "36%", why: "The front of the trunk at 18% plus the front of each leg at 9% gives 36%." },
-      { text: "40.5%", why: "This adds the red face. A superficial burn without blisters is left out of the total." },
+      { text: "40.5%", why: "This adds 4.5% for the red face. A superficial burn without blisters is left out of the total." },
       { text: "54%", why: "This counts the whole of each leg. Only the front of each leg is burned." },
     ],
     correct: 1,
@@ -203,6 +204,7 @@ export const PART1: Item[] = [
       stem: "A 34-year-old client with type 1 diabetes wears a continuous glucose monitor. At 1500 the client reports shakiness, sweating and a pounding heart. The sensor reads 112 mg/dL (6.2 mmol/L) with a steady trend arrow. The client finished a 40-minute run an hour ago. What should the nurse do first?",
       rationale:
         "The sensor measures glucose in interstitial fluid, which lags behind blood glucose when levels change fast, as after exercise. The client has the symptoms of hypoglycemia despite a normal sensor value. When symptoms do not match the sensor, a fingerstick blood glucose decides treatment. Reassurance based on the sensor alone could miss a low. Rechecking the sensor later or replacing it delays the answer.",
+      canada: "Canadian laboratories, meters and glucose sensors report glucose in mmol/L only, so this reading appears as 6.2 mmol/L.",
       sources: [ADA_TECH],
     }),
     kind: "mc",

@@ -1,5 +1,5 @@
 import type { Item } from "@/engine/types";
-import { AAP_FORESKIN, ALA_NEB, BURN_REHAB, COOLING, GINA, HINKLE, LOVENOX, PARAPHIMOSIS, PDQ_GI, POTTER, SPACER_DGT, SPACER_GGC, meta } from "./common";
+import { AAP_FORESKIN, ALA_NEB, BURN_REHAB, COOLING, GINA, HINKLE, LOVENOX, OSSUR_LINER, PARAPHIMOSIS, PDQ_GI, POTTER, SPACER_DGT, SPACER_GGC, meta } from "./common";
 
 export const PART5: Item[] = [
   {
@@ -12,7 +12,8 @@ export const PART5: Item[] = [
       stem: "A 78-year-old client receiving hospice care in a nursing home is weak but can stand and pivot with the help of one person. The client has not had a bowel movement in 3 days and now feels the urge after breakfast. The client asks for a bedpan. Which action should the nurse take?",
       rationale:
         "The client feels the urge now, so the nurse responds at once. A bedside commode lets the client sit upright, which uses gravity and makes passing stool easier than on a bedpan. Bedpans are avoided whenever possible. Privacy and quiet time support defecation. Delaying the urge lets stool dry out further in the colon.",
-      sources: [PDQ_GI],
+      sources: [PDQ_GI, POTTER],
+      version: 2,
     }),
     kind: "mc",
     options: [
@@ -23,6 +24,7 @@ export const PART5: Item[] = [
     ],
     correct: 2,
   },
+  // PULL: tests the same point as rn-s21-35 (shivering produces heat and raises oxygen use, so it works against cooling). A unique rewrite would change the key.
   {
     ...meta("rn-s34-42", {
       need: "BCC",
@@ -150,7 +152,8 @@ export const PART5: Item[] = [
       stem: "A 66-year-old client had a right below-knee amputation 3 months ago and now wears a prosthesis with a silicone liner. The nurse reviews daily limb care with the client. Which statements by the client show correct care? Select all that apply.",
       rationale:
         "The residual limb is washed daily with mild soap and water and dried well before the liner goes on. A mirror lets the client see the back of the limb for redness or breakdown. The liner is washed each day and dried, because sweat and bacteria build up inside it. Lotion softens skin under the liner. Long soaks cause swelling. Alcohol dries and cracks the skin.",
-      sources: [HINKLE],
+      sources: [OSSUR_LINER, HINKLE],
+      version: 2,
     }),
     kind: "sata",
     options: [
