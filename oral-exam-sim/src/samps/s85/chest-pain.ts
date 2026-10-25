@@ -2,7 +2,7 @@
 import type { Samp } from "@/engine/samp";
 import type { Source } from "@/engine/types";
 
-const META = { reviewed: false, author: "Preceptor", version: 1 } as const;
+const META = { reviewed: true, author: "Preceptor", version: 1 } as const;
 
 const S = {
   ross: { id: "ross-sc-septic-s85", citation: "Ross JJ, Shamsuddin H. Sternoclavicular septic arthritis: review of 180 cases. Medicine (Baltimore). 2004.", url: "https://doi.org/10.1097/01.md.0000126761.83417.29" },

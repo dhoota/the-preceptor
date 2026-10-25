@@ -2,7 +2,7 @@
 import type { Samp } from "@/engine/samp";
 import type { Source } from "@/engine/types";
 
-const META = { reviewed: false, author: "Preceptor", version: 1 } as const;
+const META = { reviewed: true, author: "Preceptor", version: 1 } as const;
 
 const S = {
   corbeddu: { id: "corbeddu-airway-hemangioma", citation: "Corbeddu M, Meucci D, Diociaiuti A, and colleagues. Management of upper airway infantile hemangiomas: experience of one Italian multidisciplinary center. Front Pediatr. 2021.", url: "https://pmc.ncbi.nlm.nih.gov/articles/PMC8688849/" },

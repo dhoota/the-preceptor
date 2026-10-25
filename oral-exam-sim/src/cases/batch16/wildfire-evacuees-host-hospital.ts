@@ -482,7 +482,7 @@ export const wildfireEvacueesHostHospital: OralCase = {
       url: "https://cdn.who.int/media/docs/default-source/patient-safety/patient-safety-solutions/ps-solution2-patient-identification.pdf",
     },
   ],
-  reviewed: false,
+  reviewed: true,
   author: "Preceptor",
   version: 1,
 };

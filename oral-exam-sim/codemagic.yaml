@@ -356,7 +356,7 @@ workflows:
       app_store_connect:
         auth: integration
         submit_to_app_store: true
-        cancel_previous_submissions: true   # a version already in review is pulled and this build submitted instead
+        cancel_previous_submissions: false   # never pull a version already in review
         release_type: AFTER_APPROVAL
 
   # App Store creative assets (App Asset Library): one 16:9 image for the

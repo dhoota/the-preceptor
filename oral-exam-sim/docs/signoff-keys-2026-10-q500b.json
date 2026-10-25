@@ -1,0 +1,2966 @@
+{
+ "suicide-risk-39": [
+  {
+   "id": "q1",
+   "kind": "single",
+   "keyed": [
+    "Intentional insulin omission"
+   ],
+   "select": 1
+  },
+  {
+   "id": "q2",
+   "kind": "single",
+   "keyed": [
+    "Whether she skips doses to die"
+   ],
+   "select": 1
+  },
+  {
+   "id": "q3",
+   "kind": "single",
+   "keyed": [
+    "Access to insulin and pills"
+   ],
+   "select": 1
+  },
+  {
+   "id": "q4",
+   "kind": "single",
+   "keyed": [
+    "Doses supervised by her father"
+   ],
+   "select": 1
+  }
+ ],
+ "suicide-risk-40": [
+  {
+   "id": "q1",
+   "kind": "single",
+   "keyed": [
+    "Can you picture things getting better?"
+   ],
+   "select": 1
+  },
+  {
+   "id": "q2",
+   "kind": "single",
+   "keyed": [
+    "Unwillingness to undergo a voluntary assessment"
+   ],
+   "select": 1
+  },
+  {
+   "id": "q3",
+   "kind": "single",
+   "keyed": [
+    "Examine him by video and apply now"
+   ],
+   "select": 1
+  },
+  {
+   "id": "q4",
+   "kind": "single",
+   "keyed": [
+    "Detention and assessment for 72 hours"
+   ],
+   "select": 1
+  }
+ ],
+ "suicide-risk-41": [
+  {
+   "id": "q1",
+   "kind": "single",
+   "keyed": [
+    "Speak with him directly in plain words"
+   ],
+   "select": 1
+  },
+  {
+   "id": "q2",
+   "kind": "single",
+   "keyed": [
+    "Return home with a shared safety plan"
+   ],
+   "select": 1
+  },
+  {
+   "id": "q3",
+   "kind": "menu",
+   "keyed": [
+    "Bereavement support adapted for him",
+    "Family physician review within 72 hours",
+    "Picture-based safety plan made with him"
+   ],
+   "select": 3
+  },
+  {
+   "id": "q4",
+   "kind": "single",
+   "keyed": [
+    "No new sedative at this time"
+   ],
+   "select": 1
+  }
+ ],
+ "suicide-risk-42": [
+  {
+   "id": "q1",
+   "kind": "single",
+   "keyed": [
+    "Highest in the first month out"
+   ],
+   "select": 1
+  },
+  {
+   "id": "q2",
+   "kind": "single",
+   "keyed": [
+    "Return to the shelter before curfew"
+   ],
+   "select": 1
+  },
+  {
+   "id": "q3",
+   "kind": "menu",
+   "keyed": [
+    "Crisis line 9-8-8 by call or text",
+    "Naloxone kit with training",
+    "Shelter staff told of the plan, with consent"
+   ],
+   "select": 3
+  },
+  {
+   "id": "q4",
+   "kind": "single",
+   "keyed": [
+    "Set a dated visit before he leaves"
+   ],
+   "select": 1
+  }
+ ],
+ "suicide-risk-43": [
+  {
+   "id": "q1",
+   "kind": "menu",
+   "keyed": [
+    "Abrupt stop of long-term oxycodone",
+    "Driver's report that he stepped out",
+    "Wife's recent move into long-term care"
+   ],
+   "select": 3
+  },
+  {
+   "id": "q2",
+   "kind": "single",
+   "keyed": [
+    "Confided the wish to family or friends"
+   ],
+   "select": 1
+  },
+  {
+   "id": "q3",
+   "kind": "single",
+   "keyed": [
+    "Collision described as a suicide attempt"
+   ],
+   "select": 1
+  },
+  {
+   "id": "q4",
+   "kind": "single",
+   "keyed": [
+    "Planned regular visits with friends"
+   ],
+   "select": 1
+  }
+ ],
+ "dvt-pe-48": [
+  {
+   "id": "q1",
+   "kind": "single",
+   "keyed": [
+    "Femoral vein injection"
+   ],
+   "select": 1
+  },
+  {
+   "id": "q2",
+   "kind": "single",
+   "keyed": [
+    "Fever with rigors and a groin sinus"
+   ],
+   "select": 1
+  },
+  {
+   "id": "q3",
+   "kind": "single",
+   "keyed": [
+    "4 points"
+   ],
+   "select": 1
+  },
+  {
+   "id": "q4",
+   "kind": "single",
+   "keyed": [
+    "Whole leg compression ultrasound"
+   ],
+   "select": 1
+  }
+ ],
+ "dvt-pe-49": [
+  {
+   "id": "q1",
+   "kind": "menu",
+   "keyed": [
+    "Emergency caesarean section",
+    "Endometritis needing IV antibiotics"
+   ],
+   "select": 2
+  },
+  {
+   "id": "q2",
+   "kind": "single",
+   "keyed": [
+    "Bibasal crackles with an S3"
+   ],
+   "select": 1
+  },
+  {
+   "id": "q3",
+   "kind": "single",
+   "keyed": [
+    "No interruption to breastfeeding"
+   ],
+   "select": 1
+  },
+  {
+   "id": "q4",
+   "kind": "single",
+   "keyed": [
+    "Three months in total"
+   ],
+   "select": 1
+  }
+ ],
+ "dvt-pe-50": [
+  {
+   "id": "q1",
+   "kind": "menu",
+   "keyed": [
+    "Nine hour flight home",
+    "Tibial nailing 16 days ago"
+   ],
+   "select": 2
+  },
+  {
+   "id": "q2",
+   "kind": "single",
+   "keyed": [
+    "Distended neck veins"
+   ],
+   "select": 1
+  },
+  {
+   "id": "q3",
+   "kind": "single",
+   "keyed": [
+    "Poor at separating children with PE"
+   ],
+   "select": 1
+  },
+  {
+   "id": "q4",
+   "kind": "single",
+   "keyed": [
+    "CT pulmonary angiogram"
+   ],
+   "select": 1
+  }
+ ],
+ "dvt-pe-51": [
+  {
+   "id": "q1",
+   "kind": "single",
+   "keyed": [
+    "Severe ovarian hyperstimulation"
+   ],
+   "select": 1
+  },
+  {
+   "id": "q2",
+   "kind": "single",
+   "keyed": [
+    "Physician gestalt"
+   ],
+   "select": 1
+  },
+  {
+   "id": "q3",
+   "kind": "single",
+   "keyed": [
+    "Respiratory rate of 26/minute"
+   ],
+   "select": 1
+  },
+  {
+   "id": "q4",
+   "kind": "single",
+   "keyed": [
+    "No routine laboratory monitoring"
+   ],
+   "select": 1
+  }
+ ],
+ "dvt-pe-52": [
+  {
+   "id": "q1",
+   "kind": "single",
+   "keyed": [
+    "7.0 points"
+   ],
+   "select": 1
+  },
+  {
+   "id": "q2",
+   "kind": "single",
+   "keyed": [
+    "Rivaroxaban taken without food"
+   ],
+   "select": 1
+  },
+  {
+   "id": "q3",
+   "kind": "single",
+   "keyed": [
+    "No anticoagulant before the CT"
+   ],
+   "select": 1
+  },
+  {
+   "id": "q4",
+   "kind": "single",
+   "keyed": [
+    "Embolus while on rivaroxaban"
+   ],
+   "select": 1
+  }
+ ],
+ "lacerations-39": [
+  {
+   "id": "q1",
+   "kind": "single",
+   "keyed": [
+    "Location of the tooth fragment"
+   ],
+   "select": 1
+  },
+  {
+   "id": "q2",
+   "kind": "single",
+   "keyed": [
+    "Soft tissue film of the lip"
+   ],
+   "select": 1
+  },
+  {
+   "id": "q3",
+   "kind": "single",
+   "keyed": [
+    "No tetanus prophylaxis"
+   ],
+   "select": 1
+  },
+  {
+   "id": "q4",
+   "kind": "single",
+   "keyed": [
+    "At the vermilion border"
+   ],
+   "select": 1
+  }
+ ],
+ "lacerations-40": [
+  {
+   "id": "q1",
+   "kind": "single",
+   "keyed": [
+    "What he had in his mouth"
+   ],
+   "select": 1
+  },
+  {
+   "id": "q2",
+   "kind": "menu",
+   "keyed": [
+    "Crepitus in the neck",
+    "Heavy bleeding that recurs",
+    "New weakness of one arm"
+   ],
+   "select": 3
+  },
+  {
+   "id": "q3",
+   "kind": "single",
+   "keyed": [
+    "Discharge home with return advice"
+   ],
+   "select": 1
+  },
+  {
+   "id": "q4",
+   "kind": "single",
+   "keyed": [
+    "Swelling of the neck with fever"
+   ],
+   "select": 1
+  }
+ ],
+ "lacerations-41": [
+  {
+   "id": "q1",
+   "kind": "single",
+   "keyed": [
+    "Her age and the dog's size"
+   ],
+   "select": 1
+  },
+  {
+   "id": "q2",
+   "kind": "menu",
+   "keyed": [
+    "None"
+   ],
+   "select": 1
+  },
+  {
+   "id": "q3",
+   "kind": "single",
+   "keyed": [
+    "CT of the head"
+   ],
+   "select": 1
+  },
+  {
+   "id": "q4",
+   "kind": "single",
+   "keyed": [
+    "IV antibiotics and neurosurgery transfer"
+   ],
+   "select": 1
+  }
+ ],
+ "lacerations-42": [
+  {
+   "id": "q1",
+   "kind": "single",
+   "keyed": [
+    "Sharp skate blade at speed"
+   ],
+   "select": 1
+  },
+  {
+   "id": "q2",
+   "kind": "single",
+   "keyed": [
+    "Weak resisted ankle dorsiflexion"
+   ],
+   "select": 1
+  },
+  {
+   "id": "q3",
+   "kind": "single",
+   "keyed": [
+    "Numbness of the first web space"
+   ],
+   "select": 1
+  },
+  {
+   "id": "q4",
+   "kind": "single",
+   "keyed": [
+    "Early surgical repair"
+   ],
+   "select": 1
+  }
+ ],
+ "lacerations-43": [
+  {
+   "id": "q1",
+   "kind": "single",
+   "keyed": [
+    "Skinning of a harbour seal"
+   ],
+   "select": 1
+  },
+  {
+   "id": "q2",
+   "kind": "single",
+   "keyed": [
+    "Pain along the sheath on passive extension"
+   ],
+   "select": 1
+  },
+  {
+   "id": "q3",
+   "kind": "single",
+   "keyed": [
+    "doxycycline 100 mg PO twice daily"
+   ],
+   "select": 1
+  },
+  {
+   "id": "q4",
+   "kind": "single",
+   "keyed": [
+    "Recheck at the health centre in 2 days"
+   ],
+   "select": 1
+  }
+ ],
+ "headache-48": [
+  {
+   "id": "q1",
+   "kind": "single",
+   "keyed": [
+    "Back pain spreading down a leg"
+   ],
+   "select": 1
+  },
+  {
+   "id": "q2",
+   "kind": "single",
+   "keyed": [
+    "Multiple lesions on both sides"
+   ],
+   "select": 1
+  },
+  {
+   "id": "q3",
+   "kind": "single",
+   "keyed": [
+    "Leptomeningeal metastasis"
+   ],
+   "select": 1
+  },
+  {
+   "id": "q4",
+   "kind": "menu",
+   "keyed": [
+    "CSF cytology after the MRI",
+    "MRI of brain and spine with contrast"
+   ],
+   "select": 2
+  }
+ ],
+ "headache-49": [
+  {
+   "id": "q1",
+   "kind": "single",
+   "keyed": [
+    "Left arm weakness, brisk reflexes"
+   ],
+   "select": 1
+  },
+  {
+   "id": "q2",
+   "kind": "single",
+   "keyed": [
+    "Occipital neuralgia"
+   ],
+   "select": 1
+  },
+  {
+   "id": "q3",
+   "kind": "single",
+   "keyed": [
+    "Anesthetic nerve block"
+   ],
+   "select": 1
+  },
+  {
+   "id": "q4",
+   "kind": "single",
+   "keyed": [
+    "Neck turning limited and painful"
+   ],
+   "select": 1
+  }
+ ],
+ "headache-50": [
+  {
+   "id": "q1",
+   "kind": "single",
+   "keyed": [
+    "Pain at peak within one minute"
+   ],
+   "select": 1
+  },
+  {
+   "id": "q2",
+   "kind": "single",
+   "keyed": [
+    "metoclopramide 10 mg IV"
+   ],
+   "select": 1
+  },
+  {
+   "id": "q3",
+   "kind": "single",
+   "keyed": [
+    "Pump and discard milk for 3 days"
+   ],
+   "select": 1
+  },
+  {
+   "id": "q4",
+   "kind": "single",
+   "keyed": [
+    "sumatriptan 50 mg PO"
+   ],
+   "select": 1
+  }
+ ],
+ "headache-51": [
+  {
+   "id": "q1",
+   "kind": "single",
+   "keyed": [
+    "Pain and swelling behind the ear"
+   ],
+   "select": 1
+  },
+  {
+   "id": "q2",
+   "kind": "single",
+   "keyed": [
+    "Petrous apicitis"
+   ],
+   "select": 1
+  },
+  {
+   "id": "q3",
+   "kind": "single",
+   "keyed": [
+    "IV ceftriaxone now, then air transfer"
+   ],
+   "select": 1
+  },
+  {
+   "id": "q4",
+   "kind": "single",
+   "keyed": [
+    "Neck stiffness and drowsiness"
+   ],
+   "select": 1
+  }
+ ],
+ "headache-52": [
+  {
+   "id": "q1",
+   "kind": "single",
+   "keyed": [
+    "Relief within minutes of rest"
+   ],
+   "select": 1
+  },
+  {
+   "id": "q2",
+   "kind": "single",
+   "keyed": [
+    "ECG with 12 leads"
+   ],
+   "select": 1
+  },
+  {
+   "id": "q3",
+   "kind": "single",
+   "keyed": [
+    "nitroglycerin 0.4 mg SL"
+   ],
+   "select": 1
+  },
+  {
+   "id": "q4",
+   "kind": "single",
+   "keyed": [
+    "Admission for early invasive coronary assessment"
+   ],
+   "select": 1
+  }
+ ],
+ "eye-39": [
+  {
+   "id": "q1",
+   "kind": "single",
+   "keyed": [
+    "Blisters on two teammates' faces"
+   ],
+   "select": 1
+  },
+  {
+   "id": "q2",
+   "kind": "single",
+   "keyed": [
+    "Fluorescein staining of the cornea"
+   ],
+   "select": 1
+  },
+  {
+   "id": "q3",
+   "kind": "single",
+   "keyed": [
+    "Valacyclovir 500 mg PO three times daily"
+   ],
+   "select": 1
+  },
+  {
+   "id": "q4",
+   "kind": "single",
+   "keyed": [
+    "Stromal haze with intact epithelium"
+   ],
+   "select": 1
+  }
+ ],
+ "eye-40": [
+  {
+   "id": "q1",
+   "kind": "single",
+   "keyed": [
+    "Neighbours with red eyes"
+   ],
+   "select": 1
+  },
+  {
+   "id": "q2",
+   "kind": "single",
+   "keyed": [
+    "Acute hemorrhagic conjunctivitis"
+   ],
+   "select": 1
+  },
+  {
+   "id": "q3",
+   "kind": "menu",
+   "keyed": [
+    "None"
+   ],
+   "select": 1
+  },
+  {
+   "id": "q4",
+   "kind": "single",
+   "keyed": [
+    "Conjunctival swab for enterovirus PCR"
+   ],
+   "select": 1
+  }
+ ],
+ "eye-41": [
+  {
+   "id": "q1",
+   "kind": "single",
+   "keyed": [
+    "Faded rash on palms and soles"
+   ],
+   "select": 1
+  },
+  {
+   "id": "q2",
+   "kind": "single",
+   "keyed": [
+    "Dilated fundus examination"
+   ],
+   "select": 1
+  },
+  {
+   "id": "q3",
+   "kind": "single",
+   "keyed": [
+    "Syphilitic uveitis"
+   ],
+   "select": 1
+  },
+  {
+   "id": "q4",
+   "kind": "menu",
+   "keyed": [
+    "HIV test at diagnosis",
+    "IV penicillin G for 10 to 14 days",
+    "Same day ophthalmology consultation"
+   ],
+   "select": 3
+  }
+ ],
+ "eye-42": [
+  {
+   "id": "q1",
+   "kind": "single",
+   "keyed": [
+    "Visual acuity in each eye"
+   ],
+   "select": 1
+  },
+  {
+   "id": "q2",
+   "kind": "single",
+   "keyed": [
+    "Occult scleral rupture"
+   ],
+   "select": 1
+  },
+  {
+   "id": "q3",
+   "kind": "single",
+   "keyed": [
+    "Ophthalmology for surgical exploration"
+   ],
+   "select": 1
+  },
+  {
+   "id": "q4",
+   "kind": "single",
+   "keyed": [
+    "Relative afferent pupillary defect"
+   ],
+   "select": 1
+  }
+ ],
+ "eye-43": [
+  {
+   "id": "q1",
+   "kind": "single",
+   "keyed": [
+    "Sodium hydroxide from the airbag"
+   ],
+   "select": 1
+  },
+  {
+   "id": "q2",
+   "kind": "single",
+   "keyed": [
+    "Grade 1"
+   ],
+   "select": 1
+  },
+  {
+   "id": "q3",
+   "kind": "single",
+   "keyed": [
+    "Known von Willebrand disease"
+   ],
+   "select": 1
+  },
+  {
+   "id": "q4",
+   "kind": "single",
+   "keyed": [
+    "Discharge with next day ophthalmology review"
+   ],
+   "select": 1
+  }
+ ],
+ "delirium-agitation-39": [
+  {
+   "id": "q1",
+   "kind": "single",
+   "keyed": [
+    "Months of the year backward"
+   ],
+   "select": 1
+  },
+  {
+   "id": "q2",
+   "kind": "single",
+   "keyed": [
+    "Thiamine deficiency"
+   ],
+   "select": 1
+  },
+  {
+   "id": "q3",
+   "kind": "single",
+   "keyed": [
+    "Give IV thiamine now"
+   ],
+   "select": 1
+  },
+  {
+   "id": "q4",
+   "kind": "single",
+   "keyed": [
+    "Korsakoff syndrome"
+   ],
+   "select": 1
+  }
+ ],
+ "delirium-agitation-40": [
+  {
+   "id": "q1",
+   "kind": "single",
+   "keyed": [
+    "Seeing bugs on the walls"
+   ],
+   "select": 1
+  },
+  {
+   "id": "q2",
+   "kind": "single",
+   "keyed": [
+    "Ask his father to wait nearby outside"
+   ],
+   "select": 1
+  },
+  {
+   "id": "q3",
+   "kind": "single",
+   "keyed": [
+    "Thanks for sitting, but kicking is not okay"
+   ],
+   "select": 1
+  },
+  {
+   "id": "q4",
+   "kind": "single",
+   "keyed": [
+    "haloperidol 2.5 mg IM"
+   ],
+   "select": 1
+  }
+ ],
+ "delirium-agitation-41": [
+  {
+   "id": "q1",
+   "kind": "single",
+   "keyed": [
+    "I have not seen that, but you sound afraid"
+   ],
+   "select": 1
+  },
+  {
+   "id": "q2",
+   "kind": "single",
+   "keyed": [
+    "Offer a choice of tablet or wafer"
+   ],
+   "select": 1
+  },
+  {
+   "id": "q3",
+   "kind": "single",
+   "keyed": [
+    "lorazepam 2 mg IM"
+   ],
+   "select": 1
+  },
+  {
+   "id": "q4",
+   "kind": "menu",
+   "keyed": [
+    "Ask how he saw the events",
+    "Explain why restraint was needed",
+    "Plan what to do if anger builds"
+   ],
+   "select": 3
+  }
+ ],
+ "delirium-agitation-42": [
+  {
+   "id": "q1",
+   "kind": "single",
+   "keyed": [
+    "Try written questions on paper"
+   ],
+   "select": 1
+  },
+  {
+   "id": "q2",
+   "kind": "single",
+   "keyed": [
+    "Request a qualified ASL interpreter"
+   ],
+   "select": 1
+  },
+  {
+   "id": "q3",
+   "kind": "single",
+   "keyed": [
+    "Wait to consent through the interpreter"
+   ],
+   "select": 1
+  },
+  {
+   "id": "q4",
+   "kind": "single",
+   "keyed": [
+    "Defer the IV for the interpreter"
+   ],
+   "select": 1
+  }
+ ],
+ "delirium-agitation-43": [
+  {
+   "id": "q1",
+   "kind": "single",
+   "keyed": [
+    "Test his cognition once delirium clears"
+   ],
+   "select": 1
+  },
+  {
+   "id": "q2",
+   "kind": "single",
+   "keyed": [
+    "A full skin exam including the feet"
+   ],
+   "select": 1
+  },
+  {
+   "id": "q3",
+   "kind": "single",
+   "keyed": [
+    "His nephew by telephone"
+   ],
+   "select": 1
+  },
+  {
+   "id": "q4",
+   "kind": "single",
+   "keyed": [
+    "The Public Guardian and Trustee"
+   ],
+   "select": 1
+  }
+ ],
+ "multiple-patients-36": [
+  {
+   "id": "q1",
+   "kind": "single",
+   "keyed": [
+    "Activate the hospital downtime procedures"
+   ],
+   "select": 1
+  },
+  {
+   "id": "q2",
+   "kind": "menu",
+   "keyed": [
+    "Independent double check of high alert drugs",
+    "Laboratory tests ordered only if they change care",
+    "Paper forms matching the electronic layout"
+   ],
+   "select": 3
+  },
+  {
+   "id": "q3",
+   "kind": "single",
+   "keyed": [
+    "Paper order for IV antibiotics now"
+   ],
+   "select": 1
+  },
+  {
+   "id": "q4",
+   "kind": "single",
+   "keyed": [
+    "Scheduled huddles with the charge nurse"
+   ],
+   "select": 1
+  },
+  {
+   "id": "q5",
+   "kind": "single",
+   "keyed": [
+    "Transcribe records with assigned staff"
+   ],
+   "select": 1
+  }
+ ],
+ "multiple-patients-37": [
+  {
+   "id": "q1",
+   "kind": "single",
+   "keyed": [
+    "Man first, then the woman"
+   ],
+   "select": 1
+  },
+  {
+   "id": "q2",
+   "kind": "single",
+   "keyed": [
+    "Call the second team in from home now"
+   ],
+   "select": 1
+  },
+  {
+   "id": "q3",
+   "kind": "single",
+   "keyed": [
+    "With a nurse in a monitored bay, pads on"
+   ],
+   "select": 1
+  },
+  {
+   "id": "q4",
+   "kind": "single",
+   "keyed": [
+    "Redirect the patient to the other PCI centre"
+   ],
+   "select": 1
+  }
+ ],
+ "multiple-patients-38": [
+  {
+   "id": "q1",
+   "kind": "single",
+   "keyed": [
+    "Postpone sedation and keep her analgesia going"
+   ],
+   "select": 1
+  },
+  {
+   "id": "q2",
+   "kind": "menu",
+   "keyed": [
+    "Blood bank to activate massive transfusion",
+    "General surgeon to come in now",
+    "Trauma centre to arrange air transfer"
+   ],
+   "select": 3
+  },
+  {
+   "id": "q3",
+   "kind": "single",
+   "keyed": [
+    "Have a nurse screen calls and list tasks"
+   ],
+   "select": 1
+  }
+ ],
+ "multiple-patients-39": [
+  {
+   "id": "q1",
+   "kind": "menu",
+   "keyed": [
+    "Man, 71, ventilated at FiO2 0.6",
+    "Woman, 58, pneumonia, O2 sat 89% on 15 L mask"
+   ],
+   "select": 2
+  },
+  {
+   "id": "q2",
+   "kind": "single",
+   "keyed": [
+    "Titrate each patient to a target saturation"
+   ],
+   "select": 1
+  },
+  {
+   "id": "q3",
+   "kind": "single",
+   "keyed": [
+    "About 45 minutes"
+   ],
+   "select": 1
+  },
+  {
+   "id": "q4",
+   "kind": "single",
+   "keyed": [
+    "Ask hospital command for bulk cylinder resupply"
+   ],
+   "select": 1
+  }
+ ],
+ "multiple-patients-40": [
+  {
+   "id": "q1",
+   "kind": "single",
+   "keyed": [
+    "Infant resuscitation with vascular access now"
+   ],
+   "select": 1
+  },
+  {
+   "id": "q2",
+   "kind": "menu",
+   "keyed": [
+    "Guidance on the infant's resuscitation",
+    "Help coordinating patient transport",
+    "Point-of-care ultrasound support"
+   ],
+   "select": 3
+  },
+  {
+   "id": "q3",
+   "kind": "single",
+   "keyed": [
+    "Admit for ongoing fluids and monitoring"
+   ],
+   "select": 1
+  },
+  {
+   "id": "q4",
+   "kind": "single",
+   "keyed": [
+    "30 mL every 10 minutes"
+   ],
+   "select": 1
+  }
+ ],
+ "sob-48": [
+  {
+   "id": "q1",
+   "kind": "single",
+   "keyed": [
+    "Subglottic hemangioma"
+   ],
+   "select": 1
+  },
+  {
+   "id": "q2",
+   "kind": "single",
+   "keyed": [
+    "Airway endoscopy"
+   ],
+   "select": 1
+  },
+  {
+   "id": "q3",
+   "kind": "single",
+   "keyed": [
+    "epinephrine 1 mg/mL 5 mL nebulized"
+   ],
+   "select": 1
+  },
+  {
+   "id": "q4",
+   "kind": "single",
+   "keyed": [
+    "Transfer to a paediatric airway centre"
+   ],
+   "select": 1
+  }
+ ],
+ "sob-49": [
+  {
+   "id": "q1",
+   "kind": "single",
+   "keyed": [
+    "Daily tamoxifen 20 mg PO"
+   ],
+   "select": 1
+  },
+  {
+   "id": "q2",
+   "kind": "single",
+   "keyed": [
+    "It is usually seen in more severe PE"
+   ],
+   "select": 1
+  },
+  {
+   "id": "q3",
+   "kind": "single",
+   "keyed": [
+    "A normal gradient can occur in PE"
+   ],
+   "select": 1
+  },
+  {
+   "id": "q4",
+   "kind": "single",
+   "keyed": [
+    "Most patients with PE have no proximal DVT"
+   ],
+   "select": 1
+  }
+ ],
+ "sob-50": [
+  {
+   "id": "q1",
+   "kind": "single",
+   "keyed": [
+    "Her end-of-treatment CT"
+   ],
+   "select": 1
+  },
+  {
+   "id": "q2",
+   "kind": "single",
+   "keyed": [
+    "Chronic post-thrombotic web"
+   ],
+   "select": 1
+  },
+  {
+   "id": "q3",
+   "kind": "single",
+   "keyed": [
+    "Community-acquired pneumonia"
+   ],
+   "select": 1
+  },
+  {
+   "id": "q4",
+   "kind": "single",
+   "keyed": [
+    "No anticoagulation"
+   ],
+   "select": 1
+  }
+ ],
+ "sob-51": [
+  {
+   "id": "q1",
+   "kind": "single",
+   "keyed": [
+    "Hepatopulmonary syndrome"
+   ],
+   "select": 1
+  },
+  {
+   "id": "q2",
+   "kind": "single",
+   "keyed": [
+    "50 mmHg"
+   ],
+   "select": 1
+  },
+  {
+   "id": "q3",
+   "kind": "single",
+   "keyed": [
+    "Saline contrast echocardiogram"
+   ],
+   "select": 1
+  },
+  {
+   "id": "q4",
+   "kind": "single",
+   "keyed": [
+    "Liver transplantation"
+   ],
+   "select": 1
+  }
+ ],
+ "sob-52": [
+  {
+   "id": "q1",
+   "kind": "single",
+   "keyed": [
+    "Epiglottitis"
+   ],
+   "select": 1
+  },
+  {
+   "id": "q2",
+   "kind": "menu",
+   "keyed": [
+    "Call the most skilled airway help",
+    "Keep her upright on her mother's lap"
+   ],
+   "select": 2
+  },
+  {
+   "id": "q3",
+   "kind": "single",
+   "keyed": [
+    "Lying back, no longer upright"
+   ],
+   "select": 1
+  },
+  {
+   "id": "q4",
+   "kind": "single",
+   "keyed": [
+    "Two-person bag-mask ventilation"
+   ],
+   "select": 1
+  },
+  {
+   "id": "q5",
+   "kind": "single",
+   "keyed": [
+    "ceftriaxone 1 g IV"
+   ],
+   "select": 1
+  }
+ ],
+ "airway-48": [
+  {
+   "id": "q1",
+   "kind": "single",
+   "keyed": [
+    "Nasogastric tube to suction"
+   ],
+   "select": 1
+  },
+  {
+   "id": "q2",
+   "kind": "single",
+   "keyed": [
+    "Release the cricoid pressure"
+   ],
+   "select": 1
+  },
+  {
+   "id": "q3",
+   "kind": "single",
+   "keyed": [
+    "Rigid suction ahead of the blade"
+   ],
+   "select": 1
+  },
+  {
+   "id": "q4",
+   "kind": "single",
+   "keyed": [
+    "Suction down the tube first"
+   ],
+   "select": 1
+  }
+ ],
+ "airway-49": [
+  {
+   "id": "q1",
+   "kind": "menu",
+   "keyed": [
+    "Missing upper front teeth",
+    "Neck circumference of 49 cm"
+   ],
+   "select": 2
+  },
+  {
+   "id": "q2",
+   "kind": "single",
+   "keyed": [
+    "Rebend the stylet to match the blade"
+   ],
+   "select": 1
+  },
+  {
+   "id": "q3",
+   "kind": "single",
+   "keyed": [
+    "Clicks over the tracheal rings"
+   ],
+   "select": 1
+  },
+  {
+   "id": "q4",
+   "kind": "single",
+   "keyed": [
+    "Rotate the tube counterclockwise"
+   ],
+   "select": 1
+  }
+ ],
+ "airway-50": [
+  {
+   "id": "q1",
+   "kind": "single",
+   "keyed": [
+    "Two-handed hold with an oral airway"
+   ],
+   "select": 1
+  },
+  {
+   "id": "q2",
+   "kind": "single",
+   "keyed": [
+    "Change to a videolaryngoscope"
+   ],
+   "select": 1
+  },
+  {
+   "id": "q3",
+   "kind": "single",
+   "keyed": [
+    "Orogastric tube to free drainage"
+   ],
+   "select": 1
+  },
+  {
+   "id": "q4",
+   "kind": "single",
+   "keyed": [
+    "Shock reducing lung blood flow"
+   ],
+   "select": 1
+  }
+ ],
+ "airway-51": [
+  {
+   "id": "q1",
+   "kind": "single",
+   "keyed": [
+    "Secure the airway today"
+   ],
+   "select": 1
+  },
+  {
+   "id": "q2",
+   "kind": "menu",
+   "keyed": [
+    "Flexible nasendoscopy",
+    "Neck CT review"
+   ],
+   "select": 2
+  },
+  {
+   "id": "q3",
+   "kind": "single",
+   "keyed": [
+    "Awake tracheostomy under local anesthetic"
+   ],
+   "select": 1
+  },
+  {
+   "id": "q4",
+   "kind": "single",
+   "keyed": [
+    "No sedative"
+   ],
+   "select": 1
+  }
+ ],
+ "airway-52": [
+  {
+   "id": "q1",
+   "kind": "single",
+   "keyed": [
+    "Obesity giving a false result"
+   ],
+   "select": 1
+  },
+  {
+   "id": "q2",
+   "kind": "single",
+   "keyed": [
+    "Recent forceful mask ventilation"
+   ],
+   "select": 1
+  },
+  {
+   "id": "q3",
+   "kind": "menu",
+   "keyed": [
+    "Epinephrine down the tube",
+    "Gastric acid on the detector"
+   ],
+   "select": 2
+  },
+  {
+   "id": "q4",
+   "kind": "single",
+   "keyed": [
+    "Colorimetric CO2 over six breaths"
+   ],
+   "select": 1
+  }
+ ],
+ "analgesia-sedation-48": [
+  {
+   "id": "q1",
+   "kind": "single",
+   "keyed": [
+    "Grimacing when he is turned"
+   ],
+   "select": 1
+  },
+  {
+   "id": "q2",
+   "kind": "single",
+   "keyed": [
+    "morphine 10 mg SC"
+   ],
+   "select": 1
+  },
+  {
+   "id": "q3",
+   "kind": "single",
+   "keyed": [
+    "Another SC dose of equal size"
+   ],
+   "select": 1
+  },
+  {
+   "id": "q4",
+   "kind": "single",
+   "keyed": [
+    "Continue regular doses and observe"
+   ],
+   "select": 1
+  }
+ ],
+ "analgesia-sedation-49": [
+  {
+   "id": "q1",
+   "kind": "single",
+   "keyed": [
+    "Treat his pain first, then reassess"
+   ],
+   "select": 1
+  },
+  {
+   "id": "q2",
+   "kind": "single",
+   "keyed": [
+    "CT with his father beside him"
+   ],
+   "select": 1
+  },
+  {
+   "id": "q3",
+   "kind": "single",
+   "keyed": [
+    "You and a nurse dedicated to monitoring"
+   ],
+   "select": 1
+  },
+  {
+   "id": "q4",
+   "kind": "single",
+   "keyed": [
+    "Difficult intubation at past surgery"
+   ],
+   "select": 1
+  }
+ ],
+ "analgesia-sedation-50": [
+  {
+   "id": "q1",
+   "kind": "single",
+   "keyed": [
+    "Picture scale she points to"
+   ],
+   "select": 1
+  },
+  {
+   "id": "q2",
+   "kind": "single",
+   "keyed": [
+    "It does not grade her pain severity"
+   ],
+   "select": 1
+  },
+  {
+   "id": "q3",
+   "kind": "single",
+   "keyed": [
+    "Acceptable 72 hours after her last apixaban dose"
+   ],
+   "select": 1
+  },
+  {
+   "id": "q4",
+   "kind": "single",
+   "keyed": [
+    "Another analgesic dose now"
+   ],
+   "select": 1
+  }
+ ],
+ "analgesia-sedation-51": [
+  {
+   "id": "q1",
+   "kind": "single",
+   "keyed": [
+    "lidocaine 1% intra-articular"
+   ],
+   "select": 1
+  },
+  {
+   "id": "q2",
+   "kind": "menu",
+   "keyed": [
+    "Left uterine displacement",
+    "Oxygen to keep O2 sat above 95%"
+   ],
+   "select": 2
+  },
+  {
+   "id": "q3",
+   "kind": "single",
+   "keyed": [
+    "midazolam with fentanyl IV, titrated"
+   ],
+   "select": 1
+  },
+  {
+   "id": "q4",
+   "kind": "single",
+   "keyed": [
+    "Regular abdominal tightening"
+   ],
+   "select": 1
+  }
+ ],
+ "analgesia-sedation-52": [
+  {
+   "id": "q1",
+   "kind": "single",
+   "keyed": [
+    "Semaglutide dose increase"
+   ],
+   "select": 1
+  },
+  {
+   "id": "q2",
+   "kind": "single",
+   "keyed": [
+    "Point-of-care gastric ultrasound"
+   ],
+   "select": 1
+  },
+  {
+   "id": "q3",
+   "kind": "single",
+   "keyed": [
+    "General anesthesia with RSI"
+   ],
+   "select": 1
+  },
+  {
+   "id": "q4",
+   "kind": "single",
+   "keyed": [
+    "fentanyl 50 mcg IV"
+   ],
+   "select": 1
+  }
+ ],
+ "pre-eclampsia-39": [
+  {
+   "id": "q1",
+   "kind": "single",
+   "keyed": [
+    "Urine protein of 2+ on dipstick"
+   ],
+   "select": 1
+  },
+  {
+   "id": "q2",
+   "kind": "single",
+   "keyed": [
+    "HELLP syndrome"
+   ],
+   "select": 1
+  },
+  {
+   "id": "q3",
+   "kind": "single",
+   "keyed": [
+    "Request an urgent medevac now"
+   ],
+   "select": 1
+  },
+  {
+   "id": "q4",
+   "kind": "single",
+   "keyed": [
+    "magnesium sulfate 5 g IM into each buttock"
+   ],
+   "select": 1
+  }
+ ],
+ "pre-eclampsia-40": [
+  {
+   "id": "q1",
+   "kind": "single",
+   "keyed": [
+    "Pre-eclampsia"
+   ],
+   "select": 1
+  },
+  {
+   "id": "q2",
+   "kind": "single",
+   "keyed": [
+    "Free hemoglobin from hemolysis"
+   ],
+   "select": 1
+  },
+  {
+   "id": "q3",
+   "kind": "single",
+   "keyed": [
+    "Expected change of later pregnancy"
+   ],
+   "select": 1
+  },
+  {
+   "id": "q4",
+   "kind": "single",
+   "keyed": [
+    "Crystalloid up to 500 mL IV with the dose"
+   ],
+   "select": 1
+  }
+ ],
+ "pre-eclampsia-41": [
+  {
+   "id": "q1",
+   "kind": "single",
+   "keyed": [
+    "Postpartum pre-eclampsia"
+   ],
+   "select": 1
+  },
+  {
+   "id": "q2",
+   "kind": "single",
+   "keyed": [
+    "Ankle clonus with confusion"
+   ],
+   "select": 1
+  },
+  {
+   "id": "q3",
+   "kind": "single",
+   "keyed": [
+    "magnesium sulfate 4 g IV"
+   ],
+   "select": 1
+  },
+  {
+   "id": "q4",
+   "kind": "single",
+   "keyed": [
+    "nifedipine XL 30 mg PO daily"
+   ],
+   "select": 1
+  }
+ ],
+ "pre-eclampsia-42": [
+  {
+   "id": "q1",
+   "kind": "single",
+   "keyed": [
+    "Pre-eclampsia"
+   ],
+   "select": 1
+  },
+  {
+   "id": "q2",
+   "kind": "single",
+   "keyed": [
+    "Urine protein-creatinine ratio"
+   ],
+   "select": 1
+  },
+  {
+   "id": "q3",
+   "kind": "single",
+   "keyed": [
+    "epinephrine 0.5 mg IM"
+   ],
+   "select": 1
+  },
+  {
+   "id": "q4",
+   "kind": "single",
+   "keyed": [
+    "Evolving organ involvement"
+   ],
+   "select": 1
+  }
+ ],
+ "pre-eclampsia-43": [
+  {
+   "id": "q1",
+   "kind": "single",
+   "keyed": [
+    "Pre-eclampsia"
+   ],
+   "select": 1
+  },
+  {
+   "id": "q2",
+   "kind": "menu",
+   "keyed": [
+    "Age of 43 years",
+    "BMI of 37 kg/m2",
+    "Pregnancy interval of 12 years"
+   ],
+   "select": 3
+  },
+  {
+   "id": "q3",
+   "kind": "single",
+   "keyed": [
+    "HELLP syndrome"
+   ],
+   "select": 1
+  },
+  {
+   "id": "q4",
+   "kind": "single",
+   "keyed": [
+    "enoxaparin 100 mg SC"
+   ],
+   "select": 1
+  }
+ ],
+ "tox-48": [
+  {
+   "id": "q1",
+   "kind": "single",
+   "keyed": [
+    "GHB withdrawal"
+   ],
+   "select": 1
+  },
+  {
+   "id": "q2",
+   "kind": "single",
+   "keyed": [
+    "Delirium with hallucinations"
+   ],
+   "select": 1
+  },
+  {
+   "id": "q3",
+   "kind": "single",
+   "keyed": [
+    "Lorazepam 2 mg IV"
+   ],
+   "select": 1
+  },
+  {
+   "id": "q4",
+   "kind": "single",
+   "keyed": [
+    "Phenobarbital IV"
+   ],
+   "select": 1
+  },
+  {
+   "id": "q5",
+   "kind": "single",
+   "keyed": [
+    "Creatine kinase"
+   ],
+   "select": 1
+  }
+ ],
+ "tox-49": [
+  {
+   "id": "q1",
+   "kind": "single",
+   "keyed": [
+    "Capillary glucose"
+   ],
+   "select": 1
+  },
+  {
+   "id": "q2",
+   "kind": "single",
+   "keyed": [
+    "Eat, Sleep, Console assessment"
+   ],
+   "select": 1
+  },
+  {
+   "id": "q3",
+   "kind": "single",
+   "keyed": [
+    "Ward admission with mother rooming in"
+   ],
+   "select": 1
+  },
+  {
+   "id": "q4",
+   "kind": "single",
+   "keyed": [
+    "Support breastfeeding on demand"
+   ],
+   "select": 1
+  }
+ ],
+ "tox-50": [
+  {
+   "id": "q1",
+   "kind": "single",
+   "keyed": [
+    "Antihistamine co-ingestion"
+   ],
+   "select": 1
+  },
+  {
+   "id": "q2",
+   "kind": "single",
+   "keyed": [
+    "Photo of the empty package"
+   ],
+   "select": 1
+  },
+  {
+   "id": "q3",
+   "kind": "single",
+   "keyed": [
+    "Activated charcoal 50 g PO"
+   ],
+   "select": 1
+  },
+  {
+   "id": "q4",
+   "kind": "single",
+   "keyed": [
+    "Repeat level in 4 hours"
+   ],
+   "select": 1
+  }
+ ],
+ "tox-51": [
+  {
+   "id": "q1",
+   "kind": "single",
+   "keyed": [
+    "Sulfonylurea co-ingestion"
+   ],
+   "select": 1
+  },
+  {
+   "id": "q2",
+   "kind": "single",
+   "keyed": [
+    "Check all medicines in the home"
+   ],
+   "select": 1
+  },
+  {
+   "id": "q3",
+   "kind": "single",
+   "keyed": [
+    "Norepinephrine infusion"
+   ],
+   "select": 1
+  },
+  {
+   "id": "q4",
+   "kind": "single",
+   "keyed": [
+    "Poor contraction on repeat echo"
+   ],
+   "select": 1
+  }
+ ],
+ "tox-52": [
+  {
+   "id": "q1",
+   "kind": "single",
+   "keyed": [
+    "3"
+   ],
+   "select": 1
+  },
+  {
+   "id": "q2",
+   "kind": "single",
+   "keyed": [
+    "Outpatient gabapentin with daily review"
+   ],
+   "select": 1
+  },
+  {
+   "id": "q3",
+   "kind": "menu",
+   "keyed": [
+    "Blackouts after heavy drinking",
+    "Clonazepam taken most nights",
+    "Seizure during a past attempt to quit"
+   ],
+   "select": 3
+  },
+  {
+   "id": "q4",
+   "kind": "single",
+   "keyed": [
+    "Admission for benzodiazepine treatment"
+   ],
+   "select": 1
+  }
+ ],
+ "environmental-39": [
+  {
+   "id": "q1",
+   "kind": "single",
+   "keyed": [
+    "Serum lithium level"
+   ],
+   "select": 1
+  },
+  {
+   "id": "q2",
+   "kind": "single",
+   "keyed": [
+    "Lithium neurotoxicity"
+   ],
+   "select": 1
+  },
+  {
+   "id": "q3",
+   "kind": "single",
+   "keyed": [
+    "Drink water throughout the day"
+   ],
+   "select": 1
+  },
+  {
+   "id": "q4",
+   "kind": "single",
+   "keyed": [
+    "Stay somewhere air-conditioned"
+   ],
+   "select": 1
+  }
+ ],
+ "environmental-40": [
+  {
+   "id": "q1",
+   "kind": "single",
+   "keyed": [
+    "Exertional heat stroke"
+   ],
+   "select": 1
+  },
+  {
+   "id": "q2",
+   "kind": "single",
+   "keyed": [
+    "Continue immersion until 38.9°C"
+   ],
+   "select": 1
+  },
+  {
+   "id": "q3",
+   "kind": "single",
+   "keyed": [
+    "Transport to hospital by ambulance"
+   ],
+   "select": 1
+  },
+  {
+   "id": "q4",
+   "kind": "single",
+   "keyed": [
+    "Exertional sickling"
+   ],
+   "select": 1
+  },
+  {
+   "id": "q5",
+   "kind": "single",
+   "keyed": [
+    "High-flow oxygen and ambulance transfer"
+   ],
+   "select": 1
+  }
+ ],
+ "environmental-41": [
+  {
+   "id": "q1",
+   "kind": "single",
+   "keyed": [
+    "Pulse check for 1 minute with POCUS"
+   ],
+   "select": 1
+  },
+  {
+   "id": "q2",
+   "kind": "single",
+   "keyed": [
+    "Weight-based standard settings"
+   ],
+   "select": 1
+  },
+  {
+   "id": "q3",
+   "kind": "single",
+   "keyed": [
+    "Increase minute ventilation"
+   ],
+   "select": 1
+  },
+  {
+   "id": "q4",
+   "kind": "single",
+   "keyed": [
+    "Rectal probe lag during rewarming"
+   ],
+   "select": 1
+  }
+ ],
+ "environmental-42": [
+  {
+   "id": "q1",
+   "kind": "single",
+   "keyed": [
+    "Pulmonary decompression sickness"
+   ],
+   "select": 1
+  },
+  {
+   "id": "q2",
+   "kind": "single",
+   "keyed": [
+    "Oxygen 100% by non-rebreather"
+   ],
+   "select": 1
+  },
+  {
+   "id": "q3",
+   "kind": "single",
+   "keyed": [
+    "Normal saline 1 L IV"
+   ],
+   "select": 1
+  },
+  {
+   "id": "q4",
+   "kind": "single",
+   "keyed": [
+    "72 hours"
+   ],
+   "select": 1
+  }
+ ],
+ "environmental-43": [
+  {
+   "id": "q1",
+   "kind": "single",
+   "keyed": [
+    "Posterior shoulder dislocation"
+   ],
+   "select": 1
+  },
+  {
+   "id": "q2",
+   "kind": "single",
+   "keyed": [
+    "Full musculoskeletal examination"
+   ],
+   "select": 1
+  },
+  {
+   "id": "q3",
+   "kind": "single",
+   "keyed": [
+    "No further cardiac testing"
+   ],
+   "select": 1
+  },
+  {
+   "id": "q4",
+   "kind": "menu",
+   "keyed": [
+    "Complete blood count",
+    "Creatine kinase",
+    "Electrolytes and creatinine"
+   ],
+   "select": 3
+  },
+  {
+   "id": "q5",
+   "kind": "single",
+   "keyed": [
+    "Burn centre consultation"
+   ],
+   "select": 1
+  }
+ ],
+ "chest-pain-48": [
+  {
+   "id": "q1",
+   "kind": "single",
+   "keyed": [
+    "Pain with chills as it worsened"
+   ],
+   "select": 1
+  },
+  {
+   "id": "q2",
+   "kind": "single",
+   "keyed": [
+    "Infected diabetic foot ulcer"
+   ],
+   "select": 1
+  },
+  {
+   "id": "q3",
+   "kind": "single",
+   "keyed": [
+    "It does not exclude a septic joint"
+   ],
+   "select": 1
+  },
+  {
+   "id": "q4",
+   "kind": "single",
+   "keyed": [
+    "Blood cultures and CT of the chest wall"
+   ],
+   "select": 1
+  }
+ ],
+ "chest-pain-49": [
+  {
+   "id": "q1",
+   "kind": "single",
+   "keyed": [
+    "Weight loss with night sweats"
+   ],
+   "select": 1
+  },
+  {
+   "id": "q2",
+   "kind": "menu",
+   "keyed": [
+    "Diastolic effusion of 24 mm",
+    "Fever of 38.4°C",
+    "Slow worsening over 10 days"
+   ],
+   "select": 3
+  },
+  {
+   "id": "q3",
+   "kind": "single",
+   "keyed": [
+    "Ibuprofen and colchicine"
+   ],
+   "select": 1
+  },
+  {
+   "id": "q4",
+   "kind": "single",
+   "keyed": [
+    "Pulsus paradoxus of 16 mmHg"
+   ],
+   "select": 1
+  }
+ ],
+ "chest-pain-50": [
+  {
+   "id": "q1",
+   "kind": "single",
+   "keyed": [
+    "Lower molar infection 9 days ago"
+   ],
+   "select": 1
+  },
+  {
+   "id": "q2",
+   "kind": "single",
+   "keyed": [
+    "Mediastinitis from neck spread"
+   ],
+   "select": 1
+  },
+  {
+   "id": "q3",
+   "kind": "single",
+   "keyed": [
+    "It may be normal early in this illness"
+   ],
+   "select": 1
+  },
+  {
+   "id": "q4",
+   "kind": "single",
+   "keyed": [
+    "Start IV broad-spectrum antibiotics"
+   ],
+   "select": 1
+  }
+ ],
+ "chest-pain-51": [
+  {
+   "id": "q1",
+   "kind": "single",
+   "keyed": [
+    "Precordial catch syndrome"
+   ],
+   "select": 1
+  },
+  {
+   "id": "q2",
+   "kind": "single",
+   "keyed": [
+    "Reassurance and posture advice"
+   ],
+   "select": 1
+  },
+  {
+   "id": "q3",
+   "kind": "menu",
+   "keyed": [
+    "Chest pain during soccer",
+    "Fainting while running",
+    "Fever with the pain"
+   ],
+   "select": 3
+  },
+  {
+   "id": "q4",
+   "kind": "single",
+   "keyed": [
+    "Brother died suddenly at age 19"
+   ],
+   "select": 1
+  }
+ ],
+ "chest-pain-52": [
+  {
+   "id": "q1",
+   "kind": "single",
+   "keyed": [
+    "45 pack-years of smoking"
+   ],
+   "select": 1
+  },
+  {
+   "id": "q2",
+   "kind": "single",
+   "keyed": [
+    "Unequal pupils with ptosis"
+   ],
+   "select": 1
+  },
+  {
+   "id": "q3",
+   "kind": "single",
+   "keyed": [
+    "It is unreliable at the lung apex"
+   ],
+   "select": 1
+  },
+  {
+   "id": "q4",
+   "kind": "single",
+   "keyed": [
+    "CT of the chest with contrast"
+   ],
+   "select": 1
+  }
+ ],
+ "cva-48": [
+  {
+   "id": "q1",
+   "kind": "single",
+   "keyed": [
+    "Daily headache since a head strike"
+   ],
+   "select": 1
+  },
+  {
+   "id": "q2",
+   "kind": "single",
+   "keyed": [
+    "Non-contrast CT head now"
+   ],
+   "select": 1
+  },
+  {
+   "id": "q3",
+   "kind": "single",
+   "keyed": [
+    "Cortical dysfunction from the hematoma"
+   ],
+   "select": 1
+  },
+  {
+   "id": "q4",
+   "kind": "menu",
+   "keyed": [
+    "ASA and clopidogrel loading"
+   ],
+   "select": 1
+  }
+ ],
+ "cva-49": [
+  {
+   "id": "q1",
+   "kind": "single",
+   "keyed": [
+    "Apathy with slow, sparse speech"
+   ],
+   "select": 1
+  },
+  {
+   "id": "q2",
+   "kind": "single",
+   "keyed": [
+    "Non-contrast CT head and CTA"
+   ],
+   "select": 1
+  },
+  {
+   "id": "q3",
+   "kind": "single",
+   "keyed": [
+    "Single A1 feeding both A2 segments"
+   ],
+   "select": 1
+  },
+  {
+   "id": "q4",
+   "kind": "single",
+   "keyed": [
+    "Tenecteplase and urgent EVT review"
+   ],
+   "select": 1
+  }
+ ],
+ "cva-50": [
+  {
+   "id": "q1",
+   "kind": "single",
+   "keyed": [
+    "Supports fluctuating vertebrobasilar ischemia"
+   ],
+   "select": 1
+  },
+  {
+   "id": "q2",
+   "kind": "single",
+   "keyed": [
+    "ASA and clopidogrel for 90 days"
+   ],
+   "select": 1
+  },
+  {
+   "id": "q3",
+   "kind": "single",
+   "keyed": [
+    "Aggressive medical management"
+   ],
+   "select": 1
+  },
+  {
+   "id": "q4",
+   "kind": "single",
+   "keyed": [
+    "Below 1.8 mmol/L"
+   ],
+   "select": 1
+  }
+ ],
+ "cva-51": [
+  {
+   "id": "q1",
+   "kind": "single",
+   "keyed": [
+    "Today, before she leaves"
+   ],
+   "select": 1
+  },
+  {
+   "id": "q2",
+   "kind": "single",
+   "keyed": [
+    "ASA 160 mg once, then 81 mg daily"
+   ],
+   "select": 1
+  },
+  {
+   "id": "q3",
+   "kind": "single",
+   "keyed": [
+    "Prolonged ECG monitoring, 2 weeks or more"
+   ],
+   "select": 1
+  },
+  {
+   "id": "q4",
+   "kind": "single",
+   "keyed": [
+    "Below 140/90 mmHg"
+   ],
+   "select": 1
+  }
+ ],
+ "cva-52": [
+  {
+   "id": "q1",
+   "kind": "single",
+   "keyed": [
+    "Vertical gaze on command"
+   ],
+   "select": 1
+  },
+  {
+   "id": "q2",
+   "kind": "single",
+   "keyed": [
+    "Base of the pons"
+   ],
+   "select": 1
+  },
+  {
+   "id": "q3",
+   "kind": "single",
+   "keyed": [
+    "Loss of motor and verbal output"
+   ],
+   "select": 1
+  },
+  {
+   "id": "q4",
+   "kind": "single",
+   "keyed": [
+    "Thrombectomy now"
+   ],
+   "select": 1
+  }
+ ],
+ "loc-48": [
+  {
+   "id": "q1",
+   "kind": "menu",
+   "keyed": [
+    "Cell block check log",
+    "Guard who did the overnight checks"
+   ],
+   "select": 2
+  },
+  {
+   "id": "q2",
+   "kind": "single",
+   "keyed": [
+    "Decline in cells after 0100"
+   ],
+   "select": 1
+  },
+  {
+   "id": "q3",
+   "kind": "single",
+   "keyed": [
+    "GCS components and pupil size"
+   ],
+   "select": 1
+  },
+  {
+   "id": "q4",
+   "kind": "single",
+   "keyed": [
+    "Transfer to the neurosurgical centre"
+   ],
+   "select": 1
+  }
+ ],
+ "loc-49": [
+  {
+   "id": "q1",
+   "kind": "single",
+   "keyed": [
+    "Day staff member who knows his routine"
+   ],
+   "select": 1
+  },
+  {
+   "id": "q2",
+   "kind": "single",
+   "keyed": [
+    "Not testable, with the reason noted"
+   ],
+   "select": 1
+  },
+  {
+   "id": "q3",
+   "kind": "single",
+   "keyed": [
+    "Phenobarbital toxicity"
+   ],
+   "select": 1
+  },
+  {
+   "id": "q4",
+   "kind": "single",
+   "keyed": [
+    "Multiple-dose activated charcoal"
+   ],
+   "select": 1
+  }
+ ],
+ "loc-50": [
+  {
+   "id": "q1",
+   "kind": "single",
+   "keyed": [
+    "Urgent search for a serious cause"
+   ],
+   "select": 1
+  },
+  {
+   "id": "q2",
+   "kind": "single",
+   "keyed": [
+    "Daycare worker who woke him"
+   ],
+   "select": 1
+  },
+  {
+   "id": "q3",
+   "kind": "single",
+   "keyed": [
+    "Record the change and keep trending"
+   ],
+   "select": 1
+  },
+  {
+   "id": "q4",
+   "kind": "single",
+   "keyed": [
+    "Point-of-care abdominal ultrasound"
+   ],
+   "select": 1
+  }
+ ],
+ "loc-51": [
+  {
+   "id": "q1",
+   "kind": "single",
+   "keyed": [
+    "Confused when roused to voice"
+   ],
+   "select": 1
+  },
+  {
+   "id": "q2",
+   "kind": "single",
+   "keyed": [
+    "Trapezius pinch at the shoulder"
+   ],
+   "select": 1
+  },
+  {
+   "id": "q3",
+   "kind": "single",
+   "keyed": [
+    "GCS 9 (E2 V2 M5)"
+   ],
+   "select": 1
+  },
+  {
+   "id": "q4",
+   "kind": "single",
+   "keyed": [
+    "Posterior fossa stroke"
+   ],
+   "select": 1
+  }
+ ],
+ "loc-52": [
+  {
+   "id": "q1",
+   "kind": "single",
+   "keyed": [
+    "Sister who lives with her"
+   ],
+   "select": 1
+  },
+  {
+   "id": "q2",
+   "kind": "single",
+   "keyed": [
+    "Bruises and petechiae"
+   ],
+   "select": 1
+  },
+  {
+   "id": "q3",
+   "kind": "single",
+   "keyed": [
+    "Thrombotic thrombocytopenic purpura"
+   ],
+   "select": 1
+  },
+  {
+   "id": "q4",
+   "kind": "menu",
+   "keyed": [
+    "Methylprednisolone IV",
+    "Plasma exchange"
+   ],
+   "select": 2
+  }
+ ],
+ "ems-37": [
+  {
+   "id": "q1",
+   "kind": "menu",
+   "keyed": [
+    "Time glucagon was given",
+    "Time the pump was disconnected",
+    "What the coworker saw and heard"
+   ],
+   "select": 3
+  },
+  {
+   "id": "q2",
+   "kind": "single",
+   "keyed": [
+    "Basal insulin restarted now"
+   ],
+   "select": 1
+  },
+  {
+   "id": "q3",
+   "kind": "single",
+   "keyed": [
+    "Hypoglycemia unawareness"
+   ],
+   "select": 1
+  },
+  {
+   "id": "q4",
+   "kind": "single",
+   "keyed": [
+    "Blood ketone level"
+   ],
+   "select": 1
+  }
+ ],
+ "ems-38": [
+  {
+   "id": "q1",
+   "kind": "single",
+   "keyed": [
+    "Go in with police to the first floor"
+   ],
+   "select": 1
+  },
+  {
+   "id": "q2",
+   "kind": "single",
+   "keyed": [
+    "Tourniquets for limb bleeding"
+   ],
+   "select": 1
+  },
+  {
+   "id": "q3",
+   "kind": "single",
+   "keyed": [
+    "Tag as dead"
+   ],
+   "select": 1
+  },
+  {
+   "id": "q4",
+   "kind": "single",
+   "keyed": [
+    "Shot in the upper abdomen, pulse 136"
+   ],
+   "select": 1
+  }
+ ],
+ "ems-39": [
+  {
+   "id": "q1",
+   "kind": "single",
+   "keyed": [
+    "Radiographs from neck to abdomen"
+   ],
+   "select": 1
+  },
+  {
+   "id": "q2",
+   "kind": "single",
+   "keyed": [
+    "Immediate transfer for removal"
+   ],
+   "select": 1
+  },
+  {
+   "id": "q3",
+   "kind": "single",
+   "keyed": [
+    "sucralfate 1 g PO every 10 minutes"
+   ],
+   "select": 1
+  },
+  {
+   "id": "q4",
+   "kind": "single",
+   "keyed": [
+    "Stop further sucralfate doses"
+   ],
+   "select": 1
+  }
+ ],
+ "ems-40": [
+  {
+   "id": "q1",
+   "kind": "single",
+   "keyed": [
+    "Load now for transport to your hospital"
+   ],
+   "select": 1
+  },
+  {
+   "id": "q2",
+   "kind": "menu",
+   "keyed": [
+    "Cardiac catheterization team",
+    "ECPR cannulation team"
+   ],
+   "select": 2
+  },
+  {
+   "id": "q3",
+   "kind": "single",
+   "keyed": [
+    "End-tidal CO2 of 24 mmHg en route"
+   ],
+   "select": 1
+  },
+  {
+   "id": "q4",
+   "kind": "single",
+   "keyed": [
+    "Palliative care for metastatic cancer"
+   ],
+   "select": 1
+  }
+ ],
+ "ems-41": [
+  {
+   "id": "q1",
+   "kind": "single",
+   "keyed": [
+    "Direct pressure on the bleeding site"
+   ],
+   "select": 1
+  },
+  {
+   "id": "q2",
+   "kind": "single",
+   "keyed": [
+    "Tape over the gauze without lifting it"
+   ],
+   "select": 1
+  },
+  {
+   "id": "q3",
+   "kind": "single",
+   "keyed": [
+    "Regional hospital with dialysis"
+   ],
+   "select": 1
+  },
+  {
+   "id": "q4",
+   "kind": "single",
+   "keyed": [
+    "Palpation for a thrill over the fistula"
+   ],
+   "select": 1
+  }
+ ]
+}

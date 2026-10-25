@@ -183,6 +183,7 @@ To regenerate the screenshots after content changes, build a seeded static copy 
 
 - [x] First 525 SAMPs and 100 oral cases signed off by a physician (24 September 2026).
 - [x] Q500 round (88 SAMPs in s54 to s71, 20 oral cases in batch11 to batch15) signed off on 19 October 2026, recorded at the physician's instruction in `docs/signoff-2026-10-q500.json`.
+- [x] Q500B round (85 SAMPs in s72 to s88, 12 oral cases in batch16 to batch18) signed off on 25 October 2026, recorded at the physician's instruction in `docs/signoff-2026-10-q500b.json`. Judgement calls ship as written; the sheet is `docs/ARJAN-SIGNOFF-2026-10-25.md`.
 - [ ] Every SAMP added after that signed off and set to `reviewed: true`.
 - [ ] No CFPC logos or trademarks in the app, icon, screenshots or listing. "CCFP-EM" names the certificate the exam leads to. Say clearly that the app is independent and not affiliated. Consider asking the CFPC whether it objects to the name.
 - [ ] No CFPC sample question or recalled exam content in the app. The Official CFPC resources screen only links out.

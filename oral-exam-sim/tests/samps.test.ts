@@ -2,6 +2,7 @@ import { describe, expect, it } from "vitest";
 import signoff from "../docs/signoff-2026-09.json";
 import signoff2 from "../docs/signoff-2026-10.json";
 import signoff3 from "../docs/signoff-2026-10-q500.json";
+import signoff4 from "../docs/signoff-2026-10-q500b.json";
 import expansion from "../docs/samp-expansion.json";
 import { PRIORITY_TOPICS, topicById } from "@/blueprint/priorityTopics";
 import { validateSamp } from "@/engine/samp";
@@ -15,7 +16,7 @@ import { AUTHORED_SAMPS, HELD_BACK, SAMPS, SAMP_BATCHES } from "@/samps/source";
 
 /** Signed-off ids. Anything new or changed stays reviewed: false. */
 /** A held-back SAMP's text changed after sign-off, so its sign-off no longer applies. See src/samps/held-back/README.md. */
-const SIGNED_OFF = new Set<string>([...signoff.samps, ...signoff2.samps, ...signoff3.samps].filter((id) => !HELD_BACK.has(id)));
+const SIGNED_OFF = new Set<string>([...signoff.samps, ...signoff2.samps, ...signoff3.samps, ...signoff4.samps].filter((id) => !HELD_BACK.has(id)));
 
 const only = process.env.SAMP_BATCH;
 const target = only ? SAMP_BATCHES[only] ?? [] : AUTHORED_SAMPS;

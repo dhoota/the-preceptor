@@ -397,7 +397,8 @@ describe("Codemagic", () => {
     for (const id of ["android-production", "ios-production"]) expect(block(root, id), id).toMatch(/events:\n\s+- tag\n\s+tag_patterns:\n\s+- pattern: 'ccfpem-v\*'/);
     expect(root.match(/- tag$/gm)?.length).toBe(2);
     expect(root).not.toMatch(/- push$|- pull_request$/m);
-    expect(block(root, "ios-production")).toContain("cancel_previous_submissions: true");
+    // A release build must never pull a version that is already in App Store review.
+    expect(block(root, "ios-production")).toContain("cancel_previous_submissions: false");
     // With working_directory set, Codemagic resolves artifact globs from that folder
     // (build 1 found nothing with an oral-exam-sim/ prefix), so the paths match the local file.
     const arts = (y: string) => y.match(/^      - [^*\s]\S*\/\S*$/gm) ?? [];

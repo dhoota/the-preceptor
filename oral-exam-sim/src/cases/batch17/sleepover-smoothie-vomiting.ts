@@ -593,7 +593,7 @@ export const sleepoverSmoothieVomiting: OralCase = {
       url: "https://pmc.ncbi.nlm.nih.gov/articles/PMC8670273/",
     },
   ],
-  reviewed: false,
+  reviewed: true,
   author: "Preceptor",
   version: 1,
 };

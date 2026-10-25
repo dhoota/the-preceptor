@@ -2,7 +2,7 @@
 import type { Samp } from "@/engine/samp";
 import type { Source } from "@/engine/types";
 
-const META = { reviewed: false, author: "Preceptor", version: 1 } as const;
+const META = { reviewed: true, author: "Preceptor", version: 1 } as const;
 
 const S = {
   dcPeds: { id: "dc-t1d-peds", citation: "Wherrett DK, Ho J, Huot C, Legault L, Nakhla M, Rosolowsky E, Diabetes Canada Clinical Practice Guidelines Expert Committee. Type 1 diabetes in children and adolescents. Can J Diabetes. 2018.", url: "https://www.diabetes.ca/for-professionals/full-guidelines/chapter-34" },

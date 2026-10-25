@@ -615,7 +615,7 @@ export const postLysisBleedRuralAnteriorStemi: OralCase = {
       url: "https://doi.org/10.1161/STR.0000000000000407",
     },
   ],
-  reviewed: false,
+  reviewed: true,
   author: "Preceptor",
   version: 1,
 };

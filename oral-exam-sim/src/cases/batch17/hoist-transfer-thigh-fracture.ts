@@ -636,7 +636,7 @@ export const hoistTransferThighFracture: OralCase = {
       url: "https://pmc.ncbi.nlm.nih.gov/articles/PMC3739053/",
     },
   ],
-  reviewed: false,
+  reviewed: true,
   author: "Preceptor",
   version: 1,
 };

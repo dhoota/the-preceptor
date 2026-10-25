@@ -2,7 +2,7 @@
 import type { Samp } from "@/engine/samp";
 import type { Source } from "@/engine/types";
 
-const META = { reviewed: false, author: "Preceptor", version: 1 } as const;
+const META = { reviewed: true, author: "Preceptor", version: 1 } as const;
 
 const S = {
   weaver: { id: "weaver-ghb", citation: "Weaver VK, Ickowicz S, Fairbairn N. Management of gamma-hydroxybutyrate intoxication and withdrawal. CMAJ. 2023.", url: "https://pmc.ncbi.nlm.nih.gov/articles/PMC10241545/" },

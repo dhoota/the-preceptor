@@ -558,7 +558,7 @@ export const cannabisGummiesOlderWomanDrowsy: OralCase = {
       url: "https://doi.org/10.1056/NEJMra1202561",
     },
   ],
-  reviewed: false,
+  reviewed: true,
   author: "Preceptor",
   version: 1,
 };

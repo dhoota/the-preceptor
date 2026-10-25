@@ -628,7 +628,7 @@ export const emsPatchBlockedTracheostomyChild: OralCase = {
         "Warren J, Fromm RE Jr, Orr RA, Rotello LC, Horst HM. Guidelines for the inter- and intrahospital transport of critically ill patients. American College of Critical Care Medicine. Crit Care Med. 2004.",
     },
   ],
-  reviewed: false,
+  reviewed: true,
   author: "Preceptor",
   version: 1,
 };

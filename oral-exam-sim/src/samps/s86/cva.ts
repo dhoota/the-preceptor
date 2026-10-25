@@ -2,7 +2,7 @@
 import type { Samp } from "@/engine/samp";
 import type { Source } from "@/engine/types";
 
-const META = { reviewed: false, author: "Preceptor", version: 1 } as const;
+const META = { reviewed: true, author: "Preceptor", version: 1 } as const;
 
 const S = {
   csbprSp: { id: "s86-csbpr-sp", citation: "Gladstone DJ and colleagues. Canadian Stroke Best Practice Recommendations: secondary prevention of stroke update 2020. Heart and Stroke Foundation of Canada. Can J Neurol Sci. 2022.", url: "https://www.strokebestpractices.ca/recommendations/secondary-prevention-of-stroke" },

@@ -2,7 +2,7 @@
 import type { Samp } from "@/engine/samp";
 import type { Source } from "@/engine/types";
 
-const META = { reviewed: false, author: "Preceptor", version: 1 } as const;
+const META = { reviewed: true, author: "Preceptor", version: 1 } as const;
 
 const S = {
   tjc: { id: "tjc-sea67", citation: "The Joint Commission. Sentinel Event Alert, Issue 67. Preserving patient safety after a cyberattack. 2023.", url: "https://digitalassets.jointcommission.org/api/public/content/8bd6addf4df943f383a074f2d9d4af64" },

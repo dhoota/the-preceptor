@@ -677,7 +677,7 @@ export const earlyPregnancyBleedingPartnerViolence: OralCase = {
       url: "https://pubmed.ncbi.nlm.nih.gov/18667689/",
     },
   ],
-  reviewed: false,
+  reviewed: true,
   author: "Preceptor",
   version: 1,
 };

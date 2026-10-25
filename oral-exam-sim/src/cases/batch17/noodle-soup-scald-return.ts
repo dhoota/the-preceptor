@@ -638,7 +638,7 @@ export const noodleSoupScaldReturn: OralCase = {
         "Stevens DL, Bisno AL, Chambers HF, and colleagues. Practice guidelines for the diagnosis and management of skin and soft tissue infections. 2014 update by the Infectious Diseases Society of America. Clin Infect Dis. 2014.",
     },
   ],
-  reviewed: false,
+  reviewed: true,
   author: "Preceptor",
   version: 1,
 };

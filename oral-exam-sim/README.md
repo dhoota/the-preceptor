@@ -7,8 +7,8 @@ Fully offline. No AI at runtime, no account and no backend. All content is stati
 ## What it does
 
 Written component
-- 1,588 original SAMPs across the 35 CFPC priority topics (1,518 ship, 70 are held back for rebuild), with at least 3 questions on every key feature.
-- 1,063 follow the 2027 exam format, multiple choice and short menu. These make up the mock exams.
+- 1,673 original SAMPs across the 35 CFPC priority topics (1,603 ship, 70 are held back for rebuild), with at least 3 questions on every key feature.
+- 1,148 follow the 2027 exam format, multiple choice and short menu. These make up the mock exams.
 - The first 525 are write-in practice, tagged "Write-in" in the app.
 - Write-in answers are scored against examiner style keys: acceptable answers, required count, unacceptable and dangerous answers. Only the first N answers count. The candidate can override a match.
 - Practice by priority topic, and a timed 4 hour mock (or 2 hour half mock) balanced across the blueprint.
@@ -38,7 +38,7 @@ In the dev server purchases are simulated so the paid flows can be clicked throu
 
 - `src/engine/`: the reusable engine. Oral cases, SAMP scoring, exam composition, reports, analytics, spaced review. No framework imports.
 - `src/blueprint/`: CFPC EM priority topics and key features (key features paraphrased).
-- `src/cases/`: 120 oral cases. `src/samps/`: 1,588 SAMPs.
+- `src/cases/`: 132 oral cases. `src/samps/`: 1,673 SAMPs.
 - `src/lib/`: storage, RevenueCat, text to speech, access rules. `src/screens/`: the UI.
 - `tests/`: engine, scoring, content structure and style, blueprint coverage, offline guard, store listing.
 - `docs/`: blueprints, writing specs and the adversarial review reports.

@@ -617,7 +617,7 @@ export const airgunPelletEyeRuralChild: OralCase = {
       url: "https://pubmed.ncbi.nlm.nih.gov/12161209/",
     },
   ],
-  reviewed: false,
+  reviewed: true,
   author: "Preceptor",
   version: 1,
 };

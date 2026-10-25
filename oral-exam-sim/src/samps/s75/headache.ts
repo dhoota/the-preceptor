@@ -2,7 +2,7 @@
 import type { Samp } from "@/engine/samp";
 import type { Source } from "@/engine/types";
 
-const META = { reviewed: false, author: "Preceptor", version: 1 } as const;
+const META = { reviewed: true, author: "Preceptor", version: 1 } as const;
 
 const S = {
   eanoLm: { id: "eano-lm", citation: "Le Rhun E, Weller M, van den Bent M, and colleagues, EANO and ESMO Guidelines Committees. Leptomeningeal metastasis from solid tumours: EANO-ESMO Clinical Practice Guideline for diagnosis, treatment and follow-up. ESMO Open. 2023.", url: "https://pmc.ncbi.nlm.nih.gov/articles/PMC10619142/" },
