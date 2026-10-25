@@ -263,7 +263,7 @@ export const PRE_ECLAMPSIA_S82: Samp[] = [
         ],
         correct: 3,
         explanation:
-          "Her confusion is a new cerebral disturbance, which ACOG counts as a severe feature of pre-eclampsia, so she needs magnesium sulfate to prevent eclampsia although her BP is below 160/110 mmHg. ACOG gives it after birth as before it, as a 4 to 6 g IV load over about 20 minutes and then 1 to 2 g/hour. A 4 g load is the usual first dose. Sedation is not needed unless her agitation threatens her safety. Droperidol, haloperidol and olanzapine would sedate her and cloud the neurological examination that tracks her response, and they do not prevent eclamptic seizures. Benzodiazepines such as lorazepam are less effective than magnesium sulfate against eclamptic seizures. Her BP still needs treatment.",
+          "ACOG notes that eclampsia is often preceded by signs of cerebral irritation such as headache and altered mental status. Her confusion, clonus and headache put her at risk, so she needs magnesium sulfate to prevent eclampsia although her BP is below 160/110 mmHg. ACOG gives it as a 4 to 6 g IV load over 20 to 30 minutes and then 1 to 2 g/hour. A 4 g load is the usual first dose. Sedation is not needed unless her agitation threatens her safety. Droperidol, haloperidol and olanzapine would sedate her and cloud the neurological examination that tracks her response, and they do not prevent eclamptic seizures. Benzodiazepines such as lorazepam are less effective than magnesium sulfate against eclamptic seizures. Her BP still needs treatment.",
         keyFeature: { topic: "pre-eclampsia", n: 4 },
         source: "acog-222",
       },
@@ -282,7 +282,7 @@ export const PRE_ECLAMPSIA_S82: Samp[] = [
         ],
         correct: 3,
         explanation:
-          "Long-acting nifedipine controls BP with one daily dose and is compatible with breastfeeding, and NICE names nifedipine and enalapril for postnatal hypertension and favours once-daily drugs. NICE advises avoiding diuretics, such as hydrochlorothiazide and spironolactone, and angiotensin receptor blockers, such as losartan, in women who are breastfeeding. Methyldopa causes sedation and low mood, and NICE advises stopping it within 2 days after the birth and switching to another drug. After a confusional episode, a drug that sedates her would also make her mental state harder to judge.",
+          "Long-acting nifedipine controls BP with one daily dose and is compatible with breastfeeding, and NICE names nifedipine and enalapril for postnatal hypertension and favours once-daily drugs. NICE advises avoiding diuretics, such as hydrochlorothiazide and spironolactone, and angiotensin receptor blockers, such as losartan, in women who are breastfeeding. Methyldopa causes sedation and low mood, and NICE advises women who took it in pregnancy to stop it within 2 days after the birth. After a confusional episode, a drug that sedates her would also make her mental state harder to judge.",
         keyFeature: { topic: "pre-eclampsia", n: 4 },
         source: "nice-ng133",
       },

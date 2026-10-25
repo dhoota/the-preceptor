@@ -220,7 +220,7 @@ export const sleepoverSmoothieVomiting: OralCase = {
       kind: "say",
       id: "s-amio",
       phase: "Ten minutes later",
-      text: "The ectopy has stopped but her pressure has fallen to 78/42 and the wheeze is louder. You stop the amiodarone infusion.",
+      text: "The ectopy has stopped but her pressure has fallen to 78/42 and the wheeze is louder. You stop the amiodarone.",
       next: "s-settle",
     },
     {

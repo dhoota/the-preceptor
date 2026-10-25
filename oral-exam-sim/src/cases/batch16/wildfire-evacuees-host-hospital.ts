@@ -73,7 +73,7 @@ export const wildfireEvacueesHostHospital: OralCase = {
     },
     {
       id: "waiting",
-      label: "Evacuees in the waiting room at 20:05",
+      label: "Other evacuees in the waiting room at 20:05",
       result:
         "A. A 2 month old girl with a runny nose and cough who is feeding less. B. A 7 year old boy with type 1 diabetes whose insulin pens were left behind. Glucose 19.2 mmol/L, blood ketones 0.4 mmol/L, alert and well. " +
         "C. A 41 year old man on buprenorphine-naloxone who has missed 2 days of doses. He is sweating, yawning and has stomach cramps. D. An 84 year old woman with dementia who came on the plane without family. E. Seven adults asking for refills of regular medications.",
@@ -168,7 +168,7 @@ export const wildfireEvacueesHostHospital: OralCase = {
         "Push the presenting part up with a gloved hand in the vagina and keep it there until the baby is born. Do not try to push the cord back.",
         "Handle the cord as little as possible to avoid spasm of its vessels.",
         "Put her in the knee-chest position, or left lateral with her head down and a pillow under her left hip.",
-        "If there is a delay, fill her bladder with 500 to 750 mL of saline through a Foley catheter, and consider terbutaline 0.25 mg subcutaneously. Empty the bladder before birth.",
+        "If there is a delay, fill her bladder with 500 to 750 mL of saline through a Foley catheter, and consider terbutaline 0.25 mg subcutaneously if the fetal heart stays abnormal. Empty the bladder before birth.",
         "Keep listening to the fetal heart. Prepare for neonatal resuscitation.",
       ],
       rubric: ["wf-m1", "wf-m2"],
@@ -401,7 +401,7 @@ export const wildfireEvacueesHostHospital: OralCase = {
       id: "wf-m2",
       competency: "management",
       criterion: "management",
-      text: "Calls the obstetric, anesthesia, pediatric and operating room teams for a category 1 caesarean, and uses bladder filling of 500 to 750 mL and terbutaline 0.25 mg subcutaneously if there is a delay.",
+      text: "Calls the obstetric, anesthesia, pediatric and operating room teams for a category 1 caesarean, and uses bladder filling of 500 to 750 mL if there is a delay and terbutaline 0.25 mg subcutaneously if the fetal heart stays abnormal.",
       points: 2,
       teaching:
         "With a pathological fetal heart rate, aim for birth by category 1 caesarean within 30 minutes. Tocolysis can be considered while preparing if the heart rate stays abnormal. Empty the bladder before birth.",
