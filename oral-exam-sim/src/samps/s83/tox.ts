@@ -191,7 +191,7 @@ export const TOX_S83: Samp[] = [
         options: ["Activated charcoal 50 g PO", "Gastric lavage by large tube", "Multiple dose activated charcoal", "Whole bowel irrigation", "No decontamination"],
         correct: 0,
         explanation:
-          "She presents within the 4 hour window in which the 2023 consensus supports a single dose of activated charcoal after an acetaminophen overdose, and she is alert with a protected airway, so she can drink it safely. About 1 g/kg, or 50 g at 52 kg, binds drug still in a gut slowed by the co-ingestant. Gastric lavage adds risk without proven benefit. Repeated doses of charcoal are for drugs that recirculate or form masses, which is not the problem here. Whole bowel irrigation is for sustained release tablets, metals and packets. Giving nothing would waste a chance to reduce absorption.",
+          "She took a potentially liver-toxic amount of acetaminophen 2.5 hours ago, and the 2023 consensus advises considering a single dose of activated charcoal in that case unless the airway is at risk. She is alert with a protected airway, so she can drink it safely. About 1 g/kg, or 50 g at 52 kg, binds drug still in a gut slowed by the co-ingestant. Gastric lavage adds risk without proven benefit. Repeated doses of charcoal are for drugs that recirculate or form masses, which is not the problem here. Whole bowel irrigation is for sustained release tablets, metals and packets. Giving nothing would waste a chance to reduce absorption.",
         keyFeature: { topic: "tox", n: 6 },
         source: "apap-consensus",
       },
