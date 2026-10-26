@@ -133,8 +133,17 @@ export function Paywall({ go, focus }: { go: Go; focus?: "written" | "oral" }) {
             ? "Subscriptions are available in the iOS and Android apps."
             : !keysConfigured()
               ? "Purchases are not set up in this build yet."
-              : "The plans could not be loaded from the store. Check your connection and open this page again."}
+              : app.plansLoading
+                ? "Loading the plans from the store."
+                : "The plans could not be loaded from the store. Check your connection and try again."}
         </p>
+      )}
+      {offers.length === 0 && isNative() && keysConfigured() && !app.plansLoading && (
+        <div className="actions">
+          <button className="btn block" onClick={() => app.refreshPlans()}>
+            Try again
+          </button>
+        </div>
       )}
 
       {label && (

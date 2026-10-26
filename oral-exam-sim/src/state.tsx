@@ -38,6 +38,8 @@ interface AppState {
   expiry: Expiry;
   /** Plans in the live store offering, with store prices. Empty until loaded or when none can be read. */
   plans: Plan[];
+  /** True while the paywall is reading the offering from the store. */
+  plansLoading: boolean;
   busy: boolean;
   sampAttempts: SampAttempt[];
   mockExams: MockExam[];
@@ -74,6 +76,7 @@ export function AppProvider({ children }: { children: ReactNode }) {
   }, []);
   const access = useMemo(() => accessAt(expiry, clock), [expiry, clock]);
   const [plans, setPlans] = useState<Plan[]>([]);
+  const [plansLoading, setPlansLoading] = useState(true);
   const [busy, setBusy] = useState(false);
   const [sampAttempts, setSampAttempts] = useState<SampAttempt[]>([]);
   const [mockExams, setMockExams] = useState<MockExam[]>([]);
@@ -108,10 +111,16 @@ export function AppProvider({ children }: { children: ReactNode }) {
       setExpiry(next);
       if (next.written !== cached.written || next.oral !== cached.oral) await settle(() => repo.setCachedExpiry(next), undefined, READ_MS);
       const offered = await settle(() => purchases.plans(), [] as Plan[], STORE_MS);
-      if (!cancelled) setPlans(offered);
+      if (!cancelled) {
+        setPlans((prev) => (offered.length || !prev.length ? offered : prev));
+        setPlansLoading(false);
+      }
     })().catch(() => {
       // Never leaves the app unopened. The paywall still decides access.
-      if (!cancelled) setReady(true);
+      if (!cancelled) {
+        setReady(true);
+        setPlansLoading(false);
+      }
     });
     return () => {
       cancelled = true;
@@ -174,8 +183,17 @@ export function AppProvider({ children }: { children: ReactNode }) {
     await repo.setCachedExpiry(e);
   }, []);
 
+  // StoreKit can return nothing on the first read (sandbox, a cold start, a slow
+  // network), so an empty offering is read once more before the paywall gives up.
   const refreshPlans = useCallback(async () => {
-    setPlans(await settle(() => purchases.plans(), [] as Plan[], STORE_MS));
+    setPlansLoading(true);
+    try {
+      let offered = await settle(() => purchases.plans(), [] as Plan[], STORE_MS);
+      if (!offered.length) offered = await settle(() => purchases.plans(), [] as Plan[], STORE_MS);
+      setPlans((prev) => (offered.length || !prev.length ? offered : prev));
+    } finally {
+      setPlansLoading(false);
+    }
   }, []);
 
   const buy = useCallback(
@@ -231,6 +249,7 @@ export function AppProvider({ children }: { children: ReactNode }) {
       access,
       expiry,
       plans,
+      plansLoading,
       busy,
       sampAttempts,
       mockExams,
@@ -249,7 +268,7 @@ export function AppProvider({ children }: { children: ReactNode }) {
       restore,
       resetProgress,
     }),
-    [ready, attempts, deck, settings, access, expiry, plans, busy, sampAttempts, mockExams, mockOrals, saveAttempt, submitMarks, answerReview, updateSettings, saveSampAttempts, saveMockExam, saveMockOral, buy, refreshPlans, restore, resetProgress],
+    [ready, attempts, deck, settings, access, expiry, plans, plansLoading, busy, sampAttempts, mockExams, mockOrals, saveAttempt, submitMarks, answerReview, updateSettings, saveSampAttempts, saveMockExam, saveMockOral, buy, refreshPlans, restore, resetProgress],
   );
 
   return <Ctx.Provider value={value}>{children}</Ctx.Provider>;

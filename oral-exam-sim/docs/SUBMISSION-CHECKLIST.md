@@ -193,6 +193,7 @@ All of these are in App Store Connect > Apps > the app with bundle `com.precepto
   - both components open
   - Settings shows a "renews or ends" date
   - Restore works after a reinstall
+- Repeat the paywall check on an iPad (App Review uses iPads, such as the iPad Air 11-inch M3): all six plans must show with store prices. If the paywall says the plans could not be loaded, Try again must bring them up.
 - If anything fails here, stop and report it.
 
 ## Phase E. Submit on the App Store
@@ -213,6 +214,7 @@ All of these are in App Store Connect > Apps > the app with bundle `com.precepto
   - `store/screenshots/iphone-6.9/` to the 6.9 inch slot
   - `store/screenshots/iphone-6.5/` to the 6.5 inch slot, if shown
   - `store/screenshots/ipad-13/` to the 13 inch iPad slot
+- Guideline 2.3.7: no screenshot (iPhone or iPad, every locale) may show the paywall, a price, a struck-through price, or the words free or discount. The repo sets are study screens only. Replace any older set in App Store Connect that differs. Never claim an AI tutor: the app has no AI.
 
 **E3. Build.**
 - Screen: the Build section of the version page.
@@ -220,7 +222,8 @@ All of these are in App Store Connect > Apps > the app with bundle `com.precepto
 
 **E4. Subscriptions with the version.**
 - Screen: the "In-App Purchases and Subscriptions" section of the version page.
-- Select all three subscriptions.
+- Select all six subscriptions: ccfpem_complete_6m, ccfpem_complete_3m, ccfpem_written_6m, ccfpem_written_3m, ccfpem_oral_6m, ccfpem_oral_3m.
+- Guideline 2.1(b): each must be Ready to Submit (or already approved), with a review screenshot, and attached to this version. Apple rejects the app when it cannot find the products in the binary.
 - A first subscription must go to review together with an app version, or Apple will not review it.
 
 **E5. App Review Information.**
